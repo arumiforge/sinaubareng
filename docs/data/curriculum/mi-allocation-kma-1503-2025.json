@@ -1,0 +1,842 @@
+{
+  "dataset": "mi_allocation",
+  "version_code": "ALOKASI-MI-KMA-1503-2025",
+  "source": {
+    "title": "Keputusan Menteri Agama Nomor 1503 Tahun 2025 tentang Perubahan atas Keputusan Menteri Agama Nomor 450 Tahun 2024 tentang Pedoman Implementasi Kurikulum pada Raudhatul Athfal, Madrasah Ibtidaiyah, Madrasah Tsanawiyah, Madrasah Aliyah, dan Madrasah Aliyah Kejuruan",
+    "issued_on": "2025-09-22",
+    "file": "docs/sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf",
+    "section": "Lampiran II, BAB III B. Struktur Kurikulum Madrasah Ibtidaiyah, Tabel 1-5, and the implementation rules after Tabel 5",
+    "pages": [
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "pages_note": "Printed page numbers; in the archived file they equal the PDF page numbers."
+  },
+  "verification": {
+    "verified": true,
+    "date": "2026-10-30",
+    "method": "Each table read from the scanned page images (rendered at 110 dpi) and every cell compared with the P1-08 head-start table. Per grade, the sum of the required subjects was checked against the decree's printed 'Total JP Mata Pelajaran Wajib' row, and the derived ranges with muatan lokal and the elective against the printed total rows. All match."
+  },
+  "units": {
+    "allocation": "JP per year",
+    "jp_minutes": 35,
+    "weeks_per_year": "36 for grades I-V, 32 for grade VI"
+  },
+  "fields": {
+    "intrakurikuler": "JP per year for intracurricular learning (the subject's own lessons)",
+    "kokurikuler": "JP per year shifted from the subject to the cocurricular programme; 0 when the cell is empty in the decree",
+    "total": "intrakurikuler + kokurikuler",
+    "intrakurikuler_per_week": "intrakurikuler / weeks_per_year; derived, not printed in the decree",
+    "group": "required = Kelompok/Mata Pelajaran Wajib; elective = Mata Pelajaran Pilihan",
+    "note": "Key into notes{}; the decree marks these with footnote letters a-c, which differ between tables (shown in brackets)"
+  },
+  "notes": {
+    "art_choice": "Madrasah menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari). [all tables, note a]",
+    "muatan_lokal_I_V": "Paling sedikit 72 JP per tahun dan paling banyak 216 JP sebagai mata pelajaran pilihan. [Tabel 1-3, note b; Tabel 4, note c]",
+    "muatan_lokal_VI": "Paling sedikit 64 JP per tahun dan paling banyak 192 JP. [Tabel 5, note c]",
+    "koding_ka": "Paling banyak 2 (dua) JP per minggu atau 72 JP per tahun (64 JP in grade VI) sebagai mata pelajaran pilihan. [Tabel 4-5, note b]"
+  },
+  "rules": [
+    {
+      "no": 2,
+      "page": 31,
+      "text": "Muatan lokal sesuai kekhasan Madrasah, tipologi Madrasah, potensi dan keunikan lokal berupa: keagamaan; seni budaya; prakarya; pendidikan jasmani, olahraga, dan kesehatan; bahasa; teknologi; dan/atau riset."
+    },
+    {
+      "no": 3,
+      "page": 32,
+      "text": "Muatan lokal dapat dilaksanakan melalui pengintegrasian ke dalam mata pelajaran lain, pengintegrasian ke dalam tema Kokurikuler, dan/atau mata pelajaran yang berdiri sendiri."
+    },
+    {
+      "no": 6,
+      "page": 32,
+      "text": "Mata pelajaran pilihan Koding dan Kecerdasan Artifisial dapat disediakan oleh Madrasah sesuai sumber daya yang dimiliki dan dapat dipilih oleh Peserta Didik sesuai minatnya."
+    },
+    {
+      "no": 7,
+      "page": 32,
+      "text": "Madrasah dapat melakukan penambahan jam pelajaran sesuai dengan hasil analisis capaian pembelajaran dan ketersediaan waktu di Madrasah paling banyak 6 JP setiap minggu.",
+      "max_extra_jp_per_week": 6
+    },
+    {
+      "no": 8,
+      "page": 32,
+      "text": "Tim Kokurikuler terdiri dari koordinator dan fasilitator. Guru mata pelajaran yang alokasi waktu Kokurikuler dialihkan dapat menjadi fasilitator setara dengan 1 JP per rombongan. Beban koordinator Kokurikuler setara 2 jam tatap muka per rombongan belajar setiap tahun, paling banyak 3 rombongan belajar."
+    }
+  ],
+  "source_quirks": [
+    "Tabel 5 (grade VI) labels the row '1.280-1.408 / 96 / 1.376-1.504' as 'Total JP Mata Pelajaran Wajib + Pilihan + Muatan Lokal'. The figures are Wajib + Muatan Lokal only (1.216 + 64..192); the next row (1.344-1.472) includes the elective. This dataset follows the figures.",
+    "Tabel 5 splits the subject 'Sejarah Kebudayaan Islam' across pages 30-31 ('Sejarah Kebudayaan' / 'Islam')."
+  ],
+  "grades": [
+    {
+      "grade": "I",
+      "grades": [
+        1
+      ],
+      "phase": "A",
+      "source": {
+        "table": 1,
+        "pages": [
+          28
+        ]
+      },
+      "weeks_per_year": 36,
+      "jp_minutes": 35,
+      "subjects": [
+        {
+          "key": "alquran_hadis",
+          "name": "Al-Qur'an Hadis",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 36,
+          "total": 108,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "akidah_akhlak",
+          "name": "Akidah Akhlak",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "fikih",
+          "name": "Fikih",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "bahasa_arab",
+          "name": "Bahasa Arab",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "pendidikan_pancasila",
+          "name": "Pendidikan Pancasila",
+          "group": "required",
+          "intrakurikuler": 144,
+          "kokurikuler": 36,
+          "total": 180,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "bahasa_indonesia",
+          "name": "Bahasa Indonesia",
+          "group": "required",
+          "intrakurikuler": 252,
+          "kokurikuler": 36,
+          "total": 288,
+          "intrakurikuler_per_week": 7
+        },
+        {
+          "key": "matematika",
+          "name": "Matematika",
+          "group": "required",
+          "intrakurikuler": 144,
+          "kokurikuler": 0,
+          "total": 144,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "pjok",
+          "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3
+        },
+        {
+          "key": "seni_budaya",
+          "name": "Seni dan Budaya",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3,
+          "options": [
+            "Seni Musik",
+            "Seni Rupa",
+            "Seni Teater",
+            "Seni Tari"
+          ],
+          "note": "art_choice"
+        }
+      ],
+      "muatan_lokal": {
+        "intrakurikuler_min": 72,
+        "intrakurikuler_max": 216,
+        "note": "muatan_lokal_I_V"
+      },
+      "totals": {
+        "required": {
+          "intrakurikuler": 1044,
+          "kokurikuler": 108,
+          "total": 1152
+        },
+        "required_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1116,
+            1260
+          ],
+          "kokurikuler": 108,
+          "total": [
+            1224,
+            1368
+          ]
+        }
+      }
+    },
+    {
+      "grade": "II",
+      "grades": [
+        2
+      ],
+      "phase": "A",
+      "source": {
+        "table": 2,
+        "pages": [
+          28,
+          29
+        ]
+      },
+      "weeks_per_year": 36,
+      "jp_minutes": 35,
+      "subjects": [
+        {
+          "key": "alquran_hadis",
+          "name": "Al-Qur'an Hadis",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 36,
+          "total": 108,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "akidah_akhlak",
+          "name": "Akidah Akhlak",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "fikih",
+          "name": "Fikih",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "bahasa_arab",
+          "name": "Bahasa Arab",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "pendidikan_pancasila",
+          "name": "Pendidikan Pancasila",
+          "group": "required",
+          "intrakurikuler": 144,
+          "kokurikuler": 36,
+          "total": 180,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "bahasa_indonesia",
+          "name": "Bahasa Indonesia",
+          "group": "required",
+          "intrakurikuler": 288,
+          "kokurikuler": 36,
+          "total": 324,
+          "intrakurikuler_per_week": 8
+        },
+        {
+          "key": "matematika",
+          "name": "Matematika",
+          "group": "required",
+          "intrakurikuler": 180,
+          "kokurikuler": 0,
+          "total": 180,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "pjok",
+          "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3
+        },
+        {
+          "key": "seni_budaya",
+          "name": "Seni dan Budaya",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3,
+          "options": [
+            "Seni Musik",
+            "Seni Rupa",
+            "Seni Teater",
+            "Seni Tari"
+          ],
+          "note": "art_choice"
+        }
+      ],
+      "muatan_lokal": {
+        "intrakurikuler_min": 72,
+        "intrakurikuler_max": 216,
+        "note": "muatan_lokal_I_V"
+      },
+      "totals": {
+        "required": {
+          "intrakurikuler": 1116,
+          "kokurikuler": 108,
+          "total": 1224
+        },
+        "required_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1188,
+            1332
+          ],
+          "kokurikuler": 108,
+          "total": [
+            1296,
+            1440
+          ]
+        }
+      }
+    },
+    {
+      "grade": "III-IV",
+      "grades": [
+        3,
+        4
+      ],
+      "phase": "B",
+      "source": {
+        "table": 3,
+        "pages": [
+          29
+        ]
+      },
+      "weeks_per_year": 36,
+      "jp_minutes": 35,
+      "subjects": [
+        {
+          "key": "alquran_hadis",
+          "name": "Al-Qur'an Hadis",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "akidah_akhlak",
+          "name": "Akidah Akhlak",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "fikih",
+          "name": "Fikih",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 36,
+          "total": 108,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "sejarah_kebudayaan_islam",
+          "name": "Sejarah Kebudayaan Islam",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "bahasa_arab",
+          "name": "Bahasa Arab",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "pendidikan_pancasila",
+          "name": "Pendidikan Pancasila",
+          "group": "required",
+          "intrakurikuler": 144,
+          "kokurikuler": 0,
+          "total": 144,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "bahasa_indonesia",
+          "name": "Bahasa Indonesia",
+          "group": "required",
+          "intrakurikuler": 216,
+          "kokurikuler": 36,
+          "total": 252,
+          "intrakurikuler_per_week": 6
+        },
+        {
+          "key": "matematika",
+          "name": "Matematika",
+          "group": "required",
+          "intrakurikuler": 180,
+          "kokurikuler": 0,
+          "total": 180,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "ipas",
+          "name": "Ilmu Pengetahuan Alam dan Sosial",
+          "group": "required",
+          "intrakurikuler": 180,
+          "kokurikuler": 36,
+          "total": 216,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "pjok",
+          "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3
+        },
+        {
+          "key": "seni_budaya",
+          "name": "Seni dan Budaya",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3,
+          "options": [
+            "Seni Musik",
+            "Seni Rupa",
+            "Seni Teater",
+            "Seni Tari"
+          ],
+          "note": "art_choice"
+        },
+        {
+          "key": "bahasa_inggris",
+          "name": "Bahasa Inggris",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        }
+      ],
+      "muatan_lokal": {
+        "intrakurikuler_min": 72,
+        "intrakurikuler_max": 216,
+        "note": "muatan_lokal_I_V"
+      },
+      "totals": {
+        "required": {
+          "intrakurikuler": 1368,
+          "kokurikuler": 108,
+          "total": 1476
+        },
+        "required_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1440,
+            1584
+          ],
+          "kokurikuler": 108,
+          "total": [
+            1548,
+            1692
+          ]
+        }
+      }
+    },
+    {
+      "grade": "V",
+      "grades": [
+        5
+      ],
+      "phase": "C",
+      "source": {
+        "table": 4,
+        "pages": [
+          30
+        ]
+      },
+      "weeks_per_year": 36,
+      "jp_minutes": 35,
+      "subjects": [
+        {
+          "key": "alquran_hadis",
+          "name": "Al-Qur'an Hadis",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "akidah_akhlak",
+          "name": "Akidah Akhlak",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 36,
+          "total": 108,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "fikih",
+          "name": "Fikih",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "sejarah_kebudayaan_islam",
+          "name": "Sejarah Kebudayaan Islam",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "bahasa_arab",
+          "name": "Bahasa Arab",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "pendidikan_pancasila",
+          "name": "Pendidikan Pancasila",
+          "group": "required",
+          "intrakurikuler": 144,
+          "kokurikuler": 0,
+          "total": 144,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "bahasa_indonesia",
+          "name": "Bahasa Indonesia",
+          "group": "required",
+          "intrakurikuler": 216,
+          "kokurikuler": 36,
+          "total": 252,
+          "intrakurikuler_per_week": 6
+        },
+        {
+          "key": "matematika",
+          "name": "Matematika",
+          "group": "required",
+          "intrakurikuler": 180,
+          "kokurikuler": 0,
+          "total": 180,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "ipas",
+          "name": "Ilmu Pengetahuan Alam dan Sosial",
+          "group": "required",
+          "intrakurikuler": 180,
+          "kokurikuler": 0,
+          "total": 180,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "pjok",
+          "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 0,
+          "total": 108,
+          "intrakurikuler_per_week": 3
+        },
+        {
+          "key": "seni_budaya",
+          "name": "Seni dan Budaya",
+          "group": "required",
+          "intrakurikuler": 108,
+          "kokurikuler": 36,
+          "total": 144,
+          "intrakurikuler_per_week": 3,
+          "options": [
+            "Seni Musik",
+            "Seni Rupa",
+            "Seni Teater",
+            "Seni Tari"
+          ],
+          "note": "art_choice"
+        },
+        {
+          "key": "bahasa_inggris",
+          "name": "Bahasa Inggris",
+          "group": "required",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "koding_ka",
+          "name": "Koding dan Kecerdasan Artifisial",
+          "group": "elective",
+          "intrakurikuler": 72,
+          "kokurikuler": 0,
+          "total": 72,
+          "intrakurikuler_per_week": 2,
+          "note": "koding_ka"
+        }
+      ],
+      "muatan_lokal": {
+        "intrakurikuler_min": 72,
+        "intrakurikuler_max": 216,
+        "note": "muatan_lokal_I_V"
+      },
+      "totals": {
+        "required": {
+          "intrakurikuler": 1368,
+          "kokurikuler": 108,
+          "total": 1476
+        },
+        "required_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1440,
+            1584
+          ],
+          "kokurikuler": 108,
+          "total": [
+            1548,
+            1692
+          ]
+        },
+        "required_plus_elective_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1512,
+            1656
+          ],
+          "kokurikuler": 108,
+          "total": [
+            1620,
+            1764
+          ]
+        }
+      }
+    },
+    {
+      "grade": "VI",
+      "grades": [
+        6
+      ],
+      "phase": "C",
+      "source": {
+        "table": 5,
+        "pages": [
+          30,
+          31
+        ]
+      },
+      "weeks_per_year": 32,
+      "jp_minutes": 35,
+      "subjects": [
+        {
+          "key": "alquran_hadis",
+          "name": "Al-Qur'an Hadis",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "akidah_akhlak",
+          "name": "Akidah Akhlak",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 32,
+          "total": 96,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "fikih",
+          "name": "Fikih",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "sejarah_kebudayaan_islam",
+          "name": "Sejarah Kebudayaan Islam",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "bahasa_arab",
+          "name": "Bahasa Arab",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "pendidikan_pancasila",
+          "name": "Pendidikan Pancasila",
+          "group": "required",
+          "intrakurikuler": 128,
+          "kokurikuler": 0,
+          "total": 128,
+          "intrakurikuler_per_week": 4
+        },
+        {
+          "key": "bahasa_indonesia",
+          "name": "Bahasa Indonesia",
+          "group": "required",
+          "intrakurikuler": 192,
+          "kokurikuler": 32,
+          "total": 224,
+          "intrakurikuler_per_week": 6
+        },
+        {
+          "key": "matematika",
+          "name": "Matematika",
+          "group": "required",
+          "intrakurikuler": 160,
+          "kokurikuler": 0,
+          "total": 160,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "ipas",
+          "name": "Ilmu Pengetahuan Alam dan Sosial",
+          "group": "required",
+          "intrakurikuler": 160,
+          "kokurikuler": 0,
+          "total": 160,
+          "intrakurikuler_per_week": 5
+        },
+        {
+          "key": "pjok",
+          "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+          "group": "required",
+          "intrakurikuler": 96,
+          "kokurikuler": 32,
+          "total": 128,
+          "intrakurikuler_per_week": 3
+        },
+        {
+          "key": "seni_budaya",
+          "name": "Seni dan Budaya",
+          "group": "required",
+          "intrakurikuler": 96,
+          "kokurikuler": 0,
+          "total": 96,
+          "intrakurikuler_per_week": 3,
+          "options": [
+            "Seni Musik",
+            "Seni Rupa",
+            "Seni Teater",
+            "Seni Tari"
+          ],
+          "note": "art_choice"
+        },
+        {
+          "key": "bahasa_inggris",
+          "name": "Bahasa Inggris",
+          "group": "required",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2
+        },
+        {
+          "key": "koding_ka",
+          "name": "Koding dan Kecerdasan Artifisial",
+          "group": "elective",
+          "intrakurikuler": 64,
+          "kokurikuler": 0,
+          "total": 64,
+          "intrakurikuler_per_week": 2,
+          "note": "koding_ka"
+        }
+      ],
+      "muatan_lokal": {
+        "intrakurikuler_min": 64,
+        "intrakurikuler_max": 192,
+        "note": "muatan_lokal_VI"
+      },
+      "totals": {
+        "required": {
+          "intrakurikuler": 1216,
+          "kokurikuler": 96,
+          "total": 1312
+        },
+        "required_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1280,
+            1408
+          ],
+          "kokurikuler": 96,
+          "total": [
+            1376,
+            1504
+          ]
+        },
+        "required_plus_elective_plus_muatan_lokal": {
+          "intrakurikuler": [
+            1344,
+            1472
+          ],
+          "kokurikuler": 96,
+          "total": [
+            1440,
+            1568
+          ]
+        }
+      }
+    }
+  ]
+}

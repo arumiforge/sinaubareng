@@ -3,11 +3,11 @@
 - **Status:** draft (owner review)
 - **Task:** P1-07
 - **Last updated:** 2026-10-30
-- **Sources:** [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf)
+- **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf)
 
 ## Purpose
 
-This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036, D-037.
+This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036, D-037, D-038.
 
 ## Official sources
 
@@ -15,7 +15,7 @@ This document defines how SIGRAK covers religious education in SD (six religions
 |---|---|---|---|
 | **Keputusan Kepala BKPDM No. 020 Tahun 2026** (11 June 2026), amending Kepka BSKAP 046/H/KR/2025 | Lampiran I: CP Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu, Fase A–F. Lampiran II: special education (SLB) versions | Scanned copy, no text layer | SD religion CP (D-034). Lampiran II is out of scope |
 | **SK Dirjen Pendis No. 9941 Tahun 2025** (28 November 2025) | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam, Bahasa Arab at MI/MTs/MA, plus MAPK subjects and RA | PDF with text layer, plus the Dirjen's cover letter B-606 (1 December 2025, BSrE e-signed) | MI CP (D-035) |
-| **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II) | *Official copy not obtained yet* (the regional Kemenag link returned 404). The figures below come from a public summary of Lampiran II | MI allocation, to be verified |
+| **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II, BAB III B, Tabel 1–5, pp. 28–31) | Official decree (22 September 2025), scanned copy supplied by the owner | MI allocation (D-038), data in [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) |
 | **KM-SD-2026-R2** (EDUNEXA curriculum data) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
 
 No newer amendment of SK 9941/2025 or KMA 1503/2025 was found on 2026-10-30.
@@ -56,10 +56,10 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 | Sejarah Kebudayaan Islam | **3–6** (Fase B–C) | 72; grade 6: 64 | Pemahaman Konsep, Keterampilan Proses | 90–92 |
 | Bahasa Arab | 1–6 | 72; grade 6: 64 | Komponen Bahasa, Keterampilan Bahasa | 99–101 |
 
-*JP figures are from a public summary of KMA 1503/2025 Lampiran II and must be verified against the official copy.*
+*JP figures verified against KMA 1503/2025 Lampiran II, Tabel 1–5 (pp. 28–31). Full MI allocation for every subject: [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json).*
 
-- **36 weeks per year, 32 in grade 6. 1 JP = 35 minutes.** "Koku" JP are shifted to the cocurricular programme. RPM scheduling counts the intrakurikuler JP only, and the kokurikuler JP belong to the Kokurikuler module.
-- **Other MI subjects** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS from grade 3, PJOK, Seni dan Budaya, Bahasa Inggris from grade 3, Koding dan KA as an option in grades 5–6, Muatan Lokal) use the national CP, but with MI's own allocation table from KMA 1503/2025.
+- **36 weeks per year, 32 in grade 6. 1 JP = 35 minutes.** A madrasah may add up to 6 JP per week (KMA 1503/2025, p. 32). "Koku" JP are shifted to the cocurricular programme. RPM scheduling counts the intrakurikuler JP only, and the kokurikuler JP belong to the Kokurikuler module.
+- **Other MI subjects** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS from grade 3, PJOK, Seni dan Budaya, Bahasa Inggris from grade 3, Koding dan KA as an option in grades 5–6, Muatan Lokal) use the national CP, but with MI's own allocation table from KMA 1503/2025 ([`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json)). Muatan Lokal takes 72–216 JP per year (64–192 in grade 6), and students choose one art (Seni Musik, Rupa, Teater, or Tari).
 - **CP data:** [`../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) holds Fase A–C text for the five subjects, extracted from the PDF's text layer. It is not yet split into element rows. **Arabic passages extract badly** and must be retyped from the PDF.
 - **Teaching materials:** Kemenag publishes free Buku Teks Utama (BTU) for these subjects aligned with KMA 1503/2025. They are a natural reference source for RPM, like the Parijatha books for Bahasa Jawa.
 - **Teachers:** the five subjects are taught by **guru mapel** (D-037). They default to `subject_teacher`, and the operator can still reassign them per class.
@@ -68,7 +68,7 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 ## How SIGRAK models it
 
 - **School level decides the subject set.** `schools.level` = `sd` gives the six religion subjects. `mi` gives the Kemenag subjects plus MI's own allocation table.
-- **Curriculum versions:** `KM-SD-2026-R2` (national SD subjects incl. PAI topics), `CP-PABP-BKPDM-020-2026` (six religions, CP), `CP-PAI-BA-MADRASAH-9941-2025` (MI PAI + Bahasa Arab, CP), and the MI allocation set from KMA 1503/2025. See [`data-model.md`](data-model.md#curriculum).
+- **Curriculum versions:** `KM-SD-2026-R2` (national SD subjects incl. PAI topics), `CP-PABP-BKPDM-020-2026` (six religions, CP), `CP-PAI-BA-MADRASAH-9941-2025` (MI PAI + Bahasa Arab, CP), and `ALOKASI-MI-KMA-1503-2025` (MI allocation). See [`data-model.md`](data-model.md#curriculum).
 - **Student religion (D-036)** is recorded per student so religion classes can be grouped. For a religion subject, the journal, student notes, assessment, and report card list only that religion's students. Attendance stays daily and class-wide.
 - **Privacy (D-036):** religion is sensitive personal data.
   - It is visible to the class's teachers, the operator, and the principal.
@@ -88,10 +88,9 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 3. **Build topics, TP, ATP, fokus, and JP** for Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **A guru agama of that same religion reviews and signs off each set** (D-037), and the dataset records the reviewer's name, school, and review date. The same rule applies to the MI subjects (a guru of that subject) and to the CP transcription check.
 4. **Structure the MI CP:** split `raw_text` into element and sub-element rows, and retype the Arabic passages.
 5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects, using the BTU books as references.
-6. **Obtain the official KMA 1503/2025** and confirm the MI allocation table above.
 
 ## Open questions
 
-- [ ] Official copy of KMA 1503/2025 (Lampiran II) and an official-channel copy of SK 9941/2025.
+- [ ] An official-channel copy of SK 9941/2025.
 - [ ] Names of the reviewing guru agama for each religion (who, from which school).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?
