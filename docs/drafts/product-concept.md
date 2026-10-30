@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-033).
+This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-036).
 
 ## Summary
 
@@ -65,7 +65,7 @@ Principles, in priority order:
 | Role (UI name) | Who | Main jobs in SIGRAK | Device |
 |---|---|---|---|
 | Guru kelas (wali kelas) | Teaches the class subjects of one class: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, and the others not listed for guru mapel | Make content, daily attendance, journal, assessment, report cards, class data | Phone, home laptop |
-| Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** | Make content, reused across classes. Journal, student notes, and assessment for their subject (attendance is daily and belongs to the homeroom teacher) | Phone |
+| Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** (in SD one subject per religion: Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu; in MI the Kemenag subjects Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab) | Make content, reused across classes. Journal, student notes, and assessment for their subject (attendance is daily and belongs to the homeroom teacher) | Phone |
 | Kepala sekolah | Principal | Watch completeness and content made, validate school curriculum changes, supervision, school books, print settings, subscription | Laptop, phone |
 | Operator sekolah | School admin staff | Academic year, classes, invite teachers, timetable, calendar, school profile | Laptop |
 | Pengawas / korwil | Supervisor of several schools | Read-only view of supervised schools, final validation of curriculum changes, supervision reports | Laptop |
@@ -79,7 +79,7 @@ A principal, operator, or supervisor who also teaches keeps the five teacher men
 
 ## Market
 
-- **Level:** SD/MI, grades 1–6. Grades 7–12 stay hidden until curriculum data for them exists (the current data, KM-SD-2026-R2, covers SD/MI only).
+- **Level:** SD/MI, grades 1–6. Grades 7–12 stay hidden until curriculum data for them exists (the current data, KM-SD-2026-R2, covers SD/MI only). SD offers all six religion subjects (D-034). MI follows the Ministry of Religious Affairs: Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, and Bahasa Arab instead of one PAI subject (D-035). Details are in [`religious-education.md`](religious-education.md).
 - **Region:** anywhere in Indonesia (D-018). Local content (*muatan lokal*, for example Bahasa Jawa) and the school calendar (*kaldik*) can be set per region and per school. Kudus is the pilot, so Bahasa Jawa and the Kudus calendar are the default values for Kudus schools only.
 - **Name risk:** "Sigrak" is Javanese. It may be less familiar outside Java, which matters now that the market is nationwide. The backup name from the rebranding notes is **Kapur**. The name stays a working name until a PDKI check is done (see Open questions).
 
@@ -303,4 +303,4 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 - [ ] Present the short version to principals and supervisors, and record their objections.
 - [ ] Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI; see D-027).
 - [ ] TKA 2027 schedule for SD/MI, once published, to time the TKA release.
-- [ ] Pendidikan Agama for religions other than Islam: the curriculum data (KM-SD-2026-R2) only has PAI. Which religions in v1, and where does their CP/TP data come from?
+- [ ] Religion data reviewers and the official KMA 1503/2025 copy (see [`religious-education.md`](religious-education.md#open-questions)).

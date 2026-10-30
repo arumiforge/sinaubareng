@@ -9,6 +9,7 @@
 | `final/` | Approved documents | English |
 | `pdf/` | Generated PDFs of final documents, for developers to read | Indonesian |
 | `templates/` | Templates for tasks and documents | English |
-| `sources/` | Owner-supplied material, kept exactly as received (input only) | As received |
+| `sources/` | Owner-supplied material and official documents, kept exactly as received (input only) | As received |
+| `data/` | Prepared data for later import (e.g. curriculum CP extracted from official documents). JSON keys English, content as in the source | English keys; source language |
 
 Start with [`agent/CONTEXT.md`](agent/CONTEXT.md) and [`agent/PROGRESS.md`](agent/PROGRESS.md). The process is in [`agent/WORKFLOW.md`](agent/WORKFLOW.md).

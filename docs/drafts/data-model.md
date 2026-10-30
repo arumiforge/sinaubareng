@@ -38,7 +38,7 @@ This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDU
 | Table | Key columns | Notes and invariants |
 |---|---|---|
 | `regions` | `province`, `regency` | Unique (`province`, `regency`). Holds the defaults for local content and the calendar (D-018) |
-| `schools` | `name`, `npsn` (unique, nullable until verified), `level` ∈ {`sd`,`mi`}, `region_id` FK RESTRICT, address | One school, one tenant |
+| `schools` | `name`, `npsn` (unique, nullable until verified), `level` ∈ {`sd`,`mi`}, `region_id` FK RESTRICT, address | One school, one tenant. `level` decides the subject set and allocation table (SD: six religion subjects; MI: Kemenag subjects; see [`religious-education.md`](religious-education.md)) |
 | `users` | `name`, `email` (unique), `password`, `nip` nullable (non-civil-servant teachers have none) | School users only: teachers, principals, operators, supervisors. **No role column.** Roles come from memberships. **No student users** (D-010) |
 | `school_memberships` | `school_id` FK CASCADE, `user_id` FK CASCADE, `role` ∈ {`principal`,`operator`,`teacher`}, `status` ∈ {`active`,`ended`}, `started_on`, `ended_on` nullable | Unique (`school_id`, `user_id`, `role`). One user can hold several roles. One active principal per school (checked in the service and by a unique index on a generated column `active_principal_school_id`) |
 | `supervisor_assignments` | `user_id` FK, `school_id` FK, `started_on`, `ended_on` nullable | Read-only scope for pengawas/korwil |
@@ -53,7 +53,7 @@ This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDU
 | `academic_years` | `school_id`, `name` (e.g. `2026/2027`), `starts_on`, `ends_on`, `even_semester_starts_on` | CHECK `starts_on < even_semester_starts_on < ends_on`. Default start 1 July |
 | `classes` | `school_id`, `academic_year_id` FK, `grade` 1–6 (CHECK), `name` (e.g. `4A`), `homeroom_teacher_id` FK users nullable (not assigned yet) | Unique (`academic_year_id`, `name`) |
 | `teaching_assignments` | `school_id`, `class_id` FK CASCADE, `subject_id` FK, `teacher_id` FK users | Unique (`class_id`, `subject_id`). When a class is created, subjects with `default_teacher = class_teacher` go to the homeroom teacher, and the rest wait for the operator to pick a guru mapel. The operator can reassign any row (D-032) |
-| `students` | `public_id`, `school_id`, `name`, `nisn` nullable (not every student has one), `gender` ∈ {`l`,`p`}, `birth_date` nullable | **A record, never an account** |
+| `students` | `public_id`, `school_id`, `name`, `nisn` nullable (not every student has one), `gender` ∈ {`l`,`p`}, `birth_date` nullable, `religion` ∈ {`islam`,`kristen`,`katolik`,`hindu`,`buddha`,`khonghucu`} nullable (not recorded yet) | **A record, never an account.** `religion` is sensitive (D-036): used only to group religion classes, never sent to AI, hidden from supervisors |
 | `enrollments` | `student_id` FK CASCADE, `class_id` FK RESTRICT, `status` ∈ {`active`,`moved`,`left`,`graduated`}, `ended_on` nullable | One active enrollment per student per academic year. Covers transfers ("Pindah atau keluar") and promotion ("Kenaikan") |
 
 ## Curriculum
@@ -63,7 +63,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | Table | Key columns | Source field (KM-SD-2026-R2) |
 |---|---|---|
 | `curriculum_versions` | `code` (unique, e.g. `KM-SD-2026-R2`), `status` ∈ {`draft`,`active`,`retired`} | `Versi_Kurikulum`, `Status_Versi` |
-| `subjects` | `code` (e.g. `PP`), `name`, `kind` ∈ {`compulsory`,`local_content`,`cocurricular`}, `default_teacher` ∈ {`class_teacher`,`subject_teacher`} | `Mata Pelajaran`, `Status_Mapel`. `subject_teacher` for PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, and Pendidikan Agama (D-032) |
+| `subjects` | `code` (e.g. `PP`), `name`, `kind` ∈ {`compulsory`,`local_content`,`cocurricular`}, `default_teacher` ∈ {`class_teacher`,`subject_teacher`}, `religion` nullable (NULL = not a religion subject), `school_level` ∈ {`sd`,`mi`,`both`} | `Mata Pelajaran`, `Status_Mapel`. `subject_teacher` for PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, and Pendidikan Agama (D-032). SD has one religion subject per religion; MI has Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, and Bahasa Arab (D-034, D-035) |
 | `subject_allocations` | `curriculum_version_id`, `subject_id`, `grade`, `phase` ∈ {A,B,C}, `learning_type` ∈ {`intracurricular`,`cocurricular`}, `jp_per_week`, `weeks_per_year`, `s1_jp`, `s1_effective_weeks`, `s2_jp`, `s2_effective_weeks` | `struktur_alokasi_sd.json` → `alokasi[]`, `kokurikuler_default[]` |
 | `topics` (materi pokok / ATP) | `curriculum_version_id`, `code` (unique, `ID_Kurikulum`), `legacy_codes` JSON, `subject_id`, `grade`, `phase`, `semester` ∈ {1,2}, `elements`, `title`, `cp_text`, `atp_code`, `order_in_semester`, `jp_total`, `jp_per_week`, `week_start`, `week_end`, `weekly_distribution` JSON, `references` JSON, `audit` JSON, `extras` JSON (art branch, science process skills) | One row of `data_kurikulum_dengan_cp.json`. JSON-string columns parsed on import |
 | `focus_items` (fokus materi) | `topic_id` FK CASCADE, `code` (unique, `FM-…`), `order`, `title`, `estimated_jp`, `allocation_status` | `Data_Fokus`. The duplicate `Fokus_Materi` is dropped |
@@ -73,6 +73,17 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | `school_subjects` | `school_id`, `subject_id`, `enabled` | A school turns local content on or off |
 | `school_topic_changes` | `school_id`, `base_topic_id` FK nullable (**NULL = new topic added by the school**), `payload` JSON (same shape as a topic), `status` ∈ {`draft`,`submitted`,`returned`,`principal_approved`,`approved`}, `submitted_by` | Validation flow guru → kepala sekolah → pengawas (D-019) |
 | `curriculum_validations` | `school_topic_change_id`, `reviewer_id`, `level` ∈ {`principal`,`supervisor`}, `decision` ∈ {`approved`,`returned`}, `note` | Append-only. Every return carries a note for the teacher |
+
+**Curriculum versions in v1:**
+
+| Code | Content | Source data |
+|---|---|---|
+| `KM-SD-2026-R2` | National SD subjects with topics, TP, ATP, fokus, JP (incl. PAI) | EDUNEXA JSON files |
+| `CP-PABP-BKPDM-020-2026` | CP for the six religion subjects, SD Fase A–C | [`docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) (transcribed, to verify) |
+| `CP-PAI-BA-MADRASAH-9941-2025` | CP for MI's Kemenag subjects, Fase A–C | [`docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) (raw text, to structure) |
+| MI allocation (KMA 1503/2025) | JP per subject and grade for MI | To be entered from the official Lampiran II |
+
+Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are built by the team (Phase 2 data tasks) and imported in the KM-SD-2026-R2 shape. CP-only versions are already enough for the RPM wizard to show CP and elements.
 
 **Import.** `php artisan curriculum:import <file>` loads `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json`. It is idempotent by `code`, keeps `Legacy_ID` aliases in `legacy_codes`, and reports any data mismatches. Only curriculum data is imported from EDUNEXA (D-020).
 
@@ -161,6 +172,5 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 ## Open questions
 
 - [ ] Report card export format required by e-Rapor (columns and file type).
-- [ ] Pendidikan Agama for religions other than Islam: the subject rows and curriculum data they need.
 - [ ] Retention for `ai_usage_logs` and `document_revisions` (proposed: 180 days / last 10).
 - [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?
