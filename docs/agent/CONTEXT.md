@@ -4,7 +4,7 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 
 ## Product
 
-**SIGRAK** (working name): a web app for SD/MI teachers and school leaders. It does AI-assisted content creation (RPM, Bank Soal, LKPD, Quiz Battle, Buat bebas) through templates and pedagogical wizards, plus school administration. Teachers never write prompts. Students are records, never users. Login-only, no public pages. Each teacher brings their own Gemini keys (several, rotated).
+**SIGRAK** (working name): a web app for SD/MI teachers and school leaders. It does AI-assisted content creation (RPM, Bank Soal, LKPD, Quiz Battle, Paket Soal TKA) through one dedicated template per content type (no generic generator), plus school administration and a TKA practice exam (CBT). Teachers never write prompts. Students are records, never users. They only touch the separate exam site, with per-session exam cards. Login-only, no public pages. Each teacher brings their own Gemini **free-tier** keys (several, rotated, at their own risk). No student personal data in prompts.
 
 - Product: `docs/drafts/product-concept.md`
 - Content engine: `docs/drafts/content-engine.md` · AI layer: `docs/drafts/ai-provider-engine.md`
@@ -21,7 +21,9 @@ Do not invent features beyond these documents.
 - **Queue workers:** multiple workers, supervised (Supervisor or systemd). Laravel Horizon is the preferred dashboard since queues run on Redis.
 - **Debugging:** Laravel Telescope (local/staging only; never enabled publicly in production).
 - **Admin / back-office:** Filament, for internal staff only (separate guard; D-010).
-- **AI:** Gemini through our own `app/AI` layer; keys are teacher-owned and encrypted (D-012, D-022).
+- **AI:** Gemini free tier only, through our own `app/AI` layer. Keys are teacher-owned and encrypted (D-012, D-022, D-023). One generation job per content type (D-024).
+- **Documents:** PDF via Gotenberg 8 + `spatie/laravel-pdf`. Excel via Laravel Excel (`maatwebsite/excel`). DOCX via PhpWord (D-028).
+- **Exam site:** separate front end and guard for TKA practice participants. No AI (D-027).
 - **Python:** only for tasks Laravel/Node cannot do well (e.g. data processing). Keep it in its own folder with pinned dependencies.
 
 ## Frontend
@@ -36,6 +38,7 @@ Do not invent features beyond these documents.
 
 - VPS on **Ubuntu Server 22.04 LTS**.
 - **Nginx** + **PHP-FPM**.
+- **Docker** only for the Gotenberg PDF service (internal network, pinned image; D-028).
 - **Cloudflare** in front (DNS, proxy, TLS, WAF). Nginx must restore the real client IP from Cloudflare headers.
 - Node.js on the server only if needed at runtime; prefer building assets in CI/locally.
 

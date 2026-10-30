@@ -7,16 +7,17 @@
 
 ## Purpose
 
-This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-022).
+This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-029).
 
 ## Summary
 
 SIGRAK (working name) is a web app for SD/MI teachers and school leaders. It does two jobs, and both ship in v1:
 
-1. **Content creation with AI help.** Teachers make RPM, question banks, LKPD, and classroom games. They pick a template and answer pedagogical questions. They never write a prompt. Developer-built templates fix the structure and design, and AI only fills in the content.
+1. **Content creation with AI help.** Teachers make RPM, question banks, LKPD, classroom games, and TKA practice packages. They pick a template and answer pedagogical questions. They never write a prompt. Developer-built templates fix the structure and design, and AI only fills in the content. There is no generic "make anything" generator, because a teacher can already get that from Gemini directly (D-024).
 2. **School administration.** Attendance, teaching journal, student notes, assessment and report cards, class data, and the principal and supervisor portals carried over from EDUNEXA.
+3. **TKA practice exam (CBT).** A computer-based exam that works like the national Tes Kemampuan Akademik for grade 6. Students take it on a separate exam site with an exam card and a proctor token (D-026, D-027).
 
-Students are not users. Every page sits behind login, and there are no public pages.
+Students are not users of the app. Every page sits behind login, and there are no public pages. The one place students touch is the exam site, and only with a one-session exam card.
 
 ## What changed from the EDUNEXA notes
 
@@ -25,8 +26,9 @@ Students are not users. Every page sits behind login, and there are no public pa
 | Product core | Administration ("Administrasi beres sambil mengajar") | Content creation **and** administration | D-009 |
 | Stack | CodeIgniter 4 + MySQL 8 + vanilla JS + PWA | Laravel + MySQL 8 + Inertia/Svelte + Tailwind/TailAdmin + Filament. Vanilla JS is used only for the game runtime | D-003, D-007, D-008 |
 | Users | Teachers, principal, supervisor, operator, super admin | Same roles, but **students are explicitly records, never users**. Login-only, no public pages | D-010 |
-| AI keys | One Gemini key per teacher, optional school fallback key | **Several keys per teacher** from the teacher's own Google projects, with round robin and failover. No school or platform key | D-012 |
-| AI generation | Prompt per feature | Template engine plus guided wizard. Teachers never write prompts | D-013, D-014 |
+| AI keys | One Gemini key per teacher, optional school fallback key | **Gemini free tier only.** Several keys per teacher from the teacher's own Google projects, with round robin and failover, at the teacher's own risk. No school or platform key | D-012, D-023 |
+| AI generation | Prompt per feature | One dedicated template per content type, each with its own wizard and job. No generic generator. Teachers never write prompts | D-013, D-014, D-024 |
+| Exams | Bank Soal "Mode Ujian" | Mode Ujian inactive for now. New **TKA practice exam (CBT)** with exam cards and proctor tokens | D-026, D-027 |
 | Games | None | Quiz Battle in v1, played in class (present mode) or as a downloaded offline HTML file | D-011, D-014 |
 | Market | Kudus only, SD/MI | SD/MI anywhere in Indonesia. Kudus is the pilot and supplies the defaults | D-018 |
 | Teacher menu | Hari Ini · Di Kelas · Rencana · Asesmen · Kelas Saya | Hari Ini · Di Kelas · **Buat** · Asesmen · Kelas Saya | D-021 |
@@ -45,12 +47,14 @@ Principles, in priority order:
 3. **The teacher stays the author.** Every AI result can be edited before use. Any single section can be revised with AI without redoing the whole document.
 4. **Data the system already has is never asked for again.** Class and subject come from the timetable. Curriculum, JP, and dates come from the curriculum data and the school calendar.
 5. **Works on a cheap phone with weak signal** where it matters: Di Kelas works offline, and a downloaded game file plays offline.
-6. **School data belongs to the school. AI keys and AI usage belong to the teacher.**
+6. **School data belongs to the school. AI keys and AI usage belong to the teacher.** Student personal data is never sent to the AI (free-tier prompts may be read by Google's reviewers; see [`ai-provider-engine.md`](ai-provider-engine.md#privacy-rules)).
+7. **Only build what Gemini alone cannot give.** Every AI feature must add structure, curriculum data, school formats, or classroom delivery that a teacher would not get by chatting with Gemini.
 
 ## Access model
 
 - **Login-only.** The only screens without a session are login, accepting an invitation, and password reset. There is no landing page, no public share link, and no public profile inside the app. A marketing site, if one is made, is a separate project.
-- **Students are records, not accounts.** A student has a name, NISN, class enrollment, attendance, notes, and scores, all managed by teachers. Students never log in.
+- **Students are records, not accounts.** A student has a name, NISN, class enrollment, attendance, notes, and scores, all managed by teachers. Students never log in to the app.
+- **The only exception is the TKA practice exam** (D-027). Students sign in to a separate exam site (for example `ujian.<domain>`) with an exam card (username + password) that is valid for one exam session only, plus the current proctor token. The exam site shows exam questions and nothing else, and it never calls the AI. Gemini's terms forbid using the API in a service likely to be used by people under 18.
 - **Games reach students in two ways** (D-011):
   - *Tayangkan* (present mode): the teacher runs the game fullscreen from their logged-in session on a projector, TV, or their own device.
   - *Unduh game*: one self-contained HTML file that plays offline without login and makes no network calls. Teachers can share it, for example on WhatsApp. It holds only the teaching content, never student data.
@@ -68,6 +72,8 @@ Principles, in priority order:
 | Tim SIGRAK | Internal staff | Template registry and prompt tuning, schools and subscriptions, support. Uses a separate internal console (Filament), not the school app | Laptop |
 
 A principal, operator, or supervisor who also teaches keeps the five teacher menus and gets a switch to their portal. The principal does not need an AI key unless they make content themselves.
+
+**Peserta ujian (exam participant)** is not a role. A student gets session-scoped exam credentials for a TKA practice session, and they stop working when the session closes.
 
 ## Market
 
@@ -125,11 +131,11 @@ Hari Ini | Di Kelas | Buat | Asesmen | Kelas Saya
 
 Hari Ini    Today's schedule, what still needs filling, this week's progress, Kabar (news)
 Di Kelas    Absensi, Jurnal, Catatan Siswa (works offline)
-Buat        Galeri templat: RPM, LKPD, Bank Soal, Quiz Battle (more games later)
-            Buat bebas (guided wizard)
+Buat        Galeri templat: RPM, LKPD, Bank Soal, Paket Soal TKA, Quiz Battle (more games later)
             Kurikulum (CP, TP, ATP, Prota, Promes), as reference and for school changes
             Kokurikuler
 Asesmen     Rencana penilaian, Nilai, Analisis (per TP), Rapor
+            Simulasi TKA: sessions, exam cards, proctor token, results
             "Buat soal" is a shortcut to the Bank Soal template
 Kelas Saya  Siswa (incl. pindah/keluar, kenaikan), Jadwal, Piket, Keuangan (school may turn off), Inventaris
 
@@ -152,7 +158,7 @@ Each role has one main flow of at most four steps.
 
 **Teacher: make content (any template)**
 
-1. **Pilih:** open *Buat* and pick a template, or *Buat bebas*.
+1. **Pilih:** open *Buat* and pick a template.
 2. **Jawab:** answer the wizard. Class and subject are prefilled from the timetable. Topic, focus, and learning goal are picked from the curriculum. Then come the template's own pedagogical questions, each with a default.
 3. **Buat:** generation runs in the background. The teacher can leave the page and gets a notification when it is done.
 4. **Periksa & pakai:** preview, edit, or revise one section ("Perbaiki bagian ini"). Then save, *Unduh PDF/Word*, *Buka di Canva*, or, for games, *Tayangkan* / *Unduh game*.
@@ -166,6 +172,13 @@ Each role has one main flow of at most four steps.
 3. After the lesson, the *Jurnal* is already filled from the RPM. The teacher marks it done and adds notes.
 4. Student notes are written when something happens. Everything saves without signal and is sent once a connection returns.
 
+**Teacher or operator: TKA practice exam (CBT)**
+
+1. **Siapkan soal:** make a *Paket Soal TKA* (Bahasa Indonesia or Matematika, 30 items in TKA forms) with the template, then check and edit it.
+2. **Buat sesi:** pick the package, the grade 6 class(es), date, and duration (75 minutes by default). The system prints *kartu login* for every student.
+3. **Jalankan:** on exam day the teacher (as proctor) opens the session and reads out the current token, which changes every 15 minutes. Students sign in on the exam site, and the proctor watches progress and can reset a stuck participant.
+4. **Hasil:** scores are 0–100 with the TKA categories (Kurang, Memadai, Baik, Istimewa), plus per-competency analysis and an Excel/PDF export.
+
 **Operator: start of the school year.** Set the academic year and classes → invite teachers → enter the timetable → set the calendar.
 
 **Principal: weekly.** *Ringkasan* (completeness per teacher this week) → *Pantau Guru* (who is behind, what content was made, send a reminder) → *Validasi* (approve or return school curriculum changes with a note).
@@ -176,13 +189,13 @@ Each role has one main flow of at most four steps.
 
 ## Business model
 
-This is unchanged from the rebranding notes: four tiers, priced per academic year (July–June). AI keys belong to teachers in every tier (D-012), so AI usage is never a SIGRAK cost.
+Four tiers, priced per academic year (July–June). AI keys belong to teachers in every tier (D-012; Gemini free tier only, D-023), so AI usage is never a SIGRAK cost. **Subscriptions are paid from funds other than BOS** (D-025). Sales material must not suggest BOS as a payment source.
 
 | Tier | For | Contents | Payer |
 |---|---|---|---|
-| Sigrak Dasar (free) | One teacher | Di Kelas, timetable, student data, templates up to a monthly limit (own AI keys), print with a small watermark | — |
+| Sigrak Dasar (free) | One teacher | Di Kelas, timetable, student data, templates up to a monthly limit (own AI keys), print with a small watermark. No TKA sessions | — |
 | Sigrak Guru | One teacher | All teacher features without limits, no watermark | Teacher |
-| Sigrak Sekolah | One school, all teachers | Sigrak Guru for every account + principal and operator portals, validation, school print settings, invitations | Principal (school) |
+| Sigrak Sekolah | One school, all teachers | Sigrak Guru for every account + principal and operator portals, validation, school print settings, invitations, Simulasi TKA | Principal (school, non-BOS funds) |
 | Sigrak Binaan | One supervisor or KKG cluster | Supervisor portal + a discount on Sigrak Sekolah for supervised schools | Supervisor / korwil / cluster |
 
 A teacher's paid Sigrak Guru time moves over automatically when their school subscribes, and the remainder becomes a discount.
@@ -209,12 +222,12 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Buat | Match dates with content (kokurikuler) | Replace | Automatic adjustment + Kabar when the schedule changes | Teachers needn't know the mechanism |
 | Buat | Screenshot PDF (html2canvas) | Replace | Server text PDF + preview before download | Light files, searchable text, no cut lines |
 | Asesmen | Bank Soal (PH, STS, SAS, US, kisi-kisi, kartu soal) | Merge | Buat > Bank Soal template. Asesmen > "Buat soal" shortcut | Questions linked to TP, one content engine |
-| Asesmen | Bank Soal "Mode Ujian" | Remove (confirm) | — | Students are not users, so there is no online exam. Quiz Battle covers in-class play |
+| Asesmen | Bank Soal "Mode Ujian" | Later (inactive) | — | Switched off for now (D-026). The TKA practice exam is the only online exam in v1 |
 | Asesmen | Program penilaian | Merge | Asesmen > Rencana Penilaian | |
 | Asesmen | Analisis nilai, taraf serap | Keep | Asesmen > Analisis, automatic per TP | |
 | Asesmen | Leger and "inject e-Rapor" | Replace | Asesmen > Rapor: leger, description drafts, e-Rapor export format | "Inject" is technical |
 | Asesmen | Levels SMP–SMK, grades 7–12 | Remove | Returns when SMP/MTs data exists | Options without data end in errors |
-| Di Kelas | Absensi | Replace | Di Kelas > Absensi: "all present" default, tap absentees, works offline | Filled on a phone during the lesson |
+| Di Kelas | Absensi | Replace | Di Kelas > Absensi: **daily** (D-029), "all present" default, tap absentees, works offline | Filled on a phone at the start of the day |
 | Di Kelas | Jurnal and refleksi | Replace | Di Kelas > Jurnal filled from the RPM. Reflection built from journals | Less retyping |
 | Di Kelas | Anecdotal, counselling (BK), achievement notes | Merge | Di Kelas > Catatan Siswa (one form, type picked) | Same fields in three books |
 | Di Kelas | Guest book, public relations book, minutes | Merge | Portal Kepala Sekolah > Buku Sekolah | Belongs to the school, not the class |
@@ -238,11 +251,12 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Portal | Supervisor portal | Replace | Sections listed under Navigation | |
 | Portal | Super Admin / Control Center | Replace | Internal Filament console + subscriptions + template registry | Not part of the school app |
 | New | Template gallery | Add | Buat > Galeri templat | Content engine (D-013) |
-| New | Buat bebas (guided generator) | Add | Buat > Buat bebas | Flexible content without prompts |
 | New | Quiz Battle game | Add | Buat > Quiz Battle, from a Bank Soal set or new questions | First game (D-014) |
 | New | Present mode and game download | Add | *Tayangkan* and *Unduh game* buttons on every game | How games reach students (D-011) |
 | New | Feature request from a template | Add | "Usulkan fitur" link in the game wizard | Replaces AI-written code in v1 (D-015) |
-| New | Multiple AI keys with rotation and failover | Add | Kunci AI Saya | D-012 |
+| New | TKA practice package template | Add | Buat > Paket Soal TKA | D-026 |
+| New | TKA practice exam (CBT): sessions, exam cards, rotating token, proctor view, results | Add | Asesmen > Simulasi TKA + separate exam site | D-026, D-027 |
+| New | Multiple AI keys (Gemini free tier) with rotation and failover | Add | Kunci AI Saya | D-012, D-023 |
 | New | AI usage history | Add | Kunci AI Saya > Riwayat | Teachers see why AI stopped |
 | New | Revise one section with AI | Add | "Perbaiki bagian ini" on every section of a preview | No full regeneration |
 | New | Report description drafts per TP | Add | Asesmen > Rapor | |
@@ -259,6 +273,8 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Later | AI-written game code on request | Later | Needs sandbox and review design | D-015 |
 | Later | Canva Connect API (direct import into the teacher's Canva) | Later | | Level 1 button is enough for v1 |
 | Later | Offline beyond Di Kelas | Later | | D-016 |
+| Removed | Generic content generator ("Buat bebas") | Remove | — | Teachers can do this in Gemini directly (D-024) |
+| Later | Per-lesson attendance for subject teachers | Later | | Daily attendance in v1 (D-029) |
 | Later | SMP/MTs | Later | | Needs curriculum data |
 
 ## v1 scope
@@ -267,18 +283,20 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 
 1. Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable.
 2. Content core: AI Provider Engine, template engine, RPM template, Dokumen Saya, PDF/DOCX export.
-3. More templates: Bank Soal, LKPD, Quiz Battle (present + download), Buat bebas.
-4. Di Kelas with offline sync, Jurnal from RPM.
-5. Asesmen: plan, scores, analysis per TP, report cards.
-6. Portals: principal, operator, supervisor. Validation and comments.
-7. Business: subscriptions, billing, watermark, Mode Contoh.
+3. More templates: Bank Soal, LKPD, Quiz Battle (present + download).
+4. TKA: Paket Soal TKA template, exam site, sessions, exam cards, token, results. Target: ready before schools start TKA practice for 2027 (January–March).
+5. Di Kelas with offline sync, Jurnal from RPM.
+6. Asesmen: plan, scores, analysis per TP, report cards.
+7. Portals: principal, operator, supervisor. Validation and comments.
+8. Business: subscriptions, billing, watermark, Mode Contoh.
 
 ## Open questions
 
-- [ ] Prices for the four tiers, and whether school subscriptions may be paid from BOS funds under the current technical guidelines (check with the education office; for the pilot, Kudus).
+- [ ] Prices for the four tiers (paid from non-BOS funds, D-025).
 - [ ] Final name: check "Sigrak" (and backup "Kapur") in [PDKI](https://pdki-indonesia.dgip.go.id) classes 9, 41, 42, then register the .id and .com domains together. The name risk is higher now that the market is nationwide.
 - [ ] Logo: brief a designer (colour, single-colour, negative, minimum 16 px).
-- [ ] Confirm removal of Bank Soal "Mode Ujian" (no student accounts, so no online exam).
 - [ ] Confirm the kokurikuler module ships in v1 as an RPM template variant.
 - [ ] Test the five-tab menu with 5 class teachers and 2 subject teachers on a click prototype (no real data).
 - [ ] Present the short version to principals and supervisors, and record their objections.
+- [ ] Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI; see D-027).
+- [ ] TKA 2027 schedule for SD/MI, once published, to time the TKA release.

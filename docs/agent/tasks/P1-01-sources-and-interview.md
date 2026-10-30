@@ -26,4 +26,4 @@ Keep the owner's material as received and settle the decisions that conflict bet
 
 ## Result
 
-Sources copied byte-identical. The concept message was saved as `Konsep_Awal_Produk_SIGRAK.md`. Interview decisions are recorded as D-007…D-021, and D-004/D-005 are closed.
+Sources copied byte-identical. The concept message was saved as `Konsep_Awal_Produk_SIGRAK.md`. Interview decisions are recorded as D-007…D-021 (round 1 review: D-023…D-029), and D-004/D-005 are closed.

@@ -69,7 +69,8 @@ Rules:
 | Structure | Tabs, Table + card list for phones, Stepper (wizards), Bottom sheet, Dialog |
 | Feedback | Toast (one line, auto-hide), inline error, Empty state, Skeleton, Progress ("Langkah 2 dari 4") |
 | Content engine | Template card (gallery), Section editor with "Perbaiki bagian ini", Revision compare (old/new), Generation status panel |
-| AI keys | Key row (label, project, last 4, status chip, cooldown time), Add-key sheet with test result |
+| AI keys | Key row (label, project, last 4, status chip, cooldown time), Add-key sheet with test result and the multi-key consent box |
+| TKA exam | Session card, exam card sheet (print), proctor panel (current token with countdown, participant list with status), result table |
 
 ## Mobile rules
 
@@ -87,6 +88,17 @@ Games (Quiz Battle and later ones) are played by children on a projector or a ph
 - Brighter colours, bigger type, and motion are allowed.
 - Still accessible: AA contrast for all text, no flashing above 3 Hz, a timer that is not conveyed by colour alone, and a sound toggle.
 - The runtime bundle carries its own CSS, so a downloaded game looks the same offline.
+
+## Exam site style (TKA practice)
+
+The exam site is a separate front end for students (D-027). It should feel like the national TKA exam client, so the practice carries over:
+
+- Plain and distraction-free: the question on the left, stimulus text or figure where the question needs it, answer options as large touch targets.
+- A number grid for jumping between items. Items are coloured *answered*, *ragu-ragu* (flagged), or *not answered*, with a text label too, never colour alone.
+- A visible countdown, with a warning 5 minutes before the end.
+- Font size control (A−, A, A+) and full keyboard use.
+- No brand promotion, no links to the teacher app, no AI wording.
+- Copy is short and child-friendly: "Masukkan token dari pengawas", "Kirim jawaban", "Waktu tersisa 5 menit".
 
 ## Voice and tone
 
@@ -136,6 +148,11 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | Rencana (menu) | Buat | **New** (D-021) |
 | Template | Templat | **New**. KBBI spelling |
 | Game mode / Play | Tayangkan (present), Unduh game (file) | **New** (D-011) |
+| CBT / ujian online TKA | Simulasi TKA | **New** (D-026). Never "TKA" alone, so it is not confused with the official test |
+| Username/password ujian | Kartu login | **New**. Same name as in TKA |
+| Token ujian | Token | **New**. "Token dari pengawas" in student copy |
+| Proktor | Pengawas (to students), Proktor (to teachers) | **New** |
+| Ragu-ragu | Ragu-ragu | **New**. Same as TKA |
 | Prompt, generate, AI generator | (never shown) | **New**. Use "Buat" and pedagogical questions |
 | API Key / API Key Gemini | Kunci AI | Plural "kunci AI", one per Google project |
 | Google Cloud Project | Project Google | **New**. The label teachers type for each key |

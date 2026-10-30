@@ -27,4 +27,4 @@ Specify Gemini access, teacher keys, round robin + failover, error handling, dup
 
 ## Result
 
-Draft written. Gemini facts checked 2026-10-30. Open questions: 429 detail fields, log retention, optional backup key.
+Draft written. Gemini facts checked 2026-10-30. Revised for the free tier only, consent for extra keys, privacy rules, and per-type jobs. Open questions: 429 detail fields, log retention, optional backup key, free-tier models.
