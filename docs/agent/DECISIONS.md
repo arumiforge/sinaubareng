@@ -144,7 +144,7 @@ Students take the practice exam on a separate exam site (own subdomain and guard
 Reason: owner's choice. Also keeps Gemini's under-18 restriction away from the student-facing part.
 
 ### D-028 — Document engines: Gotenberg for PDF, Laravel Excel for spreadsheets
-Accepted · 2026-10-30 · resolves the open PDF engine question
+Accepted · 2026-10-30 · resolves the open PDF engine question · Word-to-PDF and merge dropped by D-031
 PDF: Gotenberg 8 (Chromium + LibreOffice, Docker, internal network only) through `spatie/laravel-pdf`'s Gotenberg driver. It gives HTML/CSS fidelity, Arabic shaping, headers and footers, DOCX→PDF, merge, watermark, and PDF/A. Excel: Laravel Excel (`maatwebsite/excel`, PhpSpreadsheet), with styled multi-sheet exports, queued exports, and validated imports. DOCX: PhpWord TemplateProcessor. This adds Docker to the server, for this one service.
 Reason: owner asked for powerful engines. Dompdf/mPDF are too weak for the documents; Browsershot would need Node/Chromium on the host.
 
@@ -152,3 +152,23 @@ Reason: owner asked for powerful engines. Dompdf/mPDF are too weak for the docum
 Accepted · 2026-10-30
 One attendance record per student per day, taken by the homeroom teacher. Per-lesson attendance comes later.
 Reason: owner's decision.
+
+### D-030 — TKA figures and scoring
+Accepted · 2026-10-30
+Figures come from a bundled set (SVG) chosen by id. Cube stacks are drawn from a height map with three.js, and the view keys are computed by code. There are no AI images. PGK MCMA and PGK Kategori get partial credit, normalised to the TKA SD range 0–100 and shown as a practice estimate.
+Reason: owner's choice. AI is unreliable at spatial reasoning and image generation.
+
+### D-031 — Letterhead is an uploaded image
+Accepted · 2026-10-30 · refines D-028
+The school uploads a default letterhead image, and a teacher may upload their own, which replaces it on their documents. The layout and logo live in the image. Rules: PNG/JPG, ≥ 2,000 px wide, ratio 4:1–8:1, ≤ 2 MB, printed height ≤ 4 cm, previewed on A4/F4. As a result, Word-to-PDF conversion and PDF merging are not needed: one HTML view → one PDF, and DOCX is built from SIGRAK's own layouts.
+Reason: owner — simpler for teachers. Removes per-field letterhead settings.
+
+### D-032 — Class teachers and special subject teachers
+Accepted · 2026-10-30
+SD/MI has guru kelas (homeroom) and guru mapel. Guru mapel subjects by default: PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama. Every other subject defaults to the homeroom teacher. The operator can reassign per class.
+Reason: owner's description of SD staffing.
+
+### D-033 — Rendering libraries; no presentation feature
+Accepted · 2026-10-30
+Added where templates need them: three.js (figures), KaTeX (math), ApexCharts (charts), an Arabic font. All pinned and bundled, no CDN. No slide/presentation feature and no presentation library.
+Reason: owner allowed powerful libraries when needed, and declined the "Bahan Tayang" feature.

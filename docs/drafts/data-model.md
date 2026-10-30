@@ -52,7 +52,7 @@ This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDU
 |---|---|---|
 | `academic_years` | `school_id`, `name` (e.g. `2026/2027`), `starts_on`, `ends_on`, `even_semester_starts_on` | CHECK `starts_on < even_semester_starts_on < ends_on`. Default start 1 July |
 | `classes` | `school_id`, `academic_year_id` FK, `grade` 1–6 (CHECK), `name` (e.g. `4A`), `homeroom_teacher_id` FK users nullable (not assigned yet) | Unique (`academic_year_id`, `name`) |
-| `teaching_assignments` | `school_id`, `class_id` FK CASCADE, `subject_id` FK, `teacher_id` FK users | Unique (`class_id`, `subject_id`). The homeroom teacher covers every subject not assigned to a subject teacher |
+| `teaching_assignments` | `school_id`, `class_id` FK CASCADE, `subject_id` FK, `teacher_id` FK users | Unique (`class_id`, `subject_id`). When a class is created, subjects with `default_teacher = class_teacher` go to the homeroom teacher, and the rest wait for the operator to pick a guru mapel. The operator can reassign any row (D-032) |
 | `students` | `public_id`, `school_id`, `name`, `nisn` nullable (not every student has one), `gender` ∈ {`l`,`p`}, `birth_date` nullable | **A record, never an account** |
 | `enrollments` | `student_id` FK CASCADE, `class_id` FK RESTRICT, `status` ∈ {`active`,`moved`,`left`,`graduated`}, `ended_on` nullable | One active enrollment per student per academic year. Covers transfers ("Pindah atau keluar") and promotion ("Kenaikan") |
 
@@ -63,7 +63,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | Table | Key columns | Source field (KM-SD-2026-R2) |
 |---|---|---|
 | `curriculum_versions` | `code` (unique, e.g. `KM-SD-2026-R2`), `status` ∈ {`draft`,`active`,`retired`} | `Versi_Kurikulum`, `Status_Versi` |
-| `subjects` | `code` (e.g. `PP`), `name`, `kind` ∈ {`compulsory`,`local_content`,`cocurricular`} | `Mata Pelajaran`, `Status_Mapel` |
+| `subjects` | `code` (e.g. `PP`), `name`, `kind` ∈ {`compulsory`,`local_content`,`cocurricular`}, `default_teacher` ∈ {`class_teacher`,`subject_teacher`} | `Mata Pelajaran`, `Status_Mapel`. `subject_teacher` for PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, and Pendidikan Agama (D-032) |
 | `subject_allocations` | `curriculum_version_id`, `subject_id`, `grade`, `phase` ∈ {A,B,C}, `learning_type` ∈ {`intracurricular`,`cocurricular`}, `jp_per_week`, `weeks_per_year`, `s1_jp`, `s1_effective_weeks`, `s2_jp`, `s2_effective_weeks` | `struktur_alokasi_sd.json` → `alokasi[]`, `kokurikuler_default[]` |
 | `topics` (materi pokok / ATP) | `curriculum_version_id`, `code` (unique, `ID_Kurikulum`), `legacy_codes` JSON, `subject_id`, `grade`, `phase`, `semester` ∈ {1,2}, `elements`, `title`, `cp_text`, `atp_code`, `order_in_semester`, `jp_total`, `jp_per_week`, `week_start`, `week_end`, `weekly_distribution` JSON, `references` JSON, `audit` JSON, `extras` JSON (art branch, science process skills) | One row of `data_kurikulum_dengan_cp.json`. JSON-string columns parsed on import |
 | `focus_items` (fokus materi) | `topic_id` FK CASCADE, `code` (unique, `FM-…`), `order`, `title`, `estimated_jp`, `allocation_status` | `Data_Fokus`. The duplicate `Fokus_Materi` is dropped |
@@ -134,7 +134,8 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | `class_finance_entries` | `school_id`, `class_id`, `kind` ∈ {`income`,`expense`}, `amount` bigint rupiah CHECK > 0, `occurred_on`, `note`, `recorded_by` | Feature can be switched off per school |
 | `class_inventory_items`, `duty_rosters` | Class-scoped | |
 | `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (guest, public relations, minutes), `school_programs`, `agendas` | `school_id` | Portal features |
-| `school_print_settings` | `school_id` (unique), letterhead, logo path, signers, `paper` ∈ {`a4`,`f4`}, margins, `font` | Per-school print settings |
+| `school_print_settings` | `school_id` (unique), signers (names, NIP, titles), `paper` ∈ {`a4`,`f4`}, margins, `font` | Per-school print settings. The letterhead is in `letterheads` |
+| `letterheads` | `school_id` nullable / `user_id` nullable, `image_path`, `width_px`, `height_px`, `uploaded_by` | Exactly one owner: CHECK (`school_id` IS NULL) <> (`user_id` IS NULL). Unique per owner. A teacher's own letterhead replaces the school's on that teacher's documents. Upload rules: PNG/JPG, ≥ 2,000 px wide, ratio 4:1 to 8:1, ≤ 2 MB (D-031) |
 | `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`basic`,`teacher`,`school`,`cluster`}, `academic_year`, `status` | Exactly one owner column set (CHECK). Billing tables come in the billing task |
 
 ## TKA practice exam (CBT)
@@ -160,5 +161,6 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 ## Open questions
 
 - [ ] Report card export format required by e-Rapor (columns and file type).
+- [ ] Pendidikan Agama for religions other than Islam: the subject rows and curriculum data they need.
 - [ ] Retention for `ai_usage_logs` and `document_revisions` (proposed: 180 days / last 10).
 - [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?

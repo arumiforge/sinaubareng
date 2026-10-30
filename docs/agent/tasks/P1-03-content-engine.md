@@ -27,4 +27,4 @@ Specify templates, wizards, the generation pipeline, editing, games (present + d
 
 ## Result
 
-Draft written. Revised after owner review round 1: Buat bebas removed, per-type jobs, Paket Soal TKA + TKA practice CBT, PDF = Gotenberg, Excel = Laravel Excel. Open questions: images (LKPD, games, TKA geometry), TKA practice scoring, RPM step split.
+Draft written. Revised after owner review round 1: Buat bebas removed, per-type jobs, Paket Soal TKA + TKA practice CBT, PDF = Gotenberg, Excel = Laravel Excel. Round 2: bundled figure set + three.js cube stacks, partial PGK scoring, letterhead image, no Word-to-PDF or merge, rendering libraries. Open questions: RPM step split.
