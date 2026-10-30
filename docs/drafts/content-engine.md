@@ -188,7 +188,7 @@ This template produces a practice package that follows the official TKA framewor
 | Item forms | Only the three TKA forms: **PG** (one answer), **PGK MCMA** (several correct options), **PGK Kategori** (each statement answered benar/salah, sesuai/tidak sesuai, or mendukung/tidak mendukung). Items may be single (*soal tunggal*) or grouped on a shared stimulus (*soal grup*) |
 | Filled by AI | Stimulus texts, item stems, options, keys, short explanations, and the competency/sub-competency tag for each item |
 | Rules | Bahasa Indonesia stimulus texts are 150–200 words (poems excepted), with short simple sentences and mostly denotative vocabulary, as the framework describes. Every item is tagged with a framework competency and form. The package's form and competency mix stays within the configured bounds. Each PGK Kategori item has 3 statements (as in the official samples). There are no Isian or Uraian items |
-| Stimulus visuals | Tables, pictograms, and bar charts are generated as **structured data** and drawn by our renderer, never as AI images. Geometry figures (nets, solid views) come from a bundled figure set or a teacher upload (see Open questions) |
+| Stimulus visuals | Never AI images (D-030). Tables, pictograms, and bar charts are generated as **structured data** and drawn by our renderer. Plane shapes, nets, and measurement pictures come from a **bundled figure set** that the AI picks by id. **Cube stacks** (*susunan kubus*, front/top/side views) are generated as a height map and drawn with three.js, and the key for "what does the front view look like" is **computed by code**, not by the AI |
 | Output | The package document: items in order, keys, explanations, blueprint (*kisi-kisi*) per competency. Exports: naskah, kunci, pembahasan, kisi-kisi (PDF/Word/Excel). It is also the source for a **Simulasi TKA** session (below) |
 
 ## TKA practice exam (CBT)
@@ -203,7 +203,7 @@ The exam mimics how the national TKA runs: computer-based, the participant signs
 | Exam client | A plain, TKA-like screen at its own subdomain: question area, number grid, *ragu-ragu* flag, timer, font size control. Works on desktop and tablet. **No AI calls, no links into the app, no data beyond the participant's own exam** |
 | Integrity | Item and option order is shuffled per participant (stimulus groups stay together). Every answer autosaves with a sequence number (idempotent), so a reconnect resumes where it stopped. Time is enforced by the server. The proctor can reset a participant's login or extend time for one participant, and both actions are logged |
 | Results | Score 0–100 per subject, mapped to the TKA categories (Kurang < 50; Memadai 50 to < 76.67; Baik 76.67 to < 95; Istimewa ≥ 95, as reported for TKA 2026). Plus per-competency and per-item analysis, export to Excel and PDF, and an optional copy into Asesmen |
-| Scoring (practice) | PG: 1 point for the key. PGK MCMA and PGK Kategori: partial credit per correct choice or statement, normalised to 0–100. The official TKA scoring model is not published in this form, so the practice score is an *estimate* and the UI says so |
+| Scoring (practice) | PG: 1 point for the key. PGK MCMA and PGK Kategori: **partial credit** per correct choice or statement (D-030). Totals are normalised to the TKA SD range **0–100**. The official TKA item-scoring model is not published, so the practice score is an *estimate* and the UI says so |
 
 The general Bank Soal "Mode Ujian" stays inactive (D-026). The exam client is built for TKA packages only.
 
@@ -236,23 +236,41 @@ The downloaded file lives outside the login wall by design. That is acceptable b
 This is the single export engine from the developer notes. The engines are decided in D-028:
 
 - **One document model** (the content JSON). Every format is rendered from it, never from a screenshot.
-- **PDF: Gotenberg 8** (headless Chromium + LibreOffice in one Docker container), called through `spatie/laravel-pdf` with its Gotenberg driver:
-  - Text-based PDFs from Blade/HTML views, with full CSS: tables with `page-break-inside: avoid`, F4 and A4, repeating header and footer with page numbers, and the school letterhead.
+- **PDF: Gotenberg 8** (headless Chromium in a Docker container), called through `spatie/laravel-pdf` with its Gotenberg driver:
+  - Text-based PDFs from Blade/HTML views, with full CSS: tables with `page-break-inside: avoid`, F4 and A4, repeating header and footer with page numbers, and the letterhead image.
+  - JavaScript runs before capture (`waitUntilReady`), so KaTeX formulas, charts, and three.js figures render in print exactly as on screen.
   - It shapes Arabic script correctly, which PAI material needs.
-  - LibreOffice converts a school's DOCX template to PDF, so the Word and PDF versions look the same.
-  - It also merges PDFs (an RPM with LKPD, rubric, and key attachments as one file), stamps the Sigrak Dasar watermark, and can produce PDF/A for archiving.
-  - It runs as a separate service on the internal network only (bound to localhost, with basic auth). Chromium's memory use stays out of PHP-FPM, and export jobs on the `exports` queue call it over HTTP.
-  - Pin the image version.
-  - Rejected alternatives: Dompdf/mPDF (weak CSS and pagination), Browsershot (needs Node, Puppeteer, and Chromium installed on the host itself), and WeasyPrint (excellent paged media, but no JavaScript, an extra Python dependency, and no Office conversion).
-- **DOCX:** PhpWord TemplateProcessor from the school's Word template, so letterhead, font, and signatures change without code.
+  - **One PDF per download.** A package (RPM + LKPD + rubric + key, or all exam cards) is one HTML view with page breaks, so no PDF merging is needed. The Sigrak Dasar watermark is CSS in that view. Word-to-PDF conversion is not used either (D-031).
+  - Why a separate service:
+    - Chromium is isolated in a container. Ubuntu 22.04 only ships Chromium as a snap, which is awkward to run from PHP workers.
+    - Its memory use stays out of PHP-FPM.
+    - Export jobs on the `exports` queue call it over HTTP. It is bound to localhost with basic auth, and the image version is pinned.
+  - Rejected alternatives: Dompdf/mPDF (weak CSS and pagination, no JavaScript), Browsershot and the chrome-php driver (Node and/or Chromium on the host itself), and WeasyPrint (no JavaScript, an extra Python dependency).
+- **DOCX:** PhpWord, built from SIGRAK's own Word layouts per template, with the letterhead image placed in the header and the signers as text. Schools do not supply Word templates.
 - **Excel: Laravel Excel** (`maatwebsite/excel`, current major version, on PhpSpreadsheet). It handles styled multi-sheet exports (leger, kisi-kisi, analysis, TKA results), formulas, queued exports for large files, and chunked imports with row validation (student import, scores). Numbers are stored as numbers and columns are filterable. Confirm Laravel 13 support when installing.
-- **Per-school print settings:** letterhead, logo, signer name and NIP, A4/F4, margins, font (default Arial or Times New Roman), and which sections to include.
+- **Letterhead (kop) as an image (D-031).**
+  - The school uploads a default letterhead image, and a teacher may upload their own, which replaces the school's on that teacher's documents.
+  - The layout, logo, and divider line are all inside the image, so the teacher controls them. The system only places the image across the content width at the top of the first page.
+  - Image rules: PNG or JPG, white or transparent background, at least 2,000 px wide, width-to-height ratio between 4:1 and 8:1, at most 2 MB. Printed height is capped at 4 cm.
+  - The upload screen previews the image on A4 and F4 and warns when the resolution is too low for print.
+- **Other print settings (per school):** signer names and NIP (text), A4/F4, margins, font (default Arial or Times New Roman), and which sections to include.
 - **Labels in Indonesian** through translation keys (repo convention).
 - **Buka di Canva (level 1):** downloads DOCX/PDF and opens canva.com for the teacher to import. Direct import through the Canva Connect API is *Later*.
 - Sigrak Dasar (free plan): small watermark.
 
-## Open questions
+## Rendering libraries
 
-- [ ] Images in LKPD, games, and TKA geometry items: a bundled figure/icon set only in v1, or teacher uploads too? (AI-generated images: not in v1.)
-- [ ] TKA practice scoring: keep partial credit for PGK, or score all-or-nothing per item?
+These are added only where a template needs them (D-033). Every library is pinned, bundled by Vite, and never loaded from a CDN. The game runtime and the exam client each bundle only what they use.
+
+| Library | Used for | Where |
+|---|---|---|
+| **three.js** (with its SVG renderer for print) | Cube-stack and solid figures from data (front/top/side views); room for future 3D games | TKA package, Bank Soal, LKPD previews, exam client, PDF |
+| **KaTeX** | Fractions, operations, and units in Matematika items | Editor previews, exam client, games, PDF |
+| **ApexCharts** (TailAdmin's chart library) | Bar charts in item stimuli; score analysis and portal summaries | App, exam client (stimuli only), PDF |
+| **Noto Naskh Arabic** (or Amiri) font | Arabic text in PAI material | App, PDF, DOCX |
+| Bundled figure and pictogram set (SVG) | Plane shapes, nets, measurement pictures, pictogram icons | All templates (D-030) |
+
+There is no presentation library: a slide feature is not planned (D-033). AI-generated images are not used.
+
+## Open questions
 - [ ] Exact step split for the RPM template, to be tuned against real output sizes.

@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-029).
+This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-033).
 
 ## Summary
 
@@ -64,12 +64,14 @@ Principles, in priority order:
 
 | Role (UI name) | Who | Main jobs in SIGRAK | Device |
 |---|---|---|---|
-| Guru kelas (wali kelas) | Teaches every subject of one class | Make content, attendance and journal, assessment, report cards, class data | Phone, home laptop |
-| Guru mapel | Teaches one subject across classes (PAI, PJOK, Bahasa Jawa, …) | Make content, reused across classes. Di Kelas and assessment for their subject | Phone |
+| Guru kelas (wali kelas) | Teaches the class subjects of one class: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, and the others not listed for guru mapel | Make content, daily attendance, journal, assessment, report cards, class data | Phone, home laptop |
+| Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** | Make content, reused across classes. Journal, student notes, and assessment for their subject (attendance is daily and belongs to the homeroom teacher) | Phone |
 | Kepala sekolah | Principal | Watch completeness and content made, validate school curriculum changes, supervision, school books, print settings, subscription | Laptop, phone |
 | Operator sekolah | School admin staff | Academic year, classes, invite teachers, timetable, calendar, school profile | Laptop |
 | Pengawas / korwil | Supervisor of several schools | Read-only view of supervised schools, final validation of curriculum changes, supervision reports | Laptop |
 | Tim SIGRAK | Internal staff | Template registry and prompt tuning, schools and subscriptions, support. Uses a separate internal console (Filament), not the school app | Laptop |
+
+These subject defaults follow how SD/MI staff their classes (D-032). The operator can still assign any subject of a class to a guru mapel, or a special subject to the homeroom teacher when the school has no specialist.
 
 A principal, operator, or supervisor who also teaches keeps the five teacher menus and gets a switch to their portal. The principal does not need an AI key unless they make content themselves.
 
@@ -238,7 +240,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Kelas Saya | Piket | Keep | Kelas Saya > Piket | |
 | Kelas Saya | Class finance | Keep | Kelas Saya > Keuangan, school can turn it off | Not every school allows it |
 | Kelas Saya | Class inventory | Keep | Kelas Saya > Inventaris | |
-| Akun | Settings (theme, paper, profile, password) | Replace | Akun (profile, password, theme) + Pengaturan Sekolah (paper, letterhead) | Paper and letterhead belong to the school |
+| Akun | Settings (theme, paper, profile, password) | Replace | Akun (profile, password, theme, own letterhead image) + Pengaturan Sekolah (paper, default letterhead image, signers) | The school sets defaults; a teacher may use their own letterhead image (D-031) |
 | Akun | School profile "first save wins" | Replace | Owned by operator/principal. Teachers propose corrections | Clear data owner |
 | Akun | Gemini API key required at teacher activation | Replace | Kunci AI Saya: several keys, asked at first AI use, with a test button and status | Fast sign-up. AI never blocks other features |
 | Akun | API key required in principal profile | Remove | — | Principals don't need AI |
@@ -263,7 +265,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | New | Di Kelas offline | Add | Di Kelas menu | D-016 |
 | New | Curriculum validation guru → kepala sekolah → pengawas | Add | Status in Dokumen Saya + portal queues | D-019 |
 | New | Comments on documents by principal/supervisor | Add | Document view | D-019 |
-| New | Per-school print settings (letterhead, logo, signer, A4/F4, font) | Add | Pengaturan Sekolah > Cetak | |
+| New | Print settings: letterhead as an **uploaded image** (school default, teacher may upload their own), signers, A4/F4, font | Add | Pengaturan Sekolah > Cetak; Akun > Kop saya | Teachers control the letterhead layout and logo in the image itself (D-031) |
 | New | Buka di Canva | Add | Button on RPM, LKPD, soal previews (download + open canva.com) | |
 | New | Subscription and billing | Add | Pengaturan Sekolah > Langganan. Akun > Paket Saya | Business model |
 | New | Invite teachers | Add | Operator portal > Guru | Replaces default passwords |
@@ -274,6 +276,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Later | Canva Connect API (direct import into the teacher's Canva) | Later | | Level 1 button is enough for v1 |
 | Later | Offline beyond Di Kelas | Later | | D-016 |
 | Removed | Generic content generator ("Buat bebas") | Remove | — | Teachers can do this in Gemini directly (D-024) |
+| Removed | Slides per meeting ("Bahan Tayang") | Remove | — | Not needed; teachers present with their own tools (D-033) |
 | Later | Per-lesson attendance for subject teachers | Later | | Daily attendance in v1 (D-029) |
 | Later | SMP/MTs | Later | | Needs curriculum data |
 
@@ -300,3 +303,4 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 - [ ] Present the short version to principals and supervisors, and record their objections.
 - [ ] Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI; see D-027).
 - [ ] TKA 2027 schedule for SD/MI, once published, to time the TKA release.
+- [ ] Pendidikan Agama for religions other than Islam: the curriculum data (KM-SD-2026-R2) only has PAI. Which religions in v1, and where does their CP/TP data come from?

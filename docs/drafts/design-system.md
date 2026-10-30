@@ -57,7 +57,8 @@ Rules:
 ## Type, space, shape
 
 - **Type scale:** 13 / 15 / 17 / 20 / 24 / 30 px. Reading text is 16 px on phones. Labels are at least 13 px, weight 600, sentence case.
-- **Print documents** use the school's chosen font from print settings (default Arial or Times New Roman), because official formats often require it.
+- **Print documents** use the school's chosen font from print settings (default Arial or Times New Roman), because official formats often require it. The letterhead is an uploaded image (D-031), so its fonts and logo are whatever the school or teacher designed.
+- **Math and Arabic:** KaTeX for formulas and fractions; Noto Naskh Arabic (or Amiri) for Arabic text in PAI material.
 - **Space:** multiples of 4 px. **Radius:** 6 (inputs), 10 (cards). **Shadow:** floating menus and dialogs only.
 
 ## Components
@@ -71,6 +72,7 @@ Rules:
 | Content engine | Template card (gallery), Section editor with "Perbaiki bagian ini", Revision compare (old/new), Generation status panel |
 | AI keys | Key row (label, project, last 4, status chip, cooldown time), Add-key sheet with test result and the multi-key consent box |
 | TKA exam | Session card, exam card sheet (print), proctor panel (current token with countdown, participant list with status), result table |
+| Print | Letterhead upload with A4/F4 preview and resolution warning, print settings form |
 
 ## Mobile rules
 
@@ -152,6 +154,7 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | Username/password ujian | Kartu login | **New**. Same name as in TKA |
 | Token ujian | Token | **New**. "Token dari pengawas" in student copy |
 | Proktor | Pengawas (to students), Proktor (to teachers) | **New** |
+| Kop surat / letterhead | Kop | **New**. "Unggah kop", "Kop sekolah", "Kop saya" |
 | Ragu-ragu | Ragu-ragu | **New**. Same as TKA |
 | Prompt, generate, AI generator | (never shown) | **New**. Use "Buat" and pedagogical questions |
 | API Key / API Key Gemini | Kunci AI | Plural "kunci AI", one per Google project |
