@@ -1,7 +1,7 @@
 # P2-04 — Architecture overview
 
 - **Phase:** P2
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p2/p2-04-architecture
 - **Depends on:** —
 - **Can run in parallel with:** P1-08, P2-01…P2-03, P2-05, P2-06
@@ -22,8 +22,8 @@ Write one architecture overview that ties the Phase 1 drafts together for develo
 
 ## Done when
 
-- [ ] Every component and flow in the drafts appears once, consistent with the decisions
-- [ ] Open questions listed
+- [x] Every component and flow in the drafts appears once, consistent with the decisions
+- [x] Open questions listed
 
 ## Coordination rules (parallel sessions)
 
@@ -34,4 +34,8 @@ Write one architecture overview that ties the Phase 1 drafts together for develo
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- Wrote `docs/drafts/architecture.md`: component table and Mermaid system diagram, hostnames and guards, module boundaries with allowed dependencies, the four main flows (generation, export, offline sync, TKA exam) plus the smaller ones, deployment topology on one VPS behind Cloudflare, scheduled jobs, and security boundaries.
+- Eight items under "Decisions to record" in that document (one codebase with three hostnames and guards, module folders, job uniqueness fix, sync auth, Gotenberg without network, Redis separation, exam rate limits by username, staff tools on `admin.`). Number them at integration.
+- Found one inconsistency in the AI draft: plain `ShouldBeUnique` blocks a job from re-dispatching itself. Decision 3 proposes the fix; `ai-provider-engine.md` was not edited.
+- Open questions needing the owner: domain/hostnames, mail provider, backups, file storage, staging, exam capacity target, exam client tech, Mode Contoh, payment provider, PWA install.
+- Follow-up for P2-05 (server setup): align with the topology section (ufw to Cloudflare IPs, Redis databases, Horizon timeouts, Gotenberg on localhost).
