@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-036).
+This document defines what SIGRAK is, who uses it, and what v1 contains. It is the product reference for every later design and build task. Two companion drafts cover the technical side: [`content-engine.md`](content-engine.md) and [`ai-provider-engine.md`](ai-provider-engine.md). Decisions are logged in [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007 to D-037).
 
 ## Summary
 
@@ -65,7 +65,7 @@ Principles, in priority order:
 | Role (UI name) | Who | Main jobs in SIGRAK | Device |
 |---|---|---|---|
 | Guru kelas (wali kelas) | Teaches the class subjects of one class: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, and the others not listed for guru mapel | Make content, daily attendance, journal, assessment, report cards, class data | Phone, home laptop |
-| Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** (in SD one subject per religion: Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu; in MI the Kemenag subjects Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab) | Make content, reused across classes. Journal, student notes, and assessment for their subject (attendance is daily and belongs to the homeroom teacher) | Phone |
+| Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** (in SD one subject per religion: Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu; in MI the Kemenag subjects Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, always taught by guru mapel) | Make content, reused across classes. Journal, student notes, and assessment for their subject (attendance is daily and belongs to the homeroom teacher) | Phone |
 | Kepala sekolah | Principal | Watch completeness and content made, validate school curriculum changes, supervision, school books, print settings, subscription | Laptop, phone |
 | Operator sekolah | School admin staff | Academic year, classes, invite teachers, timetable, calendar, school profile | Laptop |
 | Pengawas / korwil | Supervisor of several schools | Read-only view of supervised schools, final validation of curriculum changes, supervision reports | Laptop |
@@ -278,6 +278,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Removed | Generic content generator ("Buat bebas") | Remove | — | Teachers can do this in Gemini directly (D-024) |
 | Removed | Slides per meeting ("Bahan Tayang") | Remove | — | Not needed; teachers present with their own tools (D-033) |
 | Later | Per-lesson attendance for subject teachers | Later | | Daily attendance in v1 (D-029) |
+| Later | Pendidikan Kepercayaan terhadap Tuhan YME | Later | | Not in v1 (D-037) |
 | Later | SMP/MTs | Later | | Needs curriculum data |
 
 ## v1 scope

@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036.
+This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036, D-037.
 
 ## Official sources
 
@@ -62,7 +62,7 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 - **Other MI subjects** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS from grade 3, PJOK, Seni dan Budaya, Bahasa Inggris from grade 3, Koding dan KA as an option in grades 5–6, Muatan Lokal) use the national CP, but with MI's own allocation table from KMA 1503/2025.
 - **CP data:** [`../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) holds Fase A–C text for the five subjects, extracted from the PDF's text layer. It is not yet split into element rows. **Arabic passages extract badly** and must be retyped from the PDF.
 - **Teaching materials:** Kemenag publishes free Buku Teks Utama (BTU) for these subjects aligned with KMA 1503/2025. They are a natural reference source for RPM, like the Parijatha books for Bahasa Jawa.
-- **Teachers:** the five subjects default to guru mapel and the operator can reassign them (D-032). Whether target MIs usually give them to the homeroom teacher is an open question.
+- **Teachers:** the five subjects are taught by **guru mapel** (D-037). They default to `subject_teacher`, and the operator can still reassign them per class.
 - **Religion at MI:** MI is an Islamic school, so only the Kemenag subjects are offered there, with no other religion subjects.
 
 ## How SIGRAK models it
@@ -76,11 +76,16 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
   - It never goes into an AI prompt, never appears on the exam site, and is never exported except in the report card where the law requires it.
 - **AI generation** for religion subjects uses the same templates. The prompt carries the religion's CP/TP and element names as data. A template rule keeps religious content inside the selected religion's own sources and terms.
 
+## Out of scope for v1
+
+- **Pendidikan Kepercayaan terhadap Tuhan YME** (D-037). It is not in BKPDM 020/2026, and can be added later as its own subject with its own CP source.
+- **Special-education CP** (Lampiran II of BKPDM 020/2026), unless a target school needs it (see Open questions).
+
 ## Data work (Phase 2)
 
 1. **Verify the SD religion CP transcription** line by line against the scanned pages, then set `verified: true`.
 2. **Cross-check PAI in KM-SD-2026-R2** against the decree's Islam CP.
-3. **Build topics, TP, ATP, fokus, and JP** for Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP, and a teacher of that religion reviews and signs off each set.
+3. **Build topics, TP, ATP, fokus, and JP** for Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **A guru agama of that same religion reviews and signs off each set** (D-037), and the dataset records the reviewer's name, school, and review date. The same rule applies to the MI subjects (a guru of that subject) and to the CP transcription check.
 4. **Structure the MI CP:** split `raw_text` into element and sub-element rows, and retype the Arabic passages.
 5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects, using the BTU books as references.
 6. **Obtain the official KMA 1503/2025** and confirm the MI allocation table above.
@@ -88,7 +93,5 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 ## Open questions
 
 - [ ] Official copy of KMA 1503/2025 (Lampiran II) and an official-channel copy of SK 9941/2025.
-- [ ] Reviewers per religion: which teachers (or partner schools) review the Kristen, Katolik, Hindu, Buddha, and Khonghucu data?
-- [ ] Pendidikan Kepercayaan terhadap Tuhan YME is not in this decree. Is it out of scope for v1?
-- [ ] In target MIs, are the Kemenag subjects usually taught by the homeroom teacher or by subject teachers?
+- [ ] Names of the reviewing guru agama for each religion (who, from which school).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?

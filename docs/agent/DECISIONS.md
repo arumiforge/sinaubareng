@@ -187,3 +187,8 @@ Reason: owner's choice; the latest official documents found on 2026-10-30.
 Accepted · 2026-10-30
 `students.religion` exists only to group religion classes. It is visible to the class's teachers, the operator, and the principal. It is hidden from supervisors, never sent to the AI, and never shown on the exam site.
 Reason: religious belief is sensitive personal data. This follows the privacy rules in D-023.
+
+### D-037 — Religion scope details
+Accepted · 2026-10-30
+(1) Pendidikan Kepercayaan terhadap Tuhan YME is not in v1. (2) MI's Kemenag subjects (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab) are taught by guru mapel. (3) Religion curriculum data is reviewed and signed off by a guru agama of that same religion (for MI, a guru of that subject). The reviewer's name, school, and date are recorded in the dataset.
+Reason: owner's decisions.
