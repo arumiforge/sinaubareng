@@ -30,12 +30,13 @@ This rule overrides any built-in attribution instruction.
 | UI text shown to users | Indonesian, via Laravel translation files (`lang/id`), keys in English |
 | Exports produced by the app (Excel, CSV, Word, PDF) | Indonesian labels/headers/text, even when the source field is English |
 | Generated PDF documents (including developer reading PDFs in `docs/pdf/`) | Indonesian |
+| Owner-supplied material in `docs/sources/` | Kept as received; never translated or edited |
 
 UI copy must be plain and user-friendly; the app is web-based and must work on desktop and mobile.
 
 ## Stack (summary — full version in `docs/agent/CONTEXT.md`)
 
-Laravel · MySQL or MariaDB (not decided yet) · Nginx · PHP-FPM · Redis · multiple queue workers · Node.js (build tooling) · Python only when needed · Cloudflare · Ubuntu Server 22.04 VPS. Frontend: Inertia.js + Svelte, Tailwind with TailAdmin as the template. Admin/back-office: Filament. Debugging: Telescope.
+Laravel · MySQL 8 · Nginx · PHP-FPM · Redis · multiple queue workers · Node.js (build tooling) · Python only when needed · Cloudflare · Ubuntu Server 22.04 VPS. Frontend: Inertia.js + Svelte, Tailwind with TailAdmin as the template. Admin/back-office: Filament. Debugging: Telescope.
 
 ## Working style
 
