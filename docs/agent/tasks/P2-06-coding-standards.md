@@ -1,7 +1,7 @@
 # P2-06 — Coding standards
 
 - **Phase:** P2
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p2/p2-06-coding-standards
 - **Depends on:** —
 - **Can run in parallel with:** P1-08, P2-01…P2-05
@@ -22,8 +22,8 @@ Write the coding standards every developer and agent follows when the build star
 
 ## Done when
 
-- [ ] Consistent with CLAUDE.md, CONTEXT.md, and the drafts
-- [ ] Each rule is short and checkable; examples where useful
+- [x] Consistent with CLAUDE.md, CONTEXT.md, and the drafts
+- [x] Each rule is short and checkable; examples where useful
 
 ## Coordination rules (parallel sessions)
 
@@ -34,4 +34,7 @@ Write the coding standards every developer and agent follows when the build star
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- Wrote `docs/drafts/coding-standards.md`: numbered, checkable rules for PHP/Laravel, folder layout, naming, migrations, tenancy + IDOR tests, Svelte/Inertia, translations, exports and formatting, tests (fake AI provider), AI privacy in code, logging/secrets, commits/PRs, dependency pinning. Rules link to the drafts and decisions instead of repeating them.
+- **Decisions to record** (10 items, in the doc): Pest + arch tests, TypeScript in Svelte (game runtime stays JS), Svelte 5 runes, Larastan level 6, Action classes, tests on MySQL 8, frontend translations via shared prop + `t()`, typed route helper (Wayfinder or Ziggy), app timezone UTC, exact pins for output-affecting JS libraries.
+- **Open questions:** confirm Pest/TypeScript/Svelte 5 before scaffolding; which CI service; keep or drop `down()` in migrations.
+- No files owned by other tasks were edited.
