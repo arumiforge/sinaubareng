@@ -34,7 +34,7 @@ Owner = branch name or session label of whoever claimed the task.
 | P1-05 | Data model | review | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/drafts/data-model.md` |
 | P1-06 | Design system and UI writing | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/design-system.md` |
 | P1-07 | Religious education curriculum (SD religions, MI Kemenag) | review | pw/eloquent-shannon-9iwufg | P1-05 | `docs/drafts/religious-education.md`, `docs/data/curriculum/` |
-| P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | in-progress | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
+| P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | review | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
 
 After approval: move the drafts to `docs/final/` and generate the Indonesian PDFs (one task per doc, can run in parallel).
 
