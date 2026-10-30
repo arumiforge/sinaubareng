@@ -1,0 +1,351 @@
+{
+  "dataset": "cp_pendidikan_agama_sd",
+  "version_code": "CP-PABP-BKPDM-020-2026",
+  "source": {
+    "title": "Keputusan Kepala Badan Kebijakan Pendidikan Dasar dan Menengah Nomor 020 Tahun 2026 tentang Perubahan atas Keputusan Kepala BSKAP Nomor 046/H/KR/2025 tentang Capaian Pembelajaran pada PAUD, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "issued_on": "2026-06-11",
+    "section": "Lampiran I — Capaian Pembelajaran Pendidikan Agama dan Budi Pekerti pada SD/MI, SMP/MTs, SMA/SMK/MA",
+    "file": "docs/sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf",
+    "pages_note": "Page numbers are the printed page numbers of the decree copy (same as PDF page numbers)."
+  },
+  "transcription": {
+    "method": "Manual reading of a scanned copy (no text layer). Not OCR software.",
+    "date": "2026-10-30",
+    "verified": false,
+    "verify_by": "Second-pass check of every text against the scanned pages before import (task in PROGRESS.md).",
+    "conventions": [
+      "Text is copied as printed, including capitalisation and punctuation.",
+      "A dash ('-') in the source table means no CP for that sub-element in that phase; stored as text null with no_cp_in_phase true.",
+      "Pinyin is written with standard tone marks; Chinese characters are copied as printed.",
+      "Only Fase A, B, and C (SD) are transcribed. Fase D–F are out of scope."
+    ]
+  },
+  "religions": [
+    {
+      "key": "islam",
+      "subject_name": "Pendidikan Agama Islam dan Budi Pekerti",
+      "decree_section": "1.1",
+      "pages": "4-9",
+      "elements": [
+        {"name": "Al-Qur'an Hadis"},
+        {"name": "Akidah"},
+        {"name": "Akhlak"},
+        {"name": "Fikih"},
+        {"name": "Sejarah Peradaban Islam"}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "6-7",
+          "summary": null,
+          "outcomes": [
+            {"element": "Al-Qur'an Hadis", "sub_element": null, "text": "Membaca dan membedakan huruf hijaiah berharakat, huruf hijaiah bersambung; menghafal Surah al-Fātiḥah, beberapa surah pendek Al-Qur'an, dan hadis tentang kebersihan."},
+            {"element": "Akidah", "sub_element": null, "text": "Menjelaskan dan meyakini rukun iman, iman kepada Allah Swt., beberapa asmaulhusna, dan iman kepada malaikat."},
+            {"element": "Akhlak", "sub_element": null, "text": "Menerapkan akhlak terhadap Allah Swt. dengan menyucikan dan memuji-Nya, dan akhlak terhadap diri sendiri."},
+            {"element": "Fikih", "sub_element": null, "text": "Menerapkan rukun Islam, syahadatain, tata cara bersuci, salat fardu, zikir dan berdoa setelah salat."},
+            {"element": "Sejarah Peradaban Islam", "sub_element": null, "text": "Menceritakan kisah keteladanan beberapa nabi dan rasul."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "7",
+          "summary": null,
+          "outcomes": [
+            {"element": "Al-Qur'an Hadis", "sub_element": null, "text": "Membaca, menulis, dan membedakan huruf hijaiah bersambung; menghafal dan menjelaskan beberapa surah pendek, hadis tentang kewajiban salat dan menjaga hubungan baik dengan sesama."},
+            {"element": "Akidah", "sub_element": null, "text": "Menjelaskan dan meyakini sifat-sifat Allah Swt., iman kepada kitab-kitab Allah Swt., beberapa asmaulhusna, dan iman kepada rasul-rasul Allah Swt."},
+            {"element": "Akhlak", "sub_element": null, "text": "Menerapkan akhlak terhadap Allah Swt. dengan berbaik sangka kepada-Nya, akhlak terhadap orang tua, keluarga, dan guru."},
+            {"element": "Fikih", "sub_element": null, "text": "Menerapkan azan dan ikamah, salat jumat dan salat sunah; menjelaskan balig dan tanggung jawab yang menyertainya (taklīf)."},
+            {"element": "Sejarah Peradaban Islam", "sub_element": null, "text": "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. sebelum dan sesudah menjadi rasul periode Makkah."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "7-8",
+          "summary": null,
+          "outcomes": [
+            {"element": "Al-Qur'an Hadis", "sub_element": null, "text": "Membaca, menulis, dan membedakan huruf hijaiah bersambung; menjelaskan beberapa surah pendek dan hadis tentang berbuat baik kepada orang tua, guru, dan teman."},
+            {"element": "Akidah", "sub_element": null, "text": "Menjelaskan dan meyakini beberapa asmaulhusna, iman kepada hari akhir, iman kepada qadā' dan qadar."},
+            {"element": "Akhlak", "sub_element": null, "text": "Menerapkan akhlak terhadap Allah Swt. dengan berdoa dan bertawakal kepada-Nya, akhlak terhadap teman, tetangga, non-muslim, hewan, dan tumbuhan."},
+            {"element": "Fikih", "sub_element": null, "text": "Menerapkan puasa wajib dan sunah, makanan minuman yang halal dan haram, zakat, infak, sedekah, dan wakaf."},
+            {"element": "Sejarah Peradaban Islam", "sub_element": null, "text": "Menceritakan dan menjelaskan kisah Nabi Muhammad saw. periode Madinah dan khulafaurasyidin."}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kristen",
+      "subject_name": "Pendidikan Agama Kristen dan Budi Pekerti",
+      "decree_section": "1.2",
+      "pages": "9-18",
+      "elements": [
+        {"name": "Allah Berkarya", "sub_elements": ["Allah Pencipta", "Allah Pemelihara", "Allah Penyelamat", "Allah Pembaru"]},
+        {"name": "Manusia dan Nilai-nilai Kristiani", "sub_elements": ["Hakikat Manusia", "Nilai-nilai Kristiani"]},
+        {"name": "Gereja dan Masyarakat Majemuk", "sub_elements": ["Tugas Panggilan Gereja", "Masyarakat Majemuk"]},
+        {"name": "Alam dan Lingkungan Hidup", "sub_elements": ["Alam Ciptaan Allah", "Tanggung Jawab Manusia terhadap Alam"]}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "12",
+          "summary": "Pada akhir Fase A, murid memahami bahwa Allah menciptakan dirinya sebagai pribadi yang istimewa, dan Allah turut memelihara dirinya melalui keluarganya sehingga memahami apa itu tindakan kebaikan yang dapat dipraktikkan dalam kehidupannya sehari-hari. Murid juga diajak mengenal apa dan bagaimana gereja itu bisa ada, memahami bahwa dirinya tidak sendiri, tetapi hidup di tengah masyarakat yang terdiri atas banyak suku bangsa serta memahami alam sekitar yang telah Allah ciptakan sedemikian rupa yang bila tidak dirawat dengan baik akan rusak sehingga berakibat buruk bagi kehidupan manusia.",
+          "outcomes": [
+            {"element": "Allah Berkarya", "sub_element": "Allah Pencipta", "text": "Murid memahami Allah menciptakan dirinya sebagai pribadi yang istimewa dan membangun interaksi dengan lingkungan terdekat."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pemelihara", "text": "Murid memahami pemeliharaan Allah pada dirinya melalui kehadiran keluarga."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Penyelamat", "text": null, "no_cp_in_phase": true},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pembaru", "text": null, "no_cp_in_phase": true},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Hakikat Manusia", "text": "Murid memahami diri sebagai pribadi yang bertumbuh dan berkembang."},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Nilai-nilai Kristiani", "text": "Murid memahami makna kebaikan, ramah dan sopan di rumah dan di sekolah."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Tugas Panggilan Gereja", "text": "Murid memahami keberadaan gereja sebagai wadah berkumpul dan beribadah serta kewajiban berdoa dan memuji Tuhan."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Masyarakat Majemuk", "text": "Murid memahami keragaman suku bangsa sebagai anugerah Allah."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Alam Ciptaan Allah", "text": "Murid memahami alam dan lingkungan hidup sebagai ciptaan Allah."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Tanggung Jawab Manusia terhadap Alam", "text": "Murid memahami tugas memelihara alam dan lingkungan hidup di rumah dan di sekolah."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "13",
+          "summary": "Pada akhir Fase B, murid diajak untuk memahami bahwa Allah dalam karyanya juga menciptakan flora, fauna, dan manusia lain selain dirinya. Pemeliharaan Allah juga dapat dirasakan murid melalui kehadiran orang-orang di sekitarnya. Oleh karena itu, murid diajarkan bahwa dirinya adalah makhluk sosial yang membutuhkan bantuan orang lain. Selain itu, murid akan memahami bahwa dalam hidup bermasyarakat, keberagaman budaya dan agama adalah anugerah Allah yang patut disyukuri. Perbedaan adalah keniscayaan yang digariskan Allah supaya manusia bisa saling mengenal satu sama lain. Murid juga diajak untuk memahami bahwa gereja punya panggilan untuk bersekutu, bersaksi, dan melayani. Terakhir, murid diajak untuk memahami kehadiran Allah melalui berbagai macam fenomena alam. Selain itu, murid diajak untuk merawat lingkungan sekitarnya.",
+          "outcomes": [
+            {"element": "Allah Berkarya", "sub_element": "Allah Pencipta", "text": "Murid memahami Allah menciptakan flora dan fauna, serta manusia (perempuan dan laki-laki)."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pemelihara", "text": "Murid memahami pemeliharaan Allah pada dirinya dan melalui kehadiran orang-orang di sekitarnya."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Penyelamat", "text": "Murid memahami Allah sebagai penyelamat."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pembaru", "text": "Murid mengenal Allah pembaru."},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Hakikat Manusia", "text": "Murid memahami diri sebagai makhluk individu dan sosial yang dapat bergaul dan bekerja sama dengan teman, saudara, dan orang tua."},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Nilai-nilai Kristiani", "text": "Murid memahami sikap disiplin di rumah dan di sekolah."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Tugas Panggilan Gereja", "text": "Murid memahami tugas panggilan gereja untuk bersekutu, bersaksi, dan melayani."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Masyarakat Majemuk", "text": "Murid memahami keragaman budaya dan agama sebagai anugerah Allah."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Alam Ciptaan Allah", "text": "Murid memahami Allah hadir dalam berbagai fenomena alam."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Tanggung Jawab Manusia terhadap Alam", "text": "Murid memahami upaya memelihara alam dan lingkungan sekitarnya."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "14",
+          "summary": "Pada akhir Fase C, murid memahami bahwa Allah menciptakan keluarga, sekolah, dan masyarakat yang di dalamnya ada pemeliharaan Allah, termasuk juga kepada mereka yang berkebutuhan khusus. Murid juga diajak memahami bahwa manusia telah jatuh dalam dosa dan manusia adalah makhluk terbatas. Oleh karena itu, manusia memerlukan penolong dalam segala hal terutama dalam hal keselamatan yang dinyatakan dalam pribadi Yesus Kristus. Murid harus memahami bahwa manusia yang diselamatkan hidupnya akan diperbarui terus-menerus sehingga menghasilkan buah Roh. Pribadi yang penuh buah Roh ditunjukkan melalui bersahabat dengan semua orang, berbela rasa, tolong-menolong tanpa membeda-bedakan suku, agama, ras dan golongan, serta memelihara alam dan lingkungan.",
+          "outcomes": [
+            {"element": "Allah Berkarya", "sub_element": "Allah Pencipta", "text": "Murid memahami Allah Pencipta berkarya melalui keluarga, sekolah, dan masyarakat."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pemelihara", "text": "Murid memahami Allah memelihara seluruh umat manusia termasuk mereka yang berkebutuhan khusus."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Penyelamat", "text": "Murid memahami Allah menyelamatkan manusia melalui Yesus Kristus."},
+            {"element": "Allah Berkarya", "sub_element": "Allah Pembaru", "text": "Murid memahami Allah membarui hidup Manusia."},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Hakikat Manusia", "text": "Murid memahami bahwa manusia adalah makhluk terbatas."},
+            {"element": "Manusia dan Nilai-nilai Kristiani", "sub_element": "Nilai-nilai Kristiani", "text": "Murid memahami buah Roh dalam interaksi antar sesama."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Tugas Panggilan Gereja", "text": "Murid memahami pelayanan terhadap sesama sebagai tanggung jawab orang beriman dalam kehidupan."},
+            {"element": "Gereja dan Masyarakat Majemuk", "sub_element": "Masyarakat Majemuk", "text": "Murid memahami hidup rukun dan toleransi dalam masyarakat majemuk."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Alam Ciptaan Allah", "text": "Murid memahami Allah hadir melalui alam ciptaan."},
+            {"element": "Alam dan Lingkungan Hidup", "sub_element": "Tanggung Jawab Manusia terhadap Alam", "text": "Murid memahami tanggung jawab orang beriman dalam memelihara alam dan lingkungan hidup."}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "katolik",
+      "subject_name": "Pendidikan Agama Katolik dan Budi Pekerti",
+      "decree_section": "1.3",
+      "pages": "18-25",
+      "elements": [
+        {"name": "Pribadi murid"},
+        {"name": "Yesus Kristus"},
+        {"name": "Gereja"},
+        {"name": "Masyarakat"}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "20-21",
+          "summary": "Pada akhir Fase A, murid memahami dirinya sebagai ciptaan Tuhan dan bagian dari keluarga, sekolah, dan lingkungan sekitar; mempunyai kebiasaan berdoa sebagai anggota Gereja; mewujudkan iman dengan cara melakukan perbuatan baik di tengah masyarakat sesuai teladan Yesus Kristus dan tokoh-tokoh dalam Kitab Suci.",
+          "outcomes": [
+            {"element": "Pribadi murid", "sub_element": null, "text": "Murid memahami dirinya sebagai pribadi yang dicintai Tuhan, memiliki anggota tubuh yang berguna, memahami cara merawat tubuhnya; memahami teman-teman, lingkungan rumah dan sekolah sebagai tempat mengembangkan potensi diri."},
+            {"element": "Yesus Kristus", "sub_element": null, "text": "Murid memahami bahwa Tuhan menciptakan langit, bumi, dan seluruh isinya; memahami tokoh-tokoh iman di dalam Perjanjian Lama (Nuh, Abraham, Ishak dan Yakub); memahami kisah kelahiran Tuhan Yesus, kisah tiga orang Majus, masa kanak-kanak Yesus di Nazaret, Yesus dipersembahkan di Bait Allah, dan berada di Bait Allah pada umur 12 tahun."},
+            {"element": "Gereja", "sub_element": null, "text": "Murid memahami imannya dengan cara membuat tanda salib, berdoa Bapa Kami, Salam Maria, dan Kemuliaan; memahami iman dengan melaksanakan perintah Allah, dan membiasakan diri dengan berdoa pujian, syukur dan permohonan."},
+            {"element": "Masyarakat", "sub_element": null, "text": "Murid memahami lingkungan keluarga, dan teman-teman, memiliki kebiasaan bekerja sama dengan anggota keluarga dan teman-teman; memahami iman di tengah masyarakat melalui kebiasaan hidup rukun dengan tetangga dan bergotong royong merawat lingkungan."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "21-22",
+          "summary": "Pada akhir Fase B, murid memahami keunikan dirinya yang dianugerahi kemampuan untuk bertumbuh dan berkembang bersama orang lain dan lingkungan sekitar; bersyukur dan bersedia mengembangkan kemampuan diri menurut teladan Yesus Kristus dan tokoh-tokoh Kitab Suci sesuai tradisi gereja; dan mewujudkan iman di masyarakat melalui sikap dan perilaku yang baik.",
+          "outcomes": [
+            {"element": "Pribadi murid", "sub_element": null, "text": "Murid memahami dirinya sebagai pribadi yang tumbuh dan berkembang, mewujudkan iman dengan cara melakukan perbuatan baik; memahami diri sebagai pribadi yang unik, bersyukur dan bersedia mengembangkan keunikan diri bersama orang lain dan lingkungan sekitar."},
+            {"element": "Yesus Kristus", "sub_element": null, "text": "Murid memahami karya keselamatan Allah melalui tokoh-tokoh Yusuf, Musa, dan Yosua; memahami Sepuluh Perintah Allah sebagai pedoman hidup; memahami bangsa Israel memasuki tanah terjanji, Allah memberkati pemimpin Israel (Samuel, Saul, dan Daud); memahami Yesus sebagai pemenuhan janji Allah yang mewartakan Kerajaan Allah melalui perkataan, perbuatan, dan mukjizat."},
+            {"element": "Gereja", "sub_element": null, "text": "Murid memahami Sakramen Baptis, Sakramen Ekaristi, dan Sakramen Tobat; mengungkapkan rasa syukur dalam doa pribadi dan doa bersama, mewujudkan makna doa melalui sikap dan tindakan dalam kehidupan sehari-hari."},
+            {"element": "Masyarakat", "sub_element": null, "text": "Murid mewujudkan imannya di tengah masyarakat melalui kebiasaan menghormati pemimpin masyarakat, menghargai tradisi masyarakat, melestarikan lingkungan alam; mewujudkan rasa hormat terhadap orang tua, menghormati hidup pribadi, menghormati milik orang lain."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "22-23",
+          "summary": "Pada akhir Fase C, murid memahami dirinya sebagai citra Allah, sebagai laki-laki atau perempuan; bersyukur dengan melibatkan diri dalam kehidupan menggereja; mewujudkan iman dalam kehidupan bermasyarakat dengan menunjukkan rasa bangga sebagai warga negara Indonesia; menjunjung tinggi hati nurani; dan membangun semangat moderasi beragama sesuai teladan Yesus Kristus dan ajaran Gereja.",
+          "outcomes": [
+            {"element": "Pribadi murid", "sub_element": null, "text": "Murid memahami diri sebagai perempuan atau laki-laki sebagai citra Allah yang sederajat dan saling melengkapi; memahami hak dan kewajiban dirinya sebagai warga negara dan bangga sebagai bangsa Indonesia; memahami diri sebagai warga dunia."},
+            {"element": "Yesus Kristus", "sub_element": null, "text": "Murid memahami perjuangan tokoh-tokoh Kitab Suci: Daud sebagai pemimpin yang tangguh; Salomo yang bijaksana, dan Ester perempuan pemberani, serta tokoh Maria dan Elisabet yang setia dan berserah kepada Allah; meneladani Yesus yang taat kepada Allah; mengajarkan pengampunan, memanggil orang berdosa; menderita, wafat, dan bangkit; mengutus Roh Kudus untuk menguatkan para rasul, dan orang yang beriman kepada-Nya; memahami perjuangan Nabi Elia yang menobatkan bangsa Israel; Nabi Amos sebagai pejuang keadilan; dan Nabi Yesaya yang me-nubuat-kan kedatangan Juru Selamat; memahami Yesus yang mewartakan kerajaan Allah dengan perkataan dan perbuatan."},
+            {"element": "Gereja", "sub_element": null, "text": "Murid mewujudkan iman dalam kehidupan sehari-hari, melibatkan diri dalam kehidupan menggereja, sebagai wujud kehidupan bersama yang dijiwai oleh Roh Kudus; memahami gereja yang satu, kudus, katolik, dan apostolik; persekutuan para kudus; pengampunan dosa, kebangkitan badan dan kehidupan kekal."},
+            {"element": "Masyarakat", "sub_element": null, "text": "Murid memahami pentingnya terlibat aktif dalam pelestarian lingkungan, bersikap jujur, bertindak menurut hati nurani, menegakkan keadilan dalam hidup sehari-hari sebagai orang beriman Kristiani, melakukan dialog antarumat beragama."}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "hindu",
+      "subject_name": "Pendidikan Agama Hindu dan Budi Pekerti",
+      "decree_section": "1.4",
+      "pages": "25-30",
+      "elements": [
+        {"name": "Kitab Suci Weda"},
+        {"name": "Śraddhā dan Bhākti"},
+        {"name": "Susila"},
+        {"name": "Acara"},
+        {"name": "Sejarah Agama Hindu"}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "29",
+          "summary": null,
+          "outcomes": [
+            {"element": "Kitab Suci Weda", "sub_element": null, "text": "Mengenali Kitab Rāmāyaṇa dan Kitab Mahābhārata."},
+            {"element": "Śraddhā dan Bhākti", "sub_element": null, "text": "Memahami Hyang Widhi Wasa sebagai pencipta dan sumber hidup."},
+            {"element": "Susila", "sub_element": null, "text": "Mengenali Subha Karma dan Asubha Karma, serta Tri Kaya Parisudha."},
+            {"element": "Acara", "sub_element": null, "text": "Mengenali Dainika Upasana dan sarana persembahyangan."},
+            {"element": "Sejarah Agama Hindu", "sub_element": null, "text": "Mengenali Kerajaan-kerajaan Hindu di Indonesia."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "29",
+          "summary": null,
+          "outcomes": [
+            {"element": "Kitab Suci Weda", "sub_element": null, "text": "Mengenali Kitab Purāṇa"},
+            {"element": "Śraddhā dan Bhākti", "sub_element": null, "text": "Memahami Hyang Widhi Wasa sebagai Tri Murti dan Cadu Sakti."},
+            {"element": "Susila", "sub_element": null, "text": "Menerapkan Ajaran Tri Parartha dan Catur Paramitha."},
+            {"element": "Acara", "sub_element": null, "text": "Mengenali Hari Suci dan Tempat Suci Agama Hindu sesuai kearifan lokal."},
+            {"element": "Sejarah Agama Hindu", "sub_element": null, "text": "Mengenali Tokoh Penyebar Agama Hindu di Indonesia."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "29",
+          "summary": null,
+          "outcomes": [
+            {"element": "Kitab Suci Weda", "sub_element": null, "text": "Memahami Kitab Weda Śruti dan Kitab Weda Smṛti."},
+            {"element": "Śraddhā dan Bhākti", "sub_element": null, "text": "Memahami Bhuana Agung dan Bhuana Alit."},
+            {"element": "Susila", "sub_element": null, "text": "Menerapkan ajaran Catur Guru dan Catur Asrama."},
+            {"element": "Acara", "sub_element": null, "text": "Menjelaskan Pañca Yajña dan Manggalaning Yajña."},
+            {"element": "Sejarah Agama Hindu", "sub_element": null, "text": "Menceritakan Sejarah Perkembangan Agama Hindu di Indonesia."}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "buddha",
+      "subject_name": "Pendidikan Agama Buddha dan Budi Pekerti",
+      "decree_section": "1.5",
+      "pages": "30-38",
+      "elements": [
+        {"name": "Sejarah"},
+        {"name": "Ritual"},
+        {"name": "Etika"}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "34-35",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah", "sub_element": null, "text": "Memadukan pemahaman identitas diri dan keluarga dengan apresiasi terhadap keragaman identitas dan budaya teman-teman di lingkungan rumah, sekolah, dan rumah ibadah untuk meninjau dan menulis ulang paradigma pluralisme yang inklusif dan harmonis dalam perbedaan identitas dan budaya teman-temannya di lingkungan rumah, sekolah, dan rumah ibadah. Merefleksikan sifat-sifat kehidupan para bodhisattva, para Buddha, murid Buddha, dan tokoh buddhis inspiratif untuk menghasilkan pola pikir dan perilaku dalam menyayangi diri sendiri melalui pemeliharaan kesehatan fisik dan batin yang holistik, serta menemukan budaya komunikasi yang hormat dan bijaksana di lingkungannya berdasarkan kebijaksanaan dari kisah jataka yang dapat diterapkan dalam konteks kehidupan kontemporer."},
+            {"element": "Ritual", "sub_element": null, "text": "Menyimpulkan identitas agama Buddha dengan keberadaan beragam identitas agama dan kepercayaan lain dalam konteks kelompok sosialnya. Meninjau dan menulis ulang makna simbol-simbol keagamaan Buddha dengan simbol agama dan kepercayaan lain yang ditemui di lingkungan rumah dan sekolahnya, sehingga dapat membangun pemahaman tentang keragaman."},
+            {"element": "Etika", "sub_element": null, "text": "Memadukan praktik aturan dan sopan santun dengan prinsip-prinsip pergaulan yang harmonis di lingkungan rumah, sekolah, dan tempat ibadah. Merefleksikan proses musyawarah sederhana untuk mufakat di lingkungan sekolah dengan nilai-nilai empat sifat luhur, hukum karma, dan Pancasila dasar negara, guna merefleksikan perilaku moderat yang mendukung kehidupan bersama."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "35-36",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah", "sub_element": null, "text": "Menganalisis identitas Buddha Sakyamuni, sebagai dasar keyakinan terhadap Agama Buddha. Mengevaluasi dengan membandingkan secara hormat budaya dan bahasa dalam agama Buddha serta memiliki keterbukaan untuk menghargai perbedaan identitas dan budaya orang lain di lingkungan tempat tinggalnya. Mengadaptasi keteladanan Buddha Sakyamuni dalam menghargai sesama manusia untuk mengkreasi strategi inovatif dalam menyelesaikan masalah pergaulan di lingkungan terdekatnya, lingkungan sekolah dan rumah ibadah."},
+            {"element": "Ritual", "sub_element": null, "text": "Mengklasifikasi doa Buddhis dalam kegiatan sehari-hari menganalisis keterkaitan mendasar dengan keyakinan kepada Ketuhanan Yang Maha Esa dan Triratna. Mengevaluasi identitas masing-masing aliran atau tradisi dalam agama Buddha dengan membandingkan keunikan dan persamaan nilai-nilainya, dan mensintesis pemahaman satu kesatuan untuk mengkreasi model praktis bersatu dalam perbedaan yang dapat diimplementasikan dalam komunitas yang beragam."},
+            {"element": "Etika", "sub_element": null, "text": "Merefleksikan nilai-nilai Pancasila Buddhis dengan menganalisis keterkaitan fundamental berlandaskan pada nilai-nilai Hukum Sebab Akibat yang Saling Bergantungan untuk mengintegrasikan prinsip-prinsip tersebut dalam melaksanakan aturan dan sopan santun secara konsisten dan bermakna. Mengevaluasi efektivitas implementasi kesempurnaan (pāramī), sikap tolong menolong antarsesama kemudian mensintesis pendekatan holistik untuk menyelesaikan masalah sosial, kebersihan, dan kelestarian lingkungan secara musyawarah mufakat di rumah, sekolah, dan rumah ibadah yang mengkreasi model kehidupan moderat dan ramah anak di rumah, sekolah, dan rumah ibadah sebagai manifestasi autentik keyakinan terhadap agama Buddha."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "36",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah", "sub_element": null, "text": "Menganalisis strategi Buddha Sakyamuni dalam menghadapi hambatan untuk meraih kesuksesan dan mengadaptasi pendekatan tersebut untuk mengatasi tantangan personal mereka. Mengevaluasi efektivitas cara Buddha Sakyamuni menyelesaikan masalah kehidupan individu dan sosial, kemudian mengkreasi solusi inovatif berdasarkan kebijaksanaan tersebut untuk konteks modern. Mengintegrasikan konsep dasar musyawarah mufakat dalam kehidupan Buddha Sakyamuni dengan mensintesis prinsip tersebut dalam praktik pengambilan keputusan demokratis di lingkungan keluarga, sekolah, dan masyarakat."},
+            {"element": "Ritual", "sub_element": null, "text": "Menganalisis keragaman upacara puja dan meditasi ketenangan dari berbagai aliran atau tradisi agama Buddha. Merefleksikan sikap bersatu dalam perbedaan dengan berperan serta melakukan dialog moderasi beragama."},
+            {"element": "Etika", "sub_element": null, "text": "Menganalisis nilai-nilai Buddhadharma, Pancasila Buddhis, dan nilai-nilai Pancasila dasar negara berlandaskan pada nilai-nilai Hukum Sebab Akibat yang Saling Bergantungan. Menerapkan hak dan kewajiban, permasalahan dan solusinya di rumah, sekolah, dan rumah ibadah sebagai dasar keyakinan terhadap agama Buddha, melalui pembelajaran ramah anak serta mencerminkan kehidupan yang moderat."}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "khonghucu",
+      "subject_name": "Pendidikan Agama Khonghucu dan Budi Pekerti",
+      "decree_section": "1.6",
+      "pages": "38-44",
+      "elements": [
+        {"name": "Sejarah Suci"},
+        {"name": "Kitab Suci"},
+        {"name": "Keimanan"},
+        {"name": "Tata Ibadah"},
+        {"name": "Perilaku Jūnzǐ (君子)"}
+      ],
+      "phases": [
+        {
+          "phase": "A",
+          "grades": [1, 2],
+          "pages": "40-41",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah Suci", "sub_element": null, "text": "Menjelaskan riwayat dan keluarga Nabi Kǒngzǐ (孔子); menginterpretasikan Kisah Keteladanan Anak Berbakti."},
+            {"element": "Kitab Suci", "sub_element": null, "text": "Menjelaskan ayat-ayat suci yang terdapat dalam kitab Bakti (Xiàojīng 孝经), Sìshū (四书) dan Wǔjīng (五经) yang berkaitan dengan kisah anak berbakti dan keteladanan Nabi Kǒngzǐ (孔)."},
+            {"element": "Keimanan", "sub_element": null, "text": "Menjelaskan konsep Tiān (天) dalam agama Khonghucu bahwa manusia diciptakan Tiān (天) melalui kedua orang tua; menginterpretasikan peran keberadaan leluhur dalam kehidupan manusia serta Nabi Kǒngzǐ (孔子) sebagai genta rohani Tiān (天), Tiān Zhī Mùduó (天之木铎)."},
+            {"element": "Tata Ibadah", "sub_element": null, "text": "Menerapkan sikap dalam berdoa dan menghormat, sembahyang kepada Tiān (天), Nabi Kǒngzǐ (孔子), dan leluhur serta perlengkapan sembahyang di altar."},
+            {"element": "Perilaku Jūnzǐ (君子)", "sub_element": null, "text": "Menerapkan sikap bakti dan hormat kepada orang tua sebagai wujud hormat kepada Tiān (天), pembiasaan berdoa sebelum maupun sesudah beraktivitas, dan sikap toleransi dengan teman, serta sikap tanggung jawab terhadap kebutuhan diri sendiri."}
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [3, 4],
+          "pages": "41-42",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah Suci", "sub_element": null, "text": "Menjelaskan tentang watak sejati (xìng 性) menurut pendapat Mèngzǐ (孟子), Zhū Xī (朱熹) sebagai tokoh pembaharuan agama Khonghucu (Rújiào 儒教), keteladanan ibunda Nabi Kǒngzǐ (孔子), ibunda Mèngzǐ (孟子), ibunda Ōuyáng Xiū (欧阳修), dan ibunda Yuè Fēi (岳飛); menginterpretasikan sikap teladan dari murid-murid Nabi Kǒngzǐ (孔子), riwayat Nabi Kǒngzǐ (孔子) sebagai Genta Rohani Tiān (天) (Tiān Zhī Mùduó 天之木铎),"},
+            {"element": "Kitab Suci", "sub_element": null, "text": "Menjelaskan bagian-bagian kitab suci yang pokok (Sìshū 四书) dan yang mendasari (Wǔjīng 五经), ayat dalam kitab Sìshū (四书) yang berkaitan dengan delapan kebajikan (bādé 八德); menginterpretasikan tiga kesukaan yang membawa faedah dan tiga kesukaan yang membawa celaka."},
+            {"element": "Keimanan", "sub_element": null, "text": "Menjelaskan makna persembahyangan kepada Tiān (天), Nabi Kǒngzǐ (孔子), para suci (shénmíng 神明) dan leluhur, tanda-tanda khusus menjelang wafat Nabi Kǒngzǐ (孔子); menginterpretasikan cita-cita mulia dan semangat belajar Nabi Kǒngzǐ (孔子); menerapkan nilai-nilai delapan keimanan (bāchéngzhēnguī 八诚箴规)."},
+            {"element": "Tata Ibadah", "sub_element": null, "text": "Menjelaskan peralatan dan perlengkapan sembahyang, penataan altar leluhur; menerapkan sikap berdoa (bào xīn bādé 抱心八德), tata cara pelaksanaan ibadah kepada Tiān (天), Nabi Kǒngzǐ (孔子), para suci (shénmíng 神明) dan leluhur di kelenteng/klenteng/bio/miào (庙) dan lǐtáng (礼堂)."},
+            {"element": "Perilaku Jūnzǐ (君子)", "sub_element": null, "text": "Menerapkan sikap dan perilaku luhur Nabi Kǒngzǐ (孔子), teladan murid-murid Nabi Kǒngzǐ (孔子), menghargai waktu, berhati-hati, saling mengasihi sesama manusia, perilaku sesuai dengan delapan kebajikan (bādé 八德), mudah bergaul tanpa membeda-bedakan, berani mengakui kesalahan dan memperbaiki diri."}
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [5, 6],
+          "pages": "42",
+          "summary": null,
+          "outcomes": [
+            {"element": "Sejarah Suci", "sub_element": null, "text": "Menjelaskan wahyu Tiān (天) yang diterima oleh para nabi dan raja suci, tokoh-tokoh Rújiào (儒教) serta sumbangsih pemikirannya, sejarah perkembangan agama Khonghucu di Indonesia."},
+            {"element": "Kitab Suci", "sub_element": null, "text": "Menginterpretasikan ayat-ayat dalam kitab Sìshū (四书) dan Wǔjīng (五经) tentang Nabi Kǒngzǐ (孔子) sebagai Tiān Zhī Mùduó (天之木铎), persaudaraan dalam pergaulan, rasa cinta tanah air, empat pantangan sìwù (四勿), dan yang berhubungan dengan konsep sāncái (三才)."},
+            {"element": "Keimanan", "sub_element": null, "text": "Menginterpretasikan bahwa sembahyang adalah pokok dari agama, definisi iman, hukum yīnyáng (阴阳) sebagai dasar hukum alam semesta, konsep Tiga Dasar Kenyataan (sāncái 三才)."},
+            {"element": "Tata Ibadah", "sub_element": null, "text": "Menginterpretasikan hari raya/sembahyang kepada Tiān (天), Nabi Kǒngzǐ (孔子), shénmíng (神明), dan leluhur sebagai wujud kesusilaan (lǐ 礼); menjelaskan perlengkapan dan peralatan sembahyang sehingga menumbuhkan keimanan dan kepribadian luhur."},
+            {"element": "Perilaku Jūnzǐ (君子)", "sub_element": null, "text": "Menerapkan sikap cinta kasih kepada seluruh makhluk ciptaan Tiān (天), cinta tanah air, hidup tepasalira dan harmonis kepada sesama, bakti kepada Tiāndìrén (天地人), prinsip empat pantangan (sìwù 四勿) dan lima hubungan kemasyarakatan (wǔlún 五伦) dalam keseharian."}
+          ]
+        }
+      ]
+    }
+  ]
+}

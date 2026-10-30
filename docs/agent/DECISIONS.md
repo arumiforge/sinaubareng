@@ -172,3 +172,18 @@ Reason: owner's description of SD staffing.
 Accepted · 2026-10-30
 Added where templates need them: three.js (figures), KaTeX (math), ApexCharts (charts), an Arabic font. All pinned and bundled, no CDN. No slide/presentation feature and no presentation library.
 Reason: owner allowed powerful libraries when needed, and declined the "Bahan Tayang" feature.
+
+### D-034 — SD religion subjects: six religions in v1
+Accepted · 2026-10-30
+SD offers Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, and Khonghucu as separate subjects. The CP source is Kepka BKPDM No. 020 Tahun 2026, Lampiran I. It was transcribed from the scanned copy, because no text version exists, and must be verified before import. PAI keeps its KM-SD-2026-R2 data, which already follows 020/2026. For the other five religions the team builds topics, TP, ATP, fokus, and JP from the CP: AI-assisted drafts, reviewed by a teacher of that religion. Allocation is 3 JP per week, as for PAI.
+Reason: owner's choice; official decree supplied by the owner.
+
+### D-035 — MI uses the Kemenag PAI subjects and Bahasa Arab
+Accepted · 2026-10-30
+MI teaches Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam (grades 3–6), and Bahasa Arab instead of one PAI subject. CP comes from SK Dirjen Pendis No. 9941 Tahun 2025, the latest found. The structure and JP come from KMA 450/2024 as amended by KMA 1503/2025, and the official copy is still needed. The team builds topics, TP, ATP, fokus, and JP for these subjects.
+Reason: owner's choice; the latest official documents found on 2026-10-30.
+
+### D-036 — Student religion is sensitive data
+Accepted · 2026-10-30
+`students.religion` exists only to group religion classes. It is visible to the class's teachers, the operator, and the principal. It is hidden from supervisors, never sent to the AI, and never shown on the exam site.
+Reason: religious belief is sensitive personal data. This follows the privacy rules in D-023.
