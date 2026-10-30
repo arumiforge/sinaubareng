@@ -273,4 +273,5 @@ These are added only where a template needs them (D-033). Every library is pinne
 There is no presentation library: a slide feature is not planned (D-033). AI-generated images are not used.
 
 ## Open questions
+
 - [ ] Exact step split for the RPM template, to be tuned against real output sizes.
