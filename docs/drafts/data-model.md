@@ -1,0 +1,150 @@
+# Data Model (draft)
+
+- **Status:** draft (owner review)
+- **Task:** P1-05
+- **Last updated:** 2026-10-30
+- **Sources:** [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
+
+## Purpose
+
+This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDUNEXA developer notes to fit the new concept: students are records, content comes from templates, and teachers own several AI keys. It sets entity boundaries, keys, invariants, and ownership. It is **not** a migration spec: each table gets its own schema review when its migration is written.
+
+## Conventions
+
+| Topic | Rule |
+|---|---|
+| Names | English, plural snake_case tables, singular StudlyCase models (repo convention) |
+| Keys | `bigint` auto-increment primary keys for internal joins. Rows exposed in URLs (documents, generations, invitations, students) also get a `public_id` UUIDv7 (Laravel `HasUuids`), so counts are not leaked and ids cannot be enumerated |
+| Foreign keys | Always declared, always indexed, with an explicit `ON DELETE` choice |
+| Nullability | `NOT NULL` by default. `NULL` only where absence has a distinct meaning, stated in this doc |
+| Fixed sets | `varchar` + `CHECK (col IN (…))` (MySQL ≥ 8.0.16 enforces CHECK), mirrored by a PHP backed enum |
+| Time | `timestamp` stored in UTC. Display in `Asia/Jakarta` (repo convention). Dates without time use `date` |
+| Money | Integer rupiah (`bigint`), no floats |
+| Deletion | No soft deletes. Hard delete after a confirmation that names the item. Lifecycle is modelled as an explicit `status` where a row stays visible but inactive |
+| JSON | Only for content whose shape a template's JSON Schema defines (`documents.content`, `generations.specification`, step outputs) and for imported reference blobs. Never as a home for queryable fields |
+
+## Tenancy and access
+
+- Every school-owned table has `school_id NOT NULL`, indexed, and composite indexes start with it.
+- MySQL has no row-level security, so the scope is enforced in the app in a **fail-closed** way:
+  - A `BelongsToSchool` trait adds a global scope from the current membership by default. Bypassing it is explicit (`withoutSchoolScope()`) and allowed only in the internal console and in jobs that name the school.
+  - Every controller action is authorized through policies.
+  - Feature tests assert that school A's user can never read school B's rows (an IDOR/BOLA test per resource).
+- Supervisors read across their assigned schools through `supervisor_assignments` with read-only policies. They see **no student-level rows**.
+- Student data (records, attendance, notes, scores) is readable only by the class's teachers, the operator, and the principal (rule from the developer notes). Counselling (BK) notes are visible only to the author, the homeroom teacher, and the principal.
+
+## Accounts and schools
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `regions` | `province`, `regency` | Unique (`province`, `regency`). Holds the defaults for local content and the calendar (D-018) |
+| `schools` | `name`, `npsn` (unique, nullable until verified), `level` ∈ {`sd`,`mi`}, `region_id` FK RESTRICT, address | One school, one tenant |
+| `users` | `name`, `email` (unique), `password`, `nip` nullable (non-civil-servant teachers have none) | School users only: teachers, principals, operators, supervisors. **No role column.** Roles come from memberships. **No student users** (D-010) |
+| `school_memberships` | `school_id` FK CASCADE, `user_id` FK CASCADE, `role` ∈ {`principal`,`operator`,`teacher`}, `status` ∈ {`active`,`ended`}, `started_on`, `ended_on` nullable | Unique (`school_id`, `user_id`, `role`). One user can hold several roles. One active principal per school (checked in the service and by a unique index on a generated column `active_principal_school_id`) |
+| `supervisor_assignments` | `user_id` FK, `school_id` FK, `started_on`, `ended_on` nullable | Read-only scope for pengawas/korwil |
+| `invitations` | `public_id`, `school_id`, `email`, `role`, `token_hash` (unique), `expires_at`, `accepted_at` nullable, `invited_by` FK users | The only way into a school. No shared default passwords |
+| `staff_users` | `name`, `email`, `password`, `role` ∈ {`admin`,`support`,`content`} | Internal Tim SIGRAK accounts for the Filament console, on a **separate guard and table**, so a school account can never become staff |
+| `school_transfer_requests` | `user_id`, `from_school_id`, `to_school_id`, `status`, `decided_by` nullable | "Pindah Sekolah", approved by the target school |
+
+## School year, classes, students
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `academic_years` | `school_id`, `name` (e.g. `2026/2027`), `starts_on`, `ends_on`, `even_semester_starts_on` | CHECK `starts_on < even_semester_starts_on < ends_on`. Default start 1 July |
+| `classes` | `school_id`, `academic_year_id` FK, `grade` 1–6 (CHECK), `name` (e.g. `4A`), `homeroom_teacher_id` FK users nullable (not assigned yet) | Unique (`academic_year_id`, `name`) |
+| `teaching_assignments` | `school_id`, `class_id` FK CASCADE, `subject_id` FK, `teacher_id` FK users | Unique (`class_id`, `subject_id`). The homeroom teacher covers every subject not assigned to a subject teacher |
+| `students` | `public_id`, `school_id`, `name`, `nisn` nullable (not every student has one), `gender` ∈ {`l`,`p`}, `birth_date` nullable | **A record, never an account** |
+| `enrollments` | `student_id` FK CASCADE, `class_id` FK RESTRICT, `status` ∈ {`active`,`moved`,`left`,`graduated`}, `ended_on` nullable | One active enrollment per student per academic year. Covers transfers ("Pindah atau keluar") and promotion ("Kenaikan") |
+
+## Curriculum
+
+Curriculum is split into **global, versioned defaults** and **per-school changes**, so a school can use the defaults, adjust them, or add its own without breaking shared data.
+
+| Table | Key columns | Source field (KM-SD-2026-R2) |
+|---|---|---|
+| `curriculum_versions` | `code` (unique, e.g. `KM-SD-2026-R2`), `status` ∈ {`draft`,`active`,`retired`} | `Versi_Kurikulum`, `Status_Versi` |
+| `subjects` | `code` (e.g. `PP`), `name`, `kind` ∈ {`compulsory`,`local_content`,`cocurricular`} | `Mata Pelajaran`, `Status_Mapel` |
+| `subject_allocations` | `curriculum_version_id`, `subject_id`, `grade`, `phase` ∈ {A,B,C}, `learning_type` ∈ {`intracurricular`,`cocurricular`}, `jp_per_week`, `weeks_per_year`, `s1_jp`, `s1_effective_weeks`, `s2_jp`, `s2_effective_weeks` | `struktur_alokasi_sd.json` → `alokasi[]`, `kokurikuler_default[]` |
+| `topics` (materi pokok / ATP) | `curriculum_version_id`, `code` (unique, `ID_Kurikulum`), `legacy_codes` JSON, `subject_id`, `grade`, `phase`, `semester` ∈ {1,2}, `elements`, `title`, `cp_text`, `atp_code`, `order_in_semester`, `jp_total`, `jp_per_week`, `week_start`, `week_end`, `weekly_distribution` JSON, `references` JSON, `audit` JSON, `extras` JSON (art branch, science process skills) | One row of `data_kurikulum_dengan_cp.json`. JSON-string columns parsed on import |
+| `focus_items` (fokus materi) | `topic_id` FK CASCADE, `code` (unique, `FM-…`), `order`, `title`, `estimated_jp`, `allocation_status` | `Data_Fokus`. The duplicate `Fokus_Materi` is dropped |
+| `learning_objectives` (TP) | `topic_id` FK CASCADE, `code` (unique, `TP-…`), `order`, `text` | `Data_Tujuan` |
+| `focus_item_objectives` | `focus_item_id`, `learning_objective_id` | **New link** (finding 3 in the mapping doc). Empty at import, filled by a data task. Needed for per-TP analysis at fokus level |
+| `region_subjects` | `region_id`, `subject_id`, `allocation` | Default local content per region, e.g. Bahasa Jawa for Kudus |
+| `school_subjects` | `school_id`, `subject_id`, `enabled` | A school turns local content on or off |
+| `school_topic_changes` | `school_id`, `base_topic_id` FK nullable (**NULL = new topic added by the school**), `payload` JSON (same shape as a topic), `status` ∈ {`draft`,`submitted`,`returned`,`principal_approved`,`approved`}, `submitted_by` | Validation flow guru → kepala sekolah → pengawas (D-019) |
+| `curriculum_validations` | `school_topic_change_id`, `reviewer_id`, `level` ∈ {`principal`,`supervisor`}, `decision` ∈ {`approved`,`returned`}, `note` | Append-only. Every return carries a note for the teacher |
+
+**Import.** `php artisan curriculum:import <file>` loads `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json`. It is idempotent by `code`, keeps `Legacy_ID` aliases in `legacy_codes`, and reports any data mismatches. Only curriculum data is imported from EDUNEXA (D-020).
+
+**Known data issues to carry over** (from the mapping doc, still open):
+
+| Issue | Action |
+|---|---|
+| Matematika grade 4 semester 2 = 80 JP, target 90 | Data fix task with the curriculum owner |
+| Keterampilan Tata Boga (grades 3–6) has no allocation target | Add a target or mark it school-optional |
+| Bahasa Inggris grades 1–2 must stay cocurricular | `learning_type = cocurricular` |
+| TP linked only to topic, not to fokus | `focus_item_objectives` + data task |
+| Curriculum existed both in static JSON and in Firestore | The SQL tables are the single source; versions change only through `curriculum_versions` |
+
+## Calendar, timetable, meetings
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `calendars` | `region_id` nullable / `school_id` nullable, `academic_year` | Exactly one owner: CHECK (`region_id` IS NULL) <> (`school_id` IS NULL). Region calendars are defaults that a school calendar overrides |
+| `calendar_events` | `calendar_id` FK CASCADE, `starts_on`, `ends_on`, `kind` ∈ {`holiday`,`exam`,`school_event`,`no_lessons`}, `title` | CHECK `starts_on <= ends_on` |
+| `timetable_slots` | `school_id`, `class_id`, `weekday` 1–6, `period_no`, `starts_at`, `ends_at`, `subject_id`, `teacher_id`, `jp` | Unique (`class_id`, `weekday`, `period_no`). 1 JP = 35 minutes for SD |
+| `meetings` | `school_id`, `document_id` FK CASCADE (the RPM), `number`, `focus_item_id`, `jp`, `minutes`, `planned_on` nullable (NULL for "RPM lepas jadwal"), `status` ∈ {`planned`,`done`,`not_done`} | Unique (`document_id`, `number`). A `not_done` meeting shifts later meetings to the next slot (EDUNEXA scheduler behaviour). The last 3 schedule versions are kept in `meeting_schedule_history` |
+
+## Content
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `templates` | `key` (unique), `category` ∈ {`document`,`game`}, `is_active`, `sort_order`, `current_version` | Registry only. The definition lives in code (D-013). `guided` = Buat bebas |
+| `template_versions` | `template_key` FK, `version`, `code_ref` (git tag/sha), `prompt_override` text nullable (NULL = code baseline), `created_by_staff_id` nullable, `first_used_at` nullable | Unique (`template_key`, `version`). **Immutable once `first_used_at` is set** (enforced in `TemplateVersionManager` and the Filament form) |
+| `generations` | `public_id`, `school_id`, `user_id`, `template_key`, `template_version`, `kind` ∈ {`create`,`section_revision`}, `document_id` nullable (set for revisions, or once saved), `client_token`, `specification` JSON, `status` ∈ {`queued`,`running`,`succeeded`,`failed`,`cancelled`}, `pinned_credential_id` FK SET NULL, `error_class` nullable, `started_at`, `finished_at` | Unique (`user_id`, `client_token`) blocks double submits. FK (`template_key`, `template_version`) → `template_versions` |
+| `generation_steps` | `generation_id` FK CASCADE, `step_key`, `position`, `status` ∈ {`pending`,`running`,`succeeded`,`failed`}, `attempts`, `output` JSON nullable (NULL until accepted) | Unique (`generation_id`, `step_key`). The output is written once, by compare-and-set on `status` |
+| `documents` | `public_id`, `school_id`, `owner_id` FK users, `template_key`, `template_version`, `title`, `grade`, `subject_id` nullable, `topic_id` nullable (Buat bebas may have neither), `content` JSON, `status` ∈ {`draft`,`final`}, `source_generation_id` FK SET NULL | "Dokumen Saya". `content` is validated against the template's output schema plus merged data fields |
+| `document_revisions` | `document_id` FK CASCADE, `content` JSON, `reason` ∈ {`manual_save`,`ai_section_revision`}, `created_by` | Last 10 kept per document, older ones pruned |
+| `document_comments` | `document_id` FK CASCADE, `author_id`, `body`, `created_at` | Principal and supervisor comments (D-019) |
+| `document_exports` | `document_id` FK CASCADE, `format` ∈ {`pdf`,`docx`,`xlsx`,`html`}, `template_version`, `content_hash`, `path`, `status` | Cache. Rebuilt when `content_hash` or print settings change |
+| `template_feature_requests` | `user_id`, `template_key`, `body`, `status` ∈ {`new`,`planned`,`declined`,`done`} | "Usulkan fitur" (D-015) |
+
+Bank Soal items stay inside the document's `content` (one source for rendering). When an assessment uses a Bank Soal document, its items are **copied** into `assessment_items`, a frozen snapshot with `kode_tp` for scoring and per-TP analysis.
+
+## AI
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `ai_credentials` | `user_id` FK CASCADE, `label`, `project_label`, `account_label` nullable, `secret` (encrypted cast), `secret_last4`, `secret_fingerprint`, `status` ∈ {`active`,`invalid`,`disabled`}, `invalid_reason` nullable, `consecutive_failures`, `circuit_open_until` nullable, `last_success_at` nullable, `last_tested_at` | Unique (`user_id`, `secret_fingerprint`). Owner-only use. Max per user in config. **No `school_id`**: keys belong to the teacher (D-012) |
+| `ai_credential_cooldowns` | `ai_credential_id` FK CASCADE, `model`, `until`, `reason` ∈ {`rate_minute`,`rate_daily`} | Unique (`ai_credential_id`, `model`). Mirror of the Redis cooldowns for the UI |
+| `ai_usage_logs` | `user_id`, `school_id` nullable (NULL for a supervisor with no school), `ai_credential_id` FK SET NULL, `generation_id` FK SET NULL, `step_key`, `attempt`, `purpose`, `model`, `outcome` (success or error class), `http_status` nullable, `input_tokens`, `output_tokens`, `latency_ms`, `created_at` | Append-only. Index (`user_id`, `created_at`), (`school_id`, `created_at`). No key, no prompt text |
+
+## Administration (kept from EDUNEXA, modelled relationally)
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `journals` | `school_id`, `class_id`, `subject_id`, `teacher_id`, `meeting_id` nullable (journal without an RPM), `date`, `status` ∈ {`done`,`not_done`}, `notes`, `client_uuid` | Unique `client_uuid` (idempotent offline sync) |
+| `attendance_records` | `school_id`, `class_id`, `student_id`, `date`, `status` ∈ {`present`,`sick`,`permitted`,`absent`}, `recorded_by`, `recorded_at_device`, `client_uuid` | Unique `client_uuid`. Uniqueness per student per day or per lesson depends on the granularity question below |
+| `student_notes` | `school_id`, `student_id`, `class_id`, `author_id`, `kind` ∈ {`anecdotal`,`counselling`,`achievement`}, `body`, `client_uuid` | Counselling visibility is restricted (see Tenancy) |
+| `assessment_plans` | `school_id`, `class_id`, `subject_id`, `semester`, components | "Rencana Penilaian" |
+| `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp`, `source_document_id` FK SET NULL | |
+| `assessment_items` | `assessment_id` FK CASCADE, `number`, `type`, `kode_tp`, `cognitive_level`, `max_score`, `answer_key` nullable (essays have none) | Frozen snapshot of Bank Soal items |
+| `scores` | `assessment_item_id` FK CASCADE, `student_id`, `score` decimal(5,2) | Unique (`assessment_item_id`, `student_id`). CHECK 0 ≤ score ≤ max (in the service; max lives on the item) |
+| `report_descriptions` | `school_id`, `student_id`, `subject_id`, `semester`, `draft`, `final` nullable (not approved yet) | AI draft from per-TP scores; the teacher edits before use |
+| `class_finance_entries` | `school_id`, `class_id`, `kind` ∈ {`income`,`expense`}, `amount` bigint rupiah CHECK > 0, `occurred_on`, `note`, `recorded_by` | Feature can be switched off per school |
+| `class_inventory_items`, `duty_rosters` | Class-scoped | |
+| `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (guest, public relations, minutes), `school_programs`, `agendas` | `school_id` | Portal features |
+| `school_print_settings` | `school_id` (unique), letterhead, logo path, signers, `paper` ∈ {`a4`,`f4`}, margins, `font` | Per-school print settings |
+| `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`basic`,`teacher`,`school`,`cluster`}, `academic_year`, `status` | Exactly one owner column set (CHECK). Billing tables come in the billing task |
+
+**Offline sync (Di Kelas, D-016).**
+
+- The device creates rows with `client_uuid` and queues them in IndexedDB. The sync endpoint upserts by `client_uuid`, so a repeated send never duplicates.
+- On conflict the last write wins per row, and the device time is kept in `recorded_at_device` next to the server timestamps.
+
+## Open questions
+
+- [ ] Attendance granularity: once a day (homeroom), or per lesson (EDUNEXA recorded it per meeting, which matters for subject teachers)?
+- [ ] Report card export format required by e-Rapor (columns and file type).
+- [ ] Retention for `ai_usage_logs` and `document_revisions` (proposed: 180 days / last 10).
+- [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?

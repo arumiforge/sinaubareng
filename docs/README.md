@@ -9,5 +9,6 @@
 | `final/` | Approved documents | English |
 | `pdf/` | Generated PDFs of final documents, for developers to read | Indonesian |
 | `templates/` | Templates for tasks and documents | English |
+| `sources/` | Owner-supplied material, kept exactly as received (input only) | As received |
 
 Start with [`agent/CONTEXT.md`](agent/CONTEXT.md) and [`agent/PROGRESS.md`](agent/PROGRESS.md). The process is in [`agent/WORKFLOW.md`](agent/WORKFLOW.md).
