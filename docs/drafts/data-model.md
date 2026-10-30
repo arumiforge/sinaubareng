@@ -99,11 +99,11 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 
 | Table | Key columns | Notes and invariants |
 |---|---|---|
-| `templates` | `key` (unique), `category` ∈ {`document`,`game`}, `is_active`, `sort_order`, `current_version` | Registry only. The definition lives in code (D-013). `guided` = Buat bebas |
+| `templates` | `key` (unique), `category` ∈ {`document`,`game`}, `is_active`, `sort_order`, `current_version` | Registry only. The definition lives in code (D-013). One row per content type: `rpm`, `bank_soal`, `lkpd`, `quiz_battle`, `tka_package` (no generic template, D-024) |
 | `template_versions` | `template_key` FK, `version`, `code_ref` (git tag/sha), `prompt_override` text nullable (NULL = code baseline), `created_by_staff_id` nullable, `first_used_at` nullable | Unique (`template_key`, `version`). **Immutable once `first_used_at` is set** (enforced in `TemplateVersionManager` and the Filament form) |
 | `generations` | `public_id`, `school_id`, `user_id`, `template_key`, `template_version`, `kind` ∈ {`create`,`section_revision`}, `document_id` nullable (set for revisions, or once saved), `client_token`, `specification` JSON, `status` ∈ {`queued`,`running`,`succeeded`,`failed`,`cancelled`}, `pinned_credential_id` FK SET NULL, `error_class` nullable, `started_at`, `finished_at` | Unique (`user_id`, `client_token`) blocks double submits. FK (`template_key`, `template_version`) → `template_versions` |
 | `generation_steps` | `generation_id` FK CASCADE, `step_key`, `position`, `status` ∈ {`pending`,`running`,`succeeded`,`failed`}, `attempts`, `output` JSON nullable (NULL until accepted) | Unique (`generation_id`, `step_key`). The output is written once, by compare-and-set on `status` |
-| `documents` | `public_id`, `school_id`, `owner_id` FK users, `template_key`, `template_version`, `title`, `grade`, `subject_id` nullable, `topic_id` nullable (Buat bebas may have neither), `content` JSON, `status` ∈ {`draft`,`final`}, `source_generation_id` FK SET NULL | "Dokumen Saya". `content` is validated against the template's output schema plus merged data fields |
+| `documents` | `public_id`, `school_id`, `owner_id` FK users, `template_key`, `template_version`, `title`, `grade`, `subject_id` nullable, `topic_id` nullable (TKA packages span many topics), `content` JSON, `status` ∈ {`draft`,`final`}, `source_generation_id` FK SET NULL | "Dokumen Saya". `content` is validated against the template's output schema plus merged data fields |
 | `document_revisions` | `document_id` FK CASCADE, `content` JSON, `reason` ∈ {`manual_save`,`ai_section_revision`}, `created_by` | Last 10 kept per document, older ones pruned |
 | `document_comments` | `document_id` FK CASCADE, `author_id`, `body`, `created_at` | Principal and supervisor comments (D-019) |
 | `document_exports` | `document_id` FK CASCADE, `format` ∈ {`pdf`,`docx`,`xlsx`,`html`}, `template_version`, `content_hash`, `path`, `status` | Cache. Rebuilt when `content_hash` or print settings change |
@@ -115,7 +115,7 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 
 | Table | Key columns | Notes and invariants |
 |---|---|---|
-| `ai_credentials` | `user_id` FK CASCADE, `label`, `project_label`, `account_label` nullable, `secret` (encrypted cast), `secret_last4`, `secret_fingerprint`, `status` ∈ {`active`,`invalid`,`disabled`}, `invalid_reason` nullable, `consecutive_failures`, `circuit_open_until` nullable, `last_success_at` nullable, `last_tested_at` | Unique (`user_id`, `secret_fingerprint`). Owner-only use. Max per user in config. **No `school_id`**: keys belong to the teacher (D-012) |
+| `ai_credentials` | `user_id` FK CASCADE, `label`, `project_label`, `account_label` nullable, `secret` (encrypted cast), `secret_last4`, `secret_fingerprint`, `status` ∈ {`active`,`invalid`,`disabled`}, `invalid_reason` nullable, `consecutive_failures`, `circuit_open_until` nullable, `last_success_at` nullable, `last_tested_at`, `multi_key_consent_at` nullable (NULL for the first key) | Unique (`user_id`, `secret_fingerprint`). Owner-only use. Max per user in config. The second and later keys require consent (D-023). **No `school_id`**: keys belong to the teacher (D-012) |
 | `ai_credential_cooldowns` | `ai_credential_id` FK CASCADE, `model`, `until`, `reason` ∈ {`rate_minute`,`rate_daily`} | Unique (`ai_credential_id`, `model`). Mirror of the Redis cooldowns for the UI |
 | `ai_usage_logs` | `user_id`, `school_id` nullable (NULL for a supervisor with no school), `ai_credential_id` FK SET NULL, `generation_id` FK SET NULL, `step_key`, `attempt`, `purpose`, `model`, `outcome` (success or error class), `http_status` nullable, `input_tokens`, `output_tokens`, `latency_ms`, `created_at` | Append-only. Index (`user_id`, `created_at`), (`school_id`, `created_at`). No key, no prompt text |
 
@@ -124,7 +124,7 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | Table | Key columns | Notes and invariants |
 |---|---|---|
 | `journals` | `school_id`, `class_id`, `subject_id`, `teacher_id`, `meeting_id` nullable (journal without an RPM), `date`, `status` ∈ {`done`,`not_done`}, `notes`, `client_uuid` | Unique `client_uuid` (idempotent offline sync) |
-| `attendance_records` | `school_id`, `class_id`, `student_id`, `date`, `status` ∈ {`present`,`sick`,`permitted`,`absent`}, `recorded_by`, `recorded_at_device`, `client_uuid` | Unique `client_uuid`. Uniqueness per student per day or per lesson depends on the granularity question below |
+| `attendance_records` | `school_id`, `class_id`, `student_id`, `date`, `status` ∈ {`present`,`sick`,`permitted`,`absent`}, `recorded_by`, `recorded_at_device`, `client_uuid` | **Daily** attendance (D-029): unique (`student_id`, `date`) and unique `client_uuid`. Recorded by the homeroom teacher. Per-lesson attendance is *Later* |
 | `student_notes` | `school_id`, `student_id`, `class_id`, `author_id`, `kind` ∈ {`anecdotal`,`counselling`,`achievement`}, `body`, `client_uuid` | Counselling visibility is restricted (see Tenancy) |
 | `assessment_plans` | `school_id`, `class_id`, `subject_id`, `semester`, components | "Rencana Penilaian" |
 | `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp`, `source_document_id` FK SET NULL | |
@@ -137,6 +137,21 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | `school_print_settings` | `school_id` (unique), letterhead, logo path, signers, `paper` ∈ {`a4`,`f4`}, margins, `font` | Per-school print settings |
 | `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`basic`,`teacher`,`school`,`cluster`}, `academic_year`, `status` | Exactly one owner column set (CHECK). Billing tables come in the billing task |
 
+## TKA practice exam (CBT)
+
+These tables back the separate exam site (D-026, D-027). Exam participants are students acting through **session-scoped credentials**. They are not rows in `users`.
+
+| Table | Key columns | Notes and invariants |
+|---|---|---|
+| `exam_sessions` | `public_id`, `school_id`, `package_document_id` FK RESTRICT (a `tka_package` document), `subject` ∈ {`bahasa_indonesia`,`matematika`}, `title`, `opens_at`, `closes_at`, `duration_minutes` (default 75), `token_secret` (encrypted), `token_period_minutes` (default 15), `proctor_id` FK users, `status` ∈ {`draft`,`scheduled`,`open`,`closed`} | CHECK `opens_at < closes_at`, CHECK `duration_minutes` between 10 and 180. The token is computed from `token_secret` and the time window, so tokens are not stored |
+| `exam_items` | `exam_session_id` FK CASCADE, `number`, `group_key` nullable (NULL = single item, set = shares a stimulus), `form` ∈ {`pg`,`pgk_mcma`,`pgk_category`}, `stimulus` JSON nullable, `content` JSON, `answer_key` JSON, `competency`, `max_points` | Frozen snapshot of the package when the session is scheduled. Editing the package later does not change a running exam |
+| `exam_participants` | `public_id`, `exam_session_id` FK CASCADE, `student_id` FK RESTRICT, `username` (unique per session), `password` (encrypted, so cards can be reprinted), `item_order` JSON (shuffled per participant), `status` ∈ {`not_started`,`in_progress`,`submitted`,`expired`}, `started_at` nullable, `submitted_at` nullable, `extra_minutes` (default 0), `login_resets` | Unique (`exam_session_id`, `student_id`). Credentials stop working when the session is `closed`. Passwords are purged 30 days after closing |
+| `exam_answers` | `exam_participant_id` FK CASCADE, `exam_item_id` FK CASCADE, `response` JSON, `is_flagged` (ragu-ragu), `client_seq`, `saved_at` | Unique (`exam_participant_id`, `exam_item_id`). Upsert only when `client_seq` is higher than the stored one, so retries and reconnects are idempotent |
+| `exam_results` | `exam_participant_id` FK CASCADE (unique), `score` decimal(5,2) CHECK 0–100, `category` ∈ {`kurang`,`memadai`,`baik`,`istimewa`}, `per_competency` JSON, `scored_at` | Practice estimate, not an official TKA result |
+| `exam_events` | `exam_session_id`, `exam_participant_id` nullable (NULL = session-level event), `actor_id` nullable (NULL = the participant), `kind` ∈ {`login`,`token_fail`,`reset_login`,`extend_time`,`submit`,`force_submit`}, `created_at` | Append-only proctor audit log |
+
+Access: teachers and the operator of the school manage sessions; the proctor runs them. Principals see results. Supervisors see school-level aggregates only. The exam site's guard reads only `exam_participants` and the participant's own items and answers.
+
 **Offline sync (Di Kelas, D-016).**
 
 - The device creates rows with `client_uuid` and queues them in IndexedDB. The sync endpoint upserts by `client_uuid`, so a repeated send never duplicates.
@@ -144,7 +159,6 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 
 ## Open questions
 
-- [ ] Attendance granularity: once a day (homeroom), or per lesson (EDUNEXA recorded it per meeting, which matters for subject teachers)?
 - [ ] Report card export format required by e-Rapor (columns and file type).
 - [ ] Retention for `ai_usage_logs` and `document_revisions` (proposed: 180 days / last 10).
 - [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?

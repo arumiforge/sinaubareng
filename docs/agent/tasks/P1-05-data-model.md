@@ -27,4 +27,4 @@ Draft the MySQL 8 relational model for accounts, curriculum, timetable, content,
 
 ## Result
 
-Draft written. Open questions: attendance granularity, e-Rapor format, retention, supervisor write context.
+Draft written. Revised: daily attendance, TKA exam tables, consent column for extra keys. Open questions: e-Rapor format, retention, supervisor write context.

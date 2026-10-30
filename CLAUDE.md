@@ -36,7 +36,7 @@ UI copy must be plain and user-friendly; the app is web-based and must work on d
 
 ## Stack (summary — full version in `docs/agent/CONTEXT.md`)
 
-Laravel · MySQL 8 · Nginx · PHP-FPM · Redis · multiple queue workers · Node.js (build tooling) · Python only when needed · Cloudflare · Ubuntu Server 22.04 VPS. Frontend: Inertia.js + Svelte, Tailwind with TailAdmin as the template. Admin/back-office: Filament. Debugging: Telescope.
+Laravel · MySQL 8 · Nginx · PHP-FPM · Redis · multiple queue workers · Node.js (build tooling) · Python only when needed · Cloudflare · Ubuntu Server 22.04 VPS. Frontend: Inertia.js + Svelte, Tailwind with TailAdmin as the template. Admin/back-office: Filament. Debugging: Telescope. Documents: Gotenberg (Docker) for PDF, Laravel Excel. AI: Gemini free tier, teacher-owned keys.
 
 ## Working style
 

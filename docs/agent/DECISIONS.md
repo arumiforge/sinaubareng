@@ -111,9 +111,44 @@ Hari Ini · Di Kelas · Buat · Asesmen · Kelas Saya. "Rencana" becomes "Buat" 
 Reason: owner's choice. Keeps a 5-item bottom nav.
 
 ### D-022 — AI engine technical choices
-**Proposed** · 2026-10-30
+**Proposed** · 2026-10-30 · item 2 superseded by D-024
 (1) Own `AIProvider` interface with a Gemini adapter on Laravel's HTTP client, not the Laravel AI SDK (per-call key choice and raw error classification are core; the SDK can become the transport later).
-(2) One generic `RunGeneration` job that runs the next step and re-dispatches itself.
+(2) ~~One generic `RunGeneration` job that runs the next step and re-dispatches itself.~~ Superseded by D-024.
 (3) Progress by polling (Inertia partial reload), websockets later only if needed.
 (4) Education logic lives in `app/Content/`, provider logic in `app/AI/`.
 Reason: see `docs/drafts/ai-provider-engine.md`. Awaiting owner review.
+
+### D-023 — AI keys: Gemini free tier only
+Accepted · 2026-10-30 · refines D-012
+Only Google Gemini keys are accepted, and the design targets the free tier: few calls per generation, stable models only, no background pings. Multi-key rotation stays, at the teacher's own risk. Google's API terms forbid circumventing limits, so the second and later keys need explicit consent. No student personal data goes into prompts, because free-tier prompts may be read by Google's reviewers. AI users are adults (teachers) only.
+Reason: owner's decision; Gemini API Additional Terms and Google APIs Terms checked 2026-10-30.
+
+### D-024 — No generic generator; one job per content type
+Accepted · 2026-10-30 · supersedes D-022 item 2 and removes "Buat bebas" from D-014
+Every content type has its own template, wizard, and queued job (`GenerateRpm`, `GenerateBankSoal`, `GenerateLkpd`, `GenerateQuizBattle`, `GenerateTkaPackage`, plus `ReviseSection`). They share only the runner, the AI gateway, the editor shell, and export. There is no "make anything" generator.
+Reason: owner — a generic generator is something teachers can already do in Gemini directly.
+
+### D-025 — Subscriptions are paid outside BOS
+Accepted · 2026-10-30
+Subscriptions are paid from funds other than BOS. Sales material never presents BOS as a payment source.
+Reason: owner's decision.
+
+### D-026 — Exams: Mode Ujian inactive, TKA practice CBT in v1
+Accepted · 2026-10-30
+The general Bank Soal "Mode Ujian" is switched off for now. v1 adds a TKA practice exam (CBT) for grade 6, modelled on the national TKA SD/MI (Bahasa Indonesia and Matematika, 75 minutes each, the forms PG / PGK MCMA / PGK Kategori, scores 0–100 with the TKA categories). Questions come from a dedicated "Paket Soal TKA" template that follows the Kerangka Asesmen TKA (Perka BSKAP 047/H/AN/2025).
+Reason: owner's decision. Timed to be ready before TKA 2027 practice.
+
+### D-027 — TKA exam access: exam cards + proctor token on a separate exam site
+Accepted · 2026-10-30 · narrow exception to D-010
+Students take the practice exam on a separate exam site (own subdomain and guard) with a per-session exam card (username + password) and a rotating proctor token (TOTP-style, 15 min). Credentials expire when the session closes. The exam site never calls the AI and links nowhere into the app. Students remain records, not users.
+Reason: owner's choice. Also keeps Gemini's under-18 restriction away from the student-facing part.
+
+### D-028 — Document engines: Gotenberg for PDF, Laravel Excel for spreadsheets
+Accepted · 2026-10-30 · resolves the open PDF engine question
+PDF: Gotenberg 8 (Chromium + LibreOffice, Docker, internal network only) through `spatie/laravel-pdf`'s Gotenberg driver. It gives HTML/CSS fidelity, Arabic shaping, headers and footers, DOCX→PDF, merge, watermark, and PDF/A. Excel: Laravel Excel (`maatwebsite/excel`, PhpSpreadsheet), with styled multi-sheet exports, queued exports, and validated imports. DOCX: PhpWord TemplateProcessor. This adds Docker to the server, for this one service.
+Reason: owner asked for powerful engines. Dompdf/mPDF are too weak for the documents; Browsershot would need Node/Chromium on the host.
+
+### D-029 — Attendance is daily
+Accepted · 2026-10-30
+One attendance record per student per day, taken by the homeroom teacher. Per-lesson attendance comes later.
+Reason: owner's decision.

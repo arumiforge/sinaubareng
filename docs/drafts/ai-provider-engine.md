@@ -4,11 +4,22 @@
 - **Task:** P1-04
 - **Last updated:** 2026-10-30
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
-- **Facts checked on 2026-10-30** against Google's [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [troubleshooting](https://ai.google.dev/gemini-api/docs/troubleshooting), and [API errors](https://ai.google.dev/gemini-api/docs/api-errors) pages, and Laravel's [AI SDK docs](https://laravel.com/docs/ai-sdk).
+- **Facts checked on 2026-10-30** against Google's [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [troubleshooting](https://ai.google.dev/gemini-api/docs/troubleshooting), [API errors](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), and [Google APIs Terms](https://developers.google.com/terms) pages, and Laravel's [AI SDK docs](https://laravel.com/docs/ai-sdk).
 
 ## Purpose
 
 This document specifies the one layer that talks to AI providers: teachers' Gemini keys, key selection with round robin and failover, error handling, retries, duplicate-request safety, and usage logs. It is for developers. The content engine calls this layer through one interface, as described in [`content-engine.md`](content-engine.md).
+
+## Scope: Gemini free tier only
+
+SIGRAK supports **only Google Gemini API keys, and is designed for the free tier** (unpaid quota) (D-023). Keys from other AI providers are not accepted. Paid-tier Gemini keys work technically, but nothing is designed around them. The `AIProvider` interface stays, because it keeps the Gemini code isolated and lets tests use a fake. No second provider is planned.
+
+Designing for the free tier means:
+
+- **Low, per-project limits.** Every generation uses as few calls as possible. Steps are merged where output size allows. There are no background pings, no automatic regeneration, and no speculative calls.
+- **Stable models only.** Preview and experimental models have tighter limits, and Google's terms forbid using them in production.
+- **Data you send may be read by people.** See [Privacy rules](#privacy-rules).
+- **Adults only.** Gemini's terms require API users to be 18+, and forbid using the API in a service directed to, or likely to be used by, people under 18. SIGRAK's AI users are teachers. The TKA exam site that students use never calls the AI (D-027).
 
 ## Goals
 
@@ -32,7 +43,11 @@ This document specifies the one layer that talks to AI providers: teachers' Gemi
 | 3 keys from 3 projects | Three separate quotas, one per project |
 | 3 keys from 3 accounts/projects | Separate quotas, each by its own tier |
 
-**Terms of use.** Rotation exists to spread load and to fail over across projects the teacher really owns and has authorized. It is not a way around free-tier limits or a way to hide usage across accounts. The key page and the help text say this plainly. SIGRAK never creates Google projects or keys for teachers.
+**Terms of use and risk (D-023).** Google's API terms say users "will not attempt to circumvent" documented API limits. On the free tier, rotating several projects owned by one teacher effectively multiplies that teacher's free quota, so Google could treat it as circumvention and restrict or suspend those projects or accounts. The owner decided to keep multi-key rotation, **with the risk carried by the teacher**:
+
+- Adding a second (or later) key requires ticking a consent box: "Saya memahami bahwa memakai beberapa project untuk menambah kuota gratis dapat melanggar ketentuan Google, dan Google dapat membatasi atau menangguhkan project saya."
+- The key page and the help text repeat this plainly. Every key must come from a project the teacher personally owns.
+- SIGRAK never creates Google projects or keys for teachers, never suggests making extra accounts, and never shares keys between teachers.
 
 ## Architecture
 
@@ -53,17 +68,19 @@ app/AI/
 │   ├── ApiKeyManager.php         # add, test, disable, delete; the encryption boundary
 │   ├── KeySelector.php           # round robin + filters + sticky per generation
 │   └── KeyHealthChecker.php      # state changes: cooldown, circuit breaker, invalid
+├── Privacy/PromptDataGuard.php   # blocks student personal data from reaching a prompt
 ├── AIGateway.php                 # the only entry point used by app/Content: select key → call → classify → retry/failover → log
 └── Usage/UsageLogger.php         # writes ai_usage_logs
 
-app/Jobs/RunGeneration.php        # runs the next pending step of a generation, then re-dispatches itself
+app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, ReviseSection.php
+                                  # one job per content type (D-024), all using GenerationRunner
 ```
 
 **Why our own client and not the Laravel AI SDK** (*proposed*, D-022). Laravel ships a first-party AI SDK (`laravel/ai`, v1.0 released September 2026) with Gemini, structured output, and queueing. It is aimed at agents with one configured key per provider. Our core needs are to choose a different key for each call, to read raw HTTP status and error details for classification, and to control retries ourselves. A thin client on `Http::` makes those explicit and easy to test. The `AIProvider` interface keeps the choice reversible: the SDK can later become the transport inside `GeminiProvider` without touching callers.
 
 ## Keys
 
-**Ownership (D-012).** Keys belong to a teacher (`user_id`), never to a school, and SIGRAK has no platform key. A principal needs no key unless they make content. Default limit: 5 keys per teacher (config).
+**Ownership (D-012, D-023).** Keys are Gemini free-tier keys that belong to a teacher (`user_id`), never to a school, and SIGRAK has no platform key. A principal needs no key unless they make content. Default limit: 5 keys per teacher (config). The second and later keys need the consent described above.
 
 **Adding a key** (*Kunci AI Saya*, also asked inline the first time a teacher uses an AI feature):
 
@@ -71,7 +88,8 @@ app/Jobs/RunGeneration.php        # runs the next pending step of a generation, 
 2. The server makes a tiny test generation. If it passes, the key is saved as `active`. If it fails, the teacher sees the reason in plain words and nothing is saved.
 3. If the same key is already saved (same fingerprint), it is rejected.
 4. If the project name matches an existing key, the teacher gets a warning: "Kunci dari project yang sama berbagi kuota, jadi tidak menambah batas pemakaian."
-5. A help page walks through making a key in Google AI Studio with a Gmail account (or belajar.id if the domain admin allows AI Studio).
+5. For the second and later keys, the consent box (Terms of use and risk) must be ticked, and the time of consent is stored.
+6. A help page walks through making a key in Google AI Studio with a Gmail account (or belajar.id if the domain admin allows AI Studio). It explains free-tier limits, the daily reset time in WIB, and that Google may read free-tier prompts.
 
 **Storage and transport.**
 
@@ -128,7 +146,7 @@ The Gemini error is classified once in `GeminiProvider`, and the gateway acts on
 | 400 `INVALID_ARGUMENT` | `bad_request` | No | **No** (another key will not fix a bad request) | None | "Belum berhasil dibuat. Tim Sigrak sudah diberi tahu." Error reported to the team |
 | 400 `FAILED_PRECONDITION` (billing, free tier unavailable in region) | `project_unavailable` | No | Yes | `invalid` | Key page explains, with a link to AI Studio |
 | 401 / 403 `PERMISSION_DENIED` (bad, leaked, or blocked key; restricted project) | `key_invalid` | No | Yes | `invalid` | Notification: "Kunci AI '…' tidak bisa dipakai lagi" |
-| 402 (prepaid credits used up) | `project_unavailable` | No | Yes | `invalid` | Key page: add credits |
+| 402 (prepaid credits used up; paid projects only, should not occur on free tier) | `project_unavailable` | No | Yes | `invalid` | Key page explains |
 | 404 model not found | `model_unavailable` | No | Next model in the purpose's list, same key | None | Nothing |
 | 408, 500, 503 | `transient` | Up to 2 times, backoff 1 s → 2 s + jitter | Yes, after that | Counts toward the circuit breaker | Nothing, unless every key fails |
 | 504 or client timeout | `timeout` | Once (see duplicates) | Yes, after that | Counts toward the circuit breaker | Nothing, unless every key fails |
@@ -160,7 +178,7 @@ Gemini's `generateContent` has no idempotency key. A call that times out on our 
 2. **On timeout, retry once on the same key before failing over.** Any duplicate cost stays on the same project, and the sticky selection holds.
 3. **Every attempt is logged** with its attempt number, so duplicates are visible in usage history.
 4. **A step's result is accepted exactly once.** `generation_steps` is unique on (`generation_id`, `step_key`) and moves `running → succeeded` with a compare-and-set, so a late duplicate cannot overwrite an accepted output.
-5. **No queue-level retries.** `RunGeneration` has `tries = 1` and implements `ShouldBeUnique` by generation id. Retries happen inside the gateway under the rules above. On resume, steps already marked `succeeded` are skipped.
+5. **No queue-level retries.** Every generation job has `tries = 1` and implements `ShouldBeUnique` by generation id. Retries happen inside the gateway under the rules above. On resume, steps already marked `succeeded` are skipped.
 6. **Double clicks.** The *Buat* button sends a client token (UUID). `generations` is unique on (`user_id`, `client_token`), so a double submit creates one generation.
 7. **Crashed workers.** A scheduled sweeper finds steps stuck in `running` longer than timeout + margin, marks the attempt `unknown` in the log, and resumes the generation from that step. A possible duplicate cost is logged.
 
@@ -174,9 +192,19 @@ Gemini's `generateContent` has no idempotency key. A call that times out on our 
 ## Queues and progress
 
 - Queues: `ai` (generation), `exports` (PDF/DOCX/HTML), `default`. Horizon gives `ai` its own supervisor, so long AI calls never block exports or mail.
-- `RunGeneration` runs one pending step and re-dispatches itself until the generation is done. This keeps each job short and resumable (one generic job for every template, *proposed* D-022).
+- **One job class per content type** (D-024): `GenerateRpm`, `GenerateBankSoal`, `GenerateLkpd`, `GenerateQuizBattle`, `GenerateTkaPackage`, plus `ReviseSection`. Each declares its own step plan, timeouts, and progress labels, and delegates the mechanics to the shared `GenerationRunner`. A job runs one pending step, then re-dispatches itself until the generation is done, so each run stays short and resumable.
 - Generation status: `queued → running (step i of n) → succeeded | failed | cancelled`.
 - The UI polls every 2–3 s through an Inertia partial reload while the page is open, and a database notification arrives in *Kabar* when the generation finishes (*proposed*). WebSockets (Reverb) come later, only if polling proves too heavy.
+
+## Privacy rules
+
+Free-tier prompts and responses are used by Google to improve its products, and human reviewers may read them. Google's own terms say not to submit sensitive, confidential, or personal information to unpaid services. So:
+
+1. **No student personal data ever goes into a prompt:** no names, NISN, birth dates, attendance, notes, or individual scores tied to an identity. `PromptDataGuard` checks every request built from school data, and generation code receives student data only in the forms allowed below.
+2. **Report description drafts** (Asesmen > Rapor) send only per-TP mastery levels for an anonymous student ("Murid A"). The real name is merged in after generation, on our server.
+3. **The teacher's note** field shows a hint: "Jangan tulis nama atau data pribadi siswa." Notes are free text, so this is guidance, not a guarantee.
+4. **Curriculum data, teacher answers, and generated content** are fine to send. They hold no personal data.
+5. The exam site (TKA) holds student credentials and answers and **never** calls the AI.
 
 ## Usage logs and visibility
 
@@ -201,3 +229,4 @@ Retention (*proposed*): detailed rows for 180 days, monthly aggregates kept.
 - [ ] Confirm the 429 detail fields that separate per-minute from per-day limits, using real responses.
 - [ ] Usage-log retention period.
 - [ ] Should a teacher be able to mark one key as "cadangan" (used only on failover)? This is not in v1 unless the owner asks for it.
+- [ ] Which stable Gemini models currently have free-tier quota (check AI Studio at build time; the list changes).

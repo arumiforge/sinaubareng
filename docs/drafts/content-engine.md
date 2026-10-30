@@ -7,31 +7,29 @@
 
 ## Purpose
 
-This document explains how teachers' answers become finished teaching content: templates, wizards, the generation pipeline, editing, games, versioning, and export. It is for developers building the *Buat* menu. The layer that talks to Gemini is specified separately in [`ai-provider-engine.md`](ai-provider-engine.md). Product context is in [`product-concept.md`](product-concept.md).
+This document explains how teachers' answers become finished teaching content: templates, wizards, the generation pipeline, editing, games, the TKA practice package and exam, versioning, and export. It is for developers building the *Buat* menu. The layer that talks to Gemini is specified separately in [`ai-provider-engine.md`](ai-provider-engine.md). Product context is in [`product-concept.md`](product-concept.md).
 
 ## Terms
 
 | Term | Meaning |
 |---|---|
-| **Template** | A developer-built definition of one content type (RPM, Bank Soal, LKPD, Quiz Battle, Buat bebas) |
+| **Template** | A developer-built definition of one content type (RPM, Bank Soal, LKPD, Quiz Battle, Paket Soal TKA) |
 | **Wizard** | The questions a template asks the teacher. Pedagogical only |
 | **Specification** | A typed, validated object built from wizard answers plus data the system already has. It is the only input to prompt building |
 | **Generation** | One run of a template for one teacher. It has one or more steps and produces a document |
 | **Document** | The saved result: structured JSON content that the teacher edits, exports, presents, or downloads |
 | **Renderer** | Code that turns document content into a preview/editor, PDF, DOCX, Excel, or a playable game |
 
-## Two generators, one model
+## One template per content type, no generic generator
 
-The owner's concept names two generator types. Both are built on the same template model, so they share the wizard, pipeline, editor, and export code.
+The owner's concept names a *Guided Generator* (a multi-step wizard) and *Developer Templates*. In SIGRAK they are one thing: **every template has its own guided wizard**. There is no generic "make any material" generator (D-024). A teacher can already get generic content by chatting with Gemini, so SIGRAK only offers content types where a template adds value Gemini alone does not:
 
-| | Developer templates | Buat bebas (Guided Generator) |
-|---|---|---|
-| Examples | RPM, Bank Soal, LKPD, Quiz Battle | A reading passage, a material summary, a rubric, a reflection sheet, … |
-| Structure | Fixed by the template: sections, fields, layout, game mechanics | A generic document: headings, paragraphs, lists, tables |
-| Wizard | Template-specific questions | Broader questions: for whom (class, subject, topic/TP), kind of material (from a list the SIGRAK team maintains), form and length, language style, optional note |
-| Teacher writes a prompt? | No | No |
+- curriculum data (CP, TP, ATP, JP) filled in automatically;
+- a fixed, school-ready structure and print format;
+- validation rules (counts, keys, TP coverage, TKA forms);
+- classroom delivery (present mode, game download, CBT exam).
 
-"Buat bebas" is therefore just another template (key `guided`) with a wider wizard and a generic output schema. It is **not** a chat box.
+Each content type has its own template class, its own wizard, its own generation job, and its own renderers. They share only infrastructure: the pipeline classes, the AI gateway, the editor shell, and the export engine.
 
 ## Template anatomy
 
@@ -62,17 +60,26 @@ app/Content/
 │   │   ├── schemas/specification.json
 │   │   ├── schemas/output.json         # + output-kokurikuler.json
 │   │   └── prompts/instructions.md
-│   ├── BankSoal/  Lkpd/  QuizBattle/  Guided/
+│   ├── BankSoal/  Lkpd/  QuizBattle/  TkaPackage/
 ├── Generation/
 │   ├── SpecificationBuilder.php
 │   ├── PromptBuilder.php
 │   ├── OutputValidator.php
 │   ├── OutputRepairer.php
-│   └── GenerationRunner.php            # runs steps, calls app/AI, stores results
+│   └── GenerationRunner.php            # shared step runner used by every job below
 └── Export/                             # PdfExporter, DocxExporter, ExcelExporter, GameExporter
+
+app/Jobs/Generation/                     # one job per content type (D-024)
+├── GenerateRpm.php
+├── GenerateBankSoal.php
+├── GenerateLkpd.php
+├── GenerateQuizBattle.php
+├── GenerateTkaPackage.php
+└── ReviseSection.php                    # "Perbaiki bagian ini", any template
 
 resources/js/Templates/<Key>/            # Svelte preview + section editors
 resources/game-runtime/quiz-battle/      # vanilla JS + CSS, built by Vite as a standalone bundle
+resources/exam-client/                   # TKA exam site front end (separate bundle, no AI)
 resources/views/exports/<key>/           # Blade views for PDF/DOCX
 ```
 
@@ -121,7 +128,7 @@ Document saved: content JSON + template key + template version
 
 - **Steps.** Large templates split generation into steps so each response stays within size limits and a failure only repeats one part. Example for RPM: `design` (identification + learning design) → `meetings` (one step per batch of meetings) → `assessment` (assessment + appendices). Later steps receive earlier outputs as context. All steps of one generation use the same AI key unless failover happens (sticky selection; see the AI engine).
 - **Data fields are never generated.** Identity, CP, TP codes, meeting count, minutes, and references come from data and are merged into the document after generation. AI output for those fields is ignored.
-- **Background work.** Generation runs on the queue. The page shows progress ("Langkah 2 dari 4"), and the teacher can leave and is notified when it is done.
+- **Background work.** Each content type has its own queued job (`GenerateRpm`, `GenerateBankSoal`, …) with its own step plan, timeout, and progress labels. The page shows progress ("Langkah 2 dari 4"), and the teacher can leave and is notified when it is done.
 - **Failure messages** say what happened and what to do, with technical detail behind "Lihat detail". For example: "RPM belum berhasil dibuat. Semua kunci AI Anda sedang mencapai batas; coba lagi pukul 15.00."
 
 ## Editing and partial revision
@@ -147,9 +154,9 @@ Document saved: content JSON + template key + template version
 
 | | |
 |---|---|
-| Wizard | **Cakupan:** assessment type (Penilaian Harian = one materi pokok; STS/SAS = several materi in a semester; Ujian Sekolah/Madrasah). **Komposisi:** count per type — PG, PG Kompleks, Benar-Salah, **Menjodohkan** (new), Isian, Uraian. Difficulty mix (Campuran/Mudah/Sedang/Sulit). Cognitive level mix C1–C6 or "Biarkan otomatis". **Pelaksanaan:** date and duration. **Periksa** |
+| Wizard | **Cakupan:** assessment type (Penilaian Harian = one materi pokok; STS/SAS = several materi in a semester; Ujian Sekolah/Madrasah). **Komposisi:** count per type — PG, PG Kompleks (MCMA), **PGK Kategori** (benar/salah per statement, as in TKA; new), Benar-Salah, **Menjodohkan** (new), Isian, Uraian. Difficulty mix (Campuran/Mudah/Sedang/Sulit). Cognitive level mix C1–C6 or "Biarkan otomatis". **Pelaksanaan:** date and duration. **Periksa** |
 | Per item | Type, stem, options, key, explanation, indicator, `kode_tp`, cognitive level, difficulty |
-| Rules | Counts match the composition. PG has exactly one key, PG Kompleks two or more. Menjodohkan pairs are one-to-one. Every `kode_tp` is inside the chosen scope |
+| Rules | Counts match the composition. PG has exactly one key, PG Kompleks two or more. PGK Kategori has 3–5 statements, each with a key. Menjodohkan pairs are one-to-one. Every `kode_tp` is inside the chosen scope |
 | Exports | Kisi-kisi, naskah soal, kunci, pembahasan, indikator, kartu soal (PDF, Word, Excel) |
 | Use in Asesmen | When an assessment uses a Bank Soal document, its items are copied into assessment items with `kode_tp`, so analysis per TP needs no retyping (see [`data-model.md`](data-model.md#content)) |
 
@@ -170,13 +177,35 @@ Document saved: content JSON + template key + template version
 | Owned by the runtime | Layout, controls, timer, scoring, turn order, animations, sounds, keyboard and remote control, responsive sizes, accessibility |
 | Rules | Every config value is inside the template's allowed ranges/enums. Every question has a valid key |
 
-### Buat bebas (`guided`)
+### Paket Soal TKA (`tka_package`)
+
+This template produces a practice package that follows the official TKA framework for SD/MI. The framework is the Kerangka Asesmen TKA (Perka BSKAP 047/H/AN/2025), published on the [Pusmendik TKA site](https://pusmendik.kemendikdasmen.go.id/tka) and checked on 2026-10-30.
 
 | | |
 |---|---|
-| Wizard | **Untuk siapa:** class, subject, topic/TP. **Jenis bahan:** from the team's list. **Bentuk:** length, form, language style. **Catatan** (optional) → **Periksa** |
-| Output | Generic document: title, sections of headings, paragraphs, lists, tables |
-| Note | The list of material kinds lives in the template registry, so the team can extend it without code changes to the wizard |
+| Wizard | **Mata uji:** Bahasa Indonesia or Matematika. **Cakupan:** all framework content (default) or chosen elements/competencies for focused practice. **Tingkat:** mixed (default), easier, or harder. **Jumlah:** 30 items (TKA default) or a shorter practice set. **Periksa** |
+| Official framework (data, not AI) | *Bahasa Indonesia* measures reading only. Text types are informational and fiction. Competencies: pemahaman tekstual, pemahaman inferensial, evaluasi dan apresiasi, with the sub-competencies of the framework matrix. *Matematika* covers the elements Bilangan, Geometri dan Pengukuran, and Data. Competencies are memahami, mengaplikasikan, and bernalar, with the sub-elements and limits of the framework matrix |
+| Item forms | Only the three TKA forms: **PG** (one answer), **PGK MCMA** (several correct options), **PGK Kategori** (each statement answered benar/salah, sesuai/tidak sesuai, or mendukung/tidak mendukung). Items may be single (*soal tunggal*) or grouped on a shared stimulus (*soal grup*) |
+| Filled by AI | Stimulus texts, item stems, options, keys, short explanations, and the competency/sub-competency tag for each item |
+| Rules | Bahasa Indonesia stimulus texts are 150–200 words (poems excepted), with short simple sentences and mostly denotative vocabulary, as the framework describes. Every item is tagged with a framework competency and form. The package's form and competency mix stays within the configured bounds. Each PGK Kategori item has 3 statements (as in the official samples). There are no Isian or Uraian items |
+| Stimulus visuals | Tables, pictograms, and bar charts are generated as **structured data** and drawn by our renderer, never as AI images. Geometry figures (nets, solid views) come from a bundled figure set or a teacher upload (see Open questions) |
+| Output | The package document: items in order, keys, explanations, blueprint (*kisi-kisi*) per competency. Exports: naskah, kunci, pembahasan, kisi-kisi (PDF/Word/Excel). It is also the source for a **Simulasi TKA** session (below) |
+
+## TKA practice exam (CBT)
+
+The exam mimics how the national TKA runs: computer-based, the participant signs in with a login card, a proctor token is required, it is timed, and the result is reported as a score with a category. Students are not app users (D-010), so the exam runs on a **separate exam site** with session-scoped credentials (D-027).
+
+| Part | Behaviour |
+|---|---|
+| Session | Created by a teacher or the operator from a *Paket Soal TKA*. It has a date, a time window, a duration (75 minutes by default, the TKA duration for each SD subject), the participating grade 6 classes, and a proctor (the teacher) |
+| Exam cards | One *kartu login* per student: name, class, session, username, password. Printed as PDF (several cards per page). Credentials work only for that session and expire when it closes |
+| Token | A 6-character token derived from the session secret and the current 15-minute window (TOTP-style), so nothing needs storing. The proctor screen shows the current token. Participants need it to start or resume |
+| Exam client | A plain, TKA-like screen at its own subdomain: question area, number grid, *ragu-ragu* flag, timer, font size control. Works on desktop and tablet. **No AI calls, no links into the app, no data beyond the participant's own exam** |
+| Integrity | Item and option order is shuffled per participant (stimulus groups stay together). Every answer autosaves with a sequence number (idempotent), so a reconnect resumes where it stopped. Time is enforced by the server. The proctor can reset a participant's login or extend time for one participant, and both actions are logged |
+| Results | Score 0–100 per subject, mapped to the TKA categories (Kurang < 50; Memadai 50 to < 76.67; Baik 76.67 to < 95; Istimewa ≥ 95, as reported for TKA 2026). Plus per-competency and per-item analysis, export to Excel and PDF, and an optional copy into Asesmen |
+| Scoring (practice) | PG: 1 point for the key. PGK MCMA and PGK Kategori: partial credit per correct choice or statement, normalised to 0–100. The official TKA scoring model is not published in this form, so the practice score is an *estimate* and the UI says so |
+
+The general Bank Soal "Mode Ujian" stays inactive (D-026). The exam client is built for TKA packages only.
 
 ## Games: hybrid approach, presenting, downloading
 
@@ -191,7 +220,7 @@ Document saved: content JSON + template key + template version
 - The runtime JS and CSS are inlined. Content is embedded as `<script type="application/json" id="content">` with `<` escaped. The runtime renders every content string with `textContent`, never `innerHTML`.
 - A Content-Security-Policy meta tag blocks all network access: `default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:`. The file plays offline and cannot phone home.
 - Images and sounds are embedded as `data:` URIs (v1 uses only bundled assets).
-- It contains teaching content only, plus the game title. It holds no student data and no teacher identity beyond what the teacher typed into the title. The free tier adds a small "Dibuat dengan Sigrak" footer.
+- It contains teaching content only, plus the game title. It holds no student data and no teacher identity beyond what the teacher typed into the title. The Sigrak Dasar (free) plan adds a small "Dibuat dengan Sigrak" footer.
 - The runtime version is embedded. Re-downloading uses the runtime of the document's template version.
 
 The downloaded file lives outside the login wall by design. That is acceptable because it holds nothing but teaching content.
@@ -204,20 +233,26 @@ The downloaded file lives outside the login wall by design. That is acceptable b
 
 ## Export
 
-This is the single export engine from the developer notes:
+This is the single export engine from the developer notes. The engines are decided in D-028:
 
 - **One document model** (the content JSON). Every format is rendered from it, never from a screenshot.
-- **PDF:** text-based, rendered on the server, with `page-break-inside: avoid` per table and activity, and a preview before download. *Engine choice is open:* headless Chromium (for example Browsershot) gives the best HTML/CSS fidelity but needs Chromium on the server; mPDF is pure PHP but supports less CSS. To be decided in the export task.
-- **DOCX:** from the school's Word template (PhpWord TemplateProcessor), so letterhead, font, and signatures change without code.
-- **Excel:** separate sheets, filterable columns, numbers stored as numbers (Bank Soal kisi-kisi, Asesmen).
+- **PDF: Gotenberg 8** (headless Chromium + LibreOffice in one Docker container), called through `spatie/laravel-pdf` with its Gotenberg driver:
+  - Text-based PDFs from Blade/HTML views, with full CSS: tables with `page-break-inside: avoid`, F4 and A4, repeating header and footer with page numbers, and the school letterhead.
+  - It shapes Arabic script correctly, which PAI material needs.
+  - LibreOffice converts a school's DOCX template to PDF, so the Word and PDF versions look the same.
+  - It also merges PDFs (an RPM with LKPD, rubric, and key attachments as one file), stamps the Sigrak Dasar watermark, and can produce PDF/A for archiving.
+  - It runs as a separate service on the internal network only (bound to localhost, with basic auth). Chromium's memory use stays out of PHP-FPM, and export jobs on the `exports` queue call it over HTTP.
+  - Pin the image version.
+  - Rejected alternatives: Dompdf/mPDF (weak CSS and pagination), Browsershot (needs Node, Puppeteer, and Chromium installed on the host itself), and WeasyPrint (excellent paged media, but no JavaScript, an extra Python dependency, and no Office conversion).
+- **DOCX:** PhpWord TemplateProcessor from the school's Word template, so letterhead, font, and signatures change without code.
+- **Excel: Laravel Excel** (`maatwebsite/excel`, current major version, on PhpSpreadsheet). It handles styled multi-sheet exports (leger, kisi-kisi, analysis, TKA results), formulas, queued exports for large files, and chunked imports with row validation (student import, scores). Numbers are stored as numbers and columns are filterable. Confirm Laravel 13 support when installing.
 - **Per-school print settings:** letterhead, logo, signer name and NIP, A4/F4, margins, font (default Arial or Times New Roman), and which sections to include.
 - **Labels in Indonesian** through translation keys (repo convention).
 - **Buka di Canva (level 1):** downloads DOCX/PDF and opens canva.com for the teacher to import. Direct import through the Canva Connect API is *Later*.
-- Free tier: small watermark.
+- Sigrak Dasar (free plan): small watermark.
 
 ## Open questions
 
-- [ ] PDF engine: Chromium (Browsershot) or mPDF.
-- [ ] First list of material kinds for *Buat bebas*.
-- [ ] Images in LKPD and games: bundled icon set only in v1, or teacher uploads? (AI-generated images: not in v1.)
+- [ ] Images in LKPD, games, and TKA geometry items: a bundled figure/icon set only in v1, or teacher uploads too? (AI-generated images: not in v1.)
+- [ ] TKA practice scoring: keep partial credit for PGK, or score all-or-nothing per item?
 - [ ] Exact step split for the RPM template, to be tuned against real output sizes.

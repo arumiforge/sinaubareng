@@ -8,7 +8,7 @@
 
 ## Goal
 
-Specify templates, wizards, the generation pipeline, editing, games (present + download), versioning, and export.
+Specify templates, wizards, the generation pipeline, editing, games (present + download), the TKA package and practice exam, versioning, and export.
 
 ## Read first
 
@@ -27,4 +27,4 @@ Specify templates, wizards, the generation pipeline, editing, games (present + d
 
 ## Result
 
-Draft written. Open questions: PDF engine, Buat bebas material kinds, images in LKPD/games, RPM step split.
+Draft written. Revised after owner review round 1: Buat bebas removed, per-type jobs, Paket Soal TKA + TKA practice CBT, PDF = Gotenberg, Excel = Laravel Excel. Open questions: images (LKPD, games, TKA geometry), TKA practice scoring, RPM step split.

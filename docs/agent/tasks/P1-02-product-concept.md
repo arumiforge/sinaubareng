@@ -27,4 +27,4 @@ Define what SIGRAK is, who uses it, the navigation, flows, business model, featu
 
 ## Result
 
-Draft written. Open questions: pricing/BOS, PDKI and domain, logo, Mode Ujian removal, kokurikuler in v1, menu test, principal presentation.
+Draft written. Revised after owner review round 1 (free tier, no Buat bebas, TKA CBT, non-BOS, daily attendance). Open questions: pricing, PDKI and domain, logo, kokurikuler in v1, menu test, principal presentation, under-18 legal reading, TKA 2027 schedule.
