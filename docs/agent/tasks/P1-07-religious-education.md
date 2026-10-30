@@ -31,4 +31,4 @@ Cover religious education for SD (six religions) and MI (Kemenag PAI subjects an
 
 ## Result
 
-Draft written. The SD CP was transcribed from the scan and is marked unverified. The MI CP comes from the PDF text layer, but the Arabic passages must be retyped. The MI allocation is taken from a public summary of KMA 1503/2025 until the official copy is obtained.
+Draft written. The SD CP was transcribed from the scan and is marked unverified. The MI CP comes from the PDF text layer, but the Arabic passages must be retyped. The MI allocation is taken from a public summary of KMA 1503/2025 until the official copy is obtained. D-037: Kepercayaan is out of v1, MI subjects are taught by guru mapel, and religion data is reviewed by a guru agama of that religion.
