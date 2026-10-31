@@ -209,12 +209,12 @@ Outcome text keeps source typos as printed and flags them in `extraction.source_
 Reason: the data must stay traceable to the decree.
 
 ### D-041 — TKA 2026 categories and the Istimewa predicate
-**Proposed** · 2026-10-31 · P2-03 · refines `content-engine.md`
+Accepted by D-120 · 2026-10-31 · P2-03 · refines `content-engine.md`
 TKA SD/MI results use three categories (Baik, Memadai, Kurang) and an Istimewa predicate for scores ≥ 95, shown as "Baik-Istimewa" (Kepmendikdasmen 56/2026). This replaces the 2025 four-category list in the draft.
 Reason: the 2026 decree changed the rule.
 
 ### D-042 — TKA scoring wording
-**Proposed** · 2026-10-31 · P2-03 · keeps D-030
+Accepted by D-120 · 2026-10-31 · P2-03 · keeps D-030
 The ministry describes classical scoring on 0–100 (two decimals). PGK partial credit is still unpublished, so D-030's partial credit stays a practice estimate, but the UI may describe official scoring more precisely.
 Reason: new official statements since the draft was written.
 
@@ -224,22 +224,22 @@ From 2026, AN literasi items are part of the Bahasa Indonesia test and AN numera
 Reason: official 2026 sample sets include these items.
 
 ### D-044 — Matematika items are tagged by cognitive level
-**Proposed** · 2026-10-31 · P2-03
+Accepted by D-120 · 2026-10-31 · P2-03
 A Matematika item stores a scope point (element → sub-element → scope) and a cognitive level (Pengetahuan dan Pemahaman, Aplikasi, Penalaran) with its thinking process.
 Reason: that is the framework's own tagging dimension (Perka BSKAP 047/H/AN/2025).
 
 ### D-045 — PGK Kategori labels
-**Proposed** · 2026-10-31 · P2-03
+Accepted by D-120 · 2026-10-31 · P2-03
 Allowed label pairs: Benar/Salah, Sesuai/Tidak Sesuai, Setuju/Tidak Setuju. Mendukung/Tidak Mendukung is dropped, because it was not found in the SD sources.
 Reason: follows the decree and the official samples.
 
 ### D-046 — TKA duration is configurable
-**Proposed** · 2026-10-31 · P2-03
+Accepted by D-120 · 2026-10-31 · P2-03
 The default is 75 minutes per subject (2026). It was 60 minutes in 2025, so the duration is stored per framework year.
 Reason: the value changes between years.
 
 ### D-047 — Default form mix for a 30-item package
-**Proposed** · 2026-10-31 · P2-03
+Accepted by D-120 · 2026-10-31 · P2-03
 The default form mix follows the official sample sets: Bahasa Indonesia 16 PG / 6 PGK MCMA / 8 PGK Kategori; Matematika 18 PG / 3 MCMA / 9 Kategori. PGK MCMA has 3 statements with 2 correct. This is not an official blueprint.
 Reason: the closest official reference available.
 
@@ -274,7 +274,7 @@ Cache, sessions, queues/Horizon, and AI state each use their own Redis database 
 Reason: `cache:clear` must not wipe sessions, jobs, or key cooldowns.
 
 ### D-054 — Exam-site rate limits by session and username
-**Proposed** · 2026-10-31 · P2-04
+Accepted by D-120 · 2026-10-31 · P2-04
 Login throttling on the exam site is keyed by exam session and username, not by IP alone. Cloudflare rules for that hostname allow bursts of 30–40 logins from one IP.
 Reason: a whole class shares one school IP.
 
@@ -601,4 +601,14 @@ Reason: owner's decision.
 ### D-119 — Backup ("cadangan") keys
 Accepted · 2026-10-31
 A teacher can mark a key as *cadangan*. Backup keys are skipped by round robin and are used only when every normal key is on cooldown, invalid, or has an open circuit. Adding one follows the same consent rule as any extra key (D-023).
+Reason: owner's decision.
+
+### D-120 — TKA and exam-site proposals accepted
+Accepted · 2026-10-31 · accepts D-041, D-042, D-044, D-045, D-046, D-047, D-054
+(1) Results show the category (Baik, Memadai, Kurang) plus the Istimewa predicate for scores ≥ 95, for example "Baik-Istimewa" (D-041). (2) PGK items get partial credit, and the score is labelled as an estimate (D-042). (3) The item rules D-044…D-047 are accepted as written, as practice defaults (D-089). (4) Exam-site login throttling is keyed by exam session and username, not by IP (D-054). D-111 (AN competencies offered) stands.
+Reason: owner's review in the P2-03 session.
+
+### D-121 — Exam client font size
+Accepted · 2026-10-31
+The exam client uses the standard default font size, not a larger one. The A−/A/A+ control stays.
 Reason: owner's decision.
