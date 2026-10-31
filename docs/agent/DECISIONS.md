@@ -204,7 +204,7 @@ MI CP rows use the SD shape (`element`, `sub_element`, `text`) plus `lead_in`, `
 Reason: one import shape for SD and MI CP, and no text is lost.
 
 ### D-040 — CP source typos kept as printed
-**Proposed** · 2026-10-31 · P2-02
+Superseded by D-115 · 2026-10-31 · P2-02
 Outcome text keeps source typos as printed and flags them in `extraction.source_notes`. Only sub-element names are normalised, because they act as keys. A guru of the subject decides whether the app shows the printed or the corrected form.
 Reason: the data must stay traceable to the decree.
 
@@ -566,4 +566,19 @@ Reason: owner's decision; practice should cover what students meet (D-089).
 ### D-112 — Reviewer recorded as Tim Validasi SIGRAK
 Accepted · 2026-10-31 · refines D-037 (3)
 Curriculum datasets record the reviewer as "Tim Validasi SIGRAK", with the review date, instead of individual teacher names and schools.
+Reason: owner's decision.
+
+### D-113 — Tim Validasi SIGRAK reviews religion data
+Accepted · 2026-10-31 · supersedes D-037 (3) and the same-religion review in D-034
+Tim Validasi SIGRAK reviews and signs off the religion and MI curriculum data. A teacher of the same religion or subject is not required. The dataset records "Tim Validasi SIGRAK" and the review date (D-112).
+Reason: owner's decision.
+
+### D-114 — File storage: local disk, R2 optional
+Accepted · 2026-10-31
+Files (letterheads, exports, uploads) are stored on the VPS's local disk. Cloudflare R2 is used only as an optional extra for small files that are rarely read, within the free tier. Backups also go to R2 (D-071).
+Reason: owner's decision; R2 is on the free tier.
+
+### D-115 — MI CP source errors are corrected
+Accepted · 2026-10-31 · supersedes D-040 for the MI CP
+The MI CP outcome text and `arabic_passages` correct the known source errors: خَالِيْ → عَمِّيْ, كَمْ → كَمِ السَّاعَةُ, the repeated "berupa kritik sosial", and the typos madarasah, peyelidikan, kongkrit. `raw_text` keeps the source as printed, and `extraction.source_corrections` lists each change. The Khonghucu "(孔)" in the SD CP stays as printed; the owner confirmed it is fine.
 Reason: owner's decision.
