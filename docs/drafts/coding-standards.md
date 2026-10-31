@@ -2,13 +2,13 @@
 
 - **Status:** draft
 - **Task:** P2-06
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-10-31
 
 ## Purpose
 
 These are the rules every developer and agent follows once the SIGRAK build starts. Each rule is short and can be checked in review or by a tool. Where a rule comes from an earlier decision or draft, it links there and does not repeat it. Items marked *proposed* are listed under [Decisions to record](#decisions-to-record) and need owner approval.
 
-Sources: [`CLAUDE.md`](../../CLAUDE.md), [`CONTEXT.md`](../agent/CONTEXT.md), [`data-model.md`](data-model.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`content-engine.md`](content-engine.md), [`design-system.md`](design-system.md).
+Sources: [`CLAUDE.md`](../../CLAUDE.md), [`CONTEXT.md`](../agent/CONTEXT.md), [`architecture.md`](architecture.md), [`data-model.md`](data-model.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`content-engine.md`](content-engine.md), [`design-system.md`](design-system.md).
 
 ## 1. PHP and Laravel
 
@@ -22,12 +22,12 @@ Sources: [`CLAUDE.md`](../../CLAUDE.md), [`CONTEXT.md`](../agent/CONTEXT.md), [`
 | PHP-6 | Input is validated in a **Form Request** (`app/Http/Requests/<Area>/<Action>Request.php`). Never `$request->all()` into a model; use `$request->validated()`. | Review, arch test |
 | PHP-7 | Every controller action is authorized through a **Policy** (`authorize()` in the Form Request or `Gate`/`can` middleware). An action without authorization fails review. | Review + IDOR tests |
 | PHP-8 | **No business logic in controllers.** A controller validates (Form Request), authorizes (Policy), calls one Action or service, and returns an Inertia response or redirect. About 15 lines per method is a smell, not a limit. | Review |
-| PHP-9 | Business operations live in single-purpose **Action** classes (`app/Actions/<Domain>/CreateJournal.php`, one public `handle()` method) (*proposed*). Domain engines keep their own layers (`app/AI`, `app/Content`). | Review |
+| PHP-9 | Business operations live in single-purpose **Action** classes with one public `handle()` method (*proposed*): in the module folder when one exists (`app/Classroom/Actions/RecordAttendance.php`), otherwise in `app/Actions/<Domain>/`. `app/AI` and `app/Content` keep their own layers. | Review |
 | PHP-10 | Models declare `$fillable` explicitly. `$guarded = []` and `Model::unguard()` are not allowed. Sensitive attributes (`secret`, `password`, `token_secret`) are in `$hidden`. | Arch test |
 | PHP-11 | Read config through `config()`. `env()` is called only inside `config/*.php`. | Larastan rule |
 | PHP-12 | No raw SQL with interpolated values. `DB::raw`/`whereRaw` only with bindings. | Review |
 | PHP-13 | Prevent N+1: `Model::preventLazyLoading()` outside production; eager load in queries that feed lists. | Runtime exception in dev/tests |
-| PHP-14 | Jobs carry ids, not models with loaded relations, and re-check state on run. Generation jobs follow [AI engine queue rules](ai-provider-engine.md#timeouts-and-duplicate-requests) (`tries = 1`, `ShouldBeUnique`). | Review |
+| PHP-14 | Jobs carry ids, not models with loaded relations, and re-check state on run. Generation jobs follow [AI engine queue rules](ai-provider-engine.md#timeouts-and-duplicate-requests) (`tries = 1`), with `ShouldBeUniqueUntilProcessing` + `WithoutOverlapping` by generation id so a job can re-dispatch itself ([architecture.md](architecture.md#decisions-to-record), item 3). | Review |
 | PHP-15 | Dates come from `now()`/`CarbonImmutable` (set as the default date class), never `date()`/`time()`, so tests can freeze time. | Review |
 
 Example of a thin controller:
@@ -39,7 +39,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Teacher;
 
-use App\Actions\Journals\CreateJournal;
+use App\Classroom\Actions\CreateJournal;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\StoreJournalRequest;
 use Illuminate\Http\RedirectResponse;
@@ -57,24 +57,23 @@ final class JournalController extends Controller
 
 ## 2. Folder layout
 
-Laravel defaults, plus these folders. Domain engines follow [content-engine.md](content-engine.md#template-anatomy) and [ai-provider-engine.md](ai-provider-engine.md#architecture); this table does not change them.
+The module folders and their allowed dependencies are defined in [architecture.md](architecture.md#module-boundaries) (`app/AI`, `app/Content`, `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, `app/Filament`, `app/Jobs/Generation`). This section does not repeat or change them. It only adds the Laravel folders around them and the rules for where code goes.
 
 | Path | Holds |
 |---|---|
-| `app/AI/` | The only code that talks to an AI provider. Knows nothing about education |
-| `app/Content/` | Templates, generation pipeline, document export. Knows nothing about Gemini |
-| `app/Actions/<Domain>/` | Single-purpose business operations called by controllers, jobs, and commands |
+| Module folders | As in [architecture.md](architecture.md#module-boundaries). `BelongsToSchool` and the school context live in `app/Tenancy/` |
+| `app/Actions/<Domain>/` | Single-purpose business operations for features **without** a module folder (assessment, report cards, portals, finance, inventory). Inside a module, its actions live in the module (`app/Classroom/Actions/RecordAttendance.php`) |
 | `app/Enums/` | Backed enums for every fixed set |
-| `app/Models/` | Eloquent models; tenancy trait in `app/Models/Concerns/BelongsToSchool.php` |
+| `app/Models/` | Eloquent models |
 | `app/Policies/` | One policy per model exposed to users |
-| `app/Http/Controllers/{Teacher,School,Supervisor,Exam}/` | Controllers grouped by area. Exam site controllers live only in `Exam/` |
+| `app/Http/Controllers/{Teacher,School,Supervisor,Exam}/` | Thin controllers grouped by area. Exam site controllers live only in `Exam/` and call `app/Exam` |
 | `app/Http/Requests/<Area>/` | Form Requests |
 | `app/Http/Resources/` | Shapes for Inertia props (see SV-4) |
 | `app/Jobs/` | Queued jobs (`Generation/` per [D-024](../agent/DECISIONS.md)) |
 | `app/Exports/`, `app/Imports/` | Laravel Excel classes for administrative data (leger, attendance, student import). Template document export stays in `app/Content/Export/` |
 | `app/Filament/` | Internal console, `staff` guard only |
 | `app/Support/` | Small framework-free helpers, e.g. `IndonesianFormat` |
-| `routes/web.php`, `routes/exam.php` | School app routes; exam site routes on their own guard and middleware group |
+| `routes/app.php`, `routes/exam.php`, `routes/admin.php` | One file per hostname group (`app.`, `ujian.`, `admin.<domain>`, registered with `Route::domain(...)`), each with its own guard ([architecture.md](architecture.md#hostnames-proposed)) |
 | `resources/js/Pages/<Area>/` | Inertia pages |
 | `resources/js/Components/` | Shared Svelte components (ported TailAdmin parts), `resources/js/Templates/<Key>/` per template |
 | `resources/game-runtime/`, `resources/exam-client/` | Separate bundles (D-011, D-027) |
@@ -84,11 +83,13 @@ Laravel defaults, plus these folders. Domain engines follow [content-engine.md](
 
 Rules:
 
-- **LAY-1** `app/Content`, `app/Http`, and `app/Actions` never import `App\AI\Providers\*`; they go through `App\AI\AIGateway`.
-- **LAY-2** `app/AI` never imports `App\Content\*` or education models (`Student`, `Topic`, …).
-- **LAY-3** Nothing under `App\Http\Controllers\Exam` or `resources/exam-client` imports `App\AI\*` (the exam site never calls AI, D-027).
+- **LAY-1** Every dependency follows the "May use / Must not use" table in [architecture.md](architecture.md#module-boundaries). Each row of that table has one Pest architecture test.
+- **LAY-2** Outside `app/AI`, code reaches AI only through `App\AI\AIGateway`, never `App\AI\Providers\*` or `KeyManager` internals.
+- **LAY-3** `app/AI` never imports `App\Content`, `App\Exam`, or student models.
+- **LAY-4** `App\Exam`, `App\Classroom`, `App\Http\Controllers\Exam`, and `resources/exam-client` never import `App\AI\*` (D-027; offline data never touches AI).
+- **LAY-5** Controllers and `app/Actions` may call into modules; modules never import `App\Http\*`.
 
-All three are enforced by Pest architecture tests (`arch()->expect('App\Content')->not->toUse('App\AI\Providers')`).
+Example: `arch()->expect('App\Exam')->not->toUse('App\AI');`
 
 ## 3. Naming
 
@@ -149,7 +150,7 @@ DB::statement("ALTER TABLE journals ADD CONSTRAINT journals_status_check CHECK (
 
 The tenancy model is in [data-model.md](data-model.md#tenancy-and-access). Code rules:
 
-- **TEN-1** Every school-owned model uses the `BelongsToSchool` trait. A model with `school_id` and without the trait fails an arch test.
+- **TEN-1** Every school-owned model uses the `App\Tenancy\BelongsToSchool` trait. A model with `school_id` and without the trait fails an arch test.
 - **TEN-2** `withoutSchoolScope()` is allowed only in `app/Filament/` and in jobs or commands that receive and name the school explicitly. Each call has a one-line comment saying why.
 - **TEN-3** Jobs that touch school data take `schoolId` in the constructor and set the tenancy context first. They never rely on the request's session.
 - **TEN-4** Route model binding resolves through the scoped query, so a foreign `public_id` gives 404, not 403 (no existence leak).
@@ -243,7 +244,7 @@ These turn the [privacy rules](ai-provider-engine.md#privacy-rules) into code ch
 - **AI-5** Templates name a purpose, never a model id; model ids live in `config/ai.php`. Never send `temperature`, `top_p`, or `top_k`.
 - **AI-6** The key is sent only in the `x-goog-api-key` header, decrypted only in `ApiKeyManager`/`GeminiClient`, and never put in a URL, prop, log, exception message, or queue payload (jobs carry the credential id).
 - **AI-7** AI text shown in the UI is escaped (SV-7).
-- **AI-8** Code under the exam site never uses `App\AI` (LAY-3).
+- **AI-8** Code under the exam site never uses `App\AI` (LAY-4).
 
 Review checklist for any PR touching `app/Content` or `app/AI`: "Which data reaches the prompt, and could any of it identify a student?"
 
@@ -287,11 +288,11 @@ Review checklist for any PR touching `app/Content` or `app/AI`: "Which data reac
 
 New choices made in this document. They get numbered in `DECISIONS.md` during integration.
 
-1. **Pest** as the test framework, with Pest architecture tests enforcing layering (LAY-1…3, TEN-1, PHP-10). Reason: readable tests and built-in arch tests make several rules here machine-checkable. PHPUnit stays underneath.
+1. **Pest** as the test framework, with Pest architecture tests enforcing layering (LAY-1…5, TEN-1, PHP-10). Reason: readable tests and built-in arch tests make several rules here machine-checkable. PHPUnit stays underneath.
 2. **TypeScript** in Svelte (`lang="ts"`) for the school app and exam client; the game runtime stays vanilla JS with JSDoc + `@ts-check` (keeps D-011). Reason: typed Inertia props catch prop/serialization mistakes; `svelte-check` runs in CI.
 3. **Svelte 5 (runes)** as the component syntax. Reason: current Svelte major, supported by `@inertiajs/svelte`.
 4. **Larastan** static analysis, starting at level 6.
-5. **Action classes** (`app/Actions/<Domain>/`) hold business operations; controllers stay thin.
+5. **Action classes** hold business operations; controllers stay thin. They live inside the module folders proposed in [architecture.md](architecture.md#decisions-to-record) (item 2), and in `app/Actions/<Domain>/` only for features without a module. This adds to that decision and does not change it.
 6. **Tests run on MySQL 8**, not SQLite, because the schema depends on MySQL 8 features (D-007).
 7. **Frontend translations** come from `lang/id` through a shared Inertia prop and one `t()` helper; no separate JS translation files.
 8. **Typed route helper** for the frontend (Laravel Wayfinder, or Ziggy if Wayfinder does not fit plain Svelte), chosen at scaffold time.
