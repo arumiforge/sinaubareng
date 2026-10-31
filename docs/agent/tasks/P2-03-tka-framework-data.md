@@ -61,5 +61,5 @@ Filled in on 2026-10-30.
 
 **Follow-ups**
 
-- Find an official document for the item count and the 50 / 76,67 limits (not in Perka 047/2025, Kepmendikdasmen 56/2026, Juknis 017/F/AN/2026 or Tanya Jawab TKA; perhaps a later surat edaran or the SHTKA guide).
+- ~~Find an official document for the item count and the 50 / 76,67 limits~~ Dropped: TKA is a practice simulation and these are configurable defaults (D-089).
 - The SMP/MTs part of the same Perka is archived and could be structured later if SMP is ever in scope.
