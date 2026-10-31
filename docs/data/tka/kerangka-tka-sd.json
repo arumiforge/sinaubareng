@@ -1,0 +1,895 @@
+{
+  "dataset": "tka_framework_sd",
+  "version_code": "TKA-SD-PERKA-047-H-AN-2025",
+  "level": "SD/MI/sederajat",
+  "grade": 6,
+  "note": "Seed data for the Paket Soal TKA template and the TKA practice exam (content-engine.md). Indonesian text is quoted from the sources as published (UI copy must still go through lang/id). Official sample questions are NOT copied; only their metadata is kept.",
+  "accessed_on": "2026-10-30",
+  "sources": [
+    {
+      "id": "perka_047_2025",
+      "type": "regulation",
+      "title": "Peraturan Kepala Badan Standar, Kurikulum, dan Asesmen Pendidikan Nomor 047/H/AN/2025 tentang Kerangka Asesmen Tes Kemampuan Akademik Jenjang SD/MI/Sederajat dan SMP/MTs/Sederajat",
+      "issued_on": "2025-07-24",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/929445_71",
+      "alt_urls": [
+        "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/341716_47"
+      ],
+      "file": "docs/sources/Perka_BSKAP_No_047_H_AN_2025_Kerangka_Asesmen_TKA_SD_MI_dan_SMP_MTs.pdf",
+      "sha256": "25f2dd0e292108893298a9684004dcaf3c003fe8ee6b2e1ecff243ceccd8d04b",
+      "accessed_on": "2026-10-30",
+      "pages_note": "page refs below are the printed page numbers (\"- n -\") of the decree"
+    },
+    {
+      "id": "kepmendikdasmen_56_2026",
+      "type": "regulation",
+      "title": "Keputusan Menteri Pendidikan Dasar dan Menengah Nomor 56 Tahun 2026 tentang Pedoman Penyelenggaraan Tes Kemampuan Akademik dan Asesmen Nasional",
+      "issued_on": "2026-03-06",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/373736_68",
+      "file": "docs/sources/Kepmendikdasmen_No_56_Tahun_2026_Pedoman_Penyelenggaraan_TKA_dan_AN.pdf",
+      "sha256": "1d1f8d037ac849e29a320d7f247981f816387f7d92e1c4b67140ee75b9b0585a",
+      "accessed_on": "2026-10-30",
+      "pages_note": "printed page numbers"
+    },
+    {
+      "id": "kepmendikdasmen_95_m_2025",
+      "type": "regulation",
+      "title": "Keputusan Menteri Pendidikan Dasar dan Menengah Nomor 95/M/2025 tentang Pedoman Penyelenggaraan Tes Kemampuan Akademik (TKA 2025; superseded for 2026 by Kepmendikdasmen 56/2026)",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/330040_46",
+      "accessed_on": "2026-10-30",
+      "archived": false
+    },
+    {
+      "id": "pusmendik_web_bi",
+      "type": "official_web",
+      "title": "Pusmendik — Kerangka Asesmen TKA SD/MI: Bahasa Indonesia (Definisi, Muatan, Kompetensi, Matriks Asesmen, Contoh Soal)",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/tka/view/mata-pelajaran-wajib/sd/bahasa-indonesia",
+      "accessed_on": "2026-10-30"
+    },
+    {
+      "id": "pusmendik_web_mtk",
+      "type": "official_web",
+      "title": "Pusmendik — Kerangka Asesmen TKA SD/MI: Matematika (Definisi, Muatan, Kompetensi, Matriks Asesmen, Contoh Soal)",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/tka/view/mata-pelajaran-wajib/sd/matematika",
+      "accessed_on": "2026-10-30"
+    },
+    {
+      "id": "kemendikdasmen_press_2026_05_26",
+      "type": "official_press_release",
+      "title": "Siaran pers Kemendikdasmen: Hasil TKA 2026 Resmi Dirilis, Kemendikdasmen Dorong Evaluasi Pembelajaran yang Lebih Presisi (26 Mei 2026)",
+      "url": "https://www.kemendikdasmen.go.id/siaran-pers/15444-hasil-tka-2026-resmi-dirilis-kemendikdasmen-dorong-evaluasi-pembelajaran-yang-lebih-presisi",
+      "accessed_on": "2026-10-30"
+    },
+    {
+      "id": "media_briefing_2026_05_26",
+      "type": "secondary_media",
+      "title": "Media reports of the Pusmendik media briefing on TKA SD/SMP 2026 results (Kapusmendik Rahmawati, 26 Mei 2026), citing official category limits",
+      "urls": [
+        "https://www.detik.com/edu/sekolah/d-8505710/8-500-murid-sd-smp-dapat-nilai-100-di-tka-2026-mapel-ini-simak-datanya",
+        "https://www.beritasatu.com/nasional/3032250/begini-cara-penilaian-tka-2026-dan-hitungan-bobot-skornya",
+        "https://kumparan.com/berita-hari-ini/kategori-nilai-tka-2026-serta-fungsinya-bagi-murid-dan-sekolah-28RuucS02dq"
+      ],
+      "accessed_on": "2026-10-30",
+      "note": "Used only where no regulation text states the value. Replace with an official document when one is found."
+    }
+  ],
+  "test": {
+    "subjects": [
+      "bahasa_indonesia",
+      "matematika"
+    ],
+    "both_required": true,
+    "item_types": {
+      "values": [
+        {
+          "key": "single",
+          "name": "Soal tunggal",
+          "definition": "Soal yang berdiri sendiri, tidak terkait dengan soal-soal lain."
+        },
+        {
+          "key": "group",
+          "name": "Soal grup",
+          "definition": "Sekumpulan soal yang mengacu pada sebuah stimulus yang sama."
+        }
+      ],
+      "source": {
+        "ref": "perka_047_2025",
+        "section": "II",
+        "pages": "7"
+      }
+    },
+    "item_forms": {
+      "values": [
+        {
+          "key": "pg",
+          "name": "Pilihan Ganda",
+          "short": "PG",
+          "definition": "Hanya terdapat satu pilihan jawaban yang benar. Peserta diminta memilih satu jawaban dari pilihan yang tersedia.",
+          "key_type": "single_option"
+        },
+        {
+          "key": "pgk_mcma",
+          "name": "Pilihan Ganda Kompleks model Multiple Choice Multiple Answers",
+          "short": "PGK MCMA",
+          "definition": "Terdapat kemungkinan lebih dari satu pilihan jawaban benar. Peserta diminta memilih lebih dari satu pilihan yang dianggap benar.",
+          "key_type": "option_set"
+        },
+        {
+          "key": "pgk_kategori",
+          "name": "Pilihan Ganda Kompleks model Kategori",
+          "short": "PGK Kategori",
+          "definition": "Terdapat beberapa pernyataan yang semuanya perlu direspon, misalnya dengan pilihan \"benar\" atau \"salah\" dan \"sesuai\" atau \"tidak sesuai\". Peserta diminta untuk memberi respon untuk masing-masing pernyataan tersebut.",
+          "key_type": "label_per_statement",
+          "response_label_pairs": [
+            [
+              "Benar",
+              "Salah"
+            ],
+            [
+              "Sesuai",
+              "Tidak Sesuai"
+            ]
+          ],
+          "response_label_pairs_note": "Benar/Salah and Sesuai/Tidak Sesuai are named in the decree as examples ('misalnya'). Setuju/Tidak Setuju appears in official SMP samples on the Pusmendik site; Mendukung/Tidak Mendukung (listed in content-engine.md) was not found in the SD sources."
+        }
+      ],
+      "source": {
+        "ref": "perka_047_2025",
+        "section": "II",
+        "pages": "7-8"
+      },
+      "confirmed_by": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB IV C.a.6",
+        "pages": "29",
+        "text": "Bentuk soal TKA dan AN terdiri dari Pilihan Ganda dan Pilihan Ganda Kompleks (Pilihan Ganda Lebih Satu Jawaban Benar dan Kategori)."
+      }
+    },
+    "duration_minutes": {
+      "value": 75,
+      "per": "subject",
+      "year": 2026,
+      "note": "2026 combined TKA + AN schedule: 'Matematika dan Numerasi (75 menit)' on day I and 'Bahasa Indonesia dan Literasi Membaca (75 menit)' on day II, each after a 10-minute practice and followed by a 20-minute survey. TKA 2025 under Kepmendikdasmen 95/M/2025 used 60 minutes per subject.",
+      "source": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB VIII A.5",
+        "pages": "44-45"
+      },
+      "previous": {
+        "value": 60,
+        "year": 2025,
+        "source": {
+          "ref": "kepmendikdasmen_95_m_2025",
+          "section": "BAB VI B.4",
+          "pages": "32"
+        }
+      }
+    },
+    "item_count": {
+      "value": 30,
+      "per": "subject",
+      "note": "No regulation text found states the item count. The official Pusmendik pages publish a 30-item sample set per SD subject, and the Kapusmendik example at the 2026 results briefing used 30 items ('kalau soal yang diterima murid 30, dia betul 15 soal, maka nilainya 50'). Treat 30 as the default, not a rule.",
+      "source": {
+        "refs": [
+          "pusmendik_web_bi",
+          "pusmendik_web_mtk",
+          "media_briefing_2026_05_26"
+        ]
+      },
+      "confidence": "secondary"
+    },
+    "item_origin": {
+      "note": "From 2026 the SD/SMP instrument combines central items (incl. AN literasi membaca / numerasi items) with items written by kabupaten/kota (soal daerah). The briefing put the split at about 70% central and 30% regional.",
+      "source": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB IV D; BAB V",
+        "pages": "29-31"
+      },
+      "split_source": {
+        "ref": "media_briefing_2026_05_26",
+        "confidence": "secondary"
+      }
+    },
+    "language": {
+      "value": "Bahasa Indonesia",
+      "source": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB IV D",
+        "pages": "29-30"
+      }
+    }
+  },
+  "scoring": {
+    "range": {
+      "min": 0,
+      "max": 100,
+      "decimals": 2,
+      "text": "Hasil TKA untuk jenjang SD/MI/sederajat dan SMP/MTs/sederajat dilaporkan dalam rentang nilai 0 (nol) sampai dengan 100 (seratus) dengan pembulatan 2 (dua) angka di belakang koma.",
+      "source": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB X B.4",
+        "pages": "49"
+      }
+    },
+    "method_note": {
+      "text": "The ministry describes TKA as using classical scoring on a 0–100 scale, after statistical verification and validation of every package and item. The briefing example (15 of 30 correct = 50, 27 of 30 = 90) suggests a proportion-correct score; partial credit for PGK items is not described.",
+      "source": {
+        "refs": [
+          "kemendikdasmen_press_2026_05_26",
+          "media_briefing_2026_05_26"
+        ]
+      }
+    },
+    "categories": {
+      "regulation_text": "Kategori capaian hasil TKA sebagai berikut: a. Baik; b. Memadai; dan c. Kurang. Predikat istimewa diperuntukkan peserta jenjang SD/MI/sederajat dan SMP/MTs/sederajat yang mendapatkan nilai 95,00 atau lebih di masing-masing mata uji.",
+      "regulation_source": {
+        "ref": "kepmendikdasmen_56_2026",
+        "section": "BAB X C.3-4",
+        "pages": "50"
+      },
+      "values": [
+        {
+          "key": "kurang",
+          "name": "Kurang",
+          "min": 0,
+          "max_exclusive": 50
+        },
+        {
+          "key": "memadai",
+          "name": "Memadai",
+          "min": 50,
+          "max_exclusive": 76.67
+        },
+        {
+          "key": "baik",
+          "name": "Baik",
+          "min": 76.67,
+          "max": 100
+        }
+      ],
+      "limits_source": {
+        "ref": "media_briefing_2026_05_26",
+        "confidence": "secondary",
+        "note": "Kepmendikdasmen 56/2026 names the categories but not their limits. 50 and 76,67 are the limits reported from the official 2026 results briefing and @litbangdikbud. The boundary at 50 is reported as '<50' and '>50' in some articles; 50 is placed in Memadai here, as in content-engine.md."
+      },
+      "predicates": [
+        {
+          "key": "istimewa",
+          "name": "Istimewa",
+          "min": 95,
+          "applies_to_category": "baik",
+          "display_example": "Baik-Istimewa",
+          "source": {
+            "ref": "kepmendikdasmen_56_2026",
+            "section": "BAB X C.4",
+            "pages": "50"
+          }
+        }
+      ],
+      "previous": {
+        "year": 2025,
+        "values": [
+          "Istimewa",
+          "Baik",
+          "Memadai",
+          "Kurang"
+        ],
+        "note": "Kepmendikdasmen 95/M/2025 listed Istimewa as a fourth category.",
+        "source": {
+          "ref": "kepmendikdasmen_95_m_2025",
+          "section": "BAB VII C.3",
+          "pages": "33-34"
+        }
+      }
+    }
+  },
+  "subjects": [
+    {
+      "key": "bahasa_indonesia",
+      "name": "Bahasa Indonesia",
+      "definition": {
+        "text": "TKA Bahasa Indonesia SD/MI/sederajat difokuskan pada salah satu keterampilan berbahasa, yakni membaca. Membaca dipilih sebagai fokus karena merupakan keterampilan yang menjadi fondasi untuk terus belajar dan bekerja pada era teknologi yang berubah dan berkembang sangat cepat.",
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A",
+          "pages": "8"
+        }
+      },
+      "skill": "membaca",
+      "content": {
+        "text_types": [
+          {
+            "key": "informasi",
+            "name": "Teks informasi",
+            "description": "Teks yang berisi fakta sederhana dari berbagai bidang atau topik serta berskala lokal dan nasional."
+          },
+          {
+            "key": "fiksi",
+            "name": "Teks fiksi",
+            "description": "Cerita rekaan yang dapat berupa fantasi atau faktual (sejarah/biografi) dengan latar cerita konkret, tokoh berkarakter datar, konflik tunggal dengan penyelesaian tertutup, alur maju, dan sudut pandang orang pertama."
+          }
+        ],
+        "text_characteristics": {
+          "vocabulary": "Kata dasar, kata berimbuhan, kata konkret, dominan makna denotatif, makna konotatif konteks terbatas.",
+          "sentence": "Jumlah kata 3–7 per kalimat, pola kalimat dasar SPOK, struktur bahasa tulis bercampur bahasa lisan terbatas.",
+          "discourse": "Kohesi pengacuan/referensi, konjungsi antarparagraf penambahan/penjelasan; panjang teks 150–200 kata (kecuali teks puisi)."
+        },
+        "rules": {
+          "words_per_sentence": {
+            "min": 3,
+            "max": 7
+          },
+          "text_length_words": {
+            "min": 150,
+            "max": 200,
+            "except": [
+              "puisi"
+            ]
+          }
+        },
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Muatan",
+          "pages": "8-9"
+        }
+      },
+      "reading_aspects": {
+        "items": [
+          "mengidentifikasi informasi tersurat dalam teks",
+          "menyusun ulang, mengelompokkan, membuat ikhtisar, dan menyajikan kembali informasi tersurat dalam teks",
+          "mengidentifikasi dan menyimpulkan informasi tersirat dalam teks",
+          "menilai gagasan, fakta, atau opini dalam teks",
+          "menanggapi isi teks, merefleksi diri dengan tokoh atau kejadian, dan menanggapi bahasa penulis dalam teks"
+        ],
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Kompetensi",
+          "pages": "9"
+        }
+      },
+      "competencies": [
+        {
+          "key": "pemahaman_tekstual",
+          "name": "Pemahaman Tekstual",
+          "description": "Kemampuan untuk memahami informasi yang dikemukakan secara eksplisit, mengelompokkan, menyusun ulang, dan menyajikan kembali informasi secara eksplisit dari teks.",
+          "sub_competencies": [
+            {
+              "key": "pt_kosakata_bidang",
+              "text": "Mengidentifikasi penggunaan kosakata umum dan khusus dalam berbagai bidang."
+            },
+            {
+              "key": "pt_objek_kosakata",
+              "text": "Mengidentifikasi objek berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi."
+            },
+            {
+              "key": "pt_ikhtisar_bagan",
+              "text": "Menyusun kembali informasi dari teks dalam bentuk ikhtisar/bagan."
+            },
+            {
+              "key": "pt_informasi_tersurat",
+              "text": "Mengidentifikasi informasi tersurat dalam teks."
+            }
+          ]
+        },
+        {
+          "key": "pemahaman_inferensial",
+          "name": "Pemahaman Inferensial",
+          "description": "Kemampuan untuk menarik kesimpulan berdasarkan informasi yang tersirat dalam teks.",
+          "sub_competencies": [
+            {
+              "key": "pi_ide_pokok",
+              "text": "Menyimpulkan ide pokok, gagasan pendukung, amanat, tokoh, peristiwa, dan/atau nilai-nilai dalam teks."
+            },
+            {
+              "key": "pi_perubahan",
+              "text": "Menyimpulkan perubahan sederhana pada objek, karakter, dan/atau latar dalam teks fiksi atau nonfiksi."
+            },
+            {
+              "key": "pi_makna_ungkapan",
+              "text": "Menjelaskan makna ungkapan yang digunakan dalam teks."
+            }
+          ]
+        },
+        {
+          "key": "evaluasi_apresiasi",
+          "name": "Evaluasi dan Apresiasi",
+          "description": "Kemampuan untuk membuat penilaian terhadap ide, menanggapi teks secara emosional dan estetis dengan mempertimbangkan dampaknya terhadap perasaan, imajinasi, serta penggunaan bahasa oleh penulis.",
+          "sub_competencies": [
+            {
+              "key": "ea_relevansi",
+              "text": "Menilai relevansi peristiwa dalam teks dengan kehidupan sehari-hari berdasarkan pengalaman atau pengetahuan pribadi."
+            },
+            {
+              "key": "ea_kesesuaian",
+              "text": "Menilai kesesuaian antarunsur dan/atau antarinformasi dalam teks."
+            },
+            {
+              "key": "ea_respons_emosional",
+              "text": "Menyimpulkan respons emosional terhadap unsur teks fiksi."
+            }
+          ]
+        }
+      ],
+      "competencies_source": {
+        "ref": "perka_047_2025",
+        "section": "III.A Kompetensi (tabel)",
+        "pages": "9-10"
+      },
+      "an_literacy_competencies_observed": {
+        "note": "Not in Perka 047/H/AN/2025. Items 16-18 and 28-30 of the official 2026 sample set on the Pusmendik page are tagged with AKM literasi membaca competencies, reflecting the 2026 merge of AN literacy items into the Bahasa Indonesia test (Kepmendikdasmen 56/2026 BAB IV D). Listed only as observed; see Decisions to record.",
+        "items": [
+          {
+            "name": "Mengakses dan Menemukan Informasi (Access and Retrieve)",
+            "sub_competencies_seen": [
+              "Menemukan informasi tersurat (siapa, kapan, di mana, mengapa, bagaimana) pada teks informasi"
+            ]
+          },
+          {
+            "name": "Menginterpretasi dan Mengintegrasi (Interpret and Integrate)",
+            "sub_competencies_seen": [
+              "Menyusun inferensi (kesimpulan) berdasarkan unsur-unsur pendukung teks informasi (grafik, gambar, tabel, dll)",
+              "Menjelaskan ide pokok dan beberapa ide pendukung pada teks informasi"
+            ]
+          },
+          {
+            "name": "Mengevaluasi dan Merefleksi (Evaluate and Reflect)",
+            "sub_competencies_seen": [
+              "Menilai kesesuaian antara ilustrasi dengan isi teks informasi"
+            ]
+          }
+        ],
+        "source": {
+          "ref": "pusmendik_web_bi"
+        }
+      },
+      "official_samples_metadata": {
+        "perka_samples": {
+          "source": {
+            "ref": "perka_047_2025",
+            "section": "IV.A",
+            "pages": "26-31"
+          },
+          "items": [
+            {
+              "no": 1,
+              "competency": "pemahaman_tekstual",
+              "sub_competency": "pt_informasi_tersurat",
+              "form": "pg",
+              "item_type": "group",
+              "options": 4
+            },
+            {
+              "no": 2,
+              "competency": "pemahaman_inferensial",
+              "sub_competency": "pi_makna_ungkapan",
+              "form": "pg",
+              "form_as_labelled": "PGK Kategori",
+              "item_type": "group",
+              "options": 4,
+              "note": "Labelled 'PGK Kategori' in the decree but built as PG with options A–D and key B; the Pusmendik page labels the same item PG."
+            },
+            {
+              "no": 3,
+              "competency": "evaluasi_apresiasi",
+              "sub_competency": "ea_relevansi",
+              "form": "pgk_kategori",
+              "item_type": "group",
+              "statements": 3,
+              "response_labels": [
+                "Sesuai",
+                "Tidak Sesuai"
+              ]
+            },
+            {
+              "no": 4,
+              "competency": "pemahaman_tekstual",
+              "sub_competency": "pt_informasi_tersurat",
+              "form": "pgk_mcma",
+              "item_type": "group",
+              "options": 3,
+              "correct_options": 2
+            },
+            {
+              "no": 5,
+              "competency": "pemahaman_tekstual",
+              "sub_competency": "pt_ikhtisar_bagan",
+              "form": "pg",
+              "item_type": "group",
+              "options": 4
+            },
+            {
+              "no": 6,
+              "competency": "pemahaman_inferensial",
+              "sub_competency": "pi_ide_pokok",
+              "form": "pg",
+              "item_type": "group",
+              "options": 4
+            }
+          ]
+        },
+        "web_sample_set": {
+          "source": {
+            "ref": "pusmendik_web_bi"
+          },
+          "item_count": 30,
+          "form_counts": {
+            "pg": 16,
+            "pgk_mcma": 6,
+            "pgk_kategori": 8
+          },
+          "note": "Counts of the 30-item sample set on the Pusmendik page. A sample, not an official blueprint."
+        }
+      }
+    },
+    {
+      "key": "matematika",
+      "name": "Matematika",
+      "definition": {
+        "text": "TKA Matematika SD/MI/sederajat mengukur kemampuan murid dalam memahami fakta, konsep, prinsip, dan prosedur matematika, serta kemampuan mereka dalam menerapkan pengetahuan matematika untuk menyelesaikan masalah (problem solving).",
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A",
+          "pages": "10"
+        }
+      },
+      "content": {
+        "basis": "Elemen kurikulum atau materi matematika yang dipelajari murid yang ada pada Kurikulum 2013 dan Kurikulum Merdeka.",
+        "contexts": "Pengetahuan matematika diukur melalui permasalahan dalam konteks matematika dan permasalahan dalam konteks keseharian yang dapat meliputi kejadian atau situasi di lingkup personal, keluarga, atau lingkungan sekitar.",
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Muatan",
+          "pages": "10"
+        },
+        "elements": [
+          {
+            "key": "bilangan",
+            "name": "Bilangan",
+            "sub_elements": [
+              {
+                "key": "bilangan_rasional",
+                "name": "Bilangan Rasional",
+                "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut",
+                "scope": [
+                  {
+                    "key": "pecahan_senilai",
+                    "text": "Pecahan senilai menggunakan gambar dan simbol matematika"
+                  },
+                  {
+                    "key": "perbandingan_pengurutan_pecahan",
+                    "text": "Perbandingan dan pengurutan bilangan pecahan"
+                  },
+                  {
+                    "key": "relasi_bentuk_pecahan",
+                    "text": "Relasi berbagai bentuk pecahan (pecahan sederhana, desimal, persen)"
+                  },
+                  {
+                    "key": "operasi_bilangan_cacah",
+                    "text": "Operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah"
+                  },
+                  {
+                    "key": "operasi_pecahan",
+                    "text": "Operasi penjumlahan dan pengurangan bilangan pecahan, serta operasi perkalian dan pembagian bilangan pecahan dengan bilangan asli"
+                  },
+                  {
+                    "key": "kelipatan_faktor_kpk_fpb",
+                    "text": "Kelipatan, faktor, KPK, dan FPB bilangan asli"
+                  }
+                ],
+                "limits": []
+              }
+            ]
+          },
+          {
+            "key": "geometri_pengukuran",
+            "name": "Geometri dan Pengukuran",
+            "sub_elements": [
+              {
+                "key": "objek_geometri",
+                "name": "Objek Geometri",
+                "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut",
+                "scope": [
+                  {
+                    "key": "bentuk_bangun_datar",
+                    "text": "Bentuk bangun datar"
+                  },
+                  {
+                    "key": "konstruksi_bangun_ruang_visualisasi",
+                    "text": "Konstruksi bangun ruang dan visualisasi spasial (bagian depan, atas, dan samping)"
+                  }
+                ],
+                "limits": [
+                  "Bangun datar mencakup segitiga, segiempat, dan segi banyak",
+                  "Bangun ruang mencakup kubus, balok, dan gabungannya"
+                ]
+              },
+              {
+                "key": "pengukuran",
+                "name": "Pengukuran",
+                "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut",
+                "scope": [
+                  {
+                    "key": "panjang_satuan_baku",
+                    "text": "Panjang benda menggunakan satuan baku"
+                  },
+                  {
+                    "key": "konversi_panjang",
+                    "text": "Hubungan antar-satuan baku panjang (mm, dm, cm, m, dam, hm, km)"
+                  },
+                  {
+                    "key": "volume_satuan_baku",
+                    "text": "Volume benda menggunakan satuan baku"
+                  },
+                  {
+                    "key": "konversi_volume",
+                    "text": "Hubungan antar-satuan baku volume (ml, dl, cl, l, dal, hl, kl)"
+                  },
+                  {
+                    "key": "berat_satuan_baku",
+                    "text": "Berat benda menggunakan satuan baku"
+                  },
+                  {
+                    "key": "konversi_berat",
+                    "text": "Hubungan antar-satuan baku berat (mg, dg, cg, g, dag, hg, kg)"
+                  },
+                  {
+                    "key": "waktu",
+                    "text": "Waktu"
+                  },
+                  {
+                    "key": "konversi_waktu",
+                    "text": "Hubungan antar-satuan waktu (detik, menit, jam, hari, pekan, bulan, tahun)"
+                  },
+                  {
+                    "key": "kecepatan",
+                    "text": "Laju perubahan (kecepatan)"
+                  },
+                  {
+                    "key": "keliling_luas_bangun_datar",
+                    "text": "Keliling dan luas bangun datar (segitiga, segiempat, dan segi banyak)"
+                  },
+                  {
+                    "key": "volume_bangun_ruang",
+                    "text": "Volume bangun ruang (kubus, balok, dan gabungannya)"
+                  },
+                  {
+                    "key": "besar_sudut",
+                    "text": "Besar sudut"
+                  },
+                  {
+                    "key": "penaksiran_ukuran",
+                    "text": "Penaksiran ukuran"
+                  }
+                ],
+                "limits": []
+              }
+            ]
+          },
+          {
+            "key": "data",
+            "name": "Data",
+            "sub_elements": [
+              {
+                "key": "penyajian_penggunaan_data",
+                "name": "Penyajian dan Penggunaan Data",
+                "competency": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen berikut",
+                "scope": [
+                  {
+                    "key": "penyajian_data",
+                    "text": "Penyajian data (gambar, piktogram, diagram batang, dan tabel frekuensi)"
+                  },
+                  {
+                    "key": "pengambilan_informasi_data",
+                    "text": "Pengambilan informasi dan penggunaan data"
+                  }
+                ],
+                "limits": []
+              }
+            ]
+          }
+        ],
+        "elements_source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Matematika (tabel)",
+          "pages": "13-15"
+        }
+      },
+      "mathematical_abilities": {
+        "items": [
+          "pengetahuan matematika",
+          "representasi matematis",
+          "penalaran",
+          "pemecahan masalah matematis",
+          "koneksi matematis"
+        ],
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Kompetensi",
+          "pages": "11"
+        }
+      },
+      "competency_statement": {
+        "text": "Memahami, mengaplikasikan, dan bernalar yang lebih tinggi untuk menyelesaikan permasalahan terkait cakupan sub-elemen.",
+        "note": "Same statement for every sub-element. Items are tagged with a sub-element scope point and one of the three cognitive levels below.",
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A (tabel)",
+          "pages": "13-15"
+        }
+      },
+      "cognitive_levels": {
+        "note": "Kemampuan matematis dalam setiap cakupan sub-elemen memungkinkan diukur dalam satu atau beberapa level kognitif.",
+        "levels": [
+          {
+            "level": 1,
+            "name": "Pengetahuan dan Pemahaman",
+            "name_en": "Knowing and Understanding",
+            "processes": [
+              {
+                "name": "Menghitung",
+                "description": "Melakukan perhitungan berdasarkan prosedur yang mencakup operasi hitung aritmatika (+, -, ×, ÷, atau kombinasinya)."
+              },
+              {
+                "name": "Memahami informasi",
+                "description": "Memahami informasi dari grafik fungsi, tabel, diagram, infografis, atau bentuk visual lainnya."
+              },
+              {
+                "name": "Mengelompokkan",
+                "description": "Mengelompokkan objek berdasarkan fakta, konsep, dan prinsip matematika dalam cakupan sub-elemen."
+              },
+              {
+                "name": "Mengidentifikasi",
+                "description": "Melakukan identifikasi terhadap objek menggunakan konsep, fakta, dan prinsip matematika dalam cakupan sub-elemen."
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "name": "Aplikasi",
+            "name_en": "Applying",
+            "processes": [
+              {
+                "name": "Memodelkan",
+                "description": "Memodelkan permasalahan kontekstual terkait cakupan sub-elemen ke dalam kalimat matematika."
+              },
+              {
+                "name": "Mengaplikasikan",
+                "description": "Mengaplikasikan rumus matematika untuk menyelesaikan permasalahan yang melibatkan konsep dan prosedur matematis yang familiar dan rutin."
+              },
+              {
+                "name": "Menginterpretasikan",
+                "description": "Menjelaskan makna dari berbagai situasi, kejadian, pernyataan, representasi, atau masalah matematika."
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "name": "Penalaran",
+            "name_en": "Reasoning",
+            "processes": [
+              {
+                "name": "Menganalisis",
+                "description": "Menentukan, menjelaskan, dan menggunakan hubungan beberapa konsep, fakta, prinsip, atau prosedur matematika dalam cakupan sub-elemen."
+              },
+              {
+                "name": "Memecahkan masalah",
+                "description": "Mengaitkan beberapa konsep, fakta, prinsip, prosedur, dan representasi matematika dalam cakupan sub-elemen, untuk menyelesaikan permasalahan dalam situasi baru atau konteks yang tidak rutin."
+              },
+              {
+                "name": "Mengevaluasi",
+                "description": "Mengevaluasi alternatif strategi dan solusi dari suatu pemecahan masalah."
+              },
+              {
+                "name": "Menyimpulkan",
+                "description": "Menarik kesimpulan yang valid dari informasi, data, atau bukti yang diberikan menggunakan konsep, fakta, prinsip, dan prosedur matematika dalam cakupan sub-elemen."
+              }
+            ]
+          }
+        ],
+        "source": {
+          "ref": "perka_047_2025",
+          "section": "III.A Kompetensi (tabel level kognitif)",
+          "pages": "11-12"
+        }
+      },
+      "an_numeracy_items_observed": {
+        "note": "Not in Perka 047/H/AN/2025. Items 25-30 of the official 2026 sample set on the Pusmendik page carry narrower, numeracy-style competency statements, reflecting the 2026 merge of AN numerasi items into the Matematika test (Kepmendikdasmen 56/2026 BAB IV D). Listed only as observed.",
+        "competencies_seen": [
+          "Menentukan panjang dan berat benda menggunakan satuan baku (termasuk menentukan satuan yang tepat)",
+          "Menghitung keliling dan luas persegi panjang bila diketahui panjang dan lebarnya, dan menghitung panjang atau lebar bila diketahui luas/keliling dan salah satu sisinya",
+          "Menyatakan bilangan pecahan dalam bentuk desimal atau persentase atau sebaliknya",
+          "Menggunakan penjumlahan/pengurangan/perkalian/ pembagian bilangan cacah, pecahan, atau bilangan desimal (termasuk mengestimasi hasil operasi)",
+          "Menyajikan, menganalisis, dan menginterpretasi data dalam bentuk diagram batang atau tabel"
+        ],
+        "source": {
+          "ref": "pusmendik_web_mtk"
+        }
+      },
+      "official_samples_metadata": {
+        "perka_samples": {
+          "source": {
+            "ref": "perka_047_2025",
+            "section": "IV.A",
+            "pages": "31-36"
+          },
+          "items": [
+            {
+              "no": 1,
+              "element": "bilangan",
+              "sub_element": "bilangan_rasional",
+              "scope": "operasi_pecahan",
+              "cognitive_level": 1,
+              "form": "pg",
+              "options": 4
+            },
+            {
+              "no": 2,
+              "element": "bilangan",
+              "sub_element": "bilangan_rasional",
+              "scope": "operasi_pecahan",
+              "cognitive_level": 2,
+              "form": "pg",
+              "options": 4
+            },
+            {
+              "no": 3,
+              "element": "bilangan",
+              "sub_element": "bilangan_rasional",
+              "scope": "operasi_pecahan",
+              "cognitive_level": 3,
+              "form": "pgk_kategori",
+              "statements": 3,
+              "response_labels": [
+                "Benar",
+                "Salah"
+              ]
+            },
+            {
+              "no": 4,
+              "element": "geometri_pengukuran",
+              "sub_element": "objek_geometri",
+              "scope": "konstruksi_bangun_ruang_visualisasi",
+              "cognitive_level": 2,
+              "form": "pg",
+              "options": 4
+            },
+            {
+              "no": 5,
+              "element": "geometri_pengukuran",
+              "sub_element": "pengukuran",
+              "scope": "konversi_berat",
+              "cognitive_level": 2,
+              "form": "pgk_mcma",
+              "options": 3,
+              "correct_options": 2
+            },
+            {
+              "no": 6,
+              "element": "data",
+              "sub_element": "penyajian_penggunaan_data",
+              "scope": "pengambilan_informasi_data",
+              "cognitive_level": 2,
+              "form": "pgk_kategori",
+              "statements": 3,
+              "response_labels": [
+                "Benar",
+                "Salah"
+              ]
+            }
+          ]
+        },
+        "web_sample_set": {
+          "source": {
+            "ref": "pusmendik_web_mtk"
+          },
+          "item_count": 30,
+          "form_counts": {
+            "pg": 18,
+            "pgk_mcma": 3,
+            "pgk_kategori": 9
+          },
+          "note": "Counts of the 30-item sample set on the Pusmendik page. A sample, not an official blueprint."
+        }
+      }
+    }
+  ]
+}
