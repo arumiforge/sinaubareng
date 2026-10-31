@@ -59,6 +59,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — D-120/D-121: TKA proposals D-041, D-042, D-044…D-047 and exam login throttling D-054 accepted; D-111 (AN offered) stands; exam font standard size. IDCloudHost confirmed outbound/7844. P2-08 (server monitoring) created. Open: print font choice (D-109 vs "font cukup 2").
 - 2026-10-31 — Owner answers D-116…D-119: D-022 accepted (own Gemini client, no Laravel AI SDK), default model Gemini 3.8 Flash (free tier 5 RPM / 250k TPM / 20 RPD per project), usage logs kept 1 month, backup keys allowed.
 - 2026-10-31 — Owner answers D-113…D-115: Tim Validasi SIGRAK reviews religion data with no same-religion teacher required; files on local disk, R2 optional; MI CP source errors corrected in the data (`raw_text` unchanged); Khonghucu "(孔)" confirmed.
 - 2026-10-31 — Owner answers D-109…D-112: F4 215 × 330 mm and one print font, Gmail SMTP, AN competencies in Paket Soal TKA, reviewer recorded as Tim Validasi SIGRAK. The owner confirmed the Cloudflare Tunnel runs on the server, so outbound NAT is OK.
