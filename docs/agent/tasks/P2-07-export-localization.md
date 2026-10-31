@@ -1,8 +1,8 @@
 # P2-07 — Export and localization guide
 
 - **Phase:** P2
-- **Status:** todo
-- **Owner:** —
+- **Status:** in-progress
+- **Owner:** p2/p2-07-export-localization
 - **Depends on:** — (P2-06 coding standards is merged)
 - **Can run in parallel with:** —
 
