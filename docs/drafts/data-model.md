@@ -81,7 +81,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | `KM-SD-2026-R2` | National SD subjects with topics, TP, ATP, fokus, JP (incl. PAI) | EDUNEXA JSON files |
 | `CP-PABP-BKPDM-020-2026` | CP for the six religion subjects, SD Fase A–C | [`docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) (transcribed, to verify) |
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP for MI's Kemenag subjects, Fase A–C | [`docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) (raw text, to structure) |
-| MI allocation (KMA 1503/2025) | JP per subject and grade for MI | To be entered from the official Lampiran II |
+| `ALOKASI-MI-KMA-1503-2025` | MI allocation: JP per subject and grade (intrakurikuler, kokurikuler), required vs elective, muatan lokal range | [`docs/data/curriculum/mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) (verified against KMA 1503/2025 Lampiran II, Tabel 1–5, pp. 28–31) |
 
 Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are built by the team (Phase 2 data tasks) and imported in the KM-SD-2026-R2 shape. CP-only versions are already enough for the RPM wizard to show CP and elements.
 
