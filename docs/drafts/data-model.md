@@ -126,7 +126,7 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 
 | Table | Key columns | Notes and invariants |
 |---|---|---|
-| `ai_credentials` | `user_id` FK CASCADE, `label`, `project_label`, `account_label` nullable, `secret` (encrypted cast), `secret_last4`, `secret_fingerprint`, `status` ∈ {`active`,`invalid`,`disabled`}, `invalid_reason` nullable, `consecutive_failures`, `circuit_open_until` nullable, `last_success_at` nullable, `last_tested_at`, `multi_key_consent_at` nullable (NULL for the first key) | Unique (`user_id`, `secret_fingerprint`). Owner-only use. Max per user in config. The second and later keys require consent (D-023). **No `school_id`**: keys belong to the teacher (D-012) |
+| `ai_credentials` | `user_id` FK CASCADE, `label`, `project_label`, `account_label` nullable, `secret` (encrypted cast), `secret_last4`, `secret_fingerprint`, `status` ∈ {`active`,`invalid`,`disabled`}, `is_backup` bool default false (D-119), `invalid_reason` nullable, `consecutive_failures`, `circuit_open_until` nullable, `last_success_at` nullable, `last_tested_at`, `multi_key_consent_at` nullable (NULL for the first key) | Unique (`user_id`, `secret_fingerprint`). Owner-only use. Max per user in config. The second and later keys require consent (D-023). **No `school_id`**: keys belong to the teacher (D-012) |
 | `ai_credential_cooldowns` | `ai_credential_id` FK CASCADE, `model`, `until`, `reason` ∈ {`rate_minute`,`rate_daily`} | Unique (`ai_credential_id`, `model`). Mirror of the Redis cooldowns for the UI |
 | `ai_usage_logs` | `user_id`, `school_id` nullable (NULL for a supervisor with no school), `ai_credential_id` FK SET NULL, `generation_id` FK SET NULL, `step_key`, `attempt`, `purpose`, `model`, `outcome` (success or error class), `http_status` nullable, `input_tokens`, `output_tokens`, `latency_ms`, `created_at` | Append-only. Index (`user_id`, `created_at`), (`school_id`, `created_at`). No key, no prompt text |
 
@@ -172,5 +172,5 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 ## Open questions
 
 - [ ] Report card export format required by e-Rapor (columns and file type).
-- [ ] Retention for `ai_usage_logs` and `document_revisions` (proposed: 180 days / last 10).
+- [ ] Retention for `document_revisions` (proposed: last 10). `ai_usage_logs`: 1 month (D-118).
 - [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?
