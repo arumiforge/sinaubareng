@@ -1,6 +1,6 @@
 # Coding Standards
 
-- **Status:** draft
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-06
 - **Last updated:** 2026-10-31
 

@@ -17,7 +17,7 @@ Draft the MySQL 8 relational model for accounts, curriculum, timetable, content,
 
 ## Output
 
-- `docs/drafts/data-model.md`
+- `docs/final/data-model.md`
 
 ## Done when
 

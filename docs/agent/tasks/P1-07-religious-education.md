@@ -17,7 +17,7 @@ Cover religious education for SD (six religions) and MI (Kemenag PAI subjects an
 
 ## Output
 
-- `docs/drafts/religious-education.md`
+- `docs/final/religious-education.md`
 - `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
 - `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`
 - `docs/sources/` (two decrees), D-034…D-036

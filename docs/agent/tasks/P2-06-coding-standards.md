@@ -13,11 +13,11 @@ Write the coding standards every developer and agent follows when the build star
 ## Read first
 
 - `CLAUDE.md`, `docs/agent/CONTEXT.md`, `docs/agent/WORKFLOW.md`
-- `docs/drafts/data-model.md` (conventions, tenancy), `docs/drafts/ai-provider-engine.md` (privacy rules), `docs/drafts/design-system.md` (UI writing, terms)
+- `docs/final/data-model.md` (conventions, tenancy), `docs/final/ai-provider-engine.md` (privacy rules), `docs/final/design-system.md` (UI writing, terms)
 
 ## Output
 
-- `docs/drafts/coding-standards.md` (use `docs/templates/DOC.md`): PHP/Laravel (PSR-12 via Pint, strict types, enums for fixed sets, Form Requests, Policies, no business logic in controllers), folder layout (`app/AI`, `app/Content`, …), naming, migrations (constraints, indexes, no soft deletes), tenancy scope and IDOR tests, Svelte + Inertia conventions, translations (`lang/id`, English keys), Indonesian exports, dates/numbers formatting, tests (what to test, fake AI provider), AI privacy rules for code, logging/secrets, commit and PR rules (no attribution), dependency pinning.
+- `docs/final/coding-standards.md` (use `docs/templates/DOC.md`): PHP/Laravel (PSR-12 via Pint, strict types, enums for fixed sets, Form Requests, Policies, no business logic in controllers), folder layout (`app/AI`, `app/Content`, …), naming, migrations (constraints, indexes, no soft deletes), tenancy scope and IDOR tests, Svelte + Inertia conventions, translations (`lang/id`, English keys), Indonesian exports, dates/numbers formatting, tests (what to test, fake AI provider), AI privacy rules for code, logging/secrets, commit and PR rules (no attribution), dependency pinning.
 - A "Decisions to record" section for anything new (e.g. Pest vs PHPUnit, TypeScript or not).
 
 ## Done when
@@ -34,7 +34,7 @@ Write the coding standards every developer and agent follows when the build star
 
 ## Result
 
-- Wrote `docs/drafts/coding-standards.md`: numbered, checkable rules for PHP/Laravel, folder layout, naming, migrations, tenancy + IDOR tests, Svelte/Inertia, translations, exports and formatting, tests (fake AI provider), AI privacy in code, logging/secrets, commits/PRs, dependency pinning. Rules link to the drafts and decisions instead of repeating them.
+- Wrote `docs/final/coding-standards.md`: numbered, checkable rules for PHP/Laravel, folder layout, naming, migrations, tenancy + IDOR tests, Svelte/Inertia, translations, exports and formatting, tests (fake AI provider), AI privacy in code, logging/secrets, commits/PRs, dependency pinning. Rules link to the drafts and decisions instead of repeating them.
 - **Decisions to record** (10 items, in the doc): Pest + arch tests, TypeScript in Svelte (game runtime stays JS), Svelte 5 runes, Larastan level 6, Action classes, tests on MySQL 8, frontend translations via shared prop + `t()`, typed route helper (Wayfinder or Ziggy), app timezone UTC, exact pins for output-affecting JS libraries.
 - **Owner approved** decisions 1–3 (Pest, TypeScript, Svelte 5) on 2026-10-31. They still need D-numbers at integration.
 - **Owner answered** the open questions on 2026-10-31: CI is GitHub Actions, and `down()` in migrations is not required (decisions 11–12, DB-13, GIT-4).

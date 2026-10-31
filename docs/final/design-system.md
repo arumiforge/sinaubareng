@@ -1,6 +1,6 @@
 # Design System and UI Writing
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
 - **Last updated:** 2026-10-30
 - **Sources:** [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)

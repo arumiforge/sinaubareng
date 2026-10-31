@@ -17,7 +17,7 @@ Adapt the EDUNEXA tokens, voice, writing rules, and terms to Tailwind/TailAdmin/
 
 ## Output
 
-- `docs/drafts/design-system.md`
+- `docs/final/design-system.md`
 
 ## Done when
 

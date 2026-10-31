@@ -47,7 +47,7 @@ Reason: owner confirmed the recommendation in D-005.
 
 ### D-009 — Product scope: content creation + administration from v1
 Accepted · 2026-10-30
-SIGRAK (working name) is an AI-assisted platform for making teaching content (Guided Generator, Template Engine, AI Provider Engine) and keeps EDUNEXA's school administration features. Both ship in v1. See `docs/drafts/product-concept.md`.
+SIGRAK (working name) is an AI-assisted platform for making teaching content (Guided Generator, Template Engine, AI Provider Engine) and keeps EDUNEXA's school administration features. Both ship in v1. See `docs/final/product-concept.md`.
 Reason: owner's concept message and interview.
 
 ### D-010 — Users and access
@@ -116,7 +116,7 @@ Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 (2) ~~One generic `RunGeneration` job that runs the next step and re-dispatches itself.~~ Superseded by D-024.
 (3) Progress by polling (Inertia partial reload), websockets later only if needed.
 (4) Education logic lives in `app/Content/`, provider logic in `app/AI/`.
-Reason: see `docs/drafts/ai-provider-engine.md`. Awaiting owner review.
+Reason: see `docs/final/ai-provider-engine.md`. Awaiting owner review.
 
 ### D-023 — AI keys: Gemini free tier only
 Accepted · 2026-10-30 · refines D-012

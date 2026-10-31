@@ -1,6 +1,6 @@
 # Export and Localization Guide
 
-- **Status:** draft
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-07
 - **Last updated:** 2026-10-31
 

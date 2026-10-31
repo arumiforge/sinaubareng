@@ -6,11 +6,11 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 
 **SIGRAK** (working name): a web app for SD/MI teachers and school leaders. It does AI-assisted content creation (RPM, Bank Soal, LKPD, Quiz Battle, Paket Soal TKA) through one dedicated template per content type (no generic generator), plus school administration and a TKA practice exam (CBT). Teachers never write prompts. Students are records, never users. They only touch the separate exam site, with per-session exam cards. Login-only, no public pages. Each teacher brings their own Gemini **free-tier** keys (several, rotated, at their own risk). No student personal data in prompts.
 
-- Product: `docs/drafts/product-concept.md`
-- Content engine: `docs/drafts/content-engine.md` · AI layer: `docs/drafts/ai-provider-engine.md`
-- Data model: `docs/drafts/data-model.md` · Design and UI copy: `docs/drafts/design-system.md`
-- Architecture: `docs/drafts/architecture.md` · Server setup: `docs/drafts/server-setup.md` · Coding standards: `docs/drafts/coding-standards.md` · Export and localization: `docs/drafts/export-localization.md`
-- Religious education (SD six religions, MI Kemenag subjects): `docs/drafts/religious-education.md` · prepared data: `docs/data/`
+- Product: `docs/final/product-concept.md`
+- Content engine: `docs/final/content-engine.md` · AI layer: `docs/final/ai-provider-engine.md`
+- Data model: `docs/final/data-model.md` · Design and UI copy: `docs/final/design-system.md`
+- Architecture: `docs/drafts/architecture.md` · Server setup: `docs/final/server-setup.md` · Coding standards: `docs/final/coding-standards.md` · Export and localization: `docs/final/export-localization.md`
+- Religious education (SD six religions, MI Kemenag subjects): `docs/final/religious-education.md` · prepared data: `docs/data/`
 - Owner's original material: `docs/sources/` (input only; drafts win where they differ)
 
 Do not invent features beyond these documents.
@@ -53,6 +53,6 @@ Do not invent features beyond these documents.
 - Laravel defaults: PSR-12, plural snake_case tables, singular StudlyCase models.
 - Exports (Excel/CSV/Word/PDF) and generated PDFs: Indonesian labels. Map English field names to Indonesian through translation keys, e.g. `__('export.columns.created_at')` → "Tanggal Dibuat".
 - Dates/numbers in exports and UI: Indonesian format (`d/m/Y`, `1.234.567,89`, `Rp`), timezone `Asia/Jakarta` unless decided otherwise.
-- Tests: **Pest** (D-074), run by **GitHub Actions** on every PR to `main` (D-084). Code rules: `docs/drafts/coding-standards.md`.
+- Tests: **Pest** (D-074), run by **GitHub Actions** on every PR to `main` (D-084). Code rules: `docs/final/coding-standards.md`.
 - Migrations are forward-only; `down()` is optional (D-085).
 - No AI attribution anywhere (see `CLAUDE.md`).

@@ -13,7 +13,7 @@ Write one architecture overview that ties the Phase 1 drafts together for develo
 ## Read first
 
 - `docs/agent/CONTEXT.md`, `docs/agent/DECISIONS.md` (read only)
-- `docs/drafts/product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`
+- `docs/final/product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`
 
 ## Output
 

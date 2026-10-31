@@ -1,6 +1,6 @@
 # Data Model (draft)
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-05
 - **Last updated:** 2026-10-30
 - **Sources:** [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)

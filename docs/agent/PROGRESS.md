@@ -28,12 +28,12 @@ Owner = branch name or session label of whoever claimed the task.
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
 | P1-01 | Archive owner sources + owner interview | done | pw/eloquent-shannon-9iwufg | — | `docs/sources/`, D-007…D-021, D-023…D-037 |
-| P1-02 | Product concept | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/product-concept.md` |
-| P1-03 | Content engine (templates, wizard, games, TKA, export) | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/content-engine.md` |
-| P1-04 | AI Provider Engine | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/ai-provider-engine.md`, D-022 |
-| P1-05 | Data model | done | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/drafts/data-model.md` |
-| P1-06 | Design system and UI writing | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/design-system.md` |
-| P1-07 | Religious education curriculum (SD religions, MI Kemenag) | done | pw/eloquent-shannon-9iwufg | P1-05 | `docs/drafts/religious-education.md`, `docs/data/curriculum/` |
+| P1-02 | Product concept | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/final/product-concept.md` |
+| P1-03 | Content engine (templates, wizard, games, TKA, export) | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/final/content-engine.md` |
+| P1-04 | AI Provider Engine | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/final/ai-provider-engine.md`, D-022 |
+| P1-05 | Data model | done | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/final/data-model.md` |
+| P1-06 | Design system and UI writing | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/final/design-system.md` |
+| P1-07 | Religious education curriculum (SD religions, MI Kemenag) | done | pw/eloquent-shannon-9iwufg | P1-05 | `docs/final/religious-education.md`, `docs/data/curriculum/` |
 | P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | done | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
 
 Approved 2026-10-31 (D-123); moved to `docs/final/` in P3-01.
@@ -48,9 +48,9 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-02 | Structure MI CP data, retype Arabic | done | p2/p2-02-mi-cp-structure | — | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` |
 | P2-03 | TKA SD/MI framework seed data | done | p2/p2-03-tka-framework-data | — | `docs/data/tka/kerangka-tka-sd.json` |
 | P2-04 | Architecture overview | done | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
-| P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
-| P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
-| P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
+| P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/final/server-setup.md` |
+| P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/final/coding-standards.md` |
+| P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/final/export-localization.md` |
 | P2-08 | Server monitoring and alerts | todo | — | P2-05 | `docs/drafts/server-monitoring.md` |
 
 ### Phase 3 — final docs · in-progress

@@ -17,7 +17,7 @@ Specify Gemini access, teacher keys, round robin + failover, error handling, dup
 
 ## Output
 
-- `docs/drafts/ai-provider-engine.md`, D-022 (proposed)
+- `docs/final/ai-provider-engine.md`, D-022 (proposed)
 
 ## Done when
 

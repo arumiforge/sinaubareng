@@ -17,7 +17,7 @@ Specify templates, wizards, the generation pipeline, editing, games (present + d
 
 ## Output
 
-- `docs/drafts/content-engine.md`
+- `docs/final/content-engine.md`
 
 ## Done when
 
