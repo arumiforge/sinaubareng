@@ -637,3 +637,12 @@ Reason: owner's decision ("font A").
 Accepted · 2026-10-31
 For MI schools, the v1 RPM template adds two fields, following SK Dirjen Pendis 6077/2025. *Tema KBC* is one or more of the five Panca Cinta themes. *Materi Insersi* is the values inserted. The AI weaves both into TP, activities, and assessment. The fields appear for every MI subject, because the guide applies to all learning in madrasah, and they do not appear for SD. There is no new subject and no JP change.
 Reason: owner's decision.
+
+### D-127 — Daily AI usage counter per key
+Accepted · 2026-10-31 · P2-04 · builds on D-117, D-119
+Detailed 429 handling is not built yet. Instead, SIGRAK counts each key's AI requests per model per day in Redis, and the count resets at midnight Pacific (14:00 or 15:00 WIB). The limit comes from `config/ai.php` (20 per day for the default model).
+- *Kunci AI Saya* and the wizard show what is left today and warn early: use another key (D-023) or wait for the reset.
+- A key at its limit is skipped until the reset. Backup keys come last.
+- The counter counts requests, because one RPM can take several calls. The UI shows an estimate ("sekitar N RPM lagi hari ini").
+- Any 429 that still arrives gets a 60 s cooldown. Reading Google's quota id waits until later.
+Reason: owner — a simple early alarm for teachers.
