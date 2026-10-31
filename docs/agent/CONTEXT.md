@@ -9,6 +9,7 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 - Product: `docs/drafts/product-concept.md`
 - Content engine: `docs/drafts/content-engine.md` · AI layer: `docs/drafts/ai-provider-engine.md`
 - Data model: `docs/drafts/data-model.md` · Design and UI copy: `docs/drafts/design-system.md`
+- Architecture: `docs/drafts/architecture.md` · Server setup: `docs/drafts/server-setup.md` · Coding standards: `docs/drafts/coding-standards.md`
 - Religious education (SD six religions, MI Kemenag subjects): `docs/drafts/religious-education.md` · prepared data: `docs/data/`
 - Owner's original material: `docs/sources/` (input only; drafts win where they differ)
 
@@ -30,7 +31,7 @@ Do not invent features beyond these documents.
 
 ## Frontend
 
-- **Inertia.js + plain Svelte** (`@inertiajs/svelte`, no SvelteKit; D-008). Vite build, Node.js for tooling.
+- **Inertia.js + plain Svelte 5** (runes; `@inertiajs/svelte`, no SvelteKit; D-008, D-076) with **TypeScript** (`lang="ts"`, D-075). Vite build, Node.js for tooling.
 - **Game runtime:** vanilla JS + CSS bundles per game template, playable standalone and offline (D-011).
 - **Styling:** Tailwind CSS. Use **TailAdmin** as the UI template/reference; port its components to Svelte.
 - **Responsive:** every screen must work on desktop and mobile.
@@ -38,7 +39,8 @@ Do not invent features beyond these documents.
 
 ## Infrastructure
 
-- VPS on **Ubuntu Server 22.04 LTS**.
+- VPS on **Ubuntu Server 22.04 LTS** (24.04 is proposed, owner to decide; D-067), **IDCloudHost Cloud VPS, Jakarta** (D-070). A smaller **staging** VPS behind Cloudflare Access (D-072).
+- Domain **`sigrak.com`** (D-069). Off-site backups on **Cloudflare R2**, encrypted (D-071).
 - **Nginx** + **PHP-FPM**.
 - **Docker** only for the Gotenberg PDF service (internal network, pinned image; D-028).
 - **Cloudflare** in front (DNS, proxy, TLS, WAF). Nginx must restore the real client IP from Cloudflare headers.
@@ -50,4 +52,6 @@ Do not invent features beyond these documents.
 - Laravel defaults: PSR-12, plural snake_case tables, singular StudlyCase models.
 - Exports (Excel/CSV/Word/PDF) and generated PDFs: Indonesian labels. Map English field names to Indonesian through translation keys, e.g. `__('export.columns.created_at')` → "Tanggal Dibuat".
 - Dates/numbers in exports and UI: Indonesian format (`d/m/Y`, `1.234.567,89`, `Rp`), timezone `Asia/Jakarta` unless decided otherwise.
+- Tests: **Pest** (D-074), run by **GitHub Actions** on every PR to `main` (D-084). Code rules: `docs/drafts/coding-standards.md`.
+- Migrations are forward-only; `down()` is optional (D-085).
 - No AI attribution anywhere (see `CLAUDE.md`).
