@@ -86,7 +86,7 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-088).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-089).
 
 | Question | Source | Who answers |
 |---|---|---|
@@ -99,7 +99,6 @@ Collected at integration from the Phase 2 outputs. Owner answers already given a
 | Mode Contoh (demo school): allow AI calls with the salesperson's key, or prepared content only | [architecture.md](architecture.md#open-questions) | owner |
 | Payment provider for subscriptions | [architecture.md](architecture.md#open-questions) | owner |
 | PWA install for the school app, or service worker for Di Kelas only | [architecture.md](architecture.md#open-questions) | owner |
-| Paket Soal TKA: offer the AN literasi/numerasi competencies merged into TKA from 2026 (D-043) | [kerangka-tka-sd.json](../data/tka/kerangka-tka-sd.json) | owner |
-| Official source for the TKA item count (30) and category limits (50; 76,67), now `confidence: secondary` | P2-03 task Result | team |
+| Paket Soal TKA: offer the AN literasi/numerasi competencies (D-043)? Low stakes, because TKA is a practice simulation (D-089). Suggested: not in v1 | [kerangka-tka-sd.json](../data/tka/kerangka-tka-sd.json) | owner |
 | MI CP source typos (e.g. خَالِيْ for a father's brother): show as printed or corrected (D-040) | [cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) | guru Bahasa Arab |
 | Khonghucu Fase A prints "(孔)" instead of "(孔子)": confirm with the guru agama | [cp-pendidikan-agama-sd-bkpdm-020-2026.json](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) | guru agama Khonghucu |
