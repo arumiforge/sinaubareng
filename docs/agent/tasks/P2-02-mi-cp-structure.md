@@ -1,7 +1,7 @@
 # P2-02 — Structure the MI CP data and retype Arabic
 
 - **Phase:** P2
-- **Status:** review
+- **Status:** done
 - **Owner:** p2/p2-02-mi-cp-structure
 - **Depends on:** —
 - **Can run in parallel with:** P1-08, P2-01, P2-03…P2-06

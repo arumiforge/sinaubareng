@@ -1,7 +1,7 @@
 # P2-01 — Verify the SD religion CP transcription
 
 - **Phase:** P2
-- **Status:** review
+- **Status:** done
 - **Owner:** p2/p2-01-verify-religion-cp
 - **Depends on:** —
 - **Can run in parallel with:** P1-08, P2-02…P2-06
