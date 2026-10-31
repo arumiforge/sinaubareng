@@ -1,8 +1,8 @@
 # P2-07 — Export and localization guide
 
 - **Phase:** P2
-- **Status:** todo
-- **Owner:** —
+- **Status:** review
+- **Owner:** p2/p2-07-export-localization
 - **Depends on:** — (P2-06 coding standards is merged)
 - **Can run in parallel with:** —
 
@@ -36,9 +36,9 @@ Write one guide for how SIGRAK's Indonesian UI text and its Indonesian exports (
 
 ## Done when
 
-- [ ] Every export format in `content-engine.md#export` and every translation rule in `coding-standards.md` (sections 7–8) is covered, with no contradiction
-- [ ] The spreadsheet mapping rule and the sample table are in the guide, and the 37 *Istilah* terms have a stated home
-- [ ] Rules are short and checkable, with code examples where useful; open questions listed
+- [x] Every export format in `content-engine.md#export` and every translation rule in `coding-standards.md` (sections 7–8) is covered, with no contradiction
+- [x] The spreadsheet mapping rule and the sample table are in the guide, and the 37 *Istilah* terms have a stated home
+- [x] Rules are short and checkable, with code examples where useful; open questions listed
 
 ## Coordination rules
 
@@ -49,4 +49,8 @@ Write one guide for how SIGRAK's Indonesian UI text and its Indonesian exports (
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- Wrote `docs/drafts/export-localization.md`. It covers the `lang/id` file layout and key scheme, the page-level translation groups for the shared prop (D-080), and the exam client's own group (D-094). It sets the spreadsheet → key mapping rule, with a 23-row sample and a tracking-file proposal. The 37 *Istilah* terms live in `lang/id/terms.php`, backed by a banned-terms test. It also covers validation, error pages, mail, and notifications, plus per-format rules for PDF, DOCX, Excel, and CSV. Other sections: the `IndonesianFormat` API, export file names, RTL/Arabic (D-039), and a table of CI checks.
+- **Decisions to record:** 12 items in the guide. Main ones: CSV `;` + UTF-8 BOM, Rupiah `Rp1.234.567` without ICU, Liberation fonts in Gotenberg, F4 = 215 × 330 mm, notifications store key + params, and `lang:audit`.
+- **Edited outside the guide:** one row of `docs/drafts/coding-standards.md` §8. The Money example now uses `IndonesianFormat::rupiah()`, so the two docs agree. P2-06 is done, so no running task owns that file.
+- **Open questions:** F4 size, e-Rapor format, extra print fonts, and the exam client's default font size.
+- **Follow-up:** fill `docs/data/ui-copy/key-map.csv` screen by screen when screens are built.

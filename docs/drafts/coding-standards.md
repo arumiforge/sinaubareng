@@ -215,7 +215,7 @@ it('hides another school\'s journal', function () {
 | Date in prose | `30 Oktober 2026` | `->locale('id')->translatedFormat('j F Y')` | `{ dateStyle: 'long' }` |
 | Time | `14.00` (WIB) | `->format('H.i')` | `{ hour: '2-digit', minute: '2-digit' }` |
 | Number | `1.234.567,89` | `Number::format($n, 2, locale: 'id')` | `Intl.NumberFormat('id-ID')` |
-| Money | `Rp1.234.567` | `Number::currency($n, 'IDR', 'id', 0)` | `{ style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }` |
+| Money | `Rp1.234.567` | `IndonesianFormat::rupiah($n)` (no ICU currency pattern; see [export-localization.md](export-localization.md#5-formatting-helpers)) | `format.rupiah(n)` |
 
 The display timezone is `Asia/Jakarta` unless a school setting says otherwise later.
 
