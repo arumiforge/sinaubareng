@@ -6,7 +6,7 @@
 
 ## Purpose
 
-These are the rules every developer and agent follows once the SIGRAK build starts. Each rule is short and can be checked in review or by a tool. Where a rule comes from an earlier decision or draft, it links there and does not repeat it. Items marked *proposed* are listed under [Decisions to record](#decisions-to-record) and need owner approval.
+These are the rules every developer and agent follows once the SIGRAK build starts. Each rule is short and can be checked in review or by a tool. Where a rule comes from an earlier decision or draft, it links there and does not repeat it. Items marked *proposed* are listed under [Decisions to record](#decisions-to-record) and need owner approval. Items marked *owner-approved* were approved by the owner on 2026-10-31 and only need a decision number.
 
 Sources: [`CLAUDE.md`](../../CLAUDE.md), [`CONTEXT.md`](../agent/CONTEXT.md), [`architecture.md`](architecture.md), [`data-model.md`](data-model.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`content-engine.md`](content-engine.md), [`design-system.md`](design-system.md).
 
@@ -172,8 +172,8 @@ it('hides another school\'s journal', function () {
 
 | # | Rule |
 |---|---|
-| SV-1 | Plain Svelte with `@inertiajs/svelte`, no SvelteKit (D-008). Svelte 5 runes syntax (*proposed*). |
-| SV-2 | TypeScript in `<script lang="ts">` for the school app and the exam client (*proposed*). Game runtime stays vanilla JS (D-011), with JSDoc types and `// @ts-check`. |
+| SV-1 | Plain Svelte with `@inertiajs/svelte`, no SvelteKit (D-008). Svelte 5 runes syntax (*owner-approved*). |
+| SV-2 | TypeScript in `<script lang="ts">` for the school app and the exam client (*owner-approved*). Game runtime stays vanilla JS (D-011), with JSDoc types and `// @ts-check`. |
 | SV-3 | Pages in `resources/js/Pages/<Area>/<Name>.svelte`, one per Inertia route. Shared parts in `resources/js/Components/`. Components stay presentational; data comes from page props. |
 | SV-4 | Props are built server-side with API Resources or explicit arrays. **Never pass a whole model** (`toArray()` leaks columns). Secrets never reach a prop (AI keys show label, last 4, status only). |
 | SV-5 | Ids in props and URLs are `public_id`s. Route URLs come from the generated route helper, never hand-built strings. |
@@ -223,7 +223,7 @@ The display timezone is `Asia/Jakarta` unless a school setting says otherwise la
 
 | # | Rule |
 |---|---|
-| TS-1 | Test framework: **Pest** (*proposed*), including its architecture tests for the layering and model rules above. |
+| TS-1 | Test framework: **Pest** (*owner-approved*), including its architecture tests for the layering and model rules above. |
 | TS-2 | Tests run against **MySQL 8** in CI and locally (*proposed*), not SQLite, because the schema relies on `CHECK` constraints, JSON columns, and generated columns. |
 | TS-3 | Required per feature: a feature test for each route (happy path + validation failure), the IDOR/role tests from TEN-5, and policy tests. Unit tests for Actions with real rules, for `app/AI` key selection and error classification, and for formatters. |
 | TS-4 | **No real AI calls in tests.** Bind the fake `AIProvider` with scripted responses and error sequences. `Http::preventStrayRequests()` is on in the base `TestCase`. The one live Gemini smoke test is opt-in and never runs in CI ([AI testing](ai-provider-engine.md#testing)). |
@@ -288,9 +288,9 @@ Review checklist for any PR touching `app/Content` or `app/AI`: "Which data reac
 
 New choices made in this document. They get numbered in `DECISIONS.md` during integration.
 
-1. **Pest** as the test framework, with Pest architecture tests enforcing layering (LAY-1…5, TEN-1, PHP-10). Reason: readable tests and built-in arch tests make several rules here machine-checkable. PHPUnit stays underneath.
-2. **TypeScript** in Svelte (`lang="ts"`) for the school app and exam client; the game runtime stays vanilla JS with JSDoc + `@ts-check` (keeps D-011). Reason: typed Inertia props catch prop/serialization mistakes; `svelte-check` runs in CI.
-3. **Svelte 5 (runes)** as the component syntax. Reason: current Svelte major, supported by `@inertiajs/svelte`.
+1. **Pest** as the test framework (*owner-approved 2026-10-31*), with Pest architecture tests enforcing layering (LAY-1…5, TEN-1, PHP-10). Reason: readable tests and built-in arch tests make several rules here machine-checkable. PHPUnit stays underneath.
+2. **TypeScript** in Svelte (*owner-approved 2026-10-31*) (`lang="ts"`) for the school app and exam client; the game runtime stays vanilla JS with JSDoc + `@ts-check` (keeps D-011). Reason: typed Inertia props catch prop/serialization mistakes; `svelte-check` runs in CI.
+3. **Svelte 5 (runes)** as the component syntax (*owner-approved 2026-10-31*). Reason: current Svelte major, supported by `@inertiajs/svelte`.
 4. **Larastan** static analysis, starting at level 6.
 5. **Action classes** hold business operations; controllers stay thin. They live inside the module folders proposed in [architecture.md](architecture.md#decisions-to-record) (item 2), and in `app/Actions/<Domain>/` only for features without a module. This adds to that decision and does not change it.
 6. **Tests run on MySQL 8**, not SQLite, because the schema depends on MySQL 8 features (D-007).
@@ -301,6 +301,6 @@ New choices made in this document. They get numbered in `DECISIONS.md` during in
 
 ## Open questions
 
-- [ ] Confirm decisions 1–3 (Pest, TypeScript, Svelte 5) before the project is scaffolded.
+- [x] Confirm decisions 1–3 (Pest, TypeScript, Svelte 5) before the project is scaffolded. Approved by the owner on 2026-10-31.
 - [ ] Is a CI service (e.g. GitHub Actions) already chosen? GIT-4 and DEP-6 assume CI exists.
 - [ ] Should `down()` methods be required (DB-13) or dropped to save time, given production is forward-only?
