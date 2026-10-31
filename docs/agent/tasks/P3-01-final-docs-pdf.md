@@ -42,7 +42,7 @@ Move the ten approved drafts to `docs/final/` and build one Indonesian PDF per f
 
 - Work on branch `p3/p3-01-final-docs-pdf`, created from `main`. Open a ready PR to `main` when done, with **no AI attribution** anywhere (see `CLAUDE.md`). Splitting into two PRs is fine (1: move + links, 2: PDFs).
 - Do **not** edit `docs/agent/DECISIONS.md` or `docs/agent/CONTEXT.md` content, except to fix draft paths to final paths. List anything new under "Decisions to record" in **Result**.
-- One owner question is still open: the print font choice (D-109 says one font; the owner later wrote "font cukup 2"). Do not change the font text in `export-localization.md`; the coordinator fixes it in `docs/final/` after the owner answers.
+- Apply D-125 and D-126 in the final docs before building the PDFs (the coordinator sends the list of lines).
 
 ## Result
 
