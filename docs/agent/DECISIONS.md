@@ -612,3 +612,8 @@ Reason: owner's review in the P2-03 session.
 Accepted · 2026-10-31
 The exam client uses the standard default font size, not a larger one. The A−/A/A+ control stays.
 Reason: owner's decision.
+
+### D-122 — Supervisor writes without school membership
+**Proposed** · 2026-10-31 · P2-04
+A supervision visit row (`supervisions`) carries the visited school's `school_id` and the supervisor's `user_id`. A policy allows the write only while an active `supervisor_assignments` row links that supervisor to that school. *Laporan Kepengawasan* is built on request from the supervisor's visits across assigned schools. Supervisors get no `school_memberships` row and no student-level reads.
+Reason: answers the data-model question with the existing tables.
