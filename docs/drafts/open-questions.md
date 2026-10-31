@@ -85,11 +85,8 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-112).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-115).
 
 | Question | Source | Who answers |
 |---|---|---|
 | Review the **Proposed** decisions D-039…D-083 and D-097…D-108 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
-| File storage: local disk only, or object storage later for letterheads and exports | [architecture.md](architecture.md#open-questions) | owner + team |
-| MI CP source typos (e.g. خَالِيْ for a father's brother): show as printed or corrected (D-040) | [cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) | guru Bahasa Arab |
-| Khonghucu Fase A prints "(孔)" instead of "(孔子)": confirm with the guru agama | [cp-pendidikan-agama-sd-bkpdm-020-2026.json](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) | guru agama Khonghucu |
