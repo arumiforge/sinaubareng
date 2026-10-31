@@ -2,19 +2,21 @@
 
 - **Status:** draft
 - **Task:** P2-05
-- **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging)
+- **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel)
 - **Versions checked online on 2026-10-30** (sources in [Versions](#versions)).
 
 ## Purpose
 
-A step-by-step guide to prepare the production VPS for SIGRAK (IDCloudHost Cloud VPS, Jakarta) and the staging VPS: the main app, the Filament back office, the TKA exam site, queue workers, and the Gotenberg PDF service. It is for whoever sets up or rebuilds the server. Run the sections in order. Every command is meant to be copied as-is. Replace only the placeholders below; never commit real values.
+A step-by-step guide to prepare the production VPS for SIGRAK (IDCloudHost Cloud VPS, Jakarta) and the staging VPS: the main app, the Filament back office, the TKA exam site, queue workers, and the Gotenberg PDF service. The VPS has **no public IP**: all web and SSH traffic arrives through a Cloudflare Tunnel (`cloudflared`), which only makes outbound connections. It is for whoever sets up or rebuilds the server. Run the sections in order. Every command is meant to be copied as-is. Replace only the placeholders below; never commit real values.
 
 | Placeholder | Meaning |
 |---|---|
 | `app.sigrak.com` | School app |
 | `ujian.sigrak.com` | TKA exam site (D-027) |
 | `admin.sigrak.com` | Staff console (Filament) + Horizon |
-| `<SERVER_IP>` | Public IP of the VPS |
+| `ssh.sigrak.com` | SSH through the tunnel, behind Cloudflare Access |
+| `<TUNNEL_ID>` | UUID printed by `cloudflared tunnel create` |
+| `<TEAM_EMAILS>` | Emails of the team members allowed by Cloudflare Access |
 | `<DB_PASSWORD>`, `<DB_BACKUP_PASSWORD>`, `<MYSQL_ROOT_PASSWORD>` | MySQL passwords |
 | `<REDIS_PASSWORD>` | Redis password |
 | `<GOTENBERG_USER>`, `<GOTENBERG_PASSWORD>` | Gotenberg basic auth |
@@ -32,39 +34,43 @@ Checked on 2026-10-30. "Pin" means the version is fixed in config and only chang
 
 | Component | Choice | Why | Support (as checked) | Source |
 |---|---|---|---|---|
-| OS | Ubuntu Server 22.04 LTS | CONTEXT.md | Standard support ends mid-2027 (Canonical lists Jun 2027); see Open questions | ubuntu.com list of releases |
+| OS | **Ubuntu Server 24.04 LTS** (owner, 2026-10-31) | 22.04 loses standard support in mid-2027, right after the first TKA season | Standard support to mid-2029 | ubuntu.com list of releases |
 | Laravel | 13.x | Current major (13.0 on 2026-03-17) | Bug fixes to Q3 2027, security to 2028-03-17 | laravel.com/docs/13.x/releases |
 | PHP | **8.5** (≥ 8.5.12) from `ppa:ondrej/php` | Laravel 13 supports 8.3–8.5; 8.5 has active support to 2027-12-31, security to 2029-12-31. 8.5.12 fixes the Oct 2026 CVEs | php.net/supported-versions | php.net, launchpad.net/~ondrej |
-| Nginx | Ubuntu package (1.18 + Ubuntu security patches) | Fewer moving parts; patched by Canonical | Follows OS | Ubuntu archive |
+| Nginx | Ubuntu 24.04 package (1.24 + Ubuntu security patches), listening on localhost only | Fewer moving parts; patched by Canonical | Follows OS | Ubuntu archive |
 | MySQL | **8.4 LTS** (8.4.13 on 2026-10-20) from repo.mysql.com, component `mysql-8.4-lts` | MySQL 8 per D-007; 8.4 is the 8.x LTS line | Premier support to Apr 2029 | dev.mysql.com release notes, endoflife.date/mysql |
-| Redis | **8.2.x** from packages.redis.io, pinned `6:8.2.*` (8.2.9 for jammy) | 8.2 is an extended release (5-year fixes); 8.10 is newest but short-lived | To 2030-09-01 | redis.io, packages.redis.io |
+| Redis | **8.2.x** from packages.redis.io, pinned `6:8.2.*` (8.2.11 for noble) | 8.2 is an extended release (5-year fixes); 8.10 is newest but short-lived | To 2030-09-01 | redis.io, packages.redis.io |
 | Horizon | latest major via Composer | Queue dashboard + supervisors on Redis | — | laravel.com/docs/13.x/horizon |
 | Filament | 5.x | PHP 8.2+, Laravel 11.28+ | — | filamentphp.com/docs/5.x |
 | Laravel Excel | `maatwebsite/excel` 4.x | 4.x supports Laravel 12/13 and PHP 8.5 (3.1 blocks PHP 8.5 via PhpSpreadsheet 1.x) | — | packagist.org/packages/maatwebsite/excel |
 | Docker Engine | docker-ce from download.docker.com | Only for Gotenberg (D-028) | — | docs.docker.com |
 | Gotenberg | **`gotenberg/gotenberg:8.39.0-chromium`** (released 2026-10-27) | Chromium-only variant: no LibreOffice needed (no Word-to-PDF, D-031), ~30% smaller | — | github.com/gotenberg/gotenberg/releases, Docker Hub |
 | Node.js | **24 LTS** (24.22.2), build only | Maintenance LTS to 2028-04-30, mature with Vite/Tailwind. Node 26 became LTS on 2026-10-28; revisit after it settles | — | nodejs.org releases, nodejs/Release schedule |
-| Cloudflare | Free plan features: proxy, Full (strict), Origin CA, Authenticated Origin Pulls | CONTEXT.md | — | developers.cloudflare.com |
+| Cloudflare Tunnel | `cloudflared` **2026.10.7** from pkg.cloudflare.com (locally-managed tunnel) | VPS has no public IP; outbound-only connections on port 7844 | — | developers.cloudflare.com/tunnel, pkg.cloudflare.com |
+| Cloudflare | Free plan: DNS, proxy, WAF, Zero Trust Access (free up to 50 users) | CONTEXT.md | — | developers.cloudflare.com |
 
 ## Content
 
 ### 1. Base system
 
-Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image Ubuntu Server 22.04 LTS (see Open questions about 24.04), at least 2 vCPU / 4 GB RAM / 80 GB NVMe disk (Chromium in Gotenberg and MySQL are the heaviest parts). Give it a public (floating) IP. IDCloudHost creates the first login with a username and password you choose; use a long random password, then log in and switch to root (`sudo -i`) once:
+Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image **Ubuntu Server 24.04 LTS**, custom package **8 vCPU / 16 GB RAM** with at least 160 GB NVMe disk. Do **not** attach a public (floating) IP. The VM still needs outbound internet (NAT) for apt, GitHub, Gemini, R2, and the tunnel itself (TCP and UDP port 7844 to Cloudflare); check this with the provider before ordering.
+
+Without a public IP, the first steps run in the **IDCloudHost web console** (the VM's screen in the browser). Log in with the user and password set when creating the VM, then switch to root (`sudo -i`):
 
 ```bash
 apt update && apt -y full-upgrade
 apt -y install curl gnupg ca-certificates lsb-release software-properties-common \
-  unzip git acl ufw fail2ban unattended-upgrades supervisor logrotate
+  unzip git acl ufw unattended-upgrades supervisor logrotate
 timedatectl set-timezone Etc/UTC   # the app displays Asia/Jakarta; cron times below are UTC
 hostnamectl set-hostname sigrak-prod
 dpkg-reconfigure -plow unattended-upgrades   # answer "Yes"
+curl -sS -m 10 -o /dev/null -w '%{http_code}\n' https://api.cloudflare.com/client/v4/   # any HTTP code = outbound works
 ```
 
-Swap (2 GB), so a burst of PDF jobs does not trigger the OOM killer:
+Swap (4 GB), so a burst of PDF jobs does not trigger the OOM killer:
 
 ```bash
-fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+fallocate -l 4G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
 echo '/swapfile none swap sw 0 0' >> /etc/fstab
 echo 'vm.swappiness=10' > /etc/sysctl.d/99-swappiness.conf && sysctl --system
 ```
@@ -81,7 +87,7 @@ adduser --system --group --home /var/www/sigrak --shell /bin/bash sigrak
 usermod -aG sigrak www-data      # Nginx reads public/ through the group
 ```
 
-SSH hardening. **Before** running this, open a second terminal and confirm `ssh admin@<SERVER_IP>` works with your key.
+SSH hardening. SSH will only be reachable through the tunnel (section 9), and the IDCloudHost web console is not SSH, so these settings cannot lock you out.
 
 ```bash
 cat > /etc/ssh/sshd_config.d/99-sigrak.conf <<'EOF'
@@ -92,20 +98,19 @@ EOF
 sshd -t && systemctl reload ssh
 ```
 
-fail2ban ships with the `sshd` jail enabled on Ubuntu; check it with `fail2ban-client status sshd`.
+fail2ban is not used: every SSH connection arrives from `cloudflared` on `127.0.0.1`, which fail2ban never bans, and Cloudflare Access already checks who may connect.
 
-From here on, work as `admin` with `sudo`.
+From here on, work as `admin` with `sudo` (in the console until section 9, then over SSH through the tunnel).
 
 ### 2. Firewall (UFW)
 
-Only SSH from anywhere; HTTP/HTTPS only from Cloudflare (section 9 adds those rules). Nothing else is exposed: MySQL, Redis, and Gotenberg listen on localhost only.
+Nothing is accepted from outside: there is no public IP, and `cloudflared` reaches Nginx and SSH over `127.0.0.1`, which UFW always allows. UFW still guards the provider's private network.
 
 ```bash
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw limit OpenSSH
 sudo ufw enable
-sudo ufw status verbose
+sudo ufw status verbose     # Status: active, no ALLOW rules
 ```
 
 Docker writes its own iptables rules and bypasses UFW for published ports. That is why Gotenberg is published on `127.0.0.1` only (section 7); never publish it as `3000:3000`.
@@ -157,10 +162,10 @@ listen.owner = www-data
 listen.group = www-data
 listen.mode = 0660
 pm = dynamic
-pm.max_children = 20
-pm.start_servers = 4
-pm.min_spare_servers = 2
-pm.max_spare_servers = 6
+pm.max_children = 60
+pm.start_servers = 8
+pm.min_spare_servers = 4
+pm.max_spare_servers = 12
 pm.max_requests = 500
 request_terminate_timeout = 65s
 EOF
@@ -168,7 +173,7 @@ sudo mv /etc/php/8.5/fpm/pool.d/www.conf /etc/php/8.5/fpm/pool.d/www.conf.disabl
 sudo systemctl restart php8.5-fpm && sudo systemctl enable php8.5-fpm
 ```
 
-`pm.max_children` ≈ (RAM left for PHP) ÷ (average worker size, about 60–80 MB). 20 fits a 4 GB VPS that also runs MySQL, Redis, and Gotenberg. Check with `ps -o rss= -C php-fpm8.5 | sort -n | tail -3`.
+`pm.max_children` ≈ (RAM left for PHP) ÷ (average worker size, about 60–80 MB). 60 (about 4–5 GB) fits the 16 GB VPS next to MySQL, Redis, Horizon, and Gotenberg. Check with `ps -o rss= -C php-fpm8.5 | sort -n | tail -3`.
 
 Composer (installer checked against the published signature):
 
@@ -188,7 +193,7 @@ composer --version
 
 ### 4. MySQL 8.4 LTS
 
-Ubuntu 22.04 ships MySQL 8.0 (end of life since April 2026), so use Oracle's APT repository with the `mysql-8.4-lts` component, which never jumps to 9.x by itself.
+Ubuntu 24.04 ships MySQL 8.0 (end of life since April 2026), so use Oracle's APT repository with the `mysql-8.4-lts` component, which never jumps to 9.x by itself.
 
 ```bash
 curl -fsSL https://repo.mysql.com/RPM-GPG-KEY-mysql-2025 | sudo gpg --dearmor -o /usr/share/keyrings/mysql.gpg
@@ -209,8 +214,8 @@ mysqlx = OFF
 character-set-server = utf8mb4
 collation-server = utf8mb4_0900_ai_ci
 default-time-zone = '+00:00'
-innodb_buffer_pool_size = 1G
-max_connections = 100
+innodb_buffer_pool_size = 5G
+max_connections = 200
 slow_query_log = ON
 slow_query_log_file = /var/log/mysql/slow.log
 long_query_time = 1
@@ -218,7 +223,7 @@ EOF
 sudo systemctl restart mysql && sudo systemctl enable mysql
 ```
 
-`innodb_buffer_pool_size`: about 25–30% of RAM on this shared box (1G for 4 GB).
+`innodb_buffer_pool_size`: about 30% of RAM on this shared box (5G of 16 GB).
 
 Database, app user, and a read-only backup user:
 
@@ -235,7 +240,7 @@ EOF
 
 ### 5. Redis 8.2
 
-Ubuntu 22.04 ships Redis 6.0, so use the official repository and pin the 8.2 line:
+Ubuntu 24.04 ships Redis 7.0, so use the official repository and pin the 8.2 line:
 
 ```bash
 curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
@@ -261,7 +266,7 @@ sudo tee -a /etc/redis/redis.conf > /dev/null <<'EOF'
 bind 127.0.0.1 -::1
 protected-mode yes
 requirepass <REDIS_PASSWORD>
-maxmemory 512mb
+maxmemory 2gb
 maxmemory-policy noeviction
 appendonly yes
 appendfsync everysec
@@ -274,27 +279,31 @@ Redis 8 is licensed AGPLv3/RSALv2/SSPLv1. We run it unmodified as an internal se
 
 ### 6. Nginx
 
+Nginx listens on `127.0.0.1:8080` only, in plain HTTP. TLS ends at Cloudflare's edge, and the hop from Cloudflare to the server runs inside the encrypted tunnel. Cloudflare's **Always Use HTTPS** setting (section 9) does the HTTP → HTTPS redirect.
+
 ```bash
 sudo apt -y install nginx
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo sed -i 's/# server_tokens off;/server_tokens off;/' /etc/nginx/nginx.conf
 ```
 
-TLS files (created in section 9): `/etc/ssl/cloudflare/origin.pem`, `/etc/ssl/cloudflare/origin.key`, `/etc/ssl/cloudflare/aop-ca.pem`.
+Real client IP: every request comes from `cloudflared` on localhost, carrying the visitor's address in `CF-Connecting-IP`. Nginx swaps it in, so Laravel logs, throttling, and exam audit trails see the real IP.
 
-Shared snippet for both vhosts:
+```bash
+sudo tee /etc/nginx/conf.d/realip.conf > /dev/null <<'EOF'
+set_real_ip_from 127.0.0.1;
+set_real_ip_from ::1;
+real_ip_header CF-Connecting-IP;
+EOF
+```
+
+Shared snippet for the three vhosts. `fastcgi_param HTTPS on` tells Laravel the visitor used HTTPS, so URLs and secure cookies are right without trusting proxy headers.
 
 ```bash
 sudo tee /etc/nginx/snippets/sigrak-common.conf > /dev/null <<'EOF'
 root /var/www/sigrak/current/public;
 index index.php;
 charset utf-8;
-
-ssl_certificate     /etc/ssl/cloudflare/origin.pem;
-ssl_certificate_key /etc/ssl/cloudflare/origin.key;
-ssl_protocols TLSv1.2 TLSv1.3;
-ssl_client_certificate /etc/ssl/cloudflare/aop-ca.pem;
-ssl_verify_client on;
 
 add_header X-Frame-Options "SAMEORIGIN" always;
 add_header X-Content-Type-Options "nosniff" always;
@@ -316,6 +325,7 @@ location ~ ^/index\.php(/|$) {
     fastcgi_pass unix:/run/php/php8.5-fpm-sigrak.sock;
     fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
     include fastcgi_params;
+    fastcgi_param HTTPS on;
     fastcgi_hide_header X-Powered-By;
     fastcgi_read_timeout 60s;
 }
@@ -329,15 +339,7 @@ School app vhost (`app.sigrak.com`):
 ```bash
 sudo tee /etc/nginx/sites-available/sigrak-app.conf > /dev/null <<'EOF'
 server {
-    listen 80;
-    listen [::]:80;
-    server_name app.sigrak.com ujian.sigrak.com admin.sigrak.com;
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    listen 127.0.0.1:8080;
     server_name app.sigrak.com;
     client_max_body_size 25m;
     access_log /var/log/nginx/sigrak-app.access.log;
@@ -352,8 +354,7 @@ Exam site vhost (`ujian.sigrak.com`). Same codebase, its own logs and a small up
 ```bash
 sudo tee /etc/nginx/sites-available/sigrak-ujian.conf > /dev/null <<'EOF'
 server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    listen 127.0.0.1:8080;
     server_name ujian.sigrak.com;
     client_max_body_size 1m;
     access_log /var/log/nginx/sigrak-ujian.access.log;
@@ -363,13 +364,12 @@ server {
 EOF
 ```
 
-Staff console vhost (`admin.sigrak.com`: Filament and Horizon behind the `staff` guard). To narrow it further, a Cloudflare Access policy or WAF rule on this hostname can allow only the team.
+Staff console vhost (`admin.sigrak.com`: Filament and Horizon behind the `staff` guard, and behind Cloudflare Access, section 9):
 
 ```bash
 sudo tee /etc/nginx/sites-available/sigrak-admin.conf > /dev/null <<'EOF'
 server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    listen 127.0.0.1:8080;
     server_name admin.sigrak.com;
     client_max_body_size 25m;
     access_log /var/log/nginx/sigrak-admin.access.log;
@@ -379,18 +379,13 @@ server {
 EOF
 ```
 
-Catch-all that drops requests for any other host name (for example scans on the bare IP):
+Catch-all for any other host name:
 
 ```bash
 sudo tee /etc/nginx/sites-available/00-default.conf > /dev/null <<'EOF'
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
+    listen 127.0.0.1:8080 default_server;
     server_name _;
-    ssl_certificate     /etc/ssl/cloudflare/origin.pem;
-    ssl_certificate_key /etc/ssl/cloudflare/origin.key;
     return 444;
 }
 EOF
@@ -398,9 +393,9 @@ sudo ln -s /etc/nginx/sites-available/00-default.conf /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/sigrak-app.conf /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/sigrak-ujian.conf /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/sigrak-admin.conf /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+curl -s -o /dev/null -w '%{http_code}\n' -H 'Host: app.sigrak.com' http://127.0.0.1:8080/   # 404 until the first deploy, then 200 or 302
 ```
-
-Run `sudo nginx -t && sudo systemctl reload nginx` only after section 9 has put the certificates and the real-IP file in place.
 
 ### 7. Docker + Gotenberg
 
@@ -446,7 +441,7 @@ services:
       - "--api-timeout=120s"
     volumes:
       - ./fonts:/usr/local/share/fonts/sigrak:ro
-    mem_limit: 1g
+    mem_limit: 2g
     networks:
       - gotenberg
 
@@ -516,64 +511,72 @@ node -v
 
 Python is not installed for the app. Ubuntu's own `python3` stays as it is; any Python tool gets its own folder and virtualenv when a task needs it (CONTEXT.md).
 
-### 9. Cloudflare
+### 9. Cloudflare Tunnel and Access
 
-**DNS** (Cloudflare dashboard → DNS): `A app`, `A ujian`, and `A admin`, each pointing to `<SERVER_IP>` and **Proxied** (orange cloud). Add `AAAA` records too if the VPS has IPv6.
+The tunnel connects outbound from the VPS to Cloudflare and carries the three web hostnames plus SSH. No DNS record points at the server; each hostname is a proxied CNAME to `<TUNNEL_ID>.cfargotunnel.com`.
 
-**SSL/TLS** (dashboard → SSL/TLS):
-
-1. Origin Server → Create Certificate → RSA, hostnames `sigrak.com` and `*.sigrak.com`, validity 15 years. Save both parts on the server:
-
-   ```bash
-   sudo mkdir -p /etc/ssl/cloudflare && sudo chmod 750 /etc/ssl/cloudflare
-   sudo nano /etc/ssl/cloudflare/origin.pem    # paste the certificate
-   sudo nano /etc/ssl/cloudflare/origin.key    # paste the private key
-   sudo chmod 640 /etc/ssl/cloudflare/origin.* && sudo chgrp www-data /etc/ssl/cloudflare /etc/ssl/cloudflare/origin.*
-   ```
-
-2. Overview → encryption mode **Full (strict)**.
-3. Edge Certificates → **Always Use HTTPS** on, **Minimum TLS Version** 1.2. Turn HSTS on only after a week without TLS problems.
-4. Origin Server → **Authenticated Origin Pulls** on (global). Install Cloudflare's client CA so Nginx accepts only Cloudflare (the `ssl_verify_client on` line in the snippet):
-
-   ```bash
-   sudo curl -fsSL https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem -o /etc/ssl/cloudflare/aop-ca.pem
-   ```
-
-   The global certificate proves a request comes from Cloudflare, not from our account. Together with the UFW allow-list that is enough for v1; zone-level AOP with our own certificate is an option later.
-
-**Real client IP.** Nginx must replace Cloudflare's address with the visitor's (`CF-Connecting-IP`), so Laravel logs, throttling, and exam audit trails see the real IP. The same list drives UFW. One script refreshes both:
+Install `cloudflared` from Cloudflare's repository (in the IDCloudHost console):
 
 ```bash
-sudo tee /usr/local/sbin/cloudflare-refresh > /dev/null <<'EOF'
-#!/usr/bin/env bash
-set -euo pipefail
-V4="$(curl -fsS https://www.cloudflare.com/ips-v4)"
-V6="$(curl -fsS https://www.cloudflare.com/ips-v6)"
-COUNT="$(printf '%s\n%s\n' "$V4" "$V6" | grep -c '/')"
-if [ "$COUNT" -lt 10 ]; then echo "Cloudflare IP list looks wrong ($COUNT entries), keeping old config"; exit 1; fi
-
-TMP="$(mktemp)"
-{
-  echo "# Generated $(date -Iseconds) from https://www.cloudflare.com/ips"
-  for ip in $V4 $V6; do echo "set_real_ip_from $ip;"; done
-  echo "real_ip_header CF-Connecting-IP;"
-} > "$TMP"
-install -m 644 "$TMP" /etc/nginx/conf.d/cloudflare-realip.conf
-rm -f "$TMP"
-
-for ip in $V4 $V6; do
-  ufw allow proto tcp from "$ip" to any port 80,443 comment cloudflare > /dev/null
-done
-
-nginx -t && systemctl reload nginx
-EOF
-sudo chmod 755 /usr/local/sbin/cloudflare-refresh
-sudo /usr/local/sbin/cloudflare-refresh
-echo '17 4 * * 1 root /usr/local/sbin/cloudflare-refresh >> /var/log/cloudflare-refresh.log 2>&1' | sudo tee /etc/cron.d/cloudflare-refresh
-sudo ufw status numbered | grep -c cloudflare   # one line per range
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg > /dev/null
+echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' \
+  | sudo tee /etc/apt/sources.list.d/cloudflared.list
+sudo apt update && sudo apt -y install cloudflared
+cloudflared --version     # 2026.10.7 or later
 ```
 
-The script only adds UFW rules. If Cloudflare ever removes a range, delete its rule by hand (`sudo ufw status numbered`, then `sudo ufw delete <n>`).
+Create the tunnel. `tunnel login` prints a URL: open it on your laptop, sign in to Cloudflare, and pick `sigrak.com`.
+
+```bash
+sudo cloudflared tunnel login                  # writes /root/.cloudflared/cert.pem
+sudo cloudflared tunnel create sigrak-prod     # prints <TUNNEL_ID>, writes /root/.cloudflared/<TUNNEL_ID>.json
+sudo install -d -m 755 /etc/cloudflared
+sudo install -m 600 /root/.cloudflared/<TUNNEL_ID>.json /etc/cloudflared/<TUNNEL_ID>.json
+sudo tee /etc/cloudflared/config.yml > /dev/null <<'EOF'
+tunnel: <TUNNEL_ID>
+credentials-file: /etc/cloudflared/<TUNNEL_ID>.json
+ingress:
+  - hostname: app.sigrak.com
+    service: http://127.0.0.1:8080
+  - hostname: ujian.sigrak.com
+    service: http://127.0.0.1:8080
+  - hostname: admin.sigrak.com
+    service: http://127.0.0.1:8080
+  - hostname: ssh.sigrak.com
+    service: ssh://127.0.0.1:22
+  - service: http_status:404
+EOF
+sudo cloudflared tunnel ingress validate --config /etc/cloudflared/config.yml
+for h in app ujian admin ssh; do sudo cloudflared tunnel route dns sigrak-prod "$h.sigrak.com"; done
+sudo cloudflared service install               # systemd unit using /etc/cloudflared/config.yml
+sudo systemctl enable --now cloudflared
+sudo cloudflared tunnel info sigrak-prod       # shows active connections
+```
+
+`cert.pem` is only needed to create tunnels and DNS routes, not to run one. Keep a copy in the password manager and remove it from the server: `sudo shred -u /root/.cloudflared/cert.pem`. The tunnel credentials JSON stays on the server (mode 600); treat it as a secret.
+
+If UDP 7844 is blocked, `cloudflared` falls back to HTTP/2 over TCP 7844 by itself.
+
+**Cloudflare Access** (Zero Trust dashboard → Access → Applications → Add → Self-hosted):
+
+1. `ssh.sigrak.com`: policy "Allow" for `<TEAM_EMAILS>`. **Required**, so only the team can even reach the SSH port.
+2. `admin.sigrak.com`: the same policy. Recommended: the staff console then needs both an Access login and the `staff` guard login.
+3. Never put `app.` or `ujian.` behind Access: teachers and students sign in with the app's own login.
+
+**SSH from a laptop.** Install `cloudflared` on the laptop, then add to `~/.ssh/config`:
+
+```text
+Host ssh.sigrak.com
+  User admin
+  ProxyCommand cloudflared access ssh --hostname %h
+```
+
+`ssh ssh.sigrak.com` opens a browser for the Access login the first time, then connects with your SSH key. Once this works, do the rest of the setup over SSH. The IDCloudHost web console stays available as the emergency way in if the tunnel is down.
+
+**Zone settings** (Cloudflare dashboard → `sigrak.com`):
+
+- SSL/TLS → Edge Certificates: **Always Use HTTPS** on, **Minimum TLS Version** 1.2. Turn HSTS on only after a week without TLS problems. The encryption mode (Full/Strict) does not affect tunnel hostnames; leave it on **Full (strict)**.
+- No Origin CA certificate, no Authenticated Origin Pulls, and no Cloudflare IP allow-list are needed: nothing can reach the server except through the tunnel.
 
 **Things Cloudflare changes for the app:**
 
@@ -581,6 +584,7 @@ The script only adds UFW rules. If Cloudflare ever removes a range, delete its r
 - Free plan uploads are capped at 100 MB per request (ours are far below).
 - Leave "I'm Under Attack" mode and aggressive bot rules **off** for `ujian.sigrak.com`: a class signs in at the same moment from one IP, which looks like an attack.
 - Cloudflare does not cache HTML by default; keep it that way. Only `/build/*` is cached long-term.
+- If `cloudflared` stops, the whole site is offline. systemd restarts it; update it monthly with `sudo apt update && sudo apt -y install --only-upgrade cloudflared && sudo systemctl restart cloudflared`.
 
 ### 10. App folders, environment, and first deploy
 
@@ -719,15 +723,15 @@ sudo supervisorctl status
 
 `stopwaitsecs=600` is longer than the longest AI step (5 minutes per step, D-022 draft), so a deploy lets running jobs finish. Keep the queue's `retry_after` above the longest job timeout, as the AI engine doc requires.
 
-Starting point for `config/horizon.php` on a 4 GB VPS (tune after real load):
+Starting point for `config/horizon.php` on the 8 vCPU / 16 GB VPS (tune after real load):
 
 | Supervisor | Queue | Processes | Timeout |
 |---|---|---|---|
-| `supervisor-ai` | `ai` | 3–6 (auto balance) | 330 s |
-| `supervisor-exports` | `exports` | 2 | 180 s |
-| `supervisor-default` | `default` | 2 | 60 s |
+| `supervisor-ai` | `ai` | 4–12 (auto balance) | 330 s |
+| `supervisor-exports` | `exports` | 4 | 180 s |
+| `supervisor-default` | `default` | 3 | 60 s |
 
-Exports call Gotenberg; two at a time fits the 1 GB container limit.
+Exports call Gotenberg; four at a time fits the 2 GB container limit. AI workers mostly wait on Gemini, so their count is bounded by the teachers' free-tier quotas and the 2-per-teacher funnel, not by CPU.
 
 ### 12. Backups and restore test
 
@@ -801,21 +805,21 @@ du -sh /tmp/restore-test/storage/app /var/www/sigrak/shared/storage/app && rm -r
 
 Row counts are estimates (`table_rows`), so compare them roughly; for key tables (`users`, `schools`, generated documents) run `SELECT COUNT(*)` on both. Twice a year, also restore from the **off-site** copy (`rclone copy offsite-crypt:daily/<file> /tmp/`) to prove the encryption password works. Write the date and result of each test in the ops log.
 
-Full disaster restore: rebuild a VPS with sections 1–11, restore the dump into `sigrak`, extract `storage/app` into `shared/storage/`, put `.env` back with the **original** `APP_KEY`, deploy, then move the Cloudflare DNS records to the new IP.
+Full disaster restore: rebuild a VPS with sections 1–11, restore the dump into `sigrak`, extract `storage/app` into `shared/storage/`, put `.env` back with the **original** `APP_KEY`, deploy, then copy `/etc/cloudflared/` (config and credentials JSON) to the new VPS and start `cloudflared` there. No DNS change is needed, because the hostnames point at the tunnel, not at an IP.
 
 ### 13. Log rotation
 
 | Log | Rotation |
 |---|---|
 | Laravel (`storage/logs/laravel-YYYY-MM-DD.log`) | By Laravel itself: `LOG_STACK=daily`, `LOG_DAILY_DAYS=14` |
-| Nginx, MySQL, Redis, fail2ban, UFW | Ubuntu's packaged logrotate rules (keep them) |
+| Nginx, MySQL, Redis, UFW | Ubuntu's packaged logrotate rules (keep them) |
 | `/var/log/sigrak/*.log` (Horizon, scheduler, backup) | Rule below |
 | Docker (Gotenberg) | `daemon.json`: 3 × 10 MB per container |
 | systemd journal | Capped below |
 
 ```bash
 sudo tee /etc/logrotate.d/sigrak > /dev/null <<'EOF'
-/var/log/sigrak/*.log /var/log/cloudflare-refresh.log {
+/var/log/sigrak/*.log {
     weekly
     rotate 8
     missingok
@@ -843,34 +847,37 @@ mysql --version                                    # 8.4.x
 redis-server --version                             # 8.2.x
 sudo docker ps --format '{{.Image}} {{.Ports}}'    # gotenberg 8.39.0-chromium on 127.0.0.1:3000
 sudo ss -tlnp | grep -E ':(3306|6379|3000|33060)\b' # all on 127.0.0.1 / ::1 only; no 33060
-sudo ufw status | grep -E '80,443|OpenSSH'
+sudo ss -tlnp | grep -E ':(80|443|8080)\b'          # only 127.0.0.1:8080 (nginx)
+sudo ufw status verbose                            # active, deny incoming, no ALLOW rules
+systemctl is-active cloudflared                    # active
+sudo cloudflared tunnel info sigrak-prod           # connections listed
 sudo supervisorctl status                          # horizon + scheduler RUNNING
-curl -sI https://app.sigrak.com | head -1          # through Cloudflare: 200 or 302 to login
-curl -sI https://admin.sigrak.com | head -1        # staff login page
-curl -skI --resolve app.sigrak.com:443:<SERVER_IP> https://app.sigrak.com | head -1   # direct: must fail (UFW/AOP)
+curl -sI https://app.sigrak.com | head -1          # 200 or 302 to login
+curl -sI https://admin.sigrak.com | head -1        # 302 to the Cloudflare Access login
 ```
 
 In the app: log in, create one document, export it to PDF, and check in Horizon that the `ai` and `exports` queues ran the jobs. Open `ujian.sigrak.com` on a phone and check that it shows the exam sign-in and nothing from the main app. Check that Horizon opens only on `admin.sigrak.com` after staff login, and that Telescope is not reachable.
 
 ### 15. Staging server
 
-Staging is a **second, smaller IDCloudHost Cloud VPS in Jakarta** (2 vCPU / 2–4 GB RAM / 40 GB), built with sections 1–14 above. Every release and every version bump (PHP, MySQL, Redis, Gotenberg image) goes to staging first.
+Staging is a **second, smaller IDCloudHost Cloud VPS in Jakarta** (suggested 2 vCPU / 4 GB RAM / 60 GB, Ubuntu 24.04, no public IP), built with sections 1–14 above. Every release and every version bump (PHP, MySQL, Redis, Gotenberg image) goes to staging first.
 
 Differences from production:
 
 | Item | Staging |
 |---|---|
-| Hostnames | `staging-app.sigrak.com`, `staging-ujian.sigrak.com`, `staging-admin.sigrak.com` (one level deep, so the same `*.sigrak.com` Origin CA certificate covers them) |
+| Hostnames | `staging-app.sigrak.com`, `staging-ujian.sigrak.com`, `staging-admin.sigrak.com`, `staging-ssh.sigrak.com` |
+| Tunnel | Its own tunnel `sigrak-staging` with the same ingress layout and these hostnames |
 | Nginx | Same three vhost files with these `server_name`s, plus `add_header X-Robots-Tag "noindex, nofollow" always;` in each |
-| Access | Cloudflare Zero Trust → Access → Application for `staging-*.sigrak.com`, allowing only the team's emails, so staging is never public |
+| Access | One Access application covering all four `staging-*.sigrak.com` hostnames, allowing only `<TEAM_EMAILS>`, so staging is never public |
 | `.env` | `APP_ENV=staging`, `APP_URL=https://staging-app.sigrak.com`, its own `APP_KEY`, DB/Redis/Gotenberg passwords, `MAIL_MAILER=log`, `LOG_LEVEL=debug` |
 | Telescope | Allowed: `TELESCOPE_ENABLED=true`, visible only to staff (architecture.md) |
 | Data | Seeded and made-up data only. **Never copy production data to staging**: it holds student names and teachers' encrypted AI keys |
 | AI keys | The team's own test Gemini keys, entered through the app |
 | Backups | Database only, local 7 days; no R2 upload (`rclone` lines removed from the backup script) |
-| Size | `pm.max_children = 8`, `innodb_buffer_pool_size = 512M`, Redis `maxmemory 256mb`, Horizon 1 process per queue |
+| Size | `pm.max_children = 10`, `innodb_buffer_pool_size = 1G`, Redis `maxmemory 512mb`, Gotenberg `mem_limit: 1g`, Horizon 1 process per queue, swap 2 GB |
 
-DNS: `A staging-app`, `A staging-ujian`, and `A staging-admin` → staging server IP, all **Proxied**.
+DNS: `for h in staging-app staging-ujian staging-admin staging-ssh; do sudo cloudflared tunnel route dns sigrak-staging "$h.sigrak.com"; done`.
 
 ## Decisions to record
 
@@ -879,10 +886,10 @@ To be numbered during integration.
 1. **PHP 8.5** (≥ 8.5.12) from `ppa:ondrej/php`, with PHP 8.4 as fallback only if a required package blocks 8.5. Reason: Laravel 13 supports 8.3–8.5, and 8.5 has the longest support window.
 2. **MySQL 8.4 LTS** from Oracle's APT repository (`mysql-8.4-lts`), not Ubuntu's 8.0 (end of life) and not 9.7 LTS (D-007 says MySQL 8).
 3. **Redis 8.2** (extended release) from packages.redis.io, pinned to `6:8.2.*`, with `noeviction` and AOF on.
-4. **Gotenberg image `gotenberg/gotenberg:8.39.0-chromium`**: the Chromium-only variant, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit, on its own Docker network whose new outbound connections are dropped; fonts mounted from `/opt/gotenberg/fonts`.
+4. **Gotenberg image `gotenberg/gotenberg:8.39.0-chromium`**: the Chromium-only variant, published on `127.0.0.1:3000` with basic auth and a 2 GB memory limit, on its own Docker network whose new outbound connections are dropped; fonts mounted from `/opt/gotenberg/fonts`.
 5. **Node 24 LTS for builds only**, preferably in CI; no Node on the server unless needed.
-6. **Ubuntu's Nginx package** (1.18, patched by Canonical) rather than nginx.org builds.
-7. **Cloudflare: Full (strict) with a 15-year Origin CA wildcard certificate + global Authenticated Origin Pulls**; UFW allows 80/443 only from Cloudflare ranges, refreshed weekly together with the Nginx real-IP list.
+6. **Ubuntu's Nginx package** (1.24 on 24.04, patched by Canonical) rather than nginx.org builds, listening on `127.0.0.1:8080` only, plain HTTP behind the tunnel.
+7. **No public IP; Cloudflare Tunnel for all traffic** (owner, 2026-10-31): a locally-managed `cloudflared` tunnel per server routes `app.`, `ujian.`, `admin.`, and `ssh.` to localhost. Real IP from `CF-Connecting-IP` (trusted only from 127.0.0.1). UFW denies all incoming. SSH and `admin.` sit behind Cloudflare Access. This replaces the Origin CA / Authenticated Origin Pulls / Cloudflare IP allow-list design.
 8. **Three Nginx vhosts for one Laravel codebase** (`app.`, `ujian.`, `admin.`), as in `architecture.md`, with host-only session cookies (no shared `SESSION_DOMAIN`).
 9. **Release-folder deploys** (`releases/`, `shared/`, `current` symlink), keeping 5 releases; PHP-FPM reload on each deploy because OPcache does not check timestamps.
 10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler; `architecture.md` shows the equivalent cron form); worker counts live in `config/horizon.php`.
@@ -894,11 +901,14 @@ To be numbered during integration.
 16. **A staging server is required** (owner, 2026-10-31): a second, smaller IDCloudHost VPS in Jakarta on `staging-*.sigrak.com`, behind Cloudflare Access, seeded data only.
 17. **Gotenberg `.env` keys** follow `spatie/laravel-pdf` v2: `LARAVEL_PDF_DRIVER=gotenberg`, `GOTENBERG_URL`, `GOTENBERG_USERNAME`, `GOTENBERG_PASSWORD`.
 18. **Server monitoring is a separate task** (owner, 2026-10-31); not covered in this guide.
+19. **Ubuntu Server 24.04 LTS** instead of 22.04 (owner, 2026-10-31). `CONTEXT.md` and `architecture.md` still say 22.04 and need the same change at integration.
+20. **Production VPS: IDCloudHost custom package, 8 vCPU / 16 GB RAM** (owner, 2026-10-31); sizing in sections 3–5, 7, and 11 follows it.
 
 ## Open questions
 
-- [ ] **Ubuntu 22.04 reaches end of standard support in mid-2027** (Canonical lists June 2027; some sources say May 2027). The TKA practice season runs January–March 2027, so the server would need an OS upgrade soon after launch. Options: (a) start on **Ubuntu 24.04 LTS** instead (supported to 2029; every repository used here supports it, and the commands use `$(lsb_release -cs)`, so they work unchanged), or (b) stay on 22.04 and attach Ubuntu Pro for security updates to 2032. Recommendation: (a). Needs an owner decision, because CONTEXT.md says 22.04.
-- [ ] Exact IDCloudHost plan (CPU/RAM/disk) for production and staging, after checking current prices.
+- [ ] Production disk size (160 GB suggested) and the staging package (2 vCPU / 4 GB suggested).
+- [ ] Confirm with IDCloudHost that a VM without a public IP has outbound internet (NAT), including TCP/UDP 7844 to Cloudflare.
+- [ ] `CONTEXT.md` (Infrastructure: Ubuntu 22.04, "Cloudflare in front … restore the real client IP") and `architecture.md` (22.04, ufw with Cloudflare ranges, Full strict origin certificate) need updating to Ubuntu 24.04 + Cloudflare Tunnel; those files belong to other tasks.
 - [ ] `sigrak.com` is chosen; the PDKI trademark check in `product-concept.md` still applies to the name.
 
-Answered by the owner on 2026-10-31: R2 for off-site backups, IDCloudHost Jakarta, domain `sigrak.com`, staging required, Gotenberg `.env` keys set now (decision 17), monitoring as a separate task.
+Answered by the owner on 2026-10-31: R2 for off-site backups, IDCloudHost Jakarta, domain `sigrak.com`, staging required, Gotenberg `.env` keys set now (decision 17), monitoring as a separate task, Ubuntu 24.04 LTS, 8 vCPU / 16 GB custom package, Cloudflare Tunnel because the VPS has no public IP.
