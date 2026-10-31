@@ -51,6 +51,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
 | P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 | P2-07 | Export and localization guide | review | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
+| P2-09 | TP and ATP for five SD religion subjects | in-progress | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
 
 Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
