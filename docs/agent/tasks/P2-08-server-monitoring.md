@@ -1,8 +1,8 @@
 # P2-08 — Server monitoring and alerts
 
 - **Phase:** P2
-- **Status:** todo
-- **Owner:** —
+- **Status:** in-progress
+- **Owner:** p2/p2-08-server-monitoring
 - **Depends on:** — (P2-05 server setup is merged)
 - **Can run in parallel with:** P2-07
 
