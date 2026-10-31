@@ -9,18 +9,53 @@
     "pages_note": "pdf_pages are PDF page numbers of the archived file (the file starts with the cover letter B-606/Dt.I.I/PP.00/12/2025)."
   },
   "extraction": {
-    "method": "pdftotext -layout from the PDF text layer, then whitespace cleanup and removal of page-number lines. Text is otherwise unchanged.",
+    "method": "pdftotext -layout from the PDF text layer, then whitespace cleanup and removal of page-number lines (kept per phase in raw_text). Structured rows were split from raw_text by script and checked against the page images. Arabic passages were retyped by hand from the page images (rendered at 300-500 dpi).",
     "date": "2026-10-30",
-    "structured": false,
-    "note": "raw_text keeps the source's own headings (e.g. '1.1 Pemahaman Konsep', 'Tajwid', '• Mengamati'). Splitting into element/sub-element rows is part of the MI data task. KNOWN DEFECT: Arabic sentence patterns in Bahasa Arab (and any Arabic in other subjects) are NOT reliably extracted — harakat are split onto separate lines and word order may be reversed. Re-type every Arabic passage from the PDF before import."
+    "structured": true,
+    "verified": false,
+    "verify_by": "A guru of each subject reviews the rows (D-037); a reader of Arabic checks the retyped passages against PDF pages 99-101.",
+    "conventions": [
+      "raw_text is the original extraction, unchanged, kept for traceability. It still has the broken Arabic; never import Arabic from it.",
+      "Each phase has lead_in (the 'Pada akhir fase ...' sentence), optional element_intros (a sentence printed under an element heading before its first sub-element), and outcomes[] {element, sub_element, text}.",
+      "outcomes[].text is the printed text with line breaks joined: a line ending in '-' or '/' joins without a space (all such breaks in these pages are real hyphens or slashes). Bullets are dropped. Spelling, capitalisation, and punctuation are as printed, including source typos (e.g. 'madarasah', 'peyelidikan', 'kongkrit', the repeated 'berupa kritik sosial' in Fikih B and C).",
+      "sub_element is null when the source prints no sub-heading (SKI Pemahaman Konsep, both Bahasa Arab elements). Sub-element names are normalised: straight apostrophe in Al-Qur'an, and 'Mengomunikasikanhasil' (SKI Fase B) written as 'Mengomunikasikan hasil'. Names are otherwise as printed, so wording differs between phases (e.g. 'Mengevaluasi dan refleksi' vs 'Mengevaluasi dan merefleksi').",
+      "subjects[].elements[].sub_elements lists every sub-element name used in any phase, in order of first appearance.",
+      "Arabic passages (Bahasa Arab only; the other subjects have no Arabic script) appear inline in outcomes[].text where the source prints them, and again in outcomes[].arabic_passages[] {pdf_page, text}. They are Unicode with full harakat in logical order (renders right to left). Arabic question mark '؟' and comma '،' are as printed; the source uses the Latin semicolon ';' between patterns, kept as '; '. Spaces before ';' and between '...' and the word before it are dropped.",
+      "Akidah Akhlak Fase A lead_in: the text layer ends in a stray 's' that is not visible on the printed page (p. 44); lead_in follows the printed page."
+    ],
+    "arabic_check": "Letter counts (harakat ignored) of each retyped phase equal those of the text layer, except letters the text layer drops inside ligatures: the madda alif in الْآنَ (Fase B, C), meem after lam in الْمَدْرَسَةِ/الْمُذَاكَرَةِ (Fase C, 4x), and hamza alif in بِالْأُذُنِ (Fase C). The page images show these letters.",
+    "source_notes": [
+      "Bahasa Arab Fase A: the source prints 'مَالَوْنُ' with almost no space; retyped as 'مَا لَوْنُ...؟'.",
+      "Bahasa Arab Fase B: 'سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ' is as printed, but a father's brother is عَمِّيْ, not خَالِيْ (mother's brother). Flag for the Bahasa Arab reviewer.",
+      "Bahasa Arab Fase C: 'كَمْ السَّاعَةُ' is as printed; standard vocalisation is 'كَمِ السَّاعَةُ' (as the source itself prints in Fase D). Flag for the reviewer.",
+      "Fikih Fase B and C: 'berupa kritik sosial berupa kritik sosial' is printed twice in the source."
+    ]
   },
   "subjects": [
     {
       "key": "alquran_hadis",
       "name": "Al-Qur'an Hadis",
       "elements": [
-        "Pemahaman Konsep",
-        "Keterampilan Proses"
+        {
+          "name": "Pemahaman Konsep",
+          "sub_elements": [
+            "Tajwid",
+            "Al-Qur'an",
+            "Hadis"
+          ]
+        },
+        {
+          "name": "Keterampilan Proses",
+          "sub_elements": [
+            "Mengamati",
+            "Mempertanyakan dan memprediksi",
+            "Merencanakan dan melakukan penyelidikan",
+            "Memproses serta menganalisis data dan informasi",
+            "Mengevaluasi dan refleksi",
+            "Mengomunikasikan hasil",
+            "Mengevaluasi dan merefleksi"
+          ]
+        }
       ],
       "phases": [
         {
@@ -30,6 +65,54 @@
             2
           ],
           "pdf_pages": "13-13",
+          "lead_in": "Pada akhir fase A, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Tajwid",
+              "text": "Mengenal dan menulis huruf hijaiyah secara terpisah dan bersambung beserta tanda bacanya; menerapkan hukum Gunnah; Alif Lam Qamariyah dan Alif Lam Syamsiyah sebagai bekal dalam mempraktikan bacaan Al-Qur’an dengan baik dan benar."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Al-Qur'an",
+              "text": "Menghafal dan menjelaskan surah-surah pendek pilihan serta menerapkannya dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Hadis",
+              "text": "Menghafal dan menjelaskan hadis tentang kebersihan; keutamaan belajar; dan berbakti pada kedua orang tua, serta menerapkan isi kandungannya dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid mengamati fenomena, fakta dan peristiwa secara sederhana kemudian mencatat hasil pengamatannya."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Dengan bantuan guru, murid membuat pertanyaan-pertanyaan ilmiah terkait konten yang diamati."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Murid merencanakan langkah-langkah operasional terhadap pertanyaan yang diajukan dan melakukan penyelidikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses serta menganalisis data dan informasi",
+              "text": "Dengan bantuan guru, murid mengolah data dan informasi yang diperoleh."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengevaluasi dan refleksi",
+              "text": "Murid melakukan evaluasi dan merefleksi terhadap proses penyelidikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Murid mengomunikasikan hasil penyelidikan baik secara lisan maupun tulisan dalam berbagai media."
+            }
+          ],
           "raw_text": "1. Fase A (Kelas 1 dan 2 MI)\nPada akhir fase A, murid memiliki kemampuan sebagai berikut.\n1.1 Pemahaman Konsep\nTajwid\nMengenal dan menulis huruf hijaiyah secara terpisah dan\nbersambung beserta tanda bacanya; menerapkan hukum\nGunnah; Alif Lam Qamariyah dan Alif Lam Syamsiyah sebagai\nbekal dalam mempraktikan bacaan Al-Qur’an dengan baik dan\nbenar.\nAl-Qur’an\nMenghafal dan menjelaskan surah-surah pendek pilihan serta\nmenerapkannya dalam kehidupan sehari-hari.\nHadis\nMenghafal dan menjelaskan hadis tentang kebersihan;\nkeutamaan belajar; dan berbakti pada kedua orang tua, serta\nmenerapkan isi kandungannya dalam kehidupan sehari-hari.\n1.2 Keterampilan Proses\n• Mengamati\nMurid mengamati fenomena, fakta dan peristiwa secara\nsederhana kemudian mencatat hasil pengamatannya.\n• Mempertanyakan dan memprediksi\nDengan bantuan guru, murid membuat pertanyaan-\npertanyaan ilmiah terkait konten yang diamati.\n• Merencanakan dan melakukan penyelidikan\nMurid merencanakan langkah-langkah operasional terhadap\npertanyaan yang diajukan dan melakukan penyelidikan.\n• Memproses serta menganalisis data dan informasi\nDengan bantuan guru, murid mengolah data dan informasi\nyang diperoleh.\n• Mengevaluasi dan refleksi\nMurid melakukan evaluasi dan merefleksi terhadap proses\npenyelidikan.\n• Mengomunikasikan hasil\nMurid mengomunikasikan hasil penyelidikan baik secara\nlisan maupun tulisan dalam berbagai media."
         },
         {
@@ -39,6 +122,54 @@
             4
           ],
           "pdf_pages": "14-15",
+          "lead_in": "Pada akhir fase B, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Tajwid",
+              "text": "Menerapkan hukum bacaan kalkalah, mad tabi’i, izhar halqi, ikhfa’ hakiki, idgam bigunnah, idgam bilagunnah, dan iqlab sebagai bekal dalam praktik membaca Al-Qur’an dengan baik dan benar."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Al-Qur'an",
+              "text": "Menghafal dan menulis surah-surah pendek/pilihan; menjelaskan arti dan isi kandungannya agar dapat menerapkan dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Hadis",
+              "text": "Menghafal dan menulis hadis tentang salat berjemaah, persaudaraan, takwa, niat, dan silaturahmi, menjelaskan arti serta isi kandungannya, agar dapat menerapkan dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid mengamati dan mengidentifikasi fenomena, fakta dan peristiwa secara sederhana kemudian mencatat hasil pengamatannya."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Dengan bantuan guru, murid membuat pertanyaan terkait hal-hal yang ingin diketahuinya serta membuat prediksi berdasarkan pengetahuan yang dimiliki."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Murid merencanakan langkah-langkah operasional terhadap pertanyaan yang diajukan dan melakukan observasi."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses serta menganalisis data dan informasi",
+              "text": "Dengan bantuan guru, murid mengolah data dan informasi yang diperoleh dalam bentuk gambar atau diagram, kemudian membandingkan antara hasil dan prediksi dengan penjelasan yang memadai."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengevaluasi dan merefleksi",
+              "text": "Murid melakukan evaluasi terhadap proses-proses yang telah dilalui maupun hasil yang didapatkan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Murid menyajikan hasil baik secara lisan maupun tulisan melalui berbagai media."
+            }
+          ],
           "raw_text": "2. Fase B (Kelas 3 dan 4 MI)\nPada akhir fase B, murid memiliki kemampuan sebagai berikut.\n2.1 Pemahaman Konsep\nTajwid\nMenerapkan hukum bacaan kalkalah, mad tabi’i, izhar halqi,\nikhfa’ hakiki, idgam bigunnah, idgam bilagunnah, dan iqlab\nsebagai bekal dalam praktik membaca Al-Qur’an dengan baik\ndan benar.\nAl-Qur’an\nMenghafal dan menulis surah-surah pendek/pilihan;\nmenjelaskan arti dan isi kandungannya agar dapat menerapkan\ndalam kehidupan sehari-hari.\nHadis\nMenghafal dan menulis hadis tentang salat berjemaah,\npersaudaraan, takwa, niat, dan silaturahmi, menjelaskan arti\nserta isi kandungannya, agar dapat menerapkan dalam\nkehidupan sehari-hari.\n2.2 Keterampilan Proses\n• Mengamati\nMurid mengamati dan mengidentifikasi fenomena, fakta dan\nperistiwa secara sederhana kemudian mencatat hasil\npengamatannya.\n• Mempertanyakan dan memprediksi\nDengan bantuan guru, murid membuat pertanyaan terkait\nhal-hal yang ingin diketahuinya serta membuat prediksi\nberdasarkan pengetahuan yang dimiliki.\n• Merencanakan dan melakukan penyelidikan\nMurid merencanakan langkah-langkah operasional terhadap\npertanyaan yang diajukan dan melakukan observasi.\n• Memproses serta menganalisis data dan informasi\nDengan bantuan guru, murid mengolah data dan informasi\nyang diperoleh dalam bentuk gambar atau diagram,\nkemudian membandingkan antara hasil dan prediksi dengan\npenjelasan yang memadai.\n• Mengevaluasi dan merefleksi\nMurid melakukan evaluasi terhadap proses-proses yang\ntelah dilalui maupun hasil yang didapatkan.\n• Mengomunikasikan hasil\nMurid menyajikan hasil baik secara lisan maupun tulisan\nmelalui berbagai media."
         },
         {
@@ -48,6 +179,54 @@
             6
           ],
           "pdf_pages": "15-16",
+          "lead_in": "Pada akhir fase C, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Tajwid",
+              "text": "Menerapkan hukum bacaan mim sukun, waqaf wasal, dan hukum ra’ tafkhim dan tarqiq, jawazul wajhain dalam praktik membaca Al-Qur’an dengan baik dan benar."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Al-Qur'an",
+              "text": "Menghafal dan menulis ayat/surah dalam Al-Qur’an tentang ciri-ciri orang munafik, menyayangi anak yatim, keutamaan memberi, amal saleh; menjelaskan arti dan isi kandungannya agar dapat menerapkan dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Hadis",
+              "text": "Menghafal dan menulis hadis tentang ciri-ciri orang munafik, menyayangi anak yatim, keutamaan memberi, dan amal saleh; menjelaskan arti dan isi kandungannya agar dapat menerapkan dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid mengamati fenomena, fakta dan peristiwa secara sederhana yang relevan dengan Al-Qur’an dan Hadis; mengidentifikasi dan mengklasifikasikan, kemudian mencatat hasil pengamatan dan mencari sisi persamaan atau perbedaan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Dengan bantuan guru, murid membuat pertanyaan ilmiah yang mengarah pada konten yang disajikan serta memprediksi jawaban."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Dengan bantuan guru, murid melakukan langkah-langkah kongkrit dalam menemukan jawaban yang diajukan melalui observasi dan penyelidikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses serta menganalisis data dan informasi",
+              "text": "Dengan bantuan guru, murid mengolah data dan informasi yang diperoleh dalam bentuk gambar atau diagram, kemudian membandingkan antara hasil dan prediksi dengan penjelasan yang memadai."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengevaluasi dan merefleksi",
+              "text": "Murid melakukan evaluasi terhadap proses-proses yang telah dilalui maupun hasil yang didapatkan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Murid menyajikan hasil baik secara lisan maupun tulisan melalui berbagai media."
+            }
+          ],
           "raw_text": "3. Fase C (Kelas 5 dan 6 MI)\nPada akhir fase C, murid memiliki kemampuan sebagai berikut.\n3.1 Pemahaman Konsep\nTajwid\nMenerapkan hukum bacaan mim sukun, waqaf wasal, dan\nhukum ra’ tafkhim dan tarqiq, jawazul wajhain dalam praktik\nmembaca Al-Qur’an dengan baik dan benar.\nAl-Qur’an\nMenghafal dan menulis ayat/surah dalam Al-Qur’an tentang\nciri-ciri orang munafik, menyayangi anak yatim, keutamaan\nmemberi, amal saleh; menjelaskan arti dan isi kandungannya\nagar dapat menerapkan dalam kehidupan sehari-hari.\nHadis\nMenghafal dan menulis hadis tentang ciri-ciri orang munafik,\nmenyayangi anak yatim, keutamaan memberi, dan amal saleh;\nmenjelaskan arti dan isi kandungannya agar dapat menerapkan\ndalam kehidupan sehari-hari.\n3.2 Keterampilan Proses\n● Mengamati\nMurid mengamati fenomena, fakta dan peristiwa secara\nsederhana yang relevan dengan Al-Qur’an dan Hadis;\nmengidentifikasi dan mengklasifikasikan, kemudian\nmencatat hasil pengamatan dan mencari sisi persamaan\natau perbedaan.\n● Mempertanyakan dan memprediksi\nDengan bantuan guru, murid membuat pertanyaan ilmiah\nyang mengarah pada konten yang disajikan serta\nmemprediksi jawaban.\n● Merencanakan dan melakukan penyelidikan\nDengan bantuan guru, murid melakukan langkah-langkah\nkongkrit dalam menemukan jawaban yang diajukan melalui\nobservasi dan penyelidikan.\n● Memproses serta menganalisis data dan informasi\nDengan bantuan guru, murid mengolah data dan informasi\nyang diperoleh dalam bentuk gambar atau diagram,\nkemudian membandingkan antara hasil dan prediksi dengan\npenjelasan yang memadai.\n● Mengevaluasi dan merefleksi\nMurid melakukan evaluasi terhadap proses-proses yang\ntelah dilalui maupun hasil yang didapatkan.\n● Mengomunikasikan hasil\nMurid menyajikan hasil baik secara lisan maupun tulisan\nmelalui berbagai media."
         }
       ]
@@ -56,8 +235,32 @@
       "key": "akidah_akhlak",
       "name": "Akidah Akhlak",
       "elements": [
-        "Pemahaman Konsep",
-        "Keterampilan Proses"
+        {
+          "name": "Pemahaman Konsep",
+          "sub_elements": [
+            "Akidah",
+            "Akhlak",
+            "Adab",
+            "Kisah Keteladanan"
+          ]
+        },
+        {
+          "name": "Keterampilan Proses",
+          "sub_elements": [
+            "Mengamati",
+            "Menanya dan mengumpulkan informasi",
+            "Menyimpulkan",
+            "Mengomunikasikan hasil",
+            "Menghafal dan menerapkan",
+            "Merefleksikan dan rencana tindak lanjut",
+            "Mempertanyakan dan memprediksi",
+            "Merencanakan dan melakukan penyelidikan",
+            "Memproses dan menganalisis informasi",
+            "Menganalisis dan menyimpulkan",
+            "Mengomunikasikan",
+            "Menerapkan"
+          ]
+        }
       ],
       "phases": [
         {
@@ -67,6 +270,65 @@
             2
           ],
           "pdf_pages": "44-45",
+          "lead_in": "Pada akhir fase A, murid memiliki kemampuan",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada mata pelajaran Akidah Akhlak meliputi kegiatan sebagai berikut."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akidah",
+              "text": "Menghafal dan menjelaskan dua kalimah syahadat, enam rukun iman, sifat wajib bagi Allah, dan iman kepada malaikat Allah; menemukan contoh asmaulhusna (ar-Rahman, ar-Rahim, al-Malik, al-Quddus, as-Salam, al-Mukmin, al-Muhaimin, al-Aziz)."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akhlak",
+              "text": "Menghafal dan menjelaskan kalimah thayyibah (basmalah, hamdalah, dan taawuz); mengidentifikasi dan menerapkan pola hidup sehat dan bersih, sikap jujur, rasa terima kasih dan rendah hati, cara menghindari sikap malas, berkata kasar, dan berbohong."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Adab",
+              "text": "Mengidentifikasi dan menerapkan adab belajar, mandi, berpakaian, bersin, menguap, makan, dan minum."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Kisah Keteladanan",
+              "text": "Menceritakan dan meneladan kisah Nabi Muhammad saw. dan Nabi Nuh a.s."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid dilatih mengamati fenomena kehidupan atau peristiwa sehari-hari berupa gambar, video, atau bentuk lainnya untuk mengenali nilai dan contoh sikap sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menanya dan mengumpulkan informasi",
+              "text": "Murid diajak bertanya untuk membangkitkan rasa ingin tahu. Kemudian, murid mengumpulkan informasi terkait dengan materi dari berbagai sumber."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menyimpulkan",
+              "text": "Melalui bimbingan guru, murid menyimpulkan pesan dari materi, cerita, atau informasi yang diperoleh."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Murid menyajikan hasil temuan dengan menceritakan kembali sesuai bahasanya sendiri, menirukan lafal, gerakan, menyanyi, atau menggambar tentang nilai-nilai yang dipelajari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menghafal dan menerapkan",
+              "text": "Murid menghafal materi dengan cara menyenangkan seperti melalui lagu, tepuk, atau permainan. Mereka juga menerapkan nilai-nilai tersebut dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merefleksikan dan rencana tindak lanjut",
+              "text": "Murid mampu merefleksikan perilaku mereka sendiri, mengevaluasi sikap yang telah diterapkan dalam kehidupan sehari-hari, dan menulis hal baik yang ingin dilakukan."
+            }
+          ],
           "raw_text": "1. Fase A (Kelas I dan II Madrasah Ibtidaiyah)\nPada akhir fase A, murid memiliki kemampuan s\n1.1 Pemahaman Konsep\nAkidah\nMenghafal dan menjelaskan dua kalimah syahadat, enam\nrukun iman, sifat wajib bagi Allah, dan iman kepada\nmalaikat Allah; menemukan contoh asmaulhusna (ar-\nRahman, ar-Rahim, al-Malik, al-Quddus, as-Salam, al-\nMukmin, al-Muhaimin, al-Aziz).\nAkhlak\nMenghafal dan menjelaskan kalimah thayyibah (basmalah,\nhamdalah, dan taawuz); mengidentifikasi dan menerapkan\npola hidup sehat dan bersih, sikap jujur, rasa terima kasih\ndan rendah hati, cara menghindari sikap malas, berkata\nkasar, dan berbohong.\nAdab\nMengidentifikasi dan menerapkan adab belajar, mandi,\nberpakaian, bersin, menguap, makan, dan minum.\nKisah Keteladanan\nMenceritakan dan meneladan kisah Nabi Muhammad saw.\ndan Nabi Nuh a.s.\n1.2 Keterampilan Proses\nKeterampilan proses pada mata pelajaran Akidah Akhlak\nmeliputi kegiatan sebagai berikut.\n• Mengamati\nMurid dilatih mengamati fenomena kehidupan atau\nperistiwa sehari-hari berupa gambar, video, atau bentuk\nlainnya untuk mengenali nilai dan contoh sikap sehari-\nhari.\n• Menanya dan mengumpulkan informasi\nMurid diajak bertanya untuk membangkitkan rasa ingin\ntahu. Kemudian, murid mengumpulkan informasi terkait\ndengan materi dari berbagai sumber.\n• Menyimpulkan\nMelalui bimbingan guru, murid menyimpulkan pesan\ndari materi, cerita, atau informasi yang diperoleh.\n• Mengomunikasikan hasil\nMurid menyajikan hasil temuan dengan menceritakan\nkembali sesuai bahasanya sendiri, menirukan lafal,\ngerakan, menyanyi, atau menggambar tentang nilai-nilai\nyang dipelajari.\n• Menghafal dan menerapkan\nMurid menghafal materi dengan cara menyenangkan\nseperti melalui lagu, tepuk, atau permainan. Mereka juga\nmenerapkan nilai-nilai tersebut dalam kehidupan sehari-\nhari.\n• Merefleksikan dan rencana tindak lanjut\nMurid mampu merefleksikan perilaku mereka sendiri,\nmengevaluasi sikap yang telah diterapkan dalam\nkehidupan sehari-hari, dan menulis hal baik yang ingin\ndilakukan."
         },
         {
@@ -76,6 +338,65 @@
             4
           ],
           "pdf_pages": "45-47",
+          "lead_in": "Pada akhir fase B, Murid memiliki kemampuan sebagai berikut.",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada mata pelajaran Akidah Akhlak meliputi kegiatan."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akidah",
+              "text": "Menemukan contoh asmaulhusna (al-Halim, al-Wahhab, al-Kabir, al- 'Adhim, as-Sami’, al-Bashir, al-Waliy, dan al-'Alim); menghafal dan menjelaskan iman kepada kitab-kitab Allah Swt. serta nabi dan rasul-Nya."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akhlak",
+              "text": "Menghafal dan menjelaskan kalimah thayyibah (Subhanallah, Allahu Akbar, Masya Allah); menjelaskan dan menerapkan sikap bersyukur, pantang menyerah, pemberani, tolong-menolong, amanah serta cara menghindari sikap serakah, kikir, dan kufur nikmat."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Adab",
+              "text": "Menerapkan adab kepada kedua orang tua, guru, dan teman."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Kisah Keteladanan",
+              "text": "Menceritakan dan menerapkan perilaku taat melalui kisah Nabi Ibrahim a.s. dan Nabi Ismail a.s."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid dilatih untuk mengamati fenomena kehidupan atau peristiwa sehari-hari berupa gambar, video, atau bentuk lainnya untuk memahami nilai-nilai yang dipelajari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Melalui bimbingan guru, murid dilatih berani mengajukan pertanyaan sederhana tentang hal yang diamati dan membuat dugaan sederhana mengenai akibat atau manfaat dari suatu sikap atau perbuatan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Murid merencanakan kegiatan belajar (seperti hafalan, praktik sikap baik, atau bermain peran), kemudian melaksanakannya secara berkelompok maupun individu."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses dan menganalisis informasi",
+              "text": "Murid menghubungkan hal yang dipelajari dengan kehidupan sehari-hari, membandingkan sikap baik dan buruk, serta mengambil pelajaran dari cerita atau pengalaman murid."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Murid menyampaikan hasil belajar secara lisan, tulisan, atau tindakan, baik dengan menceritakan kembali, memperagakan, maupun menunjukkan praktik nyata di lingkungan madarasah atau rumah."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merefleksikan dan rencana tindak lanjut",
+              "text": "Murid mampu merefleksikan perilaku mereka sendiri, mengevaluasi sikap yang telah diterapkan, mengidentifikasi hal-hal yang masih perlu diperbaiki, dan menulis hal baik yang ingin dilakukan."
+            }
+          ],
           "raw_text": "2. Fase B (Kelas III dan IV Madrasah Ibtidaiyah)\nPada akhir fase B, Murid memiliki kemampuan sebagai berikut.\n2.1 Pemahaman Konsep\nAkidah\nMenemukan contoh asmaulhusna (al-Halim, al-Wahhab, al-\nKabir, al- 'Adhim, as-Sami’, al-Bashir, al-Waliy, dan al-'Alim);\nmenghafal dan menjelaskan iman kepada kitab-kitab Allah\nSwt. serta nabi dan rasul-Nya.\nAkhlak\nMenghafal dan menjelaskan kalimah thayyibah\n(Subhanallah, Allahu Akbar, Masya Allah); menjelaskan dan\nmenerapkan sikap bersyukur, pantang menyerah,\npemberani, tolong-menolong, amanah serta cara\nmenghindari sikap serakah, kikir, dan kufur nikmat.\nAdab\nMenerapkan adab kepada kedua orang tua, guru, dan teman.\nKisah Keteladanan\nMenceritakan dan menerapkan perilaku taat melalui kisah\nNabi Ibrahim a.s. dan Nabi Ismail a.s.\n2.2 Keterampilan Proses\nKeterampilan proses pada mata pelajaran Akidah Akhlak\nmeliputi kegiatan.\n● Mengamati\nMurid dilatih untuk mengamati fenomena kehidupan atau\nperistiwa sehari-hari berupa gambar, video, atau bentuk\nlainnya untuk memahami nilai-nilai yang dipelajari.\n● Mempertanyakan dan memprediksi\nMelalui bimbingan guru, murid dilatih berani mengajukan\npertanyaan sederhana tentang hal yang diamati dan\nmembuat dugaan sederhana mengenai akibat atau manfaat\ndari suatu sikap atau perbuatan.\n● Merencanakan dan melakukan penyelidikan\nMurid merencanakan kegiatan belajar (seperti hafalan,\npraktik sikap baik, atau bermain peran), kemudian\nmelaksanakannya secara berkelompok maupun individu.\n● Memproses dan menganalisis informasi\nMurid menghubungkan hal yang dipelajari dengan\nkehidupan sehari-hari, membandingkan sikap baik dan\nburuk, serta mengambil pelajaran dari cerita atau\npengalaman murid.\n● Mengomunikasikan hasil\nMurid menyampaikan hasil belajar secara lisan, tulisan,\natau tindakan, baik dengan menceritakan kembali,\nmemperagakan, maupun menunjukkan praktik nyata di\nlingkungan madarasah atau rumah.\n● Merefleksikan dan rencana tindak lanjut\nMurid mampu merefleksikan perilaku mereka sendiri,\nmengevaluasi sikap yang telah diterapkan, mengidentifikasi\nhal-hal yang masih perlu diperbaiki, dan menulis hal baik\nyang ingin dilakukan."
         },
         {
@@ -85,6 +406,65 @@
             6
           ],
           "pdf_pages": "47-48",
+          "lead_in": "Pada akhir fase C, murid memiliki kemampuan sebagai berikut.",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada mata pelajaran Akidah Akhlak meliputi kegiatan sebagai berikut."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akidah",
+              "text": "Menerapkan perilaku yang mencerminkan sifat asmaulhusna (al-Qawiyy, al-Khabir, al-Muhyi, al-Wahid, al-Ahad, as-Samad, al-Ghaffar, dan al-Waasi’); menjelaskan hari akhir (kiamat), qada dan qadar."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Akhlak",
+              "text": "Menjelaskan dan menerapkan kalimah thayyibah (istigfar, hauqalah, tarji', dan tahlil); menerapkan dan merefleksikan akhlak terpuji (sabar, disiplin, mandiri, pemaaf, tanggung jawab, adil, dan bijaksana), serta cara menghindari akhlak tercela (pemarah, fasik, pilih kasih, iri hati, dan egois)."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Adab",
+              "text": "Mengidentifikasi dan menerapkan adab bertamu, adab kepada tetangga, dan lingkungan."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Kisah Keteladanan",
+              "text": "Menceritakan dan menerapkan sikap keberanian dan teguh pendirian melalui kisah Nabi Musa a.s. dan sikap sabar melalui kisah Nabi Isa a.s."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Murid mengamati fenomena kehidupan atau kejadian nyata di lingkungan sekitar yang terkait dengan materi berupa gambar, video, atau bentuk lainnya untuk memahami nilai-nilai yang dipelajari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menanya dan mengumpulkan informasi",
+              "text": "Murid diajak bertanya untuk membangkitkan rasa ingin tahu. Kemudian, murid mengumpulkan informasi dari berbagai sumber yang relevan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menganalisis dan menyimpulkan",
+              "text": "Melalui bimbingan guru, murid berdiskusi kelompok untuk menganalisis informasi yang telah dikumpulkan. Kemudian bersama-sama menyimpulkan nilai-nilai penting dari materi yang telah dipelajari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan",
+              "text": "Murid menyampaikan pemahaman mereka dengan cara yang menyenangkan dan kreatif agar dapat saling belajar dan memberi masukan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menerapkan",
+              "text": "Murid menerapkan nilai-nilai yang telah dipelajari dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merefleksikan dan rencana tindak lanjut",
+              "text": "Murid merefleksikan perilaku mereka yang telah menerapkan akhlak terpuji dan menghindari akhlak tercela. Mereka mengevaluasi pengalaman harian dan menuliskan satu hal baik yang akan dilakukan."
+            }
+          ],
           "raw_text": "3. Fase C (Kelas V dan VI Madrasah Ibtidaiyah)\nPada akhir fase C, murid memiliki kemampuan sebagai berikut.\n3.1 Pemahaman Konsep\nAkidah\nMenerapkan perilaku yang mencerminkan sifat\nasmaulhusna (al-Qawiyy, al-Khabir, al-Muhyi, al-Wahid, al-\nAhad, as-Samad, al-Ghaffar, dan al-Waasi’); menjelaskan\nhari akhir (kiamat), qada dan qadar.\nAkhlak\nMenjelaskan dan menerapkan kalimah thayyibah (istigfar,\nhauqalah, tarji', dan tahlil); menerapkan dan merefleksikan\nakhlak terpuji (sabar, disiplin, mandiri, pemaaf, tanggung\njawab, adil, dan bijaksana), serta cara menghindari akhlak\ntercela (pemarah, fasik, pilih kasih, iri hati, dan egois).\nAdab\nMengidentifikasi dan menerapkan adab bertamu, adab\nkepada tetangga, dan lingkungan.\nKisah Keteladanan\nMenceritakan dan menerapkan sikap keberanian dan\nteguh pendirian melalui kisah Nabi Musa a.s. dan sikap\nsabar melalui kisah Nabi Isa a.s.\n3.2 Keterampilan Proses\nKeterampilan proses pada mata pelajaran Akidah Akhlak\nmeliputi kegiatan sebagai berikut.\n● Mengamati\nMurid mengamati fenomena kehidupan atau kejadian nyata\ndi lingkungan sekitar yang terkait dengan materi berupa\ngambar, video, atau bentuk lainnya untuk memahami nilai-\nnilai yang dipelajari.\n● Menanya dan mengumpulkan informasi\nMurid diajak bertanya untuk membangkitkan rasa ingin\ntahu. Kemudian, murid mengumpulkan informasi dari\nberbagai sumber yang relevan.\n● Menganalisis dan menyimpulkan\nMelalui bimbingan guru, murid berdiskusi kelompok untuk\nmenganalisis informasi yang telah dikumpulkan. Kemudian\nbersama-sama menyimpulkan nilai-nilai penting dari\nmateri yang telah dipelajari.\n● Mengomunikasikan\nMurid menyampaikan pemahaman mereka dengan cara\nyang menyenangkan dan kreatif agar dapat saling belajar\ndan memberi masukan.\n● Menerapkan\nMurid menerapkan nilai-nilai yang telah dipelajari dalam\nkehidupan sehari-hari.\n● Merefleksikan dan rencana tindak lanjut\nMurid merefleksikan perilaku mereka yang telah\nmenerapkan akhlak terpuji dan menghindari akhlak\ntercela. Mereka mengevaluasi pengalaman harian dan\nmenuliskan satu hal baik yang akan dilakukan."
         }
       ]
@@ -93,8 +473,24 @@
       "key": "fikih",
       "name": "Fikih",
       "elements": [
-        "Pemahaman Konsep",
-        "Keterampilan Proses"
+        {
+          "name": "Pemahaman Konsep",
+          "sub_elements": [
+            "Ibadah",
+            "Muamalah"
+          ]
+        },
+        {
+          "name": "Keterampilan Proses",
+          "sub_elements": [
+            "Mengamati",
+            "Menanya",
+            "Mengumpulkan data",
+            "Menganalisis data",
+            "Menyimpulkan dan merefleksikan",
+            "Mengomunikasikan hasil"
+          ]
+        }
       ],
       "phases": [
         {
@@ -104,6 +500,50 @@
             2
           ],
           "pdf_pages": "70-71",
+          "lead_in": "Pada akhir fase A, murid memiliki kemampuan sebagai berikut.",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada fase ini meliputi kegiatan."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Ibadah",
+              "text": "Menyebutkan rukun Islam; meniru dan melafalkan kalimah syahadatain; meniru praktik taharah, salat fardu, salat berjemaah; meniru dan melafalkan azan dan ikamah serta bacaan zikir sesudah salat."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Melakukan pengamatan ibadah sebagai pengamalan rukun Islam serta mencatat hasil pengamatan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menanya",
+              "text": "Mengidentifikasi dan menyusun daftar pertanyaan yang akan digunakan untuk menggali data terhadap permasalahan fikih ibadah yang diangkat sebagai masalah penelitian."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengumpulkan data",
+              "text": "Mencari informasi dari beberapa sumber primer maupun sekunder melalui wawancara, observasi dan lain sebagainya untuk menjawab pertanyaan yang disajikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menganalisis data",
+              "text": "Menganalisis data dengan melakukan komparasi antara ketentuan ibadah sesuai syariat dengan realitas yang dilakukan seseorang."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menyimpulkan dan merefleksikan",
+              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Menyajikan informasi secara lisan, tulisan, dan/atau media lain dalam bentuk digital maupun nondigital."
+            }
+          ],
           "raw_text": "1. Fase A (Umumnya untuk Kelas I dan II MI)\nPada akhir fase A, murid memiliki kemampuan sebagai berikut.\n1.1. Pemahaman Konsep\nIbadah\nMenyebutkan rukun Islam; meniru dan melafalkan kalimah\nsyahadatain; meniru praktik taharah, salat fardu, salat\nberjemaah; meniru dan melafalkan azan dan ikamah serta\nbacaan zikir sesudah salat.\n1.2. Keterampilan Proses\nKeterampilan proses pada fase ini meliputi kegiatan.\n● Mengamati\nMelakukan pengamatan ibadah sebagai pengamalan rukun\nIslam serta mencatat hasil pengamatan.\n● Menanya\nMengidentifikasi dan menyusun daftar pertanyaan yang\nakan digunakan untuk menggali data terhadap\npermasalahan fikih ibadah yang diangkat sebagai masalah\npenelitian.\n● Mengumpulkan data\nMencari informasi dari beberapa sumber primer maupun\nsekunder melalui wawancara, observasi dan lain sebagainya\nuntuk menjawab pertanyaan yang disajikan.\n● Menganalisis data\nMenganalisis data dengan melakukan komparasi antara\nketentuan ibadah sesuai syariat dengan realitas yang\ndilakukan seseorang.\n● Menyimpulkan dan merefleksikan\nMenarasikan temuan hasil investigasi berupa kritik sosial\ndari sebuah fenomena sosial keagamaan yang terjadi di\nmasyarakat, kemudian merefleksikan hasil temuannya\nkepada diri mereka sendiri agar menjadi muslim yang\nsemakin baik.\n● Mengomunikasikan hasil\nMenyajikan informasi secara lisan, tulisan, dan/atau media\nlain dalam bentuk digital maupun nondigital."
         },
         {
@@ -113,6 +553,50 @@
             4
           ],
           "pdf_pages": "71-72",
+          "lead_in": "Pada akhir Fase B, murid memiliki kemampuan sebagai berikut.",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada fase ini meliputi kegiatan."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Ibadah",
+              "text": "Menyebutkan tata cara pelaksanaan puasa Ramadan; meniru tata cara salat Jumat dan beberapa salat sunah; menyebutkan rukhsah pada salat; menyebutkan tata cara khitan, tanda-tanda balig beserta cara bersuci dari hadas besar."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Melakukan pengamatan ibadah sebagai pengamalan rukun Islam serta mencatat hasil pengamatan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menanya",
+              "text": "Mengidentifikasi dan menyusun daftar pertanyaan yang akan digunakan untuk menggali data terhadap permasalahan fikih ibadah yang diangkat sebagai masalah penelitian."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengumpulkan data",
+              "text": "Mencari informasi dari beberapa sumber primer maupun sekunder melalui wawancara, observasi dan lain sebagainya untuk menjawab pertanyaan yang disajikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menganalisis data",
+              "text": "Menganalisis data dengan melakukan komparasi antara ketentuan ibadah sesuai syariat dengan realitas yang dilakukan seseorang."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menyimpulkan dan merefleksikan",
+              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Menyajikan informasi secara lisan, tulisan, dan/atau media lain dalam bentuk digital maupun nondigital."
+            }
+          ],
           "raw_text": "2. Fase B (Umumnya untuk Kelas III dan IV MI)\nPada akhir Fase B, murid memiliki kemampuan sebagai berikut.\n2.1. Pemahaman Konsep\nIbadah\nMenyebutkan tata cara pelaksanaan puasa Ramadan; meniru\ntata cara salat Jumat dan beberapa salat sunah;\nmenyebutkan rukhsah pada salat; menyebutkan tata cara\nkhitan, tanda-tanda balig beserta cara bersuci dari hadas\nbesar.\n2.2. Keterampilan Proses\nKeterampilan proses pada fase ini meliputi kegiatan.\n● Mengamati\nMelakukan pengamatan ibadah sebagai pengamalan rukun\nIslam serta mencatat hasil pengamatan.\n● Menanya\nMengidentifikasi dan menyusun daftar pertanyaan yang\nakan digunakan untuk menggali data terhadap\npermasalahan fikih ibadah yang diangkat sebagai masalah\npenelitian.\n● Mengumpulkan data\nMencari informasi dari beberapa sumber primer maupun\nsekunder melalui wawancara, observasi dan lain\nsebagainya untuk menjawab pertanyaan yang disajikan.\n● Menganalisis data\nMenganalisis data dengan melakukan komparasi antara\nketentuan ibadah sesuai syariat dengan realitas yang\ndilakukan seseorang.\n● Menyimpulkan dan merefleksikan\nMenarasikan temuan hasil investigasi berupa kritik sosial\nberupa kritik sosial dari sebuah fenomena sosial\nkeagamaan yang terjadi di masyarakat, kemudian\nmerefleksikan hasil temuannya kepada diri mereka sendiri\nagar menjadi muslim yang semakin baik.\n● Mengomunikasikan hasil\nMenyajikan informasi secara lisan, tulisan, dan/atau media\nlain dalam bentuk digital maupun nondigital."
         },
         {
@@ -122,6 +606,55 @@
             6
           ],
           "pdf_pages": "72-73",
+          "lead_in": "Pada akhir fase C, murid memiliki kemampuan sebagai berikut.",
+          "element_intros": [
+            {
+              "element": "Keterampilan Proses",
+              "text": "Keterampilan proses pada fase ini meliputi kegiatan."
+            }
+          ],
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Ibadah",
+              "text": "Membedakan zakat fitrah, infak dan sedekah; mengklasifikasikan jenis-jenis hewan kurban; menyebutkan hikmah dari pelaksanaan kurban; mengurutkan pelaksanaan tata cara haji dan umrah; menjelaskan ketentuan halal dan haram."
+            },
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": "Muamalah",
+              "text": "Menceritakan pengalaman praktik jual beli; mengilustrasikan ketentuan pinjam meminjam; menjelaskan pentingnya menghindari perbuatan gasab, ketentuan barang temuan/luqathah."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Melakukan pengamatan ibadah sebagai pengamalan rukun Islam dan kegiatan muamalah yang terjadi di masyarakat serta mencatat hasil pengamatan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menanya",
+              "text": "Mengidentifikasi dan menyusun daftar pertanyaan yang akan digunakan untuk menggali data terhadap permasalahan fikih ibadah dan muamalah yang diangkat sebagai masalah penelitian."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengumpulkan data",
+              "text": "Mencari informasi dari beberapa sumber primer maupun sekunder melalui wawancara, observasi dan lain sebagainya untuk menjawab pertanyaan yang disajikan."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menganalisis data",
+              "text": "Menganalisis data dengan melakukan komparasi antara ketentuan ibadah dan muamalah yang sesuai syariat dengan realitas yang dilakukan seseorang."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Menyimpulkan dan merefleksikan",
+              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Menyajikan informasi secara lisan, tulisan, dan/atau media lain dalam bentuk digital maupun nondigital."
+            }
+          ],
           "raw_text": "3. Fase C (Umumnya untuk Kelas V dan VI MI)\nPada akhir fase C, murid memiliki kemampuan sebagai berikut.\n3.1. Pemahaman Konsep\nIbadah\nMembedakan zakat fitrah, infak dan sedekah;\nmengklasifikasikan jenis-jenis hewan kurban; menyebutkan\nhikmah dari pelaksanaan kurban; mengurutkan pelaksanaan\ntata cara haji dan umrah; menjelaskan ketentuan halal dan\nharam.\nMuamalah\nMenceritakan pengalaman praktik jual beli; mengilustrasikan\nketentuan pinjam meminjam; menjelaskan pentingnya\nmenghindari perbuatan gasab, ketentuan barang temuan/\nluqathah.\n3.2. Keterampilan Proses\nKeterampilan proses pada fase ini meliputi kegiatan.\n● Mengamati\nMelakukan pengamatan ibadah sebagai pengamalan rukun\nIslam dan kegiatan muamalah yang terjadi di masyarakat\nserta mencatat hasil pengamatan.\n● Menanya\nMengidentifikasi dan menyusun daftar pertanyaan yang\nakan digunakan untuk menggali data terhadap\npermasalahan fikih ibadah dan muamalah yang diangkat\nsebagai masalah penelitian.\n● Mengumpulkan data\nMencari informasi dari beberapa sumber primer maupun\nsekunder melalui wawancara, observasi dan lain\nsebagainya untuk menjawab pertanyaan yang disajikan.\n● Menganalisis data\nMenganalisis data dengan melakukan komparasi antara\nketentuan ibadah dan muamalah yang sesuai syariat\ndengan realitas yang dilakukan seseorang.\n● Menyimpulkan dan merefleksikan\nMenarasikan temuan hasil investigasi berupa kritik sosial\nberupa kritik sosial dari sebuah fenomena sosial\nkeagamaan yang terjadi di masyarakat, kemudian\nmerefleksikan hasil temuannya kepada diri mereka sendiri\nagar menjadi muslim yang semakin baik.\n● Mengomunikasikan hasil\nMenyajikan informasi secara lisan, tulisan, dan/atau media\nlain dalam bentuk digital maupun nondigital."
         }
       ]
@@ -130,8 +663,20 @@
       "key": "ski",
       "name": "Sejarah Kebudayaan Islam",
       "elements": [
-        "Pemahaman Konsep",
-        "Keterampilan Proses"
+        {
+          "name": "Pemahaman Konsep"
+        },
+        {
+          "name": "Keterampilan Proses",
+          "sub_elements": [
+            "Mengamati",
+            "Mempertanyakan dan memprediksi",
+            "Merencanakan dan melakukan penyelidikan",
+            "Memproses, menganalisis data dan informasi",
+            "Mengevaluasi dan Refleksi",
+            "Mengomunikasikan hasil"
+          ]
+        }
       ],
       "phases": [
         {
@@ -141,6 +686,44 @@
             4
           ],
           "pdf_pages": "90-91",
+          "lead_in": "Pada akhir fase B, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": null,
+              "text": "Mengidentifikasi kehidupan masyarakat Arab sebelum Islam; menggambarkan kehidupan dan kepribadian Rasulullah saw.; mendeskripsikan peristiwa kerasulan Rasulullah saw.; menceritakan ketabahan Rasulullah saw. dan para sahabat dalam berdakwah; memahami kronologi hijrah Rasulullah saw.; menceritakan dan merefleksikan peristiwa Isra Mikraj Rasulullah saw. dalam kehidupan sehari-hari."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Mengidentifikasi sejarah perkembangan Islam yang relevan hingga saat ini."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Merumuskan pertanyaan kritis yang dapat diteliti secara ilmiah dan membuat hipotesis sederhana dari pertanyaan tersebut."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Menyusun rencana peyelidikan, seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah)."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses, menganalisis data dan informasi",
+              "text": "Mengolah data dalam bentuk peta konsep sejarah perkembangan Islam."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengevaluasi dan Refleksi",
+              "text": "Mengidentifikasi kemungkinan penjelasan alternatif dalam rangka mengevaluasi kesimpulan; merefleksikan ibrah atau pembelajaran yang diperoleh dari peristiwa yang diteliti, dihubungkan dengan konteks kehidupan kontemporer."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Mengomunikasikan hasil penelitian secara sistematis dan utuh dalam bentuk laporan tertulis, presentasi, poster, infografik, ataupun sejenisnya."
+            }
+          ],
           "raw_text": "1. Fase B (Umumnya untuk Kelas III dan IV Madrasah Ibtidaiyah)\nPada akhir fase B, murid memiliki kemampuan sebagai\nberikut.\n1.1. Pemahaman Konsep\nMengidentifikasi kehidupan masyarakat Arab sebelum\nIslam; menggambarkan kehidupan dan kepribadian Rasulullah\nsaw.; mendeskripsikan peristiwa kerasulan Rasulullah saw.;\nmenceritakan ketabahan Rasulullah saw. dan para sahabat\ndalam berdakwah; memahami kronologi hijrah Rasulullah saw.;\nmenceritakan dan merefleksikan peristiwa Isra Mikraj Rasulullah\nsaw. dalam kehidupan sehari-hari.\n1.2. Keterampilan Proses\n• Mengamati\nMengidentifikasi sejarah perkembangan Islam yang\nrelevan hingga saat ini.\n• Mempertanyakan dan memprediksi\nMerumuskan pertanyaan kritis yang dapat diteliti secara\nilmiah dan membuat hipotesis sederhana dari\npertanyaan tersebut.\n• Merencanakan dan melakukan penyelidikan\nMenyusun rencana peyelidikan, seperti studi literatur\natau wawancara untuk mengumpulkan data guna\nmenjawab pertanyaan yang telah dirumuskan;\nmengumpulkan data dari sumber primer/sekunder (Al-\nQur’an, Hadis, buku sejarah).\n• Memproses, menganalisis data dan informasi\nMengolah data dalam bentuk peta konsep sejarah\nperkembangan Islam.\n• Mengevaluasi dan Refleksi\nMengidentifikasi kemungkinan penjelasan alternatif\ndalam rangka mengevaluasi kesimpulan; merefleksikan\nibrah atau pembelajaran yang diperoleh dari peristiwa\nyang diteliti, dihubungkan dengan konteks kehidupan\nkontemporer.\n• Mengomunikasikanhasil\nMengomunikasikan hasil penelitian secara sistematis\ndan utuh dalam bentuk laporan tertulis, presentasi,\nposter, infografik, ataupun sejenisnya."
         },
         {
@@ -150,6 +733,44 @@
             6
           ],
           "pdf_pages": "91-92",
+          "lead_in": "Pada akhir fase C, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Pemahaman Konsep",
+              "sub_element": null,
+              "text": "Merefleksikan dakwah Rasulullah saw. kepada kelompok nonmuslim di Madinah; menceritakan dan merefleksikan peristiwa menjelang akhir hayat Rasulullah saw. dalam kehidupan sehari-hari; merefleksikan kisah keteladanan Abu Bakar Ash-Shiddiq, Umar bin Khattab, Usman bin Affan, dan Ali bin Abi Thalib dalam kehidupan sehari-hari; menganalisis biografi Wali Sanga dalam mengembangkan Islam di Indonesia."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengamati",
+              "text": "Mengidentifikasi sejarah perkembangan Islam yang relevan hingga saat ini."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mempertanyakan dan memprediksi",
+              "text": "Merumuskan pertanyaan kritis yang dapat diteliti secara ilmiah dan membuat hipotesis sederhana dari pertanyaan tersebut."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Merencanakan dan melakukan penyelidikan",
+              "text": "Menyusun rencana peyelidikan seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah)."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Memproses, menganalisis data dan informasi",
+              "text": "Mengolah data dalam bentuk peta konsep sejarah perkembangan Islam."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengevaluasi dan Refleksi",
+              "text": "Mengidentifikasi kemungkinan penjelasan alternatif dalam rangka mengevaluasi kesimpulan; merefleksikan ibrah atau pembelajaran yang diperoleh dari peristiwa yang diteliti, dihubungkan dengan konteks kehidupan kontemporer."
+            },
+            {
+              "element": "Keterampilan Proses",
+              "sub_element": "Mengomunikasikan hasil",
+              "text": "Mengomunikasikan hasil penelitian secara sistematis dan utuh dalam bentuk laporan tertulis, presentasi, poster, infografik, ataupun sejenisnya."
+            }
+          ],
           "raw_text": "2. Fase C (Umumnya untuk Kelas V dan VI Madrasah Ibtidaiyah)\nPada akhir fase C, murid memiliki kemampuan sebagai\nberikut.\n2.1. Pemahaman Konsep\nMerefleksikan dakwah Rasulullah saw. kepada kelompok\nnonmuslim di Madinah; menceritakan dan merefleksikan peristiwa\nmenjelang akhir hayat Rasulullah saw. dalam kehidupan sehari-\nhari; merefleksikan kisah keteladanan Abu Bakar Ash-Shiddiq,\nUmar bin Khattab, Usman bin Affan, dan Ali bin Abi Thalib dalam\nkehidupan sehari-hari; menganalisis biografi Wali Sanga dalam\nmengembangkan Islam di Indonesia.\n2.2. Keterampilan Proses\n● Mengamati\nMengidentifikasi sejarah perkembangan Islam yang\nrelevan hingga saat ini.\n● Mempertanyakan dan memprediksi\nMerumuskan pertanyaan kritis yang dapat diteliti secara\nilmiah dan membuat hipotesis sederhana dari\npertanyaan tersebut.\n● Merencanakan dan melakukan penyelidikan\nMenyusun rencana peyelidikan seperti studi literatur\natau wawancara untuk mengumpulkan data guna\nmenjawab pertanyaan yang telah dirumuskan;\nmengumpulkan data dari sumber primer/sekunder (Al-\nQur’an, Hadis, buku sejarah).\n● Memproses, menganalisis data dan informasi\nMengolah data dalam bentuk peta konsep sejarah\nperkembangan Islam.\n● Mengevaluasi dan Refleksi\nMengidentifikasi kemungkinan penjelasan alternatif\ndalam rangka mengevaluasi kesimpulan; merefleksikan\nibrah atau pembelajaran yang diperoleh dari peristiwa\nyang diteliti, dihubungkan dengan konteks kehidupan\nkontemporer.\n● Mengomunikasikan hasil\nMengomunikasikan hasil penelitian secara sistematis\ndan utuh dalam bentuk laporan tertulis, presentasi,\nposter, infografik, ataupun sejenisnya."
         }
       ]
@@ -158,8 +779,12 @@
       "key": "bahasa_arab",
       "name": "Bahasa Arab",
       "elements": [
-        "Komponen Bahasa",
-        "Keterampilan Bahasa"
+        {
+          "name": "Komponen Bahasa"
+        },
+        {
+          "name": "Keterampilan Bahasa"
+        }
       ],
       "phases": [
         {
@@ -169,6 +794,29 @@
             2
           ],
           "pdf_pages": "99-100",
+          "lead_in": "Pada akhir fase A, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Komponen Bahasa",
+              "sub_element": null,
+              "text": "Mengenali bunyi dan kosakata tentang perkenalan, keluargaku, rumahku, madrasahku, dengan pola kalimat di antaranya: مَا اسْمُكَ؟، مَا اسْمُكِ؟، اِسْمِيْ...، مَنْ هُوَ؟، مَنْ هِيَ؟، هُوَ أَبِيْ، هِيَ أُمِّيْ، هٰذَا بَيْتٌ، هٰذِهِ مَدْرَسَةٌ serta mengenali bunyi dan kosakata tentang hobiku, nama-nama buah, warna-warna, alat transportasi, pemandangan alam, dengan pola kalimat di antaranya: مَا هِوَايَتُكَ؟; مَا هِوَايَتُكِ؟; هِوَايَتِيْ...; مَا ذٰلِكَ؟; مَا تِلْكَ؟ مَا لَوْنُ...؟; تِلْكَ سَيَّارَةٌ; ذٰلِكَ قِطَارٌ; تِلْكَ حَدِيْقَةٌ; ذٰلِكَ بَحْرٌ",
+              "arabic_passages": [
+                {
+                  "pdf_page": "99",
+                  "text": "مَا اسْمُكَ؟، مَا اسْمُكِ؟، اِسْمِيْ...، مَنْ هُوَ؟، مَنْ هِيَ؟، هُوَ أَبِيْ، هِيَ أُمِّيْ، هٰذَا بَيْتٌ، هٰذِهِ مَدْرَسَةٌ"
+                },
+                {
+                  "pdf_page": "99",
+                  "text": "مَا هِوَايَتُكَ؟; مَا هِوَايَتُكِ؟; هِوَايَتِيْ...; مَا ذٰلِكَ؟; مَا تِلْكَ؟ مَا لَوْنُ...؟; تِلْكَ سَيَّارَةٌ; ذٰلِكَ قِطَارٌ; تِلْكَ حَدِيْقَةٌ; ذٰلِكَ بَحْرٌ"
+                }
+              ]
+            },
+            {
+              "element": "Keterampilan Bahasa",
+              "sub_element": null,
+              "text": "Menerapkan keterampilan berbahasa yang meliputi kegiatan menyimak, berbicara, membaca, memirsa, menulis, dan mempresentasikan."
+            }
+          ],
           "raw_text": "1. Fase A (Umumnya untuk kelas I dan II MI)\nPada akhir fase A, murid memiliki kemampuan sebagai berikut.\n1.1. Komponen Bahasa\nMengenali bunyi dan kosakata tentang perkenalan, keluargaku,\nrumahku, madrasahku, dengan pola kalimat di antaranya:\nَ ُ َ ْ َما،اس ُم َك؟\n، ٰهذا َب ْي ٌت، ِه َي أ ِم ْي، ُه َو أ ِب ْي، َم ْن ِه َي؟، َم ْن ُه َو؟،... ِا ْس ِم ْي،اس ُم ِك؟ ْ َما\nٌ\nٰه ِذ ِه َم ْد َر َسة\nserta mengenali bunyi dan kosakata tentang hobiku, nama-nama\nbuah, warna-warna, alat transportasi, pemandangan alam,\ndengan pola kalimat di antaranya:\nٌ ْ ُ َ ْ ٰ\n;؟ ; ِتل َك َس َّيا َرة... ; َما ذ ِل َك؟; َما ِتل َك؟ َمال ْون...َما ِه َو َاي ُت َك؟ ; َما ِه َو َاي ُت ِك؟ ; ِه َو َاي ِت ْي\nٰ ٌ ْ َ ٰ\nذ ِل َك ِقط ٌار; ِتل َك َح ِد ْي َقة; ذ ِل َك َب ْح ٌر\n1.2. Keterampilan Bahasa\nMenerapkan keterampilan berbahasa yang meliputi kegiatan\nmenyimak, berbicara, membaca, memirsa, menulis, dan\nmempresentasikan."
         },
         {
@@ -178,6 +826,29 @@
             4
           ],
           "pdf_pages": "100-100",
+          "lead_in": "Pada akhir fase B, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Komponen Bahasa",
+              "sub_element": null,
+              "text": "Mengidentifikasi kalimat sapaan dan pertanyaan tentang materi pelajaran, nama-nama binatang, penyakit, olahraga, teman-temanku, taman, dengan pola kalimat di antaranya: مَا دَرْسُنَا الْآنَ؟; هٰذَا دَرْسُ اللُّغَةِ الْعَرَبِيَّةِ; مَا ذٰلِكَ؟ ذٰلِكَ جَامُوْسٌ; مَا تِلْكَ؟ تِلْكَ دَجَاجَةٌ; مَا أَصَابَكَ؟ أَصَابَنِيْ اَلصُّدَاعُ; مَا أَصَابَكِ؟ أَصَابَنِيْ اَلسُّعَالُ; أَحْمَدُ يُحِبُّ السِّبَاحَةَ; مَاذَا تُحِبُّ عَائِشَةُ؟; مَنْ هُوَ؟; هٰذَا أَحْمَدُ، هُوَ ذَكِيٌّ; هَلْ تِلْكَ تُفَّاحَةٌ؟ نَعَمْ، تِلْكَ تُفَّاحَةٌ; ذٰلِكَ أَنَانَاسٌ وَتِلْكَ زَهْرَةُ الْوَرْدَةِ serta mengidentifikasi kalimat sapaan dan pertanyaan tentang alamat, profesi, cita-citaku, di rumah, anggota keluarga, cinta Indonesia, dengan pola kalimat di antaranya: مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟",
+              "arabic_passages": [
+                {
+                  "pdf_page": "100",
+                  "text": "مَا دَرْسُنَا الْآنَ؟; هٰذَا دَرْسُ اللُّغَةِ الْعَرَبِيَّةِ; مَا ذٰلِكَ؟ ذٰلِكَ جَامُوْسٌ; مَا تِلْكَ؟ تِلْكَ دَجَاجَةٌ; مَا أَصَابَكَ؟ أَصَابَنِيْ اَلصُّدَاعُ; مَا أَصَابَكِ؟ أَصَابَنِيْ اَلسُّعَالُ; أَحْمَدُ يُحِبُّ السِّبَاحَةَ; مَاذَا تُحِبُّ عَائِشَةُ؟; مَنْ هُوَ؟; هٰذَا أَحْمَدُ، هُوَ ذَكِيٌّ; هَلْ تِلْكَ تُفَّاحَةٌ؟ نَعَمْ، تِلْكَ تُفَّاحَةٌ; ذٰلِكَ أَنَانَاسٌ وَتِلْكَ زَهْرَةُ الْوَرْدَةِ"
+                },
+                {
+                  "pdf_page": "100",
+                  "text": "مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟"
+                }
+              ]
+            },
+            {
+              "element": "Keterampilan Bahasa",
+              "sub_element": null,
+              "text": "Menerapkan keterampilan berbahasa yang meliputi kegiatan menyimak, berbicara, membaca, memirsa, menulis, mempresentasikan."
+            }
+          ],
           "raw_text": "2. Fase B (Umumnya untuk kelas III dan IV MI)\nPada akhir fase B, murid memiliki kemampuan sebagai berikut.\n2.1. Komponen Bahasa\nMengidentifikasi kalimat sapaan dan pertanyaan tentang materi\npelajaran, nama-nama binatang, penyakit, olahraga, teman-\ntemanku, taman, dengan pola kalimat di antaranya:\nْ ْ\nس; َما ِتل َك؟ ِتل َك ٌ الل َغ ِة ْال َع َرب َّي ِة; َما ٰذ ِل َك؟ ٰذ ِل َك َج ُام ْوُّ ُ ْ َ َ ٰ َ ْ َ ُ ْ َ َ\nما درسنا اْلن؟; هذا درس\nَ َ َ ِ\nال; أ ْح َم ُد ُي ِح ُّب\nُ لس َع َ\nُّ ص َابن ْي ا\nَ ص َابك؟ أ َ اع; َما أ ُ لص َد َ\nُّ ص َابن ْي ا َ ص َاب َك؟ َأَ اج ٌة; َما َأ َ َد َج\nِ ِ ِ\nَ ٌ َ َّ ُ َ ْ ْ َ َ َ ُ ُ َ ْ َ َ ٰ َ ُ ْ َ ُ َ َ ُّ ُ َ َ َ َ َ\n،احة؟ ن َع ْم هو ذ ِكي; هل ِتلك تف،السباحة; ماذا ت ِحب عا ِئشة؟; من هو؟; هذا أحمد ِ\nَاس َوت ْل َك َز ْه َر ُة ْال َو ْردة َ َ َ َ ٰ ٌ َ َّ ُ َ ْ\nِ ِ ٌ ِتلك تفاحة ; ذ ِلك أنان\nserta mengidentifikasi kalimat sapaan dan pertanyaan tentang\nalamat, profesi, cita-citaku, di rumah, anggota keluarga, cinta\nIndonesia, dengan pola kalimat di antaranya:\nْ; َهل...; َما ِم ْه َن ُت ِك؟ ِم ْه َنت ْي... الشارع َّ ; َما ُع ْن َو ُان َك؟ ُع ْن َوان ْي في...م ْن َأ ْي َن َأ ْنت؟ َأ َنا م ْن\nِ ِِ ُ َ َ ِ ُِ ُ َ ِ ِ ِ\nٰ َ ٌ َّ َ َ َ ٌ َأ ْن َت ُم َدر\nُه َو َج ِم ْي ٌل، ; ذ ِل َك َب ْي ِت ْي... أنا ُم َوظف; َما أ َمل َك؟ أ ِرْي ُد أ ْن أك ْون،س؟ ال ِ\nَ ُه َو َخال ْي; َه ْل َأ ْنت، ه َي ُم َد َس ٌة; َسي ُد ُع َم ُر َأ ُخ َأب ْي،ف; َم ْن ه َي؟ ه َي ُأم ْي ٌ ْ ََ\nون ِظي\nِ ِ ِ ر\nِ ِ ِ ِ ِ\nِإ ْن ُد ْو ِن ْي ِس ي؟\n2.2. Keterampilan Bahasa\nMenerapkan keterampilan berbahasa yang meliputi kegiatan\nmenyimak, berbicara, membaca, memirsa, menulis,\nmempresentasikan."
         },
         {
@@ -187,6 +858,29 @@
             6
           ],
           "pdf_pages": "100-101",
+          "lead_in": "Pada akhir fase C, murid memiliki kemampuan sebagai berikut.",
+          "outcomes": [
+            {
+              "element": "Komponen Bahasa",
+              "sub_element": null,
+              "text": "Mengidentifikasi informasi dan bacaan sederhana tentang anggota tubuh, kebun binatang, di ruang tamu dan di ruang belajar, di perpustakaan, di kantin, dengan pola kalimat di antaranya: هٰذَا أُذُنٌ، أَنَا أَسْمَعُ بِالْأُذُنِ; تِلْكَ فَرَاشَةٌ جَمِيْلَةٌ; مَاذَا فِي غُرْفَةِ الْاِسْتِقْبَالِ؟; الْجَدْوَلُ الدِّرَاسِيُّ فِي غُرْفَةِ الْمُذَاكَرَةِ; فِي الْمَدْرَسَةِ مَكْتَبَةٌ كَبِيْرَةٌ وَنَظِيْفَةٌ; هَلْ أَنْتَ جَوْعَانُ؟ نَعَمْ، أَنَا جَوْعَانُ serta mengidentifikasi informasi dan bacaan sederhana tentang jam, saya suka bahasa Arab, saya suka kegiatan liburan, piknik, dengan pola kalimat di antaranya: كَمْ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ",
+              "arabic_passages": [
+                {
+                  "pdf_page": "101",
+                  "text": "هٰذَا أُذُنٌ، أَنَا أَسْمَعُ بِالْأُذُنِ; تِلْكَ فَرَاشَةٌ جَمِيْلَةٌ; مَاذَا فِي غُرْفَةِ الْاِسْتِقْبَالِ؟; الْجَدْوَلُ الدِّرَاسِيُّ فِي غُرْفَةِ الْمُذَاكَرَةِ; فِي الْمَدْرَسَةِ مَكْتَبَةٌ كَبِيْرَةٌ وَنَظِيْفَةٌ; هَلْ أَنْتَ جَوْعَانُ؟ نَعَمْ، أَنَا جَوْعَانُ"
+                },
+                {
+                  "pdf_page": "101",
+                  "text": "كَمْ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ"
+                }
+              ]
+            },
+            {
+              "element": "Keterampilan Bahasa",
+              "sub_element": null,
+              "text": "Menerapkan keterampilan berbahasa yang meliputi kegiatan menyimak, berbicara, membaca, memirsa, menulis, dan mempresentasikan."
+            }
+          ],
           "raw_text": "3. Fase C (Umumnya untuk kelas V dan VI MI)\nPada akhir fase C, murid memiliki kemampuan sebagai berikut.\n3.1. Komponen Bahasa\nMengidentifikasi informasi dan bacaan sederhana tentang anggota\ntubuh, kebun binatang, di ruang tamu dan di ruang belajar, di\nperpustakaan, di kantin, dengan pola kalimat di antaranya:\nَُْ ْ\nاال ْست ْق َبال؟; َ ٰ َ ُ ُ ٌ ََ َ ْ َ ُ ْ ُُ ْ َ َ َ َ ٌ َ َْ ٌ َ َ\nالج ْد َو ُل ِ َِ ِ ِ ة فرغ يفهذا أذن ،أنا أسمع ِباْلذ ِن; ِتلك فراشة ج ِميلة ; م ِ\nا اذ\nَْ ْ َ َ َ ْ َ َ ٌ َ ْ َ ٌ َ َ ْ َ ٌ َ ْ ْ َ َ ْ َ ُ َ ُ َ ُْ َ َ\nان؟ ن َع ْم، الد َر ِاس ُّي ِفي غ ْرف ِة اْلذاك َر ِة; ِفي اْلدرس ِة مكتبة ك ِبيرة ون ِظيفة; هل أنت جوع\nِ\nَأ َنا َج ْو َع ُ\nان\nserta mengidentifikasi informasi dan bacaan sederhana tentang\njam, saya suka bahasa Arab, saya suka kegiatan liburan, piknik,\ndengan pola kalimat di antaranya:\nاحا; َه ْل الرُبع َ\nص َب ً الس ِاد َس ِة َو ُّاعة َ الس َ َّ ي ف ة اع ُة ْاْلن؟; َأ َنا َأ ْذ َه ُب إ َلى ْاْلَ ْد َر َ\nس َك ْم َّ\nالس َ\nِ ِ ِ ِ\nَ ْ َ ُ ُّ ُّ َ ْ َ َ َّ َ َ ْ ُ ُّ َ ُ َ َ َ َ َّ ُ ُّ َ َ ْ َ َ َّ َ ْ ِ َ ْ َ َ َ ْ َ\nأنت ت ِحب اللغ ِة العرِبي ِة؟ نعم ،أ ِحبها; هو يتعلم اللغة العرِبية ِفي اْلدرس ِة; كيف\nَ َ َ َ ْ َْ َ ض ْيت ْال ُع ْط َل َة َيا ُأ ْختي؟ َق َ َق َ\nض ْي ُت ال ُعطلة ِب ِزَيا َر ِة َب ْي ِت َج ِد ْي; ِإلى أ ْي َن ذ َه ْب ِت؟ ذ َه ْب ُت ِ ِ\nْ َ َ\nاط ِئ ال َب ْح ِر\nِإلى ِ\nش\n3.2. Keterampilan Bahasa\nMenerapkan keterampilan berbahasa yang meliputi kegiatan\nmenyimak, berbicara, membaca, memirsa, menulis, dan\nmempresentasikan."
         }
       ]
