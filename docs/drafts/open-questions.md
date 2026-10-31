@@ -81,8 +81,8 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-119).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-121).
 
 | Question | Source | Who answers |
 |---|---|---|
-| Review the **Proposed** decisions D-039…D-083 and D-097…D-108 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
+| Review the remaining **Proposed** decisions in D-039…D-083 and D-097…D-108 (TKA ones are accepted by D-120) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
