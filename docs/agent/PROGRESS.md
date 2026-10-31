@@ -13,7 +13,7 @@ Owner = branch name or session label of whoever claimed the task.
 ## Open decisions blocking work
 
 - D-022 AI engine technical choices (proposed, needs owner review)
-- D-039…D-089: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- D-039…D-094: items marked **Proposed** need owner review (Accepted ones are owner decisions)
 
 ## Phases
 
@@ -51,13 +51,15 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-04 | Architecture overview | review | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
 | P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
 | P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
+| P2-07 | Export and localization guide | todo | — | P2-06 | `docs/drafts/export-localization.md` |
 
-Later candidates (not yet tasks): export/localization guide (incl. `lang/id` from the paraphrase spreadsheet) · v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (guru agama / subject reviewers still needed, D-037; reviewers also sign off the P2-01 and P2-02 CP data) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
+Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (guru agama / subject reviewers still needed, D-037; reviewers also sign off the P2-01 and P2-02 CP data) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
 ## Handoff notes
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — Owner answers D-090…D-094: Mode Contoh with the salesperson's key, manual payment, 10–25 per exam session, installable app, exam client on Laravel + Inertia. P2-07 (export and localization guide) created.
 - 2026-10-31 — Follow-up: owner chose Ubuntu 24.04, 8 vCPU / 16 GB, and a Cloudflare Tunnel with no public IP (D-086…D-088). `server-setup.md`, `architecture.md` and CONTEXT follow it.
 - 2026-10-31 — Phase 2 integrated. P1-08 and P2-01…P2-06 are merged (PRs #2–#9). Decisions D-039…D-085 are recorded, and owner answers are Accepted: domain `sigrak.com`, IDCloudHost Jakarta, R2 backups, staging server, Pest, TypeScript, Svelte 5, GitHub Actions, no `down()`. SD religion CP is verified against the scan, and MI CP is structured with Arabic retyped. Both still need guru review (D-037). Open owner items are in `docs/drafts/open-questions.md`.
 - 2026-10-30 — D-037: Kepercayaan is not in v1, MI Kemenag subjects are taught by guru mapel, and each religion's data is reviewed by a guru agama of that religion.
