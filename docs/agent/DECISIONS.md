@@ -197,3 +197,238 @@ Reason: owner's decisions.
 Accepted · 2026-10-30 · closes the "official copy still needed" part of D-035
 The MI subject structure and JP come from KMA 1503 Tahun 2025, Lampiran II, BAB III B, Tabel 1–5 (pp. 28–31), read from the official scanned copy supplied by the owner. Data: `docs/data/curriculum/mi-allocation-kma-1503-2025.json` (`ALOKASI-MI-KMA-1503-2025`), `verified: true`. 36 weeks per year (32 in grade VI), 1 JP = 35 minutes. Required intrakurikuler totals: I 1,044 · II 1,116 · III–IV 1,368 · V 1,368 · VI 1,216 JP per year; kokurikuler 108 (I–V) and 96 (VI). Koding dan Kecerdasan Artifisial is an elective in grades V–VI. Muatan lokal is 72–216 JP per year (64–192 in grade VI), and a madrasah may add up to 6 JP per week. Only an official-channel copy of SK 9941/2025 is still open.
 Reason: the official decree is now archived in `docs/sources/`; every figure was checked against the scan and the decree's printed totals.
+
+### D-039 — MI CP row shape and Arabic passages
+**Proposed** · 2026-10-31 · P2-02
+MI CP rows use the SD shape (`element`, `sub_element`, `text`) plus `lead_in`, `element_intros`, and for Bahasa Arab `arabic_passages[] {pdf_page, text}`. Arabic stays inline in `text`. UIs and PDFs render `text` with bidi isolation, or show `arabic_passages` as separate RTL blocks.
+Reason: one import shape for SD and MI CP, and no text is lost.
+
+### D-040 — CP source typos kept as printed
+**Proposed** · 2026-10-31 · P2-02
+Outcome text keeps source typos as printed and flags them in `extraction.source_notes`. Only sub-element names are normalised, because they act as keys. A guru of the subject decides whether the app shows the printed or the corrected form.
+Reason: the data must stay traceable to the decree.
+
+### D-041 — TKA 2026 categories and the Istimewa predicate
+**Proposed** · 2026-10-31 · P2-03 · refines `content-engine.md`
+TKA SD/MI results use three categories (Baik, Memadai, Kurang) and an Istimewa predicate for scores ≥ 95, shown as "Baik-Istimewa" (Kepmendikdasmen 56/2026). This replaces the 2025 four-category list in the draft.
+Reason: the 2026 decree changed the rule.
+
+### D-042 — TKA scoring wording
+**Proposed** · 2026-10-31 · P2-03 · keeps D-030
+The ministry describes classical scoring on 0–100 (two decimals). PGK partial credit is still unpublished, so D-030's partial credit stays a practice estimate, but the UI may describe official scoring more precisely.
+Reason: new official statements since the draft was written.
+
+### D-043 — AN items inside TKA
+**Proposed** · 2026-10-31 · P2-03
+From 2026, AN literasi items are part of the Bahasa Indonesia test and AN numerasi items are part of Matematika (Kepmendikdasmen 56/2026 BAB IV D). The data lists their competencies as observed only. Open: whether the Paket Soal TKA wizard offers them as extra competencies.
+Reason: official 2026 sample sets include these items.
+
+### D-044 — Matematika items are tagged by cognitive level
+**Proposed** · 2026-10-31 · P2-03
+A Matematika item stores a scope point (element → sub-element → scope) and a cognitive level (Pengetahuan dan Pemahaman, Aplikasi, Penalaran) with its thinking process.
+Reason: that is the framework's own tagging dimension (Perka BSKAP 047/H/AN/2025).
+
+### D-045 — PGK Kategori labels
+**Proposed** · 2026-10-31 · P2-03
+Allowed label pairs: Benar/Salah, Sesuai/Tidak Sesuai, Setuju/Tidak Setuju. Mendukung/Tidak Mendukung is dropped, because it was not found in the SD sources.
+Reason: follows the decree and the official samples.
+
+### D-046 — TKA duration is configurable
+**Proposed** · 2026-10-31 · P2-03
+The default is 75 minutes per subject (2026). It was 60 minutes in 2025, so the duration is stored per framework year.
+Reason: the value changes between years.
+
+### D-047 — Default form mix for a 30-item package
+**Proposed** · 2026-10-31 · P2-03
+The default form mix follows the official sample sets: Bahasa Indonesia 16 PG / 6 PGK MCMA / 8 PGK Kategori; Matematika 18 PG / 3 MCMA / 9 Kategori. PGK MCMA has 3 statements with 2 correct. This is not an official blueprint.
+Reason: the closest official reference available.
+
+### D-048 — One codebase, three hostnames, three guards
+**Proposed** · 2026-10-31 · P2-04 · confirmed by D-068, hostnames by D-069
+The school app, exam site, and staff console are domain-routed groups in one Laravel app (`app.`, `ujian.`, `admin.`). Each has its own guard and a host-only session cookie.
+Reason: one deploy and one data model on one VPS, while keeping D-010 and D-027 isolation.
+
+### D-049 — Module folders
+**Proposed** · 2026-10-31 · P2-04
+Module folders besides `app/AI` and `app/Content`: `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, with the dependency table in `architecture.md#module-boundaries`. `Exam` and `Classroom` never depend on `AI`.
+Reason: clear boundaries that Pest architecture tests can enforce (D-074).
+
+### D-050 — Generation job uniqueness
+**Proposed** · 2026-10-31 · P2-04 · refines D-024
+Generation jobs use `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping`, keyed by the generation id, instead of plain `ShouldBeUnique`.
+Reason: with plain `ShouldBeUnique`, a job cannot re-dispatch itself for the next step.
+
+### D-051 — Offline sync uses the web session
+**Proposed** · 2026-10-31 · P2-04
+Di Kelas offline sync uses the web session + CSRF, not an API token. Queued rows survive an expired session until the next login. Cached student data is cleared on logout and excludes religion (D-036).
+Reason: no second auth system for one small endpoint.
+
+### D-052 — Gotenberg gets every asset in the request
+**Proposed** · 2026-10-31 · P2-04
+Every asset is sent inside the Gotenberg request, and Gotenberg has no outbound network (see D-059).
+Reason: no remote fetches from a headless browser.
+
+### D-053 — Separate Redis databases
+**Proposed** · 2026-10-31 · P2-04
+Cache, sessions, queues/Horizon, and AI state each use their own Redis database (or a prefixed connection).
+Reason: `cache:clear` must not wipe sessions, jobs, or key cooldowns.
+
+### D-054 — Exam-site rate limits by session and username
+**Proposed** · 2026-10-31 · P2-04
+Login throttling on the exam site is keyed by exam session and username, not by IP alone. Cloudflare rules for that hostname allow bursts of 30–40 logins from one IP.
+Reason: a whole class shares one school IP.
+
+### D-055 — Staff tools on the admin hostname
+**Proposed** · 2026-10-31 · P2-04
+Filament and Horizon live only on `admin.` behind the `staff` guard.
+Reason: keeps staff tooling apart from school users (D-010).
+
+### D-056 — PHP 8.5
+**Proposed** · 2026-10-31 · P2-05
+PHP 8.5 (≥ 8.5.12) from `ppa:ondrej/php`. PHP 8.4 is used only if a required package blocks 8.5.
+Reason: Laravel 13 supports 8.3–8.5, and 8.5 has the longest support window.
+
+### D-057 — MySQL 8.4 LTS
+**Proposed** · 2026-10-31 · P2-05 · within D-007
+MySQL 8.4 LTS from Oracle's APT repository (`mysql-8.4-lts`), not Ubuntu's 8.0 (end of life) and not 9.x.
+Reason: the supported MySQL 8 line.
+
+### D-058 — Redis 8.2
+**Proposed** · 2026-10-31 · P2-05
+Redis 8.2 from packages.redis.io, pinned to `6:8.2.*`, with `noeviction` and AOF on.
+Reason: a supported release, and queue data must not be evicted.
+
+### D-059 — Gotenberg image and isolation
+**Proposed** · 2026-10-31 · P2-05 · refines D-028
+`gotenberg/gotenberg:8.39.0-chromium`, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit, on its own Docker network that drops new outbound connections. Fonts are mounted from `/opt/gotenberg/fonts`.
+Reason: pinned, local-only, no egress.
+
+### D-060 — Node 24 LTS for builds only
+**Proposed** · 2026-10-31 · P2-05
+Node 24 LTS for builds only, preferably in CI. No Node on the server unless a runtime need appears.
+Reason: CONTEXT already prefers building assets outside the server.
+
+### D-061 — Ubuntu's Nginx package
+**Proposed** · 2026-10-31 · P2-05
+Use Ubuntu's Nginx package (patched by Canonical), not nginx.org builds.
+Reason: security updates come with the OS.
+
+### D-062 — Cloudflare TLS and origin lock
+**Proposed** · 2026-10-31 · P2-05
+TLS mode Full (strict) with a 15-year Origin CA wildcard certificate and global Authenticated Origin Pulls. UFW allows 80/443 only from Cloudflare ranges, and a weekly job refreshes those ranges and the Nginx real-IP list.
+Reason: the origin is reachable only through Cloudflare.
+
+### D-063 — Release-folder deploys
+**Proposed** · 2026-10-31 · P2-05
+Deploys use `releases/`, `shared/`, and a `current` symlink, keeping 5 releases. PHP-FPM is reloaded on each deploy, because OPcache does not check timestamps.
+Reason: atomic deploys with quick rollback.
+
+### D-064 — Supervisor runs Horizon and the scheduler
+**Proposed** · 2026-10-31 · P2-05
+Supervisor runs Horizon and `schedule:work`, so there is no cron entry. Worker counts live in `config/horizon.php`.
+Reason: one process manager for all long-running processes.
+
+### D-065 — Backups
+**Proposed** · 2026-10-31 · P2-05 · storage by D-071
+Daily at 01:30 WIB: `mysqldump` + a `storage/app` tarball. Kept 14 days locally and 30 days off-site through an encrypted `rclone` remote. Restore test monthly, and off-site restore twice a year. `APP_KEY` stays in the password manager, never in a backup.
+Reason: no draft covered backups.
+
+### D-066 — Servers run in UTC
+**Proposed** · 2026-10-31 · P2-05, P2-06 · see D-082
+Server, PHP, and MySQL run in UTC, and the app displays `Asia/Jakarta`. Cron times are UTC.
+Reason: one storage timezone, local display.
+
+### D-067 — Ubuntu version
+**Open** · 2026-10-31 · P2-05 · concerns D-003
+Standard support for Ubuntu 22.04 ends in mid-2027, right after the first TKA season. The guide recommends 24.04 LTS, and its commands work unchanged there. The alternative is to stay on 22.04 with Ubuntu Pro. Until the owner decides, D-003 (22.04) stands.
+Reason: needs an owner decision.
+
+### D-068 — Three Nginx vhosts for one codebase
+**Proposed** · 2026-10-31 · P2-05 · same as D-048
+Nginx has three vhosts (`app.`, `ujian.`, `admin.`) for one Laravel codebase, with host-only session cookies (no shared `SESSION_DOMAIN`).
+Reason: the server-side half of D-048.
+
+### D-069 — Domain sigrak.com
+Accepted · 2026-10-31 · P2-05
+The domain is `sigrak.com`, with hostnames `app.sigrak.com`, `ujian.sigrak.com`, and `admin.sigrak.com`. The brand check in PDKI stays an open question.
+Reason: owner's decision.
+
+### D-070 — VPS provider: IDCloudHost Jakarta
+Accepted · 2026-10-31 · P2-05
+Production runs on an IDCloudHost Cloud VPS in Jakarta. The plan size is still open.
+Reason: owner's decision; low latency for schools.
+
+### D-071 — Off-site backups on Cloudflare R2
+Accepted · 2026-10-31 · P2-05
+Off-site backups go to Cloudflare R2 with a bucket-scoped token, encrypted with an `rclone` crypt remote.
+Reason: owner's decision; Cloudflare is already in the stack.
+
+### D-072 — Staging server
+Accepted · 2026-10-31 · P2-05
+A staging server is required: a second, smaller IDCloudHost VPS in Jakarta on `staging-*.sigrak.com`, behind Cloudflare Access, with seeded data only. Telescope is allowed there.
+Reason: owner's decision.
+
+### D-073 — Gotenberg env keys; monitoring as a separate task
+Accepted · 2026-10-31 · P2-05
+(1) Gotenberg `.env` keys follow `spatie/laravel-pdf` v2: `LARAVEL_PDF_DRIVER=gotenberg`, `GOTENBERG_URL`, `GOTENBERG_USERNAME`, `GOTENBERG_PASSWORD`. The owner asked the team to define them. (2) Server monitoring and alerts get a separate task.
+Reason: owner's answers.
+
+### D-074 — Pest for tests
+Accepted · 2026-10-31 · P2-06
+Pest is the test framework, and Pest architecture tests enforce the layering rules (D-049). PHPUnit stays underneath.
+Reason: owner approved; it makes the rules machine-checkable.
+
+### D-075 — TypeScript in Svelte
+Accepted · 2026-10-31 · P2-06
+`<script lang="ts">` in the school app and exam client, with `svelte-check` in CI. The game runtime stays vanilla JS with JSDoc + `@ts-check` (D-011).
+Reason: owner approved; typed Inertia props.
+
+### D-076 — Svelte 5 runes
+Accepted · 2026-10-31 · P2-06 · refines D-008
+Components use Svelte 5 runes syntax.
+Reason: owner approved; the current Svelte major, supported by `@inertiajs/svelte`.
+
+### D-077 — Larastan
+**Proposed** · 2026-10-31 · P2-06
+Larastan static analysis, starting at level 6.
+Reason: catches type errors before review.
+
+### D-078 — Action classes
+**Proposed** · 2026-10-31 · P2-06 · adds to D-049
+Business operations live in Action classes, and controllers stay thin. Actions live inside module folders, and in `app/Actions/<Domain>/` only for features without a module.
+Reason: one place for each operation, reusable from controllers, jobs, and commands.
+
+### D-079 — Tests run on MySQL 8
+**Proposed** · 2026-10-31 · P2-06
+Tests run on MySQL 8, not SQLite.
+Reason: the schema uses MySQL 8 features (D-007).
+
+### D-080 — Frontend translations via a shared prop
+**Proposed** · 2026-10-31 · P2-06
+Frontend text comes from `lang/id` through a shared Inertia prop and one `t()` helper. There are no separate JS translation files.
+Reason: one source of UI text.
+
+### D-081 — Typed route helper
+**Proposed** · 2026-10-31 · P2-06
+The frontend uses a typed route helper: Laravel Wayfinder, or Ziggy if Wayfinder does not fit plain Svelte. Chosen at scaffold time.
+Reason: no hard-coded URLs in Svelte.
+
+### D-082 — App timezone UTC
+**Proposed** · 2026-10-31 · P2-06 · same as D-066
+`config/app.php` timezone is UTC. Display and exports use `Asia/Jakarta`.
+Reason: makes the data model's "stored in UTC" explicit.
+
+### D-083 — Exact pins for output-affecting libraries
+**Proposed** · 2026-10-31 · P2-06 · refines D-033
+Front-end libraries that affect generated output are pinned to exact versions.
+Reason: same input gives the same document.
+
+### D-084 — CI on GitHub Actions
+Accepted · 2026-10-31 · P2-06
+GitHub Actions runs the GIT-4 checks on every PR to `main`, with a MySQL 8 service container. A PR merges only when it is green.
+Reason: owner's decision.
+
+### D-085 — Migrations without down()
+Accepted · 2026-10-31 · P2-06
+`down()` is optional. Production is forward-only: a mistake is fixed with a new migration, never a rollback.
+Reason: owner's decision.

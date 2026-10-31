@@ -1,7 +1,7 @@
 # P1-08 — Finish KMA 1503/2025 and Phase 1 open questions
 
 - **Phase:** P1
-- **Status:** review
+- **Status:** done
 - **Owner:** p1/p1-08-mi-allocation
 - **Depends on:** P1-07
 - **Can run in parallel with:** P2-01…P2-06

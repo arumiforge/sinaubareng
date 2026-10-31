@@ -83,3 +83,24 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 | Question | Source | Who answers |
 |---|---|---|
 | TKA 2027 schedule for SD/MI, once published, to time the TKA release | [product-concept.md](product-concept.md#open-questions) | team (watch for the announcement) |
+
+## Phase 2 additions (2026-10-31)
+
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-073, D-074…D-076, D-084, D-085).
+
+| Question | Source | Who answers |
+|---|---|---|
+| Review the **Proposed** decisions D-039…D-083 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
+| Ubuntu 22.04 (+ Ubuntu Pro) or 24.04 LTS for the VPS (D-067; recommendation: 24.04) | [server-setup.md](server-setup.md#open-questions) | owner |
+| IDCloudHost plan sizes for production and staging | [server-setup.md](server-setup.md#open-questions) | owner + team |
+| Mail provider for invitations, password reset, notifications | [architecture.md](architecture.md#open-questions) | owner |
+| File storage: local disk only, or object storage later for letterheads and exports | [architecture.md](architecture.md#open-questions) | owner + team |
+| Exam capacity target (participants at once across schools), to size the VPS | [architecture.md](architecture.md#open-questions) | owner |
+| Exam client technology: Svelte without Inertia, JSON autosave endpoints | [architecture.md](architecture.md#open-questions) | team |
+| Mode Contoh (demo school): allow AI calls with the salesperson's key, or prepared content only | [architecture.md](architecture.md#open-questions) | owner |
+| Payment provider for subscriptions | [architecture.md](architecture.md#open-questions) | owner |
+| PWA install for the school app, or service worker for Di Kelas only | [architecture.md](architecture.md#open-questions) | owner |
+| Paket Soal TKA: offer the AN literasi/numerasi competencies merged into TKA from 2026 (D-043) | [kerangka-tka-sd.json](../data/tka/kerangka-tka-sd.json) | owner |
+| Official source for the TKA item count (30) and category limits (50; 76,67), now `confidence: secondary` | P2-03 task Result | team |
+| MI CP source typos (e.g. خَالِيْ for a father's brother): show as printed or corrected (D-040) | [cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) | guru Bahasa Arab |
+| Khonghucu Fase A prints "(孔)" instead of "(孔子)": confirm with the guru agama | [cp-pendidikan-agama-sd-bkpdm-020-2026.json](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) | guru agama Khonghucu |

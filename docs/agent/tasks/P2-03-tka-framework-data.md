@@ -1,7 +1,7 @@
 # P2-03 — TKA SD/MI framework as seed data
 
 - **Phase:** P2
-- **Status:** review
+- **Status:** done
 - **Owner:** p2/p2-03-tka-framework-data
 - **Depends on:** —
 - **Can run in parallel with:** P1-08, P2-01, P2-02, P2-04…P2-06

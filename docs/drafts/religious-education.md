@@ -35,7 +35,7 @@ All six ship in v1. Each religion is a separate subject; students take the one m
 | Buddha | Pendidikan Agama Buddha dan Budi Pekerti | Sejarah, Ritual, Etika | 34–36 | CP only |
 | Khonghucu | Pendidikan Agama Khonghucu dan Budi Pekerti | Sejarah Suci, Kitab Suci, Keimanan, Tata Ibadah, Perilaku Jūnzǐ | 40–42 | CP only |
 
-- **CP data:** [`../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) has 96 outcomes across Fase A–C. It was transcribed by reading the scanned pages, because no text version exists, and is marked `verified: false` until a second pass checks every line against the scan.
+- **CP data:** [`../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) has 96 outcomes across Fase A–C. It was transcribed by reading the scanned pages, because no text version exists, and was verified word by word against the scan in P2-01 (`verified: true`). Guru agama sign-off is still needed (D-037).
 - **Where the CP is at element level:**
   - Islam, Hindu, and Khonghucu give one CP per element per phase.
   - Kristen gives one CP per sub-element, plus a phase summary. "Allah Penyelamat" and "Allah Pembaru" have no CP in Fase A.
@@ -60,7 +60,7 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 
 - **36 weeks per year, 32 in grade 6. 1 JP = 35 minutes.** A madrasah may add up to 6 JP per week (KMA 1503/2025, p. 32). "Koku" JP are shifted to the cocurricular programme. RPM scheduling counts the intrakurikuler JP only, and the kokurikuler JP belong to the Kokurikuler module.
 - **Other MI subjects** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS from grade 3, PJOK, Seni dan Budaya, Bahasa Inggris from grade 3, Koding dan KA as an option in grades 5–6, Muatan Lokal) use the national CP, but with MI's own allocation table from KMA 1503/2025 ([`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json)). Muatan Lokal takes 72–216 JP per year (64–192 in grade 6), and students choose one art (Seni Musik, Rupa, Teater, or Tari).
-- **CP data:** [`../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) holds Fase A–C text for the five subjects, extracted from the PDF's text layer. It is not yet split into element rows. **Arabic passages extract badly** and must be retyped from the PDF.
+- **CP data:** [`../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) holds Fase A–C text for the five subjects, extracted from the PDF's text layer and structured into element and sub-element rows in P2-02 (D-039, D-040). The six Bahasa Arab passages were retyped from the page images. Review by a guru of each subject and an Arabic reader is still needed (D-037).
 - **Teaching materials:** Kemenag publishes free Buku Teks Utama (BTU) for these subjects aligned with KMA 1503/2025. They are a natural reference source for RPM, like the Parijatha books for Bahasa Jawa.
 - **Teachers:** the five subjects are taught by **guru mapel** (D-037). They default to `subject_teacher`, and the operator can still reassign them per class.
 - **Religion at MI:** MI is an Islamic school, so only the Kemenag subjects are offered there, with no other religion subjects.
@@ -83,10 +83,10 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 
 ## Data work (Phase 2)
 
-1. **Verify the SD religion CP transcription** line by line against the scanned pages, then set `verified: true`.
+1. ~~**Verify the SD religion CP transcription**~~ Done in P2-01 (`verified: true`).
 2. **Cross-check PAI in KM-SD-2026-R2** against the decree's Islam CP.
 3. **Build topics, TP, ATP, fokus, and JP** for Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **A guru agama of that same religion reviews and signs off each set** (D-037), and the dataset records the reviewer's name, school, and review date. The same rule applies to the MI subjects (a guru of that subject) and to the CP transcription check.
-4. **Structure the MI CP:** split `raw_text` into element and sub-element rows, and retype the Arabic passages.
+4. ~~**Structure the MI CP**~~ Done in P2-02 (element rows, Arabic retyped).
 5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects, using the BTU books as references.
 
 ## Open questions
