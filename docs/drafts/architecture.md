@@ -355,6 +355,12 @@ New choices this document makes. They get numbered when the parallel work is int
 8. **Staff tools (Filament, Horizon) live on `admin.<domain>`** behind the `staff` guard.
 9. **Supervisor writes need no school membership.** A supervision visit row (`supervisions`) carries the visited school's `school_id` and the supervisor's `user_id`. A policy allows the write only while an active `supervisor_assignments` row links that supervisor to that school. Curriculum validations and document comments already reach the school through the reviewed row. *Laporan Kepengawasan* is built on request from the supervisor's visits across assigned schools and is not stored per school. Supervisors still get no `school_memberships` row and no student-level reads. Reason: answers the data-model open question with the existing tables.
 10. **Students only receive finished AI content** (owner's answer, 2026-10-31). AI runs only in teachers' sessions, before an exam or lesson, to prepare questions and material. A TKA package is frozen into `exam_items` before the session, so the exam site serves teacher-checked content and never generates or changes anything with AI while students take the exam. The same holds for downloaded games and *Tayangkan*. Reason: answers the Gemini under-18 question; students never use or trigger the AI.
+11. **Daily usage counter per key, before detailed 429 handling** (owner's answer, 2026-10-31). SIGRAK counts each key's AI requests per model per day itself, in Redis, reset at midnight Pacific like Google's quota (14:00 or 15:00 WIB). The limit comes from `config/ai.php` (20 per day for the default model, D-117).
+    - *Kunci AI Saya* and the wizard show what is left today. When few are left, the teacher gets an early warning before starting: add or use another key (consent rule, D-023), or wait until the reset time.
+    - When a key reaches the limit, `KeySelector` skips it for that model until the reset, exactly like a daily cooldown. Backup keys (D-119) are used only after every normal key is skipped.
+    - The counter counts requests, not documents, because Google's limit is per request and one RPM can take several steps plus a repair call. The UI turns it into an estimate ("sekitar N RPM lagi hari ini").
+    - Any 429 that still arrives gets the 60 s per-minute cooldown from the AI draft's error table. Reading Google's quota id is not needed for v1.
+    Reason: owner — teachers get a simple alarm early, without parsing Google's error details.
 
 ## Open questions
 
@@ -371,5 +377,5 @@ New choices this document makes. They get numbered when the parallel work is int
 - [x] **Free-tier model list.** Gemini 3.8 Flash by default, limits in `config/ai.php` (D-117).
 - [x] **Usage-log retention.** One month, monthly aggregates kept (D-118).
 - [x] **Supervisor `school_id` context** (from the data model). `supervisor_assignments` is enough; no membership is needed. See decision 9 above.
-- [ ] **429 detail fields** that separate per-minute from per-day limits. Team task at build time, from real responses (AI draft). Until then, a 429 without a readable quota id is treated as per-minute (60 s cooldown, as in the AI draft's error table).
+- [x] **429 detail fields** that separate per-minute from per-day limits. Owner's answer (2026-10-31): start with a simple daily counter instead of reading Google's error details. See decision 11. Parsing the 429 details stays an optional refinement for later.
 - [x] **Gemini under-18 clause** for a service that also has a student exam site (product concept). Owner's answer (2026-10-31): AI is used only by teachers *before* the exam, to prepare the questions. Students receive the finished package and never take part in any AI process; the exam site has no AI during the exam. This matches the architecture: no AI code path on the exam site, its own guard and hostname, AI users are adult teachers only (D-027). See decision 10.
