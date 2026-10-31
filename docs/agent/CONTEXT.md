@@ -24,6 +24,7 @@ Do not invent features beyond these documents.
 - **Debugging:** Laravel Telescope (local/staging only; never enabled publicly in production).
 - **Admin / back-office:** Filament, for internal staff only (separate guard; D-010).
 - **AI:** Gemini free tier only, through our own `app/AI` layer. Keys are teacher-owned and encrypted (D-012, D-022, D-023). One generation job per content type (D-024).
+- **Mail:** Gmail SMTP (App Password), transactional only (D-110).
 - **Documents:** PDF via Gotenberg 8 (Chromium) + `spatie/laravel-pdf`, one HTML view per PDF. Excel via Laravel Excel (`maatwebsite/excel`). DOCX via PhpWord. Letterhead is an uploaded image (D-028, D-031).
 - **Rendering libraries:** three.js (figures), KaTeX (math), ApexCharts (charts), Lucide icons, Plus Jakarta Sans + an Arabic font. Pinned and bundled, no CDN (D-033).
 - **Exam site:** own Inertia + Svelte entry, guard, and hostname for TKA practice participants, plus a JSON autosave endpoint. No AI (D-027, D-094). One session = one grade 6 class of 10–25 (D-092).

@@ -253,7 +253,7 @@ This is the single export engine from the developer notes. The engines are decid
   - The layout, logo, and divider line are all inside the image, so the teacher controls them. The system only places the image across the content width at the top of the first page.
   - Image rules: PNG or JPG, white or transparent background, at least 2,000 px wide, width-to-height ratio between 4:1 and 8:1, at most 2 MB. Printed height is capped at 4 cm.
   - The upload screen previews the image on A4 and F4 and warns when the resolution is too low for print.
-- **Other print settings (per school):** signer names and NIP (text), A4/F4, margins, font (default Arial or Times New Roman), and which sections to include.
+- **Other print settings (per school):** signer names and NIP (text), A4/F4, margins (one fixed print font, Arial; D-109), and which sections to include.
 - **Labels in Indonesian** through translation keys (repo convention).
 - **Buka di Canva (level 1):** downloads DOCX/PDF and opens canva.com for the teacher to import. Direct import through the Canva Connect API is *Later*.
 - Sigrak Dasar (free plan): small watermark.

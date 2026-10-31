@@ -57,7 +57,7 @@ Rules:
 ## Type, space, shape
 
 - **Type scale:** 13 / 15 / 17 / 20 / 24 / 30 px. Reading text is 16 px on phones. Labels are at least 13 px, weight 600, sentence case.
-- **Print documents** use the school's chosen font from print settings (default Arial or Times New Roman), because official formats often require it. The letterhead is an uploaded image (D-031), so its fonts and logo are whatever the school or teacher designed.
+- **Print documents** use one fixed print font, Arial (D-109), for uniform output. The letterhead is an uploaded image (D-031), so its fonts and logo are whatever the school or teacher designed.
 - **Math and Arabic:** KaTeX for formulas and fractions; Noto Naskh Arabic (or Amiri) for Arabic text in PAI material.
 - **Space:** multiples of 4 px. **Radius:** 6 (inputs), 10 (cards). **Shadow:** floating menus and dialogs only.
 
