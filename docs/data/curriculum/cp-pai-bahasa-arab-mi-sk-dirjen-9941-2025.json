@@ -6,7 +6,7 @@
     "issued_on": "2025-11-28",
     "basis": "KMA 450 Tahun 2024 sebagaimana diubah dengan KMA 1503 Tahun 2025",
     "file": "docs/sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf",
-    "pages_note": "pdf_pages are PDF page numbers of the archived file (the file starts with the cover letter B-606/Dt.I.I/PP.00/12/2025)."
+    "pages_note": "pdf_pages are PDF page numbers of the archived file. Page 1 is the Kanwil Kemenag DKI Jakarta cover letter B-1187/Kw.09.2/1/HM.00/12/2025 (16 Dec 2025); the Dirjen's cover letter B-606/Dt.I.I/PP.00/12/2025 starts on page 2."
   },
   "extraction": {
     "method": "pdftotext -layout from the PDF text layer, then whitespace cleanup and removal of page-number lines (kept per phase in raw_text). Structured rows were split from raw_text by script and checked against the page images. Arabic passages were retyped by hand from the page images (rendered at 300-500 dpi).",
