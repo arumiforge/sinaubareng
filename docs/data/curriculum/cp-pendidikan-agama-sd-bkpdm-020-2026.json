@@ -11,13 +11,19 @@
   "transcription": {
     "method": "Manual reading of a scanned copy (no text layer). Not OCR software.",
     "date": "2026-10-30",
-    "verified": false,
-    "verify_by": "Second-pass check of every text against the scanned pages before import (task in PROGRESS.md).",
+    "verified": true,
+    "verified_on": "2026-10-30",
+    "verification": "Second pass (task P2-01): every outcome text (96), phase summary (6), element and sub-element name compared word by word with the scanned pages, rendered at 150 dpi for the running text and 300-400 dpi crops for diacritics (Arabic transliteration, Sanskrit, Pali, pinyin) and Chinese characters. Section page ranges checked against the section headings. No text differences were found; only the metadata and conventions below were updated.",
     "conventions": [
-      "Text is copied as printed, including capitalisation and punctuation.",
+      "Text is copied as printed, including capitalisation and punctuation. Italics are not kept.",
+      "Typographic apostrophes and quotes are stored as ASCII (Al-Qur’an → Al-Qur'an, qadā’ → qadā').",
       "A dash ('-') in the source table means no CP for that sub-element in that phase; stored as text null with no_cp_in_phase true.",
-      "Pinyin is written with standard tone marks; Chinese characters are copied as printed.",
+      "Pinyin is written with standard tone marks: the scan prints the third tone with a breve (Kŏngzĭ, Wŭjīng); it is stored with a caron (Kǒngzǐ, Wǔjīng). Chinese characters are copied as printed.",
+      "Element and sub-element names follow the element tables in section C. The CP section spells some differently: Kristen 'Tanggung Jawab Manusia Terhadap Alam' (capital T, Fase A–C tables) and Khonghucu 'Perilaku Junzi (君子)' (no tone marks, headings 1.5/2.5/3.5).",
       "Only Fase A, B, and C (SD) are transcribed. Fase D–F are out of scope."
+    ],
+    "source_anomalies": [
+      "Khonghucu Fase A, Kitab Suci: the scan ends with 'Nabi Kǒngzǐ (孔)', one character instead of 孔子. Kept as printed; flag for the guru agama Khonghucu review (D-037)."
     ]
   },
   "religions": [
