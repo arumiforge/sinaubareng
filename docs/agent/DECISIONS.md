@@ -622,3 +622,8 @@ Reason: answers the data-model question with the existing tables.
 Accepted · 2026-10-31
 The owner approved all ten drafts: product-concept, content-engine, ai-provider-engine, data-model, design-system, religious-education, architecture, server-setup, coding-standards, export-localization. The **Proposed** decisions recorded from them (D-039, D-048…D-053, D-055…D-061, D-063…D-066, D-068, D-077…D-083, D-097…D-104, D-107, D-108, D-122) are accepted with them. The drafts move to `docs/final/` with Indonesian PDFs (task P3-01). `open-questions.md` stays in drafts as a living list. The print font question (D-109 vs. "font cukup 2") is still open.
 Reason: owner's decision.
+
+### D-124 — Students only receive finished AI content
+Accepted · 2026-10-31 · P2-04 · confirms D-027
+AI runs only in teachers' sessions, before an exam or lesson, to prepare questions and material. A TKA package is frozen into `exam_items` before the session. The exam site serves that teacher-checked content and never generates or changes anything with AI while students take the exam. The same holds for downloaded games and *Tayangkan*. This is SIGRAK's answer to Gemini's under-18 clause: students never use or trigger the AI.
+Reason: owner's decision.
