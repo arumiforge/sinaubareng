@@ -36,6 +36,7 @@ Write the coding standards every developer and agent follows when the build star
 
 - Wrote `docs/drafts/coding-standards.md`: numbered, checkable rules for PHP/Laravel, folder layout, naming, migrations, tenancy + IDOR tests, Svelte/Inertia, translations, exports and formatting, tests (fake AI provider), AI privacy in code, logging/secrets, commits/PRs, dependency pinning. Rules link to the drafts and decisions instead of repeating them.
 - **Decisions to record** (10 items, in the doc): Pest + arch tests, TypeScript in Svelte (game runtime stays JS), Svelte 5 runes, Larastan level 6, Action classes, tests on MySQL 8, frontend translations via shared prop + `t()`, typed route helper (Wayfinder or Ziggy), app timezone UTC, exact pins for output-affecting JS libraries.
-- **Open questions:** confirm Pest/TypeScript/Svelte 5 before scaffolding; which CI service; keep or drop `down()` in migrations.
+- **Owner approved** decisions 1–3 (Pest, TypeScript, Svelte 5) on 2026-10-31. They still need D-numbers at integration.
+- **Open questions:** which CI service; keep or drop `down()` in migrations.
 - No files owned by other tasks were edited.
 - 2026-10-31: aligned with P2-04 `architecture.md` after it merged. Section 2 now links to its module boundaries (`app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`) and only adds `app/Actions` for features without a module. The LAY rules map to its dependency table. `BelongsToSchool` is in `app/Tenancy`. Routes are one file per hostname group. Generation job uniqueness follows its decision 3.
