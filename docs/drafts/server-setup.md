@@ -2,12 +2,12 @@
 
 - **Status:** draft
 - **Task:** P2-05
-- **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel)
+- **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, 320 GB disk, staging on the same VPS)
 - **Versions checked online on 2026-10-30** (sources in [Versions](#versions)).
 
 ## Purpose
 
-A step-by-step guide to prepare the production VPS for SIGRAK (IDCloudHost Cloud VPS, Jakarta) and the staging VPS: the main app, the Filament back office, the TKA exam site, queue workers, and the Gotenberg PDF service. The VPS has **no public IP**: all web and SSH traffic arrives through a Cloudflare Tunnel (`cloudflared`), which only makes outbound connections. It is for whoever sets up or rebuilds the server. Run the sections in order. Every command is meant to be copied as-is. Replace only the placeholders below; never commit real values.
+A step-by-step guide to prepare the SIGRAK VPS (IDCloudHost Cloud VPS, Jakarta), which runs production and, as a second site, staging: the main app, the Filament back office, the TKA exam site, queue workers, and the Gotenberg PDF service. The VPS has **no public IP**: all web and SSH traffic arrives through a Cloudflare Tunnel (`cloudflared`), which only makes outbound connections. It is for whoever sets up or rebuilds the server. Run the sections in order. Every command is meant to be copied as-is. Replace only the placeholders below; never commit real values.
 
 | Placeholder | Meaning |
 |---|---|
@@ -17,6 +17,7 @@ A step-by-step guide to prepare the production VPS for SIGRAK (IDCloudHost Cloud
 | `ssh.sigrak.com` | SSH through the tunnel, behind Cloudflare Access |
 | `<TUNNEL_ID>` | UUID printed by `cloudflared tunnel create` |
 | `<TEAM_EMAILS>` | Emails of the team members allowed by Cloudflare Access |
+| `<STAGING_DB_PASSWORD>` | MySQL password of the staging database user |
 | `<DB_PASSWORD>`, `<DB_BACKUP_PASSWORD>`, `<MYSQL_ROOT_PASSWORD>` | MySQL passwords |
 | `<REDIS_PASSWORD>` | Redis password |
 | `<GOTENBERG_USER>`, `<GOTENBERG_PASSWORD>` | Gotenberg basic auth |
@@ -53,7 +54,7 @@ Checked on 2026-10-30. "Pin" means the version is fixed in config and only chang
 
 ### 1. Base system
 
-Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image **Ubuntu Server 24.04 LTS**, custom package **8 vCPU / 16 GB RAM** with at least 160 GB NVMe disk. Do **not** attach a public (floating) IP. The VM still needs outbound internet (NAT) for apt, GitHub, Gemini, R2, and the tunnel itself (TCP and UDP port 7844 to Cloudflare); check this with the provider before ordering.
+Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image **Ubuntu Server 24.04 LTS**, custom package **8 vCPU / 16 GB RAM / 320 GB NVMe disk**. Do **not** attach a public (floating) IP. The VM still needs outbound internet (NAT) for apt, GitHub, Gemini, R2, and the tunnel itself (TCP and UDP port 7844 to Cloudflare); check this with the provider before ordering.
 
 Without a public IP, the first steps run in the **IDCloudHost web console** (the VM's screen in the browser). Log in with the user and password set when creating the VM, then switch to root (`sudo -i`):
 
@@ -858,26 +859,163 @@ curl -sI https://admin.sigrak.com | head -1        # 302 to the Cloudflare Acces
 
 In the app: log in, create one document, export it to PDF, and check in Horizon that the `ai` and `exports` queues ran the jobs. Open `ujian.sigrak.com` on a phone and check that it shows the exam sign-in and nothing from the main app. Check that Horizon opens only on `admin.sigrak.com` after staff login, and that Telescope is not reachable.
 
-### 15. Staging server
+### 15. Staging (second site on the same VPS)
 
-Staging is a **second, smaller IDCloudHost Cloud VPS in Jakarta** (suggested 2 vCPU / 4 GB RAM / 60 GB, Ubuntu 24.04, no public IP), built with sections 1–14 above. Every release and every version bump (PHP, MySQL, Redis, Gotenberg image) goes to staging first.
+Staging runs **on the production VPS** as a second, fully separated site. It shares the services (MySQL, Redis, Gotenberg, Nginx, `cloudflared`) but has its own user, code, PHP-FPM pool, database, Redis keys, workers, and hostnames. Every app release goes to staging first.
 
-Differences from production:
+**Trade-off.** Because the services are shared, upgrades of PHP, MySQL, Redis, Nginx, the Gotenberg image, or the OS cannot be tried on staging first. Staging tests app releases only. Rehearse big service upgrades on a temporary VM or on a VPS snapshot.
 
-| Item | Staging |
-|---|---|
-| Hostnames | `staging-app.sigrak.com`, `staging-ujian.sigrak.com`, `staging-admin.sigrak.com`, `staging-ssh.sigrak.com` |
-| Tunnel | Its own tunnel `sigrak-staging` with the same ingress layout and these hostnames |
-| Nginx | Same three vhost files with these `server_name`s, plus `add_header X-Robots-Tag "noindex, nofollow" always;` in each |
-| Access | One Access application covering all four `staging-*.sigrak.com` hostnames, allowing only `<TEAM_EMAILS>`, so staging is never public |
-| `.env` | `APP_ENV=staging`, `APP_URL=https://staging-app.sigrak.com`, its own `APP_KEY`, DB/Redis/Gotenberg passwords, `MAIL_MAILER=log`, `LOG_LEVEL=debug` |
-| Telescope | Allowed: `TELESCOPE_ENABLED=true`, visible only to staff (architecture.md) |
-| Data | Seeded and made-up data only. **Never copy production data to staging**: it holds student names and teachers' encrypted AI keys |
-| AI keys | The team's own test Gemini keys, entered through the app |
-| Backups | Database only, local 7 days; no R2 upload (`rclone` lines removed from the backup script) |
-| Size | `pm.max_children = 10`, `innodb_buffer_pool_size = 1G`, Redis `maxmemory 512mb`, Gotenberg `mem_limit: 1g`, Horizon 1 process per queue, swap 2 GB |
+| Item | Production | Staging |
+|---|---|---|
+| System user | `sigrak` | `sigrak-staging` |
+| App folder | `/var/www/sigrak` | `/var/www/sigrak-staging` (same `releases/`, `shared/`, `current` layout) |
+| PHP-FPM pool | `sigrak`, 60 children | `sigrak-staging`, 10 children |
+| MySQL | DB `sigrak`, user `sigrak` | DB `sigrak_staging`, user `sigrak_staging` (no rights on `sigrak`) |
+| Redis | DB 0–3, default prefixes | DB 8–11, `sigrak_staging_` prefixes |
+| Workers | `sigrak-horizon`, `sigrak-scheduler` | `sigrak-staging-horizon` (1 process per queue), `sigrak-staging-scheduler` |
+| Hostnames | `app.`, `ujian.`, `admin.sigrak.com` | `staging-app.`, `staging-ujian.`, `staging-admin.sigrak.com` |
+| Access | `ssh.` and `admin.` | All `staging-*` hostnames, team only |
+| Logs | `/var/log/sigrak/` | `/var/log/sigrak-staging/` |
+| Backups | Daily to R2 | None (seeded data only) |
 
-DNS: `for h in staging-app staging-ujian staging-admin staging-ssh; do sudo cloudflared tunnel route dns sigrak-staging "$h.sigrak.com"; done`.
+User, folders, and PHP-FPM pool:
+
+```bash
+sudo adduser --system --group --home /var/www/sigrak-staging --shell /bin/bash sigrak-staging
+sudo usermod -aG sigrak-staging www-data
+sudo -u sigrak-staging mkdir -p /var/www/sigrak-staging/releases \
+  /var/www/sigrak-staging/shared/storage/{app/public,framework/{cache,sessions,views},logs}
+sudo chmod 750 /var/www/sigrak-staging
+sudo mkdir -p /var/log/sigrak-staging && sudo chown sigrak-staging:sigrak-staging /var/log/sigrak-staging
+
+sudo tee /etc/php/8.5/fpm/pool.d/sigrak-staging.conf > /dev/null <<'EOF'
+[sigrak-staging]
+user = sigrak-staging
+group = sigrak-staging
+listen = /run/php/php8.5-fpm-sigrak-staging.sock
+listen.owner = www-data
+listen.group = www-data
+listen.mode = 0660
+pm = dynamic
+pm.max_children = 10
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+pm.max_requests = 500
+request_terminate_timeout = 65s
+EOF
+sudo systemctl reload php8.5-fpm
+```
+
+Database and user. The staging user can only see `sigrak_staging`:
+
+```bash
+sudo mysql -uroot -p <<'EOF'
+CREATE DATABASE sigrak_staging CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE USER 'sigrak_staging'@'localhost' IDENTIFIED BY '<STAGING_DB_PASSWORD>';
+GRANT ALL PRIVILEGES ON sigrak_staging.* TO 'sigrak_staging'@'localhost';
+FLUSH PRIVILEGES;
+EOF
+```
+
+Nginx: one snippet and three vhosts, all on `127.0.0.1:8080` like production, with `noindex`:
+
+```bash
+sed -e 's#/var/www/sigrak/current/public#/var/www/sigrak-staging/current/public#' \
+    -e 's#php8.5-fpm-sigrak.sock#php8.5-fpm-sigrak-staging.sock#' \
+    /etc/nginx/snippets/sigrak-common.conf | sudo tee /etc/nginx/snippets/sigrak-staging-common.conf > /dev/null
+echo 'add_header X-Robots-Tag "noindex, nofollow" always;' | sudo tee -a /etc/nginx/snippets/sigrak-staging-common.conf > /dev/null
+
+for site in app ujian admin; do
+  sudo tee "/etc/nginx/sites-available/sigrak-staging-$site.conf" > /dev/null <<EOF
+server {
+    listen 127.0.0.1:8080;
+    server_name staging-$site.sigrak.com;
+    client_max_body_size 25m;
+    access_log /var/log/nginx/sigrak-staging-$site.access.log;
+    error_log  /var/log/nginx/sigrak-staging-$site.error.log;
+    include snippets/sigrak-staging-common.conf;
+}
+EOF
+  sudo ln -s "/etc/nginx/sites-available/sigrak-staging-$site.conf" /etc/nginx/sites-enabled/
+done
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Tunnel: add the three hostnames to the **same** tunnel, above the final catch-all rule in `/etc/cloudflared/config.yml`. No separate SSH hostname is needed, because it is the same server.
+
+```yaml
+  - hostname: staging-app.sigrak.com
+    service: http://127.0.0.1:8080
+  - hostname: staging-ujian.sigrak.com
+    service: http://127.0.0.1:8080
+  - hostname: staging-admin.sigrak.com
+    service: http://127.0.0.1:8080
+```
+
+```bash
+sudo cloudflared tunnel ingress validate --config /etc/cloudflared/config.yml
+for h in staging-app staging-ujian staging-admin; do sudo cloudflared tunnel route dns sigrak-prod "$h.sigrak.com"; done
+sudo systemctl restart cloudflared
+```
+
+`tunnel route dns` needs `cert.pem`; restore it from the password manager for this step and shred it again afterwards. Then add **one** Cloudflare Access application covering the three `staging-*` hostnames, allowing only `<TEAM_EMAILS>`.
+
+Staging `.env` (`/var/www/sigrak-staging/shared/.env`, owner `sigrak-staging`, mode 600). Start from the production list in section 10 and change these keys. The Redis prefixes keep staging Horizon from picking up production jobs:
+
+```dotenv
+APP_ENV=staging
+APP_DEBUG=false
+APP_KEY=                       # its own key; never reuse production's
+APP_URL=https://staging-app.sigrak.com
+LOG_LEVEL=debug
+
+DB_DATABASE=sigrak_staging
+DB_USERNAME=sigrak_staging
+DB_PASSWORD=<STAGING_DB_PASSWORD>
+
+REDIS_PREFIX=sigrak_staging_
+REDIS_DB=8
+REDIS_CACHE_DB=9
+CACHE_PREFIX=sigrak_staging_
+HORIZON_PREFIX=sigrak_staging_horizon:
+
+MAIL_MAILER=log
+TELESCOPE_ENABLED=true         # visible to staff only (architecture.md)
+```
+
+Redis `noeviction` is global, so staging cache keys need TTLs too. Gotenberg is shared (same container and credentials). It holds no data, but keep staging exports small.
+
+Workers:
+
+```bash
+sudo tee /etc/supervisor/conf.d/sigrak-staging.conf > /dev/null <<'EOF'
+[program:sigrak-staging-horizon]
+command=/usr/bin/php /var/www/sigrak-staging/current/artisan horizon
+user=sigrak-staging
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/var/log/sigrak-staging/horizon.log
+stopwaitsecs=600
+
+[program:sigrak-staging-scheduler]
+command=/usr/bin/php /var/www/sigrak-staging/current/artisan schedule:work
+user=sigrak-staging
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/var/log/sigrak-staging/scheduler.log
+stopwaitsecs=60
+EOF
+sudo supervisorctl reread && sudo supervisorctl update
+```
+
+In staging's `config/horizon.php` environment (`staging`), set 1 process per queue.
+
+Deploy: a copy of the section 10 script with `BASE=/var/www/sigrak-staging` and `sudo /usr/bin/supervisorctl restart sigrak-staging-scheduler`, run as `sigrak-staging`. A sudoers line like the production one, for `sigrak-staging`, allows the FPM reload and that restart. Add `/var/log/sigrak-staging/*.log` to the logrotate rule in section 13.
+
+**Data rule.** Staging holds seeded, made-up data only. **Never copy production data into `sigrak_staging`**: production holds student names and teachers' encrypted AI keys. The team enters its own test Gemini keys through the staging app.
 
 ## Decisions to record
 
@@ -898,17 +1036,16 @@ To be numbered during integration.
 13. **Domain `sigrak.com`** with hostnames `app.`, `ujian.`, `admin.` (owner, 2026-10-31).
 14. **VPS provider: IDCloudHost Cloud VPS, Jakarta** (owner, 2026-10-31).
 15. **Off-site backups on Cloudflare R2**, bucket-scoped Object Read & Write token, encrypted with an `rclone` crypt remote (owner, 2026-10-31).
-16. **A staging server is required** (owner, 2026-10-31): a second, smaller IDCloudHost VPS in Jakarta on `staging-*.sigrak.com`, behind Cloudflare Access, seeded data only.
+16. **Staging is a second site on the production VPS** (owner, 2026-10-31). It has its own user, FPM pool, DB and DB user, Redis prefixes, and Horizon/scheduler programs. Its `staging-*` hostnames run on the same tunnel behind Cloudflare Access. MySQL, Redis, Gotenberg, Nginx, and `cloudflared` are shared, so only app releases are staged. Seeded data only.
 17. **Gotenberg `.env` keys** follow `spatie/laravel-pdf` v2: `LARAVEL_PDF_DRIVER=gotenberg`, `GOTENBERG_URL`, `GOTENBERG_USERNAME`, `GOTENBERG_PASSWORD`.
 18. **Server monitoring is a separate task** (owner, 2026-10-31); not covered in this guide.
-19. **Ubuntu Server 24.04 LTS** instead of 22.04 (owner, 2026-10-31). `CONTEXT.md` and `architecture.md` still say 22.04 and need the same change at integration.
-20. **Production VPS: IDCloudHost custom package, 8 vCPU / 16 GB RAM** (owner, 2026-10-31); sizing in sections 3–5, 7, and 11 follows it.
+19. **Ubuntu Server 24.04 LTS** instead of 22.04 (owner, 2026-10-31; D-086).
+20. **Production VPS: IDCloudHost custom package, 8 vCPU / 16 GB RAM** (owner, 2026-10-31; D-087); sizing in sections 3–5, 7, and 11 follows it.
+21. **Production disk: 320 GB NVMe** (owner, 2026-10-31).
 
 ## Open questions
 
-- [ ] Production disk size (160 GB suggested) and the staging package (2 vCPU / 4 GB suggested).
 - [ ] Confirm with IDCloudHost that a VM without a public IP has outbound internet (NAT), including TCP/UDP 7844 to Cloudflare.
-- [ ] `CONTEXT.md` (Infrastructure: Ubuntu 22.04, "Cloudflare in front … restore the real client IP") and `architecture.md` (22.04, ufw with Cloudflare ranges, Full strict origin certificate) need updating to Ubuntu 24.04 + Cloudflare Tunnel; those files belong to other tasks.
 - [ ] `sigrak.com` is chosen; the PDKI trademark check in `product-concept.md` still applies to the name.
 
-Answered by the owner on 2026-10-31: R2 for off-site backups, IDCloudHost Jakarta, domain `sigrak.com`, staging required, Gotenberg `.env` keys set now (decision 17), monitoring as a separate task, Ubuntu 24.04 LTS, 8 vCPU / 16 GB custom package, Cloudflare Tunnel because the VPS has no public IP.
+Answered by the owner on 2026-10-31: R2 for off-site backups, IDCloudHost Jakarta, domain `sigrak.com`, staging required, Gotenberg `.env` keys set now (decision 17), monitoring as a separate task, Ubuntu 24.04 LTS, 8 vCPU / 16 GB custom package, Cloudflare Tunnel because the VPS has no public IP, 320 GB production disk, staging as a second site on the same VPS.
