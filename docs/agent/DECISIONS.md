@@ -219,7 +219,7 @@ The ministry describes classical scoring on 0–100 (two decimals). PGK partial 
 Reason: new official statements since the draft was written.
 
 ### D-043 — AN items inside TKA
-**Proposed** · 2026-10-31 · P2-03
+Accepted, open part resolved by D-111 · 2026-10-31 · P2-03
 From 2026, AN literasi items are part of the Bahasa Indonesia test and AN numerasi items are part of Matematika (Kepmendikdasmen 56/2026 BAB IV D). The data lists their competencies as observed only. Open: whether the Paket Soal TKA wizard offers them as extra competencies.
 Reason: official 2026 sample sets include these items.
 
@@ -529,12 +529,12 @@ Rupiah is shown as `Rp1.234.567` (no space, no decimals), built by `IndonesianFo
 Reason: ICU output differs between versions.
 
 ### D-105 — Print fonts
-**Proposed** · 2026-10-31 · P2-07 · adds to D-033
+Accepted, refined by D-109 · 2026-10-31 · P2-07 · adds to D-033
 Gotenberg uses Liberation Sans/Serif as metric-compatible stand-ins for Arial and Times New Roman, and Noto Naskh Arabic for Arabic. All fonts are bundled.
 Reason: free fonts with the same layout as the school-standard fonts.
 
 ### D-106 — F4 paper size
-**Proposed** · 2026-10-31 · P2-07
+Accepted by D-109 · 2026-10-31 · P2-07
 F4 is 215 × 330 mm. Open: whether some schools need 210 × 330 mm as a setting.
 Reason: the common Indonesian folio size.
 
@@ -547,3 +547,23 @@ Reason: no personal data in file names.
 **Proposed** · 2026-10-31 · P2-07
 "WIB" is shown only for times tied to outside events or other time zones, such as the quota reset and exam windows.
 Reason: less noise; all school times are local.
+
+### D-109 — F4 size and one print font
+Accepted · 2026-10-31 · accepts D-106 and refines D-105
+F4 is 215 × 330 mm. Every printed document uses the same fonts: Arial, rendered as the metric-compatible Liberation Sans in Gotenberg; Noto Naskh Arabic for Arabic; KaTeX fonts for math. Schools cannot choose another print font, so `school_print_settings.font` is dropped.
+Reason: owner's decision; uniform output.
+
+### D-110 — Mail through Gmail SMTP
+Accepted · 2026-10-31
+Mail (invitations, password reset, notifications) goes through the free Gmail SMTP: `smtp.gmail.com:587`, STARTTLS, from a dedicated Google account with 2-step verification and an App Password. Gmail's daily sending limit applies, so mail stays transactional only, and the sender is that Gmail address. Changing to another SMTP provider later is a `.env` change.
+Reason: owner's decision, to save cost; password-reset requests are rare.
+
+### D-111 — AN competencies in Paket Soal TKA
+Accepted · 2026-10-31 · resolves the open part of D-043
+The Paket Soal TKA wizard offers the AN literasi membaca competencies (Bahasa Indonesia) and AN numerasi competencies (Matematika) next to the TKA competencies, as in the 2026 official sample sets.
+Reason: owner's decision; practice should cover what students meet (D-089).
+
+### D-112 — Reviewer recorded as Tim Validasi SIGRAK
+Accepted · 2026-10-31 · refines D-037 (3)
+Curriculum datasets record the reviewer as "Tim Validasi SIGRAK", with the review date, instead of individual teacher names and schools.
+Reason: owner's decision.

@@ -357,7 +357,7 @@ New choices this document makes. They get numbered when the parallel work is int
 ## Open questions
 
 - [ ] **Domain and hostnames.** Final domain (depends on the PDKI name check) and whether the names `app.`, `ujian.`, `admin.` are acceptable.
-- [ ] **Mail provider** for invitations, password reset, and notifications (none is named in the drafts).
+- [x] **Mail provider.** Gmail SMTP, transactional mail only (D-110).
 - [ ] **Backups.** Database and file backup schedule, retention, and where copies are kept (off the VPS). Not covered by any draft.
 - [ ] **File storage.** Local disk on the VPS is assumed for letterheads and the export cache. Is off-site object storage wanted later?
 - [ ] **Staging environment.** Telescope is "local/staging only", which implies a staging server. Is it a second VPS, or a second site on the same VPS?
