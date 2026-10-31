@@ -12,7 +12,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Open decisions blocking work
 
-- D-039…D-108: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- D-039…D-122: items marked **Proposed** need owner review (Accepted ones are owner decisions)
 
 ## Phases
 
