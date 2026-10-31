@@ -12,7 +12,7 @@ Check `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` word by 
 
 ## Read first
 
-- `docs/drafts/religious-education.md` (SD section)
+- `docs/final/religious-education.md` (SD section)
 - `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
 - `docs/sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf` pages 6–8 (Islam), 12–14 (Kristen), 20–23 (Katolik), 29 (Hindu), 34–36 (Buddha), 40–42 (Khonghucu); scanned, read the page images
 
@@ -50,7 +50,7 @@ Checked all six religions on pages 6–8, 11–14, 19–23, 28–29, 34–36 and
 
 **Follow-ups:**
 
-- `docs/drafts/religious-education.md` (line 38 and open item 1) still says `verified: false`. That file is being edited by P1-08, so it was left alone. Update it in the integration pass.
+- `docs/final/religious-education.md` (line 38 and open item 1) still says `verified: false`. That file is being edited by P1-08, so it was left alone. Update it in the integration pass.
 - The 2026-10-30 handoff note in `PROGRESS.md` saying "still unverified" is now out of date.
 
 **Decisions to record:** none.

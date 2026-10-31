@@ -1,6 +1,6 @@
 # Religious Education Curriculum (SD and MI)
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-07
 - **Last updated:** 2026-10-31
 - **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)

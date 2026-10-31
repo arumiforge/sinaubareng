@@ -1,6 +1,6 @@
 # Server Setup Guide
 
-- **Status:** draft
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-05
 - **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, 320 GB disk, staging on the same VPS)
 - **Versions checked online on 2026-10-30** (sources in [Versions](#versions)).
