@@ -44,11 +44,7 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| D-022 AI engine technical choices (own `AIProvider` client, polling, `app/Content/` vs `app/AI/`) are still *proposed* | [ai-provider-engine.md](ai-provider-engine.md#architecture), D-022 | owner |
 | Which 429 detail fields separate per-minute from per-day limits (check real responses) | [ai-provider-engine.md](ai-provider-engine.md#open-questions) | team |
-| Usage-log retention period (proposed: detailed rows 180 days, monthly aggregates kept) | [ai-provider-engine.md](ai-provider-engine.md#open-questions), [data-model.md](data-model.md#open-questions) | owner |
-| Should a teacher be able to mark one key as "cadangan" (failover only)? Not in v1 unless the owner asks | [ai-provider-engine.md](ai-provider-engine.md#open-questions) | owner |
-| Which stable Gemini models currently have free-tier quota (check AI Studio at build time) | [ai-provider-engine.md](ai-provider-engine.md#open-questions) | team |
 | Completion notice in *Kabar* when a generation finishes is *proposed* | [ai-provider-engine.md](ai-provider-engine.md#queues-and-progress) | owner |
 
 ## Data model
@@ -85,7 +81,7 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-115).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-119).
 
 | Question | Source | Who answers |
 |---|---|---|
