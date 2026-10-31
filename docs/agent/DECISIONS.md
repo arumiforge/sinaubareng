@@ -487,3 +487,63 @@ Reason: owner's decision.
 Accepted · 2026-10-31 · P2-05 · refines D-087
 The production VPS is 8 vCPU / 16 GB RAM / 320 GB NVMe.
 Reason: owner's decision.
+
+### D-097 — Page-level translation groups
+**Proposed** · 2026-10-31 · P2-07 · refines D-080
+`common`, `nav`, `terms`, and `enums` are always shared. A page adds files through a `translations:<files>` route middleware. Server-only files are refused, and the prop is lazy, sent on full visits only.
+Reason: each page loads only the text it needs.
+
+### D-098 — Glossary file and banned-terms test
+**Proposed** · 2026-10-31 · P2-07
+The 37 *Istilah* terms live in `lang/id/terms.php`. A test rejects the old terms in any `lang/id` value.
+Reason: one home for the standard terms.
+
+### D-099 — Spreadsheet tracking file
+**Proposed** · 2026-10-31 · P2-07
+`docs/data/ui-copy/key-map.csv` records, per row of the paraphrase spreadsheet, its key or why the row was dropped. It is filled in screen by screen.
+Reason: every source string is traceable.
+
+### D-100 — `lang:audit` command
+**Proposed** · 2026-10-31 · P2-07
+An artisan command reports missing, unused, and hard-coded strings. Missing keys fail CI (D-084).
+Reason: keeps `lang/id` complete.
+
+### D-101 — Indonesian validation messages
+**Proposed** · 2026-10-31 · P2-07
+Validation messages start from a one-time copy of the MIT `laravel-lang` Indonesian file, edited to SIGRAK's voice. It is not installed as a package.
+Reason: a good base without a dependency.
+
+### D-102 — Notifications store key + params
+**Proposed** · 2026-10-31 · P2-07
+Database notifications store a translation key and its parameters, and the text is rendered when the notification is read.
+Reason: copy changes reach old notifications.
+
+### D-103 — CSV format
+**Proposed** · 2026-10-31 · P2-07
+CSV uses a `;` separator, UTF-8 with BOM, CRLF, and comma decimals. XLSX is the default export, and files for external systems follow their own spec.
+Reason: opens correctly in Excel with Indonesian settings.
+
+### D-104 — Rupiah format
+**Proposed** · 2026-10-31 · P2-07
+Rupiah is shown as `Rp1.234.567` (no space, no decimals), built by `IndonesianFormat::rupiah()` and `format.rupiah()`, not by ICU.
+Reason: ICU output differs between versions.
+
+### D-105 — Print fonts
+**Proposed** · 2026-10-31 · P2-07 · adds to D-033
+Gotenberg uses Liberation Sans/Serif as metric-compatible stand-ins for Arial and Times New Roman, and Noto Naskh Arabic for Arabic. All fonts are bundled.
+Reason: free fonts with the same layout as the school-standard fonts.
+
+### D-106 — F4 paper size
+**Proposed** · 2026-10-31 · P2-07
+F4 is 215 × 330 mm. Open: whether some schools need 210 × 330 mm as a setting.
+Reason: the common Indonesian folio size.
+
+### D-107 — Per-student export file names
+**Proposed** · 2026-10-31 · P2-07 · follows D-023, D-036
+Per-student export files are named by class and roster number, never by student name or NISN.
+Reason: no personal data in file names.
+
+### D-108 — When to show "WIB"
+**Proposed** · 2026-10-31 · P2-07
+"WIB" is shown only for times tied to outside events or other time zones, such as the quota reset and exam windows.
+Reason: less noise; all school times are local.
