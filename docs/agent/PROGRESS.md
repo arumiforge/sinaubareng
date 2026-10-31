@@ -48,7 +48,7 @@ Tasks run in parallel sessions. Each session edits only its own row here; see th
 | P2-02 | Structure MI CP data, retype Arabic | in-progress | p2/p2-02-mi-cp-structure | — | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` |
 | P2-03 | TKA SD/MI framework seed data | in-progress | p2/p2-03-tka-framework-data | — | `docs/data/tka/kerangka-tka-sd.json` |
 | P2-04 | Architecture overview | in-progress | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
-| P2-05 | Server setup guide | in-progress | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
+| P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
 | P2-06 | Coding standards | in-progress | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 
 Later candidates (not yet tasks): export/localization guide (incl. `lang/id` from the paraphrase spreadsheet) · v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (needs P2-01, P2-02 and guru agama reviewers, D-037) · move approved drafts to `docs/final/` + Indonesian PDFs.
