@@ -1,7 +1,7 @@
 # P1-08 — Finish KMA 1503/2025 and Phase 1 open questions
 
 - **Phase:** P1
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p1/p1-08-mi-allocation
 - **Depends on:** P1-07
 - **Can run in parallel with:** P2-01…P2-06
@@ -26,9 +26,9 @@ Record the official MI subject allocation from KMA 1503/2025 as data, remove the
 
 ## Done when
 
-- [ ] JSON totals match the decree: intrakurikuler I 1,044 · II 1,116 · III–IV 1,368 · V 1,368 · VI 1,216; kokurikuler 108 (I–V), 96 (VI)
-- [ ] No "to verify" or "not obtained" wording about KMA 1503/2025 left in `docs/drafts/`
-- [ ] D-038 appended; `open-questions.md` complete
+- [x] JSON totals match the decree: intrakurikuler I 1,044 · II 1,116 · III–IV 1,368 · V 1,368 · VI 1,216; kokurikuler 108 (I–V), 96 (VI)
+- [x] No "to verify" or "not obtained" wording about KMA 1503/2025 left in `docs/drafts/`
+- [x] D-038 appended; `open-questions.md` complete
 
 ## Head start (already read from the scan; re-check every number)
 
@@ -59,4 +59,8 @@ Record the official MI subject allocation from KMA 1503/2025 as data, remove the
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- **Data:** `docs/data/curriculum/mi-allocation-kma-1503-2025.json` (`ALOKASI-MI-KMA-1503-2025`). Every cell of Tabel 1–5 (pp. 28–31) was read from the scan and matches the head-start table. Required totals equal the decree's printed rows (I 1,044 · II 1,116 · III–IV 1,368 · V 1,368 · VI 1,216; kokurikuler 108/96), and the ranges with muatan lokal and the elective equal the printed total rows. The implementation rules on pp. 31–32 (muatan lokal forms, Koding dan KA, +6 JP/week, kokurikuler team) are included.
+- **Source quirk:** Tabel 5 labels the 1,280–1,408 row "Wajib + Pilihan + Muatan Lokal", but the figures are Wajib + Muatan Lokal only. Recorded in `source_quirks`; the dataset follows the figures.
+- **Docs:** KMA 1503/2025 "to verify / not obtained" wording removed from `religious-education.md`, `data-model.md`, `product-concept.md` (open-question line) and `docs/sources/README.md`. D-038 appended.
+- **Open questions:** `docs/drafts/open-questions.md` collects every open question from the six drafts plus inline ones (D-022 still proposed, Kabar notice, SD religion JP row, Laravel Excel on Laravel 13, v1 slices, known curriculum data issues).
+- **Follow-ups:** import support for `ALOKASI-MI-KMA-1503-2025` in `curriculum:import`; an official-channel copy of SK 9941/2025 is still open.
