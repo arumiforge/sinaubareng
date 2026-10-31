@@ -57,7 +57,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
-| P3-01 | Move approved drafts to final + Indonesian PDFs | todo | — | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
+| P3-01 | Move approved drafts to final + Indonesian PDFs | in-progress | p3/p3-01-final-docs-pdf | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
 
 Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
