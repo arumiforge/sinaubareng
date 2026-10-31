@@ -314,7 +314,7 @@ Notes:
 |---|---|---|
 | Stuck-step sweeper: resume generations whose step is `running` past timeout + margin, log the attempt as `unknown` | every minute | AI draft, duplicates rule 7 |
 | Prune `document_revisions` beyond the last 10 per document | daily | data model |
-| Prune `ai_usage_logs` detail rows past retention, keep monthly aggregates | daily | AI draft (*proposed* 180 days) |
+| Prune `ai_usage_logs` detail rows past retention, keep monthly aggregates | daily | D-118 (1 month) |
 | Purge `exam_participants.password` 30 days after the session closes | daily | data model |
 | Close exam sessions past `closes_at`, force-submit open attempts | every minute | data model, content engine |
 | Remove expired `ai_credential_cooldowns` mirror rows | hourly | data model |

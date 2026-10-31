@@ -76,7 +76,7 @@ app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, Revis
                                   # one job per content type (D-024), all using GenerationRunner
 ```
 
-**Why our own client and not the Laravel AI SDK** (*proposed*, D-022). Laravel ships a first-party AI SDK (`laravel/ai`, v1.0 released September 2026) with Gemini, structured output, and queueing. It is aimed at agents with one configured key per provider. Our core needs are to choose a different key for each call, to read raw HTTP status and error details for classification, and to control retries ourselves. A thin client on `Http::` makes those explicit and easy to test. The `AIProvider` interface keeps the choice reversible: the SDK can later become the transport inside `GeminiProvider` without touching callers.
+**Why our own client and not the Laravel AI SDK** (accepted, D-116). Laravel ships a first-party AI SDK (`laravel/ai`, v1.0 released September 2026) with Gemini, structured output, and queueing. It is aimed at agents with one configured key per provider. Our core needs are to choose a different key for each call, to read raw HTTP status and error details for classification, and to control retries ourselves. A thin client on `Http::` makes those explicit and easy to test. The `AIProvider` interface keeps the choice reversible: the SDK can later become the transport inside `GeminiProvider` without touching callers.
 
 ## Keys
 
@@ -184,7 +184,7 @@ Gemini's `generateContent` has no idempotency key. A call that times out on our 
 
 ## Models and requests
 
-- `config/ai.php` maps a **purpose** (for example `document_long`, `document_short`, `game_content`, `repair`) to an ordered list of models. Templates name a purpose, never a model. Model names change only in config/env. The EDUNEXA notes used `gemini-3.6-flash` with fallback down to `gemini-2.5-flash-lite`, which is a starting point to re-check at build time.
+- `config/ai.php` maps a **purpose** (for example `document_long`, `document_short`, `game_content`, `repair`) to an ordered list of models. Templates name a purpose, never a model. Model names change only in config/env. The default is **Gemini 3.8 Flash** (text-out; free tier 5 RPM, 250k TPM, 20 RPD per project, AI Studio 2026-10-31; D-117). Fallbacks and limits live in config and are re-checked at build time.
 - Structured output: `responseMimeType: application/json` with the template's output schema in the JSON-schema field the current API version supports.
 - Do not send `temperature`, `top_p`, or `top_k` (see Key facts).
 - Teacher notes and curriculum text go inside clearly delimited data blocks. Instructions come only from the template. Output is accepted only through schema validation. These are the prompt-injection guards.
@@ -216,7 +216,7 @@ Free-tier prompts and responses are used by Google to improve its products, and 
 | Principal | Per-teacher totals: generations made, failures caused by key problems. No keys, no per-key detail |
 | Tim SIGRAK | Errors by class and template in Filament, plus Horizon. Telescope on local/staging only |
 
-Retention (*proposed*): detailed rows for 180 days, monthly aggregates kept.
+Retention (D-118): detailed rows for 1 month, monthly aggregates kept.
 
 ## Testing
 
@@ -227,6 +227,6 @@ Retention (*proposed*): detailed rows for 180 days, monthly aggregates kept.
 ## Open questions
 
 - [ ] Confirm the 429 detail fields that separate per-minute from per-day limits, using real responses.
-- [ ] Usage-log retention period.
-- [ ] Should a teacher be able to mark one key as "cadangan" (used only on failover)? This is not in v1 unless the owner asks for it.
-- [ ] Which stable Gemini models currently have free-tier quota (check AI Studio at build time; the list changes).
+- [x] Usage-log retention: 1 month (D-118).
+- [x] Backup (*cadangan*) keys: yes, used only when every normal key is unavailable (D-119).
+- [x] Default model Gemini 3.8 Flash with its free-tier limits (D-117); re-check at build time.

@@ -111,7 +111,7 @@ Hari Ini · Di Kelas · Buat · Asesmen · Kelas Saya. "Rencana" becomes "Buat" 
 Reason: owner's choice. Keeps a 5-item bottom nav.
 
 ### D-022 — AI engine technical choices
-**Proposed** · 2026-10-30 · item 2 superseded by D-024
+Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 (1) Own `AIProvider` interface with a Gemini adapter on Laravel's HTTP client, not the Laravel AI SDK (per-call key choice and raw error classification are core; the SDK can become the transport later).
 (2) ~~One generic `RunGeneration` job that runs the next step and re-dispatches itself.~~ Superseded by D-024.
 (3) Progress by polling (Inertia partial reload), websockets later only if needed.
@@ -581,4 +581,24 @@ Reason: owner's decision; R2 is on the free tier.
 ### D-115 — MI CP source errors are corrected
 Accepted · 2026-10-31 · supersedes D-040 for the MI CP
 The MI CP outcome text and `arabic_passages` correct the known source errors: خَالِيْ → عَمِّيْ, كَمْ → كَمِ السَّاعَةُ, the repeated "berupa kritik sosial", and the typos madarasah, peyelidikan, kongkrit. `raw_text` keeps the source as printed, and `extraction.source_corrections` lists each change. The Khonghucu "(孔)" in the SD CP stays as printed; the owner confirmed it is fine.
+Reason: owner's decision.
+
+### D-116 — AI engine technical choices accepted
+Accepted · 2026-10-31 · accepts D-022 items 1, 3, 4
+(1) SIGRAK uses its own `AIProvider` interface with a Gemini adapter on Laravel's HTTP client, not the Laravel AI SDK. (3) Generation progress is shown by polling (Inertia partial reload); websockets come only if needed. (4) Education logic lives in `app/Content/`, provider logic in `app/AI/`. Item 2 stays superseded by D-024.
+Reason: owner approved.
+
+### D-117 — Default model and free-tier limits
+Accepted · 2026-10-31 · within D-023
+The default model for generation is Gemini 3.8 Flash (text-out), as listed in AI Studio on 2026-10-31. Its free-tier limits are 5 requests per minute, 250,000 tokens per minute, and 20 requests per day, per Google Cloud project. The model id and limits live in `config/ai.php` (purpose → models, with fallbacks) and are re-checked in AI Studio at build time and when Google changes them. Key selection and cooldowns use these limits.
+Reason: owner's choice from AI Studio.
+
+### D-118 — Usage-log retention: one month
+Accepted · 2026-10-31 · replaces the 180-day proposal
+`ai_usage_logs` detail rows are kept for 1 month and then pruned daily. Monthly aggregate counts are kept for reports.
+Reason: owner's decision.
+
+### D-119 — Backup ("cadangan") keys
+Accepted · 2026-10-31
+A teacher can mark a key as *cadangan*. Backup keys are skipped by round robin and are used only when every normal key is on cooldown, invalid, or has an open circuit. Adding one follows the same consent rule as any extra key (D-023).
 Reason: owner's decision.
