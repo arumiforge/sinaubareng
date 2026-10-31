@@ -579,7 +579,7 @@ Files (letterheads, exports, uploads) are stored on the VPS's local disk. Cloudf
 Reason: owner's decision; R2 is on the free tier.
 
 ### D-115 — MI CP source errors are corrected
-Accepted · 2026-10-31 · supersedes D-040 for the MI CP
+Superseded by D-127 · 2026-10-31 · supersedes D-040 for the MI CP
 The MI CP outcome text and `arabic_passages` correct the known source errors: خَالِيْ → عَمِّيْ, كَمْ → كَمِ السَّاعَةُ, the repeated "berupa kritik sosial", and the typos madarasah, peyelidikan, kongkrit. `raw_text` keeps the source as printed, and `extraction.source_corrections` lists each change. The Khonghucu "(孔)" in the SD CP stays as printed; the owner confirmed it is fine.
 Reason: owner's decision.
 
@@ -636,4 +636,9 @@ Reason: owner's decision ("font A").
 ### D-126 — Kurikulum Berbasis Cinta in the v1 RPM for MI
 Accepted · 2026-10-31
 For MI schools, the v1 RPM template adds two fields, following SK Dirjen Pendis 6077/2025. *Tema KBC* is one or more of the five Panca Cinta themes. *Materi Insersi* is the values inserted. The AI weaves both into TP, activities, and assessment. The fields appear for every MI subject, because the guide applies to all learning in madrasah, and they do not appear for SD. There is no new subject and no JP change.
+Reason: owner's decision.
+
+### D-127 — MI CP shows the printed text, with reviewer notes
+Accepted · 2026-10-31 · supersedes D-115 · P2-02
+The MI CP outcome text and `arabic_passages` show the decree as printed again, including خَالِيْ, كَمْ السَّاعَةُ, the repeated "berupa kritik sosial", and madarasah, peyelidikan, kongkrit. Each such row carries `review_notes[]` (9 rows) for the reviewers. The notes are never shown to teachers or students. A correction needs the owner's approval. The Khonghucu "(孔)" decision in D-115 is unchanged.
 Reason: owner's decision.
