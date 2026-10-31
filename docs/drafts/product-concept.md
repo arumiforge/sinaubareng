@@ -304,4 +304,4 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 - [ ] Present the short version to principals and supervisors, and record their objections.
 - [ ] Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI; see D-027).
 - [ ] TKA 2027 schedule for SD/MI, once published, to time the TKA release.
-- [ ] Religion data reviewers and the official KMA 1503/2025 copy (see [`religious-education.md`](religious-education.md#open-questions)).
+- [ ] Religion data reviewers and an official-channel copy of SK 9941/2025 (see [`religious-education.md`](religious-education.md#open-questions)).
