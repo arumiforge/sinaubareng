@@ -1,8 +1,8 @@
 # P2-08 — Server monitoring and alerts
 
 - **Phase:** P2
-- **Status:** todo
-- **Owner:** —
+- **Status:** review
+- **Owner:** p2/p2-08-server-monitoring
 - **Depends on:** — (P2-05 server setup is merged)
 - **Can run in parallel with:** P2-07
 
@@ -42,10 +42,10 @@ Write one guide that tells the team, quickly and reliably, when SIGRAK's product
 
 ## Done when
 
-- [ ] Every component in server-setup.md has a check, a threshold, and an alert target
-- [ ] Every tool works without a public IP; versions, prices, and free-tier limits verified online, with the date
-- [ ] Commands are copy-pasteable; secrets shown as placeholders only
-- [ ] Runbook covers each alert
+- [x] Every component in server-setup.md has a check, a threshold, and an alert target
+- [x] Every tool works without a public IP; versions, prices, and free-tier limits verified online, with the date
+- [x] Commands are copy-pasteable; secrets shown as placeholders only
+- [x] Runbook covers each alert
 
 ## Coordination rules (parallel sessions)
 
@@ -56,4 +56,20 @@ Write one guide that tells the team, quickly and reliably, when SIGRAK's product
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+2026-10-31: `docs/drafts/server-monitoring.md` written. Tools and free tiers were checked online on 2026-10-31.
+
+- **Owner answers:** alerts go by Telegram + email, to the owner only; urgent alerts may be sent at night.
+- **Design:**
+  - Healthchecks.io (free Hobbyist) is the main alerting service. It works as a dead man's switch, so it suits a server without a public IP. It has 13 checks: urgent ones go to Telegram + email, minor ones to email only.
+  - One Bash script, `/usr/local/sbin/sigrak-health`, is run by cron every minute, every 15 minutes, and daily. A check must fail twice in a row before `/fail` is sent.
+  - UptimeRobot (free) runs two external keyword checks on `/up`, alerting by email.
+  - Cloudflare sends tunnel health and tunnel deletion alerts.
+  - The guide also has a runbook for every alert and a log table.
+- **Tested:** the script's report/strike logic was dry-run with a stubbed `curl`, and `bash -n` passes. Nothing ran on a real server.
+- **For integration (not done here, per the coordination rules):**
+  - Add the three backup heartbeat lines from section 6 to the backup script in `server-setup.md` section 12.
+  - Put the Phase 3 app items (Horizon `waits` + mail notifications, scheduler `pingOnSuccess`, enabling `/up`) on the backlog.
+- **Open questions:**
+  - Healthchecks.io describes itself as "free for hobby use", but its FAQ allows company infrastructure up to 20 checks. The Business plan is $20/month if the owner wants no doubt.
+  - The app's mail provider is not chosen yet.
+  - Should a second recipient be added later?

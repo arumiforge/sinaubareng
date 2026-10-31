@@ -51,7 +51,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
 | P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 | P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
-| P2-08 | Server monitoring and alerts | todo | — | P2-05 | `docs/drafts/server-monitoring.md` |
+| P2-08 | Server monitoring and alerts | review | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
 
 ### Phase 3 — final docs · in-progress
 
