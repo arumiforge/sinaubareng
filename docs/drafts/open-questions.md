@@ -86,13 +86,12 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-073, D-074…D-076, D-084, D-085).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-088).
 
 | Question | Source | Who answers |
 |---|---|---|
 | Review the **Proposed** decisions D-039…D-083 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
-| Ubuntu 22.04 (+ Ubuntu Pro) or 24.04 LTS for the VPS (D-067; recommendation: 24.04) | [server-setup.md](server-setup.md#open-questions) | owner |
-| IDCloudHost plan sizes for production and staging | [server-setup.md](server-setup.md#open-questions) | owner + team |
+| Production disk size (160 GB suggested) and the staging package; confirm IDCloudHost outbound NAT incl. TCP/UDP 7844 for the tunnel | [server-setup.md](server-setup.md#open-questions) | owner + team |
 | Mail provider for invitations, password reset, notifications | [architecture.md](architecture.md#open-questions) | owner |
 | File storage: local disk only, or object storage later for letterheads and exports | [architecture.md](architecture.md#open-questions) | owner + team |
 | Exam capacity target (participants at once across schools), to size the VPS | [architecture.md](architecture.md#open-questions) | owner |
