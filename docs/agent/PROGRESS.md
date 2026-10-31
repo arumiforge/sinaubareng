@@ -13,7 +13,7 @@ Owner = branch name or session label of whoever claimed the task.
 ## Open decisions blocking work
 
 - D-022 AI engine technical choices (proposed, needs owner review)
-- D-039…D-096: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- D-039…D-108: items marked **Proposed** need owner review (Accepted ones are owner decisions)
 
 ## Phases
 
@@ -59,6 +59,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — P2-07 merged (#17): export and localization guide, decisions D-097…D-108 (Proposed).
 - 2026-10-31 — D-095/D-096: staging is a second site on the production VPS, and the disk is 320 GB. The `server-setup.md` section 15 rewrite is a P2-05 follow-up PR.
 - 2026-10-31 — Owner answers D-090…D-094: Mode Contoh with the salesperson's key, manual payment, 10–25 per exam session, installable app, exam client on Laravel + Inertia. P2-07 (export and localization guide) created.
 - 2026-10-31 — Follow-up: owner chose Ubuntu 24.04, 8 vCPU / 16 GB, and a Cloudflare Tunnel with no public IP (D-086…D-088). `server-setup.md`, `architecture.md` and CONTEXT follow it.
