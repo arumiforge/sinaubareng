@@ -54,7 +54,7 @@ Checked on 2026-10-30. "Pin" means the version is fixed in config and only chang
 
 ### 1. Base system
 
-Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image **Ubuntu Server 24.04 LTS**, custom package **8 vCPU / 16 GB RAM / 320 GB NVMe disk**. Do **not** attach a public (floating) IP. The VM still needs outbound internet (NAT) for apt, GitHub, Gemini, R2, and the tunnel itself (TCP and UDP port 7844 to Cloudflare); check this with the provider before ordering.
+Create the VM in the IDCloudHost console: **Cloud VPS, location Jakarta**, image **Ubuntu Server 24.04 LTS**, custom package **8 vCPU / 16 GB RAM / 320 GB NVMe disk**. Do **not** attach a public (floating) IP. The VM still needs outbound internet (NAT) for apt, GitHub, Gemini, R2, and the tunnel itself (TCP and UDP port 7844 to Cloudflare); confirmed by IDCloudHost (2026-10-31).
 
 Without a public IP, the first steps run in the **IDCloudHost web console** (the VM's screen in the browser). Log in with the user and password set when creating the VM, then switch to root (`sudo -i`):
 
@@ -1045,7 +1045,7 @@ To be numbered during integration.
 
 ## Open questions
 
-- [ ] Confirm with IDCloudHost that a VM without a public IP has outbound internet (NAT), including TCP/UDP 7844 to Cloudflare.
+- [x] IDCloudHost confirmed outbound internet (NAT) incl. TCP/UDP 7844 for a VM without a public IP (2026-10-31).
 - [ ] `sigrak.com` is chosen; the PDKI trademark check in `product-concept.md` still applies to the name.
 
 Answered by the owner on 2026-10-31: R2 for off-site backups, IDCloudHost Jakarta, domain `sigrak.com`, staging required, Gotenberg `.env` keys set now (decision 17), monitoring as a separate task, Ubuntu 24.04 LTS, 8 vCPU / 16 GB custom package, Cloudflare Tunnel because the VPS has no public IP, 320 GB production disk, staging as a second site on the same VPS.
