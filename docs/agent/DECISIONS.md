@@ -314,7 +314,7 @@ Use Ubuntu's Nginx package (patched by Canonical), not nginx.org builds.
 Reason: security updates come with the OS.
 
 ### D-062 — Cloudflare TLS and origin lock
-**Proposed** · 2026-10-31 · P2-05
+Superseded by D-088 · 2026-10-31 · P2-05
 TLS mode Full (strict) with a 15-year Origin CA wildcard certificate and global Authenticated Origin Pulls. UFW allows 80/443 only from Cloudflare ranges, and a weekly job refreshes those ranges and the Nginx real-IP list.
 Reason: the origin is reachable only through Cloudflare.
 
@@ -339,7 +339,7 @@ Server, PHP, and MySQL run in UTC, and the app displays `Asia/Jakarta`. Cron tim
 Reason: one storage timezone, local display.
 
 ### D-067 — Ubuntu version
-**Open** · 2026-10-31 · P2-05 · concerns D-003
+Closed by D-086 · 2026-10-31 · P2-05 · concerns D-003
 Standard support for Ubuntu 22.04 ends in mid-2027, right after the first TKA season. The guide recommends 24.04 LTS, and its commands work unchanged there. The alternative is to stay on 22.04 with Ubuntu Pro. Until the owner decides, D-003 (22.04) stands.
 Reason: needs an owner decision.
 
@@ -432,3 +432,18 @@ Reason: owner's decision.
 Accepted · 2026-10-31 · P2-06
 `down()` is optional. Production is forward-only: a mistake is fixed with a new migration, never a rollback.
 Reason: owner's decision.
+
+### D-086 — Ubuntu Server 24.04 LTS
+Accepted · 2026-10-31 · P2-05 · closes D-067, supersedes the OS in D-003
+The VPS runs Ubuntu Server 24.04 LTS, not 22.04.
+Reason: owner's decision. Standard support for 22.04 ends in mid-2027, right after the first TKA season.
+
+### D-087 — Production VPS size
+Accepted · 2026-10-31 · P2-05 · refines D-070
+Production is an IDCloudHost custom package with 8 vCPU and 16 GB RAM. PHP-FPM, MySQL, Redis, Gotenberg, and Horizon sizing in `server-setup.md` follows it. Disk size and the staging package are still open.
+Reason: owner's decision.
+
+### D-088 — No public IP; Cloudflare Tunnel
+Accepted · 2026-10-31 · P2-05 · supersedes D-062
+The VPS has no public IP. A locally-managed `cloudflared` tunnel per server routes `app.`, `ujian.`, `admin.`, and `ssh.` to localhost (Nginx on `127.0.0.1:8080`). The real client IP comes from `CF-Connecting-IP`, trusted only from 127.0.0.1. UFW denies all incoming. SSH and `admin.` sit behind Cloudflare Access. There is no Origin CA, no Authenticated Origin Pulls, and no Cloudflare IP allow-list. Staging has its own tunnel.
+Reason: owner's decision; the VPS has no public IP.
