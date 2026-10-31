@@ -13,7 +13,7 @@ Owner = branch name or session label of whoever claimed the task.
 ## Open decisions blocking work
 
 - D-022 AI engine technical choices (proposed, needs owner review)
-- D-039…D-088: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- D-039…D-089: items marked **Proposed** need owner review (Accepted ones are owner decisions)
 
 ## Phases
 
@@ -52,7 +52,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
 | P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 
-Later candidates (not yet tasks): export/localization guide (incl. `lang/id` from the paraphrase spreadsheet) · v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (guru agama / subject reviewers still needed, D-037; reviewers also sign off the P2-01 and P2-02 CP data) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025` · official source for the TKA item count and category limits (P2-03 follow-up).
+Later candidates (not yet tasks): export/localization guide (incl. `lang/id` from the paraphrase spreadsheet) · v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (guru agama / subject reviewers still needed, D-037; reviewers also sign off the P2-01 and P2-02 CP data) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
 ## Handoff notes
 
