@@ -16,7 +16,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 |---|---|---|
 | Prices for the four tiers (paid from non-BOS funds, D-025) | [product-concept.md](product-concept.md#open-questions) | owner |
 | Present the short version to principals and supervisors, and record their objections | [product-concept.md](product-concept.md#open-questions) | owner |
-| Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI, D-027) | [product-concept.md](product-concept.md#open-questions) | owner (legal advice) |
 
 ## Brand
 
