@@ -67,7 +67,7 @@ The exam site and its workers never call Gemini (D-027). Only jobs on the `ai` q
 | **School app** | Every screen for teachers, principals, operators, supervisors. Inertia.js + plain Svelte, Tailwind with ported TailAdmin components, `lang/id` copy. Teacher menu: Hari Ini · Di Kelas · Buat · Asesmen · Kelas Saya, plus the role portals | PHP-FPM behind Nginx, Vite bundle | MySQL, Redis, local disk, queues | D-008, D-010, D-021 |
 | **Di Kelas offline part** | Service worker and IndexedDB queue for Absensi, Jurnal, Catatan Siswa only | In the teacher's browser | Sync endpoint of the school app | D-016 |
 | **Game runtime** | Vanilla JS + CSS bundle per game template (Quiz Battle in v1). Used by *Tayangkan* inside the app, and inlined into the *Unduh game* HTML file | Browser | Nothing (the downloaded file has a CSP that blocks all network) | D-011, D-015 |
-| **Exam site** | The TKA practice exam client: question area, number grid, *ragu-ragu*, timer, font size. Separate bundle (`resources/exam-client/`) on its own subdomain | Same Laravel app, own route group and guard | Exam endpoints only | D-026, D-027 |
+| **Exam site** | The TKA practice exam client: question area, number grid, *ragu-ragu*, timer, font size. Own Inertia + Svelte entry (`resources/exam-client/`, D-094) on its own subdomain, sharing no bundle with the school app | Same Laravel app, own route group and guard | Exam endpoints only | D-026, D-027 |
 | **Staff console** | Filament panel for Tim SIGRAK: template registry and prompt overrides, schools and subscriptions, regional defaults, support, AI error overview. Horizon dashboard sits behind the same guard | Same Laravel app, own route group and guard | MySQL, Redis | D-010, D-013 |
 | **MySQL 8** | The only system of record. Schema in [`data-model.md`](data-model.md) | systemd service on the VPS | — | D-007 |
 | **Redis** | Cache, sessions, queues, Horizon metadata, and AI runtime state (round-robin counters, cooldowns, circuit state, per-teacher funnel) | systemd service on the VPS | — | D-003 |
@@ -361,9 +361,9 @@ New choices this document makes. They get numbered when the parallel work is int
 - [ ] **Backups.** Database and file backup schedule, retention, and where copies are kept (off the VPS). Not covered by any draft.
 - [ ] **File storage.** Local disk on the VPS is assumed for letterheads and the export cache. Is off-site object storage wanted later?
 - [ ] **Staging environment.** Telescope is "local/staging only", which implies a staging server. Is it a second VPS, or a second site on the same VPS?
-- [ ] **Exam capacity target.** How many participants at once across all schools (for example, several schools running TKA practice in the same morning)? This sizes PHP-FPM workers, MySQL, and Redis on the single VPS.
-- [ ] **Exam client technology.** The drafts say "separate bundle". Svelte without Inertia (JSON endpoints for autosave) is the natural fit; confirm.
-- [ ] **Mode Contoh (demo mode).** Proposed as a seeded demo school tenant; does it allow AI calls (with the salesperson's own key) or only show prepared content?
-- [ ] **Payment provider** for subscriptions (billing tables come in the billing task).
-- [ ] **PWA install.** Should the school app be installable (manifest + icon) or only cache Di Kelas through the service worker?
+- [x] **Exam capacity target.** One grade 6 class of 10–25 per session (D-092).
+- [x] **Exam client technology.** Laravel + Inertia + Svelte with its own entry, plus a JSON endpoint for autosave (D-094).
+- [x] **Mode Contoh.** Seeded demo school; AI calls allowed with the salesperson's own key (D-090).
+- [x] **Payment.** Manual confirmation by admin or marketing, no payment gateway (D-091).
+- [x] **PWA install.** The school app is installable (D-093).
 - [ ] Open questions carried from the drafts that affect architecture: Gemini under-18 clause for a service with a student exam site (product concept), 429 detail fields and free-tier model list (AI draft), usage-log retention (AI draft, data model), supervisor `school_id` context for written reports (data model).
