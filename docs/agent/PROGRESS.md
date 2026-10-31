@@ -13,8 +13,7 @@ Owner = branch name or session label of whoever claimed the task.
 ## Open decisions blocking work
 
 - D-022 AI engine technical choices (proposed, needs owner review)
-- D-067 Ubuntu 22.04 vs 24.04 for the VPS (open, owner decides before the server is ordered)
-- D-039…D-085: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- D-039…D-088: items marked **Proposed** need owner review (Accepted ones are owner decisions)
 
 ## Phases
 
@@ -59,6 +58,7 @@ Later candidates (not yet tasks): export/localization guide (incl. `lang/id` fro
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — Follow-up: owner chose Ubuntu 24.04, 8 vCPU / 16 GB, and a Cloudflare Tunnel with no public IP (D-086…D-088). `server-setup.md`, `architecture.md` and CONTEXT follow it.
 - 2026-10-31 — Phase 2 integrated. P1-08 and P2-01…P2-06 are merged (PRs #2–#9). Decisions D-039…D-085 are recorded, and owner answers are Accepted: domain `sigrak.com`, IDCloudHost Jakarta, R2 backups, staging server, Pest, TypeScript, Svelte 5, GitHub Actions, no `down()`. SD religion CP is verified against the scan, and MI CP is structured with Arabic retyped. Both still need guru review (D-037). Open owner items are in `docs/drafts/open-questions.md`.
 - 2026-10-30 — D-037: Kepercayaan is not in v1, MI Kemenag subjects are taught by guru mapel, and each religion's data is reviewed by a guru agama of that religion.
 - 2026-10-30 — Religion curriculum added (D-034…D-036). SD has six religions from BKPDM 020/2026, transcribed from a scan (verified in P2-01). MI uses the Kemenag subjects from SK Dirjen Pendis 9941/2025. Data is in `docs/data/curriculum/`.
