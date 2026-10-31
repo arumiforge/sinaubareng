@@ -53,7 +53,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 |---|---|---|
 | Report card export format required by e-Rapor (columns and file type) | [data-model.md](data-model.md#open-questions) | owner + team |
 | Retention for `document_revisions` (proposed: last 10) | [data-model.md](data-model.md#open-questions) | owner |
-| Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough? | [data-model.md](data-model.md#open-questions) | team |
 
 ## Design
 
@@ -86,4 +85,4 @@ Collected at integration from the Phase 2 outputs. Owner answers already given a
 
 | Question | Source | Who answers |
 |---|---|---|
-| Review the remaining **Proposed** decisions in D-039…D-083 and D-097…D-108 (TKA ones are accepted by D-120) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
+| Review the remaining **Proposed** decisions in D-039…D-083, D-097…D-108 and D-122 (TKA ones are accepted by D-120) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
