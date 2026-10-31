@@ -2,7 +2,7 @@
 
 - **Status:** draft (owner review)
 - **Task:** P1-08
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-10-31
 
 ## Purpose
 
@@ -16,7 +16,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 |---|---|---|
 | Prices for the four tiers (paid from non-BOS funds, D-025) | [product-concept.md](product-concept.md#open-questions) | owner |
 | Present the short version to principals and supervisors, and record their objections | [product-concept.md](product-concept.md#open-questions) | owner |
-| Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI, D-027) | [product-concept.md](product-concept.md#open-questions) | owner (legal advice) |
 
 ## Brand
 
@@ -53,7 +52,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 |---|---|---|
 | Report card export format required by e-Rapor (columns and file type) | [data-model.md](data-model.md#open-questions) | owner + team |
 | Retention for `document_revisions` (proposed: last 10) | [data-model.md](data-model.md#open-questions) | owner |
-| Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough? | [data-model.md](data-model.md#open-questions) | team |
 
 ## Design
 
@@ -66,7 +64,7 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| An official-channel copy of SK Dirjen Pendis 9941/2025 (the archived file comes from a public mirror) | [religious-education.md](religious-education.md#open-questions) | owner + team |
+| An official-channel copy of SK Dirjen Pendis 9941/2025. Low priority: a second copy from another source (2026-10-31) has identical text, but neither comes from kemenag.go.id | [religious-education.md](religious-education.md#open-questions) | owner + team |
 | Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)? | [religious-education.md](religious-education.md#open-questions) | owner |
 | SD religion JP: confirm that the national structure has one "Pendidikan Agama dan Budi Pekerti" row (3 JP per week) for every religion | [religious-education.md](religious-education.md#sd-six-religion-subjects-d-034) | team |
 | Known curriculum data issues: Matematika grade 4 semester 2 (80 of 90 JP), Keterampilan Tata Boga target, TP↔fokus links | [data-model.md](data-model.md#curriculum) | team, with the curriculum owner |
@@ -81,8 +79,7 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-119).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-121).
 
 | Question | Source | Who answers |
 |---|---|---|
-| Review the **Proposed** decisions D-039…D-083 and D-097…D-108 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
