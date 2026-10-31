@@ -128,7 +128,7 @@ Indonesian school terms that have no exact English equivalent keep a short Engli
 | DB-10 | Timestamps are stored in UTC (`APP_TIMEZONE=UTC`). Conversion to `Asia/Jakarta` happens only when displaying or exporting. |
 | DB-11 | Rows exposed in URLs use `public_id` (UUIDv7) for route model binding (`getRouteKeyName()`); the bigint id never appears in a URL or prop. |
 | DB-12 | JSON columns only where the data model allows them. Never filter or sort on a JSON path in a hot query; promote the field to a column instead. |
-| DB-13 | Each migration has a working `down()` for local use. Production is forward-only. |
+| DB-13 | `down()` is optional (*owner-approved*). Production is forward-only; a mistake is fixed with a new migration, never a rollback. Locally, rebuild with `migrate:fresh --seed`. |
 | DB-14 | Seeders for reference data (curriculum, regions) are idempotent upserts by natural key. Demo data lives only in factories and `DemoSeeder`, never runs in production. |
 
 ```php
@@ -268,7 +268,7 @@ Review checklist for any PR touching `app/Content` or `app/AI`: "Which data reac
 | GIT-1 | **No AI attribution anywhere**: no `Co-Authored-By` or session lines in commits, nothing in PR titles, descriptions, comments, code, or docs ([`CLAUDE.md`](../../CLAUDE.md)). |
 | GIT-2 | Commit messages in English, imperative, subject ≤ 72 characters, no trailing period: `Add daily attendance sync endpoint`. A body explains *why* when it is not obvious. |
 | GIT-3 | One task per branch (`<phase>/<task-id>-<slug>`) and per PR, following [`WORKFLOW.md`](../agent/WORKFLOW.md). Unrelated fixes go in their own PR. |
-| GIT-4 | Before opening a PR: `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check`, `npm run build` all pass. CI runs the same commands. |
+| GIT-4 | Before opening a PR: `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check`, `npm run build` all pass. CI is **GitHub Actions** (*owner-approved*): a workflow in `.github/workflows/` runs the same commands on every PR to `main`, with a MySQL 8 service container. A PR merges only when it is green. |
 | GIT-5 | PR description: what changed, why (task id, decision ids), how it was tested, and screenshots at phone and laptop width for UI changes. |
 | GIT-6 | Never commit `.env`, keys, real student data, dumps, or build output (`public/build`, `docs/.build/`). |
 | GIT-7 | A PR that adds a migration, a new dependency, or a new env key says so in its description. |
@@ -298,9 +298,11 @@ New choices made in this document. They get numbered in `DECISIONS.md` during in
 8. **Typed route helper** for the frontend (Laravel Wayfinder, or Ziggy if Wayfinder does not fit plain Svelte), chosen at scaffold time.
 9. **App timezone is UTC**, display and export in `Asia/Jakarta` (makes the data model's "stored in UTC" explicit in config).
 10. **Exact version pins** for output-affecting front-end libraries (DEP-2).
+11. **GitHub Actions** as the CI service (*owner-approved 2026-10-31*), running the GIT-4 checks on every PR to `main` with a MySQL 8 service container.
+12. **Migrations need no `down()`** (*owner-approved 2026-10-31*). Production is forward-only.
 
 ## Open questions
 
 - [x] Confirm decisions 1–3 (Pest, TypeScript, Svelte 5) before the project is scaffolded. Approved by the owner on 2026-10-31.
-- [ ] Is a CI service (e.g. GitHub Actions) already chosen? GIT-4 and DEP-6 assume CI exists.
-- [ ] Should `down()` methods be required (DB-13) or dropped to save time, given production is forward-only?
+- [x] CI service: GitHub Actions. Approved by the owner on 2026-10-31.
+- [x] `down()` in migrations is not required (DB-13). Approved by the owner on 2026-10-31.
