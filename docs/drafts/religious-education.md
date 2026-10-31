@@ -2,8 +2,8 @@
 
 - **Status:** draft (owner review)
 - **Task:** P1-07
-- **Last updated:** 2026-10-30
-- **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf)
+- **Last updated:** 2026-10-31
+- **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
 
 ## Purpose
 
@@ -14,13 +14,14 @@ This document defines how SIGRAK covers religious education in SD (six religions
 | Source | Covers | Form | Used for |
 |---|---|---|---|
 | **Keputusan Kepala BKPDM No. 020 Tahun 2026** (11 June 2026), amending Kepka BSKAP 046/H/KR/2025 | Lampiran I: CP Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu, Fase A–F. Lampiran II: special education (SLB) versions | Scanned copy, no text layer | SD religion CP (D-034). Lampiran II is out of scope |
-| **SK Dirjen Pendis No. 9941 Tahun 2025** (28 November 2025) | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam, Bahasa Arab at MI/MTs/MA, plus MAPK subjects and RA | PDF with text layer, plus the Dirjen's cover letter B-606 (1 December 2025, BSrE e-signed) | MI CP (D-035) |
+| **SK Dirjen Pendis No. 9941 Tahun 2025** (28 November 2025) | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam, Bahasa Arab at MI/MTs/MA, plus MAPK subjects and RA | PDF with text layer, plus the Dirjen's cover letter B-606 (1 December 2025, BSrE e-signed) and the Kanwil DKI Jakarta cover letter (16 December 2025) | MI CP (D-035) |
 | **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II, BAB III B, Tabel 1–5, pp. 28–31) | Official decree (22 September 2025), scanned copy supplied by the owner | MI allocation (D-038), data in [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) |
+| **SK Dirjen Pendis No. 6077 Tahun 2025** (22 July 2025) | Panduan Kurikulum Berbasis Cinta (KBC) for all madrasah: five Panca Cinta themes, example lessons, example CP-to-theme mapping | PDF with text layer, supplied by the owner | MI lesson planning, see [MI: Kurikulum Berbasis Cinta](#mi-kurikulum-berbasis-cinta-kbc) |
 | **KM-SD-2026-R2** (EDUNEXA curriculum data) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
 
 No newer amendment of SK 9941/2025 or KMA 1503/2025 was found on 2026-10-30.
 
-**Provenance.** The BKPDM 020/2026 copy came from the owner. The SK 9941/2025 file was downloaded from a public mirror, because no direct kemenag.go.id link was found. It contains the official cover letter and decree text. Replace it with a copy from an official channel when one is available.
+**Provenance.** The BKPDM 020/2026 copy came from the owner. The SK 9941/2025 file was downloaded from a public mirror, because no direct kemenag.go.id link was found. It contains the official cover letters and decree text. A second copy from another source (a madrasah website, supplied by the owner on 2026-10-31) has the same text on all 106 pages, so the text is very likely authentic; it lacks only the Kanwil DKI cover page. Replace it with a copy from an official channel (kemenag.go.id, pendis.kemenag.go.id, or a Kanwil/Kankemenag site) when one is available. Low priority.
 
 ## SD: six religion subjects (D-034)
 
@@ -65,6 +66,19 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 - **Teachers:** the five subjects are taught by **guru mapel** (D-037). They default to `subject_teacher`, and the operator can still reassign them per class.
 - **Religion at MI:** MI is an Islamic school, so only the Kemenag subjects are offered there, with no other religion subjects.
 
+### MI: Kurikulum Berbasis Cinta (KBC)
+
+SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta as the reference for learning in every madrasah, public and private (Diktum KEDUA). Source: [`SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf) (page numbers below are PDF pages).
+
+- **No new subject and no JP change.** KBC values are inserted into existing subjects (intrakurikuler, kokurikuler, and school culture). The MI allocation from KMA 1503/2025 stays as it is.
+- **Panca Cinta, five themes** (Tabel 1, pp. 31–35), each with goals and core material: Cinta Allah dan Rasul-Nya · Cinta Ilmu · Cinta Lingkungan · Cinta Diri dan Sesama Manusia · Cinta Tanah Air.
+- **Lesson plan fields.** The example lesson plans (Lampiran 2, pp. 72–91) add two lines to the plan's identity block: *Tema Kurikulum Berbasis Cinta* (one or more of the five themes) and *Materi Insersi* (the values inserted). The MI example is IPAS Fase C, Ekosistem, themes Cinta Allah and Cinta Lingkungan, 2 × 35 minutes (pp. 75–77). TP, activities, and assessment then carry those values.
+- **CP mapping.** Lampiran 1 (pp. 59–71) maps CP material to the five themes for RA, for PAI and Bahasa Arab, and for general madrasah subjects. Its CP wording appears to follow an older CP set than SK 9941/2025, so it cannot be imported as is.
+- **Everything is an example.** The guide says all aspects and indicators are examples, and each madrasah may adapt them (p. 12).
+- **Methods it recommends:** deep learning (mindful, meaningful, joyful), experience-based learning, the FIDS flow (Feel, Imagine, Do, Share), and process-based evaluation.
+
+Whether the RPM template supports KBC for MI schools is an open question for the owner (see below). Until it is answered, no KBC feature is in scope.
+
 ## How SIGRAK models it
 
 - **School level decides the subject set.** `schools.level` = `sd` gives the six religion subjects. `mi` gives the Kemenag subjects plus MI's own allocation table.
@@ -91,6 +105,7 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 
 ## Open questions
 
-- [ ] An official-channel copy of SK 9941/2025.
+- [ ] An official-channel copy of SK 9941/2025 (low priority: two copies from different sources have identical text).
+- [ ] KBC in the RPM template for MI: should an MI teacher pick *Tema KBC* and *Materi Insersi* in the wizard, with the AI weaving them into TP, activities, and assessment? In v1 or later? For every MI subject or only the Kemenag subjects? (Panduan KBC, SK Dirjen Pendis 6077/2025.)
 - [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?
