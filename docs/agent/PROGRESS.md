@@ -7,12 +7,12 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phase 1 — Product concept docs** · drafts in review (merged to `main`, still `review`).
-**Phase 2 — data and technical docs** · all tasks merged to `main` (2026-10-31). Data tasks are `done`; the three technical drafts wait for owner review.
+**Phase 1 and 2** · all drafts approved by the owner (D-123, 2026-10-31). P2-08 (server monitoring) is still running.
+**Phase 3 — final docs** · P3-01 moves the drafts to `docs/final/` and builds the Indonesian PDFs.
 
 ## Open decisions blocking work
 
-- D-039…D-122: items marked **Proposed** need owner review (Accepted ones are owner decisions)
+- Print font: D-109 (one font) vs. the owner's later "font cukup 2". Waiting for the owner.
 
 ## Phases
 
@@ -23,22 +23,22 @@ Owner = branch name or session label of whoever claimed the task.
 | P0-01 | No-attribution rule | done | pw/amazing-hawking-dn7dfo | — | `CLAUDE.md`, `.claude/settings.json` |
 | P0-02 | Language, stack, docs structure, agent workflow | done | pw/amazing-hawking-dn7dfo | P0-01 | `CLAUDE.md`, `docs/` |
 
-### Phase 1 — Product concept docs · review
+### Phase 1 — Product concept docs · done
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
 | P1-01 | Archive owner sources + owner interview | done | pw/eloquent-shannon-9iwufg | — | `docs/sources/`, D-007…D-021, D-023…D-037 |
-| P1-02 | Product concept | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/product-concept.md` |
-| P1-03 | Content engine (templates, wizard, games, TKA, export) | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/content-engine.md` |
-| P1-04 | AI Provider Engine | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/ai-provider-engine.md`, D-022 |
-| P1-05 | Data model | review | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/drafts/data-model.md` |
-| P1-06 | Design system and UI writing | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/design-system.md` |
-| P1-07 | Religious education curriculum (SD religions, MI Kemenag) | review | pw/eloquent-shannon-9iwufg | P1-05 | `docs/drafts/religious-education.md`, `docs/data/curriculum/` |
+| P1-02 | Product concept | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/product-concept.md` |
+| P1-03 | Content engine (templates, wizard, games, TKA, export) | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/content-engine.md` |
+| P1-04 | AI Provider Engine | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/ai-provider-engine.md`, D-022 |
+| P1-05 | Data model | done | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/drafts/data-model.md` |
+| P1-06 | Design system and UI writing | done | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/design-system.md` |
+| P1-07 | Religious education curriculum (SD religions, MI Kemenag) | done | pw/eloquent-shannon-9iwufg | P1-05 | `docs/drafts/religious-education.md`, `docs/data/curriculum/` |
 | P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | done | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
 
-After approval: move the drafts to `docs/final/` and generate the Indonesian PDFs (one task per doc, can run in parallel).
+Approved 2026-10-31 (D-123); moved to `docs/final/` in P3-01.
 
-### Phase 2 — data and technical docs · review
+### Phase 2 — data and technical docs · done (P2-08 running)
 
 Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions from the task outputs are D-039…D-085.
 
@@ -47,18 +47,25 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-01 | Verify SD religion CP transcription | done | p2/p2-01-verify-religion-cp | — | `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` |
 | P2-02 | Structure MI CP data, retype Arabic | done | p2/p2-02-mi-cp-structure | — | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` |
 | P2-03 | TKA SD/MI framework seed data | done | p2/p2-03-tka-framework-data | — | `docs/data/tka/kerangka-tka-sd.json` |
-| P2-04 | Architecture overview | review | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
-| P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
-| P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
-| P2-07 | Export and localization guide | review | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
+| P2-04 | Architecture overview | done | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
+| P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
+| P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
+| P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
 | P2-08 | Server monitoring and alerts | todo | — | P2-05 | `docs/drafts/server-monitoring.md` |
 
-Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · move approved drafts to `docs/final/` + Indonesian PDFs · import support for `ALOKASI-MI-KMA-1503-2025`.
+### Phase 3 — final docs · in-progress
+
+| ID | Task | Status | Owner | Depends on | Output |
+|---|---|---|---|---|---|
+| P3-01 | Move approved drafts to final + Indonesian PDFs | todo | — | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
+
+Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
 ## Handoff notes
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — D-123: the owner approved all ten drafts, which also accepts every remaining Proposed decision. P3-01 (final docs + Indonesian PDFs) is created; `open-questions.md` stays in drafts.
 - 2026-10-31 — D-120/D-121: TKA proposals D-041, D-042, D-044…D-047 and exam login throttling D-054 accepted; D-111 (AN offered) stands; exam font standard size. IDCloudHost confirmed outbound/7844. P2-08 (server monitoring) created. Open: print font choice (D-109 vs "font cukup 2").
 - 2026-10-31 — Owner answers D-116…D-119: D-022 accepted (own Gemini client, no Laravel AI SDK), default model Gemini 3.8 Flash (free tier 5 RPM / 250k TPM / 20 RPD per project), usage logs kept 1 month, backup keys allowed.
 - 2026-10-31 — Owner answers D-113…D-115: Tim Validasi SIGRAK reviews religion data with no same-religion teacher required; files on local disk, R2 optional; MI CP source errors corrected in the data (`raw_text` unchanged); Khonghucu "(孔)" confirmed.
