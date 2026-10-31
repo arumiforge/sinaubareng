@@ -1,8 +1,8 @@
 # P3-01 — Move approved drafts to final and build Indonesian PDFs
 
 - **Phase:** P3
-- **Status:** todo
-- **Owner:** —
+- **Status:** in-progress
+- **Owner:** p3/p3-01-final-docs-pdf
 - **Depends on:** owner approval of all drafts (D-123)
 - **Can run in parallel with:** P2-08 (it writes a new draft and does not touch these files)
 
