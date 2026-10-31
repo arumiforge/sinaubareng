@@ -85,4 +85,3 @@ Collected at integration from the Phase 2 outputs. Owner answers already given a
 
 | Question | Source | Who answers |
 |---|---|---|
-| Review the remaining **Proposed** decisions in D-039…D-083, D-097…D-108 and D-122 (TKA ones are accepted by D-120) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
