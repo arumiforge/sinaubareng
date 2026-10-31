@@ -17,29 +17,17 @@
     "conventions": [
       "raw_text is the original extraction, unchanged, kept for traceability. It still has the broken Arabic; never import Arabic from it.",
       "Each phase has lead_in (the 'Pada akhir fase ...' sentence), optional element_intros (a sentence printed under an element heading before its first sub-element), and outcomes[] {element, sub_element, text}.",
-      "outcomes[].text is the printed text with line breaks joined: a line ending in '-' or '/' joins without a space (all such breaks in these pages are real hyphens or slashes). Bullets are dropped. Capitalisation and punctuation are as printed. Source errors are corrected (D-115, see source_corrections); raw_text keeps them as printed.",
+      "outcomes[].text is the printed text with line breaks joined: a line ending in '-' or '/' joins without a space (all such breaks in these pages are real hyphens or slashes). Bullets are dropped. Capitalisation and punctuation are as printed. Spelling is as printed, including possible source errors (D-125); see review_notes.",
       "sub_element is null when the source prints no sub-heading (SKI Pemahaman Konsep, both Bahasa Arab elements). Sub-element names are normalised: straight apostrophe in Al-Qur'an, and 'Mengomunikasikanhasil' (SKI Fase B) written as 'Mengomunikasikan hasil'. Names are otherwise as printed, so wording differs between phases (e.g. 'Mengevaluasi dan refleksi' vs 'Mengevaluasi dan merefleksi').",
       "subjects[].elements[].sub_elements lists every sub-element name used in any phase, in order of first appearance.",
       "Arabic passages (Bahasa Arab only; the other subjects have no Arabic script) appear inline in outcomes[].text where the source prints them, and again in outcomes[].arabic_passages[] {pdf_page, text}. They are Unicode with full harakat in logical order (renders right to left). Arabic question mark '؟' and comma '،' are as printed; the source uses the Latin semicolon ';' between patterns, kept as '; '. Spaces before ';' and between '...' and the word before it are dropped.",
-      "Akidah Akhlak Fase A lead_in: the text layer ends in a stray 's' that is not visible on the printed page (p. 44); lead_in follows the printed page."
+      "Akidah Akhlak Fase A lead_in: the text layer ends in a stray 's' that is not visible on the printed page (p. 44); lead_in follows the printed page.",
+      "review_notes[] on an outcome row flags a possible source error or a reading choice (D-125). Notes are in English for reviewers and the back office only, never shown to teachers or students. A reviewer may propose a correction; only the owner approves it."
     ],
     "arabic_check": "Letter counts (harakat ignored) of each retyped phase equal those of the text layer, except letters the text layer drops inside ligatures: the madda alif in الْآنَ (Fase B, C), meem after lam in الْمَدْرَسَةِ/الْمُذَاكَرَةِ (Fase C, 4x), and hamza alif in بِالْأُذُنِ (Fase C). The page images show these letters.",
     "source_notes": [
-      "Bahasa Arab Fase A: the source prints 'مَالَوْنُ' with almost no space; retyped as 'مَا لَوْنُ...؟'.",
-      "Bahasa Arab Fase B: 'سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ' is as printed, but a father's brother is عَمِّيْ, not خَالِيْ (mother's brother). Flag for the Bahasa Arab reviewer.",
-      "Bahasa Arab Fase C: 'كَمْ السَّاعَةُ' is as printed; standard vocalisation is 'كَمِ السَّاعَةُ' (as the source itself prints in Fase D). Flag for the reviewer.",
-      "Fikih Fase B and C: 'berupa kritik sosial berupa kritik sosial' is printed twice in the source."
-    ],
-    "source_corrections": {
-      "decided": "2026-10-31 (D-115)",
-      "rule": "Outcome text and arabic_passages correct the source errors below; raw_text keeps the source as printed.",
-      "applied": [
-        "Bahasa Arab Fase B: خَالِيْ → عَمِّيْ (a father's brother)",
-        "Bahasa Arab Fase C: كَمْ السَّاعَةُ → كَمِ السَّاعَةُ",
-        "Fikih Fase B and C: repeated 'berupa kritik sosial' removed",
-        "madarasah → madrasah, peyelidikan → penyelidikan, kongkrit → konkret"
-      ]
-    }
+      "Every possible source error is flagged in review_notes[] on its outcome row (9 rows)."
+    ]
   },
   "subjects": [
     {
@@ -219,7 +207,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Merencanakan dan melakukan penyelidikan",
-              "text": "Dengan bantuan guru, murid melakukan langkah-langkah konkret dalam menemukan jawaban yang diajukan melalui observasi dan penyelidikan."
+              "text": "Dengan bantuan guru, murid melakukan langkah-langkah kongkrit dalam menemukan jawaban yang diajukan melalui observasi dan penyelidikan.",
+              "review_notes": [
+                "'kongkrit' is as printed; standard spelling (KBBI) is 'konkret'."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -399,7 +390,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Mengomunikasikan hasil",
-              "text": "Murid menyampaikan hasil belajar secara lisan, tulisan, atau tindakan, baik dengan menceritakan kembali, memperagakan, maupun menunjukkan praktik nyata di lingkungan madrasah atau rumah."
+              "text": "Murid menyampaikan hasil belajar secara lisan, tulisan, atau tindakan, baik dengan menceritakan kembali, memperagakan, maupun menunjukkan praktik nyata di lingkungan madarasah atau rumah.",
+              "review_notes": [
+                "'madarasah' is as printed; standard spelling is 'madrasah'."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -599,7 +593,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Menyimpulkan dan merefleksikan",
-              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik."
+              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik.",
+              "review_notes": [
+                "'berupa kritik sosial' is printed twice."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -657,7 +654,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Menyimpulkan dan merefleksikan",
-              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik."
+              "text": "Menarasikan temuan hasil investigasi berupa kritik sosial berupa kritik sosial dari sebuah fenomena sosial keagamaan yang terjadi di masyarakat, kemudian merefleksikan hasil temuannya kepada diri mereka sendiri agar menjadi muslim yang semakin baik.",
+              "review_notes": [
+                "'berupa kritik sosial' is printed twice."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -716,7 +716,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Merencanakan dan melakukan penyelidikan",
-              "text": "Menyusun rencana penyelidikan, seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah)."
+              "text": "Menyusun rencana peyelidikan, seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah).",
+              "review_notes": [
+                "'peyelidikan' is as printed; standard spelling is 'penyelidikan'."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -763,7 +766,10 @@
             {
               "element": "Keterampilan Proses",
               "sub_element": "Merencanakan dan melakukan penyelidikan",
-              "text": "Menyusun rencana penyelidikan seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah)."
+              "text": "Menyusun rencana peyelidikan seperti studi literatur atau wawancara untuk mengumpulkan data guna menjawab pertanyaan yang telah dirumuskan; mengumpulkan data dari sumber primer/sekunder (Al-Qur’an, Hadis, buku sejarah).",
+              "review_notes": [
+                "'peyelidikan' is as printed; standard spelling is 'penyelidikan'."
+              ]
             },
             {
               "element": "Keterampilan Proses",
@@ -819,6 +825,9 @@
                   "pdf_page": "99",
                   "text": "مَا هِوَايَتُكَ؟; مَا هِوَايَتُكِ؟; هِوَايَتِيْ...; مَا ذٰلِكَ؟; مَا تِلْكَ؟ مَا لَوْنُ...؟; تِلْكَ سَيَّارَةٌ; ذٰلِكَ قِطَارٌ; تِلْكَ حَدِيْقَةٌ; ذٰلِكَ بَحْرٌ"
                 }
+              ],
+              "review_notes": [
+                "Printed 'مَالَوْنُ' with almost no space; typed as 'مَا لَوْنُ'. Confirm."
               ]
             },
             {
@@ -841,7 +850,7 @@
             {
               "element": "Komponen Bahasa",
               "sub_element": null,
-              "text": "Mengidentifikasi kalimat sapaan dan pertanyaan tentang materi pelajaran, nama-nama binatang, penyakit, olahraga, teman-temanku, taman, dengan pola kalimat di antaranya: مَا دَرْسُنَا الْآنَ؟; هٰذَا دَرْسُ اللُّغَةِ الْعَرَبِيَّةِ; مَا ذٰلِكَ؟ ذٰلِكَ جَامُوْسٌ; مَا تِلْكَ؟ تِلْكَ دَجَاجَةٌ; مَا أَصَابَكَ؟ أَصَابَنِيْ اَلصُّدَاعُ; مَا أَصَابَكِ؟ أَصَابَنِيْ اَلسُّعَالُ; أَحْمَدُ يُحِبُّ السِّبَاحَةَ; مَاذَا تُحِبُّ عَائِشَةُ؟; مَنْ هُوَ؟; هٰذَا أَحْمَدُ، هُوَ ذَكِيٌّ; هَلْ تِلْكَ تُفَّاحَةٌ؟ نَعَمْ، تِلْكَ تُفَّاحَةٌ; ذٰلِكَ أَنَانَاسٌ وَتِلْكَ زَهْرَةُ الْوَرْدَةِ serta mengidentifikasi kalimat sapaan dan pertanyaan tentang alamat, profesi, cita-citaku, di rumah, anggota keluarga, cinta Indonesia, dengan pola kalimat di antaranya: مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ عَمِّيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟",
+              "text": "Mengidentifikasi kalimat sapaan dan pertanyaan tentang materi pelajaran, nama-nama binatang, penyakit, olahraga, teman-temanku, taman, dengan pola kalimat di antaranya: مَا دَرْسُنَا الْآنَ؟; هٰذَا دَرْسُ اللُّغَةِ الْعَرَبِيَّةِ; مَا ذٰلِكَ؟ ذٰلِكَ جَامُوْسٌ; مَا تِلْكَ؟ تِلْكَ دَجَاجَةٌ; مَا أَصَابَكَ؟ أَصَابَنِيْ اَلصُّدَاعُ; مَا أَصَابَكِ؟ أَصَابَنِيْ اَلسُّعَالُ; أَحْمَدُ يُحِبُّ السِّبَاحَةَ; مَاذَا تُحِبُّ عَائِشَةُ؟; مَنْ هُوَ؟; هٰذَا أَحْمَدُ، هُوَ ذَكِيٌّ; هَلْ تِلْكَ تُفَّاحَةٌ؟ نَعَمْ، تِلْكَ تُفَّاحَةٌ; ذٰلِكَ أَنَانَاسٌ وَتِلْكَ زَهْرَةُ الْوَرْدَةِ serta mengidentifikasi kalimat sapaan dan pertanyaan tentang alamat, profesi, cita-citaku, di rumah, anggota keluarga, cinta Indonesia, dengan pola kalimat di antaranya: مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟",
               "arabic_passages": [
                 {
                   "pdf_page": "100",
@@ -849,8 +858,11 @@
                 },
                 {
                   "pdf_page": "100",
-                  "text": "مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ عَمِّيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟"
+                  "text": "مِنْ أَيْنَ أَنْتِ؟ أَنَا مِنْ...; مَا عُنْوَانُكَ؟ عُنْوَانِيْ فِي الشَّارِعِ...; مَا مِهْنَتُكِ؟ مِهْنَتِيْ...; هَلْ أَنْتَ مُدَرِّسٌ؟ لَا، أَنَا مُوَظَّفٌ; مَا أَمَلُكَ؟ أُرِيْدُ أَنْ أَكُوْنَ...; ذٰلِكَ بَيْتِيْ، هُوَ جَمِيْلٌ وَنَظِيْفٌ; مَنْ هِيَ؟ هِيَ أُمِّيْ، هِيَ مُدَرِّسَةٌ; سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ; هَلْ أَنْتَ إِنْدُوْنِيْسِيٌّ؟"
                 }
+              ],
+              "review_notes": [
+                "'سَيِّدُ عُمَرُ أَخُ أَبِيْ، هُوَ خَالِيْ' is as printed, but a father's brother is عَمِّيْ; خَالِيْ is a mother's brother."
               ]
             },
             {
@@ -873,7 +885,7 @@
             {
               "element": "Komponen Bahasa",
               "sub_element": null,
-              "text": "Mengidentifikasi informasi dan bacaan sederhana tentang anggota tubuh, kebun binatang, di ruang tamu dan di ruang belajar, di perpustakaan, di kantin, dengan pola kalimat di antaranya: هٰذَا أُذُنٌ، أَنَا أَسْمَعُ بِالْأُذُنِ; تِلْكَ فَرَاشَةٌ جَمِيْلَةٌ; مَاذَا فِي غُرْفَةِ الْاِسْتِقْبَالِ؟; الْجَدْوَلُ الدِّرَاسِيُّ فِي غُرْفَةِ الْمُذَاكَرَةِ; فِي الْمَدْرَسَةِ مَكْتَبَةٌ كَبِيْرَةٌ وَنَظِيْفَةٌ; هَلْ أَنْتَ جَوْعَانُ؟ نَعَمْ، أَنَا جَوْعَانُ serta mengidentifikasi informasi dan bacaan sederhana tentang jam, saya suka bahasa Arab, saya suka kegiatan liburan, piknik, dengan pola kalimat di antaranya: كَمِ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ",
+              "text": "Mengidentifikasi informasi dan bacaan sederhana tentang anggota tubuh, kebun binatang, di ruang tamu dan di ruang belajar, di perpustakaan, di kantin, dengan pola kalimat di antaranya: هٰذَا أُذُنٌ، أَنَا أَسْمَعُ بِالْأُذُنِ; تِلْكَ فَرَاشَةٌ جَمِيْلَةٌ; مَاذَا فِي غُرْفَةِ الْاِسْتِقْبَالِ؟; الْجَدْوَلُ الدِّرَاسِيُّ فِي غُرْفَةِ الْمُذَاكَرَةِ; فِي الْمَدْرَسَةِ مَكْتَبَةٌ كَبِيْرَةٌ وَنَظِيْفَةٌ; هَلْ أَنْتَ جَوْعَانُ؟ نَعَمْ، أَنَا جَوْعَانُ serta mengidentifikasi informasi dan bacaan sederhana tentang jam, saya suka bahasa Arab, saya suka kegiatan liburan, piknik, dengan pola kalimat di antaranya: كَمْ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ",
               "arabic_passages": [
                 {
                   "pdf_page": "101",
@@ -881,8 +893,11 @@
                 },
                 {
                   "pdf_page": "101",
-                  "text": "كَمِ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ"
+                  "text": "كَمْ السَّاعَةُ الْآن؟; أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ السَّادِسَةِ وَالرُّبُعِ صَبَاحًا; هَلْ أَنْتَ تُحِبُّ اللُّغَةَ الْعَرَبِيَّةَ؟ نَعَمْ، أُحِبُّهَا; هُوَ يَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ فِي الْمَدْرَسَةِ; كَيْفَ قَضَيْتِ الْعُطْلَةَ يَا أُخْتِي؟ قَضَيْتُ الْعُطْلَةَ بِزِيَارَةِ بَيْتِ جَدِّيْ; إِلَى أَيْنَ ذَهَبْتِ؟ ذَهَبْتُ إِلَى شَاطِئِ الْبَحْرِ"
                 }
+              ],
+              "review_notes": [
+                "'كَمْ السَّاعَةُ' is as printed; standard vocalisation is 'كَمِ السَّاعَةُ' (the source prints كَمِ in Fase D)."
               ]
             },
             {
