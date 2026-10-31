@@ -39,11 +39,11 @@ Do not invent features beyond these documents.
 
 ## Infrastructure
 
-- VPS on **Ubuntu Server 22.04 LTS** (24.04 is proposed, owner to decide; D-067), **IDCloudHost Cloud VPS, Jakarta** (D-070). A smaller **staging** VPS behind Cloudflare Access (D-072).
+- VPS on **Ubuntu Server 24.04 LTS** (D-086), **IDCloudHost Cloud VPS, Jakarta**, 8 vCPU / 16 GB RAM (D-070, D-087). A smaller **staging** VPS behind Cloudflare Access (D-072).
 - Domain **`sigrak.com`** (D-069). Off-site backups on **Cloudflare R2**, encrypted (D-071).
 - **Nginx** + **PHP-FPM**.
 - **Docker** only for the Gotenberg PDF service (internal network, pinned image; D-028).
-- **Cloudflare** in front (DNS, proxy, TLS, WAF). Nginx must restore the real client IP from Cloudflare headers.
+- **Cloudflare** in front (DNS, proxy, TLS, WAF). The VPS has no public IP: all traffic arrives through a **Cloudflare Tunnel** (`cloudflared`), and SSH and `admin.` sit behind Cloudflare Access (D-088). Nginx listens on localhost and restores the real client IP from `CF-Connecting-IP`.
 - Node.js on the server only if needed at runtime; prefer building assets in CI/locally.
 
 ## Conventions

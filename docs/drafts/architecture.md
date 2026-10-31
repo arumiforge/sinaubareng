@@ -13,7 +13,7 @@ Server installation steps belong to `server-setup.md` (P2-05). Code style belong
 
 ## System at a glance
 
-One Laravel application on one Ubuntu 22.04 VPS behind Cloudflare. It serves three front ends on three hostnames, and each has its own login guard. Background work runs on Redis queues under Horizon. Gotenberg is the only Docker service. The only outside service the server calls is the Gemini API.
+One Laravel application on one Ubuntu 24.04 VPS behind Cloudflare, reached only through a Cloudflare Tunnel (D-086, D-088). It serves three front ends on three hostnames, and each has its own login guard. Background work runs on Redis queues under Horizon. Gotenberg is the only Docker service. The only outside service the server calls is the Gemini API.
 
 ```mermaid
 flowchart LR
@@ -31,7 +31,7 @@ flowchart LR
     F --> CF
     T -. shares .-> G
 
-    subgraph VPS[Ubuntu 22.04 VPS]
+    subgraph VPS[Ubuntu 24.04 VPS]
         NG[Nginx]
         subgraph LARAVEL[Laravel app · PHP-FPM]
             APP[School app<br/>Inertia + Svelte<br/>guard: web]
@@ -276,13 +276,13 @@ Everything runs on one VPS. This is enough for the pilot and is the stated stack
               ┌────────▼─────────┐
               │    Cloudflare    │  DNS, proxy (orange cloud), TLS, WAF
               └────────┬─────────┘
-                       │ HTTPS, Full (strict), origin certificate
+                       │ Cloudflare Tunnel (cloudflared, outbound only)
 ┌──────────────────────▼───────────────────────────────────────────────┐
-│ Ubuntu Server 22.04 VPS                                              │
+│ Ubuntu Server 24.04 VPS · no public IP                               │
 │                                                                      │
-│  ufw: 80/443 from Cloudflare IP ranges only, SSH restricted          │
+│  ufw: deny all incoming · SSH via tunnel + Cloudflare Access         │
 │                                                                      │
-│  Nginx ── real client IP from CF-Connecting-IP (set_real_ip_from)    │
+│  Nginx 127.0.0.1:8080 ── real IP from CF-Connecting-IP (localhost)   │
 │    │      app.<domain> · ujian.<domain> · admin.<domain>             │
 │    ▼                                                                 │
 │  PHP-FPM (Laravel) ──┬── MySQL 8        (localhost)                  │
@@ -337,7 +337,7 @@ Notes:
 | **Downloaded games** | Teaching content only, no student data, CSP blocks all network | `GameExporter` (D-011) |
 | **Gotenberg** | Localhost only, basic auth, pinned image, no outbound network, all assets passed in the request | Docker network settings (D-028) |
 | **Staff console** | Separate guard and table; Horizon gated to staff; Telescope never public in production | Filament panel config, Horizon gate |
-| **Edge** | Cloudflare WAF and TLS; origin accepts only Cloudflare IPs; Nginx restores the real client IP so Laravel's rate limits and logs see real addresses | Cloudflare, ufw, Nginx |
+| **Edge** | Cloudflare WAF and TLS; no public IP, traffic only through the Cloudflare Tunnel (D-088); Nginx restores the real client IP so Laravel's rate limits and logs see real addresses | Cloudflare, ufw, Nginx |
 
 **Rate limits on the exam site (*proposed*).** A whole class signs in from one school network, so many students share one public IP. Login throttling on `ujian.<domain>` is keyed by session and username, not by IP alone, and Cloudflare bot or rate rules for that hostname must allow bursts of 30–40 logins from one IP within a few minutes.
 
