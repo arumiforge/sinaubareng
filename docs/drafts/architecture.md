@@ -2,7 +2,7 @@
 
 - **Status:** draft
 - **Task:** P2-04
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-10-31
 - **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037)
 
 ## Purpose
@@ -353,17 +353,23 @@ New choices this document makes. They get numbered when the parallel work is int
 6. **Separate Redis databases** for cache, sessions, queues/Horizon, and AI state.
 7. **Exam-site rate limits are keyed by session and username, not IP alone**, because a class shares one IP.
 8. **Staff tools (Filament, Horizon) live on `admin.<domain>`** behind the `staff` guard.
+9. **Supervisor writes need no school membership.** A supervision visit row (`supervisions`) carries the visited school's `school_id` and the supervisor's `user_id`. A policy allows the write only while an active `supervisor_assignments` row links that supervisor to that school. Curriculum validations and document comments already reach the school through the reviewed row. *Laporan Kepengawasan* is built on request from the supervisor's visits across assigned schools and is not stored per school. Supervisors still get no `school_memberships` row and no student-level reads. Reason: answers the data-model open question with the existing tables.
+10. **Students only receive finished AI content** (owner's answer, 2026-10-31). AI runs only in teachers' sessions, before an exam or lesson, to prepare questions and material. A TKA package is frozen into `exam_items` before the session, so the exam site serves teacher-checked content and never generates or changes anything with AI while students take the exam. The same holds for downloaded games and *Tayangkan*. Reason: answers the Gemini under-18 question; students never use or trigger the AI.
 
 ## Open questions
 
-- [ ] **Domain and hostnames.** Final domain (depends on the PDKI name check) and whether the names `app.`, `ujian.`, `admin.` are acceptable.
+- [x] **Domain and hostnames.** `sigrak.com` with `app.`, `ujian.`, `admin.` (D-069), routed through the Cloudflare Tunnel (D-088). The PDKI brand check stays open in the product concept.
 - [x] **Mail provider.** Gmail SMTP, transactional mail only (D-110).
-- [ ] **Backups.** Database and file backup schedule, retention, and where copies are kept (off the VPS). Not covered by any draft.
+- [x] **Backups.** Daily `mysqldump` + `storage/app` tarball, 14 days local, 30 days off-site (D-065, still Proposed), encrypted on Cloudflare R2 (D-071).
 - [x] **File storage.** Local disk; R2 only as an optional extra for small, rarely read files (D-114).
-- [ ] **Staging environment.** Telescope is "local/staging only", which implies a staging server. Is it a second VPS, or a second site on the same VPS?
+- [x] **Staging environment.** A second site on the production VPS, with its own hostnames, user, pool, database, and Redis DBs (D-095).
 - [x] **Exam capacity target.** One grade 6 class of 10–25 per session (D-092).
 - [x] **Exam client technology.** Laravel + Inertia + Svelte with its own entry, plus a JSON endpoint for autosave (D-094).
 - [x] **Mode Contoh.** Seeded demo school; AI calls allowed with the salesperson's own key (D-090).
 - [x] **Payment.** Manual confirmation by admin or marketing, no payment gateway (D-091).
 - [x] **PWA install.** The school app is installable (D-093).
-- [ ] Open questions carried from the drafts that affect architecture: Gemini under-18 clause for a service with a student exam site (product concept), 429 detail fields and free-tier model list (AI draft), usage-log retention (AI draft, data model), supervisor `school_id` context for written reports (data model).
+- [x] **Free-tier model list.** Gemini 3.8 Flash by default, limits in `config/ai.php` (D-117).
+- [x] **Usage-log retention.** One month, monthly aggregates kept (D-118).
+- [x] **Supervisor `school_id` context** (from the data model). `supervisor_assignments` is enough; no membership is needed. See decision 9 above.
+- [ ] **429 detail fields** that separate per-minute from per-day limits. Team task at build time, from real responses (AI draft). Until then, a 429 without a readable quota id is treated as per-minute (60 s cooldown, as in the AI draft's error table).
+- [x] **Gemini under-18 clause** for a service that also has a student exam site (product concept). Owner's answer (2026-10-31): AI is used only by teachers *before* the exam, to prepare the questions. Students receive the finished package and never take part in any AI process; the exam site has no AI during the exam. This matches the architecture: no AI code path on the exam site, its own guard and hostname, AI users are adult teachers only (D-027). See decision 10.

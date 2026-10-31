@@ -373,5 +373,5 @@ New choices in this guide. They get numbered at integration.
 - [x] F4 size: 215 × 330 mm (D-109).
 - [ ] e-Rapor import format (columns, file type) is still unknown (data-model open question). The XP-24 exception covers it once known.
 - [x] No school font choice; one print font for all (D-109).
-- [ ] Does the exam client need a larger default font size for grades 5–6 than the school app? (Design question; the A−/A/A+ control exists.)
+- [x] Exam client font: standard default size, A−/A/A+ control stays (D-121).
 

@@ -173,4 +173,4 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 
 - [ ] Report card export format required by e-Rapor (columns and file type).
 - [ ] Retention for `document_revisions` (proposed: last 10). `ai_usage_logs`: 1 month (D-118).
-- [ ] Does a supervisor need a `school_id` context for anything they write (supervision reports), or is `supervisor_assignments` enough?
+- [x] Supervisor `school_id` context: `supervisor_assignments` is enough (D-122, proposed).
