@@ -359,7 +359,7 @@ New choices this document makes. They get numbered when the parallel work is int
 - [ ] **Domain and hostnames.** Final domain (depends on the PDKI name check) and whether the names `app.`, `ujian.`, `admin.` are acceptable.
 - [x] **Mail provider.** Gmail SMTP, transactional mail only (D-110).
 - [ ] **Backups.** Database and file backup schedule, retention, and where copies are kept (off the VPS). Not covered by any draft.
-- [ ] **File storage.** Local disk on the VPS is assumed for letterheads and the export cache. Is off-site object storage wanted later?
+- [x] **File storage.** Local disk; R2 only as an optional extra for small, rarely read files (D-114).
 - [ ] **Staging environment.** Telescope is "local/staging only", which implies a staging server. Is it a second VPS, or a second site on the same VPS?
 - [x] **Exam capacity target.** One grade 6 class of 10–25 per session (D-092).
 - [x] **Exam client technology.** Laravel + Inertia + Svelte with its own entry, plus a JSON endpoint for autosave (D-094).

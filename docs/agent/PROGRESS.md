@@ -53,12 +53,13 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 | P2-07 | Export and localization guide | review | p2/p2-07-export-localization | P2-06 | `docs/drafts/export-localization.md` |
 
-Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (guru agama / subject reviewers still needed, D-037; reviewers also sign off the P2-01 and P2-02 CP data) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
+Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · move approved drafts to `docs/final/` + Indonesian PDFs · server monitoring and alerts (D-073) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
 ## Handoff notes
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — Owner answers D-113…D-115: Tim Validasi SIGRAK reviews religion data with no same-religion teacher required; files on local disk, R2 optional; MI CP source errors corrected in the data (`raw_text` unchanged); Khonghucu "(孔)" confirmed.
 - 2026-10-31 — Owner answers D-109…D-112: F4 215 × 330 mm and one print font, Gmail SMTP, AN competencies in Paket Soal TKA, reviewer recorded as Tim Validasi SIGRAK. The owner confirmed the Cloudflare Tunnel runs on the server, so outbound NAT is OK.
 - 2026-10-31 — P2-07 merged (#17): export and localization guide, decisions D-097…D-108 (Proposed).
 - 2026-10-31 — D-095/D-096: staging is a second site on the production VPS, and the disk is 320 GB. The `server-setup.md` section 15 rewrite is a P2-05 follow-up PR.
