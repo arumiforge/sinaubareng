@@ -71,7 +71,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 | Question | Source | Who answers |
 |---|---|---|
 | An official-channel copy of SK Dirjen Pendis 9941/2025 (the archived file comes from a public mirror) | [religious-education.md](religious-education.md#open-questions) | owner + team |
-| Names of the reviewing guru agama for each religion, and of the MI subject reviewers (who, from which school; D-037) | [religious-education.md](religious-education.md#open-questions) | owner |
 | Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)? | [religious-education.md](religious-education.md#open-questions) | owner |
 | SD religion JP: confirm that the national structure has one "Pendidikan Agama dan Budi Pekerti" row (3 JP per week) for every religion | [religious-education.md](religious-education.md#sd-six-religion-subjects-d-034) | team |
 | Known curriculum data issues: Matematika grade 4 semester 2 (80 of 90 JP), Keterampilan Tata Boga target, TP↔fokus links | [data-model.md](data-model.md#curriculum) | team, with the curriculum owner |
@@ -86,16 +85,11 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-112).
 
 | Question | Source | Who answers |
 |---|---|---|
 | Review the **Proposed** decisions D-039…D-083 and D-097…D-108 (architecture, server, coding, TKA, MI CP shape) | [DECISIONS.md](../agent/DECISIONS.md) | owner |
-| Confirm IDCloudHost outbound NAT incl. TCP/UDP 7844 for the tunnel | [server-setup.md](server-setup.md#open-questions) | owner + team |
-| Mail provider for invitations, password reset, notifications | [architecture.md](architecture.md#open-questions) | owner |
 | File storage: local disk only, or object storage later for letterheads and exports | [architecture.md](architecture.md#open-questions) | owner + team |
-| Paket Soal TKA: offer the AN literasi/numerasi competencies (D-043)? Low stakes, because TKA is a practice simulation (D-089). Suggested: not in v1 | [kerangka-tka-sd.json](../data/tka/kerangka-tka-sd.json) | owner |
 | MI CP source typos (e.g. خَالِيْ for a father's brother): show as printed or corrected (D-040) | [cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) | guru Bahasa Arab |
 | Khonghucu Fase A prints "(孔)" instead of "(孔子)": confirm with the guru agama | [cp-pendidikan-agama-sd-bkpdm-020-2026.json](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) | guru agama Khonghucu |
-| F4 paper: 215 × 330 mm or 210 × 330 mm, or a school setting (D-106) | [export-localization.md](export-localization.md#open-questions) | owner |
-| Extra print fonts beyond Arial/Times New Roman equivalents | [export-localization.md](export-localization.md#open-questions) | owner |

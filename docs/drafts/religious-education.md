@@ -92,5 +92,5 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 ## Open questions
 
 - [ ] An official-channel copy of SK 9941/2025.
-- [ ] Names of the reviewing guru agama for each religion (who, from which school).
+- [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?

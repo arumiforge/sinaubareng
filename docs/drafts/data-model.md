@@ -145,7 +145,7 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | `class_finance_entries` | `school_id`, `class_id`, `kind` ∈ {`income`,`expense`}, `amount` bigint rupiah CHECK > 0, `occurred_on`, `note`, `recorded_by` | Feature can be switched off per school |
 | `class_inventory_items`, `duty_rosters` | Class-scoped | |
 | `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (guest, public relations, minutes), `school_programs`, `agendas` | `school_id` | Portal features |
-| `school_print_settings` | `school_id` (unique), signers (names, NIP, titles), `paper` ∈ {`a4`,`f4`}, margins, `font` | Per-school print settings. The letterhead is in `letterheads` |
+| `school_print_settings` | `school_id` (unique), signers (names, NIP, titles), `paper` ∈ {`a4`,`f4`}, margins (no font choice, D-109) | Per-school print settings. The letterhead is in `letterheads` |
 | `letterheads` | `school_id` nullable / `user_id` nullable, `image_path`, `width_px`, `height_px`, `uploaded_by` | Exactly one owner: CHECK (`school_id` IS NULL) <> (`user_id` IS NULL). Unique per owner. A teacher's own letterhead replaces the school's on that teacher's documents. Upload rules: PNG/JPG, ≥ 2,000 px wide, ratio 4:1 to 8:1, ≤ 2 MB (D-031) |
 | `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`basic`,`teacher`,`school`,`cluster`}, `academic_year`, `status` | Exactly one owner column set (CHECK). Billing tables come in the billing task |
 
