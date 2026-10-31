@@ -9,7 +9,7 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 - Product: `docs/drafts/product-concept.md`
 - Content engine: `docs/drafts/content-engine.md` · AI layer: `docs/drafts/ai-provider-engine.md`
 - Data model: `docs/drafts/data-model.md` · Design and UI copy: `docs/drafts/design-system.md`
-- Architecture: `docs/drafts/architecture.md` · Server setup: `docs/drafts/server-setup.md` · Coding standards: `docs/drafts/coding-standards.md`
+- Architecture: `docs/drafts/architecture.md` · Server setup: `docs/drafts/server-setup.md` · Coding standards: `docs/drafts/coding-standards.md` · Export and localization: `docs/drafts/export-localization.md`
 - Religious education (SD six religions, MI Kemenag subjects): `docs/drafts/religious-education.md` · prepared data: `docs/data/`
 - Owner's original material: `docs/sources/` (input only; drafts win where they differ)
 
