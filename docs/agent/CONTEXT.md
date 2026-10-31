@@ -39,7 +39,7 @@ Do not invent features beyond these documents.
 
 ## Infrastructure
 
-- VPS on **Ubuntu Server 24.04 LTS** (D-086), **IDCloudHost Cloud VPS, Jakarta**, 8 vCPU / 16 GB RAM (D-070, D-087). A smaller **staging** VPS behind Cloudflare Access (D-072).
+- VPS on **Ubuntu Server 24.04 LTS** (D-086), **IDCloudHost Cloud VPS, Jakarta**, 8 vCPU / 16 GB RAM / 320 GB (D-070, D-087, D-096). **Staging** is a second, isolated site on the same VPS, behind Cloudflare Access (D-095).
 - Domain **`sigrak.com`** (D-069). Off-site backups on **Cloudflare R2**, encrypted (D-071).
 - **Nginx** + **PHP-FPM**.
 - **Docker** only for the Gotenberg PDF service (internal network, pinned image; D-028).

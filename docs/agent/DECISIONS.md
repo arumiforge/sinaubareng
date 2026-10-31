@@ -364,7 +364,7 @@ Off-site backups go to Cloudflare R2 with a bucket-scoped token, encrypted with 
 Reason: owner's decision; Cloudflare is already in the stack.
 
 ### D-072 — Staging server
-Accepted · 2026-10-31 · P2-05
+Superseded by D-095 · 2026-10-31 · P2-05
 A staging server is required: a second, smaller IDCloudHost VPS in Jakarta on `staging-*.sigrak.com`, behind Cloudflare Access, with seeded data only. Telescope is allowed there.
 Reason: owner's decision.
 
@@ -477,3 +477,13 @@ Reason: owner's decision.
 Accepted · 2026-10-31 · team choice delegated by the owner · refines D-027
 The exam site uses the same stack as the school app: Laravel, Inertia, and Svelte 5 + TypeScript. It has its own Vite entry and root view (`resources/exam-client/`), its own `exam` guard, and its own hostname, and it shares no bundle with the school app. Pages (login, token, exam, finish) are Inertia pages. Answer autosave and the heartbeat go through one small JSON endpoint in the same app. The timer runs in the browser against a server-side end time.
 Reason: the owner asked to stay on Laravel if performance and effort allow. At 10–25 participants per session (D-092), a separate SPA brings no performance gain, while one stack shares components (KaTeX, figures, D-033), tests, and deploys.
+
+### D-095 — Staging is a second site on the production VPS
+Accepted · 2026-10-31 · P2-05 · supersedes D-072
+Staging runs on the production VPS as a second site, isolated by its own system user, PHP-FPM pool, database and database user, Redis DB numbers and prefixes, and Horizon/scheduler programs. It uses `staging-app.`, `staging-ujian.`, and `staging-admin.sigrak.com` on the same Cloudflare Tunnel, behind Cloudflare Access, with seeded data only. MySQL, Redis, and Gotenberg are shared with production, so only app releases are staged. Service and OS upgrades are rehearsed on a temporary VM or snapshot.
+Reason: owner's decision.
+
+### D-096 — Production disk 320 GB
+Accepted · 2026-10-31 · P2-05 · refines D-087
+The production VPS is 8 vCPU / 16 GB RAM / 320 GB NVMe.
+Reason: owner's decision.
