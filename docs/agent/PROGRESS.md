@@ -34,7 +34,7 @@ Owner = branch name or session label of whoever claimed the task.
 | P1-05 | Data model | review | pw/eloquent-shannon-9iwufg | P1-02…P1-04 | `docs/drafts/data-model.md` |
 | P1-06 | Design system and UI writing | review | pw/eloquent-shannon-9iwufg | P1-01 | `docs/drafts/design-system.md` |
 | P1-07 | Religious education curriculum (SD religions, MI Kemenag) | review | pw/eloquent-shannon-9iwufg | P1-05 | `docs/drafts/religious-education.md`, `docs/data/curriculum/` |
-| P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | in-progress | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
+| P1-08 | Finish KMA 1503/2025 (MI allocation) + collect open questions | review | p1/p1-08-mi-allocation | P1-07 | `docs/data/curriculum/mi-allocation-kma-1503-2025.json`, `docs/drafts/open-questions.md`, D-038 |
 
 After approval: move the drafts to `docs/final/` and generate the Indonesian PDFs (one task per doc, can run in parallel).
 
@@ -44,12 +44,12 @@ Tasks run in parallel sessions. Each session edits only its own row here; see th
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
-| P2-01 | Verify SD religion CP transcription | in-progress | p2/p2-01-verify-religion-cp | — | `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` |
-| P2-02 | Structure MI CP data, retype Arabic | in-progress | p2/p2-02-mi-cp-structure | — | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` |
+| P2-01 | Verify SD religion CP transcription | review | p2/p2-01-verify-religion-cp | — | `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` |
+| P2-02 | Structure MI CP data, retype Arabic | review | p2/p2-02-mi-cp-structure | — | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` |
 | P2-03 | TKA SD/MI framework seed data | in-progress | p2/p2-03-tka-framework-data | — | `docs/data/tka/kerangka-tka-sd.json` |
-| P2-04 | Architecture overview | in-progress | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
+| P2-04 | Architecture overview | review | p2/p2-04-architecture | — | `docs/drafts/architecture.md` |
 | P2-05 | Server setup guide | review | p2/p2-05-server-setup | — | `docs/drafts/server-setup.md` |
-| P2-06 | Coding standards | in-progress | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
+| P2-06 | Coding standards | review | p2/p2-06-coding-standards | — | `docs/drafts/coding-standards.md` |
 
 Later candidates (not yet tasks): export/localization guide (incl. `lang/id` from the paraphrase spreadsheet) · v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (needs P2-01, P2-02 and guru agama reviewers, D-037) · move approved drafts to `docs/final/` + Indonesian PDFs.
 

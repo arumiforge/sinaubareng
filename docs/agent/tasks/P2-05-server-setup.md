@@ -34,8 +34,8 @@ Write a step-by-step guide to prepare the production VPS.
 
 ## Result
 
-2026-10-31 — `docs/drafts/server-setup.md` written. Versions checked online on 2026-10-30: Laravel 13, PHP 8.5 (≥ 8.5.12, Oct 2026 CVEs), MySQL 8.4.13 LTS, Redis 8.2.x (pinned), Gotenberg `8.39.0-chromium`, Node 24.22.2 LTS (build only). Covers base hardening, UFW (80/443 from Cloudflare only), PHP-FPM, MySQL, Redis, Nginx with `app.` and `ujian.` vhosts, Docker + Gotenberg on localhost with basic auth, Cloudflare (Full strict, Origin CA, Authenticated Origin Pulls, real-IP refresh script), release-folder deploys, Supervisor (Horizon + `schedule:work`), backups with restore test, log rotation. 12 items under "Decisions to record".
+2026-10-31 — `docs/drafts/server-setup.md` written. Versions checked online on 2026-10-30: Laravel 13, PHP 8.5 (≥ 8.5.12, Oct 2026 CVEs), MySQL 8.4.13 LTS, Redis 8.2.x (pinned), Gotenberg `8.39.0-chromium`, Node 24.22.2 LTS (build only). Covers base hardening, UFW (80/443 from Cloudflare only), PHP-FPM, MySQL, Redis, Nginx with `app.`, `ujian.`, and `admin.` vhosts, Docker + Gotenberg on localhost with basic auth and no outbound network, Cloudflare (Full strict, Origin CA, Authenticated Origin Pulls, real-IP refresh script), release-folder deploys, Supervisor (Horizon + `schedule:work`), backups with restore test, log rotation. 12 items under "Decisions to record".
 
 - **Owner decision needed:** Ubuntu 22.04 standard support ends mid-2027, right after the first TKA season. The guide recommends starting on 24.04 instead (commands work unchanged). CONTEXT.md still says 22.04.
 - Open: off-site backup bucket (R2 suggested), VPS provider/region, domain, staging server, Gotenberg env key names in `spatie/laravel-pdf`.
-- Follow-ups: monitoring/alerting task; align vhost/guard split with P2-04 `architecture.md`.
+- Follow-ups: monitoring/alerting task; hostnames, UTC time and Gotenberg egress now aligned with P2-04 `architecture.md`; scheduler runs as `schedule:work` under Supervisor (task spec) where architecture shows cron, same effect.

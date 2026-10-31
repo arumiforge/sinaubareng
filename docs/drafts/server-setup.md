@@ -12,8 +12,9 @@ A step-by-step guide to prepare the single production VPS for SIGRAK: the main a
 | Placeholder | Meaning |
 |---|---|
 | `example.id` | The real domain (still open, see `product-concept.md`) |
-| `app.example.id` | Main app + Filament back office |
+| `app.example.id` | School app |
 | `ujian.example.id` | TKA exam site (D-027) |
+| `admin.example.id` | Staff console (Filament) + Horizon |
 | `<SERVER_IP>` | Public IP of the VPS |
 | `<DB_PASSWORD>`, `<DB_BACKUP_PASSWORD>`, `<MYSQL_ROOT_PASSWORD>` | MySQL passwords |
 | `<REDIS_PASSWORD>` | Redis password |
@@ -22,7 +23,7 @@ A step-by-step guide to prepare the single production VPS for SIGRAK: the main a
 
 Generate each secret with `openssl rand -base64 32 | tr -d '/+=' | cut -c1-32` and keep it in the team password manager.
 
-Architecture choices (one Laravel app serving both hostnames, separate guards) belong to `architecture.md` (P2-04). This guide only assumes one Laravel codebase whose routes are split by domain.
+The hostnames, guards, and time handling follow [`architecture.md`](architecture.md) (P2-04): one Laravel codebase, three domain-routed groups, host-only session cookies, server and database in UTC with the app showing `Asia/Jakarta`.
 
 ## Versions
 
@@ -54,7 +55,7 @@ Order the VPS with Ubuntu Server 22.04 LTS, at least 2 vCPU / 4 GB RAM / 80 GB S
 apt update && apt -y full-upgrade
 apt -y install curl gnupg ca-certificates lsb-release software-properties-common \
   unzip git acl ufw fail2ban unattended-upgrades supervisor logrotate
-timedatectl set-timezone Asia/Jakarta
+timedatectl set-timezone Etc/UTC   # the app displays Asia/Jakarta; cron times below are UTC
 hostnamectl set-hostname sigrak-prod
 dpkg-reconfigure -plow unattended-upgrades   # answer "Yes"
 ```
@@ -128,7 +129,7 @@ memory_limit = 256M
 upload_max_filesize = 20M
 post_max_size = 25M
 max_execution_time = 60
-date.timezone = Asia/Jakarta
+date.timezone = UTC
 opcache.enable = 1
 opcache.memory_consumption = 256
 opcache.interned_strings_buffer = 16
@@ -136,7 +137,7 @@ opcache.max_accelerated_files = 20000
 opcache.validate_timestamps = 0
 EOF
 sudo tee /etc/php/8.5/cli/conf.d/99-sigrak.ini > /dev/null <<'EOF'
-date.timezone = Asia/Jakarta
+date.timezone = UTC
 EOF
 ```
 
@@ -205,7 +206,7 @@ bind-address = 127.0.0.1
 mysqlx = OFF
 character-set-server = utf8mb4
 collation-server = utf8mb4_0900_ai_ci
-default-time-zone = '+07:00'
+default-time-zone = '+00:00'
 innodb_buffer_pool_size = 1G
 max_connections = 100
 slow_query_log = ON
@@ -321,14 +322,14 @@ location ~ \.php$ { return 404; }
 EOF
 ```
 
-Main app vhost (`app.example.id`, also serves Filament and Horizon behind login):
+School app vhost (`app.example.id`):
 
 ```bash
 sudo tee /etc/nginx/sites-available/sigrak-app.conf > /dev/null <<'EOF'
 server {
     listen 80;
     listen [::]:80;
-    server_name app.example.id ujian.example.id;
+    server_name app.example.id ujian.example.id admin.example.id;
     return 301 https://$host$request_uri;
 }
 
@@ -360,6 +361,22 @@ server {
 EOF
 ```
 
+Staff console vhost (`admin.example.id`: Filament and Horizon behind the `staff` guard). To narrow it further, a Cloudflare Access policy or WAF rule on this hostname can allow only the team.
+
+```bash
+sudo tee /etc/nginx/sites-available/sigrak-admin.conf > /dev/null <<'EOF'
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name admin.example.id;
+    client_max_body_size 25m;
+    access_log /var/log/nginx/sigrak-admin.access.log;
+    error_log  /var/log/nginx/sigrak-admin.error.log;
+    include snippets/sigrak-common.conf;
+}
+EOF
+```
+
 Catch-all that drops requests for any other host name (for example scans on the bare IP):
 
 ```bash
@@ -378,6 +395,7 @@ EOF
 sudo ln -s /etc/nginx/sites-available/00-default.conf /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/sigrak-app.conf /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/sigrak-ujian.conf /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/sigrak-admin.conf /etc/nginx/sites-enabled/
 ```
 
 Run `sudo nginx -t && sudo systemctl reload nginx` only after section 9 has put the certificates and the real-IP file in place.
@@ -403,7 +421,7 @@ EOF
 sudo systemctl restart docker && sudo systemctl enable docker
 ```
 
-Gotenberg with a pinned image, bound to localhost, with basic auth. The fonts folder holds Plus Jakarta Sans and the Arabic font (D-033) so PDFs render the same as the app.
+Gotenberg with a pinned image, bound to localhost, with basic auth, on its own Docker network without outbound access (the app sends every asset in the request, see `architecture.md`). The fonts folder holds Plus Jakarta Sans and the Arabic font (D-033) so PDFs render the same as the app.
 
 ```bash
 sudo mkdir -p /opt/gotenberg/fonts
@@ -427,11 +445,51 @@ services:
     volumes:
       - ./fonts:/usr/local/share/fonts/sigrak:ro
     mem_limit: 1g
+    networks:
+      - gotenberg
+
+networks:
+  gotenberg:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.250.0/24
 EOF
 # copy the font files (.ttf/.otf) into /opt/gotenberg/fonts first, then:
 cd /opt/gotenberg && sudo docker compose up -d
 curl -s -o /dev/null -w '%{http_code}\n' -u '<GOTENBERG_USER>:<GOTENBERG_PASSWORD>' http://127.0.0.1:3000/health   # 200
 curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:3000/forms/chromium/convert/html                         # 401 (auth works)
+```
+
+Block new connections **from** the container, both to the internet (Docker's `DOCKER-USER` chain) and to the host itself (`INPUT`). Requests from Laravel to `127.0.0.1:3000` and their replies keep working.
+
+```bash
+sudo tee /usr/local/sbin/gotenberg-egress > /dev/null <<'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+NET=172.31.250.0/24
+for CHAIN in DOCKER-USER INPUT; do
+  iptables -C "$CHAIN" -s "$NET" -m conntrack --ctstate NEW -j DROP 2>/dev/null \
+    || iptables -I "$CHAIN" 1 -s "$NET" -m conntrack --ctstate NEW -j DROP
+done
+EOF
+sudo chmod 755 /usr/local/sbin/gotenberg-egress
+sudo tee /etc/systemd/system/gotenberg-egress.service > /dev/null <<'EOF'
+[Unit]
+Description=Block outbound traffic from the Gotenberg container
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/gotenberg-egress
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload && sudo systemctl enable --now gotenberg-egress
+cd /opt/gotenberg && sudo docker compose exec gotenberg bash -c 'timeout 5 bash -c "</dev/tcp/1.1.1.1/443" && echo OPEN || echo BLOCKED'   # BLOCKED
 ```
 
 Upgrading Gotenberg is a deliberate change: edit the tag, `sudo docker compose pull && sudo docker compose up -d`, then print one PDF of each template before closing the change.
@@ -458,7 +516,7 @@ Python is not installed for the app. Ubuntu's own `python3` stays as it is; any 
 
 ### 9. Cloudflare
 
-**DNS** (Cloudflare dashboard → DNS): `A app → <SERVER_IP>` and `A ujian → <SERVER_IP>`, both **Proxied** (orange cloud). Add `AAAA` records too if the VPS has IPv6.
+**DNS** (Cloudflare dashboard → DNS): `A app`, `A ujian`, and `A admin`, each pointing to `<SERVER_IP>` and **Proxied** (orange cloud). Add `AAAA` records too if the VPS has IPv6.
 
 **SSL/TLS** (dashboard → SSL/TLS):
 
@@ -654,6 +712,8 @@ sudo supervisorctl reread && sudo supervisorctl update
 sudo supervisorctl status
 ```
 
+`schedule:work` under Supervisor replaces the usual cron line (`* * * * * php artisan schedule:run`), which is the form `architecture.md` shows. Both run the same schedule; use only one.
+
 `stopwaitsecs=600` is longer than the longest AI step (5 minutes per step, D-022 draft), so a deploy lets running jobs finish. Keep the queue's `retry_after` above the longest job timeout, as the AI engine doc requires.
 
 Starting point for `config/horizon.php` on a 4 GB VPS (tune after real load):
@@ -668,7 +728,7 @@ Exports call Gotenberg; two at a time fits the 1 GB container limit.
 
 ### 12. Backups and restore test
 
-What is backed up, daily at 01:30 WIB:
+What is backed up, daily at 01:30 WIB (18:30 UTC):
 
 - MySQL: a consistent `mysqldump` of `sigrak`.
 - Files: `shared/storage/app` (uploads such as letterheads, generated files).
@@ -709,7 +769,7 @@ find "$DIR" -type f -mtime +14 -delete
 echo "backup $STAMP ok"
 EOF
 sudo chmod 700 /usr/local/sbin/sigrak-backup
-echo '30 1 * * * root /usr/local/sbin/sigrak-backup >> /var/log/sigrak/backup.log 2>&1' | sudo tee /etc/cron.d/sigrak-backup
+echo '30 18 * * * root /usr/local/sbin/sigrak-backup >> /var/log/sigrak/backup.log 2>&1' | sudo tee /etc/cron.d/sigrak-backup
 sudo /usr/local/sbin/sigrak-backup    # first run by hand
 ```
 
@@ -775,27 +835,28 @@ sudo ss -tlnp | grep -E ':(3306|6379|3000|33060)\b' # all on 127.0.0.1 / ::1 onl
 sudo ufw status | grep -E '80,443|OpenSSH'
 sudo supervisorctl status                          # horizon + scheduler RUNNING
 curl -sI https://app.example.id | head -1          # through Cloudflare: 200 or 302 to login
+curl -sI https://admin.example.id | head -1        # staff login page
 curl -skI --resolve app.example.id:443:<SERVER_IP> https://app.example.id | head -1   # direct: must fail (UFW/AOP)
 ```
 
-In the app: log in, create one document, export it to PDF, and check in Horizon that the `ai` and `exports` queues ran the jobs. Open `ujian.example.id` on a phone and check that it shows the exam sign-in and nothing from the main app. Check that Telescope is not reachable.
+In the app: log in, create one document, export it to PDF, and check in Horizon that the `ai` and `exports` queues ran the jobs. Open `ujian.example.id` on a phone and check that it shows the exam sign-in and nothing from the main app. Check that Horizon opens only on `admin.example.id` after staff login, and that Telescope is not reachable.
 
 ## Decisions to record
 
 To be numbered during integration.
 
 1. **PHP 8.5** (≥ 8.5.12) from `ppa:ondrej/php`, with PHP 8.4 as fallback only if a required package blocks 8.5. Reason: Laravel 13 supports 8.3–8.5, and 8.5 has the longest support window.
-2. **MySQL 8.4 LTS** from Oracle's APT repository (`mysql-8.4-lts`), not Ubuntu's 8.0 (end of life) and not 9.7 LTS (D-007 says MySQL 8). DB timezone `+07:00` to match the app timezone.
+2. **MySQL 8.4 LTS** from Oracle's APT repository (`mysql-8.4-lts`), not Ubuntu's 8.0 (end of life) and not 9.7 LTS (D-007 says MySQL 8).
 3. **Redis 8.2** (extended release) from packages.redis.io, pinned to `6:8.2.*`, with `noeviction` and AOF on.
-4. **Gotenberg image `gotenberg/gotenberg:8.39.0-chromium`**: the Chromium-only variant, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit; fonts mounted from `/opt/gotenberg/fonts`.
+4. **Gotenberg image `gotenberg/gotenberg:8.39.0-chromium`**: the Chromium-only variant, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit, on its own Docker network whose new outbound connections are dropped; fonts mounted from `/opt/gotenberg/fonts`.
 5. **Node 24 LTS for builds only**, preferably in CI; no Node on the server unless needed.
 6. **Ubuntu's Nginx package** (1.18, patched by Canonical) rather than nginx.org builds.
 7. **Cloudflare: Full (strict) with a 15-year Origin CA wildcard certificate + global Authenticated Origin Pulls**; UFW allows 80/443 only from Cloudflare ranges, refreshed weekly together with the Nginx real-IP list.
-8. **One Laravel codebase, two Nginx vhosts** (`app.` and `ujian.`), separate session cookies (no shared `SESSION_DOMAIN`). To be confirmed by `architecture.md` (P2-04).
+8. **Three Nginx vhosts for one Laravel codebase** (`app.`, `ujian.`, `admin.`), as in `architecture.md`, with host-only session cookies (no shared `SESSION_DOMAIN`).
 9. **Release-folder deploys** (`releases/`, `shared/`, `current` symlink), keeping 5 releases; PHP-FPM reload on each deploy because OPcache does not check timestamps.
-10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler); worker counts live in `config/horizon.php`.
-11. **Backups:** daily 01:30 WIB `mysqldump` + `storage/app` tarball, 14 days local, 30 days off-site through an encrypted `rclone` remote; monthly restore test, off-site restore twice a year. `APP_KEY` kept in the password manager, never in the backup.
-12. **System timezone `Asia/Jakarta`**, so cron times read as WIB.
+10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler; `architecture.md` shows the equivalent cron form); worker counts live in `config/horizon.php`.
+11. **Backups:** daily 01:30 WIB (18:30 UTC) `mysqldump` + `storage/app` tarball, 14 days local, 30 days off-site through an encrypted `rclone` remote; monthly restore test, off-site restore twice a year. `APP_KEY` kept in the password manager, never in the backup.
+12. **Server, PHP, and MySQL run in UTC**; the app displays `Asia/Jakarta` (as in `architecture.md`). Cron times in this guide are UTC.
 
 ## Open questions
 
