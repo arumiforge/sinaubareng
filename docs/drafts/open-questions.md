@@ -86,7 +86,7 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Phase 2 additions (2026-10-31)
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-089).
+Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-094).
 
 | Question | Source | Who answers |
 |---|---|---|
@@ -94,11 +94,6 @@ Collected at integration from the Phase 2 outputs. Owner answers already given a
 | Production disk size (160 GB suggested) and the staging package; confirm IDCloudHost outbound NAT incl. TCP/UDP 7844 for the tunnel | [server-setup.md](server-setup.md#open-questions) | owner + team |
 | Mail provider for invitations, password reset, notifications | [architecture.md](architecture.md#open-questions) | owner |
 | File storage: local disk only, or object storage later for letterheads and exports | [architecture.md](architecture.md#open-questions) | owner + team |
-| Exam capacity target (participants at once across schools), to size the VPS | [architecture.md](architecture.md#open-questions) | owner |
-| Exam client technology: Svelte without Inertia, JSON autosave endpoints | [architecture.md](architecture.md#open-questions) | team |
-| Mode Contoh (demo school): allow AI calls with the salesperson's key, or prepared content only | [architecture.md](architecture.md#open-questions) | owner |
-| Payment provider for subscriptions | [architecture.md](architecture.md#open-questions) | owner |
-| PWA install for the school app, or service worker for Di Kelas only | [architecture.md](architecture.md#open-questions) | owner |
 | Paket Soal TKA: offer the AN literasi/numerasi competencies (D-043)? Low stakes, because TKA is a practice simulation (D-089). Suggested: not in v1 | [kerangka-tka-sd.json](../data/tka/kerangka-tka-sd.json) | owner |
 | MI CP source typos (e.g. خَالِيْ for a father's brother): show as printed or corrected (D-040) | [cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) | guru Bahasa Arab |
 | Khonghucu Fase A prints "(孔)" instead of "(孔子)": confirm with the guru agama | [cp-pendidikan-agama-sd-bkpdm-020-2026.json](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) | guru agama Khonghucu |

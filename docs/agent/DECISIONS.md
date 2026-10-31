@@ -452,3 +452,28 @@ Reason: owner's decision; the VPS has no public IP.
 Accepted · 2026-10-31 · P2-03 · frames D-041…D-047
 TKA in SIGRAK is a practice simulation for student drill, and it does not have to match the official TKA exactly. The official framework (`docs/data/tka/kerangka-tka-sd.json`) is a reference for item style: competencies, forms, stimulus rules, and cognitive levels. It is not a compliance target. Duration (75 min), item count (30), the category limits (50; 76,67), the Istimewa predicate, and scoring are practice defaults that teachers can change. Nobody needs to look for official sources for the `confidence: secondary` values.
 Reason: owner's decision ("tka disini hanya simulasi … soal2 nya mirip tka untuk latihan drill siswa").
+
+### D-090 — Mode Contoh is a seeded demo school
+Accepted · 2026-10-31
+Mode Contoh is a seeded demo school tenant with fictional data only. AI calls are allowed, using the salesperson's own Gemini key under the same key rules as teachers (D-012, D-023).
+Reason: owner's decision; a demo shows real generation.
+
+### D-091 — Manual payment, no payment gateway
+Accepted · 2026-10-31 · refines D-025
+Subscriptions are paid outside the app, for example by bank transfer, and confirmed manually by an admin or the marketing team in the staff console, which then activates the tier. v1 has no automatic payment gateway.
+Reason: owner's decision.
+
+### D-092 — Exam capacity target
+Accepted · 2026-10-31
+One TKA practice session holds one grade 6 class of 10–25 participants. Several schools may run sessions at the same time; the 8 vCPU / 16 GB server (D-087) is sized well beyond this.
+Reason: owner's decision.
+
+### D-093 — The school app is installable
+Accepted · 2026-10-31 · adds to D-016
+The school app is a PWA (manifest, icons, service worker) that teachers can install on phone and desktop. The Di Kelas offline cache stays limited to Absensi, Jurnal, and Catatan Siswa (D-016). The exam site is not installable.
+Reason: owner's decision.
+
+### D-094 — Exam client on Laravel + Inertia + Svelte
+Accepted · 2026-10-31 · team choice delegated by the owner · refines D-027
+The exam site uses the same stack as the school app: Laravel, Inertia, and Svelte 5 + TypeScript. It has its own Vite entry and root view (`resources/exam-client/`), its own `exam` guard, and its own hostname, and it shares no bundle with the school app. Pages (login, token, exam, finish) are Inertia pages. Answer autosave and the heartbeat go through one small JSON endpoint in the same app. The timer runs in the browser against a server-side end time.
+Reason: the owner asked to stay on Laravel if performance and effort allow. At 10–25 participants per session (D-092), a separate SPA brings no performance gain, while one stack shares components (KaTeX, figures, D-033), tests, and deploys.
