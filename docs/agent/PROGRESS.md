@@ -65,6 +65,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-10-31 — D-125 supersedes D-115: the MI CP shows the printed text again, and the 9 rows with possible source errors carry `review_notes[]`.
 - 2026-10-31 — D-124: students only receive finished AI content; this closes the Gemini under-18 question.
 - 2026-10-31 — D-123: the owner approved all ten drafts, which also accepts every remaining Proposed decision. P3-01 (final docs + Indonesian PDFs) is created; `open-questions.md` stays in drafts.
 - 2026-10-31 — D-120/D-121: TKA proposals D-041, D-042, D-044…D-047 and exam login throttling D-054 accepted; D-111 (AN offered) stands; exam font standard size. IDCloudHost confirmed outbound/7844. P2-08 (server monitoring) created. Open: print font choice (D-109 vs "font cukup 2").
