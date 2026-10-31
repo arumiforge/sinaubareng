@@ -71,6 +71,25 @@
       ],
       "accessed_on": "2026-10-30",
       "note": "Used only where no regulation text states the value. Replace with an official document when one is found."
+    },
+    {
+      "id": "juknis_017_f_an_2026",
+      "type": "regulation",
+      "title": "Keputusan Kepala Badan Kebijakan Pendidikan Dasar dan Menengah Nomor 017/F/AN/2026 tentang Petunjuk Teknis Penyelenggaraan Tes Kemampuan Akademik dan Asesmen Nasional",
+      "issued_on": "2026-04-14",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/718663_66",
+      "accessed_on": "2026-10-30",
+      "archived": false,
+      "note": "Scanned PDF (no text layer), read by OCR (tesseract, ind) on 2026-10-31. States no item count, no category limits and no scoring model; results section only says Pusmendik does the scoring and results go out as SHTKA."
+    },
+    {
+      "id": "tanya_jawab_tka_2025",
+      "type": "official_faq",
+      "title": "Tanya Jawab TKA (BSKAP, Juni 2025)",
+      "url": "https://pusmendik.kemendikdasmen.go.id/tka/page/download_file/049574_43",
+      "accessed_on": "2026-10-30",
+      "archived": false,
+      "note": "Scanned PDF, read by OCR on 2026-10-31. States no item count or category limits."
     }
   ],
   "test": {
@@ -168,7 +187,7 @@
     "item_count": {
       "value": 30,
       "per": "subject",
-      "note": "No regulation text found states the item count. The official Pusmendik pages publish a 30-item sample set per SD subject, and the Kapusmendik example at the 2026 results briefing used 30 items ('kalau soal yang diterima murid 30, dia betul 15 soal, maka nilainya 50'). Treat 30 as the default, not a rule.",
+      "note": "No regulation text found states the item count. The official Pusmendik pages publish a 30-item sample set per SD subject, and the Kapusmendik example at the 2026 results briefing used 30 items ('kalau soal yang diterima murid 30, dia betul 15 soal, maka nilainya 50'). Treat 30 as the default, not a rule. Also not stated in the Juknis TKA-AN 2026 (017/F/AN/2026) or the Tanya Jawab TKA, both checked by OCR on 2026-10-31.",
       "source": {
         "refs": [
           "pusmendik_web_bi",
@@ -250,7 +269,7 @@
       "limits_source": {
         "ref": "media_briefing_2026_05_26",
         "confidence": "secondary",
-        "note": "Kepmendikdasmen 56/2026 names the categories but not their limits. 50 and 76,67 are the limits reported from the official 2026 results briefing and @litbangdikbud. The boundary at 50 is reported as '<50' and '>50' in some articles; 50 is placed in Memadai here, as in content-engine.md."
+        "note": "Kepmendikdasmen 56/2026 names the categories but not their limits. 50 and 76,67 are the limits reported from the official 2026 results briefing and @litbangdikbud. The boundary at 50 is reported as '<50' and '>50' in some articles; 50 is placed in Memadai here, as in content-engine.md. Also not stated in the Juknis TKA-AN 2026 (017/F/AN/2026) or the Tanya Jawab TKA, both checked by OCR on 2026-10-31."
       },
       "predicates": [
         {

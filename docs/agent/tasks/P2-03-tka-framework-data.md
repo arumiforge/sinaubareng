@@ -46,7 +46,7 @@ Filled in on 2026-10-30.
 **Source notes**
 
 - The Pusmendik site sends an incomplete TLS chain and blocks non-browser clients; downloads worked with DigiCert's public intermediate added locally and a browser user agent. The per-subject pages render the same text as the Perka (checked).
-- The item count (30) and the category limits (50; 76,67) are not in any regulation text found. They come from the official 30-item sample sets and from media reports of the Kapusmendik results briefing (26 May 2026). They are marked `confidence: secondary` and should be replaced when an official document states them. The scanned *Juknis TKA-AN 2026* and *Tanya Jawab TKA* PDFs may contain them but have no text layer and were not read (no OCR tool in the session).
+- The item count (30) and the category limits (50; 76,67) are not in any regulation text found. They come from the official 30-item sample sets and from media reports of the Kapusmendik results briefing (26 May 2026). They are marked `confidence: secondary` and should be replaced when an official document states them. The scanned *Juknis TKA-AN 2026* (Keputusan Kepala BKPDM 017/F/AN/2026, 14 Apr 2026) and *Tanya Jawab TKA* (Jun 2025) were read by OCR on 2026-10-31: neither states the item count, the category limits, or the scoring model. Both are listed as checked sources in the JSON.
 - Perka sample BI no. 2 is labelled *PGK Kategori* but is built as PG (A–D, one key); the Pusmendik page labels it PG. Recorded as PG with the original label kept.
 
 **Decisions to record** (facts that differ from `content-engine.md`; draft not edited)
@@ -61,5 +61,5 @@ Filled in on 2026-10-30.
 
 **Follow-ups**
 
-- Find an official document for the item count and the 50 / 76,67 limits (OCR the scanned Juknis TKA-AN 2026 or Tanya Jawab TKA).
+- Find an official document for the item count and the 50 / 76,67 limits (not in Perka 047/2025, Kepmendikdasmen 56/2026, Juknis 017/F/AN/2026 or Tanya Jawab TKA; perhaps a later surat edaran or the SHTKA guide).
 - The SMP/MTs part of the same Perka is archived and could be structured later if SMP is ever in scope.
