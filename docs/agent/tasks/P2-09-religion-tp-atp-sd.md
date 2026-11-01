@@ -12,8 +12,8 @@ Draft topics (materi pokok/ATP), TP, fokus materi, and JP for Pendidikan Agama K
 
 ## Read first
 
-- `docs/drafts/religious-education.md` (SD section, Data work item 3)
-- `docs/drafts/data-model.md` (Curriculum)
+- `docs/final/religious-education.md` (SD section, Data work item 3)
+- `docs/final/data-model.md` (Curriculum)
 - `docs/sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md` (KM-SD-2026-R2 shape and PAI allocation)
 - `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
 
@@ -55,7 +55,7 @@ Drafted `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` (version `TP
 - **Fokus titles:** these name one week of content and are not exact lesson titles. Teachers' RPM still splits them into meetings.
 
 **Follow-ups:**
-- `docs/drafts/religious-education.md`, Data work item 3, and `docs/drafts/data-model.md` ("built by the team") should link this file once it is approved.
+- `docs/final/religious-education.md`, Data work item 3, and `docs/final/data-model.md` ("built by the team") should link this file once it is approved.
 - The importer needs to accept this file. Its shape is the data model's (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not the EDUNEXA JSON-string columns.
 
 **Decisions to record:**

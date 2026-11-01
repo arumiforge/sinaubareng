@@ -1,6 +1,6 @@
 # Export and Localization Guide
 
-- **Status:** draft
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-07
 - **Last updated:** 2026-10-31
 
@@ -225,11 +225,12 @@ Common rules for all formats:
 - **XP-6** One Blade view per PDF: `resources/views/exports/<key>/pdf.blade.php`. It extends `exports/layouts/print.blade.php`, with `<html lang="id">`. A package (RPM + LKPD + rubric + key, or all exam cards) is one view with page breaks, never a merge.
 - **XP-7** **Paper:** set by `@page` from print settings. A4 is `210mm 297mm`. F4 is `215mm 330mm` (D-109). Margins come from print settings in mm.
 - **XP-8** **Letterhead:** the school's or the teacher's image (D-031) goes at the top of the **first page only**, at full content width, `max-height: 4cm`. It is passed to Gotenberg as an asset in the request, never as a URL (architecture decision 5).
-- **XP-9** **Fonts** are bundled as files and sent with the request (D-033: no CDN). Schools cannot choose a print font (D-109):
+- **XP-9** **Fonts** are bundled as files and sent with the request (D-033: no CDN). The school chooses the print font (D-125):
 
-| Text | Font used |
+| Print setting | Font used |
 |---|---|
-| All text | Arial, rendered as Liberation Sans (metric-compatible) |
+| Arial (default) | Liberation Sans (metric-compatible) |
+| Times New Roman | Liberation Serif (metric-compatible) |
 | Arabic text (any setting) | Noto Naskh Arabic |
 | Math | KaTeX fonts |
 
@@ -244,7 +245,7 @@ Common rules for all formats:
 - **XP-15** Each template has a DOCX builder in `app/Content/Export/Docx/<Key>DocxBuilder.php` that builds SIGRAK's own layout in code (D-031). There are no uploaded Word templates and no Word-to-PDF conversion.
 - **XP-16** The document language is set to `id-ID` (proofing and hyphenation). The page size and margins follow the print settings (same values as XP-7).
 - **XP-17** The letterhead image goes in the **first-page header**, and the other pages get an empty header. Signers are plain text.
-- **XP-18** Fonts are set by name ("Arial", "Noto Naskh Arabic"; D-109), because Word substitutes fonts on the teacher's machine. Arabic runs use an RTL paragraph style (see §7).
+- **XP-18** Fonts are set by name ("Arial" or "Times New Roman", "Noto Naskh Arabic"; D-125), because Word substitutes fonts on the teacher's machine. Arabic runs use an RTL paragraph style (see §7).
 - **XP-19** Headings use Word heading styles, so teachers get a navigation pane and a table of contents. Body text does not use direct formatting.
 
 ### 4.3 Excel and CSV (Laravel Excel)
@@ -372,6 +373,6 @@ New choices in this guide. They get numbered at integration.
 
 - [x] F4 size: 215 × 330 mm (D-109).
 - [ ] e-Rapor import format (columns, file type) is still unknown (data-model open question). The XP-24 exception covers it once known.
-- [x] No school font choice; one print font for all (D-109).
+- [x] Print fonts: Arial or Times New Roman, chosen by the school; no others (D-125).
 - [x] Exam client font: standard default size, A−/A/A+ control stays (D-121).
 

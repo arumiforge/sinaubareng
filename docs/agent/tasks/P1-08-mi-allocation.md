@@ -13,14 +13,14 @@ Record the official MI subject allocation from KMA 1503/2025 as data, remove the
 ## Read first
 
 - `docs/agent/CONTEXT.md`
-- `docs/drafts/religious-education.md` (MI section)
+- `docs/final/religious-education.md` (MI section)
 - `docs/sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf` pages 28–31 (scanned; read the page images)
 - The *Open questions* section of every file in `docs/drafts/`
 
 ## Output
 
 - `docs/data/curriculum/mi-allocation-kma-1503-2025.json`: every MI subject for grades I, II, III–IV, V, VI with `intrakurikuler`, `kokurikuler`, `total` JP per year, `weeks_per_year` (36; 32 for grade VI), `jp_minutes` (35), `required` vs `elective` (Koding dan KA, grades V–VI), and the table notes (choose one art; muatan lokal 72–216, 64–192 in grade VI; up to +6 JP/week). Record `source.pages` per table and `verified: true` with the method.
-- `docs/drafts/religious-education.md` and `docs/drafts/data-model.md`: replace "must be verified" / "official copy not obtained" wording about KMA 1503/2025 with "verified against KMA 1503/2025 Lampiran II, Tabel 1–5 (pp. 28–31)" and link the JSON. Keep only "official-channel copy of SK 9941/2025" as an open source question.
+- `docs/final/religious-education.md` and `docs/final/data-model.md`: replace "must be verified" / "official copy not obtained" wording about KMA 1503/2025 with "verified against KMA 1503/2025 Lampiran II, Tabel 1–5 (pp. 28–31)" and link the JSON. Keep only "official-channel copy of SK 9941/2025" as an open source question.
 - `docs/agent/DECISIONS.md`: append **D-038 — MI allocation confirmed from the official KMA 1503/2025** (closes the "official copy still needed" part of D-035).
 - `docs/drafts/open-questions.md` (new): every unresolved open question from all drafts, grouped by topic (business, brand, content engine, AI, data model, design, religion/curriculum, TKA), each with a link to its source section and who must answer (owner / team). Leave the per-doc lists in place.
 

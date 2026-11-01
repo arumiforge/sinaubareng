@@ -13,11 +13,11 @@ Write one architecture overview that ties the Phase 1 drafts together for develo
 ## Read first
 
 - `docs/agent/CONTEXT.md`, `docs/agent/DECISIONS.md` (read only)
-- `docs/drafts/product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`
+- `docs/final/product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`
 
 ## Output
 
-- `docs/drafts/architecture.md` (use `docs/templates/DOC.md`): components (school app on Inertia+Svelte, separate exam site, Filament staff console, Redis, queues + Horizon, MySQL 8, Gotenberg, Gemini), module boundaries (`app/AI`, `app/Content`, tenancy, exam), the main flows (generation, export, offline sync, exam session), deployment topology on one Ubuntu VPS behind Cloudflare, security boundaries (guards, tenancy scope, key handling, exam isolation), and a diagram in Mermaid or ASCII.
+- `docs/final/architecture.md` (use `docs/templates/DOC.md`): components (school app on Inertia+Svelte, separate exam site, Filament staff console, Redis, queues + Horizon, MySQL 8, Gotenberg, Gemini), module boundaries (`app/AI`, `app/Content`, tenancy, exam), the main flows (generation, export, offline sync, exam session), deployment topology on one Ubuntu VPS behind Cloudflare, security boundaries (guards, tenancy scope, key handling, exam isolation), and a diagram in Mermaid or ASCII.
 - A "Decisions to record" section for anything new.
 
 ## Done when
@@ -34,7 +34,7 @@ Write one architecture overview that ties the Phase 1 drafts together for develo
 
 ## Result
 
-- Wrote `docs/drafts/architecture.md`: component table and Mermaid system diagram, hostnames and guards, module boundaries with allowed dependencies, the four main flows (generation, export, offline sync, TKA exam) plus the smaller ones, deployment topology on one VPS behind Cloudflare, scheduled jobs, and security boundaries.
+- Wrote `docs/final/architecture.md`: component table and Mermaid system diagram, hostnames and guards, module boundaries with allowed dependencies, the four main flows (generation, export, offline sync, TKA exam) plus the smaller ones, deployment topology on one VPS behind Cloudflare, scheduled jobs, and security boundaries.
 - Eight items under "Decisions to record" in that document (one codebase with three hostnames and guards, module folders, job uniqueness fix, sync auth, Gotenberg without network, Redis separation, exam rate limits by username, staff tools on `admin.`). Number them at integration.
 - Found one inconsistency in the AI draft: plain `ShouldBeUnique` blocks a job from re-dispatching itself. Decision 3 proposes the fix; `ai-provider-engine.md` was not edited.
 - Open questions needing the owner: domain/hostnames, mail provider, backups, file storage, staging, exam capacity target, exam client tech, Mode Contoh, payment provider, PWA install.

@@ -1,6 +1,6 @@
 # Content Engine: Guided Generator and Template Engine
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-03
 - **Last updated:** 2026-10-30
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
@@ -146,6 +146,7 @@ Document saved: content JSON + template key + template version
 | Wizard | **Kapan:** start date, or "RPM lepas jadwal" (no timetable, no ATP progress). Class and subject from the timetable. **Apa:** materi pokok and fokus. JP and meetings are computed from the data and locked (`jp_fokus_dapat_diubah_guru: false`). **Cara:** learning model per meeting (PjBL, Inkuiri & Discovery Learning, Problem Solving, Game Based Learning, Diskusi kelompok & eksplorasi) or "Biarkan otomatis", plus the optional note. **Periksa** |
 | Filled from data | Class, phase, subject, elements, CP, TP + codes, materi pokok, fokus, number of meetings, minutes per meeting (JP × 35 for SD), book references, link to the previous RPM |
 | Filled by AI | *Identifikasi:* readiness and needs, material characteristics, profile dimensions, initial assessment (prerequisites, items). *Desain:* method, syntax, learning partners, physical space, learning culture, digital use, media and sources. *Pengalaman belajar:* per meeting — material, opening, core activities following the syntax, closing, summary. *Asesmen:* formative assessment, principles, techniques, indicators, 4-level rubric, evaluation items, follow-up. *Lampiran:* LKPD instructions and table, cards, steps. *Kesinambungan:* summary of the last material, recommendation for the next |
+| KBC (MI only) | For MI schools, the wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. This applies to every MI subject and does not apply to SD (D-126) |
 | Kokurikuler variant | Separate output schema: background, yearly goal, success indicators, procedure, yearly phases (phase, range, focus, activities), teacher role, student role, monitoring frequency, periodic reflection. Types: Pembelajaran Kolaboratif Lintas Disiplin, Gerakan 7 KAIH, Projek. Reads the school's kokurikuler plan |
 | Rules | Meeting count and minutes equal the computed values. Every TP of the topic appears in at least one meeting or indicator. The rubric has exactly 4 levels (sangat baik, baik, berkembang, perlu bimbingan). No empty sections |
 | Scheduling | Meetings are placed on the class timetable. A meeting marked "tidak terlaksana" in the journal shifts the rest to the next JP slot. Semester 2 RPMs wait for the even-semester start date (behaviour carried over from EDUNEXA's scheduler) |
@@ -253,7 +254,7 @@ This is the single export engine from the developer notes. The engines are decid
   - The layout, logo, and divider line are all inside the image, so the teacher controls them. The system only places the image across the content width at the top of the first page.
   - Image rules: PNG or JPG, white or transparent background, at least 2,000 px wide, width-to-height ratio between 4:1 and 8:1, at most 2 MB. Printed height is capped at 4 cm.
   - The upload screen previews the image on A4 and F4 and warns when the resolution is too low for print.
-- **Other print settings (per school):** signer names and NIP (text), A4/F4, margins (one fixed print font, Arial; D-109), and which sections to include.
+- **Other print settings (per school):** signer names and NIP (text), A4/F4, margins, font (Arial or Times New Roman, D-125), and which sections to include.
 - **Labels in Indonesian** through translation keys (repo convention).
 - **Buka di Canva (level 1):** downloads DOCX/PDF and opens canva.com for the teacher to import. Direct import through the Canva Connect API is *Later*.
 - Sigrak Dasar (free plan): small watermark.

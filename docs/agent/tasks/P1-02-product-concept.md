@@ -17,7 +17,7 @@ Define what SIGRAK is, who uses it, the navigation, flows, business model, featu
 
 ## Output
 
-- `docs/drafts/product-concept.md`
+- `docs/final/product-concept.md`
 
 ## Done when
 

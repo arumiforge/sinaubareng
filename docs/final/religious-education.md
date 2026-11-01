@@ -1,6 +1,6 @@
 # Religious Education Curriculum (SD and MI)
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-07
 - **Last updated:** 2026-10-31
 - **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
@@ -77,7 +77,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 - **Everything is an example.** The guide says all aspects and indicators are examples, and each madrasah may adapt them (p. 12).
 - **Methods it recommends:** deep learning (mindful, meaningful, joyful), experience-based learning, the FIDS flow (Feel, Imagine, Do, Share), and process-based evaluation.
 
-Whether the RPM template supports KBC for MI schools is an open question for the owner (see below). Until it is answered, no KBC feature is in scope.
+**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. This applies to every MI subject and does not apply to SD.
 
 ## How SIGRAK models it
 
@@ -106,6 +106,6 @@ Whether the RPM template supports KBC for MI schools is an open question for the
 ## Open questions
 
 - [ ] An official-channel copy of SK 9941/2025 (low priority: two copies from different sources have identical text).
-- [ ] KBC in the RPM template for MI: should an MI teacher pick *Tema KBC* and *Materi Insersi* in the wizard, with the AI weaving them into TP, activities, and assessment? In v1 or later? For every MI subject or only the Kemenag subjects? (Panduan KBC, SK Dirjen Pendis 6077/2025.)
+- [x] KBC in the RPM template for MI: in v1, for every MI subject, not for SD (D-126).
 - [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?
