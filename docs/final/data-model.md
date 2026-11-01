@@ -171,6 +171,6 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 
 ## Open questions
 
-- [ ] Report card export format required by e-Rapor (columns and file type).
+- [x] e-Rapor export: deferred; report-card data uses SIGRAK's own Excel layout for now, and the owner designs a dedicated e-Rapor export later (D-144).
 - [ ] Retention for `document_revisions` (proposed: last 10). `ai_usage_logs`: 1 month (D-118).
 - [x] Supervisor `school_id` context: `supervisor_assignments` is enough (D-122, proposed).
