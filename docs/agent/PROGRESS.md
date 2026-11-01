@@ -7,11 +7,11 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-146. No open PRs, no running tasks, no worker branches in use. The next phase is not planned yet; the owner picks it.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-147. No open PRs, no running tasks, no worker branches in use. The next phase is not planned yet; the owner picks it.
 
 ## Open decisions blocking work
 
-- D-145, D-146 (P2-10 MI TP/ATP) are **Proposed**; the owner has not answered yet. Nothing else is open.
+- None.
 
 ## Phases
 
@@ -71,7 +71,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 ## Remaining work (not yet tasks)
 
-- **Owner:** answer D-145/D-146. Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
+- **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
 - **Docs:** rebuild `docs/pdf/server-setup.pdf` (it predates the D-136 backup heartbeat). Move `server-monitoring.md` to final and add its PDF. A committed PDF build script would make rebuilds repeatable.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
@@ -79,4 +79,5 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
+- 2026-11-01 — D-147: D-145/D-146 accepted. No decisions are open.
 - 2026-11-01 — Coordination run closed. P0–P3 are merged (PRs #2–#43). All worker sessions are idle and can be archived.
