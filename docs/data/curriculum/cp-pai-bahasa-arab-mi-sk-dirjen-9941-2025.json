@@ -13,7 +13,7 @@
     "date": "2026-10-30",
     "structured": true,
     "verified": false,
-    "verify_by": "A guru of each subject reviews the rows (D-037); a reader of Arabic checks the retyped passages against PDF pages 99-101.",
+    "verify_by": "Tim Validasi SIGRAK reviews and signs off the rows, including the retyped Arabic passages against PDF pages 99-101 (D-113).",
     "conventions": [
       "raw_text is the original extraction, unchanged, kept for traceability. It still has the broken Arabic; never import Arabic from it.",
       "Each phase has lead_in (the 'Pada akhir fase ...' sentence), optional element_intros (a sentence printed under an element heading before its first sub-element), and outcomes[] {element, sub_element, text}.",
