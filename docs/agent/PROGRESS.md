@@ -74,7 +74,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 ## Remaining work (not yet tasks)
 
 - **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
-- **Docs:** rebuild `docs/pdf/coding-standards.pdf` and `docs/pdf/export-localization.pdf` for D-149 (Indonesian URLs). Rebuild `docs/pdf/server-setup.pdf` (it predates the D-136 backup heartbeat). Move `server-monitoring.md` to final and add its PDF. A committed PDF build script would make rebuilds repeatable.
+- **Docs:** rebuild `docs/pdf/server-setup.pdf` (it predates the D-136 backup heartbeat). Move `server-monitoring.md` to final and add its PDF. A committed PDF build script would make rebuilds repeatable.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
 ## Handoff notes

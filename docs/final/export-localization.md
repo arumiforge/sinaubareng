@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-07
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 
 ## Purpose
 
@@ -78,7 +78,7 @@ trans_choice('classes.students_count', $n, ['count' => IndonesianFormat::number(
 
 The server sends only the groups a page needs. The browser never loads all of `lang/id`.
 
-- **LOC-9** `HandleInertiaRequests::share()` always shares `common`, `nav`, `terms`, and `enums` under the prop `translations`. A page adds its own files through route middleware *proposed*:
+- **LOC-9** `HandleInertiaRequests::share()` always shares `common`, `nav`, `terms`, and `enums` under the prop `translations`. A page adds its own files through route middleware *proposed*. The path is Indonesian and the route name stays English (D-149):
 
 ```php
 Route::get('/jurnal', [JournalController::class, 'index'])

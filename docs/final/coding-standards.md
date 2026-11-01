@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-06
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 
 ## Purpose
 
@@ -280,9 +280,9 @@ Review checklist for any PR touching `app/Content` or `app/AI`: "Which data reac
 
 | # | Rule |
 |---|---|
-| GIT-1 | **No AI attribution anywhere**: no `Co-Authored-By` or session lines in commits, nothing in PR titles, descriptions, comments, code, or docs ([`CLAUDE.md`](../../CLAUDE.md)). |
+| GIT-1 | **No AI attribution anywhere**: no `Co-Authored-By` or session lines in commits, nothing in PR titles, descriptions, comments, code, or docs ([`CLAUDE.md`](../../CLAUDE.md)). Commits are authored and committed as the owner, `Arumi Studios <arumiforge@gmail.com>` (D-148). |
 | GIT-2 | Commit messages in English, imperative, subject ≤ 72 characters, no trailing period: `Add daily attendance sync endpoint`. A body explains *why* when it is not obvious. |
-| GIT-3 | One task per branch (`<phase>/<task-id>-<slug>`) and per PR, following [`WORKFLOW.md`](../agent/WORKFLOW.md). Unrelated fixes go in their own PR. |
+| GIT-3 | One task per branch (`<phase>/<task-id>-<slug>`) and per PR, following [`WORKFLOW.md`](../agent/WORKFLOW.md). Unrelated fixes go in their own PR. Once merged, the branch is deleted; only `main` stays (D-148). |
 | GIT-4 | Before opening a PR: `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check`, `npm run build` all pass. CI is **GitHub Actions** (*owner-approved*): a workflow in `.github/workflows/` runs the same commands on every PR to `main`, with a MySQL 8 service container. A PR merges only when it is green. |
 | GIT-5 | PR description: what changed, why (task id, decision ids), how it was tested, and screenshots at phone and laptop width for UI changes. |
 | GIT-6 | Never commit `.env`, keys, real student data, dumps, or build output (`public/build`, `docs/.build/`). |
