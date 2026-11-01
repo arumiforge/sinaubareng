@@ -105,12 +105,27 @@ Example: `arch()->expect('App\Exam')->not->toUse('App\AI');`
 | Timestamps / dates | `_at` (timestamp), `_on` (date) | `submitted_at`, `starts_on` |
 | Actions, jobs | verb first | `CreateJournal`, `GenerateRpm` |
 | Events | past tense | `GenerationSucceeded` |
-| URLs | kebab-case, English, plural resources | `/ai-keys/{credential}`, `/documents/{document}` |
-| Route names | dot.snake | `ai_keys.store`, `exam.sessions.show` |
+| URLs (paths people see) | kebab-case, plain Indonesian words (D-149) | `/masuk`, `/lupa-kata-sandi`, `/kunci-ai/{credential}`, `/dokumen/{document}/ubah` |
+| Route names | dot.snake, English | `login`, `ai_keys.store`, `exam.sessions.show` |
 | Config keys, translation keys | snake_case, dot-separated | `ai.purposes.document_long`, `journals.saved` |
-| Branches | `<phase>/<task-id>-<slug>` | `p3/p3-04-journals` |
+| Branches | `<phase>/<task-id>-<slug>`, deleted after merge (D-148) | `p3/p3-04-journals` |
 
 Indonesian school terms that have no exact English equivalent keep a short English identifier plus a comment or doc link, never Indonesian identifiers (`homeroom_teacher_id`, not `wali_kelas_id`). Exception: curriculum codes and enum values already fixed in the data model (`kurang`, `memadai`, `pgk_mcma`, …).
+
+URL paths are the one place where routing uses Indonesian words (D-149). Write the path in plain Indonesian and keep the route name and parameter English, so code always links through `route()` and never through a hand-written path:
+
+```php
+// AppServiceProvider::boot()
+Route::resourceVerbs(['create' => 'buat', 'edit' => 'ubah']);
+
+// routes/app.php
+Route::get('/masuk', [LoginController::class, 'create'])->name('login');
+Route::resource('dokumen', DocumentController::class)
+    ->parameters(['dokumen' => 'document'])
+    ->names('documents'); // /dokumen/{document}/ubah -> documents.edit
+```
+
+This covers every page people open: the school app, the exam site, and the staff console (Filament resource `$slug`, where Filament allows it). Technical paths nobody reads, such as `/up`, webhooks, and `/build/*` assets, may keep the framework's English names.
 
 ## 4. Migrations and database
 

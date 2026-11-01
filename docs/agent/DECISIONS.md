@@ -747,3 +747,13 @@ Reason: RPM scheduling counts intrakurikuler JP only.
 Accepted · 2026-11-01 · accepts D-145, D-146
 The owner accepted the P2-10 decisions as written: version `TPATP-PAI-BA-MI-2026-R1` with codes QH, AA, FIK, SKI, BAR, and intrakurikuler-only JP for MI topics.
 Reason: owner's decision.
+
+### D-148 — Only `main` stays; commits authored by the owner
+Accepted · 2026-11-01 · extends D-001
+`main` is the only branch that stays: a task branch is deleted as soon as its work is merged into `main`. Every commit is authored and committed as `Arumi Studios <arumiforge@gmail.com>`, never as Claude; `.claude/hooks/session-start.sh` sets this identity each session. On 2026-11-01 the history of `main` was rewritten to replace the earlier Claude author and committer on all commits, and every other branch was deleted.
+Reason: owner's requirement — Claude must not appear as a contributor to the repository.
+
+### D-149 — Indonesian URLs
+Accepted · 2026-11-01 · narrows D-002 for routes
+URL paths people see are plain, friendly Indonesian in kebab-case: `/masuk`, `/lupa-kata-sandi`, `/dokumen/{document}/ubah`, `/kunci-ai/{credential}`. Route names, route parameters, controllers, and all other identifiers stay English (`login`, `documents.edit`). Resource verbs are `buat` and `ubah`. Technical paths nobody reads (`/up`, webhooks, built assets) may stay English. Replaces the English URL rule in `docs/final/coding-standards.md` §3.
+Reason: owner's requirement — users read the address bar, so it should be in their language.

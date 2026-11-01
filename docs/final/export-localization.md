@@ -81,7 +81,7 @@ The server sends only the groups a page needs. The browser never loads all of `l
 - **LOC-9** `HandleInertiaRequests::share()` always shares `common`, `nav`, `terms`, and `enums` under the prop `translations`. A page adds its own files through route middleware *proposed*:
 
 ```php
-Route::get('/journals', [JournalController::class, 'index'])
+Route::get('/jurnal', [JournalController::class, 'index'])
     ->middleware('translations:journals,attendance')
     ->name('journals.index');
 ```

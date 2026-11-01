@@ -11,7 +11,7 @@ How phased, parallel work is done so agents stay consistent, save tokens, and ca
 ## Running in parallel
 
 - **Sub-agents** (inside one session): the coordinating agent gives each sub-agent one task file path, nothing else. The sub-agent reads `CLAUDE.md`, `CONTEXT.md`, and its task file only.
-- **Parallel sessions**: each session works on its own branch, named `<phase>/<task-id>-<slug>` (e.g. `p1/p1-02-architecture`) unless the session was given a branch.
+- **Parallel sessions**: each session works on its own short-lived branch, named `<phase>/<task-id>-<slug>` (e.g. `p1/p1-02-architecture`) unless the session was given a branch. Only `main` stays: delete the branch once it is merged (D-148).
 - Two tasks must not edit the same file. If they would, mark one as depending on the other, or split the file.
 - Shared files (`PROGRESS.md`, `DECISIONS.md`, `CONTEXT.md`) get small, line-level edits only, to keep merges easy.
 
@@ -20,7 +20,7 @@ How phased, parallel work is done so agents stay consistent, save tokens, and ca
 1. **Claim:** in `PROGRESS.md`, set the task to `in-progress` with your owner label. Commit and push this first, so others see the claim.
 2. **Work:** read only what the task file lists under *Read first*. Write drafts in `docs/drafts/` (docs) or the code paths listed in the task.
 3. **Decide:** a new or changed decision goes in `DECISIONS.md`. If it changes the stack or a convention, update `CONTEXT.md` too.
-4. **Finish:** set status to `review` (needs owner approval) or `done`; fill *Result* in the task file; add a short handoff note in `PROGRESS.md`.
+4. **Finish:** set status to `review` (needs owner approval) or `done`; fill *Result* in the task file; add a short handoff note in `PROGRESS.md`. After the work is merged into `main`, delete the task branch on the remote and locally.
 5. **Blocked:** set `blocked`, write the reason and what is needed in the task file and the handoff notes.
 
 ## Docs pipeline

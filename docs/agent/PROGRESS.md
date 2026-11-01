@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-147. No open PRs, no running tasks, no worker branches in use. The next phase is not planned yet; the owner picks it.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-149. No open PRs, no running tasks. Only `main` exists on the remote (D-148). The next phase is not planned yet; the owner picks it.
 
 ## Open decisions blocking work
 
@@ -21,6 +21,7 @@ Owner = branch name or session label of whoever claimed the task.
 |---|---|---|---|---|---|
 | P0-01 | No-attribution rule | done | pw/amazing-hawking-dn7dfo | — | `CLAUDE.md`, `.claude/settings.json` |
 | P0-02 | Language, stack, docs structure, agent workflow | done | pw/amazing-hawking-dn7dfo | P0-01 | `CLAUDE.md`, `docs/` |
+| P0-03 | Owner commit identity, one `main` branch, Indonesian URLs | done | main | D-148, D-149 | `CLAUDE.md`, `.claude/`, `docs/agent/`, rewritten history |
 
 ### Phase 1 — Product concept docs · done
 
@@ -68,12 +69,12 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 1. Read `CLAUDE.md`, `docs/agent/CONTEXT.md`, and this file. Stack, conventions, and every owner choice are in CONTEXT and `DECISIONS.md`.
 2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions) and `docs/drafts/server-monitoring.md` (P2-08, accepted by D-143 but not yet moved to final).
 3. Data: `docs/data/curriculum/` (CP, MI allocation, TP/ATP drafts for SD religions and MI) and `docs/data/tka/`.
-4. Old branches (`p1/*`, `p2/*`, `p3/*`, `pw/*`) are all merged. Do not reuse them; start new branches from `main`.
+4. Only `main` exists. Old branches were deleted and the history was rewritten on 2026-11-01 (D-148), so old clones must be re-cloned or reset to `origin/main`. Start any task branch from `main` and delete it after merge.
 
 ## Remaining work (not yet tasks)
 
 - **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
-- **Docs:** rebuild `docs/pdf/server-setup.pdf` (it predates the D-136 backup heartbeat). Move `server-monitoring.md` to final and add its PDF. A committed PDF build script would make rebuilds repeatable.
+- **Docs:** rebuild `docs/pdf/coding-standards.pdf` and `docs/pdf/export-localization.pdf` for D-149 (Indonesian URLs). Rebuild `docs/pdf/server-setup.pdf` (it predates the D-136 backup heartbeat). Move `server-monitoring.md` to final and add its PDF. A committed PDF build script would make rebuilds repeatable.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
 ## Handoff notes
