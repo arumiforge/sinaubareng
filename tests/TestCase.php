@@ -15,5 +15,8 @@ abstract class TestCase extends BaseTestCase
 
         // No real outbound calls in tests, AI included (TS-4).
         Http::preventStrayRequests();
+
+        // Tests run before `npm run build`; pages must not need the Vite manifest.
+        $this->withoutVite();
     }
 }
