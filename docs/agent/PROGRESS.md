@@ -12,7 +12,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Open decisions blocking work
 
-- None.
+- D-130…D-141 (P2-08 monitoring, P2-09 religion TP/ATP) are **Proposed** and need the owner's review.
 
 ## Phases
 
@@ -66,6 +66,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-11-01 — P2-08 (#32) and P2-09 (#34) merged; decisions D-128…D-141. D-128 is the daily AI counter (from #30). After P3-01: add the backup heartbeat to server-setup §12 (D-136), and link the TP/ATP file from religious-education and data-model.
 - 2026-10-31 — D-127 supersedes D-115: the MI CP shows the printed text again, and the 9 rows with possible source errors carry `review_notes[]`.
 - 2026-10-31 — D-125/D-126: the school chooses Arial or Times New Roman for printing, and KBC (*Tema KBC*, *Materi Insersi*) is in the v1 RPM for MI. The doc text changes ride along in P3-01.
 - 2026-10-31 — D-124: students only receive finished AI content; this closes the Gemini under-18 question.
