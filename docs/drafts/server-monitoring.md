@@ -382,6 +382,6 @@ To be numbered during integration.
 
 ## Open questions
 
-- [ ] Healthchecks.io's About page says the service is "free for hobby use", while its FAQ explicitly allows a Hobbyist account "for monitoring your company infrastructure" (≤ 20 checks). This guide follows the FAQ. If the owner prefers no doubt at all, Business costs $20/month.
-- [ ] The app's outbound mail provider (needed for Horizon long-wait notifications and app mail) is not chosen yet.
-- [ ] Should a second person be added as a backup recipient later (for example during school holidays, when the owner is away)?
+- [x] Healthchecks.io plan: the free Hobbyist plan is used (D-144).
+- [x] Mail provider: Gmail SMTP (D-110).
+- [x] Alert recipient: the owner only, no second recipient (D-144).

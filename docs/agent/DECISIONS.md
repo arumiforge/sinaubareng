@@ -658,67 +658,77 @@ Server alerts go by Telegram and email to the owner only. Urgent alerts may be s
 Reason: owner's decision.
 
 ### D-130 — Healthchecks.io as the main alerting service
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 Healthchecks.io (free Hobbyist) works as a push-based dead man's switch, which suits a server without a public IP. 13 checks: urgent ones go to Telegram + email, minor ones to email only. Channel by severity replaces quiet hours.
 Reason: needs only outbound HTTPS (D-088).
 
 ### D-131 — One health script, run by cron
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 `/usr/local/sbin/sigrak-health` runs every minute, every 15 minutes, and daily. A check must fail twice in a row before it reports. No monitoring agent (Netdata, Prometheus) on the VPS for now.
 Reason: small footprint on one VPS.
 
 ### D-132 — External uptime checks
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 UptimeRobot (free) runs keyword checks of `app.` and `ujian.` `/up` and alerts by email.
 Reason: catches outages the server cannot report itself.
 
 ### D-133 — Cloudflare tunnel notifications
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 Cloudflare Tunnel Health and Tunnel Creation/Deletion notifications go out by email.
 Reason: first signal when the tunnel drops (D-088).
 
 ### D-134 — Laravel `/up` route enabled
-**Proposed** · 2026-10-31 · P2-08 · exception to D-010
+Accepted by D-143 · 2026-10-31 · P2-08 · exception to D-010
 `/up` is the only page reachable without login, and it shows no data.
 Reason: external checks need one public endpoint.
 
 ### D-135 — Monitoring thresholds
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 - Urgent: disk ≥ 90 %, RAM available < 1.5 GB, an OOM kill, or Redis ≥ 90 % of `maxmemory`.
 - Minor: disk ≥ 80 %, swap ≥ 50 %, load15 ≥ 8, MySQL connections ≥ 160, Redis ≥ 70 %, ≥ 5 failed jobs in 15 min, or pending security updates or a required reboot.
 Reason: sized for 8 vCPU / 16 GB (D-087).
 
 ### D-136 — Backup heartbeat
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 The backup script pings `backup/start`, then `backup` on success or `backup/fail` on error, so a missed backup alerts. The change lands in `server-setup.md` section 12.
 Reason: a silent backup failure is the worst case.
 
 ### D-137 — App-side monitoring for Phase 3
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 Horizon long-wait mail notifications (`waits`: `ai` 600 s, `exports` 120 s, `default` 60 s) and a scheduler heartbeat with `pingOnSuccess`.
 Reason: queue and scheduler stalls are invisible from outside.
 
 ### D-138 — Staging alerts by email only
-**Proposed** · 2026-10-31 · P2-08
+Accepted by D-143 · 2026-10-31 · P2-08
 Staging has one combined check that alerts by email only.
 Reason: staging must not page anyone at night.
 
 ### D-139 — Curriculum version for SD religion TP/ATP
-**Proposed** · 2026-10-31 · P2-09
+Accepted by D-143 · 2026-10-31 · P2-09
 New curriculum version `TPATP-PABP-SD-2026-R1` holds the TP/ATP for the five non-Islam SD religion subjects, with subject codes PAKR, PAKT, PAH, PAB, PAKH. It stays `draft` until Tim Validasi SIGRAK reviews it (D-113).
 Reason: PAI stays in KM-SD-2026-R2.
 
 ### D-140 — Religion TP/ATP in the data-model shape
-**Proposed** · 2026-10-31 · P2-09
+Accepted by D-143 · 2026-10-31 · P2-09
 The data is stored in the data model's English-keyed shape (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not in the EDUNEXA row shape. The importer accepts both.
 Reason: matches the target schema directly.
 
 ### D-141 — Religion allocation follows PAI
-**Proposed** · 2026-10-31 · P2-09 · follows D-034
+Accepted by D-143 · 2026-10-31 · P2-09 · follows D-034
 3 JP per week, 5 topics per semester (54/54 JP, 54/42 in grade 6), and one fokus per week of 3 JP.
 Reason: same allocation as PAI.
 
 ### D-142 — KBC fields are optional and pre-filled
 Accepted · 2026-11-01 · refines D-126
 *Tema KBC* and *Materi Insersi* in the MI RPM wizard are optional. The AI pre-fills a suggestion from the CP and the material: one or more Panca Cinta themes plus the values to insert. The teacher may change or clear both fields, and an RPM can be generated without them.
+Reason: owner's decision.
+
+### D-143 — Monitoring and religion TP/ATP decisions accepted
+Accepted · 2026-11-01 · accepts D-130…D-141
+The owner accepted the P2-08 monitoring design (D-130…D-138) and the P2-09 religion TP/ATP data decisions (D-139…D-141) as written.
+Reason: owner's decision.
+
+### D-144 — Healthchecks.io free plan, one recipient; e-Rapor format later
+Accepted · 2026-11-01
+(1) Monitoring uses the free Healthchecks.io Hobbyist plan. Alerts go to the owner only, with no second recipient. (2) The e-Rapor import format is deferred. For now, report-card data is exported in SIGRAK's own Excel layout. The owner will design a dedicated e-Rapor export later.
 Reason: owner's decision.

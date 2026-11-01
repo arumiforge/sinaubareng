@@ -12,7 +12,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Open decisions blocking work
 
-- D-130…D-141 (P2-08 monitoring, P2-09 religion TP/ATP) are **Proposed** and need the owner's review.
+- None.
 
 ## Phases
 
@@ -51,7 +51,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/final/server-setup.md` |
 | P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/final/coding-standards.md` |
 | P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/final/export-localization.md` |
-| P2-08 | Server monitoring and alerts | review | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
+| P2-08 | Server monitoring and alerts | done | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
 | P2-09 | TP and ATP for five SD religion subjects | review | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
 
 ### Phase 3 — final docs · in-progress
@@ -66,6 +66,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-11-01 — D-143/D-144: D-130…D-141 accepted; Healthchecks.io free plan, owner as the only recipient; e-Rapor export deferred (own Excel layout for now). After P3-01: tick the e-Rapor question in docs/final/data-model.md.
 - 2026-11-01 — D-142: the KBC fields are optional and AI pre-filled. The print font question is closed by D-125. The final-doc text rides along in P3-01 part 2.
 - 2026-11-01 — P2-08 (#32) and P2-09 (#34) merged; decisions D-128…D-141. D-128 is the daily AI counter (from #30). After P3-01: add the backup heartbeat to server-setup §12 (D-136), and link the TP/ATP file from religious-education and data-model.
 - 2026-10-31 — D-127 supersedes D-115: the MI CP shows the printed text again, and the 9 rows with possible source errors carry `review_notes[]`.
