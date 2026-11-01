@@ -642,3 +642,78 @@ Reason: owner's decision.
 Accepted · 2026-10-31 · supersedes D-115 · P2-02
 The MI CP outcome text and `arabic_passages` show the decree as printed again, including خَالِيْ, كَمْ السَّاعَةُ, the repeated "berupa kritik sosial", and madarasah, peyelidikan, kongkrit. Each such row carries `review_notes[]` (9 rows) for the reviewers. The notes are never shown to teachers or students. A correction needs the owner's approval. The Khonghucu "(孔)" decision in D-115 is unchanged.
 Reason: owner's decision.
+
+### D-128 — Daily AI usage counter per key
+Accepted · 2026-10-31 · P2-04 · builds on D-117, D-119
+Detailed 429 handling is not built yet. Instead, SIGRAK counts each key's AI requests per model per day in Redis, and the count resets at midnight Pacific (14:00 or 15:00 WIB). The limit comes from `config/ai.php` (20 per day for the default model).
+- *Kunci AI Saya* and the wizard show what is left today and warn early: use another key (D-023) or wait for the reset.
+- A key at its limit is skipped until the reset. Backup keys come last.
+- The counter counts requests, because one RPM can take several calls. The UI shows an estimate ("sekitar N RPM lagi hari ini").
+- Any 429 that still arrives gets a 60 s cooldown. Reading Google's quota id waits until later.
+Reason: owner — a simple early alarm for teachers.
+
+### D-129 — Alert channels and recipient
+Accepted · 2026-10-31 · P2-08
+Server alerts go by Telegram and email to the owner only. Urgent alerts may be sent at night; minor alerts go by email only.
+Reason: owner's decision.
+
+### D-130 — Healthchecks.io as the main alerting service
+**Proposed** · 2026-10-31 · P2-08
+Healthchecks.io (free Hobbyist) works as a push-based dead man's switch, which suits a server without a public IP. 13 checks: urgent ones go to Telegram + email, minor ones to email only. Channel by severity replaces quiet hours.
+Reason: needs only outbound HTTPS (D-088).
+
+### D-131 — One health script, run by cron
+**Proposed** · 2026-10-31 · P2-08
+`/usr/local/sbin/sigrak-health` runs every minute, every 15 minutes, and daily. A check must fail twice in a row before it reports. No monitoring agent (Netdata, Prometheus) on the VPS for now.
+Reason: small footprint on one VPS.
+
+### D-132 — External uptime checks
+**Proposed** · 2026-10-31 · P2-08
+UptimeRobot (free) runs keyword checks of `app.` and `ujian.` `/up` and alerts by email.
+Reason: catches outages the server cannot report itself.
+
+### D-133 — Cloudflare tunnel notifications
+**Proposed** · 2026-10-31 · P2-08
+Cloudflare Tunnel Health and Tunnel Creation/Deletion notifications go out by email.
+Reason: first signal when the tunnel drops (D-088).
+
+### D-134 — Laravel `/up` route enabled
+**Proposed** · 2026-10-31 · P2-08 · exception to D-010
+`/up` is the only page reachable without login, and it shows no data.
+Reason: external checks need one public endpoint.
+
+### D-135 — Monitoring thresholds
+**Proposed** · 2026-10-31 · P2-08
+- Urgent: disk ≥ 90 %, RAM available < 1.5 GB, an OOM kill, or Redis ≥ 90 % of `maxmemory`.
+- Minor: disk ≥ 80 %, swap ≥ 50 %, load15 ≥ 8, MySQL connections ≥ 160, Redis ≥ 70 %, ≥ 5 failed jobs in 15 min, or pending security updates or a required reboot.
+Reason: sized for 8 vCPU / 16 GB (D-087).
+
+### D-136 — Backup heartbeat
+**Proposed** · 2026-10-31 · P2-08
+The backup script pings `backup/start`, then `backup` on success or `backup/fail` on error, so a missed backup alerts. The change lands in `server-setup.md` section 12.
+Reason: a silent backup failure is the worst case.
+
+### D-137 — App-side monitoring for Phase 3
+**Proposed** · 2026-10-31 · P2-08
+Horizon long-wait mail notifications (`waits`: `ai` 600 s, `exports` 120 s, `default` 60 s) and a scheduler heartbeat with `pingOnSuccess`.
+Reason: queue and scheduler stalls are invisible from outside.
+
+### D-138 — Staging alerts by email only
+**Proposed** · 2026-10-31 · P2-08
+Staging has one combined check that alerts by email only.
+Reason: staging must not page anyone at night.
+
+### D-139 — Curriculum version for SD religion TP/ATP
+**Proposed** · 2026-10-31 · P2-09
+New curriculum version `TPATP-PABP-SD-2026-R1` holds the TP/ATP for the five non-Islam SD religion subjects, with subject codes PAKR, PAKT, PAH, PAB, PAKH. It stays `draft` until Tim Validasi SIGRAK reviews it (D-113).
+Reason: PAI stays in KM-SD-2026-R2.
+
+### D-140 — Religion TP/ATP in the data-model shape
+**Proposed** · 2026-10-31 · P2-09
+The data is stored in the data model's English-keyed shape (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not in the EDUNEXA row shape. The importer accepts both.
+Reason: matches the target schema directly.
+
+### D-141 — Religion allocation follows PAI
+**Proposed** · 2026-10-31 · P2-09 · follows D-034
+3 JP per week, 5 topics per semester (54/54 JP, 54/42 in grade 6), and one fokus per week of 3 JP.
+Reason: same allocation as PAI.
