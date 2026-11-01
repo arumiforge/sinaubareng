@@ -811,3 +811,8 @@ Reason: owner's decision.
 Accepted · 2026-11-01 · exception to D-158
 A teacher may try Game kelas (Quiz Battle, Tayangkan, Unduh game) for 7 days, once per teacher, even when the school has not switched the add-on on. Every other add-on needs the school. After the 2-week trial, an unpaid teacher can still only view and download (D-157).
 Reason: owner's decision; lets teachers see games in class before asking the school to buy the add-on.
+
+### D-160 — Teacher trial is 1 week
+Accepted · 2026-11-01 · supersedes the trial length in D-157
+The teacher trial lasts 1 week (7 days) with every feature, not 2 weeks. The Game kelas trial (D-159) stays 7 days and can never be repeated.
+Reason: owner's decision.

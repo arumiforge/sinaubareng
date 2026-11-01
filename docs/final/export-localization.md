@@ -237,7 +237,7 @@ Common rules for all formats:
 - **XP-10** **Page numbers** use Gotenberg's footer HTML, with `<span class="pageNumber">` and `<span class="totalPages">` placed in `export.print.page_of` ("Halaman :page dari :total"). Exam cards and single-page documents have no page numbers.
 - **XP-11** **Signers** (names, NIP, titles) come from print settings as text, with a place and a date in the long form ("Kudus, 31 Oktober 2026").
 - **XP-12** JavaScript content (KaTeX, ApexCharts, three.js) must finish before capture. The view sets a ready flag that the PDF call waits for, and a view with no JS needs no wait.
-- **XP-13** **No watermark.** There is no free plan any more, only a 2-week trial with every feature (D-157), so exports never carry a watermark.
+- **XP-13** **No watermark.** There is no free plan any more, only a 1-week trial with every feature (D-157, D-160), so exports never carry a watermark.
 - **XP-14** Tables use `page-break-inside: avoid` on rows and `thead { display: table-header-group }`, so headings repeat on each page.
 
 ### 4.2 DOCX (PhpWord)

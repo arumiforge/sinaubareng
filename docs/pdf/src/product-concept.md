@@ -199,7 +199,7 @@ Paket dibayar per tahun ajaran (Juli–Juni) **hanya oleh guru dan sekolah**. Si
 
 | Paket | Untuk | Isi | Harga per tahun | Pembayar |
 |---|---|---|---|---|
-| Uji coba | Satu guru | Semua fitur selama 2 minggu. Setelah itu akun hanya bisa melihat dan mengunduh datanya sampai paket dibeli | Gratis | — |
+| Uji coba | Satu guru | Semua fitur selama 1 minggu (D-160). Setelah itu akun hanya bisa melihat dan mengunduh datanya sampai paket dibeli | Gratis | — |
 | Sigrak Guru | Satu guru | Semua fitur guru | Rp60.000, atau Rp50.000 bila sekolah guru itu berlangganan Sigrak Sekolah | Guru |
 | Sigrak Sekolah | Satu sekolah | 2 akun, kepala sekolah dan operator, dengan portalnya: validasi, pengaturan cetak sekolah, undangan, data sekolah. Guru membeli Sigrak Guru sendiri | Rp100.000 | Sekolah (dana non-BOS) |
 | Fitur tambahan | Satu sekolah yang berlangganan Sigrak Sekolah | Satu fitur tambahan, diaktifkan sekolah untuk semua akunnya (D-158) | Rp50.000 per fitur | Sekolah (dana non-BOS) |
@@ -302,7 +302,7 @@ v1 berisi setiap baris di atas yang tidak bertanda *Hapus* atau *Nanti*. Itu ril
 
 ## Pertanyaan terbuka
 
-- [x] Harga: uji coba 2 minggu, Sigrak Guru Rp60.000, Sigrak Sekolah Rp100.000, fitur tambahan Rp50.000 per fitur (D-157, D-158).
+- [x] Harga: uji coba 1 minggu (D-160), Sigrak Guru Rp60.000, Sigrak Sekolah Rp100.000, fitur tambahan Rp50.000 per fitur (D-157, D-158).
 - [ ] Nama akhir: periksa "Sigrak" (dan cadangan "Kapur") di [PDKI](https://pdki-indonesia.dgip.go.id) kelas 9, 41, 42, lalu daftarkan domain .id dan .com bersamaan. Risiko nama lebih tinggi sekarang karena pasarnya nasional.
 - [ ] Logo: brief untuk desainer (berwarna, satu warna, negatif, minimal 16 px).
 - [x] Modul kokurikuler masuk v1 sebagai varian templat RPM (D-014).

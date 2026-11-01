@@ -195,7 +195,7 @@ Plans are paid per academic year (July–June) by **teachers and schools only**.
 
 | Plan | For | Contents | Price per year | Payer |
 |---|---|---|---|---|
-| Uji coba | One teacher | Every feature for 2 weeks. After that, the account can only view and download its data until a plan is bought | Free | — |
+| Uji coba | One teacher | Every feature for 1 week (D-160). After that, the account can only view and download its data until a plan is bought | Free | — |
 | Sigrak Guru | One teacher | All teacher features | Rp60.000, or Rp50.000 when the teacher's school has Sigrak Sekolah | Teacher |
 | Sigrak Sekolah | One school | 2 accounts, principal and operator, with their portals: validation, school print settings, invitations, school data. Teachers buy Sigrak Guru themselves | Rp100.000 | School (non-BOS funds) |
 | Add-on feature | One school with Sigrak Sekolah | One extra feature, switched on by the school for all its accounts (D-158) | Rp50.000 each | School (non-BOS funds) |
@@ -298,7 +298,7 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 
 ## Open questions
 
-- [x] Prices: 2-week trial, Sigrak Guru Rp60.000, Sigrak Sekolah Rp100.000, add-ons Rp50.000 each (D-157, D-158).
+- [x] Prices: 1-week trial (D-160), Sigrak Guru Rp60.000, Sigrak Sekolah Rp100.000, add-ons Rp50.000 each (D-157, D-158).
 - [ ] Final name: check "Sigrak" (and backup "Kapur") in [PDKI](https://pdki-indonesia.dgip.go.id) classes 9, 41, 42, then register the .id and .com domains together. The name risk is higher now that the market is nationwide.
 - [ ] Logo: brief a designer (colour, single-colour, negative, minimum 16 px).
 - [x] The kokurikuler module ships in v1 as an RPM template variant (D-014).

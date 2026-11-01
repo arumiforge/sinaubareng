@@ -239,7 +239,7 @@ Aturan umum untuk semua format:
 - **XP-10** **Nomor halaman** memakai HTML footer Gotenberg, dengan `<span class="pageNumber">` dan `<span class="totalPages">` yang diletakkan di `export.print.page_of` ("Halaman :page dari :total"). Kartu ujian dan dokumen satu halaman tidak diberi nomor halaman.
 - **XP-11** **Penanda tangan** (nama, NIP, jabatan) berasal dari pengaturan cetak sebagai teks, dengan tempat dan tanggal dalam bentuk panjang ("Kudus, 31 Oktober 2026").
 - **XP-12** Konten JavaScript (KaTeX, ApexCharts, three.js) harus selesai sebelum ditangkap. View menyetel penanda siap yang ditunggu oleh pemanggil PDF, dan view tanpa JS tidak perlu menunggu.
-- **XP-13** **Tanpa watermark.** Tidak ada lagi paket gratis, hanya uji coba 2 minggu dengan semua fitur (D-157), jadi ekspor tidak pernah memakai watermark.
+- **XP-13** **Tanpa watermark.** Tidak ada lagi paket gratis, hanya uji coba 1 minggu dengan semua fitur (D-157, D-160), jadi ekspor tidak pernah memakai watermark.
 - **XP-14** Tabel memakai `page-break-inside: avoid` pada baris dan `thead { display: table-header-group }`, sehingga judul kolom berulang di setiap halaman.
 
 ### 4.2 DOCX (PhpWord)
