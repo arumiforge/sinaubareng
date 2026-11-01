@@ -1,7 +1,7 @@
 # P3-02 — PDF build script
 
 - **Phase:** P3
-- **Status:** review
+- **Status:** done
 - **Owner:** p3/p3-02-pdf-build-script
 - **Depends on:** P3-01
 - **Can run in parallel with:** —
