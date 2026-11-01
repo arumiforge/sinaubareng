@@ -55,11 +55,11 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-09 | TP and ATP for five SD religion subjects | review | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
 | P2-10 | TP and ATP for five MI Kemenag subjects | review | p2/p2-01-verify-religion-cp | P2-02, P2-09 | `docs/data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json` |
 
-### Phase 3 — final docs · in-progress
+### Phase 3 — final docs · done
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
-| P3-01 | Move approved drafts to final + Indonesian PDFs | review | p3/p3-01-final-docs-pdf | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
+| P3-01 | Move approved drafts to final + Indonesian PDFs | done | p3/p3-01-final-docs-pdf | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
 
 Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
@@ -67,6 +67,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-11-01 — P3-01 done (#35, #42): ten final docs + Indonesian PDFs. The backup heartbeat (D-136) is added to final server-setup §12, and both TP/ATP files are linked from final religious-education and data-model. `server-setup.pdf` predates the heartbeat; rebuild it in the next PDF pass. Follow-up candidate: a committed PDF build script.
 - 2026-11-01 — P2-10 merged (#40): MI Kemenag TP/ATP draft data, decisions D-145/D-146 (Proposed). After P3-01: link both TP/ATP files from final religious-education and data-model.
 - 2026-11-01 — D-143/D-144: D-130…D-141 accepted; Healthchecks.io free plan, owner as the only recipient; e-Rapor export deferred (own Excel layout for now). After P3-01: tick the e-Rapor question in docs/final/data-model.md.
 - 2026-11-01 — D-142: the KBC fields are optional and AI pre-filled. The print font question is closed by D-125. The final-doc text rides along in P3-01 part 2.

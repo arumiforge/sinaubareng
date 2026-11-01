@@ -768,6 +768,10 @@ sudo tee /usr/local/sbin/sigrak-backup > /dev/null <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 umask 077
+. /etc/sigrak/monitoring.env
+HC="https://hc-ping.com/${HC_PING_KEY}"
+curl -fsS -m 10 --retry 2 -o /dev/null "$HC/backup/start"
+trap 'curl -fsS -m 10 --retry 2 -o /dev/null --data-raw "backup failed at line $LINENO" "$HC/backup/fail"' ERR
 STAMP="$(date +%Y%m%d-%H%M)"
 DIR=/var/backups/sigrak
 
@@ -782,12 +786,15 @@ tar -tzf "$DIR/storage-$STAMP.tar.gz" > /dev/null
 rclone copy "$DIR" offsite-crypt:daily --include "*-$STAMP.*"
 rclone delete offsite-crypt:daily --min-age 30d
 find "$DIR" -type f -mtime +14 -delete
+curl -fsS -m 10 --retry 2 -o /dev/null "$HC/backup"
 echo "backup $STAMP ok"
 EOF
 sudo chmod 700 /usr/local/sbin/sigrak-backup
 echo '30 18 * * * root /usr/local/sbin/sigrak-backup >> /var/log/sigrak/backup.log 2>&1' | sudo tee /etc/cron.d/sigrak-backup
 sudo /usr/local/sbin/sigrak-backup    # first run by hand
 ```
+
+The script pings Healthchecks.io at start, on success, and on any failed step, so a failed or missed backup alerts (D-136). `/etc/sigrak/monitoring.env` comes from [`server-monitoring.md`](../drafts/server-monitoring.md).
 
 **Restore test — monthly, and after any change to this section.** A backup counts only after it has been restored once. On the server, into a throwaway database:
 

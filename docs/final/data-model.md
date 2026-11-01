@@ -83,7 +83,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP for MI's Kemenag subjects, Fase A–C | [`docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) (structured into element rows in P2-02, D-039) |
 | `ALOKASI-MI-KMA-1503-2025` | MI allocation: JP per subject and grade (intrakurikuler, kokurikuler), required vs elective, muatan lokal range | [`docs/data/curriculum/mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) (verified against KMA 1503/2025 Lampiran II, Tabel 1–5, pp. 28–31) |
 
-Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are built by the team (Phase 2 data tasks) and imported in the KM-SD-2026-R2 shape. CP-only versions are already enough for the RPM wizard to show CP and elements.
+Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are drafted in [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (`TPATP-PABP-SD-2026-R1`) and [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (`TPATP-PAI-BA-MI-2026-R1`), in this data model's table shape (D-140), pending Tim Validasi SIGRAK review. CP-only versions are already enough for the RPM wizard to show CP and elements.
 
 **Import.** `php artisan curriculum:import <file>` loads `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json`. It is idempotent by `code`, keeps `Legacy_ID` aliases in `legacy_codes`, and reports any data mismatches. Only curriculum data is imported from EDUNEXA (D-020).
 
