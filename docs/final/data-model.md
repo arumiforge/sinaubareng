@@ -1,4 +1,4 @@
-# Data Model (draft)
+# Data Model
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-05
