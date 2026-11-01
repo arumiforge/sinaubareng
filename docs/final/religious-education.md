@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-07
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 - **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
 
 ## Purpose
@@ -13,7 +13,7 @@ This document defines how SIGRAK covers religious education in SD (six religions
 
 | Source | Covers | Form | Used for |
 |---|---|---|---|
-| **Keputusan Kepala BKPDM No. 020 Tahun 2026** (11 June 2026), amending Kepka BSKAP 046/H/KR/2025 | Lampiran I: CP Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu, Fase A–F. Lampiran II: special education (SLB) versions | Scanned copy, no text layer | SD religion CP (D-034). Lampiran II is out of scope |
+| **Keputusan Kepala BKPDM No. 020 Tahun 2026** (11 June 2026), amending Kepka BSKAP 046/H/KR/2025 | Lampiran I: CP Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu, Fase A–F. Lampiran II: special education (SLB) versions | Scanned copy, no text layer | SD religion CP (D-034). Lampiran II: special-education CP, in scope for inclusive schools (D-155), not yet transcribed |
 | **SK Dirjen Pendis No. 9941 Tahun 2025** (28 November 2025) | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam, Bahasa Arab at MI/MTs/MA, plus MAPK subjects and RA | PDF with text layer, plus the Dirjen's cover letter B-606 (1 December 2025, BSrE e-signed) and the Kanwil DKI Jakarta cover letter (16 December 2025) | MI CP (D-035) |
 | **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II, BAB III B, Tabel 1–5, pp. 28–31) | Official decree (22 September 2025), scanned copy supplied by the owner | MI allocation (D-038), data in [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) |
 | **SK Dirjen Pendis No. 6077 Tahun 2025** (22 July 2025) | Panduan Kurikulum Berbasis Cinta (KBC) for all madrasah: five Panca Cinta themes, example lessons, example CP-to-theme mapping | PDF with text layer, supplied by the owner | MI lesson planning, see [MI: Kurikulum Berbasis Cinta](#mi-kurikulum-berbasis-cinta-kbc) |
@@ -93,7 +93,6 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 ## Out of scope for v1
 
 - **Pendidikan Kepercayaan terhadap Tuhan YME** (D-037). It is not in BKPDM 020/2026, and can be added later as its own subject with its own CP source.
-- **Special-education CP** (Lampiran II of BKPDM 020/2026), unless a target school needs it (see Open questions).
 
 ## Data work (Phase 2)
 
@@ -102,10 +101,11 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 3. **Build topics, TP, ATP, fokus, and JP** — draft done in P2-09: [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (D-139…D-141). For Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **Tim Validasi SIGRAK reviews and signs off each set** (D-113), and the dataset records "Tim Validasi SIGRAK" and the review date (D-112). The same applies to the MI subjects and to the CP data.
 4. ~~**Structure the MI CP**~~ Done in P2-02 (element rows, Arabic retyped).
 5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects — draft done in P2-10: [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (D-145, D-146). Both sets wait for Tim Validasi SIGRAK review.
+6. **Transcribe the special-education CP** (Lampiran II of BKPDM 020/2026) for the six religions, in the same shape as the SD religion CP, for inclusive schools (D-155). The decree is a scanned copy without a text layer, so the text is typed and then checked by Tim Validasi SIGRAK (D-113).
 
 ## Open questions
 
 - [ ] An official-channel copy of SK 9941/2025 (low priority: two copies from different sources have identical text).
 - [x] KBC in the RPM template for MI: in v1, for every MI subject, not for SD (D-126); optional, AI pre-filled (D-142).
 - [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
-- [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?
+- [x] Inclusive schools need the special-education CP (Lampiran II of BKPDM 020/2026); it is in scope and waits for transcription (D-155).

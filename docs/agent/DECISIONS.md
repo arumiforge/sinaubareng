@@ -762,3 +762,33 @@ Reason: owner's requirement — users read the address bar, so it should be in t
 Accepted · 2026-11-01 · refines XP-25 in `docs/final/export-localization.md`
 An import accepts exactly what its export writes. Indonesian headings are matched without regard to letter case, extra spaces, a trailing `*` or `:`, or column order. Old heading labels stay valid forever as aliases (`export.column_aliases.*`). Indonesian cell values are read back: enum labels ("Hadir" → `present`), "Ya"/"Tidak", `dd/mm/yyyy` dates, and comma decimals. The database stays English. Files for other systems (e-Rapor) still follow that system's spec (XP-24).
 Reason: owner's requirement — teachers only ever see friendly Indonesian headings, and a filled template must keep importing after a label changes.
+
+### D-151 — "Templat" in UI copy
+Accepted · 2026-11-01
+UI copy uses the KBBI spelling "Templat", never "template". Code identifiers stay English (`template_key`, `templates.php`).
+Reason: owner's decision; consistent with the other Indonesian terms ("Unduh", "Kunci AI").
+
+### D-152 — Kabar notice when a generation finishes
+Accepted · 2026-11-01 · accepts the proposal in `ai-provider-engine.md`
+When an AI generation finishes, the teacher gets a database notification in *Kabar*, in addition to the live status on the generation page.
+Reason: owner's decision; teachers often leave the page before a long generation is done.
+
+### D-153 — Keep the last 5 document revisions
+Accepted · 2026-11-01 · replaces the proposed "last 10"
+`document_revisions` keeps the last 5 revisions per document; the daily prune job removes older ones.
+Reason: owner's decision.
+
+### D-154 — Game runtime palette by a designer
+Accepted · 2026-11-01
+The game runtime palette is a designer task, briefed together with the logo. Until then, games use the design-system tokens.
+Reason: owner's decision.
+
+### D-155 — Special-education religion CP in scope
+Accepted · 2026-11-01 · changes the v1 scope in `religious-education.md`
+Inclusive schools need the special-education CP (Lampiran II of BKPDM 020/2026). It is transcribed for the six religions in the same shape as the SD religion CP and reviewed by Tim Validasi SIGRAK (D-113).
+Reason: owner's decision; target schools include inclusive schools.
+
+### D-156 — Indonesian translations of final docs are committed
+Accepted · 2026-11-01 · changes the P3-02 docs pipeline
+The Indonesian translation of each final doc lives in `docs/pdf/src/<name>.md` and is committed. When a final doc changes, only the changed lines are translated again, then the PDF is rebuilt. `docs/.build/` keeps only generated HTML and stays git-ignored.
+Reason: owner's decision; re-translating a whole document for a one-line change was slow.

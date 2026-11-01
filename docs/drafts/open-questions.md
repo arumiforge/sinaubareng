@@ -2,7 +2,7 @@
 
 - **Status:** draft (owner review)
 - **Task:** P1-08
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 
 ## Purpose
 
@@ -14,7 +14,7 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| Prices for the four tiers (paid from non-BOS funds, D-025) | [product-concept.md](../final/product-concept.md#open-questions) | owner |
+| Prices for the four tiers (paid from non-BOS funds, D-025). A proposal is being drafted in [pricing-proposal.md](pricing-proposal.md) | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 | Present the short version to principals and supervisors, and record their objections | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 
 ## Brand
@@ -28,7 +28,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| Does the kokurikuler module ship in v1 as an RPM template variant? | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 | Test the five-tab menu with 5 class teachers and 2 subject teachers on a click prototype (no real data) | [product-concept.md](../final/product-concept.md#open-questions) | team (owner recruits the teachers) |
 | v1 release slices: confirm the proposed order when Phase 2 is planned | [product-concept.md](../final/product-concept.md#v1-scope) | owner + team |
 
@@ -37,35 +36,24 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 | Question | Source | Who answers |
 |---|---|---|
 | Exact step split for the RPM template, tuned against real output sizes | [content-engine.md](../final/content-engine.md#open-questions) | team |
-| Laravel Excel: confirm Laravel 13 support when installing | [content-engine.md](../final/content-engine.md#export) | team |
 
 ## AI
 
 | Question | Source | Who answers |
 |---|---|---|
-| Which 429 detail fields separate per-minute from per-day limits (check real responses) | [ai-provider-engine.md](../final/ai-provider-engine.md#open-questions) | team |
-| Completion notice in *Kabar* when a generation finishes is *proposed* | [ai-provider-engine.md](../final/ai-provider-engine.md#queues-and-progress) | owner |
+| Which 429 detail fields separate per-minute from per-day limits (check real responses). Optional: v1 uses the daily counter instead (D-128) | [ai-provider-engine.md](../final/ai-provider-engine.md#open-questions) | team |
 
 ## Data model
 
 | Question | Source | Who answers |
 |---|---|---|
 | Report card export format required by e-Rapor (columns and file type) | [data-model.md](../final/data-model.md#open-questions) | owner (later, D-144) |
-| Retention for `document_revisions` (proposed: last 10) | [data-model.md](../final/data-model.md#open-questions) | owner |
-
-## Design
-
-| Question | Source | Who answers |
-|---|---|---|
-| Use "Templat" (KBBI) or keep the familiar "template" in UI copy? | [design-system.md](../final/design-system.md#open-questions) | owner |
-| Game runtime palette: designer task, or derived from the brand colour? | [design-system.md](../final/design-system.md#open-questions) | owner |
 
 ## Religion and curriculum
 
 | Question | Source | Who answers |
 |---|---|---|
 | An official-channel copy of SK Dirjen Pendis 9941/2025. Low priority: a second copy from another source (2026-10-31) has identical text, but neither comes from kemenag.go.id | [religious-education.md](../final/religious-education.md#open-questions) | owner + team |
-| Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)? | [religious-education.md](../final/religious-education.md#open-questions) | owner |
 | SD religion JP: confirm that the national structure has one "Pendidikan Agama dan Budi Pekerti" row (3 JP per week) for every religion | [religious-education.md](../final/religious-education.md#sd-six-religion-subjects-d-034) | team |
 | Known curriculum data issues: Matematika grade 4 semester 2 (80 of 90 JP), Keterampilan Tata Boga target, TP↔fokus links | [data-model.md](../final/data-model.md#curriculum) | team, with the curriculum owner |
 
@@ -77,9 +65,6 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 |---|---|---|
 | TKA 2027 schedule for SD/MI, once published, to time the TKA release | [product-concept.md](../final/product-concept.md#open-questions) | team (watch for the announcement) |
 
-## Phase 2 additions (2026-10-31)
+## Answered on 2026-11-01
 
-Collected at integration from the Phase 2 outputs. Owner answers already given are recorded as Accepted decisions (D-069…D-076, D-084…D-096, D-109…D-121).
-
-| Question | Source | Who answers |
-|---|---|---|
+Kokurikuler variant in v1 (already D-014), Laravel Excel 4.x supports Laravel 13 (checked in `server-setup.md`), "Templat" in UI copy (D-151), *Kabar* notice when a generation finishes (D-152), keep the last 5 document revisions (D-153), game palette by a designer (D-154), special-education religion CP in scope (D-155). Phase 2 left no open questions.

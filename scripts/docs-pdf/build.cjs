@@ -1,4 +1,4 @@
-// Builds docs/pdf/<name>.pdf from the Indonesian translation docs/.build/<name>.md.
+// Builds docs/pdf/<name>.pdf from the Indonesian translation docs/pdf/src/<name>.md (HTML goes to docs/.build/).
 // Usage: node scripts/docs-pdf/build.cjs [name ...]   (no names = every doc in docs/final/)
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
@@ -7,6 +7,7 @@ const { chromium } = require('playwright');
 const { checkHtml } = require('./check.cjs');
 
 const root = path.resolve(__dirname, '../..');
+const srcDir = path.join(root, 'docs/pdf/src');
 const buildDir = path.join(root, 'docs/.build');
 const pdfDir = path.join(root, 'docs/pdf');
 const css = path.join(__dirname, 'print.css');
@@ -21,13 +22,14 @@ function names() {
 }
 
 (async () => {
+  fs.mkdirSync(buildDir, { recursive: true });
   const browser = await chromium.launch();
   let failed = false;
   try {
     for (const name of names()) {
-      const md = path.join(buildDir, `${name}.md`);
+      const md = path.join(srcDir, `${name}.md`);
       if (!fs.existsSync(md)) {
-        console.error(`missing translation: docs/.build/${name}.md`);
+        console.error(`missing translation: docs/pdf/src/${name}.md`);
         failed = true;
         continue;
       }

@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-04
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-11-01
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
 - **Facts checked on 2026-10-30** against Google's [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [troubleshooting](https://ai.google.dev/gemini-api/docs/troubleshooting), [API errors](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), and [Google APIs Terms](https://developers.google.com/terms) pages, and Laravel's [AI SDK docs](https://laravel.com/docs/ai-sdk).
 
@@ -194,7 +194,7 @@ Gemini's `generateContent` has no idempotency key. A call that times out on our 
 - Queues: `ai` (generation), `exports` (PDF/DOCX/HTML), `default`. Horizon gives `ai` its own supervisor, so long AI calls never block exports or mail.
 - **One job class per content type** (D-024): `GenerateRpm`, `GenerateBankSoal`, `GenerateLkpd`, `GenerateQuizBattle`, `GenerateTkaPackage`, plus `ReviseSection`. Each declares its own step plan, timeouts, and progress labels, and delegates the mechanics to the shared `GenerationRunner`. A job runs one pending step, then re-dispatches itself until the generation is done, so each run stays short and resumable.
 - Generation status: `queued → running (step i of n) → succeeded | failed | cancelled`.
-- The UI polls every 2–3 s through an Inertia partial reload while the page is open, and a database notification arrives in *Kabar* when the generation finishes (*proposed*). WebSockets (Reverb) come later, only if polling proves too heavy.
+- The UI polls every 2–3 s through an Inertia partial reload while the page is open, and a database notification arrives in *Kabar* when the generation finishes (D-152). WebSockets (Reverb) come later, only if polling proves too heavy.
 
 ## Privacy rules
 

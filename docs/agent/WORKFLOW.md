@@ -31,7 +31,7 @@ How phased, parallel work is done so agents stay consistent, save tokens, and ca
 | Final | `docs/final/` | English | Approved by owner; moved here from drafts (`git mv`). |
 | PDF | `docs/pdf/` | Indonesian | Generated from a final doc for developers to read. Same file name, `.pdf`. |
 
-PDF generation: translate the final markdown into Indonesian in `docs/.build/` (git-ignored, never committed), then render to `docs/pdf/` with `node scripts/docs-pdf/build.cjs <name>` (see [`scripts/docs-pdf/README.md`](../../scripts/docs-pdf/README.md)). Keep code blocks, identifiers, commands, and file paths unchanged; translate prose, headings, and table text. Regenerate the PDF whenever its final doc changes.
+PDF generation: translate the final markdown into Indonesian in `docs/pdf/src/<name>.md` (committed, D-156), then render to `docs/pdf/` with `node scripts/docs-pdf/build.cjs <name>` (see [`scripts/docs-pdf/README.md`](../../scripts/docs-pdf/README.md)). Keep code blocks, identifiers, commands, and file paths unchanged; translate prose, headings, and table text. Regenerate the PDF whenever its final doc changes: update only the translated lines that changed, in the same commit as the final doc.
 
 ## Saving tokens
 

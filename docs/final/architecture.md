@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-04
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 - **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037)
 
 ## Purpose
@@ -313,7 +313,7 @@ Notes:
 | Job | Frequency | Source |
 |---|---|---|
 | Stuck-step sweeper: resume generations whose step is `running` past timeout + margin, log the attempt as `unknown` | every minute | AI draft, duplicates rule 7 |
-| Prune `document_revisions` beyond the last 10 per document | daily | data model |
+| Prune `document_revisions` beyond the last 5 per document (D-153) | daily | data model |
 | Prune `ai_usage_logs` detail rows past retention, keep monthly aggregates | daily | D-118 (1 month) |
 | Purge `exam_participants.password` 30 days after the session closes | daily | data model |
 | Close exam sessions past `closes_at`, force-submit open attempts | every minute | data model, content engine |

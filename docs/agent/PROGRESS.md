@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-150. No open PRs, no running tasks. Only `main` exists on the remote (D-148). The next phase is not planned yet; the owner picks it.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-156. No open PRs, no running tasks. Only `main` exists on the remote (D-148). The next phase is not planned yet; the owner picks it.
 
 ## Open decisions blocking work
 
@@ -75,7 +75,9 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 ## Remaining work (not yet tasks)
 
 - **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
-- **Docs:** none. Every doc in `docs/final/` has a matching Indonesian PDF in `docs/pdf/`.
+- **Docs:** every doc in `docs/final/` has a matching Indonesian PDF. Translations live in `docs/pdf/src/` (D-156) for every doc except `product-concept`, whose next change (pricing, and ticking the kokurikuler question answered by D-014) needs a full translation first.
+- **Data:** transcribe the special-education religion CP (Lampiran II of BKPDM 020/2026) for the six religions (D-155).
+- **Owner:** decide the tier prices; a proposal is in `docs/drafts/pricing-proposal.md`.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
 ## Handoff notes

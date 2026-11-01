@@ -4,8 +4,8 @@ Builds the Indonesian developer PDFs in `docs/pdf/` from the final docs, as desc
 
 ## How it works
 
-1. A person or agent translates `docs/final/<name>.md` into Indonesian and saves it as `docs/.build/<name>.md`. This folder is git-ignored, so translations are never committed.
-2. `build.cjs` turns each translation into one self-contained HTML file with Pandoc. The HTML embeds `print.css` and the Arabic font.
+1. A person or agent translates `docs/final/<name>.md` into Indonesian and saves it as `docs/pdf/src/<name>.md`. Translations are committed (D-156). When a final doc changes, translate only the changed lines (`git diff docs/final/<name>.md` shows them) and rebuild.
+2. `build.cjs` turns each translation into one self-contained HTML file with Pandoc, in the git-ignored `docs/.build/`. The HTML embeds `print.css` and the Arabic font.
 3. Headless Chromium (Playwright) prints that HTML to `docs/pdf/<name>.pdf`. The PDF is A4 and its footer reads "Halaman X dari Y".
 4. Before printing, the build checks that no table or code block is wider than the page. If one is, the build exits with an error.
 

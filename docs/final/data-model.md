@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-05
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-11-01
 - **Sources:** [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
 
 ## Purpose
@@ -115,7 +115,7 @@ Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI 
 | `generations` | `public_id`, `school_id`, `user_id`, `template_key`, `template_version`, `kind` ∈ {`create`,`section_revision`}, `document_id` nullable (set for revisions, or once saved), `client_token`, `specification` JSON, `status` ∈ {`queued`,`running`,`succeeded`,`failed`,`cancelled`}, `pinned_credential_id` FK SET NULL, `error_class` nullable, `started_at`, `finished_at` | Unique (`user_id`, `client_token`) blocks double submits. FK (`template_key`, `template_version`) → `template_versions` |
 | `generation_steps` | `generation_id` FK CASCADE, `step_key`, `position`, `status` ∈ {`pending`,`running`,`succeeded`,`failed`}, `attempts`, `output` JSON nullable (NULL until accepted) | Unique (`generation_id`, `step_key`). The output is written once, by compare-and-set on `status` |
 | `documents` | `public_id`, `school_id`, `owner_id` FK users, `template_key`, `template_version`, `title`, `grade`, `subject_id` nullable, `topic_id` nullable (TKA packages span many topics), `content` JSON, `status` ∈ {`draft`,`final`}, `source_generation_id` FK SET NULL | "Dokumen Saya". `content` is validated against the template's output schema plus merged data fields |
-| `document_revisions` | `document_id` FK CASCADE, `content` JSON, `reason` ∈ {`manual_save`,`ai_section_revision`}, `created_by` | Last 10 kept per document, older ones pruned |
+| `document_revisions` | `document_id` FK CASCADE, `content` JSON, `reason` ∈ {`manual_save`,`ai_section_revision`}, `created_by` | Last 5 kept per document, older ones pruned (D-153) |
 | `document_comments` | `document_id` FK CASCADE, `author_id`, `body`, `created_at` | Principal and supervisor comments (D-019) |
 | `document_exports` | `document_id` FK CASCADE, `format` ∈ {`pdf`,`docx`,`xlsx`,`html`}, `template_version`, `content_hash`, `path`, `status` | Cache. Rebuilt when `content_hash` or print settings change |
 | `template_feature_requests` | `user_id`, `template_key`, `body`, `status` ∈ {`new`,`planned`,`declined`,`done`} | "Usulkan fitur" (D-015) |
@@ -172,5 +172,5 @@ Access: teachers and the operator of the school manage sessions; the proctor run
 ## Open questions
 
 - [x] e-Rapor export: deferred; report-card data uses SIGRAK's own Excel layout for now, and the owner designs a dedicated e-Rapor export later (D-144).
-- [ ] Retention for `document_revisions` (proposed: last 10). `ai_usage_logs`: 1 month (D-118).
+- [x] Retention: `document_revisions` keeps the last 5 per document (D-153); `ai_usage_logs` 1 month (D-118).
 - [x] Supervisor `school_id` context: `supervisor_assignments` is enough (D-122, proposed).

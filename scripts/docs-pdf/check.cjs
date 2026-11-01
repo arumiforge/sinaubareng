@@ -1,5 +1,5 @@
 // Checks for the Indonesian PDFs. Used by build.cjs; can also run alone:
-// node scripts/docs-pdf/check.cjs [name ...]   reports leftover English prose in docs/.build/<name>.md
+// node scripts/docs-pdf/check.cjs [name ...]   reports leftover English prose in docs/pdf/src/<name>.md
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -34,8 +34,8 @@ if (require.main === module) {
     : fs.readdirSync(path.join(root, 'docs/final')).filter((f) => f.endsWith('.md')).map((f) => f.slice(0, -3));
   let found = 0;
   for (const name of list) {
-    const file = path.join(root, 'docs/.build', `${name}.md`);
-    if (!fs.existsSync(file)) { console.error(`missing translation: docs/.build/${name}.md`); found++; continue; }
+    const file = path.join(root, 'docs/pdf/src', `${name}.md`);
+    if (!fs.existsSync(file)) { console.error(`missing translation: docs/pdf/src/${name}.md`); found++; continue; }
     const lines = englishLines(fs.readFileSync(file, 'utf8'));
     found += lines.length;
     for (const line of lines) console.log(`${name}: ${line.slice(0, 120)}`);

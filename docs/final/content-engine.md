@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-03
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-11-01
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
 
 ## Purpose
@@ -135,7 +135,7 @@ Document saved: content JSON + template key + template version
 
 - The preview is a structured editor per section, never raw JSON. AI text is shown as plain text (Svelte escaping; never `{@html}` on AI output).
 - **"Perbaiki bagian ini"**: the teacher picks a section and an action (*sederhanakan*, *buat diferensiasi*, *sesuaikan untuk siswa berkebutuhan khusus*, *perpanjang*, *perpendek*). The template defines a section-level output schema for this. The result shows old and new side by side, and the teacher accepts or discards it.
-- Each AI revision or manual save keeps the previous content as a revision (last 10), so the teacher can undo.
+- Each AI revision or manual save keeps the previous content as a revision (last 5, D-153), so the teacher can undo.
 
 ## v1 templates
 

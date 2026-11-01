@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-11-01
 - **Sources:** [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
 
 ## Purpose
@@ -87,7 +87,7 @@ Rules:
 
 Games (Quiz Battle and later ones) are played by children on a projector or a phone. They get **their own style**, separate from the calm app shell:
 
-- Brighter colours, bigger type, and motion are allowed.
+- Brighter colours, bigger type, and motion are allowed. The palette comes from a designer, briefed together with the logo (D-154).
 - Still accessible: AA contrast for all text, no flashing above 3 Hz, a timer that is not conveyed by colour alone, and a sound toggle.
 - The runtime bundle carries its own CSS, so a downloaded game looks the same offline.
 
@@ -148,7 +148,7 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | Worksheet | LKPD | Official curriculum term |
 | Bank Soal (menu) | Bank Soal template under Buat; "Buat soal" shortcut in Asesmen | **Updated**: soal now live in the template gallery |
 | Rencana (menu) | Buat | **New** (D-021) |
-| Template | Templat | **New**. KBBI spelling |
+| Template | Templat | **New**. KBBI spelling, used in all UI copy (D-151) |
 | Game mode / Play | Tayangkan (present), Unduh game (file) | **New** (D-011) |
 | CBT / ujian online TKA | Simulasi TKA | **New** (D-026). Never "TKA" alone, so it is not confused with the official test |
 | Username/password ujian | Kartu login | **New**. Same name as in TKA |
@@ -187,5 +187,5 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 
 ## Open questions
 
-- [ ] Confirm "Templat" (KBBI) or keep the familiar "template" in UI copy.
-- [ ] Game runtime palette: designer task, or derived from the brand colour?
+- [x] UI copy uses "Templat" (KBBI), not "template" (D-151).
+- [x] Game runtime palette: a designer task, briefed together with the logo (D-154).
