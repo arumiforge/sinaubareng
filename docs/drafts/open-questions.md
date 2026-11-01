@@ -50,7 +50,7 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| Report card export format required by e-Rapor (columns and file type) | [data-model.md](../final/data-model.md#open-questions) | owner + team |
+| Report card export format required by e-Rapor (columns and file type) | [data-model.md](../final/data-model.md#open-questions) | owner (later, D-144) |
 | Retention for `document_revisions` (proposed: last 10) | [data-model.md](../final/data-model.md#open-questions) | owner |
 
 ## Design
