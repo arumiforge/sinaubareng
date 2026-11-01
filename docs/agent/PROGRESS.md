@@ -12,7 +12,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Open decisions blocking work
 
-- None.
+- D-130…D-141 (P2-08 monitoring, P2-09 religion TP/ATP) are **Proposed** and need the owner's review.
 
 ## Phases
 
@@ -51,7 +51,8 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/final/server-setup.md` |
 | P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/final/coding-standards.md` |
 | P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/final/export-localization.md` |
-| P2-08 | Server monitoring and alerts | todo | — | P2-05 | `docs/drafts/server-monitoring.md` |
+| P2-08 | Server monitoring and alerts | review | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
+| P2-09 | TP and ATP for five SD religion subjects | review | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
 
 ### Phase 3 — final docs · in-progress
 
@@ -65,6 +66,8 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-11-01 — P2-08 (#32) and P2-09 (#34) merged; decisions D-128…D-141. D-128 is the daily AI counter (from #30). After P3-01: add the backup heartbeat to server-setup §12 (D-136), and link the TP/ATP file from religious-education and data-model.
+- 2026-10-31 — D-127 supersedes D-115: the MI CP shows the printed text again, and the 9 rows with possible source errors carry `review_notes[]`.
 - 2026-10-31 — D-125/D-126: the school chooses Arial or Times New Roman for printing, and KBC (*Tema KBC*, *Materi Insersi*) is in the v1 RPM for MI. The doc text changes ride along in P3-01.
 - 2026-10-31 — D-124: students only receive finished AI content; this closes the Gemini under-18 question.
 - 2026-10-31 — D-123: the owner approved all ten drafts, which also accepts every remaining Proposed decision. P3-01 (final docs + Indonesian PDFs) is created; `open-questions.md` stays in drafts.
