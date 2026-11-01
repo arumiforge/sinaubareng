@@ -16,7 +16,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 |---|---|---|
 | Prices for the four tiers (paid from non-BOS funds, D-025) | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 | Present the short version to principals and supervisors, and record their objections | [product-concept.md](../final/product-concept.md#open-questions) | owner |
-| Legal reading of Gemini's under-18 clause for a service that also has a student exam site (the exam site never calls the AI, D-027) | [product-concept.md](../final/product-concept.md#open-questions) | owner (legal advice) |
 
 ## Brand
 
@@ -66,7 +65,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 | Question | Source | Who answers |
 |---|---|---|
 | An official-channel copy of SK Dirjen Pendis 9941/2025. Low priority: a second copy from another source (2026-10-31) has identical text, but neither comes from kemenag.go.id | [religious-education.md](../final/religious-education.md#open-questions) | owner + team |
-| Kurikulum Berbasis Cinta (SK Dirjen Pendis 6077/2025) in the RPM template for MI: add *Tema KBC* and *Materi Insersi* to the wizard and let the AI weave them into TP, activities, and assessment? In v1 or later? Every MI subject or only the Kemenag subjects? | [religious-education.md](../final/religious-education.md#mi-kurikulum-berbasis-cinta-kbc) | owner |
 | Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)? | [religious-education.md](../final/religious-education.md#open-questions) | owner |
 | SD religion JP: confirm that the national structure has one "Pendidikan Agama dan Budi Pekerti" row (3 JP per week) for every religion | [religious-education.md](../final/religious-education.md#sd-six-religion-subjects-d-034) | team |
 | Known curriculum data issues: Matematika grade 4 semester 2 (80 of 90 JP), Keterampilan Tata Boga target, TP↔fokus links | [data-model.md](../final/data-model.md#curriculum) | team, with the curriculum owner |
