@@ -53,6 +53,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/final/export-localization.md` |
 | P2-08 | Server monitoring and alerts | review | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
 | P2-09 | TP and ATP for five SD religion subjects | review | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
+| P2-10 | TP and ATP for five MI Kemenag subjects | review | p2/p2-01-verify-religion-cp | P2-02, P2-09 | `docs/data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json` |
 
 ### Phase 3 — final docs · in-progress
 
