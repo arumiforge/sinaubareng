@@ -1,8 +1,8 @@
 # P5-01 — Project scaffold and CI
 
 - **Phase:** P5
-- **Status:** todo
-- **Owner:** —
+- **Status:** in-progress
+- **Owner:** pw/jolly-fermi-c64iie
 - **Depends on:** —
 - **Can run in parallel with:** P5-02
 
