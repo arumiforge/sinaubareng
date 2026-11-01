@@ -1,7 +1,7 @@
 # P5-01 — Project scaffold and CI
 
 - **Phase:** P5
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** pw/jolly-fermi-c64iie
 - **Depends on:** —
 - **Can run in parallel with:** P5-02
@@ -30,12 +30,18 @@ Create the empty Laravel application in this repository with the agreed stack, f
 
 ## Done when
 
-- [ ] `composer install`, `npm ci`, `npm run build` work from a clean clone.
-- [ ] `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check` pass locally and in CI.
-- [ ] `app.`, `ujian.`, and `admin.` hostnames each answer with their own placeholder page and guard.
-- [ ] No Indonesian or English UI string literals outside `lang/id` (TR-1).
+- [x] `composer install`, `npm ci`, `npm run build` work from a clean clone.
+- [x] `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check` pass locally and in CI.
+- [x] `app.`, `ujian.`, and `admin.` hostnames each answer with their own placeholder page and guard.
+- [x] No Indonesian or English UI string literals outside `lang/id` (TR-1).
 - [ ] Commits authored as the owner (D-148); the work is merged into `main` and the branch, if any, deleted.
 
 ## Result
 
-Filled in by the agent on finish.
+- Laravel 13.39 on PHP 8.5, Filament 5.11 (`staff` guard, admin host root, sign-in at `/masuk`), Inertia 3 + Svelte 5 + TypeScript, Tailwind 4 with `resources/css/tokens.css` mapped in `theme.css`, Horizon, Telescope (local and staging only, LOG-4 fields hidden), Ziggy (D-163).
+- Hostnames: `routes/app.php`, `routes/exam.php`, `routes/admin.php` under `Route::domain(config('app.hosts.*'))` (D-164). `UseGuard` makes `web`, `exam`, or `staff` the default per host. The exam site has its own root view (`exam.blade.php`), Vite entry (`resources/exam-client/`), and translation share (`common`, `exam`); ESLint blocks imports from `resources/js` there.
+- `StaffUser` and `ExamParticipant` models back the guards. Their tables come with slice 1 (staff sign-in) and P5-06 (exam).
+- `lang/id`: all 32 files from export-localization §1; only `common`, `nav`, `exam` have keys so far. `t()` in `resources/js/lib/i18n.ts`. Page-level `translations:` middleware (LOC-9) and `lang:audit` (D-100) are not built yet; `tests/Feature/TranslationKeysTest.php` already fails on a missing literal key.
+- Checks: Pint (`declare_strict_types`), Larastan level 6, Pest on MySQL (arch test per module row + LAY-5, hostname tests), ESLint, `svelte-check` with strict route names. `.github/workflows/ci.yml` runs them plus `composer audit`, `npm audit --omit=dev`, and the build, with a MySQL 8.4 service.
+- Local setup: `cp .env.example .env`, fill `APP_*`, hosts, and `DB_*`, then `php artisan key:generate && php artisan migrate`, `npm ci && npm run dev`. Map the three `*.sigrak.test` hosts to 127.0.0.1.
+- Note: `server-setup.md` §10 says the timezone `Asia/Jakarta` is set in `config/app.php`; the app keeps UTC per D-082.

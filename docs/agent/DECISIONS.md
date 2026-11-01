@@ -826,3 +826,13 @@ Reason: owner's decision.
 Accepted · 2026-11-01 · confirms the slice order in `product-concept.md`
 The v1 slices are built in the proposed order: foundation, content core, more templates, TKA, Di Kelas, Asesmen, portals, business. Before slice 1, the project is scaffolded and the server is set up (Phase 5). TKA no longer targets the January–March 2027 practice season; it targets the 2028 TKA season.
 Reason: owner's decision.
+
+### D-163 — Ziggy as the typed route helper
+Accepted · 2026-11-01 · P5-01 · resolves D-081
+The frontend builds URLs with Ziggy (`route()` from `ziggy-js`, strict route-name types from `php artisan ziggy:generate --types-only`). Each root view sends only its own route group: `@routes('app')` or `@routes('exam')` (`config/ziggy.php`), so staff and vendor routes never reach a browser.
+Reason: Wayfinder writes the hostname into the built JavaScript (`//app.sigrak.test`), so one build could not serve production and staging (`staging-app.`). Ziggy reads the hosts at request time.
+
+### D-164 — Hostnames come from env keys
+Accepted · 2026-11-01 · P5-01 · refines D-048
+`APP_HOST`, `EXAM_HOST`, and `ADMIN_HOST` set the three hostnames (`config('app.hosts.*')`). Horizon, Telescope, and the Filament panel sit at the root of the admin host; the panel's sign-in page is `/masuk`.
+Reason: production and staging use different hostnames on one codebase (D-095).

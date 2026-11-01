@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-162. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-164. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -77,7 +77,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
-| P5-01 | Project scaffold and CI | in-progress | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
+| P5-01 | Project scaffold and CI | review | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
 | P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | todo | — | P5-01 | App code |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 | App code |
@@ -105,6 +105,8 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 ## Handoff notes
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
+
+- 2026-11-01 — P5-01 in review (PR open; merge, then delete the branch): Laravel app at the repo root with CI (see the task file's Result). Ziggy replaces Wayfinder (D-163); hostnames come from `APP_HOST`/`EXAM_HOST`/`ADMIN_HOST` (D-164), so the server `.env` needs them. P5-03 can start.
 
 - 2026-11-01 — D-147: D-145/D-146 accepted. No decisions are open.
 - 2026-11-01 — Coordination run closed. P0–P3 are merged (PRs #2–#43). All worker sessions are idle and can be archived.

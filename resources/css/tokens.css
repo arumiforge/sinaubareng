@@ -1,0 +1,34 @@
+/* Colour tokens from docs/final/design-system.md. Dark is its own set, not an inversion. */
+:root {
+    --brand: #0f766e;
+    --brand-strong: #115e59;
+    --brand-tint: #f0fdfa;
+    --on-brand: #ffffff;
+    --bg: #f7f8f7;
+    --surface: #ffffff;
+    --border: #e3e6e4;
+    --text: #1c2420;
+    --text-muted: #5b6660;
+    --ok: #15803d;
+    --warn: #b45309;
+    --danger: #b91c1c;
+    --info: #1d4ed8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand: #2dd4bf;
+        --brand-strong: #5eead4;
+        --brand-tint: #12302c;
+        --on-brand: #0b1f1c;
+        --bg: #151b19;
+        --surface: #1c2321;
+        --border: #2c3532;
+        --text: #e6ece9;
+        --text-muted: #9aa7a1;
+        --ok: #4ade80;
+        --warn: #fbbf24;
+        --danger: #f87171;
+        --info: #93c5fd;
+    }
+}
