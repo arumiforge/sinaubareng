@@ -51,7 +51,7 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 | P2-05 | Server setup guide | done | p2/p2-05-server-setup | — | `docs/final/server-setup.md` |
 | P2-06 | Coding standards | done | p2/p2-06-coding-standards | — | `docs/final/coding-standards.md` |
 | P2-07 | Export and localization guide | done | p2/p2-07-export-localization | P2-06 | `docs/final/export-localization.md` |
-| P2-08 | Server monitoring and alerts | done | p2/p2-08-server-monitoring | P2-05 | `docs/drafts/server-monitoring.md` |
+| P2-08 | Server monitoring and alerts | done | p2/p2-08-server-monitoring | P2-05 | `docs/final/server-monitoring.md` |
 | P2-09 | TP and ATP for five SD religion subjects | review | p2/p2-01-verify-religion-cp | P2-01 | `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` |
 | P2-10 | TP and ATP for five MI Kemenag subjects | review | p2/p2-01-verify-religion-cp | P2-02, P2-09 | `docs/data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json` |
 
@@ -61,20 +61,21 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 |---|---|---|---|---|---|
 | P3-01 | Move approved drafts to final + Indonesian PDFs | done | p3/p3-01-final-docs-pdf | D-123 | `docs/final/*.md`, `docs/pdf/*.pdf` |
 | P3-02 | PDF build script + rebuild outdated PDFs | done | p3/p3-02-pdf-build-script | P3-01 | `scripts/docs-pdf/`, `docs/pdf/*.pdf` |
+| P3-03 | Move server monitoring to final + Indonesian PDF | done | main | D-143 | `docs/final/server-monitoring.md`, `docs/pdf/server-monitoring.pdf`, `docs/pdf/server-setup.pdf` |
 
 Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
 ## Start here (next session)
 
 1. Read `CLAUDE.md`, `docs/agent/CONTEXT.md`, and this file. Stack, conventions, and every owner choice are in CONTEXT and `DECISIONS.md`.
-2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions) and `docs/drafts/server-monitoring.md` (P2-08, accepted by D-143 but not yet moved to final).
+2. Approved specs: `docs/final/*.md`. Still-living draft: `docs/drafts/open-questions.md` (remaining owner questions).
 3. Data: `docs/data/curriculum/` (CP, MI allocation, TP/ATP drafts for SD religions and MI) and `docs/data/tka/`.
 4. Only `main` exists. Old branches were deleted and the history was rewritten on 2026-11-01 (D-148), so old clones must be re-cloned or reset to `origin/main`. Start any task branch from `main` and delete it after merge.
 
 ## Remaining work (not yet tasks)
 
 - **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
-- **Docs:** move `server-monitoring.md` to final and add its PDF. All other PDFs in `docs/pdf/` match their final docs (server-setup was rebuilt with the D-136 heartbeat in P3-02).
+- **Docs:** none. Every doc in `docs/final/` has a matching Indonesian PDF in `docs/pdf/`.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
 ## Handoff notes

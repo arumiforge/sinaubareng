@@ -794,7 +794,7 @@ echo '30 18 * * * root /usr/local/sbin/sigrak-backup >> /var/log/sigrak/backup.l
 sudo /usr/local/sbin/sigrak-backup    # first run by hand
 ```
 
-The script pings Healthchecks.io at start, on success, and on any failed step, so a failed or missed backup alerts (D-136). `/etc/sigrak/monitoring.env` comes from [`server-monitoring.md`](../drafts/server-monitoring.md).
+The script pings Healthchecks.io at start, on success, and on any failed step, so a failed or missed backup alerts (D-136). `/etc/sigrak/monitoring.env` comes from [`server-monitoring.md`](server-monitoring.md).
 
 **Restore test — monthly, and after any change to this section.** A backup counts only after it has been restored once. On the server, into a throwaway database:
 

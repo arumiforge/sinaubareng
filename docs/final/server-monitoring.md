@@ -1,13 +1,13 @@
 # Server Monitoring and Alerts
 
-- **Status:** draft
+- **Status:** final (approved 2026-11-01, D-143)
 - **Task:** P2-08
-- **Last updated:** 2026-10-31
+- **Last updated:** 2026-11-01
 - **Tools and free-tier limits checked online on 2026-10-31** (sources in [Tools](#tools)).
 
 ## Purpose
 
-This guide tells the owner, quickly and reliably, when the SIGRAK server or one of its services is down, full, or failing. It also gives the exact steps to set this up. It covers the single VPS described in [`server-setup.md`](../final/server-setup.md): IDCloudHost Jakarta, 8 vCPU / 16 GB / 320 GB, no public IP, Cloudflare Tunnel, and staging as a second site (D-073, D-086…D-088, D-095, D-096). It is for whoever sets up the server and whoever answers the alerts.
+This guide tells the owner, quickly and reliably, when the SIGRAK server or one of its services is down, full, or failing. It also gives the exact steps to set this up. It covers the single VPS described in [`server-setup.md`](server-setup.md): IDCloudHost Jakarta, 8 vCPU / 16 GB / 320 GB, no public IP, Cloudflare Tunnel, and staging as a second site (D-073, D-086…D-088, D-095, D-096). It is for whoever sets up the server and whoever answers the alerts.
 
 Owner answers (2026-10-31):
 
@@ -277,19 +277,19 @@ EOF
 cd /opt/gotenberg && sudo docker compose stop && sleep 180 && sudo docker compose start
 ```
 
-### 6. Backup heartbeat (change for `server-setup.md`)
+### 6. Backup heartbeat (in `server-setup.md`)
 
-This task does not edit `server-setup.md`. The coordinator adds the following to the backup script in server-setup section 12, at integration:
+The backup script in server-setup section 12 already contains these lines (D-136). They are listed here so this guide reads on its own:
 
-1. Add `. /etc/sigrak/monitoring.env` and `HC="https://hc-ping.com/${HC_PING_KEY}"` after `umask 077`.
-2. Add a start ping and a failure trap right after that:
+1. After `umask 077`, it loads `. /etc/sigrak/monitoring.env` and sets `HC="https://hc-ping.com/${HC_PING_KEY}"`.
+2. Right after that, it sends a start ping and sets a failure trap:
 
    ```bash
    curl -fsS -m 10 --retry 2 -o /dev/null "$HC/backup/start"
    trap 'curl -fsS -m 10 --retry 2 -o /dev/null --data-raw "backup failed at line $LINENO" "$HC/backup/fail"' ERR
    ```
 
-3. Add a success ping just before `echo "backup $STAMP ok"`:
+3. Just before `echo "backup $STAMP ok"`, it sends a success ping:
 
    ```bash
    curl -fsS -m 10 --retry 2 -o /dev/null "$HC/backup"
@@ -335,14 +335,14 @@ The first steps, in order, for each alert. SSH is `ssh ssh.sigrak.com`. If the t
 | `prod-app` / `prod-ujian` down, `tunnel` green | 1. `curl -sI -H 'Host: app.sigrak.com' http://127.0.0.1:8080/up` 2. `sudo systemctl status nginx php8.5-fpm` 3. `tail -50 /var/www/sigrak/shared/storage/logs/laravel-$(date +%F).log` | Restart the failed service (`sudo systemctl restart php8.5-fpm` or `nginx`). After a bad deploy, point `current` back to the previous release (server-setup section 10) |
 | `tunnel` down | 1. `sudo systemctl status cloudflared` 2. `sudo journalctl -u cloudflared -n 50` 3. `sudo cloudflared tunnel info sigrak-prod` | `sudo systemctl restart cloudflared`. If it cannot connect: test outbound with `curl -sI https://api.cloudflare.com`; if that fails too, it is an IDCloudHost network issue, so open a ticket |
 | UptimeRobot down, Healthchecks.io green | 1. Open the site in a browser from a phone (mobile data) 2. Cloudflare dashboard: DNS records, Access applications, WAF events | Usually a Cloudflare setting (an Access rule covering `app.`, a WAF block, a deleted DNS record). Undo the recent change |
-| `host`: disk ≥ 90 % | 1. `df -h /` 2. `sudo du -xh --max-depth=2 /var | sort -h | tail` 3. `ls -lh /var/backups/sigrak` | Remove old releases or local backups; check that logrotate runs; `sudo journalctl --vacuum-size=300M`. Plan a disk upgrade if usage grows steadily |
-| `host`: RAM / OOM | 1. `free -h` 2. `sudo journalctl -k --since '10 minutes ago' | grep -i oom` 3. `ps aux --sort=-rss | head` | Usually Chromium in Gotenberg (capped at 2 GB) or too many PHP workers. Restart the culprit and lower `pm.max_children` or the Horizon `maxProcesses` |
+| `host`: disk ≥ 90 % | 1. `df -h /` 2. `sudo du -xh --max-depth=2 /var \| sort -h \| tail` 3. `ls -lh /var/backups/sigrak` | Remove old releases or local backups; check that logrotate runs; `sudo journalctl --vacuum-size=300M`. Plan a disk upgrade if usage grows steadily |
+| `host`: RAM / OOM | 1. `free -h` 2. `sudo journalctl -k --since '10 minutes ago' \| grep -i oom` 3. `ps aux --sort=-rss \| head` | Usually Chromium in Gotenberg (capped at 2 GB) or too many PHP workers. Restart the culprit and lower `pm.max_children` or the Horizon `maxProcesses` |
 | `mysql` down | 1. `sudo systemctl status mysql` 2. `sudo tail -50 /var/log/mysql/error.log` 3. `df -h /` | `sudo systemctl restart mysql`. A full disk is the most common cause |
 | `redis` down or ≥ 90 % | 1. `redis-cli -a '<REDIS_PASSWORD>' --no-auth-warning INFO memory` 2. `... --bigkeys` 3. Horizon dashboard: pending jobs | When memory is full, writes fail (`noeviction`). Clear stale cache keys (`php artisan cache:clear` clears only the cache store when it has its own Redis database, as `architecture.md` proposes), find keys without a TTL, or raise `maxmemory` |
 | `horizon` down | 1. `sudo supervisorctl status` 2. `tail -50 /var/log/sigrak/horizon.log` 3. Redis check above | `sudo supervisorctl restart sigrak-horizon`. If it was paused on purpose, run `php artisan horizon:continue` |
 | `scheduler` down | 1. `sudo supervisorctl status sigrak-scheduler` 2. `tail -50 /var/log/sigrak/scheduler.log` | `sudo supervisorctl restart sigrak-scheduler` |
 | `gotenberg` down | 1. `cd /opt/gotenberg && sudo docker compose ps` 2. `sudo docker compose logs --tail 50` 3. `free -h` | `sudo docker compose restart`. A memory-limit kill (exit 137) points to a very large export; find it in Horizon failed jobs |
-| `backup` failed or missed | 1. `tail -50 /var/log/sigrak/backup.log` 2. `ls -lt /var/backups/sigrak | head` 3. `sudo rclone lsd offsite:<R2_BUCKET>` | Fix the failing step (MySQL credentials, disk, R2 token) and run `sudo /usr/local/sbin/sigrak-backup` by hand. Never leave a day without a good backup |
+| `backup` failed or missed | 1. `tail -50 /var/log/sigrak/backup.log` 2. `ls -lt /var/backups/sigrak \| head` 3. `sudo rclone lsd offsite:<R2_BUCKET>` | Fix the failing step (MySQL credentials, disk, R2 token) and run `sudo /usr/local/sbin/sigrak-backup` by hand. Never leave a day without a good backup |
 | `host-warn` | Read the email: it lists each warning | Plan the fix during working hours. A repeated "failed jobs" warning: open Horizon → Failed Jobs and look at the error class |
 | `security-updates` | `sudo apt list --upgradable`; `cat /var/run/reboot-required.pkgs` | `sudo apt update && sudo apt -y upgrade`. Reboot outside school hours and never during a TKA session |
 | `staging` | Same steps with the `sigrak-staging` names | Working hours only |
@@ -365,7 +365,7 @@ The first steps, in order, for each alert. SSH is `ssh ssh.sigrak.com`. If the t
 
 ## Decisions to record
 
-To be numbered during integration.
+Recorded in `DECISIONS.md` as D-129…D-138, in this order. D-143 accepted them.
 
 1. **Alert channels: Telegram and email, to the owner only; urgent alerts may be sent at night** (owner, 2026-10-31).
 2. **Healthchecks.io (free Hobbyist) as the main alerting service.** A push-based dead man's switch fits a server without a public IP. There are 13 checks: urgent ones go to Telegram + email, minor ones to email only. Severity by channel replaces a quiet-hours feature.
@@ -376,7 +376,7 @@ To be numbered during integration.
 7. **Thresholds:**
    - Urgent: disk ≥ 90 %; RAM available < 1.5 GB; OOM; Redis ≥ 90 % of `maxmemory`.
    - Minor: disk ≥ 80 %; swap ≥ 50 %; load15 ≥ 8; MySQL connections ≥ 160; Redis ≥ 70 %; ≥ 5 failed jobs in 15 min; pending security updates or a required reboot.
-8. **Backup heartbeat:** the backup script pings `backup/start`, `backup`, and `backup/fail` (change to server-setup section 12, at integration).
+8. **Backup heartbeat:** the backup script pings `backup/start`, `backup`, and `backup/fail` (in server-setup section 12, D-136).
 9. **App work for Phase 3:** Horizon long-wait mail notifications (`waits`: `ai` 600 s, `exports` 120 s, `default` 60 s) and a scheduler heartbeat with `pingOnSuccess`.
 10. **Staging alerts by email only**, from one combined `staging` check.
 
