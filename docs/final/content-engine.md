@@ -221,7 +221,7 @@ The general Bank Soal "Mode Ujian" stays inactive (D-026). The exam client is bu
 - The runtime JS and CSS are inlined. Content is embedded as `<script type="application/json" id="content">` with `<` escaped. The runtime renders every content string with `textContent`, never `innerHTML`.
 - A Content-Security-Policy meta tag blocks all network access: `default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:`. The file plays offline and cannot phone home.
 - Images and sounds are embedded as `data:` URIs (v1 uses only bundled assets).
-- It contains teaching content only, plus the game title. It holds no student data and no teacher identity beyond what the teacher typed into the title. The Sigrak Dasar (free) plan adds a small "Dibuat dengan Sigrak" footer.
+- It contains teaching content only, plus the game title. It holds no student data and no teacher identity beyond what the teacher typed into the title.
 - The runtime version is embedded. Re-downloading uses the runtime of the document's template version.
 
 The downloaded file lives outside the login wall by design. That is acceptable because it holds nothing but teaching content.
@@ -241,7 +241,7 @@ This is the single export engine from the developer notes. The engines are decid
   - Text-based PDFs from Blade/HTML views, with full CSS: tables with `page-break-inside: avoid`, F4 and A4, repeating header and footer with page numbers, and the letterhead image.
   - JavaScript runs before capture (`waitUntilReady`), so KaTeX formulas, charts, and three.js figures render in print exactly as on screen.
   - It shapes Arabic script correctly, which PAI material needs.
-  - **One PDF per download.** A package (RPM + LKPD + rubric + key, or all exam cards) is one HTML view with page breaks, so no PDF merging is needed. The Sigrak Dasar watermark is CSS in that view. Word-to-PDF conversion is not used either (D-031).
+  - **One PDF per download.** A package (RPM + LKPD + rubric + key, or all exam cards) is one HTML view with page breaks, so no PDF merging is needed. Word-to-PDF conversion is not used either (D-031).
   - Why a separate service:
     - Chromium is isolated in a container. Ubuntu 22.04 only ships Chromium as a snap, which is awkward to run from PHP workers.
     - Its memory use stays out of PHP-FPM.
@@ -257,7 +257,6 @@ This is the single export engine from the developer notes. The engines are decid
 - **Other print settings (per school):** signer names and NIP (text), A4/F4, margins, font (Arial or Times New Roman, D-125), and which sections to include.
 - **Labels in Indonesian** through translation keys (repo convention).
 - **Buka di Canva (level 1):** downloads DOCX/PDF and opens canva.com for the teacher to import. Direct import through the Canva Connect API is *Later*.
-- Sigrak Dasar (free plan): small watermark.
 
 ## Rendering libraries
 

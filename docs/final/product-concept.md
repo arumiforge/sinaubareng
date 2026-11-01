@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-02
-- **Last updated:** 2026-10-30
+- **Last updated:** 2026-11-01
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
 
 ## Purpose
@@ -191,16 +191,17 @@ Each role has one main flow of at most four steps.
 
 ## Business model
 
-Four tiers, priced per academic year (July–June). AI keys belong to teachers in every tier (D-012; Gemini free tier only, D-023), so AI usage is never a SIGRAK cost. **Subscriptions are paid from funds other than BOS** (D-025). Sales material must not suggest BOS as a payment source.
+Plans are paid per academic year (July–June) by **teachers and schools only**. Students and parents never pay and never see a price (D-157). AI keys belong to teachers (D-012; Gemini free tier only, D-023), so AI usage is never a SIGRAK cost. **School subscriptions are paid from funds other than BOS** (D-025). Sales material must not suggest BOS as a payment source.
 
-| Tier | For | Contents | Payer |
-|---|---|---|---|
-| Sigrak Dasar (free) | One teacher | Di Kelas, timetable, student data, templates up to a monthly limit (own AI keys), print with a small watermark. No TKA sessions | — |
-| Sigrak Guru | One teacher | All teacher features without limits, no watermark | Teacher |
-| Sigrak Sekolah | One school, all teachers | Sigrak Guru for every account + principal and operator portals, validation, school print settings, invitations, Simulasi TKA | Principal (school, non-BOS funds) |
-| Sigrak Binaan | One supervisor or KKG cluster | Supervisor portal + a discount on Sigrak Sekolah for supervised schools | Supervisor / korwil / cluster |
+| Plan | For | Contents | Price per year | Payer |
+|---|---|---|---|---|
+| Uji coba | One teacher | Every feature for 2 weeks. After that, the account can only view and download its data until a plan is bought | Free | — |
+| Sigrak Guru | One teacher | All teacher features | Rp60.000, or Rp50.000 when the teacher's school has Sigrak Sekolah | Teacher |
+| Sigrak Sekolah | One school | 2 accounts, principal and operator, with their portals: validation, school print settings, invitations, school data. Teachers buy Sigrak Guru themselves | Rp100.000 | School (non-BOS funds) |
+| Add-on feature | One school with Sigrak Sekolah | One extra feature, switched on by the school for all its accounts (D-158) | Rp50.000 each | School (non-BOS funds) |
+| Sigrak Binaan | One supervisor or KKG cluster | Supervisor portal. Not sold: it opens free once 5 or more of the supervised schools have Sigrak Sekolah | Free | — |
 
-A teacher's paid Sigrak Guru time moves over automatically when their school subscribes, and the remainder becomes a discount.
+**Add-on features (D-158):** Simulasi TKA · Buku Induk and Dapodik sync · Keuangan and Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, description drafts, report export). More add-ons may follow.
 
 ## Feature status
 
@@ -267,7 +268,8 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | New | Comments on documents by principal/supervisor | Add | Document view | D-019 |
 | New | Print settings: letterhead as an **uploaded image** (school default, teacher may upload their own), signers, A4/F4, font | Add | Pengaturan Sekolah > Cetak; Akun > Kop saya | Teachers control the letterhead layout and logo in the image itself (D-031) |
 | New | Buka di Canva | Add | Button on RPM, LKPD, soal previews (download + open canva.com) | |
-| New | Subscription and billing | Add | Pengaturan Sekolah > Langganan. Akun > Paket Saya | Business model |
+| New | Subscription and billing | Add | Pengaturan Sekolah > Langganan (plan and add-ons). Akun > Paket Saya | Business model (D-157) |
+| New | Buku Induk and Dapodik sync: import the Dapodik Excel export (students, rombel, ekstrakurikuler, and staff data such as gaji berkala and kepangkatan) and keep school data aligned | Add | Operator portal > Data Sekolah, as an add-on | Schools already keep this data in Dapodik (D-158). Needs its own design task |
 | New | Invite teachers | Add | Operator portal > Guru | Replaces default passwords |
 | New | Regional local content and calendar defaults | Add | Internal console + Pengaturan Sekolah | D-018 |
 | New | 3-step onboarding | Add | Shown once after sign-up: class, timetable, students | Ready on day one |
@@ -292,14 +294,14 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 5. Di Kelas with offline sync, Jurnal from RPM.
 6. Asesmen: plan, scores, analysis per TP, report cards.
 7. Portals: principal, operator, supervisor. Validation and comments.
-8. Business: subscriptions, billing, watermark, Mode Contoh.
+8. Business: trial, subscriptions, add-ons, billing, Mode Contoh.
 
 ## Open questions
 
-- [ ] Prices for the four tiers (paid from non-BOS funds, D-025).
+- [x] Prices: 2-week trial, Sigrak Guru Rp60.000, Sigrak Sekolah Rp100.000, add-ons Rp50.000 each (D-157, D-158).
 - [ ] Final name: check "Sigrak" (and backup "Kapur") in [PDKI](https://pdki-indonesia.dgip.go.id) classes 9, 41, 42, then register the .id and .com domains together. The name risk is higher now that the market is nationwide.
 - [ ] Logo: brief a designer (colour, single-colour, negative, minimum 16 px).
-- [ ] Confirm the kokurikuler module ships in v1 as an RPM template variant.
+- [x] The kokurikuler module ships in v1 as an RPM template variant (D-014).
 - [ ] Test the five-tab menu with 5 class teachers and 2 subject teachers on a click prototype (no real data).
 - [ ] Present the short version to principals and supervisors, and record their objections.
 - [x] Gemini's under-18 clause: students only receive finished, teacher-checked AI content and never trigger the AI (D-124).

@@ -149,7 +149,8 @@ Butir Bank Soal tetap berada di `content` dokumen (satu sumber untuk tampilan). 
 | `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (buku tamu, humas, notulen), `school_programs`, `agendas` | `school_id` | Fitur portal |
 | `school_print_settings` | `school_id` (unik), penanda tangan (nama, NIP, jabatan), `paper` ∈ {`a4`,`f4`}, margin, `font` ∈ {`arial`,`times_new_roman`} (D-125) | Pengaturan cetak per sekolah. Kop ada di `letterheads` |
 | `letterheads` | `school_id` nullable / `user_id` nullable, `image_path`, `width_px`, `height_px`, `uploaded_by` | Tepat satu pemilik: CHECK (`school_id` IS NULL) <> (`user_id` IS NULL). Unik per pemilik. Kop milik guru menggantikan kop sekolah pada dokumen guru itu. Aturan unggah: PNG/JPG, lebar ≥ 2.000 px, rasio 4:1 sampai 8:1, ≤ 2 MB (D-031) |
-| `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`basic`,`teacher`,`school`,`cluster`}, `academic_year`, `status` | Tepat satu kolom pemilik terisi (CHECK). Tabel penagihan dibuat di tugas penagihan |
+| `subscriptions` | `school_id` nullable / `user_id` nullable / `supervisor_user_id` nullable, `plan` ∈ {`trial`,`teacher`,`school`,`cluster`}, `academic_year`, `starts_on`, `ends_on`, `status` | Tepat satu kolom pemilik terisi (CHECK). `trial` berlaku 14 hari; setelah itu akun tanpa paket berbayar hanya bisa melihat dan mengunduh (D-157). Tabel penagihan dibuat di tugas penagihan |
+| `school_addons` | `school_id`, `addon` ∈ {`tka`,`buku_induk`,`class_finance`,`school_books`,`games`,`report_cards`}, `academic_year`, `status` | Unik (`school_id`, `addon`, `academic_year`). Membutuhkan langganan `school` yang aktif (D-158) |
 
 ## Latihan ujian TKA (CBT)
 

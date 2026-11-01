@@ -187,7 +187,7 @@ Aturan utama, semuanya dari `ai-provider-engine.md` dan `content-engine.md` (bag
 1. Guru menekan *Unduh PDF/Word/Excel* atau *Unduh game*. Controller memeriksa `document_exports` untuk baris dengan `content_hash`, versi templat, dan pengaturan cetak yang sama. Bila ada, berkas langsung disajikan dari disk.
 2. Bila tidak ada, job ekspor diantrekan di `exports` dan halaman menampilkan kemajuan (pola polling yang sama seperti pembuatan).
 3. Job membuat berkas dari JSON konten dokumen, tidak pernah dari tangkapan layar:
-   - **PDF:** satu view Blade per templat → `spatie/laravel-pdf` → Gotenberg lewat `http://127.0.0.1` dengan basic auth. JavaScript berjalan sebelum ditangkap (`waitUntilReady`) agar KaTeX, ApexCharts, dan three.js tampil. Gambar kop (milik guru, atau milik sekolah bila tidak ada; D-031), pengaturan cetak, dan watermark Sigrak Dasar menjadi bagian view. Satu view → satu PDF, tanpa penggabungan.
+   - **PDF:** satu view Blade per templat → `spatie/laravel-pdf` → Gotenberg lewat `http://127.0.0.1` dengan basic auth. JavaScript berjalan sebelum ditangkap (`waitUntilReady`) agar KaTeX, ApexCharts, dan three.js tampil. Gambar kop (milik guru, atau milik sekolah bila tidak ada; D-031) dan pengaturan cetak menjadi bagian view. Satu view → satu PDF, tanpa penggabungan.
    - **DOCX:** PhpWord dari tata letak SIGRAK sendiri per templat, gambar kop di header.
    - **Excel:** Laravel Excel, judul kolom berbahasa Indonesia lewat key terjemahan, angka disimpan sebagai angka.
    - **HTML game:** `GameExporter` menyisipkan bundel runtime dari versi templat dokumen, menyematkan konten sebagai JSON yang di-escape, dan menambahkan tag meta CSP tanpa jaringan.
@@ -276,7 +276,7 @@ Alur berikut memakai blok bangunan yang sama dan tidak butuh komponen tambahan:
 - **Penjadwalan RPM:** pertemuan ditempatkan di jadwal pelajaran; entri jurnal yang ditandai "tidak terlaksana" menggeser pertemuan berikutnya ke slot selanjutnya (`meetings`, `meeting_schedule_history`).
 - **Buka di Canva (tingkat 1):** unduhan ekspor ditambah tautan yang membuka canva.com. Tanpa panggilan server ke Canva.
 - **Kabar:** pengumuman, pengingat, dan notifikasi database (pembuatan selesai, kunci tidak valid) dalam satu kotak masuk.
-- **Batas paket:** pemeriksaan hak akses kecil (batas templat bulanan, watermark, sesi TKA hanya di Sigrak Sekolah) yang dibaca dari `subscriptions` sebelum pembuatan atau ekspor diantrekan.
+- **Batas paket:** pemeriksaan hak akses kecil membaca `subscriptions` dan `school_addons` sebelum sebuah fitur, pembuatan, atau ekspor dipakai. Setelah uji coba 2 minggu, akun tanpa paket hanya bisa melihat dan mengunduh; fitur tambahan membutuhkan add-on sekolah (D-157, D-158).
 
 ## Topologi deployment
 

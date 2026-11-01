@@ -792,3 +792,17 @@ Reason: owner's decision; target schools include inclusive schools.
 Accepted · 2026-11-01 · changes the P3-02 docs pipeline
 The Indonesian translation of each final doc lives in `docs/pdf/src/<name>.md` and is committed. When a final doc changes, only the changed lines are translated again, then the PDF is rebuilt. `docs/.build/` keeps only generated HTML and stays git-ignored.
 Reason: owner's decision; re-translating a whole document for a one-line change was slow.
+
+### D-157 — Plans and prices
+Accepted · 2026-11-01 · replaces the tier table in `product-concept.md`; D-025 still applies
+Only teachers and schools pay; students and parents are never part of any payment. Prices are per academic year:
+- **Uji coba:** 2 weeks with every feature. Afterwards an unpaid account can only view and download its data. There is no permanent free plan and no watermark.
+- **Sigrak Guru:** Rp60.000; Rp50.000 when the teacher's school has Sigrak Sekolah.
+- **Sigrak Sekolah:** Rp100.000 for 2 accounts, principal and operator, with their portals. Teachers buy Sigrak Guru themselves; a teacher's time no longer moves to the school.
+- **Sigrak Binaan:** not sold; the supervisor portal opens free once 5 or more supervised schools have Sigrak Sekolah.
+Reason: owner's decision.
+
+### D-158 — Add-on features
+Accepted · 2026-11-01
+Features outside the core are add-ons at Rp50.000 per year each, switched on by a school that has Sigrak Sekolah: Simulasi TKA, Buku Induk and Dapodik sync (import of the Dapodik Excel export: students, rombel, ekstrakurikuler, staff gaji berkala and kepangkatan), Keuangan and Inventaris kelas, Buku Sekolah, Game kelas (Quiz Battle, Tayangkan, Unduh game), and Rapor. More may follow.
+Reason: owner's decision.

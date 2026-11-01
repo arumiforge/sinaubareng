@@ -179,7 +179,7 @@ Key rules, all from [`ai-provider-engine.md`](ai-provider-engine.md) and [`conte
 1. The teacher presses *Unduh PDF/Word/Excel* or *Unduh game*. The controller checks `document_exports` for a row with the same `content_hash`, template version, and print settings. A hit is served straight from disk.
 2. A miss queues an export job on `exports` and the page shows progress (same polling pattern as generation).
 3. The job renders from the document's content JSON, never from a screenshot:
-   - **PDF:** one Blade view per template → `spatie/laravel-pdf` → Gotenberg over `http://127.0.0.1` with basic auth. JavaScript runs before capture (`waitUntilReady`) so KaTeX, ApexCharts, and three.js render. The letterhead image (teacher's own, else the school's; D-031), print settings, and the Sigrak Dasar watermark are part of the view. One view → one PDF, no merging.
+   - **PDF:** one Blade view per template → `spatie/laravel-pdf` → Gotenberg over `http://127.0.0.1` with basic auth. JavaScript runs before capture (`waitUntilReady`) so KaTeX, ApexCharts, and three.js render. The letterhead image (teacher's own, else the school's; D-031), and print settings are part of the view. One view → one PDF, no merging.
    - **DOCX:** PhpWord from SIGRAK's own layout per template, letterhead image in the header.
    - **Excel:** Laravel Excel, Indonesian headers through translation keys, numbers stored as numbers.
    - **Game HTML:** `GameExporter` inlines the runtime bundle of the document's template version, embeds content as escaped JSON, and adds the no-network CSP meta tag.
@@ -264,7 +264,7 @@ These use the same building blocks and need no extra components:
 - **RPM scheduling:** meetings are placed on the timetable; a journal entry marked "tidak terlaksana" shifts later meetings to the next slot (`meetings`, `meeting_schedule_history`).
 - **Buka di Canva (level 1):** an export download plus a link that opens canva.com. No server call to Canva.
 - **Kabar:** announcements, reminders, and database notifications (generation done, key invalid) in one inbox.
-- **Plan limits:** a small entitlement check (monthly template limit, watermark, TKA sessions only on Sigrak Sekolah) read from `subscriptions` before a generation or export is queued.
+- **Plan limits:** a small entitlement check reads `subscriptions` and `school_addons` before a feature, generation, or export is used. After the 2-week trial, an account without a plan can only view and download; add-on features need the school's add-on (D-157, D-158).
 
 ## Deployment topology
 

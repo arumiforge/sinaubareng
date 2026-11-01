@@ -14,7 +14,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 
 | Question | Source | Who answers |
 |---|---|---|
-| Prices for the four tiers (paid from non-BOS funds, D-025). A proposal is being drafted in [pricing-proposal.md](pricing-proposal.md) | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 | Present the short version to principals and supervisors, and record their objections | [product-concept.md](../final/product-concept.md#open-questions) | owner |
 
 ## Brand
@@ -67,4 +66,4 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 ## Answered on 2026-11-01
 
-Kokurikuler variant in v1 (already D-014), Laravel Excel 4.x supports Laravel 13 (checked in `server-setup.md`), "Templat" in UI copy (D-151), *Kabar* notice when a generation finishes (D-152), keep the last 5 document revisions (D-153), game palette by a designer (D-154), special-education religion CP in scope (D-155). Phase 2 left no open questions.
+Kokurikuler variant in v1 (already D-014), Laravel Excel 4.x supports Laravel 13 (checked in `server-setup.md`), "Templat" in UI copy (D-151), *Kabar* notice when a generation finishes (D-152), keep the last 5 document revisions (D-153), game palette by a designer (D-154), special-education religion CP in scope (D-155), plans and prices (D-157), add-on features (D-158). Phase 2 left no open questions.

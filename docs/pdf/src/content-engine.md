@@ -223,7 +223,7 @@ Ujian ini meniru cara TKA nasional berjalan: berbasis komputer, peserta masuk de
 - JS dan CSS runtime disisipkan langsung. Konten disematkan sebagai `<script type="application/json" id="content">` dengan `<` di-escape. Runtime menampilkan setiap string konten dengan `textContent`, tidak pernah `innerHTML`.
 - Tag meta Content-Security-Policy memblokir semua akses jaringan: `default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:`. Berkas bisa dimainkan offline dan tidak bisa menghubungi server mana pun.
 - Gambar dan suara disematkan sebagai URI `data:` (v1 hanya memakai aset yang dibundel).
-- Isinya hanya konten pembelajaran, ditambah judul game. Tidak memuat data siswa dan tidak memuat identitas guru selain yang diketik guru di judul. Paket Sigrak Dasar (gratis) menambahkan catatan kecil "Dibuat dengan Sigrak" di bagian bawah.
+- Isinya hanya konten pembelajaran, ditambah judul game. Tidak memuat data siswa dan tidak memuat identitas guru selain yang diketik guru di judul.
 - Versi runtime disematkan. Mengunduh ulang memakai runtime dari versi templat dokumen itu.
 
 Berkas yang diunduh memang berada di luar dinding login. Hal itu dapat diterima karena isinya hanya konten pembelajaran.
@@ -243,7 +243,7 @@ Ini mesin ekspor tunggal dari catatan pengembang. Mesinnya diputuskan di D-028:
   - PDF berbasis teks dari view Blade/HTML, dengan CSS penuh: tabel dengan `page-break-inside: avoid`, F4 dan A4, header dan footer berulang dengan nomor halaman, dan gambar kop.
   - JavaScript berjalan sebelum ditangkap (`waitUntilReady`), sehingga rumus KaTeX, grafik, dan gambar three.js tampil di cetakan persis seperti di layar.
   - Membentuk huruf Arab dengan benar, yang dibutuhkan materi PAI.
-  - **Satu PDF per unduhan.** Sebuah paket (RPM + LKPD + rubrik + kunci, atau semua kartu ujian) adalah satu view HTML dengan pemisah halaman, jadi tidak perlu menggabungkan PDF. Watermark Sigrak Dasar berupa CSS di view itu. Konversi Word ke PDF juga tidak dipakai (D-031).
+  - **Satu PDF per unduhan.** Sebuah paket (RPM + LKPD + rubrik + kunci, atau semua kartu ujian) adalah satu view HTML dengan pemisah halaman, jadi tidak perlu menggabungkan PDF. Konversi Word ke PDF juga tidak dipakai (D-031).
   - Mengapa layanan terpisah:
     - Chromium terisolasi di container. Ubuntu 22.04 hanya menyediakan Chromium sebagai snap, yang merepotkan bila dijalankan dari worker PHP.
     - Pemakaian memorinya tidak membebani PHP-FPM.
@@ -259,7 +259,6 @@ Ini mesin ekspor tunggal dari catatan pengembang. Mesinnya diputuskan di D-028:
 - **Pengaturan cetak lain (per sekolah):** nama dan NIP penanda tangan (teks), A4/F4, margin, font (Arial atau Times New Roman, D-125), dan bagian mana yang disertakan.
 - **Label dalam bahasa Indonesia** lewat key terjemahan (konvensi repo).
 - **Buka di Canva (tingkat 1):** mengunduh DOCX/PDF dan membuka canva.com agar guru mengimpornya. Impor langsung lewat Canva Connect API *Nanti*.
-- Sigrak Dasar (paket gratis): watermark kecil.
 
 ## Pustaka render
 
