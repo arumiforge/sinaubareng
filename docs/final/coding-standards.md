@@ -206,7 +206,7 @@ it('hides another school\'s journal', function () {
 | EX-2 | Enum values in exports go through their labels (`present` → "Hadir"), never the raw value. |
 | EX-3 | Export file names are Indonesian, lowercase, hyphenated, with the date: `jurnal-kelas-4a-2026-10-30.xlsx`. |
 | EX-4 | Excel cells keep real types: numbers as numbers, dates as dates with an Indonesian display format (`dd/mm/yyyy`), so teachers can sort and sum. |
-| EX-5 | PDFs are one Blade view per document through Gotenberg (D-028, D-031); the print font comes from the school's print settings. |
+| EX-5 | PDFs are one Blade view per document through Gotenberg (D-028, D-031); the print font comes from the school's print settings, Arial or Times New Roman (D-125). |
 | EX-6 | All formatting goes through `App\Support\IndonesianFormat` (PHP) and `resources/js/lib/format.ts` (JS). No ad-hoc `number_format()` or `toLocaleString()` in views. |
 
 | Value | Format | PHP | JS |
