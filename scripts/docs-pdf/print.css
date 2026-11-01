@@ -1,0 +1,26 @@
+/* Print stylesheet for the Indonesian developer PDFs in docs/pdf/ (see README.md). */
+@font-face { font-family: "Noto Naskh Arabic"; src: url("fonts/noto-naskh-arabic-arabic-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Noto Naskh Arabic"; src: url("fonts/noto-naskh-arabic-arabic-700-normal.woff2") format("woff2"); font-weight: 700; }
+@page { size: A4; margin: 18mm 16mm 20mm 16mm; }
+html { font-family: "Liberation Sans", Arial, "Noto Naskh Arabic", sans-serif; font-size: 10pt; line-height: 1.45; color: #1C2420; }
+body { margin: 0; }
+h1 { font-size: 20pt; color: #115E59; margin: 0 0 4pt; }
+h2 { font-size: 14pt; color: #115E59; margin: 18pt 0 6pt; border-bottom: 1px solid #E3E6E4; padding-bottom: 2pt; break-after: avoid; }
+h3 { font-size: 11.5pt; margin: 12pt 0 4pt; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 10pt 0 4pt; break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+.source-note { color: #5B6660; font-size: 9pt; margin: 0 0 10pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 8.5pt; table-layout: auto; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th, td { border: 1px solid #C9CFCC; padding: 3pt 4pt; vertical-align: top; text-align: left; overflow-wrap: break-word; }
+th { background: #F0FDFA; }
+code { font-family: "Liberation Mono", monospace; font-size: 8.5pt; background: #F3F5F4; padding: 0 2px; border-radius: 2px; overflow-wrap: break-word; }
+pre { background: #F3F5F4; border: 1px solid #E3E6E4; padding: 6pt; font-size: 8pt; line-height: 1.3; white-space: pre-wrap; overflow-wrap: break-word; break-inside: auto; }
+pre code { background: none; padding: 0; font-size: inherit; }
+a { color: #0F766E; text-decoration: none; }
+blockquote { border-left: 3px solid #2DD4BF; margin: 6pt 0; padding: 2pt 8pt; color: #3B4641; }
+[lang="ar"], .arabic { font-family: "Noto Naskh Arabic", serif; direction: rtl; unicode-bidi: isolate; }
+td code { overflow-wrap: anywhere; }
+td:first-child code, th:first-child code { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
+td:first-child { overflow-wrap: normal; }
