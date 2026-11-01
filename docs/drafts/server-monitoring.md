@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This guide tells the owner, quickly and reliably, when the SIGRAK server or one of its services is down, full, or failing. It also gives the exact steps to set this up. It covers the single VPS described in [`server-setup.md`](server-setup.md): IDCloudHost Jakarta, 8 vCPU / 16 GB / 320 GB, no public IP, Cloudflare Tunnel, and staging as a second site (D-073, D-086…D-088, D-095, D-096). It is for whoever sets up the server and whoever answers the alerts.
+This guide tells the owner, quickly and reliably, when the SIGRAK server or one of its services is down, full, or failing. It also gives the exact steps to set this up. It covers the single VPS described in [`server-setup.md`](../final/server-setup.md): IDCloudHost Jakarta, 8 vCPU / 16 GB / 320 GB, no public IP, Cloudflare Tunnel, and staging as a second site (D-073, D-086…D-088, D-095, D-096). It is for whoever sets up the server and whoever answers the alerts.
 
 Owner answers (2026-10-31):
 

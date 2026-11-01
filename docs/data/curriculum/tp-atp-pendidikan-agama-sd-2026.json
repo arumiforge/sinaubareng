@@ -19,7 +19,7 @@
     }
   },
   "conventions": [
-    "Shape follows the data model tables topics, learning_objectives (TP), focus_items, and focus_item_objectives (docs/drafts/data-model.md#curriculum); KM-SD-2026-R2 field names map as Materi Pokok -> title, Data_Tujuan -> learning_objectives, Data_ATP -> atp_code/order/jp/weeks, Data_Fokus -> focus_items.",
+    "Shape follows the data model tables topics, learning_objectives (TP), focus_items, and focus_item_objectives (docs/final/data-model.md#curriculum); KM-SD-2026-R2 field names map as Materi Pokok -> title, Data_Tujuan -> learning_objectives, Data_ATP -> atp_code/order/jp/weeks, Data_Fokus -> focus_items.",
     "Codes follow the KM-SD-2026-R2 pattern: topic <version>-<subject>-K<grade>-<nn>, ATP-<subject>-K<grade>-BAB-<nn>, TP-<subject>-K<grade>-<nn>-<mm>, FM-<subject>-K<grade>-<nn>-<mm>. Topic numbers run across both semesters of a grade.",
     "Subject codes: PAKR Kristen, PAKT Katolik, PAH Hindu, PAB Buddha, PAKH Khonghucu.",
     "Each fokus is one week of 3 JP. The JP of the fokus always add up to the topic jp_total, and the topics of a semester fill its effective weeks exactly.",

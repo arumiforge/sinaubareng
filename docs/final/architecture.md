@@ -1,6 +1,6 @@
 # Architecture Overview
 
-- **Status:** draft
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-04
 - **Last updated:** 2026-10-31
 - **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037)

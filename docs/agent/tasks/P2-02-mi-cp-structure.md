@@ -12,7 +12,7 @@ Turn the raw MI CP text (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab
 
 ## Read first
 
-- `docs/drafts/religious-education.md` (MI section)
+- `docs/final/religious-education.md` (MI section)
 - `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` (raw text; see its `extraction.note`)
 - `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` (target shape)
 - `docs/sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf` PDF pages 13–16, 44–48, 70–73, 90–92, 99–101 (has a text layer; Arabic must be read from the page images)
@@ -56,7 +56,7 @@ Turn the raw MI CP text (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab
 
 - Possible source errors: the owner decided (D-127, replacing D-115) that the app shows the printed text. The 9 affected rows carry `review_notes[]` for the reviewers: خَالِيْ (should be عَمِّيْ), كَمْ (should be كَمِ السَّاعَةُ), مَالَوْنُ spacing, the repeated "berupa kritik sosial" (Fikih B/C), madarasah, peyelidikan (SKI B/C), kongkrit.
 - Tim Validasi SIGRAK still has to review and sign off the data before import (D-113, replacing the per-subject guru review in D-037).
-- ~~`docs/drafts/religious-education.md` said the MI CP was not split.~~ Updated (structured, D-127 review notes, D-113 review).
+- ~~`docs/final/religious-education.md` said the MI CP was not split.~~ Updated (structured, D-127 review notes, D-113 review).
 
 **Decisions to record**
 

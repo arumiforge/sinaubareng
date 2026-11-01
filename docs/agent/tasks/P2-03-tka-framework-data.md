@@ -12,7 +12,7 @@ Capture the official TKA SD/MI assessment framework (Bahasa Indonesia, Matematik
 
 ## Read first
 
-- `docs/drafts/content-engine.md` (sections *Paket Soal TKA* and *TKA practice exam (CBT)*)
+- `docs/final/content-engine.md` (sections *Paket Soal TKA* and *TKA practice exam (CBT)*)
 - Official sources (fetch them): https://pusmendik.kemendikdasmen.go.id/tka/tka/view/mata-pelajaran-wajib/sd/bahasa-indonesia and …/sd/matematika; Perka BSKAP No. 047/H/AN/2025 (Kerangka Asesmen TKA SD/MI dan SMP/MTs) — archive an official copy in `docs/sources/` if one can be downloaded, and add a README row
 
 ## Output

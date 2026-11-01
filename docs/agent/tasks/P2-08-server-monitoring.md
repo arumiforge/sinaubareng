@@ -13,9 +13,9 @@ Write one guide that tells the team, quickly and reliably, when SIGRAK's product
 ## Read first
 
 - `docs/agent/CONTEXT.md`
-- `docs/drafts/server-setup.md` (all sections; especially 9 Tunnel, 11 Supervisor/Horizon, 12 backups, 15 staging)
-- `docs/drafts/architecture.md` (deployment topology, scheduled jobs, security boundaries)
-- `docs/drafts/ai-provider-engine.md` (queues, failure classes, what Tim SIGRAK sees)
+- `docs/final/server-setup.md` (all sections; especially 9 Tunnel, 11 Supervisor/Horizon, 12 backups, 15 staging)
+- `docs/final/architecture.md` (deployment topology, scheduled jobs, security boundaries)
+- `docs/final/ai-provider-engine.md` (queues, failure classes, what Tim SIGRAK sees)
 - `docs/agent/DECISIONS.md` only for D-073, D-086…D-088, D-095, D-096 (read only)
 
 ## Output
@@ -52,7 +52,7 @@ Write one guide that tells the team, quickly and reliably, when SIGRAK's product
 - Work on branch `p2/p2-08-server-monitoring`, created from `main`. Open a ready PR to `main` when done, with **no AI attribution** anywhere (see `CLAUDE.md`).
 - In `docs/agent/PROGRESS.md`, edit **only your own row** (status `review` when the PR is open). Do not add handoff notes there; write them in **Result** below.
 - Do **not** edit `docs/agent/DECISIONS.md` or `docs/agent/CONTEXT.md`. List decisions under "Decisions to record" in your output; they get numbered at integration.
-- Do not edit `docs/drafts/server-setup.md`. If monitoring needs a change there (for example a heartbeat line in the backup script), describe it in your output and in Result.
+- Do not edit `docs/final/server-setup.md`. If monitoring needs a change there (for example a heartbeat line in the backup script), describe it in your output and in Result.
 
 ## Result
 

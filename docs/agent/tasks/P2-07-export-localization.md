@@ -13,14 +13,14 @@ Write one guide for how SIGRAK's Indonesian UI text and its Indonesian exports (
 ## Read first
 
 - `CLAUDE.md` (language policy), `docs/agent/CONTEXT.md` (conventions)
-- `docs/drafts/coding-standards.md` sections 7 (translations) and 8 (exports, dates, numbers)
-- `docs/drafts/content-engine.md#export`, `docs/drafts/design-system.md` (UI writing, `#terms`)
+- `docs/final/coding-standards.md` sections 7 (translations) and 8 (exports, dates, numbers)
+- `docs/final/content-engine.md#export`, `docs/final/design-system.md` (UI writing, `#terms`)
 - `docs/sources/Parafrase_Teks_UI_Sigrak.xlsx` (sheets *Parafrase*, *Istilah*, *Ringkasan*)
 - `docs/agent/DECISIONS.md` only for D-002, D-028, D-031, D-033, D-080 (read only)
 
 ## Output
 
-- `docs/drafts/export-localization.md` (use `docs/templates/DOC.md`), covering:
+- `docs/final/export-localization.md` (use `docs/templates/DOC.md`), covering:
   - **`lang/id` layout:** one file per area (e.g. `auth`, `nav`, `rpm`, `exam`, `export`, `validation`), English dot keys, a naming scheme, and when to use parameters and `trans_choice`. Show how the shared Inertia prop and `t()` (D-080) load only the groups a page needs.
   - **From the paraphrase spreadsheet to keys:** how the 1,499 strings and 37 terms map onto files and keys. Include a mapping rule, a sample table (about 20 rows: old text → new text → key), how *Istilah* terms are kept consistent (one glossary file or a check), and how to find strings that are missing or unused.
   - **Validation and system messages:** Indonesian `validation.php` attributes and friendly error text. Mail and notification copy.
@@ -49,8 +49,8 @@ Write one guide for how SIGRAK's Indonesian UI text and its Indonesian exports (
 
 ## Result
 
-- Wrote `docs/drafts/export-localization.md`. It covers the `lang/id` file layout and key scheme, the page-level translation groups for the shared prop (D-080), and the exam client's own group (D-094). It sets the spreadsheet → key mapping rule, with a 23-row sample and a tracking-file proposal. The 37 *Istilah* terms live in `lang/id/terms.php`, backed by a banned-terms test. It also covers validation, error pages, mail, and notifications, plus per-format rules for PDF, DOCX, Excel, and CSV. Other sections: the `IndonesianFormat` API, export file names, RTL/Arabic (D-039), and a table of CI checks.
+- Wrote `docs/final/export-localization.md`. It covers the `lang/id` file layout and key scheme, the page-level translation groups for the shared prop (D-080), and the exam client's own group (D-094). It sets the spreadsheet → key mapping rule, with a 23-row sample and a tracking-file proposal. The 37 *Istilah* terms live in `lang/id/terms.php`, backed by a banned-terms test. It also covers validation, error pages, mail, and notifications, plus per-format rules for PDF, DOCX, Excel, and CSV. Other sections: the `IndonesianFormat` API, export file names, RTL/Arabic (D-039), and a table of CI checks.
 - **Decisions to record:** 12 items in the guide. Main ones: CSV `;` + UTF-8 BOM, Rupiah `Rp1.234.567` without ICU, Liberation fonts in Gotenberg, F4 = 215 × 330 mm, notifications store key + params, and `lang:audit`.
-- **Edited outside the guide:** one row of `docs/drafts/coding-standards.md` §8. The Money example now uses `IndonesianFormat::rupiah()`, so the two docs agree. P2-06 is done, so no running task owns that file.
+- **Edited outside the guide:** one row of `docs/final/coding-standards.md` §8. The Money example now uses `IndonesianFormat::rupiah()`, so the two docs agree. P2-06 is done, so no running task owns that file.
 - **Open questions:** F4 size, e-Rapor format, extra print fonts, and the exam client's default font size.
 - **Follow-up:** fill `docs/data/ui-copy/key-map.csv` screen by screen when screens are built.

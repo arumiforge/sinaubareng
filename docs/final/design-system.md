@@ -1,6 +1,6 @@
 # Design System and UI Writing
 
-- **Status:** draft (owner review)
+- **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
 - **Last updated:** 2026-10-30
 - **Sources:** [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
@@ -57,7 +57,7 @@ Rules:
 ## Type, space, shape
 
 - **Type scale:** 13 / 15 / 17 / 20 / 24 / 30 px. Reading text is 16 px on phones. Labels are at least 13 px, weight 600, sentence case.
-- **Print documents** use one fixed print font, Arial (D-109), for uniform output. The letterhead is an uploaded image (D-031), so its fonts and logo are whatever the school or teacher designed.
+- **Print documents** use the school's print font, Arial (default) or Times New Roman (D-125). The letterhead is an uploaded image (D-031), so its fonts and logo are whatever the school or teacher designed.
 - **Math and Arabic:** KaTeX for formulas and fractions; Noto Naskh Arabic (or Amiri) for Arabic text in PAI material.
 - **Space:** multiples of 4 px. **Radius:** 6 (inputs), 10 (cards). **Shadow:** floating menus and dialogs only.
 
