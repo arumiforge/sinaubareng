@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-149. No open PRs, no running tasks. Only `main` exists on the remote (D-148). The next phase is not planned yet; the owner picks it.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-150. No open PRs, no running tasks. Only `main` exists on the remote (D-148). The next phase is not planned yet; the owner picks it.
 
 ## Open decisions blocking work
 

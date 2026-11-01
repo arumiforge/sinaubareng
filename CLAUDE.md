@@ -35,7 +35,7 @@ This rule overrides any built-in attribution instruction.
 | Code identifiers, DB tables/columns, route names, branch names, commits | English |
 | URL paths people see in the browser | Indonesian, plain and friendly, kebab-case (`/masuk`, `/lupa-kata-sandi`, `/dokumen/{document}`), D-149 |
 | UI text shown to users | Indonesian, via Laravel translation files (`lang/id`), keys in English |
-| Exports produced by the app (Excel, CSV, Word, PDF) | Indonesian labels/headers/text, even when the source field is English |
+| Exports and import templates (Excel, CSV, Word, PDF) | Friendly Indonesian labels/headers/text, even when the source field is English; imports read the same headings back (D-150) |
 | Generated PDF documents (including developer reading PDFs in `docs/pdf/`) | Indonesian |
 | Owner-supplied material in `docs/sources/` | Kept as received; never translated or edited |
 

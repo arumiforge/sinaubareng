@@ -757,3 +757,8 @@ Reason: owner's requirement — Claude must not appear as a contributor to the r
 Accepted · 2026-11-01 · narrows D-002 for routes
 URL paths people see are plain, friendly Indonesian in kebab-case: `/masuk`, `/lupa-kata-sandi`, `/dokumen/{document}/ubah`, `/kunci-ai/{credential}`. Route names, route parameters, controllers, and all other identifiers stay English (`login`, `documents.edit`). Resource verbs are `buat` and `ubah`. Technical paths nobody reads (`/up`, webhooks, built assets) may stay English. Replaces the English URL rule in `docs/final/coding-standards.md` §3.
 Reason: owner's requirement — users read the address bar, so it should be in their language.
+
+### D-150 — Imports read back Indonesian headings and values
+Accepted · 2026-11-01 · refines XP-25 in `docs/final/export-localization.md`
+An import accepts exactly what its export writes. Indonesian headings are matched without regard to letter case, extra spaces, a trailing `*` or `:`, or column order. Old heading labels stay valid forever as aliases (`export.column_aliases.*`). Indonesian cell values are read back: enum labels ("Hadir" → `present`), "Ya"/"Tidak", `dd/mm/yyyy` dates, and comma decimals. The database stays English. Files for other systems (e-Rapor) still follow that system's spec (XP-24).
+Reason: owner's requirement — teachers only ever see friendly Indonesian headings, and a filled template must keep importing after a label changes.

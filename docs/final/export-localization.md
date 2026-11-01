@@ -187,7 +187,7 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 - **LOC-24** `php artisan lang:audit` (*proposed*) scans `app/`, `resources/views/`, and `resources/js/` for `__('…')`, `trans_choice('…')`, `@lang('…')`, `t('…')`, `tc('…')`, and enum `label()` lookups. It then reports:
   - **missing:** a key used in code but not in `lang/id`. This fails CI (TR-7).
   - **unused:** a key in `lang/id` that no code uses. This is a warning, listed in the PR, and the key is removed in the same task.
-  - **dynamic:** a key built at runtime (`"enums.{$enum}.{$value}"`). It is allowed only for the `enums.*` and `export.columns.*` patterns, which the audit expands from the enum cases and the export column lists.
+  - **dynamic:** a key built at runtime (`"enums.{$enum}.{$value}"`). It is allowed only for the `enums.*`, `export.columns.*`, and `export.column_aliases.*` patterns, which the audit expands from the enum cases and the export column lists.
 - **LOC-25** **Hard-coded text check.** The audit also flags literal text in Svelte templates and Blade views that is not wrapped in `t()`/`__()`. The allowed exceptions are punctuation, numbers, `aria-hidden` icons, and lines marked `<!-- i18n-ignore: reason -->`.
 
 ## 3. Validation and system messages
@@ -284,7 +284,10 @@ public function columnFormats(): array
   - Numbers have no thousands separator and use `,` for decimals. Dates are `dd/mm/yyyy`.
   - XLSX is the default download. CSV is offered only where a user asks for it.
   - A file meant for another system (for example an e-Rapor import) follows that system's spec instead, and the spec is noted in the export class.
-- **XP-25** **Imports** (students, scores) accept the same headings as the matching export, and both XLSX and CSV (`;` or `,`, with or without BOM). They validate each row and report errors in Indonesian by row number ("Baris 12: NISN harus 10 angka."). Template files for imports are generated from the same column list as the export.
+- **XP-25** **Imports** (students, scores) accept the same headings as the matching export, and both XLSX and CSV (`;` or `,`, with or without BOM). They validate each row and report errors in Indonesian by row number ("Baris 12: NISN harus 10 angka."). Template files for imports are generated from the same column list as the export, so a teacher who downloads the template never types a heading. An import reads back what its export writes (D-150):
+  - **Heading match.** Headings are compared after trimming, collapsing spaces, and ignoring case and a trailing `*` or `:`, so "nama  siswa" matches "Nama Siswa". Column order does not matter. An unknown heading is reported by name together with the expected headings ("Kolom 'Nama Murid' tidak dikenal. Kolom yang dipakai: Nama Siswa, NISN, …"). A missing required column stops the import before any row is saved.
+  - **Old headings stay valid.** When a heading label changes, the old label moves to `export.column_aliases.<column>` in `lang/id/export.php`, so templates filled earlier still import. Aliases are never removed.
+  - **Indonesian cell values.** Fixed-set cells accept the labels the export writes ("Hadir" → `present`, "Ya"/"Tidak" → `true`/`false`), matched the same way as headings. Dates accept `dd/mm/yyyy` text and Excel date cells; numbers accept comma decimals (`76,5`) and numeric cells.
 
 ## 5. Formatting helpers
 
@@ -344,6 +347,7 @@ MI CP text (D-039) and PAI material mix Indonesian and Arabic. The rules:
 | Parameter parity | Pest | A key's `:params` differ from those passed at a call site (checked for literal calls) |
 | Enum labels | Pest arch | An enum case has no `enums.*` label |
 | Export headings snapshot | Pest | An export's headings differ from the stored snapshot (`tests/Snapshots/exports/<name>.json`); the snapshot shows the Indonesian headings for review |
+| Import round trip (XP-25) | Pest | Importing an export's own file, or the same file with old alias headings, other letter case, and extra spaces, does not give back the same rows |
 | Excel cell types (EX-4) | Pest | A number, date, or Rupiah column holds strings, or NISN/NIP is numeric |
 | CSV format (XP-24) | Pest | The file lacks the BOM, uses `,` as the separator, or a cell starts with `=` unescaped |
 | Formatter parity (XP-26) | Pest + Vitest | PHP and TS formatters give different output for the shared fixtures |
