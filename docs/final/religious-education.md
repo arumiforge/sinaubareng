@@ -99,9 +99,9 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 
 1. ~~**Verify the SD religion CP transcription**~~ Done in P2-01 (`verified: true`).
 2. **Cross-check PAI in KM-SD-2026-R2** against the decree's Islam CP.
-3. **Build topics, TP, ATP, fokus, and JP** for Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **Tim Validasi SIGRAK reviews and signs off each set** (D-113), and the dataset records "Tim Validasi SIGRAK" and the review date (D-112). The same applies to the MI subjects and to the CP data.
+3. **Build topics, TP, ATP, fokus, and JP** — draft done in P2-09: [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (D-139…D-141). For Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **Tim Validasi SIGRAK reviews and signs off each set** (D-113), and the dataset records "Tim Validasi SIGRAK" and the review date (D-112). The same applies to the MI subjects and to the CP data.
 4. ~~**Structure the MI CP**~~ Done in P2-02 (element rows, Arabic retyped).
-5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects, using the BTU books as references.
+5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects — draft done in P2-10: [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (D-145, D-146). Both sets wait for Tim Validasi SIGRAK review.
 
 ## Open questions
 
