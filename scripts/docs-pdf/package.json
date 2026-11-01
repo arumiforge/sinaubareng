@@ -1,0 +1,12 @@
+{
+  "name": "sigrak-docs-pdf",
+  "private": true,
+  "description": "Builds the Indonesian developer PDFs in docs/pdf/ from translations in docs/.build/",
+  "scripts": {
+    "build": "node build.cjs",
+    "check": "node check.cjs"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

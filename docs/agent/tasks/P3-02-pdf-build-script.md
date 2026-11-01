@@ -1,7 +1,7 @@
 # P3-02 — PDF build script
 
 - **Phase:** P3
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p3/p3-02-pdf-build-script
 - **Depends on:** P3-01
 - **Can run in parallel with:** —
@@ -22,11 +22,18 @@ Keep the Indonesian PDF build from P3-01 in the repo, so anyone can regenerate `
 
 ## Done when
 
-- [ ] `node scripts/docs-pdf/build.mjs <name>` rebuilds a PDF from `docs/.build/<name>.md`
-- [ ] The page check reports no table or code block wider than the page
-- [ ] The three outdated PDFs match their final docs
-- [ ] Nothing from `docs/.build/` is committed
+- [x] `node scripts/docs-pdf/build.mjs <name>` rebuilds a PDF from `docs/.build/<name>.md`
+- [x] The page check reports no table or code block wider than the page
+- [x] The three outdated PDFs match their final docs
+- [x] Nothing from `docs/.build/` is committed
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- Added `scripts/docs-pdf/`:
+  - `build.cjs`: Pandoc to self-contained HTML, page-width check, then Chromium to PDF.
+  - `check.cjs`: the page-width check, plus a scan for leftover English prose.
+  - `print.css`, and Noto Naskh Arabic with its OFL licence.
+  - `package.json` with Playwright pinned to 1.63.0, and a README with the requirements and translation rules.
+- `WORKFLOW.md` now points to the script.
+- Rebuilt data-model, religious-education, and server-setup PDFs, so they include the TP/ATP draft links and the D-136 backup heartbeat. A full build of all ten docs passes the page check and the English scan. The other seven PDFs are unchanged.
+- Translations stay in the git-ignored `docs/.build/`, as WORKFLOW requires. Rebuilding a PDF still needs its translation file. A fresh clone has none, so the next person translates from `docs/final/` first.
