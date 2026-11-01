@@ -77,7 +77,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 - **Everything is an example.** The guide says all aspects and indicators are examples, and each madrasah may adapt them (p. 12).
 - **Methods it recommends:** deep learning (mindful, meaningful, joyful), experience-based learning, the FIDS flow (Feel, Imagine, Do, Share), and process-based evaluation.
 
-Whether the RPM template supports KBC for MI schools is an open question for the owner (see below). Until it is answered, no KBC feature is in scope.
+**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. This applies to every MI subject and does not apply to SD.
 
 ## How SIGRAK models it
 
@@ -106,6 +106,6 @@ Whether the RPM template supports KBC for MI schools is an open question for the
 ## Open questions
 
 - [ ] An official-channel copy of SK 9941/2025 (low priority: two copies from different sources have identical text).
-- [ ] KBC in the RPM template for MI: should an MI teacher pick *Tema KBC* and *Materi Insersi* in the wizard, with the AI weaving them into TP, activities, and assessment? In v1 or later? For every MI subject or only the Kemenag subjects? (Panduan KBC, SK Dirjen Pendis 6077/2025.)
+- [x] KBC in the RPM template for MI: in v1, for every MI subject, not for SD (D-126).
 - [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
 - [ ] Inclusive schools: does any target school need the special-education CP (Lampiran II of BKPDM 020/2026)?
