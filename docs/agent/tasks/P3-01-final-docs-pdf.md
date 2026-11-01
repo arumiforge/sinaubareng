@@ -1,7 +1,7 @@
 # P3-01 — Move approved drafts to final and build Indonesian PDFs
 
 - **Phase:** P3
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p3/p3-01-final-docs-pdf
 - **Depends on:** owner approval of all drafts (D-123)
 - **Can run in parallel with:** P2-08 (it writes a new draft and does not touch these files)
@@ -33,10 +33,10 @@ Move the ten approved drafts to `docs/final/` and build one Indonesian PDF per f
 
 ## Done when
 
-- [ ] Ten files are in `docs/final/` (moved with git history), and `open-questions.md` stays in `docs/drafts/`
-- [ ] `grep -rn "docs/drafts/\|\.\./drafts/\|drafts/" docs CLAUDE.md` lists only `open-questions.md`, P2-08's `server-monitoring.md`, the folder description in WORKFLOW/CLAUDE, and historical text inside DECISIONS.md
-- [ ] Ten PDFs in `docs/pdf/`, all in Indonesian, opened and spot-checked: tables fit the page, Arabic renders right to left, and no English prose is left
-- [ ] Nothing from `docs/.build/` is committed
+- [x] Ten files are in `docs/final/` (moved with git history), and `open-questions.md` stays in `docs/drafts/`
+- [x] `grep -rn "docs/drafts/\|\.\./drafts/\|drafts/" docs CLAUDE.md` lists only `open-questions.md`, P2-08's `server-monitoring.md`, the folder description in WORKFLOW/CLAUDE, and historical text inside DECISIONS.md
+- [x] Ten PDFs in `docs/pdf/`, all in Indonesian, opened and spot-checked: tables fit the page, Arabic renders right to left, and no English prose is left
+- [x] Nothing from `docs/.build/` is committed
 
 ## Coordination rules
 
@@ -46,4 +46,15 @@ Move the ten approved drafts to `docs/final/` and build one Indonesian PDF per f
 
 ## Result
 
-Filled in by the agent on finish: what was done, open questions, follow-ups.
+- **Part 1 (#35, merged):** moved ten drafts to `docs/final/` with `git mv`, set their status lines, and fixed links across the repo. `open-questions.md` stays in drafts. Applied the coordinator's text changes for D-125 and D-126.
+- **Part 2:** applied D-142 (KBC fields optional, AI pre-filled), D-144 (e-Rapor question ticked), and the D-125 reference in coding-standards EX-5 to the final docs. Then built ten Indonesian PDFs in `docs/pdf/`.
+- **PDF method:** the Indonesian translations are in `docs/.build/<name>.md` (git-ignored). Pandoc renders them to HTML with a print stylesheet (A4, Liberation Sans, embedded Noto Naskh Arabic, page numbers "Halaman X dari Y"), and headless Chromium (Playwright) turns the HTML into PDF.
+  - Code blocks, Mermaid diagrams, and ASCII diagrams stay unchanged as code. Where a diagram carries English labels, a short Indonesian summary follows it.
+- **Checks:**
+  - A script found no table or code block wider than the page in any of the ten docs.
+  - Pages from each type of content were spot-checked visually.
+  - An English-word scan of the prose (outside code) found no leftover English.
+- **Arabic:** none of the ten docs contains Arabic script, so right-to-left rendering could not be checked against real text. The Arabic font is embedded and styled for when it is needed.
+- **Follow-ups:**
+  - The coordinator will add the server-setup backup heartbeat (D-136) after this PR; server-setup.pdf then needs a rebuild.
+  - The render script and stylesheet are not in the repo (they live in the git-ignored `docs/.build/`). A small committed build script would make regeneration repeatable; this should be its own task if wanted.
