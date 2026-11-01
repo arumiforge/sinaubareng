@@ -54,7 +54,7 @@ Turn the raw MI CP text (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab
 
 **Open questions / follow-ups**
 
-- Possible source errors, kept as printed and listed in `extraction.source_notes`: خَالِيْ for a father's brother (should be عَمِّيْ), كَمْ for كَمِ السَّاعَةُ, the repeated "berupa kritik sosial" in Fikih B/C, and the typos madarasah, peyelidikan, kongkrit. A Bahasa Arab guru should decide whether the app shows the printed or the corrected form.
+- Possible source errors: the owner decided (D-127, replacing D-115) that the app shows the printed text. The 9 affected rows carry `review_notes[]` for the reviewers: خَالِيْ (should be عَمِّيْ), كَمْ (should be كَمِ السَّاعَةُ), مَالَوْنُ spacing, the repeated "berupa kritik sosial" (Fikih B/C), madarasah, peyelidikan (SKI B/C), kongkrit.
 - Review by a guru of each subject and an Arabic reader (D-037) is still needed before import.
 - `docs/drafts/religious-education.md` still says the MI CP "is not yet split into element rows". I did not edit it (P1-07 draft, also near P1-08). The integration pass should update that line.
 
