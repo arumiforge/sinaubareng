@@ -12,7 +12,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Open decisions blocking work
 
-- None.
+- D-145, D-146 (P2-10 MI TP/ATP) are **Proposed**.
 
 ## Phases
 
@@ -67,6 +67,7 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones).
 
+- 2026-11-01 — P2-10 merged (#40): MI Kemenag TP/ATP draft data, decisions D-145/D-146 (Proposed). After P3-01: link both TP/ATP files from final religious-education and data-model.
 - 2026-11-01 — D-143/D-144: D-130…D-141 accepted; Healthchecks.io free plan, owner as the only recipient; e-Rapor export deferred (own Excel layout for now). After P3-01: tick the e-Rapor question in docs/final/data-model.md.
 - 2026-11-01 — D-142: the KBC fields are optional and AI pre-filled. The print font question is closed by D-125. The final-doc text rides along in P3-01 part 2.
 - 2026-11-01 — P2-08 (#32) and P2-09 (#34) merged; decisions D-128…D-141. D-128 is the daily AI counter (from #30). After P3-01: add the backup heartbeat to server-setup §12 (D-136), and link the TP/ATP file from religious-education and data-model.
