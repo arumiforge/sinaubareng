@@ -821,3 +821,8 @@ Reason: owner's decision.
 Accepted · 2026-11-01 · narrows D-158 for v1
 Buku Induk, Dapodik sync, KGB and kepangkatan history, and ekstrakurikuler records are not in v1. The app may show them as upcoming. The design draft `docs/drafts/buku-induk-dapodik.md` (P4-01) is kept on hold, with its open questions, until the owner restarts it.
 Reason: owner's decision.
+
+### D-162 — v1 build order
+Accepted · 2026-11-01 · confirms the slice order in `product-concept.md`
+The v1 slices are built in the proposed order: foundation, content core, more templates, TKA, Di Kelas, Asesmen, portals, business. Before slice 1, the project is scaffolded and the server is set up (Phase 5). TKA no longer targets the January–March 2027 practice season; it targets the 2028 TKA season.
+Reason: owner's decision.

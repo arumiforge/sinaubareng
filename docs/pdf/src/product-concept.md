@@ -289,12 +289,12 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 
 ## Cakupan v1
 
-v1 berisi setiap baris di atas yang tidak bertanda *Hapus* atau *Nanti*. Itu rilis yang besar, jadi Fase 2 sebaiknya memotongnya menjadi irisan yang bisa dirilis satu per satu. Usulan urutan (dikonfirmasi saat Fase 2 direncanakan):
+v1 berisi setiap baris di atas yang tidak bertanda *Hapus* atau *Nanti*. Itu rilis yang besar, jadi Fase 2 sebaiknya memotongnya menjadi irisan yang bisa dirilis satu per satu. Urutan, sudah dikonfirmasi pemilik (D-162):
 
 1. Fondasi: autentikasi, undangan, sekolah dan peran, tahun ajaran dan kelas, impor kurikulum, jadwal pelajaran.
 2. Inti konten: Mesin Penyedia AI, mesin templat, templat RPM, Dokumen Saya, ekspor PDF/DOCX.
 3. Templat lain: Bank Soal, LKPD, Quiz Battle (tayang + unduh).
-4. TKA: templat Paket Soal TKA, situs ujian, sesi, kartu ujian, token, hasil. Target: siap sebelum sekolah mulai latihan TKA 2027 (Januari–Maret).
+4. TKA: templat Paket Soal TKA, situs ujian, sesi, kartu ujian, token, hasil. Target: musim TKA 2028 (D-162).
 5. Di Kelas dengan sinkronisasi offline, Jurnal dari RPM.
 6. Asesmen: rencana, nilai, analisis per TP, rapor.
 7. Portal: kepala sekolah, operator, pengawas. Validasi dan komentar.
@@ -309,5 +309,5 @@ v1 berisi setiap baris di atas yang tidak bertanda *Hapus* atau *Nanti*. Itu ril
 - [ ] Uji menu lima tab dengan 5 guru kelas dan 2 guru mapel memakai prototipe klik (tanpa data sungguhan).
 - [ ] Presentasikan versi singkat ke kepala sekolah dan pengawas, lalu catat keberatan mereka.
 - [x] Klausul batas usia di bawah 18 tahun dari Gemini: siswa hanya menerima konten AI yang sudah jadi dan diperiksa guru, dan tidak pernah memicu AI (D-124).
-- [ ] Jadwal TKA 2027 untuk SD/MI, begitu diumumkan, untuk menentukan waktu rilis fitur TKA.
+- [ ] Jadwal TKA 2028 untuk SD/MI, begitu diumumkan, untuk menentukan waktu rilis fitur TKA (D-162).
 - [ ] Peninjau data agama dan salinan SK 9941/2025 dari kanal resmi (lihat `religious-education.md`, bagian Pertanyaan terbuka).

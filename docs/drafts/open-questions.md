@@ -28,7 +28,6 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 | Question | Source | Who answers |
 |---|---|---|
 | Test the five-tab menu with 5 class teachers and 2 subject teachers on a click prototype (no real data) | [product-concept.md](../final/product-concept.md#open-questions) | team (owner recruits the teachers) |
-| v1 release slices: confirm the proposed order when Phase 2 is planned | [product-concept.md](../final/product-concept.md#v1-scope) | owner + team |
 
 ## Content engine
 
@@ -62,8 +61,8 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 | Question | Source | Who answers |
 |---|---|---|
-| TKA 2027 schedule for SD/MI, once published, to time the TKA release | [product-concept.md](../final/product-concept.md#open-questions) | team (watch for the announcement) |
+| TKA 2028 schedule for SD/MI, once published, to time the TKA release (D-162) | [product-concept.md](../final/product-concept.md#open-questions) | team (watch for the announcement) |
 
 ## Answered on 2026-11-01
 
-Kokurikuler variant in v1 (already D-014), Laravel Excel 4.x supports Laravel 13 (checked in `server-setup.md`), "Templat" in UI copy (D-151), *Kabar* notice when a generation finishes (D-152), keep the last 5 document revisions (D-153), game palette by a designer (D-154), special-education religion CP in scope (D-155), plans and prices (D-157), add-on features (D-158), Game kelas trial (D-159), 1-week teacher trial (D-160). Phase 2 left no open questions.
+Kokurikuler variant in v1 (already D-014), Laravel Excel 4.x supports Laravel 13 (checked in `server-setup.md`), "Templat" in UI copy (D-151), *Kabar* notice when a generation finishes (D-152), keep the last 5 document revisions (D-153), game palette by a designer (D-154), special-education religion CP in scope (D-155), plans and prices (D-157), add-on features (D-158), Game kelas trial (D-159), 1-week teacher trial (D-160), v1 slice order (D-162). Phase 2 left no open questions.

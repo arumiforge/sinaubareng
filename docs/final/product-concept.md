@@ -285,12 +285,12 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 
 ## v1 scope
 
-v1 contains every row above that is not *Remove* or *Later*. That is a large release, so Phase 2 should cut it into slices that can ship one by one. Proposed order (to confirm when Phase 2 is planned):
+v1 contains every row above that is not *Remove* or *Later*. That is a large release, so Phase 2 should cut it into slices that can ship one by one. Order, confirmed by the owner (D-162):
 
 1. Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable.
 2. Content core: AI Provider Engine, template engine, RPM template, Dokumen Saya, PDF/DOCX export.
 3. More templates: Bank Soal, LKPD, Quiz Battle (present + download).
-4. TKA: Paket Soal TKA template, exam site, sessions, exam cards, token, results. Target: ready before schools start TKA practice for 2027 (January–March).
+4. TKA: Paket Soal TKA template, exam site, sessions, exam cards, token, results. Target: the 2028 TKA season (D-162).
 5. Di Kelas with offline sync, Jurnal from RPM.
 6. Asesmen: plan, scores, analysis per TP, report cards.
 7. Portals: principal, operator, supervisor. Validation and comments.
@@ -305,5 +305,5 @@ v1 contains every row above that is not *Remove* or *Later*. That is a large rel
 - [ ] Test the five-tab menu with 5 class teachers and 2 subject teachers on a click prototype (no real data).
 - [ ] Present the short version to principals and supervisors, and record their objections.
 - [x] Gemini's under-18 clause: students only receive finished, teacher-checked AI content and never trigger the AI (D-124).
-- [ ] TKA 2027 schedule for SD/MI, once published, to time the TKA release.
+- [ ] TKA 2028 schedule for SD/MI, once published, to time the TKA release (D-162).
 - [ ] Religion data reviewers and an official-channel copy of SK 9941/2025 (see [`religious-education.md`](religious-education.md#open-questions)).
