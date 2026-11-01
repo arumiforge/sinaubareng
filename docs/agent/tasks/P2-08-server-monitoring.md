@@ -14,7 +14,7 @@ Write one guide that tells the team, quickly and reliably, when SIGRAK's product
 
 - `docs/agent/CONTEXT.md`
 - `docs/drafts/server-setup.md` (all sections; especially 9 Tunnel, 11 Supervisor/Horizon, 12 backups, 15 staging)
-- `docs/drafts/architecture.md` (deployment topology, scheduled jobs, security boundaries)
+- `docs/final/architecture.md` (deployment topology, scheduled jobs, security boundaries)
 - `docs/drafts/ai-provider-engine.md` (queues, failure classes, what Tim SIGRAK sees)
 - `docs/agent/DECISIONS.md` only for D-073, D-086…D-088, D-095, D-096 (read only)
 
