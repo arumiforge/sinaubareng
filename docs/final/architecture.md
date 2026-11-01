@@ -264,7 +264,7 @@ These use the same building blocks and need no extra components:
 - **RPM scheduling:** meetings are placed on the timetable; a journal entry marked "tidak terlaksana" shifts later meetings to the next slot (`meetings`, `meeting_schedule_history`).
 - **Buka di Canva (level 1):** an export download plus a link that opens canva.com. No server call to Canva.
 - **Kabar:** announcements, reminders, and database notifications (generation done, key invalid) in one inbox.
-- **Plan limits:** a small entitlement check reads `subscriptions` and `school_addons` before a feature, generation, or export is used. After the 2-week trial, an account without a plan can only view and download; add-on features need the school's add-on (D-157, D-158).
+- **Plan limits:** a small entitlement check reads `subscriptions` and `school_addons` before a feature, generation, or export is used. After the 2-week trial, an account without a plan can only view and download; add-on features need the school's add-on, except a teacher's one-time 7-day Game kelas trial (D-157, D-158, D-159).
 
 ## Deployment topology
 

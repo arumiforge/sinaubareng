@@ -201,7 +201,7 @@ Plans are paid per academic year (July–June) by **teachers and schools only**.
 | Add-on feature | One school with Sigrak Sekolah | One extra feature, switched on by the school for all its accounts (D-158) | Rp50.000 each | School (non-BOS funds) |
 | Sigrak Binaan | One supervisor or KKG cluster | Supervisor portal. Not sold: it opens free once 5 or more of the supervised schools have Sigrak Sekolah | Free | — |
 
-**Add-on features (D-158):** Simulasi TKA · Buku Induk and Dapodik sync · Keuangan and Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, description drafts, report export). More add-ons may follow.
+**Add-on features (D-158):** Simulasi TKA · Buku Induk and Dapodik sync · Keuangan and Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, description drafts, report export). More add-ons may follow. A teacher may try Game kelas for 7 days, once, even when the school has not switched it on (D-159).
 
 ## Feature status
 

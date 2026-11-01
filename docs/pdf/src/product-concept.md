@@ -205,7 +205,7 @@ Paket dibayar per tahun ajaran (Juli–Juni) **hanya oleh guru dan sekolah**. Si
 | Fitur tambahan | Satu sekolah yang berlangganan Sigrak Sekolah | Satu fitur tambahan, diaktifkan sekolah untuk semua akunnya (D-158) | Rp50.000 per fitur | Sekolah (dana non-BOS) |
 | Sigrak Binaan | Satu pengawas atau gugus KKG | Portal pengawas. Tidak dijual: terbuka gratis begitu 5 atau lebih sekolah binaannya berlangganan Sigrak Sekolah | Gratis | — |
 
-**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul.
+**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul. Guru boleh mencoba Game kelas selama 7 hari, satu kali, walaupun sekolahnya belum mengaktifkannya (D-159).
 
 ## Status fitur
 

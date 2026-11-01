@@ -806,3 +806,8 @@ Reason: owner's decision.
 Accepted · 2026-11-01
 Features outside the core are add-ons at Rp50.000 per year each, switched on by a school that has Sigrak Sekolah: Simulasi TKA, Buku Induk and Dapodik sync (import of the Dapodik Excel export: students, rombel, ekstrakurikuler, staff gaji berkala and kepangkatan), Keuangan and Inventaris kelas, Buku Sekolah, Game kelas (Quiz Battle, Tayangkan, Unduh game), and Rapor. More may follow.
 Reason: owner's decision.
+
+### D-159 — Game kelas trial for teachers
+Accepted · 2026-11-01 · exception to D-158
+A teacher may try Game kelas (Quiz Battle, Tayangkan, Unduh game) for 7 days, once per teacher, even when the school has not switched the add-on on. Every other add-on needs the school. After the 2-week trial, an unpaid teacher can still only view and download (D-157).
+Reason: owner's decision; lets teachers see games in class before asking the school to buy the add-on.
