@@ -1,6 +1,6 @@
 # Sources
 
-This folder holds material from the product owner and official documents. Each file is kept exactly as received (mostly Indonesian) and is not edited. That is the one exception to the English-only rule for repo markdown. These files are inputs, not current guidance. Where a source and a draft disagree, the draft in `docs/drafts/` (and `docs/agent/DECISIONS.md`) wins.
+This folder holds material from the product owner and official documents. Each file is kept exactly as received (mostly Indonesian) and is not edited. That is the one exception to the English-only rule for repo markdown. These files are inputs, not current guidance. Where a source and a project doc disagree, the doc in `docs/final/` (or `docs/drafts/` for work in progress) and `docs/agent/DECISIONS.md` win.
 
 | File | What it is | Date | Superseded by |
 |---|---|---|---|
