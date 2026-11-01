@@ -717,3 +717,8 @@ Reason: matches the target schema directly.
 **Proposed** · 2026-10-31 · P2-09 · follows D-034
 3 JP per week, 5 topics per semester (54/54 JP, 54/42 in grade 6), and one fokus per week of 3 JP.
 Reason: same allocation as PAI.
+
+### D-142 — KBC fields are optional and pre-filled
+Accepted · 2026-11-01 · refines D-126
+*Tema KBC* and *Materi Insersi* in the MI RPM wizard are optional. The AI pre-fills a suggestion from the CP and the material: one or more Panca Cinta themes plus the values to insert. The teacher may change or clear both fields, and an RPM can be generated without them.
+Reason: owner's decision.
