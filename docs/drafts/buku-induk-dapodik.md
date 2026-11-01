@@ -1,6 +1,6 @@
 # Buku Induk and Dapodik Sync
 
-- **Status:** draft (owner review)
+- **Status:** draft, on hold: upcoming, not in v1 (D-161)
 - **Task:** P4-01
 - **Last updated:** 2026-11-01
 - **Add-on:** Buku Induk and Dapodik sync (D-158), for schools with Sigrak Sekolah

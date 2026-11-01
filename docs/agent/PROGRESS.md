@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-160. No open PRs, no running tasks. Only `main` exists on the remote (D-148). Phase 4 (add-on designs) has started: P4-01 waits for owner review and sample Dapodik files.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-161. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). The next phase is not planned yet.
 
 ## Open decisions blocking work
 
@@ -65,16 +65,16 @@ Ran in parallel sessions and was integrated on `p2/p2-00-integration`. Decisions
 
 Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Matematika K4 S2, Tata Boga target, TP↔fokus links) · TP/ATP/fokus/JP for five religions and five MI subjects (reviewed by Tim Validasi SIGRAK, D-113) · import support for `ALOKASI-MI-KMA-1503-2025`.
 
-### Phase 4 — add-on designs · in progress
+### Phase 4 — add-on designs · on hold
 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
-| P4-01 | Buku Induk and Dapodik sync design | review | main | D-157, D-158 | `docs/drafts/buku-induk-dapodik.md` |
+| P4-01 | Buku Induk and Dapodik sync design | blocked (upcoming, D-161) | main | D-157, D-158 | `docs/drafts/buku-induk-dapodik.md` |
 
 ## Start here (next session)
 
 1. Read `CLAUDE.md`, `docs/agent/CONTEXT.md`, and this file. Stack, conventions, and every owner choice are in CONTEXT and `DECISIONS.md`.
-2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions) and `docs/drafts/buku-induk-dapodik.md` (P4-01, in review).
+2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions) and `docs/drafts/buku-induk-dapodik.md` (P4-01, on hold, D-161).
 3. Data: `docs/data/curriculum/` (CP, MI allocation, TP/ATP drafts for SD religions and MI) and `docs/data/tka/`.
 4. Only `main` exists. Old branches were deleted and the history was rewritten on 2026-11-01 (D-148), so old clones must be re-cloned or reset to `origin/main`. Start any task branch from `main` and delete it after merge.
 
@@ -83,7 +83,6 @@ Later candidates (not yet tasks): v1 release slices · curriculum data fixes (Ma
 - **Owner:** Tim Validasi SIGRAK reviews the CP and TP/ATP data before import (`status: draft`, D-113).
 - **Docs:** every doc in `docs/final/` has a matching Indonesian PDF, and every translation lives in `docs/pdf/src/` (D-156).
 - **Data:** transcribe the special-education religion CP (Lampiran II of BKPDM 020/2026) for the six religions (D-155).
-- **Owner:** review P4-01 and send anonymized Dapodik 2026 exports (Daftar PD, PTK) so the column map can be fixed.
 - **Later candidates:** listed under Phase 2 above, plus a dedicated e-Rapor export (D-144) and v1 release slices before coding starts.
 
 ## Handoff notes

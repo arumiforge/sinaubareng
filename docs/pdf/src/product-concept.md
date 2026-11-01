@@ -205,7 +205,7 @@ Paket dibayar per tahun ajaran (Juli–Juni) **hanya oleh guru dan sekolah**. Si
 | Fitur tambahan | Satu sekolah yang berlangganan Sigrak Sekolah | Satu fitur tambahan, diaktifkan sekolah untuk semua akunnya (D-158) | Rp50.000 per fitur | Sekolah (dana non-BOS) |
 | Sigrak Binaan | Satu pengawas atau gugus KKG | Portal pengawas. Tidak dijual: terbuka gratis begitu 5 atau lebih sekolah binaannya berlangganan Sigrak Sekolah | Gratis | — |
 
-**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul. Guru boleh mencoba Game kelas selama 7 hari, satu kali, walaupun sekolahnya belum mengaktifkannya (D-159).
+**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik (segera hadir, D-161) · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul. Guru boleh mencoba Game kelas selama 7 hari, satu kali, walaupun sekolahnya belum mengaktifkannya (D-159).
 
 ## Status fitur
 
@@ -273,7 +273,7 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 | Baru | Pengaturan cetak: kop sebagai **gambar yang diunggah** (bawaan sekolah, guru boleh mengunggah sendiri), penanda tangan, A4/F4, font | Tambah | Pengaturan Sekolah > Cetak; Akun > Kop saya | Guru mengatur tata letak dan logo kop di dalam gambarnya sendiri (D-031) |
 | Baru | Buka di Canva | Tambah | Tombol di pratinjau RPM, LKPD, soal (unduh + buka canva.com) | |
 | Baru | Langganan dan penagihan | Tambah | Pengaturan Sekolah > Langganan (paket dan fitur tambahan). Akun > Paket Saya | Model bisnis (D-157) |
-| Baru | Buku Induk dan sinkronisasi Dapodik: impor ekspor Excel Dapodik (siswa, rombel, ekstrakurikuler, dan data PTK seperti gaji berkala dan kepangkatan) dan menjaga data sekolah tetap selaras | Tambah | Portal operator > Data Sekolah, sebagai fitur tambahan | Sekolah sudah menyimpan data ini di Dapodik (D-158). Perlu tugas rancangan sendiri |
+| Baru | Buku Induk dan sinkronisasi Dapodik: impor ekspor Excel Dapodik (siswa, rombel, ekstrakurikuler, dan data PTK seperti gaji berkala dan kepangkatan) dan menjaga data sekolah tetap selaras | Nanti | Portal operator > Data Sekolah, sebagai fitur tambahan, ditampilkan sebagai segera hadir | Sekolah sudah menyimpan data ini di Dapodik (D-158). Ditahan sebagai segera hadir; draf rancangan P4-01 ditunda (D-161) |
 | Baru | Mengundang guru | Tambah | Portal operator > Guru | Pengganti kata sandi bawaan |
 | Baru | Bawaan muatan lokal dan kalender per daerah | Tambah | Konsol internal + Pengaturan Sekolah | D-018 |
 | Baru | Pengenalan 3 langkah | Tambah | Tampil sekali setelah mendaftar: kelas, jadwal, siswa | Siap sejak hari pertama |

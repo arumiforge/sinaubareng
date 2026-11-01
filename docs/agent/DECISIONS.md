@@ -816,3 +816,8 @@ Reason: owner's decision; lets teachers see games in class before asking the sch
 Accepted · 2026-11-01 · supersedes the trial length in D-157
 The teacher trial lasts 1 week (7 days) with every feature, not 2 weeks. The Game kelas trial (D-159) stays 7 days and can never be repeated.
 Reason: owner's decision.
+
+### D-161 — Buku Induk and Dapodik sync held as upcoming
+Accepted · 2026-11-01 · narrows D-158 for v1
+Buku Induk, Dapodik sync, KGB and kepangkatan history, and ekstrakurikuler records are not in v1. The app may show them as upcoming. The design draft `docs/drafts/buku-induk-dapodik.md` (P4-01) is kept on hold, with its open questions, until the owner restarts it.
+Reason: owner's decision.
