@@ -732,3 +732,13 @@ Reason: owner's decision.
 Accepted · 2026-11-01
 (1) Monitoring uses the free Healthchecks.io Hobbyist plan. Alerts go to the owner only, with no second recipient. (2) The e-Rapor import format is deferred. For now, report-card data is exported in SIGRAK's own Excel layout. The owner will design a dedicated e-Rapor export later.
 Reason: owner's decision.
+
+### D-145 — Curriculum version for MI Kemenag TP/ATP
+**Proposed** · 2026-11-01 · P2-10
+New curriculum version `TPATP-PAI-BA-MI-2026-R1` holds the TP/ATP for the five MI Kemenag subjects, with subject codes QH, AA, FIK, SKI, BAR. It uses the same shape as D-140 and stays `draft` until Tim Validasi SIGRAK reviews it (D-113).
+Reason: one version per source CP set.
+
+### D-146 — MI topics count intrakurikuler JP only
+**Proposed** · 2026-11-01 · P2-10 · follows D-038
+MI topics use the intrakurikuler JP from KMA 1503/2025: 2 JP per week, 4 topics per semester (36/36 JP, 36/28 in grade 6), and one fokus per week. Kokurikuler JP stay with the Kokurikuler module.
+Reason: RPM scheduling counts intrakurikuler JP only.
