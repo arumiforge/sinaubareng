@@ -839,5 +839,5 @@ Reason: production and staging use different hostnames on one codebase (D-095).
 
 ### D-165 — App time is WIB
 Accepted · 2026-11-02 · P5-01 · supersedes D-082
-`config/app.php` timezone is `Asia/Jakarta` (WIB). The app reads, stores, and shows times in WIB. The server OS and PHP CLI may stay on UTC; Laravel sets its own timezone.
+`config/app.php` timezone is `Asia/Jakarta` (WIB) and the MySQL connection's `timezone` is `+07:00`. The app reads, stores, and shows times in WIB. The server OS and PHP CLI stay on UTC; Laravel sets its own timezone.
 Reason: owner's decision.
