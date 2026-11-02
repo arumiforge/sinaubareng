@@ -841,3 +841,8 @@ Reason: production and staging use different hostnames on one codebase (D-095).
 Accepted · 2026-11-02 · P5-01 · supersedes D-082
 `config/app.php` timezone is `Asia/Jakarta` (WIB) and the MySQL connection's `timezone` is `+07:00`. The app reads, stores, and shows times in WIB. The server OS and PHP CLI stay on UTC; Laravel sets its own timezone.
 Reason: owner's decision.
+
+### D-166 — Local development runs in WSL2
+Accepted · 2026-11-02 · owner's choice
+Developers on Windows run the app in WSL2 with Ubuntu 24.04, not Laragon. PHP, MySQL, Redis, and Node live inside Ubuntu, and Gotenberg runs in Docker Desktop with WSL integration. The three local hostnames are `app.`, `ujian.`, and `admin.sigrak.localhost`. Steps: `docs/drafts/local-setup-wsl2.md`.
+Reason: Horizon needs `pcntl`/`posix`, which Windows PHP lacks. Ubuntu 24.04 matches the VPS (D-086), so local behaviour stays close to staging and production.
