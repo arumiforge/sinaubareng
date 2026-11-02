@@ -53,7 +53,7 @@ Do not invent features beyond these documents.
 - URL paths people see are Indonesian, plain and kebab-case (`/masuk`, `/dokumen/{document}`); route names stay English (`login`, `documents.show`) (D-149).
 - Laravel defaults: PSR-12, plural snake_case tables, singular StudlyCase models.
 - Exports (Excel/CSV/Word/PDF) and generated PDFs: Indonesian labels. Map English field names to Indonesian through translation keys, e.g. `__('export.columns.created_at')` → "Tanggal Dibuat". Imports read the same Indonesian headings and labels back (D-150).
-- Dates/numbers in exports and UI: Indonesian format (`d/m/Y`, `1.234.567,89`, `Rp`), timezone `Asia/Jakarta` unless decided otherwise.
+- Dates/numbers in exports and UI: Indonesian format (`d/m/Y`, `1.234.567,89`, `Rp`). App timezone is `Asia/Jakarta` (WIB) for storage and display (D-165).
 - Tests: **Pest** (D-074), run by **GitHub Actions** on every PR to `main` (D-084). Code rules: `docs/final/coding-standards.md`.
 - Migrations are forward-only; `down()` is optional (D-085).
 - No AI attribution anywhere (see `CLAUDE.md`). Commits are authored by the owner; only `main` stays as a branch (D-148).

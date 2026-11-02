@@ -836,3 +836,8 @@ Reason: Wayfinder writes the hostname into the built JavaScript (`//app.sigrak.t
 Accepted · 2026-11-01 · P5-01 · refines D-048
 `APP_HOST`, `EXAM_HOST`, and `ADMIN_HOST` set the three hostnames (`config('app.hosts.*')`). Horizon, Telescope, and the Filament panel sit at the root of the admin host; the panel's sign-in page is `/masuk`.
 Reason: production and staging use different hostnames on one codebase (D-095).
+
+### D-165 — App time is WIB
+Accepted · 2026-11-02 · P5-01 · supersedes D-082
+`config/app.php` timezone is `Asia/Jakarta` (WIB). The app reads, stores, and shows times in WIB. The server OS and PHP CLI may stay on UTC; Laravel sets its own timezone.
+Reason: owner's decision.

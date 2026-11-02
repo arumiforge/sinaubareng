@@ -1,7 +1,7 @@
 # P5-01 — Project scaffold and CI
 
 - **Phase:** P5
-- **Status:** review
+- **Status:** done
 - **Owner:** pw/jolly-fermi-c64iie
 - **Depends on:** —
 - **Can run in parallel with:** P5-02
@@ -34,7 +34,7 @@ Create the empty Laravel application in this repository with the agreed stack, f
 - [x] `pint --test`, `phpstan`, `pest`, `npm run lint`, `npm run check` pass locally and in CI.
 - [x] `app.`, `ujian.`, and `admin.` hostnames each answer with their own placeholder page and guard.
 - [x] No Indonesian or English UI string literals outside `lang/id` (TR-1).
-- [ ] Commits authored as the owner (D-148); the work is merged into `main` and the branch, if any, deleted.
+- [x] Commits authored as the owner (D-148); the work is merged into `main` and the branch, if any, deleted.
 
 ## Result
 
@@ -44,4 +44,4 @@ Create the empty Laravel application in this repository with the agreed stack, f
 - `lang/id`: all 32 files from export-localization §1; only `common`, `nav`, `exam` have keys so far. `t()` in `resources/js/lib/i18n.ts`. Page-level `translations:` middleware (LOC-9) and `lang:audit` (D-100) are not built yet; `tests/Feature/TranslationKeysTest.php` already fails on a missing literal key.
 - Checks: Pint (`declare_strict_types`), Larastan level 6, Pest on MySQL (arch test per module row + LAY-5, hostname tests), ESLint, `svelte-check` with strict route names. `.github/workflows/ci.yml` runs them plus `composer audit`, `npm audit --omit=dev`, and the build, with a MySQL 8.4 service.
 - Local setup: `cp .env.example .env`, fill `APP_*`, hosts, and `DB_*`, then `php artisan key:generate && php artisan migrate`, `npm ci && npm run dev`. Map the three `*.sigrak.test` hosts to 127.0.0.1.
-- Note: `server-setup.md` §10 says the timezone `Asia/Jakarta` is set in `config/app.php`; the app keeps UTC per D-082.
+- App timezone is `Asia/Jakarta` (D-165, supersedes D-082). The final docs still say timestamps are stored in UTC (architecture, data-model, coding-standards DB-10, export-localization XP-27, server-setup); they and their PDFs need a follow-up update.
