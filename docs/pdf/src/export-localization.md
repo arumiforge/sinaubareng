@@ -1,6 +1,6 @@
 # Panduan Ekspor dan Lokalisasi
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 2 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-07
@@ -294,7 +294,7 @@ public function columnFormats(): array
 ## 5. Helper format
 
 - **XP-26** `App\Support\IndonesianFormat` (PHP) dan `resources/js/lib/format.ts` (TS) adalah satu-satunya pemformat (EX-6). Keduanya punya API yang sama dan keluaran yang sama, dan sebuah tes memberi keduanya fixture yang sama.
-- **XP-27** Penyimpanan dalam UTC (DB-10). Setiap metode mengonversi ke `Asia/Jakarta` sebelum memformat. Masukannya Carbon atau string ISO-8601.
+- **XP-27** Waktu yang tersimpan sudah dalam WIB (DB-10, D-165). Setiap metode tetap mengonversi ke `Asia/Jakarta` sebelum memformat, sehingga masukan ISO-8601 dengan offset lain tetap terformat benar. Masukannya Carbon atau string ISO-8601.
 
 | PHP (`IndonesianFormat::`) | TS (`format.`) | Keluaran |
 |---|---|---|

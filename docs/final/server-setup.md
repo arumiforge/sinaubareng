@@ -27,7 +27,7 @@ A step-by-step guide to prepare the SIGRAK VPS (IDCloudHost Cloud VPS, Jakarta),
 
 Generate each secret with `openssl rand -base64 32 | tr -d '/+=' | cut -c1-32` and keep it in the team password manager.
 
-The hostnames, guards, and time handling follow [`architecture.md`](architecture.md) (P2-04): one Laravel codebase, three domain-routed groups, host-only session cookies, server and database in UTC with the app showing `Asia/Jakarta`.
+The hostnames, guards, and time handling follow [`architecture.md`](architecture.md) (P2-04): one Laravel codebase, three domain-routed groups, host-only session cookies, the server in UTC, while the app and its MySQL session run in WIB (`Asia/Jakarta`, `+07:00`, D-165).
 
 ## Versions
 
@@ -62,7 +62,7 @@ Without a public IP, the first steps run in the **IDCloudHost web console** (the
 apt update && apt -y full-upgrade
 apt -y install curl gnupg ca-certificates lsb-release software-properties-common \
   unzip git acl ufw unattended-upgrades supervisor logrotate
-timedatectl set-timezone Etc/UTC   # the app displays Asia/Jakarta; cron times below are UTC
+timedatectl set-timezone Etc/UTC   # the app runs in WIB (Asia/Jakarta); cron times below are UTC
 hostnamectl set-hostname sigrak-prod
 dpkg-reconfigure -plow unattended-upgrades   # answer "Yes"
 curl -sS -m 10 -o /dev/null -w '%{http_code}\n' https://api.cloudflare.com/client/v4/   # any HTTP code = outbound works
@@ -1039,7 +1039,7 @@ To be numbered during integration.
 9. **Release-folder deploys** (`releases/`, `shared/`, `current` symlink), keeping 5 releases; PHP-FPM reload on each deploy because OPcache does not check timestamps.
 10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler; `architecture.md` shows the equivalent cron form); worker counts live in `config/horizon.php`.
 11. **Backups:** daily 01:30 WIB (18:30 UTC) `mysqldump` + `storage/app` tarball, 14 days local, 30 days off-site through an encrypted `rclone` remote; monthly restore test, off-site restore twice a year. `APP_KEY` kept in the password manager, never in the backup.
-12. **Server, PHP, and MySQL run in UTC**; the app displays `Asia/Jakarta` (as in `architecture.md`). Cron times in this guide are UTC.
+12. **Server and PHP run in UTC; the app runs in WIB** (`Asia/Jakarta`, D-165), and its MySQL session uses `+07:00` (as in `architecture.md`). Cron times in this guide are UTC.
 13. **Domain `sigrak.com`** with hostnames `app.`, `ujian.`, `admin.` (owner, 2026-10-31).
 14. **VPS provider: IDCloudHost Cloud VPS, Jakarta** (owner, 2026-10-31).
 15. **Off-site backups on Cloudflare R2**, bucket-scoped Object Read & Write token, encrypted with an `rclone` crypt remote (owner, 2026-10-31).

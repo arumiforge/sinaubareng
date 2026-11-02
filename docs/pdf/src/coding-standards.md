@@ -1,6 +1,6 @@
 # Standar Koding
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/coding-standards.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/coding-standards.md</code> pada 2 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-06
@@ -142,7 +142,7 @@ Aturan ini berlaku untuk setiap halaman yang dibuka orang: aplikasi sekolah, sit
 | DB-7 | Invarian keunikan dan rentang dari model data menjadi constraint DB (unique index, `CHECK`), bukan hanya validasi. |
 | DB-8 | **Tanpa soft delete.** Trait `SoftDeletes` dan kolom `softDeletes()` dilarang. Siklus hidup memakai `status` eksplisit. |
 | DB-9 | Uang berupa rupiah `bigInteger`. Nilai memakai `decimal(5,2)`. Tidak ada `float`/`double` untuk keduanya. |
-| DB-10 | Timestamp disimpan dalam UTC (`APP_TIMEZONE=UTC`). Konversi ke `Asia/Jakarta` hanya saat ditampilkan atau diekspor. |
+| DB-10 | Timestamp dibaca, disimpan, dan ditampilkan dalam WIB: zona waktu di `config/app.php` adalah `Asia/Jakarta` dan `timezone` koneksi MySQL adalah `+07:00` (D-165). |
 | DB-11 | Baris yang tampil di URL memakai `public_id` (UUIDv7) untuk route model binding (`getRouteKeyName()`); id bigint tidak pernah muncul di URL atau prop. |
 | DB-12 | Kolom JSON hanya di tempat yang diizinkan model data. Jangan pernah memfilter atau mengurutkan berdasarkan path JSON di query yang sering dipakai; jadikan kolom tersendiri. |
 | DB-13 | `down()` opsional (*disetujui pemilik*). Produksi hanya maju; kesalahan diperbaiki dengan migrasi baru, tidak pernah dengan rollback. Secara lokal, bangun ulang dengan `migrate:fresh --seed`. |
@@ -313,7 +313,7 @@ Pilihan baru di dokumen ini. Nomornya diberikan di `DECISIONS.md` saat integrasi
 6. **Tes berjalan di MySQL 8**, bukan SQLite, karena skema bergantung pada fitur MySQL 8 (D-007).
 7. **Terjemahan frontend** berasal dari `lang/id` lewat prop Inertia bersama dan satu helper `t()`; tanpa berkas terjemahan JS terpisah.
 8. **Helper rute bertipe** untuk frontend (Laravel Wayfinder, atau Ziggy bila Wayfinder tidak cocok untuk Svelte biasa), dipilih saat kerangka proyek dibuat.
-9. **Zona waktu aplikasi UTC**, tampilan dan ekspor dalam `Asia/Jakarta` (membuat "disimpan dalam UTC" dari model data menjadi eksplisit di konfigurasi).
+9. **Zona waktu aplikasi `Asia/Jakarta` (WIB)** untuk penyimpanan, tampilan, dan ekspor (D-165, menggantikan pilihan UTC sebelumnya, D-082).
 10. **Versi terkunci pasti** untuk pustaka front-end yang memengaruhi hasil (DEP-2).
 11. **GitHub Actions** sebagai layanan CI (*disetujui pemilik 2026-10-31*), menjalankan pemeriksaan GIT-4 di setiap PR ke `main` dengan service container MySQL 8.
 12. **Migrasi tidak perlu `down()`** (*disetujui pemilik 2026-10-31*). Produksi hanya maju.

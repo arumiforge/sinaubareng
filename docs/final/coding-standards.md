@@ -140,7 +140,7 @@ This covers every page people open: the school app, the exam site, and the staff
 | DB-7 | Uniqueness and range invariants from the data model are DB constraints (unique indexes, `CHECK`), not only validation. |
 | DB-8 | **No soft deletes.** The `SoftDeletes` trait and `softDeletes()` column are banned. Lifecycle uses an explicit `status`. |
 | DB-9 | Money is `bigInteger` rupiah. Scores use `decimal(5,2)`. No `float`/`double` for either. |
-| DB-10 | Timestamps are stored in UTC (`APP_TIMEZONE=UTC`). Conversion to `Asia/Jakarta` happens only when displaying or exporting. |
+| DB-10 | Timestamps are read, stored, and shown in WIB: the `config/app.php` timezone is `Asia/Jakarta` and the MySQL connection's `timezone` is `+07:00` (D-165). |
 | DB-11 | Rows exposed in URLs use `public_id` (UUIDv7) for route model binding (`getRouteKeyName()`); the bigint id never appears in a URL or prop. |
 | DB-12 | JSON columns only where the data model allows them. Never filter or sort on a JSON path in a hot query; promote the field to a column instead. |
 | DB-13 | `down()` is optional (*owner-approved*). Production is forward-only; a mistake is fixed with a new migration, never a rollback. Locally, rebuild with `migrate:fresh --seed`. |
@@ -311,7 +311,7 @@ New choices made in this document. They get numbered in `DECISIONS.md` during in
 6. **Tests run on MySQL 8**, not SQLite, because the schema depends on MySQL 8 features (D-007).
 7. **Frontend translations** come from `lang/id` through a shared Inertia prop and one `t()` helper; no separate JS translation files.
 8. **Typed route helper** for the frontend (Laravel Wayfinder, or Ziggy if Wayfinder does not fit plain Svelte), chosen at scaffold time.
-9. **App timezone is UTC**, display and export in `Asia/Jakarta` (makes the data model's "stored in UTC" explicit in config).
+9. **App timezone is `Asia/Jakarta` (WIB)** for storage, display, and export (D-165, replaces the earlier UTC choice D-082).
 10. **Exact version pins** for output-affecting front-end libraries (DEP-2).
 11. **GitHub Actions** as the CI service (*owner-approved 2026-10-31*), running the GIT-4 checks on every PR to `main` with a MySQL 8 service container.
 12. **Migrations need no `down()`** (*owner-approved 2026-10-31*). Production is forward-only.
