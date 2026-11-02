@@ -46,6 +46,7 @@ Do not invent features beyond these documents.
 - **Docker** only for the Gotenberg PDF service (internal network, pinned image; D-028).
 - **Cloudflare** in front (DNS, proxy, TLS, WAF). The VPS has no public IP: all traffic arrives through a **Cloudflare Tunnel** (`cloudflared`), and SSH and `admin.` sit behind Cloudflare Access (D-088). Nginx listens on localhost and restores the real client IP from `CF-Connecting-IP`.
 - Node.js on the server only if needed at runtime; prefer building assets in CI/locally.
+- Local development on Windows: WSL2 + Ubuntu 24.04 (D-166, `docs/drafts/local-setup-wsl2.md`).
 
 ## Conventions
 
