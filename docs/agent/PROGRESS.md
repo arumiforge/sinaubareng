@@ -106,7 +106,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-02 — D-165: app time is WIB (`Asia/Jakarta`), superseding D-082. Follow-up: update the UTC lines in the final docs (architecture, data-model, coding-standards DB-10, export-localization XP-27, server-setup) and rebuild their PDFs.
+- 2026-11-02 — D-165: app time is WIB (`Asia/Jakarta`), superseding D-082. The MySQL session uses `+07:00`; the server OS and PHP CLI stay UTC. The final docs and their PDFs are updated.
 - 2026-11-01 — P5-01 done: Laravel app at the repo root with CI (see the task file's Result). Ziggy replaces Wayfinder (D-163); hostnames come from `APP_HOST`/`EXAM_HOST`/`ADMIN_HOST` (D-164), so the server `.env` needs them. P5-03 can start.
 
 - 2026-11-01 — D-147: D-145/D-146 accepted. No decisions are open.

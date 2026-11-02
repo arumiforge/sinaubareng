@@ -1,6 +1,6 @@
 # Gambaran Arsitektur
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 1 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 2 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-04
@@ -320,7 +320,7 @@ Catatan:
 - **Pemisahan Redis (*usulan*).** Pakai database Redis terpisah (atau koneksi dengan prefix) untuk `cache`, `session`, `queue`/Horizon, dan keadaan AI. Dengan begitu `cache:clear` tidak bisa menghapus sesi, job yang mengantre, atau cooldown kunci.
 - **Telescope** tidak dipasang di build produksi (atau dimatikan dan tidak bisa dijangkau). Horizon hanya bisa dijangkau di `admin.<domain>` di balik guard staf.
 - **Cache Cloudflare:** HTML yang butuh login tidak pernah di-cache (Laravel mengirim `private, no-store` untuk halaman ini). Hanya aset Vite yang ber-hash yang boleh di-cache.
-- **Waktu:** server dan database berjalan dalam UTC; aplikasi menampilkan `Asia/Jakarta`. Kuota harian Gemini direset tengah malam waktu Pasifik (14.00 atau 15.00 WIB), yang ditampilkan di halaman kunci.
+- **Waktu:** server berjalan dalam UTC. Aplikasi membaca, menyimpan, dan menampilkan waktu dalam WIB (`Asia/Jakarta`, D-165), dan sesi MySQL-nya memakai `+07:00`. Kuota harian Gemini direset tengah malam waktu Pasifik (14.00 atau 15.00 WIB), yang ditampilkan di halaman kunci.
 
 ### Job terjadwal
 

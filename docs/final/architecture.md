@@ -306,7 +306,7 @@ Notes:
 - **Redis separation (*proposed*).** Use separate Redis databases (or connections with prefixes) for `cache`, `session`, `queue`/Horizon, and AI state. Then `cache:clear` cannot wipe sessions, queued jobs, or key cooldowns.
 - **Telescope** is not installed in the production build (or is disabled and unreachable). Horizon is reachable only on `admin.<domain>` behind the staff guard.
 - **Cloudflare caching:** authenticated HTML is never cached (Laravel sends `private, no-store` for these pages). Only hashed Vite assets are cacheable.
-- **Time:** the server and the database run in UTC; the app displays `Asia/Jakarta`. Gemini daily quotas reset at midnight Pacific (14:00 or 15:00 WIB), which the key page shows.
+- **Time:** the server runs in UTC. The app reads, stores, and shows times in WIB (`Asia/Jakarta`, D-165), and its MySQL session uses `+07:00`. Gemini daily quotas reset at midnight Pacific (14:00 or 15:00 WIB), which the key page shows.
 
 ### Scheduled jobs
 

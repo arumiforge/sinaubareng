@@ -292,7 +292,7 @@ public function columnFormats(): array
 ## 5. Formatting helpers
 
 - **XP-26** `App\Support\IndonesianFormat` (PHP) and `resources/js/lib/format.ts` (TS) are the only formatters (EX-6). They share an API and the same outputs, and a test feeds both the same fixtures.
-- **XP-27** Storage is UTC (DB-10). Every method converts to `Asia/Jakarta` before formatting. Input is a Carbon or ISO-8601 string.
+- **XP-27** Stored times are already WIB (DB-10, D-165). Every method still converts to `Asia/Jakarta` before formatting, so ISO-8601 input with another offset formats correctly. Input is a Carbon or ISO-8601 string.
 
 | PHP (`IndonesianFormat::`) | TS (`format.`) | Output |
 |---|---|---|

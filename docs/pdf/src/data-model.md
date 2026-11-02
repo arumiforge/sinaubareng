@@ -1,6 +1,6 @@
 # Model Data
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/data-model.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/data-model.md</code> pada 2 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-05
@@ -20,7 +20,7 @@ Ini adalah model relasional SIGRAK di MySQL 8 (D-007), direvisi dari catatan pen
 | Foreign key | Selalu dideklarasikan, selalu diindeks, dengan pilihan `ON DELETE` yang eksplisit |
 | Nullability | `NOT NULL` secara bawaan. `NULL` hanya bila ketiadaan punya arti tersendiri, yang disebutkan di dokumen ini |
 | Himpunan tetap | `varchar` + `CHECK (col IN (…))` (MySQL ≥ 8.0.16 menegakkan CHECK), dicerminkan oleh PHP backed enum |
-| Waktu | `timestamp` disimpan dalam UTC. Ditampilkan dalam `Asia/Jakarta` (konvensi repo). Tanggal tanpa jam memakai `date` |
+| Waktu | `timestamp` dalam WIB (`Asia/Jakarta`, D-165): aplikasi dan sesi MySQL-nya sama-sama memakai `+07:00`. Tanggal tanpa jam memakai `date` |
 | Uang | Rupiah bilangan bulat (`bigint`), tanpa float |
 | Penghapusan | Tanpa soft delete. Hapus permanen setelah konfirmasi yang menyebut nama itemnya. Siklus hidup dimodelkan sebagai `status` eksplisit bila baris tetap terlihat tetapi tidak aktif |
 | JSON | Hanya untuk konten yang bentuknya ditetapkan JSON Schema templat (`documents.content`, `generations.specification`, keluaran langkah) dan untuk data rujukan yang diimpor. Tidak pernah menjadi tempat kolom yang perlu di-query |

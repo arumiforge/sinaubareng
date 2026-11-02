@@ -1,6 +1,6 @@
 # Panduan Penyiapan Server
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/server-setup.md</code> pada 1 November 2026. Perintah, berkas konfigurasi, dan komentar di dalam blok kode dibiarkan apa adanya.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/server-setup.md</code> pada 2 November 2026. Perintah, berkas konfigurasi, dan komentar di dalam blok kode dibiarkan apa adanya.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-05
@@ -29,7 +29,7 @@ Panduan langkah demi langkah untuk menyiapkan VPS SIGRAK (IDCloudHost Cloud VPS,
 
 Buat setiap rahasia dengan `openssl rand -base64 32 | tr -d '/+=' | cut -c1-32` dan simpan di pengelola kata sandi tim.
 
-Hostname, guard, dan penanganan waktu mengikuti `architecture.md` (P2-04): satu codebase Laravel, tiga kelompok yang dirutekan per domain, cookie sesi host-only, server dan database dalam UTC dengan aplikasi menampilkan `Asia/Jakarta`.
+Hostname, guard, dan penanganan waktu mengikuti `architecture.md` (P2-04): satu codebase Laravel, tiga kelompok yang dirutekan per domain, cookie sesi host-only, server dalam UTC, sedangkan aplikasi dan sesi MySQL-nya berjalan dalam WIB (`Asia/Jakarta`, `+07:00`, D-165).
 
 ## Versi
 
@@ -64,7 +64,7 @@ Tanpa IP publik, langkah-langkah pertama dijalankan di **konsol web IDCloudHost*
 apt update && apt -y full-upgrade
 apt -y install curl gnupg ca-certificates lsb-release software-properties-common \
   unzip git acl ufw unattended-upgrades supervisor logrotate
-timedatectl set-timezone Etc/UTC   # the app displays Asia/Jakarta; cron times below are UTC
+timedatectl set-timezone Etc/UTC   # the app runs in WIB (Asia/Jakarta); cron times below are UTC
 hostnamectl set-hostname sigrak-prod
 dpkg-reconfigure -plow unattended-upgrades   # answer "Yes"
 curl -sS -m 10 -o /dev/null -w '%{http_code}\n' https://api.cloudflare.com/client/v4/   # any HTTP code = outbound works
@@ -1041,7 +1041,7 @@ Nomornya diberikan saat integrasi.
 9. **Deploy berbasis folder rilis** (`releases/`, `shared/`, symlink `current`), menyimpan 5 rilis; PHP-FPM di-reload pada setiap deploy karena OPcache tidak memeriksa timestamp.
 10. **Supervisor menjalankan Horizon dan `schedule:work`** (tanpa entri cron untuk scheduler; `architecture.md` menunjukkan bentuk cron yang setara); jumlah worker ada di `config/horizon.php`.
 11. **Cadangan:** setiap hari 01.30 WIB (18.30 UTC) `mysqldump` + tarball `storage/app`, 14 hari lokal, 30 hari di luar server lewat remote `rclone` yang terenkripsi; uji pemulihan setiap bulan, pemulihan dari luar server dua kali setahun. `APP_KEY` disimpan di pengelola kata sandi, tidak pernah di cadangan.
-12. **Server, PHP, dan MySQL berjalan dalam UTC**; aplikasi menampilkan `Asia/Jakarta` (seperti di `architecture.md`). Waktu cron di panduan ini dalam UTC.
+12. **Server dan PHP berjalan dalam UTC; aplikasi berjalan dalam WIB** (`Asia/Jakarta`, D-165), dan sesi MySQL-nya memakai `+07:00` (seperti di `architecture.md`). Waktu cron di panduan ini dalam UTC.
 13. **Domain `sigrak.com`** dengan hostname `app.`, `ujian.`, `admin.` (pemilik, 2026-10-31).
 14. **Penyedia VPS: IDCloudHost Cloud VPS, Jakarta** (pemilik, 2026-10-31).
 15. **Cadangan di luar server di Cloudflare R2**, token Object Read & Write yang dibatasi ke bucket, dienkripsi dengan remote crypt `rclone` (pemilik, 2026-10-31).

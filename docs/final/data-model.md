@@ -18,7 +18,7 @@ This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDU
 | Foreign keys | Always declared, always indexed, with an explicit `ON DELETE` choice |
 | Nullability | `NOT NULL` by default. `NULL` only where absence has a distinct meaning, stated in this doc |
 | Fixed sets | `varchar` + `CHECK (col IN (…))` (MySQL ≥ 8.0.16 enforces CHECK), mirrored by a PHP backed enum |
-| Time | `timestamp` stored in UTC. Display in `Asia/Jakarta` (repo convention). Dates without time use `date` |
+| Time | `timestamp` in WIB (`Asia/Jakarta`, D-165): the app and its MySQL session both use `+07:00`. Dates without time use `date` |
 | Money | Integer rupiah (`bigint`), no floats |
 | Deletion | No soft deletes. Hard delete after a confirmation that names the item. Lifecycle is modelled as an explicit `status` where a row stays visible but inactive |
 | JSON | Only for content whose shape a template's JSON Schema defines (`documents.content`, `generations.specification`, step outputs) and for imported reference blobs. Never as a home for queryable fields |
