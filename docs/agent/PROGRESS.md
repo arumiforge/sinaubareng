@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-168. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-170. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -106,7 +106,8 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-03 — P5-03a in review: schools, memberships, school scope, and staff console (see the task file's Result). D-167 staff roles in the console, D-168 supervisor assignments are not school-scoped. P5-03b and P5-03c can start.
+- 2026-11-03 — P5-03f in review: school directory for Kudus, Jepara, and Pati, with the Sebaran sekolah list, map, and Excel download (D-169, D-170). After deploy, run `php artisan school-directory:import` for each file in `docs/data/schools/`. Next: P5-03b in a new session.
+- 2026-11-03 — P5-03a done (PR #52): schools, memberships, school scope, and staff console. D-167 staff roles in the console, D-168 supervisor assignments are not school-scoped.
 - 2026-11-02 — D-166: local development on Windows runs in WSL2 (Ubuntu 24.04), not Laragon. Setup guide: `docs/drafts/local-setup-wsl2.md` (draft, needs owner approval before it moves to `docs/final/`).
 - 2026-11-02 — D-165: app time is WIB (`Asia/Jakarta`), superseding D-082. The MySQL session uses `+07:00`; the server OS and PHP CLI stay UTC. The final docs and their PDFs are updated.
 - 2026-11-01 — P5-01 done: Laravel app at the repo root with CI (see the task file's Result). Ziggy replaces Wayfinder (D-163); hostnames come from `APP_HOST`/`EXAM_HOST`/`ADMIN_HOST` (D-164), so the server `.env` needs them. P5-03 can start.

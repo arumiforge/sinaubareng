@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * One school, one tenant (data model, Accounts and schools).
@@ -37,6 +38,16 @@ final class School extends Model
     public function memberships(): HasMany
     {
         return $this->hasMany(SchoolMembership::class);
+    }
+
+    /**
+     * The reference-site entry with the same NPSN, when there is one (D-169).
+     *
+     * @return HasOne<SchoolDirectoryEntry, $this>
+     */
+    public function directoryEntry(): HasOne
+    {
+        return $this->hasOne(SchoolDirectoryEntry::class, 'npsn', 'npsn');
     }
 
     protected function casts(): array

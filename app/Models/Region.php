@@ -23,4 +23,12 @@ final class Region extends Model
     {
         return $this->hasMany(School::class);
     }
+
+    /**
+     * @return HasMany<SchoolDirectoryEntry, $this>
+     */
+    public function directoryEntries(): HasMany
+    {
+        return $this->hasMany(SchoolDirectoryEntry::class);
+    }
 }

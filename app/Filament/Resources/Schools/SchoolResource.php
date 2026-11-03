@@ -10,6 +10,7 @@ use App\Filament\Resources\Schools\Pages\ManageSchools;
 use App\Filament\Resources\StaffAccess;
 use App\Models\Region;
 use App\Models\School;
+use App\Models\SchoolDirectoryEntry;
 use BackedEnum;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
@@ -17,6 +18,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
@@ -61,7 +64,9 @@ final class SchoolResource extends Resource
                     ->label(__('console.schools.fields.npsn'))
                     ->helperText(__('console.schools.hints.npsn'))
                     ->regex('/^\d{8}$/')
-                    ->unique(ignoreRecord: true),
+                    ->unique(ignoreRecord: true)
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn (?string $state, Get $get, Set $set) => self::fillFromDirectory($state, $get, $set)),
                 Select::make('level')
                     ->label(__('console.schools.fields.level'))
                     ->options(StaffAccess::options(SchoolLevel::class))
@@ -79,11 +84,36 @@ final class SchoolResource extends Resource
             ]);
     }
 
+    /**
+     * Fills empty fields from the school directory when the NPSN is found there (D-169).
+     */
+    private static function fillFromDirectory(?string $npsn, Get $get, Set $set): void
+    {
+        $entry = filled($npsn) ? SchoolDirectoryEntry::query()->firstWhere('npsn', $npsn) : null;
+
+        if ($entry === null) {
+            return;
+        }
+
+        $values = [
+            'name' => $entry->name,
+            'level' => $entry->level->value,
+            'region_id' => $entry->region_id,
+            'address' => $entry->fullAddress(),
+        ];
+
+        foreach ($values as $field => $value) {
+            if (blank($get($field))) {
+                $set($field, $value);
+            }
+        }
+    }
+
     public static function table(Table $table): Table
     {
         return $table
             ->recordTitleAttribute('name')
-            ->modifyQueryUsing(fn (Builder $query): Builder => $query->with('region'))
+            ->modifyQueryUsing(fn (Builder $query): Builder => $query->with('region')->withExists('directoryEntry'))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -101,11 +131,39 @@ final class SchoolResource extends Resource
                 TextColumn::make('region.regency')
                     ->label(__('console.schools.fields.region'))
                     ->searchable(),
+                // Shows which schools the Sebaran sekolah page can count (D-170).
+                TextColumn::make('directory_match')
+                    ->label(__('console.schools.fields.directory_match'))
+                    ->state(fn (School $record): string => match (true) {
+                        $record->npsn === null => 'missing_npsn',
+                        (bool) $record->getAttribute('directory_entry_exists') => 'matched',
+                        default => 'not_in_directory',
+                    })
+                    ->formatStateUsing(fn (string $state): string => __("console.schools.directory_match.{$state}"))
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'matched' => 'success',
+                        'missing_npsn' => 'warning',
+                        default => 'gray',
+                    }),
             ])
             ->filters([
                 SelectFilter::make('level')
                     ->label(__('console.schools.fields.level'))
                     ->options(StaffAccess::options(SchoolLevel::class)),
+                SelectFilter::make('directory_match')
+                    ->label(__('console.schools.fields.directory_match'))
+                    ->options([
+                        'matched' => __('console.schools.directory_match.matched'),
+                        'missing_npsn' => __('console.schools.directory_match.missing_npsn'),
+                        'not_in_directory' => __('console.schools.directory_match.not_in_directory'),
+                    ])
+                    ->query(fn (Builder $query, array $data): Builder => match ($data['value'] ?? null) {
+                        'matched' => $query->has('directoryEntry'),
+                        'missing_npsn' => $query->whereNull('npsn'),
+                        'not_in_directory' => $query->whereNotNull('npsn')->doesntHave('directoryEntry'),
+                        default => $query,
+                    }),
             ])
             ->recordActions([
                 EditAction::make(),
