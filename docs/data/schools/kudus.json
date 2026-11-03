@@ -1760,7 +1760,9 @@
       "address": "Gondangmanis RT 3 RW 11 JL. Gondangmanis No. 22 Kudus",
       "village": "Gondang Manis",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7778,
+      "longitude": 110.8753
     },
     {
       "npsn": "20317524",
@@ -1768,7 +1770,9 @@
       "address": "Jl Sunan Muria 48",
       "village": "Glantengan",
       "level": "sd",
-      "district": "Kota Kudus"
+      "district": "Kota Kudus",
+      "latitude": -6.8012,
+      "longitude": 110.8444
     },
     {
       "npsn": "20317525",
@@ -1776,7 +1780,9 @@
       "address": "Jl. Kyai Telingsing No.39 Rt 2 Rw 1 Kudus",
       "village": "Demangan",
       "level": "sd",
-      "district": "Kota Kudus"
+      "district": "Kota Kudus",
+      "latitude": -6.8093,
+      "longitude": 110.8321
     },
     {
       "npsn": "20317526",
@@ -1784,7 +1790,9 @@
       "address": "Tanjung Rejo RT 01 RW 08",
       "village": "Tanjung Rejo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.764,
+      "longitude": 110.9151
     },
     {
       "npsn": "20317527",
@@ -1792,7 +1800,9 @@
       "address": "Jl Mbah Blarak No.36 Ngemplak",
       "village": "Gondosari",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7238,
+      "longitude": 110.8518
     },
     {
       "npsn": "20317528",
@@ -1800,7 +1810,9 @@
       "address": "Desa Cendono RT 04 RW 05",
       "village": "Cendono",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7492,
+      "longitude": 110.8651
     },
     {
       "npsn": "20317579",
@@ -1808,7 +1820,9 @@
       "address": "Cendono Rt 5/1",
       "village": "Cendono",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7344,
+      "longitude": 110.8641
     },
     {
       "npsn": "20317581",
@@ -1816,7 +1830,9 @@
       "address": "Semliro, RT 03 RW 04, Rahtawu, Gebog, Kudus",
       "village": "Rahtawu",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.6357,
+      "longitude": 110.8805
     },
     {
       "npsn": "20317582",
@@ -1824,7 +1840,9 @@
       "address": "Puyoh Rt 01 Rw 04",
       "village": "Puyoh",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7119,
+      "longitude": 110.8602
     },
     {
       "npsn": "20317584",
@@ -1832,7 +1850,9 @@
       "address": "PRAMBATAN LOR RT 001 RW 003",
       "village": "Prambatan Lor",
       "level": "sd",
-      "district": "Kaliwungu"
+      "district": "Kaliwungu",
+      "latitude": -6.802,
+      "longitude": 110.818
     },
     {
       "npsn": "20317585",
@@ -1840,7 +1860,9 @@
       "address": "PRAMBATAN KIDUL RT 03 RW 04",
       "village": "Prambatan Kidul",
       "level": "sd",
-      "district": "Kaliwungu"
+      "district": "Kaliwungu",
+      "latitude": -6.8069,
+      "longitude": 110.8205
     },
     {
       "npsn": "20317586",
@@ -1848,7 +1870,9 @@
       "address": "Jl. Mayor Basuno No. 55 Rt.01/01",
       "village": "Ploso",
       "level": "sd",
-      "district": "Jati"
+      "district": "Jati",
+      "latitude": -6.8144,
+      "longitude": 110.8304
     },
     {
       "npsn": "20317587",
@@ -1856,7 +1880,9 @@
       "address": "Pladen Rt 4/4",
       "village": "Pladen",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8156,
+      "longitude": 110.941
     },
     {
       "npsn": "20317588",
@@ -1864,7 +1890,9 @@
       "address": "Piji Rt 05 Rw 01",
       "village": "Piji",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7366,
+      "longitude": 110.8691
     },
     {
       "npsn": "20317590",
@@ -1872,7 +1900,9 @@
       "address": "Sadang",
       "village": "Sadang",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8323,
+      "longitude": 110.915
     },
     {
       "npsn": "20317591",
@@ -1880,7 +1910,9 @@
       "address": "Sidorekso RT 1 RW 3",
       "village": "Sidorekso",
       "level": "sd",
-      "district": "Kaliwungu"
+      "district": "Kaliwungu",
+      "latitude": -6.7705,
+      "longitude": 110.7721
     },
     {
       "npsn": "20317592",
@@ -1888,7 +1920,9 @@
       "address": "BULUNGCANGKRING RT 03 RW 06",
       "village": "Bulung Cangkring",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8242497,
+      "longitude": 110.9259323
     },
     {
       "npsn": "20317594",
@@ -1896,7 +1930,9 @@
       "address": "Desa Bae Krajan Rt. 02/I No. 12 B",
       "village": "Bae",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7693,
+      "longitude": 110.8546
     },
     {
       "npsn": "20317595",
@@ -1904,7 +1940,9 @@
       "address": "Jln. Kudus-Purwodadi KM 12",
       "village": "Undaan Kidul",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.8976,
+      "longitude": 110.8057
     },
     {
       "npsn": "20317596",
@@ -1912,7 +1950,9 @@
       "address": "Terban Rt01 Rw07",
       "village": "Terban",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7984,
+      "longitude": 110.9481
     },
     {
       "npsn": "20317597",
@@ -1920,7 +1960,9 @@
       "address": "DESA TENGGELES RT 02 RW 03",
       "village": "Tenggeles",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8085,
+      "longitude": 110.8982
     },
     {
       "npsn": "20317598",
@@ -1928,7 +1970,9 @@
       "address": "Desa Temulus RT 01/01 Kecamatan Mejobo Kabupaten Kudus",
       "village": "Temulus",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8366,
+      "longitude": 110.8972
     },
     {
       "npsn": "20317600",
@@ -1936,7 +1980,9 @@
       "address": "Soco Rt 01 Rw 03",
       "village": "Soco",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.6838,
+      "longitude": 110.8621
     },
     {
       "npsn": "20317601",
@@ -1944,7 +1990,9 @@
       "address": "Payaman RT. 01 RW. 07",
       "village": "Payaman",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8635,
+      "longitude": 110.8674
     },
     {
       "npsn": "20317603",
@@ -1952,7 +2000,9 @@
       "address": "JL KH WACHID HASYIM NO 43A KUDUS",
       "village": "Panjunan",
       "level": "sd",
-      "district": "Kota Kudus"
+      "district": "Kota Kudus",
+      "latitude": -6.8113,
+      "longitude": 110.8382
     },
     {
       "npsn": "20317604",
@@ -1960,7 +2010,9 @@
       "address": "Klaling Rt05 Rw01",
       "village": "Klaling",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8067,
+      "longitude": 110.9249
     },
     {
       "npsn": "20317605",
@@ -1968,7 +2020,9 @@
       "address": "Kesambi",
       "village": "Kesambi",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8423,
+      "longitude": 110.9049
     },
     {
       "npsn": "20317606",
@@ -1976,7 +2030,9 @@
       "address": "Kedungsari",
       "village": "Kedungsari",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7343,
+      "longitude": 110.837
     },
     {
       "npsn": "20317608",
@@ -1984,7 +2040,9 @@
       "address": "Karangrowo Rt 03 Rw I",
       "village": "Karang Rowo",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.8682,
+      "longitude": 110.8666
     },
     {
       "npsn": "20317609",
@@ -1992,7 +2050,9 @@
       "address": "Karangmalang",
       "village": "Karang Malang",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7651,
+      "longitude": 110.8375
     },
     {
       "npsn": "20317610",
@@ -2000,7 +2060,9 @@
       "address": "Karangbener Rt 1, Rw 8",
       "village": "Karang Bener",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7842,
+      "longitude": 110.8772
     },
     {
       "npsn": "20317611",
@@ -2008,7 +2070,9 @@
       "address": "Kandangmas Rt5/2",
       "village": "Kandang Mas",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7402,
+      "longitude": 110.9085
     },
     {
       "npsn": "20317612",
@@ -2016,7 +2080,9 @@
       "address": "JL. BESITO KM2 KALIWUNGU RT 01 RW 04",
       "village": "Kaliwungu",
       "level": "sd",
-      "district": "Kaliwungu"
+      "district": "Kaliwungu",
+      "latitude": -6.7746,
+      "longitude": 110.8008
     },
     {
       "npsn": "20317614",
@@ -2024,7 +2090,9 @@
       "address": "Kutuk Rt 01 Rw 01",
       "village": "Kutuk",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.9334,
+      "longitude": 110.8225
     },
     {
       "npsn": "20317615",
@@ -2032,7 +2100,9 @@
       "address": "Jl. DAWE-REJOSARI",
       "village": "Lau",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.739,
+      "longitude": 110.8774
     },
     {
       "npsn": "20317616",
@@ -2040,7 +2110,9 @@
       "address": "Jl Conge Ngembalrejo",
       "village": "Ngembal Rejo",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7983,
+      "longitude": 110.8782
     },
     {
       "npsn": "20317617",
@@ -2048,7 +2120,9 @@
       "address": "Jl. Lingkar Timur (Soekarno-Hatta)",
       "village": "Ngembal Kulon",
       "level": "sd",
-      "district": "Jati"
+      "district": "Jati",
+      "latitude": -6.8095,
+      "longitude": 110.881
     },
     {
       "npsn": "20317619",
@@ -2056,7 +2130,9 @@
       "address": "Menawan Rt 02 Rw 04",
       "village": "Menawan",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.6997,
+      "longitude": 110.8406
     },
     {
       "npsn": "20317620",
@@ -2064,7 +2140,9 @@
       "address": "Desa Mejobo Rt. 07/01",
       "village": "Mejobo",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8254,
+      "longitude": 110.8844
     },
     {
       "npsn": "20317621",
@@ -2072,7 +2150,9 @@
       "address": "Jl. Kudus Purwodadi Km 14",
       "village": "Medini",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.9211,
+      "longitude": 110.793
     },
     {
       "npsn": "20317624",
@@ -2080,7 +2160,9 @@
       "address": "Loram Kulon Rt 07 Rw I",
       "village": "Loram Kulon",
       "level": "sd",
-      "district": "Jati"
+      "district": "Jati",
+      "latitude": -6.8305,
+      "longitude": 110.8471
     },
     {
       "npsn": "20317625",
@@ -2088,7 +2170,9 @@
       "address": "Jl. Kudus Purwodadi Km 15",
       "village": "Kalirejo",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.9335,
+      "longitude": 110.7887
     },
     {
       "npsn": "20317626",
@@ -2096,7 +2180,9 @@
       "address": "Cranggang",
       "village": "Cranggang",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7009,
+      "longitude": 110.9061
     },
     {
       "npsn": "20317627",
@@ -2104,7 +2190,9 @@
       "address": "Bulungkulon RT 04 RW 07",
       "village": "Bulung Kulon",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8268,
+      "longitude": 110.9372
     },
     {
       "npsn": "20317628",
@@ -2112,7 +2200,9 @@
       "address": "Gondosari RT 03 RW 01 Gebog, Kudus",
       "village": "Gondosari",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7438,
+      "longitude": 110.8371
     },
     {
       "npsn": "20317629",
@@ -2120,7 +2210,9 @@
       "address": "DESA GONDANGMANIS RT.01/09",
       "village": "Gondang Manis",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.761,
+      "longitude": 110.8685
     },
     {
       "npsn": "20317630",
@@ -2128,7 +2220,9 @@
       "address": "Getassrabi Rt.10 Rw.04",
       "village": "Getasrabi",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7584,
+      "longitude": 110.8052
     },
     {
       "npsn": "20317631",
@@ -2136,7 +2230,9 @@
       "address": "Cendono",
       "village": "Cendono",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7372,
+      "longitude": 110.865
     },
     {
       "npsn": "20317632",
@@ -2144,7 +2240,9 @@
       "address": "Bulung Kulon",
       "village": "Bulung Kulon",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8273,
+      "longitude": 110.9372
     },
     {
       "npsn": "20317633",
@@ -2152,7 +2250,9 @@
       "address": "Jalan Pasar Puri RT 2 RW 10 Bulungcangkring Jekulo Kudus",
       "village": "Bulung Cangkring",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8245,
+      "longitude": 110.9273
     },
     {
       "npsn": "20317635",
@@ -2160,7 +2260,9 @@
       "address": "DESA TEMULUS RT 04 RW 03",
       "village": "Temulus",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.845,
+      "longitude": 110.899
     },
     {
       "npsn": "20317637",
@@ -2168,7 +2270,9 @@
       "address": "Hadipolo Rt 4/4",
       "village": "Hadipolo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7905,
+      "longitude": 110.9004
     },
     {
       "npsn": "20317639",
@@ -2176,7 +2280,9 @@
       "address": "Jl Hastrodirono No 94",
       "village": "Jekulo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8143,
+      "longitude": 110.9188
     },
     {
       "npsn": "20317640",
@@ -2184,7 +2290,9 @@
       "address": "Jalan Pasar Puri Rt 03 Rw 10",
       "village": "Bulung Cangkring",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8244,
+      "longitude": 110.9271
     },
     {
       "npsn": "20317641",
@@ -2192,7 +2300,9 @@
       "address": "Terban Rt 3/1",
       "village": "Terban",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7904,
+      "longitude": 110.9303
     },
     {
       "npsn": "20317642",
@@ -2200,7 +2310,9 @@
       "address": "Tanjungrejo Rt 01 Rw VI",
       "village": "Tanjung Rejo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7792,
+      "longitude": 110.918
     },
     {
       "npsn": "20317643",
@@ -2208,7 +2320,9 @@
       "address": "Puyoh Rt2/6",
       "village": "Puyoh",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7016,
+      "longitude": 110.8657
     },
     {
       "npsn": "20317644",
@@ -2216,7 +2330,9 @@
       "address": "Margorejo Rt 04 Rw 05",
       "village": "Margorejo",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7551,
+      "longitude": 110.8893
     },
     {
       "npsn": "20317645",
@@ -2224,7 +2340,9 @@
       "address": "Klumpit Rt 4 Rw 4 Gebog Kudus",
       "village": "Klumpit",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.4556,
+      "longitude": 110.4925
     },
     {
       "npsn": "20317648",
@@ -2232,7 +2350,9 @@
       "address": "Kandangmas Rt 02 Rw 12",
       "village": "Kandang Mas",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7287,
+      "longitude": 110.9047
     },
     {
       "npsn": "20317649",
@@ -2240,7 +2360,9 @@
       "address": "Rahtawu Rt 1 Rw 2",
       "village": "Rahtawu",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.6563,
+      "longitude": 110.8651
     },
     {
       "npsn": "20317650",
@@ -2248,7 +2370,9 @@
       "address": "Puyoh RT. 2/3",
       "village": "Puyoh",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7149,
+      "longitude": 110.8619
     },
     {
       "npsn": "20317651",
@@ -2256,7 +2380,9 @@
       "address": "Sd 5 Pasuruhan Lor",
       "village": "Pasuruhan Lor",
       "level": "sd",
-      "district": "Jati"
+      "district": "Jati",
+      "latitude": -6.8148,
+      "longitude": 110.8209
     },
     {
       "npsn": "20317652",
@@ -2264,7 +2390,9 @@
       "address": "Jurang",
       "village": "Jurang",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7486,
+      "longitude": 110.8433
     },
     {
       "npsn": "20317653",
@@ -2272,7 +2400,9 @@
       "address": "Jl. Budi Utomo No. 20",
       "village": "Jepang",
       "level": "sd",
-      "district": "Mejobo"
+      "district": "Mejobo",
+      "latitude": -6.8239,
+      "longitude": 110.8683
     },
     {
       "npsn": "20317654",
@@ -2280,7 +2410,9 @@
       "address": "Jl Siliwangi No 255",
       "village": "Jekulo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.8116,
+      "longitude": 110.9227
     },
     {
       "npsn": "20317655",
@@ -2288,7 +2420,9 @@
       "address": "Honggosoco Rt 5/5",
       "village": "Honggosoco",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7768,
+      "longitude": 110.9019
     },
     {
       "npsn": "20317656",
@@ -2296,7 +2430,9 @@
       "address": "Hadipolo Rt 3/2",
       "village": "Hadipolo",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7954,
+      "longitude": 110.9013
     },
     {
       "npsn": "20317658",
@@ -2304,7 +2440,9 @@
       "address": "Gondosari RT 03 RW 11",
       "village": "Gondosari",
       "level": "sd",
-      "district": "Gebog"
+      "district": "Gebog",
+      "latitude": -6.7147,
+      "longitude": 110.847
     },
     {
       "npsn": "20317659",
@@ -2312,7 +2450,9 @@
       "address": "Gondoharum Rt 3 Rw 4",
       "village": "Gondoharum",
       "level": "sd",
-      "district": "Jekulo"
+      "district": "Jekulo",
+      "latitude": -6.7811,
+      "longitude": 110.961
     },
     {
       "npsn": "20317660",
@@ -2320,7 +2460,9 @@
       "address": "Gondangmanis RT 03 RW 05 Bae Kudus",
       "village": "Gondang Manis",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7768,
+      "longitude": 110.8795
     },
     {
       "npsn": "20317661",
@@ -2328,7 +2470,9 @@
       "address": "Kandangmas",
       "village": "Kandang Mas",
       "level": "sd",
-      "district": "Dawe"
+      "district": "Dawe",
+      "latitude": -6.7198,
+      "longitude": 110.9142
     },
     {
       "npsn": "20317662",
@@ -2336,7 +2480,9 @@
       "address": "Karangbener Rt 01 Rw 02 Kec Bae",
       "village": "Karang Bener",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.7683,
+      "longitude": 110.8834
     },
     {
       "npsn": "20317663",
@@ -2344,7 +2490,9 @@
       "address": "Karangrowo rt.1 rw.4",
       "village": "Karang Rowo",
       "level": "sd",
-      "district": "Undaan"
+      "district": "Undaan",
+      "latitude": -6.8835,
+      "longitude": 110.867
     },
     {
       "npsn": "20317664",
@@ -2352,7 +2500,9 @@
       "address": "Jln. IAIN No. 299 Ngembalrejo Bae Kudus 59322",
       "village": "Ngembal Rejo",
       "level": "sd",
-      "district": "Bae"
+      "district": "Bae",
+      "latitude": -6.803,
+      "longitude": 110.8792
     },
     {
       "npsn": "20317667",
