@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Middleware\HandleExamInertiaRequests;
 use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\SetSchoolContext;
 use App\Http\Middleware\UseGuard;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -18,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // One route file per hostname, each with its own guard (D-048).
         then: function (): void {
             Route::domain(config('app.hosts.app'))
-                ->middleware(['web', UseGuard::class.':web', HandleInertiaRequests::class])
+                ->middleware(['web', UseGuard::class.':web', SetSchoolContext::class, HandleInertiaRequests::class])
                 ->group(base_path('routes/app.php'));
 
             Route::domain(config('app.hosts.exam'))

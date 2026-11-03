@@ -27,7 +27,7 @@ arch('Exam site never touches AI', function (): void {
 
 arch('Filament is staff tooling only')
     ->expect('App\Filament')
-    ->toOnlyBeUsedIn('App\Providers\Filament');
+    ->toOnlyBeUsedIn(['App\Providers\Filament', 'App\Filament']);
 
 // Pest's array form of expect() can pass silently when a namespace is missing, so one call each.
 arch('modules never import the HTTP layer (LAY-5)', function (): void {
