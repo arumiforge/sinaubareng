@@ -1,0 +1,10 @@
+{
+  "source": "https://referensi.data.kemendikdasmen.go.id/pendidikan/dikdas/031900/2",
+  "fetched_on": "2026-11-03",
+  "province": "Jawa Tengah",
+  "regency": "Kabupaten Kudus",
+  "schools": [
+    { "npsn": "20317288", "name": "SD 3 MEGAWON", "address": "Jl. Lingkar Timur No. 450 Kudus", "village": "Megawon", "level": "sd", "district": "Jati" },
+    { "npsn": "60712382", "name": "MIN KUDUS", "address": "JALAN KADILANGU 549", "village": "Prambatan Kidul", "level": "mi", "district": "Kaliwungu" }
+  ]
+}

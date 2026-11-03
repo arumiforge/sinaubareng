@@ -856,3 +856,8 @@ Reason: the data model names the three roles but not their reach; this is the sm
 Accepted · 2026-11-03 · P5-03a · exception to TEN-1
 `supervisor_assignments` has `school_id` but no `BelongsToSchool` scope. A supervisor's rows are read by `user_id` across schools, and only the staff console manages them. `school_memberships` keeps the scope; the one place that reads them before a school is chosen (`ResolveSchoolContext`) uses `withoutSchoolScope()` limited to the user's own rows.
 Reason: scoping the supervisor's own access list by a "current school" would hide the schools they supervise.
+
+### D-169 — School directory from the Kemendikdasmen reference site
+Accepted · 2026-11-03 · P5-03f · owner's choice
+A separate reference table, `school_directory_entries` (NPSN, name, level, address, village, district, region), holds SD and MI from referensi.data.kemendikdasmen.go.id. It starts with Kabupaten Kudus only (`docs/data/schools/kudus.json`, 570 schools). The data is fetched by hand with `scripts/school-directory/fetch.cjs` and loaded with `php artisan school-directory:import <file>`, which is idempotent by NPSN. When staff type an NPSN in the console's school form, empty fields are filled from it. Directory rows are not tenants; a school becomes a tenant only when staff create it.
+Reason: there is no official public API (2026-11-03 search), and filling a school from its NPSN saves typing and typos. Kudus is the pilot region (D-018); other regencies can be added with the same script.

@@ -10,6 +10,7 @@ use App\Filament\Resources\Schools\Pages\ManageSchools;
 use App\Filament\Resources\StaffAccess;
 use App\Models\Region;
 use App\Models\School;
+use App\Models\SchoolDirectoryEntry;
 use BackedEnum;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
@@ -17,6 +18,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
@@ -61,7 +64,9 @@ final class SchoolResource extends Resource
                     ->label(__('console.schools.fields.npsn'))
                     ->helperText(__('console.schools.hints.npsn'))
                     ->regex('/^\d{8}$/')
-                    ->unique(ignoreRecord: true),
+                    ->unique(ignoreRecord: true)
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn (?string $state, Get $get, Set $set) => self::fillFromDirectory($state, $get, $set)),
                 Select::make('level')
                     ->label(__('console.schools.fields.level'))
                     ->options(StaffAccess::options(SchoolLevel::class))
@@ -77,6 +82,31 @@ final class SchoolResource extends Resource
                     ->label(__('console.schools.fields.address'))
                     ->columnSpanFull(),
             ]);
+    }
+
+    /**
+     * Fills empty fields from the school directory when the NPSN is found there (D-169).
+     */
+    private static function fillFromDirectory(?string $npsn, Get $get, Set $set): void
+    {
+        $entry = filled($npsn) ? SchoolDirectoryEntry::query()->firstWhere('npsn', $npsn) : null;
+
+        if ($entry === null) {
+            return;
+        }
+
+        $values = [
+            'name' => $entry->name,
+            'level' => $entry->level->value,
+            'region_id' => $entry->region_id,
+            'address' => $entry->fullAddress(),
+        ];
+
+        foreach ($values as $field => $value) {
+            if (blank($get($field))) {
+                $set($field, $value);
+            }
+        }
     }
 
     public static function table(Table $table): Table

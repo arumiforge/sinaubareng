@@ -23,7 +23,7 @@ return [
             'address' => 'Alamat',
         ],
         'hints' => [
-            'npsn' => '8 angka. Boleh dikosongkan sampai NPSN sudah dicek.',
+            'npsn' => '8 angka. Kalau NPSN ada di data referensi, nama, jenjang, wilayah, dan alamat terisi otomatis. Boleh dikosongkan sampai NPSN sudah dicek.',
             'npsn_missing' => 'Belum dicek',
         ],
         'delete_warning' => 'Sekolah ":name" akan dihapus permanen, termasuk semua anggota dan perannya. Tindakan ini tidak bisa dibatalkan.',
