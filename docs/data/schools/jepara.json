@@ -1510,7 +1510,9 @@
       "address": "Desa Karanggondang RT. 06 RW. 04",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.4974,
+      "longitude": 110.7146
     },
     {
       "npsn": "20318258",
@@ -1518,7 +1520,9 @@
       "address": "Desa Kancilan RT. 01 RW. 05",
       "village": "Kancilan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4983,
+      "longitude": 110.7868
     },
     {
       "npsn": "20318259",
@@ -1526,7 +1530,9 @@
       "address": "Desa Geneng RT. 09 RW. 02",
       "village": "Geneng",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6829,
+      "longitude": 110.7386
     },
     {
       "npsn": "20318260",
@@ -1534,7 +1540,9 @@
       "address": "Desa Bandungharjo RT. 01 RW. 05",
       "village": "Bandungharjo",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.437,
+      "longitude": 110.8711
     },
     {
       "npsn": "20318261",
@@ -1542,7 +1550,9 @@
       "address": "Desa Tigajuru RT. 05 RW. 02",
       "village": "Tigajuru",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7524,
+      "longitude": 110.744
     },
     {
       "npsn": "20318262",
@@ -1550,7 +1560,9 @@
       "address": "Desa Tengguli RT. 02 RW. 14",
       "village": "Tengguli",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5478,
+      "longitude": 110.791
     },
     {
       "npsn": "20318263",
@@ -1558,7 +1570,9 @@
       "address": "Desa Tempur RT. 02 RW. 03",
       "village": "Tempur",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5972,
+      "longitude": 110.89
     },
     {
       "npsn": "20318264",
@@ -1566,7 +1580,9 @@
       "address": "Desa Telukwetan RT. 13 RW. 02",
       "village": "Telukwetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7463,
+      "longitude": 110.7143
     },
     {
       "npsn": "20318266",
@@ -1574,7 +1590,9 @@
       "address": "Desa Tedunan RT. 01 RW. 04",
       "village": "Tedunan",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7146,
+      "longitude": 110.6588
     },
     {
       "npsn": "20318267",
@@ -1582,7 +1600,9 @@
       "address": "Desa Tanjung RT. 05 RW. 01",
       "village": "Tanjung",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5931,
+      "longitude": 110.7754
     },
     {
       "npsn": "20318268",
@@ -1590,7 +1610,9 @@
       "address": "Desa Tahunan RT. 05 RW. 04",
       "village": "Tahunan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6296,
+      "longitude": 110.7017
     },
     {
       "npsn": "20318269",
@@ -1598,7 +1620,9 @@
       "address": "Desa Surodadi RT. 18 RW. 06",
       "village": "Surodadi",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6805,
+      "longitude": 110.6358
     },
     {
       "npsn": "20318271",
@@ -1606,7 +1630,9 @@
       "address": "Desa Sukosono RT. 19 RW. 05",
       "village": "Sukosono",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6494,
+      "longitude": 110.6766
     },
     {
       "npsn": "20318272",
@@ -1614,7 +1640,9 @@
       "address": "Desa Sukodono RT. 05 RW. 02",
       "village": "Sukodono",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6334,
+      "longitude": 110.6778
     },
     {
       "npsn": "20318273",
@@ -1622,7 +1650,9 @@
       "address": "Desa Troso RT. 01 RW. 09",
       "village": "Troso",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6671,
+      "longitude": 110.7038
     },
     {
       "npsn": "20318274",
@@ -1630,7 +1660,9 @@
       "address": "Desa Tubanan RT. 04 RW. 06",
       "village": "Tubanan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4552771,
+      "longitude": 110.7502716
     },
     {
       "npsn": "20318275",
@@ -1638,7 +1670,9 @@
       "address": "Desa Tulakan RT. 01 RW. 03",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.459,
+      "longitude": 110.8792
     },
     {
       "npsn": "20318276",
@@ -1646,7 +1680,9 @@
       "address": "Desa Bandengan RT. 05 RW. 02",
       "village": "Bandengan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5593,
+      "longitude": 110.6621
     },
     {
       "npsn": "20318277",
@@ -1654,7 +1690,9 @@
       "address": "Desa Balong RT. 04 RW. 04",
       "village": "Balong",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4534,
+      "longitude": 110.7978
     },
     {
       "npsn": "20318278",
@@ -1662,7 +1700,9 @@
       "address": "Desa Bakalan RT. 05 RW. 01",
       "village": "Bakalan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7335,
+      "longitude": 110.7295
     },
     {
       "npsn": "20318280",
@@ -1670,7 +1710,9 @@
       "address": "Desa Welahan RT. 03 RW. 01",
       "village": "Welahan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7796,
+      "longitude": 110.7202
     },
     {
       "npsn": "20318282",
@@ -1678,7 +1720,9 @@
       "address": "Desa Watuaji RT. 02 RW. 04",
       "village": "Watuaji",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5329,
+      "longitude": 110.8809
     },
     {
       "npsn": "20318283",
@@ -1686,7 +1730,9 @@
       "address": "Desa Ujungwatu RT. 04 RW. 02",
       "village": "Ujungwatu",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4163,
+      "longitude": 110.9401
     },
     {
       "npsn": "20318284",
@@ -1694,7 +1740,9 @@
       "address": "Kelurahan Ujungbatu RT. 03 RW. 02",
       "village": "Ujungbatu",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5851,
+      "longitude": 110.6646
     },
     {
       "npsn": "20318286",
@@ -1702,7 +1750,9 @@
       "address": "Desa Tunggul Pandean RT. 02 RW. 03",
       "village": "Tunggulpandean",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.754,
+      "longitude": 110.7835
     },
     {
       "npsn": "20318287",
@@ -1710,7 +1760,9 @@
       "address": "Desa Tunahan RT. 13 RW. 04",
       "village": "Tunahan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.543,
+      "longitude": 110.8838
     },
     {
       "npsn": "20318289",
@@ -1718,7 +1770,9 @@
       "address": "Desa Somosari RT. 04 RW. 01",
       "village": "Somosari",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6361,
+      "longitude": 110.7882
     },
     {
       "npsn": "20318290",
@@ -1726,7 +1780,9 @@
       "address": "Desa Plajan RT. 03 RW. 07",
       "village": "Plajan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5834,
+      "longitude": 110.784
     },
     {
       "npsn": "20318293",
@@ -1734,7 +1790,9 @@
       "address": "Desa Pendo Sawalan RT. 11 RW. 04",
       "village": "Pendo Sawalan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.714,
+      "longitude": 110.7409
     },
     {
       "npsn": "20318294",
@@ -1742,7 +1800,9 @@
       "address": "Desa Pendem RT. 03 RW. 01",
       "village": "Pendem",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5251,
+      "longitude": 110.8104
     },
     {
       "npsn": "20318295",
@@ -1750,7 +1810,9 @@
       "address": "Desa Pelemkerep RT. 02 RW. 04",
       "village": "Pelemkerep",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7469,
+      "longitude": 110.7621
     },
     {
       "npsn": "20318296",
@@ -1758,7 +1820,9 @@
       "address": "Desa Pelang RT. 03 RW. 02",
       "village": "Pelang",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7405,
+      "longitude": 110.7404
     },
     {
       "npsn": "20318297",
@@ -1766,7 +1830,9 @@
       "address": "Desa Pekalongan RT. 04 RW. 02",
       "village": "Pekalongan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6286,
+      "longitude": 110.7105
     },
     {
       "npsn": "20318298",
@@ -1774,7 +1840,9 @@
       "address": "Desa Pecangaan Wetan RT. 02 RW. 04",
       "village": "Pecangaan Wetan",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7023,
+      "longitude": 110.7098
     },
     {
       "npsn": "20318299",
@@ -1782,7 +1850,9 @@
       "address": "Desa Pecangaan Kulon RT. 01 RW. 03",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6964,
+      "longitude": 110.7064
     },
     {
       "npsn": "20318300",
@@ -1790,7 +1860,9 @@
       "address": "Desa Paren RT. 02 RW. 01",
       "village": "Paren",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7663,
+      "longitude": 110.7359
     },
     {
       "npsn": "20318301",
@@ -1798,7 +1870,9 @@
       "address": "Desa Parang RT. 01 RW. 01",
       "village": "Parang",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.7536,
+      "longitude": 110.2439
     },
     {
       "npsn": "20318302",
@@ -1806,7 +1880,9 @@
       "address": "Desa Platar RT. 02 RW. 01",
       "village": "Platar",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6312,
+      "longitude": 110.647
     },
     {
       "npsn": "20318304",
@@ -1814,7 +1890,9 @@
       "address": "Desa Raguklampitan RT. 08 RW. 02",
       "village": "Raguklampitan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6599,
+      "longitude": 110.741
     },
     {
       "npsn": "20318305",
@@ -1822,7 +1900,9 @@
       "address": "Desa Slagi RT. 02 RW. 01",
       "village": "Slagi",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5552,
+      "longitude": 110.7264
     },
     {
       "npsn": "20318306",
@@ -1830,7 +1910,9 @@
       "address": "Desa Singorojo RT. 08 RW. 01",
       "village": "Singorojo",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7392,
+      "longitude": 110.7623
     },
     {
       "npsn": "20318307",
@@ -1838,7 +1920,9 @@
       "address": "Desa Sinanggul RT. 20 RW. 04",
       "village": "Sinanggul",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5392,
+      "longitude": 110.7124
     },
     {
       "npsn": "20318308",
@@ -1846,7 +1930,9 @@
       "address": "Desa Sidigede RT. 05 RW. 01",
       "village": "Sidigede",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.760331,
+      "longitude": 110.710129
     },
     {
       "npsn": "20318309",
@@ -1854,7 +1940,9 @@
       "address": "Desa Sengonbugel RT. 01 RW. 03",
       "village": "Sengonbugel",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7458,
+      "longitude": 110.7449
     },
     {
       "npsn": "20318311",
@@ -1862,7 +1950,9 @@
       "address": "Desa Sendang RT. 01 RW. 02",
       "village": "Sendang",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.729,
+      "longitude": 110.7122
     },
     {
       "npsn": "20318312",
@@ -1870,7 +1960,9 @@
       "address": "Jl. Semat - Jepara KM. 7",
       "village": "Semat",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6367138,
+      "longitude": 110.645052
     },
     {
       "npsn": "20318313",
@@ -1878,7 +1970,9 @@
       "address": "Desa Sekuro RT. 31 RW. 07",
       "village": "Sekuro",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5085,
+      "longitude": 110.6974
     },
     {
       "npsn": "20318314",
@@ -1886,7 +1980,9 @@
       "address": "Desa Robayan RT. 13 RW. 03",
       "village": "Robayan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7415,
+      "longitude": 110.7231
     },
     {
       "npsn": "20318315",
@@ -1894,7 +1990,9 @@
       "address": "Desa Rengging RT. 04 RW. 01",
       "village": "Rengging",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6807,
+      "longitude": 110.7093
     },
     {
       "npsn": "20318316",
@@ -1902,7 +2000,9 @@
       "address": "Desa Rajekwesi RT. 02 RW. 04",
       "village": "Rajekwesi",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6794,
+      "longitude": 110.7565
     },
     {
       "npsn": "20318317",
@@ -1910,7 +2010,9 @@
       "address": "Desa Panggung RT. 06 RW. 02",
       "village": "Panggung",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.684,
+      "longitude": 110.6439
     },
     {
       "npsn": "20318328",
@@ -1918,7 +2020,9 @@
       "address": "Desa Wanusobo RT. 03 RW. 01",
       "village": "Wanusobo",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6775,
+      "longitude": 110.6685
     },
     {
       "npsn": "20318329",
@@ -1926,7 +2030,9 @@
       "address": "Desa Tritis RT. 01 RW. 03",
       "village": "Tritis",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.742,
+      "longitude": 110.8153
     },
     {
       "npsn": "20318330",
@@ -1934,7 +2040,9 @@
       "address": "Desa Telukawur RT. 02 RW. 01",
       "village": "Telukawur",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6242,
+      "longitude": 110.6418
     },
     {
       "npsn": "20318348",
@@ -1942,7 +2050,9 @@
       "address": "Desa Bandungrejo RT. 01 RW. 01",
       "village": "Bandungrejo",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7364,
+      "longitude": 110.7104
     },
     {
       "npsn": "20318349",
@@ -1950,7 +2060,9 @@
       "address": "Desa Tedunan RT. 01 RW. 03",
       "village": "Tedunan",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7152,
+      "longitude": 110.6615
     },
     {
       "npsn": "20318350",
@@ -1958,7 +2070,9 @@
       "address": "Desa Gedangan RT. 02 RW. 02",
       "village": "Gedangan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.790119,
+      "longitude": 110.7253553
     },
     {
       "npsn": "20318351",
@@ -1966,7 +2080,9 @@
       "address": "Desa Demangan RT. 09 RW. 02",
       "village": "Demangan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6262,
+      "longitude": 110.6484
     },
     {
       "npsn": "20318352",
@@ -1974,7 +2090,9 @@
       "address": "Kelurahan Demaan RT. 01 RW. 03",
       "village": "Demaan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5996,
+      "longitude": 110.658147
     },
     {
       "npsn": "20318353",
@@ -1982,7 +2100,9 @@
       "address": "Desa Bulak Baru RT. 02 RW. 01",
       "village": "Bulak Baru",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6642,
+      "longitude": 110.6511
     },
     {
       "npsn": "20318354",
@@ -1990,7 +2110,9 @@
       "address": "Desa Batukali RT. 01 RW. 01",
       "village": "Batukali",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7283,
+      "longitude": 110.691
     },
     {
       "npsn": "20318355",
@@ -1998,7 +2120,9 @@
       "address": "Kelurahan Bapangan RT. 02 RW. 01",
       "village": "Bapangan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.594024,
+      "longitude": 110.682504
     },
     {
       "npsn": "20318356",
@@ -2006,7 +2130,9 @@
       "address": "Desa Jambu RT. 29 RW. 06",
       "village": "Jambu",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5263,
+      "longitude": 110.6919
     },
     {
       "npsn": "20318357",
@@ -2014,7 +2140,9 @@
       "address": "Desa Tulakan RT. 05 RW. 02",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4499,
+      "longitude": 110.8697
     },
     {
       "npsn": "20318358",
@@ -2022,7 +2150,9 @@
       "address": "Desa Suwawal RT. 05 RW. 04",
       "village": "Suwawal",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.561614,
+      "longitude": 110.7045454
     },
     {
       "npsn": "20318359",
@@ -2030,7 +2160,9 @@
       "address": "Desa Tulakan RT. 03 RW. 06",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4454,
+      "longitude": 110.8812
     },
     {
       "npsn": "20318360",
@@ -2038,7 +2170,9 @@
       "address": "Desa Tahunan RT. 04 RW. 06",
       "village": "Tahunan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6309,
+      "longitude": 110.7076
     },
     {
       "npsn": "20318361",
@@ -2046,7 +2180,9 @@
       "address": "Desa Suwawal RT. 07 RW. 03",
       "village": "Suwawal",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5555,
+      "longitude": 110.7128
     },
     {
       "npsn": "20318362",
@@ -2054,7 +2190,9 @@
       "address": "Desa Jatisari RT. 02 RW. 02",
       "village": "Jatisari",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7399,
+      "longitude": 110.7729
     },
     {
       "npsn": "20318363",
@@ -2062,7 +2200,9 @@
       "address": "Desa Jinggotan RT. 03 RW. 02",
       "village": "Jinggotan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5058,
+      "longitude": 110.8002
     },
     {
       "npsn": "20318364",
@@ -2070,7 +2210,9 @@
       "address": "Desa Kalianyar RT. 02 RW. 01",
       "village": "Kalianyar",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6969,
+      "longitude": 110.6451
     },
     {
       "npsn": "20318365",
@@ -2078,7 +2220,9 @@
       "address": "Desa Tanggultlare RT. 02 RW. 01",
       "village": "Tanggultlare",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.65,
+      "longitude": 110.6535
     },
     {
       "npsn": "20318366",
@@ -2086,7 +2230,9 @@
       "address": "Desa Sowan Lor RT. 05 RW. 01",
       "village": "Sowan Lor",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6808,
+      "longitude": 110.6766
     },
     {
       "npsn": "20318367",
@@ -2094,7 +2240,9 @@
       "address": "Kelurahan Saripan RT. 03 RW. 01",
       "village": "Saripan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5919,
+      "longitude": 110.6725
     },
     {
       "npsn": "20318368",
@@ -2102,7 +2250,9 @@
       "address": "Desa Rau RT. 01 RW. 03",
       "village": "Rau",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6464,
+      "longitude": 110.6679
     },
     {
       "npsn": "20318369",
@@ -2110,7 +2260,9 @@
       "address": "Desa Pule RT. 01 RW. 02",
       "village": "Pule",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6847,
+      "longitude": 110.8021
     },
     {
       "npsn": "20318370",
@@ -2118,7 +2270,9 @@
       "address": "Kelurahan Potroyudan RT. 02 RW. 02",
       "village": "Potroyudan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5984,
+      "longitude": 110.6753
     },
     {
       "npsn": "20318371",
@@ -2126,7 +2280,9 @@
       "address": "Desa Mororejo RT. 02 RW. 01",
       "village": "Mororejo",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5392,
+      "longitude": 110.6713
     },
     {
       "npsn": "20318372",
@@ -2134,7 +2290,9 @@
       "address": "Desa Mangunan RT. 04 RW. 02",
       "village": "Mangunan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.63,
+      "longitude": 110.6603
     },
     {
       "npsn": "20318374",
@@ -2142,7 +2300,9 @@
       "address": "Kelurahan Kauman RT. 02 RW. 03",
       "village": "Kauman",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5901,
+      "longitude": 110.6609
     },
     {
       "npsn": "20318375",
@@ -2150,7 +2310,9 @@
       "address": "Desa Karanganyar RT. 05 RW. 02",
       "village": "Karanganyar",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7679759,
+      "longitude": 110.685338
     },
     {
       "npsn": "20318376",
@@ -2158,7 +2320,9 @@
       "address": "Kelurahan Karangkebagusan RT. 05 RW. 02",
       "village": "Karangkebagusan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.60438,
+      "longitude": 110.6571331
     },
     {
       "npsn": "20318377",
@@ -2166,7 +2330,9 @@
       "address": "Desa Lebak RT. 04 RW. 03",
       "village": "Lebak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5958,
+      "longitude": 110.7484
     },
     {
       "npsn": "20318436",
@@ -2174,7 +2340,9 @@
       "address": "Desa Kecapi RT. 19 RW. 03",
       "village": "Kecapi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6082,
+      "longitude": 110.7405
     },
     {
       "npsn": "20318437",
@@ -2182,7 +2350,9 @@
       "address": "Desa Banyumanis RT. 03 RW. 04",
       "village": "Banyumanis",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4365,
+      "longitude": 110.8915
     },
     {
       "npsn": "20318438",
@@ -2190,7 +2360,9 @@
       "address": "Desa Sekuro RT. 10 RW. 02",
       "village": "Sekuro",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5271,
+      "longitude": 110.7215
     },
     {
       "npsn": "20318439",
@@ -2198,7 +2370,9 @@
       "address": "Desa Robayan RT. 03 RW. 01",
       "village": "Robayan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7357,
+      "longitude": 110.7194
     },
     {
       "npsn": "20318440",
@@ -2206,7 +2380,9 @@
       "address": "Desa Raguklampitan RT. 17 RW. 04",
       "village": "Raguklampitan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6576,
+      "longitude": 110.7579
     },
     {
       "npsn": "20318441",
@@ -2214,7 +2390,9 @@
       "address": "Desa Plajan RT. 42 RW. 02",
       "village": "Plajan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.588,
+      "longitude": 110.8053
     },
     {
       "npsn": "20318442",
@@ -2222,7 +2400,9 @@
       "address": "Desa Pendem RT. 03 RW. 08",
       "village": "Pendem",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5402,
+      "longitude": 110.8284
     },
     {
       "npsn": "20318445",
@@ -2230,7 +2410,9 @@
       "address": "Kelurahan Panggang RT. 03 RW. 06",
       "village": "Panggang",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5958,
+      "longitude": 110.67
     },
     {
       "npsn": "20318446",
@@ -2238,7 +2420,9 @@
       "address": "Desa Ngeling RT. 01 RW. 05",
       "village": "Ngeling",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6715,
+      "longitude": 110.6919
     },
     {
       "npsn": "20318447",
@@ -2246,7 +2430,9 @@
       "address": "Desa Ngasem RT. 21 RW. 03",
       "village": "Ngasem",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6582,
+      "longitude": 110.7258
     },
     {
       "npsn": "20318449",
@@ -2254,7 +2440,9 @@
       "address": "Desa Muryolobo RT. 01 RW. 02",
       "village": "Muryolobo",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7316,
+      "longitude": 110.7945
     },
     {
       "npsn": "20318450",
@@ -2262,7 +2450,9 @@
       "address": "Desa Mulyoharjo RT. 02 RW. 03",
       "village": "Mulyoharjo",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5837,
+      "longitude": 110.6788
     },
     {
       "npsn": "20318451",
@@ -2270,7 +2460,9 @@
       "address": "Desa Sidigede RT. 05 RW. 01",
       "village": "Sidigede",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.760677,
+      "longitude": 110.710007
     },
     {
       "npsn": "20318452",
@@ -2278,7 +2470,9 @@
       "address": "Desa Sinanggul RT. 24 RW. 04",
       "village": "Sinanggul",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5326,
+      "longitude": 110.6996
     },
     {
       "npsn": "20318453",
@@ -2286,7 +2480,9 @@
       "address": "Desa Somosari RT. 01 RW. 04",
       "village": "Somosari",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6311,
+      "longitude": 110.8029
     },
     {
       "npsn": "20318454",
@@ -2294,7 +2490,9 @@
       "address": "Desa Bangsri RT. 01 RW. 10",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5204,
+      "longitude": 110.7662
     },
     {
       "npsn": "20318455",
@@ -2302,7 +2500,9 @@
       "address": "Desa Welahan RT. 06 RW. 04",
       "village": "Welahan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7884,
+      "longitude": 110.7173
     },
     {
       "npsn": "20318457",
@@ -2310,7 +2510,9 @@
       "address": "Desa Ujungpandan RT. 11 RW. 04",
       "village": "Ujungpandan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7545,
+      "longitude": 110.6667
     },
     {
       "npsn": "20318458",
@@ -2318,7 +2520,9 @@
       "address": "Desa Tunahan RT. 08 RW. 02",
       "village": "Tunahan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5071,
+      "longitude": 110.8713
     },
     {
       "npsn": "20318459",
@@ -2326,7 +2530,9 @@
       "address": "Desa Tulakan RT. 01 RW. 03",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4589,
+      "longitude": 110.8796
     },
     {
       "npsn": "20318461",
@@ -2334,7 +2540,9 @@
       "address": "Desa Troso RT. 10 RW. 09",
       "village": "Troso",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6692,
+      "longitude": 110.7023
     },
     {
       "npsn": "20318462",
@@ -2342,7 +2550,9 @@
       "address": "Desa Tengguli RT. 03 RW. 02",
       "village": "Tengguli",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5358193,
+      "longitude": 110.7534581
     },
     {
       "npsn": "20318463",
@@ -2350,7 +2560,9 @@
       "address": "Desa Telukwetan RT. 01 RW. 01",
       "village": "Telukwetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7518,
+      "longitude": 110.7082
     },
     {
       "npsn": "20318465",
@@ -2358,7 +2570,9 @@
       "address": "Desa Suwawal RT. 04 RW. 02",
       "village": "Suwawal",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5509,
+      "longitude": 110.6928
     },
     {
       "npsn": "20318466",
@@ -2366,7 +2580,9 @@
       "address": "Desa Srobyong RT. 05 RW. 04",
       "village": "Srobyong",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5233,
+      "longitude": 110.7201
     },
     {
       "npsn": "20318467",
@@ -2374,7 +2590,9 @@
       "address": "Desa Mindahan Kidul RT. 06 RW. 02",
       "village": "Mindahan Kidul",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6429,
+      "longitude": 110.7449
     },
     {
       "npsn": "20318468",
@@ -2382,7 +2600,9 @@
       "address": "Desa Mayong Lor RT. 01 RW. 03",
       "village": "Mayong Lor",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7563,
+      "longitude": 110.7572
     },
     {
       "npsn": "20318470",
@@ -2390,7 +2610,9 @@
       "address": "Desa Jerukwangi RT. 01 RW. 10",
       "village": "Jerukwangi",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4991,
+      "longitude": 110.7351
     },
     {
       "npsn": "20318471",
@@ -2398,7 +2620,9 @@
       "address": "Desa Jambu RT. 37 RW. 08",
       "village": "Jambu",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5278,
+      "longitude": 110.7071
     },
     {
       "npsn": "20318472",
@@ -2406,7 +2630,9 @@
       "address": "Desa Dongos RT. 01 RW. 03",
       "village": "Dongos",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6572,
+      "longitude": 110.6838
     },
     {
       "npsn": "20318473",
@@ -2414,7 +2640,9 @@
       "address": "Desa Damarwulan RT. 02 RW. 04",
       "village": "Damarwulan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.565,
+      "longitude": 110.8962
     },
     {
       "npsn": "20318474",
@@ -2422,7 +2650,9 @@
       "address": "Desa Damarjati RT. 02 RW. 04",
       "village": "Damarjati",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.695018,
+      "longitude": 110.745586
     },
     {
       "npsn": "20318475",
@@ -2430,7 +2660,9 @@
       "address": "Desa Cepogo RT. 01 RW. 06",
       "village": "Cepogo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5098,
+      "longitude": 110.8363
     },
     {
       "npsn": "20318476",
@@ -2438,7 +2670,9 @@
       "address": "Desa Bulungan RT. 08 RW. 04",
       "village": "Bulungan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5898,
+      "longitude": 110.7078
     },
     {
       "npsn": "20318477",
@@ -2446,7 +2680,9 @@
       "address": "Desa Bucu RT. 02 RW. 02",
       "village": "Bucu",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5391,
+      "longitude": 110.8387
     },
     {
       "npsn": "20318478",
@@ -2454,7 +2690,9 @@
       "address": "Desa Bringin RT. 17 RW. 04",
       "village": "Bringin",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6263,
+      "longitude": 110.7586
     },
     {
       "npsn": "20318479",
@@ -2462,7 +2700,9 @@
       "address": "Desa Bondo RT. 02 RW. 07",
       "village": "Bondo",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4656,
+      "longitude": 110.7311
     },
     {
       "npsn": "20318480",
@@ -2470,7 +2710,9 @@
       "address": "Desa Blingoh RT. 04 RW. 05",
       "village": "Blingoh",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4936,
+      "longitude": 110.9237
     },
     {
       "npsn": "20318481",
@@ -2478,7 +2720,9 @@
       "address": "Desa Kaliaman RT. 04 RW. 06",
       "village": "Kaliaman",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4705,
+      "longitude": 110.739
     },
     {
       "npsn": "20318482",
@@ -2486,7 +2730,9 @@
       "address": "Desa Kaligarang RT. 20 RW. 03",
       "village": "Kaligarang",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5023,
+      "longitude": 110.8446
     },
     {
       "npsn": "20318483",
@@ -2494,7 +2740,9 @@
       "address": "Desa Kalipucang Kulon RT. 03 RW. 01",
       "village": "Kalipucang Kulon",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7528,
+      "longitude": 110.7184
     },
     {
       "npsn": "20318484",
@@ -2502,7 +2750,9 @@
       "address": "Desa Margoyoso RT. 07 RW. 03",
       "village": "Margoyoso",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7265,
+      "longitude": 110.7226
     },
     {
       "npsn": "20318485",
@@ -2510,7 +2760,9 @@
       "address": "Desa Lebak RT. 01 RW. 06",
       "village": "Lebak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5957,
+      "longitude": 110.7434
     },
     {
       "npsn": "20318486",
@@ -2518,7 +2770,9 @@
       "address": "Desa Kriyan RT. 05 RW. 01",
       "village": "Kriyan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7315,
+      "longitude": 110.7213
     },
     {
       "npsn": "20318487",
@@ -2526,7 +2780,9 @@
       "address": "Desa Krapyak RT. 02 RW. 08",
       "village": "Krapyak",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6098,
+      "longitude": 110.6734
     },
     {
       "npsn": "20318488",
@@ -2534,7 +2790,9 @@
       "address": "Desa Kemujan RT. 02 RW. 05",
       "village": "Kemujan",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.7804,
+      "longitude": 110.4786
     },
     {
       "npsn": "20318489",
@@ -2542,7 +2800,9 @@
       "address": "Desa Keling RT. 04 RW. 06",
       "village": "Keling",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4724,
+      "longitude": 110.862
     },
     {
       "npsn": "20318490",
@@ -2550,7 +2810,9 @@
       "address": "Desa Kelet RT. 20 RW. 03",
       "village": "Kelet",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5032,
+      "longitude": 110.9073
     },
     {
       "npsn": "20318491",
@@ -2558,7 +2820,9 @@
       "address": "Desa Kedungcino RT. 13 RW. 05",
       "village": "Kedungcino",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5562,
+      "longitude": 110.6689
     },
     {
       "npsn": "20318493",
@@ -2566,7 +2830,9 @@
       "address": "Desa Karimunjawa RT. 02 RW. 05",
       "village": "Karimunjawa",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.8387,
+      "longitude": 110.4429
     },
     {
       "npsn": "20318495",
@@ -2574,7 +2840,9 @@
       "address": "Desa Kalipucang Wetan RT. 07 RW. 03",
       "village": "Kalipucang Wetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7627,
+      "longitude": 110.7289
     },
     {
       "npsn": "20318496",
@@ -2582,7 +2850,9 @@
       "address": "Desa Bawu RT. 16 RW. 03",
       "village": "Bawu",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6262,
+      "longitude": 110.7267
     },
     {
       "npsn": "20318497",
@@ -2590,7 +2860,9 @@
       "address": "Desa Karimunjawa RT. 03 RW. 04",
       "village": "Karimunjawa",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.8394,
+      "longitude": 110.4214
     },
     {
       "npsn": "20318498",
@@ -2598,7 +2870,9 @@
       "address": "Desa Kecapi RT. 44 RW. 08",
       "village": "Kecapi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.598,
+      "longitude": 110.7038
     },
     {
       "npsn": "20318499",
@@ -2606,7 +2880,9 @@
       "address": "Desa Karimunjawa RT. 04 RW. 05",
       "village": "Karimunjawa",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.8382,
+      "longitude": 110.4698
     },
     {
       "npsn": "20318500",
@@ -2614,7 +2890,9 @@
       "address": "Desa Kalipucang Wetan RT. 04 RW. 03",
       "village": "Kalipucang Wetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7589,
+      "longitude": 110.7294
     },
     {
       "npsn": "20318501",
@@ -2622,7 +2900,9 @@
       "address": "Desa Jambu Timur RT. 15 RW. 03",
       "village": "Jambu Timur",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5346,
+      "longitude": 110.7379
     },
     {
       "npsn": "20318502",
@@ -2630,7 +2910,9 @@
       "address": "Desa Bulungan RT. 08 RW. 04",
       "village": "Bulungan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5898,
+      "longitude": 110.7074
     },
     {
       "npsn": "20318503",
@@ -2638,7 +2920,9 @@
       "address": "Desa Blingoh RT. 06 RW. 07",
       "village": "Blingoh",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4569,
+      "longitude": 110.92
     },
     {
       "npsn": "20318504",
@@ -2646,7 +2930,9 @@
       "address": "Desa Bangsri RT. 01 RW. 07",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5228,
+      "longitude": 110.7654
     },
     {
       "npsn": "20318505",
@@ -2654,7 +2940,9 @@
       "address": "Desa Tulakan RT. 06 RW. 05",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4558,
+      "longitude": 110.8824
     },
     {
       "npsn": "20318506",
@@ -2662,7 +2950,9 @@
       "address": "Desa Tubanan RT. 07 RW. 04",
       "village": "Tubanan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.457,
+      "longitude": 110.7601
     },
     {
       "npsn": "20318507",
@@ -2670,7 +2960,9 @@
       "address": "Desa Troso RT. 03 RW. 10",
       "village": "Troso",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6796,
+      "longitude": 110.7089
     },
     {
       "npsn": "20318508",
@@ -2678,7 +2970,9 @@
       "address": "Desa Telukwetan RT. 19 RW. 03",
       "village": "Telukwetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7472,
+      "longitude": 110.7135
     },
     {
       "npsn": "20318510",
@@ -2686,7 +2980,9 @@
       "address": "Desa Lebak RT. 03 RW. 05",
       "village": "Lebak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6013,
+      "longitude": 110.7341
     },
     {
       "npsn": "20318511",
@@ -2694,7 +2990,9 @@
       "address": "Desa Mulyoharjo RT. 03 RW. 02",
       "village": "Mulyoharjo",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5836,
+      "longitude": 110.6911
     },
     {
       "npsn": "20318512",
@@ -2702,7 +3000,9 @@
       "address": "Desa Ngabul RT. 03 RW. 07",
       "village": "Ngabul",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6581,
+      "longitude": 110.7097
     },
     {
       "npsn": "20318513",
@@ -2710,7 +3010,9 @@
       "address": "Desa Karanggondang RT. 06 RW. 02",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5149,
+      "longitude": 110.7174
     },
     {
       "npsn": "20318514",
@@ -2718,7 +3020,9 @@
       "address": "Desa Bangsri RT. 02 RW. 07",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5236,
+      "longitude": 110.7655
     },
     {
       "npsn": "20318515",
@@ -2726,7 +3030,9 @@
       "address": "Desa Tahunan RT. 03 RW. 01",
       "village": "Tahunan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6161,
+      "longitude": 110.6848
     },
     {
       "npsn": "20318517",
@@ -2734,7 +3040,9 @@
       "address": "Desa Tulakan RT. 02 RW. 10",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4487,
+      "longitude": 110.8771
     },
     {
       "npsn": "20318518",
@@ -2742,7 +3050,9 @@
       "address": "Desa Tubanan RT. 02 RW. 02",
       "village": "Tubanan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4666,
+      "longitude": 110.7794
     },
     {
       "npsn": "20318519",
@@ -2750,7 +3060,9 @@
       "address": "Desa Troso RT. 04 RW. 01",
       "village": "Troso",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6884,
+      "longitude": 110.6992
     },
     {
       "npsn": "20318521",
@@ -2758,7 +3070,9 @@
       "address": "Desa Suwawal RT. 01 RW. 01",
       "village": "Suwawal",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.546,
+      "longitude": 110.6943
     },
     {
       "npsn": "20318522",
@@ -2766,7 +3080,9 @@
       "address": "Desa Sinanggul RT. 31 RW. 06",
       "village": "Sinanggul",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5523,
+      "longitude": 110.7102
     },
     {
       "npsn": "20318523",
@@ -2774,7 +3090,9 @@
       "address": "Desa Pecangaan Kulon RT. 03 RW. 07",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.699116,
+      "longitude": 110.702692
     },
     {
       "npsn": "20318524",
@@ -2782,7 +3100,9 @@
       "address": "Kelurahan Panggang RT. 07 RW. 01",
       "village": "Panggang",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5936,
+      "longitude": 110.6675
     },
     {
       "npsn": "20318525",
@@ -2790,7 +3110,9 @@
       "address": "Desa Suwawal Timur RT. 05 RW. 03",
       "village": "Suwawal Timur",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5637,
+      "longitude": 110.7124
     },
     {
       "npsn": "20318527",
@@ -2798,7 +3120,9 @@
       "address": "Desa Karimunjawa RT. 01 RW. 06",
       "village": "Karimunjawa",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.853,
+      "longitude": 110.6066
     },
     {
       "npsn": "20318528",
@@ -2806,7 +3130,9 @@
       "address": "Desa Karanggondang RT. 01 RW. 05",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5262,
+      "longitude": 110.7175
     },
     {
       "npsn": "20318529",
@@ -2814,7 +3140,9 @@
       "address": "Desa Kancilan RT. 05 RW. 05",
       "village": "Kancilan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5014,
+      "longitude": 110.8051
     },
     {
       "npsn": "20318531",
@@ -2822,7 +3150,9 @@
       "address": "Desa Kalipucang Kulon RT. 03 RW. 03",
       "village": "Kalipucang Kulon",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7616,
+      "longitude": 110.7147
     },
     {
       "npsn": "20318532",
@@ -2830,7 +3160,9 @@
       "address": "Desa Jambu Timur RT. 27 RW. 06",
       "village": "Jambu Timur",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5412,
+      "longitude": 110.7287
     },
     {
       "npsn": "20318533",
@@ -2838,7 +3170,9 @@
       "address": "Desa Damarwulan RT. 03 RW. 02",
       "village": "Damarwulan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5542,
+      "longitude": 110.9046
     },
     {
       "npsn": "20318534",
@@ -2846,7 +3180,9 @@
       "address": "Desa Cepogo RT. 03 RW. 09",
       "village": "Cepogo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5147,
+      "longitude": 110.829
     },
     {
       "npsn": "20318535",
@@ -2854,7 +3190,9 @@
       "address": "Desa Bringin RT. 01 RW. 01",
       "village": "Bringin",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6321,
+      "longitude": 110.768
     },
     {
       "npsn": "20318536",
@@ -2862,7 +3200,9 @@
       "address": "Desa Bondo RT. 03 RW. 03",
       "village": "Bondo",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4901,
+      "longitude": 110.7231
     },
     {
       "npsn": "20318537",
@@ -2870,7 +3210,9 @@
       "address": "Desa Blingoh RT. 12 RW. 03",
       "village": "Blingoh",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4805,
+      "longitude": 110.9118
     },
     {
       "npsn": "20318538",
@@ -2878,7 +3220,9 @@
       "address": "Desa Bategede RT. 03 RW. 05",
       "village": "Bategede",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.68,
+      "longitude": 110.823
     },
     {
       "npsn": "20318539",
@@ -2886,7 +3230,9 @@
       "address": "Desa Kecapi RT. 13 RW. 02",
       "village": "Kecapi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6043,
+      "longitude": 110.7042
     },
     {
       "npsn": "20318540",
@@ -2894,7 +3240,9 @@
       "address": "Desa Keling RT. 02 RW. 02",
       "village": "Keling",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4922,
+      "longitude": 110.8627
     },
     {
       "npsn": "20318541",
@@ -2902,7 +3250,9 @@
       "address": "Desa Kemujan RT. 02 RW. 04",
       "village": "Kemujan",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.7951,
+      "longitude": 110.465
     },
     {
       "npsn": "20318542",
@@ -2910,7 +3260,9 @@
       "address": "Desa Sinanggul RT. 08 RW. 02",
       "village": "Sinanggul",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5422,
+      "longitude": 110.7156
     },
     {
       "npsn": "20318543",
@@ -2918,7 +3270,9 @@
       "address": "Desa Sekuro RT. 30 RW. 07",
       "village": "Sekuro",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.509986,
+      "longitude": 110.699902
     },
     {
       "npsn": "20318544",
@@ -2926,7 +3280,9 @@
       "address": "Desa Plajan RT. 35 RW. 05",
       "village": "Plajan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5797,
+      "longitude": 110.7912
     },
     {
       "npsn": "20318546",
@@ -2934,7 +3290,9 @@
       "address": "Desa Pecangaan Kulon RT. 01 RW. 02",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6863,
+      "longitude": 110.7071
     },
     {
       "npsn": "20318547",
@@ -2942,7 +3300,9 @@
       "address": "Kelurahan Panggang RT. 01 RW. 07",
       "village": "Panggang",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5934,
+      "longitude": 110.6677
     },
     {
       "npsn": "20318548",
@@ -2950,7 +3310,9 @@
       "address": "Desa Ngasem RT. 29 RW. 03",
       "village": "Ngasem",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6572,
+      "longitude": 110.7187
     },
     {
       "npsn": "20318549",
@@ -2958,7 +3320,9 @@
       "address": "Desa Ngabul RT. 04 RW. 05",
       "village": "Ngabul",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6487,
+      "longitude": 110.7027
     },
     {
       "npsn": "20318550",
@@ -2966,7 +3330,9 @@
       "address": "Desa Mulyoharjo RT. 07 RW. 04",
       "village": "Mulyoharjo",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5802,
+      "longitude": 110.6732
     },
     {
       "npsn": "20318551",
@@ -2974,7 +3340,9 @@
       "address": "Desa Mindahan RT. 05 RW. 04",
       "village": "Mindahan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6338,
+      "longitude": 110.7641
     },
     {
       "npsn": "20318552",
@@ -2982,7 +3350,9 @@
       "address": "Desa Mayong Lor RT. 02 RW. 06",
       "village": "Mayong Lor",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7624,
+      "longitude": 110.7581
     },
     {
       "npsn": "20318553",
@@ -2990,7 +3360,9 @@
       "address": "Desa Lebak RT. 01 RW. 04",
       "village": "Lebak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6053,
+      "longitude": 110.8031
     },
     {
       "npsn": "20318556",
@@ -2998,7 +3370,9 @@
       "address": "Desa Gemulung RT. 03 RW. 01",
       "village": "Gemulung",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7043,
+      "longitude": 110.7272
     },
     {
       "npsn": "20318795",
@@ -3006,7 +3380,9 @@
       "address": "Desa Tahunan RT. 01 RW. 03",
       "village": "Tahunan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.617,
+      "longitude": 110.6916
     },
     {
       "npsn": "20318796",
@@ -3014,7 +3390,9 @@
       "address": "Desa Sekuro RT. 08 RW. 02",
       "village": "Sekuro",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5279,
+      "longitude": 110.7228
     },
     {
       "npsn": "20318797",
@@ -3022,7 +3400,9 @@
       "address": "Desa Robayan RT. 13 RW. 03",
       "village": "Robayan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7416,
+      "longitude": 110.7233
     },
     {
       "npsn": "20318798",
@@ -3030,7 +3410,9 @@
       "address": "Desa Rengging RT. 17 RW. 03",
       "village": "Rengging",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6754,
+      "longitude": 110.7228
     },
     {
       "npsn": "20318799",
@@ -3038,7 +3420,9 @@
       "address": "Desa Rajekwesi RT. 02 RW. 03",
       "village": "Rajekwesi",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6756,
+      "longitude": 110.7607
     },
     {
       "npsn": "20318800",
@@ -3046,7 +3430,9 @@
       "address": "Desa Raguklampitan RT. 12 RW. 03",
       "village": "Raguklampitan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6676,
+      "longitude": 110.7505
     },
     {
       "npsn": "20318801",
@@ -3054,7 +3440,9 @@
       "address": "Desa Purwogondo RT. 08 RW. 02",
       "village": "Purwogondo",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.732532,
+      "longitude": 110.714934
     },
     {
       "npsn": "20318802",
@@ -3062,7 +3450,9 @@
       "address": "Desa Pringtulis RT. 03 RW. 04",
       "village": "Pringtulis",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7510922,
+      "longitude": 110.7729525
     },
     {
       "npsn": "20318803",
@@ -3070,7 +3460,9 @@
       "address": "Desa Platar RT. 07 RW. 02",
       "village": "Platar",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6309,
+      "longitude": 110.6488
     },
     {
       "npsn": "20318804",
@@ -3078,7 +3470,9 @@
       "address": "Desa Plajan RT. 22 RW. 04",
       "village": "Plajan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5898,
+      "longitude": 110.7836
     },
     {
       "npsn": "20318805",
@@ -3086,7 +3480,9 @@
       "address": "Desa Petekeyan RT. 06 RW. 02",
       "village": "Petekeyan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.637,
+      "longitude": 110.6681
     },
     {
       "npsn": "20318806",
@@ -3094,7 +3490,9 @@
       "address": "Kelurahan Pengkol RT. 01 RW. 05",
       "village": "Pengkol",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5899,
+      "longitude": 110.6731
     },
     {
       "npsn": "20318807",
@@ -3102,7 +3500,9 @@
       "address": "Desa Pendo Sawalan RT. 02 RW. 01",
       "village": "Pendo Sawalan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7181,
+      "longitude": 110.7379
     },
     {
       "npsn": "20318808",
@@ -3110,7 +3510,9 @@
       "address": "Desa Sendang RT. 01 RW. 02",
       "village": "Sendang",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.729,
+      "longitude": 110.7125
     },
     {
       "npsn": "20318809",
@@ -3118,7 +3520,9 @@
       "address": "Desa Senenan RT. 13 RW. 05",
       "village": "Senenan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6096,
+      "longitude": 110.6847
     },
     {
       "npsn": "20318810",
@@ -3126,7 +3530,9 @@
       "address": "Desa Sengonbugel RT. 01 RW. 01",
       "village": "Sengonbugel",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7336,
+      "longitude": 110.7348
     },
     {
       "npsn": "20318811",
@@ -3134,7 +3540,9 @@
       "address": "Desa Suwawal Timur RT. 01 RW. 02",
       "village": "Suwawal Timur",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5704,
+      "longitude": 110.7269
     },
     {
       "npsn": "20318812",
@@ -3142,7 +3550,9 @@
       "address": "Desa Surodadi RT. 13 RW. 04",
       "village": "Surodadi",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6883,
+      "longitude": 110.6516
     },
     {
       "npsn": "20318813",
@@ -3150,7 +3560,9 @@
       "address": "Desa Sumanding RT. 10 RW. 03",
       "village": "Sumanding",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5451,
+      "longitude": 110.8548
     },
     {
       "npsn": "20318814",
@@ -3158,7 +3570,9 @@
       "address": "Desa Sukosono RT. 10 RW. 03",
       "village": "Sukosono",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6397,
+      "longitude": 110.677
     },
     {
       "npsn": "20318815",
@@ -3166,7 +3580,9 @@
       "address": "Desa Sukodono RT. 01 RW. 03",
       "village": "Sukodono",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6286,
+      "longitude": 110.6803
     },
     {
       "npsn": "20318816",
@@ -3174,7 +3590,9 @@
       "address": "Desa Srobyong RT. 01 RW. 02",
       "village": "Srobyong",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5265,
+      "longitude": 110.7112
     },
     {
       "npsn": "20318817",
@@ -3182,7 +3600,9 @@
       "address": "Desa Sowan Lor RT. 08 RW. 02",
       "village": "Sowan Lor",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6791,
+      "longitude": 110.6786
     },
     {
       "npsn": "20318818",
@@ -3190,7 +3610,9 @@
       "address": "Desa Sowan Kidul RT. 03 RW. 01",
       "village": "Sowan Kidul",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6884,
+      "longitude": 110.6735
     },
     {
       "npsn": "20318819",
@@ -3198,7 +3620,9 @@
       "address": "Desa Somosari RT. 06 RW. 01",
       "village": "Somosari",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6358,
+      "longitude": 110.7892
     },
     {
       "npsn": "20318820",
@@ -3206,7 +3630,9 @@
       "address": "Desa Slagi RT. 14 RW. 03",
       "village": "Slagi",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5496,
+      "longitude": 110.7253
     },
     {
       "npsn": "20318821",
@@ -3214,7 +3640,9 @@
       "address": "Desa Singorojo RT. 09 RW. 01",
       "village": "Singorojo",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7387,
+      "longitude": 110.7624
     },
     {
       "npsn": "20318822",
@@ -3222,7 +3650,9 @@
       "address": "Desa Sidigede RT. 03 RW. 01",
       "village": "Sidigede",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7555,
+      "longitude": 110.7066
     },
     {
       "npsn": "20318823",
@@ -3230,7 +3660,9 @@
       "address": "Desa Pendem RT. 03 RW. 06",
       "village": "Pendem",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5185,
+      "longitude": 110.8159
     },
     {
       "npsn": "20318824",
@@ -3238,7 +3670,9 @@
       "address": "Desa Pelemkerep RT. 05 RW. 02",
       "village": "Pelemkerep",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7515,
+      "longitude": 110.7622
     },
     {
       "npsn": "20318825",
@@ -3246,7 +3680,9 @@
       "address": "Desa Mulyoharjo RT. 01 RW. 03",
       "village": "Mulyoharjo",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5857524,
+      "longitude": 110.6780742
     },
     {
       "npsn": "20318826",
@@ -3254,7 +3690,9 @@
       "address": "Desa Mindahan RT. 02 RW. 02",
       "village": "Mindahan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6316,
+      "longitude": 110.7538
     },
     {
       "npsn": "20318827",
@@ -3262,7 +3700,9 @@
       "address": "Desa Menganti RT. 01 RW. 01",
       "village": "Menganti",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6615,
+      "longitude": 110.6668
     },
     {
       "npsn": "20318828",
@@ -3270,7 +3710,9 @@
       "address": "Desa Mayong Lor RT. 05 RW. 09",
       "village": "Mayong Lor",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7493,
+      "longitude": 110.7615
     },
     {
       "npsn": "20318829",
@@ -3278,7 +3720,9 @@
       "address": "Desa Mayong Kidul RT. 05 RW. 01",
       "village": "Mayong Kidul",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.766531,
+      "longitude": 110.7492324
     },
     {
       "npsn": "20318830",
@@ -3286,7 +3730,9 @@
       "address": "Desa Margoyoso RT. 03 RW. 01",
       "village": "Margoyoso",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7257,
+      "longitude": 110.7173
     },
     {
       "npsn": "20318831",
@@ -3294,7 +3740,9 @@
       "address": "Desa Manyargading RT. 04 RW. 01",
       "village": "Manyargading",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7354,
+      "longitude": 110.7092
     },
     {
       "npsn": "20318832",
@@ -3302,7 +3750,9 @@
       "address": "Desa Mantingan RT. 29 RW. 01",
       "village": "Mantingan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6185,
+      "longitude": 110.6644
     },
     {
       "npsn": "20318834",
@@ -3310,7 +3760,9 @@
       "address": "Desa Lebuawu RT. 13 RW. 03",
       "village": "Lebuawu",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7108,
+      "longitude": 110.7158
     },
     {
       "npsn": "20318835",
@@ -3318,7 +3770,9 @@
       "address": "Desa Lebak RT. 03 RW. 01",
       "village": "Lebak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5889,
+      "longitude": 110.7444
     },
     {
       "npsn": "20318836",
@@ -3326,7 +3780,9 @@
       "address": "Desa Langon RT. 07 RW. 04",
       "village": "Langon",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6306,
+      "longitude": 110.6877
     },
     {
       "npsn": "20318837",
@@ -3334,7 +3790,9 @@
       "address": "Desa Muryolobo RT. 01 RW. 02",
       "village": "Muryolobo",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7311,
+      "longitude": 110.7913
     },
     {
       "npsn": "20318838",
@@ -3342,7 +3800,9 @@
       "address": "Desa Nalumsari RT. 01 RW. 01",
       "village": "Nalumsari",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7465,
+      "longitude": 110.804
     },
     {
       "npsn": "20318839",
@@ -3350,7 +3810,9 @@
       "address": "Desa Ngabul RT. 04 RW. 02",
       "village": "Ngabul",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6422,
+      "longitude": 110.7107
     },
     {
       "npsn": "20318840",
@@ -3358,7 +3820,9 @@
       "address": "Desa Pekalongan RT. 01 RW. 04",
       "village": "Pekalongan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6217,
+      "longitude": 110.7046
     },
     {
       "npsn": "20318841",
@@ -3366,7 +3830,9 @@
       "address": "Desa Pulodarat RT. 13 RW. 02",
       "village": "Pulodarat",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6956,
+      "longitude": 110.7105
     },
     {
       "npsn": "20318842",
@@ -3374,7 +3840,9 @@
       "address": "Desa Pecangaan Kulon RT. 02 RW. 02",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6858,
+      "longitude": 110.708
     },
     {
       "npsn": "20318843",
@@ -3382,7 +3850,9 @@
       "address": "Desa Paren RT. 01 RW. 01",
       "village": "Paren",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7673,
+      "longitude": 110.7403
     },
     {
       "npsn": "20318844",
@@ -3390,7 +3860,9 @@
       "address": "Desa Parang RT. 03 RW. 01",
       "village": "Parang",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.7504,
+      "longitude": 110.2427
     },
     {
       "npsn": "20318845",
@@ -3398,7 +3870,9 @@
       "address": "Desa Papasan RT. 13 RW. 03",
       "village": "Papasan",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5511,
+      "longitude": 110.8258
     },
     {
       "npsn": "20318846",
@@ -3406,7 +3880,9 @@
       "address": "Kelurahan Panggang RT. 01 RW. 07",
       "village": "Panggang",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5936,
+      "longitude": 110.6679
     },
     {
       "npsn": "20318847",
@@ -3414,7 +3890,9 @@
       "address": "Desa Pancur RT. 19 RW. 04",
       "village": "Pancur",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6632,
+      "longitude": 110.7779
     },
     {
       "npsn": "20318848",
@@ -3422,7 +3900,9 @@
       "address": "Desa Ngetuk RT. 03 RW. 08",
       "village": "Ngetuk",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7347,
+      "longitude": 110.8156
     },
     {
       "npsn": "20318849",
@@ -3430,7 +3910,9 @@
       "address": "Desa Ngeling RT. 07 RW. 01",
       "village": "Ngeling",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6814,
+      "longitude": 110.689
     },
     {
       "npsn": "20318850",
@@ -3438,7 +3920,9 @@
       "address": "Desa Ngasem RT. 25 RW. 03",
       "village": "Ngasem",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6532,
+      "longitude": 110.7281
     },
     {
       "npsn": "20318851",
@@ -3446,7 +3930,9 @@
       "address": "Desa Bumiharjo RT. 02 RW. 07",
       "village": "Bumiharjo",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4633,
+      "longitude": 110.8336
     },
     {
       "npsn": "20318852",
@@ -3454,7 +3940,9 @@
       "address": "Desa Kuwasen RT. 05 RW. 02",
       "village": "Kuwasen",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.573,
+      "longitude": 110.6854
     },
     {
       "npsn": "20318853",
@@ -3462,7 +3950,9 @@
       "address": "Desa Gemiring Lor RT. 03 RW. 05",
       "village": "Gemiring Lor",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.739,
+      "longitude": 110.7853
     },
     {
       "npsn": "20318854",
@@ -3470,7 +3960,9 @@
       "address": "Desa Bugel RT. 08 RW. 03",
       "village": "Bugel",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6666,
+      "longitude": 110.6724
     },
     {
       "npsn": "20318855",
@@ -3478,7 +3970,9 @@
       "address": "Desa Bucu RT. 01 RW. 02",
       "village": "Bucu",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.543,
+      "longitude": 110.8427
     },
     {
       "npsn": "20318856",
@@ -3486,7 +3980,9 @@
       "address": "Jl. Cemara Km. 0 Desa Bringin RT. 08 RW. 03",
       "village": "Bringin",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6223987,
+      "longitude": 110.756371
     },
     {
       "npsn": "20318857",
@@ -3494,7 +3990,9 @@
       "address": "Desa Brantaksekarjati RT. 08 RW. 02",
       "village": "Brantak Sekarjati",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.742,
+      "longitude": 110.721
     },
     {
       "npsn": "20318858",
@@ -3502,7 +4000,9 @@
       "address": "Desa Bondo RT. 01 RW. 03",
       "village": "Bondo",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4777,
+      "longitude": 110.726
     },
     {
       "npsn": "20318859",
@@ -3510,7 +4010,9 @@
       "address": "Desa Blingoh RT. 08 RW. 01",
       "village": "Blingoh",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4886,
+      "longitude": 110.9153
     },
     {
       "npsn": "20318860",
@@ -3518,7 +4020,9 @@
       "address": "Desa Blimbingrejo RT. 02 RW. 05",
       "village": "Blimbingrejo",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7829,
+      "longitude": 110.7623
     },
     {
       "npsn": "20318861",
@@ -3526,7 +4030,9 @@
       "address": "Desa Bendanpete RT. 06 RW. 01",
       "village": "Bendanpete",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7375,
+      "longitude": 110.8016
     },
     {
       "npsn": "20318862",
@@ -3534,7 +4040,9 @@
       "address": "Desa Bawu RT. 42 RW. 08",
       "village": "Bawu",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6307,
+      "longitude": 110.7327
     },
     {
       "npsn": "20318863",
@@ -3542,7 +4050,9 @@
       "address": "Desa Bategede RT. 05 RW. 04",
       "village": "Bategede",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.6784,
+      "longitude": 110.8228
     },
     {
       "npsn": "20318864",
@@ -3550,7 +4060,9 @@
       "address": "Desa Batealit RT. 12 RW. 03",
       "village": "Batealit",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6261,
+      "longitude": 110.7894
     },
     {
       "npsn": "20318866",
@@ -3558,7 +4070,9 @@
       "address": "Desa Bugo RT. 04 RW. 01",
       "village": "Bugo",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7777,
+      "longitude": 110.7153
     },
     {
       "npsn": "20318867",
@@ -3566,7 +4080,9 @@
       "address": "Kelurahan Bulu RT. 03 RW. 03",
       "village": "Bulu",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.59,
+      "longitude": 110.6551
     },
     {
       "npsn": "20318868",
@@ -3574,7 +4090,9 @@
       "address": "Desa Bumiharjo RT. 04 RW. 04",
       "village": "Bumiharjo",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4302,
+      "longitude": 110.8427
     },
     {
       "npsn": "20318869",
@@ -3582,7 +4100,9 @@
       "address": "Desa Gemiring Kidul RT. 01 RW. 02",
       "village": "Gemiring Kidul",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7436,
+      "longitude": 110.7768
     },
     {
       "npsn": "20318870",
@@ -3590,7 +4110,9 @@
       "address": "Desa Dorang RT. 06 RW. 01",
       "village": "Dorang",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7802,
+      "longitude": 110.7535
     },
     {
       "npsn": "20318872",
@@ -3598,7 +4120,9 @@
       "address": "Desa Dermolo RT. 03 RW. 01",
       "village": "Dermolo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4732,
+      "longitude": 110.8162
     },
     {
       "npsn": "20318873",
@@ -3606,7 +4130,9 @@
       "address": "Desa Datar RT. 01 RW. 01",
       "village": "Datar",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6913,
+      "longitude": 110.7642
     },
     {
       "npsn": "20318874",
@@ -3614,7 +4140,9 @@
       "address": "Desa Daren RT. 04 RW. 05",
       "village": "Daren",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.747,
+      "longitude": 110.8261
     },
     {
       "npsn": "20318875",
@@ -3622,7 +4150,9 @@
       "address": "Desa Damarwulan RT. 07 RW. 03",
       "village": "Damarwulan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5414,
+      "longitude": 110.9046
     },
     {
       "npsn": "20318876",
@@ -3630,7 +4160,9 @@
       "address": "Desa Damarjati RT. 03 RW. 01",
       "village": "Damarjati",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.6956,
+      "longitude": 110.7388
     },
     {
       "npsn": "20318877",
@@ -3638,7 +4170,9 @@
       "address": "Desa Clering RT. 04 RW. 01",
       "village": "Clering",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4276,
+      "longitude": 110.9604
     },
     {
       "npsn": "20318878",
@@ -3646,7 +4180,9 @@
       "address": "Desa Cepogo RT. 01 RW. 03",
       "village": "Cepogo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5121,
+      "longitude": 110.8425
     },
     {
       "npsn": "20318891",
@@ -3654,7 +4190,9 @@
       "address": "Desa Bungu RT. 01 RW. 02",
       "village": "Bungu",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6662,
+      "longitude": 110.8083
     },
     {
       "npsn": "20318892",
@@ -3662,7 +4200,9 @@
       "address": "Desa Banyumanis RT. 04 RW. 01",
       "village": "Banyumanis",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4295,
+      "longitude": 110.8789
     },
     {
       "npsn": "20318894",
@@ -3670,7 +4210,9 @@
       "address": "Desa Watuaji RT. 01 RW. 03",
       "village": "Watuaji",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5455,
+      "longitude": 110.8868
     },
     {
       "npsn": "20318895",
@@ -3678,7 +4220,9 @@
       "address": "Desa Ujungwatu RT. 01 RW. 01",
       "village": "Ujungwatu",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4102,
+      "longitude": 110.926
     },
     {
       "npsn": "20318896",
@@ -3686,7 +4230,9 @@
       "address": "Desa Ujungpandan RT. 05 RW. 02",
       "village": "Ujungpandan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7637,
+      "longitude": 110.6765
     },
     {
       "npsn": "20318897",
@@ -3694,7 +4240,9 @@
       "address": "Desa Tunggul Pandean RT. 06 RW. 01",
       "village": "Tunggulpandean",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7661,
+      "longitude": 110.7711
     },
     {
       "npsn": "20318898",
@@ -3702,7 +4250,9 @@
       "address": "Desa Tunahan RT. 25 RW. 07",
       "village": "Tunahan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5098,
+      "longitude": 110.8541
     },
     {
       "npsn": "20318899",
@@ -3710,7 +4260,9 @@
       "address": "Desa Tulakan RT. 07 RW. 01",
       "village": "Tulakan",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4679,
+      "longitude": 110.8865
     },
     {
       "npsn": "20318910",
@@ -3718,7 +4270,9 @@
       "address": "Desa Tubanan RT. 02 RW. 01",
       "village": "Tubanan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4735,
+      "longitude": 110.7781
     },
     {
       "npsn": "20318911",
@@ -3726,7 +4280,9 @@
       "address": "Desa Troso RT. 03 RW. 10",
       "village": "Troso",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6797,
+      "longitude": 110.7091
     },
     {
       "npsn": "20318912",
@@ -3734,7 +4290,9 @@
       "address": "Desa Tigajuru RT. 01 RW. 02",
       "village": "Tigajuru",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7551,
+      "longitude": 110.7485
     },
     {
       "npsn": "20318913",
@@ -3742,7 +4300,9 @@
       "address": "Jl.KH.Abdul Hadi Tengguli Bangsri Jepara",
       "village": "Tengguli",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5493489,
+      "longitude": 110.7769893
     },
     {
       "npsn": "20318914",
@@ -3750,7 +4310,9 @@
       "address": "Desa Telukwetan RT. 13 RW. 02",
       "village": "Telukwetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7461,
+      "longitude": 110.7144
     },
     {
       "npsn": "20318915",
@@ -3758,7 +4320,9 @@
       "address": "Desa Tegalsambi RT. 11 RW. 02",
       "village": "Tegalsambi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.616,
+      "longitude": 110.6501
     },
     {
       "npsn": "20318916",
@@ -3766,7 +4330,9 @@
       "address": "Desa Wedelan RT. 02 RW. 03",
       "village": "Wedelan",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5178,
+      "longitude": 110.7765
     },
     {
       "npsn": "20318917",
@@ -3774,7 +4340,9 @@
       "address": "Desa Welahan RT. 01 RW. 01",
       "village": "Welahan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7771,
+      "longitude": 110.7222
     },
     {
       "npsn": "20318918",
@@ -3782,7 +4350,9 @@
       "address": "Desa Wonorejo RT. 05 RW. 02",
       "village": "Wonorejo",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5702,
+      "longitude": 110.6968
     },
     {
       "npsn": "20318919",
@@ -3790,7 +4360,9 @@
       "address": "Desa Banjaragung RT. 01 RW. 02",
       "village": "Banjar Agung",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5193,
+      "longitude": 110.7855
     },
     {
       "npsn": "20318920",
@@ -3798,7 +4370,9 @@
       "address": "Desa Bangsri RT. 01 RW. 10",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.52,
+      "longitude": 110.7663
     },
     {
       "npsn": "20318921",
@@ -3806,7 +4380,9 @@
       "address": "Desa Bandungrejo RT. 01 RW. 05",
       "village": "Bandungrejo",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.74,
+      "longitude": 110.7058
     },
     {
       "npsn": "20318922",
@@ -3814,7 +4390,9 @@
       "address": "Desa Bandungharjo RT. 01 RW. 08",
       "village": "Bandungharjo",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4171,
+      "longitude": 110.8662
     },
     {
       "npsn": "20318923",
@@ -3822,7 +4400,9 @@
       "address": "Desa Bandung RT. 04 RW. 01",
       "village": "Bandung",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6811,
+      "longitude": 110.7959
     },
     {
       "npsn": "20318925",
@@ -3830,7 +4410,9 @@
       "address": "Desa Balong RT. 04 RW. 04",
       "village": "Balong",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4527,
+      "longitude": 110.7966
     },
     {
       "npsn": "20318926",
@@ -3838,7 +4420,9 @@
       "address": "Desa Karanggondang RT. 01 RW. 07",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.4956,
+      "longitude": 110.718
     },
     {
       "npsn": "20318927",
@@ -3846,7 +4430,9 @@
       "address": "Desa Jambu Timur RT. 27 RW. 06",
       "village": "Jambu Timur",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5422,
+      "longitude": 110.731
     },
     {
       "npsn": "20318928",
@@ -3854,7 +4440,9 @@
       "address": "Desa Karanggondang RT. 01 RW. 01",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.506,
+      "longitude": 110.7023
     },
     {
       "npsn": "20318929",
@@ -3862,7 +4450,9 @@
       "address": "Desa Jambu RT. 16 RW. 04",
       "village": "Jambu",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5205,
+      "longitude": 110.6986
     },
     {
       "npsn": "20318930",
@@ -3870,7 +4460,9 @@
       "address": "Desa Karanggondang RT. 04 RW. 09",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.4904,
+      "longitude": 110.7055
     },
     {
       "npsn": "20318931",
@@ -3878,7 +4470,9 @@
       "address": "Desa Tanjung RT. 25 RW. 03",
       "village": "Tanjung",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6023,
+      "longitude": 110.7806
     },
     {
       "npsn": "20318932",
@@ -3886,7 +4480,9 @@
       "address": "Desa Kuanyar RT. 05 RW. 02",
       "village": "Kuanyar",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7509,
+      "longitude": 110.7373
     },
     {
       "npsn": "20318933",
@@ -3894,7 +4490,9 @@
       "address": "Desa Bulungan RT. 02 RW. 01",
       "village": "Bulungan",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5763,
+      "longitude": 110.7135
     },
     {
       "npsn": "20318934",
@@ -3902,7 +4500,9 @@
       "address": "Desa Bantrung RT. 03 RW. 01",
       "village": "Bantrung",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6215,
+      "longitude": 110.7371
     },
     {
       "npsn": "20318935",
@@ -3910,7 +4510,9 @@
       "address": "Jl. Ngreco Banjaran",
       "village": "Banjaran",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5268101,
+      "longitude": 110.7816668
     },
     {
       "npsn": "20318936",
@@ -3918,7 +4520,9 @@
       "address": "Desa Bangsri RT. 01 RW. 04",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5187208,
+      "longitude": 110.7664555
     },
     {
       "npsn": "20318937",
@@ -3926,7 +4530,9 @@
       "address": "Desa Bandungrejo RT. 01 RW. 04",
       "village": "Bandungrejo",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7372,
+      "longitude": 110.7096
     },
     {
       "npsn": "20318938",
@@ -3934,7 +4540,9 @@
       "address": "Desa Bandungharjo RT. 01 RW. 05",
       "village": "Bandungharjo",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.437,
+      "longitude": 110.8701
     },
     {
       "npsn": "20318939",
@@ -3942,7 +4550,9 @@
       "address": "Desa Bandung RT. 03 RW. 01",
       "village": "Bandung",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6868,
+      "longitude": 110.7865
     },
     {
       "npsn": "20318940",
@@ -3950,7 +4560,9 @@
       "address": "Desa Bandengan RT. 13 RW. 04",
       "village": "Bandengan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5656,
+      "longitude": 110.666
     },
     {
       "npsn": "20318941",
@@ -3958,7 +4570,9 @@
       "address": "Desa Balong RT. 01 RW. 01",
       "village": "Balong",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4655,
+      "longitude": 110.8031
     },
     {
       "npsn": "20318942",
@@ -3966,7 +4580,9 @@
       "address": "Desa Bakalan RT. 06 RW. 01",
       "village": "Bakalan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7337,
+      "longitude": 110.7304
     },
     {
       "npsn": "20318943",
@@ -3974,7 +4590,9 @@
       "address": "Kelurahan Panggang RT. 01 RW. 07",
       "village": "Panggang",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5937,
+      "longitude": 110.6674
     },
     {
       "npsn": "20318944",
@@ -3982,7 +4600,9 @@
       "address": "Desa Kriyan RT. 09 RW. 02",
       "village": "Kriyan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7317,
+      "longitude": 110.7246
     },
     {
       "npsn": "20318945",
@@ -3990,7 +4610,9 @@
       "address": "Desa Bangsri RT. 01 RW. 09",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5173,
+      "longitude": 110.7661
     },
     {
       "npsn": "20318946",
@@ -3998,7 +4620,9 @@
       "address": "Desa Banyumanis RT. 01 RW. 06",
       "village": "Banyumanis",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4328,
+      "longitude": 110.8908
     },
     {
       "npsn": "20318947",
@@ -4006,7 +4630,9 @@
       "address": "Desa Banyuputih RT. 06 RW. 02",
       "village": "Banyuputih",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7162,
+      "longitude": 110.7323
     },
     {
       "npsn": "20318948",
@@ -4014,7 +4640,9 @@
       "address": "Desa Batealit RT. 07 RW. 02",
       "village": "Batealit",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6302,
+      "longitude": 110.7812
     },
     {
       "npsn": "20318949",
@@ -4022,7 +4650,9 @@
       "address": "Kelurahan Bulu RT. 03 RW. 01",
       "village": "Bulu",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5942,
+      "longitude": 110.6572
     },
     {
       "npsn": "20318950",
@@ -4030,7 +4660,9 @@
       "address": "Desa Bugo RT. 04 RW. 01",
       "village": "Bugo",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7779,
+      "longitude": 110.7153
     },
     {
       "npsn": "20318951",
@@ -4038,7 +4670,9 @@
       "address": "Desa Bugel RT. 02 RW. 01",
       "village": "Bugel",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6691,
+      "longitude": 110.666
     },
     {
       "npsn": "20318952",
@@ -4046,7 +4680,9 @@
       "address": "Desa Bucu RT. 01 RW. 04",
       "village": "Bucu",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5312,
+      "longitude": 110.8485
     },
     {
       "npsn": "20318953",
@@ -4054,7 +4690,9 @@
       "address": "Desa Bringin RT. 12 RW. 05",
       "village": "Bringin",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6125,
+      "longitude": 110.7549
     },
     {
       "npsn": "20318954",
@@ -4062,7 +4700,9 @@
       "address": "Desa Brantaksekarjati RT. 03 RW. 01",
       "village": "Brantak Sekarjati",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7463,
+      "longitude": 110.7234
     },
     {
       "npsn": "20318955",
@@ -4070,7 +4710,9 @@
       "address": "Desa Bondo RT. 03 RW. 05",
       "village": "Bondo",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4835,
+      "longitude": 110.7238
     },
     {
       "npsn": "20318957",
@@ -4078,7 +4720,9 @@
       "address": "Desa Blimbingrejo RT. 08 RW. 02",
       "village": "Blimbingrejo",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7694,
+      "longitude": 110.7653
     },
     {
       "npsn": "20318958",
@@ -4086,7 +4730,9 @@
       "address": "Desa Bendanpete RT. 05 RW. 02",
       "village": "Bendanpete",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7331,
+      "longitude": 110.8108
     },
     {
       "npsn": "20318959",
@@ -4094,7 +4740,9 @@
       "address": "Desa Bawu RT. 20 RW. 04",
       "village": "Bawu",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6285,
+      "longitude": 110.7187
     },
     {
       "npsn": "20318960",
@@ -4102,7 +4750,9 @@
       "address": "Desa Bategede RT. 03 RW. 01",
       "village": "Bategede",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.6911,
+      "longitude": 110.8258
     },
     {
       "npsn": "20318961",
@@ -4110,7 +4760,9 @@
       "address": "Jln. Raya Bondo – Mlonggo, KM.7 Bondo Kec. Bangsri Kab. Jepara 59453",
       "village": "Bondo",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4835286,
+      "longitude": 110.7185143
     },
     {
       "npsn": "20318991",
@@ -4118,7 +4770,9 @@
       "address": "Desa Kriyan RT. 09 RW. 02",
       "village": "Kriyan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7324,
+      "longitude": 110.7248
     },
     {
       "npsn": "20318992",
@@ -4126,7 +4780,9 @@
       "address": "Desa Kedung Malang RT. 02 RW. 03",
       "village": "Kedung Malang",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7077,
+      "longitude": 110.624
     },
     {
       "npsn": "20318993",
@@ -4134,7 +4790,9 @@
       "address": "Desa Kecapi RT. 34 RW. 06",
       "village": "Kecapi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.5966,
+      "longitude": 110.6989
     },
     {
       "npsn": "20318994",
@@ -4142,7 +4800,9 @@
       "address": "Desa Kawak RT. 13 RW. 02",
       "village": "Kawak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5541,
+      "longitude": 110.7363
     },
     {
       "npsn": "20318995",
@@ -4150,7 +4810,9 @@
       "address": "Desa Karimunjawa RT. 04 RW. 02",
       "village": "Karimunjawa",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.8774,
+      "longitude": 110.4352
     },
     {
       "npsn": "20318996",
@@ -4158,7 +4820,9 @@
       "address": "Desa Karangrandu RT. 04 RW. 05",
       "village": "Karangrandu",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7121,
+      "longitude": 110.6926
     },
     {
       "npsn": "20318997",
@@ -4166,7 +4830,9 @@
       "address": "Desa Karangnongko RT. 01 RW. 01",
       "village": "Karangnongko",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7456,
+      "longitude": 110.8231
     },
     {
       "npsn": "20318998",
@@ -4174,7 +4840,9 @@
       "address": "Desa Karanggondang RT. 02 RW. 03",
       "village": "Karanggondang",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5128,
+      "longitude": 110.7066
     },
     {
       "npsn": "20319001",
@@ -4182,7 +4850,9 @@
       "address": "Desa Kancilan RT. 02 RW. 05",
       "village": "Kancilan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4968,
+      "longitude": 110.7832
     },
     {
       "npsn": "20319002",
@@ -4190,7 +4860,9 @@
       "address": "Desa Kalipucang Wetan RT. 02 RW. 04",
       "village": "Kalipucang Wetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7736,
+      "longitude": 110.7248
     },
     {
       "npsn": "20319003",
@@ -4198,7 +4870,9 @@
       "address": "Desa Kalipucang Kulon RT. 06 RW. 03",
       "village": "Kalipucang Kulon",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7639,
+      "longitude": 110.7242
     },
     {
       "npsn": "20319004",
@@ -4206,7 +4880,9 @@
       "address": "Desa Kaliombo RT. 08 RW. 01",
       "village": "Kaliombo",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7268,
+      "longitude": 110.676
     },
     {
       "npsn": "20319005",
@@ -4214,7 +4890,9 @@
       "address": "Desa Kaligarang RT. 20 RW. 03",
       "village": "Kaligarang",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5017,
+      "longitude": 110.8456
     },
     {
       "npsn": "20319006",
@@ -4222,7 +4900,9 @@
       "address": "Desa Kedungsarimulyo RT. 05 RW. 01",
       "village": "Kedungsarimulyo",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7891,
+      "longitude": 110.7104
     },
     {
       "npsn": "20319007",
@@ -4230,7 +4910,9 @@
       "address": "Desa Kedungcino RT. 10 RW. 04",
       "village": "Kedungcino",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5612,
+      "longitude": 110.6731
     },
     {
       "npsn": "20319008",
@@ -4238,7 +4920,9 @@
       "address": "Desa Kedungleper RT. 03 RW. 02",
       "village": "Kedungleper",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5103,
+      "longitude": 110.7703
     },
     {
       "npsn": "20319009",
@@ -4246,7 +4930,9 @@
       "address": "Desa Krasak RT. 04 RW. 04",
       "village": "Krasak",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7149,
+      "longitude": 110.7164
     },
     {
       "npsn": "20319010",
@@ -4254,7 +4940,9 @@
       "address": "Desa Bangsri RT. 02 RW. 16",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5286,
+      "longitude": 110.7561
     },
     {
       "npsn": "20319011",
@@ -4262,7 +4950,9 @@
       "address": "Desa Krapyak RT. 03 RW. 05",
       "village": "Krapyak",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6068,
+      "longitude": 110.6657
     },
     {
       "npsn": "20319013",
@@ -4270,7 +4960,9 @@
       "address": "Desa Klepu RT. 08 RW. 02",
       "village": "Klepu",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5064,
+      "longitude": 110.8913
     },
     {
       "npsn": "20319014",
@@ -4278,7 +4970,9 @@
       "address": "Desa Ketilengsingolelo RT. 02 RW. 01",
       "village": "Ketilengsingolelo",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7709,
+      "longitude": 110.7297
     },
     {
       "npsn": "20319015",
@@ -4286,7 +4980,9 @@
       "address": "Desa Kerso RT. 01 RW. 01",
       "village": "Kerso",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6538,
+      "longitude": 110.667
     },
     {
       "npsn": "20319016",
@@ -4294,7 +4990,9 @@
       "address": "Desa Kepuk RT. 01 RW. 06",
       "village": "Kepuk",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5635,
+      "longitude": 110.7745
     },
     {
       "npsn": "20319017",
@@ -4302,7 +5000,9 @@
       "address": "Desa Kendengsidialit RT. 04 RW. 01",
       "village": "Kendengsidialit",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7656,
+      "longitude": 110.7116
     },
     {
       "npsn": "20319018",
@@ -4310,7 +5010,9 @@
       "address": "Desa Kemujan RT. 01 RW. 02",
       "village": "Kemujan",
       "level": "sd",
-      "district": "Karimunjawa"
+      "district": "Karimunjawa",
+      "latitude": -5.8194,
+      "longitude": 110.482
     },
     {
       "npsn": "20319019",
@@ -4318,7 +5020,9 @@
       "address": "Desa Jinggotan RT. 03 RW. 02",
       "village": "Jinggotan",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5057,
+      "longitude": 110.8009
     },
     {
       "npsn": "20319020",
@@ -4326,7 +5030,9 @@
       "address": "Desa Keling RT. 01 RW. 04",
       "village": "Keling",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4812013,
+      "longitude": 110.8643329
     },
     {
       "npsn": "20319021",
@@ -4334,7 +5040,9 @@
       "address": "Desa Kelet RT. 21 RW. 03",
       "village": "Kelet",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5022,
+      "longitude": 110.9059
     },
     {
       "npsn": "20319022",
@@ -4342,7 +5050,9 @@
       "address": "Desa Kaliaman RT. 01 RW. 03",
       "village": "Kaliaman",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4718,
+      "longitude": 110.7483
     },
     {
       "npsn": "20319023",
@@ -4350,7 +5060,9 @@
       "address": "Desa Bumiharjo RT. 03 RW. 01",
       "village": "Bumiharjo",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4606,
+      "longitude": 110.8552
     },
     {
       "npsn": "20319024",
@@ -4358,7 +5070,9 @@
       "address": "Desa Gelang RT. 02 RW. 04",
       "village": "Gelang",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4951,
+      "longitude": 110.8727
     },
     {
       "npsn": "20319025",
@@ -4366,7 +5080,9 @@
       "address": "Desa Dudakawu RT. 02 RW. 05",
       "village": "Dudakawu",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.548,
+      "longitude": 110.8296
     },
     {
       "npsn": "20319026",
@@ -4374,7 +5090,9 @@
       "address": "Desa Dorang RT. 06 RW. 01",
       "village": "Dorang",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7811,
+      "longitude": 110.753
     },
     {
       "npsn": "20319027",
@@ -4382,7 +5100,9 @@
       "address": "Desa Dongos RT. 05 RW. 01",
       "village": "Dongos",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6673,
+      "longitude": 110.6841
     },
     {
       "npsn": "20319028",
@@ -4390,7 +5110,9 @@
       "address": "Desa Dermolo RT. 03 RW. 01",
       "village": "Dermolo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4733,
+      "longitude": 110.8163
     },
     {
       "npsn": "20319029",
@@ -4398,7 +5120,9 @@
       "address": "Desa Datar RT. 01 RW. 01",
       "village": "Datar",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6903,
+      "longitude": 110.7677
     },
     {
       "npsn": "20319030",
@@ -4406,7 +5130,9 @@
       "address": "Desa Daren RT. 01 RW. 01",
       "village": "Daren",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7452,
+      "longitude": 110.8239
     },
     {
       "npsn": "20319031",
@@ -4414,7 +5140,9 @@
       "address": "Desa Damarwulan RT. 10 RW. 01",
       "village": "Damarwulan",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.534694,
+      "longitude": 110.893632
     },
     {
       "npsn": "20319032",
@@ -4422,7 +5150,9 @@
       "address": "Desa Damarjati RT. 04 RW. 05",
       "village": "Damarjati",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7027,
+      "longitude": 110.7494
     },
     {
       "npsn": "20319033",
@@ -4430,7 +5160,9 @@
       "address": "Desa Clering RT. 01 RW. 03",
       "village": "Clering",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4414,
+      "longitude": 110.9605
     },
     {
       "npsn": "20319034",
@@ -4438,7 +5170,9 @@
       "address": "Desa Cepogo RT. 04 RW. 10",
       "village": "Cepogo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5187,
+      "longitude": 110.8291
     },
     {
       "npsn": "20319035",
@@ -4446,7 +5180,9 @@
       "address": "Desa Buaran RT. 02 RW. 02",
       "village": "Buaran",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7115,
+      "longitude": 110.7798
     },
     {
       "npsn": "20319036",
@@ -4454,7 +5190,9 @@
       "address": "Desa Gemiring Kidul RT. 01 RW. 02",
       "village": "Gemiring Kidul",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7438,
+      "longitude": 110.7772
     },
     {
       "npsn": "20319037",
@@ -4462,7 +5200,9 @@
       "address": "Desa Gemiring Lor RT. 03 RW. 05",
       "village": "Gemiring Lor",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7402,
+      "longitude": 110.7827
     },
     {
       "npsn": "20319038",
@@ -4470,7 +5210,9 @@
       "address": "Desa Gemulung RT. 03 RW. 01",
       "village": "Gemulung",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.703,
+      "longitude": 110.7271
     },
     {
       "npsn": "20319039",
@@ -4478,7 +5220,9 @@
       "address": "Desa Jugo RT. 04 RW. 01",
       "village": "Jugo",
       "level": "sd",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4722,
+      "longitude": 110.9292
     },
     {
       "npsn": "20319040",
@@ -4486,7 +5230,9 @@
       "address": "Desa Jondang RT. 01 RW. 03",
       "village": "Jondang",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6759,
+      "longitude": 110.6628
     },
     {
       "npsn": "20319041",
@@ -4494,7 +5240,9 @@
       "address": "Kelurahan Jobokuto RT. 01 RW. 01",
       "village": "Jobokuto",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5881,
+      "longitude": 110.6664
     },
     {
       "npsn": "20319042",
@@ -4502,7 +5250,9 @@
       "address": "Desa Jlegong RT. 01 RW. 01",
       "village": "Jlegong",
       "level": "sd",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4814,
+      "longitude": 110.8805
     },
     {
       "npsn": "20319043",
@@ -4510,7 +5260,9 @@
       "address": "Desa Jerukwangi RT. 03 RW. 02",
       "village": "Jerukwangi",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5086,
+      "longitude": 110.7601
     },
     {
       "npsn": "20319044",
@@ -4518,7 +5270,9 @@
       "address": "Desa Jebol RT. 05 RW. 01",
       "village": "Jebol",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7298,
+      "longitude": 110.7646
     },
     {
       "npsn": "20319045",
@@ -4526,7 +5280,9 @@
       "address": "Desa Pulodarat RT. 09 RW. 02",
       "village": "Pulodarat",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6935,
+      "longitude": 110.719
     },
     {
       "npsn": "20319046",
@@ -4534,7 +5290,9 @@
       "address": "Desa Jambu Timur RT. 01 RW. 01",
       "village": "Jambu Timur",
       "level": "sd",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5291,
+      "longitude": 110.7272
     },
     {
       "npsn": "20319047",
@@ -4542,7 +5300,9 @@
       "address": "Desa Guyangan RT. 03 RW. 02",
       "village": "Guyangan",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5499,
+      "longitude": 110.7533
     },
     {
       "npsn": "20319048",
@@ -4550,7 +5310,9 @@
       "address": "Desa Guwosobokerto RT. 04 RW. 01",
       "village": "Guwosobokerto",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7596,
+      "longitude": 110.7037
     },
     {
       "npsn": "20319049",
@@ -4558,7 +5320,9 @@
       "address": "Desa Gidangelo RT. 01 RW. 01",
       "village": "Gidangelo",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7724,
+      "longitude": 110.7139
     },
     {
       "npsn": "20319050",
@@ -4566,7 +5330,9 @@
       "address": "Desa Gerdu RT. 05 RW. 01",
       "village": "Gerdu",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7249,
+      "longitude": 110.6814
     },
     {
       "npsn": "20319051",
@@ -4574,7 +5340,9 @@
       "address": "Desa Geneng RT. 09 RW. 02",
       "village": "Geneng",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6832,
+      "longitude": 110.7387
     },
     {
       "npsn": "20330175",
@@ -4582,7 +5350,9 @@
       "address": "Desa Mayong Kidul RT. 05 RW. 01",
       "village": "Mayong Kidul",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7685,
+      "longitude": 110.7489
     },
     {
       "npsn": "20330176",
@@ -4590,7 +5360,9 @@
       "address": "Desa Pringtulis RT. 02 RW. 01",
       "village": "Pringtulis",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7519,
+      "longitude": 110.7723
     },
     {
       "npsn": "20330177",
@@ -4598,7 +5370,9 @@
       "address": "Desa Margoyoso RT. 07 RW. 03",
       "village": "Margoyoso",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7264,
+      "longitude": 110.7226
     },
     {
       "npsn": "20330178",
@@ -4606,7 +5380,9 @@
       "address": "Desa Pecangaan Kulon RT. 01 RW. 03",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6964,
+      "longitude": 110.7063
     },
     {
       "npsn": "20330179",
@@ -4614,7 +5390,9 @@
       "address": "Kelurahan Pengkol RT. 03 RW. 02",
       "village": "Pengkol",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5916,
+      "longitude": 110.672
     },
     {
       "npsn": "20330180",
@@ -4622,7 +5400,9 @@
       "address": "Desa Rajekwesi RT. 01 RW. 02",
       "village": "Rajekwesi",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.673,
+      "longitude": 110.7537
     },
     {
       "npsn": "20330181",
@@ -4630,7 +5410,9 @@
       "address": "Kelurahan Bapangan RT. 02 RW. 01",
       "village": "Bapangan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5954,
+      "longitude": 110.6819
     },
     {
       "npsn": "20330182",
@@ -4638,7 +5420,9 @@
       "address": "Desa Buaran RT. 01 RW. 01",
       "village": "Buaran",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.722,
+      "longitude": 110.7675
     },
     {
       "npsn": "20330183",
@@ -4646,7 +5430,9 @@
       "address": "Kelurahan Kauman RT. 03 RW. 02",
       "village": "Kauman",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5915995,
+      "longitude": 110.6622716
     },
     {
       "npsn": "20330184",
@@ -4654,7 +5440,9 @@
       "address": "Kelurahan Jobokuto RT. 01 RW. 01",
       "village": "Jobokuto",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5866,
+      "longitude": 110.6608
     },
     {
       "npsn": "20330185",
@@ -4662,7 +5450,9 @@
       "address": "Desa Blimbingrejo RT. 02 RW. 03",
       "village": "Blimbingrejo",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7745,
+      "longitude": 110.7639
     },
     {
       "npsn": "20330186",
@@ -4670,7 +5460,9 @@
       "address": "Kelurahan Kauman RT. 03 RW. 02",
       "village": "Kauman",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.593,
+      "longitude": 110.6599
     },
     {
       "npsn": "20330341",
@@ -4678,7 +5470,9 @@
       "address": "Desa Mambak RT. 01 RW. 02",
       "village": "Mambak",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.555,
+      "longitude": 110.6918
     },
     {
       "npsn": "20331124",
@@ -4686,7 +5480,9 @@
       "address": "Desa Karangaji RT. 02 RW. 01",
       "village": "Karangaji",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7138,
+      "longitude": 110.6571
     },
     {
       "npsn": "20331125",
@@ -4694,7 +5490,9 @@
       "address": "Desa Sumanding RT. 14 RW. 04",
       "village": "Sumanding",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5632836,
+      "longitude": 110.8611669
     },
     {
       "npsn": "20338622",
@@ -4702,7 +5500,9 @@
       "address": "Desa Mayong Lor RT. 02 RW. 09",
       "village": "Mayong Lor",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7528,
+      "longitude": 110.7542
     },
     {
       "npsn": "20341546",
@@ -4710,7 +5510,9 @@
       "address": "Desa Kriyan RT. 03 RW. 01",
       "village": "Kriyan",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7304,
+      "longitude": 110.7221
     },
     {
       "npsn": "20349046",
@@ -4718,7 +5520,9 @@
       "address": "Desa Pelemkerep RT. 02 RW. 03",
       "village": "Pelemkerep",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7444,
+      "longitude": 110.756
     },
     {
       "npsn": "20360441",
@@ -4726,7 +5530,9 @@
       "address": "Desa Kuwasen RT. 03 RW. 01",
       "village": "Kuwasen",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5766,
+      "longitude": 110.6796
     },
     {
       "npsn": "20362381",
@@ -4734,7 +5540,9 @@
       "address": "Desa Senenan RT. 03 RW. 01",
       "village": "Senenan",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6101,
+      "longitude": 110.684
     },
     {
       "npsn": "20362712",
@@ -4742,7 +5550,9 @@
       "address": "Desa Daren RT. 01 RW. 01",
       "village": "Daren",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7449,
+      "longitude": 110.8206
     },
     {
       "npsn": "20818530",
@@ -4750,7 +5560,9 @@
       "address": "Desa Kalipucang Wetan RT. 01 RW. 03",
       "village": "Kalipucang Wetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7534,
+      "longitude": 110.7309
     },
     {
       "npsn": "60712438",
@@ -4758,7 +5570,9 @@
       "address": "Jl. Raya Bangsri No. 32 RT01 RW04 Bangsri",
       "village": "Bangsri",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5188,
+      "longitude": 110.7703
     },
     {
       "npsn": "60712439",
@@ -4766,7 +5580,9 @@
       "address": "Jl. Pesantren Blok No. 14.096 RT 001 RW 002 Desa Kedungleper",
       "village": "Kedungleper",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5107,
+      "longitude": 110.7673
     },
     {
       "npsn": "60712440",
@@ -4774,7 +5590,9 @@
       "address": "Desa Tengguli RT. 05 RW. 08",
       "village": "Tengguli",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.539,
+      "longitude": 110.771
     },
     {
       "npsn": "60712441",
@@ -4782,7 +5600,9 @@
       "address": "Desa Tengguli RT. 03 RW. 01",
       "village": "Tengguli",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5371,
+      "longitude": 110.7538
     },
     {
       "npsn": "60712442",
@@ -4790,7 +5610,9 @@
       "address": "Desa Tengguli RT. 03 RW. 04",
       "village": "Tengguli",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.552246,
+      "longitude": 110.770673
     },
     {
       "npsn": "60712443",
@@ -4798,7 +5620,9 @@
       "address": "Desa Guyangan RT. 02 RW. 06",
       "village": "Guyangan",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5253,
+      "longitude": 110.7507
     },
     {
       "npsn": "60712444",
@@ -4806,7 +5630,9 @@
       "address": "Desa Kepuk RT. 03 RW. 07",
       "village": "Kepuk",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5689,
+      "longitude": 110.7717
     },
     {
       "npsn": "60712445",
@@ -4814,7 +5640,9 @@
       "address": "Desa Kepuk RT. 03 RW. 01",
       "village": "Kepuk",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5684,
+      "longitude": 110.7975
     },
     {
       "npsn": "60712446",
@@ -4822,7 +5650,9 @@
       "address": "Desa Bangsri RT. 03 RW. 16",
       "village": "Bangsri",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.536414,
+      "longitude": 110.814745
     },
     {
       "npsn": "60712447",
@@ -4830,7 +5660,9 @@
       "address": "Desa Bondo RT. 02 RW. 09",
       "village": "Bondo",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4826,
+      "longitude": 110.7296
     },
     {
       "npsn": "60712448",
@@ -4838,7 +5670,9 @@
       "address": "Desa Banjaran RT. 01 RW. 01",
       "village": "Banjaran",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5237352,
+      "longitude": 110.7755703
     },
     {
       "npsn": "60712449",
@@ -4846,7 +5680,9 @@
       "address": "Desa Srikandang RT. 01 RW. 03",
       "village": "Srikandang",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.538,
+      "longitude": 110.8012
     },
     {
       "npsn": "60712450",
@@ -4854,7 +5690,9 @@
       "address": "Jl. Kh. Abdul Manan Klumosari Rt: 02 Rw: 05",
       "village": "Banjar Agung",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5175,
+      "longitude": 110.7905
     },
     {
       "npsn": "60712451",
@@ -4862,7 +5700,9 @@
       "address": "Srikandang Kec. Bangsri",
       "village": "Srikandang",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.508855,
+      "longitude": 110.801226
     },
     {
       "npsn": "60712452",
@@ -4870,7 +5710,9 @@
       "address": "RT 01 RW 04 Desa Srikandang Kecamatan Bangsri Kabupaten Jepara",
       "village": "Srikandang",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5419,
+      "longitude": 110.7954
     },
     {
       "npsn": "60712453",
@@ -4878,7 +5720,9 @@
       "address": "Desa Tengguli RT. 03 RW. 13",
       "village": "Tengguli",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5571,
+      "longitude": 110.8164
     },
     {
       "npsn": "60712454",
@@ -4886,7 +5730,9 @@
       "address": "Desa Papasan RT. 08 RW. 02",
       "village": "Papasan",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5577,
+      "longitude": 110.8207
     },
     {
       "npsn": "60712455",
@@ -4894,7 +5740,9 @@
       "address": "Desa Guyangan RT. 01 RW. 04",
       "village": "Guyangan",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.553674,
+      "longitude": 110.758517
     },
     {
       "npsn": "60712456",
@@ -4902,7 +5750,9 @@
       "address": "Desa Srikandang RT. 01 RW. 06",
       "village": "Srikandang",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.4942,
+      "longitude": 110.7533
     },
     {
       "npsn": "60712457",
@@ -4910,7 +5760,9 @@
       "address": "Desa Jerukwangi",
       "village": "Jerukwangi",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5157,
+      "longitude": 110.7565
     },
     {
       "npsn": "60712458",
@@ -4918,7 +5770,9 @@
       "address": "Desa Bangsri RT. 03 RW. 12",
       "village": "Bangsri",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5217,
+      "longitude": 110.7605
     },
     {
       "npsn": "60712459",
@@ -4926,7 +5780,9 @@
       "address": "Desa Bawu",
       "village": "Bawu",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6344,
+      "longitude": 110.731
     },
     {
       "npsn": "60712460",
@@ -4934,7 +5790,9 @@
       "address": "Desa Bawu RT. 22 RW. 05",
       "village": "Bawu",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6281,
+      "longitude": 110.7157
     },
     {
       "npsn": "60712461",
@@ -4942,7 +5800,9 @@
       "address": "Desa Ngasem RT. 15 RW. 02",
       "village": "Ngasem",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6504,
+      "longitude": 110.7329
     },
     {
       "npsn": "60712462",
@@ -4950,7 +5810,9 @@
       "address": "Desa Pekalongan",
       "village": "Pekalongan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.622,
+      "longitude": 110.7036
     },
     {
       "npsn": "60712463",
@@ -4958,7 +5820,9 @@
       "address": "Desa Mindahan",
       "village": "Mindahan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6349,
+      "longitude": 110.7421
     },
     {
       "npsn": "60712464",
@@ -4966,7 +5830,9 @@
       "address": "Desa Geneng RT. 16 RW. 03",
       "village": "Geneng",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.676,
+      "longitude": 110.7329
     },
     {
       "npsn": "60712465",
@@ -4974,7 +5840,9 @@
       "address": "Desa Batealit",
       "village": "Batealit",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6303,
+      "longitude": 110.7722
     },
     {
       "npsn": "60712466",
@@ -4982,7 +5850,9 @@
       "address": "Desa Mindahan",
       "village": "Mindahan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6136,
+      "longitude": 110.7413
     },
     {
       "npsn": "60712467",
@@ -4990,7 +5860,9 @@
       "address": "Desa Mindahan Kidul RT. 02 RW. 04",
       "village": "Mindahan Kidul",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.643,
+      "longitude": 110.7479
     },
     {
       "npsn": "60712468",
@@ -4998,7 +5870,9 @@
       "address": "Desa Mindahan",
       "village": "Mindahan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6424,
+      "longitude": 110.7647
     },
     {
       "npsn": "60712469",
@@ -5006,7 +5880,9 @@
       "address": "Desa Bantrung RT. 08 RW. 02",
       "village": "Bantrung",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6317,
+      "longitude": 110.7453
     },
     {
       "npsn": "60712470",
@@ -5014,7 +5890,9 @@
       "address": "Desa Raguklampitan RT. 12 RW. 03",
       "village": "Raguklampitan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6681,
+      "longitude": 110.7502
     },
     {
       "npsn": "60712471",
@@ -5022,7 +5900,9 @@
       "address": "raguklampitan rt 018rw 004",
       "village": "Raguklampitan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6173,
+      "longitude": 110.7397
     },
     {
       "npsn": "60712472",
@@ -5030,7 +5910,9 @@
       "address": "Desa Raguklampitan RT. 06 RW. 02",
       "village": "Raguklampitan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6558,
+      "longitude": 110.7391
     },
     {
       "npsn": "60712473",
@@ -5038,7 +5920,9 @@
       "address": "Desa Raguklampitan",
       "village": "Raguklampitan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6563,
+      "longitude": 110.753
     },
     {
       "npsn": "60712474",
@@ -5046,7 +5930,9 @@
       "address": "Desa Bantrung RT. 10 RW. 03",
       "village": "Bantrung",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6148,
+      "longitude": 110.7422
     },
     {
       "npsn": "60712475",
@@ -5054,7 +5940,9 @@
       "address": "Desa Bawu RT. 14 RW. 03",
       "village": "Bawu",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.662687,
+      "longitude": 110.775529
     },
     {
       "npsn": "60712476",
@@ -5062,7 +5950,9 @@
       "address": "Desa Bringin RT. 08 RW. 03",
       "village": "Bringin",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6209,
+      "longitude": 110.7548
     },
     {
       "npsn": "60712477",
@@ -5070,7 +5960,9 @@
       "address": "BLINGOH RT 06 RW 01",
       "village": "Blingoh",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4594,
+      "longitude": 110.8901
     },
     {
       "npsn": "60712478",
@@ -5078,7 +5970,9 @@
       "address": "BANDUNGHARJO RT 03 RW 02",
       "village": "Bandungharjo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4361,
+      "longitude": 110.8628
     },
     {
       "npsn": "60712479",
@@ -5086,7 +5980,9 @@
       "address": "01 RW 08 BANDUNGHARJO",
       "village": "Bandungharjo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4215,
+      "longitude": 110.8678
     },
     {
       "npsn": "60712480",
@@ -5094,7 +5990,9 @@
       "address": "BANYUMANIS RT 01 RW 04",
       "village": "Banyumanis",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4361181,
+      "longitude": 110.8903197
     },
     {
       "npsn": "60712481",
@@ -5102,7 +6000,9 @@
       "address": "DK SIDOREJO DS UJUNGWATU RT 03 RW 02",
       "village": "Ujungwatu",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.59722,
+      "longitude": 110.896077
     },
     {
       "npsn": "60712482",
@@ -5110,7 +6010,9 @@
       "address": "UJUNGWATU RT 03 RW 01",
       "village": "Ujungwatu",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4099,
+      "longitude": 110.9272
     },
     {
       "npsn": "60712483",
@@ -5118,7 +6020,9 @@
       "address": "SUMBEREJO, RT 03 RW 04",
       "village": "Sumber Rejo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4403,
+      "longitude": 110.9163
     },
     {
       "npsn": "60712484",
@@ -5126,7 +6030,9 @@
       "address": "SUMBERREJO RT 02 RW 01",
       "village": "Sumber Rejo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4452,
+      "longitude": 110.9188
     },
     {
       "npsn": "60712485",
@@ -5134,7 +6040,9 @@
       "address": "TULAKAN RT 006 RW 002 DONOROJO JEPARA",
       "village": "Tulakan",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4503,
+      "longitude": 110.8728
     },
     {
       "npsn": "60712486",
@@ -5142,7 +6050,9 @@
       "address": "JALAN KYAI KASTURI NO 1",
       "village": "Tulakan",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.46,
+      "longitude": 110.8785
     },
     {
       "npsn": "60712487",
@@ -5150,7 +6060,9 @@
       "address": "TULAKAN",
       "village": "Tulakan",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.594307,
+      "longitude": 110.681909
     },
     {
       "npsn": "60712488",
@@ -5158,7 +6070,9 @@
       "address": "CLERING RT 04 RW 01",
       "village": "Clering",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4287,
+      "longitude": 110.963
     },
     {
       "npsn": "60712489",
@@ -5166,7 +6080,9 @@
       "address": "RT 02 RW 03 UJUNGWATU",
       "village": "Ujungwatu",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4223,
+      "longitude": 110.9565
     },
     {
       "npsn": "60712490",
@@ -5174,7 +6090,9 @@
       "address": "Dukuh Clering RT. 02 RW. 04 Desa Clering Donorojo Jepara",
       "village": "Clering",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4389,
+      "longitude": 110.9565
     },
     {
       "npsn": "60712491",
@@ -5182,7 +6100,9 @@
       "address": "BLINGOH DONOROJO JEPARA",
       "village": "Blingoh",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4583,
+      "longitude": 110.8871
     },
     {
       "npsn": "60712492",
@@ -5190,7 +6110,9 @@
       "address": "RT03 RW05 SUMBERREJO",
       "village": "Sumber Rejo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4528,
+      "longitude": 110.95
     },
     {
       "npsn": "60712493",
@@ -5198,7 +6120,9 @@
       "address": "Desa Tulakan RT. 02 RW. 09",
       "village": "Tulakan",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4646792,
+      "longitude": 110.8995275
     },
     {
       "npsn": "60712494",
@@ -5206,7 +6130,9 @@
       "address": "JL. PEMUDA NO. 106 SARIPAN JEPARA",
       "village": "Saripan",
       "level": "mi",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.596,
+      "longitude": 110.6757
     },
     {
       "npsn": "60712495",
@@ -5214,7 +6140,9 @@
       "address": "Jalan Jepara-Bangsri KM.04 Bandengan RT.20/06",
       "village": "Bandengan",
       "level": "mi",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5703,
+      "longitude": 110.6865
     },
     {
       "npsn": "60712496",
@@ -5222,7 +6150,9 @@
       "address": "BANDENGAN RT 4 RW 1",
       "village": "Bandengan",
       "level": "mi",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5544,
+      "longitude": 110.6614
     },
     {
       "npsn": "60712497",
@@ -5230,7 +6160,9 @@
       "address": "ROBAYAN RT.08 RW. 02",
       "village": "Robayan",
       "level": "mi",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7373,
+      "longitude": 110.7209
     },
     {
       "npsn": "60712498",
@@ -5238,7 +6170,9 @@
       "address": "JL. MI. Safinatul Huda Desa Sowan Kidul Rt 03 Rw 03",
       "village": "Sowan Kidul",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6895,
+      "longitude": 110.6706
     },
     {
       "npsn": "60712499",
@@ -5246,7 +6180,9 @@
       "address": "Sowan Kidul, Kecamatan Kedung Kabupaten Jepara",
       "village": "Sowan Kidul",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6943,
+      "longitude": 110.6702
     },
     {
       "npsn": "60712500",
@@ -5254,7 +6190,9 @@
       "address": "Jl. Pemuda KM 01 Sowan Lor RT 02 RW 01 Kedung Jepara",
       "village": "Sowan Lor",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6827,
+      "longitude": 110.6761
     },
     {
       "npsn": "60712501",
@@ -5262,7 +6200,9 @@
       "address": "WANUSOBO",
       "village": "Wanusobo",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6778,
+      "longitude": 110.6681
     },
     {
       "npsn": "60712502",
@@ -5270,7 +6210,9 @@
       "address": "JLN.KYAI SIBRO MALISI/RT.06/RW.02 SURODADI",
       "village": "Surodadi",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6902,
+      "longitude": 110.6494
     },
     {
       "npsn": "60712503",
@@ -5278,7 +6220,9 @@
       "address": "JL.KH.FAUZINO.10 SURODADI",
       "village": "Surodadi",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6887,
+      "longitude": 110.6509
     },
     {
       "npsn": "60712504",
@@ -5286,7 +6230,9 @@
       "address": "RT 07 RW02 DESA BUGEL",
       "village": "Bugel",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6689,
+      "longitude": 110.6714
     },
     {
       "npsn": "60712505",
@@ -5294,7 +6240,9 @@
       "address": "JL. BORO-SUKOSONO KM.01",
       "village": "Dongos",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6659,
+      "longitude": 110.6784
     },
     {
       "npsn": "60712506",
@@ -5302,7 +6250,9 @@
       "address": "MENGANTI RT.09 RW.03 KEDUNG JEPARA",
       "village": "Menganti",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6598,
+      "longitude": 110.6681
     },
     {
       "npsn": "60712507",
@@ -5310,7 +6260,9 @@
       "address": "Desa Kerso RT. 04 RW. 01",
       "village": "Kerso",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6943,
+      "longitude": 110.6712
     },
     {
       "npsn": "60712508",
@@ -5318,7 +6270,9 @@
       "address": "JL. RAYA BUGEL JEPARA KM. 3 JEPARA",
       "village": "Rau",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6451,
+      "longitude": 110.6698
     },
     {
       "npsn": "60712509",
@@ -5326,7 +6280,9 @@
       "address": "Desa Sukosono, RT 10 RW 03 Kecamatan Kedung Kabupaten Jepara - Jawa Tengah",
       "village": "Sukosono",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6412,
+      "longitude": 110.6775
     },
     {
       "npsn": "60712510",
@@ -5334,7 +6290,9 @@
       "address": "RAYA PECANGAAN BUGEL KM.04 SOWAN LOR",
       "village": "Sowan Lor",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.6761,
+      "longitude": 110.6797
     },
     {
       "npsn": "60712511",
@@ -5342,7 +6300,9 @@
       "address": "Desa Sukosono RT. 27 RW. 07",
       "village": "Sukosono",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7165,
+      "longitude": 110.6643
     },
     {
       "npsn": "60712512",
@@ -5350,7 +6310,9 @@
       "address": "JL.MACANPUTIH DESA JONDANG",
       "village": "Jondang",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.702968,
+      "longitude": 110.674088
     },
     {
       "npsn": "60712513",
@@ -5358,7 +6320,9 @@
       "address": "Desa Karangaji RT. 20 RW. 03 Kecamatan Kedung Kabupaten Jepara",
       "village": "Karangaji",
       "level": "mi",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.7143,
+      "longitude": 110.6487
     },
     {
       "npsn": "60712515",
@@ -5366,7 +6330,9 @@
       "address": "Desa Tempur RT. 01 RW. 04",
       "village": "Tempur",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5973,
+      "longitude": 110.8901
     },
     {
       "npsn": "60712516",
@@ -5374,7 +6340,9 @@
       "address": "DESA TEMPUR RT. 02 RW. 06",
       "village": "Tempur",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5952,
+      "longitude": 110.8739
     },
     {
       "npsn": "60712517",
@@ -5382,7 +6350,9 @@
       "address": "Jl.Raya Jepara Kelet KM.36 RT. 006 RW. 001",
       "village": "Kelet",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4987,
+      "longitude": 110.9046
     },
     {
       "npsn": "60712518",
@@ -5390,7 +6360,9 @@
       "address": "DESA KELET RT. 06 RW. 01",
       "village": "Kelet",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.499,
+      "longitude": 110.9044
     },
     {
       "npsn": "60712519",
@@ -5398,7 +6370,9 @@
       "address": "DESA KELET RT. 32 RW. 05",
       "village": "Kelet",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4974,
+      "longitude": 110.9015
     },
     {
       "npsn": "60712520",
@@ -5406,7 +6380,9 @@
       "address": "Dukuh Bajangan",
       "village": "Damarwulan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5265,
+      "longitude": 110.9019
     },
     {
       "npsn": "60712521",
@@ -5414,7 +6390,9 @@
       "address": "DESA DAMARWULAN RT.03 RW.03",
       "village": "Damarwulan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5315,
+      "longitude": 110.9092
     },
     {
       "npsn": "60712522",
@@ -5422,7 +6400,9 @@
       "address": "DESA WATUAJI",
       "village": "Watuaji",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5535,
+      "longitude": 110.8988
     },
     {
       "npsn": "60712523",
@@ -5430,7 +6410,9 @@
       "address": "RT 01, RW 02",
       "village": "Watuaji",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5168,
+      "longitude": 110.8881
     },
     {
       "npsn": "60712524",
@@ -5438,7 +6420,9 @@
       "address": "DESA KLEPU RT 13 RW 01",
       "village": "Klepu",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5073,
+      "longitude": 110.8973
     },
     {
       "npsn": "60712525",
@@ -5446,7 +6430,9 @@
       "address": "Desa Klepu RT. 04 RW. 03",
       "village": "Klepu",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5034,
+      "longitude": 110.8859
     },
     {
       "npsn": "60712526",
@@ -5454,7 +6440,9 @@
       "address": "DESA JLEGONG RT 03 RW 02",
       "village": "Jlegong",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4852,
+      "longitude": 110.8823
     },
     {
       "npsn": "60712527",
@@ -5462,7 +6450,9 @@
       "address": "Jl. AMD XVI RT 3 RW 2",
       "village": "Gelang",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4957,
+      "longitude": 110.8754
     },
     {
       "npsn": "60712528",
@@ -5470,7 +6460,9 @@
       "address": "DESA TUNAHAN RT 28 RW 09",
       "village": "Tunahan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5038,
+      "longitude": 110.8572
     },
     {
       "npsn": "60712529",
@@ -5478,7 +6470,9 @@
       "address": "Desa Bumiharjo RT 9 RW 5",
       "village": "Bumiharjo",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.428,
+      "longitude": 110.8335
     },
     {
       "npsn": "60712530",
@@ -5486,7 +6480,9 @@
       "address": "DESA KUNIR DUKUH JEHAN RT. 01 RW 04",
       "village": "Kunir",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5577,
+      "longitude": 110.8703
     },
     {
       "npsn": "60712531",
@@ -5494,7 +6490,9 @@
       "address": "Desa Bumiharjo RT. 01 RW. 01",
       "village": "Bumiharjo",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4626,
+      "longitude": 110.8544
     },
     {
       "npsn": "60712532",
@@ -5502,7 +6500,9 @@
       "address": "Desa Bumiharjo, RT.03 RW.07",
       "village": "Bumiharjo",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4596,
+      "longitude": 110.8361
     },
     {
       "npsn": "60712533",
@@ -5510,7 +6510,9 @@
       "address": "DESA TUNAHAN RT 03 RW 01",
       "village": "Tunahan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.5463,
+      "longitude": 110.8904
     },
     {
       "npsn": "60712534",
@@ -5518,7 +6520,9 @@
       "address": "Keling, RT.05/06",
       "village": "Keling",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.4712,
+      "longitude": 110.8629
     },
     {
       "npsn": "60712535",
@@ -5526,7 +6530,9 @@
       "address": "Ds. Tunahan RT 18 RW 06 Kec. Keling Kabupaten Jepara",
       "village": "Tunahan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.521142,
+      "longitude": 110.890347
     },
     {
       "npsn": "60712536",
@@ -5534,7 +6540,9 @@
       "address": "DESA DAMARWULAN RT 11 RW 01",
       "village": "Damarwulan",
       "level": "mi",
-      "district": "Keling"
+      "district": "Keling",
+      "latitude": -6.565,
+      "longitude": 110.8995
     },
     {
       "npsn": "60712537",
@@ -5542,7 +6550,9 @@
       "address": "JL.K.R.M.MARZUKI CEPOGO",
       "village": "Cepogo",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5178,
+      "longitude": 110.847
     },
     {
       "npsn": "60712538",
@@ -5550,7 +6560,9 @@
       "address": "JL. PLTU Tanjung Jati B Km 3 Rt 01 Rw 02 Kaliaman Kembang Jepara",
       "village": "Kaliaman",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.471,
+      "longitude": 110.7463
     },
     {
       "npsn": "60712539",
@@ -5558,7 +6570,9 @@
       "address": "JL.PASAR KEMBANG KM 01 JINGGOTAN RT 02 RW 04",
       "village": "Jinggotan",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.507,
+      "longitude": 110.8148
     },
     {
       "npsn": "60712540",
@@ -5566,7 +6580,9 @@
       "address": "Desa Pendem RT. 02 RW. 06",
       "village": "Pendem",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5178,
+      "longitude": 110.8152
     },
     {
       "npsn": "60712541",
@@ -5574,7 +6590,9 @@
       "address": "DESA PENDEM RT. 02 RW. 01",
       "village": "Pendem",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5272,
+      "longitude": 110.812
     },
     {
       "npsn": "60712542",
@@ -5582,7 +6600,9 @@
       "address": "JL. KEMBANG - DUDAKAWU KM 07 RT.02 RW. 04",
       "village": "Dudakawu",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5494,
+      "longitude": 110.8302
     },
     {
       "npsn": "60712543",
@@ -5590,7 +6610,9 @@
       "address": "Komplek Masjid Darussalam Rt 17 Rw V",
       "village": "Sumanding",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5598,
+      "longitude": 110.8625
     },
     {
       "npsn": "60712544",
@@ -5598,7 +6620,9 @@
       "address": "JL. RAYA BANGSRI - KELING KM.4 DUKUH SEGAWE",
       "village": "Jinggotan",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5077,
+      "longitude": 110.7948
     },
     {
       "npsn": "60712545",
@@ -5606,7 +6630,9 @@
       "address": "DESA BALONG RT 03 RW 02",
       "village": "Balong",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4578,
+      "longitude": 110.7992
     },
     {
       "npsn": "60712546",
@@ -5614,7 +6640,9 @@
       "address": "DESA PENDEM RT 02 RW 07",
       "village": "Pendem",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5331,
+      "longitude": 110.8215
     },
     {
       "npsn": "60712547",
@@ -5622,7 +6650,9 @@
       "address": "JL MADRASAH RT 01/02",
       "village": "Mayong Lor",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7532,
+      "longitude": 110.7573
     },
     {
       "npsn": "60712548",
@@ -5630,7 +6660,9 @@
       "address": "Jl. Mayong-Pancur KM.04",
       "village": "Ngroto",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7099,
+      "longitude": 110.7685
     },
     {
       "npsn": "60712549",
@@ -5638,7 +6670,9 @@
       "address": "Jl. Tamansari RT 36 RW 07 Pancur Mayong Jepara",
       "village": "Pancur",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6551,
+      "longitude": 110.779
     },
     {
       "npsn": "60712550",
@@ -5646,7 +6680,9 @@
       "address": "JL.BOMO DESA PANCUR",
       "village": "Pancur",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6588,
+      "longitude": 110.7872
     },
     {
       "npsn": "60712551",
@@ -5654,7 +6690,9 @@
       "address": "Jl. Kauman Rajekwesi RT02/02 Mayong Jepara",
       "village": "Rajekwesi",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6722,
+      "longitude": 110.7592
     },
     {
       "npsn": "60712552",
@@ -5662,7 +6700,9 @@
       "address": "JALAN KH. MASYHURI RT 03 RW 03 KUANYAR MAYONG",
       "village": "Kuanyar",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7371,
+      "longitude": 110.7634
     },
     {
       "npsn": "60712553",
@@ -5670,7 +6710,9 @@
       "address": "KEDUNGOMBO BUARAN MAYONG JEPARA",
       "village": "Buaran",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7185,
+      "longitude": 110.7729
     },
     {
       "npsn": "60712554",
@@ -5678,7 +6720,9 @@
       "address": "Jl.Raya Pancur Km 09 Rt 10/02 Mayong",
       "village": "Pancur",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6775,
+      "longitude": 110.7676
     },
     {
       "npsn": "60712555",
@@ -5686,7 +6730,9 @@
       "address": "Pelang Rt 02 Gw 03",
       "village": "Pelang",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.739,
+      "longitude": 110.7395
     },
     {
       "npsn": "60712556",
@@ -5694,7 +6740,9 @@
       "address": "DUKUH SUKORJO RT. 53 RW. 11",
       "village": "Pancur",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.6775,
+      "longitude": 110.767
     },
     {
       "npsn": "60712557",
@@ -5702,7 +6750,9 @@
       "address": "JL. JEPARA - BANGSI KM.09 DESA JAMBU",
       "village": "Jambu",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5289,
+      "longitude": 110.7022
     },
     {
       "npsn": "60712558",
@@ -5710,7 +6760,9 @@
       "address": "Jl. Sekuro - Kawak KM.03 Dk. Jambu Sari RT.26 RW.06",
       "village": "Jambu Timur",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5405,
+      "longitude": 110.7279
     },
     {
       "npsn": "60712559",
@@ -5718,7 +6770,9 @@
       "address": "Jl. Mawar RT. 18 RW. 04 Dukuh Segebug",
       "village": "Jambu Timur",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5352,
+      "longitude": 110.7441
     },
     {
       "npsn": "60712560",
@@ -5726,7 +6780,9 @@
       "address": "JL. RAYA JEPARA - BANGSRI KM.11",
       "village": "Sekuro",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5326,
+      "longitude": 110.7179
     },
     {
       "npsn": "60712561",
@@ -5734,7 +6790,9 @@
       "address": "Jl. Mlonggo Bondo Km 03 Desa Karanggondang RT 06 RW 04",
       "village": "Karanggondang",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5016,
+      "longitude": 110.7138
     },
     {
       "npsn": "60712562",
@@ -5742,7 +6800,9 @@
       "address": "JL.KH.SHOBIRIN DESA KARANGGONDANG RT.03 RW.02",
       "village": "Karanggondang",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5123,
+      "longitude": 110.7142
     },
     {
       "npsn": "60712563",
@@ -5750,7 +6810,9 @@
       "address": "JL. PEMUDA NO.01 RT.37 RW.07 SINANGGUL",
       "village": "Sinanggul",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5494,
+      "longitude": 110.711
     },
     {
       "npsn": "60712564",
@@ -5758,7 +6820,9 @@
       "address": "DESA SINANGGUL RT 28 / RW 05",
       "village": "Sinanggul",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5382,
+      "longitude": 110.7003
     },
     {
       "npsn": "60712565",
@@ -5766,7 +6830,9 @@
       "address": "JL. K. NAWAWI DESA SINANGGUL RT.14 RW.03",
       "village": "Sinanggul",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5463,
+      "longitude": 110.7187
     },
     {
       "npsn": "60712566",
@@ -5774,7 +6840,9 @@
       "address": "JL. KH. ABU HASAN KM. 02 DESA SUWAWAL RT.04 RW.03",
       "village": "Suwawal",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5567,
+      "longitude": 110.7104
     },
     {
       "npsn": "60712567",
@@ -5782,7 +6850,9 @@
       "address": "Suwawal Rt 02/RW 02",
       "village": "Suwawal",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5483,
+      "longitude": 110.6902
     },
     {
       "npsn": "60712568",
@@ -5790,7 +6860,9 @@
       "address": "JL. EMPURANCAK KM. 1 KARANGGONDANG",
       "village": "Karanggondang",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.4925,
+      "longitude": 110.7087
     },
     {
       "npsn": "60712569",
@@ -5798,7 +6870,9 @@
       "address": "DESA SINANGGUL",
       "village": "Sinanggul",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5366,
+      "longitude": 110.7107
     },
     {
       "npsn": "60712570",
@@ -5806,7 +6880,9 @@
       "address": "JLKAUMAN DESA SROBYONG RT.04 RW.02",
       "village": "Srobyong",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5382,
+      "longitude": 110.7155
     },
     {
       "npsn": "60712571",
@@ -5814,7 +6890,9 @@
       "address": "Desa Suwawal RT. 06 RW. 04",
       "village": "Suwawal",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.5611,
+      "longitude": 110.703
     },
     {
       "npsn": "60712572",
@@ -5822,7 +6900,9 @@
       "address": "Ds. Daren RT.01/04 Nalumsari Jepara 59466",
       "village": "Daren",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7473,
+      "longitude": 110.8263
     },
     {
       "npsn": "60712573",
@@ -5830,7 +6910,9 @@
       "address": "Dk. Krajan Timur Rt 01 Rw 02",
       "village": "Karangnongko",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7439,
+      "longitude": 110.8244
     },
     {
       "npsn": "60712574",
@@ -5838,7 +6920,9 @@
       "address": "JL. KRAJAN NO. 04 RT. 01 RW. 01 GEMIRING KIDUL",
       "village": "Gemiring Kidul",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7457,
+      "longitude": 110.7764
     },
     {
       "npsn": "60712575",
@@ -5846,7 +6930,9 @@
       "address": "JL. Sreni Indah Rt. 09 Rw. 03",
       "village": "Bategede",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7011,
+      "longitude": 110.8249
     },
     {
       "npsn": "60712576",
@@ -5854,7 +6940,9 @@
       "address": "Dk. grobogan Rt 03 Rw 09 Muryolobo Nalumsari Jepara",
       "village": "Muryolobo",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.748,
+      "longitude": 110.806
     },
     {
       "npsn": "60712577",
@@ -5862,7 +6950,9 @@
       "address": "Dukuh Penggung RT 02 RW 07 Desa Gemiring Lor",
       "village": "Gemiring Lor",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7303,
+      "longitude": 110.7806
     },
     {
       "npsn": "60712578",
@@ -5870,7 +6960,9 @@
       "address": "NGETUK RT 04 RW 06",
       "village": "Ngetuk",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.732,
+      "longitude": 110.8145
     },
     {
       "npsn": "60712579",
@@ -5878,7 +6970,9 @@
       "address": "JL.RAYANALUMSARI",
       "village": "Dorang",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7457,
+      "longitude": 110.8007
     },
     {
       "npsn": "60712580",
@@ -5886,7 +6980,9 @@
       "address": "Desa Gemiring Lor RT. 02 RW. 07",
       "village": "Gemiring Lor",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7227,
+      "longitude": 110.7787
     },
     {
       "npsn": "60712581",
@@ -5894,7 +6990,9 @@
       "address": "PRINGTULIS RT 02 RW 03 NALUMSARI JEPARA",
       "village": "Pringtulis",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7499,
+      "longitude": 110.769
     },
     {
       "npsn": "60712582",
@@ -5902,7 +7000,9 @@
       "address": "Jl. Demang Koso RT 30 RW 05 Plajan Pakis Aji Jepara",
       "village": "Plajan",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.716162,
+      "longitude": 110.683537
     },
     {
       "npsn": "60712583",
@@ -5910,7 +7010,9 @@
       "address": "JL. Lebak - Tanjung Km. 03 Rt. 17 Rw. 03",
       "village": "Plajan",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5862,
+      "longitude": 110.7727
     },
     {
       "npsn": "60712584",
@@ -5918,7 +7020,9 @@
       "address": "Jl. Sinanggul-Kawak KM.05 RT.05/01",
       "village": "Slagi",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5546,
+      "longitude": 110.726
     },
     {
       "npsn": "60712585",
@@ -5926,7 +7030,9 @@
       "address": "KAWAK RT 14 RW 02",
       "village": "Kawak",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5765,
+      "longitude": 110.7905
     },
     {
       "npsn": "60712586",
@@ -5934,7 +7040,9 @@
       "address": "JL. MAMBAK-PAKIS ADHI KM 2.5 RT 05 RW 04 SUWAWAL TIMUR",
       "village": "Suwawal Timur",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5642,
+      "longitude": 110.7121
     },
     {
       "npsn": "60712587",
@@ -5942,7 +7050,9 @@
       "address": "DUKUH TUKSONGO DESA SUWAWAL TIMUR",
       "village": "Suwawal Timur",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.584,
+      "longitude": 110.7929
     },
     {
       "npsn": "60712588",
@@ -5950,7 +7060,9 @@
       "address": "JEPARA - BANGSRI KM.05 MAMBAK PAKIS AJI JEPARA",
       "village": "Mambak",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.578,
+      "longitude": 110.7616
     },
     {
       "npsn": "60712589",
@@ -5958,7 +7070,9 @@
       "address": "Jl. Masjid Induk No. 03 RT 01 RW 04",
       "village": "Bulungan",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5825,
+      "longitude": 110.7107
     },
     {
       "npsn": "60712590",
@@ -5966,7 +7080,9 @@
       "address": "Desa Bulungan RT. 06 RW. 05",
       "village": "Bulungan",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.726599,
+      "longitude": 110.68652
     },
     {
       "npsn": "60712591",
@@ -5974,7 +7090,9 @@
       "address": "JL. LEBAK RT.04 RW.04 KEC. PAKIS AJI",
       "village": "Lebak",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6043,
+      "longitude": 110.7911
     },
     {
       "npsn": "60712592",
@@ -5982,7 +7100,9 @@
       "address": "Jl. Masjid Jami` Baiturrohman N0. 01 RT. 22 RW. 03",
       "village": "Tanjung",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6039,
+      "longitude": 110.7757
     },
     {
       "npsn": "60712593",
@@ -5990,7 +7110,9 @@
       "address": "Jl. Tanjung No 250 RT 04 RW 02 Desa Lebak Kec. Pakisaji Kab. Jepara",
       "village": "Lebak",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.6087,
+      "longitude": 110.7964
     },
     {
       "npsn": "60712594",
@@ -5998,7 +7120,9 @@
       "address": "JL. BUGEL RAYA KM 1.9",
       "village": "Troso",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6863,
+      "longitude": 110.6969
     },
     {
       "npsn": "60712595",
@@ -6006,7 +7130,9 @@
       "address": "Jl. Raya Pecangaan-Kedung Km.1,9 Karangrandu Pecangaan Jepara 59462",
       "village": "Karangrandu",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.7068,
+      "longitude": 110.6948
     },
     {
       "npsn": "60712596",
@@ -6014,7 +7140,9 @@
       "address": "Jln. Cemoro Kembar Troso RT 05 RW 08 Pecangaan Jepara",
       "village": "Troso",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6688,
+      "longitude": 110.7021
     },
     {
       "npsn": "60712597",
@@ -6022,7 +7150,9 @@
       "address": "JL. KH. MOH ALI SHIDIQ",
       "village": "Rengging",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6452,
+      "longitude": 110.6698
     },
     {
       "npsn": "60712598",
@@ -6030,7 +7160,9 @@
       "address": "Jl. Ragu Klampitan KM.2 RT 03 RW 01",
       "village": "Pulodarat",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6935,
+      "longitude": 110.7239
     },
     {
       "npsn": "60712599",
@@ -6038,7 +7170,9 @@
       "address": "JL. RATU KALINYAMAT KM.1 KRAPYAK",
       "village": "Krapyak",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6089,
+      "longitude": 110.665
     },
     {
       "npsn": "60712600",
@@ -6046,7 +7180,9 @@
       "address": "JL. SUNAN MANTINGAN KM. 01, RT 08 RW 02",
       "village": "Tegalsambi",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6169,
+      "longitude": 110.6553
     },
     {
       "npsn": "60712601",
@@ -6054,7 +7190,9 @@
       "address": "Jl. Sultan Hadlirin Km. 01",
       "village": "Mantingan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6195,
+      "longitude": 110.6675
     },
     {
       "npsn": "60712602",
@@ -6062,7 +7200,9 @@
       "address": "JL. KI. AGENG ABDILLAH NO.01",
       "village": "Petekeyan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6403,
+      "longitude": 110.6615
     },
     {
       "npsn": "60712603",
@@ -6070,7 +7210,9 @@
       "address": "Desa Langon RT. 10 RW. 05",
       "village": "Langon",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6323,
+      "longitude": 110.6913
     },
     {
       "npsn": "60712604",
@@ -6078,7 +7220,9 @@
       "address": "KECAPI RT 05 RW 01",
       "village": "Kecapi",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6087,
+      "longitude": 110.7039
     },
     {
       "npsn": "60712605",
@@ -6086,7 +7230,9 @@
       "address": "JL. Raya Kecapi - Lebak Rt. 29 Rw. 05 Kecapi Tahunan Jepara",
       "village": "Kecapi",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.5985,
+      "longitude": 110.7062
     },
     {
       "npsn": "60712606",
@@ -6094,7 +7240,9 @@
       "address": "Jl. Moliki",
       "village": "Kecapi",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6059,
+      "longitude": 110.7351
     },
     {
       "npsn": "60712607",
@@ -6102,7 +7250,9 @@
       "address": "JL.CITROSOMO SENENAN RT 19 RW 07",
       "village": "Senenan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6074,
+      "longitude": 110.6916
     },
     {
       "npsn": "60712608",
@@ -6110,7 +7260,9 @@
       "address": "Jl. Jend. Hugeng Imam Santoso, Km.09 Rt 03 Rw 06 Ngabul",
       "village": "Ngabul",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.649683,
+      "longitude": 110.709261
     },
     {
       "npsn": "60712609",
@@ -6118,7 +7270,9 @@
       "address": "JL.JAYADI REJO NO. 22 B TAHUNAN",
       "village": "Tahunan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6176,
+      "longitude": 110.6917
     },
     {
       "npsn": "60712610",
@@ -6126,7 +7280,9 @@
       "address": "JL.KALITEKUK NGABUL RT.01/RW.01",
       "village": "Ngabul",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6372,
+      "longitude": 110.7027
     },
     {
       "npsn": "60712611",
@@ -6134,7 +7290,9 @@
       "address": "JL.SOEKARNO HATTA KM. 05 RT.05/III TAHUNAN",
       "village": "Tahunan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6179,
+      "longitude": 110.6911
     },
     {
       "npsn": "60712612",
@@ -6142,7 +7300,9 @@
       "address": "Jalan Raya Demangan-Petekeyan",
       "village": "Demangan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6275,
+      "longitude": 110.6535
     },
     {
       "npsn": "60712613",
@@ -6150,7 +7310,9 @@
       "address": "RT 21 RW 07",
       "village": "Mantingan",
       "level": "mi",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.6256,
+      "longitude": 110.6626
     },
     {
       "npsn": "60712614",
@@ -6158,7 +7320,9 @@
       "address": "RT01/RW01 SIDIGEDE",
       "village": "Sidigede",
       "level": "mi",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7539,
+      "longitude": 110.7073
     },
     {
       "npsn": "60712615",
@@ -6166,7 +7330,9 @@
       "address": "JL.GOTRI WELAHAN KM. 5 RT. 05 RW. 01",
       "village": "Kalipucang Wetan",
       "level": "mi",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.781715,
+      "longitude": 110.713335
     },
     {
       "npsn": "69727502",
@@ -6174,7 +7340,9 @@
       "address": "Desa Blimbingrejo RT. 05 RW. 04",
       "village": "Blimbingrejo",
       "level": "mi",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7731,
+      "longitude": 110.7618
     },
     {
       "npsn": "69727503",
@@ -6182,7 +7350,9 @@
       "address": "Jl. Pantai Blebak RT 033 RW 007 Ds. Sekuro",
       "village": "Sekuro",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.503671,
+      "longitude": 110.6786433
     },
     {
       "npsn": "69727504",
@@ -6190,7 +7360,9 @@
       "address": "DESA KRASAK RT 04 RW 06 KEC. PECANGAAN",
       "village": "Krasak",
       "level": "mi",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.715,
+      "longitude": 110.7123
     },
     {
       "npsn": "69754517",
@@ -6198,7 +7370,9 @@
       "address": "Desa Sendang RT. 03 RW. 03",
       "village": "Sendang",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7254,
+      "longitude": 110.7131
     },
     {
       "npsn": "69774628",
@@ -6206,7 +7380,9 @@
       "address": "Desa Pelemkerep RT. 03 RW. 02",
       "village": "Pelemkerep",
       "level": "sd",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7488,
+      "longitude": 110.76
     },
     {
       "npsn": "69819561",
@@ -6214,7 +7390,9 @@
       "address": "Dukuh Krajan, RT 03 RW 02, Desa Jugo",
       "village": "Jugo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4714,
+      "longitude": 110.9324
     },
     {
       "npsn": "69847246",
@@ -6222,7 +7400,9 @@
       "address": "Desa Kalipucang Wetan RT. 04 RW. 02",
       "village": "Kalipucang Wetan",
       "level": "sd",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7509,
+      "longitude": 110.7277
     },
     {
       "npsn": "69854208",
@@ -6230,7 +7410,9 @@
       "address": "DESA KANCILAN RT.04 RW.01",
       "village": "Kancilan",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.575033,
+      "longitude": 110.865341
     },
     {
       "npsn": "69881865",
@@ -6238,7 +7420,9 @@
       "address": "Jl. Raya Ngabul-Batealit Km 01, Desa Ngasem RT. 04 RW. 01 Batealit Jepara",
       "village": "Ngasem",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.642188,
+      "longitude": 110.767411
     },
     {
       "npsn": "69881866",
@@ -6246,7 +7430,9 @@
       "address": "Jl. Raya Gotri - Welahan Gang Ponpes Al Falah RT 11 RW 02",
       "village": "Bakalan",
       "level": "mi",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7324,
+      "longitude": 110.7255
     },
     {
       "npsn": "69894632",
@@ -6254,7 +7440,9 @@
       "address": "Desa Guyangan RT. 04 RW. 10",
       "village": "Guyangan",
       "level": "mi",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5691,
+      "longitude": 110.7511
     },
     {
       "npsn": "69894633",
@@ -6262,7 +7450,9 @@
       "address": "Jl. Benteng Portugis KM. 2",
       "village": "Tulakan",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": -6.4531332,
+      "longitude": 110.873607
     },
     {
       "npsn": "69895631",
@@ -6270,7 +7460,9 @@
       "address": "Desa Cepogo RT. 02 RW. 12",
       "village": "Cepogo",
       "level": "sd",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.5203,
+      "longitude": 110.8346
     },
     {
       "npsn": "69903084",
@@ -6278,7 +7470,9 @@
       "address": "Desa Bangsri RT. 01 RW. 01",
       "village": "Bangsri",
       "level": "sd",
-      "district": "Bangsri"
+      "district": "Bangsri",
+      "latitude": -6.5268,
+      "longitude": 110.7691
     },
     {
       "npsn": "69927604",
@@ -6286,7 +7480,9 @@
       "address": "Rt 03 Rw 03",
       "village": "Ketilengsingolelo",
       "level": "mi",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.7761,
+      "longitude": 110.7299
     },
     {
       "npsn": "69927605",
@@ -6294,7 +7490,9 @@
       "address": "Jl Pandan Sari Rt 07 Rw 03 Desa Kedungcino Jepara",
       "village": "Kedungcino",
       "level": "mi",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.5608,
+      "longitude": 110.6768
     },
     {
       "npsn": "69956219",
@@ -6302,7 +7500,9 @@
       "address": "Jl Raya Duren Tubanan Rt 06 Rw 04 Tubanan",
       "village": "Tubanan",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4948,
+      "longitude": 110.8181
     },
     {
       "npsn": "69977298",
@@ -6310,7 +7510,9 @@
       "address": "JL. KYAI ALI MUHAMMAD",
       "village": "Mulyoharjo",
       "level": "mi",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.588,
+      "longitude": 110.6842
     },
     {
       "npsn": "69977299",
@@ -6318,7 +7520,9 @@
       "address": "JL. DATUK GURNADI GG. 2",
       "village": "Singorojo",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": -6.7409,
+      "longitude": 110.7652
     },
     {
       "npsn": "69978392",
@@ -6326,7 +7530,9 @@
       "address": "Desa Rengging RT. 09 RW. 02",
       "village": "Rengging",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6665,
+      "longitude": 110.7144
     },
     {
       "npsn": "69978811",
@@ -6334,7 +7540,9 @@
       "address": "Desa Bandungrejo RT. 02 RW. 02",
       "village": "Bandungrejo",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7398,
+      "longitude": 110.7094
     },
     {
       "npsn": "69982983",
@@ -6342,7 +7550,9 @@
       "address": "Desa Welahan",
       "village": "Welahan",
       "level": "mi",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69982984",
@@ -6350,7 +7560,9 @@
       "address": "Desa Pancur RT. 02 RW. 01",
       "village": "Pancur",
       "level": "mi",
-      "district": "Mayong"
+      "district": "Mayong",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69989326",
@@ -6358,7 +7570,9 @@
       "address": "Kelurahan Bapangan RT. 02 RW. 05",
       "village": "Bapangan",
       "level": "sd",
-      "district": "Jepara"
+      "district": "Jepara",
+      "latitude": -6.6007,
+      "longitude": 110.6838
     },
     {
       "npsn": "69993587",
@@ -6366,7 +7580,9 @@
       "address": "Desa Kancilan RT. 04 RW. 07",
       "village": "Kancilan",
       "level": "mi",
-      "district": "Kembang"
+      "district": "Kembang",
+      "latitude": -6.4946,
+      "longitude": 110.7902
     },
     {
       "npsn": "70001856",
@@ -6374,7 +7590,9 @@
       "address": "Desa Kecapi RT. 30 RW. 06",
       "village": "Kecapi",
       "level": "sd",
-      "district": "Tahunan"
+      "district": "Tahunan",
+      "latitude": -6.5968,
+      "longitude": 110.7093
     },
     {
       "npsn": "70009789",
@@ -6382,7 +7600,9 @@
       "address": "RAGUKLAMPITAN",
       "village": "Raguklampitan",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70009792",
@@ -6390,7 +7610,9 @@
       "address": "DK. JERUKREJO RT. 02/RW. 07 DESA BANYUMANIS KECAMATAN DONOROJO KABUPATEN JEPARA",
       "village": "Banyumanis",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70010117",
@@ -6398,7 +7620,9 @@
       "address": "KOMPLEK PONPES ROUDLOTUL MUSLIMIN",
       "village": "Suwawal",
       "level": "mi",
-      "district": "Mlonggo"
+      "district": "Mlonggo",
+      "latitude": -6.552,
+      "longitude": 110.6945
     },
     {
       "npsn": "70033669",
@@ -6406,7 +7630,9 @@
       "address": "Jl. Jambu Timur - Guyangan Km 05 RT 4 RW 1",
       "village": "Kawak",
       "level": "mi",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70033930",
@@ -6414,7 +7640,9 @@
       "address": "Dukuh Mbener RT 003 RW 005",
       "village": "Mindahan Kidul",
       "level": "mi",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70034905",
@@ -6422,7 +7650,9 @@
       "address": "Desa Pecangaan Kulon RT. 01 RW. 04",
       "village": "Pecangaan Kulon",
       "level": "sd",
-      "district": "Pecangaan"
+      "district": "Pecangaan",
+      "latitude": -6.6961,
+      "longitude": 110.7078
     },
     {
       "npsn": "70040717",
@@ -6430,7 +7660,9 @@
       "address": "Desa Gemiring Lor RT. 01 RW. 06",
       "village": "Gemiring Lor",
       "level": "sd",
-      "district": "Nalumsari"
+      "district": "Nalumsari",
+      "latitude": -6.7357163,
+      "longitude": 110.7893471
     },
     {
       "npsn": "70042876",
@@ -6438,7 +7670,9 @@
       "address": "Desa Sowan Lor RT. 04 RW. 01",
       "village": "Sowan Lor",
       "level": "sd",
-      "district": "Kedung"
+      "district": "Kedung",
+      "latitude": -6.683,
+      "longitude": 110.675
     },
     {
       "npsn": "70045253",
@@ -6446,7 +7680,9 @@
       "address": "Jalan Pemuda RT 01 RW 11",
       "village": "Sumber Rejo",
       "level": "mi",
-      "district": "Donorojo"
+      "district": "Donorojo",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70047548",
@@ -6454,7 +7690,9 @@
       "address": "Desa Pekalongan RT. 05 RW. 01",
       "village": "Pekalongan",
       "level": "sd",
-      "district": "Batealit"
+      "district": "Batealit",
+      "latitude": -6.6174,
+      "longitude": 110.7134
     },
     {
       "npsn": "70047890",
@@ -6462,7 +7700,9 @@
       "address": "Desa Margoyoso RT. 07 RW. 02",
       "village": "Margoyoso",
       "level": "sd",
-      "district": "Kalinyamatan"
+      "district": "Kalinyamatan",
+      "latitude": -6.7299558,
+      "longitude": 110.7257577
     },
     {
       "npsn": "70058361",
@@ -6470,7 +7710,9 @@
       "address": "JL. Raya Lebak - Suwawal Timur 1/2 Pakis Aji",
       "village": "Suwawal Timur",
       "level": "sd",
-      "district": "Pakis Aji"
+      "district": "Pakis Aji",
+      "latitude": -6.5728893,
+      "longitude": 110.7382354
     },
     {
       "npsn": "74779714",
@@ -6478,7 +7720,9 @@
       "address": "Jalan H Umar RT 23 RW 03",
       "village": "Telukwetan",
       "level": "mi",
-      "district": "Welahan"
+      "district": "Welahan",
+      "latitude": -6.74088,
+      "longitude": 110.71136
     }
   ]
 }

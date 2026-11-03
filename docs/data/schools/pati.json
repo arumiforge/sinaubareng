@@ -1510,7 +1510,9 @@
       "address": "Jln. Tayu-Dukuhseti Km. 4",
       "village": "Kalikalong",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5111,
+      "longitude": 111.0421
     },
     {
       "npsn": "20316288",
@@ -1518,7 +1520,9 @@
       "address": "Kalikalong",
       "village": "Kalikalong",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5117,
+      "longitude": 111.0413
     },
     {
       "npsn": "20316289",
@@ -1526,7 +1530,9 @@
       "address": "Jl P Sudirman",
       "village": "Kalidoro",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.752,
+      "longitude": 111.0498
     },
     {
       "npsn": "20316290",
@@ -1534,7 +1540,9 @@
       "address": "Jln Ronggokusumo",
       "village": "Kajen",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6078,
+      "longitude": 111.0565
     },
     {
       "npsn": "20316291",
@@ -1542,7 +1550,9 @@
       "address": "Desa Kajar RT 03 RW 05 Kecamatan Trangkil",
       "village": "Kajar",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6724,
+      "longitude": 111.0838
     },
     {
       "npsn": "20316292",
@@ -1550,7 +1560,9 @@
       "address": "Jl Raya Pati Tayu Km 10",
       "village": "Kajar",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6698,
+      "longitude": 111.0731
     },
     {
       "npsn": "20316293",
@@ -1558,7 +1570,9 @@
       "address": "Jl.raya Juana Tayu Km.11",
       "village": "Kadilangu",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6451,
+      "longitude": 111.0843
     },
     {
       "npsn": "20316294",
@@ -1566,7 +1580,9 @@
       "address": "DUKUH JIWO RT 03 RW 03",
       "village": "Jrahi",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5813,
+      "longitude": 110.9395
     },
     {
       "npsn": "20316295",
@@ -1574,7 +1590,9 @@
       "address": "Jrahi",
       "village": "Jrahi",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5689,
+      "longitude": 110.9422
     },
     {
       "npsn": "20316296",
@@ -1582,7 +1600,9 @@
       "address": "Ds Karangawen",
       "village": "Karangawen",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8615,
+      "longitude": 111.0339
     },
     {
       "npsn": "20316297",
@@ -1590,7 +1610,9 @@
       "address": "Karangkonang",
       "village": "Karangkonang",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8104,
+      "longitude": 111.1163
     },
     {
       "npsn": "20316298",
@@ -1598,7 +1620,9 @@
       "address": "Jl. Pucakwangi - Winong Km.7,5",
       "village": "Karangwotan",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8436,
+      "longitude": 111.1164
     },
     {
       "npsn": "20316299",
@@ -1606,7 +1630,9 @@
       "address": "Jl. Pucakwangi - Winong Km. 07",
       "village": "Karangwotan",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8547,
+      "longitude": 111.1192
     },
     {
       "npsn": "20316300",
@@ -1614,7 +1640,9 @@
       "address": "DS. KARANGWONO RT. 02/03",
       "village": "Karangwono",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8674,
+      "longitude": 111.0535
     },
     {
       "npsn": "20316301",
@@ -1622,7 +1650,9 @@
       "address": "Karangwono",
       "village": "Karangwono",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8653,
+      "longitude": 111.053
     },
     {
       "npsn": "20316303",
@@ -1630,7 +1660,9 @@
       "address": "Ds Karangwage",
       "village": "Karangwage",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6435,
+      "longitude": 111.0719
     },
     {
       "npsn": "20316304",
@@ -1638,7 +1670,9 @@
       "address": "Karangsumber",
       "village": "Karangsumber",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8642,
+      "longitude": 111.1012
     },
     {
       "npsn": "20316305",
@@ -1646,7 +1680,9 @@
       "address": "Karangsumber RT.01 RW.02 Kec.Winong Kab.Pati",
       "village": "Karangsumber",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8603,
+      "longitude": 111.1076
     },
     {
       "npsn": "20316307",
@@ -1654,7 +1690,9 @@
       "address": "Karangsari Rt 02 Rw 07",
       "village": "Karangsari",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5164,
+      "longitude": 110.9517
     },
     {
       "npsn": "20316308",
@@ -1662,7 +1700,9 @@
       "address": "Karangsari Rt 04 Rw 01",
       "village": "Karangsari",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5143,
+      "longitude": 110.9526
     },
     {
       "npsn": "20316309",
@@ -1670,7 +1710,9 @@
       "address": "Karangrowo",
       "village": "Karangrowo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7561,
+      "longitude": 111.0929
     },
     {
       "npsn": "20316311",
@@ -1678,7 +1720,9 @@
       "address": "JALAN TEMBUS JUWANA- KARANG KM.3",
       "village": "Karangrejo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7323,
+      "longitude": 111.1553
     },
     {
       "npsn": "20316312",
@@ -1686,7 +1730,9 @@
       "address": "Karangrejolor",
       "village": "Karangrejo Lor",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7667,
+      "longitude": 111.1577
     },
     {
       "npsn": "20316313",
@@ -1694,7 +1740,9 @@
       "address": "Jl.Tambakromo-Pati Km 1",
       "village": "Karangmulyo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8634,
+      "longitude": 111.0475
     },
     {
       "npsn": "20316314",
@@ -1702,7 +1750,9 @@
       "address": "Ds Jontro",
       "village": "Jontro",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.692,
+      "longitude": 111.0696
     },
     {
       "npsn": "20316315",
@@ -1710,7 +1760,9 @@
       "address": "Jalan Jaken Jakenan Km 5",
       "village": "Mojoluhur",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7726,
+      "longitude": 111.1839
     },
     {
       "npsn": "20316316",
@@ -1718,7 +1770,9 @@
       "address": "Ds Margorejo Rt 02 Rw 02",
       "village": "Margorejo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7671,
+      "longitude": 111.0108
     },
     {
       "npsn": "20316318",
@@ -1726,7 +1780,9 @@
       "address": "Ds Margorejo",
       "village": "Margorejo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7102,
+      "longitude": 111.0625
     },
     {
       "npsn": "20316319",
@@ -1734,7 +1790,9 @@
       "address": "Dukuh Gempol",
       "village": "Margomulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7038,
+      "longitude": 111.1599
     },
     {
       "npsn": "20316320",
@@ -1742,7 +1800,9 @@
       "address": "Margomulyo",
       "village": "Margomulyo",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.574119,
+      "longitude": 111.056136
     },
     {
       "npsn": "20316321",
@@ -1750,7 +1810,9 @@
       "address": "Mantingantengah",
       "village": "Mantingan Tengah",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7531,
+      "longitude": 111.1454
     },
     {
       "npsn": "20316322",
@@ -1758,7 +1820,9 @@
       "address": "Jalan Mantingan Kolutan Km 04",
       "village": "Mantingan",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.81,
+      "longitude": 111.2312
     },
     {
       "npsn": "20316323",
@@ -1766,7 +1830,9 @@
       "address": "Ds Mangunrekso",
       "village": "Mangunrekso",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8839,
+      "longitude": 111.0266
     },
     {
       "npsn": "20316324",
@@ -1774,7 +1840,9 @@
       "address": "Mangunlegi",
       "village": "Mangunlegi",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7056,
+      "longitude": 111.2222
     },
     {
       "npsn": "20316325",
@@ -1782,7 +1850,9 @@
       "address": "Desa Manjang Rt. 06 Rw. 03",
       "village": "Manjang",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7694,
+      "longitude": 111.2446
     },
     {
       "npsn": "20316327",
@@ -1790,7 +1860,9 @@
       "address": "Jln.Tambakromo-Maitan Km 12",
       "village": "Maitan",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.9532,
+      "longitude": 111.0714
     },
     {
       "npsn": "20316328",
@@ -1798,7 +1870,9 @@
       "address": "Jl. Raya Tambakromo - Maitan Km. 12",
       "village": "Maitan",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.9435,
+      "longitude": 111.0752
     },
     {
       "npsn": "20316329",
@@ -1806,7 +1880,9 @@
       "address": "Ds Margomulyo",
       "village": "Margomulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7052,
+      "longitude": 111.1079
     },
     {
       "npsn": "20316330",
@@ -1814,7 +1890,9 @@
       "address": "Luwang",
       "village": "Luwang",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5194,
+      "longitude": 111.0409
     },
     {
       "npsn": "20316331",
@@ -1822,7 +1900,9 @@
       "address": "Lundo",
       "village": "Lundo",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7715,
+      "longitude": 111.1992
     },
     {
       "npsn": "20316334",
@@ -1830,7 +1910,9 @@
       "address": "Medani, Rt. 05 Rw. 01",
       "village": "Medani",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.550336,
+      "longitude": 110.924794
     },
     {
       "npsn": "20316335",
@@ -1838,7 +1920,9 @@
       "address": "DESA MOJOLAWARAN",
       "village": "Mojolawaran",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8355,
+      "longitude": 111.0363
     },
     {
       "npsn": "20316336",
@@ -1846,7 +1930,9 @@
       "address": "Mojolampir",
       "village": "Mojolampir",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.799,
+      "longitude": 111.2083
     },
     {
       "npsn": "20316337",
@@ -1854,7 +1940,9 @@
       "address": "Jl Raya Pati Tayu Km 14",
       "village": "Mojoagung",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6426,
+      "longitude": 111.0603
     },
     {
       "npsn": "20316339",
@@ -1862,7 +1950,9 @@
       "address": "Mojo Jati RT 02 RW 08",
       "village": "Mojo",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5177,
+      "longitude": 110.9322
     },
     {
       "npsn": "20316340",
@@ -1870,7 +1960,9 @@
       "address": "Dukuh Mojo Pligen",
       "village": "Mojo",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5144,
+      "longitude": 110.9358
     },
     {
       "npsn": "20316341",
@@ -1878,7 +1970,9 @@
       "address": "Jln.Tayu-Jepara Km 18",
       "village": "Mojo",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5074,
+      "longitude": 110.9155
     },
     {
       "npsn": "20316342",
@@ -1886,7 +1980,9 @@
       "address": "MOJO",
       "village": "Mojo",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5071,
+      "longitude": 110.9289
     },
     {
       "npsn": "20316343",
@@ -1894,7 +1990,9 @@
       "address": "Mintorahayu",
       "village": "Mintorahayu",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8098,
+      "longitude": 111.0763
     },
     {
       "npsn": "20316346",
@@ -1902,7 +2000,9 @@
       "address": "Mintomulyo",
       "village": "Mintomulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7253,
+      "longitude": 111.1284
     },
     {
       "npsn": "20316347",
@@ -1910,7 +2010,9 @@
       "address": "Ds.Mintobasuki",
       "village": "Mintobasuki",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8245,
+      "longitude": 111.0345
     },
     {
       "npsn": "20316349",
@@ -1918,7 +2020,9 @@
       "address": "Ds.metaraman",
       "village": "Metaraman",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7423,
+      "longitude": 111.0037
     },
     {
       "npsn": "20316350",
@@ -1926,7 +2030,9 @@
       "address": "Ds Mencon",
       "village": "Mencon",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8356,
+      "longitude": 111.1913
     },
     {
       "npsn": "20316352",
@@ -1934,7 +2040,9 @@
       "address": "Dkh.Belukan RT 03 RW 03",
       "village": "Lumbungmas",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8931,
+      "longitude": 111.1624
     },
     {
       "npsn": "20316353",
@@ -1942,7 +2050,9 @@
       "address": "Jl.Pucakwangi-Todanan KM7",
       "village": "Lumbungmas",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8851,
+      "longitude": 111.1858
     },
     {
       "npsn": "20316354",
@@ -1950,7 +2060,9 @@
       "address": "JALAN BATANGAN-JAKEN KM. 5",
       "village": "Kuniran",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.743,
+      "longitude": 111.232
     },
     {
       "npsn": "20316356",
@@ -1958,7 +2070,9 @@
       "address": "Kudur",
       "village": "Kudur",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8854,
+      "longitude": 111.0927
     },
     {
       "npsn": "20316358",
@@ -1966,7 +2080,9 @@
       "address": "Jalan PN Bajo",
       "village": "Kudukeras",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7134,
+      "longitude": 111.1509
     },
     {
       "npsn": "20316359",
@@ -1974,7 +2090,9 @@
       "address": "Kropak",
       "village": "Kropak",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8611,
+      "longitude": 111.0923
     },
     {
       "npsn": "20316360",
@@ -1982,7 +2100,9 @@
       "address": "Kropak",
       "village": "Kropak",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8624,
+      "longitude": 111.09
     },
     {
       "npsn": "20316361",
@@ -1990,7 +2110,9 @@
       "address": "Krandan",
       "village": "Krandan",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6521,
+      "longitude": 111.084
     },
     {
       "npsn": "20316362",
@@ -1998,7 +2120,9 @@
       "address": "JLN PATI-GABUS KM 06",
       "village": "Koripandriyo",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.7977,
+      "longitude": 111.0527
     },
     {
       "npsn": "20316363",
@@ -2006,7 +2130,9 @@
       "address": "Jl Tlogowungu - Gunungwungkal Km 18",
       "village": "Klumpit",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6155,
+      "longitude": 110.9542
     },
     {
       "npsn": "20316364",
@@ -2014,7 +2140,9 @@
       "address": "KLECOREGONANG",
       "village": "Klecoregonang",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8597,
+      "longitude": 111.1009
     },
     {
       "npsn": "20316365",
@@ -2022,7 +2150,9 @@
       "address": "Klayusiwalan",
       "village": "Klayusiwalan",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7497,
+      "longitude": 111.1993
     },
     {
       "npsn": "20316366",
@@ -2030,7 +2160,9 @@
       "address": "Dk Domo",
       "village": "Klakah Kasian",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6683,
+      "longitude": 110.9521
     },
     {
       "npsn": "20316367",
@@ -2038,7 +2170,9 @@
       "address": "Kayen",
       "village": "Kayen",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8986,
+      "longitude": 110.9772
     },
     {
       "npsn": "20316369",
@@ -2046,7 +2180,9 @@
       "address": "Jalan Juwana - Rembang Km. 06 Ds. Ketitang Wetan Batangan Pati 59186",
       "village": "Ketitangwetan",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7152,
+      "longitude": 111.1905
     },
     {
       "npsn": "20316371",
@@ -2054,7 +2190,9 @@
       "address": "Jl Gabus -tlogoayu Km 2",
       "village": "Koryokalangan",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8315317,
+      "longitude": 111.0364687
     },
     {
       "npsn": "20316372",
@@ -2062,7 +2200,9 @@
       "address": "Jalan Raya Juwana- Rembang Km 08",
       "village": "Lengkong",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7423,
+      "longitude": 111.2157
     },
     {
       "npsn": "20316373",
@@ -2070,7 +2210,9 @@
       "address": "Ds Larangan",
       "village": "Larangan",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.9013,
+      "longitude": 111.0557
     },
     {
       "npsn": "20316374",
@@ -2078,7 +2220,9 @@
       "address": "Ds Langse",
       "village": "Langse",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7604,
+      "longitude": 110.9999
     },
     {
       "npsn": "20316375",
@@ -2086,7 +2230,9 @@
       "address": "jln.Bima RT 05 RW 02",
       "village": "Langgenharjo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6786,
+      "longitude": 111.1493
     },
     {
       "npsn": "20316376",
@@ -2094,7 +2240,9 @@
       "address": "Jl Juwana-trangkil Km 4",
       "village": "Langgenharjo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7011,
+      "longitude": 111.1198
     },
     {
       "npsn": "20316377",
@@ -2102,7 +2250,9 @@
       "address": "DS.LANGGENHARJO",
       "village": "Langgenharjo",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6258,
+      "longitude": 111.088
     },
     {
       "npsn": "20316379",
@@ -2110,7 +2260,9 @@
       "address": "Desa Langenharjo",
       "village": "Langenharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7783,
+      "longitude": 111.0324
     },
     {
       "npsn": "20316380",
@@ -2118,7 +2270,9 @@
       "address": "Lahar",
       "village": "Lahar",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.708,
+      "longitude": 110.9943
     },
     {
       "npsn": "20316382",
@@ -2126,7 +2280,9 @@
       "address": "Ds. Kuwawur",
       "village": "Kuwawur",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9529,
+      "longitude": 110.8812
     },
     {
       "npsn": "20316383",
@@ -2134,7 +2290,9 @@
       "address": "Ds Kuwawur",
       "village": "Kuwawur",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9628,
+      "longitude": 110.8784
     },
     {
       "npsn": "20316384",
@@ -2142,7 +2300,9 @@
       "address": "Jl Raya Pati Tayu Km 2",
       "village": "Kutoharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7583,
+      "longitude": 111.0435
     },
     {
       "npsn": "20316387",
@@ -2150,7 +2310,9 @@
       "address": "Ds Kuryokalangan",
       "village": "Koryokalangan",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8037,
+      "longitude": 111.0361
     },
     {
       "npsn": "20316388",
@@ -2158,7 +2320,9 @@
       "address": "Jl. Juwana - Kuniran Km. 5",
       "village": "Ketip",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7329,
+      "longitude": 111.1691
     },
     {
       "npsn": "20316426",
@@ -2166,7 +2330,9 @@
       "address": "Desa Wonorejo RT.01 RW.03",
       "village": "Wonorejo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7044,
+      "longitude": 111.0426
     },
     {
       "npsn": "20316427",
@@ -2174,7 +2340,9 @@
       "address": "Jl Raya Pati-Juana Km 4,5",
       "village": "Widorokandang",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7407,
+      "longitude": 111.0771
     },
     {
       "npsn": "20316429",
@@ -2182,7 +2350,9 @@
       "address": "Wirun",
       "village": "Wirun",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8561,
+      "longitude": 111.1039
     },
     {
       "npsn": "20316432",
@@ -2190,7 +2360,9 @@
       "address": "Jl. Kolonel Sunandar Gang III",
       "village": "Winong",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7458,
+      "longitude": 111.0302
     },
     {
       "npsn": "20316433",
@@ -2198,7 +2370,9 @@
       "address": "Jl.Raya Winong- Jakenan Km 0,5 Winong",
       "village": "Winong",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8066,
+      "longitude": 111.1019
     },
     {
       "npsn": "20316434",
@@ -2206,7 +2380,9 @@
       "address": "Jalan Sunan Prawoto Km. 07",
       "village": "Wegil",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9519,
+      "longitude": 110.8554
     },
     {
       "npsn": "20316435",
@@ -2214,7 +2390,9 @@
       "address": "Jl. Puncel - Ngablak Km. 05 Desa Wedusan",
       "village": "Wedusan",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.487,
+      "longitude": 110.9758
     },
     {
       "npsn": "20316436",
@@ -2222,7 +2400,9 @@
       "address": "Jl Kapten Yusuf No 40 RT 02 / RW 05",
       "village": "Wedarijaksa",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6801,
+      "longitude": 111.074
     },
     {
       "npsn": "20316437",
@@ -2230,7 +2410,9 @@
       "address": "Jl Raya Pati Tayu Km -9",
       "village": "Wedarijaksa",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.676,
+      "longitude": 111.0723
     },
     {
       "npsn": "20316438",
@@ -2238,7 +2420,9 @@
       "address": "Ds Waturoyo",
       "village": "Waturoyo",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.5955,
+      "longitude": 111.0544
     },
     {
       "npsn": "20316439",
@@ -2246,7 +2430,9 @@
       "address": "Jl Raya Pati Kudus Km 8",
       "village": "Wangunrejo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7864,
+      "longitude": 110.9814
     },
     {
       "npsn": "20316440",
@@ -2254,7 +2440,9 @@
       "address": "Jl.Raya Tayu Juwana Km 3",
       "village": "Tunggulsari",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5565,
+      "longitude": 111.0598
     },
     {
       "npsn": "20316441",
@@ -2262,7 +2450,9 @@
       "address": "Dukuh Dopang",
       "village": "Triguno",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8243,
+      "longitude": 111.1345
     },
     {
       "npsn": "20316442",
@@ -2270,7 +2460,9 @@
       "address": "Jl Pati Gembong Km 9",
       "village": "Wonosekar",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7078,
+      "longitude": 110.9798
     },
     {
       "npsn": "20316443",
@@ -2278,7 +2470,9 @@
       "address": "Wotan Rt 04 Rw 01",
       "village": "Wotan",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.923,
+      "longitude": 110.9091
     },
     {
       "npsn": "20316455",
@@ -2286,7 +2480,9 @@
       "address": "Ds.wuwur",
       "village": "Wuwur",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8427,
+      "longitude": 110.9966
     },
     {
       "npsn": "20316457",
@@ -2294,7 +2490,9 @@
       "address": "Arumanis",
       "village": "Arumanis",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.8368,
+      "longitude": 111.2212
     },
     {
       "npsn": "20316460",
@@ -2302,7 +2500,9 @@
       "address": "Wotan",
       "village": "Wotan",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.8872,
+      "longitude": 110.8856
     },
     {
       "npsn": "20316461",
@@ -2310,7 +2510,9 @@
       "address": "Ds Wotan",
       "village": "Wotan",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9161,
+      "longitude": 110.9055
     },
     {
       "npsn": "20316535",
@@ -2318,7 +2520,9 @@
       "address": "Sumur Rt 18 Rw 03",
       "village": "Sumur",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.4982,
+      "longitude": 110.9636
     },
     {
       "npsn": "20316536",
@@ -2326,7 +2530,9 @@
       "address": "Jln. Pati - Banyuurip km.4",
       "village": "Sukoharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7537,
+      "longitude": 111.01
     },
     {
       "npsn": "20316537",
@@ -2334,7 +2540,9 @@
       "address": "Jln Raya Pati-tayu Km 6",
       "village": "Sukoharjo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7023,
+      "longitude": 111.0633
     },
     {
       "npsn": "20316538",
@@ -2342,7 +2550,9 @@
       "address": "Ds Sukobubuk",
       "village": "Sukobubuk",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7445,
+      "longitude": 110.9496
     },
     {
       "npsn": "20316539",
@@ -2350,7 +2560,9 @@
       "address": "Sukoagung",
       "village": "Sukoagung",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7461,
+      "longitude": 111.1917
     },
     {
       "npsn": "20316540",
@@ -2358,7 +2570,9 @@
       "address": "Ds Sugihrejo",
       "village": "Sugihrejo",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8822,
+      "longitude": 111.0419
     },
     {
       "npsn": "20316541",
@@ -2366,7 +2580,9 @@
       "address": "Ds Sugihrejo",
       "village": "Sugihrejo",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8193,
+      "longitude": 111.0401
     },
     {
       "npsn": "20316542",
@@ -2374,7 +2590,9 @@
       "address": "Ds Sugihrejo Rt.1/5",
       "village": "Sugihrejo",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8299,
+      "longitude": 111.0394
     },
     {
       "npsn": "20316543",
@@ -2382,7 +2600,9 @@
       "address": "Jl. Raya Pati-Juwana Km. 4 Ds. Sugiharjo Kec. Pati",
       "village": "Sugiharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7486,
+      "longitude": 111.0683
     },
     {
       "npsn": "20316544",
@@ -2390,7 +2610,9 @@
       "address": "Sugihan",
       "village": "Sugihan",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8529,
+      "longitude": 111.1125
     },
     {
       "npsn": "20316545",
@@ -2398,7 +2620,9 @@
       "address": "Sumberagung",
       "village": "Sumberagung",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.8195047,
+      "longitude": 111.2615597
     },
     {
       "npsn": "20316546",
@@ -2406,7 +2630,9 @@
       "address": "Sriwedari",
       "village": "Sriwedari",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7579,
+      "longitude": 111.2205
     },
     {
       "npsn": "20316547",
@@ -2414,7 +2640,9 @@
       "address": "Sriwedari",
       "village": "Sriwedari",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7577,
+      "longitude": 111.216
     },
     {
       "npsn": "20316548",
@@ -2422,7 +2650,9 @@
       "address": "Srikaton",
       "village": "Srikaton",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7797,
+      "longitude": 111.2418
     },
     {
       "npsn": "20316549",
@@ -2430,7 +2660,9 @@
       "address": "Jl Kersen Desa Srikaton Rt 02 Rw 03",
       "village": "Srikaton",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8876,
+      "longitude": 110.9609
     },
     {
       "npsn": "20316550",
@@ -2438,7 +2670,9 @@
       "address": "jaken jakenan KM 0",
       "village": "Srikaton",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7768,
+      "longitude": 111.2377
     },
     {
       "npsn": "20316551",
@@ -2446,7 +2680,9 @@
       "address": "Desa Srikaton RT 03 RW 01",
       "village": "Srikaton",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8927,
+      "longitude": 110.9629
     },
     {
       "npsn": "20316552",
@@ -2454,7 +2690,9 @@
       "address": "Jl.sudiyono",
       "village": "Sukoharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7522,
+      "longitude": 111.0141
     },
     {
       "npsn": "20316554",
@@ -2462,7 +2700,9 @@
       "address": "Sumur",
       "village": "Sumur",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5066,
+      "longitude": 110.9577
     },
     {
       "npsn": "20316556",
@@ -2470,7 +2710,9 @@
       "address": "Dk. Doplang, RT 05 RW 01",
       "village": "Sumbersoko",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9566,
+      "longitude": 110.9307
     },
     {
       "npsn": "20316557",
@@ -2478,7 +2720,9 @@
       "address": "Sumbersari",
       "village": "Sumbersari",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9307,
+      "longitude": 111.0097
     },
     {
       "npsn": "20316558",
@@ -2486,7 +2730,9 @@
       "address": "Jl. Raya Kayen-Beketel Km. 02",
       "village": "Sumbersari",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9156,
+      "longitude": 110.9925
     },
     {
       "npsn": "20316559",
@@ -2494,7 +2740,9 @@
       "address": "Sumbersari",
       "village": "Sumbersari",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9155,
+      "longitude": 110.9926
     },
     {
       "npsn": "20316560",
@@ -2502,7 +2750,9 @@
       "address": "Sumbermulyo",
       "village": "Sumbermulyo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7819,
+      "longitude": 111.0782
     },
     {
       "npsn": "20316561",
@@ -2510,7 +2760,9 @@
       "address": "Sumbermulyo",
       "village": "Sumbermulyo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.784909,
+      "longitude": 111.084394
     },
     {
       "npsn": "20316562",
@@ -2518,7 +2770,9 @@
       "address": "Jln. Jaken-Jakenan Km 1 Desa Sumberejo Kec.Jaken Kab.Pati",
       "village": "Sumberejo",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7732,
+      "longitude": 111.2232
     },
     {
       "npsn": "20316563",
@@ -2526,7 +2780,9 @@
       "address": "Sumberarum",
       "village": "Sumberarum",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7582,
+      "longitude": 111.2251
     },
     {
       "npsn": "20316564",
@@ -2534,7 +2790,9 @@
       "address": "Jl. Jaken - Pucakwangi KM. 05",
       "village": "Sumberan",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.792,
+      "longitude": 111.2055
     },
     {
       "npsn": "20316565",
@@ -2542,7 +2800,9 @@
       "address": "Sumberagung",
       "village": "Sumberagung",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.8043,
+      "longitude": 111.2471
     },
     {
       "npsn": "20316568",
@@ -2550,7 +2810,9 @@
       "address": "Sukorukun",
       "village": "Sukorukun",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7714,
+      "longitude": 111.2158
     },
     {
       "npsn": "20316570",
@@ -2558,7 +2820,9 @@
       "address": "Jl Sumber Gemblung",
       "village": "Sukolilo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9499,
+      "longitude": 110.9192
     },
     {
       "npsn": "20316571",
@@ -2566,7 +2830,9 @@
       "address": "Ds Sukolilo",
       "village": "Sukolilo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9421,
+      "longitude": 110.924
     },
     {
       "npsn": "20316572",
@@ -2574,7 +2840,9 @@
       "address": "Sonorejo",
       "village": "Sonorejo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7656,
+      "longitude": 111.0954
     },
     {
       "npsn": "20316573",
@@ -2582,7 +2850,9 @@
       "address": "Ds Soneyan RT 03 RW 02",
       "village": "Soneyan",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.617,
+      "longitude": 111.0201
     },
     {
       "npsn": "20316574",
@@ -2590,7 +2860,9 @@
       "address": "JL. Tambakromo - Gunung Panti Km. 03",
       "village": "Sinomwidodo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.872,
+      "longitude": 111.0644
     },
     {
       "npsn": "20316575",
@@ -2598,7 +2870,9 @@
       "address": "Sinoman",
       "village": "Sinoman",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7189,
+      "longitude": 111.0982
     },
     {
       "npsn": "20316576",
@@ -2606,7 +2880,9 @@
       "address": "Sidomulyo RT 05/ RW 02",
       "village": "Sidomulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7757,
+      "longitude": 111.1649
     },
     {
       "npsn": "20316577",
@@ -2614,7 +2890,9 @@
       "address": "Desa Sidomulyo",
       "village": "Sidomulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.5864,
+      "longitude": 110.9091
     },
     {
       "npsn": "20316578",
@@ -2622,7 +2900,9 @@
       "address": "Jl Raya Gunungwungkal Tlogowungu Km 7",
       "village": "Sidomulyo",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.6044,
+      "longitude": 110.9666
     },
     {
       "npsn": "20316579",
@@ -2630,7 +2910,9 @@
       "address": "Jln Raya Pati - Tayu Km 15 Desa Sidomukti",
       "village": "Sidomukti",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6261,
+      "longitude": 111.054
     },
     {
       "npsn": "20316580",
@@ -2638,7 +2920,9 @@
       "address": "Ds Sidomukti",
       "village": "Sidomukti",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6274,
+      "longitude": 111.0478
     },
     {
       "npsn": "20316581",
@@ -2646,7 +2930,9 @@
       "address": "Dukuh Nguyangan",
       "village": "Sidoluhur",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.79,
+      "longitude": 111.2419
     },
     {
       "npsn": "20316582",
@@ -2654,7 +2940,9 @@
       "address": "Sidokerto",
       "village": "Sidokerto",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7314,
+      "longitude": 111.0604
     },
     {
       "npsn": "20316584",
@@ -2662,7 +2950,9 @@
       "address": "Jl Sunan Kalijogo No 396",
       "village": "Sidokerto",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7525,
+      "longitude": 111.0343
     },
     {
       "npsn": "20316585",
@@ -2670,7 +2960,9 @@
       "address": "Jl Ki Juru Mertani 18 Pati",
       "village": "Sidoharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7543,
+      "longitude": 111.053
     },
     {
       "npsn": "20316586",
@@ -2678,7 +2970,9 @@
       "address": "DS SIDOARUM",
       "village": "Sidoarum",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7734,
+      "longitude": 111.1003
     },
     {
       "npsn": "20316587",
@@ -2686,7 +2980,9 @@
       "address": "Ds. Serutsadang RT. 04 / RW. 01, Kec. Winong, Kab. Pati",
       "village": "Serutsadang",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7865,
+      "longitude": 111.102
     },
     {
       "npsn": "20316588",
@@ -2694,7 +2990,9 @@
       "address": "Sentul",
       "village": "Sentul",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.555,
+      "longitude": 110.9371
     },
     {
       "npsn": "20316589",
@@ -2702,7 +3000,9 @@
       "address": "Sentul",
       "village": "Sentul",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5571,
+      "longitude": 110.9475
     },
     {
       "npsn": "20316590",
@@ -2710,7 +3010,9 @@
       "address": "Ds.sinomwidodo",
       "village": "Sinomwidodo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8866,
+      "longitude": 111.067
     },
     {
       "npsn": "20316591",
@@ -2718,7 +3020,9 @@
       "address": "Jln Tambakromo - Gunungpanti Km 02",
       "village": "Sinomwidodo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8718,
+      "longitude": 111.0647
     },
     {
       "npsn": "20316592",
@@ -2726,7 +3030,9 @@
       "address": "Ds Soneyan",
       "village": "Soneyan",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6092,
+      "longitude": 111.031
     },
     {
       "npsn": "20316594",
@@ -2734,7 +3040,9 @@
       "address": "Desa Sukopuluhan kecamatan Puncakwangi, 59183",
       "village": "Sokopuluhan",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.815669,
+      "longitude": 111.174383
     },
     {
       "npsn": "20316595",
@@ -2742,7 +3050,9 @@
       "address": "Desa Sokopuluhan Rt.01/03",
       "village": "Sokopuluhan",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8119,
+      "longitude": 111.1717
     },
     {
       "npsn": "20316596",
@@ -2750,7 +3060,9 @@
       "address": "Desa Sokokulon",
       "village": "Sokokulon",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7775,
+      "longitude": 110.9883
     },
     {
       "npsn": "20316597",
@@ -2758,7 +3070,9 @@
       "address": "Ds Sokokulon",
       "village": "Sokokulon",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.786,
+      "longitude": 110.9927
     },
     {
       "npsn": "20316598",
@@ -2766,7 +3080,9 @@
       "address": "Jalan Soko - Koripondriyo Km.1 Desa Soko 2/I",
       "village": "Soko",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.7982,
+      "longitude": 111.0653
     },
     {
       "npsn": "20316599",
@@ -2774,7 +3090,9 @@
       "address": "Slungkep",
       "village": "Slungkep",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8799,
+      "longitude": 110.9854
     },
     {
       "npsn": "20316600",
@@ -2782,7 +3100,9 @@
       "address": "Jln. Ki Rahman, Slungkep",
       "village": "Slungkep",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9125,
+      "longitude": 110.9911
     },
     {
       "npsn": "20316602",
@@ -2790,7 +3110,9 @@
       "address": "Ds Sitirejo Rt 07/ Rw 02",
       "village": "Sitirejo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8737,
+      "longitude": 111.0374
     },
     {
       "npsn": "20316603",
@@ -2798,7 +3120,9 @@
       "address": "Dukuh Pringapus RT 02 RW 3",
       "village": "Sitimulyo",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8682,
+      "longitude": 111.2102
     },
     {
       "npsn": "20316604",
@@ -2806,7 +3130,9 @@
       "address": "DS. Sitimulyo Kec. Pucakwangi Kab. Pati",
       "village": "Sitimulyo",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8682,
+      "longitude": 111.218
     },
     {
       "npsn": "20316605",
@@ -2814,7 +3140,9 @@
       "address": "Jln Ki Ageng Loko Joyo",
       "village": "Sitiluhur",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6594,
+      "longitude": 110.9667
     },
     {
       "npsn": "20316606",
@@ -2822,7 +3150,9 @@
       "address": "Sirahan",
       "village": "Sirahan",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.526925,
+      "longitude": 110.920219
     },
     {
       "npsn": "20316607",
@@ -2830,7 +3160,9 @@
       "address": "Jalan Raya Tayu-Jepara Km 17",
       "village": "Sirahan",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.514,
+      "longitude": 110.9144
     },
     {
       "npsn": "20316608",
@@ -2838,7 +3170,9 @@
       "address": "Sendangsoko",
       "village": "Sendangsoko",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7789,
+      "longitude": 111.0988
     },
     {
       "npsn": "20316610",
@@ -2846,7 +3180,9 @@
       "address": "Jl Pati Kayen Km 9",
       "village": "Tlogoayu",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8268,
+      "longitude": 111.0158
     },
     {
       "npsn": "20316612",
@@ -2854,7 +3190,9 @@
       "address": "Desa Terteg",
       "village": "Terteg",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8194,
+      "longitude": 111.2198
     },
     {
       "npsn": "20316613",
@@ -2862,7 +3200,9 @@
       "address": "Tendas",
       "village": "Tendas",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5486,
+      "longitude": 111.0327
     },
     {
       "npsn": "20316614",
@@ -2870,7 +3210,9 @@
       "address": "Jl.Pucakwangi-Jakenan KM5 Tegalwero",
       "village": "Tegalwero",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8603,
+      "longitude": 111.1655
     },
     {
       "npsn": "20316615",
@@ -2878,7 +3220,9 @@
       "address": "Tegalombo",
       "village": "Tegalombo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4468,
+      "longitude": 110.9937
     },
     {
       "npsn": "20316616",
@@ -2886,7 +3230,9 @@
       "address": "Ds Tegalharjo",
       "village": "Tegalharjo",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6433,
+      "longitude": 111.0277
     },
     {
       "npsn": "20316617",
@@ -2894,7 +3240,9 @@
       "address": "Ds.Tegalharjo",
       "village": "Tegalharjo",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6683,
+      "longitude": 111.0462
     },
     {
       "npsn": "20316618",
@@ -2902,7 +3250,9 @@
       "address": "Jalan Jaken-jakenan Km 3",
       "village": "Tegalarum",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.776,
+      "longitude": 111.2125
     },
     {
       "npsn": "20316619",
@@ -2910,7 +3260,9 @@
       "address": "Ds. Tegalarum",
       "village": "Tegalarum",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6107,
+      "longitude": 111.01
     },
     {
       "npsn": "20316621",
@@ -2918,7 +3270,9 @@
       "address": "Jalan P. Sudirman No. 192",
       "village": "Tayu Kulon",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5419,
+      "longitude": 111.0392
     },
     {
       "npsn": "20316623",
@@ -2926,7 +3280,9 @@
       "address": "Gang Anggrek IV No 18",
       "village": "Tayu Wetan",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5469,
+      "longitude": 111.0427
     },
     {
       "npsn": "20316624",
@@ -2934,7 +3290,9 @@
       "address": "JL. RA KARTINI NO 50 A",
       "village": "Sambiroto",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5384,
+      "longitude": 111.0525
     },
     {
       "npsn": "20316625",
@@ -2942,7 +3300,9 @@
       "address": "Tawangrejo",
       "village": "Tawangrejo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.802,
+      "longitude": 111.0861
     },
     {
       "npsn": "20316626",
@@ -2950,7 +3310,9 @@
       "address": "Tlogomojo",
       "village": "Tlogomojo",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7391,
+      "longitude": 111.1733
     },
     {
       "npsn": "20316627",
@@ -2958,7 +3320,9 @@
       "address": "Tlogorejo RT 05 RW 02",
       "village": "Tlogorejo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7630611,
+      "longitude": 111.105704
     },
     {
       "npsn": "20316628",
@@ -2966,7 +3330,9 @@
       "address": "Ds Sidoharjo",
       "village": "Sidoharjo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6845,
+      "longitude": 111.1026
     },
     {
       "npsn": "20316629",
@@ -2974,7 +3340,9 @@
       "address": "Jl Wijayakusuma",
       "village": "Trangkil",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6608,
+      "longitude": 111.0666
     },
     {
       "npsn": "20316630",
@@ -2982,7 +3350,9 @@
       "address": "Tondomulyo",
       "village": "Tondomulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7678,
+      "longitude": 111.1133
     },
     {
       "npsn": "20316631",
@@ -2990,7 +3360,9 @@
       "address": "Tondokerto",
       "village": "Tondokerto",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7702,
+      "longitude": 111.134
     },
     {
       "npsn": "20316634",
@@ -2998,7 +3370,9 @@
       "address": "Ds. Tompegunung RT. 04 / RW. 01, Kec. Sukolilo, Kab. Pati",
       "village": "Tompegunung",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.936,
+      "longitude": 110.9546
     },
     {
       "npsn": "20316635",
@@ -3006,7 +3380,9 @@
       "address": "Ds Tluwuk",
       "village": "Tluwuk",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6809,
+      "longitude": 111.1158
     },
     {
       "npsn": "20316636",
@@ -3014,7 +3390,9 @@
       "address": "Jl Tembusan Juwana Karang Km 5",
       "village": "Tluwah",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7187,
+      "longitude": 111.1483
     },
     {
       "npsn": "20316637",
@@ -3022,7 +3400,9 @@
       "address": "Jl Raya Juana - Tayu Km 11",
       "village": "Tlutup",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6488,
+      "longitude": 111.0867
     },
     {
       "npsn": "20316638",
@@ -3030,7 +3410,9 @@
       "address": "Desa Tlogorejo RT 002 RW 002",
       "village": "Tlogorejo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7233,
+      "longitude": 111.0181
     },
     {
       "npsn": "20316639",
@@ -3038,7 +3420,9 @@
       "address": "Jl Raya Pati Tlogowungu Km 7",
       "village": "Tlogorejo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7073,
+      "longitude": 111.0143
     },
     {
       "npsn": "20316640",
@@ -3046,7 +3430,9 @@
       "address": "Tlogosari",
       "village": "Tlogosari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6841,
+      "longitude": 111.0245
     },
     {
       "npsn": "20316643",
@@ -3054,7 +3440,9 @@
       "address": "SDN TLOGOREJO",
       "village": "Tlogorejo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8245,
+      "longitude": 111.12
     },
     {
       "npsn": "20316644",
@@ -3062,7 +3450,9 @@
       "address": "DESA TAWANGHARJO",
       "village": "Tawangharjo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7071,
+      "longitude": 111.0827
     },
     {
       "npsn": "20316645",
@@ -3070,7 +3460,9 @@
       "address": "Dk. Pengilon",
       "village": "Tanjungsekar",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8186,
+      "longitude": 111.1557
     },
     {
       "npsn": "20316646",
@@ -3078,7 +3470,9 @@
       "address": "Jl Raya Pati Tayu Km 04",
       "village": "Tambaharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7204,
+      "longitude": 111.0539
     },
     {
       "npsn": "20316647",
@@ -3086,7 +3480,9 @@
       "address": "Ds. Tambaharjo",
       "village": "Tambaharjo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8782,
+      "longitude": 111.0029
     },
     {
       "npsn": "20316648",
@@ -3094,7 +3490,9 @@
       "address": "Tambahagung",
       "village": "Tambahagung",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8622,
+      "longitude": 111.0197
     },
     {
       "npsn": "20316649",
@@ -3102,7 +3500,9 @@
       "address": "Ds Tambahagung 02",
       "village": "Tambahagung",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8621,
+      "longitude": 111.0202
     },
     {
       "npsn": "20316650",
@@ -3110,7 +3510,9 @@
       "address": "Ds.Tambahagung",
       "village": "Tambahagung",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8512,
+      "longitude": 111.027
     },
     {
       "npsn": "20316651",
@@ -3118,7 +3520,9 @@
       "address": "Tamansari",
       "village": "Tamansari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.72,
+      "longitude": 111.0127
     },
     {
       "npsn": "20316652",
@@ -3126,7 +3530,9 @@
       "address": "Jl Raya Pati Tlogowungu Km 5",
       "village": "Tamansari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7191,
+      "longitude": 111.0167
     },
     {
       "npsn": "20316654",
@@ -3134,7 +3540,9 @@
       "address": "Tamansari",
       "village": "Tamansari",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7619802,
+      "longitude": 111.2386023
     },
     {
       "npsn": "20316655",
@@ -3142,7 +3550,9 @@
       "address": "TALUN KAYEN PATI",
       "village": "Talun",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.865,
+      "longitude": 110.9864
     },
     {
       "npsn": "20316656",
@@ -3150,7 +3560,9 @@
       "address": "Ds. Talun Rt 02/03 Kec. Kayen Kab. Pati",
       "village": "Talun",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8661,
+      "longitude": 110.986
     },
     {
       "npsn": "20316657",
@@ -3158,7 +3570,9 @@
       "address": "Ds.Suwatu RT 02 / RW 02",
       "village": "Suwatu",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6306,
+      "longitude": 111.0086
     },
     {
       "npsn": "20316658",
@@ -3166,7 +3580,9 @@
       "address": "Ds Suwaduk",
       "village": "Suwaduk",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6888,
+      "longitude": 111.063
     },
     {
       "npsn": "20316659",
@@ -3174,7 +3590,9 @@
       "address": "DESA SUNGGINGWARNO",
       "village": "Sunggingwarno",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8123,
+      "longitude": 111.0557
     },
     {
       "npsn": "20316670",
@@ -3182,7 +3600,9 @@
       "address": "Ds Sunggingwarno",
       "village": "Sunggingwarno",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8136,
+      "longitude": 111.062
     },
     {
       "npsn": "20316671",
@@ -3190,7 +3610,9 @@
       "address": "Sundoluhur",
       "village": "Sundoluhur",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.85,
+      "longitude": 111.007
     },
     {
       "npsn": "20316672",
@@ -3198,7 +3620,9 @@
       "address": "Jl.Pati- Tayu Km.4",
       "village": "Tambaharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7323,
+      "longitude": 111.0537
     },
     {
       "npsn": "20316673",
@@ -3206,7 +3630,9 @@
       "address": "Tambaharjo",
       "village": "Tambaharjo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8676,
+      "longitude": 111.0656
     },
     {
       "npsn": "20316674",
@@ -3214,7 +3640,9 @@
       "address": "Tajungsari",
       "village": "Tajungsari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6219,
+      "longitude": 110.964
     },
     {
       "npsn": "20316675",
@@ -3222,7 +3650,9 @@
       "address": "Tajungsari",
       "village": "Tajungsari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6431,
+      "longitude": 110.9766
     },
     {
       "npsn": "20316676",
@@ -3230,7 +3660,9 @@
       "address": "TANJUNGSARI",
       "village": "Tanjungsari",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7556,
+      "longitude": 111.1631
     },
     {
       "npsn": "20316679",
@@ -3238,7 +3670,9 @@
       "address": "Desa Tanjungrejo",
       "village": "Tanjungrejo",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6335,
+      "longitude": 111.0433
     },
     {
       "npsn": "20316681",
@@ -3246,7 +3680,9 @@
       "address": "Ds Tanjung Anom",
       "village": "Tanjunganom",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8366,
+      "longitude": 111.0633
     },
     {
       "npsn": "20316682",
@@ -3254,7 +3690,9 @@
       "address": "Jl Gabus Winong Km 1",
       "village": "Tanjunganom",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8334,
+      "longitude": 111.0586
     },
     {
       "npsn": "20316683",
@@ -3262,7 +3700,9 @@
       "address": "Ds Tanjang",
       "village": "Tanjang",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.792,
+      "longitude": 111.0388
     },
     {
       "npsn": "20316685",
@@ -3270,7 +3710,9 @@
       "address": "Tanggel",
       "village": "Tanggel",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7961,
+      "longitude": 111.1125
     },
     {
       "npsn": "20316687",
@@ -3278,7 +3720,9 @@
       "address": "Tambakromo",
       "village": "Tambakromo",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8773,
+      "longitude": 111.0448
     },
     {
       "npsn": "20316688",
@@ -3286,7 +3730,9 @@
       "address": "Tambahsari",
       "village": "Tambahsari",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7263,
+      "longitude": 111.066
     },
     {
       "npsn": "20316689",
@@ -3294,7 +3740,9 @@
       "address": "Jln Jakenan - Winong Km 06",
       "village": "Tambahmulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7742,
+      "longitude": 111.1076
     },
     {
       "npsn": "20316690",
@@ -3302,7 +3750,9 @@
       "address": "Desa Tambahmulyo",
       "village": "Tambahmulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7717,
+      "longitude": 111.1077
     },
     {
       "npsn": "20316993",
@@ -3310,7 +3760,9 @@
       "address": "Dumpil",
       "village": "Dumpil",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.5034,
+      "longitude": 111.0212
     },
     {
       "npsn": "20316994",
@@ -3318,7 +3770,9 @@
       "address": "Cabak",
       "village": "Cabak",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6287,
+      "longitude": 110.994
     },
     {
       "npsn": "20316995",
@@ -3326,7 +3780,9 @@
       "address": "Ds. Bungasrejo Rt. 1 Rw. II",
       "village": "Bungasrejo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7462,
+      "longitude": 111.1288
     },
     {
       "npsn": "20316996",
@@ -3334,7 +3790,9 @@
       "address": "Ds Bumirejo",
       "village": "Bumirejo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7941,
+      "longitude": 110.98
     },
     {
       "npsn": "20316997",
@@ -3342,7 +3800,9 @@
       "address": "Jl.pencikan",
       "village": "Bumirejo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.702,
+      "longitude": 111.151
     },
     {
       "npsn": "20317001",
@@ -3350,7 +3810,9 @@
       "address": "Bumiharjo",
       "village": "Bumiharjo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.791,
+      "longitude": 111.0989
     },
     {
       "npsn": "20317002",
@@ -3358,7 +3820,9 @@
       "address": "Bumiharjo",
       "village": "Bumiharjo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7958,
+      "longitude": 111.099
     },
     {
       "npsn": "20317003",
@@ -3366,7 +3830,9 @@
       "address": "Jl Bapoh - Tlogowungu Km 0,5",
       "village": "Bumiayu",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7107,
+      "longitude": 111.0542
     },
     {
       "npsn": "20317005",
@@ -3374,7 +3840,9 @@
       "address": "Bulumulyo",
       "village": "Bulumulyo",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7335,
+      "longitude": 111.1999
     },
     {
       "npsn": "20317006",
@@ -3382,7 +3850,9 @@
       "address": "Ds Bulumanis Lor",
       "village": "Bulumanis Lor",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6058,
+      "longitude": 111.0689
     },
     {
       "npsn": "20317007",
@@ -3390,7 +3860,9 @@
       "address": "Ds Bulumanis Kidul",
       "village": "Bulumanis Kidul",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6116,
+      "longitude": 111.0717
     },
     {
       "npsn": "20317008",
@@ -3398,7 +3870,9 @@
       "address": "Ds. Bringinwareng Rt 4 Rw 1",
       "village": "Bringinwareng",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7908,
+      "longitude": 111.0703
     },
     {
       "npsn": "20317009",
@@ -3406,7 +3880,9 @@
       "address": "Jl.juwana-Jakenan km 5",
       "village": "Bringin",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6864,
+      "longitude": 111.1561
     },
     {
       "npsn": "20317011",
@@ -3414,7 +3890,9 @@
       "address": "Pedak - Brati",
       "village": "Brati",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.929,
+      "longitude": 111.0333
     },
     {
       "npsn": "20317014",
@@ -3422,7 +3900,9 @@
       "address": "Desa Cabak RT 02 RW 04",
       "village": "Cabak",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6772,
+      "longitude": 110.9825
     },
     {
       "npsn": "20317015",
@@ -3430,7 +3910,9 @@
       "address": "Jl.Mangkudipuro",
       "village": "Dukutalit",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7063,
+      "longitude": 111.136
     },
     {
       "npsn": "20317016",
@@ -3438,7 +3920,9 @@
       "address": "Jl. Tayu Utara Km.02",
       "village": "Dukutalit",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7096,
+      "longitude": 111.1313
     },
     {
       "npsn": "20317018",
@@ -3446,7 +3930,9 @@
       "address": "Dororejo",
       "village": "Dororejo",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5345,
+      "longitude": 111.0527
     },
     {
       "npsn": "20317019",
@@ -3454,7 +3940,9 @@
       "address": "Jln. MAKAM DOROPAYUNG",
       "village": "Doropayung",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7229,
+      "longitude": 111.1444
     },
     {
       "npsn": "20317020",
@@ -3462,7 +3950,9 @@
       "address": "Jl. Alon-alun No 1a",
       "village": "Doropayung",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6809,
+      "longitude": 111.1466
     },
     {
       "npsn": "20317022",
@@ -3470,7 +3960,9 @@
       "address": "Jl Ki Juru Mertani No.53",
       "village": "Dengkek",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7576,
+      "longitude": 111.0551
     },
     {
       "npsn": "20317023",
@@ -3478,7 +3970,9 @@
       "address": "Degan",
       "village": "Degan",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7789,
+      "longitude": 111.0823
     },
     {
       "npsn": "20317025",
@@ -3486,7 +3980,9 @@
       "address": "Dadirejo",
       "village": "Dadirejo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7685,
+      "longitude": 111.0284
     },
     {
       "npsn": "20317027",
@@ -3494,7 +3990,9 @@
       "address": "Ds Cengkalsewu",
       "village": "Cengkalsewu",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9094,
+      "longitude": 110.9631
     },
     {
       "npsn": "20317029",
@@ -3502,7 +4000,9 @@
       "address": "Jl Kyai Cebolang No 1",
       "village": "Cebolek Kidul",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6065,
+      "longitude": 111.0654
     },
     {
       "npsn": "20317030",
@@ -3510,7 +4010,9 @@
       "address": "Jl Ki Cebolang",
       "village": "Cebolek Kidul",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.5985,
+      "longitude": 111.0663
     },
     {
       "npsn": "20317031",
@@ -3518,7 +4020,9 @@
       "address": "Boto",
       "village": "Boto",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.8083,
+      "longitude": 111.1934
     },
     {
       "npsn": "20317032",
@@ -3526,7 +4030,9 @@
       "address": "Ds. Boloagung RT. 17 RW. 03",
       "village": "Boloagung",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9049,
+      "longitude": 110.9959
     },
     {
       "npsn": "20317033",
@@ -3534,7 +4040,9 @@
       "address": "Dk. Bantengurip",
       "village": "Kedungwinong",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9537,
+      "longitude": 110.8901
     },
     {
       "npsn": "20317034",
@@ -3542,7 +4050,9 @@
       "address": "DESA BANJARSARI",
       "village": "Banjarsari",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.774,
+      "longitude": 111.0575
     },
     {
       "npsn": "20317035",
@@ -3550,7 +4060,9 @@
       "address": "Jl Pati Gabus Km 3",
       "village": "Banjarsari",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.7785,
+      "longitude": 111.0555
     },
     {
       "npsn": "20317038",
@@ -3558,7 +4070,9 @@
       "address": "Ds Bangsalrejo Jl Wedarijaksa-juana Kms",
       "village": "Bangsalrejo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7004,
+      "longitude": 111.1094
     },
     {
       "npsn": "20317039",
@@ -3566,7 +4080,9 @@
       "address": "Desa Bancak RT. 04 RW. 01 Kec. Gunungwungkal",
       "village": "Bancak",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5705,
+      "longitude": 110.9845
     },
     {
       "npsn": "20317041",
@@ -3574,7 +4090,9 @@
       "address": "Baleadi",
       "village": "Baleadi",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9326,
+      "longitude": 110.8864
     },
     {
       "npsn": "20317042",
@@ -3582,7 +4100,9 @@
       "address": "Jl.kh Dewantoro",
       "village": "Bakaran Wetan",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.703,
+      "longitude": 111.1321
     },
     {
       "npsn": "20317044",
@@ -3590,7 +4110,9 @@
       "address": "Ds Bakaran Wetan",
       "village": "Bakaran Wetan",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6813,
+      "longitude": 111.1304
     },
     {
       "npsn": "20317045",
@@ -3598,7 +4120,9 @@
       "address": "Desa Bakaran Kulon",
       "village": "Bakaran Kulon",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7072,
+      "longitude": 111.1245
     },
     {
       "npsn": "20317047",
@@ -3606,7 +4130,9 @@
       "address": "Jl.siswa No.11",
       "village": "Bakaran Kulon",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.706,
+      "longitude": 111.1288
     },
     {
       "npsn": "20317048",
@@ -3614,7 +4140,9 @@
       "address": "Jl. Hang Tuah No.6",
       "village": "Bajomulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7105985,
+      "longitude": 111.1506409
     },
     {
       "npsn": "20317050",
@@ -3622,7 +4150,9 @@
       "address": "Bakalan",
       "village": "Bakalan",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.5026,
+      "longitude": 111.0406
     },
     {
       "npsn": "20317051",
@@ -3630,7 +4160,9 @@
       "address": "Jln. Kayen - Pati Km. 13",
       "village": "Boloagung",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8595,
+      "longitude": 111.003
     },
     {
       "npsn": "20317052",
@@ -3638,7 +4170,9 @@
       "address": "Desa Bogotanjung",
       "village": "Bogotanjung",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8403,
+      "longitude": 111.0246
     },
     {
       "npsn": "20317053",
@@ -3646,7 +4180,9 @@
       "address": "Jl. Pucakwangi-Winong",
       "village": "Bodeh",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8365,
+      "longitude": 111.1302
     },
     {
       "npsn": "20317054",
@@ -3654,7 +4190,9 @@
       "address": "Blingijati",
       "village": "Blingijati",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8282,
+      "longitude": 111.0884
     },
     {
       "npsn": "20317055",
@@ -3662,7 +4200,9 @@
       "address": "Bleber",
       "village": "Bleber",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5239,
+      "longitude": 110.957
     },
     {
       "npsn": "20317056",
@@ -3670,7 +4210,9 @@
       "address": "Jl Mr Iskandar Gang 3 Pati",
       "village": "Blaru",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7617,
+      "longitude": 111.0405
     },
     {
       "npsn": "20317057",
@@ -3678,7 +4220,9 @@
       "address": "Ds Bermi",
       "village": "Bermi",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7235,
+      "longitude": 110.9501
     },
     {
       "npsn": "20317059",
@@ -3686,7 +4230,9 @@
       "address": "Bendokaton Kidul",
       "village": "Bendokaton Kidul",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5406,
+      "longitude": 111.0048
     },
     {
       "npsn": "20317060",
@@ -3694,7 +4240,9 @@
       "address": "Jl. Raya Juwana Rembang Km2",
       "village": "Bendar",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6941,
+      "longitude": 111.1568
     },
     {
       "npsn": "20317063",
@@ -3702,7 +4250,9 @@
       "address": "Batursari",
       "village": "Batursari",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7082,
+      "longitude": 111.2284
     },
     {
       "npsn": "20317064",
@@ -3710,7 +4260,9 @@
       "address": "Baturejo",
       "village": "Baturejo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9186,
+      "longitude": 110.9159
     },
     {
       "npsn": "20317065",
@@ -3718,7 +4270,9 @@
       "address": "Dk. Ronggo, Rt. 01 Rw. 1",
       "village": "Baturejo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9191,
+      "longitude": 110.9108
     },
     {
       "npsn": "20317066",
@@ -3726,7 +4280,9 @@
       "address": "Ds Baturejo",
       "village": "Baturejo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.931,
+      "longitude": 110.911
     },
     {
       "npsn": "20317067",
@@ -3734,7 +4290,9 @@
       "address": "Ds Bageng Rt 2/3",
       "village": "Bageng",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6898,
+      "longitude": 110.9406
     },
     {
       "npsn": "20317068",
@@ -3742,7 +4300,9 @@
       "address": "Jongso",
       "village": "Wotan",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.8731,
+      "longitude": 110.8891
     },
     {
       "npsn": "20317070",
@@ -3750,7 +4310,9 @@
       "address": "Jln. Jakenan - Jaken . Km 01, Jakenan",
       "village": "Jakenan",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7614,
+      "longitude": 111.166
     },
     {
       "npsn": "20317071",
@@ -3758,7 +4320,9 @@
       "address": "Brati",
       "village": "Brati",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9073,
+      "longitude": 111.0273
     },
     {
       "npsn": "20317072",
@@ -3766,7 +4330,9 @@
       "address": "Guyangan Rt 02 Rw 01",
       "village": "Guyangan",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8634,
+      "longitude": 111.1217
     },
     {
       "npsn": "20317073",
@@ -3774,7 +4340,9 @@
       "address": "Guyangan Jl Juana Tayu Km 9",
       "village": "Guyangan",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6582,
+      "longitude": 111.0962
     },
     {
       "npsn": "20317074",
@@ -3782,7 +4350,9 @@
       "address": "Jl. Raya Gunungwungkal - Tlogowungu Km 1",
       "village": "Gunungwungkal",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5701,
+      "longitude": 110.9878
     },
     {
       "npsn": "20317076",
@@ -3790,7 +4360,9 @@
       "address": "Gunungsari",
       "village": "Gunungsari",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7311,
+      "longitude": 111.2313
     },
     {
       "npsn": "20317077",
@@ -3798,7 +4370,9 @@
       "address": "Gunungpanti",
       "village": "Gunungpanti",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8658,
+      "longitude": 111.1011
     },
     {
       "npsn": "20317078",
@@ -3806,7 +4380,9 @@
       "address": "Gunungpanti",
       "village": "Gunungpanti",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8745,
+      "longitude": 111.0788
     },
     {
       "npsn": "20317079",
@@ -3814,7 +4390,9 @@
       "address": "Gulangpongge RT 02 /RW 01",
       "village": "Gulangpongge",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5794,
+      "longitude": 110.9587
     },
     {
       "npsn": "20317080",
@@ -3822,7 +4400,9 @@
       "address": "Ds. Gulangpongge Rt.07/Rw.02 Kec. Gunungwungkal Kab. Pati Prov. Jawa Tengah",
       "village": "Gulangpongge",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5736,
+      "longitude": 110.9659
     },
     {
       "npsn": "20317082",
@@ -3830,7 +4410,9 @@
       "address": "Jl. Ki Hajar Dewantoro",
       "village": "Growong Lor",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7183,
+      "longitude": 111.1432
     },
     {
       "npsn": "20317083",
@@ -3838,7 +4420,9 @@
       "address": "Jl.ki Hajar Dewantara No.607",
       "village": "Growong Kidul",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7079,
+      "longitude": 111.1404
     },
     {
       "npsn": "20317084",
@@ -3846,7 +4430,9 @@
       "address": "Ds Grogolsari",
       "village": "Grogolsari",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8038,
+      "longitude": 111.1248
     },
     {
       "npsn": "20317085",
@@ -3854,7 +4440,9 @@
       "address": "Ds Jambean Kidul",
       "village": "Jambean Kidul",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7781,
+      "longitude": 110.9836
     },
     {
       "npsn": "20317088",
@@ -3862,7 +4450,9 @@
       "address": "PTPN IX Kebun Jollong",
       "village": "Sitiluhur",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6535,
+      "longitude": 110.9339
     },
     {
       "npsn": "20317090",
@@ -3870,7 +4460,9 @@
       "address": "DESA JIMBARAN RT. 01 RW. II",
       "village": "Jimbaran",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7433,
+      "longitude": 110.9925
     },
     {
       "npsn": "20317091",
@@ -3878,7 +4470,9 @@
       "address": "Jln. Juwana - Wedarijaksa km 7",
       "village": "Jetak",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6816,
+      "longitude": 111.0951
     },
     {
       "npsn": "20317092",
@@ -3886,7 +4480,9 @@
       "address": "Jl. Jolotundo Desa Jepuro",
       "village": "Jepuro",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7295,
+      "longitude": 111.1456
     },
     {
       "npsn": "20317093",
@@ -3894,7 +4490,9 @@
       "address": "Jepatlor",
       "village": "Jepat Lor",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5789,
+      "longitude": 111.0512
     },
     {
       "npsn": "20317095",
@@ -3902,7 +4500,9 @@
       "address": "Pati",
       "village": "Banyuurip",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7469,
+      "longitude": 110.981
     },
     {
       "npsn": "20317096",
@@ -3910,7 +4510,9 @@
       "address": "Desa Jembulwunut RT. 01 RW. 01",
       "village": "Jembulwunut",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5458,
+      "longitude": 110.9978
     },
     {
       "npsn": "20317098",
@@ -3918,7 +4520,9 @@
       "address": "Sumbermulyo",
       "village": "Sumbermulyo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6635,
+      "longitude": 111.0025
     },
     {
       "npsn": "20317099",
@@ -3926,7 +4530,9 @@
       "address": "Desa Jatisari",
       "village": "Jatisari",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7893,
+      "longitude": 111.1632
     },
     {
       "npsn": "20317100",
@@ -3934,7 +4540,9 @@
       "address": "Jatiroto",
       "village": "Jatiroto",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9289,
+      "longitude": 110.9978
     },
     {
       "npsn": "20317101",
@@ -3942,7 +4550,9 @@
       "address": "Jatiroto",
       "village": "Jatiroto",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8872,
+      "longitude": 111.008
     },
     {
       "npsn": "20317102",
@@ -3950,7 +4560,9 @@
       "address": "Jl Wedarijaksa-jetak Km 02",
       "village": "Jatimulyo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6814,
+      "longitude": 111.0907
     },
     {
       "npsn": "20317103",
@@ -3958,7 +4570,9 @@
       "address": "Desa Grogolan Kec, Dukuhseti Kab. Pati",
       "village": "Grogolan",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4861,
+      "longitude": 111.0224
     },
     {
       "npsn": "20317104",
@@ -3966,7 +4580,9 @@
       "address": "DUSUN GODONGAN",
       "village": "Wegil",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9219,
+      "longitude": 110.8532
     },
     {
       "npsn": "20317105",
@@ -3974,7 +4590,9 @@
       "address": "Jalan Raya Pati-Gembong Km. 12",
       "village": "Gembong",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7359,
+      "longitude": 110.9556
     },
     {
       "npsn": "20317106",
@@ -3982,7 +4600,9 @@
       "address": "Ds Gembong Rt 2/6",
       "village": "Gembong",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6926,
+      "longitude": 110.9416
     },
     {
       "npsn": "20317108",
@@ -3990,7 +4610,9 @@
       "address": "Ds Gembong",
       "village": "Gembong",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7051,
+      "longitude": 110.9447
     },
     {
       "npsn": "20317109",
@@ -3998,7 +4620,9 @@
       "address": "Dukuh Gelur",
       "village": "Tompegunung",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.956,
+      "longitude": 110.9714
     },
     {
       "npsn": "20317110",
@@ -4006,7 +4630,9 @@
       "address": "DESA GEBANG RT.03 RW.02",
       "village": "Gebang",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8078,
+      "longitude": 111.0301
     },
     {
       "npsn": "20317112",
@@ -4014,7 +4640,9 @@
       "address": "Galiran Rt 02 Rw 09",
       "village": "Baleadi",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9126,
+      "longitude": 110.8555
     },
     {
       "npsn": "20317113",
@@ -4022,7 +4650,9 @@
       "address": "Gajihan RT 06 RW 02",
       "village": "Gajihan",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5871,
+      "longitude": 111.0071
     },
     {
       "npsn": "20317114",
@@ -4030,7 +4660,9 @@
       "address": "Jl Kiai Pupus No 85",
       "village": "Gajahmati",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7611,
+      "longitude": 111.0446
     },
     {
       "npsn": "20317115",
@@ -4038,7 +4670,9 @@
       "address": "Desa Gajahkumpul",
       "village": "Gajahkumpul",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7082,
+      "longitude": 111.2387
     },
     {
       "npsn": "20317116",
@@ -4046,7 +4680,9 @@
       "address": "Gadudero",
       "village": "Gadudero",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9254,
+      "longitude": 110.9369
     },
     {
       "npsn": "20317117",
@@ -4054,7 +4690,9 @@
       "address": "Gadu ,Rt.03,RW.02",
       "village": "Gadu",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5957,
+      "longitude": 111.0061
     },
     {
       "npsn": "20317118",
@@ -4062,7 +4700,9 @@
       "address": "Jalan Raya Juwana - Pati Km.4",
       "village": "Gadingrejo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7296,
+      "longitude": 111.1048
     },
     {
       "npsn": "20317121",
@@ -4070,7 +4710,9 @@
       "address": "Durensawit",
       "village": "Durensawit",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9192,
+      "longitude": 110.9885
     },
     {
       "npsn": "20317124",
@@ -4078,7 +4720,9 @@
       "address": "Jl Pati Gabus Km 5",
       "village": "Gempolsari",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8278,
+      "longitude": 111.0367
     },
     {
       "npsn": "20317126",
@@ -4086,7 +4730,9 @@
       "address": "Dukuh Selowire",
       "village": "Godo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.9014,
+      "longitude": 111.1024
     },
     {
       "npsn": "20317127",
@@ -4094,7 +4740,9 @@
       "address": "Jl Godo - Kropak",
       "village": "Godo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8745,
+      "longitude": 111.087
     },
     {
       "npsn": "20317128",
@@ -4102,7 +4750,9 @@
       "address": "Glonggong",
       "village": "Glonggong",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7586,
+      "longitude": 111.1235
     },
     {
       "npsn": "20317129",
@@ -4110,7 +4760,9 @@
       "address": "Desa Giling RT 03 RW 04",
       "village": "Giling",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5693,
+      "longitude": 110.9574
     },
     {
       "npsn": "20317130",
@@ -4118,7 +4770,9 @@
       "address": "Desa Giling Kecamatan Gunung Wungkal",
       "village": "Giling",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5576,
+      "longitude": 110.9648
     },
     {
       "npsn": "20317131",
@@ -4126,7 +4780,9 @@
       "address": "Desa Giling Rt 04 Rw 01",
       "village": "Giling",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5842,
+      "longitude": 110.9661
     },
     {
       "npsn": "20317132",
@@ -4134,7 +4790,9 @@
       "address": "Gesengan",
       "village": "Gesengan",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5392,
+      "longitude": 110.9326
     },
     {
       "npsn": "20317133",
@@ -4142,7 +4800,9 @@
       "address": "Gesengan Rt 02 Rw 02",
       "village": "Gesengan",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5284,
+      "longitude": 110.9851
     },
     {
       "npsn": "20317134",
@@ -4150,7 +4810,9 @@
       "address": "Jln Raya Pati - Juwana Km 2",
       "village": "Geritan",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7511,
+      "longitude": 111.0581
     },
     {
       "npsn": "20317135",
@@ -4158,7 +4820,9 @@
       "address": "Jalan Ngablak - Puncel Km. 03",
       "village": "Gerit",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5235,
+      "longitude": 110.9711
     },
     {
       "npsn": "20317136",
@@ -4166,7 +4830,9 @@
       "address": "Dk. Toyong Rt 06 Rw 01",
       "village": "Gerit",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5125,
+      "longitude": 110.9414
     },
     {
       "npsn": "20317137",
@@ -4174,7 +4840,9 @@
       "address": "Jl. Lapangan Trigunting",
       "village": "Genengmulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6868,
+      "longitude": 111.1226
     },
     {
       "npsn": "20317138",
@@ -4182,7 +4850,9 @@
       "address": "Jl Senawi",
       "village": "Genengmulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6865,
+      "longitude": 111.1213
     },
     {
       "npsn": "20317139",
@@ -4190,7 +4860,9 @@
       "address": "Trikoyo",
       "village": "Trikoyo",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7984,
+      "longitude": 111.1911
     },
     {
       "npsn": "20317141",
@@ -4198,7 +4870,9 @@
       "address": "Ciroto, Durensawit",
       "village": "Durensawit",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9648,
+      "longitude": 110.987
     },
     {
       "npsn": "20317142",
@@ -4206,7 +4880,9 @@
       "address": "Jl Tayu Juwana Km 7 Rt 1/2",
       "village": "Margoyoso",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.5912,
+      "longitude": 111.0667
     },
     {
       "npsn": "20317161",
@@ -4214,7 +4890,9 @@
       "address": "Jl Kamandowo Gang Sunan Kalijaga No 87",
       "village": "Pati Kidul",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7539,
+      "longitude": 111.0371
     },
     {
       "npsn": "20317162",
@@ -4222,7 +4900,9 @@
       "address": "Jln Raya Pati Tayu Km 04",
       "village": "Tambaharjo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7142,
+      "longitude": 111.0553
     },
     {
       "npsn": "20317163",
@@ -4230,7 +4910,9 @@
       "address": "Margorejo",
       "village": "Tegalombo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4431,
+      "longitude": 110.9948
     },
     {
       "npsn": "20317165",
@@ -4238,7 +4920,9 @@
       "address": "Jl. Soewondo No.1 Sekarkurung",
       "village": "Muktiharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7425,
+      "longitude": 111.0176
     },
     {
       "npsn": "20317214",
@@ -4246,7 +4930,9 @@
       "address": "Bageng",
       "village": "Bageng",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6962,
+      "longitude": 110.9447
     },
     {
       "npsn": "20317215",
@@ -4254,7 +4940,9 @@
       "address": "Bulungan",
       "village": "Bulungan",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5263,
+      "longitude": 111.019
     },
     {
       "npsn": "20317216",
@@ -4262,7 +4950,9 @@
       "address": "Jln Kayen-karangasem Km 9",
       "village": "Beketel",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9569,
+      "longitude": 111.0117
     },
     {
       "npsn": "20317217",
@@ -4270,7 +4960,9 @@
       "address": "Jalan Wijaya Kusuma",
       "village": "Trangkil",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6618,
+      "longitude": 111.0667
     },
     {
       "npsn": "20317218",
@@ -4278,7 +4970,9 @@
       "address": "Jln Nusa Indah 02",
       "village": "Trangkil",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6687,
+      "longitude": 111.0738
     },
     {
       "npsn": "20317219",
@@ -4286,7 +4980,9 @@
       "address": "Dukuh Tawangrejo Rt 07 Rw 03",
       "village": "Tegalombo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4241,
+      "longitude": 110.994
     },
     {
       "npsn": "20317220",
@@ -4294,7 +4990,9 @@
       "address": "Tegalombo",
       "village": "Tegalombo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4909,
+      "longitude": 111.0034
     },
     {
       "npsn": "20317221",
@@ -4302,7 +5000,9 @@
       "address": "Jl Gabus Tambakromo, Km.0",
       "village": "Gabus",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.806,
+      "longitude": 111.052
     },
     {
       "npsn": "20317223",
@@ -4310,7 +5010,9 @@
       "address": "Selempung",
       "village": "Dukuhseti",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4435,
+      "longitude": 111.0329
     },
     {
       "npsn": "20317225",
@@ -4318,7 +5020,9 @@
       "address": "Puncel",
       "village": "Puncel",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.482,
+      "longitude": 110.9833
     },
     {
       "npsn": "20317226",
@@ -4326,7 +5030,9 @@
       "address": "Jln. Kandangan Kembang",
       "village": "Kembang",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4287,
+      "longitude": 111.0076
     },
     {
       "npsn": "20317227",
@@ -4334,7 +5040,9 @@
       "address": "Ds. Guwo RT. 02 RW. 02",
       "village": "Guwo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6839,
+      "longitude": 110.9828
     },
     {
       "npsn": "20317228",
@@ -4342,7 +5050,9 @@
       "address": "Jl. Desa Dukuhseti",
       "village": "Dukuhseti",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4617973,
+      "longitude": 111.0287333
     },
     {
       "npsn": "20317230",
@@ -4350,7 +5060,9 @@
       "address": "Ds.Tlogoharum",
       "village": "Tlogoharum",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6714,
+      "longitude": 111.1067
     },
     {
       "npsn": "20317231",
@@ -4358,7 +5070,9 @@
       "address": "Jln. Jakenan - Winong . Km 3",
       "village": "Sembaturagung",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7585,
+      "longitude": 111.1358
     },
     {
       "npsn": "20317233",
@@ -4366,7 +5080,9 @@
       "address": "Desa Wateshaji, RT 2 RW I",
       "village": "Wateshaji",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.9157,
+      "longitude": 111.1321
     },
     {
       "npsn": "20317235",
@@ -4374,7 +5090,9 @@
       "address": "Jl Raya Pati Kudus Km 4",
       "village": "Badegan",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7641,
+      "longitude": 111.0037
     },
     {
       "npsn": "20317236",
@@ -4382,7 +5100,9 @@
       "address": "Desa Babalan",
       "village": "Babalan",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.7964,
+      "longitude": 111.0479
     },
     {
       "npsn": "20317237",
@@ -4390,7 +5110,9 @@
       "address": "Asempapan",
       "village": "Asempapan",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6674,
+      "longitude": 111.1021
     },
     {
       "npsn": "20317240",
@@ -4398,7 +5120,9 @@
       "address": "Angkatankidul",
       "village": "Angkatan Kidul",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8558,
+      "longitude": 111.0637
     },
     {
       "npsn": "20317242",
@@ -4406,7 +5130,9 @@
       "address": "Jl Turonggo No 173a",
       "village": "Agungmulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.6926,
+      "longitude": 111.1283
     },
     {
       "npsn": "20317243",
@@ -4414,7 +5140,9 @@
       "address": "JL. KI BAGUS KUNCUNG",
       "village": "Jatiroto",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8959,
+      "longitude": 111.0103
     },
     {
       "npsn": "20317244",
@@ -4422,7 +5150,9 @@
       "address": "Jl. Pati-Tayu KM 9 Wedarijaksa",
       "village": "Wedarijaksa",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6881,
+      "longitude": 111.0725
     },
     {
       "npsn": "20317245",
@@ -4430,7 +5160,9 @@
       "address": "Ds Sukoharjo",
       "village": "Sukoharjo",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6987,
+      "longitude": 111.0676
     },
     {
       "npsn": "20317247",
@@ -4438,7 +5170,9 @@
       "address": "Jl.Kayen-Tambakromo Km.01",
       "village": "Jatiroto",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.922,
+      "longitude": 110.9973
     },
     {
       "npsn": "20317248",
@@ -4446,7 +5180,9 @@
       "address": "Desa Karanglegi RT. 02 RW. 01 Kec. Trangkil Kab. Pati",
       "village": "Karanglegi",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6586,
+      "longitude": 111.072
     },
     {
       "npsn": "20317249",
@@ -4454,7 +5190,9 @@
       "address": "Gadu",
       "village": "Gadu",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5954,
+      "longitude": 111.0149
     },
     {
       "npsn": "20317250",
@@ -4462,7 +5200,9 @@
       "address": "Ds Bumiayu",
       "village": "Bumiayu",
       "level": "sd",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7034,
+      "longitude": 111.0589
     },
     {
       "npsn": "20317251",
@@ -4470,7 +5210,9 @@
       "address": "Jl. Raya Pati-Kayen KM.14",
       "village": "Rogomulyo",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8698,
+      "longitude": 110.9978
     },
     {
       "npsn": "20317252",
@@ -4478,7 +5220,9 @@
       "address": "Jl. Tayu-Juana Km. 3 Margomulyo",
       "village": "Margomulyo",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5619,
+      "longitude": 111.0598
     },
     {
       "npsn": "20317253",
@@ -4486,7 +5230,9 @@
       "address": "Dk. PENGGUNG RT 7 RW 6",
       "village": "Ngagel",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4987,
+      "longitude": 111.0276
     },
     {
       "npsn": "20317254",
@@ -4494,7 +5240,9 @@
       "address": "JL. PASUCEN - LAHAR Km. 1",
       "village": "Pasucen",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6593,
+      "longitude": 111.059
     },
     {
       "npsn": "20317255",
@@ -4502,7 +5250,9 @@
       "address": "Jl Raya Juwana-tayu Km 10",
       "village": "Kertomulyo",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6509,
+      "longitude": 111.0735
     },
     {
       "npsn": "20317256",
@@ -4510,7 +5260,9 @@
       "address": "Jl.Raya Tayu - Puncel Km 12",
       "village": "Kembang",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.44,
+      "longitude": 111.0117
     },
     {
       "npsn": "20317257",
@@ -4518,7 +5270,9 @@
       "address": "Jimbaran",
       "village": "Jimbaran",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9123,
+      "longitude": 110.9713
     },
     {
       "npsn": "20317259",
@@ -4526,7 +5280,9 @@
       "address": "Jl Gabus Tlogoayu",
       "village": "Gabus",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8357,
+      "longitude": 111.052
     },
     {
       "npsn": "20317260",
@@ -4534,7 +5290,9 @@
       "address": "Jln. Tayu - Puncel Km.10, Dukuhseti",
       "village": "Dukuhseti",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4609,
+      "longitude": 111.0334
     },
     {
       "npsn": "20317261",
@@ -4542,7 +5300,9 @@
       "address": "Bumimulyo",
       "village": "Bumimulyo",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7098,
+      "longitude": 111.2023
     },
     {
       "npsn": "20317262",
@@ -4550,7 +5310,9 @@
       "address": "Jln. Tayu - Puncel. Km 7 Dukuhseti",
       "village": "Alasdowo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4611,
+      "longitude": 111.0389
     },
     {
       "npsn": "20317265",
@@ -4558,7 +5320,9 @@
       "address": "Jl. Sunan Ngerang No. 234 RT 1 RW 2",
       "village": "Kudukeras",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.713,
+      "longitude": 111.1488
     },
     {
       "npsn": "20317266",
@@ -4566,7 +5330,9 @@
       "address": "Jln. Tayu Juwana Km 3.5",
       "village": "Margomulyo",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5373,
+      "longitude": 111.0602
     },
     {
       "npsn": "20317267",
@@ -4574,7 +5340,9 @@
       "address": "Jln Panglima Sudirman No 152 Pati",
       "village": "Pati Kidul",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7533,
+      "longitude": 111.0381
     },
     {
       "npsn": "20317268",
@@ -4582,7 +5350,9 @@
       "address": "JL. P. SUDIRMAN NO 152 PATI",
       "village": "Pati Kidul",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7533,
+      "longitude": 111.038
     },
     {
       "npsn": "20317269",
@@ -4590,7 +5360,9 @@
       "address": "Jl.KH Abdul Rozak No. 221Pondowan Kecamatan Tayu",
       "village": "Pondowan",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.553,
+      "longitude": 111.0343
     },
     {
       "npsn": "20317274",
@@ -4598,7 +5370,9 @@
       "address": "DS. KALIMULYO Rt.04 Rw.01 KEC.JAKENAN KAB.PATI",
       "village": "Kalimulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7511,
+      "longitude": 111.1171
     },
     {
       "npsn": "20317276",
@@ -4606,7 +5380,9 @@
       "address": "Jepatkidul",
       "village": "Jepat Kidul",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5572,
+      "longitude": 111.0505
     },
     {
       "npsn": "20317277",
@@ -4614,7 +5390,9 @@
       "address": "Grogolan RT.01/II",
       "village": "Grogolan",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4881,
+      "longitude": 111.0264
     },
     {
       "npsn": "20317278",
@@ -4622,7 +5400,9 @@
       "address": "Jln. Tayu - Puncel Km 10, Dukuhseti",
       "village": "Dukuhseti",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4562,
+      "longitude": 111.0316
     },
     {
       "npsn": "20317279",
@@ -4630,7 +5410,9 @@
       "address": "Jln. Jakenan-Juwana Km 1,5",
       "village": "Dukuhmulyo",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.752,
+      "longitude": 111.1554
     },
     {
       "npsn": "20317280",
@@ -4638,7 +5420,9 @@
       "address": "Desa Bogotanjung",
       "village": "Bogotanjung",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8401,
+      "longitude": 111.0241
     },
     {
       "npsn": "20317281",
@@ -4646,7 +5430,9 @@
       "address": "Sidoluhur",
       "village": "Sidoluhur",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7996,
+      "longitude": 111.2418
     },
     {
       "npsn": "20317283",
@@ -4654,7 +5440,9 @@
       "address": "Jl Nusa Indah",
       "village": "Trangkil",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6639,
+      "longitude": 111.0773
     },
     {
       "npsn": "20317286",
@@ -4662,7 +5450,9 @@
       "address": "Banyutowo",
       "village": "Banyutowo",
       "level": "sd",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4589,
+      "longitude": 111.0462
     },
     {
       "npsn": "20317287",
@@ -4670,7 +5460,9 @@
       "address": "Ds Bumirejo",
       "village": "Bumirejo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7659,
+      "longitude": 110.988
     },
     {
       "npsn": "20330135",
@@ -4678,7 +5470,9 @@
       "address": "Jl. Juwana - Jakenan Km. 3 Juwana",
       "village": "Pekuwon",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7212,
+      "longitude": 111.1565
     },
     {
       "npsn": "20330927",
@@ -4686,7 +5480,9 @@
       "address": "Jl. P. Diponegoro No. 155 Pati",
       "village": "Parenggan",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7488,
+      "longitude": 111.0439
     },
     {
       "npsn": "20330928",
@@ -4694,7 +5490,9 @@
       "address": "Jl Banyuurip Km 7",
       "village": "Banyuurip",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7355,
+      "longitude": 110.986
     },
     {
       "npsn": "20330930",
@@ -4702,7 +5500,9 @@
       "address": "Jembangan",
       "village": "Jembangan",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7108,
+      "longitude": 111.2108
     },
     {
       "npsn": "20330931",
@@ -4710,7 +5510,9 @@
       "address": "Desa Kletek",
       "village": "Kletek",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8335,
+      "longitude": 111.2228
     },
     {
       "npsn": "20330932",
@@ -4718,7 +5520,9 @@
       "address": "Jl.Pucakwangi-Todanan Km.4",
       "village": "Mojoagung",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8617,
+      "longitude": 111.1759
     },
     {
       "npsn": "20330933",
@@ -4726,7 +5530,9 @@
       "address": "Ds Plukaran Rt 2/2",
       "village": "Plukaran",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6937,
+      "longitude": 110.9339
     },
     {
       "npsn": "20330934",
@@ -4734,7 +5540,9 @@
       "address": "Purworejo",
       "village": "Purworejo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7291,
+      "longitude": 111.0845
     },
     {
       "npsn": "20330935",
@@ -4742,7 +5550,9 @@
       "address": "Sambiroto",
       "village": "Sambiroto",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5772,
+      "longitude": 111.0381
     },
     {
       "npsn": "20330937",
@@ -4750,7 +5560,9 @@
       "address": "Desa Sidomulyo RT 07 RW 02 Kecamatan Gunungwungkal",
       "village": "Sidomulyo",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5994,
+      "longitude": 110.9692
     },
     {
       "npsn": "20330938",
@@ -4758,7 +5570,9 @@
       "address": "Sidomukti",
       "village": "Sidomukti",
       "level": "sd",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7812,
+      "longitude": 111.1935
     },
     {
       "npsn": "20330939",
@@ -4766,7 +5580,9 @@
       "address": "KEDUNG PANJANG",
       "village": "Soneyan",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6227,
+      "longitude": 111.0308
     },
     {
       "npsn": "20330942",
@@ -4774,7 +5590,9 @@
       "address": "DESA TAMBAHMULYO",
       "village": "Tambahmulyo",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.823,
+      "longitude": 111.0507
     },
     {
       "npsn": "20331099",
@@ -4782,7 +5600,9 @@
       "address": "Ds Wukirsari",
       "village": "Wukirsari",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.9272,
+      "longitude": 111.075
     },
     {
       "npsn": "20331711",
@@ -4790,7 +5610,9 @@
       "address": "Ds.kepohkencono",
       "village": "Kepohkencono",
       "level": "sd",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8356,
+      "longitude": 111.1346
     },
     {
       "npsn": "20331712",
@@ -4798,7 +5620,9 @@
       "address": "Sumberejo",
       "village": "Sumberrejo",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5571,
+      "longitude": 111.0163
     },
     {
       "npsn": "20331987",
@@ -4806,7 +5630,9 @@
       "address": "JL. TAMBAKROMO - GABUS KM. 3",
       "village": "Angkatan Lor",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8658,
+      "longitude": 111.0556
     },
     {
       "npsn": "20331988",
@@ -4814,7 +5640,9 @@
       "address": "Ds Bermi Rt 1/10",
       "village": "Bermi",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7186364,
+      "longitude": 110.9282999
     },
     {
       "npsn": "20331989",
@@ -4822,7 +5650,9 @@
       "address": "Danyangmulyo",
       "village": "Danyangmulyo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8609,
+      "longitude": 111.101
     },
     {
       "npsn": "20331990",
@@ -4830,7 +5660,9 @@
       "address": "Dukuh Geger",
       "village": "Klakah Kasian",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6568,
+      "longitude": 110.9225
     },
     {
       "npsn": "20331991",
@@ -4838,7 +5670,9 @@
       "address": "Jl Tambakromo Kayen Km 3",
       "village": "Mangunrekso",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8704,
+      "longitude": 111.0466
     },
     {
       "npsn": "20331992",
@@ -4846,7 +5680,9 @@
       "address": "Dk. Randukuning",
       "village": "Porang Paring",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9649,
+      "longitude": 110.9003
     },
     {
       "npsn": "20331995",
@@ -4854,7 +5690,9 @@
       "address": "Jln Kyai Cebolang No 31",
       "village": "Tunjungrejo",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.598,
+      "longitude": 111.0663
     },
     {
       "npsn": "20338718",
@@ -4862,7 +5700,9 @@
       "address": "Jl. Raya Kayen - Pakis Km. 12 Desa Pakis",
       "village": "Pakis",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.9552,
+      "longitude": 111.0401
     },
     {
       "npsn": "20338855",
@@ -4870,7 +5710,9 @@
       "address": "Desa Trimulyo Rt. 01 Rw. 03",
       "village": "Trimulyo",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9002,
+      "longitude": 110.9791
     },
     {
       "npsn": "20338856",
@@ -4878,7 +5720,9 @@
       "address": "Jl. Juwana - Rembang Km. 3",
       "village": "Trimulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7133,
+      "longitude": 111.1629
     },
     {
       "npsn": "20339216",
@@ -4886,7 +5730,9 @@
       "address": "jl raya pati purwodadi km 28",
       "village": "Sukolilo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9099,
+      "longitude": 110.9178
     },
     {
       "npsn": "20340613",
@@ -4894,7 +5740,9 @@
       "address": "Jl. Sukolilo - Prawoto Km 1",
       "village": "Sukolilo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9394,
+      "longitude": 110.9125
     },
     {
       "npsn": "20340697",
@@ -4902,7 +5750,9 @@
       "address": "Jepalo",
       "village": "Jepalo",
       "level": "sd",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.596,
+      "longitude": 110.9605
     },
     {
       "npsn": "20340698",
@@ -4910,7 +5760,9 @@
       "address": "Ketitang Wetan",
       "village": "Ketitangwetan",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7151,
+      "longitude": 111.1903
     },
     {
       "npsn": "20340699",
@@ -4918,7 +5770,9 @@
       "address": "Jln. O.W Goa Pancur",
       "village": "Jimbaran",
       "level": "sd",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9153,
+      "longitude": 110.9765
     },
     {
       "npsn": "20340701",
@@ -4926,7 +5780,9 @@
       "address": "Kuniran",
       "village": "Kuniran",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7454,
+      "longitude": 111.2334
     },
     {
       "npsn": "20340703",
@@ -4934,7 +5790,9 @@
       "address": "JL. TAYU JUWANA KM.04",
       "village": "Margotuhu Kidul",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.5792,
+      "longitude": 111.0617
     },
     {
       "npsn": "20340704",
@@ -4942,7 +5800,9 @@
       "address": "Payak Rt 02 Rw 01",
       "village": "Payak",
       "level": "sd",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5313,
+      "longitude": 110.9227
     },
     {
       "npsn": "20340705",
@@ -4950,7 +5810,9 @@
       "address": "Jl. Raya Pati - Puwodadi Km. 26 Sukolilo Kab. Pati 59172",
       "village": "Sukolilo",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9307,
+      "longitude": 110.9179
     },
     {
       "npsn": "20340707",
@@ -4958,7 +5820,9 @@
       "address": "Ds Sumbersoko",
       "village": "Sumbersoko",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9226,
+      "longitude": 110.938
     },
     {
       "npsn": "20340708",
@@ -4966,7 +5830,9 @@
       "address": "Dukuh Joga",
       "village": "Tlogosari",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6565,
+      "longitude": 111.0127
     },
     {
       "npsn": "20340709",
@@ -4974,7 +5840,9 @@
       "address": "Tompomulyo",
       "village": "Tompomulyo",
       "level": "sd",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7406,
+      "longitude": 111.21
     },
     {
       "npsn": "20340810",
@@ -4982,7 +5850,9 @@
       "address": "Danyangmulyo",
       "village": "Danyangmulyo",
       "level": "sd",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8519,
+      "longitude": 111.101
     },
     {
       "npsn": "20340994",
@@ -4990,7 +5860,9 @@
       "address": "JAL PATI KAYEN KM. 02",
       "village": "Panjunan",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7733,
+      "longitude": 111.0367
     },
     {
       "npsn": "20341464",
@@ -4998,7 +5870,9 @@
       "address": "Jl. Sedayu no 18, Tayu kulon",
       "village": "Tayu Kulon",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5338,
+      "longitude": 111.0446
     },
     {
       "npsn": "20348740",
@@ -5006,7 +5880,9 @@
       "address": "DUK KRASAK",
       "village": "Kedungwinong",
       "level": "sd",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.8995,
+      "longitude": 110.9094
     },
     {
       "npsn": "20354181",
@@ -5014,7 +5890,9 @@
       "address": "JALAN PENJAWI NO. 29 B RANDUKUNING",
       "village": "Pati Lor",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7483,
+      "longitude": 111.0367
     },
     {
       "npsn": "20360118",
@@ -5022,7 +5900,9 @@
       "address": "Jalan Supriyadi III RT 5/RW 4",
       "village": "Pati Kidul",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7551,
+      "longitude": 111.0356
     },
     {
       "npsn": "20362663",
@@ -5030,7 +5910,9 @@
       "address": "JL. TAMBAK NO. 37 BAJOMULYO",
       "village": "Bajomulyo",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7062,
+      "longitude": 111.1493
     },
     {
       "npsn": "20364882",
@@ -5038,7 +5920,9 @@
       "address": "DESA TANJUNGANOM RT 01 RW 02",
       "village": "Tanjunganom",
       "level": "sd",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.828,
+      "longitude": 111.0595
     },
     {
       "npsn": "60712135",
@@ -5046,7 +5930,9 @@
       "address": "JALAN K.ZUHRI",
       "village": "Raci",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.6967,
+      "longitude": 111.2117
     },
     {
       "npsn": "60712136",
@@ -5054,7 +5940,9 @@
       "address": "KLAYUSIWALAN",
       "village": "Klayusiwalan",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7229,
+      "longitude": 111.2003
     },
     {
       "npsn": "60712137",
@@ -5062,7 +5950,9 @@
       "address": "KOMPLEKS MASJID BESAR TLOGOMOJO BATANGAN",
       "village": "Tlogomojo",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.741928,
+      "longitude": 111.1726
     },
     {
       "npsn": "60712138",
@@ -5070,7 +5960,9 @@
       "address": "DESA KUNIRAN",
       "village": "Kuniran",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7464,
+      "longitude": 111.2384
     },
     {
       "npsn": "60712139",
@@ -5078,7 +5970,9 @@
       "address": "JLN RAYA PATI - JEPARA KM 45 DESA MOJO, KEC. CLUWAK, KABUPATEN PATI",
       "village": "Mojo",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.507,
+      "longitude": 110.9156
     },
     {
       "npsn": "60712140",
@@ -5086,7 +5980,9 @@
       "address": "JL.GANG MASJID MUSTAQIM 2",
       "village": "Mojo",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5059,
+      "longitude": 110.9276
     },
     {
       "npsn": "60712141",
@@ -5094,7 +5990,9 @@
       "address": "SIRAHAN CLUWAK PATI",
       "village": "Sirahan",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5219,
+      "longitude": 110.9138
     },
     {
       "npsn": "60712142",
@@ -5102,7 +6000,9 @@
       "address": "JALAN RAYA TAYU - JEPARA KM 13 RT 12 RW 04",
       "village": "Payak",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5296,
+      "longitude": 110.9318
     },
     {
       "npsn": "60712143",
@@ -5110,7 +6010,9 @@
       "address": "PAYAK",
       "village": "Payak",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5285,
+      "longitude": 110.9232
     },
     {
       "npsn": "60712144",
@@ -5118,7 +6020,9 @@
       "address": "Jl. Raya Tayu-Jepara Km. 12",
       "village": "Plaosan",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5638,
+      "longitude": 110.9406
     },
     {
       "npsn": "60712145",
@@ -5126,7 +6030,9 @@
       "address": "DK.CLUWAK RT.4 RW.2",
       "village": "Karangsari",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5105744,
+      "longitude": 110.9450885
     },
     {
       "npsn": "60712146",
@@ -5134,7 +6040,9 @@
       "address": "JL.K.WIRA`I NO.05 SUMUR CLUWAK PATI",
       "village": "Sumur",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.567548,
+      "longitude": 110.917727
     },
     {
       "npsn": "60712147",
@@ -5142,7 +6050,9 @@
       "address": "RT 04 RW 03 Desa Gerit Kecamatan Cluwak Kabupaten Pati",
       "village": "Gerit",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5154,
+      "longitude": 110.9708
     },
     {
       "npsn": "60712148",
@@ -5150,7 +6060,9 @@
       "address": "GESENGAN",
       "village": "Gesengan",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5136,
+      "longitude": 110.9246
     },
     {
       "npsn": "60712149",
@@ -5158,7 +6070,9 @@
       "address": "Jl. Raya Tayu - Puncel Km. 7,5 Alasdowo",
       "village": "Alasdowo",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4702,
+      "longitude": 111.0372
     },
     {
       "npsn": "60712150",
@@ -5166,7 +6080,9 @@
       "address": "JL Raya Tayu Puncel KM 11",
       "village": "Kembang",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4442,
+      "longitude": 111.0218
     },
     {
       "npsn": "60712151",
@@ -5174,7 +6090,9 @@
       "address": "Jl. Raya Tayu-Puncel Km. 15 Sumurtowo",
       "village": "Kembang",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.421579,
+      "longitude": 111.014553
     },
     {
       "npsn": "60712153",
@@ -5182,7 +6100,9 @@
       "address": "NGAGEL",
       "village": "Ngagel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4872,
+      "longitude": 111.0351
     },
     {
       "npsn": "60712154",
@@ -5190,7 +6110,9 @@
       "address": "BAKALAN",
       "village": "Bakalan",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.506,
+      "longitude": 111.0433
     },
     {
       "npsn": "60712155",
@@ -5198,7 +6120,9 @@
       "address": "Jl. Bawal No.11 , RT 05 RW 01",
       "village": "Banyutowo",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4578,
+      "longitude": 111.0472
     },
     {
       "npsn": "60712156",
@@ -5206,7 +6130,9 @@
       "address": "DS. DUKUHSETI RT 01 RW 01",
       "village": "Dukuhseti",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4657,
+      "longitude": 111.0305
     },
     {
       "npsn": "60712157",
@@ -5214,7 +6140,9 @@
       "address": "JLN. RAYA TAYU KALITELO KM.18 NGARENGAN",
       "village": "Puncel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4841,
+      "longitude": 110.9982
     },
     {
       "npsn": "60712158",
@@ -5222,7 +6150,9 @@
       "address": "PENGGUNG",
       "village": "Ngagel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4459,
+      "longitude": 111.038
     },
     {
       "npsn": "60712159",
@@ -5230,7 +6160,9 @@
       "address": "JL. Tayu-Puncel Km. 14",
       "village": "Tegalombo",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4392,
+      "longitude": 111.0004
     },
     {
       "npsn": "60712160",
@@ -5238,7 +6170,9 @@
       "address": "JL. TAYU-PUNCEL KM.17 Rt.07 / Rw.02",
       "village": "Puncel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4449,
+      "longitude": 110.9848
     },
     {
       "npsn": "60712161",
@@ -5246,7 +6180,9 @@
       "address": "PUNCEL",
       "village": "Puncel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4203,
+      "longitude": 110.9773
     },
     {
       "npsn": "60712162",
@@ -5254,7 +6190,9 @@
       "address": "Jl. Raya Tayu-Puncel Km.8",
       "village": "Alasdowo",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.47045,
+      "longitude": 111.036713
     },
     {
       "npsn": "60712163",
@@ -5262,7 +6200,9 @@
       "address": "TANJUNGANOM",
       "village": "Tanjunganom",
       "level": "mi",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.8368267,
+      "longitude": 111.0637093
     },
     {
       "npsn": "60712164",
@@ -5270,7 +6210,9 @@
       "address": "JL. PATI KAYEN KM. 11",
       "village": "Wuwur",
       "level": "mi",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.841,
+      "longitude": 110.9955
     },
     {
       "npsn": "60712165",
@@ -5278,7 +6220,9 @@
       "address": "RT 002 RW 001",
       "village": "Sambirejo",
       "level": "mi",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -6.819079,
+      "longitude": 111.031487
     },
     {
       "npsn": "60712166",
@@ -5286,7 +6230,9 @@
       "address": "BERMI - GEMBONG - PATI",
       "village": "Bermi",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7222,
+      "longitude": 110.9483
     },
     {
       "npsn": "60712167",
@@ -5294,7 +6240,9 @@
       "address": "JL. RAYA PATI GEMBONG KM. 12",
       "village": "Gembong",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7072,
+      "longitude": 110.9496
     },
     {
       "npsn": "60712168",
@@ -5302,7 +6250,9 @@
       "address": "BORO SITILUHUR GEMBONG",
       "village": "Sitiluhur",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6457,
+      "longitude": 110.9494
     },
     {
       "npsn": "60712169",
@@ -5310,7 +6260,9 @@
       "address": "Dk. Randu RT 02 RW 01 Ds. Bageng Kec. Gembong Kab. Pati",
       "village": "Bageng",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6937,
+      "longitude": 110.942
     },
     {
       "npsn": "60712170",
@@ -5318,7 +6270,9 @@
       "address": "DK. KENDIL RT. 03 RW. 03 DS. KLAKAHKASIHAN",
       "village": "Klakah Kasian",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6767,
+      "longitude": 110.9492
     },
     {
       "npsn": "60712171",
@@ -5326,7 +6280,9 @@
       "address": "JL. RAYA GUNUNGWUNGKAL KM.7",
       "village": "Gunungwungkal",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.583,
+      "longitude": 110.9878
     },
     {
       "npsn": "60712172",
@@ -5334,7 +6290,9 @@
       "address": "PESAGEN, RT.02/01 KEC. GUNUNGWUNGKAL KAB. PATI",
       "village": "Pesagen",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.6068,
+      "longitude": 111.0176
     },
     {
       "npsn": "60712173",
@@ -5342,7 +6300,9 @@
       "address": "NGETUK",
       "village": "Ngetuk",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5662,
+      "longitude": 111.0139
     },
     {
       "npsn": "60712174",
@@ -5350,7 +6310,9 @@
       "address": "RT 04 RW 01 Desa Jepalo",
       "village": "Jepalo",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5956,
+      "longitude": 110.9612
     },
     {
       "npsn": "60712175",
@@ -5358,7 +6320,9 @@
       "address": "PERDOPO",
       "village": "Perdopo",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5845,
+      "longitude": 110.9746
     },
     {
       "npsn": "60712176",
@@ -5366,7 +6330,9 @@
       "address": "SUMBEREJO",
       "village": "Sumberrejo",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5571,
+      "longitude": 111.0156
     },
     {
       "npsn": "60712177",
@@ -5374,7 +6340,9 @@
       "address": "Jembulwunut Rt. 03 Rw. 02",
       "village": "Jembulwunut",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5479,
+      "longitude": 110.9953
     },
     {
       "npsn": "60712178",
@@ -5382,7 +6350,9 @@
       "address": "GAJIHAN",
       "village": "Gajihan",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5806,
+      "longitude": 110.999
     },
     {
       "npsn": "60712179",
@@ -5390,7 +6360,9 @@
       "address": "GUNUNGWUNGKAL",
       "village": "Gunungwungkal",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5731,
+      "longitude": 110.9948
     },
     {
       "npsn": "60712180",
@@ -5398,7 +6370,9 @@
       "address": "SUMBERREJO",
       "village": "Sumberrejo",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.6052,
+      "longitude": 111.0156
     },
     {
       "npsn": "60712181",
@@ -5406,7 +6380,9 @@
       "address": "Dukuh Wedelan RT 001/ RW 003 Desa Gajihan",
       "village": "Gajihan",
       "level": "mi",
-      "district": "Gunung Wungkal"
+      "district": "Gunung Wungkal",
+      "latitude": -6.5845,
+      "longitude": 111.0242
     },
     {
       "npsn": "60712182",
@@ -5414,7 +6390,9 @@
       "address": "ARUMANIS",
       "village": "Arumanis",
       "level": "mi",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7908,
+      "longitude": 111.225
     },
     {
       "npsn": "60712183",
@@ -5422,7 +6400,9 @@
       "address": "Dukuh Payaman RT 02 RW 05",
       "village": "Sriwedari",
       "level": "mi",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.747,
+      "longitude": 111.2159
     },
     {
       "npsn": "60712184",
@@ -5430,7 +6410,9 @@
       "address": "Sumberejo, Rt.01/Rw.06",
       "village": "Sumberejo",
       "level": "mi",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7794,
+      "longitude": 111.2283
     },
     {
       "npsn": "60712185",
@@ -5438,7 +6420,9 @@
       "address": "RT 04 RW 02 Desa Tamansari Kecamatan Jaken kabupaten Pati Provinsi Jawa Tengah",
       "village": "Tamansari",
       "level": "mi",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": -6.7585,
+      "longitude": 111.2357
     },
     {
       "npsn": "60712186",
@@ -5446,7 +6430,9 @@
       "address": "Jl. Jakenan-Winong Km. 5",
       "village": "Tambahmulyo",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7637,
+      "longitude": 111.1135
     },
     {
       "npsn": "60712187",
@@ -5454,7 +6440,9 @@
       "address": "DS.SIDOMULYO KEC.JAKENAN KAB.PATI",
       "village": "Sidomulyo",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.774811,
+      "longitude": 111.170325
     },
     {
       "npsn": "60712188",
@@ -5462,7 +6450,9 @@
       "address": "Jalan Masjid Kijingan Kalimulyo",
       "village": "Kalimulyo",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7471,
+      "longitude": 111.117
     },
     {
       "npsn": "60712189",
@@ -5470,7 +6460,9 @@
       "address": "DESA PULUHANTENGAH RT 01 RW 02 KECAMATAN JAKENAN",
       "village": "Puluhan Tengah",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7703,
+      "longitude": 111.1507
     },
     {
       "npsn": "60712190",
@@ -5478,7 +6470,9 @@
       "address": "JL. JAKENAN - JUWANA KM 01 DESA DUKUHMULYO",
       "village": "Dukuhmulyo",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.7545,
+      "longitude": 111.1517
     },
     {
       "npsn": "60712191",
@@ -5486,7 +6480,9 @@
       "address": "DS. TONDOMULYO KEC. JAKENAN KAB. PATI",
       "village": "Tondomulyo",
       "level": "mi",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -6.741,
+      "longitude": 111.1164
     },
     {
       "npsn": "60712192",
@@ -5494,7 +6490,9 @@
       "address": "LANGGENHARJO",
       "village": "Langgenharjo",
       "level": "mi",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7022,
+      "longitude": 111.1214
     },
     {
       "npsn": "60712193",
@@ -5502,7 +6500,9 @@
       "address": "MARGOMULYO",
       "village": "Margomulyo",
       "level": "mi",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7061,
+      "longitude": 111.105
     },
     {
       "npsn": "60712194",
@@ -5510,7 +6510,9 @@
       "address": "Jl. Ki Dukut Gang Merpati Ds. Dukutalit Kec. Juwana",
       "village": "Dukutalit",
       "level": "mi",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7096,
+      "longitude": 111.136
     },
     {
       "npsn": "60712195",
@@ -5518,7 +6520,9 @@
       "address": "JL. KRAPYAK NO.9 BAJOMULYO JUWANA PATI",
       "village": "Bajomulyo",
       "level": "mi",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7068,
+      "longitude": 111.1532
     },
     {
       "npsn": "60712196",
@@ -5526,7 +6530,9 @@
       "address": "JL. KAYEN SUMBERSARI KM. 02",
       "village": "Slungkep",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9063,
+      "longitude": 110.9889
     },
     {
       "npsn": "60712197",
@@ -5534,7 +6540,9 @@
       "address": "KAYEN",
       "village": "Kayen",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8979,
+      "longitude": 110.9782
     },
     {
       "npsn": "60712198",
@@ -5542,7 +6550,9 @@
       "address": "Dukuh Malangan RT.03 RW.04",
       "village": "Trimulyo",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8879,
+      "longitude": 110.97
     },
     {
       "npsn": "60712199",
@@ -5550,7 +6560,9 @@
       "address": "Desa Srikaton Kec.Kayen",
       "village": "Srikaton",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8898,
+      "longitude": 110.964
     },
     {
       "npsn": "60712200",
@@ -5558,7 +6570,9 @@
       "address": "JL. PATI-KAYEN KM.12",
       "village": "Sundoluhur",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8484,
+      "longitude": 111.0075
     },
     {
       "npsn": "60712201",
@@ -5566,7 +6580,9 @@
       "address": "SUMBERSARI",
       "village": "Sumbersari",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9128,
+      "longitude": 110.9936
     },
     {
       "npsn": "60712202",
@@ -5574,7 +6590,9 @@
       "address": "CARIKAN",
       "village": "Kayen",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8978,
+      "longitude": 110.9906
     },
     {
       "npsn": "60712203",
@@ -5582,7 +6600,9 @@
       "address": "RT. 005 RW. 002",
       "village": "Pasuruhan",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8759,
+      "longitude": 110.9675
     },
     {
       "npsn": "60712204",
@@ -5590,7 +6610,9 @@
       "address": "Jl. Masjid Al Falah Gang Arjuna No. 5 Desa Talun 59171",
       "village": "Talun",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8624,
+      "longitude": 110.986
     },
     {
       "npsn": "60712205",
@@ -5598,7 +6620,9 @@
       "address": "RT 01 RW 04 Desa Rogomulyo Kecamatan Kayen Kabupaten Pati Provinsi Jawa Tengah",
       "village": "Rogomulyo",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8684,
+      "longitude": 110.9966
     },
     {
       "npsn": "60712206",
@@ -5606,7 +6630,9 @@
       "address": "JL.RAYAPATI-KAYEN KM.12",
       "village": "Sundoluhur",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8465,
+      "longitude": 111.0077
     },
     {
       "npsn": "60712207",
@@ -5614,7 +6640,9 @@
       "address": "JL. K.H Mataram 01 RT 07 RW 02 Jatiroto",
       "village": "Jatiroto",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8913,
+      "longitude": 111.0102
     },
     {
       "npsn": "60712208",
@@ -5622,7 +6650,9 @@
       "address": "SUKOBUBUK",
       "village": "Sukobubuk",
       "level": "mi",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.744,
+      "longitude": 110.9538
     },
     {
       "npsn": "60712209",
@@ -5630,7 +6660,9 @@
       "address": "JL. PATI - BANYUURIP KM.8",
       "village": "Metaraman",
       "level": "mi",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7867,
+      "longitude": 110.984
     },
     {
       "npsn": "60712210",
@@ -5638,7 +6670,9 @@
       "address": "POHIJO",
       "village": "Pohijo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6285,
+      "longitude": 111.0732
     },
     {
       "npsn": "60712211",
@@ -5646,7 +6680,9 @@
       "address": "DS.KAJEN RT/RW 05/01",
       "village": "Kajen",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6094,
+      "longitude": 111.0604
     },
     {
       "npsn": "60712212",
@@ -5654,7 +6690,9 @@
       "address": "LAPANGAN OLAH RAGA",
       "village": "Waturoyo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6068,
+      "longitude": 111.0584
     },
     {
       "npsn": "60712213",
@@ -5662,7 +6700,9 @@
       "address": "JALAN MASJID",
       "village": "Waturoyo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6005,
+      "longitude": 111.0595
     },
     {
       "npsn": "60712214",
@@ -5670,7 +6710,9 @@
       "address": "JALAN RAYA TAYU-JUANA KM 06",
       "village": "Tunjungrejo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6248,
+      "longitude": 111.0666
     },
     {
       "npsn": "60712215",
@@ -5678,7 +6720,9 @@
       "address": "JALAN MASJID RT 03. RW 02",
       "village": "Bulumanis Lor",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6065,
+      "longitude": 111.0681
     },
     {
       "npsn": "60712216",
@@ -5686,7 +6730,9 @@
       "address": "KERTOMULYO",
       "village": "Kertomulyo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6321,
+      "longitude": 111.0784
     },
     {
       "npsn": "60712217",
@@ -5694,7 +6740,9 @@
       "address": "RT 02 RW 06",
       "village": "Cebolek Kidul",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6026,
+      "longitude": 111.0658
     },
     {
       "npsn": "60712218",
@@ -5702,7 +6750,9 @@
       "address": "PURWOREJO",
       "village": "Purworejo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.5993,
+      "longitude": 111.0443
     },
     {
       "npsn": "60712219",
@@ -5710,7 +6760,9 @@
       "address": "JALAN RONGGO KUSUMO KAJEN",
       "village": "Kajen",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6164,
+      "longitude": 111.0594
     },
     {
       "npsn": "60712220",
@@ -5718,7 +6770,9 @@
       "address": "RT 01 RW 03 Desa Ngemplak Kidul",
       "village": "Ngemplak Kidul",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6113,
+      "longitude": 111.0531
     },
     {
       "npsn": "60712221",
@@ -5726,7 +6780,9 @@
       "address": "LANGGENHARJO",
       "village": "Langgenharjo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6289,
+      "longitude": 111.0439
     },
     {
       "npsn": "60712222",
@@ -5734,7 +6790,9 @@
       "address": "Dk,Mondoliko Rt 01/ Rw 03 Ds. Tegalarum",
       "village": "Tegalarum",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6086,
+      "longitude": 111.0027
     },
     {
       "npsn": "60712223",
@@ -5742,7 +6800,9 @@
       "address": "RT 05 RW 01 Desa Tegalarum",
       "village": "Tegalarum",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6099,
+      "longitude": 111.0107
     },
     {
       "npsn": "60712224",
@@ -5750,7 +6810,9 @@
       "address": "RT.22/RW.06",
       "village": "Tanjungrejo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6355,
+      "longitude": 111.0283
     },
     {
       "npsn": "60712225",
@@ -5758,7 +6820,9 @@
       "address": "Jl. Prima 005/001 Kajen Margoyoso Pati",
       "village": "Kajen",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6055,
+      "longitude": 111.0598
     },
     {
       "npsn": "60712226",
@@ -5766,7 +6830,9 @@
       "address": "TANJUNGREJO",
       "village": "Tanjungrejo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6362929,
+      "longitude": 111.0424662
     },
     {
       "npsn": "60712227",
@@ -5774,7 +6840,9 @@
       "address": "Rt 01 RW 04",
       "village": "Kertomulyo",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6045,
+      "longitude": 111.0482
     },
     {
       "npsn": "60712228",
@@ -5782,7 +6850,9 @@
       "address": "TAMBAHARJO",
       "village": "Tambaharjo",
       "level": "mi",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7224,
+      "longitude": 111.0545
     },
     {
       "npsn": "60712229",
@@ -5790,7 +6860,9 @@
       "address": "JL.TAMAN PAHLAWAN Desa Puri Rt.02 Rw.06 PATI",
       "village": "Puri",
       "level": "mi",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7503,
+      "longitude": 111.0249
     },
     {
       "npsn": "60712230",
@@ -5798,7 +6870,9 @@
       "address": "JL. RAYA PATI-JUANA KM. 07",
       "village": "Sinoman",
       "level": "mi",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.76969,
+      "longitude": 111.040286
     },
     {
       "npsn": "60712231",
@@ -5806,7 +6880,9 @@
       "address": "JL. PUCAKWANGI-WINONG KM05 DS.KARANGWATON",
       "village": "Karangwotan",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8377,
+      "longitude": 111.1142
     },
     {
       "npsn": "60712232",
@@ -5814,7 +6890,9 @@
       "address": "Jl. Sokopuluhan Winong Km 03",
       "village": "Plosorejo",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8012,
+      "longitude": 111.1486
     },
     {
       "npsn": "60712233",
@@ -5822,7 +6900,9 @@
       "address": "SOKOPULUHAN PUCAKWANGI PATI",
       "village": "Sokopuluhan",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.824,
+      "longitude": 111.176
     },
     {
       "npsn": "60712234",
@@ -5830,7 +6910,9 @@
       "address": "TERTEG",
       "village": "Terteg",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8419,
+      "longitude": 111.2178
     },
     {
       "npsn": "60712235",
@@ -5838,7 +6920,9 @@
       "address": "TRIGUNO",
       "village": "Triguno",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8191,
+      "longitude": 111.1359
     },
     {
       "npsn": "60712236",
@@ -5846,7 +6930,9 @@
       "address": "JL.RAYA JUWANA PUCAKWANGI KM.13 TEGALWERO PUCAKWANGI PATI",
       "village": "Tegalwero",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.7965,
+      "longitude": 111.1658
     },
     {
       "npsn": "60712239",
@@ -5854,7 +6940,9 @@
       "address": "KEPOHKENCONO",
       "village": "Kepohkencono",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.837,
+      "longitude": 111.149
     },
     {
       "npsn": "60712241",
@@ -5862,7 +6950,9 @@
       "address": "BODEH",
       "village": "Bodeh",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8374,
+      "longitude": 111.1307
     },
     {
       "npsn": "60712242",
@@ -5870,7 +6960,9 @@
       "address": "Jln. K.H. Abdul Qodir No. 03 Kincir",
       "village": "Wegil",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9618,
+      "longitude": 110.8592
     },
     {
       "npsn": "60712243",
@@ -5878,7 +6970,9 @@
       "address": "Dukuh Sewunegaran RT 006 RW 005 Desa Prawoto",
       "village": "Prawoto",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9625,
+      "longitude": 110.8291
     },
     {
       "npsn": "60712244",
@@ -5886,7 +6980,9 @@
       "address": "GALIRAN",
       "village": "Baleadi",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9165,
+      "longitude": 110.8543
     },
     {
       "npsn": "60712245",
@@ -5894,7 +6990,9 @@
       "address": "JLN.TALANGTUMENGGUNG NO.35",
       "village": "Sukolilo",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9458,
+      "longitude": 110.9203
     },
     {
       "npsn": "60712246",
@@ -5902,7 +7000,9 @@
       "address": "KEDUNGWINONG",
       "village": "Kedungwinong",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9315,
+      "longitude": 110.9005
     },
     {
       "npsn": "60712247",
@@ -5910,7 +7010,9 @@
       "address": "WOTAN",
       "village": "Wotan",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9188351,
+      "longitude": 110.9048581
     },
     {
       "npsn": "60712248",
@@ -5918,7 +7020,9 @@
       "address": "Dukuh Dermoyo RT 01 RW 01 Ds Cengkalsewu Kec. Sukolilo Kab. Pati",
       "village": "Cengkalsewu",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9035,
+      "longitude": 110.9606
     },
     {
       "npsn": "60712249",
@@ -5926,7 +7030,9 @@
       "address": "Dk. Papasan RT 003 RW 003",
       "village": "Baleadi",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9261,
+      "longitude": 110.8893
     },
     {
       "npsn": "60712250",
@@ -5934,7 +7040,9 @@
       "address": "JL.Makam Sunan Prawoto Rt06Rw05",
       "village": "Prawoto",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9625,
+      "longitude": 110.8291
     },
     {
       "npsn": "60712252",
@@ -5942,7 +7050,9 @@
       "address": "NGANDONG",
       "village": "Pakem",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9848,
+      "longitude": 110.8354
     },
     {
       "npsn": "60712253",
@@ -5950,7 +7060,9 @@
       "address": "Dukuh Jongso Rt 04 Rw 10",
       "village": "Wotan",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.8726,
+      "longitude": 110.8885
     },
     {
       "npsn": "60712254",
@@ -5958,7 +7070,9 @@
       "address": "JL. RAYA PATI PURWODADI",
       "village": "Sukolilo",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9028,
+      "longitude": 110.9145
     },
     {
       "npsn": "60712255",
@@ -5966,7 +7080,9 @@
       "address": "BATUREJO",
       "village": "Baturejo",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9197,
+      "longitude": 110.9135
     },
     {
       "npsn": "60712256",
@@ -5974,7 +7090,9 @@
       "address": "JL. GUA WARIH GG. NO. I PURI",
       "village": "Kedumulyo",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9127,
+      "longitude": 110.9582
     },
     {
       "npsn": "60712257",
@@ -5982,7 +7100,9 @@
       "address": "Jl. Cengkalsewu - Bareng Km. 4 Desa Kasiyan RT. 005 / RW. 001",
       "village": "Kasiyan",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": -6.9063,
+      "longitude": 110.9478
     },
     {
       "npsn": "60712258",
@@ -5990,7 +7110,9 @@
       "address": "MOJOMULYO",
       "village": "Mojomulyo",
       "level": "mi",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8936,
+      "longitude": 111.0385
     },
     {
       "npsn": "60712259",
@@ -5998,7 +7120,9 @@
       "address": "Rt 005 Rw 002",
       "village": "Keben",
       "level": "mi",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8857,
+      "longitude": 111.0554
     },
     {
       "npsn": "60712260",
@@ -6006,7 +7130,9 @@
       "address": "Jl. Ratu Kalinyamat No.51 RT 01/02",
       "village": "Tayu Wetan",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5361,
+      "longitude": 111.0491
     },
     {
       "npsn": "60712261",
@@ -6014,7 +7140,9 @@
       "address": "PUNDENREJO JL. P. SUDIRMAN KM. 3 TAYU",
       "village": "Pundenrejo",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5344,
+      "longitude": 111.0272
     },
     {
       "npsn": "60712262",
@@ -6022,7 +7150,9 @@
       "address": "Jl. Sentana RT 003 RW 001",
       "village": "Kedungbang",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5413,
+      "longitude": 111.0208
     },
     {
       "npsn": "60712263",
@@ -6030,7 +7160,9 @@
       "address": "Bulungan RT.06 /02 Tayu",
       "village": "Bulungan",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5349,
+      "longitude": 111.039
     },
     {
       "npsn": "60712264",
@@ -6038,7 +7170,9 @@
       "address": "Jl. Raya Tayu-Jepara Km.5",
       "village": "Purwokerto",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5514,
+      "longitude": 111.0351
     },
     {
       "npsn": "60712265",
@@ -6046,7 +7180,9 @@
       "address": "Jln. RAYA TAYU-JEPARA KM. 06",
       "village": "Purwokerto",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.533,
+      "longitude": 110.9938
     },
     {
       "npsn": "60712266",
@@ -6054,7 +7190,9 @@
       "address": "Jl. Tayu - Puncel No.02, Luwang, Kec. Tayu, Kabupaten Pati, Jawa Tengah 59155",
       "village": "Luwang",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5754,
+      "longitude": 111.0438
     },
     {
       "npsn": "60712267",
@@ -6062,7 +7200,9 @@
       "address": "Jl. K.H. Bahri Dk. Winong",
       "village": "Luwang",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5799,
+      "longitude": 111.0308
     },
     {
       "npsn": "60712268",
@@ -6070,7 +7210,9 @@
       "address": "Keboromo",
       "village": "Keboromo",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.542848,
+      "longitude": 111.047021
     },
     {
       "npsn": "60712269",
@@ -6078,7 +7220,9 @@
       "address": "Jl. Tayu-Juwana Km. 1",
       "village": "Jepat Lor",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.549734,
+      "longitude": 111.054445
     },
     {
       "npsn": "60712270",
@@ -6086,7 +7230,9 @@
       "address": "Ds.Tendas Rt 05 RW I",
       "village": "Tendas",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5502,
+      "longitude": 111.0353
     },
     {
       "npsn": "60712271",
@@ -6094,7 +7240,9 @@
       "address": "Sendangrejo",
       "village": "Sendangrejo",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5545,
+      "longitude": 111.0381
     },
     {
       "npsn": "60712272",
@@ -6102,7 +7250,9 @@
       "address": "Jalan Raya Tayu-Pati Km. 3 Pakis",
       "village": "Pakis",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5664331,
+      "longitude": 111.0405047
     },
     {
       "npsn": "60712273",
@@ -6110,7 +7260,9 @@
       "address": "Pondowan",
       "village": "Pondowan",
       "level": "mi",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.566788,
+      "longitude": 111.034841
     },
     {
       "npsn": "60712274",
@@ -6118,7 +7270,9 @@
       "address": "GUYANGAN",
       "village": "Guyangan",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6602,
+      "longitude": 111.0995
     },
     {
       "npsn": "60712275",
@@ -6126,7 +7280,9 @@
       "address": "ASEMPAPAN",
       "village": "Asempapan",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6595,
+      "longitude": 111.1018
     },
     {
       "npsn": "60712276",
@@ -6134,7 +7290,9 @@
       "address": "TEGALHARJO",
       "village": "Tegalharjo",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6422,
+      "longitude": 111.0278
     },
     {
       "npsn": "60712277",
@@ -6142,7 +7300,9 @@
       "address": "PASUCEN",
       "village": "Pasucen",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6573,
+      "longitude": 111.05
     },
     {
       "npsn": "60712278",
@@ -6150,7 +7310,9 @@
       "address": "Jl. Dampuawang No. 12 Desa Pasucen RT 05 RW 04",
       "village": "Pasucen",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.659,
+      "longitude": 111.0501
     },
     {
       "npsn": "60712279",
@@ -6158,7 +7320,9 @@
       "address": "TRANGKIL",
       "village": "Trangkil",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6551,
+      "longitude": 111.0795
     },
     {
       "npsn": "60712280",
@@ -6166,7 +7330,9 @@
       "address": "RT 04 RW 08",
       "village": "Pasucen",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6677,
+      "longitude": 111.045
     },
     {
       "npsn": "60712281",
@@ -6174,7 +7340,9 @@
       "address": "TAWANGHARJO",
       "village": "Tawangharjo",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.7090105,
+      "longitude": 111.0935462
     },
     {
       "npsn": "60712282",
@@ -6182,7 +7350,9 @@
       "address": "jln. Mataram Km 01 Desa Suwaduk kecamatan Wedarijaksa kab. Pati",
       "village": "Suwaduk",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6784,
+      "longitude": 111.0618
     },
     {
       "npsn": "60712283",
@@ -6190,7 +7360,9 @@
       "address": "JONTRO",
       "village": "Jontro",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6933,
+      "longitude": 111.0739
     },
     {
       "npsn": "60712284",
@@ -6198,7 +7370,9 @@
       "address": "JL. KAPTEN YUSUF NO.91",
       "village": "Wedarijaksa",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.695,
+      "longitude": 111.0593
     },
     {
       "npsn": "60712285",
@@ -6206,7 +7380,9 @@
       "address": "SUKOHARJO",
       "village": "Sukoharjo",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6961,
+      "longitude": 111.067
     },
     {
       "npsn": "60712286",
@@ -6214,7 +7390,9 @@
       "address": "PAGERHARJO",
       "village": "Pagerharjo",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6786,
+      "longitude": 111.0847
     },
     {
       "npsn": "60712287",
@@ -6222,7 +7400,9 @@
       "address": "TLOGOHARUM",
       "village": "Tlogoharum",
       "level": "mi",
-      "district": "Wedarijaksa"
+      "district": "Wedarijaksa",
+      "latitude": -6.6711,
+      "longitude": 111.0999
     },
     {
       "npsn": "60712288",
@@ -6230,7 +7410,9 @@
       "address": "Dk. Pecangaan",
       "village": "Winong",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.812639,
+      "longitude": 111.100568
     },
     {
       "npsn": "60712289",
@@ -6238,7 +7420,9 @@
       "address": "Pekalongan",
       "village": "Pekalongan",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8163158,
+      "longitude": 111.1063769
     },
     {
       "npsn": "60712290",
@@ -6246,7 +7430,9 @@
       "address": "RT 05 RW 3",
       "village": "Danyangmulyo",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8338,
+      "longitude": 111.0938
     },
     {
       "npsn": "60712291",
@@ -6254,7 +7440,9 @@
       "address": "BLINGIJATI",
       "village": "Blingijati",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8265,
+      "longitude": 111.0881
     },
     {
       "npsn": "60712292",
@@ -6262,7 +7450,9 @@
       "address": "TAWANGREJO",
       "village": "Tawangrejo",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8023,
+      "longitude": 111.082
     },
     {
       "npsn": "60712293",
@@ -6270,7 +7460,9 @@
       "address": "SARIMULYO",
       "village": "Sarimulyo",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.793,
+      "longitude": 111.137
     },
     {
       "npsn": "60712294",
@@ -6278,7 +7470,9 @@
       "address": "WIRUN",
       "village": "Wirun",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8723,
+      "longitude": 111.1012
     },
     {
       "npsn": "60712295",
@@ -6286,7 +7480,9 @@
       "address": "TANGGEL RT 06 RW 02",
       "village": "Tanggel",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.7966,
+      "longitude": 111.1133
     },
     {
       "npsn": "60712296",
@@ -6294,7 +7490,9 @@
       "address": "KARANGKONANG",
       "village": "Karangkonang",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8086,
+      "longitude": 111.1166
     },
     {
       "npsn": "60712297",
@@ -6302,7 +7500,9 @@
       "address": "Desa Tlogorejo Dkh. Julu RT 04 RW 02 Kec. Winong Kab. Pati Prov. Jawa Tengah",
       "village": "Tlogorejo",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.827525,
+      "longitude": 111.124433
     },
     {
       "npsn": "60712298",
@@ -6310,7 +7510,9 @@
       "address": "PAGENDISAN",
       "village": "Pagendisan",
       "level": "mi",
-      "district": "Winong"
+      "district": "Winong",
+      "latitude": -6.8728,
+      "longitude": 111.1011
     },
     {
       "npsn": "60729487",
@@ -6318,7 +7520,9 @@
       "address": "DESA TAJUNGSARI",
       "village": "Tajungsari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6528,
+      "longitude": 110.9844
     },
     {
       "npsn": "60729488",
@@ -6326,7 +7530,9 @@
       "address": "DESA GUWO",
       "village": "Guwo",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6763,
+      "longitude": 110.985
     },
     {
       "npsn": "60729489",
@@ -6334,7 +7540,9 @@
       "address": "RANDU GUNTING TAJUNGSARI TLOGOWUNGU PATI RT 05/04",
       "village": "Tajungsari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.643473,
+      "longitude": 110.974875
     },
     {
       "npsn": "60730248",
@@ -6342,7 +7550,9 @@
       "address": "JL RAYA TLOGOWUNGU PATI KM 07 DESA LAHAR KEC TLOGOWUNGU KAB PATI",
       "village": "Lahar",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7021,
+      "longitude": 111.0087
     },
     {
       "npsn": "69725319",
@@ -6350,7 +7560,9 @@
       "address": "JLN. NUSA INDAH",
       "village": "Wonorejo",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.704015,
+      "longitude": 111.010431
     },
     {
       "npsn": "69725759",
@@ -6358,7 +7570,9 @@
       "address": "DS.PESAGI KEC KAYEN",
       "village": "Pesagi",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.8732,
+      "longitude": 110.9832
     },
     {
       "npsn": "69725760",
@@ -6366,7 +7580,9 @@
       "address": "DS.JIMBARAN KEC KAYEN",
       "village": "Jimbaran",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9138,
+      "longitude": 110.9765
     },
     {
       "npsn": "69725762",
@@ -6374,7 +7590,9 @@
       "address": "Komplek Masjid Al Amin",
       "village": "Mojoagung",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6394153,
+      "longitude": 111.0632372
     },
     {
       "npsn": "69726183",
@@ -6382,7 +7600,9 @@
       "address": "Kompleks Masjid Al-Muwahhidin",
       "village": "Lengkong",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7076,
+      "longitude": 111.2117
     },
     {
       "npsn": "69726185",
@@ -6390,7 +7610,9 @@
       "address": "DS WONOSEKAR KEC GEMBONG",
       "village": "Wonosekar",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6952,
+      "longitude": 110.9709
     },
     {
       "npsn": "69726187",
@@ -6398,7 +7620,9 @@
       "address": "DS.SITI LUHUR KEC GEMBONG",
       "village": "Sitiluhur",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7087,
+      "longitude": 110.9692
     },
     {
       "npsn": "69726189",
@@ -6406,7 +7630,9 @@
       "address": "Jl. Gembong - Argojembangan KM 3 Pl",
       "village": "Plukaran",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.695,
+      "longitude": 110.9329
     },
     {
       "npsn": "69726190",
@@ -6414,7 +7640,9 @@
       "address": "Dukuh Bengkal Rt 01 Rw 06",
       "village": "Plukaran",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7094,
+      "longitude": 110.9435
     },
     {
       "npsn": "69726194",
@@ -6422,7 +7650,9 @@
       "address": "Rt. 01 Rw. 03",
       "village": "Pohgading",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7187,
+      "longitude": 110.9552
     },
     {
       "npsn": "69726197",
@@ -6430,7 +7660,9 @@
       "address": "DK. POSONO RT.01 RW.07 DS. KLAKAHKASIHAN KEC. GEMBONG KAB. PATI",
       "village": "Klakah Kasian",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6543,
+      "longitude": 110.9435
     },
     {
       "npsn": "69726198",
@@ -6438,7 +7670,9 @@
       "address": "KLAKAHKASIHAN RT:04/RW:05",
       "village": "Klakah Kasian",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.6589,
+      "longitude": 110.9332
     },
     {
       "npsn": "69726200",
@@ -6446,7 +7680,9 @@
       "address": "GUNUNGSARI RT01/01",
       "village": "Gunungsari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.716,
+      "longitude": 110.9507
     },
     {
       "npsn": "69726201",
@@ -6454,7 +7690,9 @@
       "address": "DS.SUMBERMULYO TLOGOWUNGU",
       "village": "Sumbermulyo",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6613,
+      "longitude": 111.0008
     },
     {
       "npsn": "69726202",
@@ -6462,7 +7700,9 @@
       "address": "SUMBERMULYO 05/1 TLOGOWUNGU PATI",
       "village": "Sumbermulyo",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6649,
+      "longitude": 110.9971
     },
     {
       "npsn": "69726204",
@@ -6470,7 +7710,9 @@
       "address": "DS PANGKALAN KEC MARGOYOSO",
       "village": "Pangkalan",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6136,
+      "longitude": 111.0464
     },
     {
       "npsn": "69726205",
@@ -6478,7 +7720,9 @@
       "address": "DS.KARANGSARI CLUWAK",
       "village": "Karangsari",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.5543,
+      "longitude": 110.9477
     },
     {
       "npsn": "69726207",
@@ -6486,7 +7730,9 @@
       "address": "DS.WEDUSAN KEC DUKUHSETI",
       "village": "Wedusan",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4937,
+      "longitude": 110.9749
     },
     {
       "npsn": "69726209",
@@ -6494,7 +7740,9 @@
       "address": "Jl. KRPH Ngrancang Rt 05 Rw 05",
       "village": "Wedusan",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4557,
+      "longitude": 110.9866
     },
     {
       "npsn": "69726210",
@@ -6502,7 +7750,9 @@
       "address": "Jl. Dukuhseti - Banyutowo Km.01 Dukuhseti",
       "village": "Dukuhseti",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4598,
+      "longitude": 111.0381
     },
     {
       "npsn": "69726211",
@@ -6510,7 +7760,9 @@
       "address": "DS. DUKUHSETI RT 07 RW 03",
       "village": "Dukuhseti",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4467,
+      "longitude": 111.0368
     },
     {
       "npsn": "69726219",
@@ -6518,7 +7770,9 @@
       "address": "DS.GROGOLAN KEC DUKUHSETI",
       "village": "Grogolan",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4861,
+      "longitude": 111.0273
     },
     {
       "npsn": "69726220",
@@ -6526,7 +7780,9 @@
       "address": "Dukuh Sambikerep RT 003/03",
       "village": "Purwosari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6899,
+      "longitude": 111.0168
     },
     {
       "npsn": "69727151",
@@ -6534,7 +7790,9 @@
       "address": "DS.KETANGGAN KEC GEMBONG",
       "village": "Ketanggan",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7077,
+      "longitude": 110.9694
     },
     {
       "npsn": "69727152",
@@ -6542,7 +7800,9 @@
       "address": "DS.GEMBONG KEC GEMBONG",
       "village": "Gembong",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7032,
+      "longitude": 110.9446
     },
     {
       "npsn": "69727494",
@@ -6550,7 +7810,9 @@
       "address": "DS.KLAKAHKASIHAN KEC GEMBONG",
       "village": "Klakah Kasian",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7219,
+      "longitude": 110.9508
     },
     {
       "npsn": "69727495",
@@ -6558,7 +7820,9 @@
       "address": "Desa Wonorejo RT 2 RW 1 Kecamatan Tlogowungu Kabupaten PAti",
       "village": "Wonorejo",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7088,
+      "longitude": 111.0439
     },
     {
       "npsn": "69727496",
@@ -6566,7 +7830,9 @@
       "address": "DS.TLOGOSARI KEC TLOGOWUNGU",
       "village": "Tlogosari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7192,
+      "longitude": 111.0088
     },
     {
       "npsn": "69727497",
@@ -6574,7 +7840,9 @@
       "address": "Jl Masjid Jami` Al Muttaqin",
       "village": "Bulumanis Kidul",
       "level": "mi",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6109,
+      "longitude": 111.0676
     },
     {
       "npsn": "69727498",
@@ -6582,7 +7850,9 @@
       "address": "DS. GROGOLAN RT 008 RW 003",
       "village": "Grogolan",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.4803,
+      "longitude": 111.0227
     },
     {
       "npsn": "69727499",
@@ -6590,7 +7860,9 @@
       "address": "DS.CABAK KEC TLGOWUNGU",
       "village": "Cabak",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.719,
+      "longitude": 110.986
     },
     {
       "npsn": "69727500",
@@ -6598,7 +7870,9 @@
       "address": "DS.BERMI KEC GEMBONG",
       "village": "Bermi",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.724,
+      "longitude": 110.9504
     },
     {
       "npsn": "69762661",
@@ -6606,7 +7880,9 @@
       "address": "DESA TLOGOREJO",
       "village": "Tlogorejo",
       "level": "sd",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7063,
+      "longitude": 111.0168
     },
     {
       "npsn": "69819560",
@@ -6614,7 +7890,9 @@
       "address": "RT 01/ 05 Desa Suwatu",
       "village": "Suwatu",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.7046,
+      "longitude": 111.0299
     },
     {
       "npsn": "69824826",
@@ -6622,7 +7900,9 @@
       "address": "JALAN NANAS RT 7/2 PLANGITAN",
       "village": "Plangitan",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.756,
+      "longitude": 111.0226
     },
     {
       "npsn": "69827777",
@@ -6630,7 +7910,9 @@
       "address": "Jl. Jakenan - Pucakwangi ,Tanjungsekar Rt. 04/ Rw.IV",
       "village": "Tanjungsekar",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.839506,
+      "longitude": 111.209002
     },
     {
       "npsn": "69852841",
@@ -6638,7 +7920,9 @@
       "address": "Jl. Raden Patah Jepat Lor Tayu Pati",
       "village": "Jepat Lor",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5488,
+      "longitude": 111.0492
     },
     {
       "npsn": "69854216",
@@ -6646,7 +7930,9 @@
       "address": "Jl. Tiwongso No.08 Sokopuluhan Pucakwangi",
       "village": "Sokopuluhan",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8202,
+      "longitude": 111.174
     },
     {
       "npsn": "69854217",
@@ -6654,7 +7940,9 @@
       "address": "Desa Karangrejo Kecamatan Pucakwangi Kabupaten Pati Provinsi Jawa Tengah",
       "village": "Karangrejo",
       "level": "mi",
-      "district": "Pucakwangi"
+      "district": "Pucakwangi",
+      "latitude": -6.8038,
+      "longitude": 111.1351
     },
     {
       "npsn": "69880234",
@@ -6662,7 +7950,9 @@
       "address": "DS TAYU WETAN",
       "village": "Tayu Wetan",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5332,
+      "longitude": 111.0432
     },
     {
       "npsn": "69880574",
@@ -6670,7 +7960,9 @@
       "address": "JALAN SUTRA NO. 1 DS TRANGKIL",
       "village": "Trangkil",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.6657,
+      "longitude": 111.0656
     },
     {
       "npsn": "69880575",
@@ -6678,7 +7970,9 @@
       "address": "JALAN SALMAN AL-FARISI NO. 5 PERUM TAYLON SEJAHTERA",
       "village": "Tayu Kulon",
       "level": "sd",
-      "district": "Tayu"
+      "district": "Tayu",
+      "latitude": -6.5326,
+      "longitude": 111.0353
     },
     {
       "npsn": "69894629",
@@ -6686,7 +7980,9 @@
       "address": "Rt 02 Rw 1 Desa Brati Kecamatan Kayen Kabupaten Pati",
       "village": "Brati",
       "level": "mi",
-      "district": "Kayen"
+      "district": "Kayen",
+      "latitude": -6.9076,
+      "longitude": 111.0255
     },
     {
       "npsn": "69894631",
@@ -6694,7 +7990,9 @@
       "address": "Karanglegi",
       "village": "Karanglegi",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.651731,
+      "longitude": 111.074002
     },
     {
       "npsn": "69901954",
@@ -6702,7 +8000,9 @@
       "address": "Jalan Kauman Nomor 01",
       "village": "Ngagel",
       "level": "mi",
-      "district": "Dukuhseti"
+      "district": "Dukuhseti",
+      "latitude": -6.488749,
+      "longitude": 111.037853
     },
     {
       "npsn": "69927958",
@@ -6710,7 +8010,9 @@
       "address": "Jl. Tlogosari - Tlogowungu Rt 05 Rw 01",
       "village": "Tlogosari",
       "level": "mi",
-      "district": "Tlogowungu"
+      "district": "Tlogowungu",
+      "latitude": -6.6599,
+      "longitude": 111.0234
     },
     {
       "npsn": "69927959",
@@ -6718,7 +8020,9 @@
       "address": "Jl. Raya Tayu-Jepara No. 460",
       "village": "Ngablak",
       "level": "mi",
-      "district": "Cluwak"
+      "district": "Cluwak",
+      "latitude": -6.536,
+      "longitude": 110.9706
     },
     {
       "npsn": "69946898",
@@ -6726,7 +8030,9 @@
       "address": "Jalan Al Azhar nomor 1 Desa Winong RT.03 RW. 07",
       "village": "Winong",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7368,
+      "longitude": 111.0246
     },
     {
       "npsn": "69956218",
@@ -6734,7 +8040,9 @@
       "address": "Ds Ngepungrojo Desa Ngepungrojo Kec Pati",
       "village": "Ngepungrojo",
       "level": "mi",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69957062",
@@ -6742,7 +8050,9 @@
       "address": "Jl. Komodo No. 128 Kauman Juwana",
       "village": "Kauman",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7162,
+      "longitude": 111.1427
     },
     {
       "npsn": "69967207",
@@ -6750,7 +8060,9 @@
       "address": "Jl. Pati - Tayu KM 18",
       "village": "Waturoyo",
       "level": "sd",
-      "district": "Margoyoso"
+      "district": "Margoyoso",
+      "latitude": -6.6035,
+      "longitude": 111.0519
     },
     {
       "npsn": "69975868",
@@ -6758,7 +8070,9 @@
       "address": "Jl. Raya Juwana Rembang Km. 02",
       "village": "Bendar",
       "level": "sd",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.7099433,
+      "longitude": 111.155462
     },
     {
       "npsn": "69977296",
@@ -6766,7 +8080,9 @@
       "address": "DS. SEMIREJO RT.01 RW.03 KEC. GEMBONG KAB. PATI",
       "village": "Semirejo",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69977297",
@@ -6774,7 +8090,9 @@
       "address": "JL. PATI-KUDUS KM 9",
       "village": "Wangunrejo",
       "level": "mi",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69993391",
@@ -6782,7 +8100,9 @@
       "address": "DS BERMI RT 003 RW 005 KEC GEMBONG",
       "village": "Bermi",
       "level": "mi",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7276,
+      "longitude": 110.9502
     },
     {
       "npsn": "69994036",
@@ -6790,7 +8110,9 @@
       "address": "Jl. K. Ismail Desa Sumberarum RT 03 RW 04 Kec. Jaken Kab. Pati",
       "village": "Sumberarum",
       "level": "mi",
-      "district": "Jaken"
+      "district": "Jaken",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "69994874",
@@ -6798,7 +8120,9 @@
       "address": "Jl. Sunan Prawoto Km. 07",
       "village": "Wegil",
       "level": "mi",
-      "district": "Sukolilo"
+      "district": "Sukolilo",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "70006703",
@@ -6806,7 +8130,9 @@
       "address": "Dk. Cacah Rt. 6 Rw. 2",
       "village": "Sukoharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7536,
+      "longitude": 111.0128
     },
     {
       "npsn": "70007477",
@@ -6814,7 +8140,9 @@
       "address": "Desa Langenharjo Rt 5 Rw 2",
       "village": "Langenharjo",
       "level": "sd",
-      "district": "Margorejo"
+      "district": "Margorejo",
+      "latitude": -6.7796,
+      "longitude": 111.035
     },
     {
       "npsn": "70008994",
@@ -6822,7 +8150,9 @@
       "address": "Ds. Kedalon Rt 003 Rw 001 Kec. Batangan Kab. Pati",
       "village": "Kedalon",
       "level": "mi",
-      "district": "Batangan"
+      "district": "Batangan",
+      "latitude": -6.7158191,
+      "longitude": 111.2342851
     },
     {
       "npsn": "70011327",
@@ -6830,7 +8160,9 @@
       "address": "RT. 03 RW. 02",
       "village": "Tanjungsari",
       "level": "sd",
-      "district": "Jakenan"
+      "district": "Jakenan",
+      "latitude": -7.0348,
+      "longitude": 107.5624
     },
     {
       "npsn": "70012678",
@@ -6838,7 +8170,9 @@
       "address": "RT 7 RW 1",
       "village": "Sidokerto",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7345,
+      "longitude": 111.0354
     },
     {
       "npsn": "70028135",
@@ -6846,7 +8180,9 @@
       "address": "Desa Ketanen",
       "village": "Ketanen",
       "level": "sd",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": -6.648336,
+      "longitude": 111.059071
     },
     {
       "npsn": "70033161",
@@ -6854,7 +8190,9 @@
       "address": "Dk. Karangtawang 02/04 Ds. Karangrejo",
       "village": "Karangrejo",
       "level": "mi",
-      "district": "Juwana"
+      "district": "Juwana",
+      "latitude": -6.738,
+      "longitude": 111.1484
     },
     {
       "npsn": "70039987",
@@ -6862,7 +8200,9 @@
       "address": "Jl. Taman Makam Pahlawan",
       "village": "Puri",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7459,
+      "longitude": 111.0218
     },
     {
       "npsn": "70053149",
@@ -6870,7 +8210,9 @@
       "address": "kinyan,Ngepungrojo,kec.pati,kabupaten pati",
       "village": "Ngepungrojo",
       "level": "sd",
-      "district": "Pati"
+      "district": "Pati",
+      "latitude": -6.7182593,
+      "longitude": 111.0594177
     },
     {
       "npsn": "70063821",
@@ -6878,7 +8220,9 @@
       "address": "Angkatan Kidul",
       "village": "Angkatan Kidul",
       "level": "sd",
-      "district": "Tambakromo"
+      "district": "Tambakromo",
+      "latitude": -6.8537504,
+      "longitude": 111.0632118
     },
     {
       "npsn": "71299206",
@@ -6886,7 +8230,9 @@
       "address": "Dukuh Sentul",
       "village": "Gembong",
       "level": "sd",
-      "district": "Gembong"
+      "district": "Gembong",
+      "latitude": -6.7035146,
+      "longitude": 110.9462996
     },
     {
       "npsn": "71924409",
@@ -6894,7 +8240,9 @@
       "address": "RT 05 RW 01",
       "village": "Tlutup",
       "level": "mi",
-      "district": "Trangkil"
+      "district": "Trangkil",
+      "latitude": null,
+      "longitude": null
     },
     {
       "npsn": "75915716",
@@ -6902,7 +8250,9 @@
       "address": "Dukuh Pasinggahan",
       "village": "Sugihrejo",
       "level": "mi",
-      "district": "Gabus"
+      "district": "Gabus",
+      "latitude": -7.71193,
+      "longitude": 111.47494
     }
   ]
 }
