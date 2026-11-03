@@ -1,0 +1,6608 @@
+{
+  "source": "https://referensi.data.kemendikdasmen.go.id/pendidikan/dikdas/031800/2",
+  "fetched_on": "2026-11-03",
+  "province": "Jawa Tengah",
+  "regency": "Kabupaten Pati",
+  "schools": [
+    {
+      "npsn": "20316095",
+      "name": "SD NEGERI PATI KIDUL 01",
+      "address": "Jl P Sudirman No 96",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316097",
+      "name": "SD NEGERI PATI KIDUL 03",
+      "address": "Jl. Syeh Jangkung 183",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316099",
+      "name": "SD NEGERI PATI KIDUL 05",
+      "address": "Jln Syeh Jangkung Gang V No 20 Pati",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316101",
+      "name": "SD NEGERI PATI LOR 01",
+      "address": "Jl. RA. Kartini No 22A Pati",
+      "village": "Pati Lor",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316102",
+      "name": "SD NEGERI PASURUHAN",
+      "address": "Pasuruhan",
+      "village": "Pasuruhan",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316103",
+      "name": "SD NEGERI PASUCEN 02",
+      "address": "Pasucen",
+      "village": "Pasucen",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316104",
+      "name": "SD NEGERI PARENGGAN 01",
+      "address": "Jl. Diponegoro No. 143",
+      "village": "Parenggan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316105",
+      "name": "SD NEGERI PANJUNAN 02",
+      "address": "Jalan Raya Pati - Kayen",
+      "village": "Panjunan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316106",
+      "name": "SD NEGERI PANGONAN 02",
+      "address": "Gunungsari RT 01 RW 05",
+      "village": "Gunungsari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316107",
+      "name": "SD NEGERI PANGONAN 01",
+      "address": "Jl.Raya Tlogowungu - Gunungwungkal Km.17,5",
+      "village": "Gunungsari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316108",
+      "name": "SD NEGERI PANGKALAN",
+      "address": "Ds Pangkalan",
+      "village": "Pangkalan",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316109",
+      "name": "SD NEGERI PANGGUNGROYOM 01",
+      "address": "Ds Panggungroyom RT 8 RW 1",
+      "village": "Panggungroyom",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316110",
+      "name": "SD NEGERI PAKIS 01",
+      "address": "Jalan Raya Tayu Pati Km 3",
+      "village": "Pakis",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316112",
+      "name": "SD NEGERI PAKIS 02",
+      "address": "Pakis",
+      "village": "Pakis",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316113",
+      "name": "SD NEGERI PATI LOR 02",
+      "address": "Jl Ra Kartini No. 22b Pati",
+      "village": "Pati Lor",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316115",
+      "name": "SD NEGERI PELEMGEDE 02",
+      "address": "Ds. Pelemgede RT. 010 RW.002",
+      "village": "Pelemgede",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316116",
+      "name": "SD NEGERI PELEMGEDE 03",
+      "address": "Pelemgede",
+      "village": "Pelemgede",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316117",
+      "name": "SD NEGERI PEKUWON",
+      "address": "Jln Juana - Jakenan Km 3",
+      "village": "Pekuwon",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316118",
+      "name": "SD NEGERI PEKALONGAN",
+      "address": "Jl. Winong-Pucakwangi Km. 01",
+      "village": "Pekalongan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316119",
+      "name": "SD NEGERI PEGANDAN 02",
+      "address": "Jl Desa Pegandan Rt 3/2",
+      "village": "Pegandan",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316120",
+      "name": "SD NEGERI PEGANDAN 01",
+      "address": "Desa Pegandan",
+      "village": "Pegandan",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316121",
+      "name": "SD NEGERI PECANGAAN",
+      "address": "Pecangaan",
+      "village": "Pecangaan",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316122",
+      "name": "SD NEGERI PAYANG 03",
+      "address": "Payang",
+      "village": "Payang",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316127",
+      "name": "SD NEGERI PAYAK 02",
+      "address": "Payak RT 14 RW 05",
+      "village": "Payak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316130",
+      "name": "SD NEGERI PATI WETAN 01",
+      "address": "Jl Tondonegoro No 7",
+      "village": "Pati Wetan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316131",
+      "name": "SD NEGERI PATI LOR 05",
+      "address": "JALAN RA KARTINI NO: 22 E",
+      "village": "Pati Lor",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316132",
+      "name": "SD NEGERI PENAMBUHAN 01",
+      "address": "Ds Penambuhan",
+      "village": "Penambuhan",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316133",
+      "name": "SD NEGERI PAKEM 02",
+      "address": "Dk. Ngrombo",
+      "village": "Pakem",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316134",
+      "name": "SD NEGERI NGAWEN",
+      "address": "Ngawen",
+      "village": "Ngawen",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316135",
+      "name": "SD NEGERI NGASTOREJO",
+      "address": "Ngastorejo",
+      "village": "Ngastorejo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316136",
+      "name": "SD NEGERI NGARUS 02",
+      "address": "Jl Kolonel Sugiyono 11 Pati",
+      "village": "Ngarus",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316137",
+      "name": "SD NEGERI NGAGEL 02",
+      "address": "RT.04 RW.03",
+      "village": "Ngagel",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316138",
+      "name": "SD NEGERI NGAGEL 01",
+      "address": "Ngagel",
+      "village": "Ngagel",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316139",
+      "name": "SD NEGERI NGABLAK 04",
+      "address": "Jalan Raya Tayu Jepara Km 9",
+      "village": "Ngablak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316140",
+      "name": "SD NEGERI NGABLAK 03",
+      "address": "Jalan Ngablak- Gunungwungkal Km 1 Ngablak",
+      "village": "Ngablak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316141",
+      "name": "SD NEGERI NGABLAK 02",
+      "address": "Desa Ngablak RT. 004 RW. 011",
+      "village": "Ngablak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316142",
+      "name": "SD NEGERI NGABLAK 01",
+      "address": "Ngablak",
+      "village": "Ngablak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316144",
+      "name": "SD NEGERI MUSTOKOHARJO",
+      "address": "Jalan Pati Gabus Km 1",
+      "village": "Mustokoharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316145",
+      "name": "SD NEGERI MULYOHARJO 02",
+      "address": "JL. RAYA PATI - TAYU KM. 3",
+      "village": "Mulyoharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316146",
+      "name": "SD NEGERI MULYOHARJO 01",
+      "address": "Jl. Pati - Tayu Km 3",
+      "village": "Mulyoharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316148",
+      "name": "SD NEGERI MUKTIHARJO 02",
+      "address": "Dk Muktisari Rt 05 Rw 02",
+      "village": "Muktiharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316149",
+      "name": "SD NEGERI MUKTIHARJO 01",
+      "address": "Muktiharjo",
+      "village": "Muktiharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316150",
+      "name": "SD NEGERI NGAWEN 02",
+      "address": "Jalan Pati - Kudus Km 5",
+      "village": "Ngawen",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316151",
+      "name": "SD NEGERI NGEMPLAK KIDUL 01",
+      "address": "Jl Raya Pati Tayu",
+      "village": "Ngemplak Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316152",
+      "name": "SD NEGERI PAKEM 01",
+      "address": "Ds Pakem Rt 06 Rw 04",
+      "village": "Pakem",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316153",
+      "name": "SD NEGERI PAGERHARJO 02",
+      "address": "Ds Pagerharjo",
+      "village": "Pagerharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316154",
+      "name": "SD NEGERI PAGERHARJO 01",
+      "address": "Pagerharjo",
+      "village": "Pagerharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316155",
+      "name": "SD NEGERI PAGENDISAN",
+      "address": "Pagendisan",
+      "village": "Pagendisan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316156",
+      "name": "SD NEGERI PADANGAN",
+      "address": "Padangan",
+      "village": "Padangan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316157",
+      "name": "SD NEGERI NGURENSITI 01",
+      "address": "Ds Ngurensiti",
+      "village": "Ngurensiti",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316159",
+      "name": "SD NEGERI NGURENREJO",
+      "address": "Ds Ngurenrejo",
+      "village": "Ngurenrejo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316160",
+      "name": "SD NEGERI NGETUK 01",
+      "address": "Desa Ngetuk RT. 01 RW. 02",
+      "village": "Ngetuk",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316162",
+      "name": "SD NEGERI NGEPUNGROJO 01",
+      "address": "Ngepungrojo",
+      "village": "Ngepungrojo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316164",
+      "name": "SD NEGERI NGENING 01",
+      "address": "Ngening",
+      "village": "Ngening",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316165",
+      "name": "SD NEGERI NGEMPLAK LOR",
+      "address": "Ds Ngemplak Lor",
+      "village": "Ngemplak Lor",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316167",
+      "name": "SD NEGERI NGEMPLAK KIDUL 02",
+      "address": "Ds Ngemplak Kidul",
+      "village": "Ngemplak Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316168",
+      "name": "SD NEGERI MOJOMULYO",
+      "address": "Jl. Raya Tambakromo - Kayen Km. 02",
+      "village": "Mojomulyo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316169",
+      "name": "SD NEGERI SENDANGREJO",
+      "address": "Sendangrejo",
+      "village": "Sendangrejo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316170",
+      "name": "SD NEGERI SAMBILAWANG",
+      "address": "Jl Juana Tayu Km 08 Ds Sambilawang Kec.Trangkil Kab. Pati",
+      "village": "Sambilawang",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316171",
+      "name": "SD NEGERI SALANGAMER",
+      "address": "Dsn.Salangamer RT.07/RW.06",
+      "village": "Pakem",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316172",
+      "name": "SD Negeri Ronggo 03",
+      "address": "Jln Jaken Ronggo Km 09",
+      "village": "Ronggo",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316174",
+      "name": "SD NEGERI ROGOMULYO 01",
+      "address": "Rogomulyo",
+      "village": "Rogomulyo",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316176",
+      "name": "SD NEGERI REJOAGUNG 01",
+      "address": "Ds Rejoagung",
+      "village": "Rejoagung",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316177",
+      "name": "SD NEGERI REGALOH 02",
+      "address": "Ds. Regaloh RT. 02 RW. 03",
+      "village": "Regaloh",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316180",
+      "name": "SD NEGERI RACI 01",
+      "address": "Jln Raya Juwana-rembang Km 5",
+      "village": "Raci",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316181",
+      "name": "SD NEGERI PURWOSARI 02",
+      "address": "Jl.tlogowungu Gn.rowo Km.1,5",
+      "village": "Purwosari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316183",
+      "name": "SD NEGERI PURWOREJO 01",
+      "address": "Jl Pati Juwana Km 8 Pati",
+      "village": "Purworejo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316184",
+      "name": "SD NEGERI PURWOREJO",
+      "address": "Jalan Tambak Buntu",
+      "village": "Purworejo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316185",
+      "name": "SD NEGERI PURWOKERTO 02",
+      "address": "Purwokerto",
+      "village": "Purwokerto",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316186",
+      "name": "SD NEGERI SAMBIREJO 01",
+      "address": "DS. SAMBIREJO RT 02 RW 03 Kecamatan Gabus Kabupaten Pati",
+      "village": "Sambirejo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316187",
+      "name": "SD NEGERI SAMBIREJO 01",
+      "address": "Jl Tlogowungu-bapoh Km 2",
+      "village": "Sambirejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316188",
+      "name": "SD NEGERI SEMIREJO 02",
+      "address": "Dk. Randangan Rt.1/4",
+      "village": "Semirejo",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316190",
+      "name": "SD NEGERI SEMERAK",
+      "address": "Ds Semerak",
+      "village": "Semerak",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316191",
+      "name": "SD NEGERI SEMAMPIR",
+      "address": "Jl Roro Mendut No 2",
+      "village": "Semampir",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316193",
+      "name": "SD NEGERI SEKARJALAK 01",
+      "address": "Ds Sekarjalak",
+      "village": "Sekarjalak",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316194",
+      "name": "SD NEGERI SEJOMULYO 02",
+      "address": "Ds Sejomulyo Rt 1/1",
+      "village": "Sejomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316197",
+      "name": "SD NEGERI SARIREJO 04",
+      "address": "Desa sarirejo Rt 04 / Rw I",
+      "village": "Sarirejo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316199",
+      "name": "SD NEGERI SARIMULYO 03",
+      "address": "Sarimulyo",
+      "village": "Sarimulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316200",
+      "name": "SD NEGERI SARIMULYO 02",
+      "address": "Sarimulyo",
+      "village": "Sarimulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316201",
+      "name": "SD NEGERI SAMPOK",
+      "address": "Sampok",
+      "village": "Sampok",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316202",
+      "name": "SD NEGERI SAMBIROTO 01",
+      "address": "SAMBIROTO",
+      "village": "Sambiroto",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316203",
+      "name": "SD NEGERI SAMBIREJO 02",
+      "address": "Jl Tlogowungu-Bapoh Km 02",
+      "village": "Sambirejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316204",
+      "name": "SD NEGERI PURWOKERTO 01",
+      "address": "Jalan Tayu Jepara Km 5",
+      "village": "Purwokerto",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316205",
+      "name": "SD NEGERI PURWOKERTO",
+      "address": "Purwokerto",
+      "village": "Purwokerto",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316206",
+      "name": "SD NEGERI PONCOMULYO",
+      "address": "Dukuh Poncomulyo Desa Gadudero",
+      "village": "Gadudero",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316208",
+      "name": "SD NEGERI POHIJO 01",
+      "address": "Jl Tayu - Juwana Km 10",
+      "village": "Pohijo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316209",
+      "name": "SD NEGERI POHGADING",
+      "address": "POHGADING",
+      "village": "Pohgading",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316210",
+      "name": "SD NEGERI POHGADING",
+      "address": "DESA POHGADING",
+      "village": "Pohgading",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316211",
+      "name": "SD NEGERI PLUMBUNGAN",
+      "address": "Desa Plumbungan",
+      "village": "Plumbungan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316212",
+      "name": "SD NEGERI PLUKARAN 02",
+      "address": "Jln. Gembong-Argojembangan",
+      "village": "Plukaran",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316213",
+      "name": "SD NEGERI PLOSOMALANG 02",
+      "address": "Dk. PLOSOMALANG",
+      "village": "Pantirejo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316214",
+      "name": "SD NEGERI PLOSOMALANG 01",
+      "address": "Ds Kosekan Rt 1/1",
+      "village": "Kosekan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316215",
+      "name": "SD NEGERI PLOSOKEREP",
+      "address": "Dk. Plosokerep",
+      "village": "Prawoto",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316216",
+      "name": "SD NEGERI PLOSOJENAR",
+      "address": "Plosojenar",
+      "village": "Plosojenar",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316217",
+      "name": "SD NEGERI PLAOSAN 01",
+      "address": "Jl Raya Tayu - Jepara Km 12 Plaosan",
+      "village": "Plaosan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316218",
+      "name": "SD NEGERI PLAOSAN 03",
+      "address": "Plaosan",
+      "village": "Plaosan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316219",
+      "name": "SD NEGERI PESAGI 02",
+      "address": "Pesagi",
+      "village": "Pesagi",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316220",
+      "name": "SD NEGERI PERDOPO 02",
+      "address": "Perdopo",
+      "village": "Perdopo",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316221",
+      "name": "SD NEGERI PENANGGUNGAN",
+      "address": "JL. GABUS-PATI KM.02",
+      "village": "Penanggungan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316223",
+      "name": "SD NEGERI PONDOWAN 02",
+      "address": "Pondowan",
+      "village": "Pondowan",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316225",
+      "name": "SD NEGERI PURWODADI",
+      "address": "Jln Pati Tayu Km 20 No 182",
+      "village": "Purwodadi",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316226",
+      "name": "SD NEGERI PURI 03",
+      "address": "Jl Ronggowarsito No 2 PATI",
+      "village": "Puri",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316227",
+      "name": "SD NEGERI PURI 02",
+      "address": "Jln Taman Pahlawan 17 Pati",
+      "village": "Puri",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316229",
+      "name": "SD NEGERI PUNDENREJO",
+      "address": "Jalan Raya Tayu Jepara Km 3",
+      "village": "Pundenrejo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316230",
+      "name": "SD NEGERI PUNCEL 01",
+      "address": "Jl. Raya Tayu-Puncel KM.17",
+      "village": "Puncel",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316231",
+      "name": "SD NEGERI PULUHANTENGAH",
+      "address": "Jln. Jakenan - Winong. Km 1",
+      "village": "Puluhan Tengah",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316232",
+      "name": "SD NEGERI PULOREJO 02",
+      "address": "Pulorejo",
+      "village": "Pulorejo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316233",
+      "name": "SD NEGERI PULOREJO 01",
+      "address": "Pulorejo",
+      "village": "Pulorejo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316235",
+      "name": "SD NEGERI PUCAKWANGI 04",
+      "address": "Jln Pucakwangi - Todanan km 1",
+      "village": "Pucakwangi",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316236",
+      "name": "SD NEGERI PUCAKWANGI 03",
+      "address": "Jln. Pucakwangi-Winong km 0,5",
+      "village": "Pucakwangi",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316237",
+      "name": "SD NEGERI PUCAKWANGI 01",
+      "address": "Jln. Raya Pucakwangi - Winong",
+      "village": "Pucakwangi",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316238",
+      "name": "SD NEGERI PUCAKWANGI 02",
+      "address": "Dk.Jatilawang, RT.04/RW.02",
+      "village": "Pucakwangi",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316240",
+      "name": "SD NEGERI PRAWOTO 03",
+      "address": "Dk. Karang Tandan Rt.09 Rw.04",
+      "village": "Prawoto",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316241",
+      "name": "SD NEGERI PRAWOTO 02",
+      "address": "Dk Sewunegaran",
+      "village": "Prawoto",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316243",
+      "name": "SD NEGERI KETANGGAN 02",
+      "address": "Ds Ketanggan",
+      "village": "Ketanggan",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316244",
+      "name": "SD NEGERI KEDALINGAN 02",
+      "address": "Jl Gabus Tambakromo Km 3",
+      "village": "Kedalingan",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316246",
+      "name": "SD NEGERI KEBOWAN",
+      "address": "Kebowan",
+      "village": "Kebowan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316247",
+      "name": "SD NEGERI KEBOROMO",
+      "address": "Jl. Pantai, Ds. Keboromo RT : 04 RW : 01 Kec. Tayu Kab. Pati",
+      "village": "Keboromo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316248",
+      "name": "SD NEGERI KEBONTURI",
+      "address": "Kebonturi",
+      "village": "Kebonturi",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316249",
+      "name": "SD NEGERI KEBONSAWAHAN 02",
+      "address": "Jl. Sunan Ngerang 31 B",
+      "village": "Kebonsawahan",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316251",
+      "name": "SD NEGERI KEBOLAMPANG",
+      "address": "Jalan Raya Winong Pucakwangi Km 5",
+      "village": "Kebolampang",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316252",
+      "name": "SD NEGERI KEBEN",
+      "address": "Jln. Tambakromo - Maitan KM 02",
+      "village": "Keben",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316253",
+      "name": "SD NEGERI KAYEN 06",
+      "address": "Kayen, Rt. 02 Rw.02",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316254",
+      "name": "SD NEGERI KAYEN 05",
+      "address": "Kayen",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316255",
+      "name": "SD NEGERI KAYEN 03",
+      "address": "Jln Perhutani, Kayen",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316256",
+      "name": "SD NEGERI KAYEN 02",
+      "address": "JL. PERHUTANI KAYEN",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316257",
+      "name": "SD NEGERI KAYEN 01",
+      "address": "Ds Kayen Rt 03 Rw 01",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316258",
+      "name": "SD NEGERI KAUMAN 02",
+      "address": "Jl. Wr Supratman",
+      "village": "Pajeksan",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316259",
+      "name": "SD NEGERI KAUMAN 01",
+      "address": "Jl P Diponegoro No 2",
+      "village": "Kauman",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316260",
+      "name": "SD NEGERI KEDALON 01",
+      "address": "Kedalon",
+      "village": "Kedalon",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316261",
+      "name": "SD NEGERI KEDALON 02",
+      "address": "Kedalon",
+      "village": "Kedalon",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316262",
+      "name": "SD NEGERI KETANEN",
+      "address": "Ds Ketanen",
+      "village": "Ketanen",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316263",
+      "name": "SD NEGERI KERTOMULYO 01",
+      "address": "Jl Raya Tayu Juwana Km 10",
+      "village": "Kertomulyo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316264",
+      "name": "SD NEGERI KEPOHKENCONO 03",
+      "address": "DESA KEPOHKENCONO",
+      "village": "Kepohkencono",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316265",
+      "name": "SD NEGERI KEPOH",
+      "address": "Ds Kepoh Rt.4/2",
+      "village": "Kepoh",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316266",
+      "name": "SD NEGERI KENANTI",
+      "address": "Desa Kenanti",
+      "village": "Kenanti",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316267",
+      "name": "SD NEGERI KEMBANG 02",
+      "address": "Kembang",
+      "village": "Kembang",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316269",
+      "name": "SD NEGERI KEDUNGWINONG 01",
+      "address": "Jln. Sunan Prawoto km.2",
+      "village": "Kedungwinong",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316270",
+      "name": "SD NEGERI KEDUNGSARI 02",
+      "address": "Jalan TAYU PATI Km 5",
+      "village": "Kedungsari",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316271",
+      "name": "SD NEGERI KEDUNGSARI 01",
+      "address": "Jalan Tayu Pati Km 4",
+      "village": "Kedungsari",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316272",
+      "name": "SD Negeri Kedungmulyo",
+      "address": "Kedungmulyo",
+      "village": "Kedungmulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316274",
+      "name": "SD NEGERI KEDUNGBULUS 02",
+      "address": "Kedungbulus Rt 3/2",
+      "village": "Kedungbulus",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316275",
+      "name": "SD NEGERI KEDUMULYO 02",
+      "address": "Kedumulyo",
+      "village": "Kedumulyo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316276",
+      "name": "SD NEGERI KEDUMULYO 01",
+      "address": "Kedumulyo Rt 01 Rw 02",
+      "village": "Kedumulyo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316277",
+      "name": "SD NEGERI KEDALON 03",
+      "address": "Kedalon",
+      "village": "Kedalon",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316278",
+      "name": "SD NEGERI KASIYAN",
+      "address": "Kasiyan",
+      "village": "Kasiyan",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316279",
+      "name": "SD NEGERI KARANGWOTAN 03",
+      "address": "Karangwotan",
+      "village": "Karangwotan",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316280",
+      "name": "SD NEGERI KARANG",
+      "address": "Jln. Kuniran - Ketip Km. 03. Desa Karang Juwana",
+      "village": "Karang",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316285",
+      "name": "SD NEGERI KARABAN 01",
+      "address": "Jl.pati-kayen Km.10",
+      "village": "Karaban",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316286",
+      "name": "SD NEGERI KALIMULYO 01",
+      "address": "Jln. Jakenan - Winong . Km 4",
+      "village": "Kalimulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316287",
+      "name": "SD NEGERI KALIKALONG 01",
+      "address": "Jln. Tayu-Dukuhseti Km. 4",
+      "village": "Kalikalong",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316288",
+      "name": "SD MUHAMMADIYAH KALIKALONG",
+      "address": "Kalikalong",
+      "village": "Kalikalong",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316289",
+      "name": "SD NEGERI KALIDORO",
+      "address": "Jl P Sudirman",
+      "village": "Kalidoro",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316290",
+      "name": "SD NEGERI KAJEN",
+      "address": "Jln Ronggokusumo",
+      "village": "Kajen",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316291",
+      "name": "SD NEGERI KAJAR 02",
+      "address": "Desa Kajar RT 03 RW 05 Kecamatan Trangkil",
+      "village": "Kajar",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316292",
+      "name": "SD NEGERI KAJAR 01",
+      "address": "Jl Raya Pati Tayu Km 10",
+      "village": "Kajar",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316293",
+      "name": "SD NEGERI KADILANGU",
+      "address": "Jl.raya Juana Tayu Km.11",
+      "village": "Kadilangu",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316294",
+      "name": "SD NEGERI JRAHI 01",
+      "address": "DUKUH JIWO RT 03 RW 03",
+      "village": "Jrahi",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316295",
+      "name": "SD NEGERI JRAHI 02",
+      "address": "Jrahi",
+      "village": "Jrahi",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316296",
+      "name": "SD NEGERI KARANGAWEN",
+      "address": "Ds Karangawen",
+      "village": "Karangawen",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316297",
+      "name": "SD NEGERI KARANGKONANG",
+      "address": "Karangkonang",
+      "village": "Karangkonang",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316298",
+      "name": "SD NEGERI KARANGWOTAN 02",
+      "address": "Jl. Pucakwangi - Winong Km.7,5",
+      "village": "Karangwotan",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316299",
+      "name": "SD NEGERI KARANGWOTAN 01",
+      "address": "Jl. Pucakwangi - Winong Km. 07",
+      "village": "Karangwotan",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316300",
+      "name": "SD NEGERI KARANGWONO 02",
+      "address": "DS. KARANGWONO RT. 02/03",
+      "village": "Karangwono",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316301",
+      "name": "SD NEGERI KARANGWONO 01",
+      "address": "Karangwono",
+      "village": "Karangwono",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316303",
+      "name": "SD NEGERI KARANGWAGE 01",
+      "address": "Ds Karangwage",
+      "village": "Karangwage",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316304",
+      "name": "SD NEGERI KARANGSUMBER 02",
+      "address": "Karangsumber",
+      "village": "Karangsumber",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316305",
+      "name": "SD NEGERI KARANGSUMBER 01",
+      "address": "Karangsumber RT.01 RW.02 Kec.Winong Kab.Pati",
+      "village": "Karangsumber",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316307",
+      "name": "SD NEGERI KARANGSARI 01",
+      "address": "Karangsari Rt 02 Rw 07",
+      "village": "Karangsari",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316308",
+      "name": "SD NEGERI KARANGSARI 03",
+      "address": "Karangsari Rt 04 Rw 01",
+      "village": "Karangsari",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316309",
+      "name": "SD NEGERI KARANGROWO",
+      "address": "Karangrowo",
+      "village": "Karangrowo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316311",
+      "name": "SD NEGERI KARANGREJO 01",
+      "address": "JALAN TEMBUS JUWANA- KARANG KM.3",
+      "village": "Karangrejo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316312",
+      "name": "SD NEGERI KARANGREJO",
+      "address": "Karangrejolor",
+      "village": "Karangrejo Lor",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316313",
+      "name": "SD NEGERI KARANGMULYO",
+      "address": "Jl.Tambakromo-Pati Km 1",
+      "village": "Karangmulyo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316314",
+      "name": "SD NEGERI JONTRO",
+      "address": "Ds Jontro",
+      "village": "Jontro",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316315",
+      "name": "SD Negeri Mojoluhur",
+      "address": "Jalan Jaken Jakenan Km 5",
+      "village": "Mojoluhur",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316316",
+      "name": "SD NEGERI MARGOREJO 02",
+      "address": "Ds Margorejo Rt 02 Rw 02",
+      "village": "Margorejo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316318",
+      "name": "SD NEGERI MARGOREJO",
+      "address": "Ds Margorejo",
+      "village": "Margorejo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316319",
+      "name": "SD NEGERI MARGOMULYO 01",
+      "address": "Dukuh Gempol",
+      "village": "Margomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316320",
+      "name": "SD NEGERI MARGOMULYO",
+      "address": "Margomulyo",
+      "village": "Margomulyo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316321",
+      "name": "SD NEGERI MANTINGANTENGAH",
+      "address": "Mantingantengah",
+      "village": "Mantingan Tengah",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316322",
+      "name": "SD NEGERI MANTINGAN",
+      "address": "Jalan Mantingan Kolutan Km 04",
+      "village": "Mantingan",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316323",
+      "name": "SD NEGERI MANGUNREKSO 02",
+      "address": "Ds Mangunrekso",
+      "village": "Mangunrekso",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316324",
+      "name": "SD NEGERI MANGUNLEGI 01",
+      "address": "Mangunlegi",
+      "village": "Mangunlegi",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316325",
+      "name": "SD Negeri Manjang",
+      "address": "Desa Manjang Rt. 06 Rw. 03",
+      "village": "Manjang",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316327",
+      "name": "SD NEGERI MAITAN 02",
+      "address": "Jln.Tambakromo-Maitan Km 12",
+      "village": "Maitan",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316328",
+      "name": "SD NEGERI MAITAN 01",
+      "address": "Jl. Raya Tambakromo - Maitan Km. 12",
+      "village": "Maitan",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316329",
+      "name": "SD NEGERI MARGOMULYO 02",
+      "address": "Ds Margomulyo",
+      "village": "Margomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316330",
+      "name": "SD NEGERI LUWANG 01",
+      "address": "Luwang",
+      "village": "Luwang",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316331",
+      "name": "SD Negeri Lundo",
+      "address": "Lundo",
+      "village": "Lundo",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316334",
+      "name": "SD NEGERI MEDANI 01",
+      "address": "Medani, Rt. 05 Rw. 01",
+      "village": "Medani",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316335",
+      "name": "SD NEGERI MOJOLAWARAN",
+      "address": "DESA MOJOLAWARAN",
+      "village": "Mojolawaran",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316336",
+      "name": "SD Negeri Mojolampir",
+      "address": "Mojolampir",
+      "village": "Mojolampir",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316337",
+      "name": "SD NEGERI MOJOAGUNG 02",
+      "address": "Jl Raya Pati Tayu Km 14",
+      "village": "Mojoagung",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316339",
+      "name": "SD NEGERI MOJO 04",
+      "address": "Mojo Jati RT 02 RW 08",
+      "village": "Mojo",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316340",
+      "name": "SD NEGERI MOJO 03",
+      "address": "Dukuh Mojo Pligen",
+      "village": "Mojo",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316341",
+      "name": "SD NEGERI MOJO 02",
+      "address": "Jln.Tayu-Jepara Km 18",
+      "village": "Mojo",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316342",
+      "name": "SD NEGERI MOJO 01",
+      "address": "MOJO",
+      "village": "Mojo",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316343",
+      "name": "SD NEGERI MINTORAHAYU 02",
+      "address": "Mintorahayu",
+      "village": "Mintorahayu",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316346",
+      "name": "SD NEGERI MINTOMULYO",
+      "address": "Mintomulyo",
+      "village": "Mintomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316347",
+      "name": "SD NEGERI MINTOBASUKI 02",
+      "address": "Ds.Mintobasuki",
+      "village": "Mintobasuki",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316349",
+      "name": "SD NEGERI METARAMAN",
+      "address": "Ds.metaraman",
+      "village": "Metaraman",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316350",
+      "name": "SD NEGERI MENCON",
+      "address": "Ds Mencon",
+      "village": "Mencon",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316352",
+      "name": "SD NEGERI LUMBUNGMAS 02",
+      "address": "Dkh.Belukan RT 03 RW 03",
+      "village": "Lumbungmas",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316353",
+      "name": "SD NEGERI LUMBUNGMAS 01",
+      "address": "Jl.Pucakwangi-Todanan KM7",
+      "village": "Lumbungmas",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316354",
+      "name": "SD NEGERI KUNIRAN 02",
+      "address": "JALAN BATANGAN-JAKEN KM. 5",
+      "village": "Kuniran",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316356",
+      "name": "SD NEGERI KUDUR",
+      "address": "Kudur",
+      "village": "Kudur",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316358",
+      "name": "SD NEGERI KUDUKERAS 01",
+      "address": "Jalan PN Bajo",
+      "village": "Kudukeras",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316359",
+      "name": "SD NEGERI KROPAK 01",
+      "address": "Kropak",
+      "village": "Kropak",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316360",
+      "name": "SD NEGERI KROPAK 02",
+      "address": "Kropak",
+      "village": "Kropak",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316361",
+      "name": "SD NEGERI KRANDAN",
+      "address": "Krandan",
+      "village": "Krandan",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316362",
+      "name": "SD NEGERI KORIPANDRIYO",
+      "address": "JLN PATI-GABUS KM 06",
+      "village": "Koripandriyo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316363",
+      "name": "SD NEGERI KLUMPIT",
+      "address": "Jl Tlogowungu - Gunungwungkal Km 18",
+      "village": "Klumpit",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316364",
+      "name": "SD NEGERI KLECOREGONANG",
+      "address": "KLECOREGONANG",
+      "village": "Klecoregonang",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316365",
+      "name": "SD NEGERI KLAYUSIWALAN 02",
+      "address": "Klayusiwalan",
+      "village": "Klayusiwalan",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316366",
+      "name": "SD NEGERI KLAKAHKASIHAN 01",
+      "address": "Dk Domo",
+      "village": "Klakah Kasian",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316367",
+      "name": "SD NEGERI KAYEN 04",
+      "address": "Kayen",
+      "village": "Kayen",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316369",
+      "name": "SD NEGERI KETITANG WETAN 01",
+      "address": "Jalan Juwana - Rembang Km. 06 Ds. Ketitang Wetan Batangan Pati 59186",
+      "village": "Ketitangwetan",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316371",
+      "name": "SD NEGERI KURYOKALANGAN 01",
+      "address": "Jl Gabus -tlogoayu Km 2",
+      "village": "Koryokalangan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316372",
+      "name": "SD NEGERI LENGKONG",
+      "address": "Jalan Raya Juwana- Rembang Km 08",
+      "village": "Lengkong",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316373",
+      "name": "SD NEGERI LARANGAN",
+      "address": "Ds Larangan",
+      "village": "Larangan",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316374",
+      "name": "SD NEGERI LANGSE 02",
+      "address": "Ds Langse",
+      "village": "Langse",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316375",
+      "name": "SD NEGERI LANGGENHARJO 02",
+      "address": "jln.Bima RT 05 RW 02",
+      "village": "Langgenharjo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316376",
+      "name": "SD NEGERI LANGGENHARJO 01",
+      "address": "Jl Juwana-trangkil Km 4",
+      "village": "Langgenharjo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316377",
+      "name": "SD NEGERI LANGGENHARJO",
+      "address": "DS.LANGGENHARJO",
+      "village": "Langgenharjo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316379",
+      "name": "SD NEGERI LANGENHARJO 02",
+      "address": "Desa Langenharjo",
+      "village": "Langenharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316380",
+      "name": "SD NEGERI LAHAR 02",
+      "address": "Lahar",
+      "village": "Lahar",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316382",
+      "name": "SD NEGERI KUWAWUR 02",
+      "address": "Ds. Kuwawur",
+      "village": "Kuwawur",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316383",
+      "name": "SD NEGERI KUWAWUR 01",
+      "address": "Ds Kuwawur",
+      "village": "Kuwawur",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316384",
+      "name": "SD NEGERI KUTOHARJO 03",
+      "address": "Jl Raya Pati Tayu Km 2",
+      "village": "Kutoharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316387",
+      "name": "SD NEGERI KURYOKALANGAN 02",
+      "address": "Ds Kuryokalangan",
+      "village": "Koryokalangan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316388",
+      "name": "SD NEGERI KETIP",
+      "address": "Jl. Juwana - Kuniran Km. 5",
+      "village": "Ketip",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316426",
+      "name": "SD NEGERI WONOREJO 02",
+      "address": "Desa Wonorejo RT.01 RW.03",
+      "village": "Wonorejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316427",
+      "name": "SD NEGERI WIDOROKANDANG",
+      "address": "Jl Raya Pati-Juana Km 4,5",
+      "village": "Widorokandang",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316429",
+      "name": "SD NEGERI WIRUN",
+      "address": "Wirun",
+      "village": "Wirun",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316432",
+      "name": "SD NEGERI WINONG 01",
+      "address": "Jl. Kolonel Sunandar Gang III",
+      "village": "Winong",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316433",
+      "name": "SD NEGERI WINONG 01",
+      "address": "Jl.Raya Winong- Jakenan Km 0,5 Winong",
+      "village": "Winong",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316434",
+      "name": "SD NEGERI WEGIL",
+      "address": "Jalan Sunan Prawoto Km. 07",
+      "village": "Wegil",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316435",
+      "name": "SD NEGERI WEDUSAN",
+      "address": "Jl. Puncel - Ngablak Km. 05 Desa Wedusan",
+      "village": "Wedusan",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316436",
+      "name": "SD NEGERI WEDARIJAKSA 02",
+      "address": "Jl Kapten Yusuf No 40 RT 02 / RW 05",
+      "village": "Wedarijaksa",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316437",
+      "name": "SD NEGERI WEDARIJAKSA 01",
+      "address": "Jl Raya Pati Tayu Km -9",
+      "village": "Wedarijaksa",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316438",
+      "name": "SD NEGERI WATUROYO",
+      "address": "Ds Waturoyo",
+      "village": "Waturoyo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316439",
+      "name": "SD NEGERI WANGUNREJO 01",
+      "address": "Jl Raya Pati Kudus Km 8",
+      "village": "Wangunrejo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316440",
+      "name": "SD NEGERI TUNGGULSARI",
+      "address": "Jl.Raya Tayu Juwana Km 3",
+      "village": "Tunggulsari",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316441",
+      "name": "SD NEGERI TRIGUNO",
+      "address": "Dukuh Dopang",
+      "village": "Triguno",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316442",
+      "name": "SD NEGERI WONOSEKAR",
+      "address": "Jl Pati Gembong Km 9",
+      "village": "Wonosekar",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316443",
+      "name": "SD NEGERI WOTAN 01",
+      "address": "Wotan Rt 04 Rw 01",
+      "village": "Wotan",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316455",
+      "name": "SD NEGERI WUWUR 01",
+      "address": "Ds.wuwur",
+      "village": "Wuwur",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316457",
+      "name": "SD NEGERI WUNGWUNG",
+      "address": "Arumanis",
+      "village": "Arumanis",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316460",
+      "name": "SD NEGERI WOTAN 04",
+      "address": "Wotan",
+      "village": "Wotan",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316461",
+      "name": "SD NEGERI WOTAN 02",
+      "address": "Ds Wotan",
+      "village": "Wotan",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316535",
+      "name": "SD NEGERI SUMUR 03",
+      "address": "Sumur Rt 18 Rw 03",
+      "village": "Sumur",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316536",
+      "name": "SD NEGERI SUKOHARJO 01",
+      "address": "Jln. Pati - Banyuurip km.4",
+      "village": "Sukoharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316537",
+      "name": "SD NEGERI SUKOHARJO 01",
+      "address": "Jln Raya Pati-tayu Km 6",
+      "village": "Sukoharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316538",
+      "name": "SD NEGERI SUKOBUBUK 01",
+      "address": "Ds Sukobubuk",
+      "village": "Sukobubuk",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316539",
+      "name": "SD NEGERI SUKOAGUNG",
+      "address": "Sukoagung",
+      "village": "Sukoagung",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316540",
+      "name": "SD NEGERI SUGIHREJO 01",
+      "address": "Ds Sugihrejo",
+      "village": "Sugihrejo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316541",
+      "name": "SD NEGERI SUGIHREJO 03",
+      "address": "Ds Sugihrejo",
+      "village": "Sugihrejo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316542",
+      "name": "SD NEGERI SUGIHREJO 02",
+      "address": "Ds Sugihrejo Rt.1/5",
+      "village": "Sugihrejo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316543",
+      "name": "SD NEGERI SUGIHARJO 02",
+      "address": "Jl. Raya Pati-Juwana Km. 4 Ds. Sugiharjo Kec. Pati",
+      "village": "Sugiharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316544",
+      "name": "SD NEGERI SUGIHAN",
+      "address": "Sugihan",
+      "village": "Sugihan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316545",
+      "name": "SD NEGERI SUMBERAGUNG 02",
+      "address": "Sumberagung",
+      "village": "Sumberagung",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316546",
+      "name": "SD Negeri Sriwedari 02",
+      "address": "Sriwedari",
+      "village": "Sriwedari",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316547",
+      "name": "SD Negeri Sriwedari 01",
+      "address": "Sriwedari",
+      "village": "Sriwedari",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316548",
+      "name": "SD Negeri Srikaton 02",
+      "address": "Srikaton",
+      "village": "Srikaton",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316549",
+      "name": "SD NEGERI SRIKATON 02",
+      "address": "Jl Kersen Desa Srikaton Rt 02 Rw 03",
+      "village": "Srikaton",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316550",
+      "name": "SD Negeri Srikaton 01",
+      "address": "jaken jakenan KM 0",
+      "village": "Srikaton",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316551",
+      "name": "SD NEGERI SRIKATON 01",
+      "address": "Desa Srikaton RT 03 RW 01",
+      "village": "Srikaton",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316552",
+      "name": "SD NEGERI SUKOHARJO 03",
+      "address": "Jl.sudiyono",
+      "village": "Sukoharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316554",
+      "name": "SD NEGERI SUMUR 02",
+      "address": "Sumur",
+      "village": "Sumur",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316556",
+      "name": "SD NEGERI SUMBERSOKO 01",
+      "address": "Dk. Doplang, RT 05 RW 01",
+      "village": "Sumbersoko",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316557",
+      "name": "SD NEGERI SUMBERSARI 03",
+      "address": "Sumbersari",
+      "village": "Sumbersari",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316558",
+      "name": "SD NEGERI SUMBERSARI 02",
+      "address": "Jl. Raya Kayen-Beketel Km. 02",
+      "village": "Sumbersari",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316559",
+      "name": "SD NEGERI SUMBERSARI 01",
+      "address": "Sumbersari",
+      "village": "Sumbersari",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316560",
+      "name": "SD NEGERI SUMBERMULYO 02",
+      "address": "Sumbermulyo",
+      "village": "Sumbermulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316561",
+      "name": "SD NEGERI SUMBERMULYO 01",
+      "address": "Sumbermulyo",
+      "village": "Sumbermulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316562",
+      "name": "SD Negeri Sumberejo",
+      "address": "Jln. Jaken-Jakenan Km 1 Desa Sumberejo Kec.Jaken Kab.Pati",
+      "village": "Sumberejo",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316563",
+      "name": "SD Negeri Sumberarum",
+      "address": "Sumberarum",
+      "village": "Sumberarum",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316564",
+      "name": "SD Negeri Sumberan",
+      "address": "Jl. Jaken - Pucakwangi KM. 05",
+      "village": "Sumberan",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316565",
+      "name": "SD Negeri Sumberagung 01",
+      "address": "Sumberagung",
+      "village": "Sumberagung",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316568",
+      "name": "SD Negeri Sukorukun",
+      "address": "Sukorukun",
+      "village": "Sukorukun",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316570",
+      "name": "SD NEGERI SUKOLILO 04",
+      "address": "Jl Sumber Gemblung",
+      "village": "Sukolilo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316571",
+      "name": "SD NEGERI SUKOLILO 02",
+      "address": "Ds Sukolilo",
+      "village": "Sukolilo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316572",
+      "name": "SD NEGERI SONOREJO",
+      "address": "Sonorejo",
+      "village": "Sonorejo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316573",
+      "name": "SD NEGERI SONEYAN 03",
+      "address": "Ds Soneyan RT 03 RW 02",
+      "village": "Soneyan",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316574",
+      "name": "SD NEGERI SINOMWIDODO 01",
+      "address": "JL. Tambakromo - Gunung Panti Km. 03",
+      "village": "Sinomwidodo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316575",
+      "name": "SD NEGERI SINOMAN",
+      "address": "Sinoman",
+      "village": "Sinoman",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316576",
+      "name": "SD NEGERI SIDOMULYO 03",
+      "address": "Sidomulyo RT 05/ RW 02",
+      "village": "Sidomulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316577",
+      "name": "SD NEGERI SIDOMULYO 02",
+      "address": "Desa Sidomulyo",
+      "village": "Sidomulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316578",
+      "name": "SD NEGERI SIDOMULYO 01",
+      "address": "Jl Raya Gunungwungkal Tlogowungu Km 7",
+      "village": "Sidomulyo",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20316579",
+      "name": "SD NEGERI SIDOMUKTI 01",
+      "address": "Jln Raya Pati - Tayu Km 15 Desa Sidomukti",
+      "village": "Sidomukti",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316580",
+      "name": "SD NEGERI SIDOMUKTI 02",
+      "address": "Ds Sidomukti",
+      "village": "Sidomukti",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316581",
+      "name": "SD Negeri Sidoluhur 02",
+      "address": "Dukuh Nguyangan",
+      "village": "Sidoluhur",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316582",
+      "name": "SD NEGERI SIDOKERTO 03",
+      "address": "Sidokerto",
+      "village": "Sidokerto",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316584",
+      "name": "SD NEGERI SIDOKERTO 01",
+      "address": "Jl Sunan Kalijogo No 396",
+      "village": "Sidokerto",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316585",
+      "name": "SD NEGERI SIDOHARJO",
+      "address": "Jl Ki Juru Mertani 18 Pati",
+      "village": "Sidoharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316586",
+      "name": "SD NEGERI SIDOARUM",
+      "address": "DS SIDOARUM",
+      "village": "Sidoarum",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316587",
+      "name": "SD NEGERI SERUTSADANG",
+      "address": "Ds. Serutsadang RT. 04 / RW. 01, Kec. Winong, Kab. Pati",
+      "village": "Serutsadang",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316588",
+      "name": "SD NEGERI SENTUL 01",
+      "address": "Sentul",
+      "village": "Sentul",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316589",
+      "name": "SD NEGERI SENTUL 02",
+      "address": "Sentul",
+      "village": "Sentul",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316590",
+      "name": "SD NEGERI SINOMWIDODO 02",
+      "address": "Ds.sinomwidodo",
+      "village": "Sinomwidodo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316591",
+      "name": "SD NEGERI SINOMWIDODO 03",
+      "address": "Jln Tambakromo - Gunungpanti Km 02",
+      "village": "Sinomwidodo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316592",
+      "name": "SD NEGERI SONEYAN 01",
+      "address": "Ds Soneyan",
+      "village": "Soneyan",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316594",
+      "name": "SD NEGERI SOKOPULUHAN 02",
+      "address": "Desa Sukopuluhan kecamatan Puncakwangi, 59183",
+      "village": "Sokopuluhan",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316595",
+      "name": "SD NEGERI SOKOPULUHAN 01",
+      "address": "Desa Sokopuluhan Rt.01/03",
+      "village": "Sokopuluhan",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316596",
+      "name": "SD NEGERI SOKOKULON 02",
+      "address": "Desa Sokokulon",
+      "village": "Sokokulon",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316597",
+      "name": "SD NEGERI SOKOKULON 01",
+      "address": "Ds Sokokulon",
+      "village": "Sokokulon",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316598",
+      "name": "SD NEGERI SOKO",
+      "address": "Jalan Soko - Koripondriyo Km.1 Desa Soko 2/I",
+      "village": "Soko",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316599",
+      "name": "SD NEGERI SLUNGKEP 03",
+      "address": "Slungkep",
+      "village": "Slungkep",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316600",
+      "name": "SD NEGERI SLUNGKEP 02",
+      "address": "Jln. Ki Rahman, Slungkep",
+      "village": "Slungkep",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316602",
+      "name": "SD NEGERI SITIREJO",
+      "address": "Ds Sitirejo Rt 07/ Rw 02",
+      "village": "Sitirejo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316603",
+      "name": "SD NEGERI SITIMULYO 02",
+      "address": "Dukuh Pringapus RT 02 RW 3",
+      "village": "Sitimulyo",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316604",
+      "name": "SD NEGERI SITIMULYO 01",
+      "address": "DS. Sitimulyo Kec. Pucakwangi Kab. Pati",
+      "village": "Sitimulyo",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316605",
+      "name": "SD NEGERI SITILUHUR 02",
+      "address": "Jln Ki Ageng Loko Joyo",
+      "village": "Sitiluhur",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20316606",
+      "name": "SD NEGERI SIRAHAN 02",
+      "address": "Sirahan",
+      "village": "Sirahan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316607",
+      "name": "SD NEGERI SIRAHAN 01",
+      "address": "Jalan Raya Tayu-Jepara Km 17",
+      "village": "Sirahan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20316608",
+      "name": "SD NEGERI SENDANGSOKO",
+      "address": "Sendangsoko",
+      "village": "Sendangsoko",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316610",
+      "name": "SD NEGERI TLOGOAYU",
+      "address": "Jl Pati Kayen Km 9",
+      "village": "Tlogoayu",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316612",
+      "name": "SD NEGERI TERTEG 01",
+      "address": "Desa Terteg",
+      "village": "Terteg",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316613",
+      "name": "SD NEGERI TENDAS",
+      "address": "Tendas",
+      "village": "Tendas",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316614",
+      "name": "SD NEGERI TEGALWERO 01",
+      "address": "Jl.Pucakwangi-Jakenan KM5 Tegalwero",
+      "village": "Tegalwero",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316615",
+      "name": "SD NEGERI TEGALOMBO 03",
+      "address": "Tegalombo",
+      "village": "Tegalombo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316616",
+      "name": "SD NEGERI TEGALHARJO 02",
+      "address": "Ds Tegalharjo",
+      "village": "Tegalharjo",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316617",
+      "name": "SD NEGERI TEGALHARJO 01",
+      "address": "Ds.Tegalharjo",
+      "village": "Tegalharjo",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316618",
+      "name": "SD Negeri Tegalarum",
+      "address": "Jalan Jaken-jakenan Km 3",
+      "village": "Tegalarum",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316619",
+      "name": "SD NEGERI TEGALARUM",
+      "address": "Ds. Tegalarum",
+      "village": "Tegalarum",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316621",
+      "name": "SD NEGERI TAYU KULON 02",
+      "address": "Jalan P. Sudirman No. 192",
+      "village": "Tayu Kulon",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316623",
+      "name": "SD NEGERI TAYU WETAN 03",
+      "address": "Gang Anggrek IV No 18",
+      "village": "Tayu Wetan",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316624",
+      "name": "SD NEGERI TAYU WETAN 01",
+      "address": "JL. RA KARTINI NO 50 A",
+      "village": "Sambiroto",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20316625",
+      "name": "SD NEGERI TAWANGREJO",
+      "address": "Tawangrejo",
+      "village": "Tawangrejo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316626",
+      "name": "SD NEGERI TLOGOMOJO",
+      "address": "Tlogomojo",
+      "village": "Tlogomojo",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20316627",
+      "name": "SD NEGERI TLOGOREJO",
+      "address": "Tlogorejo RT 05 RW 02",
+      "village": "Tlogorejo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316628",
+      "name": "SD NEGERI TRANGKILAN",
+      "address": "Ds Sidoharjo",
+      "village": "Sidoharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316629",
+      "name": "SD NEGERI TRANGKIL 04",
+      "address": "Jl Wijayakusuma",
+      "village": "Trangkil",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316630",
+      "name": "SD NEGERI TONDOMULYO",
+      "address": "Tondomulyo",
+      "village": "Tondomulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316631",
+      "name": "SD NEGERI TONDOKERTO",
+      "address": "Tondokerto",
+      "village": "Tondokerto",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316634",
+      "name": "SD NEGERI TOMPEGUNUNG",
+      "address": "Ds. Tompegunung RT. 04 / RW. 01, Kec. Sukolilo, Kab. Pati",
+      "village": "Tompegunung",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20316635",
+      "name": "SD NEGERI TLUWUK",
+      "address": "Ds Tluwuk",
+      "village": "Tluwuk",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316636",
+      "name": "SD NEGERI TLUWAH",
+      "address": "Jl Tembusan Juwana Karang Km 5",
+      "village": "Tluwah",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20316637",
+      "name": "SD NEGERI TLUTUP",
+      "address": "Jl Raya Juana - Tayu Km 11",
+      "village": "Tlutup",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20316638",
+      "name": "SD NEGERI TLOGOWUNGU 02",
+      "address": "Desa Tlogorejo RT 002 RW 002",
+      "village": "Tlogorejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316639",
+      "name": "SD NEGERI TLOGOWUNGU 01",
+      "address": "Jl Raya Pati Tlogowungu Km 7",
+      "village": "Tlogorejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316640",
+      "name": "SD NEGERI TLOGOSARI 03",
+      "address": "Tlogosari",
+      "village": "Tlogosari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316643",
+      "name": "SD NEGERI TLOGOREJO",
+      "address": "SDN TLOGOREJO",
+      "village": "Tlogorejo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316644",
+      "name": "SD NEGERI TAWANGHARJO 01",
+      "address": "DESA TAWANGHARJO",
+      "village": "Tawangharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316645",
+      "name": "SD NEGERI TANJUNGSEKAR",
+      "address": "Dk. Pengilon",
+      "village": "Tanjungsekar",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20316646",
+      "name": "SD NEGERI TAMBAHARJO 01",
+      "address": "Jl Raya Pati Tayu Km 04",
+      "village": "Tambaharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316647",
+      "name": "SD NEGERI TAMBAHARJO 01",
+      "address": "Ds. Tambaharjo",
+      "village": "Tambaharjo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316648",
+      "name": "SD NEGERI TAMBAHAGUNG 03",
+      "address": "Tambahagung",
+      "village": "Tambahagung",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316649",
+      "name": "SD NEGERI TAMBAHAGUNG 02",
+      "address": "Ds Tambahagung 02",
+      "village": "Tambahagung",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316650",
+      "name": "SD NEGERI TAMBAHAGUNG 01",
+      "address": "Ds.Tambahagung",
+      "village": "Tambahagung",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316651",
+      "name": "SD NEGERI TAMANSARI 03",
+      "address": "Tamansari",
+      "village": "Tamansari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316652",
+      "name": "SD NEGERI TAMANSARI 02",
+      "address": "Jl Raya Pati Tlogowungu Km 5",
+      "village": "Tamansari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316654",
+      "name": "SD Negeri Tamansari",
+      "address": "Tamansari",
+      "village": "Tamansari",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20316655",
+      "name": "SD NEGERI TALUN 02",
+      "address": "TALUN KAYEN PATI",
+      "village": "Talun",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316656",
+      "name": "SD NEGERI TALUN 01",
+      "address": "Ds. Talun Rt 02/03 Kec. Kayen Kab. Pati",
+      "village": "Talun",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316657",
+      "name": "SD NEGERI SUWATU",
+      "address": "Ds.Suwatu RT 02 / RW 02",
+      "village": "Suwatu",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316658",
+      "name": "SD NEGERI SUWADUK 02",
+      "address": "Ds Suwaduk",
+      "village": "Suwaduk",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20316659",
+      "name": "SD NEGERI SUNGGINGWARNO 02",
+      "address": "DESA SUNGGINGWARNO",
+      "village": "Sunggingwarno",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316670",
+      "name": "SD NEGERI SUNGGINGWARNO 01",
+      "address": "Ds Sunggingwarno",
+      "village": "Sunggingwarno",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316671",
+      "name": "SD NEGERI SUNDOLUHUR 01",
+      "address": "Sundoluhur",
+      "village": "Sundoluhur",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20316672",
+      "name": "SD NEGERI TAMBAHARJO 02",
+      "address": "Jl.Pati- Tayu Km.4",
+      "village": "Tambaharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316673",
+      "name": "SD NEGERI TAMBAHARJO 02",
+      "address": "Tambaharjo",
+      "village": "Tambaharjo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316674",
+      "name": "SD NEGERI TAJUNGSARI 02",
+      "address": "Tajungsari",
+      "village": "Tajungsari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316675",
+      "name": "SD NEGERI TAJUNGSARI 01",
+      "address": "Tajungsari",
+      "village": "Tajungsari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316676",
+      "name": "SD NEGERI TANJUNGSARI",
+      "address": "TANJUNGSARI",
+      "village": "Tanjungsari",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316679",
+      "name": "SD NEGERI TANJUNGREJO 02",
+      "address": "Desa Tanjungrejo",
+      "village": "Tanjungrejo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20316681",
+      "name": "SD NEGERI TANJUNGANOM 02",
+      "address": "Ds Tanjung Anom",
+      "village": "Tanjunganom",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316682",
+      "name": "SD NEGERI TANJUNGANOM 01",
+      "address": "Jl Gabus Winong Km 1",
+      "village": "Tanjunganom",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316683",
+      "name": "SD NEGERI TANJANG",
+      "address": "Ds Tanjang",
+      "village": "Tanjang",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20316685",
+      "name": "SD NEGERI TANGGEL",
+      "address": "Tanggel",
+      "village": "Tanggel",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20316687",
+      "name": "SD NEGERI TAMBAKROMO 01",
+      "address": "Tambakromo",
+      "village": "Tambakromo",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20316688",
+      "name": "SD NEGERI TAMBAHSARI",
+      "address": "Tambahsari",
+      "village": "Tambahsari",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20316689",
+      "name": "SD NEGERI TAMBAHMULYO 01",
+      "address": "Jln Jakenan - Winong Km 06",
+      "village": "Tambahmulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316690",
+      "name": "SD Negeri Tambahmulyo 02",
+      "address": "Desa Tambahmulyo",
+      "village": "Tambahmulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316993",
+      "name": "SD NEGERI DUMPIL",
+      "address": "Dumpil",
+      "village": "Dumpil",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20316994",
+      "name": "SD NEGERI CABAK 01",
+      "address": "Cabak",
+      "village": "Cabak",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20316995",
+      "name": "SD NEGERI BUNGASREJO",
+      "address": "Ds. Bungasrejo Rt. 1 Rw. II",
+      "village": "Bungasrejo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20316996",
+      "name": "SD NEGERI BUMIREJO 01",
+      "address": "Ds Bumirejo",
+      "village": "Bumirejo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20316997",
+      "name": "SD NEGERI BUMIREJO",
+      "address": "Jl.pencikan",
+      "village": "Bumirejo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317001",
+      "name": "SD NEGERI BUMIHARJO 02",
+      "address": "Bumiharjo",
+      "village": "Bumiharjo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317002",
+      "name": "SD NEGERI BUMIHARJO 01",
+      "address": "Bumiharjo",
+      "village": "Bumiharjo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317003",
+      "name": "SD NEGERI BUMIAYU 01",
+      "address": "Jl Bapoh - Tlogowungu Km 0,5",
+      "village": "Bumiayu",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317005",
+      "name": "SD NEGERI BULUMULYO 01",
+      "address": "Bulumulyo",
+      "village": "Bulumulyo",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20317006",
+      "name": "SD NEGERI BULUMANIS LOR",
+      "address": "Ds Bulumanis Lor",
+      "village": "Bulumanis Lor",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20317007",
+      "name": "SD NEGERI BULUMANIS KIDUL",
+      "address": "Ds Bulumanis Kidul",
+      "village": "Bulumanis Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20317008",
+      "name": "SD NEGERI BRINGINWARENG",
+      "address": "Ds. Bringinwareng Rt 4 Rw 1",
+      "village": "Bringinwareng",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317009",
+      "name": "SD NEGERI BRINGIN",
+      "address": "Jl.juwana-Jakenan km 5",
+      "village": "Bringin",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317011",
+      "name": "SD NEGERI BRATI 02",
+      "address": "Pedak - Brati",
+      "village": "Brati",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317014",
+      "name": "SD NEGERI CABAK 03",
+      "address": "Desa Cabak RT 02 RW 04",
+      "village": "Cabak",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20317015",
+      "name": "SD NEGERI DUKUTALIT 01",
+      "address": "Jl.Mangkudipuro",
+      "village": "Dukutalit",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317016",
+      "name": "SD NEGERI DUKUTALIT 02",
+      "address": "Jl. Tayu Utara Km.02",
+      "village": "Dukutalit",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317018",
+      "name": "SD NEGERI DOROREJO",
+      "address": "Dororejo",
+      "village": "Dororejo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317019",
+      "name": "SD NEGERI DOROPAYUNG 02",
+      "address": "Jln. MAKAM DOROPAYUNG",
+      "village": "Doropayung",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317020",
+      "name": "SD NEGERI DOROPAYUNG 01",
+      "address": "Jl. Alon-alun No 1a",
+      "village": "Doropayung",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317022",
+      "name": "SD NEGERI DENGKEK 01",
+      "address": "Jl Ki Juru Mertani No.53",
+      "village": "Dengkek",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317023",
+      "name": "SD NEGERI DEGAN",
+      "address": "Degan",
+      "village": "Degan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317025",
+      "name": "SD NEGERI DADIREJO 02",
+      "address": "Dadirejo",
+      "village": "Dadirejo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317027",
+      "name": "SD NEGERI CENGKALSEWU 01",
+      "address": "Ds Cengkalsewu",
+      "village": "Cengkalsewu",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317029",
+      "name": "SD NEGERI CEBOLEK KIDUL 01",
+      "address": "Jl Kyai Cebolang No 1",
+      "village": "Cebolek Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20317030",
+      "name": "SD NEGERI CEBOLEK 02",
+      "address": "Jl Ki Cebolang",
+      "village": "Cebolek Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20317031",
+      "name": "SD Negeri Boto",
+      "address": "Boto",
+      "village": "Boto",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20317032",
+      "name": "SD NEGERI BOLOAGUNG 02",
+      "address": "Ds. Boloagung RT. 17 RW. 03",
+      "village": "Boloagung",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317033",
+      "name": "SD NEGERI BANTENGURIP",
+      "address": "Dk. Bantengurip",
+      "village": "Kedungwinong",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317034",
+      "name": "SD NEGERI BANJARSARI 02",
+      "address": "DESA BANJARSARI",
+      "village": "Banjarsari",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317035",
+      "name": "SD NEGERI BANJARSARI 01",
+      "address": "Jl Pati Gabus Km 3",
+      "village": "Banjarsari",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317038",
+      "name": "SD NEGERI BANGSALREJO",
+      "address": "Ds Bangsalrejo Jl Wedarijaksa-juana Kms",
+      "village": "Bangsalrejo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317039",
+      "name": "SD NEGERI BANCAK 01",
+      "address": "Desa Bancak RT. 04 RW. 01 Kec. Gunungwungkal",
+      "village": "Bancak",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317041",
+      "name": "SD NEGERI BALEADI 01",
+      "address": "Baleadi",
+      "village": "Baleadi",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317042",
+      "name": "SD NEGERI BAKARAN WETAN 03",
+      "address": "Jl.kh Dewantoro",
+      "village": "Bakaran Wetan",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317044",
+      "name": "SD NEGERI BAKARAN WETAN 01",
+      "address": "Ds Bakaran Wetan",
+      "village": "Bakaran Wetan",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317045",
+      "name": "SD NEGERI BAKARAN KULON 03",
+      "address": "Desa Bakaran Kulon",
+      "village": "Bakaran Kulon",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317047",
+      "name": "SD NEGERI BAKARAN KULON 01",
+      "address": "Jl.siswa No.11",
+      "village": "Bakaran Kulon",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317048",
+      "name": "SD NEGERI BAJOMULYO",
+      "address": "Jl. Hang Tuah No.6",
+      "village": "Bajomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317050",
+      "name": "SD NEGERI BAKALAN",
+      "address": "Bakalan",
+      "village": "Bakalan",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317051",
+      "name": "SD NEGERI BOLOAGUNG 01",
+      "address": "Jln. Kayen - Pati Km. 13",
+      "village": "Boloagung",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317052",
+      "name": "SD NEGERI BOGOTANJUNG 01",
+      "address": "Desa Bogotanjung",
+      "village": "Bogotanjung",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317053",
+      "name": "SD NEGERI BODEH",
+      "address": "Jl. Pucakwangi-Winong",
+      "village": "Bodeh",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20317054",
+      "name": "SD NEGERI BLINGIJATI",
+      "address": "Blingijati",
+      "village": "Blingijati",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317055",
+      "name": "SD NEGERI BLEBER",
+      "address": "Bleber",
+      "village": "Bleber",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20317056",
+      "name": "SD NEGERI BLARU 02",
+      "address": "Jl Mr Iskandar Gang 3 Pati",
+      "village": "Blaru",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317057",
+      "name": "SD NEGERI BERMI 02",
+      "address": "Ds Bermi",
+      "village": "Bermi",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317059",
+      "name": "SD NEGERI BENDOKATONKIDUL",
+      "address": "Bendokaton Kidul",
+      "village": "Bendokaton Kidul",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317060",
+      "name": "SD NEGERI BENDAR",
+      "address": "Jl. Raya Juwana Rembang Km2",
+      "village": "Bendar",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317063",
+      "name": "SD NEGERI BATURSARI 01",
+      "address": "Batursari",
+      "village": "Batursari",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20317064",
+      "name": "SD NEGERI BATUREJO 03",
+      "address": "Baturejo",
+      "village": "Baturejo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317065",
+      "name": "SD NEGERI BATUREJO 02",
+      "address": "Dk. Ronggo, Rt. 01 Rw. 1",
+      "village": "Baturejo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317066",
+      "name": "SD NEGERI BATUREJO 01",
+      "address": "Ds Baturejo",
+      "village": "Baturejo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317067",
+      "name": "SD NEGERI BAGENG 02",
+      "address": "Ds Bageng Rt 2/3",
+      "village": "Bageng",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317068",
+      "name": "SD NEGERI JONGSO",
+      "address": "Jongso",
+      "village": "Wotan",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317070",
+      "name": "SD NEGERI JAKENAN",
+      "address": "Jln. Jakenan - Jaken . Km 01, Jakenan",
+      "village": "Jakenan",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317071",
+      "name": "SD NEGERI BRATI 01",
+      "address": "Brati",
+      "village": "Brati",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317072",
+      "name": "SD NEGERI GUYANGAN",
+      "address": "Guyangan Rt 02 Rw 01",
+      "village": "Guyangan",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317073",
+      "name": "SD NEGERI GUYANGAN",
+      "address": "Guyangan Jl Juana Tayu Km 9",
+      "village": "Guyangan",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317074",
+      "name": "SD NEGERI GUNUNGWUNGKAL 01",
+      "address": "Jl. Raya Gunungwungkal - Tlogowungu Km 1",
+      "village": "Gunungwungkal",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317076",
+      "name": "SD NEGERI GUNUNGSARI 01",
+      "address": "Gunungsari",
+      "village": "Gunungsari",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20317077",
+      "name": "SD NEGERI GUNUNGPANTI 02",
+      "address": "Gunungpanti",
+      "village": "Gunungpanti",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317078",
+      "name": "SD NEGERI GUNUNGPANTI 01",
+      "address": "Gunungpanti",
+      "village": "Gunungpanti",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317079",
+      "name": "SD NEGERI GULANGPONGGE 01",
+      "address": "Gulangpongge RT 02 /RW 01",
+      "village": "Gulangpongge",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317080",
+      "name": "SD NEGERI GULANGPONGGE 02",
+      "address": "Ds. Gulangpongge Rt.07/Rw.02 Kec. Gunungwungkal Kab. Pati Prov. Jawa Tengah",
+      "village": "Gulangpongge",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317082",
+      "name": "SD NEGERI GROWONG LOR 01",
+      "address": "Jl. Ki Hajar Dewantoro",
+      "village": "Growong Lor",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317083",
+      "name": "SD NEGERI GROWONG KIDUL 02",
+      "address": "Jl.ki Hajar Dewantara No.607",
+      "village": "Growong Kidul",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317084",
+      "name": "SD NEGERI GROGOLSARI",
+      "address": "Ds Grogolsari",
+      "village": "Grogolsari",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20317085",
+      "name": "SD NEGERI JAMBEAN 02",
+      "address": "Ds Jambean Kidul",
+      "village": "Jambean Kidul",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317088",
+      "name": "SD NEGERI JOLONG 01",
+      "address": "PTPN IX Kebun Jollong",
+      "village": "Sitiluhur",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317090",
+      "name": "SD NEGERI JIMBARAN",
+      "address": "DESA JIMBARAN RT. 01 RW. II",
+      "village": "Jimbaran",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317091",
+      "name": "SD NEGERI JETAK",
+      "address": "Jln. Juwana - Wedarijaksa km 7",
+      "village": "Jetak",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317092",
+      "name": "SD NEGERI JEPURO",
+      "address": "Jl. Jolotundo Desa Jepuro",
+      "village": "Jepuro",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317093",
+      "name": "SD NEGERI JEPATLOR",
+      "address": "Jepatlor",
+      "village": "Jepat Lor",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317095",
+      "name": "SD NEGERI JENGGOLO 03",
+      "address": "Pati",
+      "village": "Banyuurip",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317096",
+      "name": "SD NEGERI JEMBULWUNUT",
+      "address": "Desa Jembulwunut RT. 01 RW. 01",
+      "village": "Jembulwunut",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317098",
+      "name": "SD NEGERI JATIURIP 01",
+      "address": "Sumbermulyo",
+      "village": "Sumbermulyo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20317099",
+      "name": "SD NEGERI JATISARI",
+      "address": "Desa Jatisari",
+      "village": "Jatisari",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317100",
+      "name": "SD NEGERI JATIROTO 02",
+      "address": "Jatiroto",
+      "village": "Jatiroto",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317101",
+      "name": "SD NEGERI JATIROTO 01",
+      "address": "Jatiroto",
+      "village": "Jatiroto",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317102",
+      "name": "SD NEGERI JATIMULYO",
+      "address": "Jl Wedarijaksa-jetak Km 02",
+      "village": "Jatimulyo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317103",
+      "name": "SD NEGERI GROGOLAN 01",
+      "address": "Desa Grogolan Kec, Dukuhseti Kab. Pati",
+      "village": "Grogolan",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317104",
+      "name": "SD NEGERI GODONGAN",
+      "address": "DUSUN GODONGAN",
+      "village": "Wegil",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317105",
+      "name": "SD NEGERI GEMBONG 04",
+      "address": "Jalan Raya Pati-Gembong Km. 12",
+      "village": "Gembong",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317106",
+      "name": "SD NEGERI GEMBONG 03",
+      "address": "Ds Gembong Rt 2/6",
+      "village": "Gembong",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317108",
+      "name": "SD NEGERI GEMBONG 01",
+      "address": "Ds Gembong",
+      "village": "Gembong",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317109",
+      "name": "SD NEGERI GELUR",
+      "address": "Dukuh Gelur",
+      "village": "Tompegunung",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317110",
+      "name": "SD NEGERI GEBANG",
+      "address": "DESA GEBANG RT.03 RW.02",
+      "village": "Gebang",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317112",
+      "name": "SD NEGERI GALIRAN",
+      "address": "Galiran Rt 02 Rw 09",
+      "village": "Baleadi",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317113",
+      "name": "SD NEGERI GAJIHAN",
+      "address": "Gajihan RT 06 RW 02",
+      "village": "Gajihan",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317114",
+      "name": "SD NEGERI GAJAHMATI",
+      "address": "Jl Kiai Pupus No 85",
+      "village": "Gajahmati",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317115",
+      "name": "SD NEGERI GAJAHKUMPUL",
+      "address": "Desa Gajahkumpul",
+      "village": "Gajahkumpul",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20317116",
+      "name": "SD NEGERI GADUDERO",
+      "address": "Gadudero",
+      "village": "Gadudero",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20317117",
+      "name": "SD NEGERI GADU 01",
+      "address": "Gadu ,Rt.03,RW.02",
+      "village": "Gadu",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317118",
+      "name": "SD NEGERI GADINGREJO",
+      "address": "Jalan Raya Juwana - Pati Km.4",
+      "village": "Gadingrejo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317121",
+      "name": "SD NEGERI DURENSAWIT 01",
+      "address": "Durensawit",
+      "village": "Durensawit",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317124",
+      "name": "SD NEGERI GEMPOLSARI 01",
+      "address": "Jl Pati Gabus Km 5",
+      "village": "Gempolsari",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317126",
+      "name": "SD NEGERI GODO 02",
+      "address": "Dukuh Selowire",
+      "village": "Godo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317127",
+      "name": "SD NEGERI GODO 01",
+      "address": "Jl Godo - Kropak",
+      "village": "Godo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20317128",
+      "name": "SD NEGERI GLONGGONG",
+      "address": "Glonggong",
+      "village": "Glonggong",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317129",
+      "name": "SD NEGERI GILING 03",
+      "address": "Desa Giling RT 03 RW 04",
+      "village": "Giling",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317130",
+      "name": "SD NEGERI GILING 02",
+      "address": "Desa Giling Kecamatan Gunung Wungkal",
+      "village": "Giling",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317131",
+      "name": "SD NEGERI GILING 01",
+      "address": "Desa Giling Rt 04 Rw 01",
+      "village": "Giling",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317132",
+      "name": "SD NEGERI GESENGAN 02",
+      "address": "Gesengan",
+      "village": "Gesengan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20317133",
+      "name": "SD NEGERI GESENGAN 01",
+      "address": "Gesengan Rt 02 Rw 02",
+      "village": "Gesengan",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20317134",
+      "name": "SD NEGERI GERITAN",
+      "address": "Jln Raya Pati - Juwana Km 2",
+      "village": "Geritan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317135",
+      "name": "SD Negeri Gerit 02",
+      "address": "Jalan Ngablak - Puncel Km. 03",
+      "village": "Gerit",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20317136",
+      "name": "SD NEGERI GERIT 01",
+      "address": "Dk. Toyong Rt 06 Rw 01",
+      "village": "Gerit",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20317137",
+      "name": "SD NEGERI GENENGMULYO 02",
+      "address": "Jl. Lapangan Trigunting",
+      "village": "Genengmulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317138",
+      "name": "SD NEGERI GENENGMULYO 01",
+      "address": "Jl Senawi",
+      "village": "Genengmulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317139",
+      "name": "SD Negeri Gendolo",
+      "address": "Trikoyo",
+      "village": "Trikoyo",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20317141",
+      "name": "SD NEGERI DURENSAWIT 02",
+      "address": "Ciroto, Durensawit",
+      "village": "Durensawit",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317142",
+      "name": "SD ISLAM MIFTAHUL FALAH",
+      "address": "Jl Tayu Juwana Km 7 Rt 1/2",
+      "village": "Margoyoso",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20317161",
+      "name": "SD ISLAM KAUMAN",
+      "address": "Jl Kamandowo Gang Sunan Kalijaga No 87",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317162",
+      "name": "SD ISLAM AL HUDA",
+      "address": "Jln Raya Pati Tayu Km 04",
+      "village": "Tambaharjo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317163",
+      "name": "SD BOPKRI TEGALOMBO",
+      "address": "Margorejo",
+      "village": "Tegalombo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317165",
+      "name": "SD ISLAM TERPADU ABU BAKAR ASH SHIDIQ",
+      "address": "Jl. Soewondo No.1 Sekarkurung",
+      "village": "Muktiharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317214",
+      "name": "SD NEGERI BAGENG 01",
+      "address": "Bageng",
+      "village": "Bageng",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20317215",
+      "name": "SD NEGERI BULUNGAN",
+      "address": "Bulungan",
+      "village": "Bulungan",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317216",
+      "name": "SD NEGERI BEKETEL 01",
+      "address": "Jln Kayen-karangasem Km 9",
+      "village": "Beketel",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317217",
+      "name": "SD NEGERI TRANGKIL 06",
+      "address": "Jalan Wijaya Kusuma",
+      "village": "Trangkil",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317218",
+      "name": "SD NEGERI TRANGKIL 05",
+      "address": "Jln Nusa Indah 02",
+      "village": "Trangkil",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317219",
+      "name": "SD NEGERI TEGALOMBO 05",
+      "address": "Dukuh Tawangrejo Rt 07 Rw 03",
+      "village": "Tegalombo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317220",
+      "name": "SD NEGERI TEGALOMBO 04",
+      "address": "Tegalombo",
+      "village": "Tegalombo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317221",
+      "name": "SD NEGERI GABUS 04",
+      "address": "Jl Gabus Tambakromo, Km.0",
+      "village": "Gabus",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317223",
+      "name": "SD NEGERI DUKUHSETI 04",
+      "address": "Selempung",
+      "village": "Dukuhseti",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317225",
+      "name": "SD NEGERI PUNCEL 03",
+      "address": "Puncel",
+      "village": "Puncel",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317226",
+      "name": "SD NEGERI KEMBANG 03",
+      "address": "Jln. Kandangan Kembang",
+      "village": "Kembang",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317227",
+      "name": "SD NEGERI GUWO 03",
+      "address": "Ds. Guwo RT. 02 RW. 02",
+      "village": "Guwo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20317228",
+      "name": "SD NEGERI DUKUHSETI 03",
+      "address": "Jl. Desa Dukuhseti",
+      "village": "Dukuhseti",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317230",
+      "name": "SD NEGERI TLOGOHARUM 02",
+      "address": "Ds.Tlogoharum",
+      "village": "Tlogoharum",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317231",
+      "name": "SD NEGERI SEMBATURAGUNG 02",
+      "address": "Jln. Jakenan - Winong . Km 3",
+      "village": "Sembaturagung",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317233",
+      "name": "SD NEGERI WATESHAJI 01",
+      "address": "Desa Wateshaji, RT 2 RW I",
+      "village": "Wateshaji",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20317235",
+      "name": "SD NEGERI BADEGAN 02",
+      "address": "Jl Raya Pati Kudus Km 4",
+      "village": "Badegan",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20317236",
+      "name": "SD NEGERI BABALAN",
+      "address": "Desa Babalan",
+      "village": "Babalan",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317237",
+      "name": "SD NEGERI ASEMPAPAN",
+      "address": "Asempapan",
+      "village": "Asempapan",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317240",
+      "name": "SD NEGERI ANGKATAN KIDUL 01",
+      "address": "Angkatankidul",
+      "village": "Angkatan Kidul",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20317242",
+      "name": "SD NEGERI AGUNG MULYO",
+      "address": "Jl Turonggo No 173a",
+      "village": "Agungmulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317243",
+      "name": "SD NEGERI JATIROTO 04",
+      "address": "JL. KI BAGUS KUNCUNG",
+      "village": "Jatiroto",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317244",
+      "name": "SD NEGERI WEDARIJAKSA 03",
+      "address": "Jl. Pati-Tayu KM 9 Wedarijaksa",
+      "village": "Wedarijaksa",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317245",
+      "name": "SD NEGERI SUKOHARJO 03",
+      "address": "Ds Sukoharjo",
+      "village": "Sukoharjo",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317247",
+      "name": "SD NEGERI JATIROTO 03",
+      "address": "Jl.Kayen-Tambakromo Km.01",
+      "village": "Jatiroto",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317248",
+      "name": "SD NEGERI KARANGLEGI 02",
+      "address": "Desa Karanglegi RT. 02 RW. 01 Kec. Trangkil Kab. Pati",
+      "village": "Karanglegi",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317249",
+      "name": "SD NEGERI GADU 02",
+      "address": "Gadu",
+      "village": "Gadu",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20317250",
+      "name": "SD NEGERI BUMIAYU 02",
+      "address": "Ds Bumiayu",
+      "village": "Bumiayu",
+      "level": "sd",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "20317251",
+      "name": "SD NEGERI ROGOMULYO 02",
+      "address": "Jl. Raya Pati-Kayen KM.14",
+      "village": "Rogomulyo",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317252",
+      "name": "SD ISLAM SALAFIYAH MARGOMULYO",
+      "address": "Jl. Tayu-Juana Km. 3 Margomulyo",
+      "village": "Margomulyo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317253",
+      "name": "SD NEGERI PENGGUNG 01",
+      "address": "Dk. PENGGUNG RT 7 RW 6",
+      "village": "Ngagel",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317254",
+      "name": "SD NEGERI PASUCEN 01",
+      "address": "JL. PASUCEN - LAHAR Km. 1",
+      "village": "Pasucen",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317255",
+      "name": "SD NEGERI KERTOMULYO 01",
+      "address": "Jl Raya Juwana-tayu Km 10",
+      "village": "Kertomulyo",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317256",
+      "name": "SD NEGERI KEMBANG 01",
+      "address": "Jl.Raya Tayu - Puncel Km 12",
+      "village": "Kembang",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317257",
+      "name": "SD NEGERI JIMBARAN 01",
+      "address": "Jimbaran",
+      "village": "Jimbaran",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20317259",
+      "name": "SD NEGERI GABUS 01",
+      "address": "Jl Gabus Tlogoayu",
+      "village": "Gabus",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317260",
+      "name": "SD NEGERI DUKUHSETI 01",
+      "address": "Jln. Tayu - Puncel Km.10, Dukuhseti",
+      "village": "Dukuhseti",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317261",
+      "name": "SD NEGERI BUMIMULYO 01",
+      "address": "Bumimulyo",
+      "village": "Bumimulyo",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20317262",
+      "name": "SD NEGERI ALASDOWO 01",
+      "address": "Jln. Tayu - Puncel. Km 7 Dukuhseti",
+      "village": "Alasdowo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317265",
+      "name": "SD RAJAWALI",
+      "address": "Jl. Sunan Ngerang No. 234 RT 1 RW 2",
+      "village": "Kudukeras",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20317266",
+      "name": "SD MUHAMMADIYAH MARGOMULYO",
+      "address": "Jln. Tayu Juwana Km 3.5",
+      "village": "Margomulyo",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317267",
+      "name": "SD KANISIUS PATI 02",
+      "address": "Jln Panglima Sudirman No 152 Pati",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317268",
+      "name": "SD KANISIUS PATI 01",
+      "address": "JL. P. SUDIRMAN NO 152 PATI",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20317269",
+      "name": "SD NEGERI PONDOWAN 01",
+      "address": "Jl.KH Abdul Rozak No. 221Pondowan Kecamatan Tayu",
+      "village": "Pondowan",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317274",
+      "name": "SD NEGERI KALIMULYO 02",
+      "address": "DS. KALIMULYO Rt.04 Rw.01 KEC.JAKENAN KAB.PATI",
+      "village": "Kalimulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317276",
+      "name": "SD NEGERI JEPATKIDUL 02",
+      "address": "Jepatkidul",
+      "village": "Jepat Kidul",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20317277",
+      "name": "SD NEGERI GROGOLAN 02",
+      "address": "Grogolan RT.01/II",
+      "village": "Grogolan",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317278",
+      "name": "SD NEGERI DUKUHSETI 02",
+      "address": "Jln. Tayu - Puncel Km 10, Dukuhseti",
+      "village": "Dukuhseti",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317279",
+      "name": "SD NEGERI DUKUHMULYO 02",
+      "address": "Jln. Jakenan-Juwana Km 1,5",
+      "village": "Dukuhmulyo",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "20317280",
+      "name": "SD NEGERI BOGOTANJUNG 02",
+      "address": "Desa Bogotanjung",
+      "village": "Bogotanjung",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20317281",
+      "name": "SD Negeri Sidoluhur 01",
+      "address": "Sidoluhur",
+      "village": "Sidoluhur",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20317283",
+      "name": "SD NEGERI TRANGKIL 01",
+      "address": "Jl Nusa Indah",
+      "village": "Trangkil",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "20317286",
+      "name": "SD NEGERI BANYUTOWO 02",
+      "address": "Banyutowo",
+      "village": "Banyutowo",
+      "level": "sd",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "20317287",
+      "name": "SD NEGERI BUMIREJO 02",
+      "address": "Ds Bumirejo",
+      "village": "Bumirejo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20330135",
+      "name": "SD ISLAM TERPADU UMAR BIN KHATHAB",
+      "address": "Jl. Juwana - Jakenan Km. 3 Juwana",
+      "village": "Pekuwon",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20330927",
+      "name": "SD ISLAM TERPADU YAUMI FATIMAH",
+      "address": "Jl. P. Diponegoro No. 155 Pati",
+      "village": "Parenggan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20330928",
+      "name": "SD NEGERI BANYUURIP 02",
+      "address": "Jl Banyuurip Km 7",
+      "village": "Banyuurip",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "20330930",
+      "name": "SD NEGERI JEMBANGAN 01",
+      "address": "Jembangan",
+      "village": "Jembangan",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20330931",
+      "name": "SD NEGERI KLETEK 01",
+      "address": "Desa Kletek",
+      "village": "Kletek",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20330932",
+      "name": "SD NEGERI MOJOAGUNG",
+      "address": "Jl.Pucakwangi-Todanan Km.4",
+      "village": "Mojoagung",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20330933",
+      "name": "SD NEGERI PLUKARAN 01",
+      "address": "Ds Plukaran Rt 2/2",
+      "village": "Plukaran",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20330934",
+      "name": "SD NEGERI PURWOREJO 02",
+      "address": "Purworejo",
+      "village": "Purworejo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20330935",
+      "name": "SD NEGERI SAMBIROTO 02",
+      "address": "Sambiroto",
+      "village": "Sambiroto",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20330937",
+      "name": "SD NEGERI SIDOMULYO 02",
+      "address": "Desa Sidomulyo RT 07 RW 02 Kecamatan Gunungwungkal",
+      "village": "Sidomulyo",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20330938",
+      "name": "SD Negeri Sidomukti",
+      "address": "Sidomukti",
+      "village": "Sidomukti",
+      "level": "sd",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "20330939",
+      "name": "SD NEGERI SONEYAN 02",
+      "address": "KEDUNG PANJANG",
+      "village": "Soneyan",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20330942",
+      "name": "SD NEGERI TAMBAHMULYO 02",
+      "address": "DESA TAMBAHMULYO",
+      "village": "Tambahmulyo",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "20331099",
+      "name": "SD NEGERI WUKIRSARI 02",
+      "address": "Ds Wukirsari",
+      "village": "Wukirsari",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20331711",
+      "name": "SD NEGERI KEPOHKENCONO 01",
+      "address": "Ds.kepohkencono",
+      "village": "Kepohkencono",
+      "level": "sd",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "20331712",
+      "name": "SD NEGERI SUMBEREJO 01",
+      "address": "Sumberejo",
+      "village": "Sumberrejo",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20331987",
+      "name": "SD NEGERI ANGKATAN LOR 02",
+      "address": "JL. TAMBAKROMO - GABUS KM. 3",
+      "village": "Angkatan Lor",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20331988",
+      "name": "SD NEGERI BERMI 03",
+      "address": "Ds Bermi Rt 1/10",
+      "village": "Bermi",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20331989",
+      "name": "SD NEGERI DANYANGMULYO 01",
+      "address": "Danyangmulyo",
+      "village": "Danyangmulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20331990",
+      "name": "SD NEGERI KLAKAHKASIHAN 02",
+      "address": "Dukuh Geger",
+      "village": "Klakah Kasian",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "20331991",
+      "name": "SD NEGERI MANGUNREKSO 01",
+      "address": "Jl Tambakromo Kayen Km 3",
+      "village": "Mangunrekso",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20331992",
+      "name": "SD NEGERI PORANG PARING",
+      "address": "Dk. Randukuning",
+      "village": "Porang Paring",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20331995",
+      "name": "SD NEGERI TUNJUNGREJO 01",
+      "address": "Jln Kyai Cebolang No 31",
+      "village": "Tunjungrejo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20338718",
+      "name": "SD NEGERI PAKIS",
+      "address": "Jl. Raya Kayen - Pakis Km. 12 Desa Pakis",
+      "village": "Pakis",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "20338855",
+      "name": "SD NEGERI TRIMULYO 02",
+      "address": "Desa Trimulyo Rt. 01 Rw. 03",
+      "village": "Trimulyo",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20338856",
+      "name": "SD NEGERI TRIMULYO 02",
+      "address": "Jl. Juwana - Rembang Km. 3",
+      "village": "Trimulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20339216",
+      "name": "SD ISLAM SUKOLILO",
+      "address": "jl raya pati purwodadi km 28",
+      "village": "Sukolilo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20340613",
+      "name": "SD NEGERI SUKOLILO 03",
+      "address": "Jl. Sukolilo - Prawoto Km 1",
+      "village": "Sukolilo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20340697",
+      "name": "SD NEGERI JEPALO",
+      "address": "Jepalo",
+      "village": "Jepalo",
+      "level": "sd",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "20340698",
+      "name": "SD NEGERI KETITANG WETAN 02",
+      "address": "Ketitang Wetan",
+      "village": "Ketitangwetan",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20340699",
+      "name": "SD NEGERI JIMBARAN 02",
+      "address": "Jln. O.W Goa Pancur",
+      "village": "Jimbaran",
+      "level": "sd",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "20340701",
+      "name": "SD NEGERI KUNIRAN 03",
+      "address": "Kuniran",
+      "village": "Kuniran",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20340703",
+      "name": "SD NEGERI MARGOTUHU KIDUL",
+      "address": "JL. TAYU JUWANA KM.04",
+      "village": "Margotuhu Kidul",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "20340704",
+      "name": "SD NEGERI PAYAK 03",
+      "address": "Payak Rt 02 Rw 01",
+      "village": "Payak",
+      "level": "sd",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "20340705",
+      "name": "SD NEGERI SUKOLILO 01",
+      "address": "Jl. Raya Pati - Puwodadi Km. 26 Sukolilo Kab. Pati 59172",
+      "village": "Sukolilo",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20340707",
+      "name": "SD NEGERI SUMBERSOKO 02",
+      "address": "Ds Sumbersoko",
+      "village": "Sumbersoko",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20340708",
+      "name": "SD NEGERI TLOGOSARI 01",
+      "address": "Dukuh Joga",
+      "village": "Tlogosari",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "20340709",
+      "name": "SD NEGERI TOMPOMULYO 02",
+      "address": "Tompomulyo",
+      "village": "Tompomulyo",
+      "level": "sd",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "20340810",
+      "name": "SD NEGERI DANYANGMULYO 02",
+      "address": "Danyangmulyo",
+      "village": "Danyangmulyo",
+      "level": "sd",
+      "district": "Winong"
+    },
+    {
+      "npsn": "20340994",
+      "name": "SD MUHAMMADIYAH",
+      "address": "JAL PATI KAYEN KM. 02",
+      "village": "Panjunan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20341464",
+      "name": "SD MARANATHA",
+      "address": "Jl. Sedayu no 18, Tayu kulon",
+      "village": "Tayu Kulon",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "20348740",
+      "name": "SD MUHAMMADIYAH KEDUNGWINONG",
+      "address": "DUK KRASAK",
+      "village": "Kedungwinong",
+      "level": "sd",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "20354181",
+      "name": "SD KRISTEN TERANG BAGI BANGSA",
+      "address": "JALAN PENJAWI NO. 29 B RANDUKUNING",
+      "village": "Pati Lor",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20360118",
+      "name": "SD HARAPAN BANGSA",
+      "address": "Jalan Supriyadi III RT 5/RW 4",
+      "village": "Pati Kidul",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "20362663",
+      "name": "SD IT YAUMI FATIMAH",
+      "address": "JL. TAMBAK NO. 37 BAJOMULYO",
+      "village": "Bajomulyo",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "20364882",
+      "name": "SD IT LENTERA HATI",
+      "address": "DESA TANJUNGANOM RT 01 RW 02",
+      "village": "Tanjunganom",
+      "level": "sd",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "60712135",
+      "name": "MI TARBIYATUL ISLAMIYAH RACI",
+      "address": "JALAN K.ZUHRI",
+      "village": "Raci",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "60712136",
+      "name": "MI MISHBAHUL FALAH",
+      "address": "KLAYUSIWALAN",
+      "village": "Klayusiwalan",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "60712137",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "KOMPLEKS MASJID BESAR TLOGOMOJO BATANGAN",
+      "village": "Tlogomojo",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "60712138",
+      "name": "MI AL ASY`ARI",
+      "address": "DESA KUNIRAN",
+      "village": "Kuniran",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "60712139",
+      "name": "MI Al Azhar Pati",
+      "address": "JLN RAYA PATI - JEPARA KM 45 DESA MOJO, KEC. CLUWAK, KABUPATEN PATI",
+      "village": "Mojo",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712140",
+      "name": "MI ISLAMIYAH 02 MOJO",
+      "address": "JL.GANG MASJID MUSTAQIM 2",
+      "village": "Mojo",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712141",
+      "name": "MI DARUL FALAH",
+      "address": "SIRAHAN CLUWAK PATI",
+      "village": "Sirahan",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712142",
+      "name": "MI ISLAMIYAH 01",
+      "address": "JALAN RAYA TAYU - JEPARA KM 13 RT 12 RW 04",
+      "village": "Payak",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712143",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "PAYAK",
+      "village": "Payak",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712144",
+      "name": "MI MANAHIJUL ULUM",
+      "address": "Jl. Raya Tayu-Jepara Km. 12",
+      "village": "Plaosan",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712145",
+      "name": "MI MATHOLI`UL HUDA 01",
+      "address": "DK.CLUWAK RT.4 RW.2",
+      "village": "Karangsari",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712146",
+      "name": "MI ISLAMIYAH",
+      "address": "JL.K.WIRA`I NO.05 SUMUR CLUWAK PATI",
+      "village": "Sumur",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712147",
+      "name": "MI MANBA`UL FALAH",
+      "address": "RT 04 RW 03 Desa Gerit Kecamatan Cluwak Kabupaten Pati",
+      "village": "Gerit",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712148",
+      "name": "MI MANBA`UL ULUM",
+      "address": "GESENGAN",
+      "village": "Gesengan",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "60712149",
+      "name": "MIN 2 PATI",
+      "address": "Jl. Raya Tayu - Puncel Km. 7,5 Alasdowo",
+      "village": "Alasdowo",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712150",
+      "name": "MI MADARIJUL HUDA",
+      "address": "JL Raya Tayu Puncel KM 11",
+      "village": "Kembang",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712151",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Jl. Raya Tayu-Puncel Km. 15 Sumurtowo",
+      "village": "Kembang",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712153",
+      "name": "MI MUHAMMADIYAH",
+      "address": "NGAGEL",
+      "village": "Ngagel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712154",
+      "name": "MI MATHOLI`UL HUDA",
+      "address": "BAKALAN",
+      "village": "Bakalan",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712155",
+      "name": "MI NURUL FALAH",
+      "address": "Jl. Bawal No.11 , RT 05 RW 01",
+      "village": "Banyutowo",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712156",
+      "name": "MI HIMMATUL MUTAALIMIN 02",
+      "address": "DS. DUKUHSETI RT 01 RW 01",
+      "village": "Dukuhseti",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712157",
+      "name": "MI TARBIYATUL ISLAM",
+      "address": "JLN. RAYA TAYU KALITELO KM.18 NGARENGAN",
+      "village": "Puncel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712158",
+      "name": "MI MANAHIJUL HUDA",
+      "address": "PENGGUNG",
+      "village": "Ngagel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712159",
+      "name": "MI MINSYA`UL HUDA",
+      "address": "JL. Tayu-Puncel Km. 14",
+      "village": "Tegalombo",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712160",
+      "name": "MI SULLAMUL HUDA",
+      "address": "JL. TAYU-PUNCEL KM.17 Rt.07 / Rw.02",
+      "village": "Puncel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712161",
+      "name": "MI MIFTAHUL FALAH",
+      "address": "PUNCEL",
+      "village": "Puncel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712162",
+      "name": "MI TARBIYATUL BANIN BANAT",
+      "address": "Jl. Raya Tayu-Puncel Km.8",
+      "village": "Alasdowo",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "60712163",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "TANJUNGANOM",
+      "village": "Tanjunganom",
+      "level": "mi",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "60712164",
+      "name": "MI SIROJUL HUDA",
+      "address": "JL. PATI KAYEN KM. 11",
+      "village": "Wuwur",
+      "level": "mi",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "60712165",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "RT 002 RW 001",
+      "village": "Sambirejo",
+      "level": "mi",
+      "district": "Gabus"
+    },
+    {
+      "npsn": "60712166",
+      "name": "MI MANBAUL ULUM",
+      "address": "BERMI - GEMBONG - PATI",
+      "village": "Bermi",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "60712167",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "JL. RAYA PATI GEMBONG KM. 12",
+      "village": "Gembong",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "60712168",
+      "name": "MI RAUDLATUL FALAH",
+      "address": "BORO SITILUHUR GEMBONG",
+      "village": "Sitiluhur",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "60712169",
+      "name": "MI PIM MUJAHIDIN",
+      "address": "Dk. Randu RT 02 RW 01 Ds. Bageng Kec. Gembong Kab. Pati",
+      "village": "Bageng",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "60712170",
+      "name": "MI TARBIYATUL ATHFAL",
+      "address": "DK. KENDIL RT. 03 RW. 03 DS. KLAKAHKASIHAN",
+      "village": "Klakah Kasian",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "60712171",
+      "name": "MI TARBIYATUS SHIBYAN",
+      "address": "JL. RAYA GUNUNGWUNGKAL KM.7",
+      "village": "Gunungwungkal",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712172",
+      "name": "MI THOWALIB",
+      "address": "PESAGEN, RT.02/01 KEC. GUNUNGWUNGKAL KAB. PATI",
+      "village": "Pesagen",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712173",
+      "name": "MI MUAWANATUL FALAH",
+      "address": "NGETUK",
+      "village": "Ngetuk",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712174",
+      "name": "MI TARBIYATUL ATHFAL",
+      "address": "RT 04 RW 01 Desa Jepalo",
+      "village": "Jepalo",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712175",
+      "name": "MI TARBIYATUL AULAD",
+      "address": "PERDOPO",
+      "village": "Perdopo",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712176",
+      "name": "MI MANBAUL HUDA",
+      "address": "SUMBEREJO",
+      "village": "Sumberrejo",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712177",
+      "name": "MI MINSYAUL HUDA",
+      "address": "Jembulwunut Rt. 03 Rw. 02",
+      "village": "Jembulwunut",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712178",
+      "name": "MI ISLAMIYAH",
+      "address": "GAJIHAN",
+      "village": "Gajihan",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712179",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "GUNUNGWUNGKAL",
+      "village": "Gunungwungkal",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712180",
+      "name": "MI MIFTAHUL HUDA SUMBERREJO",
+      "address": "SUMBERREJO",
+      "village": "Sumberrejo",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712181",
+      "name": "MI NURUL HIKMAH",
+      "address": "Dukuh Wedelan RT 001/ RW 003 Desa Gajihan",
+      "village": "Gajihan",
+      "level": "mi",
+      "district": "Gunung Wungkal"
+    },
+    {
+      "npsn": "60712182",
+      "name": "MI NAHRUS SALAMAH",
+      "address": "ARUMANIS",
+      "village": "Arumanis",
+      "level": "mi",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "60712183",
+      "name": "MI MANBA`UL HUDA",
+      "address": "Dukuh Payaman RT 02 RW 05",
+      "village": "Sriwedari",
+      "level": "mi",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "60712184",
+      "name": "MI NATIJATUL ISLAM",
+      "address": "Sumberejo, Rt.01/Rw.06",
+      "village": "Sumberejo",
+      "level": "mi",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "60712185",
+      "name": "MI TARBIYATUL ISLAM",
+      "address": "RT 04 RW 02 Desa Tamansari Kecamatan Jaken kabupaten Pati Provinsi Jawa Tengah",
+      "village": "Tamansari",
+      "level": "mi",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "60712186",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "Jl. Jakenan-Winong Km. 5",
+      "village": "Tambahmulyo",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712187",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "DS.SIDOMULYO KEC.JAKENAN KAB.PATI",
+      "village": "Sidomulyo",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712188",
+      "name": "MI TARBIYATUSY SYUBBAN",
+      "address": "Jalan Masjid Kijingan Kalimulyo",
+      "village": "Kalimulyo",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712189",
+      "name": "MI NABA`UL ULUM",
+      "address": "DESA PULUHANTENGAH RT 01 RW 02 KECAMATAN JAKENAN",
+      "village": "Puluhan Tengah",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712190",
+      "name": "MI MIFTAHUL FALAH",
+      "address": "JL. JAKENAN - JUWANA KM 01 DESA DUKUHMULYO",
+      "village": "Dukuhmulyo",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712191",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "DS. TONDOMULYO KEC. JAKENAN KAB. PATI",
+      "village": "Tondomulyo",
+      "level": "mi",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "60712192",
+      "name": "MI MATHOLI`UL FALAH",
+      "address": "LANGGENHARJO",
+      "village": "Langgenharjo",
+      "level": "mi",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "60712193",
+      "name": "MI TARBIYATUSH SHIBYAN",
+      "address": "MARGOMULYO",
+      "village": "Margomulyo",
+      "level": "mi",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "60712194",
+      "name": "MI AL FATTAH",
+      "address": "Jl. Ki Dukut Gang Merpati Ds. Dukutalit Kec. Juwana",
+      "village": "Dukutalit",
+      "level": "mi",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "60712195",
+      "name": "MI NURUL HUDA",
+      "address": "JL. KRAPYAK NO.9 BAJOMULYO JUWANA PATI",
+      "village": "Bajomulyo",
+      "level": "mi",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "60712196",
+      "name": "MIN 1 PATI",
+      "address": "JL. KAYEN SUMBERSARI KM. 02",
+      "village": "Slungkep",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712197",
+      "name": "MI MAMBAUL ULUM",
+      "address": "KAYEN",
+      "village": "Kayen",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712198",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "Dukuh Malangan RT.03 RW.04",
+      "village": "Trimulyo",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712199",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "Desa Srikaton Kec.Kayen",
+      "village": "Srikaton",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712200",
+      "name": "MI MIFTAHUL MUHTADIN",
+      "address": "JL. PATI-KAYEN KM.12",
+      "village": "Sundoluhur",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712201",
+      "name": "MI TAMRINUSSIBYAN",
+      "address": "SUMBERSARI",
+      "village": "Sumbersari",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712202",
+      "name": "MI KHOIRIYAH",
+      "address": "CARIKAN",
+      "village": "Kayen",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712203",
+      "name": "MI SIROJUL HUDA",
+      "address": "RT. 005 RW. 002",
+      "village": "Pasuruhan",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712204",
+      "name": "MI AL- FALAH",
+      "address": "Jl. Masjid Al Falah Gang Arjuna No. 5 Desa Talun 59171",
+      "village": "Talun",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712205",
+      "name": "MI TAMRINUTH THULLAB",
+      "address": "RT 01 RW 04 Desa Rogomulyo Kecamatan Kayen Kabupaten Pati Provinsi Jawa Tengah",
+      "village": "Rogomulyo",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712206",
+      "name": "MI NIHAYATURROGHIBIN",
+      "address": "JL.RAYAPATI-KAYEN KM.12",
+      "village": "Sundoluhur",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712207",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "JL. K.H Mataram 01 RT 07 RW 02 Jatiroto",
+      "village": "Jatiroto",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "60712208",
+      "name": "MIS MIFTAHUL HUDA",
+      "address": "SUKOBUBUK",
+      "village": "Sukobubuk",
+      "level": "mi",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "60712209",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "JL. PATI - BANYUURIP KM.8",
+      "village": "Metaraman",
+      "level": "mi",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "60712210",
+      "name": "MI TSAMROTUL HUDA",
+      "address": "POHIJO",
+      "village": "Pohijo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712211",
+      "name": "MI SALAFIYAH KAJEN",
+      "address": "DS.KAJEN RT/RW 05/01",
+      "village": "Kajen",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712212",
+      "name": "MI HIDAYATUL ISLAM",
+      "address": "LAPANGAN OLAH RAGA",
+      "village": "Waturoyo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712213",
+      "name": "MI KHOIRIYAH",
+      "address": "JALAN MASJID",
+      "village": "Waturoyo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712214",
+      "name": "MI MANBAUL HUDA",
+      "address": "JALAN RAYA TAYU-JUANA KM 06",
+      "village": "Tunjungrejo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712215",
+      "name": "MI TARBIYATUL ATHFAL",
+      "address": "JALAN MASJID RT 03. RW 02",
+      "village": "Bulumanis Lor",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712216",
+      "name": "MI RAUDLATUT THALIBIN",
+      "address": "KERTOMULYO",
+      "village": "Kertomulyo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712217",
+      "name": "MI I`ANATUT THALIBIN",
+      "address": "RT 02 RW 06",
+      "village": "Cebolek Kidul",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712218",
+      "name": "MI AL ISTIQOMAH",
+      "address": "PURWOREJO",
+      "village": "Purworejo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712219",
+      "name": "MI HADIWIJAYA",
+      "address": "JALAN RONGGO KUSUMO KAJEN",
+      "village": "Kajen",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712220",
+      "name": "MI DARUN NAJAH",
+      "address": "RT 01 RW 03 Desa Ngemplak Kidul",
+      "village": "Ngemplak Kidul",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712221",
+      "name": "MI MATHALI`UL HUDA",
+      "address": "LANGGENHARJO",
+      "village": "Langgenharjo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712222",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Dk,Mondoliko Rt 01/ Rw 03 Ds. Tegalarum",
+      "village": "Tegalarum",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712223",
+      "name": "MI RAUDLOTUL HUDA",
+      "address": "RT 05 RW 01 Desa Tegalarum",
+      "village": "Tegalarum",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712224",
+      "name": "MI SALAFIYAH",
+      "address": "RT.22/RW.06",
+      "village": "Tanjungrejo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712225",
+      "name": "MI AL HIKMAH KAJEN",
+      "address": "Jl. Prima 005/001 Kajen Margoyoso Pati",
+      "village": "Kajen",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712226",
+      "name": "MI MATHLAUL HUDA",
+      "address": "TANJUNGREJO",
+      "village": "Tanjungrejo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712227",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Rt 01 RW 04",
+      "village": "Kertomulyo",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "60712228",
+      "name": "MI MUHAMMADIYAH",
+      "address": "TAMBAHARJO",
+      "village": "Tambaharjo",
+      "level": "mi",
+      "district": "Pati"
+    },
+    {
+      "npsn": "60712229",
+      "name": "MI AL HIDAYAH",
+      "address": "JL.TAMAN PAHLAWAN Desa Puri Rt.02 Rw.06 PATI",
+      "village": "Puri",
+      "level": "mi",
+      "district": "Pati"
+    },
+    {
+      "npsn": "60712230",
+      "name": "MI MANBAUL ULUM",
+      "address": "JL. RAYA PATI-JUANA KM. 07",
+      "village": "Sinoman",
+      "level": "mi",
+      "district": "Pati"
+    },
+    {
+      "npsn": "60712231",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "JL. PUCAKWANGI-WINONG KM05 DS.KARANGWATON",
+      "village": "Karangwotan",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712232",
+      "name": "MI TARBIYATUL BANIN",
+      "address": "Jl. Sokopuluhan Winong Km 03",
+      "village": "Plosorejo",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712233",
+      "name": "MI MATHOLI`UL HUDA",
+      "address": "SOKOPULUHAN PUCAKWANGI PATI",
+      "village": "Sokopuluhan",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712234",
+      "name": "MI MATHOLI`UL ULUM",
+      "address": "TERTEG",
+      "village": "Terteg",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712235",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "TRIGUNO",
+      "village": "Triguno",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712236",
+      "name": "MI NURUL QURAN",
+      "address": "JL.RAYA JUWANA PUCAKWANGI KM.13 TEGALWERO PUCAKWANGI PATI",
+      "village": "Tegalwero",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712239",
+      "name": "MI NAHJATUL FAIZIN",
+      "address": "KEPOHKENCONO",
+      "village": "Kepohkencono",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712241",
+      "name": "MI MIFTAHUL FALAH BODEH",
+      "address": "BODEH",
+      "village": "Bodeh",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "60712242",
+      "name": "MI RAUDLATUS SYUBBAN",
+      "address": "Jln. K.H. Abdul Qodir No. 03 Kincir",
+      "village": "Wegil",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712243",
+      "name": "MI AL HIDAYAH PRAWOTO",
+      "address": "Dukuh Sewunegaran RT 006 RW 005 Desa Prawoto",
+      "village": "Prawoto",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712244",
+      "name": "MI SABILUL HUDA",
+      "address": "GALIRAN",
+      "village": "Baleadi",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712245",
+      "name": "MI SULTAN AGUNG 02",
+      "address": "JLN.TALANGTUMENGGUNG NO.35",
+      "village": "Sukolilo",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712246",
+      "name": "MI SULTAN AGUNG 03",
+      "address": "KEDUNGWINONG",
+      "village": "Kedungwinong",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712247",
+      "name": "MI MIFTAHUL FALAH",
+      "address": "WOTAN",
+      "village": "Wotan",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712248",
+      "name": "MI I`ANATUL ATHFAL",
+      "address": "Dukuh Dermoyo RT 01 RW 01 Ds Cengkalsewu Kec. Sukolilo Kab. Pati",
+      "village": "Cengkalsewu",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712249",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Dk. Papasan RT 003 RW 003",
+      "village": "Baleadi",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712250",
+      "name": "MI AL MU`MIN",
+      "address": "JL.Makam Sunan Prawoto Rt06Rw05",
+      "village": "Prawoto",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712252",
+      "name": "MI AL HIDAYAH",
+      "address": "NGANDONG",
+      "village": "Pakem",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712253",
+      "name": "MI MATHOLIBUL ULUM",
+      "address": "Dukuh Jongso Rt 04 Rw 10",
+      "village": "Wotan",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712254",
+      "name": "MI SULTAN AGUNG 01",
+      "address": "JL. RAYA PATI PURWODADI",
+      "village": "Sukolilo",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712255",
+      "name": "MI DARUL ULUM",
+      "address": "BATUREJO",
+      "village": "Baturejo",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712256",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "JL. GUA WARIH GG. NO. I PURI",
+      "village": "Kedumulyo",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712257",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "Jl. Cengkalsewu - Bareng Km. 4 Desa Kasiyan RT. 005 / RW. 001",
+      "village": "Kasiyan",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "60712258",
+      "name": "MI DARUL MUQODDAS",
+      "address": "MOJOMULYO",
+      "village": "Mojomulyo",
+      "level": "mi",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "60712259",
+      "name": "MI MANBA`UL FALAH",
+      "address": "Rt 005 Rw 002",
+      "village": "Keben",
+      "level": "mi",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "60712260",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Jl. Ratu Kalinyamat No.51 RT 01/02",
+      "village": "Tayu Wetan",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712261",
+      "name": "MI MANBAUL HUDA",
+      "address": "PUNDENREJO JL. P. SUDIRMAN KM. 3 TAYU",
+      "village": "Pundenrejo",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712262",
+      "name": "MI MABDAUL HUDA",
+      "address": "Jl. Sentana RT 003 RW 001",
+      "village": "Kedungbang",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712263",
+      "name": "MI MAMBA`UN NIDHOM",
+      "address": "Bulungan RT.06 /02 Tayu",
+      "village": "Bulungan",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712264",
+      "name": "MI ISLAMIYAH 01",
+      "address": "Jl. Raya Tayu-Jepara Km.5",
+      "village": "Purwokerto",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712265",
+      "name": "MI ISLAMIYAH 02",
+      "address": "Jln. RAYA TAYU-JEPARA KM. 06",
+      "village": "Purwokerto",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712266",
+      "name": "MI THORIQOTUL ISLAMIYAH",
+      "address": "Jl. Tayu - Puncel No.02, Luwang, Kec. Tayu, Kabupaten Pati, Jawa Tengah 59155",
+      "village": "Luwang",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712267",
+      "name": "MI SIROJUL ANAM",
+      "address": "Jl. K.H. Bahri Dk. Winong",
+      "village": "Luwang",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712268",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "Keboromo",
+      "village": "Keboromo",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712269",
+      "name": "MI MIFTAHUL FALAH",
+      "address": "Jl. Tayu-Juwana Km. 1",
+      "village": "Jepat Lor",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712270",
+      "name": "MI ISLAMIYAH",
+      "address": "Ds.Tendas Rt 05 RW I",
+      "village": "Tendas",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712271",
+      "name": "MI MANSYAUL HUDA",
+      "address": "Sendangrejo",
+      "village": "Sendangrejo",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712272",
+      "name": "MI RAUDLATUT THOLIBIN",
+      "address": "Jalan Raya Tayu-Pati Km. 3 Pakis",
+      "village": "Pakis",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712273",
+      "name": "MI MAMBAUL HIDAYAH",
+      "address": "Pondowan",
+      "village": "Pondowan",
+      "level": "mi",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "60712274",
+      "name": "MI RAUDLATUL ULUM",
+      "address": "GUYANGAN",
+      "village": "Guyangan",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712275",
+      "name": "MI SILAHUL ULUM",
+      "address": "ASEMPAPAN",
+      "village": "Asempapan",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712276",
+      "name": "MI KHOIRIYATUL ULUM",
+      "address": "TEGALHARJO",
+      "village": "Tegalharjo",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712277",
+      "name": "MI MATHALI`UL HUDA",
+      "address": "PASUCEN",
+      "village": "Pasucen",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712278",
+      "name": "MI MISBAHUL ULUM",
+      "address": "Jl. Dampuawang No. 12 Desa Pasucen RT 05 RW 04",
+      "village": "Pasucen",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712279",
+      "name": "MI MASLAKUL ULUM",
+      "address": "TRANGKIL",
+      "village": "Trangkil",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712280",
+      "name": "MI LUTHFUL ULUM",
+      "address": "RT 04 RW 08",
+      "village": "Pasucen",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "60712281",
+      "name": "MI MAUDLAUL ULUM",
+      "address": "TAWANGHARJO",
+      "village": "Tawangharjo",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712282",
+      "name": "MI MAZRO`ATUL ULUM",
+      "address": "jln. Mataram Km 01 Desa Suwaduk kecamatan Wedarijaksa kab. Pati",
+      "village": "Suwaduk",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712283",
+      "name": "MI MASALIKUL ULUM",
+      "address": "JONTRO",
+      "village": "Jontro",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712284",
+      "name": "MI TARBIYATUL ULUM",
+      "address": "JL. KAPTEN YUSUF NO.91",
+      "village": "Wedarijaksa",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712285",
+      "name": "MI MANSYAUL ULUM",
+      "address": "SUKOHARJO",
+      "village": "Sukoharjo",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712286",
+      "name": "MI BUSTANUL ULUM",
+      "address": "PAGERHARJO",
+      "village": "Pagerharjo",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712287",
+      "name": "MI THORIQOTUL ULUM",
+      "address": "TLOGOHARUM",
+      "village": "Tlogoharum",
+      "level": "mi",
+      "district": "Wedarijaksa"
+    },
+    {
+      "npsn": "60712288",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "Dk. Pecangaan",
+      "village": "Winong",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712289",
+      "name": "MI TARBIYATUL BANIN",
+      "address": "Pekalongan",
+      "village": "Pekalongan",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712290",
+      "name": "MI TARBIYATUL MUBTADI",
+      "address": "RT 05 RW 3",
+      "village": "Danyangmulyo",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712291",
+      "name": "MI MIFTAHUSSA`ADAH",
+      "address": "BLINGIJATI",
+      "village": "Blingijati",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712292",
+      "name": "MI ROUDLOTUSYSYUBBAN",
+      "address": "TAWANGREJO",
+      "village": "Tawangrejo",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712293",
+      "name": "MI NAHDLOTUSYSYUBBAN",
+      "address": "SARIMULYO",
+      "village": "Sarimulyo",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712294",
+      "name": "MI TARBIYATUL BANIN",
+      "address": "WIRUN",
+      "village": "Wirun",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712295",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "TANGGEL RT 06 RW 02",
+      "village": "Tanggel",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712296",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "KARANGKONANG",
+      "village": "Karangkonang",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712297",
+      "name": "MI RAUDLATUL ULUM",
+      "address": "Desa Tlogorejo Dkh. Julu RT 04 RW 02 Kec. Winong Kab. Pati Prov. Jawa Tengah",
+      "village": "Tlogorejo",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60712298",
+      "name": "MIS NURUL IMAN",
+      "address": "PAGENDISAN",
+      "village": "Pagendisan",
+      "level": "mi",
+      "district": "Winong"
+    },
+    {
+      "npsn": "60729487",
+      "name": "MI SALAFIYAH",
+      "address": "DESA TAJUNGSARI",
+      "village": "Tajungsari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "60729488",
+      "name": "MI KHOIRIYAH GUWO",
+      "address": "DESA GUWO",
+      "village": "Guwo",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "60729489",
+      "name": "MI TARBIYATUL ULUM",
+      "address": "RANDU GUNTING TAJUNGSARI TLOGOWUNGU PATI RT 05/04",
+      "village": "Tajungsari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "60730248",
+      "name": "MI SALAFIYAH LAHAR",
+      "address": "JL RAYA TLOGOWUNGU PATI KM 07 DESA LAHAR KEC TLOGOWUNGU KAB PATI",
+      "village": "Lahar",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69725319",
+      "name": "MI MUHAMMADIYAH",
+      "address": "JLN. NUSA INDAH",
+      "village": "Wonorejo",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69725759",
+      "name": "MI RAUDLATUL MUTA`ALLIMIN",
+      "address": "DS.PESAGI KEC KAYEN",
+      "village": "Pesagi",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "69725760",
+      "name": "MI MIFTAHUL ISLAMIYAH",
+      "address": "DS.JIMBARAN KEC KAYEN",
+      "village": "Jimbaran",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "69725762",
+      "name": "MI TARBIYATUS SALAM",
+      "address": "Komplek Masjid Al Amin",
+      "village": "Mojoagung",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "69726183",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "Kompleks Masjid Al-Muwahhidin",
+      "village": "Lengkong",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "69726185",
+      "name": "MI MATHOLIUL ULUM",
+      "address": "DS WONOSEKAR KEC GEMBONG",
+      "village": "Wonosekar",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726187",
+      "name": "MI KHOIRIYAH",
+      "address": "DS.SITI LUHUR KEC GEMBONG",
+      "village": "Sitiluhur",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726189",
+      "name": "MI IANATUL ISLAM",
+      "address": "Jl. Gembong - Argojembangan KM 3 Pl",
+      "village": "Plukaran",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726190",
+      "name": "MI AL HIDAYAH",
+      "address": "Dukuh Bengkal Rt 01 Rw 06",
+      "village": "Plukaran",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726194",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "Rt. 01 Rw. 03",
+      "village": "Pohgading",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726197",
+      "name": "MI MATHOLIUL HUDA",
+      "address": "DK. POSONO RT.01 RW.07 DS. KLAKAHKASIHAN KEC. GEMBONG KAB. PATI",
+      "village": "Klakah Kasian",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726198",
+      "name": "MI THORIQOTUL HUDA",
+      "address": "KLAKAHKASIHAN RT:04/RW:05",
+      "village": "Klakah Kasian",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69726200",
+      "name": "MI MASLAKUL HUDA",
+      "address": "GUNUNGSARI RT01/01",
+      "village": "Gunungsari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69726201",
+      "name": "MI NURUL ISLAM",
+      "address": "DS.SUMBERMULYO TLOGOWUNGU",
+      "village": "Sumbermulyo",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69726202",
+      "name": "MI BID`UL ULUM",
+      "address": "SUMBERMULYO 05/1 TLOGOWUNGU PATI",
+      "village": "Sumbermulyo",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69726204",
+      "name": "MI MIFTAHUL HUDA",
+      "address": "DS PANGKALAN KEC MARGOYOSO",
+      "village": "Pangkalan",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "69726205",
+      "name": "MI MATHOLI`UL HUDA 02",
+      "address": "DS.KARANGSARI CLUWAK",
+      "village": "Karangsari",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "69726207",
+      "name": "MI TARBIYATUL ISLAM 01",
+      "address": "DS.WEDUSAN KEC DUKUHSETI",
+      "village": "Wedusan",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69726209",
+      "name": "MI TARBIYATUL ISLAM 02",
+      "address": "Jl. KRPH Ngrancang Rt 05 Rw 05",
+      "village": "Wedusan",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69726210",
+      "name": "MI HIMMATUL MUTAALLIMIN 01",
+      "address": "Jl. Dukuhseti - Banyutowo Km.01 Dukuhseti",
+      "village": "Dukuhseti",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69726211",
+      "name": "MI HIMMATUL MUTAALLIMIN 03",
+      "address": "DS. DUKUHSETI RT 07 RW 03",
+      "village": "Dukuhseti",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69726219",
+      "name": "MI MAMBAUL ULUM",
+      "address": "DS.GROGOLAN KEC DUKUHSETI",
+      "village": "Grogolan",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69726220",
+      "name": "MI DARUSSALAM",
+      "address": "Dukuh Sambikerep RT 003/03",
+      "village": "Purwosari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69727151",
+      "name": "MI TARBIYATUS SIBYAN",
+      "address": "DS.KETANGGAN KEC GEMBONG",
+      "village": "Ketanggan",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69727152",
+      "name": "MI HIDAYATUL ISLAM",
+      "address": "DS.GEMBONG KEC GEMBONG",
+      "village": "Gembong",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69727494",
+      "name": "MI TARBIYATUL ISLAMIYAH",
+      "address": "DS.KLAKAHKASIHAN KEC GEMBONG",
+      "village": "Klakah Kasian",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69727495",
+      "name": "MI NABAUL ULUM",
+      "address": "Desa Wonorejo RT 2 RW 1 Kecamatan Tlogowungu Kabupaten PAti",
+      "village": "Wonorejo",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69727496",
+      "name": "MI MATHOLI`UN NAJAH",
+      "address": "DS.TLOGOSARI KEC TLOGOWUNGU",
+      "village": "Tlogosari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69727497",
+      "name": "MI NAHJATUL FALAH",
+      "address": "Jl Masjid Jami` Al Muttaqin",
+      "village": "Bulumanis Kidul",
+      "level": "mi",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "69727498",
+      "name": "MI MINSYAUL WATHON",
+      "address": "DS. GROGOLAN RT 008 RW 003",
+      "village": "Grogolan",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69727499",
+      "name": "MI MIFTAHUL ULUM",
+      "address": "DS.CABAK KEC TLGOWUNGU",
+      "village": "Cabak",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69727500",
+      "name": "MI TAHFIDZUL QURAN",
+      "address": "DS.BERMI KEC GEMBONG",
+      "village": "Bermi",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69762661",
+      "name": "SD IT AL - IKHLAS",
+      "address": "DESA TLOGOREJO",
+      "village": "Tlogorejo",
+      "level": "sd",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69819560",
+      "name": "MI Matholi`ul Huda",
+      "address": "RT 01/ 05 Desa Suwatu",
+      "village": "Suwatu",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69824826",
+      "name": "SD INTEGRAL HIDAYATULLAH",
+      "address": "JALAN NANAS RT 7/2 PLANGITAN",
+      "village": "Plangitan",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "69827777",
+      "name": "MI HIDAYATUSSUBBAN",
+      "address": "Jl. Jakenan - Pucakwangi ,Tanjungsekar Rt. 04/ Rw.IV",
+      "village": "Tanjungsekar",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "69852841",
+      "name": "SD ANNIDA YA FATIMAH",
+      "address": "Jl. Raden Patah Jepat Lor Tayu Pati",
+      "village": "Jepat Lor",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "69854216",
+      "name": "MI Tarbiyatul Islamiyah",
+      "address": "Jl. Tiwongso No.08 Sokopuluhan Pucakwangi",
+      "village": "Sokopuluhan",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "69854217",
+      "name": "MI Matholi`ul Falah",
+      "address": "Desa Karangrejo Kecamatan Pucakwangi Kabupaten Pati Provinsi Jawa Tengah",
+      "village": "Karangrejo",
+      "level": "mi",
+      "district": "Pucakwangi"
+    },
+    {
+      "npsn": "69880234",
+      "name": "SD ISLAM HIDAYAH",
+      "address": "DS TAYU WETAN",
+      "village": "Tayu Wetan",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "69880574",
+      "name": "SD IT NURUL FIKRI",
+      "address": "JALAN SUTRA NO. 1 DS TRANGKIL",
+      "village": "Trangkil",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "69880575",
+      "name": "SD IT SALMAN AL-FARISI",
+      "address": "JALAN SALMAN AL-FARISI NO. 5 PERUM TAYLON SEJAHTERA",
+      "village": "Tayu Kulon",
+      "level": "sd",
+      "district": "Tayu"
+    },
+    {
+      "npsn": "69894629",
+      "name": "MI NURUL FALAH",
+      "address": "Rt 02 Rw 1 Desa Brati Kecamatan Kayen Kabupaten Pati",
+      "village": "Brati",
+      "level": "mi",
+      "district": "Kayen"
+    },
+    {
+      "npsn": "69894631",
+      "name": "MI TARBIYATUL FALAH",
+      "address": "Karanglegi",
+      "village": "Karanglegi",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "69901954",
+      "name": "MI MANAHIJUL HUDA",
+      "address": "Jalan Kauman Nomor 01",
+      "village": "Ngagel",
+      "level": "mi",
+      "district": "Dukuhseti"
+    },
+    {
+      "npsn": "69927958",
+      "name": "MI NDHOLO KUSUMO",
+      "address": "Jl. Tlogosari - Tlogowungu Rt 05 Rw 01",
+      "village": "Tlogosari",
+      "level": "mi",
+      "district": "Tlogowungu"
+    },
+    {
+      "npsn": "69927959",
+      "name": "MI ALAM ALFA KID`S",
+      "address": "Jl. Raya Tayu-Jepara No. 460",
+      "village": "Ngablak",
+      "level": "mi",
+      "district": "Cluwak"
+    },
+    {
+      "npsn": "69946898",
+      "name": "SD ISLAM AL AZHAR 48 PATI",
+      "address": "Jalan Al Azhar nomor 1 Desa Winong RT.03 RW. 07",
+      "village": "Winong",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "69956218",
+      "name": "MI AL KHOLIFAH",
+      "address": "Ds Ngepungrojo Desa Ngepungrojo Kec Pati",
+      "village": "Ngepungrojo",
+      "level": "mi",
+      "district": "Pati"
+    },
+    {
+      "npsn": "69957062",
+      "name": "SD IT NURUL FIKRI",
+      "address": "Jl. Komodo No. 128 Kauman Juwana",
+      "village": "Kauman",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "69967207",
+      "name": "SD TERPADU AN NISMAH",
+      "address": "Jl. Pati - Tayu KM 18",
+      "village": "Waturoyo",
+      "level": "sd",
+      "district": "Margoyoso"
+    },
+    {
+      "npsn": "69975868",
+      "name": "SDIT AL MADINAH",
+      "address": "Jl. Raya Juwana Rembang Km. 02",
+      "village": "Bendar",
+      "level": "sd",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "69977296",
+      "name": "MI NURUL MA`ARIF",
+      "address": "DS. SEMIREJO RT.01 RW.03 KEC. GEMBONG KAB. PATI",
+      "village": "Semirejo",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69977297",
+      "name": "MI TERPADU AL MADANI",
+      "address": "JL. PATI-KUDUS KM 9",
+      "village": "Wangunrejo",
+      "level": "mi",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "69993391",
+      "name": "MI ASSALAMIYYAH",
+      "address": "DS BERMI RT 003 RW 005 KEC GEMBONG",
+      "village": "Bermi",
+      "level": "mi",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "69994036",
+      "name": "MI ISLAMIYAH",
+      "address": "Jl. K. Ismail Desa Sumberarum RT 03 RW 04 Kec. Jaken Kab. Pati",
+      "village": "Sumberarum",
+      "level": "mi",
+      "district": "Jaken"
+    },
+    {
+      "npsn": "69994874",
+      "name": "MI RAUDLATUL ULUM",
+      "address": "Jl. Sunan Prawoto Km. 07",
+      "village": "Wegil",
+      "level": "mi",
+      "district": "Sukolilo"
+    },
+    {
+      "npsn": "70006703",
+      "name": "SD Plus Abayasa Islamic School",
+      "address": "Dk. Cacah Rt. 6 Rw. 2",
+      "village": "Sukoharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "70007477",
+      "name": "SDIT PEMBINA GENERUS",
+      "address": "Desa Langenharjo Rt 5 Rw 2",
+      "village": "Langenharjo",
+      "level": "sd",
+      "district": "Margorejo"
+    },
+    {
+      "npsn": "70008994",
+      "name": "MI KHOIRIYAH",
+      "address": "Ds. Kedalon Rt 003 Rw 001 Kec. Batangan Kab. Pati",
+      "village": "Kedalon",
+      "level": "mi",
+      "district": "Batangan"
+    },
+    {
+      "npsn": "70011327",
+      "name": "SDIT KHADIJAH JAKENAN",
+      "address": "RT. 03 RW. 02",
+      "village": "Tanjungsari",
+      "level": "sd",
+      "district": "Jakenan"
+    },
+    {
+      "npsn": "70012678",
+      "name": "SDIT NUR MADINAH",
+      "address": "RT 7 RW 1",
+      "village": "Sidokerto",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "70028135",
+      "name": "SD TERPADU BINA BANGSA PATI",
+      "address": "Desa Ketanen",
+      "village": "Ketanen",
+      "level": "sd",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "70033161",
+      "name": "MI ANNUR BUMI DAMAI",
+      "address": "Dk. Karangtawang 02/04 Ds. Karangrejo",
+      "village": "Karangrejo",
+      "level": "mi",
+      "district": "Juwana"
+    },
+    {
+      "npsn": "70039987",
+      "name": "SDQT IBNU RUSLAN",
+      "address": "Jl. Taman Makam Pahlawan",
+      "village": "Puri",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "70053149",
+      "name": "SEKOLAH DASAR ISLAM TERPADU (SDIT) NURUL FIKRI",
+      "address": "kinyan,Ngepungrojo,kec.pati,kabupaten pati",
+      "village": "Ngepungrojo",
+      "level": "sd",
+      "district": "Pati"
+    },
+    {
+      "npsn": "70063821",
+      "name": "SDIT AL QASHWA",
+      "address": "Angkatan Kidul",
+      "village": "Angkatan Kidul",
+      "level": "sd",
+      "district": "Tambakromo"
+    },
+    {
+      "npsn": "71299206",
+      "name": "SD IT NURUL FIKRI",
+      "address": "Dukuh Sentul",
+      "village": "Gembong",
+      "level": "sd",
+      "district": "Gembong"
+    },
+    {
+      "npsn": "71924409",
+      "name": "MI ABAYASA",
+      "address": "RT 05 RW 01",
+      "village": "Tlutup",
+      "level": "mi",
+      "district": "Trangkil"
+    },
+    {
+      "npsn": "75915716",
+      "name": "MI TERPADU MIFTAHUL HUDA",
+      "address": "Dukuh Pasinggahan",
+      "village": "Sugihrejo",
+      "level": "mi",
+      "district": "Gabus"
+    }
+  ]
+}

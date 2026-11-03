@@ -41,4 +41,24 @@ return [
             'password' => 'Minimal 12 karakter. Kosongkan saat mengubah jika kata sandi tidak diganti.',
         ],
     ],
+    'directory' => [
+        'label' => 'sekolah',
+        'plural_label' => 'Sebaran sekolah',
+        'fields' => [
+            'npsn' => 'NPSN',
+            'name' => 'Nama sekolah',
+            'level' => 'Jenjang',
+            'district' => 'Kecamatan',
+            'region' => 'Kabupaten/kota',
+            'is_customer' => 'Pelanggan',
+        ],
+        'summary' => [
+            'schools' => 'Jumlah sekolah',
+            'customers' => 'Sudah pelanggan',
+        ],
+        'filters' => [
+            'customers' => 'Sudah pelanggan',
+            'not_customers' => 'Belum pelanggan',
+        ],
+    ],
 ];

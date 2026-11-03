@@ -861,3 +861,8 @@ Reason: scoping the supervisor's own access list by a "current school" would hid
 Accepted · 2026-11-03 · P5-03f · owner's choice
 A separate reference table, `school_directory_entries` (NPSN, name, level, address, village, district, region), holds SD and MI from referensi.data.kemendikdasmen.go.id. It starts with Kabupaten Kudus only (`docs/data/schools/kudus.json`, 570 schools). The data is fetched by hand with `scripts/school-directory/fetch.cjs` and loaded with `php artisan school-directory:import <file>`, which is idempotent by NPSN. When staff type an NPSN in the console's school form, empty fields are filled from it. Directory rows are not tenants; a school becomes a tenant only when staff create it.
 Reason: there is no official public API (2026-11-03 search), and filling a school from its NPSN saves typing and typos. Kudus is the pilot region (D-018); other regencies can be added with the same script.
+
+### D-170 — Jepara and Pati in the directory; school map for marketing
+Accepted · 2026-11-03 · P5-03f · owner's choice · extends D-169
+The school directory also holds Kabupaten Jepara (772 schools) and Kabupaten Pati (825). The staff console has a read-only page, Sebaran sekolah (`/sebaran-sekolah`), for admin and support. It lists the directory grouped by district (or regency, or level), shows the number of schools and of customers per group, and filters customers or not-yet-customers. For now a customer is a directory school whose NPSN matches a school created in the console; it moves to "has an active subscription" when billing exists (P5-10).
+Reason: the team wants to see where SIGRAK is already used around Kudus and which schools to approach next.

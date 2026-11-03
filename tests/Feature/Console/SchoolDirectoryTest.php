@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use App\Enums\SchoolLevel;
 use App\Enums\StaffRole;
+use App\Filament\Resources\SchoolDirectoryEntries\Pages\ManageSchoolDirectoryEntries;
 use App\Filament\Resources\Schools\Pages\ManageSchools;
 use App\Models\Region;
+use App\Models\School;
 use App\Models\SchoolDirectoryEntry;
 use App\Models\StaffUser;
 use Filament\Actions\CreateAction;
@@ -83,3 +85,32 @@ it('keeps what staff already typed', function (): void {
         ->fillForm(['name' => 'Nama dari staf', 'npsn' => '60712382'])
         ->assertSchemaStateSet(['name' => 'Nama dari staf', 'level' => 'mi']);
 });
+
+it('shows staff which directory schools are already customers', function (): void {
+    $this->artisan('school-directory:import', ['file' => directoryFixture()])->assertSuccessful();
+    $customer = SchoolDirectoryEntry::query()->firstWhere('npsn', '60712382');
+    School::factory()->create(['npsn' => $customer->npsn, 'region_id' => $customer->region_id]);
+    $prospect = SchoolDirectoryEntry::query()->firstWhere('npsn', '20317288');
+
+    Filament::setCurrentPanel('admin');
+    actingAs(StaffUser::factory()->role(StaffRole::Support)->create(), 'staff');
+
+    Livewire::test(ManageSchoolDirectoryEntries::class)
+        ->assertCanSeeTableRecords([$customer, $prospect])
+        ->filterTable('is_customer', false)
+        ->assertCanSeeTableRecords([$prospect])
+        ->assertCanNotSeeTableRecords([$customer])
+        ->filterTable('is_customer', true)
+        ->assertCanSeeTableRecords([$customer])
+        ->assertCanNotSeeTableRecords([$prospect]);
+});
+
+it('keeps the directory page to admin and support staff', function (StaffRole $role, int $status): void {
+    actingAs(StaffUser::factory()->role($role)->create(), 'staff')
+        ->get('http://'.config('app.hosts.admin').'/sebaran-sekolah')
+        ->assertStatus($status);
+})->with([
+    'admin' => [StaffRole::Admin, 200],
+    'support' => [StaffRole::Support, 200],
+    'content' => [StaffRole::Content, 403],
+]);

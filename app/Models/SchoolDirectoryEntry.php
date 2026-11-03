@@ -8,6 +8,7 @@ use App\Enums\SchoolLevel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * One SD/MI from the Kemendikdasmen reference site, used to fill in a new school's data (D-169).
@@ -23,6 +24,16 @@ final class SchoolDirectoryEntry extends Model
     public function region(): BelongsTo
     {
         return $this->belongsTo(Region::class);
+    }
+
+    /**
+     * The SIGRAK school with the same NPSN, if this school is already a customer.
+     *
+     * @return HasOne<School, $this>
+     */
+    public function school(): HasOne
+    {
+        return $this->hasOne(School::class, 'npsn', 'npsn');
     }
 
     /**
