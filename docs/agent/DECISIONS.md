@@ -846,3 +846,13 @@ Reason: owner's decision.
 Accepted · 2026-11-02 · owner's choice
 Developers on Windows run the app in WSL2 with Ubuntu 24.04, not Laragon. PHP, MySQL, Redis, and Node live inside Ubuntu, and Gotenberg runs in Docker Desktop with WSL integration. The three local hostnames are `app.`, `ujian.`, and `admin.sigrak.localhost`. Steps: `docs/drafts/local-setup-wsl2.md`.
 Reason: Horizon needs `pcntl`/`posix`, which Windows PHP lacks. Ubuntu 24.04 matches the VPS (D-086), so local behaviour stays close to staging and production.
+
+### D-167 — Staff console access by staff role
+Accepted · 2026-11-03 · P5-03a
+`admin` manages everything in the console, including staff accounts. `support` manages regions and schools. `content` gets the template registry when it is built and sees nothing else yet. The first admin on a server is made with `php artisan staff:create <email>`.
+Reason: the data model names the three roles but not their reach; this is the smallest split that keeps staff accounts with admins only.
+
+### D-168 — Supervisor assignments have no school scope
+Accepted · 2026-11-03 · P5-03a · exception to TEN-1
+`supervisor_assignments` has `school_id` but no `BelongsToSchool` scope. A supervisor's rows are read by `user_id` across schools, and only the staff console manages them. `school_memberships` keeps the scope; the one place that reads them before a school is chosen (`ResolveSchoolContext`) uses `withoutSchoolScope()` limited to the user's own rows.
+Reason: scoping the supervisor's own access list by a "current school" would hide the schools they supervise.
