@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('village');
             $table->string('district');
             $table->foreignId('region_id')->constrained()->restrictOnDelete();
+            $table->decimal('latitude', 10, 7)->nullable()->comment('NULL when the source has no location');
+            $table->decimal('longitude', 10, 7)->nullable()->comment('NULL when the source has no location');
             $table->date('fetched_on');
             $table->timestamps();
         });

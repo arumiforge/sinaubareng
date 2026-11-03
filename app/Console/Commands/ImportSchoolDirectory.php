@@ -38,6 +38,9 @@ final class ImportSchoolDirectory extends Command
             'schools.*.address' => ['present', 'string', 'max:255'],
             'schools.*.village' => ['present', 'string', 'max:255'],
             'schools.*.district' => ['required', 'string', 'max:255'],
+            // Optional: added by `fetch.cjs --coordinates`, null when the source has no location.
+            'schools.*.latitude' => ['nullable', 'numeric', 'between:-11.5,6.5', 'required_with:schools.*.longitude'],
+            'schools.*.longitude' => ['nullable', 'numeric', 'between:94,141.5', 'required_with:schools.*.latitude'],
         ]);
 
         if ($validator->fails()) {
@@ -48,7 +51,7 @@ final class ImportSchoolDirectory extends Command
             return self::FAILURE;
         }
 
-        /** @var array{fetched_on: string, province: string, regency: string, schools: list<array{npsn: string, name: string, level: string, address: string, village: string, district: string}>} $valid */
+        /** @var array{fetched_on: string, province: string, regency: string, schools: list<array{npsn: string, name: string, level: string, address: string, village: string, district: string, latitude?: float|null, longitude?: float|null}>} $valid */
         $valid = $validator->validated();
 
         $count = DB::transaction(function () use ($valid): int {
@@ -56,12 +59,14 @@ final class ImportSchoolDirectory extends Command
 
             $rows = array_map(fn (array $school): array => [
                 ...$school,
+                'latitude' => $school['latitude'] ?? null,
+                'longitude' => $school['longitude'] ?? null,
                 'region_id' => $region->id,
                 'fetched_on' => $valid['fetched_on'],
             ], $valid['schools']);
 
             foreach (array_chunk($rows, 500) as $chunk) {
-                SchoolDirectoryEntry::query()->upsert($chunk, ['npsn'], ['name', 'level', 'address', 'village', 'district', 'region_id', 'fetched_on']);
+                SchoolDirectoryEntry::query()->upsert($chunk, ['npsn'], ['name', 'level', 'address', 'village', 'district', 'region_id', 'latitude', 'longitude', 'fetched_on']);
             }
 
             SchoolDirectoryEntry::query()

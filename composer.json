@@ -13,6 +13,7 @@
         "laravel/horizon": "^5.50",
         "laravel/telescope": "^5.27",
         "laravel/tinker": "^3.0",
+        "maatwebsite/excel": "^4.0",
         "tightenco/ziggy": "^2.6"
     },
     "require-dev": {

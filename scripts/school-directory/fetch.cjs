@@ -3,6 +3,11 @@
 //
 //   node scripts/school-directory/fetch.cjs <regency-code> <output.json>
 //   node scripts/school-directory/fetch.cjs 031900 docs/data/schools/kudus.json
+//
+// Then add map coordinates from each school's detail page (one request per school; it saves
+// as it goes, so a stopped run continues where it left off):
+//
+//   node scripts/school-directory/fetch.cjs --coordinates docs/data/schools/kudus.json
 'use strict';
 
 const fs = require('node:fs');
@@ -54,7 +59,35 @@ function parseSchools(html) {
     });
 }
 
+// Indonesia lies within these bounds; anything else (often 0, 0) means "not recorded".
+const inIndonesia = (lat, lng) => lat >= -11.5 && lat <= 6.5 && lng >= 94 && lng <= 141.5;
+
+async function addCoordinates(file) {
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const todo = data.schools.filter((school) => !('latitude' in school));
+
+    for (const [index, school] of todo.entries()) {
+        await sleep(DELAY_MS);
+        const html = await get(`https://referensi.data.kemendikdasmen.go.id/pendidikan/npsn/${school.npsn}`);
+        const lat = Number(html.match(/Lintang:\s*(?:<[^>]*>\s*)*(-?[\d.]+)/)?.[1]);
+        const lng = Number(html.match(/Bujur:\s*(?:<[^>]*>\s*)*(-?[\d.]+)/)?.[1]);
+        const found = Number.isFinite(lat) && Number.isFinite(lng) && inIndonesia(lat, lng);
+        school.latitude = found ? Math.round(lat * 1e7) / 1e7 : null;
+        school.longitude = found ? Math.round(lng * 1e7) / 1e7 : null;
+
+        if ((index + 1) % 25 === 0 || index === todo.length - 1) {
+            fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
+            console.error(`${file}: ${index + 1}/${todo.length}`);
+        }
+    }
+}
+
 async function main() {
+    if (process.argv[2] === '--coordinates') {
+        await addCoordinates(process.argv[3]);
+        return;
+    }
+
     const [regencyCode, output] = process.argv.slice(2);
     if (!/^\d{6}$/.test(regencyCode ?? '') || !output) {
         console.error('Usage: node scripts/school-directory/fetch.cjs <regency-code> <output.json>');

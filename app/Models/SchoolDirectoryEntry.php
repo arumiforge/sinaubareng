@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property SchoolLevel $level
  */
-#[Fillable(['npsn', 'name', 'level', 'address', 'village', 'district', 'region_id', 'fetched_on'])]
+#[Fillable(['npsn', 'name', 'level', 'address', 'village', 'district', 'region_id', 'latitude', 'longitude', 'fetched_on'])]
 final class SchoolDirectoryEntry extends Model
 {
     /**
@@ -49,6 +49,8 @@ final class SchoolDirectoryEntry extends Model
         return [
             'level' => SchoolLevel::class,
             'fetched_on' => 'date',
+            'latitude' => 'float',
+            'longitude' => 'float',
         ];
     }
 }

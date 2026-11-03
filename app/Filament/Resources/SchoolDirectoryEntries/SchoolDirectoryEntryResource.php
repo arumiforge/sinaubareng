@@ -63,6 +63,8 @@ final class SchoolDirectoryEntryResource extends Resource
             ->modifyQueryUsing(fn (Builder $query): Builder => $query->with('region')->withExists('school'))
             ->defaultSort('district')
             ->defaultGroup('district')
+            // "Ringkasan" shows one row per group with its counts instead of every school.
+            ->groupsOnly(fn (ManageSchoolDirectoryEntries $livewire): bool => $livewire->summaryOnly)
             ->groups([
                 Group::make('district')->label(__('console.directory.fields.district'))->collapsible(),
                 Group::make('region.regency')->label(__('console.directory.fields.region'))->collapsible(),

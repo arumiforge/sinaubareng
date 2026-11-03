@@ -21,6 +21,12 @@ return [
             'level' => 'Jenjang',
             'region' => 'Wilayah',
             'address' => 'Alamat',
+            'directory_match' => 'Data referensi',
+        ],
+        'directory_match' => [
+            'matched' => 'Cocok',
+            'missing_npsn' => 'NPSN kosong',
+            'not_in_directory' => 'Tidak ada di data referensi',
         ],
         'hints' => [
             'npsn' => '8 angka. Kalau NPSN ada di data referensi, nama, jenjang, wilayah, dan alamat terisi otomatis. Boleh dikosongkan sampai NPSN sudah dicek.',
@@ -60,5 +66,19 @@ return [
             'customers' => 'Sudah pelanggan',
             'not_customers' => 'Belum pelanggan',
         ],
+        'actions' => [
+            'summary' => 'Ringkasan per kelompok',
+            'list' => 'Daftar sekolah',
+            'map' => 'Lihat peta',
+            'download' => 'Unduh Excel',
+        ],
+        'unmatched' => '{1} 1 sekolah pelanggan belum punya NPSN, jadi belum terhitung di sini. Lengkapi NPSN-nya di menu Sekolah.|[2,*] :count sekolah pelanggan belum punya NPSN, jadi belum terhitung di sini. Lengkapi NPSN-nya di menu Sekolah.',
+    ],
+    'map' => [
+        'title' => 'Peta sekolah',
+        'all' => 'Semua',
+        'show' => 'Tampilkan',
+        'count' => ':shown sekolah di peta, :customers di antaranya pelanggan.',
+        'missing_locations' => '{1} 1 sekolah tidak tampil karena lokasinya belum tercatat di data referensi.|[2,*] :count sekolah tidak tampil karena lokasinya belum tercatat di data referensi.',
     ],
 ];
