@@ -1,4 +1,4 @@
-# P4-02 — Papan Kelas: IFP learning mode for SD/MI
+# P4-02 — Game kelas: IFP learning mode for SD/MI
 
 - **Phase:** P4
 - **Status:** review
@@ -28,4 +28,4 @@ Map how papaninteraktif.com and game.digitaleducation.id use the Interactive Fla
 
 ## Result
 
-Draft written 2026-11-04. Waiting for owner review of the seven proposed decisions and six open questions in the draft.
+Draft written 2026-11-04. Owner interview the same day settled D-171…D-181 (name stays Game kelas, class-level results kept, Kode Tayang + phone remote, Kartu Jawab last, manipulatives in Sigrak Guru, template order, content packs, usage report, reference IFP, camera later, weekly offline bundle). Open: Android/WebView version on a real unit, Kode Tayang hostname, and updating `product-concept.md`/`content-engine.md` (and PDFs) for D-176 when the draft moves to final.

@@ -1,20 +1,20 @@
-# Papan Kelas: Interactive Flat Panel (IFP) Learning for SD/MI
+# Game kelas: Interactive Flat Panel (IFP) Learning for SD/MI
 
-- **Status:** draft, proposal for owner review (not in v1 scope yet)
+- **Status:** draft; owner interview done 2026-11-04, decisions D-171…D-181 recorded (not in v1 scope yet)
 - **Task:** P4-02
 - **Last updated:** 2026-11-04
-- **Working UI name:** *Papan Kelas* (proposed; the Game kelas add-on, D-158, would grow into it)
+- **UI name:** *Game kelas*. The existing add-on (D-158) keeps its name and grows into this IFP mode (D-171)
 - **Scope:** SD and MI, grades 1–6 (Fase A–C). PAUD, SMP, and SMA are out of scope.
 
 ## Purpose
 
-Most schools now have an Interactive Flat Panel (IFP, also called *Papan Interaktif Digital* or PID) from the Kemendikdasmen digitalisation programme. The ministry targeted delivery to more than 288,000 schools by December 2025, and the pilot region Kudus already received units ([ANTARA, 2025-10-07](https://www.antaranews.com/berita/5159673/mendikdasmen-pengiriman-papan-interaktif-ditargetkan-selesai-desember)). In practice the panel is often used as a big TV for slides.
+Most schools now have an Interactive Flat Panel (IFP, also called *Papan Interaktif Digital* or PID) from the Kemendikdasmen digitalisation programme. The ministry targeted delivery to more than 288,000 schools by December 2025, and the pilot region Kudus already received units ([ANTARA, 2025-10-07](https://www.antaranews.com/berita/5159673/mendikdasmen-pengiriman-papan-interaktif-ditargetkan-selesai-desember)). The units are 75-inch, all-in-one Android panels with 4K UHD, multi-touch, a speaker and a microphone, delivered with a laptop and an external drive of learning content ([BBPMP Jatim](https://bbpmpjatim.kemendikdasmen.go.id/main/syarat-syarat-sekolah-penerima-ifp-dan-tipe-tipe-wilayahnya), [PAUDPEDIA](https://paudpedia.kemendikdasmen.go.id/), [detikEdu, 2025-10-23](https://www.detik.com/edu/sekolah/d-8174445/program-digitalisasi-pendidikan-berlanjut-dalam-5-tahun-sekolah-bakal-punya-6-ifp)). In 2025 each school got one unit (149,268 of the target schools are SD); the ministry aims for three per school in 2026, so one panel is still shared by several classes. In practice the panel is often used as a big TV for slides.
 
 Free sites such as [papaninteraktif.com](https://papaninteraktif.com/) and [game.digitaleducation.id](https://game.digitaleducation.id/) show that teachers want ready-to-play IFP activities. They are popular, but they are game catalogues: a teacher picks a game, plays it, and nothing connects to the lesson plan, the learning objective (TP), or the class's results.
 
 This document maps how those two sites use the IFP, finds what they lack, and proposes a SIGRAK feature where **every activity on the panel starts from a TP, sits in a step of the RPM, and feeds back into assessment and the next lesson**. Play is the delivery, not the goal.
 
-Items marked *proposed* need owner approval and are listed under [Decisions to record](#decisions-to-record).
+The owner's answers from the 2026-11-04 interview are recorded as D-171…D-181 and listed under [Decisions](#decisions). Items still marked *proposed* are details not yet decided.
 
 ## 1. Benchmark: what the two sites do
 
@@ -88,17 +88,17 @@ Design principles that follow from the deep learning approach already used in th
 - **Meaningful:** contexts from the students' life (pasar, ongkos angkot, panen, kalender hijriah), not abstract drills only.
 - **Joyful:** team play and movement, without public ranking of single students.
 
-## 3. Proposed feature: Papan Kelas
+## 3. Feature: Game kelas
 
 ### 3.1 Concept
 
-*Papan Kelas* is a fullscreen classroom mode for the IFP, built on *Tayangkan* (D-011). It plays a **lesson sequence** taken from the RPM meeting, not a single game:
+*Game kelas* (D-171) is a fullscreen classroom mode for the IFP, built on *Tayangkan* (D-011). It plays a **lesson sequence** taken from the RPM meeting, not a single game:
 
 ```
 RPM meeting (Kegiatan Pembuka → Inti → Penutup)
-        │  teacher taps "Buka di Papan Kelas"
+        │  teacher taps "Buka Game kelas"
         ▼
-Papan Kelas playlist for today
+Game kelas playlist for today
   1. Tujuan hari ini        (goal screen, from TP)
   2. Cek awal               (2–3 quick items, prior knowledge)
   3. Alat peraga / simulasi (manipulative for the core concept)
@@ -112,7 +112,7 @@ Class summary (per item, per TP) → Jurnal (D-016) and Asesmen
 
 The teacher can still open a single game from *Buat*; the playlist is the recommended path.
 
-### 3.2 Activity templates (proposed catalogue for SD/MI)
+### 3.2 Activity templates (catalogue for SD/MI; build order in D-176)
 
 All templates follow the hybrid rule: the runtime owns structure, AI fills content and allowed config only (D-015). Names are working names. Mechanics are generic classroom formats, not copies of the benchmark titles.
 
@@ -146,7 +146,11 @@ All templates follow the hybrid rule: the runtime owns structure, AI fills conte
 | Hijaiyah & Harakat | Letter forms, harakat, reading practice (PAI, Al-Qur'an Hadis) | 1–4 |
 | Aksara Jawa | Letter matching and tracing (Bahasa Jawa, muatan lokal) | 3–6 |
 
-**Classroom helpers (always free with Papan Kelas):** timer and stopwatch, random group maker from the class list, turn rotation ("who has not come to the board yet"), name picker, blank board with grid and lined backgrounds, traffic-light signal.
+**Classroom helpers:** timer and stopwatch, random group maker from the class list, turn rotation ("who has not come to the board yet"), name picker, blank board with grid and lined backgrounds, traffic-light signal.
+
+**Pricing (D-175):** manipulatives and classroom helpers use no AI and are part of **Sigrak Guru** for every paying teacher, so the value of the IFP mode is visible without the add-on. The game templates, the playlist, and the learning loop stay in the **Game kelas** add-on.
+
+**Order (D-176):** after Quiz Battle is IFP-ready, the first new templates are **Lomba Tim**, **Pilah & Kelompokkan**, and **Pasangkan**. This learning-function list replaces the mechanic list "Drag & Drop, Word Puzzle, Maze, Flashcard" in D-014.
 
 ### 3.3 Coverage map by subject and phase
 
@@ -171,22 +175,22 @@ Content always comes from SIGRAK's curriculum data (`docs/data/curriculum/`) and
 
 ## 4. Integration with existing SIGRAK modules
 
-| Module | How Papan Kelas connects |
+| Module | How Game kelas connects |
 |---|---|
-| **Buat → RPM** | Each meeting step can hold a Papan Kelas activity. The RPM wizard's learning model "Game Based Learning" suggests one. The RPM PDF prints the activity name and goal, not the game |
+| **Buat → RPM** | Each meeting step can hold a Game kelas activity. The RPM wizard's learning model "Game Based Learning" suggests one. The RPM PDF prints the activity name and goal, not the game |
 | **Bank Soal** | Practice templates read items from a saved set (same rule as Quiz Battle: auto-gradable types). Distractor explanations come from the item's *pembahasan* |
-| **LKPD** | An LKPD can end with "Lanjut di Papan Kelas" (group work on paper, check on the panel), and a manipulative can be printed as a worksheet image |
+| **LKPD** | An LKPD can end with "Lanjut di Game kelas" (group work on paper, check on the panel), and a manipulative can be printed as a worksheet image |
 | **Paket Soal TKA** | Pemanasan TKA reuses items of a package without starting a CBT session |
-| **Hari Ini** | Today's lessons show a "Buka di Papan Kelas" button next to the RPM meeting |
+| **Hari Ini** | Today's lessons show a "Buka Game kelas" button next to the RPM meeting |
 | **Di Kelas → Jurnal** | After the session, the journal entry is pre-filled: activities run, time used, class result summary (D-016 offline sync applies to the journal, not to the game) |
 | **Asesmen** | The class summary per TP is a formative record. It can be attached to the assessment plan as *asesmen formatif* evidence; per-student scores only when the teacher uses the response method in §6.2 |
 | **Dokumen Saya** | Activities and playlists are documents with validation status and comments, like other content |
-| **Portal Kepala Sekolah / Pengawas** | Usage report: how often Papan Kelas runs per class and subject, and which TPs were practised. Useful for supervision and for reporting the school's IFP use (proposed) |
-| **Business (D-158, D-159)** | Papan Kelas becomes the content of the **Game kelas** add-on. The 7-day teacher trial still applies |
+| **Portal Kepala Sekolah / Pengawas** | Usage report for both principal and supervisor (D-178): how often Game kelas runs per class and subject, and which TPs were practised. Useful for supervision and for reporting the school's IFP use |
+| **Business (D-158, D-159, D-175)** | The IFP mode is the content of the **Game kelas** add-on. Manipulatives and classroom helpers are in Sigrak Guru. The 7-day teacher trial still applies |
 
 ## 5. Learning loop: from play to evidence
 
-A game alone shows nothing to the teacher once the screen closes. Papan Kelas keeps a small, **class-level** summary on the teacher's session:
+A game alone shows nothing to the teacher once the screen closes. Game kelas **always keeps** a small, **class-level** summary on the teacher's session (D-172); the teacher can delete it:
 
 | Data kept | Granularity | Student data? |
 |---|---|---|
@@ -201,7 +205,7 @@ From this summary SIGRAK shows, after the lesson:
 2. **Saran tindak lanjut** (AI, from TP and the wrong-answer pattern only, no student data): a short remedial activity for the next meeting, which the teacher can drop into the next RPM meeting with one tap.
 3. **Jurnal** text, pre-filled.
 
-This respects the present-mode rule that scores live in the teacher's session and no student data is stored (D-011): the summary is about items and teams. Per-student capture is a separate, optional method (§6.2) and needs its own decision.
+This respects the present-mode rule that scores live in the teacher's session and no student data is stored (D-011): the summary is about items and teams. Per-student capture comes only from Kartu Jawab (§6.2, D-174), in a later step.
 
 ## 6. IFP-specific design requirements
 
@@ -213,7 +217,7 @@ This respects the present-mode rule that scores live in the teacher's session an
 | Touch targets at least 80 px at 1080p, text at least 32 px; key content in the lower two-thirds | Grade 1–2 students are short and stand close to the screen |
 | Multi-touch: 2–4 independent zones (split screen), each with its own input | Teams play at the same time without stealing touches |
 | No hover, no right-click, no long-press menus, no system keyboard (custom keypads) | The panel's on-screen keyboard covers the game |
-| Works in the IFP's built-in Android browser/WebView, not only desktop Chrome | Many panels run Android with an older WebView; test the oldest version found in pilot schools |
+| Works in the IFP's built-in Android browser/WebView, not only desktop Chrome | The Kemendikdasmen units run Android; the reference test device is that unit (D-179). Its Android and WebView versions are not published, so check them on a real unit in a pilot school before building |
 | Sound through the panel speaker with a global mute; no sound needed to play | Classroom noise and hearing-impaired students |
 | Offline: every template also works as *Unduh game* HTML (D-011) and can run from a USB drive | Panels can work without internet; school connections drop |
 | No AI or network call during play | Play must not stall on Gemini quotas (D-012) or signal |
@@ -222,9 +226,9 @@ This respects the present-mode rule that scores live in the teacher's session an
 
 The IFP is a shared screen in front of the class. Typing the teacher's password on it is a risk (students watch, and the browser may stay logged in).
 
-- *Proposed:* **Kode Tayang.** The teacher opens `papan.` (or a `/papan` page) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Papan Kelas items and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
-- *Proposed:* **Phone as remote.** The paired phone shows next/previous, reveal answer, the answer key, and the run sheet. The teacher can walk around the class, and the key never appears on the big screen.
-- *Proposed, optional:* **Kartu Jawab** (per-student responses without student devices). Each student holds a printed card with a number and four sides (A–D). The teacher scans the raised cards with the phone camera. The app maps card numbers to the roster on the teacher's phone, so the exit ticket gives per-student results without any student touching a device or logging in. Names never show on the IFP. This needs a decision because it creates per-student scores from a game (§5).
+- **Kode Tayang (D-173).** The teacher opens a `/papan` page (hostname or path still *proposed*) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Game kelas items and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
+- **Phone as remote (D-173).** The paired phone shows next/previous, reveal answer, the answer key, and the run sheet. The teacher can walk around the class, and the key never appears on the big screen.
+- **Kartu Jawab (D-174, last step).** Per-student responses without student devices. Each student holds a printed card with a number and four sides (A–D). The teacher scans the raised cards with the phone camera. The app maps card numbers to the roster on the teacher's phone, so the exit ticket gives per-student results without any student touching a device or logging in. Names never show on the IFP. This is the only path from a game to per-student scores (§5), so it comes after the class-level loop is proven.
 - On the IFP, only team names and team scores are shown; no public ranking of individual students.
 
 ### 6.3 Inclusion
@@ -236,7 +240,7 @@ The IFP is a shared screen in front of the class. Typing the teacher's password 
 
 ## 7. Guardrails: learning, not only playing
 
-Every Papan Kelas activity must pass these checks before it can be saved (template rules, checked by code):
+Every Game kelas activity must pass these checks before it can be saved (template rules, checked by code):
 
 1. It has at least one `kode_tp` inside the teacher's scope.
 2. It states a lesson phase (pembuka, inti, penutup) and a duration (default 5–15 minutes; longer needs a reason).
@@ -249,53 +253,56 @@ Every Papan Kelas activity must pass these checks before it can be saved (templa
 
 Ideas the two sites do not have and that fit SIGRAK's strengths:
 
-1. **Start from the RPM, not the catalogue.** The "Buka di Papan Kelas" button on today's lesson removes the decision "which game?" and keeps the activity on the TP. This is SIGRAK's clearest difference.
+1. **Start from the RPM, not the catalogue.** The "Buka Game kelas" button on today's lesson removes the decision "which game?" and keeps the activity on the TP. This is SIGRAK's clearest difference.
 2. **One question set, many formats** (as DigiEd's Excel quiz), but fed from Bank Soal with `kode_tp`, so practice results line up with assessment.
 3. **Misconception-aware distractors.** When AI writes options, each wrong option names the misconception it tests, and the class summary reports misconceptions, not just scores.
 4. **Kode Tayang + phone remote** (§6.2). Solves the shared-screen login problem that free sites avoid only by having no accounts.
 5. **Kartu Jawab** (§6.2). Per-student formative data in classes where students have no devices, which is most SD/MI classes.
-6. **Paket mingguan offline.** Download all of next week's Papan Kelas activities as one offline bundle (one HTML per activity, or one launcher page) for a USB drive.
+6. **Paket mingguan offline (D-181, with the core).** Download all of next week's Game kelas activities as one offline bundle (one HTML per activity, or one launcher page) for a USB drive.
 7. **MI and religion packs from curriculum data.** Hijaiyah, tajwid basics, doa harian, wudu and salat steps, SKI timelines, mufradat; and equivalent packs for Kristen, Katolik, Hindu, Buddha, Khonghucu in SD. Neither benchmark serves these well.
 8. **Bahasa Jawa and aksara Jawa** for the pilot region (Kudus, Jepara, Pati).
 9. **Kokurikuler support.** Diagram Data and Peta & Skala let a class collect and show its own project data on the panel.
 10. **Grade 6 TKA warm-ups** in game form, so the unfamiliar PGK formats are practised long before the Simulasi TKA session.
 11. **Principal usage report** (§4). Shows the school uses its IFP for learning, which helps supervision and programme reporting.
 12. **Teacher run sheet in every template.** A 5-line guide (goal, roles, time, how to rotate turns, debrief question) shown on the phone, so the activity is run well the first time.
-13. **Sharing inside the school or KKG.** A teacher can share a Papan Kelas activity with colleagues in the same school (no public links, D-010 rules stay).
-14. **Camera and movement activities later.** Papan Interaktif shows that body-movement games excite students, but they need camera permission and heavier processing. Keep them for later, and only where the movement is part of the learning (PJOK, counting jumps), never as decoration.
+13. **Sharing inside the school or KKG.** A teacher can share a Game kelas activity with colleagues in the same school (no public links, D-010 rules stay).
+14. **Camera and movement activities later (D-180).** Papan Interaktif shows that body-movement games excite students, but they need camera permission and heavier processing. They come last, and only where the movement is part of the learning and tied to a TP (PJOK, counting jumps), never as decoration.
 
-## 9. Proposed phasing
+## 9. Phasing
 
 | Step | Content | Depends on |
 |---|---|---|
 | 0 | Make Quiz Battle IFP-ready: §6.1 requirements, split-screen team mode, explanation and debrief screens | P5-05 |
-| 1 | Papan Kelas shell: playlist from an RPM meeting, goal screen, exit ticket, class summary, journal pre-fill, classroom helpers | Step 0, P5-07 |
-| 2 | Three new templates with the widest reuse: Lomba Tim, Pilah & Kelompokkan, Pasangkan | Step 1 |
+| 1 | Game kelas shell: playlist from an RPM meeting, goal screen, exit ticket, class summary, journal pre-fill, classroom helpers, weekly offline bundle (D-181) | Step 0, P5-07 |
+| 2 | Three new templates (D-176): Lomba Tim, Pilah & Kelompokkan, Pasangkan | Step 1 |
 | 3 | Kode Tayang and phone remote | Step 1, security review |
 | 4 | Manipulatives for Matematika Fase A–B (Blok Puluhan, Garis Bilangan, Pita Pecahan, Jam Analog, Uang Rupiah) | Step 1 |
 | 5 | Asesmen link, "Perlu diulang" and AI follow-up suggestions; principal usage report | P5-08, P5-09 |
-| 6 | Religion and MI packs, Bahasa Jawa, Pemanasan TKA, Urutkan, Papan Petak, Kotak Kejutan | Steps 2–5, curriculum data sign-off (D-113) |
-| 7 | Kartu Jawab; offline weekly bundle; camera activities (if still wanted) | Decisions below |
+| 6 | Content packs, first MI (Al-Qur'an Hadis, Bahasa Arab, Fikih, Akidah Akhlak, SKI) and Bahasa Jawa with aksara Jawa (D-177); then the six SD religions. Also Pemanasan TKA, Urutkan, Papan Petak, Kotak Kejutan | Steps 2–5, curriculum data sign-off (D-113) |
+| 7 | Kartu Jawab (D-174); camera activities tied to a TP (D-180) | Steps 1–6 |
 
-**Success measures (pilot):** share of RPM meetings with a Papan Kelas activity; sessions per class per week; share of sessions that reach the exit ticket and debrief; teachers' rating of "membantu siswa paham" after use; time from opening the RPM to first activity on the panel (target under 1 minute).
+**Success measures (pilot):** share of RPM meetings with a Game kelas activity; sessions per class per week; share of sessions that reach the exit ticket and debrief; teachers' rating of "membantu siswa paham" after use; time from opening the RPM to first activity on the panel (target under 1 minute).
 
-## Decisions to record
+## Decisions
 
-| # | Proposal | Touches |
-|---|---|---|
-| 1 | Adopt *Papan Kelas* as the IFP mode and as the content of the Game kelas add-on | D-011, D-014, D-158 |
-| 2 | Keep class-level, item-level results from present mode (no student data) and feed them to Jurnal and Asesmen | D-011, D-016 |
-| 3 | Add the activity templates in §3.2 to the template roadmap, replacing the generic "Drag & Drop, Word Puzzle, Maze, Flashcard" list with learning-function templates | D-014 |
-| 4 | Kode Tayang present-only session and phone remote | D-010, D-088, D-164 |
-| 5 | Kartu Jawab per-student responses (camera scan on the teacher's phone) | D-010, D-011 |
-| 6 | Manipulatives and classroom helpers need no AI and are part of Papan Kelas | D-024 |
-| 7 | Principal/supervisor usage report for Papan Kelas | portals (P5-09) |
+Recorded in `docs/agent/DECISIONS.md` after the owner interview on 2026-11-04.
 
-## Open questions for the owner
+| ID | Decision |
+|---|---|
+| D-171 | The add-on keeps the name **Game kelas** and becomes the IFP learning mode described here |
+| D-172 | The class-level, item-level result summary (no student data) is always kept and feeds Jurnal and Asesmen; the teacher can delete it |
+| D-173 | Kode Tayang present-only session on the IFP, plus the phone as remote |
+| D-174 | Kartu Jawab per-student responses, in the last step |
+| D-175 | Manipulatives and classroom helpers are in Sigrak Guru; game templates stay in the add-on |
+| D-176 | Template roadmap by learning function replaces D-014's later list; first Lomba Tim, Pilah & Kelompokkan, Pasangkan |
+| D-177 | First content packs: MI subjects and Bahasa Jawa with aksara Jawa; SD six religions after |
+| D-178 | Usage report for both principal and supervisor |
+| D-179 | Reference test device is the Kemendikdasmen IFP unit |
+| D-180 | Camera and movement activities only later and only when tied to a TP |
+| D-181 | Weekly offline bundle ships with the Game kelas core |
 
-1. Is *Papan Kelas* the right name, or should it stay *Game kelas*?
-2. Should the class summary (no student names) be kept by default, or only when the teacher turns it on?
-3. Is per-student data from Kartu Jawab wanted at all, or is class level enough?
-4. Which IFP brands and Android versions are in the pilot schools? We need two or three real panels for testing.
-5. Should manipulatives be free for all Sigrak Guru users (to show value) while game templates stay in the add-on?
-6. Which religion and MI packs come first, and who from Tim Validasi reviews them (D-113)?
+## Open questions
+
+1. Android and WebView version of the Kemendikdasmen IFP in pilot schools: to be checked on a real unit (D-179). Who arranges access to two or three panels?
+2. Hostname or path for the Kode Tayang page (`papan.` subdomain or `/papan` on `app.`), D-164.
+3. Final docs `product-concept.md` and `content-engine.md` (and their PDFs) still list the old D-014 game list; update them when this draft moves to `docs/final/`.

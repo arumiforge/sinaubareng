@@ -867,3 +867,58 @@ Accepted · 2026-11-03 · P5-03f · owner's choice · extends D-169
 The school directory also holds Kabupaten Jepara (772 schools) and Kabupaten Pati (825). The staff console has a read-only page, Sebaran sekolah (`/sebaran-sekolah`), for admin and support. It lists the directory grouped by district (or regency, or level), shows the number of schools and of customers per group, and filters customers or not-yet-customers. For now a customer is a directory school whose NPSN matches a school created in the console; it moves to "has an active subscription" when billing exists (P5-10).
 The page also has: a switch to one summary row per group; an Excel download of the rows as filtered on screen (`app/Exports/SchoolDirectoryExport`, Laravel Excel 4); and a link to Peta sekolah (`/peta-sekolah`), a Leaflet 1.9.4 map (bundled, D-033) of schools with a location from the reference site, coloured by customer or not. Map tiles come from OpenStreetMap in the staff member's browser; staff only, so no school-user traffic reaches OSM. The Sekolah list shows whether each school matches the directory (Cocok, NPSN kosong, Tidak ada di data referensi), and Sebaran sekolah says how many customers lack an NPSN and so are not counted.
 Reason: the team wants to see where SIGRAK is already used around Kudus and which schools to approach next.
+
+### D-171 — Game kelas becomes the IFP learning mode
+Accepted · 2026-11-04 · P4-02 · owner's choice · extends D-011, D-158
+The Game kelas add-on keeps its name. It grows from Quiz Battle, Tayangkan, and Unduh game into a fullscreen IFP mode that plays a lesson sequence from an RPM meeting (goal, prior-knowledge check, manipulative, team practice, exit ticket, reflection). Design: `docs/drafts/ifp-classroom.md`.
+Reason: free IFP game sites are catalogues with no link to TP, RPM, or results; tying play to the lesson is SIGRAK's difference.
+
+### D-172 — Class-level results from Game kelas are kept
+Accepted · 2026-11-04 · P4-02 · owner's choice · refines D-011
+Every Game kelas session keeps a summary per item, per team, and per TP (correct share, most chosen wrong option, time), with no student data. It feeds "Perlu diulang", AI follow-up suggestions (from TP and wrong-answer pattern only), the Jurnal entry, and Asesmen as formative evidence. The teacher can delete it.
+Reason: owner's choice; the teacher needs evidence after the screen closes, and item-level data holds no personal data.
+
+### D-173 — Kode Tayang and phone remote
+Accepted · 2026-11-04 · P4-02 · owner's choice
+On the shared IFP the teacher does not type a password. The IFP shows a 6-digit code or QR, the teacher confirms it on their phone, and the IFP gets a present-only session (today's Game kelas items only; no students, documents, or settings) that ends from the phone or after a time limit. The paired phone is the remote and the only place the answer key shows. Hostname or path is still open (D-164).
+Reason: one panel is shared by several classes; a teacher session left open on it is a risk.
+
+### D-174 — Kartu Jawab, last step
+Accepted · 2026-11-04 · P4-02 · owner's choice
+Per-student responses come only from Kartu Jawab: printed numbered cards with sides A–D, scanned with the teacher's phone camera and mapped to the roster on the phone. Names never show on the IFP. It is built after the class-level loop (D-172) is in use.
+Reason: owner's choice; most SD/MI classes have no student devices.
+
+### D-175 — Manipulatives and classroom helpers in Sigrak Guru
+Accepted · 2026-11-04 · P4-02 · owner's choice · exception to D-158
+IFP manipulatives (blok puluhan, garis bilangan, pita pecahan, jam analog, uang rupiah, bangun datar, diagram data, peta, huruf, hijaiyah, aksara Jawa) and classroom helpers (timer, group maker, turn rotation, name picker, blank board) use no AI and are part of Sigrak Guru. Game templates, the playlist, and the learning loop stay in the Game kelas add-on.
+Reason: shows the IFP value to every paying teacher, which helps sell the add-on to schools.
+
+### D-176 — Game template roadmap by learning function
+Accepted · 2026-11-04 · P4-02 · owner's choice · amends D-014
+The later game list "Drag & Drop, Word Puzzle, Maze, Flashcard" is replaced by learning-function templates: Lomba Tim, Pilah & Kelompokkan, Pasangkan, Urutkan, Papan Petak, Kotak Kejutan, Tiket Keluar, Pemanasan TKA. After Quiz Battle is IFP-ready, the first three are Lomba Tim, Pilah & Kelompokkan, and Pasangkan.
+Reason: every template must state what it teaches, not only how it plays.
+
+### D-177 — First Game kelas content packs
+Accepted · 2026-11-04 · P4-02 · owner's choice
+The first content packs are MI (Al-Qur'an Hadis and Bahasa Arab; Fikih, Akidah Akhlak, and SKI) and Bahasa Jawa with aksara Jawa. The six SD religion packs follow. All are reviewed by Tim Validasi SIGRAK (D-113).
+Reason: the benchmarks barely cover MI and local content, and the pilot region is Kudus, Jepara, and Pati.
+
+### D-178 — Game kelas usage report for principal and supervisor
+Accepted · 2026-11-04 · P4-02 · owner's choice
+The principal and supervisor portals show how often Game kelas runs per class and subject and which TPs were practised. No student data.
+Reason: supports supervision and the school's reporting of IFP use.
+
+### D-179 — Reference IFP is the Kemendikdasmen unit
+Accepted · 2026-11-04 · P4-02 · owner's choice
+Game kelas targets the 75-inch Android 4K multi-touch panel from the Kemendikdasmen digitalisation programme, using its built-in browser. Its Android and WebView versions are checked on a real unit in a pilot school before building.
+Reason: almost every SD/MI got this unit in 2025; the exact software version is not published.
+
+### D-180 — Camera and movement activities only when tied to a TP
+Accepted · 2026-11-04 · P4-02 · owner's choice
+Camera-based and body-movement activities come last and only where the movement is part of the learning and tied to a TP (for example PJOK).
+Reason: camera permission and heavy processing are costly; movement as decoration adds no learning.
+
+### D-181 — Weekly offline bundle with the Game kelas core
+Accepted · 2026-11-04 · P4-02 · owner's choice · extends D-011
+A teacher can download all Game kelas activities for a week as one offline bundle for a USB drive. It ships with the Game kelas core (playlist step), with the same rules as Unduh game: teaching content only, no network calls.
+Reason: school connections drop, and the IFP can run without internet.
