@@ -931,17 +931,9 @@
                 "subjects": "Matematika, IPS, dan Informatika."
               }
             ],
-            "advantages": [
-              "Murid belajar suatu konsep secara komprehensif dan kontekstual karena keterampilan, pengetahuan dan sikap diintegrasikan untuk mencapai suatu penguasaan kompetensi tertentu.",
-              "Para pendidik terkondisikan untuk berkolaborasi secara intensif karena perlu memilih kompetensi/konten yang selaras dengan pemahaman yang dituju.",
-              "Lebih efisien karena pendidik bisa memilah konsep yang perlu dieksplorasi secara lebih mendalam dan konten yang memerlukan waktu lebih sedikit."
-            ],
-            "considerations": [
-              "Memberikan waktu yang cukup untuk merencanakan dan menyelaraskan di antara pendidik mata pelajaran yang mengajarkan tujuan pembelajaran yang berkaitan atau sama dengan unit atau konsep yang dipelajari .",
-              "Satuan pendidikan harus memberikan fleksibilitas bagi pendidik untuk mengelola penjadwalan mengikuti kebutuhan/fokus pemahaman yang bisa berbeda setiap term/semester/tahun."
-            ],
             "pages": [34, 35, 36, 40, 41],
-            "summary": "The guide lists SD/MI as subject-based or thematic; the integrated examples (Seni and Prakarya, Informatika, IPS) read as SMP-level and are kept as generic patterns."
+            "summary": "The guide lists SD/MI as subject-based or thematic; the integrated examples (Seni and Prakarya, Informatika, IPS) read as SMP-level and are kept as generic patterns.",
+            "advantages_considerations_note": "Kelebihan and 'hal yang perlu dipertimbangkan' for this model are on PDF 35-36; not transcribed because SD/MI is directed to subject-based or thematic organisation (PDF 34)."
           },
           {
             "key": "block",
@@ -965,18 +957,8 @@
               "Pertimbangkan alokasi waktu mata pelajaran, jumlah ketersediaan pendidik dan tenaga kependidikan, jumlah murid, dan jumlah paralel kelas.",
               "Pertimbangkan bobot kesulitan dan kekhasan dari masing-masing mata pelajaran sehingga murid memiliki jadwal pelajaran yang seimbang pada tahun ajaran tersebut."
             ],
-            "advantages": [
-              "Memberikan waktu yang cukup bagi murid untuk mempelajari materi secara mendalam.",
-              "Waktu pembelajaran menjadi lebih banyak dan hal tersebut memungkinkan murid belajar hingga tuntas.",
-              "Dengan blok waktu yang lebih panjang, pendidik memiliki lebih banyak waktu untuk menyelesaikan rencana pelajaran dan mengevaluasi pembelajaran.",
-              "Dengan blok waktu yang lebih lama memungkinkan untuk studi yang mendalam, seperti mengerjakan projek/penelitian individu/kelompok, kolaborasi antar murid dan pendidik."
-            ],
-            "considerations": [
-              "Pengaturan jam mengajar pendidik harus diperhitungkan sedemikian rupa, sehingga pendidik tetap memiliki beban kerja proporsional.",
-              "Ketersediaan sarana prasarana - mengingat pengorganisasian blok membutuhkan pengaturan sarana dan prasarana yang ketat.",
-              "Perlu dirancang strategi tertentu agar materi yang diajarkan pada satu blok tertentu bisa tetap diingat."
-            ],
-            "pages": [34, 35, 36, 42]
+            "pages": [34, 35, 36, 42],
+            "advantages_considerations_note": "Kelebihan and 'hal yang perlu dipertimbangkan' for this model are on PDF 35-36; not transcribed because SD/MI is directed to subject-based or thematic organisation (PDF 34)."
           }
         ]
       },
@@ -1032,18 +1014,6 @@
           "summary": "The KSP only needs a few sample lesson plans attached, not all of them.",
           "pages": [19]
         },
-        "chapter_wording": [
-          {
-            "text": "Ruang lingkup satuan pendidikan - penyusunan tujuan pembelajaran dan alurnya untuk kegiatan intrakurikuler dan pemetaan tema untuk kegiatan kokurikuler.",
-            "number": 1,
-            "pages": [47]
-          },
-          {
-            "text": "Ruang lingkup kelas - penyusunan perencanaan pembelajaran kegiatan intrakurikuler (rencana pelaksanaan pembelajaran atau modul ajar) dan perencanaan pembelajaran kegiatan kokurikuler.",
-            "number": 2,
-            "pages": [47]
-          }
-        ],
         "pages": [19, 47]
       },
       "use_of_government_examples": [
@@ -1423,17 +1393,12 @@
       ],
       "strategy_tips": {
         "items": [
-          "mengadakan pertemuan dengan orang tua, warga satuan pendidikan untuk mendapatkan gambaran mengenai pandangan mereka terhadap evaluasi kurikulum; apa yang dipahami, bagaimana perasaan dan pendapatnya mengenai evaluasi satuan pendidikan",
-          "mengarahkan diskusi pada pembahasan mengenai lingkup evaluasi kurikulum; tunjukkan sampel yang akan digunakan atau dokumen evaluasi yang akan digunakan",
-          "mengamati jalannya program secara saksama untuk mendapatkan informasi nyata mengenai implementasinya dan mengingatkan semua pihak terhadap tujuan program",
-          "memahami tujuan program dan kekhawatiran yang dimiliki pihak-pihak yang terlibat mengenai program dan evaluasi; …",
           "mengidentifikasi hal-hal yang menjadi akar permasalahan. Untuk setiap permasalahan perlu didesain proses evaluasi, dan mencari data yang spesifik.",
           "menentukan cara untuk mencari data; melalui observasi, penilaian, wawancara, diskusi terpumpun ataupun melalui rapor pendidikan",
-          "menjalankan prosedur pencarian dan pengumpulan data secara objektif dan sistematis",
-          "mengelompokkan dan mengatur informasi dalam tema-tema dan menyiakan potret implementasinya. Potret ini bisa dalam bentuk video, artefak, kasus atau bentuk-bentuk lain",
-          "memutuskan pihak yang akan diberi laporan dan memilih format laporan yang sesuai."
+          "menjalankan prosedur pencarian dan pengumpulan data secara objektif dan sistematis"
         ],
-        "pages": [59]
+        "pages": [59],
+        "note": "Three of nine tips kept (root cause, data methods, objective collection); the others cover meetings with parents, scoping, observing the programme, understanding concerns, organising findings and choosing the report format."
       },
       "professional_development": {
         "guiding_questions": {

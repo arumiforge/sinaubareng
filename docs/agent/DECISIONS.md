@@ -937,3 +937,8 @@ Reason: the email is both the sign-in name and the invitation address, so changi
 Accepted · 2026-11-07 · P5-03b · owner's choice
 How pengawas/korwil accounts are created is decided and built with the supervisor portal (P5-09). Until then, Penugasan pengawas in the staff console assigns existing user accounts only.
 Reason: invitations always name a school role; a supervisor has none, and the portal defines what the account needs.
+
+### D-203 — Official 2025 documents as SD/MI data in `docs/data/regulations/`
+Proposed · 2026-11-07 · P4-03
+The eight official documents in `docs/dokumen-resmi/` are kept as received. Their SD/MI parts (SD, MI, Fase A–C, plus rules shared by all levels) are stored as one JSON file per document in `docs/data/regulations/`. Each file has `status: draft`, source metadata (title, number, year, file, SHA-256), and PDF page references on every item. Tim Validasi SIGRAK checks them before import (D-113). What the final docs need is listed in `docs/drafts/dokumen-resmi-sd-mi.md`. The owner approves those changes before anything in `docs/final/` changes.
+Reason: the same draft, source-quoted, page-referenced shape as `docs/data/curriculum/`, kept apart because these are rules and guides rather than CP or allocation rows.
