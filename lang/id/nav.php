@@ -10,5 +10,10 @@ return [
         'create' => 'Buat',
         'assessments' => 'Asesmen',
         'my_classes' => 'Kelas Saya',
+        'teachers' => 'Guru',
     ],
+    'account' => 'Akun',
+    'sign_out' => 'Keluar',
+    'switch_role' => 'Ganti peran',
+    'current_role' => ':role di :school',
 ];

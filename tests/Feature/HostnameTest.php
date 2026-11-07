@@ -12,11 +12,11 @@ function hostUrl(string $host, string $path = '/'): string
 }
 
 it('serves the school app on app. with the web guard', function (): void {
-    $this->get(hostUrl('app'))
+    $this->get(hostUrl('app', '/masuk'))
         ->assertOk()
         ->assertViewIs('app')
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Home')
+            ->component('Auth/Login')
             ->where('translations', fn ($translations): bool => $translations['common.app_name'] === 'SIGRAK'
                 && isset($translations['nav.items.today'])));
 

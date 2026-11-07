@@ -7,6 +7,7 @@ namespace App\Tenancy\Actions;
 use App\Models\SchoolMembership;
 use App\Models\User;
 use App\Tenancy\SchoolContext;
+use App\Tenancy\UserMemberships;
 
 /**
  * Picks the school and role a signed-in user acts as: the preferred membership when it
@@ -14,16 +15,14 @@ use App\Tenancy\SchoolContext;
  */
 final class ResolveSchoolContext
 {
-    public function __construct(private readonly SchoolContext $context) {}
+    public function __construct(
+        private readonly SchoolContext $context,
+        private readonly UserMemberships $memberships,
+    ) {}
 
     public function handle(User $user, ?int $preferredMembershipId = null): ?SchoolMembership
     {
-        // This query is what sets the school scope, so it cannot use it; it is limited to the user's own rows.
-        $memberships = SchoolMembership::withoutSchoolScope()
-            ->whereBelongsTo($user)
-            ->active()
-            ->orderBy('id')
-            ->get();
+        $memberships = $this->memberships->active($user);
 
         $membership = $memberships->firstWhere('id', $preferredMembershipId) ?? $memberships->first();
 

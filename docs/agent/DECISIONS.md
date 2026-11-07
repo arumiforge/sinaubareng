@@ -922,3 +922,18 @@ Reason: camera permission and heavy processing are costly; movement as decoratio
 Accepted · 2026-11-04 · P4-02 · owner's choice · extends D-011
 A teacher can download all Game kelas activities for a week as one offline bundle for a USB drive. It ships with the Game kelas core (playlist step), with the same rules as Unduh game: teaching content only, no network calls.
 Reason: school connections drop, and the IFP can run without internet.
+
+### D-182 — Invitation links and who invites whom
+Accepted · 2026-11-07 · P5-03b · exception to TEN-2
+The `invitations` table stores only a SHA-256 hash of the mailed token. A link is valid for 7 days. Sending an invitation again to the same school, email, and role renews the open one with a new token instead of adding a row. In the school app, only the operator invites, and only teachers. Tim SIGRAK invites any role from the staff console, usually the first operator or principal. The data model has no staff inviter, so `invited_by` (users) is nullable and `invited_by_staff_id` (staff_users) records console invitations. Opening a link happens before there is a session or school, so `FindInvitation` looks the invitation up with `withoutSchoolScope()`. The token, compared in constant time, is what authorizes it. An unknown, used, or expired link shows one neutral page. `school_memberships` gets a `public_id`, so the role switch never puts a bigint id in props (DB-11).
+Reason: no default passwords (D-010), no stored usable tokens, and a link that reveals nothing about other schools.
+
+### D-183 — School account password and email rules
+Accepted · 2026-11-07 · P5-03b
+School account passwords need at least 8 characters with letters and numbers. (Staff keep 12 characters, from P5-03a.) Failed sign-ins are counted per email and IP: after 5 failures there is a 1-minute wait. Loose per-IP limits cover sign-in (30/min), reset links (5/min), and invitation acceptance (10/min), because a whole school can share one IP. A reset request gets the same answer whether or not the email exists. The email shown on Akun is read-only, and changing it goes through Tim SIGRAK for now. Accepting an invitation marks the email as verified.
+Reason: the email is both the sign-in name and the invitation address, so changing it needs a verified flow that v1 does not have yet.
+
+### D-184 — Supervisor accounts come with the supervisor portal
+Accepted · 2026-11-07 · P5-03b · owner's choice
+How pengawas/korwil accounts are created is decided and built with the supervisor portal (P5-09). Until then, Penugasan pengawas in the staff console assigns existing user accounts only.
+Reason: invitations always name a school role; a supervisor has none, and the portal defines what the account needs.
