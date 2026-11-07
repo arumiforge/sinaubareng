@@ -1,0 +1,1426 @@
+{
+  "dataset": "learning_assessment_guide",
+  "version_code": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": ["A", "B", "C"],
+  "note": "SD/MI-relevant content of the BSKAP Panduan Pembelajaran dan Asesmen (revised edition 2025): deep-learning principles, CP→TP→ATP planning, the lesson-plan (RPP/modul ajar) frame, assessment types and KKTP approaches, score processing, rapor components and promotion/graduation rules. SIGRAK may use it as the reference for the RPM editor fields, the assessment/KKTP module, the rapor template and their validation rules; the guide itself is mostly non-binding (it repeatedly gives schools and teachers latitude), so rules are tagged with their force as printed.",
+  "source": {
+    "title": "Panduan Pembelajaran dan Asesmen Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah — Edisi Revisi Tahun 2025",
+    "number": null,
+    "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah (Pusat Kurikulum dan Pembelajaran)",
+    "issued_on": null,
+    "issued_note": "Colophon: 'Edisi Revisi Ke-3, Juli 2025' (exact day not printed).",
+    "year": 2025,
+    "file": "docs/dokumen-resmi/pembelajaran-dan-asesmen.pdf",
+    "sha256": "de29a031ef88e1c917a5ff29361b3ceb9b0436947195d55e2f24b5f188e5a1b4",
+    "pages_total": 159,
+    "pages_note": "All page refs are PDF page numbers. Body and appendices: printed page = PDF page - 8 (PDF 9 = printed 1, PDF 82 = printed 74, PDF 158 = printed 150). Front matter uses roman numerals (PDF 6 = iv). PDF 2 is blank; PDF 159 is the back cover.",
+    "legal_basis_cited": [
+      {"text": "Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 10 Tahun 2025 tentang Standar Kompetensi Lulusan …", "pages": [11]},
+      {"text": "Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 12 Tahun 2025 tentang Standar Isi …", "pages": [11]},
+      {"text": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 16 Tahun 2022 tentang Standar Proses …", "pages": [11]},
+      {"text": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 21 Tahun 2022 tentang Standar Penilaian …", "pages": [11]},
+      {"text": "Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 13 Tahun 2025 tentang Perubahan atas Permendikbudristek Nomor 12 Tahun 2024 tentang Kurikulum …", "pages": [11]},
+      {"text": "Keputusan Kepala BSKAP Nomor 046/H/Kr/2025 tentang Capaian Pembelajaran …", "pages": [11]}
+    ]
+  },
+  "extraction": {
+    "method": "Text layer from pdftotext -layout, read page by page; tables, diagrams and image-only pages checked against page images rendered with pdftoppm at 100-160 dpi and read visually (no OCR).",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [2, 35, 38, 49, 52, 63, 64, 65, 70, 71, 73, 112, 113, 114],
+    "skipped": [
+      "PAUD/Fase Fondasi: CP elements and six developmental aspects (p.25), PAUD notes in principles (p.21), PAUD rapor components and kokurikuler-in-rapor rule (p.73-74), Lampiran 3 TP for PAUD (p.96-102), Lampiran 6 PAUD lesson plan (p.109-111), Lampiran 10 PAUD rapor examples (p.136-141). Only the PAUD-SD transition material that binds Fase A is kept.",
+      "SMK: CP analysis with industry, Kelas XIII (p.26), SMK modul ajar (p.43), PKL / Uji Kompetensi Keahlian / Ujian Unit Kompetensi assessment (p.56-57), SMK qualitative processing example (p.68-69), skill passport (p.158).",
+      "SMP/MTs and SMA/MA examples: Fase D collaboration example (p.28), Matematika Fase E rubric (p.50-51), SMP Informatika qualitative processing (p.67-68), SMA ATP-based rapor description (p.72), Opsi Rata-Rata table uses SMA topics (p.66, rule kept), Lampiran 8 SMP lesson plan (p.115-122), Lampiran 9 SMA lesson plan (p.123-135), SMP/SMA rapor formats (p.146-151).",
+      "Pendidikan Kesetaraan (Paket A/B/C) SKK time rules and tatap muka/tutorial/mandiri forms (p.27, p.42-43, p.56); Paket A rapor example (p.154-155) noted only, its descriptions do not match the subjects.",
+      "Pendidikan Khusus details beyond what sits with SD: SDLB phase/mental-age table kept in short form (p.27); SDLB rapor example summarised (p.152-153).",
+      "Lampiran 1 taxonomy explanations (p.83-88) summarised to level names only.",
+      "Credits, foreword and bibliography (p.4-7, p.81)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "'…' marks a shortened quote; nothing is paraphrased inside 'text'. Optional English 'summary' fields are developer notes, not source text.",
+      "'force' tags how binding the guide phrases a rule: 'mandatory' (harus / wajib / minimal memuat / tidak diperbolehkan / perlu as an explicit duty), 'recommended' (sebaiknya / disarankan / diharapkan / direkomendasikan / perlu as advice), 'optional' (opsional / bersifat pilihan / dapat), 'not_recommended' (tidak disarankan), 'school_discretion' (dikembalikan pada / keleluasaan satuan pendidikan). The guide itself says its procedures and formats may be adapted as long as they do not lower regulatory standards (p.10), so even 'mandatory' here means mandatory per this guide.",
+      "Examples are kept only for SD (Fase A-C); numbers in examples are as printed, including printed arithmetic slips, which are listed in open_points."
+    ]
+  },
+  "guide_scope": {
+    "text": "Panduan ini difokuskan untuk pembelajaran dan asesmen intrakurikuler, sedangkan panduan kokurikuler disampaikan dalam dokumen terpisah.",
+    "users": ["Pendidik", "Kepala Sekolah", "Pengawas sekolah/penilik", "Komunitas belajar"],
+    "adaptation_rule": {
+      "text": "Panduan ini disusun secara adaptif terhadap kebutuhan pengguna, oleh karena itu pendidik diberikan kebebasan untuk mengembangkan mekanisme, prosedur, dan contoh format sesuai konteksnya masing-masing. Penting untuk diperhatikan bahwa pengembangan tersebut tidak mengurangi standar dalam regulasi-regulasi yang ditetapkan oleh Pemerintah. Contoh-contoh yang dituangkan dalam panduan ini hanya sebagai inspirasi …",
+      "pages": [10, 11]
+    },
+    "learning_assessment_cycle": {
+      "text": "Dalam panduan ini, pembelajaran dan asesmen merupakan satu siklus, di mana asesmen memberikan informasi tentang pembelajaran yang perlu dirancang, kemudian asesmen digunakan untuk melihat efektivitas pembelajaran yang berlangsung. Oleh karena itu, asesmen yang diutamakan adalah asesmen formatif yang berorientasi pada perkembangan kompetensi murid.",
+      "pages": [9]
+    },
+    "definitions": [
+      {"term": "perencanaan pembelajaran", "text": "aktivitas untuk merumuskan tujuan, langkah, dan asesmen pembelajaran, serta aspek lain yang menunjang pelaksanaan pembelajaran.", "pages": [9]},
+      {"term": "pelaksanaan pembelajaran", "text": "kegiatan belajar mengajar yang diselenggarakan secara interaktif, inspiratif, menyenangkan, menantang, memotivasi murid untuk berpartisipasi aktif, dan memberikan ruang yang cukup bagi prakarsa, kreativitas, kemandirian sesuai dengan bakat, minat, dan perkembangan fisik, serta psikologis murid.", "pages": [9]},
+      {"term": "asesmen", "text": "Asesmen disebut juga penilaian adalah proses pengumpulan dan pengolahan informasi untuk mengetahui kebutuhan belajar dan capaian perkembangan atau hasil belajar murid.", "pages": [9]},
+      {"term": "pembelajaran mendalam", "text": "pendekatan yang memuliakan dengan menekankan pada penciptaan suasana belajar dan proses pembelajaran berkesadaran, bermakna, dan menggembirakan melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.", "pages": [12]}
+    ]
+  },
+  "deep_learning_framework": {
+    "components": {
+      "text": "Kerangka kerja pembelajaran mendalam terdiri atas empat komponen, yaitu (1) dimensi profil lulusan, (2) prinsip pembelajaran, (3) pengalaman belajar, dan (4) kerangka pembelajaran.",
+      "pages": [12]
+    },
+    "graduate_profile_dimensions": {
+      "text": "Pembelajaran mendalam difokuskan pada pencapaian delapan dimensi profil lulusan … Dimensi profil lulusan merupakan kompetensi utuh yang harus dimiliki oleh setiap murid setelah menyelesaikan proses pembelajaran dan pendidikan.",
+      "items": [
+        {"order": 1, "code": "DPL1", "name": "Keimanan dan Ketakwaan terhadap Tuhan YME"},
+        {"order": 2, "code": "DPL2", "name": "Kewargaan"},
+        {"order": 3, "code": "DPL3", "name": "Penalaran Kritis"},
+        {"order": 4, "code": "DPL4", "name": "Kreativitas"},
+        {"order": 5, "code": "DPL5", "name": "Kolaborasi"},
+        {"order": 6, "code": "DPL6", "name": "Kemandirian"},
+        {"order": 7, "code": "DPL7", "name": "Kesehatan"},
+        {"order": 8, "code": "DPL8", "name": "Komunikasi"}
+      ],
+      "codes_note": "Order from the list on p.13. The checkbox frame on p.38 prints the codes DPL1, DPL1, DPL5, DPL7 / DPL1, DPL1, DPL6, DPL8 (DPL2-DPL4 misprinted as DPL1); codes 2-4 here are inferred from the order — see open_points.",
+      "selection_rule": {
+        "text": "Pendidik dapat memilih dimensi yang relevan dengan tujuan pembelajaran dan karakteristik mata pelajaran yang diajarkan. Dimensi profil lulusan diupayakan terintegrasi dalam proses pembelajaran, bukan sebagai bagian yang terpisah.",
+        "force": "recommended",
+        "pages": [35]
+      },
+      "pages": [13, 38]
+    },
+    "learning_principles": {
+      "text": "Tiga prinsip utama yang mendukung pembelajaran mendalam adalah berkesadaran, bermakna, dan menggembirakan. … Ketiga prinsip pembelajaran tersebut dilaksanakan melalui olah pikir, olah hati, olah rasa, dan olah raga.",
+      "items": [
+        {
+          "key": "berkesadaran",
+          "name": "Berkesadaran",
+          "definition": "pengalaman belajar murid yang diperoleh ketika mereka memiliki kesadaran untuk menjadi pembelajar yang aktif dan mampu meregulasi diri. Murid memahami tujuan pembelajaran, termotivasi secara intrinsik untuk belajar, serta aktif mengembangkan strategi belajar untuk mencapai tujuan.",
+          "characteristics": [
+            "Kenyamanan murid dalam belajar",
+            "Fokus, konsentrasi, dan perhatian",
+            "Kesadaran terhadap proses berpikir",
+            "Kesempatan murid untuk menentukan pilihan dan memiliki alasan atas pilihannya",
+            "Keterlibatan murid dalam mengembangkan strategi belajarnya",
+            "Keterbukaan terhadap perspektif baru",
+            "Keingintahuan terhadap pengetahuan dan pengalaman baru"
+          ],
+          "implementation_examples": [
+            "Memberikan pertanyaan pemantik sebagai proses pembelajaran yang memacu keingintahuan murid.",
+            "Memastikan murid mengetahui apa yang akan dicapai dalam pembelajaran.",
+            "Menunjukkan kebermanfaatan dari hasil belajar bagi murid",
+            "Melaksanakan aktivitas pemantik kegiatan pembelajaran yang interaktif, seperti: berdiskusi, eksplorasi, dll.",
+            "Menyiapkan lingkungan belajar yang sesuai dengan karakteristik dan kenyamanan murid.",
+            "Menjadi pendengar aktif bagi murid, serta memberi ruang yang nyaman bagi keberagaman."
+          ],
+          "pages": [13, 14]
+        },
+        {
+          "key": "bermakna",
+          "name": "Bermakna",
+          "definition": "Pembelajaran bermakna terjadi ketika murid dapat menerapkan pengetahuannya secara kontekstual. … Konsep pembelajaran yang bermakna melibatkan murid dengan isu nyata dalam konteks personal/lokal/nasional/global. Pembelajaran harus melibatkan orang tua, masyarakat, atau komunitas sebagai sumber pengetahuan praktis, serta menumbuhkan rasa tanggung jawab dan kepedulian sosial.",
+          "characteristics": [
+            "Kontekstual dan/atau relevan dengan kehidupan nyata",
+            "Keterlibatan murid berperan dalam pemecahan masalah/isu terdekat di kehidupan nyata",
+            "Keterkaitan dengan pengalaman sebelumnya",
+            "Kebermanfaatan pengalaman belajar untuk diterapkan dalam konteks baru",
+            "Keterkaitan dengan bidang ilmu lain",
+            "Pembelajar sepanjang hayat"
+          ],
+          "implementation_examples": [
+            "Mengembangkan pembelajaran yang sesuai dengan permasalahan yang terjadi di sekitar murid agar mereka dapat mengemukakan pengalamannya.",
+            "Menunjukkan ilustrasi yang menggambarkan perbedaan antara kenyataan dan pengetahuan yang dimiliki.",
+            "Melibatkan murid dalam merancang pembelajaran, seperti memilih projek, menentukan isu permasalahan, dsb.",
+            "Melaksanakan pembelajaran yang tidak hanya berfokus pada penguasaan materi, tetapi mendorong murid untuk menerapkan pengetahuan dalam situasi nyata dan kontekstual.",
+            "Berdasarkan asesmen awal pembelajaran, pendidik memperoleh data karakteristik murid untuk dijadikan dasar variasi aktivitas pembelajaran di kelas.",
+            "Kegiatan belajar disesuaikan dengan kebutuhan belajar murid sehingga mereka merasakan manfaat dari apa yang dipelajari bagi kehidupannya."
+          ],
+          "pages": [14, 15]
+        },
+        {
+          "key": "menggembirakan",
+          "name": "Menggembirakan",
+          "definition": "suasana belajar yang positif, menantang, menyenangkan, dan memotivasi. … Bergembira dalam belajar juga diwujudkan ketika setiap murid merasa nyaman, murid terpenuhi kebutuhannya, seperti pemenuhan kebutuhan fisiologis, kebutuhan rasa aman, kebutuhan kasih sayang dan rasa memiliki, kebutuhan penghargaan, serta kebutuhan aktualisasi diri.",
+          "characteristics": [
+            "Lingkungan pembelajaran yang interaktif",
+            "Aktivitas pembelajaran yang menarik minat dan rasa ingin tahu",
+            "Menginspirasi",
+            "Tantangan yang memotivasi",
+            "Tercapainya keberhasilan belajar (AHA moment)",
+            "Memberikan ruang untuk prakarsa, kreativitas sesuai dengan bakat, minat, dan perkembangan"
+          ],
+          "implementation_examples": [
+            "Memfasilitasi interaksi yang sistematis dan produktif antara pendidik dengan murid, sesama murid, dan antara murid dengan materi belajar.",
+            "Merancang kegiatan pembelajaran yang memberikan jawaban terbuka yang memancing pemikiran pribadi murid.",
+            "Memfasilitasi murid untuk berdiskusi atau melakukan simulasi.",
+            "Memberikan dukungan dan tantangan yang sesuai dengan kemampuan murid, seperti menyesuaikan alokasi waktu pembelajaran dengan kebutuhan murid, serta menyesuaikan proses dan asesmen pembelajaran."
+          ],
+          "pages": [15]
+        }
+      ],
+      "special_needs_note": {
+        "text": "… prinsip pembelajaran berkesadaran, bermakna, dan menggembirakan pada murid berkebutuhan khusus diperlukan akomodasi sesuai dengan karakteristik masing-masing jenis dan tingkat kebutuhannya.",
+        "pages": [16]
+      },
+      "pages": [13, 14, 15, 16]
+    },
+    "learning_experiences": {
+      "text": "Pembelajaran mendalam memberikan pengalaman belajar kepada murid dengan memahami, mengaplikasi, dan merefleksi. … Dalam proses pembelajaran, pengalaman belajar ini bukanlah aspek yang perlu dinilai secara khusus, melainkan cara atau jalan yang ditempuh murid dalam mencapai tujuan pembelajaran yang telah ditetapkan.",
+      "assessed": false,
+      "items": [
+        {
+          "key": "memahami",
+          "name": "Memahami",
+          "definition": "murid difasilitasi untuk aktif mengonstruksi pengetahuan agar dapat memahami secara mendalam terhadap konsep atau materi dari berbagai sumber dan konteks. Pengetahuan pada pengalaman belajar memahami terdiri atas pengetahuan esensial, pengetahuan aplikatif, dan pengetahuan nilai dan karakter.",
+          "knowledge_types": ["pengetahuan esensial", "pengetahuan aplikatif", "pengetahuan nilai dan karakter"],
+          "characteristics": [
+            "Menghubungkan pengetahuan baru dengan pengetahuan sebelumnya.",
+            "Menstimulasi proses berpikir murid.",
+            "Menghubungkan dengan konteks nyata dan/atau kehidupan sehari-hari.",
+            "Memberikan kebebasan eksploratif dan kolaboratif.",
+            "Menanamkan nilai-nilai moral dan etika dan nilai positif lainnya.",
+            "Mengaitkan pembelajaran dengan pembentukan karakter murid."
+          ],
+          "pages": [17]
+        },
+        {
+          "key": "mengaplikasi",
+          "name": "Mengaplikasi",
+          "definition": "Pengalaman belajar yang menunjukan aktivitas murid mengaplikasi pengetahuan dalam kehidupan secara kontekstual. … Murid mampu menghubungkan ide-ide, menganalisis, dan membangun solusi kreatif dan inovatif dalam pemecahan masalah konkret, yang hasilnya dapat berupa produk/kinerja murid.",
+          "characteristics": [
+            "Menghubungkan konsep yang dipelajari dengan ide baru.",
+            "Menerapkan pengetahuan ke dalam situasi nyata atau bidang lain.",
+            "Mengembangkan pemahaman dengan eksplorasi lebih lanjut.",
+            "Berpikir kritis dan mencari solusi inovatif berdasarkan pengetahuan yang ada."
+          ],
+          "pages": [17]
+        },
+        {
+          "key": "merefleksi",
+          "name": "Merefleksi",
+          "definition": "Pengalaman belajar di mana murid mengevaluasi dan memaknai proses serta hasil dari tindakan atau praktik nyata yang telah mereka lakukan. Tahap refleksi melibatkan regulasi diri … yang meliputi perencanaan, pelaksanaan, pengawasan, dan evaluasi terhadap cara belajar mereka.",
+          "characteristics": [
+            "Memotivasi diri sendiri untuk terus belajar bagaimana cara belajar.",
+            "Refleksi terhadap pencapaian tujuan pembelajaran (evaluasi diri).",
+            "Menerapkan strategi berpikir.",
+            "Memiliki kemampuan metakognisi (meregulasi diri dalam pembelajaran).",
+            "Meregulasi emosi dalam pembelajaran."
+          ],
+          "distinction_note": {
+            "text": "… murid tidak hanya diminta untuk mengulang atau mengingat kembali materi yang telah dipelajari, tetapi diarahkan untuk mengonstruksi kembali pemahamannya secara kritis … Hal inilah yang menjadi pembeda antara pengalaman belajar merefleksi dengan refleksi sebagai bagian dari proses pembelajaran.",
+            "pages": [37]
+          },
+          "characteristics_heading_note": "The p.18 box for merefleksi is headed 'Karakteristik Pengalaman Belajar Memahami' (misprint).",
+          "pages": [17, 18, 36, 37]
+        }
+      ],
+      "taxonomy_link": {
+        "text": "Pengalaman belajar dalam pembelajaran mendalam dimulai pada aspek memahami yang relevan dengan taksonomi SOLO pada tahapan unistruktural dan multistruktural dan mengingat dan memahami pada taksonomi Bloom. … Selanjutnya pada aspek mengaplikasi dan merefleksi dimulai pada aspek relasional dan berpikir abstrak yang mendalam pada taksonomi SOLO dan menerapkan, menganalisis, mencipta dan mengevaluasi pada taksonomi Bloom …",
+        "pages": [85]
+      },
+      "pages": [16, 17, 18]
+    },
+    "learning_frame": {
+      "text": "Keempat komponen tersebut adalah praktik pedagogis, kemitraan pembelajaran, lingkungan pembelajaran, dan pemanfaatan teknologi digital.",
+      "items": [
+        {
+          "key": "praktik_pedagogis",
+          "name": "Praktik Pedagogis",
+          "definition": "Strategi mengajar yang dipilih pendidik untuk mencapai tujuan belajar dalam mencapai dimensi profil lulusan.",
+          "examples": [
+            "Penggunaan model pembelajaran pembelajaran berbasis projek, pembelajaran berbasis masalah, inkuiri, pembelajaran berbasis permainan, pendekatan berbasis genre, pembelajaran berbasis kolaboratif, dan lainnya",
+            "Penggunaan berbagai media belajar",
+            "Penyediaan berbagai sumber belajar."
+          ],
+          "pages": [18, 19]
+        },
+        {
+          "key": "kemitraan_pembelajaran",
+          "name": "Kemitraan Pembelajaran",
+          "definition": "Kemitraan pembelajaran membentuk hubungan yang dinamis antara pendidik murid, orang tua, komunitas, dan mitra profesional.",
+          "examples": [
+            "Kerja sama pendidik dengan murid dalam perancangan pembelajaran, proses asesmen, dsb.",
+            "Kerja sama pendidik dengan rekan sejawat dalam berbagi praktik baik, perencanaan, refleksi dan evaluasi, dsb.",
+            "Kerja sama pendidik dengan orang tua untuk mendukung program pembelajaran yang dilakukan di sekolah, seperti melibatkan orang tua menjadi guru tamu.",
+            "Kerja sama pendidik dengan pihak luar sekolah seperti Dunia Kerja, puskesmas dan lembaga lainnya yang terkait dengan pembelajaran.",
+            "Kerja sama pendidik dengan universitas untuk memberikan wawasan ruang lingkup pembelajaran dan pekerjaan.",
+            "Kerja sama murid dengan murid lain, murid lintas kelompok, atau murid lintas kelas.",
+            "Kerja sama murid dengan orang tua.",
+            "Kerja sama murid dengan pihak lain."
+          ],
+          "pages": [19]
+        },
+        {
+          "key": "lingkungan_pembelajaran",
+          "name": "Lingkungan Pembelajaran",
+          "definition": "Lingkungan pembelajaran menekankan integrasi antara ruang fisik, ruang virtual, dan budaya belajar untuk mendukung pembelajaran mendalam.",
+          "examples": [
+            "Menciptakan lingkungan belajar yang aman dan nyaman.",
+            "Memotivasi murid untuk bereksplorasi, berekspresi dan berkolaborasi.",
+            "Penggunaan platform pembelajaran daring/hybrid.",
+            "Pemanfaatan lingkungan sekolah maupun sekitar, seperti ruang komputer, perpustakaan, kantin, taman sekolah, fasilitas umum, dan lainnya."
+          ],
+          "pages": [19, 20]
+        },
+        {
+          "key": "pemanfaatan_teknologi_digital",
+          "name": "Pemanfaatan Teknologi Digital",
+          "definition": "Pemanfaatan teknologi digital juga memegang peran penting sebagai katalisator untuk menciptakan pembelajaran yang lebih interaktif, kolaboratif, dan kontekstual.",
+          "force": "optional",
+          "force_text": "pemanfaatan teknologi digital menjadi unsur pendukung yang bersifat opsional dan strategis …",
+          "examples": [
+            "Pemanfaatan aplikasi atau media digital dalam pembelajaran.",
+            "Penggunaan Kecerdasan Artifisial sebagai alat dukung pembelajaran.",
+            "Penggunaan teknologi asistif untuk murid berkebutuhan khusus.",
+            "Platform ruang kerja digital dan platform pendidikan digital, seperti Rumah Pendidikan, dsb."
+          ],
+          "pages": [20, 36]
+        }
+      ],
+      "pages": [18, 19, 20]
+    }
+  },
+  "assessment_principles": {
+    "text": "Dalam merencanakan dan melaksanakan asesmen, pendidik perlu mengacu pada tiga prinsip asesmen dalam pembelajaran berikut ini.",
+    "items": [
+      {
+        "key": "berkeadilan",
+        "name": "Berkeadilan",
+        "definition": "Asesmen hasil belajar murid dilakukan sesuai dengan tujuan asesmen secara berkeadilan. Pendidik melakukan asesmen yang tidak bias oleh latar belakang, identitas, atau kebutuhan khusus murid.",
+        "implementation_examples": [
+          "Asesmen tidak dipengaruhi oleh latar belakang dan identitas apapun.",
+          "Asesmen untuk murid berkebutuhan khusus memerlukan akomodasi/penyelarasan dalam bentuk soal/instrumen, format jawaban, setting, dan lama waktu. …",
+          "Terkait dukungan untuk transisi PAUD ke SD, satuan pendidikan menyesuaikan kebijakan Sistem Penerimaan Murid Baru (SPMB) untuk tidak menggunakan tes terkait calistung (baca, tulis, hitung) sebagai pertimbangan kriteria masuk SD. …",
+          "Pendidik menentukan kriteria ketercapaian dan menyampaikannya pada murid sehingga mereka memahami ekspektasi yang perlu dicapai.",
+          "Pendidik berkolaborasi dalam merancang asesmen sehingga dapat menggunakan kriteria yang serupa dan sesuai dengan tujuan asesmen.",
+          "Pendidik merancang asesmen untuk mendorong murid terus meningkatkan kompetensinya melalui asesmen dengan tingkat kesulitan yang tepat dan umpan balik yang membangun."
+        ],
+        "pages": [20, 21]
+      },
+      {
+        "key": "objektif",
+        "name": "Objektif",
+        "definition": "Asesmen hasil belajar murid dilakukan sesuai dengan tujuan asesmen secara objektif. Pendidik melakukan asesmen berdasarkan pada informasi faktual atas pencapaian perkembangan atau hasil belajar murid. Asesmen dilakukan secara konsisten dan berdasarkan kriteria ketercapaian yang jelas serta disepakati, bukan berdasarkan persepsi pribadi atau faktor subjektif lainnya. …",
+        "implementation_examples": [
+          "Pendidik menguatkan asesmen di awal pembelajaran yang digunakan untuk merancang pembelajaran sesuai dengan kesiapan murid.",
+          "Asesmen awal pada murid berkebutuhan khusus dapat dilakukan sebelum perencanaan pembelajaran yang mencakup aspek akademik dan atau nonakademik.",
+          "Pendidik merencanakan asesmen yang selaras dengan tujuan pembelajaran.",
+          "Pendidik menganalisis, merefleksi, dan menindaklanjuti hasil asesmen.",
+          "Pendidik menggunakan berbagai teknik asesmen, bukan hanya tes tertulis/lisan, tetapi juga bisa menggunakan teknik asesmen observasi (murid diamati secara berkala dalam kurun waktu tertentu) dan teknik asesmen performa (praktik, produk, projek, dan portofolio)."
+        ],
+        "pages": [21]
+      },
+      {
+        "key": "edukatif",
+        "name": "Edukatif",
+        "definition": "Asesmen hasil belajar murid dilakukan sesuai dengan tujuan asesmen secara edukatif. Pendidik melakukan asesmen yang hasilnya digunakan sebagai umpan balik bagi pendidik, murid, dan orang tua … Asesmen tidak hanya menghakimi hasil, tetapi memperkuat proses belajar.",
+        "implementation_examples": [
+          "Pendidik merencanakan pembelajaran dengan merujuk pada tujuan yang hendak dicapai.",
+          "Pendidik melibatkan murid dalam melakukan asesmen, melalui penilaian diri, penilaian antarteman, refleksi diri, dan pemberian umpan balik antarteman dengan memberikan rambu-rambu yang jelas.",
+          "Pendidik menyusun laporan kemajuan belajar secara ringkas, mengutamakan informasi yang paling penting untuk dipahami oleh murid dan orang tua.",
+          "Pendidik menggunakan hasil asesmen sebagai bahan diskusi untuk menentukan hal-hal yang sudah berjalan baik dan area yang perlu diperbaiki. …",
+          "Pendidik memberikan umpan balik kepada murid berupa kalimat dukungan untuk menstimulasi pola pikir bertumbuh secara berkala dan mendiskusikan tindak lanjutnya bersama-sama orang tua.",
+          "Pendidik merancang asesmen yang dapat meningkatkan kompetensi murid dengan tingkat kesulitan yang sesuai dengan kemampuan murid dan umpan balik yang membangun.",
+          "Pendidik melakukan asesmen sebagai bagian dari proses pembelajaran dan bukan hanya untuk kepentingan menguji.",
+          "Pendidik menggunakan teknik asesmen yang beragam sesuai dengan fungsi dan tujuan asesmen. Hasil dari asesmen formatif digunakan untuk umpan balik pembelajaran, sementara hasil dari asesmen sumatif digunakan untuk pelaporan hasil belajar"
+        ],
+        "pages": [22]
+      }
+    ],
+    "pages": [20, 21, 22]
+  },
+  "planning_process": {
+    "steps": {
+      "text": "Menganalisis Capaian Pembelajaran → Menyusun Tujuan Pembelajaran dan Alurnya → Merencanakan Pembelajaran dan Asesmen",
+      "items": ["Menganalisis Capaian Pembelajaran", "Menyusun Tujuan Pembelajaran dan Alurnya", "Merencanakan Pembelajaran dan Asesmen"],
+      "pages": [23]
+    },
+    "development_options": {
+      "text": "Alur tujuan pembelajaran dan/atau perencanaan pembelajaran dapat dikembangkan oleh pendidik sesuai kemampuannya dengan cara:",
+      "items": [
+        "mengembangkan sepenuhnya alur tujuan pembelajaran dan/atau perencanaan pembelajaran secara mandiri;",
+        "mengembangkan alur tujuan pembelajaran dan/atau rencana pembelajaran berdasarkan contoh-contoh yang disediakan pemerintah; atau",
+        "menggunakan contoh yang disediakan sesuai dengan kebutuhan belajar murid."
+      ],
+      "obligation": {
+        "text": "Dengan kata lain, setiap pendidik perlu menggunakan alur tujuan pembelajaran dan perencanaan pembelajaran untuk memandu mereka mengajar. Pendidik dapat mengembangkan sendiri, menggunakan contoh yang disiapkan, atau memodifikasi perencanaan belajarnya.",
+        "force": "mandatory"
+      },
+      "government_examples_location": "Dalam Platform Rumah Pendidikan, pemerintah menyediakan contoh alur tujuan pembelajaran dan perencanaan pembelajaran berupa RPP atau modul ajar.",
+      "pages": [23, 24]
+    }
+  },
+  "capaian_pembelajaran": {
+    "definition": {
+      "text": "Capaian Pembelajaran (CP) merupakan kompetensi pembelajaran yang harus dicapai murid di akhir setiap fase, dimulai dari fase fondasi pada PAUD. … Untuk pendidikan dasar dan menengah, CP disusun untuk setiap mata pelajaran. Rumusan kompetensi pada CP dapat menggunakan taksonomi SOLO atau taksonomi lain (taksonomi Bloom, Wiggins dan Tighe, Marzano, dll.) yang sesuai dengan bidang keilmuan masing-masing mata pelajaran.",
+      "pages": [24]
+    },
+    "phases_sd": {
+      "table": "Tabel 3.1. Pembagian Fase Capaian Pembelajaran",
+      "rows": [
+        {"phase": "A", "grades": [1, 2], "text": "Kelas I-II SD/MI/ Program Paket A"},
+        {"phase": "B", "grades": [3, 4], "text": "Kelas III-IV SD/MI/ Program Paket A"},
+        {"phase": "C", "grades": [5, 6], "text": "Kelas V-VI SD/MI/ Program Paket A"}
+      ],
+      "pages": [24]
+    },
+    "phases_sdlb": {
+      "table": "Tabel 3.2. Fase Capaian Pembelajaran pada Pendidikan Khusus",
+      "rows": [
+        {"phase": "A", "text": "Kelas I-II SDLB", "mental_age": "< 7 tahun"},
+        {"phase": "B", "text": "Kelas III-IV SDLB", "mental_age": "± 7 tahun"},
+        {"phase": "C", "text": "Kelas V-VI SDLB", "mental_age": "± 8 tahun"}
+      ],
+      "rule": "… untuk mengakomodasi murid dengan hambatan intelektual … digunakan CP Pendidikan khusus yang disusun berdasarkan pada usia mental murid. Sementara murid berkebutuhan khusus tanpa hambatan intelektual menggunakan CP untuk SD/MI/Program Paket A … dengan menerapkan prinsip akomodasi kurikulum. Penggunaan CP pada murid berkebutuhan khusus … bersifat fleksibel sehingga dapat dilakukan lintas fase dan lintas elemen …",
+      "pages": [27]
+    },
+    "structure": {
+      "text": "CP terdiri atas rasional, tujuan, karakteristik, dan capaian per fase. … Capaian per fase disampaikan dalam bentuk capaian per elemen.",
+      "parts": [
+        {"name": "rasional", "text": "Rasional menjelaskan alasan pentingnya mempelajari mata pelajaran tersebut serta kaitannya dengan dimensi profil lulusan."},
+        {"name": "tujuan", "text": "Tujuan menjelaskan tentang kemampuan atau kompetensi yang dituju setelah murid mempelajari mata pelajaran tersebut secara keseluruhan."},
+        {"name": "karakteristik", "text": "Karakteristik menjelaskan tentang apa yang dipelajari dalam mata pelajaran tersebut, elemen-elemen yang membentuk mata pelajaran dan berkembang dari fase ke fase."},
+        {"name": "capaian_per_fase", "text": "Capaian per fase disampaikan dalam bentuk capaian per elemen."}
+      ],
+      "paragraph_form": "Dalam CP, kompetensi yang ingin dicapai ditulis dalam paragraf yang memadukan antara pengetahuan, keterampilan, dan sikap.",
+      "pages": [28, 29]
+    },
+    "analysis_rule": {
+      "text": "Pendidik perlu memahami keseluruhan dokumen capaian pembelajaran, mulai dari rasional, tujuan, karakteristik, dan capaian pembelajaran perfase pada setiap mata pelajaran. Rumusan capaian pembelajaran perlu dianalisis untuk menyusun tujuan pembelajaran dan alurnya.",
+      "force": "recommended",
+      "pages": [23]
+    },
+    "above_cp": {
+      "text": "CP yang disusun sudah disesuaikan dengan kemampuan murid pada umumnya. Jika ada murid memiliki kebutuhan belajar di atas CP, maka bisa dilakukan pengayaan atau pendalaman.",
+      "pages": [27]
+    },
+    "phase_use": [
+      {"key": "collaborative_planning", "text": "Pengembangan rencana pembelajaran yang kolaboratif. Pada umumnya, satu fase dilalui satu atau lebih tingkat kelas … pendidik … perlu berkolaborasi dengan pendidik di [kelas sebelumnya/berikutnya] …", "summary": "Teachers of consecutive grades in one phase hand over where learning stopped (guide's example is Fase D; same applies to SD grades I-II, III-IV, V-VI).", "pages": [28]},
+      {"key": "flexible_pace", "text": "Pembelajaran yang fleksibel. Ada kalanya proses belajar berjalan lebih lambat pada suatu periode … Ketika harus “menggeser” waktu untuk mengajarkan materi-materi pelajaran yang sudah dirancang, pendidik memiliki waktu lebih panjang …", "pages": [28]}
+    ],
+    "paud_sd_continuity": {
+      "text": "Pembelajaran di PAUD dan SD perlu berkesinambungan sebagaimana satu kesatuan yang tak terpisahkan. Kemampuan fondasi dapat terus dibangun dengan menggunakan CP Fase A. … Enam aspek kemampuan fondasi ini bukanlah capaian pembelajaran atau kompetensi baru, melainkan nilai, pengetahuan, dan keterampilan yang dapat dibangun pada setiap murid melalui struktur kurikulum PAUD dan SD.",
+      "foundational_abilities": [
+        "mengenal nilai agama dan budi pekerti;",
+        "kematangan emosi yang cukup untuk berkegiatan di lingkungan belajar;",
+        "keterampilan sosial dan bahasa yang memadai untuk berinteraksi sehat dengan teman sebaya dan individu lainnya;",
+        "pemaknaan terhadap belajar yang positif;",
+        "pengembangan keterampilan motorik dan perawatan diri yang memadai untuk dapat berpartisipasi di lingkungan sekolah secara mandiri; dan",
+        "kematangan kognitif yang cukup untuk melakukan kegiatan belajar, seperti dasar literasi, numerasi, serta pemahaman tentang hal-hal mendasar yang terjadi dalam kehidupan sehari-hari."
+      ],
+      "sd_examples": [
+        {"ability": "Kematangan emosi yang cukup untuk berkegiatan di lingkungan belajar", "subject": "Pendidikan Pancasila", "tp": "Murid mengenal aturan di lingkungan keluarga,", "derived_from": "elemen Undang-Undang Dasar Negara Republik Indonesia Tahun 1945"},
+        {"ability": "Pengembangan keterampilan motorik dan perawatan diri yang memadai untuk dapat berpartisipasi di lingkungan sekolah secara mandiri", "subject": "PJOK", "tp": "Murid mempraktikkan keterampilan gerak fundamental (lokomotor, nonlokomotor, dan manipulatif) berikut penerapannya dalam berbagai situasi gerak yang berbeda.", "derived_from": "elemen terampil bergerak."}
+      ],
+      "sd_planning_note": {
+        "text": "Perencanaan pembelajaran di SD perlu mempertimbangkan kesinambungan pembinaan kemampuan fondasi yang dibina sejak PAUD dan dapat terus dilanjutkan di Fase A menggunakan struktur kurikulum SD. Sebagai contoh saat pendidik ingin membina kemampuan fondasi terkait nilai agama dan budi pekerti, pendidik dapat membinanya melalui pembelajaran Pendidikan Agama dan Budi Pekerti dan Pendidikan Pancasila. … panduan pemetaan kemampuan fondasi … dapat diakses melalui Sistem Informasi Kurikulum Nasional (SIKN).",
+        "force": "recommended",
+        "pages": [42]
+      },
+      "pages": [25, 26, 42]
+    },
+    "taxonomies": {
+      "text": "Penjelasan terkait taksonomi dapat dilihat pada lampiran 1.",
+      "items": [
+        {"name": "Taksonomi SOLO (Biggs & Collis)", "levels": ["Prastruktural: Tidak memahami materi", "Unistruktural: Memahami satu aspek", "Multistruktural: Memahami beberapa aspek, tanpa menghubungkan", "Relasional: Menghubungkan berbagai aspek secara kohesif", "Berpikir abstrak yang mendalam: Menerapkan pemahaman dalam konteks baru"], "sd_example_note": "Levels illustrated with an IPA 'habitat' example (p.84-85).", "pages": [83, 84, 85]},
+        {"name": "Taksonomi Bloom revisi (Anderson & Krathwohl, 2001)", "levels": ["Level 1 Mengingat", "Level 2 Memahami", "Level 3 Mengaplikasikan", "Level 4 Menganalisis", "Level 5 Mengevaluasi", "Level 6 Menciptakan"], "pages": [85, 86]},
+        {"name": "Enam bentuk pemahaman (Tighe & Wiggins)", "levels": ["Penjelasan (explanation)", "Interpretasi", "Aplikasi", "Perspektif", "Empati", "Pengenalan diri atau refleksi diri"], "note": "… dalam merumuskan tujuan pembelajaran kata “memahami” bukan berarti memahami dalam level 2 pada Taksonomi Bloom.", "pages": [86, 87]},
+        {"name": "Taksonomi Marzano (2000)", "levels": ["Tingkat 1 Mengenali dan mengingat kembali (retrieval)", "Tingkat 2 Pemahaman", "Tingkat 3 Analisis", "Tingkat 4 Pemanfaatan Pengetahuan", "Tingkat 5 Metakognisi", "Tingkat 6 Sistem Diri"], "pages": [88]}
+      ],
+      "pages": [24, 83, 84, 85, 86, 87, 88]
+    }
+  },
+  "tujuan_pembelajaran": {
+    "definition": {
+      "text": "Tujuan pembelajaran dikembangkan dari capaian pembelajaran. Tujuan pembelajaran yang dikembangkan ini perlu dicapai murid hingga akhir fase. Tujuan pembelajaran mencakup kompetensi dan konten pada lingkup materi dengan menggunakan kata kerja operasional yang relevan.",
+      "pages": [29]
+    },
+    "components": {
+      "text": "Penulisan tujuan pembelajaran sebaiknya memuat 2 komponen, yaitu sebagai berikut.",
+      "force": "recommended",
+      "items": [
+        {"order": 1, "key": "kompetensi", "name": "Kompetensi", "text": "kesatuan pengetahuan, keterampilan, dan sikap yang menunjukkan kemampuan murid sebagai hasil dari proses pembelajaran."},
+        {"order": 2, "key": "lingkup_materi", "name": "Lingkup materi", "text": "konten dan konsep utama yang perlu dipahami pada akhir satu unit pembelajaran. Lingkup materi berfokus pada materi esensial yang mengacu pada konsep inti dan informasi yang dianggap penting bagi murid untuk dipelajari."}
+      ],
+      "pages": [29]
+    },
+    "freedom_note": {
+      "text": "Panduan ini memberi keleluasaan pada pendidik untuk menggali berbagai referensi yang dapat digunakan untuk merancang tujuan pembelajaran. Pendidik dapat menggunakan teori atau pendekatan lain dalam merancang tujuan pembelajaran, selama teori tersebut dinilai relevan …",
+      "pages": [30]
+    },
+    "time_depth_note": {
+      "text": "Dalam merumuskan tujuan pembelajaran, hendaknya guru mempertimbangkan ketersedian waktu dan kedalaman dari tujuan pembelajaran tersebut.",
+      "force": "recommended",
+      "pages": [30]
+    },
+    "special_education_note": {
+      "text": "Pada Pendidikan Khusus, selain kompetensi dan konten, tujuan pembelajaran juga mencakup variasi dan akomodasi layanan sesuai karakteristik murid. …",
+      "pages": [30]
+    },
+    "formulation_alternatives": {
+      "text": "Pendidik memiliki alternatif untuk merumuskan tujuan pembelajaran sesuai karakteristik setiap mata pelajaran dengan beberapa alternatif di bawah ini.",
+      "items": [
+        {
+          "order": 1,
+          "key": "direct_from_cp",
+          "text": "Alternatif 1. Merumuskan tujuan pembelajaran secara langsung berdasarkan CP.",
+          "sd_example": {
+            "subject": "Matematika", "phase": "B",
+            "summary": "Each CP sentence of a Fase B element is turned into one TP bullet (elements Bilangan, Aljabar, Pengukuran, Geometri, Analisis Data dan Peluang).",
+            "sample": [
+              {"element": "Bilangan", "cp_excerpt": "Pada akhir fase B, murid menunjukkan pemahaman dan intuisi bilangan (number sense) pada bilangan cacah sampai 10.000. …", "tp": ["menunjukkan pemahaman dan intuisi bilangan (number sense) pada bilangan cacah sampai 10.000.", "membaca, dan menulis bilangan cacah sampai 10.000.", "membandingkan dan mengurutkan bilangan cacah sampai 10.000.", "menentukan dan menggunakan nilai tempat.", "melakukan komposisi dan dekomposisi bilangan cacah sampai 10.000", "melakukan dan menyelesaikan masalah operasi bilangan penjumlahan dan pengurangan bilangan cacah sampai 1.000", "melakukan dan menyelesaikan masalah operasi perkalian dan pembagian bilangan cacah sampai 100 dengan bantuan benda konkret, gambar dan simbol", "mengenal kelipatan dan faktor.", "melakukan perbandingan dan pengurutan pecahan dengan pembilang satu dan antar pecahan dengan penyebut yang sama", "mengenal dan dapat menerapkan pecahan senilai", "memiliki intuisi pecahan dan desimal", "menentukan pecahan sebagai desimal dan persen."]},
+              {"element": "Pengukuran", "tp": ["Mengukur panjang dan berat benda menggunakan satuan baku.", "Menentukan hubungan antar-satuan baku panjang (cm, m).", "Menentukan hubungan antar-satuan berat (g, kg)", "Mengukur dan mengestimasi luas dan volume menggunakan satuan tidak baku dan satuan baku berupa bilangan cacah."]},
+              {"element": "Geometri", "tp": ["Mendeskripsikan ciri berbagai bentuk bangun datar (segiempat, segitiga, segi banyak).", "Menyusun (komposisi) dan mengurai (dekomposisi) berbagai bangun datar dengan lebih dari satu cara jika memungkinkan."]}
+            ],
+            "pages": [89, 90]
+          },
+          "pages": [30, 89, 90]
+        },
+        {
+          "order": 2,
+          "key": "competency_and_content",
+          "text": "Alternatif 2. Merumuskan tujuan pembelajaran dengan menganalisis ‘kompetensi’ dan ‘konten’ pada ruang lingkup materi pada CP.",
+          "sd_example": {
+            "subject": "Matematika", "phase": "B",
+            "summary": "CP sentence split into a Kompetensi column (verbs) and a Lingkup Materi column (content), then recombined into numbered TPs.",
+            "sample": [
+              {"element": "Bilangan", "kompetensi": ["Memahami", "Menentukan", "menggunakan", "Membandingkan", "Mengurutkan", "Melakukan", "menyelesaikan", "mengenal", "menerapkan"], "lingkup_materi": ["Bilangan cacah sampai 10.000.", "nilai tempat.", "komposisi dan dekomposisi bilangan.", "bilangan cacah sampai 1.000", "bilangan cacah sampai 100", "gambar dan simbol", "kelipatan dan faktor.", "pecahan", "pecahan senilai", "desimal", "persen."], "tp": ["Menyajikan nilai tempat dan urutan pada bilangan cacah sampai 10.000.", "Melakukan komposisi dan dekomposisi bilangan cacah sampai dengan 10.000.", "Menyelesaikan masalah operasi bilangan penjumlahan dan pengurangan bilangan cacah sampai 1.000", "Menyelesaikan masalah operasi perkalian dan pembagian bilangan cacah sampai 100 dengan bantuan benda konkret, gambar dan simbol", "Mengenal kelipatan dan faktor", "Membandingkan dan mengurutkan pecahan dengan pembilang satu dan antar pecahan dengan penyebut yang sama", "Mengembangkan intuisi pecahan dan desimal", "Menerapkan pecahan dan pecahan senilai sebagai desimal dan persen"]},
+              {"element": "Aljabar", "tp": ["Menemukan nilai yang belum diketahui dalam sebuah kalimat matematika yang berkaitan dengan penjumlahan pada bilangan cacah sampai 100.", "Menemukan nilai yang belum diketahui dalam sebuah kalimat matematika yang berkaitan dengan pengurangan pada bilangan cacah sampai 100.", "Mengidentifikasi, meniru, dan mengembangkan pola gambar atau objek sederhana pada bilangan cacah sampai 100.", "Mengidentifikasi, meniru, dan mengembangkan pola bilangan membesar dan mengecil yang melibatkan penjumlahan dan pengurangan pada bilangan cacah sampai 100."]},
+              {"element": "Analisis Data dan Peluang", "tp": ["Mengurutkan, membandingkan dan menyajikan, data dalam bentuk tabel, diagram gambar, piktogram, dan diagram batang (skala satu satuan).", "Menganalisis dan menginterpretasi data dalam bentuk tabel, diagram gambar, piktogram, dan diagram batang (skala satu satuan)."]}
+            ],
+            "pages": [91, 92, 93, 94]
+          },
+          "pages": [30, 91, 92, 93, 94]
+        },
+        {
+          "order": 3,
+          "key": "across_elements",
+          "text": "Alternatif 3. Merumuskan tujuan pembelajaran Lintas Elemen CP.",
+          "sd_example": {
+            "subject": "Matematika", "phase": "B",
+            "elements": ["Pengukuran", "Geometri"],
+            "tp": ["Menentukan hubungan antar-satuan baku panjang (cm, m).", "Menentukan hubungan antar-satuan baku berat (g, kg).", "Menjelaskan cara mengukur panjang benda menggunakan satuan baku.", "Menjelaskan ciri berbagai bentuk bangun datar (segiempat, segitiga, segi banyak).", "Menentukan ciri bagian-bagian dari bangun datar (segiempat, segitiga, segi banyak).", "Mengukur bangun datar (segiempat, segitiga, segi banyak) menggunakan satuan baku"],
+            "note": "Penting untuk diperhatikan: dapat mengembangkan dengan cara lain selama Capaian Pembelajaran di akhir fase tercapaii.",
+            "pages": [95]
+          },
+          "pages": [30, 95]
+        }
+      ],
+      "pages": [30]
+    }
+  },
+  "alur_tujuan_pembelajaran": {
+    "definition": {
+      "text": "Alur tujuan pembelajaran merupakan tujuan pembelajaran yang diurutkan, bukan turunan atau rincian dari tujuan pembelajaran.",
+      "pages": [31]
+    },
+    "rules": [
+      {"order": 1, "text": "Alur tujuan pembelajaran dikembangkan tiap fase selanjutnya ditetapkan per tahunnya.", "pages": [31]},
+      {"order": 2, "text": "Alur tujuan pembelajaran perlu dikembangkan secara kolaboratif. Apabila pendidik mengembangkan alur tujuan pembelajaran secara mandiri, maka perlu kolaborasi pendidik lintas kelas/tingkatan dalam satu fase atau merancang bersama komunitas atau tim pendidik atau MGMP/KKG/KKT (Kelompok Kerja Tutor) di satuan pendidikan masing masing.", "force": "recommended", "pages": [31]},
+      {"order": 3, "text": "Alur tujuan pembelajaran dikembangkan sesuai dengan karakteristik dan kompetensi yang dikembangkan setiap mata pelajaran.", "pages": [31]},
+      {"order": 4, "text": "Alur tujuan pembelajaran fokus pada pencapaian pembelajaran.", "pages": [31]},
+      {"order": 5, "text": "Alur tujuan pembelajaran yang disediakan pemerintah adalah contoh. Urutan tujuan pembelajaran ditunjukkan dengan nomor atau huruf, tetapi pendidik atau satuan pendidikan dapat mengubah atau memodifikasi sesuai dengan kebutuhan.", "force": "optional", "pages": [31]},
+      {"order": 6, "text": "Pada pendidikan khusus, penyusunan alur tujuan pembelajaran boleh dilakukan lintas fase.", "pages": [31]}
+    ],
+    "sequencing_methods": {
+      "table": "Tabel 3.3. Cara-Cara Menyusun Alur Tujuan Pembelajaran",
+      "items": [
+        {"key": "concrete_to_abstract", "name": "Pengurutan dari yang Konkret ke yang Abstrak", "text": "Metode pengurutan dari konten yang konkret dan berwujud ke konten yang lebih abstrak dan simbolis. Contoh: memulai pengajaran dengan menjelaskan tentang benda geometris (konkret) terlebih dahulu sebelum mengajarkan aturan teori objek geometris tersebut (abstrak)."},
+        {"key": "deductive", "name": "Pengurutan Deduktif", "text": "Metode pengurutan dari konten bersifat umum ke konten yang spesifik. Contoh: mengajarkan konsep database terlebih dahulu sebelum mengajarkan tentang tipe database, seperti hierarki atau relasional."},
+        {"key": "easy_to_hard", "name": "Pengurutan dari Mudah ke yang lebih Sulit", "text": "Metode pengurutan dari konten paling mudah ke konten paling sulit. Contoh: mengajarkan cara mengeja kata-kata pendek dalam kelas bahasa sebelum mengajarkan kata yang lebih panjang."},
+        {"key": "hierarchical", "name": "Pengurutan Hierarki", "text": "Metode ini dilaksanakan dengan mengajarkan keterampilan komponen konten yang lebih mudah terlebih dahulu sebelum mengajarkan keterampilan yang lebih kompleks. Contoh: murid perlu belajar tentang penjumlahan sebelum mereka dapat memahami konsep perkalian."},
+        {"key": "procedural", "name": "Pengurutan Prosedural", "text": "Metode ini dilaksanakan dengan mengajarkan tahap pertama dari sebuah prosedur, kemudian membantu murid untuk menyelesaikan tahapan selanjutnya. …"},
+        {"key": "scaffolding", "name": "Scaffolding", "text": "Metode pengurutan yang meningkatkan standar performa sekaligus mengurangi bantuan secara bertahap. Contoh: dalam mengajarkan berenang …"}
+      ],
+      "pages": [31, 32]
+    },
+    "format": {
+      "text": "Tidak ada format komponen yang ditetapkan oleh Pemerintah. Komponen alur tujuan pembelajaran dapat disesuaikan dengan kebutuhan satuan pendidikan yang mudah dimengerti oleh pendidik.",
+      "force": "school_discretion",
+      "summary": "No mandated ATP fields; illustration (Gambar 3.2) is a chain: Awal Fase → TP 1 → TP 2 → TP 3 → … → TP (n) → Akhir Fase.",
+      "pages": [32]
+    }
+  },
+  "lesson_planning": {
+    "plan_forms": {
+      "text": "Setiap pendidik perlu memiliki perencanaan pembelajaran untuk membantu mengarahkan proses pembelajaran untuk mencapai tujuan pembelajaran secara lebih mendalam. Perencanaan pembelajaran ini dapat berupa: (1) rencana pelaksanaan pembelajaran (RPP), atau (2) modul ajar.",
+      "force": "mandatory",
+      "forms": ["rencana pelaksanaan pembelajaran (RPP)", "modul ajar"],
+      "pages": [40]
+    },
+    "document_quality": {
+      "text": "Perencanaan pembelajaran disusun dalam bentuk dokumen yang fleksibel, jelas, dan sederhana. Tujuan pembelajaran disusun dari CP dengan mempertimbangkan karakteristik murid dan satuan pendidikan. Pendidik juga harus memastikan tujuan pembelajaran sudah sesuai dengan tahapan dan kebutuhan murid.",
+      "force": "mandatory",
+      "pages": [33]
+    },
+    "deep_learning_must_be_present": {
+      "text": "Pendidik perlu memastikan bahwa kerangka kerja pembelajaran mendalam telah termuat baik secara implisit atau eksplisit dalam perencanaan pembelajaran dengan menerapkan prinsip berkesadaran, bermakna, dan menggembirakan dalam proses pembelajaran dan melalui pengalaman belajar memahami, mengaplikasikan, dan merefleksi.",
+      "force": "mandatory",
+      "pages": [40]
+    },
+    "based_on_atp": {
+      "text": "Perencanaan pembelajaran dirancang untuk memandu pendidik melaksanakan pembelajaran sehari-hari untuk mencapai tujuan pembelajaran. Dengan demikian, perencanaan pembelajaran disusun berdasarkan alur tujuan pembelajaran. … perencanaan pembelajaran yang dibuat masing-masing pendidik pun dapat berbeda-beda …",
+      "pages": [34, 35]
+    },
+    "assessment_planned_upfront": {
+      "text": "Pembelajaran sebaiknya diawali dengan proses perencanaan pembelajaran dan perencanaan asesmen. Pendidik perlu merancang asesmen yang dilaksanakan pada awal, proses, dan akhir pembelajaran.",
+      "force": "recommended",
+      "pages": [33]
+    },
+    "design_steps": {
+      "text": "Dalam menyusun perencanaan pembelajaran, pendidik diharapkan merancang pembelajaran dengan memperhatikan langkah seperti pada gambar berikut.",
+      "force": "recommended",
+      "items": [
+        {"order": 1, "key": "identifikasi", "name": "Identifikasi", "sub": ["Mengidentifikasi kesiapan murid", "Memahami karakteristik materi pelajaran", "Menentukan dimensi profil Lulusan"]},
+        {"order": 2, "key": "desain_pembelajaran", "name": "Desain Pembelajaran", "sub": ["Menentukan tujuan pembelajaran", "Menentukan kerangka pembelajaran (praktis pedagogis, kemitraan pembelajaran, lingkungan pembelajaran, pemanfaatan digital)"]},
+        {"order": 3, "key": "pengalaman_belajar", "name": "Pengalaman Belajar", "sub": ["Merancang pembelajaran dengan prinsip berkesadaran, bermakna, dan menggembirakan", "Mendeskripsikan pengalaman belajar memahami, mengaplikasi, dan merefleksi"]},
+        {"order": 4, "key": "asesmen", "name": "Asesmen", "sub": ["Asesmen pada awal pembelajaran", "Asesmen pada proses pembelajaran", "Asesmen pada akhir pembelajaran"]}
+      ],
+      "pages": [35]
+    },
+    "plan_frame": {
+      "title": "Contoh kerangka dalam perencanaan pembelajaran.",
+      "summary": "The guide's model lesson-plan frame (RPM). Sections and fields in printed order; 'optional' marks fields the guide labels '(opsional)'. It is an example ('Contoh'), but p.40 requires the deep-learning framework to be present in whatever plan is used.",
+      "sections": [
+        {
+          "order": 1,
+          "key": "identifikasi",
+          "name": "Identifikasi",
+          "fields": [
+            {"order": 1, "key": "asesmen_awal", "name": "Asesmen pada awal pembelajaran", "optional": true, "instruction": "Tuliskan strategi penilaian yang digunakan pada awal pembelajaran dan tindak lanjut hasil asesmen awal."},
+            {"order": 2, "key": "dimensi_profil_lulusan", "name": "Dimensi Profil Lulusan", "optional": false, "instruction": "Pilihlah dimensi profil lulusan yang akan dicapai dalam pembelajaran.", "input_type": "checkbox of the 8 dimensions"}
+          ],
+          "pages": [38]
+        },
+        {
+          "order": 2,
+          "key": "desain_pembelajaran",
+          "name": "Desain Pembelajaran",
+          "fields": [
+            {"order": 1, "key": "tujuan_pembelajaran", "name": "Tujuan Pembelajaran", "optional": false, "instruction": "Tuliskan tujuan pembelajaran yang mencakup kompetensi dan konten pada ruang lingkup materi dengan menggunakan kata kerja operasional yang relevan."},
+            {"order": 2, "key": "praktik_pedagogis", "name": "Praktik Pedagogis", "optional": false, "instruction": "Tuliskan Model/Strategi/Metode pembelajaran yang dipilih untuk mencapai tujuan belajar, seperti pembelajaran berbasis masalah, pembelajaran berbasis proyek, pembelajaran inkuiri, pembelajaran kontekstual, dan sebagainya."},
+            {"order": 3, "key": "kemitraan_pembelajaran", "name": "Kemitraan Pembelajaran", "optional": true, "instruction": "Tuliskan kegiatan kemitraan atau kolaborasi dalam dan/atau luar lingkup sekolah, seperti kemitraan antar guru lintas mata pelajaran, antar murid lintas kelas, antar guru lintas sekolah, orang tua, komunitas, tokoh masyarakat, dunia usaha dan dunia industri kerja, institusi, atau mitra profesional."},
+            {"order": 4, "key": "lingkungan_pembelajaran", "name": "Lingkungan Pembelajaran", "optional": false, "instruction": "Tuliskan lingkungan pembelajaran yang ingin dikembangkan dalam budaya belajar, ruang fisik dan/atau ruang virtual. Budaya belajar dikembangkan agar tercipta iklim belajar yang aman, nyaman, dan saling memuliakan. Contoh: memberikan kesempatan kepada siswa untuk menyampaikan pendapatnya dalam ruang kelas dan forum diskusi pada platform daring (ruang virtual bersifat opsional)."},
+            {"order": 5, "key": "pemanfaatan_digital", "name": "Pemanfaatan Digital", "optional": true, "instruction": "Tuliskan pemanfaatan teknologi digital untuk menciptakan pembelajaran yang interaktif, kolaboratif, dan kontekstual. Contoh: video pembelajaran, platform pembelajaran, perpustakaan digital, forum diskusi daring, aplikasi penilaian, dan sebagainya."}
+          ],
+          "pages": [38]
+        },
+        {
+          "order": 3,
+          "key": "pengalaman_belajar",
+          "name": "Pengalaman Belajar",
+          "intro": "Langkah-langkah Pembelajaran — Pada tahap ini, murid aktif terlibat dalam pengalaman belajar memahami, mengaplikasi, dan merefleksi dalam suasana yang saling memuliakan. Pendidik menerapkan prinsip pembelajaran berkesadaran, bermakna, menyenangkan untuk mencapai tujuan pembelajaran. Pengalaman belajar dapat dilaksanakan dalam beberapa kali pertemuan.",
+          "fields": [
+            {"order": 1, "key": "memahami", "name": "Memahami", "optional": false, "principle_tag": "tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan", "instruction": "Tuliskan kegiatan pembelajaran yang memfasilitasi murid untuk terlibat aktif mengonstruksi pengetahuan agar dapat memahami secara mendalam konsep atau materi dari berbagai sumber dan konteks. Pengetahuan pada fase ini terdiri dari pengetahuan esensial, pengetahuan aplikatif, dan pengetahuan nilai dan karakter."},
+            {"order": 2, "key": "mengaplikasi", "name": "Mengaplikasi", "optional": false, "principle_tag": "tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan", "instruction": "Tuliskan kegiatan yang mengondisikan pengalaman belajar yang menunjukan aktivitas murid mengaplikasi pemahaman secara kontekstual atau kehidupan nyata (hidup, kehidupan, dan/atau penghidupan). Proses mengaplikasi ini merupakan bagian dari pendalaman pengetahuan untuk menghasilkan pengembangan kompetensi."},
+            {"order": 3, "key": "merefleksi", "name": "Merefleksi", "optional": false, "principle_tag": "tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan", "instruction": "Tuliskan kegiatan yang mampu memfasilitasi murid: mengevaluasi dan memaknai proses serta hasil dari tindakan atau praktik nyata yang telah mereka lakukan dan menentukan tindaklanjut ke depan; mengelola proses belajarnya secara mandiri, dengan meneruskan dan mengembangkan strategi belajar yang berhasil dan memperbaiki yang belum berhasil dengan tetap meningkatkan motivasi belajar dan kepercayaan diri."}
+          ],
+          "pages": [39]
+        },
+        {
+          "order": 4,
+          "key": "asesmen_pembelajaran",
+          "name": "Asesmen Pembelajaran",
+          "fields": [
+            {"order": 1, "key": "teknik_instrumen", "name": "Asesmen Pembelajaran", "optional": false, "instruction": "Tuliskan teknik dan instrumen penilaian yang digunakan pada proses, dan akhir pembelajaran. Asesmen dalam pembelajaran mendalam dilaksanakan melalui asesmen sebagai pembelajaran (assessment as learning) yang menekankan pada penilaian diri dan penilaian sejawat, asesmen untuk pembelajaran (assessment for learning) yang menekankan pada umpan balik, dan asesmen hasil pembelajaran (assessment of learning) yang menekankan pada pencapaian dan tindak lanjut dengan mempertimbangkan karakteristik murid.", "examples": ["Penilaian Sejawat", "Penilaian Diri", "Penilaian Proyek", "Penilaian Produk", "Observasi", "Portofolio", "Penilaian Berbasis Kelas", "Penilaian Kinerja", "Tes tertulis", "Tes lisan"]}
+          ],
+          "pages": [39]
+        }
+      ],
+      "header_fields_from_sd_example": {
+        "summary": "The frame itself has no header; the SD example (Lampiran 7) adds a title and Mata pelajaran, Fase/kelas, Alokasi waktu.",
+        "fields": ["Judul/tema pembelajaran", "Mata pelajaran", "Fase/kelas", "Alokasi waktu"],
+        "pages": [112]
+      },
+      "pages": [38, 39]
+    },
+    "reflective_questions": {
+      "text": "Pertanyaan-pertanyaan reflektif berikut ini dapat digunakan pendidik dalam proses perencanaan pembelajaran.",
+      "force": "optional",
+      "items": [
+        "Bagaimana agar perhatian murid senantiasa fokus dan mereka terus bersemangat sepanjang kegiatan pembelajaran?",
+        "Bagaimana saya sebagai pendidik akan membantu setiap individu murid memahami pembelajaran?",
+        "Bagaimana saya akan mendorong murid untuk melakukan refleksi, mempelajari lagi, memperbaiki, dan memperdalam konsep atau materi pelajaran yang telah mereka pelajari?",
+        "Bagaimana murid dapat menunjukkan pemahaman mereka dan melakukan evaluasi diri yang berarti setelah mempelajari materi ini?",
+        "Bagaimana saya akan menyesuaikan langkah dan/atau materi pelajaran berdasarkan keunikan dan kebutuhan masing-masing murid?",
+        "Bagaimana saya akan mengelola pengalaman belajar yang mendorong murid untuk menjadi pelajar yang aktif dan mandiri?"
+      ],
+      "pages": [40]
+    },
+    "backward_design": {
+      "text": "Selain pertanyaan reflektif di atas, pendidik dapat juga menggunakan Backward Design (Wiggins & Tighe, 2005).",
+      "force": "optional",
+      "steps": [
+        "Memahami tujuan pembelajaran. Pahami kompetensi dan konsep/konten kunci yang harus dikuasai murid.",
+        "Tentukan strategi asesmennya yang dapat mengukur kompetensi yang dimunculkan murid ketika mereka sudah mencapainya.",
+        "Mendesain proses belajar: menentukan metode, menyusun urutan dan mencari sumber materi yang membantu murid menguasai kompetensi yang dituju."
+      ],
+      "pages": [40, 41]
+    },
+    "interdisciplinary": {
+      "text": "… pendidik bisa juga mempertimbangkan kegiatan pembelajaran dengan interdisipliner sebagai bagian dari strategi pembelajaran. Kegiatan ini bisa dilakukan melalui projek, juga dapat diwujudkan melalui berbagai model … seperti pendekatan STEM, pembelajaran berbasis inkuiri, pembelajaran berbasis masalah (problem-based learning), atau eksplorasi kontekstual lainnya.",
+      "force": "optional",
+      "pages": [37]
+    },
+    "sd_example": {
+      "source": "Lampiran 7 Contoh Dokumen Perencanaan Pembelajaran SD (image-only pages, transcribed from images)",
+      "title": "\"MENJADI REPORTER CILIK HASIL ANALISIS TEKS EKSPLANASI SEDERHANA TENTANG PERUBAHAN IKLIM DENGAN EFEKTIF DAN SANTUN\"",
+      "subject": "Bahasa Indonesia",
+      "phase_grade": "C/6 (lima)",
+      "time_allocation": {"text": "15JP (5 x 3 x 35 menit)", "jp_total": 15, "meetings": 5, "jp_per_meeting": 3, "jp_minutes": 35},
+      "identifikasi_murid": "Murid memiliki pengetahuan berbagai tipe teks eksplanasi sederhana (teks nonfiksi). Murid memiliki pengetahuan dasar yang bervariasi mengenai isu-isu lingkungan, perlu memiliki kesadaran perannya terhadap mencegah perubahan iklim, menunjukkan minat tinggi dalam kegiatan projek.",
+      "dimensi_profil_lulusan_checked": ["Penalaran Kritis", "Kreativitas", "Kolaborasi", "Komunikasi"],
+      "tujuan_pembelajaran": [
+        "Menganalisis informasi dalam teks eksplanasi sederhana (teks nonfiksi) yang berwujud teks vidual dan/atau audiovisual.",
+        "Mempresentasikan gagasan dari teks eksplanasi sederhana dengan efektif dan santun."
+      ],
+      "praktik_pedagogik": "Pendidik menggunakan pembelajaran berbasis projek dengan multi metoda seperti diskusi, sosiodrama, berkelompok, dan reportase. Pembelajaran juga menggunakan prinsip berkesadaran, bermakna, dan menggembirakan. Selain itu, pembelajaran dilakukan melalui pengalaman belajar memahami, mengaplikasi, dan merefleksi sehingga murid belajar secara lebih mendalam.",
+      "mitra_pembelajaran": ["Komunitas Peduli Lingkungan", "Dinas Lingkungan Hidup", "Masyarakat sekitar sekolah"],
+      "lingkungan_pembelajaran": "Pembelajaran dapat memanfaatkan lingkungan sekolah sebagai ruang fisik. Penggunaan platform media sosial untuk menyajikan reportase hasil pembelajaran dan melatih literasi digital. Budaya belajar yang dikembangkan mendorong partisipasi aktif, serta menumbuhkan rasa ingin tahu melalui diskusi, kerja tim, dan kolaborasi inkuiri.",
+      "pemanfaatan_digital": [
+        "Perencanaan: Memanfaatkan beragam aplikasi edukasi (Canva, Ms.Office, dll.)",
+        "Pelaksanaan: pertemuan daring, video, perpustakaan daring",
+        "Asesmen: memungkinkan pemanfaatan beragam media sosial seperti Instagram, tiktok, youtube,dll.) untuk reportase berita"
+      ],
+      "langkah_pembelajaran_summary": [
+        {"meeting": 1, "summary": "Pembukaan dan pembiasaan (berdoa, saling menyapa, presensi); apersepsi dan motivasi dengan pertanyaan pemantik sebagai asesmen awal (6 pertanyaan, mis. “Pernahkah kalian melihat tayangan teks eksplanasi sederhana?”); memirsa teks tentang dampak perubahan iklim (tautan video); diskusi konsep informasi dan gagasan; menyimpulkan."},
+        {"meeting": 2, "summary": "Memirsa tayangan yang disampaikan mitra pembelajaran (komunitas peduli lingkungan/Dinas Lingkungan Hidup); tanya jawab; menyimpulkan; refleksi awal tentang perilaku penyebab perubahan iklim; menyampaikan kembali (boleh dengan platform digital)."},
+        {"meeting": 3, "summary": "Memilih tayangan; diskusi menemukan gagasan dan informasi (5W + 1H); mendeskripsikan ke poster/infografik (platform digital); presentasi; umpan balik antarteman."},
+        {"meeting": 4, "summary": "Mereviu informasi; membuat sketsa berita singkat dengan bahasa efektif dan santun; berlatih presentasi reportase."},
+        {"meeting": 5, "summary": "Bermain peran sebagai reporter iklim; umpan balik atas reportase; refleksi dan jurnal perilaku positif mencegah perubahan iklim; menyampaikan perasaan dan refleksi bersama; menutup dengan doa dan salam."}
+      ],
+      "asesmen": {
+        "awal": "Tanya jawab singkat tentang pemahaman awal terkait teks eksplanasi sederhana (teks nonfiksi), cara menemukan informasi dan gagasan, dan cara mempresentasikannya dalam bentuk reportase dengan efektif dan santun",
+        "formatif": "Menganalisis informasi dan gagasan dalam teks eksplanasi sederhana yang dipirsa tentang perubahan iklim.",
+        "sumatif": "Mempresentasikan informasi dan gagasan dari teks eksplanasi sederhana yang dipirsa tentang perubahan iklim dengan efektif dan santun.",
+        "criteria_table": {
+          "columns": ["Kriteria", "Memenuhi", "Belum Memenuhi"],
+          "rows": [
+            {"kriteria": "Formatif: Menganalisis informasi dan gagasan dalam teks eksplanasi sederhana (teks nonfiksi) yang dipirsa tentang perubahan iklim.", "memenuhi": "Bisa mendeskripsikan dengan jelas dan tepat informasi dan gagasan dalam teks eksplanasi sederhana yang dipirsa tentang perubahan iklim.", "belum_memenuhi": "Belum bisa mendeskripsikan dengan jelas dan tepat informasi dan gagasan dalam teks eksplanasi sederhana yang dipirsa tentang perubahan iklim."},
+            {"kriteria": "Sumatif: Mempresentasikan informasi dan gagasan dari teks eksplanasi sederhana yang dipirsa,tentang tentang perubahan iklim dengan santun, logis, sistematis, efektif, dan kreatif.", "memenuhi": "Bisa menyampaikan kembali informasi dan gagasan dalam teks eksplanasi sederhana (teks nonfiksi) yang dipirsa tentang perubahan iklim secara santun, logis, sistematis, efektif, dan kreatif.", "belum_memenuhi": "Menyampaikan kembali informasi dan gagasan dalam teks eksplanasi sederhana (teks nonfiksi) yang dipirsa tentang perubahan iklim dengan tidak akurat, secara tidak jelas, tidak lancar, dan sulit dipahami oleh pendengar."},
+            {"kriteria": "Rencana tindak lanjut", "memenuhi": "Praktik diskusi kelas dan melatih teman sekelas yang memerlukan bantuan", "belum_memenuhi": "Berlatih memirsa untuk menganalisis teks dan menyampaikan kembali dengan bimbingan"}
+          ]
+        }
+      },
+      "section_order_in_example": ["Identifikasi Murid", "Dimensi Profil Lulusan", "Tujuan Pembelajaran", "Praktik Pedagogik", "Mitra Pembelajaran", "Lingkungan Pembelajaran", "Pemanfaatan Digital", "Langkah Pembelajaran", "Asesmen dan Tindak lanjut"],
+      "pages": [112, 113, 114]
+    }
+  },
+  "differentiation_and_implementation": {
+    "start_from_initial_assessment": {
+      "text": "Pelaksanaan pembelajaran dimulai dari hasil asesmen awal pembelajaran. Pendidik dapat melaksanakan pembelajaran yang bervariasi (pembelajaran terdiferensiasi) sesuai dengan tingkat kesiapan/kompetensi murid.",
+      "pages": [33]
+    },
+    "differentiation_role": {
+      "text": "… diferensiasi berperan sebagai penguat pembelajaran mendalam karena memungkinkan guru untuk merancang pengalaman belajar yang relevan, menantang, dan bermakna bagi setiap murid berdasarkan kesiapan, minat, dan gaya belajarnya. Melalui diferensiasi konten, proses, produk, atau lingkungan belajar … diferensiasi bukan sekadar strategi untuk memenuhi keberagaman, tetapi menjadi jembatan yang memastikan setiap murid dapat terlibat secara aktif …",
+      "dimensions": ["konten", "proses", "produk", "lingkungan belajar"],
+      "pages": [58]
+    },
+    "flexible_grouping": {
+      "text": "… melalui pengelompokan fleksibel yang bersifat sementara dan kontekstual. Namun, perlu ditegaskan bahwa pengelompokan ini tidak bertujuan untuk memberi label atau menciptakan hirarki kemampuan antar murid …",
+      "force": "mandatory",
+      "summary": "Grouping must be temporary and must not label or rank pupils by ability; roles in groups may rotate.",
+      "pages": [58]
+    },
+    "student_choice": {
+      "text": "Pendidik juga diharapkan memberi ruang bagi murid untuk memilih cara belajar atau mengekspresikan pemahamannya, misalnya melalui pilihan media pembelajaran (artikel, video, modul, atau esai), strategi penyelesaian masalah, atau bentuk akhir dari tugas belajar (produk).",
+      "force": "recommended",
+      "pages": [58]
+    },
+    "same_rubric_rule": {
+      "text": "Dalam pembelajaran mendalam, meskipun murid menempuh jalur belajar atau menunjukkan hasil akhir yang berbeda, kompetensi yang diukur tetap sama. Oleh karena itu, tidak diperlukan rubrik asesmen yang berbeda. Asesmen tetap berfokus pada kedalaman pemahaman terhadap kompetensi yang telah ditetapkan.",
+      "pages": [59]
+    },
+    "cycle": {
+      "text": "Berikut ini adalah ilustrasi siklus perencanaan dan pelaksanaan pembelajaran dan asesmen dalam kerangka pembelajaran mendalam:",
+      "items": [
+        "Pendidik menyusun rencana pembelajaran yang berfokus pada pencapaian pemahaman bermakna, termasuk perencanaan asesmen formatif untuk mengeksplorasi cara berpikir, latar belakang pengetahuan, dan kesiapan belajar murid.",
+        "Di awal pembelajaran, pendidik melakukan asesmen untuk memahami titik awal belajar masing-masing murid …",
+        "Berdasarkan hasil asesmen, pendidik menyesuaikan strategi pembelajaran agar lebih kontekstual, kolaboratif, dan mendorong eksplorasi serta refleksi. …",
+        "Selama proses pembelajaran, pendidik menggunakan asesmen formatif secara berkelanjutan untuk memantau pemahaman dan memfasilitasi umpan balik yang membangun …",
+        "Di akhir pembelajaran, asesmen dilakukan untuk melihat sejauh mana murid membangun pemahaman terhadap kompetensi inti. Hasil asesmen ini sekaligus menjadi dasar perencanaan pembelajaran selanjutnya …"
+      ],
+      "pages": [59]
+    },
+    "not_complex": {
+      "text": "… pembelajaran mendalam tidak selalu menuntut rancangan yang rumit atau sepenuhnya berbeda-beda, melainkan menekankan pada bagaimana pembelajaran dirancang dan dijalankan agar bermakna, relevan, dan memfasilitasi pemahaman yang utuh bagi setiap murid.",
+      "pages": [59]
+    }
+  },
+  "assessment": {
+    "planning": {
+      "text": "Dalam perencanaan asesmen, pendidik dapat mengadopsi, mengadaptasi, atau mengembangkan perencanaan asesmen secara mandiri.",
+      "considerations": [
+        "Perencanaan asesmen diawali dengan penentuan tujuan, baik yang berfokus pada proses pembelajaran maupun pada ketercapaian tujuan pembelajaran.",
+        "Setelah tujuan asesmen dirumuskan, pendidik memilih dan/atau mengembangkan instrumen asesmen sesuai tujuan. Beberapa hal yang perlu diperhatikan dalam memilih/mengembangkan instrumen, antara lain: karakteristik murid, kesesuaian asesmen dengan rencana/tujuan pembelajaran dan tujuan asesmen, kemudahan penggunaan instrumen untuk memberikan umpan balik kepada murid dan pendidik."
+      ],
+      "evidence": "Asesmen dilakukan untuk mencari bukti ataupun dasar pertimbangan tentang ketercapaian tujuan pembelajaran, bukti yang dimaksud dapat berupa catatan kemajuan belajar murid, performa atau nilai/skor hasil belajar murid.",
+      "focus": {
+        "text": "Asesmen dalam pembelajaran difokuskan pada asesmen formatif, dengan bentuk dan teknik yang beragam disesuaikan dengan kebutuhan murid …",
+        "pages": [46]
+      },
+      "pages": [43]
+    },
+    "types": [
+      {
+        "key": "formatif_awal",
+        "name": "Asesmen di awal pembelajaran (asesmen awal / diagnostik)",
+        "category": "formatif",
+        "text": "Asesmen di awal pembelajaran yang dilakukan untuk mengetahui kesiapan murid untuk mempelajari materi ajar dan mencapai tujuan pembelajaran yang direncanakan. Asesmen ini termasuk dalam kategori asesmen formatif karena ditujukan untuk kebutuhan pendidik dalam merancang dan menyesuaikan pembelajaran, tidak untuk keperluan asesmen hasil belajar murid yang dilaporkan dalam rapor.",
+        "reported_in_rapor": false,
+        "rules": [
+          {"text": "Asesmen di awal tahun pembelajaran bersifat opsional, yang lebih ditekankan adalah pelaksanaan asesmen awal sebelum melaksanakan pembelajaran.", "force": "optional", "summary": "Start-of-year assessment optional; initial assessment before each learning unit is emphasised.", "pages": [44]},
+          {"text": "Asesmen formatif yang dilakukan di awal pembelajaran akan memberikan informasi kepada pendidik tentang kesiapan belajar murid. Berdasarkan asesmen ini, pendidik perlu menyesuaikan/memodifikasi rencana pelaksanaan pembelajarannya dan/atau membuat diferensiasi pembelajaran agar sesuai dengan kebutuhan murid.", "force": "recommended", "pages": [45]},
+          {"text": "Asesmen pada awal pembelajaran (opsional)", "force": "optional", "summary": "The lesson-plan frame field is optional.", "pages": [38]}
+        ],
+        "terminology_note": "The guide uses 'diagnostik' only for pendidikan khusus (asesmen fungsional dan/atau diagnostik, p.35, p.42, p.45); for regular SD it speaks of 'asesmen awal'.",
+        "pages": [44, 45]
+      },
+      {
+        "key": "formatif_proses",
+        "name": "Asesmen di dalam proses pembelajaran",
+        "category": "formatif",
+        "text": "Asesmen di dalam proses pembelajaran yang dilakukan selama proses pembelajaran untuk mengetahui perkembangan murid dan sekaligus pemberian umpan balik yang cepat. Asesmen ini dapat dilakukan sepanjang atau di tengah kegiatan/langkah pembelajaran, dan dapat juga dilakukan di akhir langkah pembelajaran.",
+        "reported_in_rapor": false,
+        "pages": [44]
+      },
+      {
+        "key": "sumatif",
+        "name": "Asesmen Sumatif",
+        "category": "sumatif",
+        "text": "Asesmen sumatif pada jenjang pendidikan dasar dan menengah bertujuan untuk menilai pencapaian hasil belajar murid sebagai dasar penentuan kenaikan kelas dan/atau kelulusan dari satuan pendidikan. Penilaian pencapaian hasil belajar murid dilakukan dengan membandingkan pencapaian hasil belajar murid dengan kriteria ketercapaian tujuan pembelajaran. Berbeda dengan asesmen formatif, asesmen sumatif menjadi bagian dari perhitungan penilaian di akhir semester, akhir tahun ajaran, dan/atau akhir jenjang.",
+        "reported_in_rapor": true,
+        "functions": [
+          "menilai pencapaian hasil belajar murid dalam satu atau lebih tujuan pembelajaran di periode tertentu;",
+          "membandingkan capaian hasil belajar murid dengan kriteria yang telah ditetapkan; dan",
+          "menjadi dasar pertimbangan untuk menentukan kelanjutan proses belajar murid, baik di kelas maupun jenjang berikutnya."
+        ],
+        "timing": {
+          "text": "Asesmen sumatif dapat dilakukan setelah pembelajaran berakhir, misalnya pada akhir satu lingkup materi (dapat terdiri atas satu atau lebih tujuan pembelajaran), pada akhir semester. Khusus asesmen pada akhir semester, asesmen ini bersifat pilihan. Jika pendidik merasa masih memerlukan konfirmasi atau informasi tambahan … maka dapat melakukan asesmen pada akhir semester. Sebaliknya, jika pendidik merasa bahwa data hasil asesmen yang diperoleh selama 1 semester telah mencukupi, maka tidak perlu melakukan asesmen pada akhir semester.",
+          "end_of_semester_force": "optional",
+          "pages": [46]
+        },
+        "not_compulsory_midterm": {
+          "text": "Asesmen sumatif juga tidak diartikan sebagai kewajiban yang harus dilakukan di tengah atau di akhir semester. Asesmen sumatif dilakukan sesuai dengan kebutuhan dan dapat dilakukan untuk satu atau lebih tujuan pembelajaran.",
+          "pages": [54]
+        },
+        "techniques": "… untuk asesmen sumatif, pendidik dapat menggunakan teknik dan instrumen yang beragam, tidak hanya berupa tes tertulis, tetapi dapat menggunakan observasi dan performa (praktik, menghasilkan produk, dan melakukan projek).",
+        "pages": [46, 54]
+      }
+    ],
+    "formative_design_rules": {
+      "text": "Beberapa hal yang perlu diperhatikan pendidik dalam merancang asesmen formatif, antara lain sebagai berikut.",
+      "items": [
+        {"text": "Tidak berisiko tinggi (high stake). Asesmen formatif dirancang untuk tujuan pembelajaran dan tidak seharusnya digunakan untuk menentukan nilai rapor, keputusan kenaikan kelas, kelulusan, atau keputusan-keputusan penting lainnya.", "force": "mandatory"},
+        {"text": "Menggunakan berbagai teknik dan/atau instrumen. Asesmen formatif dapat dilakukan dengan teknik observasi, atau menggunakan instrumen asesmen diri, dan asesmen antarteman.", "force": "recommended"},
+        {"text": "Dilaksanakan bersamaan dengan proses pembelajaran yang sedang berlangsung sehingga asesmen formatif dan pembelajaran menjadi suatu kesatuan.", "force": "recommended"},
+        {"text": "Asesmen di awal tahun pembelajaran bersifat opsional, yang lebih ditekankan adalah pelaksanaan asesmen awal sebelum melaksanakan pembelajaran.", "force": "optional"},
+        {"text": "Dapat menggunakan metode yang sederhana sehingga umpan balik hasil asesmen tersebut dapat diperoleh dengan cepat.", "force": "optional"},
+        {"text": "Asesmen formatif yang dilakukan di awal pembelajaran akan memberikan informasi kepada pendidik tentang kesiapan belajar murid. Berdasarkan asesmen ini, pendidik perlu menyesuaikan/memodifikasi rencana pelaksanaan pembelajarannya dan/atau membuat diferensiasi pembelajaran …", "force": "recommended"},
+        {"text": "Instrumen asesmen yang digunakan dapat memberikan informasi tentang kekuatan, hal-hal yang masih perlu ditingkatkan oleh murid dan mengungkapkan cara untuk meningkatkan kualitas tulisan, karya atau performa yang diberi umpan balik. Dengan demikian, hasil asesmen tidak sekadar sebuah angka.", "force": "recommended"}
+      ],
+      "pages": [44, 45]
+    },
+    "formative_purpose": {
+      "for_teacher": "Bagi pendidik, asesmen formatif berguna untuk merefleksikan strategi pembelajaran yang digunakan, serta untuk meningkatkan efektivitasnya dalam merancang dan melaksanakan pembelajaran. Asesmen ini juga memberikan informasi tentang kebutuhan belajar individu murid yang diajar.",
+      "for_pupil": "Bagi murid, asesmen formatif berguna untuk melakukan refleksi dengan memonitor kemajuan belajar, tantangan yang dialami, serta langkah-langkah yang perlu ia lakukan untuk meningkatkan capaiannya secara berkelanjutan. …",
+      "follow_up": "Apabila murid telah mencapai tujuan pembelajaran, maka pendidik dapat meneruskan pada tujuan pembelajaran berikutnya. Namun, apabila tujuan pembelajaran belum tercapai, maka pendidik perlu memberikan tindak lanjut sehingga murid dapat mencapai tujuan pembelajaran tersebut.",
+      "pages": [34, 44]
+    },
+    "formative_examples_sd": {
+      "items": [
+        "Merancang kegiatan permainan untuk melihat gambaran kemampuan fondasi murid seperti bagaimana kemampuan motorik kasar, halus, dan taktil, kemampuan bahasa dan berkomunikasi, dsb. Kegiatan ini disarankan terutama untuk di PAUD dan Fase A.",
+        "Pendidik memulai kegiatan tatap muka dengan memberikan pertanyaan berkaitan dengan konsep atau topik yang telah dipelajari pada pertemuan sebelumnya.",
+        "Pendidik mengakhiri kegiatan pembelajaran di kelas dengan meminta murid untuk menuliskan 3 hal tentang konsep yang baru mereka pelajari, 2 hal yang ingin mereka pelajari lebih mendalam, dan 1 hal yang mereka belum pahami.",
+        "Kegiatan percobaan dilanjutkan dengan diskusi terkait proses dan hasil percobaan, kemudian pendidik memberikan umpan balik terhadap pemahaman murid.",
+        "Pendidik melihat progres pemahaman murid dengan melihat hasil kerja mereka, disesuaikan dengan rubrik asesmen yang sudah disepakati. … Instrumen asesmen yang digunakan berupa penilaian diri, penilaian antarteman, pemberian umpan balik antarteman dan refleksi. …"
+      ],
+      "pages": [45]
+    },
+    "authentic_holistic": {
+      "text": "Dua jenis asesmen utama yang digunakan adalah asesmen formatif dan sumatif, dengan penekanan pada asesmen autentik dan holistik.",
+      "authentic": "Autentik, asesmen yang merepresentasikan realitas kehidupan atau konteks sehari-hari, berfokus pada proses dan produk belajar dalam konteks yang nyata dan bermakna. Bertujuan mengukur kompetensi nyata, seperti pemecahan masalah, berpikir kritis, berpikir kreatif, kolaborasi, dan komunikasi.",
+      "holistic": "Holistik, asesmen yang melihat keseluruhan aspek kemampuan siswa secara utuh dan terpadu (pengetahuan, keterampilan, dan sikap). …",
+      "formative_traits": ["dilakukan secara berkala selama pembelajaran;", "berfokus pada proses, bukan hanya hasil akhir;", "mendorong refleksi dan melibatkan murid secara aktif; dan", "kontekstual dan relevan dengan kehidupan nyata."],
+      "formative_examples": "jurnal reflektif, penilaian antarteman (peer assessment), penilaian diri (self assessment), peta konsep, observasi kinerja, dll.",
+      "summative_traits": ["menilai hasil belajar akhir;", "menilai keterampilan berpikir tingkat tinggi; dan", "menilai aspek pengetahuan, keterampilan, dan sikap secara terpadu."],
+      "summative_examples": "projek tematik (kolaborasi beberapa mata pelajaran); portofolio; studi kasus, presentasi interdisipliner, dan lain-lain.",
+      "pages": [47]
+    },
+    "functions_as_for_of": {
+      "text": "Asesmen dalam pembelajaran memiliki tiga fungsi utama, yaitu assessment as learning untuk refleksi diri murid dan refleksi proses pembelajaran yang membantu murid belajar menjadi pemelajar aktif dan mandiri, assessment for learning untuk membantu pendidik memperbaiki proses pembelajaran, dan assessment of learning untuk menilai capaian pembelajaran murid pada akhir pembelajaran.",
+      "mapping": [
+        {"function": "Assessment as Learning", "type": "formatif", "purpose": "untuk refleksi diri murid dan refleksi proses pembelajaran", "examples": "Jurnal reflektif, self-assessment, peer assessment, checklist kemajuan belajar, dan lainnya"},
+        {"function": "Assessment for Learning", "type": "formatif", "purpose": "untuk perbaikan proses pembelajaran", "examples": "Peta konsep, umpan balik formatif, Classroom Assessment Technique (CATs), observasi, exit ticket dan lainnya"},
+        {"function": "Assessment of Learning", "type": "sumatif", "purpose": "untuk penilaian capaian pembelajaran murid pada akhir pembelajaran", "examples": "Tes lisan, tes tertulis, laporan, penilaian projek, portofolio, dan lainnya"}
+      ],
+      "pages": [47, 48]
+    },
+    "techniques": {
+      "text": "Instrumen asesmen dapat dikembangkan berdasarkan teknik penilaian yang digunakan oleh pendidik. Di bawah ini diuraikan contoh teknik asesmen yang dapat diadaptasi, yaitu :",
+      "items": [
+        {"key": "observasi", "name": "Observasi", "text": "Asesmen yang dilakukan secara berkesinambungan melalui pengamatan perilaku yang diamati secara berkala. Observasi dapat difokuskan untuk semua murid atau per individu. Observasi dapat dilakukan dalam tugas atau aktivitas rutin/harian."},
+        {"key": "kinerja", "name": "Kinerja", "text": "Asesmen yang ditujukan untuk mendemonstrasikan dan mengaplikasikan pengetahuannya ke dalam berbagai macam konteks sesuai dengan kriteria yang diinginkan. Asesmen kinerja dapat berupa praktik, menghasilkan produk, melakukan projek, atau membuat portofolio."},
+        {"key": "projek", "name": "Projek", "text": "Asesmen yang meliputi kegiatan perancangan, pelaksanaan, dan pelaporan, yang harus diselesaikan dalam periode/waktu tertentu."},
+        {"key": "tes_tertulis", "name": "Tes Tertulis", "text": "Tes dengan soal dan jawaban disajikan secara tertulis untuk mengukur atau memperoleh informasi tentang kemampuan murid. Tes tertulis dapat berbentuk esai, pilihan ganda, uraian, atau bentuk-bentuk tes tertulis lainnya."},
+        {"key": "tes_lisan", "name": "Tes Lisan", "text": "Pemberian soal/pertanyaan agar murid dapat menjawab secara lisan dan diberikan ketika pembelajaran berlangsung."},
+        {"key": "penugasan", "name": "Penugasan", "text": "Pemberian tugas kepada murid untuk mengukur pengetahuan dan memfasilitasi murid memperoleh atau meningkatkan pengetahuan."},
+        {"key": "portofolio", "name": "Portofolio", "text": "Kumpulan dokumen hasil penilaian, penghargaan, dan karya murid dalam bidang tertentu yang mencerminkan perkembangan (reflektif-integratif) dalam kurun waktu tertentu."},
+        {"key": "cats", "name": "Classroom Assessment Technique (CATs)", "text": "Strategi asesmen formatif yang sederhana, cepat, dan efektif untuk mengukur pemahaman murid secara langsung selama proses pembelajaran berlangsung.", "examples": ["minute paper", "muddiest point", "one sentence summary", "background knowledge probe", "chain notes"]},
+        {"key": "exit_ticket", "name": "Exit ticket", "text": "Asesmen formatif sederhana yang dilakukan di akhir pembelajaran, murid menjawab satu atau beberapa pertanyaan singkat sebelum meninggalkan kelas."}
+      ],
+      "pages": [55]
+    },
+    "instruments": {
+      "text": "Berikut adalah beberapa instrumen asesmen yang dapat menjadi inspirasi bagi pendidik.",
+      "items": [
+        {"key": "rubrik", "name": "Rubrik", "text": "Pedoman yang dibuat untuk menilai dan mengevaluasi kualitas capaian kinerja murid sehingga pendidik dapat menyediakan bantuan yang diperlukan untuk meningkatkan kinerja. … Capaian kinerja dituangkan dalam bentuk kriteria atau dimensi yang akan dinilai yang dibuat secara bertingkat dari kurang sampai terbaik."},
+        {"key": "ceklis", "name": "Ceklis", "text": "Daftar informasi, data, ciri-ciri, karakteristik, atau elemen yang dituju."},
+        {"key": "catatan_anekdotal", "name": "Catatan Anekdotal", "text": "Catatan singkat hasil observasi yang difokuskan pada performa dan perilaku yang menonjol, disertai latar belakang kejadian dan hasil analisis atas observasi yang dilakukan."},
+        {"key": "grafik_perkembangan", "name": "Grafik Perkembangan (Kontinum)", "text": "Grafik atau infografik yang menggambarkan tahap perkembangan belajar."}
+      ],
+      "pages": [54]
+    },
+    "fase_a_rules": {
+      "summary": "Fase A (grades I-II) assessment rules tied to the PAUD-SD transition.",
+      "items": [
+        {"text": "Pada PAUD dan SD di Fase A, pelaksanaan asesmen formatif dapat dilakukan dengan observasi atau unjuk kerja sesuai perkembangan anak, tidak menggunakan tes tulis.", "force": "mandatory", "summary": "Fase A formative assessment: observation or performance, no written tests.", "pages": [45]},
+        {"text": "Untuk satuan PAUD dan SD Fase A, teknik asesmen tidak disarankan menggunakan tes, baik tertulis maupun lisan. Penerapan teknik tes dinilai kurang tepat karena pada fase ini kemampuan baca-tulis anak masih dalam tahap pembinaan. Pelaksanaan asesmen literasi dan numerasi pada tahap ini dilakukan dalam suasana bermain dan interaksi yang menyenangkan …", "force": "not_recommended", "summary": "Fase A: tests (written or oral) not recommended for any assessment.", "pages": [56]},
+        {"text": "… praktik asesmen harus didasarkan pada observasi autentik untuk mendukung perkembangan murid secara menyeluruh. Ragam bentuk asesmen yang dapat dilakukan untuk fase fondasi dan SD Fase A, antara lain: catatan anekdot, ceklis, hasil karya, portofolio, dokumentasi, dll.", "force": "mandatory", "forms": ["catatan anekdot", "ceklis", "hasil karya", "portofolio", "dokumentasi"], "pages": [56]},
+        {"text": "Upaya pemenuhan kemampuan fondasi di Fase A dapat didukung dengan asesmen awal di masa pengenalan lingkungan sekolah dengan teknik asesmen yang sesuai dengan anak usia dini. Hasil … dapat digunakan oleh pendidik untuk: (i) memperkaya informasi tentang murid, (ii) menjadi rujukan untuk merefleksikan alur tujuan pembelajaran …, dan (iii) merancang perencanaan pembelajaran yang membangun kemampuan fondasi.", "force": "optional", "pages": [45]},
+        {"text": "… satuan pendidikan menyesuaikan kebijakan Sistem Penerimaan Murid Baru (SPMB) untuk tidak menggunakan tes terkait calistung (baca, tulis, hitung) sebagai pertimbangan kriteria masuk SD.", "force": "mandatory", "pages": [21]}
+      ],
+      "grade1_initial_assessment_example": {
+        "source": "Lampiran 4 Contoh Langkah-langkah Pelaksanaan Asesmen Awal Jenjang SD untuk Transisi PAUD SD",
+        "window": "dua minggu pertama di awal tahun ajaran baru bagi kelas 1 SD",
+        "steps": [
+          "Langkah pertama, tentukan aspek kemampuan fondasi yang ingin diamati. Karena perkembangan anak bersifat holistik, maka dapat ditentukan lebih dari satu kemampuan fondasi yang ingin ditinjau.",
+          "Langkah kedua, rancang kegiatan yang dapat digunakan untuk mengamati perilaku tersebut. …",
+          "Langkah ketiga, identifikasi mata pelajaran yang dapat digunakan. …",
+          "Langkah keempat, dokumentasikan informasi tersebut di lembar asesmen awal. Rekapan informasi tidak harus untuk setiap murid. Serupa dengan prinsip asesmen formatif, informasi dapat berupa kemampuan murid secara umum, serta catatan khusus untuk tindak lanjut, seperti misalnya murid yang perlu pendampingan lebih lanjut.",
+          "Langkah kelima, identifikasi pertimbangan yang perlu masuk ke dalam rancangan kegiatan pembelajaran ke depan."
+        ],
+        "observation_sheet_rows": ["Aspek Kemampuan fase fondasi yang akan diamati", "Contoh perilaku kemampuan fase fondasi yang perlu diamati", "Rancangan kegiatan", "Catatan/Hasil dari Asesmen Awal (Pertanyaan pemandu: bagaimana kondisi capaian murid secara umum? Apakah ada murid yang perlu perhatian khusus?)", "Rancangan Kegiatan Pembelajaran ke depan perlu mempertimbangkan …"],
+        "example_activities": ["Permainan “Ibu Berkata!” (menyimak dan mengikuti instruksi, koordinasi gerak)", "Kegiatan berbagi cerita tentang sekolah dengan media gambar, ditambah tulisan apabila sudah bisa"],
+        "pages": [103, 104, 105]
+      },
+      "pages": [21, 45, 56, 103, 104, 105]
+    },
+    "kktp": {
+      "definition": {
+        "text": "Untuk mengetahui apakah murid telah berhasil mencapai tujuan pembelajaran, pendidik perlu menetapkan kriteria ketercapaian tujuan pembelajaran. Kriteria ini dikembangkan saat pendidik merencanakan asesmen, yang dilakukan saat pendidik menyusun perencanaan pembelajaran … Kriteria ini merupakan penjelasan tentang kompetensi apa yang perlu ditunjukkan/didemonstrasikan murid sebagai bukti (evidence) bahwa ia telah mencapai tujuan pembelajaran.",
+        "force": "mandatory",
+        "pages": [48]
+      },
+      "not_only_numbers": {
+        "text": "Yang perlu digaris bawahi adalah bahwa Pendidik membuat kriteria ketercapaian tujuan pembelajaran, bukan hanya berupa angka.",
+        "also": "Kriteria ini bukan berupa angka, melainkan kalimat yang menjelaskan penguasaan kompetensi pada tujuan pembelajaran. Misalnya, “murid menguasai semua indikator tanpa banyak menghadapi kesulitan.”",
+        "pages": [63, 64]
+      },
+      "communicate_to_pupils": {
+        "text": "Pendidik menentukan kriteria ketercapaian dan menyampaikannya pada murid sehingga mereka memahami ekspektasi yang perlu dicapai.",
+        "pages": [21]
+      },
+      "approaches_text": "… kriteria yang digunakan untuk menentukan apakah murid telah mencapai tujuan pembelajaran dapat dikembangkan pendidik dengan menggunakan beberapa pendekatan, di antaranya: 1) menggunakan deskripsi kriteria; 2) menggunakan rubrik; 3) menggunakan skala atau interval nilai; dan 4) menggunakan persentase, atau pendekatan lainnya sesuai dengan kebutuhan dan kesiapan pendidik dalam mengembangkannya.",
+      "approaches": [
+        {
+          "order": 1,
+          "key": "deskripsi_kriteria",
+          "name": "Menggunakan Deskripsi Kriteria",
+          "sd_example": {
+            "subject": "Bahasa Indonesia", "phase": "C",
+            "tp": "Murid mampu menulis laporan dari gagasan, hasil pengamatan, pengalaman, dan imajinasi.",
+            "table": "Tabel 3.4",
+            "columns": ["Kriteria", "Belum Tercapai", "Tercapai"],
+            "criteria": [
+              {"text": "Laporan menunjukkan kemampuan penulisan teks eksplanasi dengan runtut.", "example_mark": "Tercapai"},
+              {"text": "Laporan menunjukkan hasil pengamatan berdasarkan data yang terkumpul.", "example_mark": "Belum Tercapai"},
+              {"text": "Laporan menceritakan pengalaman secara terstruktur.", "example_mark": "Belum Tercapai"},
+              {"text": "Laporan menjelaskan hubungan kausalitas yang logis disertai dengan argumen yang logis sehingga dapat meyakinkan pembaca.", "example_mark": "Tercapai"}
+            ],
+            "conclusion": "Murid dianggap mencapai tujuan pembelajaran jika minimal 3 kriteria tercapai. Pada contoh ini, hanya ada dua kriteria yang tercapai sehingga murid masuk kategori belum mencapai tujuan pembelajaran. Oleh karena itu, perlu dilakukan intervensi pembelajaran agar pencapaian murid dapat diperbaiki.",
+            "threshold": {"min_criteria_met": 3, "of": 4}
+          },
+          "pages": [48, 49]
+        },
+        {
+          "order": 2,
+          "key": "rubrik",
+          "name": "Menggunakan Rubrik",
+          "text": "… dalam tugas menulis laporan, pendidik menetapkan kriteria ketercapaian yang terdiri atas dua bagian: Isi laporan dan penulisan. Dalam rubrik terdapat empat tahap pencapaian, dari baru berkembang, layak, cakap hingga mahir. Dalam setiap tahapan ada deskripsi yang menjelaskan performa murid.",
+          "levels": ["Baru berkembang", "Layak", "Cakap", "Mahir"],
+          "sd_example": {
+            "subject": "Bahasa Indonesia", "phase": "C",
+            "table": "Tabel 3.5. Contoh Rubrik untuk Kriteria Ketuntasan Tujuan Pembelajaran",
+            "rows": [
+              {"criterion": "Isi laporan", "baru_berkembang": "Belum mampu menulis teks eksplanasi, hasil pengamatan, dan pengalaman belum jelas tertuang dalam tulisan. Ide dan informasi dalam laporan tercampur dan hubungan antara paragraf tidak berhubungan.", "layak": "Mampu menulis teks eksplanasi, hasil pengamatan, dan pengalaman secara jelas. Laporan menunjukkan hubungan yang jelas di sebagian paragraf.", "cakap": "Mampu menulis teks eksplanasi, hasil pengamatan, dan pengalaman secara jelas. Laporan menjelaskan hubungan kausalitas yang logis disertai dengan argumen yang logis sehingga dapat meyakinkan pembaca.", "mahir": "Mampu menulis teks eksplanasi, hasil pengamatan, dan pengalaman secara jelas. Laporan menjelaskan hubungan kausalitas yang logis disertai dengan argumen yang logis sehingga dapat meyakinkan pembaca serta ada fakta-fakta pendukung yang relevan."},
+              {"criterion": "Penulisan (tanda baca dan huruf kapital)", "baru_berkembang": "Belum menggunakan tanda baca dan huruf kapital atau sebagian besar tidak digunakan secara tepat.", "layak": "Hanya menggunakan tanda baca atau hanya huruf kapital saja.", "cakap": "Sudah menggunakan tanda baca dan huruf kapital tapi belum tepat.", "mahir": "Semua tanda baca dan huruf kapital digunakan secara tepat."}
+            ],
+            "conclusion": "Murid dianggap sudah mencapai tujuan pembelajaran jika kedua kriteria di atas mencapai minimal tahap cakap.",
+            "threshold": {"min_level_all_criteria": "Cakap"}
+          },
+          "pages": [49, 50]
+        },
+        {
+          "order": 3,
+          "key": "interval_nilai",
+          "name": "Menggunakan interval nilai",
+          "text": "Pendidik dapat menggunakan interval nilai yang diolah dari rubrik. … Untuk setiap kriteria terdapat 5 (lima) skala pencapaian (1-5).",
+          "sd_example": {
+            "subject": "Bahasa Indonesia", "phase": "C",
+            "table": "Tabel 3.7. Contoh Kriteria Ketuntasan Tujuan Pembelajaran Menggunakan Interval",
+            "scale": [
+              {"value": 1, "text": "belum muncul pada bagian pembuka, isi dan penutup"},
+              {"value": 2, "text": "muncul pada salah satu unsur"},
+              {"value": 3, "text": "muncul pada pada dua unsur"},
+              {"value": 4, "text": "muncul pada tiga unsur"},
+              {"value": 5, "text": "muncul pada pembuka, isi, dan penutup; serta menambahkan rekomendasi"}
+            ],
+            "criteria": ["Laporan menunjukkan kemampuan penulisan teks eksplanasi dengan runtut.", "Laporan menunjukkan hasil pengamatan yang jelas.", "Laporan menceritakan pengalaman secara jelas.", "Laporan menjelaskan hubungan kausalitas yang logis disertai dengan argumen yang logis sehingga dapat meyakinkan pembaca."],
+            "example_marks": [4, 4, 4, 2],
+            "flex_note": "*Pendidik diberi keleluasaan untuk menentukan jumlah kriteria dan skala ketercapaiannya, sesuai dengan kebutuhan.",
+            "weighting_note": "Diasumsikan untuk setiap kriteria memiliki tingkat kesulitan yang sama, sehingga bobotnya sama. Pembagi merupakan total dari jumlah skala (dalam hal ini 5 skala) dan nilai maksimum (dalam hal ini nilai maksimumnya 5). Satuan pendidikan dan/atau pendidik dapat memberikan bobot sehingga penghitungan disesuaikan dengan bobot kriteria.",
+            "conversion_example": "Didi memperoleh 3 kriteria pada bobot 4, dan satu kriteria berada pada bobot 2. Oleh karena itu, pendidik dapat menghitung 3x4 = 12, ditambah 2x1 = 2. Jadi, 12+2 = 14. Karena kriterianya ada 4 dan skalanya ada 5 sehingga jumlah pembagi adalah 20. Jadi, 14:20 x100 = 70. Dengan demikian, murid mendapat nilai 70. Dengan menggunakan interval nilai di atas, Didi berada pada interval 61-80.",
+            "formula_summary": "score = sum(scale points) / (number_of_criteria × max_scale) × 100; e.g. (4+4+4+2)/(4×5)×100 = 70."
+          },
+          "interval_table": {
+            "text": "Setelah mendapatkan nilai (baik dari rubrik ataupun nilai dari tes), pendidik dan/atau satuan pendidikan dapat menentukan interval nilai untuk menentukan ketercapaian dan tindak lanjut sesuai dengan intervalnya. Interval nilai yang digunakan adalah sebagai berikut:",
+            "force": "optional",
+            "rows": [
+              {"min": 0, "max": 20, "achieved": false, "follow_up": "remedial_all", "text": "Belum mencapai tujuan pembelajaran. Pendidik menanyakan kepada murid tantangan apa yang mereka hadapi (perlu remedial dengan mempelajari kembali seluruh kriteria)."},
+              {"min": 21, "max": 40, "achieved": false, "follow_up": "remedial_most", "text": "Belum mencapai tujuan pembelajaran, perlu remedial dengan mempelajari kembali sebagian besar kriteria."},
+              {"min": 41, "max": 60, "achieved": false, "follow_up": "remedial_needed_criteria", "text": "Hampir mencapai tujuan pembelajaran, perlu remedial dengan mempelajari kembali kriteria yang diperlukan."},
+              {"min": 61, "max": 80, "achieved": true, "follow_up": "continue", "text": "Sudah mencapai tujuan pembelajaran"},
+              {"min": 81, "max": 100, "achieved": true, "follow_up": "enrichment", "text": "Sudah mencapai tujuan pembelajaran, perlu tantangan lebih (pengayaan)."}
+            ],
+            "pages": [52, 53]
+          },
+          "pages": [51, 52, 53]
+        },
+        {
+          "order": 4,
+          "key": "persentase",
+          "name": "Menggunakan pendekatan persentase",
+          "sd_example": {
+            "subject": "Bahasa Indonesia", "phase": "C",
+            "text": "Misalnya, pada Fase C terdapat 4 tujuan pembelajaran. Pada masing-masing tujuan pembelajaran terdapat 5 kriteria/indikator pembelajaran sehingga dalam satu fase murid mempunyai 20 indikator/kriteria pembelajaran. Jika murid A telah mencapai 15 kriteria/indikator pembelajaran, maka ia telah menguasai 75%. Murid B dinyatakan telah mencapai 18 kriteria pembelajaran. Dengan demikian, murid B telah menguasai 90% …",
+            "formula_summary": "percent = criteria_met / total_criteria × 100."
+          },
+          "pages": [53]
+        }
+      ],
+      "kktp_derivation_guidance": {
+        "text": "Untuk menyusun Kriteria Ketercapaian Tujuan Pembelajaran, pendidik perlu terlebih dahulu memahami isi tujuan pembelajaran dengan mencermati kata kerja dan materi utamanya. Langkah selanjutnya adalah merumuskan kriteria-kriteria yang menunjukkan kesuksesan murid dalam mencapai tujuan pembelajaran, menggunakan kata kerja yang jelas dan bisa diamati. Kriteria yang dibuat harus mudah dipahami, bisa diukur, dan mencerminkan kemampuan berpikir serta sikap murid. Selain itu, kriteria juga perlu tersusun secara runtut dan mencakup berbagai aspek, seperti pemahaman, keterampilan, serta keterlibatan sosial atau emosional. Terakhir, pastikan kriteria mencerminkan pembelajaran yang berkesadaran (mendorong murid berpikir), bermakna (terkait dengan kehidupan nyata), dan menyenangkan (melibatkan kreativitas dan interaksi yang positif).",
+        "force": "mandatory",
+        "summary": "Criteria must be understandable, measurable, use observable verbs, be ordered, cover understanding/skills/social-emotional aspects, and reflect the three learning principles.",
+        "pages": [108]
+      },
+      "sd_examples_lampiran_5": [
+        {
+          "subject": "Bahasa Indonesia", "phase": "C",
+          "rows": [
+            {"alternative": "Alternatif 1. Merumuskan tujuan pembelajaran secara langsung berdasarkan CP", "tp": "Menganalisis informasi dari teks nonsastra berbentuk teks aural (teks yang dibacakan dan/atau didengarkan)", "criteria": ["Menentukan gagasan dari teks yang disimak", "Mengidentifikasi informasi penting dalam teks yang disimak.", "Menyimpulkan isi teks dengan kalimat sendiri secara runtut dan logis.", "Menganalisis hubungan antarbagian teks, seperti sebab-akibat, perbandingan, atau urutan peristiwa.", "Mengaitkan isi teks dengan pengalaman pribadi atau konteks kehidupan nyata.", "Mengomunikasikan hasil analisis secara lisan atau tertulis dengan alasan yang logis dan runtut."]},
+            {"alternative": "Alternatif 2. Merumuskan tujuan pembelajaran dengan menganalisis ‘kompetensi’ dan ‘konten’ pada ruang lingkup materi pada CP", "tp": "Menganalisis isi teks sastra (puisi) berbentuk teks aural", "criteria": ["Menganalisis unsur intrinsik puisi yang dibacakan dan/atau didengarkan.", "Mengaitkan pesan dari puisi dengan kehidupan sehari-hari atau pengalaman pribadi.", "Mempresentasikan hasil analisis puisi yang telah dibacakan dan/atau didengarkan dengan bahasa sendiri secara komunikatif."]},
+            {"alternative": "Alternatif 3. Merumuskan tujuan pembelajaran Lintas Elemen CP", "tp": "Menganalisis informasi dari teks nonsastra berbentuk teks aural (teks yang dibacakan dan/atau didengarkan), menulis berbagai tipe teks sederhana berdasarkan gagasan dengan rangkaian kalimat kompleks secara kreatif dan mempresentasikannya", "criteria": ["Mengidentifikasi informasi teks sederhana yang dibacakan/diperdengarkan", "Menyimpulkan isi dari teks sederhana yang dibacakan/diperdengarkan.", "Memilih tipe teks sederhana yang akan dikembangkan.", "Menentukan tema dan gagasan pada tipe teks sederhana yang akan dikembangkan.", "Menyusun kerangka karangan berdasarkan tema dan gagasan yang akan dikembangkan.", "Mengembangkan kerangka karangan ke dalam berbagai tipe teks sederhana.", "Memperbaiki hasil karangan berdasarkan umpan balik", "Mempresentasikan hasil tulisan yang telah dibuat"], "note": "pendidik dapat menyesuaikan tipe teks sederhana yang akan digunakan untuk mencapai tujuan pembelajaran"}
+          ],
+          "pages": [106, 107]
+        },
+        {
+          "subject": "IPAS", "phase": "B",
+          "rows": [
+            {"tp": "Menghasilkan solusi untuk masalah yang berkaitan dengan pelestarian sumber daya alam sebagai upaya mitigasi perubahan iklim", "criteria": ["Mengidentifikasi berbagai sumber daya alam di lingkungan sekitar.", "Menjelaskan cara-cara pelestarian sumber daya alam sederhana yang sudah dikenalnya.", "Menghubungkan kegiatan manusia dengan dampak terhadap lingkungan dan perubahan iklim.", "Mengemukakan masalah lingkungan sederhana yang terjadi di sekitar.", "Mengajukan ide atau solusi sederhana untuk menjaga sumber daya alam di rumah atau sekolah.", "Merancang aksi nyata pelestarian lingkungan yang dapat dilakukan secara sederhana.", "Melakukan aksi pelestarian sumber daya alam secara sederhana.", "Mengungkapkan perasaan, pendapat, atau harapan terhadap aksi pelestarian yang sudah dilakukan."]}
+          ],
+          "pages": [108]
+        }
+      ],
+      "teacher_latitude": {
+        "text": "Pendidik adalah sosok yang paling memahami kemajuan belajar murid sehingga pendidik perlu memiliki kompetensi dan keleluasaan untuk melakukan asesmen agar sesuai dengan kebutuhan murid masing- masing. Keleluasaan tersebut mencakup perancangan asesmen, waktu pelaksanaan, penggunaan teknik dan instrumen asesmen, penentuan kriteria ketercapaian tujuan pembelajaran, dan pengolahan hasil asesmen. Satuan pendidikan berdasarkan kesepakatan pendidik berwenang untuk memutuskan perlu atau tidaknya melakukan penilaian tersebut.",
+        "force": "school_discretion",
+        "pages": [53]
+      },
+      "pages": [48, 49, 50, 51, 52, 53, 106, 107, 108]
+    },
+    "remedial_enrichment": {
+      "remedial": {
+        "text": "Tujuan remedial bukan hanya untuk perbaikan nilai, tetapi untuk meningkatkan capaian belajar murid. Dengan demikian, remedial tidak dilakukan dengan memberikan soal atau tugas semata, melainkan dengan memberikan pendampingan kepada murid untuk mempelajari kembali kriteria-kriteria tujuan pembelajaran yang belum tercapai.",
+        "pages": [54]
+      },
+      "enrichment": {
+        "text": "Pengayaan dapat dilakukan dengan memberikan tantangan yang berbeda dengan tingkat kompleksitas yang lebih dari murid yang lain. Pengayaan bukan berarti murid diberi soal yang lebih sulit, tetapi untuk mempertajam dan memperluas pengetahuan murid dengan berbagai referensi.",
+        "pages": [54]
+      },
+      "not_always_written": {
+        "text": "Asesmen formatif dan sumatif tidak selalu dalam bentuk tes tertulis, tetapi pendidik dapat menggunakan berbagai variasi teknik asesmen lainnya.",
+        "pages": [54]
+      }
+    }
+  },
+  "results_processing": {
+    "no_mixing_rule": {
+      "text": "Penting untuk diperhatikan bahwa pendidik tidak menggabungkan hasil asesmen formatif dan sumatif karena asesmen formatif dan sumatif memiliki fungsi yang berbeda. Asesmen formatif bertujuan untuk memberikan umpan balik pada proses sehingga asesmen formatif bukan menjadi penentu atau pembagi untuk nilai akhir. Sementara itu, asesmen sumatif bertujuan untuk untuk menilai pencapaian hasil belajar murid.",
+      "force": "mandatory",
+      "summary": "Final grade = summative only; formative scores never enter the average or divisor.",
+      "pages": [60]
+    },
+    "split_summatives": {
+      "text": "Dalam mengolah dan menentukan hasil akhir asesmen sumatif, pendidik perlu membagi asesmennya ke dalam beberapa kegiatan asesmen sumatif agar murid dapat menyelesaikan asesmen sumatifnya dalam kondisi yang optimal (tidak terburu-buru atau tidak terlalu padat). Untuk situasi ini, nilai akhir merupakan gabungan dari beberapa kegiatan asesmen tersebut.",
+      "force": "recommended",
+      "pages": [60]
+    },
+    "method": {
+      "text": "Pengolahan hasil asesmen dilakukan dengan menganalisis secara kuantitatif dan/atau kualitatif terhadap hasil asesmen. Hasil asesmen untuk setiap tujuan pembelajaran diperoleh melalui data kualitatif (hasil amatan atau rubrik) maupun data kuantitatif (berupa angka). Data-data ini diperoleh dengan membandingkan pencapaian hasil belajar murid dengan kriteria ketercapaian tujuan pembelajaran …",
+      "pages": [60]
+    },
+    "per_tp": {
+      "text": "Asesmen sumatif dilaksanakan secara periodik setiap selesai satu atau lebih tujuan pembelajaran. Hasil asesmen perlu diolah menjadi capaian dari tujuan pembelajaran setiap murid. Hasil asesmen dapat berupa data kualitatif ataupun data kuantitatif. Pendidik diberi keleluasaan untuk mengolah data kuantitatif, baik secara rerata maupun proporsional.",
+      "sd_example": {
+        "subject": "IPAS", "phase": "C",
+        "tp": "Menyelidiki ragam sumber energi yang dapat dimanfaatkan di lingkungan sekitar",
+        "indicators": ["kemampuan menguraikan manfaat sumber energi; dan", "kemampuan menjelaskan ragam sumber energi alternatif."],
+        "technique": "Indikator 1 dan 2 menggunakan teknik tes tertulis dan essay.",
+        "quality_levels": ["Perlu Bimbingan", "Cukup", "Baik", "Sangat Baik"],
+        "rubric_table": "Tabel 5.1",
+        "rubric": [
+          {"criterion": "Mampu menguraikan manfaat sumber energi", "perlu_bimbingan": "Belum Mampu menguraikan manfaat sumber energi", "cukup": "Menguraikan 1 contoh manfaat sumber energi", "baik": "Menguraikan 2 contoh manfaat sumber energi", "sangat_baik": "Menguraikan lebih dari 2 contoh manfaat sumber energi"},
+          {"criterion": "Mampu menjelaskan ragam sumber energi alternatif", "perlu_bimbingan": "belum mampu menjelaskan ragam sumber energi alternatif", "cukup": "Menjelaskan 1 ragam sumber energi alternatif", "baik": "Menjelaskan 2 ragam sumber energi alternatif", "sangat_baik": "Menjelaskan 3 ragam sumber energi alternatif"}
+        ],
+        "threshold_rule": "Pendidik menentukan kriteria ketercapaian tujuan pembelajaran pada kualitas yang diyakininya, misalkan pada kualitas cukup, murid dianggap telah mencapai kriteria ketercapaian kompetensi.",
+        "result_table": "Tabel 5.2 — columns Nama, Kriteria 1, Kriteria 2, Deskripsi; e.g. 'Amar | Baik | Cukup | Mampu menguraikan 2 contoh manfaat sumber energi dan mampu menjelaskan 1 ragam sumber energi alternatif.'"
+      },
+      "pages": [61, 62]
+    },
+    "semester_final_grade": {
+      "text": "Tujuan pembelajaran yang dicapai murid merupakan bahan yang diolah menjadi nilai akhir mata pelajaran dalam kurun waktu pelaporan (biasanya satu semester). Untuk mendapatkan nilai akhir mata pelajaran tersebut, data kuantitatif langsung diolah, sedangkan untuk deskripsi, pendidik dapat memberikan penjelasan mengenai kompetensi yang sudah dikuasai murid, dan kompetensi yang belum dikuasai, serta dapat ditambahkan tindak lanjut secara ringkas.",
+      "pages": [62]
+    },
+    "achievement_per_tp_rule": {
+      "text": "Ketercapaian ditentukan untuk setiap tujuan pembelajaran, bukan hasil akhir pengolahan nilai sumatif per mata pelajaran. Ketidaktuntasan ditandai (*) di tujuan pembelajaran tertentu saja. Hal ini bertujuan untuk mengomunikasikan kepada orang tua dan murid tentang tujuan pembelajaran mana yang belum dituntaskan oleh murid.",
+      "range_rule": "Asumsi: satuan pendidikan menggunakan rentang nilai untuk ketercapaian tujuan pembelajaran. Rentang ini bisa sama untuk setiap mata pelajaran atau berbeda, tergantung kesepakatan para pendidik di satuan pendidikan.",
+      "range_example": "Para pendidik menyepakati bahwa rentang nilai 0-55 belum masuk kategori ketercapaian dan 56-100 sudah masuk kategori ketercapaian.",
+      "force": "school_discretion",
+      "example_note": "The worked table uses a Kelas VII/D pupil (Budi) with IPA, Bahasa Indonesia and Agama per TP, 'Hasil Akhir' and '*' marks; the method applies to SD.",
+      "progressive_tp_rule": "… jika bentuk datanya sebagai pembelajaran prasyarat serta menunjukkan progres, maka pendidik cukup mengambil angka akhir saja (pada TP 4).",
+      "pages": [63]
+    },
+    "qualitative_per_tp": {
+      "text": "Apabila pengukuran pencapaian dilakukan untuk setiap tujuan pembelajaran dengan data kualitatif (skala dengan deskriptor) … Tanda centang diberikan sesuai dengan rubrik ketercapaian yang ada pada masing-masing tujuan pembelajaran.",
+      "scale": [
+        {"value": 1, "label": "Perlu bimbingan", "text": "murid masih kesulitan dan sangat bergantung pada bimbingan dalam mencapai tujuan pembelajaran dan belum siap memasuki pembelajaran lebih lanjut. Perlu direkomendasikan untuk menguatkan tujuan pembelajaran."},
+        {"value": 2, "label": "Cukup", "text": "murid masih kesulitan dalam mencapai sebagian tujuan pembelajaran dan perlu menguatkan tujuan pembelajaran yang dipelajari sebelum mengikuti pembelajaran selanjutnya dengan penekanan pada aspek-aspek yang belum dikuasai."},
+        {"value": 3, "label": "Baik", "text": "murid sudah menuntaskan sebagian besar indikator tujuan pembelajaran dan perlu siap mengikuti pembelajaran selanjutnya."},
+        {"value": 4, "label": "Sangat baik", "text": "murid mengikuti pembelajaran selanjutnya dan dilibatkan menjadi tutor sebaya atau tantangan lebih."}
+      ],
+      "pages": [64]
+    },
+    "aggregation_options": {
+      "text": "Pengolahan nilai dalam panduan ini menggunakan tiga opsi, yaitu pembobotan, persentase, dan rata rata. Opsi pembobotan dan persentase dipilih dengan ketentuan materi pembelajaran bersifat progresif, atau berkaitan langsung. … Opsi rata-rata dipilih dengan ketentuan karakteristik materi pelajaran bersifat lepas pada tujuan pembelajarannya, dengan kata lain tujuan pembelajaran satu bukan menjadi dasar pengetahuan atau prasyarat untuk tujuan pembelajaran berikutnya.",
+      "options": [
+        {
+          "key": "pembobotan",
+          "name": "Opsi Pembobotan",
+          "when": "materi pembelajaran yang bersifat progresif … ada lingkup materi tertentu yang mempunyai tingkat kesulitan lebih sehingga perlu diberikan pembobotan yang lebih besar.",
+          "sd_example": {
+            "summary": "Matematika SD-level lingkup materi (penjumlahan bilangan cacah, mengukur panjang dengan satuan baku, menyusun dan menguraikan bangun datar, menyajikan data dalam diagram gambar) weighted 20/20/20/40; weighted parts rounded and summed.",
+            "weights": [
+              {"lingkup_materi": "Melakukan penjumlahan bilangan cacah", "weight_percent": 20},
+              {"lingkup_materi": "Mengukur Panjang dengan satuan baku", "weight_percent": 20},
+              {"lingkup_materi": "Menyusun dan menguraikan berbagai bangun datar", "weight_percent": 20},
+              {"lingkup_materi": "Menyajikan data dalam bentuk diagram gambar", "weight_percent": 40}
+            ],
+            "rows": [
+              {"name": "Edo", "scores": [85, 83, 60, 84], "weighted": [17, 17, 12, 34], "nilai_rapor": 80},
+              {"name": "Dayu", "scores": [64, 68, 40, 96], "weighted": [13, 14, 8, 38], "nilai_rapor": 73},
+              {"name": "Siti", "scores": [87, 79, 80, 78], "weighted": [17, 16, 16, 31], "nilai_rapor": 80},
+              {"name": "Lani", "scores": [90, 90, 90, 94], "weighted": [18, 18, 18, 38], "nilai_rapor": 92}
+            ]
+          },
+          "pages": [64, 65]
+        },
+        {
+          "key": "persentase",
+          "name": "Opsi Persentase",
+          "when": "materi pembelajaran bersifat progresif, atau berkaitan langsung.",
+          "text": "Pengolahan nilai dengan sistem persentase didapat dari seberapa banyak tujuan yang telah tercapai dari beberapa ujian sumatif. … didapat dari jumlah tujuan pembelajaran yang tercapai dibagi dengan total jumlah tujuan pembelajaran.",
+          "sd_example": {
+            "threshold_text": "… menetapkan jika murid memperoleh nilai 75 dari hasil sumatif, maka murid telah mencapai tujuan pembelajaran.",
+            "rounding": "*Pembulatan Normal",
+            "rows": [
+              {"name": "Edo", "scores": [83, 83, 60, 84], "achieved": [true, true, false, true], "nilai_rapor": 75, "label": "3 dari 4 Tercapai"},
+              {"name": "Dayu", "scores": [64, 78, 40, 80], "achieved": [false, true, false, true], "nilai_rapor": 50, "label": "2 dari 4 Tercapai"},
+              {"name": "Siti", "scores": [87, 79, 80, 78], "achieved": [true, true, true, true], "nilai_rapor": 100, "label": "4 dari 4 Tercapai"},
+              {"name": "Lani", "scores": [90, 90, 90, 94], "achieved": [true, true, true, true], "nilai_rapor": 100, "label": "4 dari 4 Tercapai"}
+            ]
+          },
+          "pages": [65, 66]
+        },
+        {
+          "key": "rata_rata",
+          "name": "Opsi Rata-Rata",
+          "when": "karakteristik materi pelajaran bersifat lepas pada tujuan pembelajarannya …",
+          "summary": "Plain mean of the summative scores (printed example uses SMA topics: Edo 85/83/60/84 → 78).",
+          "pages": [66]
+        }
+      ],
+      "pages": [64, 65, 66]
+    },
+    "quantify_qualitative": {
+      "text": "Beberapa contoh proses pengolahan hasil asesmen di atas adalah inspirasi bagi pendidik. Tentunya pendidik dapat menggunakan cara lain, namun tetap menjaga validitas dan akurasi penilaian … Pada satuan pendidikan yang menggunakan angka dan deskripsi pada pelaporan hasil belajarnya, hasil asesmen kualitatif tersebut perlu dikuantifikasi.",
+      "force": "mandatory",
+      "pages": [69]
+    }
+  },
+  "reporting": {
+    "rapor_required": {
+      "text": "Pelaporan hasil asesmen dituangkan dalam bentuk laporan hasil belajar. Laporan hasil belajar paling sedikit memberikan informasi mengenai pencapaian hasil belajar murid. Satuan pendidikan perlu melaporkan hasil belajar dalam bentuk rapor.",
+      "force": "mandatory",
+      "pages": [70]
+    },
+    "nature": {
+      "text": "… laporan hasil belajar hendaknya bersifat sederhana dan informatif. Laporan hasil belajar memberikan informasi capaian kompetensi oleh murid dan strategi tindak lanjut bagi pendidik, satuan pendidikan, serta orang tua untuk mendukung capaian pembelajaran.",
+      "force": "recommended",
+      "pages": [70]
+    },
+    "minimum_components_sd": {
+      "text": "Komponen rapor murid SD/MI, SMP/MTs, SMA/MA, dan SMK/MAK atau sederajat minimal memuat informasi mengenai:",
+      "force": "mandatory",
+      "items": [
+        {"order": 1, "key": "identitas_murid", "name": "Identitas murid"},
+        {"order": 2, "key": "nama_satuan_pendidikan", "name": "Nama satuan pendidikan"},
+        {"order": 3, "key": "kelas", "name": "Kelas"},
+        {"order": 4, "key": "semester", "name": "Semester"},
+        {"order": 5, "key": "mata_pelajaran", "name": "Mata pelajaran"},
+        {"order": 6, "key": "nilai", "name": "Nilai", "fase_a_exception": "Fase A may omit numeric grades (see fase_a_options)."},
+        {"order": 7, "key": "deskripsi_capaian_kompetensi", "name": "Deskripsi Capaian Kompetensi"},
+        {"order": 8, "key": "deskripsi_capaian_kokurikuler", "name": "Deskripsi Capaian Kokurikuler"},
+        {"order": 9, "key": "kegiatan_ekstrakurikuler", "name": "Kegiatan ekstrakurikuler"},
+        {"order": 10, "key": "ketidakhadiran", "name": "Ketidakhadiran"},
+        {"order": 11, "key": "catatan_wali_kelas", "name": "Catatan Wali Kelas"},
+        {"order": 12, "key": "tanggapan_orang_tua", "name": "Tanggapan Orang Tua/Wali Murid"}
+      ],
+      "pages": [73]
+    },
+    "sd_format": {
+      "title": "Format Laporan Hasil Belajar (Rapor) — Contoh format rapor SD",
+      "force": "optional",
+      "adapt_note": "Format rapor di atas dapat disesuaikan berdasarkan struktur kurikulum masing-masing jenjang.",
+      "fields": [
+        {"no": 1, "section": "header", "key": "nama_murid", "label": "Nama Murid", "fill": "Diisi nama murid"},
+        {"no": 2, "section": "header", "key": "nisn", "label": "NISN", "fill": "Diisi Nomor Induk Siswa Nasional"},
+        {"no": 3, "section": "header", "key": "sekolah", "label": "Sekolah", "fill": "Diisi nama satuan pendidikan"},
+        {"no": 4, "section": "header", "key": "alamat", "label": "Alamat", "fill": "Diisi alamat satuan pendidikan"},
+        {"no": 5, "section": "header", "key": "kelas", "label": "Kelas", "fill": "Diisi kelas yang diikuti murid"},
+        {"no": 6, "section": "header", "key": "fase", "label": "Fase", "fill": "Diisi Fase yang diikuti murid"},
+        {"no": 7, "section": "header", "key": "semester", "label": "Semester", "fill": "Diisi semester"},
+        {"no": 8, "section": "header", "key": "tahun_ajaran", "label": "Tahun Ajaran", "fill": "Diisi tahun ajaran"},
+        {"no": 9, "section": "subjects", "key": "mata_pelajaran", "label": "Mata Pelajaran", "fill": "Diisi mata pelajaran yang diikuti murid"},
+        {"no": 10, "section": "subjects", "key": "nilai_akhir", "label": "Nilai Akhir", "fill": "Diisi nilai hasil belajar murid"},
+        {"no": 11, "section": "subjects", "key": "capaian_kompetensi", "label": "Capaian Kompetensi", "fill": "Diisi capaian kompetensi murid sesuai dengan tujuan pembelajaran yang telah dicapai. Capaian kompetensi yang ditulis adalah capaian tujuan pembelajaran yang telah dikuasai murid, jika masih ada tujuan pembelajaran yang belum tercapai dapat ditulis setelahnya."},
+        {"no": 12, "section": "kokurikuler", "key": "kokurikuler", "label": "Kokurikuler", "fill": "Diisi capaian kokurikuler. Ditulis dimensi profil lulusan yang sudah diperkuat dan dimensi profil lulusan yang masih perlu penguatan."},
+        {"no": 13, "section": "ekstrakurikuler", "key": "ekstrakurikuler", "label": "Ekstrakurikuler", "fill": "Diisi ekstrakurikuler yang diikuti murid"},
+        {"no": 14, "section": "ekstrakurikuler", "key": "keterangan_ekstrakurikuler", "label": "Keterangan", "fill": "Diisi capaian ekstrakurikuler"},
+        {"no": 15, "section": "attendance", "key": "ketidakhadiran", "label": "Ketidakhadiran", "fill": "Diisi ketidakhadiran murid", "sub_fields": ["Sakit . . . hari", "Izin . . . hari", "Tanpa Keterangan . . . hari"]},
+        {"no": 16, "section": "notes", "key": "catatan_wali_kelas", "label": "Catatan Wali Kelas", "fill": "Diisi catatan wali kelas mengenai progres perkembangan murid"},
+        {"no": 17, "section": "parents", "key": "tanggapan_orang_tua", "label": "Tanggapan Orang Tua/ Wali Murid", "fill": "Diisi oleh orang tua/ wali murid yang berisi komentar, kesan, dan pesan untuk sekolah/guru."}
+      ],
+      "signature_block": ["Tempat, Tanggal rapor", "Orang Tua Murid (TTD)", "Kepala Sekolah (TTD)", "Wali Kelas (TTD)"],
+      "pages": [70, 71]
+    },
+    "description_rules": [
+      {"key": "subject_description", "text": "Deskripsi capaian kompetensi murid berisi informasi tentang kompetensi yang sudah dicapai dan kompetensi yang perlu ditingkatkan. Deskripsi ditulis menggunakan kalimat positif dan memotivasi. Deskripsi ini berdasarkan capaian murid terhadap tujuan pembelajaran yang ditetapkan per mata pelajaran", "force": "recommended", "pages": [71]},
+      {"key": "highest_lowest", "text": "Dalam penyusunan deskripsi capaian kompetensi, pendidik harus mengidentifikasi capaian kompetensi tertinggi dan terendah. Untuk melihat capaian kompetensi tertinggi ditandai dengan warna hijau dan capaian kompetensi terendah ditantai dengan warna merah.", "force": "mandatory", "pages": [71]},
+      {"key": "kokurikuler_description", "text": "Deskripsi kokurikuler berisi informasi yang menggambarkan pencapaian dimensi profil lulusan murid, menggambarkan hasil belajar secara ringkas, dan menggunakan bahasa yang positif.", "force": "recommended", "pages": [71]},
+      {"key": "transfer_pupils", "text": "Jika terdapat murid yang pindah dari satuan pendidikan yang berbeda kurikulum, maka satuan pendidikan dapat mengakomodasi murid tersebut dengan menyesuaikan dengan tingkat ketercapaian tujuan pembelajaran dengan kompetensi/indikator pembelajaran pada satuan pendidikan sebelumnya.", "force": "optional", "pages": [71]},
+      {"key": "homeroom_note", "text": "Di bagian catatan wali kelas, dapat diisi dengan pengamatan pendidik tentang capaian anak (utamanya yang terkait kepemilikan kemampuan fondasi) yang tidak terakomodasi di dalam tujuan pembelajaran yang dibangun per mata pelajaran. Bagian ini juga dapat diisikan dengan tumbuh kembang anak dan layanan kesehatan yang perlu dipenuhi dan diperhatikan orang tua/wali murid.", "force": "optional", "pages": [71]},
+      {"key": "school_latitude", "text": "Satuan pendidikan dan pendidik memiliki keleluasaan untuk menentukan deskripsi dalam menjelaskan makna nilai yang diperoleh murid. Satuan pendidikan memiliki keleluasaan untuk menentukan mekanisme dan format pelaporan hasil belajar kepada orang tua/wali.", "force": "school_discretion", "pages": [73]}
+    ],
+    "description_options": {
+      "text": "Terdapat 2 opsi dalam menyusun deskripsi capaian kompetensi pada rapor, ketiga opsi tersebut sebagai berikut.",
+      "items": [
+        {"order": 1, "key": "from_atp", "name": "Penyusunan Deskripsi Capaian Kompetensi Berdasarkan Alur Tujuan Pembelajaran", "summary": "Description lists the ATP items of the semester the pupil mastered ('Menunjukkan penguasaan yang sangat baik dalam …') and those needing work ('Perlu penguatan dalam …' / 'Perlu bimbingan dalam …'). Printed example is SMA Fase E (skipped).", "pages": [72]},
+        {"order": 2, "key": "from_material_points", "name": "Penyusunan Deskripsi Capaian Kompetensi Mengambil dari Poin-Poin Penting dari Materi yang sudah Diberikan", "sd_example": {"summary": "Highest summative → strength sentence, lowest → support sentence.", "subject_label": "Ilmu Pengetahuan Alam", "lingkup_materi": ["Cuaca di Sekitarku", "Nama-nama Hari dan Bulan", "Konsep Waktu", "Membedakan Siang-malam"], "scores": {"Edo": [80, 76, 60, 83], "na_sumatif": 74.5}, "description_high": "Menunjukkan penguasaan yang baik dalam memprediksi kondisi cuaca dan membedakan siang-malam.", "description_low": "Perlu pendampingan dalam memahami konsep waktu jam, menit, detik, perlu pembimbingan lebih lanjut agar kemampuan tersebut dikuasai secara konsisten."}, "pages": [73]}
+      ],
+      "pages": [71, 72, 73]
+    },
+    "kokurikuler_reporting": {
+      "text": "⑫ Diisi capaian kokurikuler. Ditulis dimensi profil lulusan yang sudah diperkuat dan dimensi profil lulusan yang masih perlu penguatan.",
+      "format": "Single free-text block per pupil (not per subject), no grade.",
+      "sd_examples": [
+        {"phase": "A", "text": "Ananda sudah baik dalam kemandirian yang terlihat dari kemampuan menentukan pilihan dan kegigihan menyelesaikan tugas secara tepat tanpa bergantung pada teman. Ananda masih perlu pendampingan dalam menyampaikan kembali informasi dengan tepat.", "pages": [142]},
+        {"phase": "A-C", "text": "Ananda sudah baik dalam penalaran kritis dan masih perlu pendampingan dalam mengomunikasikan gagasan dalam tema peduli lingkungan.", "pages": [144]}
+      ],
+      "pages": [70, 71, 142, 144]
+    },
+    "ekstrakurikuler_reporting": {
+      "text": "⑬ Diisi ekstrakurikuler yang diikuti murid; ⑭ Diisi capaian ekstrakurikuler",
+      "sd_examples": [
+        {"name": "Pramuka", "keterangan": "Baik, mampu menerapkan Dwi Darma maupun Dasa Darma, cakap memahami sejarah dan teknik kepramukaan.", "pages": [142, 144]},
+        {"name": "Sepak Bola", "keterangan": "Baik, menguasai teknik dasar dribbling dan passing serta mampu bekerja sama dalam tim.", "pages": [145]}
+      ],
+      "pages": [70, 142, 144, 145]
+    },
+    "attendance_reporting": {
+      "categories": ["Sakit", "Izin", "Tanpa Keterangan"],
+      "unit": "hari",
+      "pages": [70]
+    },
+    "fase_a_options": {
+      "text": "Ada dua pilihan dalam menyajikan rapor untuk Fase A dengan menggunakan nilai atau tanpa menggunakan nilai. Apabila satuan pendidikan ingin memilih opsi tanpa menggunakan nilai, maka deskripsi capaian kompetensi akan menggantikan fungsi angka sehingga deskripsi perlu spesifik dan mampu memberi gambaran tentang capaian hasil belajar murid secara jelas kepada orang tua.",
+      "force": "school_discretion",
+      "options": [
+        {"key": "description_only", "title": "Contoh Format Laporan Hasil Belajar (Rapor) Jenjang SD untuk Fase A (Opsi jika satuan pendidikan ingin langsung menggunakan deskripsi capaian kompetensi saja tanpa memasukkan angka)", "columns": ["No.", "Mata Pelajaran", "Capaian Kompetensi"], "pages": [142, 143]},
+        {"key": "grade_and_description", "title": "Contoh Format Laporan Hasil Belajar (Rapor) Jenjang SD untuk Fase A, B dan C (Opsi untuk fase A jika satuan pendidikan memilih memunculkan angka dan capaian kompetensi di rapor)", "columns": ["No.", "Mata Pelajaran", "Nilai Akhir", "Capaian Kompetensi"], "pages": [144, 145]}
+      ],
+      "fase_b_c_rule": "Fase B and C use the numeric + description format (only Fase A gets the no-number option).",
+      "homeroom_note_fase_a": {
+        "text": "Pada rapor fase A, komponen catatan direkomendasikan diisi oleh pendidik untuk menyampaikan juga terkait perkembangan kemampuan fondasi secara singkat, utamanya informasi yang tidak tersampaikan pada kolom capaian kompetensi mata pelajaran. Misalnya, gambaran dari perkembangan adaptasi murid di sekolah, interaksi murid dengan teman sebaya, imunisasi, atau hal lain yang penting disampaikan.",
+        "force": "recommended",
+        "pages": [74]
+      },
+      "description_examples": [
+        {"subject": "Pendidikan Pancasila", "strength": "Ananda menunjukkan pemahaman terhadap nilai baik yang tertuang di dalam Pancasila, dan dapat menyebutkan contoh perilakunya", "support": "Ananda masih perlu didampingi dan diingatkan tentang pentingnya mengikuti aturan yang berlaku di kelas.", "example_grade": 95},
+        {"subject": "Bahasa Indonesia", "strength": "Ananda sudah mampu memahami arti dari kosakata yang cukup kompleks, dan juga sudah mampu memahami makna dari sejumlah kalimat dengan tepat.", "support": "Ananda masih perlu bimbingan dalam menyampaikan gagasan, instruksi dan keinginannya.", "example_grade": 65},
+        {"subject": "Matematika", "strength": "Ananda sudah memahami berbagai bentuk bangun datar dan sudah mengenal tentang penentuan besar kecilnya suatu bangun datar dengan menggunakan pengukuran tidak baku. Ananda sudah mampu melakukan operasi penjumlahan dengan baik", "support": "Ananda masih perlu didampingi dalam melakukan operasi pengurangan.", "example_grade": 80}
+      ],
+      "pages": [74, 142, 143, 144, 145]
+    },
+    "frequency_and_channel": {
+      "text": "Pelaporan hasil belajar disampaikan sekurang-kurangnya pada setiap akhir semester. Di samping itu, satuan pendidikan menyampaikan rapor murid secara berkala melalui e-rapor/dapodik. Untuk pendidikan khusus dapat menyesuaikan dengan jenjang yang ada.",
+      "force": "mandatory",
+      "min_frequency": "every_semester_end",
+      "channel": "e-rapor/dapodik",
+      "pages": [73, 74]
+    },
+    "parent_communication": {
+      "text": "Komunikasi dengan orang tua terkait kemajuan murid sebaiknya terus dilakukan sepanjang tahun ajaran dan jika mendesak, dapat disampaikan ke orang tua sebelum masa penyampaian rapor.",
+      "force": "recommended",
+      "pages": [74]
+    },
+    "other_report_forms": {
+      "text": "Sebagai bahan pertimbangan, satuan pendidikan dapat juga menambahkan bentuk laporan lainnya, seperti portofolio, diskusi/konferensi, pameran karya, atau skill passport.",
+      "force": "optional",
+      "items": [
+        {"key": "portofolio", "name": "Portofolio", "text": "Portofolio bertujuan untuk melihat perkembangan belajar murid melalui dokumentasi hasil karya murid. Isi portofolio adalah hasil karya yang dipilih oleh murid berdasarkan hasil diskusi dengan pendidik. Portofolio juga perlu dilengkapi refleksi pendidik dan murid terhadap pencapaian pembelajaran selama ini.", "pages": [156]},
+        {"key": "diskusi_konferensi", "name": "Diskusi/Konferensi", "text": "Diskusi/konferensi bertujuan untuk berbagi informasi capaian hasil belajar dan informasi lainnya antara pendidik, murid, dan orang tua. Diskusi/konferensi dapat dilakukan dalam suasana formal maupun informal.", "pages": [157]},
+        {"key": "pameran_karya", "name": "Pameran Karya", "text": "Pameran karya berperan sebagai wadah komunikasi terhadap proses belajar dan juga sebagai asesmen sumatif, di mana murid dapat membagikan refleksi proses belajar, portofolio, lembar kerja, hasil tulisan, produk kesenian, dll. …", "pages": [157]}
+      ],
+      "skipped_note": "Skill passport is SMK-only (p.158).",
+      "pages": [74, 156, 157]
+    },
+    "sdlb_example": {
+      "summary": "SDLB rapor example (Kelas Tunarungu B, Fase A, Semester 1) uses sections A. Nilai dan Capaian Kompetensi, B. Kokurikuler, C. Ekstrakurikuler, D. Ketidakhadiran, E. Catatan Wali Kelas, F. Tanggapan Orang Tua/Wali Murid, and lists 'Program Kebutuhan Khusus' as an extra subject. Its description pattern is 'Kompetensi … telah tercapai' + 'Perlu peningkatan dalam …'.",
+      "pages": [152, 153]
+    },
+    "pages": [70, 71, 72, 73, 74, 142, 143, 144, 145, 152, 153, 156, 157]
+  },
+  "promotion": {
+    "authority": {
+      "text": "Satuan pendidikan memiliki keleluasaan untuk menentukan kriteria dan mekanisme kenaikan kelas. Penentuan kenaikan kelas dilakukan dengan mempertimbangkan laporan kemajuan belajar yang mencerminkan pencapaian murid pada semua mata pelajaran dan ekstrakurikuler serta prestasi lain selama 1 (satu) tahun ajaran. Dalam proses penentuan murid tidak naik kelas, perlu dilakukan musyawarah para pendidik, yang mempertimbangkan keseluruhan proses belajar murid serta pendampingan oleh pendidik dari awal tahun ajaran.",
+      "force": "school_discretion",
+      "retention_requires_teacher_deliberation": true,
+      "pages": [74]
+    },
+    "aspects": [
+      {"order": 1, "key": "pencapaian_kompetensi", "name": "Pencapaian Kompetensi Murid", "text": "Penentuan kenaikan kelas dapat mempertimbangkan laporan kemajuan belajar yang mencerminkan pencapaian kompetensi murid (kesatuan pengetahuan, keterampilan, dan sikap) pada semua mata pelajaran, kokurikuler, ekstrakurikuler, serta prestasi lainnya.", "pages": [75]},
+      {"order": 2, "key": "kehadiran", "name": "Kehadiran", "text": "Tingkat kehadiran menjadi indikator kedisiplinan dan partisipasi murid dalam pembelajaran. … Jumlah ketidakhadiran yang menjadi pertimbangan tidak naik kelas dikembalikan pada satuan pendidikan.", "force": "school_discretion", "pages": [75]}
+    ],
+    "additional_criteria": {
+      "text": "Selain kedua aspek di atas, satuan pendidikan dapat menambahkan kriteria lain sesuai dengan kekhasan satuan pendidikan, karakteristik murid, serta konteks sosial dan kultural di lingkungan sekolah.",
+      "force": "optional",
+      "pages": [75]
+    },
+    "holistic_view": {
+      "text": "Perkembangan murid dalam masing-masing aspek tersebut perlu dilihat secara menyeluruh dan berkelanjutan, bukan hanya berdasarkan capaian akhir. Kenaikan kelas sebaiknya mempertimbangkan proses kemajuan yang telah dicapai murid selama satu tahun ajaran, termasuk upaya dan perbaikan yang dilakukan oleh murid dan pendampingan yang diberikan oleh pendidik …",
+      "force": "recommended",
+      "pages": [75]
+    },
+    "retention_exceptional": {
+      "text": "Dalam hal tertentu yang memungkinkan terjadi kasus luar biasa, jika terdapat banyak mata pelajaran yang tidak tercapai oleh murid dan/atau terkait isu sikap dan karakter murid, maka satuan pendidikan dapat menetapkan mekanisme tidak naik kelas. Namun demikian, keputusan ini sebaiknya dipertimbangkan dengan tetap memperhatikan dampaknya terhadap kondisi psikologis murid.",
+      "pages": [75]
+    },
+    "issue_alternatives": [
+      {"issue": "Murid mempunyai tujuan pembelajaran yang belum tuntas (ada tujuan-tujuan pembelajaran yang hasilnya belum memenuhi pencapaian minimum).", "consideration": "Murid dapat dipertimbangkan naik di kelas berikutnya dengan pendampingan tambahan untuk menyelesaikan tujuan pembelajaran yang belum tercapai/tuntas."},
+      {"issue": "Murid mempunyai masalah absen/ketidakhadiran yang banyak (banyaknya jumlah ketidakhadiran disepakati oleh satuan pendidikan)", "consideration": "Dapat dipertimbangkan dengan mengetahui alasan ketidakhadiran. Jika murid tidak hadir karena kondisi keluarga (murid yang membantu orang tua bekerja karena alasan ekonomi) atau masalah kesehatan murid, maka dapat dipertimbangkan naik kelas dengan catatan khusus. Khusus permasalahan ketidakhadiran, wali kelas harus dapat mendeteksi permasalahan ini sedini mungkin sehingga tidak terjadi penumpukan jumlah ketidakhadiran dari murid di akhir semester.", "force_note": "Early detection of absence by the wali kelas is phrased as 'harus' (mandatory)."},
+      {"issue": "Keterlambatan psikologis, perkembangan, dan/atau kognitif", "consideration": "Murid bisa dipertimbangkan untuk naik kelas dengan catatan murid perlu mendapat bimbingan dalam memahami pelajaran dan/atau mendapatkan layanan konseling."}
+    ],
+    "notes": [
+      {"text": "Jika satuan pendidikan memutuskan untuk tidak menaikkan kelas, maka perlu dipikirkan bentuk intervensi untuk membantu murid agar dapat berkembang.", "force": "recommended"},
+      {"text": "Ketercapaian belajar sebagai pertimbangan kenaikan kelas pada murid yang memiliki hambatan intelektual tidak disamakan kriterianya dengan murid pada umumnya. …"}
+    ],
+    "pages": [74, 75, 76]
+  },
+  "graduation": {
+    "aspects": [
+      {
+        "order": 1,
+        "key": "pencapaian_kompetensi",
+        "name": "Pencapaian Kompetensi Murid",
+        "text": "Penentuan kelulusan dapat mempertimbangkan laporan kemajuan belajar yang mencerminkan pencapaian kompetensi murid (kesatuan pengetahuan, keterampilan, dan sikap) pada semua mata pelajaran, termasuk kemampuan literasi dan numerasi, ekstrakurikuler, dan prestasi lainnya pada: i. kelas V dan kelas VI untuk sekolah dasar atau bentuk lain yang sederajat; …",
+        "sd_grades_considered": [5, 6],
+        "pages": [77]
+      },
+      {
+        "order": 2,
+        "key": "ujian_satuan_pendidikan",
+        "name": "Ujian yang Diselenggarakan oleh Satuan Pendidikan",
+        "text": "Ujian yang diselenggarakan oleh satuan pendidikan merupakan penilaian hasil belajar yang bertujuan untuk menilai pencapaian hasil belajar murid untuk semua mata pelajaran. Ujian dapat dilaksanakan pada semester ganjil dan/atau semester genap pada akhir jenjang dengan mempertimbangkan ketuntasan capaian pembelajaran di setiap mata pelajaran. Pelaksanaan ujian tidak harus dilaksanakan secara bersamaan untuk semua mata pelajaran. …",
+        "eligibility": {"text": "Murid yang mengikuti ujian yang diselenggarakan oleh satuan pendidikan harus telah berada pada tahun terakhir di masing-masing jenjang atau program paket kesetaraan dan memiliki laporan lengkap penilaian hasil belajar seluruh program pembelajaran yang telah ditempuh pada jenjang pendidikan tersebut.", "force": "mandatory"},
+        "forms": ["portofolio;", "penugasan;", "tes tertulis; dan/atau", "bentuk kegiatan lain yang ditetapkan Satuan Pendidikan sesuai dengan kompetensi yang diukur berdasarkan Standar Nasional Pendidikan."],
+        "mix_forms": {"text": "Satuan pendidikan disarankan untuk memadukan beragam bentuk ujian sehingga dapat menilai capaian belajar setiap murid secara lebih utuh", "force": "recommended"},
+        "timing_summary": "Grade VI, odd and/or even semester; subjects may be examined at different times once their CP is complete.",
+        "pages": [77]
+      },
+      {
+        "order": 3,
+        "key": "kehadiran",
+        "name": "Kehadiran",
+        "text": "Tingkat kehadiran menjadi indikator kedisiplinan dan partisipasi murid dalam pembelajaran. … Jumlah ketidakhadiran yang menjadi pertimbangan kelulusan dikembalikan pada satuan pendidikan.",
+        "force": "school_discretion",
+        "pages": [77]
+      }
+    ],
+    "graduation_rule": {
+      "text": "Murid dinyatakan lulus dari satuan/program pendidikan setelah menyelesaikan seluruh program pembelajaran dan mengikuti ujian yang diselenggarakan oleh satuan pendidikan. Kelulusan murid sebagaimana dimaksud, ditetapkan oleh satuan/program pendidikan yang bersangkutan.",
+      "force": "mandatory",
+      "pages": [78]
+    },
+    "ijazah": {
+      "text": "Murid yang dinyatakan lulus dari satuan pendidikan diberikan ijazah. Ijazah diberikan kepada murid sebagai pengakuan terhadap prestasi belajar dan/atau penyelesaian suatu jenjang pendidikan setelah lulus ujian yang diselenggarakan oleh satuan pendidikan terakreditasi. … Ijazah diberikan pada akhir semester genap pada setiap akhir jenjang oleh satuan pendidikan terakreditasi. Pengolahan dalam menentukan nilai ijazah diserahkan kepada satuan pendidikan. Ketentuan mengenai ijazah dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.",
+      "ijazah_grade_processing": "school_discretion",
+      "accreditation_note": "Satuan pendidikan yang belum terakreditasi diharapkan mengajukan akreditasi kepada Badan Akreditasi Nasional untuk Pendidikan Anak Usia Dini, Pendidikan Dasar dan Menengah sebelum muridnya ada di tahap akhir.",
+      "pages": [78]
+    },
+    "notes": [
+      "Pendidik perlu memonitor dan mengomunikasikan sepanjang proses pembelajaran dan bukan hanya di akhir semester/tahun, misalnya terhadap permasalahan kehadiran, seharusnya tidak diketahui di akhir tahun, tetapi sudah ada intervensi sebelumnya.",
+      "Pendidik perlu bekerja sama dengan orang tua untuk mendeteksi permasalahan di sepanjang proses pembelajaran. …",
+      "Pendidik menggunakan umpan balik/refleksi untuk mengetahui dan menentukan strategi untuk membantu murid yang mengalami ketertinggalan pada sepanjang proses pembelajaran."
+    ],
+    "tka_note": "The guide does not mention TKA (Tes Kemampuan Akademik) anywhere.",
+    "pages": [77, 78]
+  },
+  "reflection_follow_up": {
+    "text": "Asesmen tanpa umpan balik hanyalah data administratif yang kurang bermanfaat untuk peningkatan kualitas pembelajaran dan asesmen.",
+    "items": [
+      {"key": "refleksi_diri", "name": "Refleksi Diri", "frequency": "paling sedikit satu kali dalam satu semester", "force": "mandatory", "questions": ["Apa tujuan saya mengajar (belajar) semester/tahun ini?", "Apa yang saya sukai dari proses belajar mengajar semester/tahun ini?", "Aspek/hal apa dalam pengajaran (pembelajaran) dan asesmen yang berhasil?", "Aspek/hal apa dalam pengajaran (pembelajaran) dan asesmen yang perlu peningkatan?", "Apa yang perlu saya lakukan tahun ini untuk hal yang lebih baik tahun depan?", "Apa saja tantangan terbesar yang saya hadapi dalam semester/tahun ini?", "Bagaimana cara saya mengatasi tantangan-tantangan tersebut?"], "pages": [79]},
+      {"key": "refleksi_sesama_pendidik", "name": "Refleksi Sesama Pendidik", "frequency": "paling sedikit satu kali dalam satu semester", "force": "mandatory", "activities": ["Berdiskusi mengenai proses perencanaan dan pelaksanaan pembelajaran (dapat menggunakan/menyesuaikan pertanyaan untuk refleksi diri).", "Mengamati proses pelaksanaan pembelajaran.", "Melakukan refleksi terhadap perencanaan dan pelaksanaan pembelajaran."], "pages": [79]},
+      {"key": "refleksi_kepala_sekolah", "name": "Refleksi oleh Kepala Satuan Pendidikan", "purposes": ["Membangun budaya reflektif …", "Memberi umpan balik yang konstruktif …"], "supervisor_note": "Dalam proses refleksi, pengawas tidak dianjurkan meminta laporan administrasi yang membebani Pendidik.", "pages": [80]},
+      {"key": "refleksi_murid", "name": "Refleksi oleh Murid", "frequency": "paling sedikit dilakukan satu kali dalam satu semester", "force": "mandatory", "method": "… pendidik dapat membuat questioner yang dapat memberikan informasi tentang evaluasi perencanaan dan pelaksanaan pembelajaran.", "pages": [80]}
+    ],
+    "after": "Pendidik setelah melakukan refleksi dan mendapatkan masukan dari sesama pendidik, kepala sekolah, pengawas/penilik, serta murid, kemudian pendidik menyusun rencana perbaikan-perbaikan kualitas pembelajaran.",
+    "pages": [79, 80]
+  },
+  "open_points": [
+    {"topic": "DPL codes", "text": "The plan frame on p.38 prints DPL1 for Keimanan, Penalaran Kritis, Kewargaan and Kreativitas (DPL2-DPL4 missing). Codes DPL2 Kewargaan, DPL3 Penalaran Kritis, DPL4 Kreativitas are inferred from the order on p.13; confirm before using codes in SIGRAK.", "pages": [13, 38]},
+    {"topic": "SD plan example phase/grade", "text": "Lampiran 7 header reads 'Fase/kelas : C/6 (lima)' — grade 6 written as 'lima'. Steps in Pertemuan 4-5 restart numbering at 11 after reaching 15 in Pertemuan 3.", "pages": [112, 113, 114]},
+    {"topic": "Interval divisor wording", "text": "p.52 says the divisor is 'total dari jumlah skala (5) dan nilai maksimum (5)', but the worked example divides by criteria × max scale (4 × 5 = 20). The example also writes '2x1 = 2' for one criterion at scale 2. Treat the formula as sum / (criteria × max) × 100.", "pages": [52, 53]},
+    {"topic": "Percentage option text vs table", "text": "p.66 text says Edo's '83%' comes from TPs achieved / total TPs, while the table on p.65 shows 75 (3 of 4). 75 is arithmetically correct.", "pages": [65, 66]},
+    {"topic": "NA sumatif example", "text": "Edo's four summatives 80, 76, 60, 83 average to 74.75, but p.73 prints 74,5 (both in the table and the rapor line).", "pages": [73]},
+    {"topic": "Description options count", "text": "p.71 says 'Terdapat 2 opsi … ketiga opsi tersebut'; only two options follow (p.72-73).", "pages": [71, 72, 73]},
+    {"topic": "Interval table authority", "text": "The 0-20/21-40/41-60/61-80/81-100 interval table is introduced with 'Interval nilai yang digunakan adalah sebagai berikut' after saying schools/teachers 'dapat menentukan interval'; it reads as an example, not a fixed national scale. Elsewhere (p.63) the example threshold is 56-100 and (p.65-66) 75. SIGRAK should keep thresholds school-configurable.", "pages": [52, 53, 63, 65, 66]},
+    {"topic": "Ekstrakurikuler example mismatch", "text": "Fase A rapor example lists 'Silat' with the description 'menguasai teknik dasar dribbling dan passing' (football text); the Fase A-C example uses 'Sepak Bola' with the same text.", "pages": [142, 145]},
+    {"topic": "Paket A rapor example", "text": "Descriptions in the Paket A rapor example do not match their subjects (e.g. PJOK described with planets, Bahasa Inggris with dance). Not used.", "pages": [154, 155]},
+    {"topic": "Kokurikuler in rapor for SD", "text": "The SD format has one 'Kokurikuler' free-text box naming strengthened and still-to-strengthen dimensions; the guide gives no grade/scale for kokurikuler and defers kokurikuler planning to a separate guide.", "pages": [10, 70, 71]},
+    {"topic": "Merefleksi characteristics heading", "text": "The characteristics box for 'Pengalaman Belajar Merefleksi' on p.18 is headed 'Karakteristik Pengalaman Belajar Memahami' (misprint); content clearly belongs to merefleksi.", "pages": [18]}
+  ]
+}

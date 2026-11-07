@@ -1,0 +1,750 @@
+{
+  "dataset": "coding_ai_guideline",
+  "version_code": "PEDOMAN-KKA-KEPMENDIKDASMEN-127-P-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Binding implementation guideline for Coding and Artificial Intelligence (Koding dan Kecerdasan Artifisial, KKA) as it applies to SD/MI: KKA's status (elective subject, or integrated, cocurricular, extracurricular), delivery modes, school and regional-government roles, teacher preparation, monitoring and timeline. It sets no grades, JP or learning outcomes; SIGRAK should take those from coding-ai-learning-bskap-2025.json (recommendation) or a later CP decree.",
+  "source": {
+    "title": "Keputusan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 127/P/2025 tentang Pedoman Implementasi Koding dan Kecerdasan Artifisial pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "127/P/2025",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2025-09-04",
+    "year": 2025,
+    "file": "docs/dokumen-resmi/1758017435_manage_file.pdf",
+    "sha256": "8441abc021bbb4598b34fbdc1300ceb26b34394fd343a0e74c73ca6369a480a2",
+    "pages_total": 28,
+    "pages_note": "Page refs are PDF page numbers. PDF 1-3 are the decree body (printed '-2-', '-3-' on PDF 2-3). The Lampiran starts on PDF 4; Lampiran printed page n = PDF page n+3 (PDF 6 = '-3-', PDF 15 = '-12-', PDF 26 = '-23-'). The file is a scanned 'SALINAN' with an OCR text layer."
+  },
+  "extraction": {
+    "method": "pdftotext -layout of the scanned copy's OCR layer, read page by page; OCR errors corrected by reading the page images (pdftoppm) for the pages listed below; obvious OCR typos on other pages (e.g. 'artihsial' -> 'artifisial') fixed in quotes.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [
+      1,
+      3,
+      6,
+      15,
+      17,
+      26
+    ],
+    "skipped": [
+      "PAUD: muatan pengembangan berpikir komputasional (Ruang Lingkup D.1, Strategi Pembelajaran B.5, Satuan Pendidikan C.1-C.2 PAUD part) (PDF 5, 6, 15).",
+      "SMK/vocational UPT roles: BBPPMPV/BPPMPV tasks for guru vokasional (PDF 14).",
+      "Mengingat list (legal basis items 1-10) kept only as a short list of titles (PDF 1-3).",
+      "BAB V Sistem Informasi dan Komunikasi details (media sosial, laman, Rumah Pendidikan, belajar.id, media luring, helpdesk/ULT/SSD) summarised, not transcribed (PDF 19-22).",
+      "BAB IV Manajemen Risiko steps kept in short form (PDF 16-18)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "Element keys, phase keys (A, B, C), strategy keys and delivery-mode keys are shared with coding-ai-learning-bskap-2025.json.",
+      "The decree contains no elements, CP or JP; those keys are present with null values so both files have the same shape."
+    ]
+  },
+  "decree": {
+    "kesatu": {
+      "text": "Menetapkan pedoman implementasi koding dan kecerdasan artifisial pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah sebagaimana tercantum dalam Lampiran yang merupakan bagian tidak terpisahkan dari Keputusan Menteri ini.",
+      "pages": [
+        3
+      ]
+    },
+    "kedua": {
+      "text": "Pedoman implementasi koding dan kecerdasan artifisial digunakan sebagai acuan bagi Kementerian Pendidikan Dasar dan Menengah, pemerintah daerah, satuan pendidikan, pendidik, dan tenaga kependidikan dalam melaksanakan pembelajaran koding dan kecerdasan artifisial mulai tahun ajaran 2025/2026.",
+      "start_school_year": "2025/2026",
+      "pages": [
+        3
+      ]
+    },
+    "ketiga": {
+      "text": "Keputusan Menteri ini mulai berlaku pada tanggal ditetapkan.",
+      "pages": [
+        3
+      ]
+    },
+    "legal_basis_highlights": [
+      "Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional",
+      "Undang-Undang Nomor 14 Tahun 2005 tentang Guru dan Dosen",
+      "Peraturan Pemerintah Nomor 57 Tahun 2021 tentang Standar Nasional Pendidikan",
+      "Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 10 Tahun 2025 tentang Standar Kompetensi Lulusan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+      "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah sebagaimana telah diubah dengan Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 13 Tahun 2025"
+    ],
+    "legal_basis_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  "purpose_and_scope": {
+    "background": {
+      "text": "Agar setiap anak memiliki kesempatan yang sama untuk menghadapi tantangan ini, sistem pendidikan perlu memastikan bahwa literasi digital, termasuk koding dan kecerdasan artifisial, menjadi bagian dari kurikulum. … Koding dan kecerdasan artifisial tidak hanya meningkatkan literasi digital, tetapi juga membangun keterampilan berpikir kritis, kreatif, kolaboratif, dan pemecahan masalah …",
+      "pages": [
+        4
+      ]
+    },
+    "objectives": [
+      {
+        "text": "memberikan acuan dan arah yang jelas dan terstruktur bagi unit utama dan direktorat teknis di Kementerian Pendidikan Dasar dan Menengah (Kemendikdasmen), Kementerian Agama, dinas pendidikan provinsi/kabupaten/kota, satuan pendidikan, pendidik, tenaga kependidikan, dan pemangku kepentingan terkait dalam mengimplementasikan kebijakan koding dan kecerdasan artifisial;",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "text": "memastikan koordinasi, keselarasan dan kesinambungan program dan kegiatan Kemendikdasmen yang terkait dengan implementasi kebijakan koding dan kecerdasan artifisial; dan",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "text": "memberikan gambaran mekanisme kerja implementasi kebijakan koding dan kecerdasan artifisial pada tingkat Kementerian.",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "targets": [
+      {
+        "text": "pengambil kebijakan dan pelaksana teknis, baik di Kemendikdasmen maupun dinas pendidikan;",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "text": "pengawas, penilik, kepala satuan pendidikan, pendidik, dan tenaga kependidikan lainnya; dan",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "text": "pemangku kepentingan pendidikan lainnya yang terlibat dalam implementasi koding dan kecerdasan artifisial.",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "scope_sd": {
+      "text": "pembelajaran koding dan kecerdasan artifisial pada jenjang pendidikan dasar dan jenjang pendidikan menengah, meliputi latar belakang, tujuan, sasaran, strategi, tata kelola implementasi, manajemen risiko, sistem informasi dan komunikasi, pemantauan dan evaluasi, serta lini masa.",
+      "pages": [
+        5
+      ]
+    },
+    "madrasah_note": "Objective 1 names Kementerian Agama among the addressees; the decree has no madrasah-specific rule."
+  },
+  "kka_status": {
+    "summary": "KKA is not mandatory: the decree makes it an elective intracurricular subject that schools are not obliged to offer, and alternatively allows integration into other subjects, cocurricular or extracurricular activities. No grade range or JP is set for SD.",
+    "is_mandatory": false,
+    "subject_type": "mata_pelajaran_pilihan",
+    "grades": null,
+    "grades_note": "Not stated in the decree; the naskah akademik recommends SD kelas 5 dan 6.",
+    "school_duty": {
+      "text": "Menyediakan muatan pengembangan berpikir komputasional yang terintegrasi dalam kegiatan pembelajaran pada pendidikan anak usia dini, dan mata pelajaran koding dan kecerdasan artifisial pada jenjang pendidikan dasar dan pendidikan menengah sesuai ketersediaan sumber daya.",
+      "pages": [
+        15
+      ]
+    },
+    "pages": [
+      6,
+      15
+    ]
+  },
+  "implementation_strategies": {
+    "intro": {
+      "text": "Mengingat sifatnya yang membutuhkan sumber daya spesifik, koding dan kecerdasan artifisial dapat diterapkan melalui:",
+      "pages": [
+        6
+      ]
+    },
+    "intracurricular_elective": {
+      "label": "Intrakurikuler sebagai mata pelajaran pilihan",
+      "text": "Makna koding dan kecerdasan artifisial sebagai mata pelajaran pilihan adalah tidak mewajibkan seluruh satuan pendidikan untuk menyediakan mata pelajaran tersebut dan menjadikannya pilihan bagi peserta didik yang memiliki minat untuk mempelajarinya.",
+      "pages": [
+        6
+      ]
+    },
+    "integrated_other_subjects": {
+      "label": "Terintegrasi dengan mata pelajaran lain",
+      "text": "Satuan pendidikan dapat mengintegrasikan materi pembelajaran atau kemampuan koding dan kecerdasan artifisial pada mata pelajaran lain. Seperti etika KA pada mata pelajaran Pendidikan Pancasila atau analisis data pada mata pelajaran Matematika.",
+      "pages": [
+        6
+      ]
+    },
+    "cocurricular": {
+      "label": "Kokurikuler",
+      "text": "Satuan pendidikan dapat mengembangkan kokurikuler berbasis teknologi atau rekayasa (engineering) dengan memanfaatkan teknologi koding dan kecerdasan artifisial.",
+      "pages": [
+        6
+      ]
+    },
+    "extracurricular": {
+      "label": "Ekstrakurikuler",
+      "text": "Satuan pendidikan dapat mengembangkan ekstrakurikuler berjenis latihan olah-bakat atau olah-minat yang berkaitan dengan koding dan kecerdasan artifisial/KA seperti robotika dan koding.",
+      "pages": [
+        6
+      ]
+    }
+  },
+  "delivery_modes": {
+    "intro": {
+      "text": "Pembelajaran koding dan kecerdasan artifisial KA dapat dilaksanakan secara:",
+      "pages": [
+        6
+      ]
+    },
+    "internet_based": {
+      "label": "Berbasis internet (internet-based)",
+      "text": "Memanfaatkan konektivitas internet untuk mengakses materi, menggunakan perangkat lunak, dan berkomunikasi.",
+      "pages": [
+        6
+      ]
+    },
+    "plugged": {
+      "label": "Dengan perangkat digital (plugged)",
+      "text": "Memanfaatkan perangkat keras dan perangkat lunak tertentu, seperti komputer, tablet, ponsel pintar, atau perangkat lain yang terhubung dengan komputer, walaupun tanpa koneksi internet.",
+      "pages": [
+        6
+      ]
+    },
+    "unplugged": {
+      "label": "Tanpa perangkat digital (unplugged)",
+      "text": "Pembelajaran tanpa perangkat digital berbasis aktivitas melalui simulasi, permainan, dan aktivitas fisik lainnya.",
+      "pages": [
+        6,
+        7
+      ]
+    },
+    "closing_note": {
+      "text": "Ragam alternatif strategi pembelajaran seperti internet based, plugged, dan unplugged dapat diterapkan untuk menjembatani kesenjangan sarana dan prasarana serta kemampuan dasar peserta didik.",
+      "pages": [
+        28
+      ]
+    }
+  },
+  "sd_allocation": {
+    "grades": null,
+    "phase": null,
+    "jp_per_week": null,
+    "jp_per_year": null,
+    "note": "The decree sets no JP or grade range. Timeline item A.2 plans 'penyelarasan Standar Nasional Pendidikan, struktur kurikulum' as supporting regulation.",
+    "pages": [
+      26
+    ]
+  },
+  "curriculum": {
+    "cp_source": {
+      "text": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP) menyusun naskah akademik dengan melibatkan berbagai pihak, terutama akademisi, praktisi pendidikan, dan pemangku kepentingan lainnya. Hasil dari penyusunan naskah akademik ini berupa rekomendasi kebijakan dan referensi bagi pengembangan dokumen capaian pembelajaran. Dokumen capaian pembelajaran selanjutnya menjadi referensi bagi pengembangan media pembelajaran berupa buku teks, panduan mata pelajaran, dokumen perencanaan pembelajaran, dan media pembelajaran lainnya.",
+      "pages": [
+        6
+      ]
+    },
+    "school_curriculum": {
+      "text": "Merancang kurikulum muatan pengembangan berpikir komputasional atau koding dan kecerdasan artifisial di tingkat satuan pendidikan.",
+      "pages": [
+        15
+      ]
+    },
+    "elements": [
+      {
+        "key": "computational_thinking",
+        "name": "Berpikir Komputasional",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      },
+      {
+        "key": "digital_literacy",
+        "name": "Literasi Digital",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      },
+      {
+        "key": "programming_algorithms",
+        "name": "Algoritma Pemrograman",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      },
+      {
+        "key": "data_analysis",
+        "name": "Analisis Data",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      },
+      {
+        "key": "ai_literacy_ethics",
+        "name": "Literasi dan Etika Kecerdasan Artifisial",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      },
+      {
+        "key": "ai_use_development",
+        "name": "Pemanfaatan dan Pengembangan Kecerdasan Artifisial",
+        "sd_phases": null,
+        "note": "Not defined in the decree; see coding-ai-learning-bskap-2025.json.",
+        "pages": []
+      }
+    ],
+    "phases": {
+      "A": null,
+      "B": null,
+      "C": null
+    },
+    "phases_note": "The decree contains no elements, CP or learning objectives for any phase; it assigns CP development to BSKAP (BAB III A.5.b, PDF 13) and lists 'Pengembangan dokumen capaian pembelajaran' under Persiapan 2024-2025 (PDF 26)."
+  },
+  "teacher_preparation": {
+    "intro": {
+      "text": "Penyiapan SDM pendidik untuk mengimplementasikan pembelajaran KKA dilakukan melalui:",
+      "pages": [
+        7
+      ]
+    },
+    "lpd": {
+      "label": "Pemilihan Lembaga Penyelenggara Diklat",
+      "text": "Lembaga Penyelenggara Diklat (LPD) adalah lembaga yang ditetapkan oleh Kemendikdasmen untuk menyelenggarakan pelatihan bagi pendidik pengampu koding dan kecerdasan artifisial. LPD dapat berupa Lembaga Kursus dan Pelatihan, perguruan tinggi, asosiasi profesi, penyedia teknologi pendidikan, dan unsur lainnya. … LPD diseleksi dan ditetapkan oleh Direktorat Jenderal PAUD, Pendidikan Dasar, dan Pendidikan Menengah (Ditjen PDM).",
+      "pages": [
+        7,
+        8
+      ]
+    },
+    "bimtek": {
+      "label": "Bimbingan Teknis",
+      "text": "Bimbingan teknis (bimtek) Koding dan kecerdasan artifisial dilakukan oleh Direktorat Jenderal Guru, Tenaga Kependidikan, dan Pendidikan Guru (GTK-PG) untuk menyiapkan calon fasilitator pelatihan di tingkat daerah, yang selanjutnya disebut peserta bimtek. Calon pengajar berasal dari unsur LPD atau pihak lain yang ditetapkan Kemendikdasmen. … Pelaksanaan bimtek menggunakan pendekatan pembelajaran mendalam dengan prinsip andragogi.",
+      "pages": [
+        8
+      ]
+    },
+    "training": {
+      "label": "Pelatihan",
+      "text": "Pelatihan koding dan kecerdasan artifisial dilakukan oleh LPD dan lembaga penyelenggara pelatihan lainnya yang ditetapkan Kemendikdasmen. Pelatihan koding dan kecerdasan artifisial dilakukan terhadap pendidik calon pengampu koding dan kecerdasan artifisial. Pendekatan pelatihan koding dan kecerdasan artifisial terdiri atas 3 tahap yaitu: a. pelatihan dalam jabatan atau in-service training 1 (IN-1), b. pelatihan di tempat kerja atau on-the-job training (ON), dan c. pelatihan dalam jabatan atau in-service training 2 (IN-2).",
+      "stages": [
+        "IN-1",
+        "ON",
+        "IN-2"
+      ],
+      "pages": [
+        8,
+        9
+      ]
+    },
+    "pkb": {
+      "label": "Pengembangan Kompetensi Berkelanjutan",
+      "text": "Skema tahapan PKB dibagi menjadi dua yaitu: a. skema bimtek, pelatihan dan pengimbasan program pusat, dan b. skema pemberdayaan kelompok kerja yang diinisiasi pendidik dan tenaga kependidikan sesuai kebutuhan. … Tenaga pendidik secara berdaya menyelenggarakan berbagai pelatihan/pengimbasan, diskusi dan kolaborasi dengan siklus inkuiri dalam KKG/MGMP/MKKS/KKKS/MKPS/KKPS.",
+      "pages": [
+        9
+      ]
+    },
+    "teacher_requirements": null,
+    "teacher_requirements_note": "The decree sets no qualification or eligibility rule for who may teach KKA at SD (e.g. guru kelas); the naskah akademik covers this."
+  },
+  "infrastructure": {
+    "note": {
+      "text": "Sinergi yang kuat diperlukan untuk mengatasi berbagai tantangan, seperti keterbatasan sarana prasarana serta peningkatan kapasitas pendidik. … Selain itu, penyediaan sarana dan prasarana yang memadai, khususnya teknologi digital perlu diperhatikan.",
+      "pages": [
+        28
+      ]
+    },
+    "resource_condition": {
+      "text": "… mata pelajaran koding dan kecerdasan artifisial pada jenjang pendidikan dasar dan pendidikan menengah sesuai ketersediaan sumber daya.",
+      "pages": [
+        15
+      ]
+    },
+    "central_infrastructure": {
+      "text": "Mengembangkan dan menyediakan infrastruktur teknologi pendukung koding dan kecerdasan artifisial, termasuk platform digital dan sumber daya pembelajaran berbasis teknologi.",
+      "pages": [
+        12
+      ]
+    },
+    "funding": {
+      "text": "Sumber pembiayaan implementasi koding dan kecerdasan artifisial dapat menggunakan pembiayaan dari pemerintah pusat yaitu Anggaran Pendapatan dan Belanja Negara (APBN), pemerintah daerah yaitu Anggaran Pendapatan dan Belanja Daerah (APBD) serta sumber sah lain yang tidak mengikat seperti kemitraan dengan masyarakat dan dunia kerja seperti Tanggung Jawab Sosial Perusahaan atau Corporate Social Responsibilities (CSR) dan hibah.",
+      "pages": [
+        10,
+        11
+      ]
+    }
+  },
+  "other_strategies": {
+    "socialisation": {
+      "text": "Sosialisasi implementasi koding dan kecerdasan artifisial dilakukan melalui beberapa strategi: 1. Sosialisasi oleh Kemendikdasmen … 2. Sosialisasi oleh mitra … 3. Pemberdayaan Komunitas …",
+      "pages": [
+        7
+      ]
+    },
+    "advocacy": {
+      "text": "Ditjen PDM dan Ditjen Pendidikan Vokasi-PKPLK melakukan advokasi kepada pemerintah daerah agar dapat memahami kebijakan koding dan kecerdasan artifisial. Selanjutnya, Dinas Pendidikan mengembangkan kebijakan dan menyediakan anggaran untuk mendukung implementasi koding dan kecerdasan artifisial di satuan pendidikan.",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    "benchmarking": {
+      "text": "Studi tiru (benchmarking) bertujuan untuk mendapatkan contoh perbandingan pembelajaran koding dan kecerdasan artifisial yang selama ini telah dilaksanakan beberapa satuan pendidikan di setiap jenjang.",
+      "pages": [
+        10
+      ]
+    },
+    "model_schools": {
+      "text": "Sekolah model dikembangkan sebagai bukti keberhasilan konsep (proof of concept), laboratorium implementasi pembelajaran koding dan kecerdasan artifisial, dan tempat studi bagi sekolah lain … Sekolah model akan mendapatkan beberapa intervensi antara lain: 1. pelatihan yang berkelanjutan; 2. pendampingan; 3. pengembangan media pembelajaran; 4. fasilitasi kemitraan; dan 5. penguatan kelompok kerja guru.",
+      "pages": [
+        10
+      ]
+    }
+  },
+  "roles": {
+    "school": {
+      "label": "Satuan Pendidikan",
+      "items": [
+        "Menyediakan muatan pengembangan berpikir komputasional yang terintegrasi dalam kegiatan pembelajaran pada pendidikan anak usia dini, dan mata pelajaran koding dan kecerdasan artifisial pada jenjang pendidikan dasar dan pendidikan menengah sesuai ketersediaan sumber daya.",
+        "Merancang kurikulum muatan pengembangan berpikir komputasional atau koding dan kecerdasan artifisial di tingkat satuan pendidikan.",
+        "Meningkatkan kapasitas pendidik melalui pendidikan dan pelatihan.",
+        "Memfasilitasi peserta didik yang berminat untuk mengikuti pembelajaran koding dan kecerdasan artifisial.",
+        "Melibatkan orang tua dan komunitas dalam mengembangkan koding dan kecerdasan artifisial yang bermakna.",
+        "Menciptakan lingkungan belajar yang mendukung.",
+        "Melakukan evaluasi dan perbaikan berkelanjutan."
+      ],
+      "pages": [
+        15
+      ]
+    },
+    "regional_government": {
+      "label": "Pemerintah Daerah",
+      "items": [
+        "Membuat kebijakan untuk implementasi koding dan kecerdasan artifisial.",
+        "Membuat perencanaan program untuk implementasi koding dan kecerdasan artifisial pada satuan pendidikan di wilayahnya.",
+        "Melakukan sosialisasi koding dan kecerdasan artifisial pada satuan pendidikan di wilayahnya.",
+        "Melakukan pelatihan koding dan kecerdasan artifisial.",
+        "Melakukan penjaminan mutu terkait koding dan kecerdasan artifisial pada satuan pendidikan di wilayahnya.",
+        "Melakukan koordinasi dengan UPT.",
+        "Melakukan pemantauan dan evaluasi ke satuan pendidikan."
+      ],
+      "pages": [
+        15
+      ]
+    },
+    "education_partners": {
+      "label": "Mitra Pendidikan",
+      "definition": "Mitra pendidikan adalah lembaga, organisasi serta dunia usaha dan dunia industri yang memiliki pendanaan mandiri (self-funding) serta ketertarikan dan komitmen dalam berkontribusi di bidang pendidikan seperti pelatihan dan/atau advokasi.",
+      "items": [
+        "Membantu pemerintah melakukan pelatihan koding dan kecerdasan artifisial.",
+        "Membantu satuan pendidikan mengembangkan kurikulum koding dan kecerdasan artifisial yang kontekstual.",
+        "Membantu penyediaan sarana dan prasarana pembelajaran.",
+        "Melakukan intervensi lainnya yang relevan dengan kapasitasnya."
+      ],
+      "pages": [
+        15
+      ]
+    },
+    "central_government": {
+      "secretariat_general": {
+        "items": [
+          "Menyusun kebijakan dan alokasi anggaran yang mendukung penerapan koding dan kecerdasan artifisial di satuan pendidikan.",
+          "Melakukan sosialisasi dan kampanye mengenai koding dan kecerdasan artifisial kepada publik, termasuk pendidik, orang tua, dan masyarakat luas.",
+          "Mengembangkan dan menyediakan infrastruktur teknologi pendukung koding dan kecerdasan artifisial, termasuk platform digital dan sumber daya pembelajaran berbasis teknologi.",
+          "Mengembangkan dan menyebarluaskan praktik baik terkait koding dan kecerdasan artifisial melalui platform Rumah Pendidikan.",
+          "Mengembangkan ajang talenta yang mendorong peserta didik untuk menerapkan koding dan kecerdasan artifisial melalui proyek, riset, dan inovasi.",
+          "Menyediakan skema pembiayaan yang mendukung implementasi koding dan kecerdasan artifisial, termasuk bantuan untuk satuan pendidikan dan peserta didik.",
+          "Memfasilitasi kerja sama antara Kemendikdasmen dengan kementerian lembaga lain atau sektor swasta terkait implementasi koding dan kecerdasan artifisial."
+        ],
+        "pages": [
+          12
+        ]
+      },
+      "ditjen_gtk_pg": {
+        "items": [
+          "Menyiapkan desain, norma, prosedur, dan kriteria fasilitasi peningkatan kompetensi pendidik dan tenaga kependidikan dan pemberdayaan kelompok kerja guru dan tendik terkait koding dan kecerdasan artifisial.",
+          "Menyiapkan narasumber bimtek dan fasilitator pelatihan koding dan kecerdasan artifisial.",
+          "Melakukan penyamaan persepsi narasumber bimtek dan fasilitator pelatihan koding dan kecerdasan artifisial.",
+          "Merancang perangkat bimtek dan pelatihan.",
+          "Melaksanakan bimtek dan pelatihan.",
+          "Menyelenggarakan fasilitasi peningkatan kompetensi pendidik dan tendik bersama Unit Pelaksana Teknis.",
+          "Melakukan pemantauan, analisis, supervisi, dan evaluasi penyelenggaraan fasilitasi peningkatan kompetensi pendidik dan tendik"
+        ],
+        "pages": [
+          12
+        ]
+      },
+      "ditjen_pdm": {
+        "items": [
+          "Menyeleksi dan menetapkan LPD.",
+          "Melakukan advokasi kepada pemangku kepentingan di daerah (Dinas Pendidikan Provinsi, dan Dinas Pendidikan Kabupaten/Kota) dengan melibatkan Unit Pelaksana Teknis.",
+          "Melakukan studi tiru (benchmarking) pada satuan pendidikan yang telah menerapkan koding dan kecerdasan artifisial.",
+          "Melakukan pemantauan, pendampingan, dan evaluasi.",
+          "Menyelenggarakan fasilitasi peningkatan mutu satuan pendidikan.",
+          "Melakukan pengembangan konten pembelajaran."
+        ],
+        "pages": [
+          13
+        ]
+      },
+      "bskap": {
+        "items": [
+          "Menyiapkan berbagai naskah kebijakan terkait koding dan kecerdasan artifisial.",
+          "Mengembangkan capaian koding dan kecerdasan artifisial.",
+          "Mengembangkan panduan mata pelajaran koding dan kecerdasan artifisial.",
+          "Mengembangkan perangkat ajar koding dan kecerdasan artifisial.",
+          "Menilai buku teks pendamping dan mengembangkan buku teks utama.",
+          "Memfasilitasi penyamaan persepsi koding dan kecerdasan artifisial untuk Internal Kemendikdasmen.",
+          "Menyiapkan desain pemantauan dan evaluasi koding dan kecerdasan artifisial.",
+          "Mengkoordinasi pelaksanaan pemantauan dan evaluasi implementasi koding dan kecerdasan artifisial."
+        ],
+        "pages": [
+          13
+        ]
+      },
+      "upt_bbgtk_bgtk": {
+        "items": [
+          "Melakukan koordinasi dengan LPD dan antar UPT untuk intervensi implementasi koding dan kecerdasan artifisial di daerah.",
+          "Memfasilitasi dan/atau menyelenggarakan pelatihan koding dan kecerdasan artifisial.",
+          "Melakukan supervisi/pendampingan pembelajaran pendidik",
+          "Melakukan refleksi dan evaluasi implementasi koding dan kecerdasan artifisial dari sisi pendidik dan dampaknya.",
+          "Melakukan perencanaan intervensi koding dan kecerdasan artifisial tahun berikutnya berbasis hasil refleksi dan evaluasi."
+        ],
+        "pages": [
+          13,
+          14
+        ]
+      },
+      "upt_bbpmp_bpmp": {
+        "items": [
+          "Melakukan koordinasi antar UPT untuk intervensi implementasi koding dan kecerdasan artifisial di daerah.",
+          "Melakukan advokasi kepada Pemda secara berkelanjutan.",
+          "Melakukan penjaminan mutu koding dan kecerdasan artifisial.",
+          "Memimpin refleksi dan evaluasi implementasi koding dan kecerdasan artifisial bersama Dinas Pendidikan dan UPT GTK dan Vokasi",
+          "Melakukan perencanaan intervensi dan advokasi pemangku kepentingan berbasis refleksi dan evaluasi."
+        ],
+        "pages": [
+          14
+        ]
+      },
+      "other_units_note": "Ditjen Pendidikan Vokasi, Pendidikan Khusus, dan Pendidikan Layanan Khusus has parallel tasks (PDF 13); BBPPMPV/BPPMPV tasks concern vocational teachers (skipped)."
+    }
+  },
+  "assessment": {
+    "classroom_assessment": null,
+    "note": "The decree has no classroom assessment or rapor rule for KKA; it only defines programme monitoring and evaluation (below).",
+    "success_indicator": {
+      "text": "Secara umum indikator keberhasilan pembelajaran koding dan kecerdasan artifisial yakni meningkatnya kemampuan pemecahan masalah (problem solving) peserta didik dan kemampuan memanfaatkan teknologi kecerdasan artifisial secara efektif, produktif, dan bertanggungjawab.",
+      "pages": [
+        23
+      ]
+    }
+  },
+  "monitoring_evaluation": {
+    "design": {
+      "text": "Desain pemantauan dan evaluasi ini disusun dalam tiga tahapan utama: evaluasi dokumen, evaluasi implementasi, dan evaluasi dampak.",
+      "pages": [
+        23
+      ]
+    },
+    "stages": [
+      {
+        "key": "document",
+        "text": "Evaluasi dokumen, untuk menelaah dokumen koding dan kecerdasan artifisial sehingga diperoleh umpan balik perbaikan dokumen kurikulum yang telah disediakan.",
+        "pages": [
+          23
+        ]
+      },
+      {
+        "key": "implementation",
+        "text": "Evaluasi implementasi, dilakukan untuk memantau perkembangan pelaksanaan implementasi koding dan kecerdasan artifisial agar diperoleh gambaran implementasi di level satuan pendidikan dan daerah.",
+        "sub_stages": [
+          "Tahap Persiapan",
+          "Tahap Pelaksanaan"
+        ],
+        "pages": [
+          23,
+          24
+        ]
+      },
+      {
+        "key": "impact",
+        "text": "Evaluasi dampak, dilakukan untuk mengukur perubahan yang terjadi di tingkat satuan pendidikan (capaian hasil belajar peserta didik) dan daerah (meningkatnya komitmen dan dukungan pemerintah daerah).",
+        "sub_stages": [
+          "Dampak Awal",
+          "Dampak Akhir"
+        ],
+        "final_impact": "Instrumen yang dikembangkan bertujuan untuk mengukur hasil jangka panjang di tingkat satuan pendidikan, seperti peningkatan kemampuan problem solving dan literasi KA.",
+        "pages": [
+          23,
+          24
+        ]
+      }
+    ],
+    "mechanism": [
+      "Perencanaan Pemantauan dan Evaluasi",
+      "Pengumpulan Data",
+      "Analisis dan Interpretasi Data",
+      "Pelaporan Hasil",
+      "Tindak Lanjut dan Perbaikan"
+    ],
+    "mechanism_pages": [
+      24,
+      25
+    ]
+  },
+  "risk_management": {
+    "risk_areas": [
+      "pemahaman konsep kebijakan",
+      "pemahaman materi pembelajaran",
+      "kepemimpinan pembelajaran",
+      "pemanfaatan sarana dan prasarana",
+      "administrasi keuangan",
+      "partisipasi"
+    ],
+    "process": [
+      "Identifikasi risiko",
+      "Analisis risiko",
+      "Evaluasi risiko",
+      "Penanganan risiko",
+      "Pemantauan dan reviu risiko",
+      "Koordinasi dan konsultasi"
+    ],
+    "risk_map": {
+      "axes": "konsekuensi (rendah/sedang/tinggi) x kemungkinan (rendah/sedang/tinggi)",
+      "rows": {
+        "tinggi": [
+          "Risiko tinggi - Mitigasi dan Kendalikan",
+          "Risiko tinggi - Mitigasi dan Kendalikan",
+          "Risiko tinggi - Mitigasi dan Kendalikan"
+        ],
+        "sedang": [
+          "Risiko sedang - Kendalikan",
+          "Risiko sedang - Kendalikan",
+          "Risiko tinggi - Mitigasi dan Kendalikan"
+        ],
+        "rendah": [
+          "Risiko rendah - Terima",
+          "Risiko rendah - Terima",
+          "Risiko sedang - Kendalikan"
+        ]
+      },
+      "columns": [
+        "kemungkinan rendah",
+        "kemungkinan sedang",
+        "kemungkinan tinggi"
+      ]
+    },
+    "pages": [
+      16,
+      17,
+      18
+    ]
+  },
+  "information_systems": {
+    "summary": "Communication via online media (social media, websites, digital platforms such as Rumah Pendidikan and Ruang GTK, belajar.id accounts) and offline media; KKA information to be offered in Rumah Pendidikan (Ruang GTK, Ruang Sekolah, Ruang Orangtua, Ruang Mitra) including self-paced teacher training; safeguarding via helpdesk, Pusdatin, ULT complaint handling and an SSD/FAQ.",
+    "rumah_pendidikan": {
+      "text": "Semua ini dapat diakses melalui platform Rumah Pendidikan dalam fitur Ruang GTK, Ruang Sekolah, Ruang Orangtua dan Ruang Mitra.",
+      "pages": [
+        20
+      ]
+    },
+    "pages": [
+      19,
+      20,
+      21,
+      22
+    ]
+  },
+  "timeline": {
+    "intro": {
+      "text": "Implementasi koding dan kecerdasan artifisial dirancang bertahap selama tiga tahun untuk memastikan efektivitas, mutu, dan keberlanjutan. … Lini masa implementasi koding dan kecerdasan artifisial 2025-2028 dijelaskan sebagai berikut.",
+      "pages": [
+        26
+      ]
+    },
+    "phases": [
+      {
+        "key": "preparation",
+        "label": "Persiapan (2024-2025)",
+        "items": [
+          "Penyusunan naskah akademik",
+          "Penyusunan regulasi pendukung berupa penyelarasan Standar Nasional Pendidikan, struktur kurikulum, dan kesesuaian sertifikasi dengan bidang tugas pendidik.",
+          "Sosialisasi pada seluruh unit Kemendikdasmen, dinas pendidikan, dan masyarakat dilakukan melalui berbagai media oleh unit Kemendikdasmen yang terkait.",
+          "Pengembangan dokumen capaian pembelajaran sebagai acuan pengembangan kurikulum koding dan kecerdasan artifisial di tingkat satuan pendidikan.",
+          "Penyusunan buku teks utama dan penilaian buku teks pendamping",
+          "Studi tiru (benchmarking) pada satuan pendidikan yang telah menerapkan koding dan kecerdasan artifisial.",
+          "Penyiapan calon tenaga pendidik pengampu mata pelajaran koding dan kecerdasan artifisial."
+        ],
+        "pages": [
+          26
+        ]
+      },
+      {
+        "key": "year_1",
+        "label": "Tahun Pertama (2025-2026)",
+        "items": [
+          "Pengembangan dan kurasi media pembelajaran sebagai inspirasi bagi pendidik pembelajaran berupa video inspirasi dan perencanaan pembelajaran.",
+          "Sosialisasi dilakukan melalui webinar, lokakarya (workshop), dan distribusi materi digital kepada dinas pendidikan, satuan pendidikan, dan komunitas pendidikan.",
+          "Penyiapan tenaga pendidik pengampu mata pelajaran koding dan kecerdasan artifisial.",
+          "Penyelenggaraan advokasi berupa penguatan, pendampingan, dan supervisi …",
+          "Pengembangan sistem informasi.",
+          "Pengembangan sekolah model implementasi koding dan kecerdasan artifisial.",
+          "Penerapan manajemen risiko.",
+          "Penguatan kemitraan dengan kementerian/lembaga, sektor swasta, dan masyarakat.",
+          "Pemantauan dan evaluasi kebijakan serta merencanakan tindak lanjutnya."
+        ],
+        "pages": [
+          26,
+          27
+        ]
+      },
+      {
+        "key": "year_2",
+        "label": "Tahun Kedua (2026-2027)",
+        "items": [
+          "Kurasi media pembelajaran sebagai inspirasi bagi pendidik pembelajaran berupa video inspirasi dan perencanaan pembelajaran yang dikembangkan oleh pendidik.",
+          "Penyiapan tenaga pendidik pengampu mata pelajaran koding dan kecerdasan artifisial melalui pengembangan kompetensi berkelanjutan.",
+          "Penyelenggaraan advokasi … agar mampu meningkatkan mutu implementasi koding dan kecerdasan artifisial.",
+          "Penyempurnaan sistem informasi.",
+          "Peningkatan mutu dan jumlah sekolah model implementasi koding dan kecerdasan artifisial.",
+          "Penerapan manajemen risiko.",
+          "Peningkatan kemitraan dengan kementerian/lembaga, sektor swasta, dan masyarakat.",
+          "Pemantauan dan evaluasi kebijakan serta merencanakan tindak lanjutnya."
+        ],
+        "pages": [
+          27
+        ]
+      },
+      {
+        "key": "year_3",
+        "label": "Tahun Ketiga (2027-2028)",
+        "items": [
+          "Kurasi media pembelajaran sebagai inspirasi bagi pendidik pembelajaran berupa video inspirasi dan perencanaan pembelajaran yang dikembangkan oleh pendidik.",
+          "Penyiapan tenaga pendidik pengampu mata pelajaran koding dan kecerdasan artifisial melalui pengembangan kompetensi berkelanjutan.",
+          "Penyelenggaraan advokasi … agar mampu memperkuat ekosistem implementasi koding dan kecerdasan artifisial.",
+          "Pemeliharaan sistem informasi.",
+          "Peningkatan mutu dan jumlah sekolah model implementasi koding dan kecerdasan artifisial.",
+          "Penerapan manajemen risiko.",
+          "Pemeliharaan kemitraan dengan kementerian/lembaga, sektor swasta, dan masyarakat.",
+          "Pemantauan dan evaluasi kebijakan serta merencanakan tindak lanjutnya."
+        ],
+        "pages": [
+          27
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "text": "Koding dan kecerdasan artifisial diharapkan untuk mampu menyiapkan talenta digital untuk berkontribusi pada pembangunan ekonomi. Selain itu koding dan kecerdasan artifisial bertujuan untuk menyiapkan sumber daya manusia yang mampu memanfaatkan teknologi kecerdasan artifisial dengan produktif, efektif, dan bertanggungjawab. … Peningkatan kapasitas pendidik menjadi prioritas utama melalui pelatihan dan pendampingan.",
+    "pages": [
+      28
+    ]
+  },
+  "open_points": [
+    "The decree sets no grade range, phase or JP for KKA at SD. The naskah akademik (Februari 2025) recommends SD kelas 5 dan 6, 2 JP per minggu; until a curriculum-structure regulation confirms this, SIGRAK should treat grades and JP as unconfirmed.",
+    "No CP, elements or learning objectives are in the decree; BSKAP is tasked to develop 'capaian koding dan kecerdasan artifisial'. The only SD content available is Tabel 6 (Fase C) of the naskah akademik; no Fase A or B content exists in either document.",
+    "The OCR text layer reads 'Lini masa ... 2025-2029' on PDF 26; the page image reads '2025-2028'. The image value is used.",
+    "Integration examples differ from the naskah akademik: decree names Pendidikan Pancasila (etika KA) and Matematika (analisis data); the naskah akademik names matematika, bahasa, IPAS and a Bahasa Indonesia example. Kokurikuler in the decree is 'berbasis teknologi atau rekayasa (engineering)'.",
+    "Bimtek trainers: decree says 'Calon pengajar berasal dari unsur LPD atau pihak lain yang ditetapkan Kemendikdasmen' (PDF 8); the naskah akademik says Widyaiswara and PTP at UPT plus LPD practitioners. Training providers: decree says LPD; naskah akademik says UPT Ditjen GTK-PG.",
+    "The decree has no teacher eligibility rule for SD (guru kelas vs. other teachers) and no classroom assessment/rapor rule for KKA.",
+    "The decree addresses Kementerian Agama in its objectives but has no MI-specific provision; whether madrasah follow it depends on a Kemenag instrument not in docs/dokumen-resmi.",
+    "The KEDUA dictum applies the guideline 'mulai tahun ajaran 2025/2026', while the timeline calls 2025-2026 'Tahun Pertama'."
+  ]
+}

@@ -1,0 +1,928 @@
+{
+  "dataset": "deep_learning_guideline",
+  "version_code": "PEDOMAN-PM-KEPMENDIKDASMEN-126-P-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Kepmendikdasmen 126/P/2025 (implementation guideline for pembelajaran mendalam): definition, principles, the 8 profile dimensions by name, the four framework elements by name, stakeholder roles, risks, monitoring, and the 2024-2030 timeline, as they bind SD/MI. The decree is a governance document; the pedagogical detail SIGRAK needs for RPM (principle indicators, learning experiences, dimension descriptions, lesson-plan components, assessment) is only in the slide deck, see docs/data/regulations/deep-learning-slides.json, which uses the same keys for shared concepts.",
+  "source": {
+    "title": "Keputusan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 126/P/2025 tentang Pedoman Implementasi Pembelajaran Mendalam pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "126/P/2025",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2025-09-04",
+    "year": 2025,
+    "file": "docs/dokumen-resmi/1758017373_manage_file.pdf",
+    "sha256": "20706793bca33c17062d72cfc0fe0c362e31f867f42656287b5c05be4fab2da3",
+    "pages_total": 29,
+    "pages_note": "All page refs are PDF page numbers. PDF pages 1-3 are the decree body (printed 1-3); PDF pages 4-29 are the Lampiran, printed 1-26 (printed = PDF - 3). PDF page 25 carries printed number 22. It is a scanned 'Salinan' copy with an OCR text layer."
+  },
+  "extraction": {
+    "method": "pdftotext -layout text layer (OCR of a scanned copy, with errors such as 'mendaiam', '2O28', 'UPI'), read page by page; quoted values corrected against the page images where the OCR was wrong.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [
+      1,
+      3,
+      25,
+      26
+    ],
+    "skipped": [
+      "Mengingat list of legal bases (PDF 1-3): kept only the two curriculum/SKL regulations in legal_basis.",
+      "Ditjen Vokasi, Pendidikan Khusus, dan PLK items aimed only at SMK (SMK content, partnership with dunia kerja), PDF 8-9; items shared with SLB are kept.",
+      "BBPPMPV/BPPMPV (vocational UPT) roles, PDF 10: SMK only.",
+      "PAUD, SMP, SMA, SMK named only as levels in scope (PDF 1, 3, 26); no level-specific rules for them were found in the decree.",
+      "BAB IV media list (social media, TV, radio, print), PDF 16-17: summarised in one item, not itemised.",
+      "BAB VII Penutup prose, PDF 28-29: only the 'memuliakan, berkesadaran, bermakna, dan menggembirakan' sentence kept."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only, OCR errors fixed from the image).",
+      "Shared concepts use the same keys as docs/data/regulations/deep-learning-slides.json: principles (mindful/meaningful/joyful, plus honouring), holistic_development (olah pikir/hati/rasa/raga), learning_experiences (understanding/applying/reflecting), learning_framework (pedagogical_practice/learning_partnership/learning_environment/digital_utilization), graduate_profile_dimensions (faith_piety ... communication).",
+      "'summary' fields are English developer notes, not source text."
+    ]
+  },
+  "decree": {
+    "decisions": [
+      {
+        "key": "kesatu",
+        "text": "Menetapkan pedoman implementasi pembelajaran mendalam pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah sebagaimana tercantum dalam Lampiran yang merupakan bagian tidak terpisahkan dari Keputusan Menteri ini.",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "key": "kedua",
+        "text": "Pedoman implementasi pembelajaran mendalam digunakan sebagai acuan bagi Kementerian Pendidikan Dasar dan Menengah, pemerintah daerah, satuan pendidikan, pendidik dan tenaga kependidikan, serta pemangku kepentingan lainnya dalam melaksanakan pembelajaran mendalam mulai tahun ajaran 2025/2026.",
+        "effective_school_year": "2025/2026",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "key": "ketiga",
+        "text": "Keputusan Menteri ini mulai berlaku pada tanggal ditetapkan.",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "legal_basis_relevant": [
+      {
+        "text": "Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 10 Tahun 2025 tentang Standar Kompetensi Lulusan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "text": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah … sebagaimana telah diubah dengan Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 13 Tahun 2025",
+        "pages": [
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "guideline_meta": {
+    "purposes": [
+      {
+        "text": "memberikan acuan bagi unit utama dan direktorat teknis di Kementerian Pendidikan Dasar dan Menengah, dinas pendidikan provinsi/kabupaten/kota, pendidik, tenaga kependidikan, dan pemangku kepentingan lainnya dalam mengimplementasikan pembelajaran mendalam.",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "text": "memastikan koordinasi, keselarasan, serta kesinambungan program dan kegiatan Kementerian Pendidikan Dasar dan Menengah yang terkait dengan implementasi pembelajaran mendalam; dan",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "text": "memberikan gambaran mekanisme kerja implementasi pembelajaran mendalam bagi seluruh pemangku kepentingan.",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "audiences": [
+      {
+        "text": "Kementerian Pendidikan Dasar dan Menengah.",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "text": "Dinas Pendidikan Provinsi/Kabupaten/Kota.",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "text": "Pendidik, kepala satuan pendidikan, pengawas sekolah, penilik satuan pendidikan, dan tenaga kependidikan lainnya.",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "text": "Mitra pembangunan pendidikan, pemangku kepentingan pendidikan lainnya yang terlibat dalam implementasi pembelajaran mendalam.",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "scope": {
+      "text": "Ruang lingkup pedoman implementasi pembelajaran mendalam mencakup pendahuluan, tata kelola, manajemen risiko, sistem informasi dan komunikasi, pemantauan dan evaluasi, lini masa, dan penutup.",
+      "summary": "Chapters: BAB I Pendahuluan, II Tata Kelola, III Manajemen Risiko, IV Sistem Informasi dan Komunikasi, V Pemantauan dan Evaluasi, VI Lini Masa, VII Penutup. No chapter on lesson planning or assessment.",
+      "pages": [
+        6
+      ]
+    }
+  },
+  "background": {
+    "problems": [
+      {
+        "text": "Hasil studi The Organisation for Economic Cooperation and Development (OECD) pada Programme for International Student Assessment (PISA), menunjukkan rendahnya kemampuan literasi dan numerasi murid Indonesia. … kurangnya keterampilan berpikir tingkat tinggi (Higher Order Thinking Skills/HOTs) menghambat kemampuan murid dalam analisis, evaluasi, dan kreativitas. Ketimpangan mutu pendidikan antar daerah menambah kesenjangan akses terhadap pembelajaran yang berkualitas.",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "text": "… proses pembelajaran di Indonesia masih cenderung berbasis hafalan … Hal ini menuntut adanya perubahan pendekatan pembelajaran dari yang tekstual ke kontekstual, dari pasif ke aktif, dari ceramah ke eksplorasi.",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "competency_lineage": {
+      "text": "Murid perlu dibekali dengan keterampilan abad ke-21 yang mencakup berpikir kritis, kolaborasi, komunikasi, dan kreativitas. Seiring berjalannya waktu, keterampilan abad 21 di beberapa negara menjadi 6 kompetensi global di mana selain keterampilan abad 21 juga ditambahkan kewargaan dan karakter. Di Indonesia, 6 kompetensi tersebut dikembangkan menjadi 8 dimensi profil lulusan …",
+      "pages": [
+        5
+      ]
+    }
+  },
+  "definition": {
+    "text": "Pembelajaran mendalam merupakan pendekatan pembelajaran yang bertujuan untuk meningkatkan kualitas proses pembelajaran menuju pendidikan bermutu untuk semua. Pembelajaran mendalam bukan kurikulum baru, melainkan pendekatan yang dikembangkan untuk menyempurnakan berbagai model pembelajaran sebelumnya seperti Cara Belajar Siswa Aktif (CBSA), Pembelajaran Aktif, Kreatif, Efektif, dan Menyenangkan (PAKEM), Pembelajaran Aktif, Inovatif, Kreatif, Efektif, dan Menyenangkan (PAIKEM), dan Contextual Teaching and Learning (CTL).",
+    "emphasis": "Pembelajaran mendalam menekankan pentingnya pembelajaran yang memuliakan, berkesadaran, bermakna, dan menggembirakan melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.",
+    "core_of_deep_learning": "… inti dari pembelajaran mendalam adalah memahami, menganalisis, dan menerapkan konsep hingga melakukan refleksi dalam berbagai konteks.",
+    "not_a_new_curriculum": true,
+    "summary": "The decree's wording differs from the formal one-sentence definition on slide 8 (see slides file definition); both agree on memuliakan + the three principles + olah pikir/hati/rasa/raga.",
+    "pages": [
+      5,
+      12
+    ]
+  },
+  "principles": {
+    "summary": "The decree names the qualities but does not define them; definitions and indicators are in the slides file (principles).",
+    "items": [
+      {
+        "key": "honouring",
+        "name": "memuliakan",
+        "role": "overarching",
+        "pages": [
+          5,
+          28
+        ]
+      },
+      {
+        "key": "mindful",
+        "name": "berkesadaran",
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      },
+      {
+        "key": "meaningful",
+        "name": "bermakna",
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      },
+      {
+        "key": "joyful",
+        "name": "menggembirakan",
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      }
+    ]
+  },
+  "holistic_development": {
+    "items": [
+      {
+        "key": "olah_pikir",
+        "name": "olah pikir",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "key": "olah_hati",
+        "name": "olah hati",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "key": "olah_rasa",
+        "name": "olah rasa",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "key": "olah_raga",
+        "name": "olah raga",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "text": "… melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.",
+    "pages": [
+      5
+    ]
+  },
+  "graduate_profile_dimensions": {
+    "count": 8,
+    "text": "Di Indonesia, 6 kompetensi tersebut dikembangkan menjadi 8 dimensi profil lulusan, yaitu keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, dan komunikasi.",
+    "summary": "Names only; descriptions are in the slides file (graduate_profile_dimensions). The binding source of the dimensions is Permendikdasmen 10/2025 (SKL).",
+    "items": [
+      {
+        "order": 1,
+        "key": "faith_piety",
+        "name": "Keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa"
+      },
+      {
+        "order": 2,
+        "key": "citizenship",
+        "name": "Kewargaan"
+      },
+      {
+        "order": 3,
+        "key": "critical_reasoning",
+        "name": "Penalaran kritis"
+      },
+      {
+        "order": 4,
+        "key": "creativity",
+        "name": "Kreativitas"
+      },
+      {
+        "order": 5,
+        "key": "collaboration",
+        "name": "Kolaborasi"
+      },
+      {
+        "order": 6,
+        "key": "independence",
+        "name": "Kemandirian"
+      },
+      {
+        "order": 7,
+        "key": "health",
+        "name": "Kesehatan"
+      },
+      {
+        "order": 8,
+        "key": "communication",
+        "name": "Komunikasi"
+      }
+    ],
+    "pages": [
+      5
+    ]
+  },
+  "learning_experiences": {
+    "summary": "Not named as a framework in the decree; it only states the core of deep learning as understanding, analysing, applying, and reflecting. The three learning experiences (memahami, mengaplikasi, merefleksi) are defined in the slides file.",
+    "text": "Padahal inti dari pembelajaran mendalam adalah memahami, menganalisis, dan menerapkan konsep hingga melakukan refleksi dalam berbagai konteks.",
+    "items": [
+      {
+        "key": "understanding",
+        "name": "memahami"
+      },
+      {
+        "key": "applying",
+        "name": "menerapkan",
+        "note": "the slides use 'mengaplikasi'"
+      },
+      {
+        "key": "reflecting",
+        "name": "melakukan refleksi",
+        "note": "the slides use 'merefleksi'"
+      }
+    ],
+    "pages": [
+      12
+    ]
+  },
+  "learning_framework": {
+    "text": "… platform Rumah Pendidikan ini dapat dirancang untuk menyediakan berbagai informasi kerangka Pembelajaran Mendalam, yang dapat digunakan sebagai panduan sistematis dalam menyusun desain pembelajaran yang meliputi praktik pedagogis, lingkungan pembelajaran, pemanfaatan digital dan kemitraan pembelajaran.",
+    "summary": "Names only (listed in a different order than the slides); definitions in the slides file.",
+    "items": [
+      {
+        "key": "pedagogical_practice",
+        "name": "praktik pedagogis"
+      },
+      {
+        "key": "learning_partnership",
+        "name": "kemitraan pembelajaran"
+      },
+      {
+        "key": "learning_environment",
+        "name": "lingkungan pembelajaran"
+      },
+      {
+        "key": "digital_utilization",
+        "name": "pemanfaatan digital"
+      }
+    ],
+    "pages": [
+      17
+    ]
+  },
+  "governance": {
+    "central_government": [
+      {
+        "key": "secretariat_general",
+        "unit": "Sekretariat Jenderal",
+        "duties": [
+          "Menyusun kebijakan dan alokasi anggaran yang mendukung penerapan pembelajaran mendalam.",
+          "Melakukan sosialisasi dan kampanye mengenai pentingnya pembelajaran mendalam kepada publik, termasuk pendidik, orang tua, dan masyarakat luas.",
+          "Mengembangkan dan menyediakan infrastruktur teknologi pendukung pembelajaran mendalam, termasuk platform digital dan sumber daya pembelajaran berbasis teknologi.",
+          "Mengembangkan dan menyebarluaskan praktik baik terkait pembelajaran mendalam melalui Rumah Pendidikan.",
+          "Mengintegrasikan pendidikan karakter dalam pembelajaran mendalam.",
+          "Mengembangkan ajang talenta yang mendorong murid untuk menerapkan pembelajaran mendalam melalui projek, riset, dan inovasi.",
+          "Menyediakan skema pembiayaan yang mendukung implementasi pembelajaran mendalam, termasuk bantuan untuk satuan pendidikan dan murid."
+        ],
+        "pages": [
+          7
+        ]
+      },
+      {
+        "key": "dg_teachers",
+        "unit": "Direktorat Jenderal Guru, Tenaga Kependidikan, dan Pendidikan Guru",
+        "duties": [
+          "Menyiapkan desain dan Norma Prosedur Kriteria (NPK) untuk memfasilitasi pendidikan profesi guru bagi guru tertentu dan calon guru, peningkatan kompetensi pendidik dan tenaga kependidikan, dan pemberdayaan kelompok kerja pendidik dan tenaga kependidikan tentang pembelajaran mendalam.",
+          "Melakukan pelatihan pembelajaran mendalam bagi tim pengembang kurikulum dan penulis modul perkuliahan Pendidikan Profesi Guru (PPG).",
+          "Melakukan pembaharuan materi pembelajaran mendalam pada kurikulum PPG bagi calon guru dan guru tertentu.",
+          "Memasukkan materi pembelajaran mendalam pada modul dan Learning Management System (LMS) perkuliahan PPG bagi calon guru dan guru tertentu.",
+          "Menyiapkan perangkat pembelajaran untuk bimtek dan pelatihan dalam rangka peningkatan kompetensi pendidik dan tenaga kependidikan.",
+          "Menyiapkan narasumber bimtek dan pengajar pelatihan pembelajaran mendalam bagi pendidik, tenaga kependidikan, dan dosen/instruktur PPG.",
+          "Melakukan kegiatan bimtek narasumber Training of Trainer (ToT) pelatihan pembelajaran mendalam bagi pendidik dan tenaga kependidikan.",
+          "Melakukan koordinasi penyelenggaraan program peningkatan kompetensi pendidik dan tenaga kependidikan terkait pembelajaran mendalam bersama Unit Pelaksana Teknis (UPT).",
+          "Memfasilitasi penyelenggaraan program PPG dengan pendekatan pembelajaran mendalam.",
+          "Melakukan penjaminan mutu penyelenggaraan pengembangan kompetensi pendidik dan tenaga kependidikan.",
+          "Melakukan penjaminan mutu internal terhadap penyelenggaraan program PPG."
+        ],
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "key": "dg_paud_basic_secondary",
+        "unit": "Direktorat Jenderal Pendidikan Anak Usia Dini, Pendidikan Dasar dan Pendidikan Menengah",
+        "duties": [
+          "Menyiapkan strategi komunikasi digital tentang implementasi pembelajaran mendalam dengan: 1) merumuskan isi pesan (pesan kunci, pesan utama, dan pesan untuk semua pihak); 2) memetakan media yang digunakan (webinar, komunitas belajar kepala satuan pendidikan dan pendidik, media sosial, buklet, dll.); dan 3) memetakan sasaran penerima pesan (UPT, Dinas Pendidikan Provinsi/Kabupaten/Kota, Satuan Pendidikan).",
+          "Melakukan koordinasi dengan Sekretariat Jenderal berkaitan dengan butir a.",
+          "Melakukan advokasi pembelajaran mendalam untuk pemangku kepentingan pendidikan di daerah.",
+          "Melakukan pendampingan pada satuan pendidikan dengan: 1) melakukan pemetaan sekolah sasaran. 2) menyiapkan bahan pendampingan. 3) melaksanakan pendampingan dengan siklus: Refleksi Awal, Perencanaan, Implementasi, dan Evaluasi.",
+          "Melakukan pemantauan dan evaluasi implementasi pembelajaran mendalam."
+        ],
+        "mentoring_cycle": [
+          "Refleksi Awal",
+          "Perencanaan",
+          "Implementasi",
+          "Evaluasi"
+        ],
+        "pages": [
+          8
+        ]
+      },
+      {
+        "key": "dg_vocational_special",
+        "unit": "Direktorat Jenderal Pendidikan Vokasi, Pendidikan Khusus, dan Pendidikan Layanan Khusus",
+        "applies_to_sd": "Only through SLB (special schools, which may include SDLB); SMK-only items skipped.",
+        "duties": [
+          "Menyiapkan desain dan Norma Prosedur Kriteria (NPK) untuk memfasilitasi peningkatan profesionalisme guru Menengah Kejuruan (SMK) dan Sekolah Luar Biasa (SLB) dalam penerapan pembelajaran mendalam.",
+          "Menyiapkan strategi komunikasi digital tentang implementasi pembelajaran mendalam untuk SMK dan SLB …",
+          "Melakukan pendampingan pada satuan pendidikan … dengan siklus: Refleksi Awal, Perencanaan, Implementasi, dan Evaluasi.",
+          "Mengembangkan dan memperbaharui konten pembelajaran untuk SMK dan SLB.",
+          "Melakukan pemantauan dan evaluasi implementasi pembelajaran mendalam baik di SMK maupun di SLB."
+        ],
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "key": "bskap",
+        "unit": "Badan Standar, Kurikulum, dan Asesmen Pendidikan",
+        "duties": [
+          "Menyiapkan berbagai perangkat kebijakan yang terkait standar, kurikulum, asesmen, dan perbukuan dalam rangka implementasi pembelajaran mendalam.",
+          "Melakukan pengembangan panduan implementasi pembelajaran mendalam pada intrakurikuler, kokurikuler, dan ekstrakurikuler.",
+          "Melakukan pengembangan perangkat ajar yang menggunakan pendekatan pembelajaran mendalam.",
+          "Memfasilitasi penyamaan persepsi pembelajaran mendalam untuk internal Kemendikdasmen.",
+          "Melakukan evaluasi implementasi pembelajaran mendalam.",
+          "Mengkoordinasi pelaksanaan pemantauan dan evaluasi implementasi pembelajaran mendalam."
+        ],
+        "pages": [
+          9
+        ]
+      },
+      {
+        "key": "upt_bgtk",
+        "unit": "Balai Besar Guru dan Tenaga Kependidikan (BBGTK)/Balai Guru dan Tenaga Kependidikan (BGTK)/Kantor Guru dan Tenaga Kependidikan (KGTK)",
+        "duties": [
+          "Melakukan koordinasi antar UPT Kementerian untuk pelatihan implementasi pembelajaran mendalam bagi pendidik dan tenaga kependidikan di daerah masing-masing.",
+          "Mengelola perangkat pelatihan pembelajaran mendalam.",
+          "Memfasilitasi dan/atau menyelenggarakan ToT dan pelatihan pembelajaran mendalam.",
+          "Melakukan supervisi dan pendampingan pembelajaran pendidik, kepala satuan pendidikan, pengawas sekolah dan tenaga pendidik dalam rangka peningkatan kompetensi terkait pembelajaran mendalam.",
+          "Melakukan refleksi dan evaluasi pelatihan pembelajaran mendalam dan dampaknya.",
+          "Membuat rencana tindak lanjut berbasis hasil refleksi dan evaluasi."
+        ],
+        "pages": [
+          9,
+          10
+        ]
+      },
+      {
+        "key": "upt_bpmp",
+        "unit": "Balai Besar Penjaminan Mutu Pendidikan (BBPMP)/Balai Penjaminan Mutu Pendidikan (BPMP)",
+        "duties": [
+          "Melakukan koordinasi antar UPT untuk intervensi dalam rangka penguatan implementasi pembelajaran mendalam di daerah.",
+          "Menyiapkan bahan bimtek bagi Dinas Pendidikan.",
+          "Menyelenggarakan bimtek bagi Dinas Pendidikan.",
+          "Melakukan advokasi kepada Pemda secara berkelanjutan.",
+          "Melakukan refleksi dan evaluasi implementasi pembelajaran mendalam.",
+          "Melakukan perencanaan tindak lanjut berbasis refleksi dan evaluasi."
+        ],
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "regional_government": {
+      "summary": "Role of dinas pendidikan (provincial/district).",
+      "duties": [
+        "Membuat kebijakan untuk implementasi.",
+        "Membuat perencanaan program untuk pembelajaran mendalam.",
+        "Melakukan pendampingan dan pelatihan kepada satuan pendidikan.",
+        "Melakukan koordinasi dengan UPT.",
+        "Memfasilitasi optimalisasi kelompok kerja guru dan tenaga kependidikan sebagai wadah peningkatan kompetensi berkelanjutan.",
+        "Pemantauan dan evaluasi ke satuan pendidikan."
+      ],
+      "pages": [
+        10
+      ]
+    },
+    "school": {
+      "summary": "Role of the satuan pendidikan (SD/MI school). Teacher-level roles (aktivator, kolaborator, pengembang budaya belajar) are only in the slides file (teacher_roles).",
+      "duties": [
+        "Merancang dan mengadaptasi kurikulum.",
+        "Meningkatkan kapasitas pendidik melalui pelatihan.",
+        "Mendorong kemitraan, kolaborasi, dan keterlibatan murid.",
+        "Melibatkan orang tua dan komunitas.",
+        "Menciptakan lingkungan belajar yang mendukung.",
+        "Mengoptimalkan digitalisasi pendidikan di sekolah untuk mendukung implementasi pembelajaran mendalam.",
+        "Melakukan evaluasi dan perbaikan berkelanjutan."
+      ],
+      "pages": [
+        11
+      ]
+    },
+    "development_partners": {
+      "text": "Mitra pembangunan pendidikan adalah lembaga, organisasi serta dunia usaha dan dunia industri yang memiliki pendanaan mandiri (self-funding) serta ketertarikan dan komitmen dalam berkontribusi di bidang pendidikan, seperti pelatihan dan/atau pengadaan media pembelajaran dalam bentuk cetak dan digital atau bentuk lainnya yang relevan.",
+      "pages": [
+        11
+      ]
+    }
+  },
+  "risk_management": {
+    "definition": {
+      "text": "Manajemen risiko adalah proses mengidentifikasi peristiwa yang berpotensi dapat memengaruhi pemangku kepentingan, mengelola risiko agar berada dalam batas toleransi risiko (risk appetite), dan menyediakan penjaminan memadai terkait implementasi pembelajaran mendalam.",
+      "pages": [
+        12
+      ]
+    },
+    "risks": [
+      {
+        "key": "misconception",
+        "name": "Miskonsepsi dan Distorsi",
+        "examples": [
+          "… ada anggapan bahwa pembelajaran mendalam hanya berarti murid harus mengingat lebih banyak informasi. Padahal inti dari pembelajaran mendalam adalah memahami, menganalisis, dan menerapkan konsep hingga melakukan refleksi dalam berbagai konteks.",
+          "Anggapan lain yang mungkin muncul, antara lain bahwa hanya murid dengan kemampuan akademik tinggi yang bisa berpartisipasi dalam pembelajaran mendalam."
+        ],
+        "pages": [
+          12
+        ]
+      },
+      {
+        "key": "participation_resistance",
+        "name": "Partisipasi dan Resistensi",
+        "text": "Pendidik perlu menciptakan lingkungan pembelajaran yang aman, kondusif, dan nyaman. Mereka perlu membangun hubungan yang saling mendukung, di mana murid merasa nyaman untuk mencoba berhasil dan bahkan ketika mereka gagal.",
+        "resistance_factors": [
+          "informasi tentang pembelajaran mendalam yang beredar tidak berdasar pada sumber atau rujukan yang valid",
+          "memiliki anggapan bahwa pendidik merasa sudah mengetahui dan menerapkan lebih dahulu pembelajaran mendalam, padahal belum pembelajaran mendalam",
+          "munculnya asumsi bahwa pendekatan ini akan menambah beban kerja guru",
+          "keraguan atas efektivitas pembelajaran mendalam",
+          "tidak menganggap penting pembelajaran mendalam sebagai pendekatan yang selaras dan kontekstual pada masa ini"
+        ],
+        "mitigation": "Untuk mengatasi resistensi pendidik, satuan pendidikan perlu terlebih dahulu mengidentifikasi faktor penyebabnya. Setelah itu pendidik perlu dilibatkan dalam proses perencanaan dan pengambilan keputusan terhadap perubahan yang terjadi. Implementasi pembelajaran mendalam bisa dimulai dari porsi yang kecil dalam keseluruhan proses pembelajaran dan ditingkatkan secara bertahap. Keputusan peningkatan penerapan pembelajaran mendalam dilakukan setelah melalui evaluasi secara berkala. … pendidik yang berhasil menerapkan pembelajaran mendalam … perlu diberikan apresiasi dan motivasi untuk membagikan praktik baiknya kepada pendidik lain.",
+        "summary": "Gradual adoption is explicitly allowed: start with a small portion of lessons and scale up after periodic evaluation. Relevant to SIGRAK onboarding copy.",
+        "pages": [
+          12,
+          13
+        ]
+      },
+      {
+        "key": "instructional_leadership",
+        "name": "Kepemimpinan Pembelajaran",
+        "text": "Kepemimpinan dalam pembelajaran mendalam tidak hanya berfokus pada manajemen sekolah atau institusi, tetapi juga pada bagaimana pemimpin (kepala satuan pendidikan, pengawas, pendidik, atau pemimpin kebijakan pendidikan) dapat menetapkan arah strategis yang mendukung eksplorasi mendalam dan pengembangan keterampilan berpikir tingkat tinggi, dalam bentuk rumusan visi yang berorientasi pada pembelajaran mendalam. Selain itu, mendorong budaya kolaboratif adalah salah satu kunci kesuksesan pembelajaran mendalam …",
+        "pages": [
+          13,
+          14
+        ]
+      }
+    ],
+    "treatment": [
+      {
+        "key": "universal_participation",
+        "text": "Partisipasi semesta dalam konteks pendidikan mengacu pada keterlibatan aktif semua komponen masyarakat dalam penyelenggaraan pendidikan … melalui konsep 'Gotong Royong Mencerdaskan Bangsa' …",
+        "pages": [
+          14
+        ]
+      },
+      {
+        "key": "technology_ai",
+        "text": "Pemanfaatan teknologi terkini dalam rangka mendukung proses pembelajaran, terutama integrasi kecerdasan artifisial, menjadi keadaban baru guna menciptakan pembelajaran yang berkesadaran, bermakna, dan menggembirakan.",
+        "summary": "Explicit endorsement of AI in learning; supports SIGRAK's AI-assisted planning positioning.",
+        "pages": [
+          14
+        ]
+      }
+    ],
+    "monitoring_review": {
+      "text": "Pemantauan dan reviu risiko dilakukan melalui pengawasan terkait tata kelola implementasi pembelajaran mendalam dan efektivitas tahapan manajemen risiko.",
+      "pages": [
+        14,
+        15
+      ]
+    }
+  },
+  "information_and_communication": {
+    "channels": {
+      "summary": "Online: media sosial, laman, platform digital (Rumah Pendidikan), akun pembelajaran (belajar.id). Offline: media cetak, televisi dan radio, kegiatan, surat dan dokumen.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    "rumah_pendidikan": {
+      "text": "Platform Rumah Pendidikan mengintegrasikan berbagai layanan pendidikan digital dalam satu ekosistem yang inklusif, efisien, dan berkelanjutan melalui fitur Ruang Murid, Ruang GTK, Ruang Sekolah, Ruang Bahasa, Ruang Orang Tua, Ruang Pemerintah, Ruang Publik, dan Ruang Mitra.",
+      "pages": [
+        17,
+        18
+      ]
+    },
+    "complaints": {
+      "text": "Penanganan masalah di Kementerian Pendidikan Dasar dan Menengah dilakukan terintegrasi melalui Unit Layanan Terpadu (ULT).",
+      "pages": [
+        18,
+        19
+      ]
+    },
+    "faq": {
+      "text": "SSD dapat disediakan melalui laman Sistem Informasi Kurikulum Nasional (kurikulum.kemdikbud.go.id) dan Rumah Pendidikan.",
+      "pages": [
+        19
+      ]
+    }
+  },
+  "monitoring_evaluation": {
+    "success_indicator": {
+      "text": "Secara umum indikator keberhasilan pembelajaran mendalam, yakni meningkatkan mutu pendidikan yang dilihat dari capaian hasil belajar murid.",
+      "pages": [
+        20
+      ]
+    },
+    "stages": [
+      {
+        "key": "document_evaluation",
+        "name": "Evaluasi dokumen",
+        "text": "… untuk melihat kesiapan dan kelengkapan dokumen penunjang kebijakan pembelajaran mendalam, mulai dari naskah akademik, regulasi peraturan Menteri (Standar Kompetensi Lulusan, Standar Isi, dan Kurikulum), dokumen persiapan pelaksanaan (panduan pelaksanaan implementasi, pedoman sosialisasi, buku teks, panduan pembelajaran dan asesmen, dll), sampai pada perangkat ajar (capaian pembelajaran, alur tujuan pembelajaran, modul ajar, dll).",
+        "pages": [
+          20,
+          21
+        ]
+      },
+      {
+        "key": "implementation_evaluation",
+        "name": "Evaluasi implementasi",
+        "phases": [
+          {
+            "name": "Tahap Persiapan",
+            "text": "Instrumen yang dikembangkan bertujuan untuk menilai keberhasilan sosialisasi dan bimbingan teknis, pemanfaatan sumber daya yang disediakan oleh Kemendikdasmen serta kesiapan satuan pendidikan, termasuk kesiapan pendidik dan kepala satuan pendidikan."
+          },
+          {
+            "name": "Tahap pelaksanaan",
+            "text": "Instrumen yang dikembangkan bertujuan untuk melihat gambaran implementasi pembelajaran mendalam di satuan pendidikan serta komitmen dan dukungan pemerintah daerah."
+          }
+        ],
+        "pages": [
+          20,
+          21
+        ]
+      },
+      {
+        "key": "impact_evaluation",
+        "name": "Evaluasi dampak",
+        "phases": [
+          {
+            "name": "Dampak Awal",
+            "text": "Instrumen yang dikembangkan bertujuan untuk mengukur peningkatan mutu proses pembelajaran dan kualitas lingkungan belajar serta meningkatnya komitmen daerah dalam mendukung pembelajaran mendalam melalui regulasi, program, dan penganggaran."
+          },
+          {
+            "name": "Dampak Akhir",
+            "text": "Instrumen yang dikembangkan bertujuan untuk mengukur hasil jangka panjang di tingkat satuan pendidikan, seperti peningkatan mutu pendidikan (literasi, numerasi, dan karakter) serta di tingkat pemerintah daerah dalam hal kebijakan yang mendukung keberlanjutan pembelajaran mendalam."
+          }
+        ],
+        "pages": [
+          20,
+          21
+        ]
+      }
+    ],
+    "mechanism_steps": [
+      {
+        "order": 1,
+        "name": "Perencanaan Pemantauan dan Evaluasi",
+        "pages": [
+          21
+        ]
+      },
+      {
+        "order": 2,
+        "name": "Pengumpulan Data",
+        "text": "… misalnya survei, wawancara, observasi, atau analisis dokumen …",
+        "pages": [
+          21,
+          22
+        ]
+      },
+      {
+        "order": 3,
+        "name": "Analisis dan Interpretasi Data",
+        "pages": [
+          22
+        ]
+      },
+      {
+        "order": 4,
+        "name": "Pelaporan Hasil",
+        "pages": [
+          22
+        ]
+      },
+      {
+        "order": 5,
+        "name": "Tindak Lanjut dan Perbaikan",
+        "pages": [
+          22
+        ]
+      }
+    ]
+  },
+  "professional_development": {
+    "training_stages": {
+      "text": "Pendekatan pembelajaran mendalam digunakan dalam pelatihan pembelajaran mendalam, dengan tahapan:",
+      "items": [
+        {
+          "code": "IN-1",
+          "text": "In-Service Learning 1 (IN-1): Pemahaman konsep pembelajaran mendalam."
+        },
+        {
+          "code": "ON",
+          "text": "On-the-Job Learning (ON): Praktik langsung di satuan pendidikan."
+        },
+        {
+          "code": "IN-2",
+          "text": "In-Service Learning 2 (IN-2): Refleksi dan tindak lanjut peningkatan praktik."
+        }
+      ],
+      "pages": [
+        24
+      ]
+    },
+    "pkb_70_20_10": {
+      "text": "PKB dilaksanakan dengan pola 70:20:10 agar dapat meningkatkan kualitas praktik pendidik dan tenaga kependidikan di satuan pendidikan",
+      "items": [
+        {
+          "percent": 70,
+          "name": "Pengalaman",
+          "text": "Praktik langsung di satuan pendidikan."
+        },
+        {
+          "percent": 20,
+          "name": "Sosial",
+          "text": "Diskusi dan kolaborasi dalam kelompok kerja (komunitas belajar)."
+        },
+        {
+          "percent": 10,
+          "name": "Formal",
+          "text": "Pelatihan terstruktur di UPT atau di kelompok kerja (komunitas belajar)."
+        }
+      ],
+      "note": "Komposisi 70:20:10 dapat diadaptasi secara proporsional berdasarkan kebutuhan PKB PTK dengan pembelajaran berbasis pengalaman yang memiliki komposisi lebih besar dibandingkan dengan pembelajaran berbasis sosial dan pembelajaran berbasis formal.",
+      "pages": [
+        25,
+        26
+      ]
+    }
+  },
+  "timeline": {
+    "summary_text": "Implementasi pembelajaran mendalam dirancang bertahap selama lima tahun untuk memastikan efektivitas dan keberlanjutan program …",
+    "overview": [
+      {
+        "key": "year_0",
+        "label": "Tahun nol",
+        "years": "2024-2025",
+        "text": "… fokus utama pada persiapan dan uji coba melalui penyusunan naskah akademik, sosialisasi, bimbingan teknis serta pelaksanaan Sekolah Model Quick Win Pembelajaran Mendalam di berbagai jenjang pendidikan.",
+        "pages": [
+          23
+        ]
+      },
+      {
+        "key": "year_1",
+        "label": "Tahun pertama",
+        "years": "2025-2026",
+        "text": "… menitikberatkan pada uji publik dan umpan balik, sosialisasi dan strategi komunikasi, bimbingan teknis, TOT dan pelatihan, advokasi, penetapan sekolah model, pendampingan dan analisis data.",
+        "pages": [
+          23
+        ]
+      },
+      {
+        "key": "year_2_3",
+        "label": "Tahun kedua dan ketiga",
+        "years": "2026-2028",
+        "text": "… berdasarkan hasil evaluasi model, diarahkan pada perluasan implementasi secara nasional dengan dukungan UPT Ditjen GTK di 38 provinsi serta penguatan kompetensi pendidik melalui strategi Pengembangan Kompetensi Berkelanjutan (PKB).",
+        "pages": [
+          23
+        ]
+      },
+      {
+        "key": "year_4_5",
+        "label": "Tahun keempat dan kelima",
+        "years": "2028-2030",
+        "text": "… pembelajaran mendalam diterapkan secara menyeluruh di semua jenjang pendidikan dengan memastikan keselarasan kurikulum, asesmen, dan praktik pembelajaran …",
+        "pages": [
+          23
+        ]
+      }
+    ],
+    "detail": [
+      {
+        "key": "year_0",
+        "heading": "Tahun Nol (2024-2025)",
+        "items": [
+          "Penyusunan naskah akademik dan bahan sosialisasi",
+          "Sosialisasi awal dan uji publik",
+          "Reviu Standar Kompetensi Lulusan, Standar Isi, Standar Proses, dan Standar Penilaian Pendidikan"
+        ],
+        "pages": [
+          23
+        ]
+      },
+      {
+        "key": "year_1",
+        "heading": "Tahun Pertama (2025-2026)",
+        "items": [
+          "Uji Publik dan Umpan Balik",
+          "Sosialisasi dan Strategi Komunikasi",
+          "Bimbingan Teknis (Bimtek), ToT, dan Pelatihan",
+          "Advokasi kepada Pemerintah Daerah",
+          "Penetapan Sekolah Model Quick Win Pembelajaran Mendalam, Pendampingan, dan Analisis Data"
+        ],
+        "pages": [
+          24,
+          25
+        ]
+      },
+      {
+        "key": "year_2_3",
+        "heading": "Tahun Kedua dan Ketiga (2026-2028)",
+        "items": [
+          "Perluasan Implementasi",
+          "Pengembangan Kompetensi Berkelanjutan (PKB)",
+          "Advokasi kepada Pemerintah Daerah (Pemda)",
+          "Safeguarding dan Complaint Handling"
+        ],
+        "pages": [
+          25,
+          26
+        ]
+      },
+      {
+        "key": "year_4_5",
+        "heading": "Tahun Keempat dan Kelima (2028-2029)",
+        "items": [
+          "Implementasi Menyeluruh di Seluruh Satuan Pendidikan",
+          "Refleksi dan Rencana Tindak Lanjut",
+          "Penguatan Ekosistem Pendidikan",
+          "Penjaminan Mutu Internal dan Eksternal"
+        ],
+        "key_rules": [
+          "Pembelajaran mendalam diterapkan secara nasional di semua jenjang pendidikan, mulai dari PAUD hingga Jenjang Pendidikan Dasar dan Pendidikan Menengah.",
+          "BSKAP dan Puskurjar memastikan keselarasan antara kurikulum, asesmen, dan praktik pembelajaran di kelas.",
+          "Akreditasi sekolah dan sertifikasi guru diselaraskan dengan prinsip-prinsip pembelajaran mendalam."
+        ],
+        "pages": [
+          26,
+          27
+        ]
+      },
+      {
+        "key": "year_5",
+        "heading": "Tahun Kelima (2029-2030)",
+        "items": [
+          "Refleksi dan Keberlanjutan",
+          "Keberlanjutan Pedagogis",
+          "Keberlanjutan Kebijakan",
+          "Keberlanjutan Anggaran",
+          "Pengembangan Rekomendasi dan Tindak Lanjut"
+        ],
+        "pages": [
+          27
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "text": "Dengan pembelajaran mendalam diharapkan tercipta proses pembelajaran yang memuliakan, berkesadaran, bermakna, dan menggembirakan sehingga setiap murid dapat berkembang secara optimal sesuai dengan potensinya.",
+    "pages": [
+      28
+    ]
+  },
+  "not_in_this_document": {
+    "summary": "Topics the task brief expected but the decree does not contain; use the slides file for them.",
+    "items": [
+      "definitions/indicators of berkesadaran, bermakna, menggembirakan",
+      "definitions of memahami, mengaplikasi, merefleksi",
+      "descriptions of the 8 graduate profile dimensions",
+      "definitions of the four framework elements",
+      "lesson-plan (RPM) components: identifikasi, desain pembelajaran, pengalaman belajar, asesmen",
+      "teacher roles in the classroom",
+      "assessment guidance (as/for/of learning)",
+      "SD/MI-specific examples"
+    ],
+    "see": "docs/data/regulations/deep-learning-slides.json"
+  },
+  "open_points": [
+    {
+      "text": "Timeline year ranges are inconsistent: the overview gives 'Tahun keempat dan kelima (2028-2030)', the detail heading gives 'Tahun Keempat dan Kelima (2028-2029)', and a separate 'Tahun Kelima (2029-2030)' follows; the caption reads 'Linimasa Implementasi Pembelajaran Mendalam 2025-2030' while year 0 is 2024-2025. Recorded as printed.",
+      "pages": [
+        23,
+        26,
+        27
+      ]
+    },
+    {
+      "text": "Province count differs: 'UPT Ditjen GTK di 38 provinsi' (PDF 23) vs 'UPT Ditjen GTKPG di 34 provinsi' (PDF 25, confirmed on image).",
+      "pages": [
+        23,
+        25
+      ]
+    },
+    {
+      "text": "Resistance factors are numbered (1)-(4) with (4) used twice; five factors recorded.",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "text": "The decree does not mention madrasah/MI or Kementerian Agama; whether it binds MI directly (versus KMA rules) is not stated. SIGRAK treats the pedagogy as shared for SD/MI; confirm with Tim Validasi.",
+      "pages": [
+        1,
+        6
+      ]
+    },
+    {
+      "text": "BSKAP is named 'Badan Standar, Kurikulum, dan Asesmen Pendidikan' (PDF 9) and 'Badan Standar, Asesmen, dan Kurikulum Pendidikan' (PDF 23-24). Recorded as printed.",
+      "pages": [
+        9,
+        23,
+        24
+      ]
+    }
+  ]
+}

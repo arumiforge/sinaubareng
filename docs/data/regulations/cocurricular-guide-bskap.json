@@ -1,0 +1,725 @@
+{
+  "dataset": "cocurricular_guide",
+  "version_code": "PANDUAN-KOKURIKULER-BSKAP-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": ["A", "B", "C"],
+  "note": "Structured extract of the BSKAP 2025 Kokurikuler guide, limited to what binds or illustrates SD/MI: definition, the three forms, time allocation, planning steps, plan template, assessment, rapor reporting and evaluation. SIGRAK may use it as the reference for the Kokurikuler module (output schema, JP budget per grade, rapor description rules) after validation.",
+  "source": {
+    "title": "Panduan Kokurikuler Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": null,
+    "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah (Pusat Kurikulum dan Pembelajaran)",
+    "issued_on": null,
+    "year": 2025,
+    "file": "docs/dokumen-resmi/kokurikuler.pdf",
+    "sha256": "340d1fc4ffb35572acc4da8b452fb295161021a2147e948f54f76ebf77f7ee46",
+    "pages_total": 74,
+    "pages_note": "All page refs are PDF page numbers. PDF pages 1-6 are covers, credits, foreword (printed iv) and contents (printed v-vi); from PDF page 7 on, printed page = PDF page - 6 (PDF 7 = printed 1, PDF 73 = printed 67). PDF 74 is the back cover. No issue date is printed; the year 2025 is printed on the title page (p. 2) and credits (p. 3)."
+  },
+  "extraction": {
+    "method": "pdftotext -layout text read page by page; every table and figure transcribed below was compared with page images rendered at 110 dpi.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [9, 30, 31, 34, 35, 36, 37, 45, 49, 50, 52, 62, 67, 68, 73],
+    "skipped": [
+      "PAUD: theme-integration rules, Bu Cici illustration, Tabel 10 PAUD row, PAUD Berseri 'Gigiku Bersih' plan and PAUD rapor rule (pp. 26, 28, 30, 45, 56-58, 62).",
+      "SMP/MTs: Bu Lina illustration, Tabel 6 rows 7-8, Tabel 9 'Program Kokurikuler SMP Generasi Unggul' (9 rows), Tabel 10 SMP row, SMP 'Peduli lingkungan' plan, SMP 7KAIH plan 'Generasi Sehat dan Bugar' kelas VII (pp. 27, 35, 41-44, 46-48, 53-54, 70-72).",
+      "SMA/MA: Tabel 6 rows 9-11, Tabel 10 SMA row, SMA Nusantara Jaya 'Kearifan Lokal Budaya Sunda' plan (pp. 35, 46, 58-60).",
+      "SMK/MAK: Pak Bara illustration, Tabel 7, Tabel 10 SMK row (pp. 27, 36, 46).",
+      "SMPLB and SMALB rows of Tabel 8 (p. 37); pendidikan kesetaraan rule (p. 28) noted only in passing.",
+      "Credits, foreword, contents, chapter title pages, reference list and back cover (pp. 1-6, 13, 21, 63, 69, 74) except where facts were taken from them."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "Obvious printed typos are kept as printed and flagged in open_points when they change meaning.",
+      "Fields prefixed derived_ are computed by the extractor, not printed in the source.",
+      "The guide never mentions P5 / Projek Penguatan Profil Pelajar Pancasila or Profil Pelajar Pancasila; any relation to P5 recorded here is an inference and is marked as such.",
+      "SMP-only examples are kept only where they are the sole illustration of a rule binding SD (the rapor description walkthrough), and are marked source_level SMP."
+    ]
+  },
+
+  "definition": {
+    "text": "Kokurikuler merupakan kegiatan pembelajaran yang dilaksanakan untuk penguatan, pendalaman, dan/atau pengayaan kegiatan Intrakurikuler dalam rangka pengembangan kompetensi, terutama penguatan karakter.",
+    "competence_meaning": "Kompetensi yang dimaksud adalah delapan dimensi profil lulusan … Delapan dimensi profil lulusan merupakan hasil dari capaian pengetahuan, keterampilan, dan karakter. Disamping itu, delapan dimensi profil lulusan menumbuhkembangkan lulusan yang memiliki kepemimpinan efektif yang berintegritas, profesional, dan transformatif.",
+    "foreword_variant": "Kokurikuler adalah kegiatan pembelajaran yang dilaksanakan untuk penguatan, pendalaman, dan/atau pengayaan kegiatan Intrakurikuler dalam rangka pengembangan karakter dan kompetensi murid.",
+    "nature": "Kokurikuler berisi kegiatan eksperiensial, langsung, berorientasi pada tindakan dan berdasarkan keterampilan.",
+    "flexibility": "Pelaksanaan kokurikuler dilakukan secara fleksibel, dari segi muatan, kegiatan, dan waktu pelaksanaannya. Satuan pendidikan dapat melibatkan orang tua, masyarakat dan/atau dunia kerja untuk merancang dan menyelenggarakan kokurikuler.",
+    "theme_role": "Tema dalam pelaksanaan kegiatan kokurikuler berfungsi menyatukan berbagai gagasan yang mengaitkan kegiatan pembelajaran sesuai dengan konteks sosial budaya dan karakteristik murid.",
+    "pages": [4, 7, 8]
+  },
+
+  "relation_to_other_programmes": {
+    "intrakurikuler_ekstrakurikuler": {
+      "text": "Pengalaman belajar yang beragam ini diperoleh melalui kegiatan intrakurikuler, kokurikuler, maupun ekstrakurikuler. Dengan demikian, kegiatan kokurikuler menjadi bagian integral dan berperan strategis untuk mengembangkan kompetensi murid, terutama karakter.",
+      "bridge": "Kokurikuler memiliki peran strategis untuk menjembatani antara pembelajaran konseptual di kelas dan penerapannya dalam kehidupan nyata, sehingga murid dapat mengembangkan kompetensi secara lebih utuh dan kontekstual.",
+      "pages": [7, 8]
+    },
+    "cross_disciplinary_in_intra_vs_koku": {
+      "text": "Pembelajaran kolaboratif lintas disiplin ilmu dapat dilaksanakan baik dalam kegiatan intrakurikuler maupun kokurikuler. Dalam konteks intrakurikuler, pembelajaran lintas disiplin ilmu bersifat opsional dan berorientasi pada pencapaian CP (Capaian Pembelajaran) sesuai mata pelajaran yang terlibat. Sementara itu, dalam kegiatan kokurikuler, pembelajaran lintas disiplin ilmu difokuskan pada pendalaman, penguatan, dan pengayaan pembelajaran kegiatan intrakurikuler dalam rangka memperkuat delapan dimensi profil lulusan.",
+      "pages": [44]
+    },
+    "deep_learning": {
+      "text": "Hal ini sejalan dengan konsep pembelajaran mendalam sebagaimana didefinisikan oleh Kemendikdasmen (2025), yaitu pendekatan yang memuliakan manusia dengan menekankan penciptaan suasana belajar yang berkesadaran (mindful), bermakna (meaningful), dan menggembirakan (joyful).",
+      "pages": [8]
+    },
+    "not_an_add_on": {
+      "text": "… kokurikuler menjadi ruang yang hidup, bermakna, dan menyatu dalam keseharian satuan pendidikan—bukan sekadar agenda tambahan …",
+      "reuse_existing": "Satuan pendidikan dapat memanfaatkan atau mengadaptasi kegiatan yang selama ini sudah berjalan, dan/atau merencanakan kegiatan kokurikuler yang baru untuk mencapai delapan dimensi profil lulusan. … Misalnya, kegiatan kerja bakti satuan pendidikan dapat dikaitkan dengan nilai kolaborasi … melalui kebiasaan bermasyarakat (dalam 7 KAIH).",
+      "pages": [12]
+    },
+    "muatan_lokal": {
+      "text": "Pada struktur kurikulum tercantum bahwa alokasi waktu kokurikuler pada muatan lokal ditandai dengan tanda “–”. Hal ini bukan berarti muatan lokal tidak dapat diintegrasikan ke dalam kegiatan kokurikuler, melainkan menunjukkan bahwa kokurikuler tidak mengambil alokasi jam pelajaran muatan lokal. Dengan demikian, muatan lokal tetap dapat menjadi bagian dari kokurikuler selama dirancang sebagai penguatan nilai, budaya, atau kearifan lokal melalui pendekatan lintas disiplin.",
+      "pages": [37]
+    },
+    "p5": {
+      "mentioned_in_source": false,
+      "summary": "The guide does not mention P5 or Profil Pelajar Pancasila at all. The only trace is the teacher-workload title: the kokurikuler coordinator is 'dalam peraturan yang mengatur beban kerja guru disebut koordinator pembelajaran berbasis projek'. Inference (not printed): kokurikuler replaces the P5 slot, and the eight dimensi profil lulusan replace the P5 dimensions.",
+      "pages": [22, 37]
+    }
+  },
+
+  "purpose": {
+    "goal": {
+      "text": "Kegiatan kokurikuler bertujuan mendukung tercapainya delapan dimensi profil lulusan secara nyata dan kontekstual melalui pengalaman belajar yang bermakna.",
+      "pages": [9]
+    },
+    "importance": [
+      {"text": "Komitmen ini tidak cukup diwujudkan hanya melalui pengalaman belajar intrakurikuler dan ekstrakurikuler saja, tetapi juga perlu diperkuat melalui kegiatan kokurikuler yang dirancang secara sistematis, bermakna, dan kontekstual.", "pages": [8]},
+      {"text": "Kokurikuler juga memiliki peran untuk menciptakan ekosistem belajar yang menyenangkan, bermakna, dan memberdayakan, yang memungkinkan murid tumbuh menjadi pribadi yang utuh.", "pages": [8]},
+      {"text": "Mereka diajak memahami, mengaplikasi, merefleksikan, dan bertindak. … pembelajaran yang menyentuh dimensi intelektual, etika, estetika, dan kinestetik sekaligus.", "pages": [9]}
+    ]
+  },
+
+  "graduate_profile_dimensions": {
+    "note": "Same eight dimensions for all levels. Kokurikuler targets one or more of them per activity; there is no fixed set per grade.",
+    "items": [
+      {"no": 1, "key": "faith_piety", "name": "Keimanan dan Ketakwaan terhadap Tuhan YME", "description": "Dimensi keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa mengacu pada individu yang memiliki keyakinan dan mengamalkan ajaran agama/kepercayaannya, berakhlak mulia, serta menjaga hubungan dengan Tuhan Yang Maha Esa, sesama manusia, dan lingkungan.", "pages": [10]},
+      {"no": 2, "key": "citizenship", "name": "Kewargaan", "description": "Dimensi kewargaan mengacu pada individu yang bangga akan identitas dan budayanya, menghargai keberagaman, menjaga persatuan bangsa, menaati aturan bernegara dan bermasyarakat, serta menjaga keberlanjutan kehidupan, lingkungan, dan harmoni antarbangsa.", "pages": [10]},
+      {"no": 3, "key": "critical_reasoning", "name": "Penalaran Kritis", "description": "Dimensi penalaran kritis mengacu pada individu yang memiliki rasa ingin tahu, mampu berpikir logis dan analitis, serta mampu menganalisis dan menyelesaikan permasalahan, berargumentasi logis, dan memanfaatkan literasi dan numerasi untuk memecahkan masalah.", "pages": [10]},
+      {"no": 4, "key": "creativity", "name": "Kreativitas", "description": "Dimensi kreativitas mengacu pada individu yang mampu berperilaku produktif, menciptakan inovasi, dan merumuskan solusi bagi permasalahan di sekitarnya.", "pages": [10]},
+      {"no": 5, "key": "collaboration", "name": "Kolaborasi", "description": "Dimensi kolaborasi mengacu pada individu yang membiasakan diri untuk peduli dan berbagi, serta membangun kerja sama dengan berbagai kalangan di lingkungan sekitar.", "pages": [10]},
+      {"no": 6, "key": "independence", "name": "Kemandirian", "description": "Dimensi kemandirian mengacu pada individu yang mampu bertanggung jawab, berinisiatif, dan beradaptasi dalam pembelajaran dan pengembangan diri.", "pages": [10]},
+      {"no": 7, "key": "health", "name": "Kesehatan", "description": "Dimensi kesehatan mengacu pada individu yang menjalankan pola hidup bersih dan sehat berdasarkan pemahaman tentang kebugaran, kesehatan fisik dan mental, dan berkontribusi secara positif terhadap lingkungannya.", "pages": [10]},
+      {"no": 8, "key": "communication", "name": "Komunikasi", "description": "Dimensi komunikasi mengacu pada individu yang memiliki kemampuan menyimak, membaca, berbicara, dan menulis dengan baik dan benar, sesuai etika dalam beragam konteks dan moda.", "pages": [10]}
+    ],
+    "how_chosen": {
+      "rule": "Kegiatan harus berangkat dari identifikasi dimensi profil lulusan yang ingin dikuatkan atau diperdalam. Dengan menentukan terlebih dahulu aspek dimensi profil lulusan yang menjadi fokus, satuan pendidikan dapat merancang kegiatan kokurikuler yang relevan dan berdampak.",
+      "from_analysis": "Hasil analisis pada tahapan sebelumnya menjadi dasar satuan pendidikan menentukan dimensi profil yang akan disasar dalam kegiatan kokurikuler.",
+      "identification_methods": "… kepala satuan pendidikan memimpin diskusi dengan pendidik, melakukan observasi, memeriksa dokumen hasil pembelajaran, dan analisis untuk mengidentifikasi delapan dimensi profil lulusan yang masih memerlukan penguatan.",
+      "led_by": "Kepala Satuan Pendidikan … Memimpin analisis kebutuhan untuk menentukan dimensi profil lulusan yang akan dikuatkan bersama koordinator dan guru kelas/ mata pelajaran",
+      "progression_term": "Kompetensi yang dimaksud adalah delapan dimensi profil lulusan yang selanjutnya dimaknai sebagai alur perkembangan kompetensi.",
+      "carry_over": "Apabila terdapat dimensi yang belum tercapai maka dimensi tersebut dilanjutkan kembali pada kegiatan kokurikuler tahun berikutnya.",
+      "sd_illustration": {
+        "school": "SD Lentera (Pak Armand)",
+        "text": "Hasil analisis menunjukkan tingkat pemakaian gawai murid semakin meningkat. Kadang hal ini memicu penyebaran informasi yang belum sesuai dengan usia murid. Dengan kondisi ini, dimensi yang sebaiknya dibangun adalah penalaran kritis. Murid diharapkan dapat menyaring dan memilah informasi dari internet."
+      },
+      "pages": [11, 22, 23, 25, 26, 66]
+    }
+  },
+
+  "criteria": {
+    "text": "Sebuah kegiatan dapat dikembangkan sebagai bagian dari kokurikuler jika bertujuan untuk memperkuat delapan dimensi profil lulusan, menunjang kegiatan intrakurikuler baik secara langsung maupun tidak langsung, serta memberi pengalaman belajar yang bermakna dan kontekstual bagi murid.",
+    "items": [
+      {"no": 1, "text": "Memiliki tujuan untuk memperkuat satu atau lebih dari delapan dimensi profil lulusan."},
+      {"no": 2, "text": "Mengembangkan tema sebagai muatan pembelajaran yang relevan dengan konteks sosial budaya dan karakteristik murid."},
+      {"no": 3, "text": "Mengelola alokasi waktu secara fleksibel mengacu pada struktur kurikulum yang berlaku."},
+      {"no": 4, "text": "Mengembangkan rangkaian kegiatan secara terencana (memuat tujuan, langkah-langkah pelaksanaan, dan asesmen)."}
+    ],
+    "pages": [11]
+  },
+
+  "forms": {
+    "intro": "Dalam konteks ini, kokurikuler dapat dilaksanakan dalam tiga cara, yaitu: 1) pembelajaran kolaboratif lintas disiplin ilmu; 2) Gerakan Tujuh Kebiasaan Anak Indonesia Hebat (7 KAIH); dan/atau 3) cara lainnya. Cara lainnya mengacu pada kurikulum satuan pendidikan dan/atau kebijakan pemerintah. Satuan pendidikan dapat memilih cara pelaksanaan kokurikuler disesuaikan dengan analisis potensi dan kebutuhan.",
+    "combinable": "Forms are joined by 'dan/atau'; a school may run several forms in one semester (rapor example p. 62: one lintas disiplin activity plus one 7KAIH activity).",
+    "pages": [8, 11, 28],
+    "items": [
+      {
+        "key": "cross_disciplinary_collaborative",
+        "name": "Pembelajaran kolaboratif lintas disiplin ilmu",
+        "description": "Pembelajaran kolaboratif lintas disiplin merupakan kegiatan kokurikuler yang mengintegrasikan dua atau lebih mata pelajaran/muatan pembelajaran dalam satu tema yang relevan dengan kehidupan nyata murid. Tujuannya adalah membantu murid melihat keterkaitan antarilmu sebagai upaya mengembangkan delapan dimensi profil lulusan serta memperdalam pemahaman melalui pengalaman kontekstual.",
+        "theme_rule": "Tema yang akan digunakan dapat ditentukan oleh satuan pendidikan dengan didasarkan pada hasil analisis potensi dan kebutuhan satuan pendidikan serta dimensi profil lulusan yang perlu ditingkatkan.",
+        "min_subjects": 2,
+        "development_flow": {
+          "figure": "Gambar 2. Alur Pengembangan Kegiatan Kokurikuler Lintas Disiplin Ilmu",
+          "steps": ["Penentuan Dimensi Profil Lulusan", "Penentuan Tema", "Mapel 1 / Mapel 2 / Mapel Lainnya (in parallel)", "Penyusunan Perencanaan Kokurikuler", "Pelaksanaaan Kokurikuler", "Evaluasi dan Tindak Lanjut"],
+          "pages": [30]
+        },
+        "implementation_and_grading": "Pelaksanaan kokurikuler dalam bentuk kolaboratif lintas disiplin ilmu dapat dilaksanakan seperti pembelajaran intrakurikuler yang berorientasi pada CP (Capaian Pembelajaran) sesuai mata pelajaran yang terlibat dalam rangka memperkuat delapan dimensi profil lulusan. Hasil asesmen dari bentuk ini dapat diintegrasikan pada nilai di intrakurikuler sesuai mata pelajaran yang relevan.",
+        "sd_example": {
+          "theme": "Lingkunganku Sehat, Aku Kuat",
+          "dimensions": ["Kesehatan", "Penalaran Kritis", "Kolaborasi"],
+          "text": "Tema ini mengajak murid untuk mengeksplorasi lingkungan sekitar mereka, mengenali masalah kebersihan dan kesehatan, serta merancang kampanye untuk menciptakan lingkungan yang lebih sehat. Kegiatan ini melibatkan integrasi beberapa mata pelajaran, yakni IPAS, Matematika, Bahasa Indonesia, dan Seni dan Budaya, dengan peran yang saling melengkapi.",
+          "subject_roles": [
+            {"subject": "IPAS", "role": "murid diajak untuk mengamati kondisi lingkungan di sekitar rumah atau satuan pendidikan, mengidentifikasi jenis-jenis sampah, serta memahami pengaruh lingkungan terhadap kesehatan."},
+            {"subject": "Matematika", "role": "murid belajar mengumpulkan dan menyusun data dalam bentuk tabel, grafik batang, atau diagram lingkaran sederhana."},
+            {"subject": "Bahasa Indonesia", "role": "mereka mengolah hasil pengamatan dan data tersebut menjadi laporan atau narasi … serta menuliskan pesan kampanye kebersihan dan kesehatan."},
+            {"subject": "Seni dan Budaya", "role": "sebagai penerapan keterampilan dan mengembangkan kreativitas digunakan untuk mendesain poster, brosur, atau media visual lainnya."}
+          ],
+          "closing": "Pada akhir kegiatan, murid mempresentasikan hasil proyek mereka di depan kelas.",
+          "note": "Labelled 'satuan pendidikan X' (no level printed), but the subjects (IPAS, Seni dan Budaya) are SD subjects and Tabel 10 lists this theme in the SD row.",
+          "pages": [29]
+        },
+        "pages": [28, 29, 30, 44, 61]
+      },
+      {
+        "key": "g7kaih",
+        "name": "Gerakan 7 Kebiasaan Anak Indonesia Hebat (G7KAIH / 7KAIH)",
+        "description": "Gerakan 7 Kebiasaan Anak Indonesia Hebat (G7KAIH) berbasis kebiasaan dan pembelajaran mendalam yang mengedepankan pembelajaran berkesadaran (mindful), bermakna (meaningful), dan menggembirakan (joyful). Dalam rangka mencapai sebuah kebiasaan diperlukan pembiasaan, dan pembiasaan memerlukan ekosistem pendukung yang dilakukan bersama mitra yang disebut dengan Catur Pusat Pendidikan.",
+        "focus": "Kegiatan kokurikuler G7KAIH ini fokus pada pembentukan karakter murid melalui pembangunan pembiasaan positif yang dilakukan secara rutin, konsisten, dan terencana.",
+        "habits": [
+          {"no": 1, "name": "Bangun pagi"},
+          {"no": 2, "name": "Beribadah"},
+          {"no": 3, "name": "Berolahraga"},
+          {"no": 4, "name": "Makan sehat dan bergizi"},
+          {"no": 5, "name": "Gemar belajar"},
+          {"no": 6, "name": "Bermasyarakat"},
+          {"no": 7, "name": "Tidur Cepat", "note": "Tabel 11 (p. 49) writes 'tidur tepat waktu'."}
+        ],
+        "not_a_slogan": "Sebagai kegiatan kokurikuler, G7KAIH bukan sekedar ajakan moral atau slogan harian, melainkan bagian dari proses pendidikan karakter yang perlu dirancang melalui identifikasi kebutuhan, tujuan yang jelas, langkah pelaksanaan yang sistematis, pendampingan, dan asesmen untuk merefleksikan perubahan kebiasaan dan sikap murid.",
+        "requirements": [
+          {"no": "i", "text": "tujuan memperkuat minimal satu dari delapan dimensi profil lulusan;"},
+          {"no": "ii", "text": "memperhatikan paduan antara aktivitas pembiasaan dan pengolahan lanjut hasil catatan harian; dan"},
+          {"no": "iii", "text": "asesmen boleh dikaitkan dengan satu atau lebih mata pelajaran/muatan pembelajaran yang relevan"}
+        ],
+        "activity_forms": "jurnal kebiasaan harian, tantangan kelas mingguan, kampanye kebiasaan baik, turun ke lapangan, wawancara dengan tokoh masyarakat atau tokoh agama, riset, hingga aksi kolaboratif antar kelas atau tingkat",
+        "choose_habits": "Satuan pendidikan dapat secara fleksibel menentukan tema dan memilih satu atau lebih kebiasaan dalam 7KAIH sesuai kebutuhan.",
+        "development_flow": {
+          "figure": "Gambar 3. Tahapan Pengembangan Kegiatan Kokurikuler Gerakan 7KAIH",
+          "steps": ["Penentuan Dimensi Profil Lulusan", "Penentuan Tema", "Penentuan Pembiasaan (Pelaksanaan G7KAIH)", "Penyusunan Perencanaan Kokurikuler", "Pelaksanaaan Kokurikuler", "Evaluasi dan Tindak Lanjut"],
+          "step_notes": [
+            {"step": "Penentuan tema dan pembiasaan", "text": "Penentuan tema dalam kegiatan kokurikuler wajib memperhatikan dimensi profil lulusan yang ingin dicapai, sekaligus menentukan pembiasaan yang akan dilakukan. Pembiasaan ditentukan dengan memperhatikan aktivitas kebiasaan yang akan dilakukan dan dukungan dari Catur Pusat Pendidikan guna membangun ekosistem pendukung."},
+            {"step": "Penyusunan perencanaan", "text": "Dalam penyusunan perencanaan memperhatikan praktik pedagogis yang dilakukan, lingkungan dan kemitraan pembelajaran, pemanfaatan teknologi digital, aktivitas kegiatan yang dilakukan, dan evaluasi dan tindak lanjut."},
+            {"step": "Pelaksanaan", "text": "Pelaksanaan terdiri dari 4 (empat) kegiatan utama, yaitu (i) membangun kesepakatan antara guru dan murid sebagai upaya membangun kesadaran sekaligus menjelaskan pelaksanaan kegiatan kokurikuler yang akan dilakukan (catatan harian, aktivitas pendampingan, dan refleksi); (ii) melaksanakan kebiasaan dan melakukan monitoring serta melakukan pembahasan secara berkala hasil evaluasi dari kebiasaan yang dilakukan melalui catatan harian atau jurnal …; (iii) melakukan diseminasi dan advokasi dengan memberikan materi-materi penting dan berinteraksi dengan praktisi maupun narasumber terkait dengan kebiasaan; dan (iv) membangun kemitraan."},
+            {"step": "Evaluasi", "text": "Pada tahapan evaluasi terdiri asesmen dan evaluasi serta tindak lanjut. Asesmen yang dilakukan untuk melihat dampak yang terjadi setelah dilakukan pembiasaan. Evaluasi yang dilakukan adalah pelaksanaan kegiatan kokurikuler, dengan melihat masukan (input), proses (process), hasil (outcome. Dan tindak lanjut merupakan kebijakan atau program atau aktivitas yang akan dilakukan setelah melihat hasil asesmen dan evaluasi …"}
+          ],
+          "pages": [31, 32]
+        },
+        "implementation_timing": "Pelaksanaan kokurikuler dalam bentuk 7 KAIH perlu mempertimbangkan alokasi waktu yang mendukung, mengingat hasil yang diharapkan juga berupa kebiasaan, sehingga perlu penyesuaian pelaksanaan dalam frekuensi yang lebih rutin. … Walaupun tema kemudian berganti … pembiasaan berolahraga tetap perlu dilakukan secara rutin. Bentuk asesmen formatif pun menyesuaikan untuk kurun waktu yang cukup panjang, misalnya jurnal olahraga murid untuk satu semester atau tiga bulan, walaupun asesmen sumatif sudah selesai dilaksanakan.",
+        "policy_basis": "Kemendikdasmen telah mengeluarkan Surat Edaran Bersama dengan Kementerian Dalam Negeri dan Kementerian Agama tentang Penguatan Pendidikan Karakter melalui Pembiasaan di satuan pendidikan. Penguatan pendidikan karakter melalui Pagi Ceria adalah melakukan Senam Anak Indonesia Hebat.",
+        "inspiration_table": {
+          "title": "Tabel 11. Inspirasi Kegiatan Kokurikuler G7KAIH",
+          "rows": [
+            {"dimension": "Keimanan dan ketaqwaan kepada Tuhan YME", "habits": ["beribadah", "berolahraga"], "example_themes": ["peduli dan berbagi", "Aku dan Sang Pencipta", "dll"], "example_activities": ["kegiatan keagamaan", "jurnal ibadah", "catatan syukur", "dll"]},
+            {"dimension": "Kewargaan", "habits": ["bermasyarakat"], "example_themes": ["Hidup bersama dalam keberagaman", "Aku bagian dari bangsa ini"], "example_activities": ["Diskusi toleransi", "Simulasi pemilu mini", "Kegiatan gotong royong"]},
+            {"dimension": "Penalaran kritis", "habits": ["gemar belajar"], "example_themes": ["Menyelesaikan masalah", "Fakta dan opini", "Aku berpikir"], "example_activities": ["Proyek mini riset", "Analisis berita", "Eksperimen sederhana"]},
+            {"dimension": "Kreativitas", "habits": ["gemar belajar"], "example_themes": ["Aku bisa berkarya", "Inovasi untuk sekitar"], "example_activities": ["Karya seni", "Pameran ide", "Karya tulis kreatif", "Desain poster"]},
+            {"dimension": "Kolaborasi", "habits": ["bermasyarakat"], "example_themes": ["Kerja tim itu asyik", "Bersama kita bisa"], "example_activities": ["Proyek kelompok", "Games kerja sama", "Forum diskusi"]},
+            {"dimension": "Kemandirian", "habits": ["bangun pagi", "tidur tepat waktu"], "example_themes": ["Mengatur waktuku", "Aku bertanggung jawab"], "example_activities": ["Jurnal manajemen waktu", "Tantangan pribadi harian", "Penjadwalan mingguan"]},
+            {"dimension": "Kesehatan", "habits": ["berolahraga", "makan sehat dan bergizi"], "example_themes": ["Hidup sehat", "Aku sayang tubuhku"], "example_activities": ["Jadwal olahraga bersama", "Pojok sehat", "Kampanye gizi"]},
+            {"dimension": "Komunikasi", "habits": ["gemar belajar", "bermasyarakat"], "example_themes": ["Bicara yang baik", "Aku bisa menyampaikan pendapat"], "example_activities": ["Debat kelompok", "Kegiatan presentasi", "Cerita pengalaman"]}
+          ],
+          "pages": [49]
+        },
+        "pages": [8, 30, 31, 32, 49, 50, 61]
+      },
+      {
+        "key": "other_ways",
+        "name": "Cara lainnya",
+        "description": "Bentuk kegiatan kokurikuler dalam kategori cara lainnya berupa kegiatan kokurikuler ciri khas satuan pendidikan berbasis konteks lokal dan kegiatan-kegiatan berbasis nilai-nilai satuan pendidikan, dan kegiatan satu disiplin ilmu yang dalam aktivitasnya terjadi kolaborasi beragam keilmuan dan keahlian.",
+        "freedom": "… satuan pendidikan diberi kebebasan untuk mengembangkan bentuk kegiatan kokurikuler lain yang sesuai dengan nilai-nilai satuan pendidikan, potensi satuan pendidikan, kebutuhan murid, dan konteks lokal, sepanjang kegiatan tersebut memenuhi kriteria kokurikuler.",
+        "validity_test": "Selama kegiatan tersebut dirancang secara terencana, melibatkan murid secara aktif, terdapat asesmen yang relevan dengan mata pelajaran, serta berorientasi pada delapan dimensi profil lulusan, maka kegiatan tersebut merupakan kokurikuler.",
+        "subtypes": [
+          {
+            "key": "local_context",
+            "name": "Kegiatan kokurikuler ciri khas satuan pendidikan berbasis konteks lokal",
+            "examples_text": "Misalnya, satuan pendidikan dapat menyelenggarakan kelas membatik, belajar permainan tradisional, praktik bertani atau berkebun, sebagai bagian dari upaya melestarikan warisan lokal sekaligus menanamkan kecintaan terhadap lingkungan dan budaya sendiri.",
+            "worked_examples": [
+              "Sebuah satuan pendidikan terletak di daerah pengrajin batik … Materi pembelajaran membatik meliputi pengenalan batik, motif batik, proses membuat batik. Kegiatan pembelajaran difokuskan pada praktik membatik sehingga murid memiliki keterampilan membatik.",
+              "Sebuah satuan pendidikan terletak di daerah pariwisata … Materi pembelajaran pariwisata mencakup pengenalan industri pariwisata, pengelolaan dan inovasi pariwisata"
+            ],
+            "pages": [33, 55]
+          },
+          {
+            "key": "school_values",
+            "name": "Kegiatan kokurikuler melalui nilai-nilai satuan pendidikan",
+            "examples_text": "Kegiatan berdasarkan nilai-nilai khas lembaga atau yayasan, seperti nilai keislaman di satuan-satuan Pendidikan dan/atau pondok pesantren yang berafiliasi dengan lembaga keislaman, nilai kristiani di satuan pendidikan Kristen/Katolik, atau terafiliasi dengan Lembaga agama lainnya.",
+            "worked_examples": [
+              "Sebuah satuan pendidikan memiliki keunggulan dalam bidang kepemimpinan, maka satuan pendidikan tersebut dapat membuat kegiatan kokurikuler berupa latihan kepemimpinan. … Materi yang diajarkan selama latihan diimplementasikan oleh murid secara terus menerus dan dilakukan monitoring serta asesmen.",
+              "Sebuah satuan pendidikan berbasis keagamaan, misalnya PAUD, SD, SMP, SMA Islam, maka satuan pendidikan dapat membuat kegiatan berupa mengaji yang dilakukan secara rutin setiap satu minggu sekali."
+            ],
+            "reporting": "Hasil belajar yang diperoleh dilaporkan dalam rapor sesuai dengan ketentuan yang telah ditetapkan.",
+            "pages": [33, 55]
+          },
+          {
+            "key": "single_discipline_collaborative",
+            "name": "Kegiatan kokurikuler melalui satu disiplin ilmu yang aktivitasnya terjadi kolaborasi keilmuan dan keahlian",
+            "examples_text": "Kegiatan dari monodisiplin seperti pagelaran seni, karena dalam aktivitas pagelaran seni terjadi kolaborasi keilmuan dan keahlian seni serta bidang lainnya yang mendukung.",
+            "worked_examples": [
+              "Sebuah satuan pendidikan mengusung nilai seni budaya sebagai keunggulan satuan pendidikan. Untuk memperkuat mata pelajaran seni budaya maka dilakukan kegiatan kokurikuler berupa pentas seni atau pagelaran seni. …"
+            ],
+            "pages": [33, 56]
+          }
+        ],
+        "development_flow": {
+          "figure": "Gambar 3. Tahapan Pengembangan Kegiatan Kokurikuler Cara Lainnya (figure number repeated in the source)",
+          "steps": ["Penentuan Dimensi Profil Lulusan", "Penentuan Nilai-nilai/kekhasan/program unggulan sekolah/kebijakan pemerintah setempat/lainnya.", "Penentuan Tema", "Penyusunan Perencanaan Kokurikuler", "Pelaksanaaan Kokurikuler", "Evaluasi dan Tindak Lanjut"],
+          "pages": [34]
+        },
+        "continuation": "Apabila hasil yang diharapkan juga berupa internalisasi nilai-nilai satuan pendidikan, maka kegiatan tertentu dapat terus dilaksanakan walaupun durasi kegiatan kokurikuler sudah selesai.",
+        "partners": "Kegiatan kokurikuler dapat diselenggarakan bekerjasama dengan mitra untuk menguatkan penggunaan ragam sumber daya yang membantu murid mencapai tujuan pembelajaran.",
+        "pages": [33, 34, 55, 56, 61]
+      }
+    ]
+  },
+
+  "learning_framework": {
+    "intro": "… kerangka pembelajaran kokurikuler disusun dengan memperhatikan empat komponen penting yang saling terhubung: praktik pedagogis, lingkungan pembelajaran, kemitraan pembelajaran, dan pemanfaatan teknologi digital.",
+    "components": [
+      {"key": "pedagogical_practice", "name": "Praktik Pedagogis", "text": "Pendidik berperan sebagai aktivator, kolaborator, dan pengembang budaya belajar, yang mendampingi proses berpikir, merasakan, dan bertindak murid secara reflektif … Praktik pedagogis dalam kokurikuler mengutamakan pembelajaran kolaboratif lintas disiplin ilmu melalui pembelajaran aktif seperti model pembelajaran berbasis penyelidikan (inquiry), pembelajaran berbasis proyek (project-based learning), pembelajaran berbasis masalah, dan ruang eksplorasi …", "pages": [14, 15]},
+      {"key": "learning_environment", "name": "Lingkungan Pembelajaran", "text": "Kegiatan kokurikuler mendorong pemaknaan ruang belajar yang lebih luas, tidak hanya di dalam kelas, tetapi juga di luar ruang formal: area-area di dalam dan sekitar satuan pendidikan, komunitas lokal, bahkan ruang digital. Lingkungan pembelajaran yang mendukung adalah lingkungan yang aman, terbuka, inklusif, dan menghargai keberagaman cara belajar murid.", "pages": [15]},
+      {"key": "learning_partnership", "name": "Kemitraan Pembelajaran", "text": "… diperlukan kemitraan dengan berbagai pihak. Kemitraan dalam hal ini bisa ditinjau dari catur pusat pendidikan yaitu satuan pendidikan, keluarga, masyarakat, dan media.", "pages": [15]},
+      {"key": "digital_technology", "name": "Pemanfaatan Teknologi Digital", "text": "Dalam kokurikuler, teknologi dapat dimanfaatkan untuk mencari referensi, mendokumentasikan proses, menyampaikan berbagai pesan ke publik, berkolaborasi jarak jauh, memvisualisasikan ide kreatif murid, mempublikasikan hasil pembelajaran yang telah dikerjakan. Teknologi digital dapat juga dimanfaatkan untuk asesmen dan pertukaran informasi di antara guru tentang perkembangan belajar murid.", "pages": [20]}
+    ],
+    "pages": [14, 15, 20]
+  },
+
+  "roles": {
+    "catur_pusat_pendidikan": {
+      "school": {
+        "table": "Tabel 1. Peran Satuan Pendidikan",
+        "rows": [
+          {"actor": "Kepala satuan pendidikan", "roles": ["memimpin perencanaan kegiatan kokurikuler sesuai dengan kebutuhan murid.", "menjaga ekosistem pendidikan yang kondusif untuk mendukung pelaksanaan kegiatan kokurikuler.", "meningkatkan kapasitas SDM pendukung pelaksanaan kegiatan kokurikuler."]},
+          {"actor": "Pendidik", "roles": ["menjadi koordinator dan fasilitator kokurikuler.", "membersamai murid agar menjadi pembelajar aktif, berkolaborasi, dan mengembangkan budaya belajar dalam kegiatan kokurikuler."]},
+          {"actor": "Tenaga Kependidikan", "roles": ["Menyiapkan sarana dan prasarana pendukung."]},
+          {"actor": "Warga satuan pendidikan lainnya", "roles": ["Sebagai mitra dan ikut menjaga ekosistem yang kondusif."]}
+        ],
+        "pages": [15, 16]
+      },
+      "family": {
+        "table": "Tabel 2. Peran Keluarga",
+        "rows": [
+          {"actor": "Orang Tua/Wali", "roles": ["memberikan teladan di rumah dan mitra bagi satuan pendidikan.", "membimbing anak untuk menanamkan nilai-nilai dasar kebaikan.", "membangun ekosistem atau lingkungan yang mendukung peningkatan kompetensi dan penguatan karakter anak di rumah.", "menciptakan lingkungan yang kondusif untuk mempraktikkan nilai-nilai kebaikan.", "memantau tumbuh kembang anak.", "meningkatkan kompetensi dan menguatkan karakter murid sebagai mitra utama satuan pendidikan."]},
+          {"actor": "Anggota Keluarga lainnya", "roles": ["Mendukung orangtua/ wali dalam penanaman penilaian membangun terhadap kompetensi dan karakter nilai-nilai positif keluarga.", "Mendukung secara sosial emosional dan menumbuhkembangkan cinta kasih, kerjasama dan toleransi di dalam keluarga.", "menciptakan serta menjaga ekosistem yang kondusif."]}
+        ],
+        "pages": [16, 17]
+      },
+      "community": {
+        "table": "Tabel 3. Peran Masyarakat",
+        "rows": [
+          {"actor": "Komunitas", "roles": ["memberikan akses aktualisasi dan tempat untuk praktik di lapangan seperti kantor desa, balai, dsb.", "menjadi teladan dan contoh nyata praktik-praktik baik penguatan karakter.", "sebagai mitra (sosialisasi dan advokasi) dan ikut menjaga ekosistem yang kondusif.", "mendukung kegiatan sosial murid seperti kerja bakti, bakti sosial, dsb."]},
+          {"actor": "Dunia Usaha Dunia Industri", "roles": ["menjadi fasilitator murid dengan dunia nyata sekaligus ikut membantu untuk magang, praktek kerja, dan lain sebagainya dalam rangka meningkatkan kompetensi dan kemampuan soft skill."]},
+          {"actor": "Tokoh Masyarakat", "roles": ["sebagai teladan dengan menjunjung tinggi nilai-nilai kebaikan sekaligus menjadi contoh nyata yang membentuk karakter murid.", "ikut menjaga ekosistem yang kondusif."]},
+          {"actor": "Tokoh Agama", "roles": ["memberikan teladan dengan menjunjung tinggi nilai-nilai keagamaan sekaligus menjadi contoh nyata dalam menguatkan karakter religius.", "membudayakan karakter toleransi."]}
+        ],
+        "pages": [17, 18]
+      },
+      "media": {
+        "table": "Tabel 4. Peran Media",
+        "rows": [
+          {"actor": "Media Sosial", "roles": ["sebagai alat dan mitra untuk menyampaikan nilai, narasi, dan inspirasi peningkatan kompetensi dan penguatan karakter kegiatan kokurikuler yang dapat menjangkau secara luas dan berkelanjutan."]},
+          {"actor": "Media Konvensional", "roles": ["menjadi alat komunikasi, sosialisasi, dan refleksi."]}
+        ],
+        "pages": [19]
+      }
+    },
+    "work_team": {
+      "formation": "Pada awal tahun ajaran, kepala satuan pendidikan membentuk tim kerja kokurikuler yang terdiri atas kepala satuan pendidikan, guru yang ditugaskan sebagai koordinator kokurikuler (dalam peraturan yang mengatur beban kerja guru disebut koordinator pembelajaran berbasis projek), guru kelas dan/atau guru mata pelajaran, tenaga kependidikan, serta warga satuan pendidikan lainnya yang relevan.",
+      "function": "Dalam pelaksanaannya, tim ini berperan sebagai perancang, pengelola, sekaligus pendamping murid selama proses kokurikuler berlangsung.",
+      "table": "Tabel 5. Pembagian Peran dalam Tim Kerja Kokurikuler",
+      "rows": [
+        {"actor": "Kepala Satuan Pendidikan", "roles": ["Memimpin penyusunan kesepakatan dan regulasi pendukung;", "Menentukan koordinator kokurikuler;", "Memimpin implementasi kegiatan kokurikuler dengan menjadi penanggung jawab;", "Memimpin analisis kebutuhan untuk menentukan dimensi profil lulusan yang akan dikuatkan bersama koordinator dan guru kelas/ mata pelajaran;", "Memimpin upaya keterlibatan semua pihak dan membangun jejaring kemitraan untuk keperluan kegiatan kokurikuler."]},
+        {"actor": "Koordinator Pembelajaran Berbasis Projek (Koordinator Kokurikuler)", "roles": ["mengembangkan kemampuan kepemimpinan dalam mengelola kegiatan kokurikuler di satuan pendidikan;", "membuka pintu kolaborasi dengan narasumber untuk memperkaya materi (masyarakat, komunitas, universitas, praktisi);", "mengomunikasikan pembelajaran kolaboratif lintas disiplin ilmu, dan kebijakan pendidikan nasional kepada lingkungan satuan pendidikan, orang tua murid, dan mitra (narasumber dan organisasi terkait);", "mengelola sistem pelaksanaan kegiatan kokurikuler yang dibutuhkan guru dan murid;", "memastikan kolaborasi pembelajaran terjadi di antara para guru yang tergabung di dalam tim sebagai aktivator, kolaborator, dan pengembang budaya belajar;", "memastikan kokurikuler memiliki aktivitas yang kaya dan beragam untuk mengoptimalkan prinsip eksploratif; dan", "memastikan rancangan kokurikuler dan asesmen yang dilakukan sesuai dengan kriteria kesuksesan yang sudah ditetapkan."]},
+        {"actor": "Guru Mata Pelajaran/Guru Kelas sebagai fasilitator kokurikuler", "roles": ["Bersama-sama koordinator menyusun perencanaan dan melaksanakan kegiatan kokurikuler;", "Menjadi aktivator, kolaborator, dan pengembang budaya belajari murid dalam kegiatan kokurikuler;", "Melakukan asesmen kokurikuler."]},
+        {"actor": "Tenaga Kependidikan", "roles": ["Menyiapkan sarana dan prasarana pendukung."]},
+        {"actor": "Warga satuan pendidikan lainnya", "roles": ["Sebagai mitra dan ikut menjaga ekosistem yang kondusif."]}
+      ],
+      "coordinator_workload": {
+        "text": "… koordinator pembelajaran berbasis proyek (koordinator kokurikuler) juga mendapatkan beban kerja tambahan sebesar 2 jam tatap muka per rombongan belajar, maksimal 3 rombongan belajar sehingga totalnya 6 jam … pelajaran. Lebih lanjut, setiap guru memiliki kesempatan untuk menjadi koordinator pembelajaran berbasis proyek (koordinator kokurikuler), sesuai dengan kebutuhan dan kebijakan satuan pendidikan.",
+        "extra_hours_per_rombel": 2,
+        "max_rombel": 3,
+        "max_extra_hours": 6,
+        "pages": [37, 38]
+      },
+      "pages": [22, 23, 24]
+    },
+    "student_role_note": "The guide has no separate student-role table; student actions appear only inside each plan's Kegiatan steps (e.g. investigate, visit, fill the journal, present, reflect, agree on follow-up)."
+  },
+
+  "time_allocation": {
+    "rule": "Langkah pertama merancang alokasi waktu kegiatan kokurikuler adalah mengidentifikasi jumlah total jam kokurikuler yang dimiliki setiap kelas. Jumlah jam tersebut diatur dalam Peraturan Menteri tentang implementasi kurikulum.",
+    "unit": "JP per tahun pelajaran",
+    "sd_mi_table": {
+      "title": "Tabel 6. Alokasi Waktu Kegiatan Kokurikuler per Tahun Jenjang PAUD/sederajat, SD/sederajat, SMP/sederajat, dan SMA/sederajat (SD/MI rows only)",
+      "rows": [
+        {"grade": "I", "grades": [1], "jp_per_year": 216, "derived_jp_per_week": 6, "derived_weeks_basis": 36},
+        {"grade": "II", "grades": [2], "jp_per_year": 216, "derived_jp_per_week": 6, "derived_weeks_basis": 36},
+        {"grade": "III-IV", "grades": [3, 4], "jp_per_year": 252, "derived_jp_per_week": 7, "derived_weeks_basis": 36},
+        {"grade": "V", "grades": [5], "jp_per_year": 252, "derived_jp_per_week": 7, "derived_weeks_basis": 36},
+        {"grade": "VI", "grades": [6], "jp_per_year": 224, "derived_jp_per_week": 7, "derived_weeks_basis": 32}
+      ],
+      "row_label": "SD/MI atau bentuk lain yang sederajat",
+      "derived_note": "derived_jp_per_week = jp_per_year / weeks (36 weeks, 32 in grade VI, the week counts used in the curriculum structure); the guide prints only the yearly totals and does not say the JP must be spread weekly.",
+      "pages": [35]
+    },
+    "sdlb_milb_table": {
+      "title": "Tabel 8. Alokasi Waktu Kokurikuler per Tahun Jenjang SDLB/sederajat, SMPLB/sederajat, SMALB/sederajat (SDLB/MILB rows only)",
+      "rows": [
+        {"grade": "I", "jp_per_year": 180},
+        {"grade": "II", "jp_per_year": 216},
+        {"grade": "III-IV", "jp_per_year": 252},
+        {"grade": "V", "jp_per_year": 252},
+        {"grade": "VI", "jp_per_year": 224}
+      ],
+      "pages": [36, 37]
+    },
+    "distribution_rules": [
+      {"text": "Alokasi waktu total di atas adalah pelaksanaan kokurikuler dalam satu Tahun Pelajaran. Satuan pendidikan dapat membagi pelaksanaannya menjadi dua semester. Alokasi waktu untuk setiap kegiatan tidak harus sama, sehingga memberikan keleluasaan kepada satuan pendidikan untuk menyusun kegiatan kokurikulernya sendiri.", "pages": [37]},
+      {"text": "Mengelola alokasi waktu secara fleksibel mengacu pada struktur kurikulum yang berlaku.", "pages": [11]},
+      {"text": "Kokurikuler tidak mengambil alokasi jam pelajaran muatan lokal (tanda “–” pada struktur kurikulum).", "pages": [37]},
+      {"text": "Dalam pengorganisasian kegiatan kokurikuler, guru memiliki alokasi waktu sesuai dengan ketentuan pada tabel di atas.", "pages": [37]},
+      {"text": "Satuan pendidikan dapat menetapkan secara mandiri jumlah dan apa saja aktivitas yang akan dilakukan pada setiap tahapan, sesuai alokasi waktu yang disepakati.", "pages": [38]},
+      {"text": "7KAIH: perlu penyesuaian pelaksanaan dalam frekuensi yang lebih rutin (misalnya kebiasaan berolahraga setiap minggu atau beberapa hari dalam seminggu).", "pages": [61]}
+    ],
+    "jp_counting_note": "The guide gives no per-subject breakdown of the kokurikuler JP and no block/period rules; it defers to the Peraturan Menteri on curriculum implementation (structure tables there mark each subject's kokurikuler share). Example SD activity sizes: 108 JP (Tabel 10, lintas disiplin) and 48 JP (kelas II, 7KAIH).",
+    "pages": [11, 35, 36, 37, 38]
+  },
+
+  "planning": {
+    "intro": "Dalam merencanakan kokurikuler, diperlukan beberapa tahapan kerja:",
+    "stages": [
+      {
+        "order": 1,
+        "key": "form_team",
+        "name": "Penentuan Tim Kerja Kokurikuler",
+        "when": "Pada awal tahun ajaran",
+        "who": "kepala satuan pendidikan",
+        "output": "Tim kerja kokurikuler (kepala satuan pendidikan, koordinator kokurikuler, guru kelas dan/atau guru mata pelajaran, tenaga kependidikan, warga satuan pendidikan lainnya) with roles per Tabel 5.",
+        "text": "Pembentukan tim ini dilakukan untuk memastikan bahwa perencanaan, pelaksanaan, dan evaluasi kegiatan kokurikuler berjalan secara terstruktur, kolaboratif, dan berkesinambungan.",
+        "pages": [22, 23, 24]
+      },
+      {
+        "order": 2,
+        "key": "school_analysis",
+        "name": "Analisis Satuan Pendidikan",
+        "output": "Daftar dimensi profil lulusan yang masih memerlukan penguatan, cara penguatan, dan tindak lanjutnya; peta sumber daya.",
+        "text": "Analisis satuan pendidikan yang dimaksud dalam perencanaan kokurikuler merupakan analisis lanjutan yang berfokus untuk memetakan tujuan dan perencanaan kegiatan kokurikuler agar berbasis pada kebutuhan satuan pendidikan dan murid. Analisis lanjutan untuk perencanaan kokurikuler terkait dengan kebutuhan belajar murid, sumber daya yang dimiliki oleh satuan pendidikan, pemanfaatan sumber daya tersebut pada kegiatan kokurikuler, serta fasilitasi kebutuhan belajar murid.",
+        "basis": "Pemanfaatan analisis ketika menyusun kurikulum satuan pendidikan menjadi dasar perencanaan kegiatan kokurikuler.",
+        "considerations": [
+          {"no": "i", "text": "Kesesuaian dengan kurikulum satuan pendidikan."},
+          {"no": "ii", "text": "Minat dan bakat murid serta capaian pembelajaran yang belum optimal dicapai dalam kegiatan intrakurikuler, sehingga dapat dioptimalkan pencapaiannya melalui kegiatan kokurikuler."},
+          {"no": "iii", "text": "Sumber daya yang dimiliki atau dapat diakses oleh satuan pendidikan.", "resource_types": [
+            "Sumber daya fisik (ruang kelas, lapangan, ruang pertemuan, laboratorium, dan lainnya)",
+            "Sumber daya manusia (keahlian khusus yang dimiliki guru, orang tua, alumni, dan mitra belajar lainnya yang dapat dimanfaatkan)",
+            "Sumber daya finansial (mempertimbangkan kondisi finansial satuan pendidikan dan kondisi sosial ekonomi keluarga murid)",
+            "Sumber daya lingkungan (memanfaatkan fasilitas dan daya dukung lingkungan fisik dan non fisik di sekitar satuan pendidikan seperti museum, sanggar, hutan kota, sawah, kebun perangkat desa, instansi pemerintah, dan lainnya)"
+          ], "partner_rule": "Ketika satuan pendidikan memanfaatkan sumber daya lingkungan sebagai mitra, perlu dipastikan mitra tetap mendapatkan umpan balik atau manfaat dari kegiatan kokurikuler yang dilakukan."},
+          {"no": "iv", "text": "Kondisi kontekstual dan karakteristik sosial yang terkait dengan kehidupan keseharian murid."}
+        ],
+        "pages": [24, 25]
+      },
+      {
+        "order": 3,
+        "key": "plan_from_analysis",
+        "name": "Membuat perencanaan berdasarkan hasil analisis",
+        "text": "Dari hasil analisa keempat hal diatas, satuan pendidikan lalu menentukan:",
+        "decisions": [
+          {"order": 1, "key": "dimensions", "name": "Dimensi profil lulusan yang akan dipilih dalam kegiatan kokurikuler", "output": "Satu atau lebih dimensi sasaran.", "pages": [26, 27]},
+          {"order": 2, "key": "theme", "name": "Tema dalam kegiatan kokurikuler", "text": "Tema dikembangkan oleh satuan pendidikan diperbolehkan menggunakan inspirasi tema dalam panduan ini. Namun satuan pendidikan didorong untuk membuat tema-tema lain yang kontekstual dengan kondisi dan kebutuhan masing-masing.", "theme_inspirations": ["Generasi sehat dan bugar", "Peduli dan berbagi", "Aku cinta Indonesia", "Hidup hemat dan produktif", "Berkarya untuk sesama dan bangsa", "Gaya hidup berkelanjutan", "dan tema-tema lainnya."], "output": "Tema.", "pages": [27, 28]},
+          {"order": 3, "key": "form", "name": "Bentuk kegiatan kokurikuler", "text": "… kegiatan kokurikuler diklasifikasikan ke dalam tiga bentuk utama yang dapat dipilih dan dikembangkan oleh satuan pendidikan sesuai dengan karakteristik murid dan konteks satuan pendidikan.", "output": "Bentuk: lintas disiplin / G7KAIH / cara lainnya (see forms).", "pages": [28]},
+          {"order": 4, "key": "learning_objectives", "name": "Tujuan Pembelajaran", "text": "Tujuan pembelajaran dalam konteks kokurikuler merupakan gambaran hasil yang diharapkan setelah melaksanakan kokurikuler. Komponen tujuan pembelajaran adalah gabungan antara kompetensi yang ingin dibangun dan konten atau muatan nilai yang ingin ditanamkan. Kompetensi merujuk pada kemampuan murid delapan dimensi profil lulusan. Sementara itu, konten dapat berupa tema proyek, kebiasaan positif, nilai-nilai khas satuan pendidikan, atau isu kontekstual yang menjadi ruang belajar bagi murid.", "formula": "tujuan = kompetensi (dimensi profil lulusan) + konten (tema/kebiasaan/nilai/isu)", "sd_example": {"theme": "Lingkunganku Sehat, Aku Kuat", "form": "pembelajaran kolaboratif lintas disiplin ilmu", "objective": "Murid mampu mengidentifikasi kondisi lingkungan sekitar dan menyampaikan pesan ajakan hidup bersih secara kreatif", "analysis": "Dalam rumusan ini, terdapat gabungan antara kompetensi penalaran kritis dan komunikasi dengan konten tentang kesehatan lingkungan dan kepedulian sosial."}, "output": "Rumusan tujuan pembelajaran kokurikuler.", "pages": [34]},
+          {"order": 5, "key": "time_allocation", "name": "Alokasi Waktu", "text": "See time_allocation.", "output": "JP per kegiatan dalam batas total JP tahunan per kelas.", "pages": [35, 36, 37, 38]},
+          {"order": 6, "key": "activities", "name": "Merancang aktivitas", "text": "Pengembangan aktivitas dalam kegiatan kokurikuler perlu mempertimbangkan pengalaman belajar dalam pembelajaran mendalam, yaitu memahami, mengaplikasi, dan merefleksi. Ketiga pengalaman belajar tersebut diupayakan ada dalam rangkaian kegiatan kokurikuler. Sebagai satu rangkaian, kegiatan kokurikuler juga perlu dirancang beralur.", "learning_experiences": ["memahami", "mengaplikasi", "merefleksi"], "activity_types": [
+            {"key": "practical", "name": "Aktivitas yang bersifat praktikal", "text": "Misalnya kegiatan berkebun, bertukang, mengolah bahan pangan, membuat model/maket/instalasi, berniaga, kegiatan olah fisik, dan masih banyak lagi."},
+            {"key": "religious", "name": "Aktivitas keagamaan", "text": "Bentuk kokurikuler melalui kegiatan keagamaan dapat menguatkan karakter murid dengan mengaplikasikan pemahaman agamanya di kehidupan nyata. Sebagai contoh, kegiatan kokurikuler murid beragama Islam adalah dengan terlibat di kegiatan penyembelihan hewan Qurban di lingkungan sekitar rumahnya. …"},
+            {"key": "public_facilities", "name": "Kunjungan/pemanfaatan fasilitas umum", "text": "… misalnya cagar budaya, museum, perpustakaan daerah, kantor pemerintahan, tempat ibadah, pasar, sanggar budaya, dan sebagainya. Menggunakan transportasi umum seperti angkutan kota atau kereta menuju ke sebuah lokasi juga bisa menjadi media kegiatan kokurikuler."},
+            {"key": "data_research", "name": "Aktivitas penelitian yang melibatkan pengumpulan dan penyajian data", "text": "Pengumpulan data dapat terkait diri sendiri, orang lain, atau hal lain yang diamati. … misalnya menggunakan jurnal ibadah, jurnal olahraga, catatan perkembangan pemikiran … wawancara, observasi … presentasi, pembuatan infografis, video blog …"},
+            {"key": "literature_research", "name": "Aktivitas penelitian berbasis riset dan studi literatur", "text": "Bentuk kegiatannya antara lain mengumpulkan informasi dari berbagai sumber seperti buku referensi, situs, video, infografis, atau sumber lain. Informasi yang didapat lalu didiskusikan, dianalisis, dan disajikan …"},
+            {"key": "advocacy", "name": "Aktivitas yang bersifat advokasi", "text": "Misalnya kampanye, sosialisasi, penyuluhan, talkshow, penyampaian aspirasi kepada pejabat pemerintah, dan bentuk-bentuk kegiatan lain. … seperti hemat energi, bahaya rokok, menanam tanaman untuk ketahanan pangan."},
+            {"key": "resource_persons", "name": "Pelibatan narasumber", "text": "Misalnya melakukan wawancara dengan tokoh adat setempat, pelaku UMKM, orangtua murid yang memiliki beragam pekerjaan, dan sebagainya. … Narasumber juga mendapatkan manfaat dari perannya sebagai narasumber dalam kegiatan kokurikuler …"}
+          ], "output": "Rangkaian aktivitas beralur.", "pages": [38, 39, 40]},
+          {"order": 7, "key": "assessment", "name": "Merancang asesmen", "text": "See assessment.", "output": "Instrumen asesmen formatif dan sumatif.", "pages": [40, 41]}
+        ],
+        "pages": [26, 27, 28, 34, 35, 38, 40, 41]
+      },
+      {
+        "order": 4,
+        "key": "annual_plan_then_activity_plans",
+        "name": "Rencana kegiatan satu tahun ajaran, lalu perencanaan per kegiatan",
+        "text": "Dalam pelaksanaan kokurikuler, satuan pendidikan dapat membuat rencana kegiatan untuk satu tahun ajaran. Dalam pelaksanannya, satuan pendidikan bisa memilih jenis kokurikulernya berdasarkan hasil analisis. … Setelah rencana kegiatan Kokurikuler untuk satu tahun ajaran disetujui oleh Kepala satuan pendidikan, selanjutnya koordinator kokurikuler bersama guru kelas/mata pelajaran membuat perencanaan kokurikuler untuk setiap kegiatannya.",
+        "approver": "Kepala satuan pendidikan",
+        "authors": "koordinator kokurikuler bersama guru kelas/mata pelajaran",
+        "output": "Rencana kegiatan kokurikuler tahunan (format Tabel 9), lalu satu Perencanaan Kokurikuler per kegiatan.",
+        "pages": [41, 46]
+      }
+    ],
+    "pages": [22, 23, 24, 25, 26, 27, 28, 34, 35, 38, 40, 41, 46]
+  },
+
+  "templates": {
+    "annual_plan": {
+      "source_table": "Tabel 9. Program Kokurikuler SMP Generasi Unggul (SMP example; only its column layout is recorded)",
+      "columns": ["No", "Kelas", "Fokus Dimensi Profil Lulusan", "Tema", "Jenis Kokurikuler", "Bentuk Kegiatan", "Mata Pelajaran Terkait", "Alokasi Waktu"],
+      "note": "Rows are activities, each tagged with a grade, focus dimensions, form (Jenis Kokurikuler) and JP. There is no column for goal, semester or phase.",
+      "pages": [42, 43, 44]
+    },
+    "inspiration_table": {
+      "source_table": "Tabel 10. Kegiatan Kokurikuler",
+      "columns": ["Jenjang/Satuan", "Fokus Dimensi Profil Lulusan", "Tema", "Tujuan", "Bentuk Aktivitas", "Mata Pelajaran/Muatan Pembelajaran Terkait", "Alokasi Waktu"],
+      "pages": [45, 46]
+    },
+    "activity_plan": {
+      "title": "PERENCANAAN KOKURIKULER (heading varies: 'Perencanaan Kokurikuler Gerakan 7 Kebiasaan Anak Indonesia Hebat', 'PERENCANAAN KOKURIKULER G7KAIH')",
+      "header_fields": [
+        {"key": "school_name", "label": "Nama satuan pendidikan"},
+        {"key": "grade", "label": "Kelas"},
+        {"key": "theme", "label": "Tema", "note": "'Tema Kegiatan' in the SMP lintas disiplin plan"},
+        {"key": "time_allocation", "label": "Alokasi Waktu", "note": "in JP (PAUD uses weeks)"},
+        {"key": "location", "label": "Lokasi Kegiatan", "note": "absent in the PAUD plan"}
+      ],
+      "sections": [
+        {"letter": "A", "key": "graduate_profile_dimensions", "label": "Dimensi Profil Lulusan"},
+        {"letter": "B", "key": "learning_objectives", "label": "Tujuan Pembelajaran", "note": "often introduced with 'Kegiatan ini bertujuan untuk menguatkan kompetensi'; lintas disiplin objectives name the subject in brackets"},
+        {"letter": "C", "key": "pedagogical_practice", "label": "Praktik Pedagogis"},
+        {"letter": "D", "key": "learning_environment", "label": "Lingkungan Pembelajaran", "note": "'Lingkungan Belajar' in the SMP plan"},
+        {"letter": "E", "key": "learning_partnership", "label": "Kemitraan Pembelajaran"},
+        {"letter": "F", "key": "digital_use", "label": "Pemanfaatan Digital", "note": "omitted in the SD kelas II and PAUD plans; placed before Kemitraan in the SMP 7KAIH plan"},
+        {"letter": "G", "key": "activities", "label": "Kegiatan", "note": "numbered steps"},
+        {"letter": "H", "key": "assessment", "label": "Asesmen", "note": "Formatif (technique + instrument + blank recording table) and Sumatif (technique + rubric)"}
+      ],
+      "rubric_levels": ["Sangat Baik", "Baik", "Cukup", "Kurang"],
+      "rubric_level_codes": ["SB", "B", "C", "K"],
+      "rubric_columns": ["Dimensi Profil Lulusan", "Aspek yang Dinilai", "Sangat Baik", "Baik", "Cukup", "Kurang"],
+      "pages": [47, 48, 50, 51, 52, 53, 54, 56, 57, 58, 72]
+    }
+  },
+
+  "sd_examples": [
+    {
+      "key": "sd_tabel10_lingkunganku_sehat",
+      "source": "Tabel 10. Kegiatan Kokurikuler, SD row",
+      "form": "Pembelajaran kolaboratif lintas disiplin ilmu",
+      "grade": null,
+      "focus_dimensions": ["Kesehatan", "Kolaborasi", "Komunikasi"],
+      "theme": "Lingkunganku Sehat, Aku Kuat",
+      "objective": "Murid mampu mengamati kondisi lingkungan sekitar dan membuat poster ajakan hidup bersih",
+      "activity_forms": "Observasi lingkungan satuan pendidikan, diskusi kelompok, dan membuat poster kampanye hidup bersih",
+      "related_subjects": ["IPAS", "Bahasa Indonesia", "Seni dan Budaya", "Pendidikan Pancasila"],
+      "jp": 108,
+      "pages": [45]
+    },
+    {
+      "key": "sd_kelas2_hidup_sehat_saih",
+      "source": "Inspirasi contoh aktivitas 1: Kebiasaan Berolahraga melalui Senam Anak Indonesia Hebat (SAIH)",
+      "form": "Gerakan 7KAIH (berolahraga)",
+      "header": {
+        "school_name": "SD Cerdas Berkarakter",
+        "grade": "II",
+        "phase": "A",
+        "theme": "Hidup sehat",
+        "time_allocation_text": "48 JP",
+        "jp": 48,
+        "location": "di lingkungan satuan pendidikan dan lingkungan sekitar"
+      },
+      "graduate_profile_dimensions": ["Kesehatan", "Kemandirian"],
+      "learning_objectives": ["memahami manfaat berolahraga bagi tubuh.", "pembiasaan kegiatan berolahraga"],
+      "pedagogical_practice": "Pembelajaran kontekstual, Observasi ke Lapangan.",
+      "learning_environment": "Penguatan karakter melalui kebiasaan berolahraga dengan mengedepankan pendekatan yang memuliakan melalui pembiasaan yang dilakukan secara berkesadaran, bermakna, dan menggembirakan pada ekosistem yang mendukung.",
+      "learning_partnership": [
+        "Satuan pendidikan, kolaborasi antara Guru PJOK dan IPAS",
+        "Keluarga, menggiatkan anak untuk bergaya hidup aktif dan terbiasa berolahraga.",
+        "Masyarakat: a. pemilik pusat kebugaran, kunjungan ke pusat kebugaran; b. praktisi kesehatan, melakukan wawancara dengan atlet atau dokter; c. Organisasi sosial masyarakat dan aparat pemerintah, ikut menyosialisasikan dan menggiatkan kegiatan berolahraga di lingkungan"
+      ],
+      "digital_use": null,
+      "activities": [
+        {"no": 1, "text": "Pendidik mengajak murid mendiskusikan kegiatan olahraga murid dan frekuensi yang dilakukan selama ini serta memberikan sumber belajar tentang pentingnya berolahraga"},
+        {"no": 2, "text": "Murid menginvestigasi manfaat dari berolahraga dan berbagai kegiatan olahraga yang dianjurkan untuk rentang usianya dari berbagai sumber (guru tamu dari dunia kesehatan/ atlet/ buku/ dsb)"},
+        {"no": 3, "text": "Murid melakukan kunjungan ke pusat kebugaran atau tempat sejenis dimana kebiasaan olahraga terjadi untuk melihat manfaat dari berolahraga teratur"},
+        {"no": 4, "text": "Murid menunjukkan temuan pentingnya berolahraga dan ragam olahraga yang direkomendasikan untuk dirinya"},
+        {"no": 5, "text": "Penyusunan rencana kegiatan kokurikuler berupa kebiasaan berolahraga (murid menyepakati kegiatan-kegiatan olahraga yang akan dilaksanakan dalam kurun waktu tertentu)"},
+        {"no": 6, "text": "Pembuatan buku jurnal kesehatan"},
+        {"no": 7, "text": "Pembiasaan kegiatan berolahraga", "sub": [
+          "Guru membangun kesepakatan dengan murid untuk melaksanakan Senam Anak Indonesia Hebat (SAIH) dan kegiatan berolahraga lainnya, baik di satuan pendidikan dan di rumah",
+          "Murid melaksanakan kegiatan berolahraga di satuan pendidikan dan bekerjasama dengan orang tua untuk pelaksanaan di rumah",
+          "Murid mengisi jurnal pelaksanaan."
+        ]},
+        {"no": 8, "text": "Diskusi berkala terkait manfaat dari kebiasaan berolahraga", "sub": [
+          "Murid membahas hasil evaluasi jurnal yang mereka isi tiap rentang waktu tertentu yang disepakati.",
+          "Murid berdiskusi tentang manfaat berolahraga atau perbedaan yang dirasakan setelah lebih rutin berolahraga dengan para narasumber-narasumber yang berkompeten"
+        ]}
+      ],
+      "assessment": {
+        "formative": {
+          "technique": "Teknik observasi dengan instrumen catatan anekdotal",
+          "table_columns": ["Nama Murid", "Kebiasaan Berolahraga: Belum Terbiasa", "Kebiasaan Berolahraga: Terbiasa", "Catatan Guru"]
+        },
+        "summative": {
+          "technique": "Penilaian kinerja dengan instrumen rubrik",
+          "rubric": [
+            {"dimension": "Kesehatan", "aspect": "memahami manfaat berolahraga bagi tubuh", "sangat_baik": "mampu menjelaskan dengan baik manfaat dari semua gerakan pada SAIH", "baik": "mampu menjelaskan dengan baik manfaat dari sebagian besar gerakan pada SAIH", "cukup": "mampu menjelaskan dengan baik manfaat dari sebagian gerakan pada SAIH", "kurang": "hanya mampu menjelaskan dengan baik manfaat dari beberapa gerakan pada SAIH"},
+            {"dimension": "Kemandirian", "aspect": "berolahraga menjadi kebiasaan", "sangat_baik": "mampu melaksanakan SAIH setiap hari, baik di rumah maupun di sekolah", "baik": "mampu melaksanakan SAIH, 2 kali seminggu di sekolah dan beberapa hari di rumah", "cukup": "mampu melaksanakan SAIH, 2 kali seminggu di sekolah dan satu hari di rumah", "kurang": "hanya mampu melaksanakan SAIH, 2 kali seminggu di sekolah"}
+          ]
+        }
+      },
+      "pages": [50, 51, 52]
+    }
+  ],
+
+  "assessment": {
+    "importance": "Asesmen merupakan bagian yang sangat penting dan tidak terpisahkan dari kegiatan kokurikuler. Melalui asesmen, guru dan murid bersama-sama merefleksikan tujuan pembelajaran yang telah dijalani, khususnya berkenaan dengan pencapaian delapan dimensi profil lulusan.",
+    "who": "Guru Mata Pelajaran/Guru Kelas sebagai fasilitator kokurikuler … Melakukan asesmen kokurikuler.",
+    "types": [
+      {
+        "key": "formative",
+        "name": "Asesmen formatif",
+        "text": "Asesmen formatif dilakukan selama proses kegiatan berlangsung. Tujuannya adalah untuk memberikan umpan balik yang bersifat membangun, membantu murid merefleksikan pembelajarannya, dan memberikan informasi bagi guru untuk menyesuaikan strategi pembelajaran.",
+        "examples": ["jurnal refleksi harian murid", "observasi keterlibatan murid", "tanya-jawab terbuka", "umpan balik teman sebaya", "penilaian diri", "bentuk lainnya"],
+        "instruments_in_examples": ["catatan anekdotal", "check list (Belum Muncul/Muncul)", "tabel Belum Terbiasa/Terbiasa untuk kebiasaan"],
+        "pages": [40, 52, 58, 61]
+      },
+      {
+        "key": "summative",
+        "name": "Asesmen sumatif",
+        "text": "Asesmen sumatif dilakukan pada akhir kegiatan kokurikuler untuk melihat sejauh mana tujuan pembelajaran tercapai. Asesmen ini mencakup hasil akhir yang dihasilkan murid, baik berupa karya, aksi, maupun presentasi.",
+        "examples": ["poster kampanye yang dibuat murid dalam proyek kolaboratif", "presentasi akhir proyek kokurikuler", "laporan pengamatan atau refleksi tertulis", "produk berbasis kebudayaan lokal (dalam bentuk karya seni, video, atau pertunjukan)", "lembar penilaian kebiasaan (dalam G7KAIH) berdasarkan catatan harian", "bentuk penilaian lainnya"],
+        "technique": "penilaian kinerja (instrumen rubrik, 4 levels SB/B/C/K)",
+        "reference": "Asesmen sumatif pada kokurikuler mengacu pada alur perkembangan delapan dimensi profil lulusan. Hasil asesmen ini sekaligus menjadi dasar perencanaan pembelajaran selanjutnya sehingga siklus belajar terus berlanjut secara reflektif dan adaptif.",
+        "pages": [40, 41, 61]
+      }
+    ],
+    "design_principles": [
+      {"text": "Mengacu pada alur perkembangan Delapan Dimensi Profil Lulusan. Asesmen harus dirancang untuk menilai ketercapaian dimensi profil lulusan secara ringkas."},
+      {"text": "Fleksibel dan Kontekstual. Asesmen sebaiknya cukup fleksibel untuk disesuaikan dengan konteks kegiatan, bentuk kokurikuler (pembelajaran kolaboratif lintas disiplin ilmu, G7KAIH, atau cara lainnya), serta karakteristik murid dan satuan pendidikan."},
+      {"text": "Asesmen formatif dan sumatif dalam kokurikuler dapat diintegrasikan dalam asesmen intrakurikuler jika diperlukan, dengan tetap memasukkan deskripsi kokurikuler di kolom rapor."},
+      {"text": "Deskripsi di rapor didasarkan pada asesmen formatif dan sumatif"}
+    ],
+    "integration_with_subject_grades": [
+      {"form": "lintas disiplin", "text": "Hasil asesmen dari bentuk ini dapat diintegrasikan pada nilai di intrakurikuler sesuai mata pelajaran yang relevan.", "pages": [61]},
+      {"form": "G7KAIH", "text": "asesmen boleh dikaitkan dengan satu atau lebih mata pelajaran/muatan pembelajaran yang relevan", "pages": [31]},
+      {"form": "cara lainnya", "text": "terdapat asesmen yang relevan dengan mata pelajaran", "pages": [33]}
+    ],
+    "pages": [31, 33, 40, 41, 61]
+  },
+
+  "implementation": {
+    "text": "Pada awal pelaksanaan kokurikuler, pendidik melaksanakan kegiatan dengan mengacu pada perencanaan sambil mengamati dinamika pembelajaran. Pendidik lalu menyesuaikan strategi pembelajaran agar lebih kontekstual, kolaboratif, dan mendorong eksplorasi serta refleksi. Pada tahap ini, pendidik menciptakan ruang belajar yang menantang, menggugah rasa ingin tahu, dan memberi kesempatan bagi murid untuk terlibat aktif, mengembangkan ide, dan memecahkan masalah secara kreatif.",
+    "formative_use": "Asesmen formatif digunakan untuk memantau efektifitas strategi pembelajaran yang responsif untuk memantau pemahaman dan memfasilitasi umpan balik yang membangun …",
+    "per_form": "See forms[].implementation_and_grading, forms[].implementation_timing and forms[].continuation.",
+    "pages": [61]
+  },
+
+  "reporting": {
+    "rapor_column": {
+      "text": "Pelaporan hasil kokurikuler dalam rapor murid dicantumkan pada kolom Kokurikuler. Pelaporan berisi deskripsi tentang kegiatan yang dilakukan murid dalam kokurikuler beserta pencapaian dimensi profil lulusan yang sudah ditentukan.",
+      "also": "Asesmen dari kegiatan kokurikuler dilaporkan dalam kolom tersendiri pada rapor hasil belajar. Bentuk pelaporan secara umum, tidak selalu harus mengacu pada Capaian Pembelajaran dari suatu mata pelajaran.",
+      "pages": [40, 62]
+    },
+    "one_description_per_semester": {
+      "text": "Deskripsi dalam rapor mencakup seluruh kegiatan kokurikuler yang dilakukan dalam tiap semester. Artinya, jika satuan pendidikan membuat dua atau lebih kegiatan kokurikuler dalam satu semester maka pelaporannya cukup satu yang mencakup dimensi profil lulusan yang sudah ditentukan.",
+      "sd_example": "Misal, SD X di semester ganjil menyepakati melaksanakan 2 kegiatan kokurikuler, yaitu pembelajaran kolaboratif lintas disiplin ilmu yang fokus pada dimensi penalaran kritis dan gerakan 7KAIH yang fokus pada dimensi kolaborasi, maka yang dilaporkan adalah hasil belajar pada dimensi penalaran kritis dan kolaborasi.",
+      "pages": [62]
+    },
+    "procedure": {
+      "text": "Setelah satuan pendidikan melaksanakan kokurikuler selama satu semester, selanjutnya hasil dari kegiatan kokurikuler dianalisis untuk menentukan dimensi profil lulusan yang sudah diganti baik dan dimensi profil lulusan yang masih perlu penguatan pada murid. Pendidik kemudian mendeskripsikan dimensi profil lulusan di rapor.",
+      "steps": [
+        {"order": 1, "name": "Input dan Analisis nilai", "table_columns": ["Nama Murid", "Hasil Asesmen <dimensi 1> (SB/B/C/K)", "Hasil Asesmen <dimensi 2> (SB/B/C/K)", "Catatan pendidik"], "pages": [73]},
+        {"order": 2, "name": "Deskripsi rapor", "pages": [73]}
+      ],
+      "pages": [62, 73]
+    },
+    "description_rules": [
+      {"no": 1, "text": "Menggambarkan pencapaian dimensi profil lulusan murid."},
+      {"no": 2, "text": "Menggambarkan hasil belajar secara ringkas."},
+      {"no": 3, "text": "Menggunakan bahasa yang positif dan edukatif."}
+    ],
+    "description_examples": {
+      "source_level": "SMP",
+      "note": "The only worked walkthrough is the SMP kelas VII 'Peduli lingkungan' plan (Lampiran); kept because the pattern is level-neutral. Analysis row: Putra, Penalaran Kritis B, Komunikasi K, catatan 'Gagasan yang disampaikan tidak dapat dipahami, namun sudah bisa menjelaskan interaksi antar komponen ekosistem'.",
+      "pattern_summary": "Ananda <nama> sudah baik dalam <dimensi kuat> [dengan bukti/konteks], dan masih perlu berlatih dalam <dimensi lemah> [dalam tema …].",
+      "items": [
+        {"label": "Inspirasi 1", "text": "Ananda Putra sudah baik dalam penalaran kritis dengan mampu menjelaskan 3-5 interaksi antar komponen-komponen yang membentuk ekosistem, dan masih perlu berlatih dalam mengomunikasikan gagasan."},
+        {"label": "Inspirasi 2", "text": "Ananda Putra sudah baik dalam penalaran kritis saat mencari solusi terhadap permasalahan terkait lingkungan dan masih perlu berlatih dalam mengomunikasikan gagasan."},
+        {"label": "Inspirasi 3", "text": "Ananda Putra sudah baik dalam penalaran kritis dan masih perlu berlatih dalam mengomunikasikan gagasan dalam tema peduli lingkungan."}
+      ],
+      "pages": [70, 73]
+    },
+    "pages": [40, 41, 62, 70, 73]
+  },
+
+  "evaluation": {
+    "intro": "Evaluasi terhadap kegiatan dapat memberikan umpan balik, dan melihat efektivitas pelaksanaan, serta dampak.",
+    "purposes": [
+      {"key": "a", "text": "mengetahui apakah kegiatan telah mencapai sasaran dan tujuan yang telah ditetapkan, termasuk mengukur tingkat keberhasilan, efektivitas, dan dampak kegiatan. Evaluasi bukan hanya melihat hasil, tetapi juga proses. …"},
+      {"key": "b", "text": "memastikan keterkaitan kegiatan kokurikuler dengan intrakurikuler dan ketercapaian delapan dimensi profil lulusan mengacu pada alur perkembangan kompetensi delapan dimensi profil lulusan."},
+      {"key": "c", "text": "memberikan umpan balik seperti kekuatan, kelemahan, hambatan selama implementasi. Umpan balik digunakan untuk memodifikasi dan penyempurnaan kegiatan kedepannya. …"},
+      {"key": "d", "text": "menyediakan data dan bukti otentik bagi kepala satuan pendidikan untuk melanjutkan kegiatan / menghentikan kegiatan / melanjutkan kegiatan dengan perbaikan dan pengembangan. …"}
+    ],
+    "evaluator": "Penanggung jawab kegiatan adalah kepala satuan pendidikan, sehingga evaluasi kegiatan kokurikuler juga menjadi tanggung jawab kepala satuan pendidikan. Kepala satuan pendidikan dapat menunjuk pihak lain untuk melakukan evaluasi kegiatan. … Namun dengan alasan penyederhanaan, satuan pendidikan dapat melakukan sendiri evaluasi kegiatan melibatkan semua elemen dalam pelaksanaan kegiatan seperti murid, guru, orang tua untuk menjaga objektivitas. Objektivitas tetap dapat dipenuhi dengan cara dipilih guru yang tidak terlibat dalam kegiatan untuk melakukan evaluasi.",
+    "model": {
+      "components": [
+        {"key": "input", "name": "masukan (input)", "text": "masukan mencakup sumber daya dan perencanaan pembelajaran dengan tujuan untuk menilai apakah sumber daya yang tersedia telah dimanfaatkan secara optimal dan perencanaan yang dibuat dapat dilakukan."},
+        {"key": "process", "name": "proses (process)", "text": "Proses mencakup tindakan yang dilakukan dalam menjalankan kegiatan. Evaluasi pada proses bertujuan untuk menilai apakah kegiatan terlaksana sesuai dengan rencana dan partisipasi murid."},
+        {"key": "output", "name": "keluaran (output)", "text": "Keluaran mencakup hasil kegiatan. Evaluasi pada keluaran bertujuan untuk menilai apakah terdapat perubahan sikap, keterampilan, dan pengetahuan murid."},
+        {"key": "outcome", "name": "hasil (outcome)", "text": "Hasil mencakup hasil kegiatan pada jangka panjang. Evaluasi pada hasil bertujuan untuk menilai apakah kegiatan memiliki dampak jangka panjang pada murid dan satuan pendidikan."}
+      ],
+      "pages": [66]
+    },
+    "analysis": "Data evaluasi yang telah dikumpulkan dianalisis untuk mendapatkan informasi seperti partisipasi murid, manfaat kegiatan, kendala, dan dukungan satuan pendidikan",
+    "follow_up": [
+      {"key": "plan_revision", "text": "Perbaikan perencanaan kegiatan: menyesuaikan kembali tujuan, strategi, dan indikator keberhasilan berdasarkan hasil evaluasi sebelumnya. Apabila terdapat dimensi yang belum tercapai maka dimensi tersebut dilanjutkan kembali pada kegiatan kokurikuler tahun berikutnya."},
+      {"key": "teacher_capacity", "text": "Peningkatan kompetensi guru: memberikan pelatihan atau workshop kepada guru untuk meningkatkan kualitas pelaksanaan kegiatan."},
+      {"key": "facilities", "text": "Pengadaan sarana dan prasarana: memenuhi kebutuhan fasilitas penunjang agar kegiatan dapat berjalan optimal."},
+      {"key": "participation", "text": "Peningkatan partisipasi murid: melakukan pendekatan kreatif untuk menarik minat murid dan menciptakan lingkungan yang inklusif."}
+    ],
+    "sd_example": {
+      "school": "satuan pendidikan Dasar Anggrek Berseri",
+      "context": "… melakukan kegiatan kokurikuler berupa Senam Pagi Bersama dalam rangka membentuk 7 KAIH. Kegiatan di kelola oleh seorang guru sebagai koordinator kegiatan, dengan sasaran untuk semua murid kelas I-VI.",
+      "table": "Tabel 12. Contoh Evaluasi Kegiatan Penguatan Karakter",
+      "rows": [
+        {"component": "Masukan", "item": "Terdapat perencanaan, pelaksanaan, dan asesmen", "techniques": [{"technique": "Studi dokumen rencana kegiatan", "respondent": "Guru koordinator kegiatan"}]},
+        {"component": "Masukan", "item": "Sumber daya satuan pendidikan dimanfaatkan secara optimal", "techniques": [{"technique": "Wawancara", "respondent": "Guru koordinator kegiatan"}, {"technique": "Observasi", "respondent": "Sumber daya yang dipakai kegiatan"}]},
+        {"component": "Masukan", "item": "Guru pemandu senam memiliki kompetensi yang relevan", "techniques": [{"technique": "Wawancara", "respondent": "Guru koordinator kegiatan"}, {"technique": "Observasi", "respondent": "Guru pemandu senam"}]},
+        {"component": "Proses", "item": "Melibatkan seluruh murid", "techniques": [{"technique": "Observasi", "respondent": "Murid"}]},
+        {"component": "Proses", "item": "Peserta mengikuti kegiatan dengan antusias", "techniques": [{"technique": "Wawancara, Observas", "respondent": "Murid"}]},
+        {"component": "Proses", "item": "Pelaksanaan kegiatan mengikuti jadwal yang telah ditetapkan", "techniques": [{"technique": "Studi dokumen rencana jadwal", "respondent": "Guru koordinator kegiatan"}]},
+        {"component": "Keluaran", "item": "Kegiatan berjalan dengan lancar", "techniques": [{"technique": "Observasi", "respondent": null}]},
+        {"component": "Keluaran", "item": "Murid senang mengikuti kegiatan", "techniques": [{"technique": "Wawancara", "respondent": "Murid"}]},
+        {"component": "Keluaran", "item": "Kesehatan/kebugaran murid meningkat", "techniques": [{"technique": "Studi dokumen frekuensi dan jumlah siswa yang tidak masuk karena sakit", "respondent": "Guru koordinator program"}]},
+        {"component": "Hasil", "item": "Kebiasaan senam/berolahraga pada murid", "techniques": [{"technique": "Kuesioner", "respondent": "Orang tua"}]},
+        {"component": "Hasil", "item": "Pola makan dan hidup teratur sesuai standar kesehatan", "techniques": [{"technique": "Kuesioner", "respondent": "Alumni"}, {"technique": "Data hasil pengukuran indeks massa tubuh (Body Mass Index)", "respondent": "Alumni"}]}
+      ],
+      "pages": [67, 68]
+    },
+    "pages": [64, 65, 66, 67, 68]
+  },
+
+  "sigrak_schema_comparison": {
+    "note": "Extractor's mapping of SIGRAK's kokurikuler module output fields to the guide's activity-plan template (templates.activity_plan). Not source text.",
+    "rows": [
+      {"sigrak_field": "background", "guide_match": "partial", "guide_equivalent": "Analisis satuan pendidikan (planning stage 2); examples open with a short narrative of the identified need (pp. 53, 56), but the plan template has no background section."},
+      {"sigrak_field": "yearly_goal", "guide_match": "mismatch", "guide_equivalent": "Guide sets Tujuan Pembelajaran per activity (section B). The annual plan (Tabel 9 layout) has no goal column; the yearly target is the set of focus dimensions."},
+      {"sigrak_field": "success_indicators", "guide_match": "partial", "guide_equivalent": "Summative rubric (Aspek yang Dinilai × SB/B/C/K) in section H; coordinator ensures 'kriteria kesuksesan yang sudah ditetapkan' (p. 24); 'indikator keberhasilan' is revisited in follow-up (p. 66)."},
+      {"sigrak_field": "procedure", "guide_match": "match", "guide_equivalent": "G. Kegiatan (numbered steps), designed to cover memahami, mengaplikasi, merefleksi."},
+      {"sigrak_field": "yearly_phases", "guide_match": "partial", "guide_equivalent": "Annual plan rows (activities with grade, form, JP) and the option to split the yearly JP over two semesters; no named phases."},
+      {"sigrak_field": "teacher_role", "guide_match": "partial", "guide_equivalent": "Roles table (Tabel 5: koordinator, guru kelas/mapel as fasilitator) and teacher steps inside Kegiatan; no per-plan teacher-role section."},
+      {"sigrak_field": "student_role", "guide_match": "partial", "guide_equivalent": "Only implicit in Kegiatan steps; no student-role section."},
+      {"sigrak_field": "monitoring", "guide_match": "partial", "guide_equivalent": "Formative assessment (catatan anekdotal, journals) and 7KAIH monitoring of habits; school-level evaluation model input-process-output-outcome (Tabel 12)."},
+      {"sigrak_field": "reflection", "guide_match": "partial", "guide_equivalent": "Reflection steps inside Kegiatan (murid melakukan refleksi; kesepakatan tindak lanjut) and formative reflection journals; no separate section."}
+    ],
+    "guide_fields_missing_in_sigrak": [
+      "Header: Nama satuan pendidikan, Kelas, Tema, Alokasi Waktu (JP), Lokasi Kegiatan",
+      "A. Dimensi Profil Lulusan",
+      "B. Tujuan Pembelajaran (per activity; subject named for lintas disiplin)",
+      "C. Praktik Pedagogis",
+      "D. Lingkungan Pembelajaran",
+      "E. Kemitraan Pembelajaran (catur pusat: sekolah, keluarga, masyarakat, media)",
+      "F. Pemanfaatan Digital",
+      "H. Asesmen: formatif (teknik + instrumen) and sumatif (rubrik 4 level SB/B/C/K per dimensi)",
+      "Form/Jenis Kokurikuler (lintas disiplin / G7KAIH + chosen habits / cara lainnya) and Mata Pelajaran Terkait",
+      "Rapor description per semester (kolom Kokurikuler)"
+    ],
+    "pages": [24, 41, 46, 47, 48, 50, 51, 52, 62, 66, 73]
+  },
+
+  "open_points": [
+    {"text": "p. 62 prints 'dimensi profil lulusan yang sudah diganti baik'; most likely a typo for 'sudah dicapai dengan baik'. Confirm before quoting in UI copy.", "pages": [62]},
+    {"text": "Tabel 8 gives SDLB/MILB grade I 180 JP, while Tabel 6 gives SD/MI grade I 216 JP; other SDLB grades equal SD. Check against the Permendikdasmen structure tables whether 180 is intended.", "pages": [35, 36]},
+    {"text": "The guide says the JP totals are set in 'Peraturan Menteri tentang implementasi kurikulum' but does not name it or give the per-subject share of the kokurikuler JP for SD. Cross-check Tabel 6 with that regulation and with KMA 1503/2025 for MI.", "pages": [35]},
+    {"text": "The 7th habit is 'Tidur Cepat' in the text (p. 30) but 'tidur tepat waktu' in Tabel 11 (p. 49). SIGRAK should pick one label (official G7KAIH name).", "pages": [30, 49]},
+    {"text": "Coordinator workload sentence is garbled by a layout artefact ('totalnya 6 jam 32 Panduan Kokurikuler pelajaran'); read as 6 jam pelajaran. The figures 2 per rombel, max 3 rombel are clear.", "pages": [37]},
+    {"text": "No relation to P5 is stated; the P5-replacement reading is an inference from the 'koordinator pembelajaran berbasis projek' title only.", "pages": [22, 37]},
+    {"text": "Rapor: the guide states one combined Kokurikuler description per semester but gives no SD-level worked description; the only walkthrough is SMP. No grading scale is required in the rapor (description only); the SB/B/C/K scale appears only in the analysis step.", "pages": [62, 73]},
+    {"text": "Figure numbering: two figures are labelled 'Gambar 3' (pp. 31 and 34). Contents page numbers (pp. 5-6) do not match the body.", "pages": [5, 6, 31, 34]}
+  ]
+}

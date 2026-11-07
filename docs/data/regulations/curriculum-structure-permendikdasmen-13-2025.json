@@ -1,0 +1,2667 @@
+{
+  "dataset": "curriculum_structure_sd",
+  "version_code": "STRUKTUR-KURIKULUM-SD-PERMENDIKDASMEN-13-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "SD/MI (and SDLB/MILB) parts of Permendikdasmen 13/2025, which amends Permendikbudristek 12/2024: the amended body articles, the kerangka dasar (eight dimensi profil lulusan, pembelajaran mendalam), the SD/MI and SDLB/MILB JP allocation tables per grade, the SD structure rules, and the ekstrakurikuler guidance. SIGRAK may use it as the national source for subject lists, JP per grade, kokurikuler time, Koding dan Kecerdasan Artifisial as an elective, and profile dimensions once Tim Validasi has checked it.",
+  "source": {
+    "title": "Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 13 Tahun 2025 tentang Perubahan atas Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "13 Tahun 2025",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2025-07-11",
+    "promulgated_on": "2025-07-15",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2025 Nomor 503",
+    "amends": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 (Berita Negara Republik Indonesia Tahun 2024 Nomor 172)",
+    "year": 2025,
+    "file": "docs/dokumen-resmi/1752637369_manage_file.pdf",
+    "sha256": "2fab2e91fc07efd3243b83c6bec383b6997083079fcada9b13359f4aff357325",
+    "pages_total": 75,
+    "copy_type": "SALINAN (certified copy from jdih.kemendikdasmen.go.id)",
+    "pages_note": "All page refs are PDF page numbers. Body: PDF 1-6 = printed 1-6. Lampiran I starts at PDF 7 (printed page 1 unnumbered); from there the printed number runs continuously through Lampiran II and III and equals PDF page minus 6 (e.g. PDF 15 = printed -9-, PDF 75 = printed -69-)."
+  },
+  "extraction": {
+    "method": "Text from pdftotext -layout (born-digital PDF, clean text layer), structured by hand; every SD/MI and SDLB/MILB JP table compared cell by cell with page images rendered at 110 dpi; row sums and required-subject sums recomputed against the printed total rows (see sum_check in each table).",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      41,
+      42,
+      44,
+      46,
+      47,
+      48
+    ],
+    "skipped": [
+      "Pasal 32 huruf a and c (PAUD/kesetaraan and SMA/SMK/SMALB implementation timing) kept only as context inside the Pasal 32 entry; no separate rows (p. 5).",
+      "Lampiran I C-E landasan filosofis, sosiologis, psikopedagogis: long prose; only short excerpts on pembelajaran mendalam kept (pp. 7-12).",
+      "Lampiran II A. Struktur Kurikulum PAUD (intrakurikuler Fase fondasi, kokurikuler STPPA, 900/360 menit per minggu, TKLB) (pp. 14-15).",
+      "Lampiran II C. Struktur Kurikulum SMP/MTs, Tabel 6-7 and explanations (pp. 22-26).",
+      "Lampiran II D. Struktur Kurikulum SMA/MA, Tabel 8-10 and explanations (pp. 26-33).",
+      "Lampiran II E. Struktur Kurikulum SMK/MAK, Tabel 11-15 and explanations (pp. 33-40).",
+      "Lampiran II G. Struktur Kurikulum SMPLB/MTsLB, Tabel 21-23 (pp. 49-56).",
+      "Lampiran II H. Struktur Kurikulum SMALB/MALB, Tabel 24-26 (pp. 57-64); the general SLB explanation list on pp. 64-65 is kept because it binds SDLB too, minus SMPLB/SMALB-only items.",
+      "Lampiran II I. Struktur Kurikulum pendidikan kesetaraan: Paket A (Tabel 27, SKK per Fase A-C, merged cells), Paket B (Tabel 28), Paket C (Tabel 29) and explanations (pp. 66-71). Paket A not captured: it uses SKK, not JP, and is not trivially shared with SD/MI."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "JP numbers are per school year as printed; '-' in a kokurikuler cell is stored as 0.",
+      "intrakurikuler_per_week and kokurikuler_per_week_equivalent are derived (JP per year / weeks_per_year), not printed. The decree states kokurikuler as an annual allocation (Pasal 19), so the weekly kokurikuler figure is only an equivalent.",
+      "The six Pendidikan Agama rows share one merged cell in every table; they are stored as one subject with variants.",
+      "group: required = Mata Pelajaran Wajib; elective = Mata Pelajaran Pilihan; muatan_lokal = Muatan Lokal row.",
+      "Footnote letters differ between tables (Muatan Lokal is c in Tabel 1-3 and d in Tabel 4-5); each table keeps its own footnotes map."
+    ]
+  },
+  "amended_articles": {
+    "pages": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "intro": "Beberapa ketentuan dalam Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2024 Nomor 172) diubah sebagai berikut:",
+    "items": [
+      {
+        "no": 1,
+        "article": "Pasal 3",
+        "change": "Ketentuan ayat (2) Pasal 3 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "(1) Kerangka dasar Kurikulum sebagaimana dimaksud dalam Pasal 2 huruf a merupakan rancangan landasan utama dalam pengembangan struktur Kurikulum.",
+          "(2) Kerangka dasar Kurikulum sebagaimana dimaksud pada ayat (1) memuat: a. tujuan; b. prinsip; c. landasan filosofis; d. landasan sosiologis; e. landasan psikopedagogis; dan f. pendekatan pembelajaran mendalam."
+        ],
+        "summary": "Kerangka dasar now includes 'pendekatan pembelajaran mendalam' as a sixth component.",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      {
+        "no": 2,
+        "article": "Pasal 6",
+        "change": "Ketentuan Pasal 6 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "Struktur Kurikulum terdiri atas: a. struktur Kurikulum pendidikan anak usia dini atau bentuk lain yang sederajat; b. struktur Kurikulum sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat; c. struktur Kurikulum sekolah menengah pertama, madrasah tsanawiyah, atau bentuk lain yang sederajat; d. struktur Kurikulum sekolah menengah atas, madrasah aliyah, atau bentuk lain yang sederajat; e. struktur Kurikulum sekolah menengah kejuruan atau madrasah aliyah kejuruan; f. struktur Kurikulum sekolah dasar luar biasa dan madrasah ibtidaiyah luar biasa; g. struktur Kurikulum sekolah menengah pertama luar biasa dan madrasah tsanawiyah luar biasa; h. struktur Kurikulum sekolah menengah atas luar biasa dan madrasah aliyah luar biasa; dan i. struktur Kurikulum Satuan Pendidikan penyelenggara pendidikan kesetaraan."
+        ],
+        "summary": "SD/MI is huruf b; SDLB/MILB is huruf f. These letters are used by Pasal 32.",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "no": 3,
+        "article": "Pasal 16",
+        "change": "Ketentuan Pasal 16 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "(1) Kokurikuler sebagaimana dimaksud dalam Pasal 7 ayat (1) huruf b memuat: a. kompetensi; b. muatan pembelajaran; dan c. beban belajar.",
+          "(2) Kokurikuler sebagaimana dimaksud pada ayat (1) dilaksanakan dalam bentuk pembelajaran kolaboratif lintas disiplin ilmu, gerakan 7 (tujuh) kebiasaan anak Indonesia hebat, dan/atau cara lainnya.",
+          "(3) Kokurikuler sebagaimana dimaksud pada ayat (1) pada pendidikan kesetaraan dilaksanakan paling sedikit melalui pemberdayaan dan keterampilan.",
+          "(4) Kokurikuler sebagaimana dimaksud pada ayat (1) dikembangkan oleh Satuan Pendidikan mengacu pada panduan yang ditetapkan oleh pejabat pimpinan tinggi madya yang melaksanakan tugas di bidang Kurikulum."
+        ],
+        "summary": "Kokurikuler forms: cross-disciplinary collaborative learning, the 7 kebiasaan anak Indonesia hebat movement, and/or other ways; built by the school from a guide set by the Kurikulum echelon-I official. Ayat (3) concerns kesetaraan only.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "no": 4,
+        "article": "Pasal 17",
+        "change": "Ketentuan Pasal 17 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "(1) Kompetensi sebagaimana dimaksud dalam Pasal 16 ayat (1) huruf a dirumuskan untuk memperkuat: a. keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa; b. kewargaan; c. penalaran kritis; d. kreativitas; e. kolaborasi; f. kemandirian; g. kesehatan; dan h. komunikasi.",
+          "(2) Alur perkembangan kompetensi sebagaimana dimaksud pada ayat (1) ditetapkan oleh pejabat pimpinan tinggi madya yang melaksanakan tugas di bidang Kurikulum."
+        ],
+        "summary": "Kokurikuler competencies = the eight dimensi profil lulusan.",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "no": 5,
+        "article": "Pasal 18",
+        "change": "Ketentuan Pasal 18 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "(1) Muatan pembelajaran sebagaimana dimaksud dalam Pasal 16 ayat (1) huruf b berupa tema.",
+          "(2) Tema sebagaimana dimaksud pada ayat (1) digunakan untuk merumuskan topik yang relevan dengan konteks sosial budaya dan karakteristik Peserta Didik.",
+          "(3) Tema sebagaimana dimaksud pada ayat (1) dikembangkan oleh Satuan Pendidikan."
+        ],
+        "summary": "Kokurikuler content is a theme developed by the school.",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "no": 6,
+        "article": "Pasal 19",
+        "change": "Ketentuan Pasal 19 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "Beban belajar sebagaimana dimaksud dalam Pasal 16 ayat (1) huruf c pada Kokurikuler dirumuskan dalam bentuk alokasi waktu 1 (satu) tahun ajaran."
+        ],
+        "summary": "Kokurikuler load is stated per school year.",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "no": 7,
+        "article": "Pasal 22",
+        "change": "Ketentuan Pasal 22 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "(1) Satuan Pendidikan pada jenjang pendidikan dasar dan pendidikan menengah jalur formal menyelenggarakan layanan Ekstrakurikuler.",
+          "(2) Satuan Pendidikan sebagaimana dimaksud pada ayat (1) sekurang-kurangnya menyediakan Ekstrakurikuler kepramukaan atau kepanduan lainnya.",
+          "(3) Satuan Pendidikan pada pendidikan anak usia dini dan Satuan Pendidikan penyelenggara pendidikan kesetaraan dapat menyelenggarakan layanan Ekstrakurikuler."
+        ],
+        "summary": "Formal SD must run ekstrakurikuler and at least offer kepramukaan (or other scouting).",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "no": 8,
+        "article": "Pasal 32",
+        "change": "Ketentuan Pasal 32 diubah",
+        "applies_to_sd": true,
+        "text": [
+          "Pada saat Peraturan Menteri ini mulai berlaku:",
+          "a. Satuan Pendidikan yang menggunakan struktur Kurikulum sebagaimana dimaksud dalam Pasal 6 huruf a dan huruf i dapat menerapkan Kurikulum sebagaimana tercantum pada Peraturan Menteri ini secara bertahap atau secara serentak;",
+          "b. Satuan Pendidikan yang menggunakan struktur Kurikulum sebagaimana dimaksud dalam Pasal 6 huruf b, huruf c, huruf f, dan huruf g dapat menerapkan Kurikulum sebagaimana tercantum pada Peraturan Menteri ini secara bertahap mulai dari kelas I, kelas IV, dan kelas VII atau secara serentak pada seluruh kelas; dan",
+          "c. Satuan Pendidikan yang menggunakan struktur Kurikulum sebagaimana dimaksud dalam Pasal 6 huruf d, huruf e, dan huruf h dapat menerapkan Kurikulum sebagaimana tercantum pada Peraturan Menteri ini secara bertahap mulai dari kelas X."
+        ],
+        "summary": "SD/MI (huruf b) and SDLB/MILB (huruf f) may phase in from kelas I and kelas IV, or apply to all grades at once.",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "no": 9,
+        "article": "Pasal 32A",
+        "change": "Di antara Pasal 32 dan Pasal 33 disisipkan 1 (satu) pasal, yakni Pasal 32A",
+        "applies_to_sd": true,
+        "text": [
+          "Pada saat Peraturan Menteri ini mulai berlaku, mata pelajaran pilihan Koding dan Kecerdasan Artifisial diselenggarakan Satuan Pendidikan pada jenjang pendidikan dasar dan jenjang pendidikan menengah mulai tahun ajaran 2025-2026 secara bertahap."
+        ],
+        "summary": "New article: Koding dan Kecerdasan Artifisial elective from school year 2025-2026, phased.",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "no": 10,
+        "article": "Lampiran I, II, III",
+        "change": "Lampiran diganti",
+        "applies_to_sd": true,
+        "text": [
+          "Ketentuan sebagaimana tercantum dalam Lampiran I, Lampiran II, dan Lampiran III Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah diubah, sehingga menjadi sebagaimana tercantum dalam Lampiran I, Lampiran II, dan Lampiran III yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini."
+        ],
+        "summary": "All three annexes are replaced: I Kerangka Dasar Kurikulum, II Struktur Kurikulum, III Pengembangan Ekstrakurikuler.",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  "effective_date": {
+    "article": "Pasal II",
+    "text": "Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.",
+    "promulgated_on": "2025-07-15",
+    "summary": "In force from 15 July 2025 (date of promulgation).",
+    "pages": [
+      5,
+      6
+    ]
+  },
+  "transition": {
+    "sd_mi_sdlb": {
+      "text": "Satuan Pendidikan yang menggunakan struktur Kurikulum sebagaimana dimaksud dalam Pasal 6 huruf b, huruf c, huruf f, dan huruf g dapat menerapkan Kurikulum sebagaimana tercantum pada Peraturan Menteri ini secara bertahap mulai dari kelas I, kelas IV, dan kelas VII atau secara serentak pada seluruh kelas",
+      "phase_in_start_grades_sd": [
+        1,
+        4
+      ],
+      "alternative": "serentak pada seluruh kelas",
+      "pages": [
+        5
+      ]
+    },
+    "koding_kecerdasan_artifisial": {
+      "text": "mata pelajaran pilihan Koding dan Kecerdasan Artifisial diselenggarakan Satuan Pendidikan pada jenjang pendidikan dasar dan jenjang pendidikan menengah mulai tahun ajaran 2025-2026 secara bertahap.",
+      "start_school_year": "2025-2026",
+      "pages": [
+        5
+      ]
+    }
+  },
+  "kerangka_dasar": {
+    "pages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "tujuan": {
+      "text": "Kurikulum memiliki tujuan untuk meningkatkan keimanan, ketakwaan kepada Tuhan Yang Maha Esa, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, dan komunikasi serta menumbuhkembangkan cipta, rasa, dan karsa Peserta Didik sebagai pelajar sepanjang hayat yang berkarakter Pancasila melalui pembelajaran mendalam.",
+      "pages": [
+        7
+      ]
+    },
+    "prinsip": {
+      "intro": "Kurikulum dirancang dengan prinsip:",
+      "items": [
+        {
+          "no": 1,
+          "key": "pengembangan_karakter",
+          "text": "pengembangan karakter, yaitu pengembangan kompetensi spiritual, moral, sosial, dan emosional Peserta Didik yang terintegrasi dalam intrakurikuler, kokurikuler, dan ekstrakurikuler, serta melalui pembiasaan dalam budaya sekolah;"
+        },
+        {
+          "no": 2,
+          "key": "fleksibel",
+          "text": "fleksibel, yaitu dapat disesuaikan dengan kebutuhan pengembangan kompetensi Peserta Didik, karakteristik Satuan Pendidikan, dan konteks lingkungan sosial budaya setempat; dan"
+        },
+        {
+          "no": 3,
+          "key": "berfokus_muatan_esensial",
+          "text": "berfokus pada muatan esensial, yaitu berpusat pada muatan yang paling diperlukan untuk mengembangkan kompetensi dan karakter Peserta Didik agar proses pembelajaran dapat dikelola secara optimal untuk pembelajaran mendalam."
+        }
+      ],
+      "pages": [
+        7
+      ]
+    },
+    "landasan": [
+      {
+        "key": "filosofis",
+        "heading": "C. Landasan Filosofis",
+        "excerpt": "Pembelajaran Mendalam sejalan dengan pemikiran para filsuf pendidikan, karena pembelajaran mendalam menempatkan peserta didik sebagai pusat dari proses pembelajaran, dengan menciptakan suasana belajar yang berkesadaran, bermakna, dan menggembirakan. … dengan cara mengintegrasikan olah pikir (intelektual), olah hati (etika), olah rasa (estetika), dan olah raga (kinestetik) secara holistik dan terpadu.",
+        "summary": "Long prose citing Dewey, Ki Hajar Dewantara (sistem among: asah, asih, asuh), K.H. Ahmad Dahlan (seven principles), K.H. Hasyim Asy'ari, Ki Bagus Hadikusumo, Romo Mangunwijaya, Az-Zarnuji; not transcribed in full.",
+        "pages": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "key": "sosiologis",
+        "heading": "D. Landasan Sosiologis",
+        "excerpt": "Pembelajaran mendalam sebagai fondasi dari seluruh proses pembelajaran dalam sistem pendidikan nasional merupakan sarana untuk mewujudkan amanat konstitusi untuk membangun kehidupan bangsa yang cerdas …",
+        "pages": [
+          11,
+          12
+        ]
+      },
+      {
+        "key": "psikopedagogis",
+        "heading": "E. Landasan Psikopedagogis",
+        "text": "Landasan psikopedagogis merupakan landasan yang memberikan dasar Kurikulum terkait proses manusia belajar dan berkembang. Penggabungan teori psikologi perkembangan dan pedagogi dimaksudkan untuk memastikan bahwa pengalaman belajar disesuaikan dengan kebutuhan dan kapasitas Peserta Didik. Untuk memperhatikan tingkat perkembangan dan kemajuan belajar maka Peserta Didik ditempatkan sebagai pelaku aktif pembelajaran.",
+        "pages": [
+          12
+        ]
+      }
+    ],
+    "pembelajaran_mendalam": {
+      "heading": "F. Pendekatan Pembelajaran Mendalam",
+      "definition": "Pendekatan pembelajaran mendalam merupakan pendekatan yang memuliakan dengan menekankan pada penciptaan suasana belajar dan proses pembelajaran berkesadaran, bermakna, dan menggembirakan melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.",
+      "framework_components": {
+        "text": "Kerangka kerja pembelajaran mendalam terdiri atas empat komponen, yaitu (1) dimensi profil lulusan, (2) prinsip pembelajaran, (3) pengalaman belajar, dan (4) kerangka pembelajaran.",
+        "items": [
+          "dimensi profil lulusan",
+          "prinsip pembelajaran",
+          "pengalaman belajar",
+          "kerangka pembelajaran"
+        ]
+      },
+      "principles": [
+        {
+          "key": "berkesadaran",
+          "text": "Pembelajaran yang berkesadaran terjadi ketika Peserta Didik menjadi pemelajar yang aktif dan mampu meregulasi diri. Peserta Didik memahami tujuan pembelajaran, termotivasi secara intrinsik untuk belajar, serta aktif mengembangkan strategi belajar untuk mencapai tujuan. …"
+        },
+        {
+          "key": "bermakna",
+          "text": "Pembelajaran yang bermakna terjadi ketika Peserta Didik dapat menerapkan pengetahuannya secara kontekstual. … Konsep pembelajaran yang bermakna melibatkan Peserta Didik dengan isu nyata dalam konteks personal, lokal, nasional, global. Pembelajaran harus melibatkan orang tua, masyarakat, atau komunitas sebagai sumber pengetahuan praktis, serta menumbuhkan rasa tanggung jawab dan kepedulian sosial."
+        },
+        {
+          "key": "menggembirakan",
+          "text": "Pembelajaran yang menggembirakan merupakan suasana belajar yang positif, menantang, menyenangkan, dan memotivasi. … Bergembira dalam belajar juga diwujudkan ketika setiap Peserta Didik merasa nyaman, Peserta Didik terpenuhi kebutuhannya seperti pemenuhan kebutuhan fisiologis, kebutuhan rasa aman, kebutuhan kasih sayang dan rasa memiliki, kebutuhan penghargaan, serta kebutuhan aktualisasi diri."
+        }
+      ],
+      "learning_experiences": {
+        "text": "Prinsip tersebut diwujudkan melalui pengalaman belajar Peserta Didik, yaitu memahami, mengaplikasi, dan merefleksi.",
+        "items": [
+          "memahami",
+          "mengaplikasi",
+          "merefleksi"
+        ]
+      },
+      "learning_framework": {
+        "text": "Penerapan pembelajaran mendalam didukung dengan praktik pedagogis oleh Pendidik, lingkungan belajar yang memberikan keamanan dan kenyamanan kepada Peserta Didik, pemanfaatan digital serta adanya kemitraan pembelajaran yang optimal.",
+        "items": [
+          "praktik pedagogis",
+          "lingkungan belajar",
+          "pemanfaatan digital",
+          "kemitraan pembelajaran"
+        ],
+        "items_note": "Short labels derived from the sentence; the decree does not list them as a numbered set here."
+      },
+      "pages": [
+        12,
+        13
+      ]
+    }
+  },
+  "dimensi_profil_lulusan": {
+    "text": "Pembelajaran mendalam difokuskan pada pencapaian delapan dimensi profil lulusan yaitu (1) keimanan dan ketakwaan kepada Tuhan Yang Maha Esa, (2) kewargaan, (3) penalaran kritis, (4) kreativitas, (5) kolaborasi, (6) kemandirian, (7) kesehatan, dan (8) komunikasi. Dimensi profil lulusan merupakan kompetensi utuh yang harus dimiliki oleh setiap Peserta Didik setelah menyelesaikan proses pembelajaran dan pendidikan.",
+    "items": [
+      {
+        "no": 1,
+        "key": "keimanan_ketakwaan",
+        "name": "keimanan dan ketakwaan kepada Tuhan Yang Maha Esa"
+      },
+      {
+        "no": 2,
+        "key": "kewargaan",
+        "name": "kewargaan"
+      },
+      {
+        "no": 3,
+        "key": "penalaran_kritis",
+        "name": "penalaran kritis"
+      },
+      {
+        "no": 4,
+        "key": "kreativitas",
+        "name": "kreativitas"
+      },
+      {
+        "no": 5,
+        "key": "kolaborasi",
+        "name": "kolaborasi"
+      },
+      {
+        "no": 6,
+        "key": "kemandirian",
+        "name": "kemandirian"
+      },
+      {
+        "no": 7,
+        "key": "kesehatan",
+        "name": "kesehatan"
+      },
+      {
+        "no": 8,
+        "key": "komunikasi",
+        "name": "komunikasi"
+      }
+    ],
+    "further_text": "Delapan dimensi profil lulusan merupakan hasil dari capaian pengetahuan, keterampilan, dan karakter. Di samping itu, delapan dimensi profil lulusan menumbuhkembangkan lulusan yang memiliki kepemimpinan efektif yang berintegritas, profesional, dan transformatif.",
+    "also_in": "Pasal 17 ayat (1) (kokurikuler competencies, p. 4, wording 'keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa') and Lampiran I A. Tujuan (p. 7).",
+    "pages": [
+      4,
+      7,
+      12,
+      13
+    ]
+  },
+  "structure_components": {
+    "summary": "The amending decree does not restate definitions of intrakurikuler/kokurikuler/ekstrakurikuler for SD; it amends the kokurikuler articles (Pasal 16-19), the ekstrakurikuler article (Pasal 22) and replaces Lampiran III. Pasal 7 (the three components) is referenced but not amended.",
+    "intrakurikuler": {
+      "text_refs": "For SD/MI the intrakurikuler load is the 'Alokasi Intrakurikuler Per Tahun' column of Tabel 1-5.",
+      "pages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "kokurikuler": {
+      "contents": [
+        "kompetensi",
+        "muatan pembelajaran",
+        "beban belajar"
+      ],
+      "forms_text": "dilaksanakan dalam bentuk pembelajaran kolaboratif lintas disiplin ilmu, gerakan 7 (tujuh) kebiasaan anak Indonesia hebat, dan/atau cara lainnya.",
+      "competencies": [
+        "keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa",
+        "kewargaan",
+        "penalaran kritis",
+        "kreativitas",
+        "kolaborasi",
+        "kemandirian",
+        "kesehatan",
+        "komunikasi"
+      ],
+      "content_text": "Muatan pembelajaran … berupa tema. … digunakan untuk merumuskan topik yang relevan dengan konteks sosial budaya dan karakteristik Peserta Didik. … dikembangkan oleh Satuan Pendidikan.",
+      "load_text": "Beban belajar … pada Kokurikuler dirumuskan dalam bentuk alokasi waktu 1 (satu) tahun ajaran.",
+      "guide_text": "dikembangkan oleh Satuan Pendidikan mengacu pada panduan yang ditetapkan oleh pejabat pimpinan tinggi madya yang melaksanakan tugas di bidang Kurikulum.",
+      "sd_allocation_pattern": "In Tabel 1-5 every required SD/MI subject except Bahasa Inggris carries 36 JP kokurikuler per year (32 in kelas VI); Bahasa Inggris, Koding dan Kecerdasan Artifisial and Muatan Lokal carry '-'.",
+      "muatan_lokal_link": "Muatan Lokal dapat dilaksanakan … melalui … pengintegrasian ke dalam Kokurikuler",
+      "pages": [
+        3,
+        4,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "ekstrakurikuler": {
+      "obligation_text": "Satuan Pendidikan pada jenjang pendidikan dasar dan pendidikan menengah jalur formal menyelenggarakan layanan Ekstrakurikuler.",
+      "minimum_text": "Satuan Pendidikan sebagaimana dimaksud pada ayat (1) sekurang-kurangnya menyediakan Ekstrakurikuler kepramukaan atau kepanduan lainnya.",
+      "guidance_ref": "Lampiran III Pengembangan Ekstrakurikuler (see ekstrakurikuler_guidance).",
+      "pages": [
+        4,
+        5,
+        72
+      ]
+    }
+  },
+  "jp_allocation_sd_mi": {
+    "section": "Lampiran II B. Struktur Kurikulum Sekolah Dasar, Madrasah Ibtidaiyah, atau Bentuk Lain yang Sederajat, Tabel 1-5",
+    "pages": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "units": {
+      "allocation": "JP per tahun",
+      "jp_minutes": 35,
+      "weeks_per_year": {
+        "kelas_I_V": 36,
+        "kelas_VI": 32
+      },
+      "per_week_printed": false,
+      "per_week_note": "The tables print only annual JP. Per-week figures are derived. Footnotes state Muatan Lokal and Koding dan Kecerdasan Artifisial as 2 JP per minggu."
+    },
+    "tables": [
+      {
+        "table": 1,
+        "title": "Tabel 1. Alokasi waktu mata pelajaran sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat kelas I",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu dan 1 JP = 35 menit",
+        "grades": [
+          1
+        ],
+        "phase": "A",
+        "weeks_per_year": 36,
+        "jp_minutes": 35,
+        "pages": [
+          15,
+          16
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 36,
+            "total": 180,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 252,
+            "kokurikuler": 36,
+            "total": 288,
+            "intrakurikuler_per_week": 7.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 36,
+            "total": 180,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "c",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 864,
+            "kokurikuler": 216,
+            "total": 1080
+          },
+          {
+            "label": "Total JP Mata Pelajaran Umum + Muatan Lokal",
+            "intrakurikuler": 936,
+            "kokurikuler": 216,
+            "total": 1152
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 864,
+          "required_kokurikuler_sum": 216,
+          "required_total_sum": 1080,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 24.0,
+          "required_kokurikuler_share_percent": 20.0
+        }
+      },
+      {
+        "table": 2,
+        "title": "Tabel 2. Alokasi waktu mata pelajaran sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat kelas II",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu dan 1 JP = 35 menit",
+        "grades": [
+          2
+        ],
+        "phase": "A",
+        "weeks_per_year": 36,
+        "jp_minutes": 35,
+        "pages": [
+          16,
+          17
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 36,
+            "total": 180,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 288,
+            "kokurikuler": 36,
+            "total": 324,
+            "intrakurikuler_per_week": 8.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 180,
+            "kokurikuler": 36,
+            "total": 216,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "c",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 936,
+            "kokurikuler": 216,
+            "total": 1152
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1008,
+            "kokurikuler": 216,
+            "total": 1224
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 936,
+          "required_kokurikuler_sum": 216,
+          "required_total_sum": 1152,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 26.0,
+          "required_kokurikuler_share_percent": 18.8
+        }
+      },
+      {
+        "table": 3,
+        "title": "Tabel 3. Alokasi waktu mata pelajaran sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat kelas III-IV",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu dan 1 JP = 35 menit",
+        "grades": [
+          3,
+          4
+        ],
+        "phase": "B",
+        "weeks_per_year": 36,
+        "jp_minutes": 35,
+        "pages": [
+          17,
+          18
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 36,
+            "total": 180,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 216,
+            "kokurikuler": 36,
+            "total": 252,
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 180,
+            "kokurikuler": 36,
+            "total": 216,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 180,
+            "kokurikuler": 36,
+            "total": 216,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "c",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 1116,
+            "kokurikuler": 252,
+            "total": 1368
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1188,
+            "kokurikuler": 252,
+            "total": 1440
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 1116,
+          "required_kokurikuler_sum": 252,
+          "required_total_sum": 1368,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 31.0,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      },
+      {
+        "table": 4,
+        "title": "Tabel 4. Alokasi waktu mata pelajaran sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat kelas V",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu dan 1 JP = 35 menit",
+        "grades": [
+          5
+        ],
+        "phase": "C",
+        "weeks_per_year": 36,
+        "jp_minutes": 35,
+        "pages": [
+          18,
+          19,
+          20
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 36,
+            "total": 180,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 216,
+            "kokurikuler": 36,
+            "total": 252,
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 180,
+            "kokurikuler": 36,
+            "total": 216,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 180,
+            "kokurikuler": 36,
+            "total": 216,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "koding_kecerdasan_artifisial",
+            "name": "Koding dan Kecerdasan Artifisial",
+            "group": "elective",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "c",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 1116,
+            "kokurikuler": 252,
+            "total": 1368
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan/Muatan Lokal",
+            "intrakurikuler": 1188,
+            "kokurikuler": 252,
+            "total": 1440
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+            "intrakurikuler": 1260,
+            "kokurikuler": 252,
+            "total": 1512
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dialokasikan 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun sebagai mata pelajaran pilihan.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 1116,
+          "required_kokurikuler_sum": 252,
+          "required_total_sum": 1368,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 31.0,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      },
+      {
+        "table": 5,
+        "title": "Tabel 5. Alokasi waktu mata pelajaran sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat kelas VI",
+        "assumption_printed": "Asumsi 1 Tahun = 32 minggu dan 1 JP = 35 menit",
+        "grades": [
+          6
+        ],
+        "phase": "C",
+        "weeks_per_year": 32,
+        "jp_minutes": 35,
+        "pages": [
+          20,
+          21
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 128,
+            "kokurikuler": 32,
+            "total": 160,
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 192,
+            "kokurikuler": 32,
+            "total": 224,
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 160,
+            "kokurikuler": 32,
+            "total": 192,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 160,
+            "kokurikuler": 32,
+            "total": 192,
+            "intrakurikuler_per_week": 5.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 64,
+            "kokurikuler": 0,
+            "total": 64,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "koding_kecerdasan_artifisial",
+            "name": "Koding dan Kecerdasan Artifisial",
+            "group": "elective",
+            "intrakurikuler": 64,
+            "kokurikuler": 0,
+            "total": 64,
+            "footnote": "c",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 64,
+            "kokurikuler": 0,
+            "total": 64,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 992,
+            "kokurikuler": 224,
+            "total": 1216
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib+ Mata Pelajaran Pilihan/Muatan Lokal",
+            "intrakurikuler": 1056,
+            "kokurikuler": 224,
+            "total": 1280
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Mata Pelajaran Pilihan + Muatan Lokal",
+            "intrakurikuler": 1120,
+            "kokurikuler": 224,
+            "total": 1344
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dialokasikan 2 (dua) JP per minggu atau 64 (enam puluh empat) JP per tahun sebagai mata pelajaran pilihan.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 64 (enam puluh empat) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 992,
+          "required_kokurikuler_sum": 224,
+          "required_total_sum": 1216,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 31.0,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      }
+    ]
+  },
+  "sd_structure_rules": {
+    "section": "Lampiran II B, 'Berikut merupakan penjelasan dari struktur Kurikulum sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat secara umum.'",
+    "items": [
+      {
+        "no": 1,
+        "key": "kepercayaan",
+        "text": "Muatan pembelajaran kepercayaan untuk penghayat kepercayaan terhadap Tuhan Yang Maha Esa dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan mengenai layanan pendidikan kepercayaan terhadap Tuhan Yang Maha Esa.",
+        "pages": [
+          21
+        ]
+      },
+      {
+        "no": 2,
+        "key": "bimbingan_konseling",
+        "text": "Layanan bimbingan dan konseling dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan mengenai bimbingan dan konseling.",
+        "pages": [
+          21
+        ]
+      },
+      {
+        "no": 3,
+        "key": "muatan_lokal_content",
+        "text": "Muatan Lokal merupakan muatan pembelajaran tentang potensi dan keunikan lokal berupa: a. seni budaya; b. prakarya; c. pendidikan jasmani, olahraga, dan kesehatan; d. bahasa; dan/atau e. teknologi.",
+        "list": [
+          "seni budaya",
+          "prakarya",
+          "pendidikan jasmani, olahraga, dan kesehatan",
+          "bahasa",
+          "teknologi"
+        ],
+        "pages": [
+          21
+        ]
+      },
+      {
+        "no": 4,
+        "key": "muatan_lokal_delivery",
+        "text": "Muatan Lokal dapat dilaksanakan pada Satuan Pendidikan melalui: a. pengintegrasian ke dalam mata pelajaran lain; b. pengintegrasian ke dalam Kokurikuler; dan/atau c. mata pelajaran yang berdiri sendiri.",
+        "list": [
+          "pengintegrasian ke dalam mata pelajaran lain",
+          "pengintegrasian ke dalam Kokurikuler",
+          "mata pelajaran yang berdiri sendiri"
+        ],
+        "pages": [
+          21
+        ]
+      },
+      {
+        "no": 5,
+        "key": "inklusif_pkk",
+        "text": "Kurikulum di Satuan Pendidikan penyelenggara pendidikan inklusif di sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat menambahkan mata pelajaran Program Kebutuhan Khusus sesuai dengan kondisi Peserta Didik.",
+        "pages": [
+          21
+        ]
+      },
+      {
+        "no": 6,
+        "key": "kecerdasan_istimewa",
+        "text": "Peserta Didik yang memiliki potensi kecerdasan istimewa dapat diberikan percepatan pemenuhan beban belajar, dan/atau pendalaman dan pengayaan Capaian Pembelajaran sebagai layanan individual dan bukan dalam bentuk rombongan belajar.",
+        "pages": [
+          22
+        ]
+      },
+      {
+        "no": 7,
+        "key": "koding_ka_elective",
+        "text": "Mata pelajaran pilihan Koding dan Kecerdasan Artifisial dapat disediakan oleh Satuan Pendidikan sesuai sumber daya yang dimiliki dan dapat dipilih oleh Peserta Didik sesuai minatnya.",
+        "pages": [
+          22
+        ]
+      }
+    ],
+    "pages": [
+      21,
+      22
+    ]
+  },
+  "subject_rules_sd": {
+    "summary": "Subject facts that follow directly from Tabel 1-5 and their footnotes.",
+    "items": [
+      {
+        "key": "pendidikan_agama",
+        "text": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+        "note": "Six religions: Islam, Kristen, Katolik, Buddha, Hindu, Khonghucu; one shared allocation.",
+        "pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "key": "seni_budaya_choice",
+        "text": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+        "options": [
+          "Seni Musik",
+          "Seni Rupa",
+          "Seni Teater",
+          "Seni Tari"
+        ],
+        "pages": [
+          16,
+          17,
+          18,
+          20,
+          21
+        ]
+      },
+      {
+        "key": "ipas_from_grade_3",
+        "summary": "Ilmu Pengetahuan Alam dan Sosial appears from kelas III (Tabel 3-5); not in kelas I-II.",
+        "pages": [
+          18,
+          19,
+          20
+        ]
+      },
+      {
+        "key": "bahasa_inggris",
+        "summary": "Bahasa Inggris is listed under Mata Pelajaran Wajib from kelas III to VI: 72 JP intrakurikuler per year (kelas III-V), 64 JP (kelas VI), no kokurikuler. Not in kelas I-II.",
+        "pages": [
+          18,
+          19,
+          20
+        ]
+      },
+      {
+        "key": "koding_kecerdasan_artifisial",
+        "summary": "Mata Pelajaran Pilihan in kelas V and VI only (Tabel 4-5).",
+        "text_kelas_V": "Dialokasikan 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun sebagai mata pelajaran pilihan.",
+        "text_kelas_VI": "Dialokasikan 2 (dua) JP per minggu atau 64 (enam puluh empat) JP per tahun sebagai mata pelajaran pilihan.",
+        "provision_text": "dapat disediakan oleh Satuan Pendidikan sesuai sumber daya yang dimiliki dan dapat dipilih oleh Peserta Didik sesuai minatnya.",
+        "pages": [
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      {
+        "key": "muatan_lokal_cap",
+        "summary": "Muatan Lokal is a maximum, not a minimum: 72 JP per year in kelas I-V, 64 JP in kelas VI, no kokurikuler.",
+        "text_kelas_I_V": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun.",
+        "text_kelas_VI": "Paling banyak 2 (dua) JP per minggu atau 64 (enam puluh empat) JP per tahun.",
+        "pages": [
+          16,
+          17,
+          18,
+          20,
+          21
+        ]
+      },
+      {
+        "key": "total_rows_kelas_V_VI",
+        "summary": "Kelas V-VI tables print two totals: Wajib + one of (Pilihan or Muatan Lokal), and Wajib + Pilihan + Muatan Lokal, so a student may take both.",
+        "pages": [
+          19,
+          21
+        ]
+      }
+    ]
+  },
+  "adding_jp_rules": {
+    "summary": "The SD/MI part of the decree contains no general rule allowing schools to add JP beyond the tables. The only flexible items are Muatan Lokal ('paling banyak' 72/64 JP), the elective Koding dan Kecerdasan Artifisial (72/64 JP), acceleration/enrichment for gifted students as individual service, and the flexible load rule for SLB (sdlb_rules no. 12).",
+    "pages": [
+      16,
+      19,
+      21,
+      22,
+      65
+    ]
+  },
+  "assessment_references": {
+    "items": [
+      {
+        "key": "ekstrakurikuler_assessment",
+        "text": "Kinerja Peserta Didik dalam Ekstrakurikuler perlu mendapat Penilaian atau asesmen dan dideskripsikan dalam laporan hasil belajar. Kriteria keberhasilannya meliputi proses dan hasil capaian kompetensi Peserta Didik dalam Ekstrakurikuler yang dipilihnya. Penilaian atau asesmen dilakukan secara kualitatif.",
+        "pages": [
+          74
+        ]
+      },
+      {
+        "key": "slb_fase_by_diagnostic",
+        "text": "Penentuan Fase pada Peserta Didik didasarkan pada hasil asesmen diagnostik, sehingga pembelajaran sesuai dengan kebutuhan dan karakteristik Peserta Didik.",
+        "applies_to": "sekolah luar biasa",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "key": "slb_functional_assessment",
+        "text": "Asesmen fungsional dilakukan oleh Pendidik untuk memperoleh informasi secara menyeluruh berkaitan dengan kondisi, hambatan, dan kebutuhan Peserta Didik berkebutuhan khusus untuk dijadikan dasar dalam merancang perangkat pembelajaran.",
+        "applies_to": "sekolah luar biasa",
+        "pages": [
+          65
+        ]
+      }
+    ],
+    "summary": "No intrakurikuler or kokurikuler assessment/rapor rules are set in this decree; only the ekstrakurikuler qualitative assessment in the rapor and SLB diagnostic/functional assessment."
+  },
+  "jp_allocation_sdlb_milb": {
+    "section": "Lampiran II F. Struktur Kurikulum Sekolah Dasar Luar Biasa dan Madrasah Ibtidaiyah Luar Biasa, Tabel 16-20",
+    "pages": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "units": {
+      "allocation": "JP per tahun",
+      "jp_minutes": 30,
+      "weeks_per_year": {
+        "kelas_I_V": 36,
+        "kelas_VI": 32
+      },
+      "per_week_printed": false
+    },
+    "notes": "SDLB tables have no Koding dan Kecerdasan Artifisial row. JP is 30 minutes (SD/MI: 35).",
+    "tables": [
+      {
+        "table": 16,
+        "title": "Tabel 16. Alokasi waktu mata pelajaran sekolah dasar luar biasa dan madrasah ibtidaiyah luar biasa kelas I",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu, 1 JP = 30 menit",
+        "grades": [
+          1
+        ],
+        "phase": "A",
+        "weeks_per_year": 36,
+        "jp_minutes": 30,
+        "pages": [
+          40,
+          41,
+          42
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 252,
+            "kokurikuler": 108,
+            "total": 360,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 7.0,
+            "kokurikuler_per_week_equivalent": 3.0
+          },
+          {
+            "key": "program_kebutuhan_khusus",
+            "name": "Program Kebutuhan Khusus",
+            "group": "required",
+            "intrakurikuler": 216,
+            "kokurikuler": 0,
+            "total": 216,
+            "options": [
+              "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+              "Pengembangan komunikasi, persepsi bunyi, dan irama; (penyandang disabilitas rungu)",
+              "Pengembangan diri (penyandang disabilitas intelektual)",
+              "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+              "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+            ],
+            "footnote": "c",
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 900,
+            "kokurikuler": 180,
+            "total": 1080
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 972,
+            "kokurikuler": 180,
+            "total": 1152
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 900,
+          "required_kokurikuler_sum": 180,
+          "required_total_sum": 1080,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 25.0,
+          "required_kokurikuler_share_percent": 16.7
+        }
+      },
+      {
+        "table": 17,
+        "title": "Tabel 17. Alokasi waktu mata pelajaran sekolah dasar luar biasa dan madrasah ibtidaiyah luar biasa kelas II",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu, 1 JP = 30 menit",
+        "grades": [
+          2
+        ],
+        "phase": "A",
+        "weeks_per_year": 36,
+        "jp_minutes": 30,
+        "pages": [
+          42,
+          43
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 252,
+            "kokurikuler": 108,
+            "total": 360,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 7.0,
+            "kokurikuler_per_week_equivalent": 3.0
+          },
+          {
+            "key": "program_kebutuhan_khusus",
+            "name": "Program Kebutuhan Khusus",
+            "group": "required",
+            "intrakurikuler": 216,
+            "kokurikuler": 0,
+            "total": 216,
+            "options": [
+              "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+              "Pengembangan komunikasi, persepsi bunyi, dan irama; (penyandang disabilitas rungu)",
+              "Pengembangan diri (penyandang disabilitas intelektual)",
+              "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+              "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+            ],
+            "footnote": "c",
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 936,
+            "kokurikuler": 216,
+            "total": 1152
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1008,
+            "kokurikuler": 216,
+            "total": 1224
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 936,
+          "required_kokurikuler_sum": 216,
+          "required_total_sum": 1152,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 26.0,
+          "required_kokurikuler_share_percent": 18.8
+        }
+      },
+      {
+        "table": 18,
+        "title": "Tabel 18. Alokasi waktu mata pelajaran sekolah dasar luar biasa dan madrasah ibtidaiyah luar biasa kelas III-IV",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu, 1 JP = 30 menit",
+        "grades": [
+          3,
+          4
+        ],
+        "phase": "B",
+        "weeks_per_year": 36,
+        "jp_minutes": 30,
+        "pages": [
+          44,
+          45
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 36,
+            "total": 108,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 36,
+            "total": 108,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 360,
+            "kokurikuler": 144,
+            "total": 504,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 10.0,
+            "kokurikuler_per_week_equivalent": 4.0
+          },
+          {
+            "key": "program_kebutuhan_khusus",
+            "name": "Program Kebutuhan Khusus",
+            "group": "required",
+            "intrakurikuler": 216,
+            "kokurikuler": 0,
+            "total": 216,
+            "options": [
+              "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+              "Pengembangan komunikasi, persepsi bunyi, dan irama; (penyandang disabilitas rungu)",
+              "Pengembangan diri (penyandang disabilitas intelektual)",
+              "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+              "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+            ],
+            "footnote": "c",
+            "intrakurikuler_per_week": 6.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 1116,
+            "kokurikuler": 252,
+            "total": 1368
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1188,
+            "kokurikuler": 252,
+            "total": 1440
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 1116,
+          "required_kokurikuler_sum": 252,
+          "required_total_sum": 1368,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 31.0,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      },
+      {
+        "table": 19,
+        "title": "Tabel 19. Alokasi waktu mata pelajaran sekolah dasar luar biasa dan dan madrasah ibtidaiyah luar biasa kelas V",
+        "assumption_printed": "Asumsi 1 Tahun = 36 minggu, 1 JP = 30 menit",
+        "grades": [
+          5
+        ],
+        "phase": "C",
+        "weeks_per_year": 36,
+        "jp_minutes": 30,
+        "pages": [
+          45,
+          46,
+          47
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 108,
+            "kokurikuler": 36,
+            "total": 144,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 360,
+            "kokurikuler": 144,
+            "total": 504,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 10.0,
+            "kokurikuler_per_week_equivalent": 4.0
+          },
+          {
+            "key": "program_kebutuhan_khusus",
+            "name": "Program Kebutuhan Khusus",
+            "group": "required",
+            "intrakurikuler": 144,
+            "kokurikuler": 0,
+            "total": 144,
+            "options": [
+              "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+              "Pengembangan komunikasi, persepsi bunyi, dan irama; (penyandang disabilitas rungu)",
+              "Pengembangan diri (penyandang disabilitas intelektual)",
+              "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+              "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+            ],
+            "footnote": "c",
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 72,
+            "kokurikuler": 0,
+            "total": 72,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 1116,
+            "kokurikuler": 252,
+            "total": 1368
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1188,
+            "kokurikuler": 252,
+            "total": 1440
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 72 (tujuh puluh dua) JP per tahun."
+        },
+        "sum_check": {
+          "required_intrakurikuler_sum": 1116,
+          "required_kokurikuler_sum": 252,
+          "required_total_sum": 1368,
+          "matches_printed_required_total": true,
+          "required_intrakurikuler_per_week": 31.0,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      },
+      {
+        "table": 20,
+        "title": "Tabel 20. Alokasi waktu mata pelajaran sekolah dasar luar biasa dan madrasah ibtidaiyah luar biasa kelas VI",
+        "assumption_printed": "Asumsi 1 Tahun = 32 minggu, 1 JP = 30 menit",
+        "grades": [
+          6
+        ],
+        "phase": "C",
+        "weeks_per_year": 32,
+        "jp_minutes": 30,
+        "pages": [
+          47,
+          48,
+          49
+        ],
+        "subjects": [
+          {
+            "key": "pendidikan_agama",
+            "name": "Pendidikan Agama dan Budi Pekerti",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "variants": [
+              "Pendidikan Agama Islam dan Budi Pekerti",
+              "Pendidikan Agama Kristen dan Budi Pekerti",
+              "Pendidikan Agama Katolik dan Budi Pekerti",
+              "Pendidikan Agama Buddha dan Budi Pekerti",
+              "Pendidikan Agama Hindu dan Budi Pekerti",
+              "Pendidikan Agama Khonghucu dan Budi Pekerti"
+            ],
+            "variants_note": "Six religion rows share one merged cell in the table; one row applies per student.",
+            "footnote": "a",
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "pendidikan_pancasila",
+            "name": "Pendidikan Pancasila",
+            "group": "required",
+            "intrakurikuler": 54,
+            "kokurikuler": 0,
+            "total": 64,
+            "intrakurikuler_per_week": 1.69,
+            "kokurikuler_per_week_equivalent": 0.0,
+            "printed_anomaly": "Intrakurikuler printed as 54 while total is 64 and kokurikuler is '-'; 64 is what makes the printed totals (992 / 1.216) add up. Kept as printed; see open_points."
+          },
+          {
+            "key": "bahasa_indonesia",
+            "name": "Bahasa Indonesia",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "matematika",
+            "name": "Matematika",
+            "group": "required",
+            "intrakurikuler": 96,
+            "kokurikuler": 32,
+            "total": 128,
+            "intrakurikuler_per_week": 3.0,
+            "kokurikuler_per_week_equivalent": 1.0
+          },
+          {
+            "key": "ipas",
+            "name": "Ilmu Pengetahuan Alam dan Sosial",
+            "group": "required",
+            "intrakurikuler": 54,
+            "kokurikuler": 0,
+            "total": 64,
+            "intrakurikuler_per_week": 1.69,
+            "kokurikuler_per_week_equivalent": 0.0,
+            "printed_anomaly": "Intrakurikuler printed as 54 while total is 64 and kokurikuler is '-'; 64 is what makes the printed totals (992 / 1.216) add up. Kept as printed; see open_points."
+          },
+          {
+            "key": "pjok",
+            "name": "Pendidikan Jasmani Olahraga dan Kesehatan",
+            "group": "required",
+            "intrakurikuler": 54,
+            "kokurikuler": 0,
+            "total": 64,
+            "intrakurikuler_per_week": 1.69,
+            "kokurikuler_per_week_equivalent": 0.0,
+            "printed_anomaly": "Intrakurikuler printed as 54 while total is 64 and kokurikuler is '-'; 64 is what makes the printed totals (992 / 1.216) add up. Kept as printed; see open_points."
+          },
+          {
+            "key": "seni_budaya",
+            "name": "Seni dan Budaya",
+            "group": "required",
+            "intrakurikuler": 320,
+            "kokurikuler": 128,
+            "total": 448,
+            "options": [
+              "Seni Musik",
+              "Seni Rupa",
+              "Seni Teater",
+              "Seni Tari"
+            ],
+            "footnote": "b",
+            "intrakurikuler_per_week": 10.0,
+            "kokurikuler_per_week_equivalent": 4.0
+          },
+          {
+            "key": "program_kebutuhan_khusus",
+            "name": "Program Kebutuhan Khusus",
+            "group": "required",
+            "intrakurikuler": 128,
+            "kokurikuler": 0,
+            "total": 128,
+            "options": [
+              "Pengembangan orientasi, mobilitas, sosial, dan komunikasi (penyandang disabilitas netra)",
+              "Pengembangan komunikasi, persepsi bunyi, dan irama; (penyandang disabilitas rungu)",
+              "Pengembangan diri (penyandang disabilitas intelektual)",
+              "Pengembangan diri dan pengembangan gerak (penyandang disabilitas fisik)",
+              "Pengembangan komunikasi, interaksi sosial, dan perilaku (penyandang disabilitas mental)"
+            ],
+            "footnote": "c",
+            "intrakurikuler_per_week": 4.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "bahasa_inggris",
+            "name": "Bahasa Inggris",
+            "group": "required",
+            "intrakurikuler": 64,
+            "kokurikuler": 0,
+            "total": 64,
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          },
+          {
+            "key": "muatan_lokal",
+            "name": "Muatan Lokal",
+            "group": "muatan_lokal",
+            "intrakurikuler": 64,
+            "kokurikuler": 0,
+            "total": 64,
+            "footnote": "d",
+            "intrakurikuler_per_week": 2.0,
+            "kokurikuler_per_week_equivalent": 0.0
+          }
+        ],
+        "totals_printed": [
+          {
+            "label": "Total JP Mata Pelajaran Wajib",
+            "intrakurikuler": 992,
+            "kokurikuler": 224,
+            "total": 1216
+          },
+          {
+            "label": "Total JP Mata Pelajaran Wajib + Muatan Lokal",
+            "intrakurikuler": 1056,
+            "kokurikuler": 224,
+            "total": 1280
+          }
+        ],
+        "footnotes": {
+          "a": "Diikuti oleh Peserta Didik sesuai dengan agama masing-masing.",
+          "b": "Satuan Pendidikan menyediakan minimal 1 (satu) jenis seni (seni musik, seni rupa, seni teater, dan/atau seni tari). Peserta Didik memilih 1 (satu) jenis seni (seni musik, seni rupa, seni teater, atau seni tari).",
+          "c": "Dipilih sesuai jenis hambatan Peserta Didik.",
+          "d": "Paling banyak 2 (dua) JP per minggu atau 64 (enam puluh empat) JP per tahun."
+        },
+        "row_sum_mismatches": [
+          "Pendidikan Pancasila: 54 + 0 != 64 (as printed)",
+          "Ilmu Pengetahuan Alam dan Sosial: 54 + 0 != 64 (as printed)",
+          "Pendidikan Jasmani Olahraga dan Kesehatan: 54 + 0 != 64 (as printed)"
+        ],
+        "sum_check": {
+          "required_intrakurikuler_sum": 962,
+          "required_kokurikuler_sum": 224,
+          "required_total_sum": 1216,
+          "matches_printed_required_total": false,
+          "required_intrakurikuler_per_week": 30.06,
+          "required_kokurikuler_share_percent": 18.4
+        }
+      }
+    ]
+  },
+  "sdlb_rules": {
+    "section": "Lampiran II H (end), 'Berikut merupakan penjelasan dari struktur Kurikulum sekolah luar biasa secara umum.' Only items that bind SDLB are kept; items 1, 3, 4, 5, 16 (SMPLB/SMALB only) skipped.",
+    "items": [
+      {
+        "no": 2,
+        "text": "Kelompok keterampilan (untuk sekolah menengah pertama luar biasa dan sekolah menengah atas luar biasa) dan mata pelajaran Seni dan Budaya untuk sekolah dasar luar biasa didasarkan pada penekanan kemandirian dan pengembangan keterampilan adaptif anak.",
+        "pages": [
+          64
+        ]
+      },
+      {
+        "no": 6,
+        "text": "Program Kebutuhan Khusus menjadi muatan wajib di taman kanak-kanak luar biasa. Sedangkan di sekolah dasar luar biasa, sekolah menengah pertama luar biasa, dan sekolah menengah atas luar biasa Program Kebutuhan Khusus menjadi mata pelajaran wajib dengan pertimbangan mempersiapkan Peserta Didik agar mampu hidup mandiri di lingkungan masyarakat.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 7,
+        "text": "Program Kebutuhan Khusus bertujuan untuk membantu anak memaksimalkan indera yang dimilikinya dan mengatasi keterbatasannya.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 8,
+        "text": "Penentuan Fase pada Peserta Didik didasarkan pada hasil asesmen diagnostik, sehingga pembelajaran sesuai dengan kebutuhan dan karakteristik Peserta Didik.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 9,
+        "text": "Asesmen fungsional dilakukan oleh Pendidik untuk memperoleh informasi secara menyeluruh berkaitan dengan kondisi, hambatan, dan kebutuhan Peserta Didik berkebutuhan khusus untuk dijadikan dasar dalam merancang perangkat pembelajaran.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 10,
+        "text": "Peserta Didik berkebutuhan khusus yang tidak memiliki hambatan intelektual di sekolah luar biasa atau Satuan Pendidikan umum dapat menggunakan struktur Kurikulum dan Capaian Pembelajaran pendidikan umum sesuai jenjangnya dengan menerapkan prinsip-prinsip akomodasi Kurikulum.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 11,
+        "text": "Peserta Didik berkebutuhan khusus dari sekolah luar biasa dapat melanjutkan pendidikannya ke Satuan Pendidikan umum dengan mengikuti kelas transisi.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 12,
+        "text": "Alokasi waktu belajar bersifat fleksibel sehingga Satuan Pendidikan dapat menyesuaikan beban belajar dengan karakteristik, kebutuhan belajar dan/atau kebutuhan akademik, sosial, budaya, dan faktor lain.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 13,
+        "text": "Muatan pelajaran kepercayaan untuk penganut kepercayaan kepada Tuhan Yang Maha Esa dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan mengenai layanan pendidikan kepercayaan kepada Tuhan Yang Maha Esa.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 14,
+        "text": "Muatan lokal merupakan muatan pembelajaran tentang potensi dan keunikan lokal berupa: a. seni budaya; b. prakarya; c. pendidikan jasmani, olahraga, dan kesehatan; d. bahasa; dan/atau e. teknologi.",
+        "pages": [
+          65
+        ]
+      },
+      {
+        "no": 15,
+        "text": "Muatan lokal dapat dilaksanakan pada Satuan Pendidikan melalui: a. pengintegrasian ke dalam mata pelajaran lain; b. pengintegrasian ke dalam tema Kokurikuler; dan/atau c. mata pelajaran yang berdiri sendiri.",
+        "pages": [
+          65
+        ]
+      }
+    ],
+    "pages": [
+      64,
+      65
+    ]
+  },
+  "ekstrakurikuler_guidance": {
+    "section": "Lampiran III Pengembangan Ekstrakurikuler (applies to all formal jenjang, including SD/MI)",
+    "visi": {
+      "text": "Visi Ekstrakurikuler pada Satuan Pendidikan adalah berkembangnya potensi, bakat, minat, kemampuan, kepribadian, dan kemandirian Peserta Didik secara optimal melalui kegiatan-kegiatan di luar Intrakurikuler.",
+      "pages": [
+        72
+      ]
+    },
+    "misi": {
+      "items": [
+        "menyediakan sejumlah kegiatan yang dapat dipilih dan diikuti sesuai dengan kebutuhan, potensi, bakat, dan minat Peserta Didik; dan",
+        "menyelenggarakan sejumlah kegiatan yang memberikan kesempatan kepada Peserta Didik untuk dapat mengekspresikan dan mengaktualisasikan diri secara optimal melalui kegiatan mandiri dan/atau berkelompok."
+      ],
+      "pages": [
+        72
+      ]
+    },
+    "fungsi": {
+      "items": [
+        {
+          "key": "pengembangan",
+          "text": "Fungsi pengembangan, yakni bahwa Ekstrakurikuler berfungsi untuk mendukung perkembangan Peserta Didik melalui perluasan minat, pengembangan potensi dan bakat, serta pemberian kesempatan untuk pembentukan karakter dan pelatihan kepemimpinan."
+        },
+        {
+          "key": "sosial",
+          "text": "Fungsi sosial, yakni bahwa Ekstrakurikuler berfungsi untuk mengembangkan kemampuan dan rasa tanggung jawab sosial Peserta Didik. Kompetensi sosial dikembangkan dengan memberikan kesempatan kepada Peserta Didik untuk memperluas pengalaman sosial, praktik keterampilan sosial, dan internalisasi nilai moral serta nilai sosial."
+        },
+        {
+          "key": "rekreatif",
+          "text": "Fungsi rekreatif, yakni bahwa Ekstrakurikuler dilakukan dalam suasana rileks dan menyenangkan sehingga menunjang proses perkembangan Peserta Didik. Ekstrakurikuler harus dapat menjadikan kehidupan atau atmosfer sekolah lebih menantang dan lebih menarik bagi Peserta Didik."
+        },
+        {
+          "key": "persiapan_karier",
+          "text": "Fungsi persiapan karier, yakni bahwa Ekstrakurikuler berfungsi untuk mengembangkan kesiapan karir Peserta Didik melalui pengembangan kapasitas."
+        }
+      ],
+      "pages": [
+        72
+      ]
+    },
+    "tujuan": {
+      "items": [
+        "Ekstrakurikuler harus dapat meningkatkan kemampuan kognitif, afektif, dan psikomotor Peserta Didik.",
+        "Ekstrakurikuler harus dapat mengembangkan bakat, minat, dan potensi serta karakter Peserta Didik dalam upaya pembinaan pribadi menuju manusia seutuhnya."
+      ],
+      "pages": [
+        72,
+        73
+      ]
+    },
+    "jenis": {
+      "items": [
+        {
+          "key": "krida",
+          "text": "krida, misalnya: Kepramukaan atau Kepanduan lainnya, Latihan Kepemimpinan Siswa (LKS), Palang Merah Remaja (PMR), Usaha Kesehatan Sekolah (UKS), Pasukan Pengibar Bendera (Paskibra), dan lainnya;"
+        },
+        {
+          "key": "karya_ilmiah",
+          "text": "karya ilmiah, misalnya: Kegiatan Ilmiah Remaja (KIR), kegiatan penguasaan keilmuan dan kemampuan akademik, penelitian, dan lainnya;"
+        },
+        {
+          "key": "olah_bakat_minat",
+          "text": "latihan olah-bakat atau latihan olah-minat, misalnya: pengembangan bakat olahraga, seni dan budaya, pecinta alam, jurnalistik, teater, teknologi informasi dan komunikasi, rekayasa, dan lainnya;"
+        },
+        {
+          "key": "keagamaan",
+          "text": "keagamaan, misalnya: pesantren kilat, ceramah keagamaan, baca tulis Al-Quran, retret, Sekolah Injil Liburan, Pendalaman Alkitab; atau"
+        },
+        {
+          "key": "lainnya",
+          "text": "bentuk kegiatan lainnya."
+        }
+      ],
+      "pages": [
+        73
+      ]
+    },
+    "format": {
+      "items": [
+        {
+          "key": "individual",
+          "text": "Individual, yakni Ekstrakurikuler dapat dilakukan dalam format yang diikuti oleh Peserta Didik secara perorangan."
+        },
+        {
+          "key": "kelompok",
+          "text": "Kelompok, yakni Ekstrakurikuler dapat dilakukan dalam format yang diikuti oleh kelompok-kelompok Peserta Didik."
+        },
+        {
+          "key": "klasikal",
+          "text": "Klasikal, yakni Ekstrakurikuler dapat dilakukan dalam format yang diikuti oleh Peserta Didik dalam 1 (satu) rombongan belajar."
+        },
+        {
+          "key": "gabungan",
+          "text": "Gabungan, yakni Ekstrakurikuler dapat dilakukan dalam format yang diikuti oleh Peserta Didik antar rombongan belajar."
+        },
+        {
+          "key": "lapangan",
+          "text": "Lapangan, yakni Ekstrakurikuler dapat dilakukan dalam format yang diikuti oleh seorang atau sejumlah Peserta Didik melalui kegiatan di luar sekolah atau kegiatan lapangan."
+        }
+      ],
+      "pages": [
+        73
+      ]
+    },
+    "prinsip": {
+      "items": [
+        {
+          "key": "individual",
+          "text": "Bersifat individual, yakni bahwa Ekstrakurikuler dikembangkan sesuai dengan potensi, bakat, dan minat Peserta Didik masing-masing."
+        },
+        {
+          "key": "pilihan",
+          "text": "Bersifat pilihan, yakni bahwa Ekstrakurikuler dikembangkan sesuai dengan minat dan diikuti oleh Peserta Didik secara sukarela."
+        },
+        {
+          "key": "keterlibatan_aktif",
+          "text": "Keterlibatan aktif, yakni bahwa Ekstrakurikuler menuntut keikutsertaan Peserta Didik secara penuh sesuai dengan minat dan pilihan masing-masing."
+        },
+        {
+          "key": "menyenangkan",
+          "text": "Menyenangkan, yakni bahwa Ekstrakurikuler dilaksanakan dalam suasana yang menggembirakan bagi Peserta Didik."
+        },
+        {
+          "key": "etos_kerja",
+          "text": "Membangun etos kerja, yakni bahwa Ekstrakurikuler dikembangkan dan dilaksanakan dengan prinsip membangun semangat Peserta Didik untuk berusaha dan bekerja dengan baik dan giat."
+        },
+        {
+          "key": "kemanfaatan_sosial",
+          "text": "Kemanfaatan sosial, yakni bahwa Ekstrakurikuler dikembangkan dan dilaksanakan dengan memperhatikan dampak positifnya bagi masyarakat."
+        }
+      ],
+      "pages": [
+        73
+      ]
+    },
+    "mekanisme": {
+      "pengembangan": {
+        "text": "Ekstrakurikuler diselenggarakan oleh Satuan Pendidikan bagi Peserta Didik sesuai potensi, bakat, dan minat Peserta Didik.",
+        "steps": [
+          "analisis sumber daya yang diperlukan dalam penyelenggaraan Ekstrakurikuler",
+          "identifikasi kebutuhan, potensi, bakat, dan minat Peserta Didik",
+          "menetapkan bentuk kegiatan yang diselenggarakan, kompetensi, muatan pembelajaran, beban belajar, dan indikator ketercapaiannya",
+          "mengupayakan sumber daya sesuai pilihan Peserta Didik atau menyalurkannya ke Satuan Pendidikan atau lembaga lainnya",
+          "menyusun Program Ekstrakurikuler"
+        ],
+        "program_text": "Satuan Pendidikan menyusun program Ekstrakurikuler yang merupakan bagian dari Rencana Kerja Sekolah. … Program Ekstrakurikuler disosialisasikan kepada Peserta Didik dan orangtua/wali pada setiap awal tahun pelajaran.",
+        "program_contents": [
+          "rasional dan tujuan umum",
+          "deskripsi setiap Ekstrakurikuler",
+          "pengelolaan",
+          "pendanaan",
+          "evaluasi"
+        ],
+        "pages": [
+          73,
+          74
+        ]
+      },
+      "pelaksanaan": {
+        "text": "Penjadwalan Ekstrakurikuler dirancang di awal tahun ajaran oleh pembina Ekstrakurikuler di bawah supervisi kepala sekolah/madrasah atau wakil kepala sekolah/madrasah. Jadwal Ekstrakurikuler diatur agar tidak menghambat pelaksanaan Intrakurikuler dan Kokurikuler.",
+        "pages": [
+          74
+        ]
+      },
+      "penilaian": {
+        "text": "Kinerja Peserta Didik dalam Ekstrakurikuler perlu mendapat Penilaian atau asesmen dan dideskripsikan dalam laporan hasil belajar. Kriteria keberhasilannya meliputi proses dan hasil capaian kompetensi Peserta Didik dalam Ekstrakurikuler yang dipilihnya. Penilaian atau asesmen dilakukan secara kualitatif.",
+        "pages": [
+          74
+        ]
+      }
+    },
+    "evaluasi": {
+      "text": "Evaluasi Ekstrakurikuler dilakukan untuk mengukur ketercapaian tujuan pada setiap indikator yang telah ditetapkan dalam rencana pengembangan Ekstrakurikuler oleh Satuan Pendidikan. … Berdasarkan hasil evaluasi, Satuan Pendidikan dapat melakukan tindak lanjut berupa perbaikan pada perencanaan siklus kegiatan berikutnya.",
+      "pages": [
+        74
+      ]
+    },
+    "daya_dukung": {
+      "items": [
+        {
+          "key": "kebijakan",
+          "text": "Pengembangan dan pelaksanaan Ekstrakurikuler merupakan kewenangan dan tanggung jawab penuh dari Satuan Pendidikan. Satuan Pendidikan menetapkan kebijakan pengembangan dan pelaksanaan Ekstrakurikuler melalui rapat Satuan Pendidikan dengan melibatkan komite sekolah/madrasah."
+        },
+        {
+          "key": "pembina",
+          "text": "Pelaksanaan Ekstrakurikuler harus didukung dengan ketersediaan pembina Ekstrakurikuler. Satuan Pendidikan dapat bekerja sama dengan pihak lain untuk memenuhi kebutuhan pembina Ekstrakurikuler."
+        },
+        {
+          "key": "sarana_prasarana",
+          "text": "Pelaksanaan Ekstrakurikuler memerlukan dukungan berupa ketersediaan sarana dan prasarana di Satuan Pendidikan. …"
+        }
+      ],
+      "pages": [
+        74,
+        75
+      ]
+    },
+    "pihak_terlibat": {
+      "items": [
+        {
+          "key": "satuan_pendidikan",
+          "text": "Kepala sekolah/madrasah, pendidik, tenaga kependidikan, dan pembina Ekstrakurikuler bersama-sama mewujudkan keunggulan dalam ragam Ekstrakurikuler sesuai dengan sumber daya yang dimiliki oleh Satuan Pendidikan."
+        },
+        {
+          "key": "komite",
+          "text": "Sebagai mitra sekolah, komite sekolah/madrasah memberikan dukungan, saran, dan kontrol dalam mewujudkan keunggulan ragam Ekstrakurikuler."
+        },
+        {
+          "key": "orang_tua",
+          "text": "Memberikan kepedulian, komitmen, dan berperan secara aktif terhadap keberhasilan Ekstrakurikuler pada Satuan Pendidikan."
+        }
+      ],
+      "pages": [
+        75
+      ]
+    },
+    "pages": [
+      72,
+      73,
+      74,
+      75
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        47,
+        48
+      ],
+      "text": "Tabel 20 (SDLB/MILB kelas VI): Pendidikan Pancasila, IPAS and PJOK print intrakurikuler 54, kokurikuler '-', total 64. Only 64 makes the printed Total JP Mata Pelajaran Wajib (992 intrakurikuler / 1.216) add up, so 54 is probably a typo for 64. Values stored as printed; confirmed on the page image."
+    },
+    {
+      "pages": [
+        16
+      ],
+      "text": "Tabel 1 (kelas I) labels the last total row 'Total JP Mata Pelajaran Umum + Muatan Lokal' while Tabel 2-3 use 'Wajib + Muatan Lokal'. Treated as the same row."
+    },
+    {
+      "pages": [
+        3,
+        4
+      ],
+      "text": "The 'panduan' for kokurikuler (Pasal 16 ayat 4) and the 'alur perkembangan kompetensi' (Pasal 17 ayat 2) are delegated to the pejabat pimpinan tinggi madya for Kurikulum; they are separate documents, not part of this decree."
+    },
+    {
+      "pages": [
+        5
+      ],
+      "text": "Pasal 32A starts Koding dan Kecerdasan Artifisial 'secara bertahap' from 2025-2026 but gives no schedule for which schools or grades go first."
+    },
+    {
+      "pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "text": "This decree only lists the amended articles. Articles of Permendikbudristek 12/2024 that were not amended (e.g. Pasal 7, which Pasal 16 cites for the kokurikuler component, and the intrakurikuler articles) still apply but are not in this file; capture them from the base regulation if SIGRAK needs them."
+    }
+  ]
+}
