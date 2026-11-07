@@ -11,6 +11,7 @@ use Database\Factories\SchoolMembershipFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * A user's role at a school. Roles live here, never on users (data model).
  *
  * @property int $school_id
+ * @property string $public_id
  * @property MembershipRole $role
  * @property MembershipStatus $status
  */
@@ -29,6 +31,21 @@ final class SchoolMembership extends Model
 
     /** @use HasFactory<SchoolMembershipFactory> */
     use HasFactory;
+
+    use HasUuids;
+
+    /**
+     * @return list<string>
+     */
+    public function uniqueIds(): array
+    {
+        return ['public_id'];
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'public_id';
+    }
 
     /**
      * @return BelongsTo<User, $this>

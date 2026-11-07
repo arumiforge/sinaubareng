@@ -16,6 +16,11 @@ return [
         'active' => 'Aktif',
         'ended' => 'Berakhir',
     ],
+    'invitation_status' => [
+        'pending' => 'Menunggu',
+        'accepted' => 'Diterima',
+        'expired' => 'Kedaluwarsa',
+    ],
     'staff_role' => [
         'admin' => 'Admin',
         'support' => 'Dukungan',
