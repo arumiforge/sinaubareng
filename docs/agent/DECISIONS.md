@@ -932,3 +932,8 @@ Reason: no default passwords (D-010), no stored usable tokens, and a link that r
 Accepted · 2026-11-07 · P5-03b
 School account passwords need at least 8 characters with letters and numbers. (Staff keep 12 characters, from P5-03a.) Failed sign-ins are counted per email and IP: after 5 failures there is a 1-minute wait. Loose per-IP limits cover sign-in (30/min), reset links (5/min), and invitation acceptance (10/min), because a whole school can share one IP. A reset request gets the same answer whether or not the email exists. The email shown on Akun is read-only, and changing it goes through Tim SIGRAK for now. Accepting an invitation marks the email as verified.
 Reason: the email is both the sign-in name and the invitation address, so changing it needs a verified flow that v1 does not have yet.
+
+### D-184 — Supervisor accounts come with the supervisor portal
+Accepted · 2026-11-07 · P5-03b · owner's choice
+How pengawas/korwil accounts are created is decided and built with the supervisor portal (P5-09). Until then, Penugasan pengawas in the staff console assigns existing user accounts only.
+Reason: invitations always name a school role; a supervisor has none, and the portal defines what the account needs.
