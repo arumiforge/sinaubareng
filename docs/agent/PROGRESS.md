@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-181. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-183. No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -107,7 +107,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-07 — P5-03b (auth and invitations) claimed by `p5/p5-03b-auth-invitations`.
+- 2026-11-07 — P5-03b in review (PR #55): sign-in, reset, invitations (staff invite the first operator/principal, the operator invites teachers), Akun, role switch, and console pages for memberships and supervisor assignments. D-182, D-183. Open owner question: how supervisor accounts are created (see the task file). Next: P5-03c, then P5-03d.
 - 2026-11-04 — P4-02 in review: `docs/drafts/ifp-classroom.md` maps IFP use on papaninteraktif.com and game.digitaleducation.id and designs Game kelas as an RPM-driven IFP mode. Owner interview done: D-171…D-181. Open: Android/WebView version on a real Kemendikdasmen IFP, Kode Tayang hostname; final docs still list the old D-014 game list (update when the draft moves to final).
 - 2026-11-03 — P5-03f in review: school directory for Kudus, Jepara, and Pati, with the Sebaran sekolah list, map, and Excel download (D-169, D-170). After deploy, run `php artisan school-directory:import` for each file in `docs/data/schools/`. Next: P5-03b in a new session.
 - 2026-11-03 — P5-03a done (PR #52): schools, memberships, school scope, and staff console. D-167 staff roles in the console, D-168 supervisor assignments are not school-scoped.
