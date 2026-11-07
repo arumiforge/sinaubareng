@@ -10,5 +10,6 @@ return [
     ],
     'empty' => [
         'page' => 'Halaman ini sedang disiapkan.',
+        'no_role' => 'Anda belum punya peran aktif di sekolah mana pun. Minta operator sekolah mengirim undangan.',
     ],
 ];

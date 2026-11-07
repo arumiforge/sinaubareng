@@ -1,19 +1,27 @@
 <script lang="ts">
     // School app shell, ported from TailAdmin's layout (sidebar, header, content), drawn with our tokens.
     import type { Snippet } from 'svelte';
+    import { Link, page } from '@inertiajs/svelte';
     import { route } from 'ziggy-js';
     import CalendarDays from '@lucide/svelte/icons/calendar-days';
+    import CircleUser from '@lucide/svelte/icons/circle-user';
     import ClipboardCheck from '@lucide/svelte/icons/clipboard-check';
+    import GraduationCap from '@lucide/svelte/icons/graduation-cap';
+    import LogOut from '@lucide/svelte/icons/log-out';
     import Menu from '@lucide/svelte/icons/menu';
     import Presentation from '@lucide/svelte/icons/presentation';
     import SquarePen from '@lucide/svelte/icons/square-pen';
     import Users from '@lucide/svelte/icons/users';
     import X from '@lucide/svelte/icons/x';
+    import RoleSwitch from '@/Components/RoleSwitch.svelte';
+    import Toast from '@/Components/Toast.svelte';
     import { t } from '@/lib/i18n';
 
     let { title, children }: { title: string; children: Snippet } = $props();
 
     let sidebarOpen = $state(false);
+
+    const role = $derived(page.props.auth?.memberships.find((membership) => membership.current)?.role);
 
     // Menu from the product concept; each item gets its route when its slice is built.
     const items = [
@@ -24,6 +32,10 @@
         { label: t('nav.items.my_classes'), icon: Users },
     ];
 </script>
+
+<svelte:head>
+    <title>{title} · {t('common.app_name')}</title>
+</svelte:head>
 
 <div class="flex min-h-screen">
     {#if sidebarOpen}
@@ -61,8 +73,38 @@
                         </span>
                     </li>
                 {/each}
+                {#if role === 'operator'}
+                    <li>
+                        <Link
+                            href={route('teachers.index')}
+                            class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+                        >
+                            <GraduationCap size={20} strokeWidth={1.5} />
+                            {t('nav.items.teachers')}
+                        </Link>
+                    </li>
+                {/if}
             </ul>
         </nav>
+
+        <div class="space-y-1 border-t border-line px-4 py-3">
+            <Link
+                href={route('account.edit')}
+                class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+            >
+                <CircleUser size={20} strokeWidth={1.5} />
+                {t('nav.account')}
+            </Link>
+            <Link
+                href={route('logout')}
+                method="post"
+                as="button"
+                class="flex min-h-11 w-full items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+            >
+                <LogOut size={20} strokeWidth={1.5} />
+                {t('nav.sign_out')}
+            </Link>
+        </div>
     </aside>
 
     <div class="flex min-w-0 flex-1 flex-col">
@@ -76,7 +118,8 @@
             >
                 <Menu size={20} strokeWidth={1.5} />
             </button>
-            <h1 class="text-lead font-semibold">{title}</h1>
+            <h1 class="min-w-0 flex-1 truncate text-lead font-semibold">{title}</h1>
+            <RoleSwitch />
         </header>
 
         <main class="flex-1 p-4 lg:p-8">
@@ -84,3 +127,5 @@
         </main>
     </div>
 </div>
+
+<Toast />
