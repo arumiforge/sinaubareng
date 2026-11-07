@@ -27,6 +27,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\ValidationException;
 
 /**
@@ -46,7 +47,7 @@ final class InvitationResource extends Resource
         return StaffAccess::allows(StaffRole::Admin, StaffRole::Support);
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return false;
     }
@@ -61,9 +62,6 @@ final class InvitationResource extends Resource
         return __('console.invitations.plural_label');
     }
 
-    /**
-     * @return Builder<Invitation>
-     */
     public static function getEloquentQuery(): Builder
     {
         // The staff console sees every school (TEN-2).
@@ -155,7 +153,7 @@ final class InvitationResource extends Resource
                     ->dateTime('d/m/Y H.i'),
                 TextColumn::make('invited_by_name')
                     ->label(__('console.invitations.fields.invited_by'))
-                    ->state(fn (Invitation $record): ?string => $record->staffInviter?->name ?? $record->inviter?->name),
+                    ->state(fn (Invitation $record): ?string => $record->staffInviter->name ?? $record->inviter?->name),
             ])
             ->filters([
                 SelectFilter::make('school')

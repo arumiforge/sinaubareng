@@ -55,9 +55,6 @@ final class SchoolMembershipResource extends Resource
         return __('console.memberships.plural_label');
     }
 
-    /**
-     * @return Builder<SchoolMembership>
-     */
     public static function getEloquentQuery(): Builder
     {
         // The staff console sees every school (TEN-2).
