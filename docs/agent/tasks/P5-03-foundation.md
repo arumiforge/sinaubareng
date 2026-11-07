@@ -26,7 +26,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | ID | Sub-task | Depends on | Output | Status |
 |---|---|---|---|---|
 | P5-03a | Tenancy core: `regions`, `schools`, `users.nip`, `school_memberships`, `supervisor_assignments`, `staff_users`; `BelongsToSchool` scope (fail-closed), current-school context; staff console resources for regions, schools, and staff users | — | `app/Tenancy`, migrations, Filament resources, tenancy tests | done |
-| P5-03b | Auth and invitations: sign-in (`/masuk`), sign-out, password reset (`/lupa-kata-sandi`), `invitations` and acceptance (`/undangan/{invitation}`), throttling, Akun (profile, password), role switch. Staff invite a school's first operator or principal from the console; the operator invites teachers | a | Controllers, Svelte pages, mail, tests | review |
+| P5-03b | Auth and invitations: sign-in (`/masuk`), sign-out, password reset (`/lupa-kata-sandi`), `invitations` and acceptance (`/undangan/{invitation}`), throttling, Akun (profile, password), role switch. Staff invite a school's first operator or principal from the console; the operator invites teachers | a | Controllers, Svelte pages, mail, tests | done |
 | P5-03c | Curriculum tables and `curriculum:import`: `curriculum_versions`, `subjects`, `subject_allocations`, `topics`, `focus_items`, `learning_objectives`, `focus_item_objectives`, `region_subjects`, `school_subjects`. Imports the files in `docs/data/curriculum/` and, once supplied, KM-SD-2026-R2 | — (parallel with a) | `app/Curriculum`, migrations, import command, tests | todo |
 | P5-03d | Academic year, classes, teaching assignments: operator pages Tahun Ajaran and Kelas; default teaching assignments from `subjects.default_teacher` (D-032), reassignment by the operator | a, b, c | Operator portal pages, policies, IDOR tests | todo |
 | P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | todo |
@@ -54,7 +54,7 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 - Staff console: Wilayah (`/wilayah`), Sekolah (`/sekolah`), Akun staf (`/staf`), gated by staff role (D-167). `php artisan staff:create <email>` makes the first admin.
 - Left for P5-03b: the role-switch control (it writes the session key that `SetSchoolContext` reads), managing memberships and supervisor assignments in the console, and invitations.
 
-**P5-03b** (review, PR #55):
+**P5-03b** (done, PR #55):
 - Routes in `routes/app.php`: `/masuk`, `POST /keluar`, `/lupa-kata-sandi`, `/kata-sandi-baru/{token}`, `/undangan/{invitation}?token=…`, `/akun` (profile, `/akun/kata-sandi`), `PUT /ganti-peran` (role switch), and `/guru` (operator: teachers, invite, `kirim-ulang`, cancel). Only sign-in, reset, and invitation acceptance are open; `tests/Feature/Auth/SessionRequiredTest.php` fails if another route is left open.
 - `invitations` table plus `school_memberships.public_id` (D-182). `app/Tenancy/Actions`: `InviteMember` (also renews and resends), `FindInvitation` (token lookup), and `AcceptInvitation`. `UserMemberships` lists a user's own active roles. The mail is `App\Mail\InvitationMail` (queued). The reset mail uses our own Indonesian view (`resources/views/mail/`).
 - `SetSchoolContext` now runs before route model binding (middleware priority in `bootstrap/app.php`), so a school-scoped `{model}` from another school is a 404.
