@@ -71,6 +71,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 |---|---|---|---|---|---|
 | P4-01 | Buku Induk and Dapodik sync design | blocked (upcoming, D-161) | main | D-157, D-158 | `docs/drafts/buku-induk-dapodik.md` |
 | P4-02 | Game kelas: IFP learning mode for SD/MI (benchmark + design) | review | sky/inspiring-volta-3bdmuq | D-011, D-014, D-158 | `docs/drafts/ifp-classroom.md` |
+| P4-03 | Official documents (`docs/dokumen-resmi/`) → SD/MI data | in-progress | p4/p4-03-dokumen-resmi-data | — | `docs/data/regulations/`, `docs/drafts/dokumen-resmi-sd-mi.md` |
 
 ### Phase 5 — v1 build · todo
 
