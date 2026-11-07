@@ -42,6 +42,9 @@ final class InvitationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
 
+    // InvitationPolicy is for school users in the school app; the console checks the staff role in canAccess().
+    protected static bool $shouldSkipAuthorization = true;
+
     public static function canAccess(): bool
     {
         return StaffAccess::allows(StaffRole::Admin, StaffRole::Support);

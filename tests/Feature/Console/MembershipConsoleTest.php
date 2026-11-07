@@ -46,7 +46,7 @@ it('opens the membership, invitation, and supervisor pages for admin and support
 ]);
 
 it('keeps school users out of the new console pages', function (): void {
-    actingAs(User::factory()->operatorAt(School::factory()->create()))
+    actingAs(User::factory()->operatorAt(School::factory()->create())->create())
         ->get(consoleUrl('/undangan'))
         ->assertRedirect(consoleUrl('/masuk'));
 });
