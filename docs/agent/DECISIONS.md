@@ -1052,3 +1052,38 @@ Reason: owner's choice; keeps supervision results between the teacher and the pr
 Accepted · 2026-11-08 · P4-12 · owner's choice
 Murid feedback (S-12) is gathered in class on paper or cards, and the teacher enters only the count per answer for the class. No per-murid answers are stored, since murid are not users (D-010).
 Reason: Permendikdasmen 1/2026 asks for murid reflection each semester; class totals meet it without student data.
+
+### D-226 — CP rows in `learning_outcomes`
+Accepted · 2026-11-08 · P5-03c · adds a table to the data model's Curriculum section
+The CP-only versions (`CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`) are stored in a new table `learning_outcomes`: `curriculum_version_id`, `subject_id`, `phase`, `code` (unique, `<version>-<subject>-<phase>-<nn>`), `order`, `element` (NULL = the phase summary), `sub_element` nullable, `text`, `extras` JSON (`lead_in`, `element_intro`, `arabic_passages`, `review_notes`, D-039, D-127). Sub-elements printed with no CP in a phase (`no_cp_in_phase`) get no row. Topics keep their own `cp_text`.
+Reason: the data model lists these versions for v1 but none of its tables holds CP rows without topics; the RPM wizard needs CP and elements per phase.
+
+### D-227 — Subject catalogue file
+Accepted · 2026-11-08 · P5-03c
+`docs/data/curriculum/subjects.json` (`status: draft`) is the source of `subjects`: code, name, kind, default teacher, religion, level, and aliases, plus regional local content defaults (Kudus: Bahasa Jawa, 2 JP per week). Other files name subjects by code, name, or alias; matching ignores case, punctuation, and spaces, and an unknown subject makes the file invalid. Codes follow the KM-SD-2026-R2 topic IDs (`PP`, `BIN`, `MTK`, `IPAS`, `PJOK`, `BIG`, `BJW`, `PAI`, `KKA`, `KTB`, `SSD`) and the religion and MI TP/ATP files. Seni dan Budaya is one subject `SB`, and the five codes its topic IDs use (`MUS`, `SM`, `SMU`, `SR`, `SRP`) are aliases. Seni Suara Daerah (`SSD`) is school-optional muatan lokal for SD until the owner decides C5 of `docs/drafts/km-sd-2026-r2-source-check.md`; it is not a region default.
+Reason: KM-SD-2026-R2 has no subject code field, and every source names subjects differently.
+
+### D-228 — Subject defaults not covered by D-032
+Accepted · 2026-11-08 · P5-03c · extends D-032, D-035, D-208
+The MI Kemenag subjects and Bahasa Arab default to a guru mapel, as Pendidikan Agama does for SD. Keterampilan Tata Boga, a muatan lokal (D-204), defaults to a guru mapel like Bahasa Jawa. Koding dan KA has kind `cocurricular` (D-208) and gets no intrakurikuler allocation. `subjects.religion` is set only for the six SD religion subjects; the MI subjects are taken by every MI student, so it stays NULL.
+Reason: `subjects.default_teacher` and `religion` are NOT NULL or meaningful for every subject; the operator can still reassign (D-032).
+
+### D-229 — Import rules for `curriculum:import`
+Accepted · 2026-11-08 · P5-03c · implements D-020, D-113
+Each file is one transaction: an invalid file writes nothing. A version made from several files (KM-SD-2026-R2) records each file's hash and reference data under `meta.files`; its name comes from the file that creates it. Rows are matched by `code` (allocations by version, subject, grade, and learning type) and never deleted; a row missing from a newer file is reported and kept. A new version is `draft`; an import never changes the status of an existing version, whatever the file says. Data mismatches (JP sums, phase vs grade, printed totals, fokus–TP links outside the topic, subject code differences) are listed and do not stop the import unless `--strict` is given. Sources that print only JP per year get 18 effective weeks in semester 1 and the rest in semester 2 (14 in grade 6), as in KM-SD-2026-R2. The muatan lokal limits go to the version's `meta`. The EDUNEXA `kokurikuler_default` rows (Bahasa Inggris grades 1–2) are not imported, since that is optional content (D-204). Fokus–TP links are synced only when the file has them, so a KM-SD-2026-R2 re-import keeps links a data task added. `legacy_codes` holds `Legacy_ID` and its aliases minus the topic's own code; aliases are a fallback lookup after `topics.code`, and aliases shared by several topics or equal to another topic's code are reported. A topic that runs past its semester's effective weeks (18, or 14 in grade 6 semester 2) is a mismatch.
+Reason: repeatable imports that report data issues without losing data or approvals.
+
+### D-230 — A class's subjects
+Accepted · 2026-11-08 · P5-03c · implements D-204 and the data model's `region_subjects`/`school_subjects`
+A class takes the compulsory subjects with an intrakurikuler allocation for its grade in the level's structure version (`config/curriculum.php`: SD `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, MI `ALOKASI-MI-KMA-1503-2025`), plus the region's local content unless the school switches it off, plus anything the school switches on (optional content is off by default and outside the rapor unless `in_report`). A school cannot switch off a compulsory subject. A `school_subjects` row for one grade wins over the every-grade row. The SD structure file's `version_code` was changed to the data model's `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`.
+Reason: one rule set for P5-03d (default teaching assignments) and later the timetable and rapor.
+
+### D-231 — Seni Suara Daerah is school-optional muatan lokal
+Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C5 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Seni Suara Daerah (`SSD`, KM-SD-2026-R2) is imported as optional muatan lokal for SD that a school switches on in `school_subjects`; it is off by default and is not a region default. Its CP and JP stay `draft` until Tim Validasi SIGRAK reviews them (D-113).
+Reason: owner's choice; the CP is a system draft marked "PERLU VERIFIKASI".
+
+### D-232 — Muatan lokal cap warns, for now
+Accepted · 2026-11-08 · P5-03c · owner's choice · provisional · resolves C6 of `docs/drafts/km-sd-2026-r2-source-check.md`
+When a school's muatan lokal (Bahasa Jawa, Tata Boga, Seni Suara Daerah, or other local subjects) goes over the SD cap of 72 JP per year (64 in grade 6, D-204), SIGRAK warns and does not block. The owner will revisit this once field practice is clear. The check itself is built with the operator pages that switch subjects on (P5-03d or later).
+Reason: owner's choice; practice in schools is not settled yet and may change.

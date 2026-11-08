@@ -1,0 +1,276 @@
+{
+  "dataset": "subjects",
+  "status": "draft",
+  "note": "Subject catalogue for curriculum:import (D-227). Every other curriculum file names its subjects by code, name, or one of the aliases; matching ignores case, punctuation, and spaces. Codes follow the topic IDs of KM-SD-2026-R2 (P5-03g); Seni dan Budaya keeps one subject for the five codes its topic IDs use (MUS, SM, SMU, SR, SRP). Seni Suara Daerah (SSD) is new in KM-SD-2026-R2 and waits for the owner's decision (C5 in docs/drafts/km-sd-2026-r2-source-check.md); until then it is school-optional muatan lokal, like Tata Boga.",
+  "conventions": [
+    "kind: compulsory (intrakurikuler subject of the national or Kemenag structure), local_content (muatan lokal), cocurricular (delivered through kokurikuler only; Koding dan KA, D-208).",
+    "default_teacher follows D-032: Pendidikan Agama (SD six religions, and the MI Kemenag subjects that replace it), PJOK, Bahasa Inggris, and muatan lokal go to a guru mapel; the rest to the guru kelas. D-228 adds the MI subjects and Tata Boga.",
+    "religion is set only for the six SD religion subjects, which students take according to their religion (D-034, D-036). The MI Kemenag subjects are taken by every MI student, so religion stays null.",
+    "school_level: sd, mi, or both."
+  ],
+  "subjects": [
+    {
+      "code": "PAI",
+      "name": "Pendidikan Agama Islam dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "islam",
+      "school_level": "sd",
+      "aliases": [
+        "PAI dan Budi Pekerti",
+        "Pendidikan Agama Islam"
+      ]
+    },
+    {
+      "code": "PAKR",
+      "name": "Pendidikan Agama Kristen dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "kristen",
+      "school_level": "sd",
+      "aliases": [
+        "Pendidikan Agama Kristen"
+      ]
+    },
+    {
+      "code": "PAKT",
+      "name": "Pendidikan Agama Katolik dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "katolik",
+      "school_level": "sd",
+      "aliases": [
+        "Pendidikan Agama Katolik"
+      ]
+    },
+    {
+      "code": "PAH",
+      "name": "Pendidikan Agama Hindu dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "hindu",
+      "school_level": "sd",
+      "aliases": [
+        "Pendidikan Agama Hindu"
+      ]
+    },
+    {
+      "code": "PAB",
+      "name": "Pendidikan Agama Buddha dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "buddha",
+      "school_level": "sd",
+      "aliases": [
+        "Pendidikan Agama Buddha"
+      ]
+    },
+    {
+      "code": "PAKH",
+      "name": "Pendidikan Agama Khonghucu dan Budi Pekerti",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": "khonghucu",
+      "school_level": "sd",
+      "aliases": [
+        "Pendidikan Agama Khonghucu"
+      ]
+    },
+    {
+      "code": "QH",
+      "name": "Al-Qur'an Hadis",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "mi",
+      "aliases": [
+        "alquran_hadis",
+        "Al Quran Hadis"
+      ]
+    },
+    {
+      "code": "AA",
+      "name": "Akidah Akhlak",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "mi",
+      "aliases": [
+        "akidah_akhlak",
+        "Aqidah Akhlak"
+      ]
+    },
+    {
+      "code": "FIK",
+      "name": "Fikih",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "mi",
+      "aliases": [
+        "fikih",
+        "Fiqih"
+      ]
+    },
+    {
+      "code": "SKI",
+      "name": "Sejarah Kebudayaan Islam",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "mi",
+      "aliases": [
+        "ski"
+      ]
+    },
+    {
+      "code": "BAR",
+      "name": "Bahasa Arab",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "mi",
+      "aliases": [
+        "bahasa_arab"
+      ]
+    },
+    {
+      "code": "PP",
+      "name": "Pendidikan Pancasila",
+      "kind": "compulsory",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "pendidikan_pancasila"
+      ]
+    },
+    {
+      "code": "BIN",
+      "name": "Bahasa Indonesia",
+      "kind": "compulsory",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "bahasa_indonesia"
+      ]
+    },
+    {
+      "code": "MTK",
+      "name": "Matematika",
+      "kind": "compulsory",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "matematika"
+      ]
+    },
+    {
+      "code": "IPAS",
+      "name": "Ilmu Pengetahuan Alam dan Sosial",
+      "kind": "compulsory",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "ipas"
+      ]
+    },
+    {
+      "code": "PJOK",
+      "name": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "pjok",
+        "Pendidikan Jasmani Olahraga dan Kesehatan"
+      ]
+    },
+    {
+      "code": "SB",
+      "name": "Seni dan Budaya",
+      "kind": "compulsory",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "seni_budaya",
+        "Seni Budaya",
+        "MUS",
+        "SM",
+        "SMU",
+        "SR",
+        "SRP"
+      ]
+    },
+    {
+      "code": "BIG",
+      "name": "Bahasa Inggris",
+      "kind": "compulsory",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "bahasa_inggris"
+      ]
+    },
+    {
+      "code": "KKA",
+      "name": "Koding dan Kecerdasan Artifisial",
+      "kind": "cocurricular",
+      "default_teacher": "class_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "koding_ka",
+        "koding_kecerdasan_artifisial",
+        "Koding dan KA"
+      ]
+    },
+    {
+      "code": "BJW",
+      "name": "Bahasa Jawa",
+      "kind": "local_content",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "Muatan Lokal Bahasa Jawa",
+        "Muatan Lokal (Bahasa Jawa)"
+      ]
+    },
+    {
+      "code": "KTB",
+      "name": "Keterampilan Tata Boga",
+      "kind": "local_content",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "both",
+      "aliases": [
+        "Tata Boga"
+      ]
+    },
+    {
+      "code": "SSD",
+      "name": "Seni Suara Daerah",
+      "kind": "local_content",
+      "default_teacher": "subject_teacher",
+      "religion": null,
+      "school_level": "sd",
+      "aliases": []
+    }
+  ],
+  "region_defaults": [
+    {
+      "province": "Jawa Tengah",
+      "regency": "Kabupaten Kudus",
+      "subject": "BJW",
+      "allocation": 2,
+      "note": "Kudus pilot default (D-018, data model region_subjects). Allocation in JP per week, as in KM-SD-2026-R2 (36 JP per semester)."
+    }
+  ]
+}

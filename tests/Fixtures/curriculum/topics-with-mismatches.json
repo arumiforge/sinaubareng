@@ -1,0 +1,127 @@
+{
+  "dataset": "tp_atp_test",
+  "version_code": "TPATP-TEST-R1",
+  "status": "draft",
+  "scope": "Test topics",
+  "subjects": [
+    {
+      "religion": "kristen",
+      "code": "PAKR",
+      "name": "Pendidikan Agama Kristen dan Budi Pekerti",
+      "allocations": [
+        {
+          "grade": 1,
+          "phase": "A",
+          "s1_jp": 12,
+          "s1_effective_weeks": 18,
+          "s2_jp": 54,
+          "s2_effective_weeks": 18,
+          "jp_per_week": 3
+        }
+      ],
+      "topics": [
+        {
+          "code": "TPATP-TEST-R1-PAKR-K1-01",
+          "grade": 1,
+          "phase": "A",
+          "semester": 1,
+          "order_in_semester": 1,
+          "element": "Allah Berkarya",
+          "sub_element": "Allah Pencipta",
+          "title": "Aku Ciptaan Allah",
+          "cp_text": "CP",
+          "atp_code": "ATP-PAKR-K1-BAB-01",
+          "jp_total": 6,
+          "jp_per_week": 3,
+          "week_start": 1,
+          "week_end": 2,
+          "weekly_distribution": [
+            3,
+            3
+          ],
+          "learning_objectives": [
+            {
+              "code": "TP-T-PAKR-K1-01-01",
+              "order": 1,
+              "text": "TP satu"
+            },
+            {
+              "code": "TP-T-PAKR-K1-01-02",
+              "order": 2,
+              "text": "TP dua"
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "FM-T-PAKR-K1-01-01",
+              "order": 1,
+              "title": "Fokus satu",
+              "estimated_jp": 3,
+              "allocation_status": "sesuai",
+              "objective_codes": [
+                "TP-T-PAKR-K1-01-01"
+              ]
+            },
+            {
+              "code": "FM-T-PAKR-K1-01-02",
+              "order": 2,
+              "title": "Fokus dua",
+              "estimated_jp": 3,
+              "allocation_status": "sesuai",
+              "objective_codes": [
+                "TP-T-PAKR-K1-01-02"
+              ]
+            }
+          ],
+          "references": {
+            "cp_source": "BKPDM 020/2026",
+            "book": "Buku",
+            "book_pages": null
+          }
+        },
+        {
+          "code": "TPATP-TEST-R1-PAKR-K1-02",
+          "grade": 1,
+          "phase": "B",
+          "semester": 1,
+          "order_in_semester": 2,
+          "element": "Allah Berkarya",
+          "sub_element": null,
+          "title": "Keluargaku",
+          "cp_text": "CP",
+          "atp_code": "ATP-PAKR-K1-BAB-02",
+          "jp_total": 9,
+          "jp_per_week": 3,
+          "week_start": 3,
+          "week_end": 4,
+          "weekly_distribution": [
+            3,
+            3
+          ],
+          "learning_objectives": [
+            {
+              "code": "TP-T-PAKR-K1-02-01",
+              "order": 1,
+              "text": "TP"
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "FM-T-PAKR-K1-02-01",
+              "order": 1,
+              "title": "Fokus",
+              "estimated_jp": 6,
+              "allocation_status": "sesuai",
+              "objective_codes": [
+                "TP-T-PAKR-K1-01-01"
+              ]
+            }
+          ],
+          "references": {
+            "cp_source": "BKPDM 020/2026"
+          }
+        }
+      ]
+    }
+  ]
+}
