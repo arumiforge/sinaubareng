@@ -3,6 +3,7 @@
     import type { Snippet } from 'svelte';
     import { Link, page } from '@inertiajs/svelte';
     import { route } from 'ziggy-js';
+    import CalendarClock from '@lucide/svelte/icons/calendar-clock';
     import CalendarDays from '@lucide/svelte/icons/calendar-days';
     import CalendarRange from '@lucide/svelte/icons/calendar-range';
     import CircleUser from '@lucide/svelte/icons/circle-user';
@@ -82,6 +83,18 @@
                         </span>
                     </li>
                 {/each}
+                {#if role === 'teacher'}
+                    <!-- Kelas Saya > Jadwal (P5-03e); the other Kelas Saya pages come with their slices. -->
+                    <li>
+                        <Link
+                            href={route('my_classes.timetable')}
+                            class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+                        >
+                            <CalendarClock size={20} strokeWidth={1.5} />
+                            {t('nav.items.my_timetable')}
+                        </Link>
+                    </li>
+                {/if}
                 {#if role === 'operator'}
                     {#each operatorItems as item (item.route)}
                         <li>

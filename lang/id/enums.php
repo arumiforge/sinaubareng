@@ -12,6 +12,12 @@ return [
         'operator' => 'Operator sekolah',
         'teacher' => 'Guru',
     ],
+    'timetable_slot_kind' => [
+        'lesson' => 'Pelajaran',
+        'break' => 'Istirahat',
+        'ceremony' => 'Upacara',
+        'activity' => 'Kegiatan',
+    ],
     'membership_status' => [
         'active' => 'Aktif',
         'ended' => 'Berakhir',

@@ -74,6 +74,14 @@ final class SchoolClass extends Model
         return $this->hasMany(TeachingAssignment::class, 'class_id');
     }
 
+    /**
+     * @return HasMany<TimetableSlot, $this>
+     */
+    public function timetableSlots(): HasMany
+    {
+        return $this->hasMany(TimetableSlot::class, 'class_id');
+    }
+
     protected function casts(): array
     {
         return [

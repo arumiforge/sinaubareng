@@ -43,6 +43,12 @@ final class SchoolClassPolicy
         return $this->view($user, $class);
     }
 
+    /** Kelas Saya > Jadwal: a teacher sees their own lessons and their homeroom classes' timetables. */
+    public function viewOwnTimetable(User $user): bool
+    {
+        return $this->context->schoolId() !== null && $this->context->role() === MembershipRole::Teacher;
+    }
+
     private function isOperator(): bool
     {
         return $this->context->schoolId() !== null && $this->context->role() === MembershipRole::Operator;

@@ -1132,3 +1132,28 @@ Reason: free names carry no grade to change; a clash must not stop the whole cop
 Accepted · 2026-11-09 · P5-03h · owner's choice, applies D-242
 Copying works only when the target year has no classes; otherwise it is refused and the copy button is hidden. The source is the school's latest year that starts before the target year.
 Reason: a second copy would duplicate or mix classes; refusing keeps it safe to retry.
+
+### D-247 — Timetable: breaks and non-lesson rows are recorded
+Accepted · 2026-11-09 · P5-03e · owner's choice, refines the data model's `timetable_slots`
+A class timetable has lesson rows and non-lesson rows: Istirahat, Upacara, and Kegiatan (with an optional label such as "Senam" or "Literasi"). `timetable_slots` gets `kind` ∈ {`lesson`,`break`,`ceremony`,`activity`} and `label` (nullable); `subject_id` is set only for lessons and `jp` is 0 for other rows (CHECKs). The operator types the start and end time of each row, so a shorter Friday or Saturday is just other times; `period_no` is the row's place in the day, recomputed from the start times, and never typed.
+Reason: the owner wants breaks and ceremonies visible in the timetable.
+
+### D-248 — Timetable: teacher clashes are refused
+Accepted · 2026-11-09 · P5-03e · owner's choice
+Saving a lesson row is refused when its teacher already has a lesson in another class that overlaps it on the same day; the message names the class and the time. Rows of one class may not overlap either. Picking a guru mapel on the Kelas page is refused the same way when it would make a clash. A clash that comes from a homeroom change is shown as a warning on the Jadwal page until the operator fixes it.
+Reason: the teacher's timetable feeds RPM scheduling and Jurnal, so it must be right.
+
+### D-249 — Timetable: the teacher follows the class's teaching assignments
+Accepted · 2026-11-09 · P5-03e · owner's choice, refines the data model's `timetable_slots.teacher_id`
+A lesson row's teacher is the teacher of that subject in that class (`teaching_assignments`, D-240). The table has no `teacher_id` column: the teacher is read through the assignment, so changing a teacher on the Kelas page changes the timetable with it. A subject without a teacher cannot be put on the timetable; a row whose assignment is cleared later stays and shows "Belum ada guru".
+Reason: one place to set teachers; a copied column could drift from the assignments.
+
+### D-250 — Timetable: lesson hours must match the allocation
+Accepted · 2026-11-09 · P5-03e · owner's choice
+A subject's JP per week on the timetable must equal its allocation for the class (`SubjectsForGrade`, D-230). A row that would put a subject over its allocation is refused; the Jadwal page lists each subject's scheduled and allocated JP and calls the timetable complete only when every allocated subject matches. Subjects without an allocation (optional content) have no cap. 1 JP = 35 minutes (data model); the JP of a row is suggested from its length and the operator may change it (1–4).
+Reason: the curriculum allocation is binding; the timetable is filled row by row, so "under" can only be shown, not refused.
+
+### D-251 — Timetable: religion lessons run in parallel
+Accepted · 2026-11-09 · P5-03e · owner's choice, refines D-248 and D-250
+Lessons of different religion subjects (the six Pendidikan Agama subjects) may share the same time in a class, since students split by religion; any other overlap in a class is still refused, and every teacher is still checked for clashes. A religion subject counts towards "complete" only when it has a teacher in that class; a religion without a teacher is shown as not counted.
+Reason: all six religions are in the structure at 3 JP, but a class only teaches the religions of its students, at the same hour.

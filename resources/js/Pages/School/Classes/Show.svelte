@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Link, router } from '@inertiajs/svelte';
+    import { Link, page, router } from '@inertiajs/svelte';
     import { route } from 'ziggy-js';
     import AppShell from '@/Layouts/AppShell.svelte';
     import { t } from '@/lib/i18n';
@@ -39,6 +39,9 @@
 
     let saving = $state<string | null>(null);
 
+    // A refused change (e.g. a timetable clash, D-248) comes back as a validation error.
+    const assignError = $derived(page.props.errors?.teacher ?? page.props.errors?.subject);
+
     function assign(subject: SubjectRow, teacher: string): void {
         saving = subject.code;
         router.put(
@@ -60,6 +63,10 @@
             ← {t('classes.classes.actions.back')}
         </Link>
 
+        {#if assignError}
+            <p class="rounded-card border border-danger bg-surface p-4 text-body text-danger" role="alert">{assignError}</p>
+        {/if}
+
         <section class="flex flex-col gap-4 rounded-card border border-line bg-surface p-4 sm:flex-row sm:items-start sm:justify-between sm:p-6">
             <dl class="grid gap-x-6 gap-y-1 text-body sm:grid-cols-[auto_1fr]">
                 <dt class="text-muted">{t('classes.classes.fields.academic_year')}</dt>
@@ -70,6 +77,12 @@
                 <dd>{school_class.homeroom_teacher ?? t('classes.classes.no_homeroom')}</dd>
             </dl>
             <div class="flex flex-wrap gap-2">
+                <Link
+                    href={route('classes.timetable.show', { class: school_class.id })}
+                    class="inline-flex min-h-11 items-center rounded-input border border-line px-4 text-body font-semibold"
+                >
+                    {t('classes.classes.actions.timetable')}
+                </Link>
                 <Link
                     href={route('classes.edit', { class: school_class.id })}
                     class="inline-flex min-h-11 items-center rounded-input border border-line px-4 text-body font-semibold"

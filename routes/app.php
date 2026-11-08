@@ -14,6 +14,8 @@ use App\Http\Controllers\School\InvitationController;
 use App\Http\Controllers\School\SchoolClassController;
 use App\Http\Controllers\School\TeacherController;
 use App\Http\Controllers\School\TeachingAssignmentController;
+use App\Http\Controllers\School\TimetableController;
+use App\Http\Controllers\Teacher\MyTimetableController;
 use Illuminate\Support\Facades\Route;
 
 // School app (app.<domain>, `web` guard). Paths are Indonesian, names English (D-149).
@@ -71,5 +73,18 @@ Route::middleware('auth')->group(function (): void {
             ->parameters(['kelas' => 'class'])
             ->names('classes');
         Route::put('/kelas/{class}/guru-mapel', [TeachingAssignmentController::class, 'update'])->name('classes.assignments.update');
+    });
+
+    Route::middleware('translations:timetable')->group(function (): void {
+        // Operator: /kelas/{class}/jadwal; a row belongs to its class (scoped binding).
+        Route::get('/kelas/{class}/jadwal', [TimetableController::class, 'show'])->name('classes.timetable.show');
+        Route::post('/kelas/{class}/jadwal', [TimetableController::class, 'store'])->name('classes.timetable.store');
+        Route::scopeBindings()->group(function (): void {
+            Route::put('/kelas/{class}/jadwal/{timetableSlot}', [TimetableController::class, 'update'])->name('classes.timetable.update');
+            Route::delete('/kelas/{class}/jadwal/{timetableSlot}', [TimetableController::class, 'destroy'])->name('classes.timetable.destroy');
+        });
+
+        // Teacher: Kelas Saya > Jadwal.
+        Route::get('/kelas-saya/jadwal', MyTimetableController::class)->name('my_classes.timetable');
     });
 });
