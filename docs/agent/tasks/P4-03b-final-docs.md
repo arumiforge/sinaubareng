@@ -1,7 +1,7 @@
 # P4-03b — Apply P4-03 findings to the final docs
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done
 - **Owner:** p4/p4-03b-final-docs
 - **Depends on:** P4-03, D-203…D-209
 - **Can run in parallel with:** P4-04
