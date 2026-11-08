@@ -1,6 +1,6 @@
 # Official documents 2025: what changes for SIGRAK (SD/MI)
 
-- **Status:** draft (P4-03). The owner answered the open questions on 2026-11-08 (D-204…D-209, §12). The `docs/final/` updates in §10 still wait for owner approval, and nothing there was edited.
+- **Status:** draft (P4-03). The owner answered the open questions on 2026-11-08 (D-204…D-209, §12). The `docs/final/` updates in §10 were applied in P4-03b.
 - **Data:** [`docs/data/regulations/`](../data/regulations/README.md), eight JSON files, all `status: draft` (D-113, D-203).
 - **Sources:** the eight PDFs, received in `docs/dokumen-resmi/` and moved unchanged to `docs/sources/` under descriptive names (D-203, §11).
 
@@ -127,7 +127,9 @@ The RPM rubric labels (sangat baik, baik, berkembang, perlu bimbingan) are compa
 - 126 explicitly endorses "integrasi kecerdasan artifisial" (p. 14). The slides list AI use for planning, delivery, and assessment (p. 31). This supports the product's AI positioning.
 - Neither 126 nor 127 mentions madrasah or Kemenag. MI keeps following KMA 1503/2025 and KBC. Deep learning is consistent with KBC.
 
-## 10. Proposed final-doc updates (for the owner to approve)
+## 10. Final-doc updates
+
+**Applied in P4-03b (2026-11-08)** to the four final docs below and their Indonesian PDFs. The KSP starter template is placed in Kepala Sekolah portal > Program Sekolah.
 
 | Final doc | Update |
 |---|---|
@@ -162,4 +164,4 @@ The RPM rubric labels (sangat baik, baik, berkembang, perlu bimbingan) are compa
 7. KKA runs through kokurikuler, including the grade 5–6 Koding dan KA rows in KM-SD-2026-R2 (confirmed). Formative scores are not shown in the rapor, but the rapor description uses the highest and lowest formative achievement (D-208, D-205).
 8. KSP: free format, with a starter template each school adapts (D-209).
 
-Still open: owner approval of the `docs/final/` updates in §10.
+The `docs/final/` updates in §10 were applied in P4-03b.

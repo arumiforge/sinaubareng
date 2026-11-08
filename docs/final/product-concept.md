@@ -79,7 +79,7 @@ A principal, operator, or supervisor who also teaches keeps the five teacher men
 
 ## Market
 
-- **Level:** SD/MI, grades 1–6. Grades 7–12 stay hidden until curriculum data for them exists (the current data, KM-SD-2026-R2, covers SD/MI only). SD offers all six religion subjects (D-034). MI follows the Ministry of Religious Affairs: Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, and Bahasa Arab instead of one PAI subject (D-035). Details are in [`religious-education.md`](religious-education.md).
+- **Level:** SD/MI, grades 1–6. Grades 7–12 stay hidden until curriculum data for them exists (the current data, KM-SD-2026-R2, covers SD/MI only). The structure and JP follow Permendikdasmen 13/2025 for SD and KMA 1503/2025 for MI. Bahasa Inggris and IPAS in grades 1–2 are optional content a school can switch on (D-204). SD offers all six religion subjects (D-034). MI follows the Ministry of Religious Affairs: Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, and Bahasa Arab instead of one PAI subject (D-035). Details are in [`religious-education.md`](religious-education.md).
 - **Region:** anywhere in Indonesia (D-018). Local content (*muatan lokal*, for example Bahasa Jawa) and the school calendar (*kaldik*) can be set per region and per school. Kudus is the pilot, so Bahasa Jawa and the Kudus calendar are the default values for Kudus schools only.
 - **Name risk:** "Sigrak" is Javanese. It may be less familiar outside Java, which matters now that the market is nationwide. The backup name from the rebranding notes is **Kapur**. The name stays a working name until a PDKI check is done (see Open questions).
 
@@ -218,7 +218,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Buat | Curriculum (CP, TP, ATP, Prota, Promes) | Merge | Buat > Kurikulum | Basis of planning and content |
 | Buat | RPM generator | Keep | Buat > RPM template, 4 steps (Kapan, Apa, Cara, Periksa) on the template engine | Most valuable feature |
 | Buat | Modul mandiri (manual mode) | Merge | "RPM lepas jadwal" option in step 1 | One door for every RPM |
-| Buat | Kokurikuler module (7 KAIH, projek, lintas disiplin) | Keep | Buat > Kokurikuler, a variant of the RPM template that reads the school plan | Existing feature |
+| Buat | Kokurikuler module (7 KAIH, projek, lintas disiplin) | Keep | Buat > Kokurikuler, a variant of the RPM template that reads the school plan. Forms follow Panduan Kokurikuler 2025: Lintas Disiplin, 7 KAIH, Cara Lainnya (projects fall here). Koding dan Kecerdasan Artifisial runs here (D-208) | Existing feature |
 | Buat | Worksheet / LKPD | Merge | Buat > LKPD template. Also an RPM attachment | LKPD is part of the plan |
 | Buat | Bank Modul / RPM storage | Merge | Dokumen Saya | One archive for every document |
 | Buat | Download / import backup | Replace | Server autosave. Full data export in Akun | Manual backup makes teachers doubt their data is safe |
@@ -228,7 +228,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | Asesmen | Bank Soal "Mode Ujian" | Later (inactive) | — | Switched off for now (D-026). The TKA practice exam is the only online exam in v1 |
 | Asesmen | Program penilaian | Merge | Asesmen > Rencana Penilaian | |
 | Asesmen | Analisis nilai, taraf serap | Keep | Asesmen > Analisis, automatic per TP | |
-| Asesmen | Leger and "inject e-Rapor" | Replace | Asesmen > Rapor: leger, description drafts, e-Rapor export format | "Inject" is technical |
+| Asesmen | Leger and "inject e-Rapor" | Replace | Asesmen > Rapor: leger, description drafts, e-Rapor export format. The rapor covers the official minimum: grades from summative results only, competency descriptions, kokurikuler description, ekstrakurikuler, attendance, homeroom note, parent response (D-205) | "Inject" is technical |
 | Asesmen | Levels SMP–SMK, grades 7–12 | Remove | Returns when SMP/MTs data exists | Options without data end in errors |
 | Di Kelas | Absensi | Replace | Di Kelas > Absensi: **daily** (D-029), "all present" default, tap absentees, works offline | Filled on a phone at the start of the day |
 | Di Kelas | Jurnal and refleksi | Replace | Di Kelas > Jurnal filled from the RPM. Reflection built from journals | Less retyping |
@@ -262,7 +262,8 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | New | Multiple AI keys (Gemini free tier) with rotation and failover | Add | Kunci AI Saya | D-012, D-023 |
 | New | AI usage history | Add | Kunci AI Saya > Riwayat | Teachers see why AI stopped |
 | New | Revise one section with AI | Add | "Perbaiki bagian ini" on every section of a preview | No full regeneration |
-| New | Report description drafts per TP | Add | Asesmen > Rapor | |
+| New | Report description drafts per TP | Add | Asesmen > Rapor | Drafted from the highest and lowest formative TP achievement (D-205) |
+| New | Starter KSP template (Kurikulum Satuan Pendidikan) | Add | Kepala Sekolah portal > Program Sekolah | The KSP format is free; SIGRAK gives a starting draft that follows the official components and the school adapts it (D-209) |
 | New | Di Kelas offline | Add | Di Kelas menu | D-016 |
 | New | Curriculum validation guru → kepala sekolah → pengawas | Add | Status in Dokumen Saya + portal queues | D-019 |
 | New | Comments on documents by principal/supervisor | Add | Document view | D-019 |

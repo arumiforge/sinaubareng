@@ -1,6 +1,6 @@
 # Model Data
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/data-model.md</code> pada 2 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/data-model.md</code> pada 8 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-05
@@ -72,7 +72,7 @@ Kurikulum dipisah menjadi **bawaan global yang berversi** dan **perubahan per se
 | `learning_objectives` (TP) | `topic_id` FK CASCADE, `code` (unik, `TP-…`), `order`, `text` | `Data_Tujuan` |
 | `focus_item_objectives` | `focus_item_id`, `learning_objective_id` | **Tautan baru** (temuan 3 di dokumen pemetaan). Kosong saat impor, diisi lewat tugas data. Dibutuhkan untuk analisis per TP di tingkat fokus |
 | `region_subjects` | `region_id`, `subject_id`, `allocation` | Muatan lokal bawaan per daerah, mis. Bahasa Jawa untuk Kudus |
-| `school_subjects` | `school_id`, `subject_id`, `enabled` | Sekolah menyalakan atau mematikan muatan lokal |
+| `school_subjects` | `school_id`, `subject_id`, `grade` nullable (NULL = semua kelas), `enabled`, `in_report` bool | Sekolah menyalakan atau mematikan muatan lokal dan konten opsional. Konten opsional (Bahasa Inggris dan IPAS di kelas 1–2, D-204) mati secara bawaan, dan `in_report` menyatakan apakah sekolah juga menilainya di rapor |
 | `school_topic_changes` | `school_id`, `base_topic_id` FK nullable (**NULL = topik baru yang ditambahkan sekolah**), `payload` JSON (bentuknya sama dengan topik), `status` ∈ {`draft`,`submitted`,`returned`,`principal_approved`,`approved`}, `submitted_by` | Alur validasi guru → kepala sekolah → pengawas (D-019) |
 | `curriculum_validations` | `school_topic_change_id`, `reviewer_id`, `level` ∈ {`principal`,`supervisor`}, `decision` ∈ {`approved`,`returned`}, `note` | Hanya ditambah. Setiap pengembalian membawa catatan untuk guru |
 
@@ -83,6 +83,7 @@ Kurikulum dipisah menjadi **bawaan global yang berversi** dan **perubahan per se
 | `KM-SD-2026-R2` | Mata pelajaran SD nasional dengan topik, TP, ATP, fokus, JP (termasuk PAI) | Berkas JSON EDUNEXA |
 | `CP-PABP-BKPDM-020-2026` | CP enam mata pelajaran agama, SD Fase A–C | `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` (ditranskripsi, dicocokkan dengan pindaian di P2-01) |
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP mata pelajaran Kemenag di MI, Fase A–C | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` (disusun menjadi baris elemen di P2-02, D-039) |
+| `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | Alokasi SD: JP intrakurikuler dan kokurikuler per mata pelajaran dan kelas (36 JP kokurikuler per mata pelajaran wajib per tahun, 32 di kelas 6, tidak ada untuk Bahasa Inggris), batas muatan lokal | `docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json` (Lampiran II B, Tabel 1–5; draf sampai ditinjau, D-113). Mengisi baris `cocurricular` di `subject_allocations` untuk SD. JP intrakurikulernya sama dengan KM-SD-2026-R2 |
 | `ALOKASI-MI-KMA-1503-2025` | Alokasi MI: JP per mata pelajaran dan kelas (intrakurikuler, kokurikuler), wajib vs pilihan, rentang muatan lokal | `docs/data/curriculum/mi-allocation-kma-1503-2025.json` (dicocokkan dengan KMA 1503/2025 Lampiran II, Tabel 1–5, hlm. 28–31) |
 
 Topik, TP, ATP, fokus, dan JP untuk lima agama selain Islam dan lima mata pelajaran MI sudah dibuat drafnya di `tp-atp-pendidikan-agama-sd-2026.json` (`TPATP-PABP-SD-2026-R1`) dan `tp-atp-pai-bahasa-arab-mi-2026.json` (`TPATP-PAI-BA-MI-2026-R1`), dengan bentuk tabel model data ini (D-140), menunggu tinjauan Tim Validasi SIGRAK. Versi yang hanya berisi CP sudah cukup bagi wizard RPM untuk menampilkan CP dan elemen.
@@ -94,8 +95,10 @@ Topik, TP, ATP, fokus, dan JP untuk lima agama selain Islam dan lima mata pelaja
 | Masalah | Tindakan |
 |---|---|
 | Matematika kelas 4 semester 2 = 80 JP, target 90 | Tugas perbaikan data bersama pemilik kurikulum |
-| Keterampilan Tata Boga (kelas 3–6) tidak punya target alokasi | Tambah target atau tandai sebagai pilihan sekolah |
-| Bahasa Inggris kelas 1–2 harus tetap kokurikuler | `learning_type = cocurricular` |
+| Keterampilan Tata Boga (kelas 3–6) tidak punya target alokasi | Muatan lokal pilihan sekolah (D-204). Batas muatan lokal SD 72 JP per tahun (64 di kelas 6, Permendikdasmen 13/2025) diperiksa per sekolah untuk Bahasa Jawa, Tata Boga, dan muatan lokal lain |
+| Bahasa Inggris kelas 1–2 tidak ada di struktur nasional (baru mulai di kelas 3) | Konten opsional yang dinyalakan sekolah, mati secara bawaan (`school_subjects`). Bukan mata pelajaran wajib di rapor (D-204) |
+| IPAS kelas 1–2 tidak ada di struktur nasional (baru mulai di kelas 3) | Sama dengan Bahasa Inggris kelas 1–2 (D-204). KM-SD-2026-R2 belum punya topiknya, jadi topik masih harus ditulis |
+| Koding dan KA (kelas 5–6) adalah mata pelajaran intrakurikuler di KM-SD-2026-R2 | Tidak diimpor sebagai alokasi intrakurikuler. Topiknya menjadi isi kokurikuler (D-208) |
 | TP hanya tertaut ke topik, tidak ke fokus | `focus_item_objectives` + tugas data |
 | Kurikulum ada di JSON statis sekaligus di Firestore | Tabel SQL menjadi satu-satunya sumber; versi hanya berubah lewat `curriculum_versions` |
 
@@ -140,10 +143,12 @@ Butir Bank Soal tetap berada di `content` dokumen (satu sumber untuk tampilan). 
 | `attendance_records` | `school_id`, `class_id`, `student_id`, `date`, `status` ∈ {`present`,`sick`,`permitted`,`absent`}, `recorded_by`, `recorded_at_device`, `client_uuid` | Absensi **harian** (D-029): unik (`student_id`, `date`) dan unik `client_uuid`. Dicatat wali kelas. Absensi per jam pelajaran *Nanti* |
 | `student_notes` | `school_id`, `student_id`, `class_id`, `author_id`, `kind` ∈ {`anecdotal`,`counselling`,`achievement`}, `body`, `client_uuid` | Visibilitas konseling dibatasi (lihat Tenancy) |
 | `assessment_plans` | `school_id`, `class_id`, `subject_id`, `semester`, komponen | "Rencana Penilaian" |
-| `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp`, `source_document_id` FK SET NULL | |
+| `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp_approach` ∈ {`description`,`rubric`,`interval`,`percentage`}, `kktp` (teks kriteria; ambang, bila dipakai, diatur per sekolah), `source_document_id` FK SET NULL | Nilai formatif tidak pernah menjadi nilai rapor. Nilai itu dipakai untuk analisis per TP dan draf deskripsi (D-205) |
 | `assessment_items` | `assessment_id` FK CASCADE, `number`, `type`, `kode_tp`, `cognitive_level`, `max_score`, `answer_key` nullable (uraian tidak punya) | Snapshot beku dari butir Bank Soal |
 | `scores` | `assessment_item_id` FK CASCADE, `student_id`, `score` decimal(5,2) | Unik (`assessment_item_id`, `student_id`). CHECK 0 ≤ nilai ≤ maksimum (di service; nilai maksimum ada di butir) |
-| `report_descriptions` | `school_id`, `student_id`, `subject_id`, `semester`, `draft`, `final` nullable (belum disetujui) | Draf AI dari nilai per TP; guru menyuntingnya sebelum dipakai |
+| `report_descriptions` | `school_id`, `student_id`, `subject_id`, `semester`, `draft`, `final` nullable (belum disetujui) | Draf AI dari capaian TP tertinggi dan terendah pada hasil formatif (D-205); guru menyuntingnya sebelum dipakai |
+| `report_cards` | `school_id`, `student_id`, `class_id`, `semester`, `cocurricular_draft`, `cocurricular_final` nullable, `homeroom_note`, `numeric_grades` bool | Satu per murid per semester. Deskripsi kokurikuler: dimensi yang sudah menguat dan yang masih berkembang. `numeric_grades = false` menghasilkan rapor tanpa angka, pilihan sekolah untuk kelas 1–2. Rapor juga mencetak rekap kehadiran dari `attendance_records` dan kotak tanggapan orang tua yang kosong (Panduan Pembelajaran dan Asesmen 2025, hlm. 70–73) |
+| `report_extracurriculars` | `report_card_id` FK CASCADE, `activity`, `description` | Baris ekstrakurikuler di rapor v1 (D-205). Teks bebas per murid; catatan ekstrakurikuler yang lengkap tetap di luar v1 (D-161) |
 | `class_finance_entries` | `school_id`, `class_id`, `kind` ∈ {`income`,`expense`}, `amount` bigint rupiah CHECK > 0, `occurred_on`, `note`, `recorded_by` | Fitur bisa dimatikan per sekolah |
 | `class_inventory_items`, `duty_rosters` | Lingkup kelas | |
 | `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (buku tamu, humas, notulen), `school_programs`, `agendas` | `school_id` | Fitur portal |

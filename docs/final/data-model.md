@@ -70,7 +70,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | `learning_objectives` (TP) | `topic_id` FK CASCADE, `code` (unique, `TP-…`), `order`, `text` | `Data_Tujuan` |
 | `focus_item_objectives` | `focus_item_id`, `learning_objective_id` | **New link** (finding 3 in the mapping doc). Empty at import, filled by a data task. Needed for per-TP analysis at fokus level |
 | `region_subjects` | `region_id`, `subject_id`, `allocation` | Default local content per region, e.g. Bahasa Jawa for Kudus |
-| `school_subjects` | `school_id`, `subject_id`, `enabled` | A school turns local content on or off |
+| `school_subjects` | `school_id`, `subject_id`, `grade` nullable (NULL = every grade), `enabled`, `in_report` bool | A school turns local content and optional content on or off. Optional content (Bahasa Inggris and IPAS in grades 1–2, D-204) is off by default, and `in_report` says whether the school also grades it in the rapor |
 | `school_topic_changes` | `school_id`, `base_topic_id` FK nullable (**NULL = new topic added by the school**), `payload` JSON (same shape as a topic), `status` ∈ {`draft`,`submitted`,`returned`,`principal_approved`,`approved`}, `submitted_by` | Validation flow guru → kepala sekolah → pengawas (D-019) |
 | `curriculum_validations` | `school_topic_change_id`, `reviewer_id`, `level` ∈ {`principal`,`supervisor`}, `decision` ∈ {`approved`,`returned`}, `note` | Append-only. Every return carries a note for the teacher |
 
@@ -81,6 +81,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 | `KM-SD-2026-R2` | National SD subjects with topics, TP, ATP, fokus, JP (incl. PAI) | EDUNEXA JSON files |
 | `CP-PABP-BKPDM-020-2026` | CP for the six religion subjects, SD Fase A–C | [`docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) (transcribed, verified against the scan in P2-01) |
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP for MI's Kemenag subjects, Fase A–C | [`docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) (structured into element rows in P2-02, D-039) |
+| `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | SD allocation: intrakurikuler and kokurikuler JP per subject and grade (36 kokurikuler JP per compulsory subject per year, 32 in grade 6, none for Bahasa Inggris), muatan lokal cap | [`docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json`](../data/regulations/curriculum-structure-permendikdasmen-13-2025.json) (Lampiran II B, Tabel 1–5; draft until reviewed, D-113). Fills the `cocurricular` rows of `subject_allocations` for SD. Its intrakurikuler JP equal KM-SD-2026-R2 |
 | `ALOKASI-MI-KMA-1503-2025` | MI allocation: JP per subject and grade (intrakurikuler, kokurikuler), required vs elective, muatan lokal range | [`docs/data/curriculum/mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) (verified against KMA 1503/2025 Lampiran II, Tabel 1–5, pp. 28–31) |
 
 Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are drafted in [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (`TPATP-PABP-SD-2026-R1`) and [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (`TPATP-PAI-BA-MI-2026-R1`), in this data model's table shape (D-140), pending Tim Validasi SIGRAK review. CP-only versions are already enough for the RPM wizard to show CP and elements.
@@ -92,8 +93,10 @@ Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI 
 | Issue | Action |
 |---|---|
 | Matematika grade 4 semester 2 = 80 JP, target 90 | Data fix task with the curriculum owner |
-| Keterampilan Tata Boga (grades 3–6) has no allocation target | Add a target or mark it school-optional |
-| Bahasa Inggris grades 1–2 must stay cocurricular | `learning_type = cocurricular` |
+| Keterampilan Tata Boga (grades 3–6) has no allocation target | School-optional muatan lokal (D-204). The SD muatan lokal cap of 72 JP per year (64 in grade 6, Permendikdasmen 13/2025) is checked per school across Bahasa Jawa, Tata Boga, and any other local subject |
+| Bahasa Inggris grades 1–2 is not in the national structure (it starts in grade 3) | Optional content a school switches on, off by default (`school_subjects`). It is not a required rapor subject (D-204) |
+| IPAS grades 1–2 is not in the national structure (it starts in grade 3) | Same as Bahasa Inggris grades 1–2 (D-204). KM-SD-2026-R2 has no topics for it yet, so they have to be written |
+| Koding dan KA (grades 5–6) is an intrakurikuler subject in KM-SD-2026-R2 | Not imported as an intrakurikuler allocation. Its topics become kokurikuler content (D-208) |
 | TP linked only to topic, not to fokus | `focus_item_objectives` + data task |
 | Curriculum existed both in static JSON and in Firestore | The SQL tables are the single source; versions change only through `curriculum_versions` |
 
@@ -138,10 +141,12 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | `attendance_records` | `school_id`, `class_id`, `student_id`, `date`, `status` ∈ {`present`,`sick`,`permitted`,`absent`}, `recorded_by`, `recorded_at_device`, `client_uuid` | **Daily** attendance (D-029): unique (`student_id`, `date`) and unique `client_uuid`. Recorded by the homeroom teacher. Per-lesson attendance is *Later* |
 | `student_notes` | `school_id`, `student_id`, `class_id`, `author_id`, `kind` ∈ {`anecdotal`,`counselling`,`achievement`}, `body`, `client_uuid` | Counselling visibility is restricted (see Tenancy) |
 | `assessment_plans` | `school_id`, `class_id`, `subject_id`, `semester`, components | "Rencana Penilaian" |
-| `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp`, `source_document_id` FK SET NULL | |
+| `assessments` | `school_id`, `class_id`, `subject_id`, `kind` ∈ {`formative`,`summative`,`sts`,`sas`}, `held_on`, `kktp_approach` ∈ {`description`,`rubric`,`interval`,`percentage`}, `kktp` (criteria text; a threshold, when used, is set per school), `source_document_id` FK SET NULL | Formative scores never become rapor grades. They feed the per-TP analysis and the description drafts (D-205) |
 | `assessment_items` | `assessment_id` FK CASCADE, `number`, `type`, `kode_tp`, `cognitive_level`, `max_score`, `answer_key` nullable (essays have none) | Frozen snapshot of Bank Soal items |
 | `scores` | `assessment_item_id` FK CASCADE, `student_id`, `score` decimal(5,2) | Unique (`assessment_item_id`, `student_id`). CHECK 0 ≤ score ≤ max (in the service; max lives on the item) |
-| `report_descriptions` | `school_id`, `student_id`, `subject_id`, `semester`, `draft`, `final` nullable (not approved yet) | AI draft from per-TP scores; the teacher edits before use |
+| `report_descriptions` | `school_id`, `student_id`, `subject_id`, `semester`, `draft`, `final` nullable (not approved yet) | AI draft from the highest and lowest TP achievement in the formative results (D-205); the teacher edits before use |
+| `report_cards` | `school_id`, `student_id`, `class_id`, `semester`, `cocurricular_draft`, `cocurricular_final` nullable, `homeroom_note`, `numeric_grades` bool | One per student per semester. Kokurikuler description: the dimensions strengthened and those still developing. `numeric_grades = false` gives a description-only rapor, a school choice for grades 1–2. The rapor also prints attendance totals from `attendance_records` and a blank parent-response box (Panduan Pembelajaran dan Asesmen 2025, pp. 70–73) |
+| `report_extracurriculars` | `report_card_id` FK CASCADE, `activity`, `description` | Ekstrakurikuler rows on the v1 rapor (D-205). Free text per student; fuller ekstrakurikuler records stay out of v1 (D-161) |
 | `class_finance_entries` | `school_id`, `class_id`, `kind` ∈ {`income`,`expense`}, `amount` bigint rupiah CHECK > 0, `occurred_on`, `note`, `recorded_by` | Feature can be switched off per school |
 | `class_inventory_items`, `duty_rosters` | Class-scoped | |
 | `school_announcements` (Kabar), `reminders` (Pengingat), `supervisions`, `school_books` (guest, public relations, minutes), `school_programs`, `agendas` | `school_id` | Portal features |
