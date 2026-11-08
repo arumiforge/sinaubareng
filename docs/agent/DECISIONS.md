@@ -1077,3 +1077,13 @@ Reason: repeatable imports that report data issues without losing data or approv
 Accepted · 2026-11-08 · P5-03c · implements D-204 and the data model's `region_subjects`/`school_subjects`
 A class takes the compulsory subjects with an intrakurikuler allocation for its grade in the level's structure version (`config/curriculum.php`: SD `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, MI `ALOKASI-MI-KMA-1503-2025`), plus the region's local content unless the school switches it off, plus anything the school switches on (optional content is off by default and outside the rapor unless `in_report`). A school cannot switch off a compulsory subject. A `school_subjects` row for one grade wins over the every-grade row. The SD structure file's `version_code` was changed to the data model's `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`.
 Reason: one rule set for P5-03d (default teaching assignments) and later the timetable and rapor.
+
+### D-231 — Seni Suara Daerah is school-optional muatan lokal
+Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C5 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Seni Suara Daerah (`SSD`, KM-SD-2026-R2) is imported as optional muatan lokal for SD that a school switches on in `school_subjects`; it is off by default and is not a region default. Its CP and JP stay `draft` until Tim Validasi SIGRAK reviews them (D-113).
+Reason: owner's choice; the CP is a system draft marked "PERLU VERIFIKASI".
+
+### D-232 — Muatan lokal cap warns, for now
+Accepted · 2026-11-08 · P5-03c · owner's choice · provisional · resolves C6 of `docs/drafts/km-sd-2026-r2-source-check.md`
+When a school's muatan lokal (Bahasa Jawa, Tata Boga, Seni Suara Daerah, or other local subjects) goes over the SD cap of 72 JP per year (64 in grade 6, D-204), SIGRAK warns and does not block. The owner will revisit this once field practice is clear. The check itself is built with the operator pages that switch subjects on (P5-03d or later).
+Reason: owner's choice; practice in schools is not settled yet and may change.

@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-230 (D-185…D-202 unused). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-232 (D-185…D-202 unused). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -91,7 +91,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 |---|---|---|---|---|---|
 | P5-01 | Project scaffold and CI | done | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
-| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5; P5-03c (p5/p5-03c-curriculum) and P5-03g in review | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
+| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5; P5-03g in review | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 | App code |
 | P5-05 | Slice 3 — More templates: Bank Soal, LKPD, Quiz Battle | todo | — | P5-04 | App code |
 | P5-06 | Slice 4 — TKA: package template, exam site, sessions, cards, token, results (target: 2028 season) | todo | — | P5-05 | App code |
@@ -118,7 +118,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-08 — P5-03c in review (branch `p5/p5-03c-curriculum`): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4). After deploy, run `php artisan curriculum:import`. Next: P5-03d.
+- 2026-11-08 — P5-03c done (PR #60): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4). Owner: Seni Suara Daerah is school-optional (D-231); the muatan lokal cap warns for now (D-232). After deploy, run `php artisan curriculum:import`. Next: P5-03d.
 - 2026-11-08 — P5-03g in review: the KM-SD-2026-R2 files are in `docs/data/curriculum/` (exact copies, provenance in its README), so P5-03c can import them. Findings for the import: `docs/drafts/km-sd-2026-r2-source-check.md`. Owner to decide on the new Seni Suara Daerah subject and the muatan lokal cap (C5, C6).
 - 2026-11-08 — P4-03b done (PR #58): `docs/final/` now follows the official 2025 documents and D-204…D-209. Changes: SD allocation version `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, optional Bahasa Inggris/IPAS grades 1–2, the eight dimensi profil lulusan, RPM INTI steps, kokurikuler plan schema, rapor tables (`report_cards`, `report_extracurriculars`), and the KSP starter template. PDFs rebuilt.
 - 2026-11-08 — P4-04 done: `docs/drafts/administration-features.md` lists SD/MI administration features against the 2025–2026 rules and a benchmark. Owner chose D-210…D-221: rules applied, every new feature core with plan mapping in the console, follow-up design tasks P4-05…P4-11. Owner samples received 2026-11-08: the supervision instrument is in `docs/sources/`; the SK sample and two Ruang GTK documents are kept as received. P4-12 done: `docs/drafts/teacher-supervision-instruments.md` maps 18 teacher supervision instruments with first drafts and an MI first draft; owner chose D-222…D-225 (all 18, Ruang GTK 3-level observation, 1–4 reviews, sample bands, principal-only observation, school recap for pengawas, murid feedback as class totals). P4-08 writes the per-item descriptors.
