@@ -41,7 +41,7 @@ This confirms the D-141 assumption (`religious-education.md`): one religion row 
 
 | # | Finding | Source | Affects | Proposal |
 |---|---|---|---|---|
-| C1 | **Bahasa Inggris grades 1–2 is not in the structure.** 13/2025 has Bahasa Inggris only from grade 3, with no kokurikuler. KM-SD-2026-R2 has 36+36 JP of "kokurikuler" Bahasa Inggris in grades 1–2, and `data-model.md` (Known data issues) says it "must stay cocurricular". | 13/2025 pp. 15–18 | `data-model.md`, KM-SD import | Under 13/2025, kokurikuler is a school-wide theme, not a subject. **Decided (D-204):** keep the grade 1–2 topics as content a school can switch on, off by default |
+| C1 | **Bahasa Inggris grades 1–2 is not in the structure.** 13/2025 has Bahasa Inggris only from grade 3, with no kokurikuler. KM-SD-2026-R2 has 36+36 JP of "kokurikuler" Bahasa Inggris in grades 1–2, and `data-model.md` (Known data issues) says it "must stay cocurricular". | 13/2025 pp. 15–18 | `data-model.md`, KM-SD import | Under 13/2025, kokurikuler is a school-wide theme, not a subject. **Decided (D-204):** keep the grade 1–2 topics as content a school can switch on, off by default. The same applies to IPAS in grades 1–2 (not in the structure either; no KM-SD topics yet). Neither is a required rapor subject |
 | C2 | **Muatan lokal cap is 72 JP per year (64 in grade 6)** for SD. Bahasa Jawa already uses all 72. Keterampilan Tata Boga (34+34 in KM-SD) has no room as separate muatan lokal. MI is different: 72–216 JP (KMA 1503/2025). | 13/2025 p. 16 (note c), p. 21 | `data-model.md` (Tata Boga issue), `region_subjects` | Answers the open "Tata Boga target" issue. Under 13/2025 Tata Boga can only be integrated into another subject or a kokurikuler theme, or replace Bahasa Jawa. **Decided (D-204):** Tata Boga is a school-optional muatan lokal. The SD cap of 72 JP (64 in grade 6) is enforced per school |
 | C3 | **Kokurikuler allocation missing for SD.** SD gets 36 JP per subject per year (32 in grade 6), taken out of each compulsory subject except Bahasa Inggris. Totals: 216 / 216 / 252 / 252 / 252 / 224. | 13/2025 pp. 15–21; PK p. 35 | `subject_allocations` (`learning_type = cocurricular`), the kokurikuler module, the scheduler | Import the 13/2025 table as a new allocation version, e.g. `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, holding intra and kokurikuler JP per subject per grade, like `ALOKASI-MI-KMA-1503-2025`. RPM scheduling keeps counting intrakurikuler JP only. MI already works this way (D-146) |
 | C4 | **MI kokurikuler differs from SD.** KMA 1503/2025 moves JP to kokurikuler only for some subjects per grade. 13/2025 puts SD and MI in one table title, but MI follows KMA 1503 (D-038). | 13/2025 p. 15; `mi-allocation-kma-1503-2025.json` | `religious-education.md` | No change. Note in the final doc that MI keeps the KMA table even though 13/2025's tables mention MI |
@@ -131,7 +131,7 @@ The RPM rubric labels (sangat baik, baik, berkembang, perlu bimbingan) are compa
 
 | Final doc | Update |
 |---|---|
-| `data-model.md` | New allocation version from 13/2025 with SD kokurikuler JP (C3). Bahasa Inggris grades 1–2 as school-switchable content and Tata Boga as school-optional muatan lokal (D-204). Enforce the SD muatan lokal cap. Koding dan KA out of the intrakurikuler allocation (D-208). `assessments`: store the KKTP approach and criteria text (A3). Rapor: kokurikuler description, homeroom note, ekstrakurikuler row, Fase A description-only setting (A5–A7, K4) |
+| `data-model.md` | New allocation version from 13/2025 with SD kokurikuler JP (C3). Bahasa Inggris and IPAS grades 1–2 as school-switchable content, not required in the rapor, and Tata Boga as school-optional muatan lokal (D-204). Enforce the SD muatan lokal cap. Koding dan KA out of the intrakurikuler allocation (D-208). `assessments`: store the KKTP approach and criteria text (A3). Rapor: kokurikuler description, homeroom note, ekstrakurikuler row, Fase A description-only setting (A5–A7, K4) |
 | `content-engine.md` | RPM: eight dimensions as an enum, INTI split into Memahami/Mengaplikasi/Merefleksi with principle tags, official labels, optional Lintas disiplin (R1–R4). Kokurikuler: type "Cara lainnya" instead of "Projek", plan schema per PK (K1–K3). Bank Soal: written items optional for grades 1–2 (D-206). 7 KAIH label "Tidur Cepat" (D-207). KSP starter template (D-209) |
 | `product-concept.md` | Kokurikuler types (K1), KKA via kokurikuler (D-208); Rapor content incl. ekstrakurikuler (A5, A6, D-205); KSP starter template (D-209) |
 | `religious-education.md` | D-141 JP assumption confirmed by 13/2025. MI keeps KMA 1503 even though 13/2025 tables name MI (C4). Koding dan KA line follows D-208 |
@@ -153,13 +153,13 @@ The RPM rubric labels (sangat baik, baik, berkembang, perlu bimbingan) are compa
 
 ## 12. Owner answers (2026-11-08)
 
-1. Bahasa Inggris grades 1–2: kept as content a school can switch on (D-204).
+1. Bahasa Inggris grades 1–2: kept as content a school can switch on. IPAS grades 1–2 is optional in the same way, and neither has to be graded in the rapor (D-204).
 2. Tata Boga: school-optional muatan lokal (D-204).
 3. Ekstrakurikuler: shown in the v1 rapor (D-205).
 4. Written tests in grades 1–2: optional, not removed (D-206).
 5. 7 KAIH label: "Tidur Cepat"; "tidur tepat waktu" explains it (D-207).
 6. PDFs: moved to `docs/sources/` with descriptive names (D-203, §11).
-7. KKA runs through kokurikuler. Formative scores are not shown in the rapor, but the rapor description uses the highest and lowest formative achievement (D-208, D-205).
+7. KKA runs through kokurikuler, including the grade 5–6 Koding dan KA rows in KM-SD-2026-R2 (confirmed). Formative scores are not shown in the rapor, but the rapor description uses the highest and lowest formative achievement (D-208, D-205).
 8. KSP: free format, with a starter template each school adapts (D-209).
 
 Still open: owner approval of the `docs/final/` updates in §10.

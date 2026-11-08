@@ -943,9 +943,9 @@ Accepted · 2026-11-08 · P4-03 · owner's choice
 The eight official documents supplied in `docs/dokumen-resmi/` are moved unchanged to `docs/sources/` under descriptive names, and listed in `docs/sources/README.md`. The JSON files keep the original path in `source.received_as`. Their SD/MI parts (SD, MI, Fase A–C, plus rules shared by all levels) are stored as one JSON file per document in `docs/data/regulations/`. Each file has `status: draft`, source metadata (title, number, year, file, SHA-256), and PDF page references on every item. Tim Validasi SIGRAK checks them before import (D-113). What the final docs need is listed in `docs/drafts/dokumen-resmi-sd-mi.md`. The owner approves those changes before anything in `docs/final/` changes.
 Reason: the same draft, source-quoted, page-referenced shape as `docs/data/curriculum/`, kept apart because these are rules and guides rather than CP or allocation rows.
 
-### D-204 — Optional SD content: Bahasa Inggris grades 1–2 and Tata Boga
+### D-204 — Optional SD content: Bahasa Inggris and IPAS in grades 1–2, Tata Boga
 Accepted · 2026-11-08 · P4-03 · owner's choice
-Permendikdasmen 13/2025 has no Bahasa Inggris in grades 1–2. SIGRAK keeps the KM-SD-2026-R2 Bahasa Inggris topics for grades 1–2 as content a school can switch on, off by default. Keterampilan Tata Boga becomes a school-optional muatan lokal. The SD muatan lokal cap of 72 JP per year (64 in grade 6) still applies per school. MI keeps 72–216 JP (KMA 1503/2025).
+Permendikdasmen 13/2025 has no Bahasa Inggris in grades 1–2. SIGRAK keeps the KM-SD-2026-R2 Bahasa Inggris topics for grades 1–2 as content a school can switch on, off by default. IPAS in grades 1–2 (also not in the structure; IPAS starts in grade 3) is optional in the same way. When a school switches either on, it is not a required rapor subject: it carries no rapor grade unless the school chooses to report it. KM-SD-2026-R2 has no IPAS topics for grades 1–2, so they still have to be written. Keterampilan Tata Boga becomes a school-optional muatan lokal. The SD muatan lokal cap of 72 JP per year (64 in grade 6) still applies per school. MI keeps 72–216 JP (KMA 1503/2025).
 Reason: schools that teach these keep using them, without making them look compulsory. Resolves C1 and C2 in `docs/drafts/dokumen-resmi-sd-mi.md`.
 
 ### D-205 — Rapor v1: ekstrakurikuler row; descriptions from formative highs and lows
@@ -964,8 +964,8 @@ The seventh habit of Gerakan 7 KAIH is labelled "Tidur Cepat". "Tidur tepat wakt
 Reason: Panduan Kokurikuler uses both. The label follows the main text.
 
 ### D-208 — KKA runs through kokurikuler
-Accepted · 2026-11-08 · P4-03 · owner's choice
-In SIGRAK, Koding dan Kecerdasan Artifisial is delivered through the kokurikuler programme, one of the options in Kepmendikdasmen 127/P/2025. It is not set up as an intrakurikuler subject with its own allocation.
+Accepted · 2026-11-08 · P4-03 · owner's choice (confirmed 2026-11-08)
+In SIGRAK, Koding dan Kecerdasan Artifisial is delivered through the kokurikuler programme, one of the options in Kepmendikdasmen 127/P/2025. It is not set up as an intrakurikuler subject with its own allocation. The Koding dan KA rows for grades 5–6 in KM-SD-2026-R2 move to kokurikuler as well.
 Reason: KKA is an elective with no CP decree yet. Kokurikuler lets a school offer it without a fixed weekly slot.
 
 ### D-209 — KSP: free format, with a starter template
