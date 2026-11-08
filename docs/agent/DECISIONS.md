@@ -844,7 +844,7 @@ Reason: owner's decision.
 
 ### D-166 — Local development runs in WSL2
 Accepted · 2026-11-02 · owner's choice
-Developers on Windows run the app in WSL2 with Ubuntu 24.04, not Laragon. PHP, MySQL, Redis, and Node live inside Ubuntu, and Gotenberg runs in Docker Desktop with WSL integration. The three local hostnames are `app.`, `ujian.`, and `admin.sigrak.localhost`. Steps: `docs/drafts/local-setup-wsl2.md`.
+Developers on Windows run the app in WSL2 with Ubuntu 24.04, not Laragon. PHP, MySQL, Redis, and Node live inside Ubuntu, and Gotenberg runs in Docker Desktop with WSL integration. The three local hostnames are `app.`, `ujian.`, and `admin.sigrak.localhost`. Steps: `docs/final/local-setup-wsl2.md`.
 Reason: Horizon needs `pcntl`/`posix`, which Windows PHP lacks. Ubuntu 24.04 matches the VPS (D-086), so local behaviour stays close to staging and production.
 
 ### D-167 — Staff console access by staff role
@@ -870,7 +870,7 @@ Reason: the team wants to see where SIGRAK is already used around Kudus and whic
 
 ### D-171 — Game kelas becomes the IFP learning mode
 Accepted · 2026-11-04 · P4-02 · owner's choice · extends D-011, D-158
-The Game kelas add-on keeps its name. It grows from Quiz Battle, Tayangkan, and Unduh game into a fullscreen IFP mode that plays a lesson sequence from an RPM meeting (goal, prior-knowledge check, manipulative, team practice, exit ticket, reflection). Design: `docs/drafts/ifp-classroom.md`.
+The Game kelas add-on keeps its name. It grows from Quiz Battle, Tayangkan, and Unduh game into a fullscreen IFP mode that plays a lesson sequence from an RPM meeting (goal, prior-knowledge check, manipulative, team practice, exit ticket, reflection). Design: `docs/final/ifp-classroom.md`.
 Reason: free IFP game sites are catalogues with no link to TP, RPM, or results; tying play to the lesson is SIGRAK's difference.
 
 ### D-172 — Class-level results from Game kelas are kept
@@ -1087,3 +1087,13 @@ Reason: owner's choice; the CP is a system draft marked "PERLU VERIFIKASI".
 Accepted · 2026-11-08 · P5-03c · owner's choice · provisional · resolves C6 of `docs/drafts/km-sd-2026-r2-source-check.md`
 When a school's muatan lokal (Bahasa Jawa, Tata Boga, Seni Suara Daerah, or other local subjects) goes over the SD cap of 72 JP per year (64 in grade 6, D-204), SIGRAK warns and does not block. The owner will revisit this once field practice is clear. The check itself is built with the operator pages that switch subjects on (P5-03d or later).
 Reason: owner's choice; practice in schools is not settled yet and may change.
+
+### D-233 — Kode Tayang lives at `/pid` on the app host
+Accepted · 2026-11-08 · P4-02 · owner's choice · resolves open question 2 of `docs/final/ifp-classroom.md` (D-164, D-173)
+The Kode Tayang page for Game kelas is at the path `/pid` on the app host (`APP_HOST`), not on a `papan.` subdomain and not at `/papan`. The IFP opens it, shows the code or QR, and runs the present-only session there.
+Reason: owner's choice; one hostname less to set up and route.
+
+### D-234 — Tata Boga grade 6 semester 2 trimmed to 28 JP at import
+Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C4 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Keterampilan Tata Boga grade 6 semester 2 (`KM-SD-2026-R2-KTB-K6-04`) has 34 JP over weeks 1–17 in the source, but that semester has 14 effective weeks. SIGRAK trims it to 28 JP (14 weeks × 2 JP, weeks 1–14, 14 JP per fokus) at import, as an explicit correction in `app/Curriculum/Import/SourceOverrides.php` that keeps the source values in the topic's `extras.import_override`. The source file in `docs/data/curriculum/` stays exactly as received. The correction applies only while the source still has 34 JP to week 17.
+Reason: owner's choice; the source is kept byte-for-byte (P5-03g) and the topic must fit its semester.

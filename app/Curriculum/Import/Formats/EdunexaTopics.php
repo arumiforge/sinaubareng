@@ -10,6 +10,7 @@ use App\Curriculum\Import\Grades;
 use App\Curriculum\Import\ImportedFile;
 use App\Curriculum\Import\ImportReport;
 use App\Curriculum\Import\InvalidCurriculumFile;
+use App\Curriculum\Import\SourceOverrides;
 use App\Curriculum\Import\SubjectLookup;
 use App\Curriculum\Import\TopicInput;
 use App\Curriculum\Import\TopicWriter;
@@ -26,7 +27,8 @@ use App\Models\SubjectAllocation;
  * strings in older exports). Findings on the shape: docs/drafts/km-sd-2026-r2-source-check.md.
  * `Fokus_Materi` duplicates Data_Fokus and is dropped. Data_ATP keys without a column,
  * Status_Mapel, Jenis_Pembelajaran, and the art branch go to `extras`. Import
- * struktur_alokasi_sd.json first so the semester totals can be checked.
+ * struktur_alokasi_sd.json first so the semester totals can be checked. Owner-approved
+ * corrections (SourceOverrides, D-234) are applied after a row is read.
  */
 final readonly class EdunexaTopics implements CurriculumFormat
 {
@@ -35,7 +37,7 @@ final readonly class EdunexaTopics implements CurriculumFormat
 
     private const REFERENCE_KEYS = ['sumber_cp' => 'cp_source', 'sumber_buku' => 'book', 'halaman_buku' => 'book_pages', 'tanggal_penyesuaian' => 'adjusted_on'];
 
-    public function __construct(private VersionRegistry $versions, private TopicWriter $topics, private SubjectLookup $subjects) {}
+    public function __construct(private VersionRegistry $versions, private TopicWriter $topics, private SubjectLookup $subjects, private SourceOverrides $overrides) {}
 
     public function supports(array $json): bool
     {
@@ -66,7 +68,7 @@ final readonly class EdunexaTopics implements CurriculumFormat
         $flagged = [];
 
         foreach ($rows as $row) {
-            $topic = $this->topic($row, $codes[0], $report);
+            $topic = $this->overrides->apply($this->topic($row, $codes[0], $report), $report);
             $topics[] = $topic;
             $this->flag($row, $topic, $flagged, $report);
         }

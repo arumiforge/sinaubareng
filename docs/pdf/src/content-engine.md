@@ -218,6 +218,8 @@ Ujian ini meniru cara TKA nasional berjalan: berbasis komputer, peserta masuk de
 
 **Tanpa kode buatan AI di v1 (D-015).** Bila guru menginginkan sesuatu yang tidak ada di templat, "Usulkan fitur" mencatat permintaan (`template_feature_requests`) untuk tim. Pilihan kode AI dalam sandbox mungkin menyusul dengan rancangannya sendiri.
 
+**Templat game berikutnya (D-176).** Setelah Quiz Battle, templat game baru mengikuti peta jalan fungsi belajar Game kelas, mode belajar IFP (D-171): Lomba Tim, Pilah & Kelompokkan, dan Pasangkan lebih dulu. Rancangan: [`ifp-classroom.md`](ifp-classroom.md).
+
 **Tayangkan (mode tayang).** Rute layar penuh di dalam sesi guru. Hurufnya besar untuk proyektor, bisa dikendalikan dengan keyboard atau clicker, dan nilai hanya disimpan di perangkat guru. Tidak menyimpan data siswa.
 
 **Unduh game (HTML mandiri, D-011).** Berupa satu berkas `.html`:

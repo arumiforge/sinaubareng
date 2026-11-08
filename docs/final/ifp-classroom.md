@@ -1,8 +1,8 @@
 # Game kelas: Interactive Flat Panel (IFP) Learning for SD/MI
 
-- **Status:** draft; owner interview done 2026-11-04, decisions D-171…D-181 recorded (not in v1 scope yet)
+- **Status:** final (approved 2026-11-08); owner interview done 2026-11-04, decisions D-171…D-181 and D-233 recorded (not in v1 scope yet)
 - **Task:** P4-02
-- **Last updated:** 2026-11-04
+- **Last updated:** 2026-11-08
 - **UI name:** *Game kelas*. The existing add-on (D-158) keeps its name and grows into this IFP mode (D-171)
 - **Scope:** SD and MI, grades 1–6 (Fase A–C). PAUD, SMP, and SMA are out of scope.
 
@@ -14,7 +14,7 @@ Free sites such as [papaninteraktif.com](https://papaninteraktif.com/) and [game
 
 This document maps how those two sites use the IFP, finds what they lack, and proposes a SIGRAK feature where **every activity on the panel starts from a TP, sits in a step of the RPM, and feeds back into assessment and the next lesson**. Play is the delivery, not the goal.
 
-The owner's answers from the 2026-11-04 interview are recorded as D-171…D-181 and listed under [Decisions](#decisions). Items still marked *proposed* are details not yet decided.
+The owner's answers from the 2026-11-04 interview are recorded as D-171…D-181 and listed under [Decisions](#decisions); the Kode Tayang path followed on 2026-11-08 (D-233).
 
 ## 1. Benchmark: what the two sites do
 
@@ -226,7 +226,7 @@ This respects the present-mode rule that scores live in the teacher's session an
 
 The IFP is a shared screen in front of the class. Typing the teacher's password on it is a risk (students watch, and the browser may stay logged in).
 
-- **Kode Tayang (D-173).** The teacher opens a `/papan` page (hostname or path still *proposed*) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Game kelas items and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
+- **Kode Tayang (D-173).** The teacher opens the `/pid` page on the app host (D-233) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Game kelas items and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
 - **Phone as remote (D-173).** The paired phone shows next/previous, reveal answer, the answer key, and the run sheet. The teacher can walk around the class, and the key never appears on the big screen.
 - **Kartu Jawab (D-174, last step).** Per-student responses without student devices. Each student holds a printed card with a number and four sides (A–D). The teacher scans the raised cards with the phone camera. The app maps card numbers to the roster on the teacher's phone, so the exit ticket gives per-student results without any student touching a device or logging in. Names never show on the IFP. This is the only path from a game to per-student scores (§5), so it comes after the class-level loop is proven.
 - On the IFP, only team names and team scores are shown; no public ranking of individual students.
@@ -300,9 +300,10 @@ Recorded in `docs/agent/DECISIONS.md` after the owner interview on 2026-11-04.
 | D-179 | Reference test device is the Kemendikdasmen IFP unit |
 | D-180 | Camera and movement activities only later and only when tied to a TP |
 | D-181 | Weekly offline bundle ships with the Game kelas core |
+| D-233 | Kode Tayang page at `/pid` on the app host (not a `papan.` subdomain, not `/papan`) |
 
 ## Open questions
 
 1. Android and WebView version of the Kemendikdasmen IFP in pilot schools: to be checked on a real unit (D-179). Who arranges access to two or three panels?
-2. Hostname or path for the Kode Tayang page (`papan.` subdomain or `/papan` on `app.`), D-164.
-3. Final docs `product-concept.md` and `content-engine.md` (and their PDFs) still list the old D-014 game list; update them when this draft moves to `docs/final/`.
+2. ~~Hostname or path for the Kode Tayang page~~: resolved, `/pid` on the app host (D-233).
+3. ~~Final docs still list the old D-014 game list~~: resolved, `product-concept.md` and `content-engine.md` follow D-176 (2026-11-08).

@@ -216,6 +216,8 @@ The general Bank Soal "Mode Ujian" stays inactive (D-026). The exam client is bu
 
 **No AI-written code in v1 (D-015).** If a teacher wants something the template lacks, "Usulkan fitur" records a request (`template_feature_requests`) for the team. A sandboxed AI-code option may come later with its own design.
 
+**More game templates (D-176).** After Quiz Battle, new game templates follow the learning-function roadmap of Game kelas, the IFP learning mode (D-171): Lomba Tim, Pilah & Kelompokkan, and Pasangkan first. Design: [`ifp-classroom.md`](ifp-classroom.md).
+
 **Tayangkan (present mode).** This is a fullscreen route inside the teacher's session. It uses large type for projectors, works with keyboard or clicker, and keeps scores on the teacher's device only. It stores no student data.
 
 **Unduh game (standalone HTML, D-011).** This is a single `.html` file:

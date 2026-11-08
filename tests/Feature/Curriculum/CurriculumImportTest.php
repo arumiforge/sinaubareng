@@ -3,9 +3,13 @@
 declare(strict_types=1);
 
 use App\Curriculum\Import\CurriculumImporter;
+use App\Curriculum\Import\ImportReport;
 use App\Curriculum\Import\InvalidCurriculumFile;
+use App\Curriculum\Import\SourceOverrides;
+use App\Curriculum\Import\TopicInput;
 use App\Enums\CurriculumVersionStatus;
 use App\Enums\LearningType;
+use App\Enums\Phase;
 use App\Models\CurriculumVersion;
 use App\Models\FocusItem;
 use App\Models\LearningObjective;
@@ -49,7 +53,7 @@ function curriculumJson(string $path): array
 
 it('imports every curriculum file in the repository as draft versions', function (): void {
     $this->artisan('curriculum:import')
-        ->expectsOutputToContain('1 data mismatch(es) to review.')
+        ->doesntExpectOutputToContain('data mismatch(es) to review.')
         ->assertSuccessful();
 
     expect(CurriculumVersion::query()->orderBy('code')->pluck('status', 'code')->map->value->all())->toBe([
@@ -262,9 +266,7 @@ it('imports the KM-SD-2026-R2 files and reports what the source check found', fu
     $version = CurriculumVersion::query()->where('code', 'KM-SD-2026-R2')->sole();
     $topic = Topic::query()->where('code', 'KM-SD-2026-R2-PP-K1-01')->sole();
 
-    expect($report->mismatches())->toBe([
-        'Topic KM-SD-2026-R2-KTB-K6-04: runs to week 17, beyond the 14 effective weeks of grade 6 semester 2.',
-    ])
+    expect($report->mismatches())->toBe([])
         ->and(array_keys($version->meta['files']))->toEqualCanonicalizing(['docs/data/curriculum/data_kurikulum_dengan_cp.json', 'docs/data/curriculum/struktur_alokasi_sd.json'])
         ->and($topic->weekly_distribution)->toBe([4, 4, 4, 4, 4, 4, 4, 4, 1])
         ->and($topic->legacy_codes)->toBe(['CUR-256333696'])
@@ -274,8 +276,35 @@ it('imports the KM-SD-2026-R2 files and reports what the source check found', fu
         ->and(Topic::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'PAI')->count())->toBe(60)
         ->and(SubjectAllocation::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'KKA')->exists())->toBeFalse();
 
+    // D-234: Tata Boga grade 6 semester 2 is trimmed to its 14 effective weeks at import.
+    $tataBoga = Topic::query()->where('code', 'KM-SD-2026-R2-KTB-K6-04')->sole();
+    expect($tataBoga->only(['jp_total', 'week_start', 'week_end']))->toBe(['jp_total' => 28, 'week_start' => 1, 'week_end' => 14])
+        ->and($tataBoga->weekly_distribution)->toBe(array_fill(0, 14, 2))
+        ->and($tataBoga->focusItems()->orderBy('order')->pluck('estimated_jp')->all())->toBe([14, 14])
+        ->and($tataBoga->extras['import_override'])->toEqual([
+            'decision' => 'D-234',
+            'source' => ['jp_total' => 34, 'week_end' => 17, 'focus_jp' => ['FM-KTB-K6-04-01' => 17, 'FM-KTB-K6-04-02' => 17]],
+        ])
+        ->and($tataBoga->extras['atp']['durasi_minggu'] ?? null)->toBe(17)
+        ->and($report->notes())->toContain('Topic KM-SD-2026-R2-KTB-K6-04: trimmed from 34 JP over weeks 1–17 to 28 JP over weeks 1–14 (D-234).')
+        ->and(Topic::query()->where('code', 'KM-SD-2026-R2-KTB-K6-03')->value('jp_total'))->toBe(34);
+
     // A second run of both files leaves the shared version alone.
     $again = app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/struktur_alokasi_sd.json'))->changedRows()
         + app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/data_kurikulum_dengan_cp.json'))->changedRows();
     expect($again)->toBe(0);
+});
+
+it('leaves a corrected topic alone once the source no longer has the values the correction was written for', function (): void {
+    $input = new TopicInput(
+        code: 'KM-SD-2026-R2-KTB-K6-04', legacyCodes: [], subject: new Subject, grade: 6, phase: Phase::C, semester: 2,
+        elements: 'Wirausaha Bidang Boga', title: 'Wirausaha Bidang Boga', cpText: 'CP', atpCode: 'ATP-KTB-K6-BAB-04',
+        orderInSemester: 2, jpTotal: 28, jpPerWeek: 2, weekStart: 1, weekEnd: 14, weeklyDistribution: array_fill(0, 14, 2),
+        references: [], audit: null, extras: null, objectives: [],
+        focusItems: [['code' => 'FM-KTB-K6-04-01', 'order' => 1, 'title' => 'Fokus', 'estimated_jp' => 28, 'allocation_status' => '', 'objective_codes' => null]],
+    );
+    $report = new ImportReport('test.json');
+
+    expect((new SourceOverrides)->apply($input, $report))->toBe($input)
+        ->and($report->notes())->toBe(['Topic KM-SD-2026-R2-KTB-K6-04: the source no longer has 34 JP to week 17, so the D-234 correction is not applied.']);
 });
