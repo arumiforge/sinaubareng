@@ -1052,3 +1052,28 @@ Reason: owner's choice; keeps supervision results between the teacher and the pr
 Accepted · 2026-11-08 · P4-12 · owner's choice
 Murid feedback (S-12) is gathered in class on paper or cards, and the teacher enters only the count per answer for the class. No per-murid answers are stored, since murid are not users (D-010).
 Reason: Permendikdasmen 1/2026 asks for murid reflection each semester; class totals meet it without student data.
+
+### D-226 — CP rows in `learning_outcomes`
+Accepted · 2026-11-08 · P5-03c · adds a table to the data model's Curriculum section
+The CP-only versions (`CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`) are stored in a new table `learning_outcomes`: `curriculum_version_id`, `subject_id`, `phase`, `code` (unique, `<version>-<subject>-<phase>-<nn>`), `order`, `element` (NULL = the phase summary), `sub_element` nullable, `text`, `extras` JSON (`lead_in`, `element_intro`, `arabic_passages`, `review_notes`, D-039, D-127). Sub-elements printed with no CP in a phase (`no_cp_in_phase`) get no row. Topics keep their own `cp_text`.
+Reason: the data model lists these versions for v1 but none of its tables holds CP rows without topics; the RPM wizard needs CP and elements per phase.
+
+### D-227 — Subject catalogue file
+Accepted · 2026-11-08 · P5-03c
+`docs/data/curriculum/subjects.json` (`status: draft`) is the source of `subjects`: code, name, kind, default teacher, religion, level, and aliases, plus regional local content defaults (Kudus: Bahasa Jawa, 2 JP per week). Other files name subjects by code, name, or alias; matching ignores case, punctuation, and spaces, and an unknown subject makes the file invalid. Codes come from the religion and MI TP/ATP files and KM-SD-2026-R2 (`PP`); the other national codes (`BIND`, `MTK`, `IPAS`, `PJOK`, `SB`, `BING`, `KKA`, `BJAW`, `TB`, `PAI`) are set here and the import reports a KM topic code that uses a different one, so the catalogue can be corrected when the files arrive.
+Reason: `subjects` needs codes before KM-SD-2026-R2 is supplied, and every source names subjects differently.
+
+### D-228 — Subject defaults not covered by D-032
+Accepted · 2026-11-08 · P5-03c · extends D-032, D-035, D-208
+The MI Kemenag subjects and Bahasa Arab default to a guru mapel, as Pendidikan Agama does for SD. Keterampilan Tata Boga, a muatan lokal (D-204), defaults to a guru mapel like Bahasa Jawa. Koding dan KA has kind `cocurricular` (D-208) and gets no intrakurikuler allocation. `subjects.religion` is set only for the six SD religion subjects; the MI subjects are taken by every MI student, so it stays NULL.
+Reason: `subjects.default_teacher` and `religion` are NOT NULL or meaningful for every subject; the operator can still reassign (D-032).
+
+### D-229 — Import rules for `curriculum:import`
+Accepted · 2026-11-08 · P5-03c · implements D-020, D-113
+Each file is one transaction: an invalid file writes nothing. Rows are matched by `code` (allocations by version, subject, grade, and learning type) and never deleted; a row missing from a newer file is reported and kept. A new version is `draft`; an import never changes the status of an existing version, whatever the file says. Data mismatches (JP sums, phase vs grade, printed totals, fokus–TP links outside the topic, subject code differences) are listed and do not stop the import unless `--strict` is given. Sources that print only JP per year get 18 effective weeks in semester 1 and the rest in semester 2 (14 in grade 6), as in KM-SD-2026-R2. The muatan lokal limits go to the version's `meta`. The EDUNEXA `kokurikuler_default` rows (Bahasa Inggris grades 1–2) are not imported, since that is optional content (D-204). Fokus–TP links are synced only when the file has them, so a KM-SD-2026-R2 re-import keeps links a data task added.
+Reason: repeatable imports that report data issues without losing data or approvals.
+
+### D-230 — A class's subjects
+Accepted · 2026-11-08 · P5-03c · implements D-204 and the data model's `region_subjects`/`school_subjects`
+A class takes the compulsory subjects with an intrakurikuler allocation for its grade in the level's structure version (`config/curriculum.php`: SD `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, MI `ALOKASI-MI-KMA-1503-2025`), plus the region's local content unless the school switches it off, plus anything the school switches on (optional content is off by default and outside the rapor unless `in_report`). A school cannot switch off a compulsory subject. A `school_subjects` row for one grade wins over the every-grade row. The SD structure file's `version_code` was changed to the data model's `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`.
+Reason: one rule set for P5-03d (default teaching assignments) and later the timetable and rapor.
