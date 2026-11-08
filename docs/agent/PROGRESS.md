@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-232 (D-185…D-202 unused). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 (D-185…D-202 unused). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -70,7 +70,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | ID | Task | Status | Owner | Depends on | Output |
 |---|---|---|---|---|---|
 | P4-01 | Buku Induk and Dapodik sync design | blocked (upcoming, D-161) | main | D-157, D-158 | `docs/drafts/buku-induk-dapodik.md` |
-| P4-02 | Game kelas: IFP learning mode for SD/MI (benchmark + design) | review | sky/inspiring-volta-3bdmuq | D-011, D-014, D-158 | `docs/drafts/ifp-classroom.md` |
+| P4-02 | Game kelas: IFP learning mode for SD/MI (benchmark + design) | done | sky/inspiring-volta-3bdmuq | D-011, D-014, D-158 | `docs/final/ifp-classroom.md`, `docs/pdf/ifp-classroom.pdf` |
 | P4-03 | Official documents (`docs/dokumen-resmi/`) → SD/MI data | done | p4/p4-03-dokumen-resmi-data | — | `docs/data/regulations/`, `docs/drafts/dokumen-resmi-sd-mi.md` |
 | P4-03b | Apply P4-03 findings to `docs/final/` + Indonesian PDFs | done | p4/p4-03b-final-docs | P4-03, D-203…D-209 | `docs/final/{content-engine,data-model,product-concept,religious-education}.md`, `docs/pdf/` |
 | P4-04 | Class and school administration features for SD/MI (research + recommendations) | done | p4/p4-04-administration-features | D-009, D-158 | `docs/drafts/administration-features.md`, D-210…D-221 |
@@ -91,7 +91,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 |---|---|---|---|---|---|
 | P5-01 | Project scaffold and CI | done | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
-| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5; P5-03d p5/p5-03d-school-year; P5-03g in review | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
+| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5; P5-03d p5/p5-03d-school-year | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 | App code |
 | P5-05 | Slice 3 — More templates: Bank Soal, LKPD, Quiz Battle | todo | — | P5-04 | App code |
 | P5-06 | Slice 4 — TKA: package template, exam site, sessions, cards, token, results (target: 2028 season) | todo | — | P5-05 | App code |
@@ -103,7 +103,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 ## Start here (next session)
 
 1. Read `CLAUDE.md`, `docs/agent/CONTEXT.md`, and this file. Stack, conventions, and every owner choice are in CONTEXT and `DECISIONS.md`.
-2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions), `docs/drafts/buku-induk-dapodik.md` (P4-01, on hold, D-161), and `docs/drafts/local-setup-wsl2.md` (local setup, D-166).
+2. Approved specs: `docs/final/*.md`. Still-living drafts: `docs/drafts/open-questions.md` (remaining owner questions), `docs/drafts/buku-induk-dapodik.md` (P4-01, on hold, D-161), and `docs/drafts/km-sd-2026-r2-source-check.md` (P5-03g findings). Moved to final on 2026-11-08: `docs/final/ifp-classroom.md` (Game kelas, P4-02) and `docs/final/local-setup-wsl2.md` (local setup, D-166).
 3. Data: `docs/data/curriculum/` (CP, MI allocation, TP/ATP drafts for SD religions and MI) and `docs/data/tka/`.
 4. Only `main` exists. Old branches were deleted and the history was rewritten on 2026-11-01 (D-148), so old clones must be re-cloned or reset to `origin/main`. Start any task branch from `main` and delete it after merge.
 
@@ -118,7 +118,8 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-08 — P5-03c done (PR #60): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4). Owner: Seni Suara Daerah is school-optional (D-231); the muatan lokal cap warns for now (D-232). After deploy, run `php artisan curriculum:import`. Next: P5-03d.
+- 2026-11-08 — Owner approvals applied (branch `p5/owner-approvals-2026-11-08`): P5-03f and P5-03g done; P4-02 done and `ifp-classroom.md` plus `local-setup-wsl2.md` moved to `docs/final/` with Indonesian PDFs. D-233: Kode Tayang page at `/pid` on the app host. D-234: `curriculum:import` trims Tata Boga grade 6 semester 2 (`KM-SD-2026-R2-KTB-K6-04`) to 28 JP over weeks 1–14 (`app/Curriculum/Import/SourceOverrides.php`); the source file is unchanged and the import now reports no mismatch. `product-concept.md` and `content-engine.md` follow D-176. Still open for Game kelas: the Android/WebView check on a real IFP (D-179).
+- 2026-11-08 — P5-03c done (PR #60): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4), now trimmed at import (D-234). Owner: Seni Suara Daerah is school-optional (D-231); the muatan lokal cap warns for now (D-232). After deploy, run `php artisan curriculum:import`. Next: P5-03d.
 - 2026-11-08 — P5-03g in review: the KM-SD-2026-R2 files are in `docs/data/curriculum/` (exact copies, provenance in its README), so P5-03c can import them. Findings for the import: `docs/drafts/km-sd-2026-r2-source-check.md`. Owner to decide on the new Seni Suara Daerah subject and the muatan lokal cap (C5, C6).
 - 2026-11-08 — P4-03b done (PR #58): `docs/final/` now follows the official 2025 documents and D-204…D-209. Changes: SD allocation version `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, optional Bahasa Inggris/IPAS grades 1–2, the eight dimensi profil lulusan, RPM INTI steps, kokurikuler plan schema, rapor tables (`report_cards`, `report_extracurriculars`), and the KSP starter template. PDFs rebuilt.
 - 2026-11-08 — P4-04 done: `docs/drafts/administration-features.md` lists SD/MI administration features against the 2025–2026 rules and a benchmark. Owner chose D-210…D-221: rules applied, every new feature core with plan mapping in the console, follow-up design tasks P4-05…P4-11. Owner samples received 2026-11-08: the supervision instrument is in `docs/sources/`; the SK sample and two Ruang GTK documents are kept as received. P4-12 done: `docs/drafts/teacher-supervision-instruments.md` maps 18 teacher supervision instruments with first drafts and an MI first draft; owner chose D-222…D-225 (all 18, Ruang GTK 3-level observation, 1–4 reviews, sample bands, principal-only observation, school recap for pengawas, murid feedback as class totals). P4-08 writes the per-item descriptors.

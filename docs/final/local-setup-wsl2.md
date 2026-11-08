@@ -1,8 +1,11 @@
 # Local development on Windows (WSL2)
 
+- **Status:** final (approved 2026-11-08, D-166)
+- **Last updated:** 2026-11-08
+
 How a developer runs SIGRAK on a Windows laptop before code goes to staging and production. Local development uses **WSL2 with Ubuntu 24.04**, not Laragon (D-166). Ubuntu 24.04 matches the VPS (D-086), so Horizon, `phpredis`, and `pcntl` work the same as on the server.
 
-Versions follow [server-setup.md](../final/server-setup.md#versions); only the local differences are noted here.
+Versions follow [server-setup.md](server-setup.md#versions); only the local differences are noted here.
 
 ## 1. WSL2 and Ubuntu
 
