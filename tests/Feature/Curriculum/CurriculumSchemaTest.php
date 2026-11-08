@@ -14,8 +14,7 @@ function curriculumVersionRow(?string $code = null): int
     $code ??= 'TEST-'.Str::upper(Str::random(8));
 
     return DB::table('curriculum_versions')->insertGetId([
-        'code' => $code, 'name' => 'Test', 'status' => 'draft', 'source_file' => 'x.json',
-        'source_sha256' => str_repeat('a', 64), 'imported_at' => now(),
+        'code' => $code, 'name' => 'Test', 'status' => 'draft', 'meta' => '{}', 'imported_at' => now(),
     ]);
 }
 
@@ -53,7 +52,7 @@ it('rejects values outside the fixed sets and ranges', function (string $table, 
     expect(fn () => DB::table($table)->insert($row()))->toThrow(QueryException::class);
 })->with([
     'version status' => ['curriculum_versions', fn (): array => [
-        'code' => 'X-1', 'name' => 'X', 'status' => 'published', 'source_file' => 'x', 'source_sha256' => str_repeat('a', 64), 'imported_at' => now(),
+        'code' => 'X-1', 'name' => 'X', 'status' => 'published', 'meta' => '{}', 'imported_at' => now(),
     ]],
     'subject kind' => ['subjects', fn (): array => [...Subject::factory()->raw(), 'kind' => 'elective', 'aliases' => '[]']],
     'subject teacher' => ['subjects', fn (): array => [...Subject::factory()->raw(), 'default_teacher' => 'principal', 'aliases' => '[]']],

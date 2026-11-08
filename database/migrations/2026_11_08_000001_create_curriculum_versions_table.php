@@ -17,9 +17,7 @@ return new class extends Migration
             $table->string('code', 64)->unique();
             $table->string('name');
             $table->string('status')->comment('draft until Tim Validasi SIGRAK signs the data off (D-113)');
-            $table->string('source_file')->comment('Repository path of the last imported file');
-            $table->char('source_sha256', 64)->comment('Hash of the last imported file');
-            $table->json('meta')->nullable()->comment('Imported reference blob (source, muatan lokal limits); NULL when the file has none');
+            $table->json('meta')->comment('Imported reference blob per source file: {files: {path: {sha256, source, …}}}. KM-SD-2026-R2 has two files');
             $table->timestamp('imported_at');
             $table->timestamps();
         });

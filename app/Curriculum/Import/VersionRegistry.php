@@ -9,7 +9,9 @@ use App\Models\CurriculumVersion;
 
 /**
  * Creates or refreshes a curriculum version by code. A new version starts as draft
- * (D-113); an import never changes the status of an existing one.
+ * (D-113); an import never changes the status of an existing one. A version can come
+ * from several files (KM-SD-2026-R2: topics and allocation), so each file keeps its
+ * own entry in `meta.files`, and the name is set by the file that creates the version.
  */
 final readonly class VersionRegistry
 {
@@ -35,12 +37,14 @@ final readonly class VersionRegistry
             $report->note("The file says status '{$fileStatus}'; the version keeps status '{$version->status->value}' until Tim Validasi SIGRAK signs it off (D-113).");
         }
 
-        $version->fill([
-            'name' => mb_substr($name, 0, 255),
-            'source_file' => $file->relativePath,
-            'source_sha256' => $file->sha256,
-            'meta' => $meta,
-        ]);
+        if ($created) {
+            $version->name = mb_substr($name, 0, 255);
+        }
+
+        $files = $version->meta['files'] ?? [];
+        $files[$file->relativePath] = ['sha256' => $file->sha256, ...($meta ?? [])];
+        ksort($files);
+        $version->meta = ['files' => $files];
         $this->rows->ignoreKeyOrder($version);
 
         $outcome = $created ? 'created' : ($version->isDirty() ? 'updated' : 'unchanged');

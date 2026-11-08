@@ -49,22 +49,23 @@ function curriculumJson(string $path): array
 
 it('imports every curriculum file in the repository as draft versions', function (): void {
     $this->artisan('curriculum:import')
-        ->expectsOutputToContain('Skipped docs/data/curriculum/data_kurikulum_dengan_cp.json: not in the repository yet.')
+        ->expectsOutputToContain('1 data mismatch(es) to review.')
         ->assertSuccessful();
 
     expect(CurriculumVersion::query()->orderBy('code')->pluck('status', 'code')->map->value->all())->toBe([
         'ALOKASI-MI-KMA-1503-2025' => 'draft',
         'CP-PABP-BKPDM-020-2026' => 'draft',
         'CP-PAI-BA-MADRASAH-9941-2025' => 'draft',
+        'KM-SD-2026-R2' => 'draft',
         'STRUKTUR-SD-PERMENDIKDASMEN-13-2025' => 'draft',
         'TPATP-PABP-SD-2026-R1' => 'draft',
         'TPATP-PAI-BA-MI-2026-R1' => 'draft',
     ])
-        ->and(Subject::query()->count())->toBe(21)
+        ->and(Subject::query()->count())->toBe(22)
         ->and(LearningOutcome::query()->count())->toBe(199)
-        ->and(Topic::query()->count())->toBe(524)
-        ->and(LearningObjective::query()->count())->toBe(1323)
-        ->and(FocusItem::query()->count())->toBe(2048)
+        ->and(Topic::query()->count())->toBe(956)
+        ->and(LearningObjective::query()->count())->toBe(2695)
+        ->and(FocusItem::query()->count())->toBe(4069)
         ->and(RegionSubject::query()->sole()->region->regency)->toBe('Kabupaten Kudus');
 });
 
@@ -81,12 +82,12 @@ it('fills SD allocations from Permendikdasmen 13/2025, with kokurikuler and with
         ->and($row('PAKH', 6, LearningType::Intracurricular)?->only(['jp_per_week', 'weeks_per_year', 's1_jp', 's1_effective_weeks', 's2_jp', 's2_effective_weeks']))
         ->toBe(['jp_per_week' => 3, 'weeks_per_year' => 32, 's1_jp' => 54, 's1_effective_weeks' => 18, 's2_jp' => 42, 's2_effective_weeks' => 14])
         ->and($row('MTK', 1, LearningType::Cocurricular)?->s1_jp)->toBe(18)
-        ->and($row('BING', 3, LearningType::Intracurricular)?->jp_per_week)->toBe(2)
-        ->and($row('BING', 3, LearningType::Cocurricular))->toBeNull()
-        ->and($row('BING', 1, LearningType::Intracurricular))->toBeNull()
+        ->and($row('BIG', 3, LearningType::Intracurricular)?->jp_per_week)->toBe(2)
+        ->and($row('BIG', 3, LearningType::Cocurricular))->toBeNull()
+        ->and($row('BIG', 1, LearningType::Intracurricular))->toBeNull()
         ->and($row('IPAS', 2, LearningType::Intracurricular))->toBeNull()
         ->and($row('KKA', 5, LearningType::Intracurricular))->toBeNull()
-        ->and($version->meta['local_content_max_jp_per_year'] ?? null)->toBe(['1' => 72, '2' => 72, '3' => 72, '4' => 72, '5' => 72, '6' => 64]);
+        ->and($version->fileMeta('local_content_max_jp_per_year'))->toBe(['1' => 72, '2' => 72, '3' => 72, '4' => 72, '5' => 72, '6' => 64]);
 });
 
 it('changes nothing when the same files are imported again', function (): void {
@@ -217,7 +218,7 @@ it('rolls back a catalogue that fails half way', function (): void {
         ->and(Region::query()->count())->toBe(0);
 });
 
-it('is ready for the KM-SD-2026-R2 files in the EDUNEXA shape', function (): void {
+it('reads the EDUNEXA shapes, JSON strings included', function (): void {
     importCatalogue();
     $structure = app(CurriculumImporter::class)->import(curriculumFixture('km-struktur.json'));
     $topics = app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));
@@ -226,7 +227,7 @@ it('is ready for the KM-SD-2026-R2 files in the EDUNEXA shape', function (): voi
 
     expect($version->status)->toBe(CurriculumVersionStatus::Draft)
         ->and(SubjectAllocation::query()->whereBelongsTo($version)->with('subject')->get()->map(fn ($row) => "{$row->subject->code}-{$row->grade}")->sort()->values()->all())
-        ->toBe(['BJAW-1', 'MTK-4'])
+        ->toBe(['BJW-1', 'MTK-4'])
         ->and($structure->notes())->toContain('Koding dan Kecerdasan Artifisial grade 5 is not imported as an intrakurikuler allocation; it runs through kokurikuler (D-208).')
         ->and($structure->notes())->toContain('kokurikuler_default Bahasa Inggris grade 1 is not imported: optional content that a school switches on (D-204).')
         ->and($topic->semester)->toBe(1)
@@ -252,4 +253,29 @@ it('keeps fokus–TP links a data task added when KM-SD-2026-R2 is imported agai
     app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));
 
     expect($focus->learningObjectives()->pluck('code')->all())->toBe(['TP-MAT-K4-02-02']);
+});
+
+it('imports the KM-SD-2026-R2 files and reports what the source check found', function (): void {
+    importCatalogue();
+    app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/struktur_alokasi_sd.json'));
+    $report = app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/data_kurikulum_dengan_cp.json'));
+    $version = CurriculumVersion::query()->where('code', 'KM-SD-2026-R2')->sole();
+    $topic = Topic::query()->where('code', 'KM-SD-2026-R2-PP-K1-01')->sole();
+
+    expect($report->mismatches())->toBe([
+        'Topic KM-SD-2026-R2-KTB-K6-04: runs to week 17, beyond the 14 effective weeks of grade 6 semester 2.',
+    ])
+        ->and(array_keys($version->meta['files']))->toEqualCanonicalizing(['docs/data/curriculum/data_kurikulum_dengan_cp.json', 'docs/data/curriculum/struktur_alokasi_sd.json'])
+        ->and($topic->weekly_distribution)->toBe([4, 4, 4, 4, 4, 4, 4, 4, 1])
+        ->and($topic->legacy_codes)->toBe(['CUR-256333696'])
+        ->and($topic->extras['atp']['urutan_tahunan'] ?? null)->toBe(1)
+        ->and($topic->extras['subject_status'] ?? null)->toBe('Wajib')
+        ->and(Topic::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'SB')->count())->toBe(61)
+        ->and(Topic::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'PAI')->count())->toBe(60)
+        ->and(SubjectAllocation::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'KKA')->exists())->toBeFalse();
+
+    // A second run of both files leaves the shared version alone.
+    $again = app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/struktur_alokasi_sd.json'))->changedRows()
+        + app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/data_kurikulum_dengan_cp.json'))->changedRows();
+    expect($again)->toBe(0);
 });

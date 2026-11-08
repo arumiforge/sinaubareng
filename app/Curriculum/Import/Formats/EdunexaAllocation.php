@@ -22,9 +22,7 @@ use App\Models\SubjectAllocation;
 
 /**
  * EDUNEXA struktur_alokasi_sd.json (KM-SD-2026-R2): `alokasi[]` rows with semester
- * figures, field names from the EDUNEXA mapping doc. Not in the repository yet; the
- * shape follows docs/sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md
- * and must be checked when the owner supplies the file.
+ * figures (docs/drafts/km-sd-2026-r2-source-check.md).
  *
  * `kokurikuler_default[]` (Bahasa Inggris grades 1–2) is not imported: it is optional
  * content a school switches on in school_subjects (D-204). Koding dan KA is not an
@@ -48,13 +46,17 @@ final readonly class EdunexaAllocation implements CurriculumFormat
     public function import(ImportedFile $file, ImportReport $report): void
     {
         $data = $file->data();
-        $code = $data->nullableString('versi_kurikulum') ?? $data->nullableString('Versi_Kurikulum') ?? self::DEFAULT_VERSION;
+        $code = $data->nullableString('versi') ?? $data->nullableString('versi_kurikulum') ?? self::DEFAULT_VERSION;
 
         $version = $this->versions->upsert($code, "{$code}: struktur alokasi SD (EDUNEXA)", $file, array_filter([
             'dataset' => 'struktur_alokasi_sd',
+            'jp_minutes' => $data->raw('jp_menit'),
+            'default_weeks' => $data->raw('default_minggu'),
             'generator_rpm' => $data->raw('generator_rpm'),
             'sinkronisasi' => $data->raw('sinkronisasi'),
             'catatan' => $data->raw('catatan'),
+            'referensi_bahasa_jawa' => $data->raw('referensi_bahasa_jawa'),
+            'referensi_pai' => $data->raw('referensi_pai'),
         ], fn (mixed $value): bool => $value !== null), $report, $data->nullableString('status_versi'));
 
         $written = [];
@@ -76,7 +78,8 @@ final readonly class EdunexaAllocation implements CurriculumFormat
         }
 
         foreach ($data->has('kokurikuler_default') ? $data->objects('kokurikuler_default') : [] as $row) {
-            $report->note("kokurikuler_default {$row->string('mata_pelajaran')} grade ".json_encode($row->raw('kelas')).' is not imported: optional content that a school switches on (D-204).');
+            $name = $row->nullableString('nama_program') ?? $row->string('mata_pelajaran');
+            $report->note("kokurikuler_default {$name} grade ".json_encode($row->raw('kelas')).' is not imported: optional content that a school switches on (D-204).');
         }
 
         $this->allocations->reportStale($version, $written, $report);

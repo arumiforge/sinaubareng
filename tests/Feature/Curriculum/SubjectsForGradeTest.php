@@ -52,40 +52,40 @@ function switchSubject(School $school, string $code, ?int $grade, bool $enabled,
 it('gives an SD class the national subjects and the region\'s local content', function (): void {
     $kudus = School::factory()->create(['level' => SchoolLevel::Sd, 'region_id' => $this->kudus->id]);
     $elsewhere = School::factory()->create(['level' => SchoolLevel::Sd]);
-    $national = ['PAI', 'PAKR', 'PAKT', 'PAH', 'PAB', 'PAKH', 'PP', 'BIND', 'MTK', 'PJOK', 'SB'];
+    $national = ['PAI', 'PAKR', 'PAKT', 'PAH', 'PAB', 'PAKH', 'PP', 'BIN', 'MTK', 'PJOK', 'SB'];
 
-    expect(array_keys(subjectsFor($kudus, 1)))->toBe([...$national, 'BJAW'])
+    expect(array_keys(subjectsFor($kudus, 1)))->toBe([...$national, 'BJW'])
         ->and(array_keys(subjectsFor($elsewhere, 1)))->toBe($national)
-        ->and(array_keys(subjectsFor($elsewhere, 5)))->toBe([...array_slice($national, 0, 9), 'IPAS', 'PJOK', 'SB', 'BING'])
+        ->and(array_keys(subjectsFor($elsewhere, 5)))->toBe([...array_slice($national, 0, 9), 'IPAS', 'PJOK', 'SB', 'BIG'])
         ->and(subjectsFor($kudus, 1))->each->toBeTrue();
 });
 
 it('gives an MI class the Kemenag subjects instead of PAI', function (): void {
     $school = School::factory()->create(['level' => SchoolLevel::Mi]);
 
-    expect(array_keys(subjectsFor($school, 3)))->toBe(['QH', 'AA', 'FIK', 'SKI', 'BAR', 'PP', 'BIND', 'MTK', 'IPAS', 'PJOK', 'SB', 'BING'])
-        ->and(array_keys(subjectsFor($school, 1)))->not->toContain('SKI', 'IPAS', 'BING', 'KKA')
+    expect(array_keys(subjectsFor($school, 3)))->toBe(['QH', 'AA', 'FIK', 'SKI', 'BAR', 'PP', 'BIN', 'MTK', 'IPAS', 'PJOK', 'SB', 'BIG'])
+        ->and(array_keys(subjectsFor($school, 1)))->not->toContain('SKI', 'IPAS', 'BIG', 'KKA')
         ->and(array_keys(subjectsFor($school, 6)))->not->toContain('KKA');
 });
 
 it('keeps optional content off until the school switches it on, outside the rapor by default', function (): void {
     $school = School::factory()->create(['level' => SchoolLevel::Sd]);
-    switchSubject($school, 'BING', 1, true);
+    switchSubject($school, 'BIG', 1, true);
     switchSubject($school, 'IPAS', null, true, inReport: true);
-    switchSubject($school, 'TB', null, true, inReport: true);
+    switchSubject($school, 'KTB', null, true, inReport: true);
 
-    expect(subjectsFor($school, 1))->toMatchArray(['BING' => false, 'IPAS' => true, 'TB' => true])
-        ->and(subjectsFor($school, 2))->not->toHaveKey('BING')
+    expect(subjectsFor($school, 1))->toMatchArray(['BIG' => false, 'IPAS' => true, 'KTB' => true])
+        ->and(subjectsFor($school, 2))->not->toHaveKey('BIG')
         ->and(subjectsFor($school, 2))->toHaveKey('IPAS');
 });
 
 it('lets a school switch local content off, and back on for one grade', function (): void {
     $school = School::factory()->create(['level' => SchoolLevel::Sd, 'region_id' => $this->kudus->id]);
-    switchSubject($school, 'BJAW', null, false);
-    switchSubject($school, 'BJAW', 3, true, inReport: true);
+    switchSubject($school, 'BJW', null, false);
+    switchSubject($school, 'BJW', 3, true, inReport: true);
 
-    expect(subjectsFor($school, 1))->not->toHaveKey('BJAW')
-        ->and(subjectsFor($school, 3))->toHaveKey('BJAW');
+    expect(subjectsFor($school, 1))->not->toHaveKey('BJW')
+        ->and(subjectsFor($school, 3))->toHaveKey('BJW');
 });
 
 it('does not let a school switch off a compulsory subject or take another level\'s subject', function (): void {
@@ -101,11 +101,11 @@ it('does not let a school switch off a compulsory subject or take another level\
 it('never uses another school\'s choices', function (): void {
     $schoolA = School::factory()->create(['level' => SchoolLevel::Sd, 'region_id' => $this->kudus->id]);
     $schoolB = School::factory()->create(['level' => SchoolLevel::Sd, 'region_id' => $this->kudus->id]);
-    switchSubject($schoolB, 'BING', 1, true);
-    switchSubject($schoolB, 'BJAW', null, false);
+    switchSubject($schoolB, 'BIG', 1, true);
+    switchSubject($schoolB, 'BJW', null, false);
 
-    expect(subjectsFor($schoolA, 1))->toHaveKey('BJAW')
-        ->and(subjectsFor($schoolA, 1))->not->toHaveKey('BING');
+    expect(subjectsFor($schoolA, 1))->toHaveKey('BJW')
+        ->and(subjectsFor($schoolA, 1))->not->toHaveKey('BIG');
 });
 
 it('refuses to resolve subjects for a school other than the current one', function (): void {

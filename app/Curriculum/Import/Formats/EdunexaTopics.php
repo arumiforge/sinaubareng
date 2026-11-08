@@ -22,14 +22,19 @@ use App\Models\SubjectAllocation;
 
 /**
  * EDUNEXA data_kurikulum_dengan_cp.json (KM-SD-2026-R2): one row per topic, with
- * Data_Tujuan, Data_ATP, Data_Fokus, Referensi, and Audit_Data stored as JSON strings.
- * Field names follow the EDUNEXA mapping doc; the file is not in the repository yet,
- * so check this reader when the owner supplies it. `Fokus_Materi` duplicates
- * Data_Fokus and is dropped. Import struktur_alokasi_sd.json first so the semester
- * totals can be checked.
+ * Data_Tujuan, Data_ATP, Data_Fokus, Referensi, and Audit_Data as JSON objects (or JSON
+ * strings in older exports). Findings on the shape: docs/drafts/km-sd-2026-r2-source-check.md.
+ * `Fokus_Materi` duplicates Data_Fokus and is dropped. Data_ATP keys without a column,
+ * Status_Mapel, Jenis_Pembelajaran, and the art branch go to `extras`. Import
+ * struktur_alokasi_sd.json first so the semester totals can be checked.
  */
 final readonly class EdunexaTopics implements CurriculumFormat
 {
+    /** Data_ATP keys stored in topic columns. */
+    private const ATP_COLUMNS = ['kode_atp', 'urutan_semester', 'alokasi_jp', 'jp_per_minggu', 'minggu_mulai', 'minggu_selesai', 'distribusi_mingguan'];
+
+    private const REFERENCE_KEYS = ['sumber_cp' => 'cp_source', 'sumber_buku' => 'book', 'halaman_buku' => 'book_pages', 'tanggal_penyesuaian' => 'adjusted_on'];
+
     public function __construct(private VersionRegistry $versions, private TopicWriter $topics, private SubjectLookup $subjects) {}
 
     public function supports(array $json): bool
@@ -66,7 +71,37 @@ final readonly class EdunexaTopics implements CurriculumFormat
             $this->flag($row, $topic, $flagged, $report);
         }
 
+        $this->reportAmbiguousAliases($topics, $report);
         $this->topics->write($version, $topics, $this->targets($version), $report);
+    }
+
+    /**
+     * Legacy codes are a fallback lookup only: look up topics.code first. Aliases that
+     * name several topics, or another topic's current code, cannot be resolved.
+     *
+     * @param  list<TopicInput>  $topics
+     */
+    private function reportAmbiguousAliases(array $topics, ImportReport $report): void
+    {
+        $owners = [];
+        $codes = array_flip(array_map(fn (TopicInput $topic): string => $topic->code, $topics));
+
+        foreach ($topics as $topic) {
+            foreach ($topic->legacyCodes as $legacy) {
+                $owners[$legacy][] = $topic->code;
+            }
+        }
+
+        $shared = array_filter($owners, fn (array $rows): bool => count($rows) > 1);
+        $current = array_intersect_key($owners, $codes);
+
+        if ($shared !== []) {
+            $report->note(count($shared).' legacy code(s) belong to several topics and cannot be resolved, e.g. '.array_key_first($shared).' ('.implode(', ', reset($shared)).').');
+        }
+
+        if ($current !== []) {
+            $report->note(count($current).' legacy code(s) are the current code of another topic; a lookup uses topics.code first, e.g. '.array_key_first($current).' (alias of '.implode(', ', reset($current)).').');
+        }
     }
 
     /**
@@ -98,14 +133,17 @@ final readonly class EdunexaTopics implements CurriculumFormat
         $extras = array_filter([
             'art_branch' => $row->raw('Cabang_Seni'),
             'science_process_skills' => $row->raw('Keterampilan_Proses'),
+            'subject_status' => $row->raw('Status_Mapel'),
+            'learning_type' => $row->raw('Jenis_Pembelajaran'),
+            'atp' => array_diff_key($atp->toArray(), array_flip(self::ATP_COLUMNS)),
         ], fn (mixed $value): bool => $value !== null && $value !== '' && $value !== []);
 
         return new TopicInput(
             code: $code,
-            legacyCodes: array_values(array_unique(array_filter([
+            legacyCodes: array_values(array_diff(array_unique(array_filter([
                 $row->nullableString('Legacy_ID'),
                 ...($row->has('Legacy_ID_Aliases') ? $row->strings('Legacy_ID_Aliases') : []),
-            ]))),
+            ])), [$code])),
             subject: $subject,
             grade: Grades::grade($row->raw('Kelas'), $code),
             phase: Grades::phase($row->string('Fase'), $code),
@@ -119,13 +157,8 @@ final readonly class EdunexaTopics implements CurriculumFormat
             jpPerWeek: $atp->int('jp_per_minggu'),
             weekStart: $atp->int('minggu_mulai'),
             weekEnd: $atp->int('minggu_selesai'),
-            weeklyDistribution: $atp->has('distribusi_mingguan') ? $atp->ints('distribusi_mingguan') : [],
-            references: $references === null ? [] : array_filter([
-                'cp_source' => $references->raw('sumber_cp'),
-                'book' => $references->raw('sumber_buku'),
-                'book_pages' => $references->raw('halaman_buku'),
-                'adjusted_on' => $references->raw('tanggal_penyesuaian'),
-            ], fn (mixed $value): bool => $value !== null),
+            weeklyDistribution: $this->weeklyDistribution($atp, $code),
+            references: $references === null ? [] : $this->references($references),
             audit: $row->nullableObject('Audit_Data')?->toArray(),
             extras: $extras === [] ? null : $extras,
             objectives: array_map(fn (string $text, int $index): array => [
@@ -142,6 +175,59 @@ final readonly class EdunexaTopics implements CurriculumFormat
                 'objective_codes' => $focus->has('kode_tp') ? $focus->strings('kode_tp') : null,
             ], $row->objects('Data_Fokus')),
         );
+    }
+
+    /**
+     * A list of JP per week, or of {minggu, jp} objects in week order.
+     *
+     * @return list<int>
+     */
+    private function weeklyDistribution(Data $atp, string $code): array
+    {
+        if (! $atp->has('distribusi_mingguan')) {
+            return [];
+        }
+
+        $weeks = $atp->list('distribusi_mingguan');
+
+        if ($weeks === [] || ! is_array($weeks[0])) {
+            return $atp->ints('distribusi_mingguan');
+        }
+
+        $jp = [];
+        $start = $atp->int('minggu_mulai');
+
+        foreach ($atp->objects('distribusi_mingguan') as $index => $week) {
+            if ($week->int('minggu') !== $start + $index) {
+                throw new InvalidCurriculumFile("{$code}: distribusi_mingguan must list the weeks in order from minggu_mulai {$start}.");
+            }
+
+            $jp[] = $week->int('jp');
+        }
+
+        return $jp;
+    }
+
+    /**
+     * The whole Referensi object, with the four keys the RPM uses under the English
+     * names the other topic files use.
+     *
+     * @return array<string, mixed>
+     */
+    private function references(Data $references): array
+    {
+        $values = $references->toArray();
+        $renamed = [];
+
+        foreach (self::REFERENCE_KEYS as $source => $target) {
+            if (array_key_exists($source, $values)) {
+                $renamed[$target] = $values[$source];
+                unset($values[$source]);
+            }
+        }
+
+        /** @var array<string, mixed> */
+        return [...$renamed, ...$values];
     }
 
     private function semester(Data $row, string $code): int
@@ -161,13 +247,13 @@ final readonly class EdunexaTopics implements CurriculumFormat
     }
 
     /**
-     * KM-SD-2026-R2 codes look like <version>-<subject>-K<grade>-<nn>. The catalogue
-     * codes other than PP were set before the file was seen (D-227), so a difference
-     * is reported for the catalogue to be corrected.
+     * KM-SD-2026-R2 codes look like <version>-<subject>-K<grade>-<nn>. The subject part
+     * must be the catalogue code or an alias of the same subject (Seni dan Budaya uses
+     * five), so a new code is reported for the catalogue to be corrected.
      */
     private function checkSubjectCode(string $code, string $version, Subject $subject, ImportReport $report): void
     {
-        if (preg_match('/^'.preg_quote($version, '/').'-(.+)-K\d+-\d+$/', $code, $match) === 1 && $match[1] !== $subject->code) {
+        if (preg_match('/^'.preg_quote($version, '/').'-(.+)-K\d+-\d+$/', $code, $match) === 1 && $this->subjects->find($match[1])?->is($subject) !== true) {
             $report->mismatch("Topic {$code} uses subject code {$match[1]}; the catalogue code for {$subject->name} is {$subject->code}.");
         }
     }
@@ -187,7 +273,7 @@ final readonly class EdunexaTopics implements CurriculumFormat
 
         if ($topic->subject->kind === SubjectKind::Cocurricular) {
             $report->note("{$topic->subject->name} grade {$topic->grade}: topics are kept as kokurikuler content (D-208).");
-        } elseif ($topic->grade <= 2 && in_array($topic->subject->code, ['BING', 'IPAS'], true)) {
+        } elseif ($topic->grade <= 2 && in_array($topic->subject->code, ['BIG', 'IPAS'], true)) {
             $report->note("{$topic->subject->name} grade {$topic->grade}: optional content, off until a school switches it on (D-204).");
         } elseif (mb_strtolower((string) $row->nullableString('Jenis_Pembelajaran')) === 'kokurikuler') {
             $report->note("{$topic->subject->name} grade {$topic->grade}: the file marks these topics as kokurikuler.");

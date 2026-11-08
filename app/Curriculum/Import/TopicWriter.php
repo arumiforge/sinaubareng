@@ -15,6 +15,9 @@ use App\Models\Topic;
  */
 final readonly class TopicWriter
 {
+    /** Grade 6 ends early for the final exams (KM-SD-2026-R2, Permendikdasmen 13/2025: 32 weeks). */
+    private const GRADE_6_SECOND_SEMESTER_WEEKS = 14;
+
     public function __construct(private RowWriter $rows) {}
 
     /**
@@ -91,6 +94,12 @@ final readonly class TopicWriter
 
         if ($input->weekStart < 1 || $input->weekEnd < $input->weekStart) {
             throw new InvalidCurriculumFile("{$where}: weeks {$input->weekStart}–{$input->weekEnd} are not a valid range.");
+        }
+
+        $semesterWeeks = $input->semester === 2 && $input->grade === 6 ? self::GRADE_6_SECOND_SEMESTER_WEEKS : AllocationWriter::FIRST_SEMESTER_WEEKS;
+
+        if ($input->weekEnd > $semesterWeeks) {
+            $report->mismatch("{$where}: runs to week {$input->weekEnd}, beyond the {$semesterWeeks} effective weeks of grade {$input->grade} semester {$input->semester}.");
         }
 
         if ($input->objectives === [] || $input->focusItems === []) {
