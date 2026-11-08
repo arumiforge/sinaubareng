@@ -4,12 +4,14 @@
     import { Link, page } from '@inertiajs/svelte';
     import { route } from 'ziggy-js';
     import CalendarDays from '@lucide/svelte/icons/calendar-days';
+    import CalendarRange from '@lucide/svelte/icons/calendar-range';
     import CircleUser from '@lucide/svelte/icons/circle-user';
     import ClipboardCheck from '@lucide/svelte/icons/clipboard-check';
     import GraduationCap from '@lucide/svelte/icons/graduation-cap';
     import LogOut from '@lucide/svelte/icons/log-out';
     import Menu from '@lucide/svelte/icons/menu';
     import Presentation from '@lucide/svelte/icons/presentation';
+    import School from '@lucide/svelte/icons/school';
     import SquarePen from '@lucide/svelte/icons/square-pen';
     import Users from '@lucide/svelte/icons/users';
     import X from '@lucide/svelte/icons/x';
@@ -31,6 +33,13 @@
         { label: t('nav.items.assessments'), icon: ClipboardCheck },
         { label: t('nav.items.my_classes'), icon: Users },
     ];
+
+    // Operator portal (product concept: Tahun Ajaran, Kelas, Guru, …).
+    const operatorItems = [
+        { label: t('nav.items.academic_years'), icon: CalendarRange, route: 'academic_years.index' },
+        { label: t('nav.items.classes'), icon: School, route: 'classes.index' },
+        { label: t('nav.items.teachers'), icon: GraduationCap, route: 'teachers.index' },
+    ] as const;
 </script>
 
 <svelte:head>
@@ -74,15 +83,17 @@
                     </li>
                 {/each}
                 {#if role === 'operator'}
-                    <li>
-                        <Link
-                            href={route('teachers.index')}
-                            class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
-                        >
-                            <GraduationCap size={20} strokeWidth={1.5} />
-                            {t('nav.items.teachers')}
-                        </Link>
-                    </li>
+                    {#each operatorItems as item (item.route)}
+                        <li>
+                            <Link
+                                href={route(item.route)}
+                                class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+                            >
+                                <item.icon size={20} strokeWidth={1.5} />
+                                {item.label}
+                            </Link>
+                        </li>
+                    {/each}
                 {/if}
             </ul>
         </nav>
