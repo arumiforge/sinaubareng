@@ -32,6 +32,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | todo |
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | done |
 | P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the EDUNEXA portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | done |
+| P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | in-progress |
 
 Not in this slice: students and enrollments, school calendar (Kaldik), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 

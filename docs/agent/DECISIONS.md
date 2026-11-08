@@ -1107,3 +1107,28 @@ Reason: the data model's "the rest wait for the operator" without a nullable tea
 Accepted · 2026-11-09 · P5-03d · applies DB-11 and D-149
 `academic_years` and `classes` get a `public_id` (UUIDv7) for URLs: `/tahun-ajaran/{academicYear}/ubah`, `/kelas/{class}`, `/kelas/{class}/guru-mapel`. The model for `classes` is `SchoolClass` (`Class` is reserved in PHP). A year's name follows its start date (`2026/2027`) and is not typed; a year lasts at most 12 months and does not overlap another year of the school; the form suggests the year after the latest one (1 July to 30 June, semester 2 from 1 January). The "current" year is the one that includes today, else the next one, else the latest. A year with classes cannot be deleted; deleting a class removes its assignments. Class names are free text up to 20 characters, unique per year. Only the operator uses these pages for now; principals and teachers get their views with P5-09 and Kelas Saya.
 Reason: DB-11 needs public ids for rows in URLs; deriving the name keeps it in step with the dates.
+
+### D-242 — Copy classes into a new academic year
+Accepted · 2026-11-09 · P5-03h · owner's choice
+When a new academic year is created, the operator can copy the classes of the previous year. Each class name is copied with the grade moved up one (4A becomes 5A). Homeroom teachers and subject teachers are left empty so they are filled in again. Students move later through Kenaikan in the student slice.
+Reason: schools keep the same class set from year to year; teachers change, so assignments are chosen again.
+
+### D-243 — Copy classes: grade 6 is not copied
+Accepted · 2026-11-09 · P5-03h · owner's choice, applies D-242
+Grade 6 classes are not copied (they graduate). Grade 6 in the new year comes from last year's grade 5.
+Reason: there is no grade 7 in SD/MI.
+
+### D-244 — Copy classes: optional new grade 1 classes
+Accepted · 2026-11-09 · P5-03h · owner's choice, applies D-242
+The copy dialog has a checkbox, on by default, to recreate last year's grade 1 classes with the same names (1A, 1B) for the new intake.
+Reason: after the move-up there is no grade 1 left, and most schools open the same grade 1 classes each year.
+
+### D-245 — Copy classes: names without a leading grade number
+Accepted · 2026-11-09 · P5-03h · owner's choice, applies D-242
+Only a name that starts with the class's grade number gets the new number (`4A`, `4 B`, `4-Umar` → `5A`, `5 B`, `5-Umar`). Other names (`Kelas Merah`) keep their name and move up a grade; the operator can rename them. If two copied names would clash in the new year, the later one gets the new grade added (`Kelas Merah 5`), cut to the 20-character limit (D-241).
+Reason: free names carry no grade to change; a clash must not stop the whole copy.
+
+### D-246 — Copy classes only into an empty year
+Accepted · 2026-11-09 · P5-03h · owner's choice, applies D-242
+Copying works only when the target year has no classes; otherwise it is refused and the copy button is hidden. The source is the school's latest year that starts before the target year.
+Reason: a second copy would duplicate or mix classes; refusing keeps it safe to retry.

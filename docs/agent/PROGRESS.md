@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-241 (D-185…D-202 unused; D-235…D-239 reserved). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-246 (D-185…D-202 unused; D-235…D-239 reserved). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -91,7 +91,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 |---|---|---|---|---|---|
 | P5-01 | Project scaffold and CI | done | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
-| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5 | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
+| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable (now: P5-03h on `p5/p5-03h-copy-classes`) | in-progress | p5/p5-03h-copy-classes | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 | App code |
 | P5-05 | Slice 3 — More templates: Bank Soal, LKPD, Quiz Battle | todo | — | P5-04 | App code |
 | P5-06 | Slice 4 — TKA: package template, exam site, sessions, cards, token, results (target: 2028 season) | todo | — | P5-05 | App code |
