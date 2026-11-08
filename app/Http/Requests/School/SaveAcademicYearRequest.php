@@ -34,6 +34,9 @@ final class SaveAcademicYearRequest extends FormRequest
             'starts_on' => ['required', 'date_format:Y-m-d'],
             'even_semester_starts_on' => ['required', 'date_format:Y-m-d', 'after:starts_on'],
             'ends_on' => ['required', 'date_format:Y-m-d', 'after:even_semester_starts_on'],
+            // Only on create: copy the previous year's classes (D-242, D-244).
+            'copy_classes' => ['sometimes', 'boolean'],
+            'with_grade_one' => ['sometimes', 'boolean'],
         ];
     }
 

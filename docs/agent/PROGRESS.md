@@ -91,7 +91,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 |---|---|---|---|---|---|
 | P5-01 | Project scaffold and CI | done | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
-| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable (now: P5-03h on `p5/p5-03h-copy-classes`) | in-progress | p5/p5-03h-copy-classes | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
+| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | in-progress | pw/lucid-fermi-pxp4d5 | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 | App code |
 | P5-05 | Slice 3 — More templates: Bank Soal, LKPD, Quiz Battle | todo | — | P5-04 | App code |
 | P5-06 | Slice 4 — TKA: package template, exam site, sessions, cards, token, results (target: 2028 season) | todo | — | P5-05 | App code |
@@ -118,6 +118,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
+- 2026-11-09 — P5-03h done (branch `p5/p5-03h-copy-classes`): Tahun Ajaran can copy the previous year's classes into a new or empty year, one grade up, without teachers or students (D-242). Owner chose: grade 6 not copied (D-243), optional new grade 1 classes (D-244), free names kept (D-245), only into an empty year (D-246). Next: P5-03e (timetable).
 - 2026-11-09 — P5-03d done (branch `p5/p5-03d-school-year`): operator pages Tahun Ajaran (`/tahun-ajaran`) and Kelas (`/kelas`), tables `academic_years`, `classes`, `teaching_assignments`. A class's homeroom teacher gets the class-teacher subjects; the operator picks guru mapel per subject (D-240). Years and classes have a `public_id` (D-241). Not built: the `school_subjects` switches and the D-232 muatan lokal warning (with that page later). Next: P5-03e (timetable).
 - 2026-11-08 — Owner approvals applied (branch `p5/owner-approvals-2026-11-08`): P5-03f and P5-03g done; P4-02 done and `ifp-classroom.md` plus `local-setup-wsl2.md` moved to `docs/final/` with Indonesian PDFs. D-233: Kode Tayang page at `/pid` on the app host. D-234: `curriculum:import` trims Tata Boga grade 6 semester 2 (`KM-SD-2026-R2-KTB-K6-04`) to 28 JP over weeks 1–14 (`app/Curriculum/Import/SourceOverrides.php`); the source file is unchanged and the import now reports no mismatch. `product-concept.md` and `content-engine.md` follow D-176. Still open for Game kelas: the Android/WebView check on a real IFP (D-179).
 - 2026-11-08 — P5-03c done (PR #60): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4), now trimmed at import (D-234). Owner: Seni Suara Daerah is school-optional (D-231); the muatan lokal cap warns for now (D-232). After deploy, run `php artisan curriculum:import`. Next: P5-03d.

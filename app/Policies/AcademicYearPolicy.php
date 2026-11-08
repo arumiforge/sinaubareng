@@ -37,6 +37,12 @@ final class AcademicYearPolicy
         return $this->update($user, $academicYear);
     }
 
+    /** Copy the previous year's classes into this year (D-242). */
+    public function copyClasses(User $user, AcademicYear $academicYear): bool
+    {
+        return $this->update($user, $academicYear);
+    }
+
     private function isOperator(): bool
     {
         return $this->context->schoolId() !== null && $this->context->role() === MembershipRole::Operator;

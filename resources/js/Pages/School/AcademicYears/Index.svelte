@@ -1,6 +1,8 @@
 <script lang="ts">
     import { Link, router } from '@inertiajs/svelte';
     import { route } from 'ziggy-js';
+    import CopyClassesPreview from '@/Components/CopyClassesPreview.svelte';
+    import PrimaryButton from '@/Components/PrimaryButton.svelte';
     import AppShell from '@/Layouts/AppShell.svelte';
     import { t } from '@/lib/i18n';
 
@@ -11,9 +13,32 @@
         even_semester: string;
         is_current: boolean;
         classes_count: number;
+        copy_from: { name: string; classes: { grade: number; name: string; new_intake: boolean }[] } | null;
     }
 
     let { years }: { years: Year[] } = $props();
+
+    // Salin kelas on an empty year (D-242…D-246): one open panel at a time.
+    let copying = $state<string | null>(null);
+    let withGradeOne = $state(true);
+    let processing = $state(false);
+
+    function toggleCopy(year: Year): void {
+        copying = copying === year.id ? null : year.id;
+        withGradeOne = true;
+    }
+
+    function copy(year: Year): void {
+        router.post(
+            route('academic_years.copy_classes', { academicYear: year.id }),
+            { with_grade_one: withGradeOne },
+            { onStart: () => (processing = true), onFinish: () => (processing = false) },
+        );
+    }
+
+    function plannedCount(year: Year): number {
+        return (year.copy_from?.classes ?? []).filter((row) => withGradeOne || !row.new_intake).length;
+    }
 
     function remove(year: Year): void {
         // The confirmation names the item and the consequence (design system, writing rule 5).
@@ -71,6 +96,17 @@
                                 >
                                     {t('classes.years.actions.edit')}
                                 </Link>
+                                {#if year.copy_from !== null}
+                                    <button
+                                        type="button"
+                                        class="min-h-11 rounded-input border border-line px-4 text-body font-semibold"
+                                        aria-expanded={copying === year.id}
+                                        aria-controls={'copy-' + year.id}
+                                        onclick={() => toggleCopy(year)}
+                                    >
+                                        {t('classes.copy.actions.open')}
+                                    </button>
+                                {/if}
                                 {#if year.classes_count === 0}
                                     <button
                                         type="button"
@@ -82,6 +118,25 @@
                                 {/if}
                             </div>
                         </div>
+                        {#if year.copy_from !== null && copying === year.id}
+                            <section id={'copy-' + year.id} class="mt-4 space-y-3 border-t border-line pt-4">
+                                <h3 class="text-body font-semibold">{t('classes.copy.title', { name: year.copy_from.name })}</h3>
+                                <p class="text-body text-muted">{t('classes.copy.hint')}</p>
+                                <CopyClassesPreview id={'grade-one-' + year.id} classes={year.copy_from.classes} bind:withGradeOne />
+                                <div class="flex flex-col gap-3 sm:flex-row">
+                                    <PrimaryButton type="button" disabled={processing} onclick={() => copy(year)}>
+                                        {t('classes.copy.actions.confirm', { count: plannedCount(year) })}
+                                    </PrimaryButton>
+                                    <button
+                                        type="button"
+                                        class="inline-flex min-h-11 items-center justify-center rounded-input border border-line px-5 text-body font-semibold"
+                                        onclick={() => (copying = null)}
+                                    >
+                                        {t('common.actions.cancel')}
+                                    </button>
+                                </div>
+                            </section>
+                        {/if}
                     </li>
                 {/each}
             </ul>

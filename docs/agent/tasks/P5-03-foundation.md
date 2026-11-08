@@ -32,7 +32,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | todo |
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | done |
 | P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the EDUNEXA portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | done |
-| P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | in-progress |
+| P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | done |
 
 Not in this slice: students and enrollments, school calendar (Kaldik), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 
@@ -90,3 +90,10 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 - `docs/final/data-model.md` does not list `public_id` on `academic_years` and `classes` yet (D-241); add it with the next data-model update (e.g. P4-05).
 - Tests: `tests/Feature/SchoolYear/` (45 tests: routes, validation, defaults, homeroom and grade changes, optional content, role 403s, IDOR 404s, DB constraints).
 - Not built here: the operator switches for optional subjects and muatan lokal (`school_subjects`), so the D-232 cap warning is not built either; both belong with the page that switches subjects on (a later slice, e.g. P5-09 operator portal). Also later: copying classes into a new year and promotion (Kenaikan, with students and enrollments), principal and teacher views of classes.
+
+**P5-03h** (done):
+- `App\Actions\SchoolYear\CopyClasses`: the source is the school's latest year that starts before the target; each class below grade 6 moves up one grade (D-243), a name that starts with its grade number follows it (`4A` → `5A`, `4-Umar` → `5-Umar`), other names stay, and a clash gets the grade added within 20 characters (D-245). Optionally last year's grade 1 classes are made again with the same names (D-244). The target must have no classes, checked under a row lock on the year (D-246); otherwise `CopyClassesRefused` with a message for the operator.
+- No homeroom teacher and no `teaching_assignments` rows: under D-240 a missing row already means "no teacher yet", and the Kelas page lists every subject from `SubjectsForGrade` for the new grade. No students move (Kenaikan, student slice).
+- Operator UI (lang file `classes`, keys `classes.copy.*`): Tahun Ajaran > Tambah has "Salin kelas dari tahun ajaran …" (on by default) with the grade 1 checkbox and a preview of the new class names; an empty year in the list has a "Salin kelas" button with the same panel. Route `POST /tahun-ajaran/{academicYear}/salin-kelas` (`academic_years.copy_classes`), policy `AcademicYearPolicy::copyClasses` (operator only).
+- Tests: `tests/Feature/SchoolYear/CopyClassesTest.php` (15: copy rules, grade 1 option, name rules and clashes, refusal on a second copy, nothing to copy, source choice, create form, list, role 403s, IDOR both ways).
+
