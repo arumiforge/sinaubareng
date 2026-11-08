@@ -1,0 +1,1653 @@
+{
+  "dataset": "deep_learning_slides",
+  "version_code": "PAPARAN-PEMBELAJARAN-MENDALAM",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Kemendikdasmen slide deck on pembelajaran mendalam: the pedagogical layer missing from Kepmendikdasmen 126/P/2025 (principle indicators, learning experiences, 8 profile dimension descriptions, framework definitions, teacher roles, lesson-plan/RPM template, assessment functions, worked example). SIGRAK may use the RPM template and dimension descriptions as the basis for its lesson-plan form and AI prompts; items are cross-referenced to docs/data/regulations/deep-learning-kepmendikdasmen-126-p-2025.json with the same keys.",
+  "source": {
+    "title": "Pembelajaran Mendalam Menuju Pendidikan Bermutu untuk Semua",
+    "number": null,
+    "issued_by": "Kementerian Pendidikan Dasar dan Menengah Republik Indonesia (logo/name on cover and last slide); content credited to Tim Pengembangan Pembelajaran Mendalam (TPPM)",
+    "issued_on": null,
+    "year": null,
+    "file": "docs/sources/Paparan_Pembelajaran_Mendalam_Kemendikdasmen.pdf",
+    "received_as": "docs/dokumen-resmi/paparan-pembelajaran-mendalam.pdf (moved to docs/sources/ unchanged, D-203)",
+    "sha256": "5c76281c3ef13a43ba36b19f7df23ba55967aa31e5c25b510c7f245b653ec604",
+    "pages_total": 62,
+    "pages_note": "All page refs are PDF page numbers (one slide per page). Each content slide prints 'Hal. N' in the footer; N equals the PDF page except PDF 29 (prints Hal. 31), PDF 30 (Hal. 29) and PDF 31 (Hal. 30). Section dividers (PDF 3, 7, 12, 35, 59) carry no number."
+  },
+  "extraction": {
+    "method": "pdftotext -layout text layer (born-digital slides; multi-column layouts read out of order were reassembled from the page images); image-only and diagram slides read from page renders at 60-90 dpi.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [
+      3,
+      7,
+      9,
+      12,
+      13,
+      17,
+      23,
+      24,
+      26,
+      29,
+      31,
+      32,
+      34,
+      35,
+      36,
+      38,
+      39,
+      46,
+      51,
+      52,
+      53,
+      59
+    ],
+    "skipped": [
+      "PDF 1-2: cover and outline (Garis Besar: Pendahuluan, Pengertian, Kerangka, Implementasi, Penutup).",
+      "PDF 3, 7, 12, 35, 59: section divider slides (image only, title text only).",
+      "PDF 4: Latar Belakang bullets duplicate the decree background (docs/data/regulations/deep-learning-kepmendikdasmen-126-p-2025.json background, PDF 4-5).",
+      "PDF 5: PISA 2022 level chart (context only; not curriculum data).",
+      "PDF 52: PAUD example (out of scope).",
+      "PDF 54: SMP/MTs example; PDF 55: SMA/MA example; PDF 56: SMK/MAK example (out of scope).",
+      "PDF 60: closing summary slide; restates principles already captured (kept as closing_messages one line each).",
+      "PDF 61: list of 16 TPPM members (personal names; only the team name is recorded in source.issued_by).",
+      "PDF 62: thank-you slide with contact kurikulum@kemdikbud.go.id."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "Shared concepts use the same keys as docs/data/regulations/deep-learning-kepmendikdasmen-126-p-2025.json: principles, holistic_development, learning_experiences, learning_framework, graduate_profile_dimensions. 'decree_ref' says how the item relates to the decree: 'adds' (not in decree), 'same' (duplicate), 'differs' (wording or content differs).",
+      "'optional': true marks lesson-plan fields printed with '(opsional)'; 'highlighted': true marks fields printed with a yellow highlight in the template (PDF 38-39), read from the image.",
+      "'summary' fields are English developer notes, not source text."
+    ]
+  },
+  "why_deep_learning": {
+    "text": "Melengkapi pendekatan pembelajaran dengan menambah karakteristik praktik pedagogi",
+    "decree_ref": "adds",
+    "items": [
+      {
+        "key": "engagement",
+        "name": "Keterlibatan",
+        "text": "Guru membangun keterlibatan peserta didik sebagai subjek belajar untuk memperoleh pengalaman belajar yang bermakna"
+      },
+      {
+        "key": "mindful",
+        "name": "Berkesadaran",
+        "text": "Guru lebih dapat membangun kesadaran peserta didik untuk menjadi pembelajar yang aktif dan termotivasi secara intrinsik untuk belajar, serta aktif mengembangkan strategi belajar untuk mencapai tujuan."
+      },
+      {
+        "key": "honouring",
+        "name": "Memuliakan",
+        "text": "Guru dan peserta didik lebih saling menghargai dan menghormati potensi, martabat, dan nilai-nilai kemanusiaan"
+      },
+      {
+        "key": "learning_culture",
+        "name": "Pengembang Budaya Belajar",
+        "text": "Guru lebih dapat mengembangkan kreativitas dan berinovasi, dan melibatkan peserta didik dalam mengembangkan pengalaman belajar"
+      },
+      {
+        "key": "digital_technology",
+        "name": "Pemanfaatan Teknologi Digital",
+        "text": "Guru dan peserta didik lebih dapat memanfaatkan teknologi digital untuk memberikan efisiensi dan efektivitas pada perencanaan, pelaksanaan, dan penilaian pembelajaran"
+      },
+      {
+        "key": "interdisciplinary",
+        "name": "Multi/Interdisiplin Ilmu Pengetahuan",
+        "text": "Guru dan peserta didik lebih dapat menerapkan multi/interdisiplin ilmu pengetahuan dalam proses pembelajaran"
+      }
+    ],
+    "pages": [
+      6
+    ]
+  },
+  "definition": {
+    "text": "Pembelajaran Mendalam merupakan pendekatan yang memuliakan dengan menekankan pada penciptaan suasana belajar dan proses pembelajaran berkesadaran, bermakna, dan menggembirakan melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.",
+    "decree_ref": "differs",
+    "summary": "Formal one-sentence definition; the decree (PDF 5) describes PM as an approach to raise learning quality, not a new curriculum, refining CBSA/PAKEM/PAIKEM/CTL. Use this sentence for UI definitions, cite the decree for status.",
+    "flow": {
+      "text": "Pembelajaran Mendalam → Berkesadaran, Bermakna, Menggembirakan → Olah Pikir, Olah Hati, Olah Rasa, Olah Raga → Mewujudkan → Profil Lulusan (8 Dimensi)",
+      "summary": "Diagram on PDF 9, read from image; 'Memuliakan' sits above the whole flow.",
+      "pages": [
+        9
+      ]
+    },
+    "pages": [
+      8,
+      9
+    ]
+  },
+  "principles": {
+    "decree_ref": "adds",
+    "summary": "The decree only names these; definitions and indicators are slide-only.",
+    "application_note": "Penerapan prinsip pembelajaran mendalam dapat terjadi secara terpisah ataupun simultan dan tidak harus berurutan",
+    "items": [
+      {
+        "key": "honouring",
+        "name": "Memuliakan",
+        "role": "overarching",
+        "text": "Dalam penerapan PM semua pihak yang terlibat saling menghargai dan menghormati dengan mempertimbangkan potensi, martabat dan nilai-nilai kemanusiaan",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "key": "mindful",
+        "name": "Berkesadaran",
+        "text": "Pengalaman belajar peserta didik yang diperoleh ketika mereka memiliki kesadaran untuk menjadi pembelajar yang aktif dan mampu meregulasi diri. Peserta didik memahami tujuan pembelajaran, termotivasi secara intrinsik untuk belajar, serta aktif mengembangkan strategi belajar untuk mencapai tujuan.",
+        "indicators": [
+          "Kenyamanan peserta didik dalam belajar",
+          "Fokus, konsentrasi, dan perhatian",
+          "Kesadaran terhadap proses berpikir",
+          "Keterbukaan terhadap perspektif baru",
+          "Keingintahuan terhadap pengetahuan dan pengalaman baru"
+        ],
+        "pages": [
+          10,
+          16
+        ]
+      },
+      {
+        "key": "meaningful",
+        "name": "Bermakna",
+        "text": "Peserta didik dapat merasakan manfaat dan relevansi dari hal-hal yang dipelajari untuk kehidupan. Peserta didik mampu mengkonstruksi pengetahuan baru berdasarkan pengetahuan lama dan menerapkan pengetahuannya dalam kehidupan nyata.",
+        "indicators": [
+          "Kontekstual dan/atau relevan dengan kehidupan nyata",
+          "Keterkaitan dengan pengalaman sebelumnya",
+          "Kebermanfaatan pengalaman belajar untuk diterapkan dalam konteks baru",
+          "Keterkaitan dengan bidang ilmu lain",
+          "Pembelajar sepanjang hayat"
+        ],
+        "pages": [
+          10,
+          16
+        ]
+      },
+      {
+        "key": "joyful",
+        "name": "Menggembirakan",
+        "text": "Pembelajaran yang menggembirakan merupakan suasana belajar yang positif, menyenangkan, menantang, dan memotivasi. Peserta didik merasa dihargai atas keterlibatan dan kontribusinya pada proses pembelajaran. Peserta didik terhubung secara emosional, sehingga lebih mudah memahami, mengingat, dan menerapkan pengetahuan.",
+        "indicators": [
+          "Lingkungan pembelajaran yang interaktif",
+          "Aktivitas pembelajaran yang menarik",
+          "Menginspirasi",
+          "Tantangan yang memotivasi",
+          "Tercapainya keberhasilan belajar (AHA moment)"
+        ],
+        "pages": [
+          10,
+          16
+        ]
+      }
+    ],
+    "pages": [
+      9,
+      10,
+      16
+    ]
+  },
+  "holistic_development": {
+    "decree_ref": "adds",
+    "summary": "Decree names the four 'olah'; definitions are slide-only.",
+    "items": [
+      {
+        "key": "olah_pikir",
+        "name": "Olah pikir",
+        "text": "Merupakan proses pendidikan yang berfokus pada pengasahan akal budi dan kemampuan kognitif, seperti kemampuan untuk memahami, menganalisa, dan memecahkan masalah"
+      },
+      {
+        "key": "olah_hati",
+        "name": "Olah hati",
+        "text": "Adalah proses pendidikan untuk mengasah kepekaan batin, membentuk budi pekerti, serta menanamkan nilai-nilai moral dan spiritual"
+      },
+      {
+        "key": "olah_rasa",
+        "name": "Olah rasa",
+        "text": "Sebagai proses pendidikan yang bertujuan untuk mengembangkan kepekaan estetika, empati, dan kemampuan menghargai keindahan serta hubungan antarmanusia"
+      },
+      {
+        "key": "olah_raga",
+        "name": "Olah raga",
+        "text": "Merupakan bagian dari pendidikan yang bertujuan untuk menjaga dan meningkatkan kesehatan fisik, kekuatan tubuh, serta membentuk karakter melalui kegiatan jasmani"
+      }
+    ],
+    "implementation_note": "Pengalaman belajar melalui olah pikir, olah hati, olah rasa, dan olah raga adalah pengembangan diri yang holistik dan integratif yang mencakup aspek intelektual, sosio-emosional, spiritual, dan fisik. Sehingga pembelajaran menghasilkan pribadi yang memiliki kompetensi utuh dan seimbang sesuai fitrahnya",
+    "pages": [
+      11,
+      41
+    ]
+  },
+  "framework_overview": {
+    "summary": "Slide 13 wheel diagram (read from image): profile dimensions at the centre, principles in the inner ring, learning experiences as arrows, the four framework elements in the outer ring.",
+    "components": [
+      {
+        "key": "graduate_profile_dimensions",
+        "name": "Dimensi Profil Lulusan",
+        "text": "Dimensi profil lulusan merupakan fokus profil lulusan yang akan dicapai yaitu keimanan dan ketakwaan terhadap Tuhan YME, kewargaan, kreativitas, penalaran kritis, kolaborasi, kemandirian, kesehatan, dan komunikasi"
+      },
+      {
+        "key": "principles",
+        "name": "Prinsip Pembelajaran",
+        "text": "Prinsip Pembelajaran merupakan dasar karakteristik pembelajaran mendalam yaitu berkesadaran, bermakna, menggembirakan"
+      },
+      {
+        "key": "learning_experiences",
+        "name": "Pengalaman Belajar",
+        "text": "Pengalaman belajar sebagai proses yang dialami peserta didik dalam pembelajaran yaitu memahami, mengaplikasi, merefleksi"
+      },
+      {
+        "key": "learning_framework",
+        "name": "Kerangka Pembelajaran",
+        "text": "Kerangka pembelajaran sebagai panduan sistematis dalam menyusun desain pembelajaran, yaitu praktik pedagogis, kemitraan pembelajaran, lingkungan pembelajaran, dan pemanfaatan digital"
+      }
+    ],
+    "attribution": "Empat Kerangka Pembelajaran diadaptasi dari Four Elements of Learning Design © copyright 2018 Education in Motion (New Pedagogies for Deep Learning) https://deep-learning.global",
+    "decree_ref": "adds",
+    "pages": [
+      13
+    ]
+  },
+  "graduate_profile_dimensions": {
+    "count": 8,
+    "decree_ref": "adds",
+    "summary": "Same 8 names and order as the decree (PDF 5), plus descriptions. Slide 13 lists kreativitas before penalaran kritis; slides 14-15 and the decree use the order below.",
+    "items": [
+      {
+        "order": 1,
+        "key": "faith_piety",
+        "name": "Keimanan dan Ketakwaan terhadap Tuhan YME",
+        "description": "Individu yang memiliki keyakinan teguh akan keberadaan Tuhan YME dan menghayati serta mengamalkan nilai-nilai spiritual dalam kehidupan sehari-hari.",
+        "pages": [
+          14
+        ]
+      },
+      {
+        "order": 2,
+        "key": "citizenship",
+        "name": "Kewargaan",
+        "description": "Individu yang memiliki rasa cinta tanah air serta menghargai keberagaman budaya, mentaati aturan dan norma sosial dalam kehidupan bermasyarakat, memiliki kepedulian dan tanggung jawab sosial, serta berkomitmen untuk menyelesaikan masalah nyata yang berkaitan dengan keberlanjutan kehidupan, lingkungan, dan harmoni antarbangsa dalam konteks kebhinekaan global.",
+        "pages": [
+          14
+        ]
+      },
+      {
+        "order": 3,
+        "key": "critical_reasoning",
+        "name": "Penalaran Kritis",
+        "description": "Individu yang mampu berpikir secara logis, analitis, dan reflektif dalam memahami, mengevaluasi, serta memproses informasi untuk menyelesaikan masalah.",
+        "pages": [
+          14
+        ]
+      },
+      {
+        "order": 4,
+        "key": "creativity",
+        "name": "Kreativitas",
+        "description": "Individu yang mampu berpikir secara inovatif, fleksibel, dan orisinal dalam mengolah ide atau informasi untuk menciptakan solusi yang unik dan bermanfaat.",
+        "pages": [
+          14
+        ]
+      },
+      {
+        "order": 5,
+        "key": "collaboration",
+        "name": "Kolaborasi",
+        "description": "Individu yang mampu bekerja sama secara efektif dengan orang lain secara gotong royong untuk mencapai tujuan bersama melalui pembagian peran dan tanggung jawab.",
+        "pages": [
+          15
+        ]
+      },
+      {
+        "order": 6,
+        "key": "independence",
+        "name": "Kemandirian",
+        "description": "Individu yang mampu bertanggung jawab atas proses dan hasil belajarnya sendiri dengan menunjukkan kemampuan untuk mengambil inisiatif, mengatasi hambatan, dan menyelesaikan tugas secara tepat tanpa bergantung pada orang lain.",
+        "pages": [
+          15
+        ]
+      },
+      {
+        "order": 7,
+        "key": "health",
+        "name": "Kesehatan",
+        "description": "Individu yang memiliki fisik yang prima, bugar, sehat, dan mampu menjaga keseimbangan kesehatan mental dan fisik untuk mewujudkan kesejahteraan lahir dan batin (well-being).",
+        "pages": [
+          15
+        ]
+      },
+      {
+        "order": 8,
+        "key": "communication",
+        "name": "Komunikasi",
+        "description": "Individu yang memiliki kemampuan komunikasi intrapribadi untuk melakukan refleksi dan antarpribadi untuk menyampaikan ide, gagasan, dan informasi baik lisan maupun tulisan serta berinteraksi secara efektif dalam berbagai situasi.",
+        "pages": [
+          15
+        ]
+      }
+    ],
+    "pages": [
+      13,
+      14,
+      15
+    ]
+  },
+  "learning_experiences": {
+    "decree_ref": "adds",
+    "text": "Pengalaman belajar dilakukan secara bertahap untuk mencapai level PM",
+    "items": [
+      {
+        "order": 1,
+        "key": "understanding",
+        "name": "Memahami",
+        "text": "Tahap awal peserta didik untuk aktif mengkonstruksi pengetahuan agar dapat memahami secara mendalam konsep atau materi dari berbagai sumber dan konteks. Pengetahuan pada fase ini terdiri dari pengetahuan esensial, pengetahuan aplikatif, dan pengetahuan nilai dan karakter.",
+        "knowledge_types": [
+          {
+            "key": "essential",
+            "name": "Pengetahuan Esensial",
+            "text": "Pengetahuan dasar yang fundamental dalam suatu bidang atau disiplin ilmu, yang harus dipahami dan dikuasai untuk membangun pemahaman yang lebih kompleks dan dapat diterapkan dalam berbagai konteks",
+            "example": "Bahasa (Kosa kata, tata bahasa dasar, pengetahuan wacana, dan empat keterampilan berbahasa)"
+          },
+          {
+            "key": "applicative",
+            "name": "Pengetahuan Aplikatif",
+            "text": "Pengetahuan yang berfokus pada penerapan konsep, teori, atau keterampilan dalam situasi nyata. Pengetahuan ini digunakan untuk menyelesaikan masalah, membuat keputusan, atau menciptakan sesuatu yang berdampak.",
+            "example": "Bahasa (Memahami cara menggunakan keterampilan menulis untuk membuat laporan atau bahan presentasi yang efektif)"
+          },
+          {
+            "key": "values_character",
+            "name": "Pengetahuan Nilai dan Karakter",
+            "text": "Pengetahuan yang berkaitan dengan pemahaman tentang nilai-nilai moral, etika, budaya, dan kemanusiaan yang berperan penting dalam membentuk kepribadian, sikap, dan perilaku seseorang",
+            "example": "Bahasa (Memahami cara menggunakan bahasa untuk membangun hubungan baik, menghindari konflik, serta menunjukkan empati dan kepedulian)"
+          }
+        ],
+        "characteristics": [
+          "Menghubungkan pengetahuan baru dengan pengetahuan sebelumnya",
+          "Menstimulasi proses berpikir peserta didik",
+          "Menghubungkan dengan konteks nyata dan/atau kehidupan sehari-hari",
+          "Memberikan kebebasan eksploratif dan kolaboratif",
+          "Menanamkan nilai-nilai moral dan etika dan nilai positif lainnya",
+          "Mengaitkan pembelajaran dengan pembentukan karakter peserta didik"
+        ],
+        "examples": [
+          "Mengeksplorasi pengalaman-pengalaman peserta didik terhadap permasalahan sosial di masyarakat sebelum menyampaikan topik permasalahan sosial pada pembelajaran IPS",
+          "Memberikan data kemiskinan di Indonesia serta meminta peserta didik untuk memahami dan memberikan tanggapan"
+        ],
+        "pages": [
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      {
+        "order": 2,
+        "key": "applying",
+        "name": "Mengaplikasi",
+        "text": "Pengalaman belajar yang menunjukan aktivitas peserta didik mengaplikasi pengetahuan dalam kehidupan secara kontekstual. Pengetahuan yang diperoleh oleh peserta didik melalui pendalaman pengetahuan.",
+        "deepening_knowledge": "Memperluas atau mengembangkan pemahaman terhadap konsep dengan menghubungkannya ke situasi baru, pengalaman lain, atau bidang ilmu yang berbeda.",
+        "characteristics": [
+          "Menghubungkan konsep baru dengan pengetahuan sebelumnya.",
+          "Menerapkan pengetahuan ke dalam situasi nyata atau bidang lain.",
+          "Mengembangkan pemahaman dengan eksplorasi lebih lanjut.",
+          "Berpikir Kritis dan mencari solusi inovatif berdasarkan pengetahuan yang ada."
+        ],
+        "examples": [
+          "Topik: Persamaan Linear. Dasar: Peserta didik memahami bentuk umum persamaan linear dan cara menyelesaikannya. Pendalaman Pengetahuan: Peserta didik menerapkan persamaan linear dalam masalah keuangan, seperti menghitung keuntungan bisnis atau menentukan titik impas dalam penjualan produk."
+        ],
+        "example_level_note": "Linear equations are not SD content; use as a pattern only.",
+        "pages": [
+          17,
+          18,
+          21
+        ]
+      },
+      {
+        "order": 3,
+        "key": "reflecting",
+        "name": "Merefleksi",
+        "text": "Proses di mana peserta didik mengevaluasi dan memaknai proses serta hasil dari tindakan atau praktik nyata yang telah mereka lakukan. Tahap refleksi melibatkan regulasi diri sebagai kemampuan individu untuk mengelola proses belajarnya secara mandiri, meliputi perencanaan, pelaksanaan, pengawasan, dan evaluasi terhadap cara belajar mereka.",
+        "self_regulation": "Individu mampu mengendalikan pikiran, emosi, dan perilaku dalam mencapai tujuan tertentu. Dalam konteks pendidikan, regulasi diri sangat penting bagi peserta didik untuk mengelola proses belajar mereka secara mandiri dan efektif.",
+        "characteristics": [
+          "Memotivasi diri sendiri untuk terus belajar bagaimana cara belajar",
+          "Refleksi terhadap pencapaian tujuan pembelajaran (evaluasi diri)",
+          "Menerapkan strategi berpikir",
+          "Memiliki kemampuan metakognisi (meregulasi diri dalam pembelajaran)",
+          "Meregulasi emosi dalam pembelajaran"
+        ],
+        "examples": [
+          "Menyampaikan motivasi belajar sesuai pengalaman yang diperoleh",
+          "Penilaian diri sendiri terhadap pencapaian tujuan pembelajaran",
+          "Peserta didik dapat membuat ringkasan materi yang dipahami untuk menguji pemahaman mereka sendiri.",
+          "Peserta didik mampu mengendalikan emosi negatif seperti kecemasan, stres, dan frustasi saat belajar dengan strategi coping seperti bernapas dalam-dalam, istirahat sejenak, atau mencari dukungan sosial, dan lain-lain."
+        ],
+        "pages": [
+          17,
+          18,
+          22
+        ]
+      }
+    ],
+    "pages": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ]
+  },
+  "taxonomy_alignment": {
+    "decree_ref": "adds",
+    "summary": "Table on PDF 24 (checked on image) mapping Bloom (Anderson & Krathwohl 2001) and SOLO (Biggs & Collis 1982) to PM learning experiences. PDF 23 shows the SOLO taxonomy diagram (source: johnbiggs.com.au).",
+    "rows": [
+      {
+        "bloom": [
+          "Mencipta",
+          "Mengevaluasi"
+        ],
+        "solo": "Berpikir Abstrak yang Mendalam",
+        "pm_experience": "reflecting",
+        "description": "Memperluas dan menerapkan ide"
+      },
+      {
+        "bloom": [
+          "Menganalisis",
+          "Menerapkan"
+        ],
+        "solo": "Relasional",
+        "pm_experience": "applying",
+        "description": "Menghubungkan ide-ide"
+      },
+      {
+        "bloom": [
+          "Memahami"
+        ],
+        "solo": "Multistruktural",
+        "pm_experience": "understanding",
+        "description": "Memiliki banyak ide"
+      },
+      {
+        "bloom": [
+          "Mengingat"
+        ],
+        "solo": "Unistruktural",
+        "pm_experience": "understanding",
+        "description": "Mengingat kembali"
+      },
+      {
+        "bloom": [],
+        "solo": "Prastruktural",
+        "pm_experience": null,
+        "description": "Belum Memahami"
+      }
+    ],
+    "cognitive_example": {
+      "topic": "Fotosintesis",
+      "rows": [
+        {
+          "pm_experience": "reflecting",
+          "text": "Peserta didik mengaitkan fotosintesis dalam konteks yang lebih luas dan menyadari perannya terhadap isu nyata seperti ketersediaan pangan, perubahan iklim, dan sebagainya."
+        },
+        {
+          "pm_experience": "applying",
+          "text": "Peserta didik menerapkan proses fotosintesis dan keterkaitannya dengan isu ketersediaan tanaman pangan."
+        },
+        {
+          "pm_experience": "understanding",
+          "text": "Peserta didik menjelaskan beberapa elemen yang terlibat dalam fotosintesis, namun tidak dapat mengaitkan antar proses fotosintesis."
+        },
+        {
+          "pm_experience": "understanding",
+          "text": "Peserta didik dapat memberikan definisi fotosintesis namun belum dapat menjelaskan bagaimana atau mengapa fotosintesis terjadi."
+        }
+      ],
+      "pages": [
+        25
+      ]
+    },
+    "affective_psychomotor": {
+      "affective": {
+        "text": "Sikap dan perilaku dalam pembelajaran yang menunjukkan bagaimana peserta didik menerima, merespons, menghargai, mengorganisasi, dan menginternalisasi nilai-nilai dalam kehidupan mereka.",
+        "example": "Guru memfasilitasi diskusi tentang isu sosial dan meminta peserta didik untuk menuliskan refleksi tentang sikap mereka."
+      },
+      "psychomotor": {
+        "text": "Keterampilan fisik, koordinasi gerakan, atau tindakan nyata dalam pembelajaran yang melibatkan aktivitas motorik seperti tindakan fisik dan praktik langsung.",
+        "example": "peserta didik mempraktikkan keterampilan dalam situasi yang menyerupai dunia nyata, seperti simulasi jual beli di pasar atau simulasi debat."
+      },
+      "summary": "One text per domain spans all three learning experiences (merged cells, checked on image).",
+      "pages": [
+        26
+      ]
+    },
+    "pages": [
+      23,
+      24,
+      25,
+      26
+    ]
+  },
+  "learning_framework": {
+    "decree_ref": "adds",
+    "summary": "Decree names the four elements (PDF 17); definitions and examples are slide-only.",
+    "items": [
+      {
+        "order": 1,
+        "key": "pedagogical_practice",
+        "name": "Praktik Pedagogis",
+        "text": "Strategi mengajar yang dipilih guru untuk mencapai tujuan belajar dalam mencapai dimensi profil lulusan. Untuk mewujudkan pembelajaran mendalam guru berfokus pada pengalaman belajar peserta didik yang autentik, mengutamakan praktik nyata, mendorong keterampilan berpikir tingkat tinggi dan kolaborasi.",
+        "detail": "Pembelajaran Mendalam dapat dilaksanakan menggunakan berbagai praktik pedagogis dengan menerapkan tiga prinsip yaitu berkesadaran, bermakna, menggembirakan, contohnya:",
+        "examples_models": [
+          "Pembelajaran Berbasis Inkuiri",
+          "Pembelajaran Berbasis Proyek",
+          "Pembelajaran Berbasis Masalah",
+          "Pembelajaran Kolaboratif",
+          "Pembelajaran STEM (Science, Technology, Engineering, Mathematic)",
+          "Pembelajaran Berdiferensiasi",
+          "dan sebagainya"
+        ],
+        "examples_techniques": [
+          "Diskusi",
+          "peta konsep",
+          "advance organiser",
+          "kerja kelompok",
+          "dan sebagainya"
+        ],
+        "pages": [
+          27,
+          28
+        ]
+      },
+      {
+        "order": 2,
+        "key": "learning_partnership",
+        "name": "Kemitraan Pembelajaran",
+        "text": "Kemitraan pembelajaran membentuk hubungan yang dinamis antara guru, peserta didik, orang tua, komunitas, dan mitra profesional. Pendekatan ini memindahkan kontrol pembelajaran dari guru saja menjadi kolaborasi bersama.",
+        "detail": "Kemitraan pembelajaran membentuk hubungan yang kolaboratif untuk memberikan pengalaman belajar, kebaruan informasi/ serta umpan balik kepada peserta didik melalui pengetahuan yang kontekstual dan nyata.",
+        "examples": [
+          {
+            "scope": "Lingkungan Sekolah",
+            "text": "Kepala sekolah, pengawas sekolah, guru, dan peserta didik, dan lainnya"
+          },
+          {
+            "scope": "Lingkungan Luar Sekolah",
+            "text": "MGMP, Mitra Profesional, Dunia Usaha, Dunia Industri, dan Dunia Kerja, Institusi/ lembaga Pendidikan, Media, dan lainnya"
+          },
+          {
+            "scope": "Masyarakat",
+            "text": "Orang tua, Komunitas, Tokoh Masyarakat, Organisasi Keagamaan dan/atau Budaya, dan lainnya"
+          }
+        ],
+        "pages": [
+          27,
+          29
+        ]
+      },
+      {
+        "order": 3,
+        "key": "learning_environment",
+        "name": "Lingkungan Pembelajaran",
+        "text": "Lingkungan pembelajaran menekankan integrasi antara ruang fisik, ruang virtual, dan budaya belajar untuk mendukung pembelajaran mendalam. Ruang fisik dan virtual dirancang fleksibel sebagai tempat yang mendorong kolaborasi, refleksi, eksplorasi, dan berbagi ide, sehingga dapat mengakomodasi berbagai gaya belajar peserta didik dengan optimal.",
+        "parts": [
+          {
+            "key": "learning_culture",
+            "name": "budaya belajar",
+            "text": "budaya belajar yang dikembangkan agar tercipta iklim belajar yang aman, nyaman, dan saling memuliakan untuk pembelajaran yang kondusif, interaktif, dan memotivasi peserta didik bereksplorasi, berekspresi, dan kolaborasi."
+          },
+          {
+            "key": "physical_space",
+            "name": "ruang fisik",
+            "text": "optimalisasi ruang fisik sebagai proses interaksi langsung dalam menciptakan suasana belajar yang kondusif, meningkatkan kenyamanan, serta mendukung PM seperti ruang kelas, laboratorium, ruang konseling, lingkungan sekolah, perpustakaan, lingkungan/alam sekitar, ruang seni, ruang praktik keterampilan, ruang ibadah, aula/auditorium, museum, dan lainnya"
+          },
+          {
+            "key": "virtual_space",
+            "name": "ruang virtual",
+            "text": "pemanfaatan ruang virtual untuk interaksi, transfer ilmu, penilaian pembelajaran tanpa keterbatasan ruang fisik, seperti desain pembelajaran daring, platform pembelajaran daring/hybrid, dan penilaian daring, dan lainnya."
+          }
+        ],
+        "pages": [
+          27,
+          30
+        ]
+      },
+      {
+        "order": 4,
+        "key": "digital_utilization",
+        "name": "Pemanfaatan Digital",
+        "text": "Pemanfaatan teknologi digital juga memegang peran penting sebagai katalisator untuk menciptakan pembelajaran yang lebih interaktif, kolaboratif, dan kontekstual. Tersedianya beragam sumber belajar menjadi peluang menciptakan pengetahuan bermakna pada peserta didik.",
+        "detail": "Teknologi digital dapat dimanfaatkan dalam perencanaan, pelaksanaan, dan asesmen pembelajaran. Peserta didik mendapatkan pengalaman belajar yang lebih interaktif, fleksibel, dan kolaboratif.",
+        "examples": [
+          {
+            "stage": "planning",
+            "name": "Perencanaan Pembelajaran",
+            "text": "merancang dan mengelola kelas digital, manajemen perencanaan pembelajaran berbasis proyek), desain bahan ajar visual dan infografis, pembuatan konten interaktif seperti kuis dan simulasi, pemanfaatan kecerdasan artifisial, serta aplikasi desain instruksional, dan perencanaan pembelajaran lainnya."
+          },
+          {
+            "stage": "implementation",
+            "name": "Pelaksanaan Pembelajaran",
+            "text": "pembelajaran sinkronus, kolaborasi daring, pembelajaran asinkronus, laman sumber belajar, perpustakaan digital, pemanfaatan kecerdasan artifisial, video edukasi, multimedia Interaktif, simulasi dan animasi, gamifikasi dan kuis, serta sumber lainnya."
+          },
+          {
+            "stage": "assessment",
+            "name": "Asesmen Pembelajaran",
+            "text": "pembuatan tes otomatis, evaluasi orisinalitas dan kualitas tulisan, tes formatif berbasis interaktif, pemanfaatan kecerdasan artifisial, pengelolaan portofolio digital, dan sebagainya."
+          }
+        ],
+        "summary": "AI ('pemanfaatan kecerdasan artifisial') is listed as an example in planning, implementation and assessment.",
+        "pages": [
+          27,
+          31
+        ]
+      }
+    ],
+    "pages": [
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "teacher_roles": {
+    "decree_ref": "adds",
+    "summary": "PDF 32 diagram (image): the traditional top-down pyramid (Pemerintah Pusat > Pemerintah Daerah > Kepala Sekolah > Guru) is inverted so that Guru is on top, then Kepala Sekolah, Pemerintah Daerah, Pemerintah Pusat. School/dinas roles are in the decree file (governance).",
+    "items": [
+      {
+        "key": "activator",
+        "name": "Aktivator",
+        "text": "Guru menstimulasi peserta didik untuk mencapai tujuan pembelajaran dan kriteria kesuksesan pembelajaran dengan berbagai strategi serta memberikan umpan balik untuk menstimulasi setiap level pencapaian yang lebih tinggi"
+      },
+      {
+        "key": "collaborator",
+        "name": "Kolaborator",
+        "text": "Guru membangun kolaboratif inkuiri dengan peserta didik, rekan sejawat, keluarga, masyarakat, mitra profesi dan DUDIKA, dalam mitra lainnya dalam mengembangkan dan berbagi pengalaman nyata dalam penerapan PM"
+      },
+      {
+        "key": "learning_culture_developer",
+        "name": "Pengembang Budaya Belajar",
+        "text": "Guru memberikan kepercayaan dan peluang mengambil resiko (risk-taking) kepada peserta didik untuk mengembangkan kreativitas dan berinovasi, dan melibatkan peserta didik dalam mengembangkan pengalaman belajar, serta menciptakan lingkungan pembelajaran yang mendukung PM"
+      }
+    ],
+    "pages": [
+      32,
+      33
+    ]
+  },
+  "ecosystem": {
+    "decree_ref": "same",
+    "summary": "PDF 34 diagram (image): Pemerintah Pusat → Pemerintah Daerah → Satuan Pendidikan; at the centre 'Guru dan Siswa' ringed by Kurikulum, Pembelajaran, Asesmen; around them Keluarga, Masyarakat, Teknologi Digital, Media, Mitra Profesi dan DUDIKA. Consistent with decree governance.",
+    "elements": [
+      "Pemerintah Pusat",
+      "Pemerintah Daerah",
+      "Satuan Pendidikan",
+      "Guru dan Siswa",
+      "Keluarga",
+      "Masyarakat",
+      "Teknologi Digital",
+      "Media",
+      "Mitra Profesi dan DUDIKA"
+    ],
+    "pages": [
+      34
+    ]
+  },
+  "implementation_stages": {
+    "decree_ref": "adds",
+    "summary": "Classroom cycle (PDF 36, image). Not to be confused with the decree's national timeline or mentoring cycle.",
+    "items": [
+      {
+        "order": 1,
+        "key": "planning",
+        "name": "Perencanaan",
+        "text": "Perencanaan PM melalui refleksi guru terhadap diri sendiri, karakteristik peserta didik, materi pelajaran, sumber daya dan mitra pembelajaran"
+      },
+      {
+        "order": 2,
+        "key": "implementation",
+        "name": "Pelaksanaan",
+        "text": "Pelaksanaan pembelajaran dengan prinsip berkesadaran, bermakna, dan menggembirakan melalui pengalaman belajar memahami, merefleksi"
+      },
+      {
+        "order": 3,
+        "key": "assessment",
+        "name": "Asesmen",
+        "text": "Asesmen tidak hanya berfokus pada penguasaan teori, tetapi juga pada pemahaman konseptual yang mendalam, keterampilan berpikir kritis, serta penerapan dalam kehidupan nyata"
+      }
+    ],
+    "pages": [
+      36
+    ]
+  },
+  "lesson_plan": {
+    "decree_ref": "adds",
+    "summary": "Planning structure for an RPM (Rencana Pembelajaran Mendalam; the slides do not use the term 'RPM'). PDF 37 gives the four components; PDF 38-39 give the fill-in template with field instructions. Fields marked (opsional) are optional; non-optional fields are highlighted yellow in the template.",
+    "components": [
+      {
+        "order": 1,
+        "key": "identification",
+        "name": "Identifikasi",
+        "steps": [
+          "Mengidentifikasi kesiapan peserta didik",
+          "Memahami karakteristik materi pelajaran",
+          "Menentukan dimensi profil Lulusan"
+        ],
+        "pages": [
+          37
+        ]
+      },
+      {
+        "order": 2,
+        "key": "learning_design",
+        "name": "Desain Pembelajaran",
+        "steps": [
+          "Menentukan capaian pembelajaran",
+          "Menentukan topik pembelajaran yang kontekstual dan relevan",
+          "Mengintegrasikan lintas disiplin ilmu yang relevan dengan topik",
+          "Menentukan tujuan pembelajaran",
+          "Menentukan kerangka pembelajaran (praktik pedagogis, kemitraan pembelajaran, lingkungan pembelajaran, pemanfaatan digital)"
+        ],
+        "pages": [
+          37
+        ]
+      },
+      {
+        "order": 3,
+        "key": "learning_experience",
+        "name": "Pengalaman Belajar",
+        "steps": [
+          "Merancang pembelajaran dengan prinsip berkesadaran, bermakna, dan menggembirakan",
+          "Merancang tahapan pembelajaran dengan langkah-langkah kegiatan awal, inti dan penutup.",
+          "Mendeskripsikan pengalaman belajar memahami, mengaplikasi, dan merefleksi"
+        ],
+        "pages": [
+          37
+        ]
+      },
+      {
+        "order": 4,
+        "key": "assessment",
+        "name": "Asesmen",
+        "steps": [
+          "Asesmen pada awal pembelajaran",
+          "Asesmen pada proses pembelajaran",
+          "Asesmen pada akhir pembelajaran"
+        ],
+        "pages": [
+          37
+        ]
+      }
+    ],
+    "template_fields": [
+      {
+        "section": "identification",
+        "key": "learner_readiness",
+        "label": "Peserta Didik",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "Identifikasi kesiapan peserta didik sebelum belajar, seperti pengetahuan awal, minat, latar belakang, dan kebutuhan belajar, serta aspek lainnya",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "identification",
+        "key": "subject_matter_analysis",
+        "label": "Materi Pelajaran",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "Tuliskan analisis materi pelajaran seperti jenis pengetahuan yang akan dicapai, relevansi dengan kehidupan nyata peserta didik, tingkat kesulitan, struktur materi, serta integrasi nilai dan karakter, dan lainnya",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "identification",
+        "key": "graduate_profile_dimensions",
+        "label": "Dimensi Profil Lulusan",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "Pilihlah dimensi profil lulusan yang akan dicapai dalam pembelajaran",
+        "input": "checkbox list of the 8 dimensions (multi-select)",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "learning_outcomes_cp",
+        "label": "Capaian Pembelajaran",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "Tuliskan capaian pembelajaran sesuai fase",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "cross_disciplinary",
+        "label": "Lintas Disiplin Ilmu",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "Tuliskan disiplin ilmu dan/atau mata pelajaran yang relevan",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "learning_objectives",
+        "label": "Tujuan Pembelajaran",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "Tuliskan tujuan pembelajaran yang mencakup kompetensi dan konten pada ruang lingkup materi dengan menggunakan kata kerja operasional yang relevan.",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "topic",
+        "label": "Topik Pembelajaran",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "Tuliskan topik pembelajaran yang relevan dengan capaian dan tujuan pembelajaran",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "pedagogical_practice",
+        "label": "Praktik Pedagogis",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "Tuliskan Model/Strategi/Metode pembelajaran yang dipilih untuk mencapai tujuan belajar, seperti pembelajaran berbasis masalah, pembelajaran berbasis proyek, pembelajaran inkuiri, pembelajaran kontekstual, dan sebagainya.",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "learning_partnership",
+        "label": "Kemitraan Pembelajaran",
+        "optional": true,
+        "highlighted": true,
+        "instruction": "Tuliskan kegiatan kemitraan atau kolaborasi dalam dan/atau luar lingkup sekolah, seperti kemitraan antar guru lintas mata pelajaran, antar murid lintas kelas, antar guru lintas sekolah, orang tua, komunitas, tokoh masyarakat, dunia usaha dan dunia industri kerja, institusi, atau mitra profesional.",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "learning_environment",
+        "label": "Lingkungan Pembelajaran",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "Tuliskan lingkungan pembelajaran yang ingin dikembangkan dalam budaya belajar, ruang fisik dan/atau ruang virtual. Budaya belajar dikembangkan agar tercipta iklim belajar yang aman, nyaman, dan saling memuliakan. Contoh: memberikan kesempatan kepada siswa untuk menyampaikan pendapatnya dalam ruang kelas dan forum diskusi pada platform daring (ruang virtual bersifat opsional).",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_design",
+        "key": "digital_utilization",
+        "label": "Pemanfaatan Digital",
+        "optional": true,
+        "highlighted": true,
+        "instruction": "Tuliskan pemanfaatan teknologi digital untuk menciptakan pembelajaran yang interaktif, kolaboratif, dan kontekstual. Contoh: video pembelajaran, platform pembelajaran, perpustakaan digital, forum diskusi daring, aplikasi penilaian, dan sebagainya.",
+        "pages": [
+          38
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "opening",
+        "label": "AWAL",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "(tuliskan prinsip pembelajaran yang digunakan, misal berkesadaran, bermakna, menggembirakan) Pembuka dari proses pembelajaran yang bertujuan untuk mempersiapkan peserta didik sebelum memasuki inti pembelajaran. Kegiatan dalam tahap ini meliputi orientasi yang bermakna, apersepsi yang kontekstual, dan motivasi yang menggembirakan.",
+        "tag_principles": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "core",
+        "label": "INTI",
+        "optional": false,
+        "highlighted": false,
+        "instruction": "Pada tahap ini, siswa aktif terlibat dalam pengalaman belajar memahami, mengaplikasi, dan merefleksi. Guru menerapkan prinsip pembelajaran berkesadaran, bermakna, menyenangkan untuk mencapai tujuan pembelajaran. Pengalaman belajar tidak harus dilaksanakan dalam satu kali pertemuan.",
+        "multi_meeting": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "core_understanding",
+        "parent": "core",
+        "experience": "understanding",
+        "label": "Memahami",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "(tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan) Tuliskan kegiatan pembelajaran yang memfasilitasi peserta didik untuk terlibat aktif mengonstruksi pengetahuan agar dapat memahami secara mendalam konsep atau materi dari berbagai sumber dan konteks. Pengetahuan pada fase ini terdiri dari pengetahuan esensial, pengetahuan aplikatif, dan pengetahuan nilai dan karakter.",
+        "tag_principles": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "core_applying",
+        "parent": "core",
+        "experience": "applying",
+        "label": "Mengaplikasi",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "(tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan) Tuliskan kegiatan yang mengondisikan pengalaman belajar yang menunjukan aktivitas peserta didik mengaplikasi pemahaman secara kontekstual atau kehidupan nyata (hidup, kehidupan, dan/atau penghidupan). Proses mengaplikasi ini merupakan bagian dari pendalaman pengetahuan untuk menghasilkan pengembangan kompetensi.",
+        "tag_principles": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "core_reflecting",
+        "parent": "core",
+        "experience": "reflecting",
+        "label": "Merefleksi",
+        "optional": false,
+        "highlighted": true,
+        "instruction": "(tuliskan prinsip pembelajaran yang digunakan: berkesadaran, bermakna, dan/atau menggembirakan) Tuliskan kegiatan yang mampu memfasilitasi peserta didik: a. mengevaluasi dan memaknai proses serta hasil dari tindakan atau praktik nyata yang telah mereka lakukan dan menentukan tindaklanjut ke depan. b. mengelola proses belajarnya secara mandiri, dengan meneruskan dan mengembangkan strategi belajar yang berhasil dan memperbaiki yang belum berhasil dengan tetap meningkatkan motivasi belajar dan kepercayaan diri.",
+        "tag_principles": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "learning_experience",
+        "key": "closing",
+        "label": "PENUTUP",
+        "optional": true,
+        "highlighted": false,
+        "instruction": "(Tuliskan prinsip pembelajaran yang digunakan, misal berkesadaran, bermakna, dan menggembirakan) Tahap akhir dalam proses pembelajaran yang bertujuan memberikan umpan balik yang konstruktif kepada siswa atas pengalaman belajar yang telah dilakukan, menyimpulkan pembelajaran, dan siswa terlibat dalam perencanaan pembelajaran selanjutnya.",
+        "tag_principles": true,
+        "pages": [
+          39
+        ]
+      },
+      {
+        "section": "assessment",
+        "key": "assessment",
+        "label": "Asesmen Pembelajaran",
+        "optional": false,
+        "highlighted": false,
+        "instruction": "Tuliskan teknik dan instrumen penilaian yang digunakan pada awal, proses, dan akhir pembelajaran. Asesmen dalam pembelajaran mendalam dilaksanakan melalui asesmen sebagai pembelajaran (assessment as learning) yang menekankan pada penilaian diri dan penilaian sejawat, asesmen untuk pembelajaran (assessment for learning) yang menekankan pada umpan balik, dan asesmen hasil pembelajaran (assessment of learning) yang menekankan pada pencapaian dan tindak lanjut dengan mempertimbangkan karakteristik peserta didik. Contoh: Penilaian Sejawat, Penilaian Diri, Penilaian Proyek, Penilaian Produk, Observasi, Portofolio, Penilaian Berbasis Kelas, Penilaian Kinerja, Tes tertulis, Tes lisan, dan sebagainya.",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "pages": [
+      37,
+      38,
+      39
+    ]
+  },
+  "implementation_guidance": {
+    "decree_ref": "adds",
+    "items": [
+      {
+        "order": 1,
+        "text": "Penyampaian materi sesuai tahapan berpikir peserta didik untuk mendukung pencapaian kedalaman pemahaman konsep peserta didik"
+      },
+      {
+        "order": 2,
+        "text": "Model-model atau strategi pembelajaran yang ada dapat digunakan dengan prinsip pembelajaran berkesadaran, bermakna, dan menggembirakan"
+      },
+      {
+        "order": 3,
+        "text": "Penerapan pembelajaran bermakna dengan pemanfaatan lingkungan sekitar, seperti pemanfaatan lingkungan sekolah, lingkungan alam sekitar, lingkungan sosial, dan sebagainya"
+      },
+      {
+        "order": 4,
+        "text": "Prinsip pembelajaran berkesadaran, bermakna, dan menggembirakan dapat berada dalam beberapa kegiatan pembelajaran tidak harus berurutan dan/atau simultan"
+      },
+      {
+        "order": 5,
+        "text": "Pengalaman belajar memahami, mengaplikasi, dan merefleksi dilaksanakan dengan langkah-langkah pembelajaran yang sesuai dengan konteks dan kondisi pembelajaran, serta inovasi guru"
+      },
+      {
+        "order": 6,
+        "text": "Sintak/Langkah-langkah pembelajaran pada model-model atau strategi pembelajaran yang ada dapat diadaptasi sesuai pengalaman belajar memahami, mengaplikasi dan merefleksi"
+      },
+      {
+        "order": 7,
+        "text": "Pengalaman belajar memahami, mengaplikasi dan merefleksi dilakukan dalam beberapa langkah pembelajaran yang pelaksanaannya disesuaikan dengan konteks dan kondisi pembelajaran"
+      },
+      {
+        "order": 8,
+        "text": "Pengalaman belajar melalui olah pikir, olah hati, olah rasa, dan olah raga adalah pengembangan diri yang holistik dan integratif yang mencakup aspek intelektual, sosio-emosional, spiritual, dan fisik. Sehingga pembelajaran menghasilkan pribadi yang memiliki kompetensi utuh dan seimbang sesuai fitrahnya"
+      },
+      {
+        "order": 9,
+        "text": "Topik pembelajaran dikaitkan dengan lintas ilmu (multi/inter disiplin) atau terkait dengan bidang ilmu atau mata pelajaran yang dipelajari peserta didik"
+      },
+      {
+        "order": 10,
+        "text": "Penerapan pembelajaran mendalam disesuaikan dengan karakteristik masing-masing mata pelajaran"
+      },
+      {
+        "order": 11,
+        "text": "Kemitraan yang melibatkan berbagai pihak baik lingkungan sekolah, luar sekolah, dan masyarakat untuk mendukung pembelajaran mendalam"
+      },
+      {
+        "order": 12,
+        "text": "Lingkungan pembelajaran diciptakan merupakan integrasi ruang fisik, ruang virtual dan budaya belajar untuk mendukung pembelajaran mendalam"
+      },
+      {
+        "order": 13,
+        "text": "Pemanfaatan teknologi digital akan menguatkan pembelajaran mendalam pada perencanaan, pelaksanaan, dan asesmen pembelajaran"
+      },
+      {
+        "order": 14,
+        "text": "Asesmen menggunakan assessment as learning, assessment for learning, assessment of learning. Pada PM menekankan pentingnya umpan balik dan asesmen autentik"
+      }
+    ],
+    "pages": [
+      40,
+      41
+    ]
+  },
+  "subject_examples": {
+    "decree_ref": "adds",
+    "summary": "Generic, not level-specific; some scenarios (kenakalan remaja) suit older learners. Useful as AI prompt hints per subject group.",
+    "items": [
+      {
+        "key": "religion",
+        "subject": "Agama",
+        "focus": "Pembelajaran agama yang berfokus pada pengembangan spiritual, karakter, akhlak dan atau moral melalui penanaman keyakinan dan nilai agama, serta penerapannya dalam kehidupan sehari-hari.",
+        "model": "Experiential Learning",
+        "example": "Experiential Learning yang mengajarkan nilai-nilai agama melalui pengalaman kehidupan sehari-sehari seperti peserta didik diberikan isu atau realita kenakalan remaja, kemudian diminta untuk mencermati dan mengajukan solusi berdasarkan nilai-nilai agama.",
+        "pages": [
+          42
+        ]
+      },
+      {
+        "key": "pancasila",
+        "subject": "Pendidikan Pancasila",
+        "focus": "Pembelajaran yang membentuk peserta didik menjadi warga negara yang baik, bertanggung jawab, memiliki kesadaran terhadap hak serta kewajibannya dalam kehidupan berbangsa dan bernegara, dan mampu berpartisipasi dalam kehidupan bermasyarakat",
+        "model": "Studi Kasus",
+        "example": "Studi Kasus yang memberikan peserta didik untuk menyelesaikan permasalahan pada isu sosial, politik, atau hukum dengan mencari solusi berdasarkan prinsip demokrasi dan Pancasila.",
+        "pages": [
+          42
+        ]
+      },
+      {
+        "key": "mathematics",
+        "subject": "Matematika",
+        "focus": "Pembelajaran yang mengembangkan pola pikir logis, pemecahan masalah, dan keterampilan analitis dan komputatif",
+        "model": "Pembelajaran Berbasis Masalah",
+        "example": "Pembelajaran Berbasis Masalah yang memberikan peluang peserta didik untuk memecahkan masalah nyata seperti komposisi dan nilai kalori makanan bergizi dengan menggunakan konsep proporsi, persentase dan pengukuran untuk mencari makanan sehat dan bergizi.",
+        "pages": [
+          42
+        ]
+      },
+      {
+        "key": "language",
+        "subject": "Bahasa",
+        "focus": "Pembelajaran yang mengembangkan keterampilan komunikasi, pemahaman teks, berpikir kritis, ekspresi gagasan, dan pemahaman budaya",
+        "model": "Pembelajaran Berbasis Inkuiri",
+        "example": "Pembelajaran Berbasis Inkuiri yang memberikan kesempatan peserta didik mengeksplorasi bahasa dengan mengumpulkan, mengolah dan mengevaluasi informasi terkait permasalahan sosial di masyarakat untuk mendapatkan pengetahuan baru.",
+        "pages": [
+          43
+        ]
+      },
+      {
+        "key": "science",
+        "subject": "IPA",
+        "focus": "Pembelajaran yang berfokus pada pemahaman tentang alam semesta, fenomena alam, dan prinsip ilmiah untuk mengembangkan pengetahuan, keterampilan berpikir ilmiah, bekerja ilmiah, serta sikap peduli terhadap lingkungan",
+        "model": "Pembelajaran Berbasis Proyek",
+        "example": "Pembelajaran Berbasis Proyek dengan memberikan pengalaman kepada peserta didik untuk membuat proyek energi terbarukan untuk mengatasi permasalahan lingkungan.",
+        "pages": [
+          43
+        ]
+      },
+      {
+        "key": "social_science",
+        "subject": "Ilmu Sosial",
+        "focus": "Pembelajaran yang menekankan pada kehidupan sosial, interaksi manusia, dan dinamika masyarakat untuk membentuk wawasan kebangsaan serta keterampilan berpikir kritis",
+        "model": "Pembelajaran Kontekstual",
+        "example": "Pembelajaran Kontekstual dengan membandingkan nilai-nilai dan permasalahan pasar modern dan pasar tradisional pada sudut pandang sosial dan ekonomi dan memberikan solusi untuk mengatasi permasalahan tersebut.",
+        "pages": [
+          43
+        ]
+      }
+    ],
+    "pages": [
+      42,
+      43
+    ]
+  },
+  "model_adaptation_example": {
+    "decree_ref": "adds",
+    "title": "Keterkaitan Pengalaman Belajar, Prinsip Pembelajaran, dan adaptasi Model Pembelajaran Inkuiri",
+    "summary": "Shows how a model's syntax maps onto the three learning experiences, each tagged with principles. A pattern SIGRAK can reuse for other models (PjBL, PBL).",
+    "steps": [
+      {
+        "order": 1,
+        "name": "Orientasi",
+        "experience": "understanding",
+        "principles": [
+          "mindful",
+          "meaningful"
+        ],
+        "text": "Guru memberikan stimulus untuk membangkitkan rasa ingin tahu peserta didik dan mulai mengidentifikasi topik yang akan dieksplorasi (kaitkan dengan pengetahuan esensial, aplikatif, nilai dan karakter)."
+      },
+      {
+        "order": 2,
+        "name": "Merumuskan Masalah",
+        "experience": "understanding",
+        "principles": [
+          "mindful",
+          "meaningful"
+        ],
+        "text": "Peserta didik mengidentifikasi dan merumuskan pertanyaan yang akan dijawab dalam proses inkuiri dan guru membimbing peserta didik untuk menyusun hipotesis atau dugaan awal."
+      },
+      {
+        "order": 3,
+        "name": "Pengumpulan Data",
+        "experience": "applying",
+        "principles": [
+          "meaningful",
+          "joyful"
+        ],
+        "text": "Peserta didik mengumpulkan informasi dari berbagai sumber, seperti eksperimen, observasi, wawancara, atau literatur dan mencari pola atau hubungan antar konsep (menggunakan sumber lingkungan sekitar)."
+      },
+      {
+        "order": 4,
+        "name": "Pengolahan dan Analisis Data",
+        "experience": "applying",
+        "principles": [
+          "meaningful",
+          "joyful"
+        ],
+        "text": "Peserta didik mengorganisasi dan menafsirkan data yang telah dikumpulkan, menggunakan berbagai teknik analisis, seperti diskusi kelompok, pemetaan konsep, atau pembuatan grafik."
+      },
+      {
+        "order": 5,
+        "name": "Menarik Kesimpulan",
+        "experience": "applying",
+        "principles": [
+          "meaningful",
+          "joyful"
+        ],
+        "text": "Peserta didik menyusun kesimpulan berdasarkan bukti dan hasil analisis, serta menjelaskan temuan dan menghubungkannya dengan konsep atau teori yang relevan (pendalaman pengetahuan)."
+      },
+      {
+        "order": 6,
+        "name": "Komunikasi",
+        "experience": "applying",
+        "principles": [
+          "meaningful",
+          "joyful"
+        ],
+        "text": "Peserta didik menyampaikan hasil temuannya melalui presentasi, laporan tertulis, atau diskusi kelas."
+      },
+      {
+        "order": 7,
+        "name": "Refleksi",
+        "experience": "reflecting",
+        "principles": [
+          "mindful",
+          "meaningful"
+        ],
+        "text": "Melakukan refleksi terhadap proses pembelajaran: apa yang telah dipelajari, kesulitan yang dihadapi, dan bagaimana meningkatkan pemahaman lebih lanjut, serta guru memberikan umpan balik konstruktif untuk memperkaya pengalaman belajar peserta didik (stimulasi regulasi diri)."
+      },
+      {
+        "order": 8,
+        "name": "Aplikasi dan Tindak Lanjut",
+        "experience": "reflecting",
+        "principles": [
+          "mindful",
+          "meaningful"
+        ],
+        "text": "Peserta didik menerapkan hasil pembelajaran dalam konteks nyata atau proyek lanjutan dan mendorong eksplorasi lebih lanjut untuk memperdalam pemahaman konsep."
+      }
+    ],
+    "pages": [
+      44,
+      45
+    ]
+  },
+  "worked_example": {
+    "decree_ref": "adds",
+    "summary": "Complete sample lesson plan following the template (12 numbered parts). Level is not stated; the CP text matches an upper-level IPA outcome, so treat it as a structural example only (see open_points).",
+    "level_stated": null,
+    "topic": "Peran Manusia dalam Menjaga Ekosistem",
+    "parts": [
+      {
+        "order": 1,
+        "key": "learner_readiness",
+        "label": "Identifikasi Peserta Didik",
+        "text": "Peserta didik memiliki pengetahuan dasar yang bervariasi mengenai isu-isu lingkungan, perlu memiliki kesadaran perannya terhadap keseimbangan ekosistem, menunjukkan minat tinggi dalam kegiatan berbasis proyek.",
+        "pages": [
+          46
+        ]
+      },
+      {
+        "order": 2,
+        "key": "subject_matter_analysis",
+        "label": "Identifikasi Materi Pelajaran",
+        "text": "Materi ekosistem dapat mencakup pengetahuan faktual, konseptual, prosedural, dan metakognitif. Materi ini dirancang relevan dengan kehidupan nyata, seperti memahami dampak aktivitas manusia terhadap ekosistem sungai, serta aplikatif melalui kegiatan seperti proyek pengelolaan sampah.",
+        "pages": [
+          46
+        ]
+      },
+      {
+        "order": 3,
+        "key": "graduate_profile_dimensions",
+        "label": "Dimensi Profil Lulusan",
+        "selected": [
+          "critical_reasoning",
+          "creativity",
+          "collaboration",
+          "communication"
+        ],
+        "note": "Ticked boxes read from the image: Penalaran Kritis, Kreativitas, Kolaborasi, Komunikasi.",
+        "pages": [
+          46
+        ]
+      },
+      {
+        "order": 4,
+        "key": "learning_outcomes_cp",
+        "label": "Capaian Pembelajaran",
+        "text": "Peserta didik menyelidiki bagaimana hubungan saling ketergantungan antar komponen biotik-abiotik dapat memengaruhi kestabilan suatu ekosistem di lingkungan sekitarnya.",
+        "pages": [
+          46
+        ]
+      },
+      {
+        "order": 5,
+        "key": "topic",
+        "label": "Topik Pembelajaran",
+        "text": "Peran Manusia dalam Menjaga Ekosistem",
+        "pages": [
+          46
+        ]
+      },
+      {
+        "order": 6,
+        "key": "learning_objectives",
+        "label": "Tujuan Pembelajaran",
+        "items": [
+          "Memahami pentingnya keanekaragaman hayati dalam ekosistem",
+          "Mengidentifikasi dampak aktivitas manusia terhadap keseimbangan ekosistem",
+          "Melaksanakan proyek kreatif berbasis solusi lingkungan untuk mencegah pencemaran pada ekosistem"
+        ],
+        "pages": [
+          47
+        ]
+      },
+      {
+        "order": 7,
+        "key": "pedagogical_practice",
+        "label": "Praktik Pedagogis",
+        "items": [
+          "Pembelajaran Berbasis Proyek",
+          "Diskusi kelompok, eksplorasi lapangan, wawancara, dan presentasi"
+        ],
+        "pages": [
+          47
+        ]
+      },
+      {
+        "order": 8,
+        "key": "learning_partnership",
+        "label": "Mitra Pembelajaran",
+        "items": [
+          "Komunitas Peduli Ciliwung (KPC)",
+          "Pengelola Bank Sampah Sungai Ciliwung",
+          "Masyarakat Sekitar Sungai Ciliwung"
+        ],
+        "pages": [
+          47
+        ]
+      },
+      {
+        "order": 9,
+        "key": "learning_environment",
+        "label": "Lingkungan Pembelajaran",
+        "items": [
+          "Ruang Fisik: lingkungan di sekitar Sungai Ciliwung",
+          "Ruang Virtual: platform daring untuk diskusi dengan teman",
+          "Budaya Belajar: kolaboratif, berpartisipasi aktif, dan rasa ingin tahu"
+        ],
+        "pages": [
+          47
+        ]
+      },
+      {
+        "order": 10,
+        "key": "digital_utilization",
+        "label": "Pemanfaatan Digital",
+        "items": [
+          "Perencanaan: LMS",
+          "Pelaksanaan: pertemuan daring, video, perpustakaan daring",
+          "Asesmen: asesmen daring"
+        ],
+        "pages": [
+          47
+        ]
+      },
+      {
+        "order": 11,
+        "key": "learning_steps",
+        "label": "Langkah-Langkah Pembelajaran",
+        "stages": [
+          {
+            "key": "opening",
+            "label": "Awal",
+            "principles": [
+              "mindful",
+              "meaningful"
+            ],
+            "steps": [
+              "Guru membuka pelajaran dengan salam, doa bersama, dan sapaan ramah untuk menciptakan suasana positif",
+              "Guru menerapkan teknik permainan pemusatan konsentrasi",
+              "Guru memulai dengan video singkat perbedaan kondisi sungai yang bersih dan tercemar",
+              "Guru memberikan pertanyaan pemantik “Bagaimana kondisi makhluk hidup pada kedua sungai tersebut?” untuk menstimulasi empati peserta didik",
+              "Peserta didik melakukan literasi melalui bahan bacaan pada websites tentang Sungai Ciliwung yang Tercemar",
+              "Guru tanya jawab dengan peserta didik mengenai bahan bacaan untuk menumbuhkan kesadaran pencemaran sungai akibat sampah sehingga berdampak pada kondisi makhluk hidup di sungai (“Apa penyebab terjadinya pencemaran sungai?” “Apakah sungai yang tercemar mempengaruhi kondisi makhluk hidup di sana?”)",
+              "Memaparkan tujuan pembelajaran yang akan dicapai dan menghubungkan dengan peran peserta didik (\"Apa yang bisa kita lakukan untuk melestarikan sungai kita?\")"
+            ],
+            "pages": [
+              48
+            ]
+          },
+          {
+            "key": "core_understanding",
+            "label": "Inti – Memahami",
+            "principles": [
+              "meaningful",
+              "joyful"
+            ],
+            "steps": [
+              "Berdiskusi, membaca artikel, eksplorasi sumber informasi pada buku, e-book, artikel, dan websites melalui internet tentang keanekaragaman hayati dan ekosistem sungai (a. Apa definisi ekosistem? b. Apa saja macam-macam ekosistem? c. Apa definisi keanekaragaman hayati? d. Mengapa keanekaragaman hayati penting bagi kelangsungan ekosistem? e. Apakah aktivitas manusia mempengaruhi kelangsungan ekosistem sungai?)",
+              "Membuat peta konsep tentang ekosistem, keanekaragaman hayati, dan kelangsungan ekosistem sungai"
+            ],
+            "pages": [
+              49
+            ]
+          },
+          {
+            "key": "core_applying",
+            "label": "Inti – Mengaplikasi",
+            "principles": [
+              "meaningful",
+              "joyful"
+            ],
+            "steps": [
+              "Peserta didik melakukan kunjungan lapangan ke Sungai Ciliwung untuk mengidentifikasi masalah kelangsungan ekosistem sungai",
+              "Peserta didik melakukan interview dengan masyarakat di sekitar sungai ciliwung",
+              "Peserta didik menyimak penjelasan dari Komunitas Peduli Ciliwung dan Pengelola Bank Sampah",
+              "Guru dan narasumber menumbuhkan kesadaran kepada Peserta didik tercemarnya sungai akibat sampah yang tidak dikelola dengan baik",
+              "Peserta didik berdiskusi dengan teman melalui zoom dan guru pendamping untuk merancang proyek pengelolaan sampah",
+              "Peserta didik mengembangkan proyek pengelolaan sampah di sekolah contohnya: membuat tempat sampah berdasarkan jenisnya, ecobrick, 3R, bank sampah, dan sebagainya (dilakukan diferensiasi produk/ide)"
+            ],
+            "pages": [
+              49
+            ]
+          },
+          {
+            "key": "core_reflecting",
+            "label": "Inti – Merefleksi",
+            "principles": [
+              "mindful",
+              "meaningful"
+            ],
+            "steps": [
+              "Peserta didik melakukan uji coba proyek dan atau mempresentasikan hasil proyeknya",
+              "Peserta didik mendapatkan umpan balik dari teman, guru, dan narasumber dari Komunitas Peduli Ciliwung dan Pengelola Bank Sampah",
+              "Peserta didik membuat jurnal refleksi individu terhadap proyek yang telah dilakukan",
+              "Peserta didik melakukan evaluasi diri terhadap pencapaian tujuan pembelajaran",
+              "Peserta didik menemukan solusi dan atau peran lanjutan mereka setelah belajar"
+            ],
+            "pages": [
+              50
+            ]
+          },
+          {
+            "key": "closing",
+            "label": "Penutup",
+            "principles": [
+              "mindful"
+            ],
+            "steps": [
+              "Guru dan Peserta didik menyimpulkan pembelajaran",
+              "Guru mengajak peserta didik merencanakan pembelajaran selanjutnya dan strategi belajar yang akan digunakan (contoh: topik yang akan dipelajari, mitra yang akan diundang, eksperimen yang akan dilakukan, salah satu sumber/media pembelajaran yang digunakan)",
+              "Guru memuliakan peserta didik dengan menghargai pencapaian proyeknya"
+            ],
+            "pages": [
+              50
+            ]
+          }
+        ],
+        "pages": [
+          48,
+          49,
+          50
+        ]
+      },
+      {
+        "order": 12,
+        "key": "assessment",
+        "label": "Asesmen Pembelajaran",
+        "items": [
+          {
+            "timing": "initial",
+            "label": "Asesmen pada Awal Pembelajaran",
+            "text": "Kuis singkat pengetahuan awal tentang ekosistem dan hubungannya dengan aktivitas manusia"
+          },
+          {
+            "timing": "process",
+            "label": "Asesmen pada Proses Pembelajaran",
+            "text": "Peta konsep, presentasi, asesmen proyek pengelolaan sampah"
+          },
+          {
+            "timing": "final",
+            "label": "Asesmen pada Akhir Pembelajaran",
+            "text": "Jurnal reflektif, tes tertulis"
+          }
+        ],
+        "note": "Instrument texts exist only in the slide image (text layer has headings only); read from the render.",
+        "pages": [
+          51
+        ]
+      }
+    ],
+    "pages": [
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ]
+  },
+  "level_examples": {
+    "decree_ref": "adds",
+    "sd_mi": {
+      "text": "Pendekatan PM dalam SD/MI dapat mengembangkan pemahaman konsep secara peserta didik secara kritis, kreatif, analitis, dan aplikatif serta menyelesaikan permasalahan",
+      "photos": "Five photos (image only): pupils examining a plant in a bottle, pupils with a ruler/measuring tool, a cardboard house model, a hand drawing on paper, a classroom poster/display activity. No captions.",
+      "pages": [
+        53
+      ]
+    },
+    "special_education": {
+      "text": "Pendekatan PM pada pendidikan khusus dapat diterapkan untuk memfasilitasi pemahaman mendalam (memahami, mengaplikasi, dan merefleksi) melalui penerapan sesuai konteks, kondisi, dan kekhususan peserta didik",
+      "summary": "Kept because SDLB may sit with SD.",
+      "pages": [
+        57
+      ]
+    }
+  },
+  "assessment": {
+    "decree_ref": "adds",
+    "summary": "The decree has no classroom assessment guidance. Slides: assessment at start/process/end (PDF 37), three functions (PDF 39, 41, 58), emphasis on feedback and authentic assessment.",
+    "principle": "Pembelajaran menekankan pentingnya umpan balik dan asesmen autentik yang mencakup tiga fungsi asesmen sebagai berikut:",
+    "timing": [
+      {
+        "key": "initial",
+        "name": "Asesmen pada awal pembelajaran"
+      },
+      {
+        "key": "process",
+        "name": "Asesmen pada proses pembelajaran"
+      },
+      {
+        "key": "final",
+        "name": "Asesmen pada akhir pembelajaran"
+      }
+    ],
+    "functions": [
+      {
+        "key": "as_learning",
+        "name": "Asesmen sebagai Pembelajaran (Assessment as Learning)",
+        "text": "Asesmen untuk refleksi proses pembelajaran dan refleksi diri peserta didik",
+        "template_text": "asesmen sebagai pembelajaran (assessment as learning) yang menekankan pada penilaian diri dan penilaian sejawat",
+        "examples": [
+          "Jurnal reflektif",
+          "self-assessment",
+          "peer assessment",
+          "checklist kemajuan belajar",
+          "dan lainnya"
+        ]
+      },
+      {
+        "key": "for_learning",
+        "name": "Asesmen untuk Pembelajaran (Assessment for Learning)",
+        "text": "Asesmen untuk perbaikan proses pembelajaran berfungsi sebagai umpan balik membantu peserta didik memahami progres belajar mereka, serta refleksi guru mengajar",
+        "template_text": "asesmen untuk pembelajaran (assessment for learning) yang menekankan pada umpan balik",
+        "examples": [
+          "Peta konsep",
+          "umpan balik formatif",
+          "observasi",
+          "pertanyaan diagnostik",
+          "dan lainnya"
+        ]
+      },
+      {
+        "key": "of_learning",
+        "name": "Asesmen dalam Pembelajaran (Assessment of Learning)",
+        "text": "Asesmen untuk mengukur capaian pembelajaran peserta didik pada akhir pembelajaran",
+        "template_text": "asesmen hasil pembelajaran (assessment of learning) yang menekankan pada pencapaian dan tindak lanjut dengan mempertimbangkan karakteristik peserta didik",
+        "examples": [
+          "Tes lisan",
+          "tes tertulis",
+          "laporan",
+          "penilaian proyek",
+          "portofolio",
+          "dan lainnya"
+        ]
+      }
+    ],
+    "technique_examples": [
+      "Penilaian Sejawat",
+      "Penilaian Diri",
+      "Penilaian Proyek",
+      "Penilaian Produk",
+      "Observasi",
+      "Portofolio",
+      "Penilaian Berbasis Kelas",
+      "Penilaian Kinerja",
+      "Tes tertulis",
+      "Tes lisan"
+    ],
+    "pages": [
+      37,
+      39,
+      41,
+      58
+    ]
+  },
+  "closing_messages": {
+    "decree_ref": "same",
+    "items": [
+      "Memuliakan Setiap Individu. Menghargai keunikan, potensi, dan pengalaman belajar peserta didik dengan menciptakan lingkungan yang inklusif dan mendukung pertumbuhan.",
+      "Transformasi Pembelajaran. Mewujudkan pendidikan yang berkesadaran, bermakna, dan menggembirakan untuk meningkatkan kompetensi peserta didik secara optimal.",
+      "Pendekatan Holistik. Mengembangkan peserta didik secara utuh melalui olah pikir, olah hati, olah rasa, dan olah raga agar siap menghadapi tantangan kehidupan.",
+      "Kolaborasi Ekosistem Pendidikan. Keberhasilan pembelajaran mendalam memerlukan sinergi antara guru, peserta didik, orang tua, masyarakat, dan mitra pendidikan.",
+      "Pendidikan Masa Depan. Memanfaatkan teknologi digital untuk menciptakan pembelajaran yang lebih interaktif dan fleksibel, serta menyiapkan generasi unggul yang berkarakter."
+    ],
+    "pages": [
+      60
+    ]
+  },
+  "open_points": [
+    {
+      "text": "Issuer, date and year are not printed. The cover and last slide show 'Kementerian Pendidikan Dasar dan Menengah Republik Indonesia' and the content is credited to TPPM (PDF 61); issued_on and year left null. The decree (PDF 24) says BSKAP/Puskurjar with TPPM prepared the socialisation material, so this deck is probably that material (2025), unconfirmed.",
+      "pages": [
+        1,
+        61,
+        62
+      ]
+    },
+    {
+      "text": "PDF 36 'Pelaksanaan' lists only 'pengalaman belajar memahami, merefleksi' (mengaplikasi missing), while PDF 13, 18, 37, 39 name all three. Treat as a slide typo; SIGRAK should use all three.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "text": "Template INTI text (PDF 39) says 'berkesadaran, bermakna, menyenangkan' instead of 'menggembirakan'. Recorded as printed.",
+      "pages": [
+        39
+      ]
+    },
+    {
+      "text": "The third assessment function is named 'Asesmen dalam Pembelajaran (Assessment of Learning)' on PDF 58 but 'asesmen hasil pembelajaran (assessment of learning)' on PDF 39. SIGRAK UI should pick one label; 'asesmen hasil pembelajaran' matches the English term better.",
+      "pages": [
+        39,
+        58
+      ]
+    },
+    {
+      "text": "Which template fields are mandatory is inferred: fields without '(opsional)' are taken as required. Kemitraan Pembelajaran and Pemanfaatan Digital are highlighted yet marked opsional; Langkah AWAL and PENUTUP are opsional; INTI and Asesmen are not marked either way.",
+      "pages": [
+        38,
+        39
+      ]
+    },
+    {
+      "text": "The worked example (PDF 46-51) has no level/phase; its CP sentence (biotik-abiotik, kestabilan ekosistem) reads like an upper-phase IPA outcome, not Fase A-C. Do not seed it as SD content without adapting.",
+      "pages": [
+        46
+      ]
+    },
+    {
+      "text": "Slide footers on PDF 29-31 are out of order (Hal. 31, 29, 30); the framework sub-slide numbering (2/5 to 5/5) and the overview order follow PDF order, so PDF page numbers are used.",
+      "pages": [
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "text": "Terminology: the slides use 'peserta didik', the decree uses 'murid'. Neither uses the term 'RPM' or 'modul ajar' for the template on PDF 38-39.",
+      "pages": [
+        38,
+        39
+      ]
+    }
+  ]
+}

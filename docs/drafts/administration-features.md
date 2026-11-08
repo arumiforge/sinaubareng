@@ -236,7 +236,7 @@ Answers to the open questions: Q1 → D-211; Q2 → D-212; Q3 → D-213; Q4 → 
 
 All accessed 2026-11-07. *Secondary* = news or blog only; verify before product copy.
 
-Official documents in the repo (`docs/dokumen-resmi/`): Permendikdasmen 13/2025; Kepmendikdasmen 126/P/2025 and 127/P/2025; BSKAP Panduan Kokurikuler 2025, Panduan Pengembangan KSP edisi revisi 2025, Panduan Pembelajaran dan Asesmen edisi revisi 2025, Panduan Pembelajaran KKA (Feb 2025).
+Official documents in the repo (received in `docs/dokumen-resmi/`, now in `docs/sources/` under descriptive names, D-203): Permendikdasmen 13/2025; Kepmendikdasmen 126/P/2025 and 127/P/2025; BSKAP Panduan Kokurikuler 2025, Panduan Pengembangan KSP edisi revisi 2025, Panduan Pembelajaran dan Asesmen edisi revisi 2025, Panduan Pembelajaran KKA (Feb 2025).
 
 Regulation text:
 - Permendikdasmen 1/2026: https://www.peraturan.go.id/filespengundangan/Permendikdasmen-no-1-tahun-2026.pdf

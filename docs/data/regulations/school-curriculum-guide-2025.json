@@ -1,0 +1,2356 @@
+{
+  "dataset": "school_curriculum_guide",
+  "version_code": "PANDUAN-KSP-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": ["A", "B", "C"],
+  "note": "Structured SD/MI-relevant content of the 2025 revised guide for developing the Kurikulum Satuan Pendidikan (KSP): principles, the four components plus evaluation/professional development, the development and review cycle, roles of the head, supervisors and dinas, SD examples and the implementation-stage (awal-berkembang-siap-mahir) review questions. SIGRAK may use it to scaffold a school's KSP outline, to word helper text and checklists, and to cite where a rule comes from; it holds no national JP table for SD (that lives in Permendikdasmen 13/2025).",
+  "source": {
+    "title": "Panduan Pengembangan Kurikulum Satuan Pendidikan Edisi Revisi Tahun 2025",
+    "number": null,
+    "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah (Pusat Kurikulum dan Pembelajaran)",
+    "issued_on": null,
+    "edition": "Edisi Revisi Ke-3, Juli 2025",
+    "year": 2025,
+    "file": "docs/sources/Panduan_Pengembangan_Kurikulum_Satuan_Pendidikan_Revisi_2025.pdf",
+    "received_as": "docs/dokumen-resmi/kurikulum-satuan-pendidikan.pdf (moved to docs/sources/ unchanged, D-203)",
+    "sha256": "6202243d310e1add6fac3338759f4ca28069a7517e183a39e7b69bed37a302f3",
+    "pages_total": 126,
+    "pages_note": "All page refs are PDF page numbers. PDF pages 1-2 are covers, 3 is the credits page, 4-6 carry roman numbers iv-vi; from PDF page 7 the printed page number is PDF page minus 6 (PDF 7 = printed 1, PDF 125 = printed 119, PDF 126 = back cover printed 120).",
+    "legal_basis_cited": [
+      {
+        "text": "Peraturan Menteri Pendidikan, Kebudayaan, Riset dan Teknologi Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah sebagaimana telah diubah dengan Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 13 Tahun 2025",
+        "summary": "The guide covers the minimum KSP components set in this regulation.",
+        "pages": [7]
+      },
+      {
+        "text": "Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional Pasal 37 (as cited): kurikulum pendidikan dasar dan menengah dikembangkan sesuai dengan relevansinya oleh setiap kelompok atau satuan pendidikan dan komite sekolah/madrasah di bawah koordinasi dan supervisi dinas pendidikan atau kantor departemen agama kabupaten/kota untuk pendidikan dasar dan provinsi untuk pendidikan menengah.",
+        "pages": [16]
+      },
+      {
+        "text": "Peraturan Pemerintah Nomor 57 Tahun 2021 tentang Standar Nasional Pendidikan sebagaimana telah diubah dengan Peraturan Pemerintah Nomor 4 Tahun 2022, Pasal 38: Pengembangan kurikulum satuan pendidikan … melibatkan komite sekolah/madrasah di bawah koordinasi dan supervisi dinas pendidikan atau kantor kementerian yang menyelenggarakan urusan pemerintahan di bidang agama kabupaten/kota.",
+        "pages": [16]
+      }
+    ],
+    "companion_guides": {
+      "text": "Panduan Pembelajaran dan Asesmen, Panduan Kokurikuler, Panduan Pelaksanaan Pendidikan Inklusif, Panduan Implementasi Bimbingan dan Konseling, Panduan Pemilihan Mata Pelajaran Pilihan di SMA/MA/Bentuk Lain yang Sederajat, dan Panduan Pengembangan Bakat dan Minat Murid SMK Melalui Pemilihan Konsentrasi Keahlian dan Ekstrakurikuler.",
+      "summary": "Guides to be read with this one; the first three apply to SD.",
+      "pages": [7]
+    }
+  },
+  "extraction": {
+    "method": "pdftotext -layout text layer read page by page; diagrams, sparse pages and every table carried into this file compared against page images rendered with pdftoppm at 110 dpi. Diagram-only content (development cycle numbering, flowchart, data-driven cycle, eight actions) transcribed from the images.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [13, 20, 23, 25, 30, 34, 46, 54, 64, 65, 66, 80, 96, 97],
+    "skipped": [
+      "PDF 1-6: covers, credits (tim penyusun/penelaah), kata pengantar, daftar isi; only edition and publisher kept.",
+      "PDF 20, 25, 30, 46: section divider illustrations (Komponen 1-4 title art), no text besides the title; checked visually.",
+      "PDF 24: thinking-process flowchart for SMK (visi-misi SMK, tujuan program keahlian, konsentrasi).",
+      "PDF 43: pengorganisasian pembelajaran untuk PAUD (900/360 menit per minggu) and SMK (spektrum keahlian, konsentrasi, kelas X/XI).",
+      "PDF 44: pengorganisasian Pendidikan Khusus (SLB, PPI, program kebutuhan khusus) kept only as a one-line pointer for SDLB; detail skipped.",
+      "PDF 45: Pendidikan Kesetaraan (SKK, pemberdayaan dan keterampilan, Paket A/B/C).",
+      "PDF 77-79: Lampiran 4 PAUD Cemerlang thematic example (Fase Fondasi TP per usia).",
+      "PDF 81: Paket B (Fase D) SKK table.",
+      "PDF 82-83: SMP/MTs time allocation tables (kelas VII-VIII 36 minggu, kelas IX 32 minggu, 1 JP = 40 menit); only the muatan lokal footnote noted in open_points.",
+      "PDF 84-86: SMP integrated and block examples.",
+      "PDF 87-88: SMK block scheduling (Teaching Factory).",
+      "PDF 90-93: Lampiran 5 planning for PAUD, SMK, Pendidikan Khusus, Kesetaraan (only the SD-relevant reporting rule for SLB noted as skipped).",
+      "PDF 94: Lampiran 6 evaluation/professional development example for SMK.",
+      "PDF 95: academic calendar example is for SMP Merdeka; summarised as a generic calendar pattern because the guide has no SD calendar.",
+      "PDF 98-99: Lampiran 8 penetapan examples for SMA Bhinneka and SMK Garuda (SD Merdeka example kept).",
+      "PDF 125-126: daftar pustaka and back cover.",
+      "All SMK/SMALB/PKL/LPA (SPK) clauses inside shared sections and in Lampiran 10 are left out of the rows."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "Long prose is shortened with '…'; no English inside text values. English goes in optional summary fields.",
+      "Where a printed passage names SD alongside other levels, only the clause binding SD is quoted.",
+      "The guide is a guide (panduan), not a regulation: everything here is advisory unless the text says 'wajib'/'harus'/'sekurang-kurangnya' or cites a regulation.",
+      "Derived numbers (per-week figures, shares) are marked derived and are not printed in the source."
+    ]
+  },
+  "ksp_definition": {
+    "purpose": {
+      "text": "Panduan Pengembangan Kurikulum Satuan Pendidikan merupakan dokumen untuk membantu satuan pendidikan dalam mengembangkan kurikulumnya. Kurikulum satuan pendidikan dikembangkan dan dikelola dengan mengacu kepada standar dan kurikulum yang ditetapkan oleh pemerintah serta menyelaraskannya dengan karakteristik dan kebutuhan murid, satuan pendidikan, serta daerah.",
+      "pages": [7]
+    },
+    "freedom_of_form": {
+      "text": "Dalam menyusun kurikulum satuan pendidikan, satuan pendidikan diberikan kewenangan untuk menentukan bentuk dan sistematika penyusunannya, dan dapat disesuaikan dengan konteks satuan pendidikan.",
+      "summary": "Schools choose the format and order of the KSP document; SIGRAK must not force a single template.",
+      "pages": [7]
+    },
+    "freedom_note": {
+      "text": "Satuan pendidikan memiliki kebebasan untuk mengembangkan kurikulumnya dengan cara lain selama selaras dengan tujuan pendidikan nasional. Satuan pendidikan dapat melengkapi penyusunan dokumen kurikulum satuan pendidikan dengan menyertakan beberapa lampiran guna mendukung penjelasan komponen analisis satuan pendidikan, pengorganisasian dan perencanaan pembelajaran, serta evaluasi, pengembangan profesional, dan pendampingan.",
+      "pages": [8]
+    },
+    "no_uniform_administration": {
+      "text": "Pengembangan kurikulum satuan pendidikan tidak menekankan pada pemenuhan aturan administrasi yang seragam.",
+      "pages": [10]
+    },
+    "living_document": {
+      "text": "Kurikulum Satuan Pendidikan merupakan dokumen hidup (living document) yang membantu satuan pendidikan untuk menyelenggarakan pendidikan berkualitas yang terwujud melalui proses analisis, refleksi, dan evaluasi berbasis data yang telah dijalankan secara sistematis dan terstruktur …",
+      "pages": [8]
+    },
+    "functions": [
+      {
+        "text": "memunculkan kemandirian dan mengembangkan kompetensi kepala satuan pendidikan, pendidik, dan tenaga kependidikan untuk mengorganisasi dan merencanakan pembelajaran dengan lebih efektif dan efisien sesuai dengan kondisi dari satuan pendidikan untuk mencapai tujuannya.",
+        "number": 1,
+        "pages": [8]
+      },
+      {
+        "text": "membantu kepala satuan pendidikan melakukan diversifikasi kurikulum berdasarkan hasil identifikasi potensi dan karakteristik daerah, satuan pendidikan, dan murid. Diversifikasi ini diharapkan dapat memperkuat ciri khas satuan pendidikan dan membantu untuk mencapai visi, misi, dan tujuannya.",
+        "number": 2,
+        "pages": [8]
+      },
+      {
+        "text": "memunculkan rasa kepemilikan dan kolaborasi dalam menyukseskan pelaksanaan kurikulumnya menuju pendidikan yang berkualitas melalui proses keterlibatan berbagai pemangku kepentingan.",
+        "number": 3,
+        "pages": [8]
+      }
+    ],
+    "graduate_profile_dimensions": {
+      "text": "delapan dimensi profil lulusan yaitu (1) keimanan dan ketakwaan kepada Tuhan Yang Maha Esa, (2) kewargaan, (3) penalaran kritis, (4) kreativitas, (5) kolaborasi, (6) kemandirian, (7) kesehatan, dan (8) komunikasi. Dimensi profil lulusan merupakan kompetensi utuh yang harus dimiliki oleh setiap murid setelah menyelesaikan proses pembelajaran dan pendidikan. Di samping itu, delapan dimensi profil lulusan menumbuhkembangkan lulusan yang memiliki kepemimpinan efektif yang berintegritas, profesional, dan transformatif.",
+      "dimensions": [
+        {"number": 1, "name": "keimanan dan ketakwaan kepada Tuhan Yang Maha Esa"},
+        {"number": 2, "name": "kewargaan"},
+        {"number": 3, "name": "penalaran kritis"},
+        {"number": 4, "name": "kreativitas"},
+        {"number": 5, "name": "kolaborasi"},
+        {"number": 6, "name": "kemandirian"},
+        {"number": 7, "name": "kesehatan"},
+        {"number": 8, "name": "komunikasi"}
+      ],
+      "pages": [8]
+    },
+    "process_nature": [
+      {
+        "text": "TETAP (mengacu kepada kerangka dasar kurikulum dan struktur kurikulum ditetapkan oleh pemerintah pusat)",
+        "key": "fixed",
+        "pages": [13]
+      },
+      {
+        "text": "FLEKSIBEL/DINAMIS (mengembangkan kurikulum satuan pendidikan berdasarkan kerangka dasar kurikulum dan struktur kurikulum, sesuai karakteristik dan kebutuhan satuan pendidikan).",
+        "key": "flexible",
+        "pages": [13]
+      }
+    ],
+    "dynamic_document": {
+      "text": "Dalam penyelenggaraannya, kurikulum satuan pendidikan perlu menjadi dokumen yang dinamis, diperbarui secara berkesinambungan, menjadi referensi dalam keseharian, direfleksikan, dan terus disusun sesuai dengan evaluasi dan kebutuhan satuan pendidikan.",
+      "pages": [12]
+    }
+  },
+  "principles": {
+    "intro": {
+      "text": "Prinsip Penyusunan Kurikulum Satuan Pendidikan",
+      "summary": "Five principles for drafting the KSP; shown as a graphic list on the page.",
+      "pages": [9]
+    },
+    "items": [
+      {
+        "text": "Pembelajaran harus memenuhi keragaman potensi, kebutuhan perkembangan dan tahapan belajar, serta kepentingan Murid.",
+        "key": "student_centred",
+        "name": "Berpusat pada murid",
+        "pages": [9]
+      },
+      {
+        "text": "Menunjukkan diversifikasi, berdasarkan pada karakteristik satuan pendidikan, konteks daerah (sosial budaya dan lingkungan), serta dunia kerja (khusus SMK).",
+        "key": "contextual",
+        "name": "Kontekstual",
+        "summary": "The 'dunia kerja' clause is SMK-only.",
+        "pages": [9]
+      },
+      {
+        "text": "Memuat semua unsur informasi penting/utama yang dibutuhkan dan digunakan di satuan pendidikan. Bahasa yang digunakan lugas, ringkas, dan mudah dipahami.",
+        "key": "essential",
+        "name": "Esensial",
+        "pages": [9]
+      },
+      {"text": "Dapat dipertanggungjawabkan karena berbasis data dan aktual.", "key": "accountable", "name": "Akuntabel", "pages": [9]},
+      {
+        "text": "Pengembangan kurikulum satuan pendidikan melibatkan komite satuan pendidikan dan berbagai pemangku kepentingan antara lain orang tua, organisasi, berbagai sentra, … di bawah koordinasi dan supervisi dinas pendidikan atau kantor kementerian yang menyelenggarakan urusan pemerintahan di bidang agama sesuai dengan kewenangannya.",
+        "key": "stakeholders",
+        "name": "Melibatkan berbagai pemangku kepentingan",
+        "summary": "For MI the supervising office is the Kemenag kabupaten/kota office.",
+        "pages": [9]
+      }
+    ]
+  },
+  "references": {
+    "basis": [
+      {"text": "Kerangka dasar Kurikulum dan Struktur Kurikulum yang ditetapkan secara nasional", "key": "a", "pages": [11]},
+      {"text": "Visi, misi, dan karakteristik satuan pendidikan.", "key": "b", "pages": [11]}
+    ],
+    "national_standards": {
+      "text": "Standar Nasional Pendidikan yang menjadi acuan dalam pengembangan kurikulum meliputi:",
+      "items": [
+        "Standar Kompetensi Lulusan",
+        "Standar Isi",
+        "Standar Proses",
+        "Standar Penilaian Pendidikan",
+        "Standar Pendidik dan Tenaga Kependidikan",
+        "Standar Pengelolaan",
+        "Standar Sarana dan Prasarana",
+        "Standar Pembiayaan"
+      ],
+      "pages": [11]
+    },
+    "curriculum_framework": {
+      "text": "Kerangka Dasar Kurikulum dan Struktur Kurikulum yang ditetapkan oleh Pemerintah menjadi acuan satuan pendidikan untuk mengembangkan kurikulum yang terdiri atas intrakurikuler dan kokurikuler. Selain intrakurikuler dan kokurikuler, struktur kurikulum dapat memuat ekstrakurikuler yang sesuai dengan karakteristik dan kekhasan satuan pendidikan sesuai dengan visi, misi, dan tujuan satuan pendidikan. … khusus SLB ditambah dengan Keterampilan Pilihan dan Program Kebutuhan Khusus.",
+      "pages": [11]
+    }
+  },
+  "development_cycle": {
+    "note": "The cycle is continuous: evaluation is the start of the next cycle, not the end.",
+    "cycle_text": {
+      "text": "Penyusunan dokumen kurikulum satuan pendidikan hendaknya dimulai dengan memahami secara utuh struktur kurikulum. Langkah penyusunan kurikulum satuan pendidikan merupakan sebuah siklus yang berkesinambungan dan berkelanjutan. Hal Ini berarti proses evaluasi tidak seharusnya menjadi akhir dari proses penyusunan kurikulum satuan pendidikan, melainkan evaluasi dapat menjadi awal siklus yang tidak terpisah sebelum mulai melakukan perencanaan.",
+      "pages": [12]
+    },
+    "new_ksp": {
+      "title": "Langkah-langkah Penyusunan Kurikulum Satuan Pendidikan (Bagi yang belum pernah menyusun)",
+      "steps": [
+        {
+          "text": "Menganalisis konteks KARAKTERISTIK SATUAN PENDIDIKAN",
+          "number": 1,
+          "component": "school_characteristics",
+          "pages": [13]
+        },
+        {"text": "Merumuskan VISI, MISI, dan TUJUAN", "number": 2, "component": "vision_mission_goals", "pages": [13]},
+        {"text": "Menentukan PENGORGANISASIAN PEMBELAJARAN", "number": 3, "component": "learning_organisation", "pages": [13]},
+        {"text": "Menyusun RENCANA PEMBELAJARAN", "number": 4, "component": "learning_planning", "pages": [13]},
+        {
+          "text": "Merancang EVALUASI, PENGEMBANGAN PROFESIONAL, dan PENDAMPINGAN",
+          "number": 5,
+          "component": "evaluation_development_mentoring",
+          "pages": [13]
+        }
+      ],
+      "evaluation_loops": [
+        {
+          "text": "Evaluasi Jangka Panjang (4-5 tahun)",
+          "from_step": 5,
+          "back_to_steps": [1, 2],
+          "summary": "Long loop returns to steps 1-2 (read from the diagram).",
+          "pages": [13]
+        },
+        {
+          "text": "Evaluasi Jangka Pendek (semester/tahunan)",
+          "from_step": 5,
+          "back_to_steps": [3],
+          "summary": "Short loop returns to step 3, then 4-5 (read from the diagram).",
+          "pages": [13]
+        }
+      ],
+      "pages": [13]
+    },
+    "existing_ksp_review": {
+      "title": "Langkah-langkah Peninjauan dan Revisi Kurikulum Satuan Pendidikan (bagi yang telah memiliki dokumen kurikulum satuan pendidikan)",
+      "steps": [
+        {"text": "Menganalisis konteks KARAKTERISTIK SATUAN PENDIDIKAN", "number": 1, "pages": [15]},
+        {"text": "Meninjau dan/atau merevisi VISI, MISI, dan TUJUAN", "number": 2, "pages": [15]},
+        {"text": "Meninjau dan/atau merevisi PENGORGANISASIAN PEMBELAJARAN", "number": 3, "pages": [15]},
+        {"text": "Menyusun RENCANA PEMBELAJARAN", "number": 4, "pages": [15]},
+        {"text": "Merancang EVALUASI, PENGEMBANGAN PROFESIONAL, DAN PENDAMPINGAN", "number": 5, "pages": [15]}
+      ],
+      "rules": [
+        {"text": "Peninjauan dapat dilaksanakan secara berkala menyesuaikan dengan kebutuhan satuan pendidikan.", "pages": [15]},
+        {"text": "Revisi dilakukan berdasarkan hasil evaluasi dan disesuaikan dengan kondisi aktual satuan pendidikan.", "pages": [15]},
+        {
+          "text": "Bagi yang sudah memiliki kurikulum satuan pendidikan, proses peninjauan dimulai dari proses evaluasi yang dapat dibagi menjadi evaluasi lingkup kelas dan satuan pendidikan",
+          "pages": [15]
+        },
+        {
+          "text": "Evaluasi lingkup kelas (langkah 3-5) dilakukannya per semester/tahunan sesuai dengan kebutuhan. Evaluasi jangka pendek dapat menggunakan data seperti observasi, diskusi dengan warga sekolah (seperti pendidik, kepala satuan pendidikan, murid), dan rapor pendidikan. …",
+          "scope": "class",
+          "steps": [3, 4, 5],
+          "frequency": "per semester/tahunan",
+          "pages": [15]
+        },
+        {
+          "text": "Evaluasi lingkup satuan pendidikan (langkah 1-5) bisa dilakukan setiap 4-5 tahun",
+          "scope": "school",
+          "steps": [1, 2, 3, 4, 5],
+          "frequency_years": [4, 5],
+          "pages": [15]
+        }
+      ],
+      "pages": [15]
+    },
+    "review_frequency_by_component": [
+      {
+        "text": "Komponen ini menjadi komponen utama yang ditinjau setiap 4 – 5 tahun.",
+        "components": ["school_characteristics", "vision_mission_goals"],
+        "pages": [18]
+      },
+      {
+        "text": "Komponen ini menjadi komponen utama yang ditinjau setiap tahun.",
+        "components": ["learning_organisation", "learning_planning"],
+        "pages": [19]
+      }
+    ],
+    "starter_questions_new": {
+      "text": "Bagi satuan pendidikan yang belum pernah menyusun kurikulum satuan pendidikan, berikut beberapa pertanyaan pemantik yang dapat membantu proses penyusunan dokumen:",
+      "items": [
+        "Apakah satuan pendidikan sudah mengetahui kondisi dan karakteristik satuan pendidikan untuk dapat menyusun kurikulum?",
+        "Apakah satuan pendidikan sudah memiliki inspirasi kurikulum dari satuan pendidikan lain?",
+        "Apakah satuan pendidikan telah memiliki visi dan misi?",
+        "Siapa yang akan memfasilitasi dan terlibat di dalam penyusunan ini?",
+        "Apakah akan dilakukan pembahasan kurikulum oleh pemangku kepentingan internal? (kepala satuan pendidikan dan pendidik)?",
+        "Apakah akan dilakukan pembahasan kurikulum satuan pendidikan oleh pemangku kepentingan eksternal? (meliputi: orang tua, komite satuan pendidikan dan pemangku kepentingan lainnya yaitu, organisasi, berbagai sentra …)?"
+      ],
+      "pages": [12]
+    },
+    "starter_questions_review": {
+      "text": "Bagi satuan pendidikan yang sudah pernah menyusun dokumen kurikulum satuan pendidikan, berikut beberapa pertanyaan pemantik yang dapat membantu proses peninjauan dan revisi dokumen:",
+      "items": [
+        "Apakah sudah melakukan evaluasi kurikulum satuan pendidikan sebelumnya?",
+        "Adakah hal-hal yang menjadi fokus perbaikan untuk meningkatkan kualitas penerapan kurikulum satuan pendidikan?",
+        "Siapa yang akan memfasilitasi dan terlibat di dalam peninjauan dan revisi ini?",
+        "Apakah kurikulum satuan pendidikan yang telah dibuat sudah sesuai dengan kerangka dan ketentuan penyusunan?",
+        "Apakah ada proses diskusi/kerja kolaborasi untuk menyusun kurikulum satuan pendidikan?",
+        "Apakah ada informasi atau pembahasan yang disampaikan pada orang tua mengenai kurikulum dan/atau program-program?",
+        "Apakah ada hal penting yang perlu dibenahi berdasarkan rapor pendidikan yang perlu difasilitasi dalam kurikulum satuan pendidikan?",
+        "Bagaimana strategi yang akan dilakukan untuk mengevaluasi?"
+      ],
+      "pages": [14],
+      "summary": "Question 9 (SMK/SMALB dunia kerja) skipped."
+    }
+  },
+  "roles": {
+    "approval": {
+      "text": "Kurikulum Satuan Pendidikan ditetapkan oleh kepala Satuan Pendidikan. Pengawas sekolah atau penilik dan dinas pendidikan memastikan satuan pendidikan melibatkan warga satuan pendidikan berdasarkan potensi dan data.",
+      "summary": "The school head signs/approves (menetapkan) the KSP; no dinas approval step.",
+      "pages": [13]
+    },
+    "school_head": {
+      "text": "Kepala satuan pendidikan dapat menggunakan dokumen ini untuk memimpin dan melibatkan berbagai pemangku kepentingan dalam pengembangan kurikulum yang kontekstual dan memenuhi kebutuhan belajar murid. Sebagai pemimpin proses belajar di satuan pendidikan, kepala satuan pendidikan memimpin perencanaan, implementasi, dan evaluasi kurikulum satuan pendidikan, kemudian menetapkan dokumen kurikulum satuan pendidikan. Kepala satuan pendidikan juga perlu melakukan refleksi sebagai bagian aktivitas sehari-hari. …",
+      "pages": [10]
+    },
+    "teachers": {
+      "text": "Pendidik dapat menggunakan dokumen ini untuk mengembangkan kurikulum yang diadaptasi sesuai dengan kebutuhan dan harapan murid yang beragam di dalam satuan pendidikan. Sebagai fasilitator proses belajar murid di kelas, pendidik perlu mengembangkan rencana pembelajaran, kemajuan pembelajaran (learning progression), dan asesmen yang dapat memberikan umpan balik efektif dan melibatkan murid.",
+      "pages": [10]
+    },
+    "education_staff": {
+      "text": "Tenaga kependidikan dapat menggunakan dokumen ini untuk mendukung layanan pendidikan dan pembelajaran sesuai dengan kebutuhan murid.",
+      "pages": [10]
+    },
+    "dinas": {
+      "text": "Dinas Pendidikan dapat menggunakan dokumen ini untuk memberi bimbingan bagi satuan pendidikan dalam proses pengembangan kurikulum yang sesuai dengan kondisi riil satuan pendidikan.",
+      "pages": [10]
+    },
+    "supervisor": {
+      "text": "Pengawas sekolah atau penilik diharapkan dapat mendorong tiap satuan pendidikan di bawah binaannya untuk mengembangkan kurikulum secara kreatif dan inovatif yang dijadikan sebagai referensi tiap anggota satuan pendidikan dalam perencanaan pembelajaran dan mencerminkan pembelajaran yang dapat mengembangkan kompetensi murid dan pencapaian delapan dimensi profil lulusan.",
+      "pages": [10]
+    },
+    "coordination_and_supervision": [
+      {
+        "text": "Satuan pendidikan menginformasikan ke dinas melalui pengawas sekolah atau penilik bahwa satuan pendidikan sudah mengembangkan dan menetapkan Kurikulum Satuan Pendidikannya.",
+        "number": 1,
+        "pages": [16]
+      },
+      {
+        "text": "Dinas pendidikan diwakili pengawas sekolah atau penilik melakukan supervisi terhadap satuan pendidikan untuk memastikan dokumen Kurikulum Satuan Pendidikan sudah selaras dengan prinsip pengembangan dan komponen minimum Kurikulum Satuan Pendidikan.",
+        "number": 2,
+        "pages": [16]
+      },
+      {
+        "text": "Jika belum selaras, maka pengawas sekolah atau penilik perlu mendampingi satuan pendidikan untuk mengembangkan kurikulum sesuai dengan komponen minimum.",
+        "number": 3,
+        "pages": [16]
+      }
+    ],
+    "supervisor_tasks": [
+      {
+        "text": "Pengawas sekolah atau penilik memfasilitasi satuan pendidikan melakukan refleksi, mengidentifikasi akar masalah, dan membuat prioritas.",
+        "number": 1,
+        "pages": [17]
+      },
+      {
+        "text": "Pengawas sekolah atau penilik memfasilitasi satuan pendidikan melakukan analisis karakteristik di lingkungan sekolah.",
+        "number": 2,
+        "pages": [17]
+      },
+      {
+        "text": "Pengawas sekolah atau penilik membantu atau mendorong sekolah untuk mencari data atau informasi menyeluruh untuk analisis karakteristik daerah (potensi dan tantangan daerah dan sekolah), termasuk melibatkan komite satuan pendidikan.",
+        "number": 3,
+        "pages": [17]
+      },
+      {
+        "text": "Pengawas sekolah atau penilik membantu satuan pendidikan untuk berjejaring memperkaya pembelajaran untuk intrakurikuler dan kokurikuler.",
+        "number": 4,
+        "pages": [17]
+      }
+    ],
+    "supervisor_mentoring_options": [
+      {
+        "text": "melakukan fasilitasi dengan berdiskusi dengan kepala satuan pendidikan, dan memastikan kepala satuan pendidikan berdiskusi atau mengumpulkan aspirasi pendidik serta warga sekolah",
+        "pages": [17]
+      },
+      {"text": "melakukan fasilitasi dengan berdiskusi langsung dengan kepala satuan pendidikan dan pendidik.", "pages": [17]}
+    ],
+    "involvement_rule": {
+      "text": "Dalam pengembangan kurikulum ini, pengawas satuan pendidikan atau penilik memastikan satuan pendidikan melibatkan komite sekolah dan warga sekolah. … Bagi pendidikan khusus, satuan pendidikan juga melibatkan ahli yang relevan.",
+      "pages": [17]
+    },
+    "drafting_team_example": {
+      "text": "See sd_examples.penetapan_sd: kepala sekolah, wakil kepala sekolah, pendidik, guru bimbingan konseling, pengawas sekolah, komite sekolah.",
+      "summary": "The guide names no fixed team; the SD example lists these parties.",
+      "pages": [98]
+    },
+    "curriculum_team_mention": {
+      "text": "Per semester: setelah 1 semester selesai, kepala satuan pendidikan dan tim pengembang kurikulum dapat melihat rangkaian pencapaian pembelajaran.",
+      "pages": [55]
+    }
+  },
+  "components": [
+    {
+      "key": "school_characteristics",
+      "number": 1,
+      "name": "Analisis Karakteristik Satuan Pendidikan",
+      "review_cycle": "4-5 tahun",
+      "must_contain": {
+        "text": "Berdasarkan analisis konteks, diperoleh gambaran mengenai karakteristik satuan pendidikan, termasuk murid, pendidik, tenaga kependidikan, sarana dan prasarana, dan sosial budaya. … Untuk SLB, karakteristik satuan pendidikan mencakup keterampilan.",
+        "aspects": ["murid", "pendidik", "tenaga kependidikan", "sarana dan prasarana", "sosial budaya"],
+        "pages": [18]
+      },
+      "purpose": {
+        "text": "Sebelum mengembangkan kurikulum, satuan pendidikan perlu melakukan analisis karakteristik dan lingkungan belajar dengan menampung aspirasi anggota komunitas, dan menjadikan visi dan misi sebagai arahan yang disepakati oleh seluruh warga satuan pendidikan. … Hasil analisis karakteristik akan menjadi landasan dalam proses perumusan visi, misi, dan tujuan satuan pendidikan.",
+        "pages": [21]
+      },
+      "analysis_principles": {
+        "items": [
+          "Melibatkan perwakilan warga satuan pendidikan seperti pendidik, tenaga kependidikan, murid, orang tua, dan lain-lain",
+          "Menggunakan data-data yang diperoleh dari situasi nyata/kondisi satuan pendidikan",
+          "Mengalokasikan waktu yang cukup untuk pengumpulan, pengorganisasian, analisis dan dokumentasi data",
+          "Memilah informasi yang relevan dan menyimpulkan untuk mengembangkan strategi atau solusi"
+        ],
+        "pages": [21]
+      },
+      "information_to_gather": {
+        "items": [
+          "Nilai-nilai apa yang perlu dihidupkan oleh satuan pendidikan dalam keseluruhan proses?",
+          "Bagaimana keterlibatan orang tua untuk mendukung perkembangan murid di satuan pendidikan?",
+          "Apa potensi dan kekhasan daerah setempat yang penting untuk diketahui, diberdayakan, atau dilestarikan?",
+          "Bagaimana peran satuan pendidikan sebagai bagian dari masyarakat setempat?",
+          "Apa dampak dari satuan pendidikan yang sudah dapat dirasakan saat ini (baik oleh warga masyarakat maupun warga satuan pendidikan itu sendiri)?",
+          "Bagaimana peran satuan pendidikan dalam menyiapkan murid mencapai delapan dimensi profil lulusan?"
+        ],
+        "pages": [22]
+      },
+      "data_collection_methods": [
+        {
+          "text": "Kuesioner, dengan pertanyaan disesuaikan dengan tujuan dan sasaran yang dibutuhkan",
+          "key": "questionnaire",
+          "pages": [22]
+        },
+        {"text": "Wawancara, untuk mendapatkan data secara langsung", "key": "interview", "pages": [22]},
+        {
+          "text": "Diskusi kelompok terpumpun/Focus Group Discussion (FGD) dengan mengundang perwakilan dari seluruh warga satuan pendidikan dan tokoh masyarakat",
+          "key": "fgd",
+          "pages": [22]
+        },
+        {
+          "text": "Observasi, mengamati dan mencatat apa yang tampak dari objek penelitian. Disarankan lebih dari 1 orang yang melakukan observasi di waktu yang sama untuk menghasilkan hasil pengamatan yang dapat diandalkan (reliable).",
+          "key": "observation",
+          "pages": [22]
+        },
+        {
+          "text": "Analisis Rapor Pendidikan, terkait mutu dan hasil belajar, kompetensi dan kinerja pendidik dan tenaga kependidikan, mutu dan relevansi pembelajaran. Hasil rapor pendidikan digunakan untuk melakukan identifikasi masalah pada satuan pendidikan, refleksi untuk mencari tahu akar masalah, dan perbaikan kualitas satuan pendidikan.",
+          "key": "rapor_pendidikan",
+          "pages": [22]
+        }
+      ],
+      "other_methods_allowed": {
+        "text": "Selain cara di atas, satuan pendidikan juga dapat menggunakan cara lain dalam mengumpulkan informasi untuk analisis karakteristik satuan pendidikan.",
+        "pages": [22]
+      },
+      "analysis_tools": {
+        "text": "Analisis SWOT (contoh dapat dilihat pada Lampiran 2); Root Cause analysis; Fish Bone diagram",
+        "items": ["Analisis SWOT", "Root Cause analysis", "Fish Bone diagram"],
+        "pages": [107]
+      },
+      "thinking_process": {
+        "text": "Dalam menyusun kurikulum satuan pendidikan, setiap komponennya dapat dikembangkan melalui proses reversibel (bolak-balik) antara analisis lingkungan belajar satuan pendidikan, visi-misi satuan pendidikan, serta tujuan dan strateginya. … Satuan pendidikan dapat menggunakan berbagai cara yang dinilai sesuai dengan kebutuhan berproses selama hasilnya selaras antarkomponennya.",
+        "flowchart": [
+          {
+            "step": "Apakah satuan pendidikan sudah memiliki visi-misi-tujuan yang ajek?",
+            "if_yes": "Apakah sudah memiliki analisis kebutuhan satuan pendidikan?",
+            "if_no": "Analisis karakteristik lingkungan belajar satuan pendidikan"
+          },
+          {"step": "Analisis karakteristik lingkungan belajar satuan pendidikan", "next": "Merumuskan visi-misi-tujuan satuan pendidikan"},
+          {"step": "Merumuskan visi-misi-tujuan satuan pendidikan", "next": "Analisis kebutuhan satuan pendidikan"},
+          {
+            "step": "Apakah sudah memiliki analisis kebutuhan satuan pendidikan?",
+            "if_yes": "Apakah sudah memiliki strategi?",
+            "if_no": "Analisis kebutuhan satuan pendidikan"
+          },
+          {"step": "Analisis kebutuhan satuan pendidikan", "next": "Menyusun strategi"},
+          {"step": "Apakah sudah memiliki strategi?", "if_yes": "Mendesain pengorganisasian pembelajaran", "if_no": "Menyusun strategi"},
+          {"step": "Menyusun strategi", "next": "Mendesain pengorganisasian pembelajaran"}
+        ],
+        "pages": [23]
+      }
+    },
+    {
+      "key": "vision_mission_goals",
+      "number": 2,
+      "name": "Visi, Misi, dan Tujuan",
+      "review_cycle": "4-5 tahun",
+      "intro": {
+        "text": "Visi, misi, dan tujuan menjadi referensi arah pengembangan dan menunjukkan prioritas satuan pendidikan. … Untuk satuan pendidikan, visi, misi, dan tujuan harus berpusat pada murid.",
+        "pages": [26]
+      },
+      "vision": {
+        "must_contain": {
+          "text": "Menggambarkan bagaimana murid menjadi subjek dalam tujuan jangka panjang satuan pendidikan dan nilai-nilai yang dituju berdasarkan hasil analisis karakteristik satuan pendidikan. Visi juga mengandung nilai-nilai yang mendasari penyelenggaraan pembelajaran agar murid dapat mencapai delapan dimensi profil lulusan yang mengacu pada Standar Kompetensi Lulusan …",
+          "pages": [18]
+        },
+        "definition": {
+          "text": "Visi adalah cita-cita bersama pada masa mendatang dari warga satuan pendidikan, yang dirumuskan berdasarkan masukan dari seluruh warga satuan pendidikan.",
+          "pages": [26]
+        },
+        "criteria": [
+          {"text": "Visi merupakan gambaran masa depan yang ingin dicapai oleh satuan pendidikan.", "key": "a", "pages": [26]},
+          {"text": "Visi harus dapat memberikan panduan/arahan serta motivasi.", "key": "b", "pages": [26]},
+          {
+            "text": "Visi harus tampak realistis, kredibel dan atraktif. Sebaiknya mudah dipahami, relatif singkat, ideal dan berfokus pada mutu, serta memotivasi setiap pemangku kepentingan.",
+            "key": "c",
+            "pages": [26]
+          }
+        ]
+      },
+      "mission": {
+        "must_contain": {
+          "text": "Menjawab bagaimana satuan pendidikan mencapai visi. Di dalam kalimat misi juga dijabarkan nilai-nilai penting yang diprioritaskan selama menjalankan misi.",
+          "pages": [18]
+        },
+        "definition": {
+          "text": "Misi adalah pernyataan bagaimana satuan pendidikan mencapai visi, yang ditetapkan untuk menjadi rujukan bagi penyusunan program jangka pendek, menengah, dan jangka panjang, dengan berdasarkan masukan dari seluruh warga satuan pendidikan.",
+          "pages": [27]
+        },
+        "criteria": [
+          {
+            "text": "Pernyataan misi menunjukkan secara jelas mengenai apa yang hendak dicapai oleh satuan pendidikan.",
+            "key": "a",
+            "pages": [27]
+          },
+          {
+            "text": "Rumusan misi selalu dalam bentuk kalimat yang menunjukkan tindakan, bukan kalimat yang menunjukkan keadaan sebagaimana pada rumusan visi.",
+            "key": "b",
+            "pages": [27]
+          },
+          {
+            "text": "Antara indikator visi dengan rumusan misi harus ada keterkaitan atau terdapat benang merahnya secara jelas. Satu indikator visi dapat dirumuskan lebih dari satu rumusan misi.",
+            "key": "c",
+            "pages": [27]
+          },
+          {"text": "Misi menggambarkan upaya bersama yang berorientasi kepada murid.", "key": "d", "pages": [27]}
+        ]
+      },
+      "goals": {
+        "must_contain": {
+          "text": "mendeskripsikan tujuan akhir dari kurikulum satuan pendidikan yang berdampak kepada murid. Di dalam kalimat tujuan juga mengandung kompetensi/karakteristik yang menjadi kekhasan lulusan satuan pendidikan dan selaras dengan delapan dimensi profil lulusan. Tujuan juga menggambarkan tahapan-tahapan (milestone) penting dan selaras dengan misi.",
+          "pages": [18]
+        },
+        "definition": {
+          "text": "Tujuan adalah gambaran hasil yang akan dicapai dalam kurun waktu tertentu oleh setiap satuan pendidikan … dengan mengacu pada karakteristik dan/atau keunikan setiap satuan pendidikan sesuai dengan prinsip yang sudah ditetapkan.",
+          "pages": [27]
+        },
+        "criteria": [
+          {"text": "Tujuan harus serasi dan mendeskripsikan misi dan nilai-nilai satuan pendidikan.", "key": "a", "pages": [27]},
+          {"text": "Tujuan fokus pada hasil yang diinginkan pada murid.", "key": "b", "pages": [27]},
+          {
+            "text": "Tujuan harus spesifik, terukur, dapat dicapai dalam jangka waktu tertentu. Untuk mengetahui pencapaian tujuan pendidikan, satuan pendidikan dapat melakukan evaluasi.",
+            "key": "c",
+            "pages": [27]
+          },
+          {
+            "text": "Tujuan Pendidikan Khusus dapat dikembangkan sesuai karakteristik dan kebutuhan murid. Tujuan Pendidikan Kesetaraan dapat dikembangkan sesuai dengan program pendidikannya (Paket A, B, dan/atau C).",
+            "key": "d",
+            "pages": [27]
+          }
+        ],
+        "embodiment": {
+          "text": "Tujuan harus selalu merupakan perwujudan dari visi dan misi, dan tujuan satuan pendidikan harus mencerminkan karakteristik atau hasil yang akan dicapai oleh murid. Karakteristik tersebut mencakup berbagai kapasitas dan tanggung jawab seseorang yang mencakup pertumbuhan intelektual, pribadi, emosional, dan sosial.",
+          "pages": [28]
+        },
+        "student_centred_principles": [
+          {
+            "text": "Dalam kurikulum satuan pendidikan, delapan dimensi profil lulusan secara lengkap menjadi fondasi. Satuan pendidikan dapat menambahkan kompetensi murid sesuai dengan karakteristik satuan pendidikan, selama tidak bertentangan dengan delapan dimensi profil lulusan.",
+            "number": 1,
+            "pages": [28]
+          },
+          {
+            "text": "Mengevaluasi secara kritis lingkungan belajar di satuan pendidikan dan membuat perubahan yang diperlukan agar memungkinkan semua murid dan pendidik untuk bekerja mengembangkan nilai-nilai delapan dimensi profil lulusan pada murid.",
+            "number": 2,
+            "pages": [28]
+          },
+          {
+            "text": "Memfokuskan kembali tujuan satuan pendidikan …, secara kreatif mengelola sumber daya yang ada pada satuan pendidikan baik itu sumber daya manusia (pendidik, orang tua atau murid) maupun sumber daya lainnya, seperti dunia kerja, lingkungan/komunitas di sekitar satuan pendidikan.",
+            "number": 3,
+            "pages": [28]
+          },
+          {
+            "text": "Menjadikan delapan dimensi profil lulusan sebagai prinsip utama setiap program pembelajaran untuk membantu murid berkembang sesuai keragaman potensinya.",
+            "number": 4,
+            "pages": [28]
+          },
+          {
+            "text": "Menggunakan delapan dimensi profil lulusan sebagai alat untuk melakukan refleksi dan analisis seluruh program pembelajaran di satuan pendidikan.",
+            "number": 5,
+            "pages": [28]
+          },
+          {
+            "text": "Satuan pendidikan melakukan refleksi secara berkala untuk mengetahui sejauh mana keberhasilan pembelajaran, serta sejauh mana struktur, sistem, dan kurikulum yang diterapkan di satuan pendidikan memungkinkan murid dan pendidik berkembang sesuai dengan delapan dimensi profil lulusan.",
+            "number": 6,
+            "pages": [28]
+          }
+        ],
+        "tips": {
+          "items": [
+            "Fokus untuk memahami dan membantu murid untuk mengenal diri dan cara belajar mereka sendiri.",
+            "Memungkinkan murid untuk melihat kemajuan mereka sendiri, merefleksikan cara dan kekuatan belajar mereka, dan menetapkan tujuan individu.",
+            "Tinjau kembali dan refleksikan berdasarkan delapan dimensi profil lulusan. Sepanjang tahun, murid akan berubah dan bertumbuh. Berikan ruang bagi murid untuk merekam refleksi diri secara teratur."
+          ],
+          "pages": [27]
+        },
+        "smart_er": {
+          "text": "Tujuan dibuat untuk menerjemahkan kalimat tindakan dalam misi menjadi aksi-aksi spesifik dan terukur. Aksi-aksi inilah yang selanjutnya akan digunakan manajemen satuan pendidikan untuk menyusun program kerja yang akan direfleksikan dan dievaluasi dalam kurun waktu tertentu.",
+          "criteria": [
+            {
+              "letter": "S",
+              "name": "Specific",
+              "questions": [
+                "Apakah tujuan dibuat sederhana dan spesifik?",
+                "Apakah tujuan dapat menunjukkan ciri khas satuan pendidikan?"
+              ]
+            },
+            {
+              "letter": "M",
+              "name": "Measurable",
+              "questions": [
+                "Apakah tujuan dapat diukur dan dapat memotivasi warga satuan pendidikan agar tercapai?",
+                "Apakah kriteria pencapaiannya jelas?"
+              ]
+            },
+            {
+              "letter": "A",
+              "name": "Achievable/Attainable",
+              "questions": [
+                "Apakah tujuan dapat dicapai dan dilaksanakan oleh seluruh warga satuan pendidikan?",
+                "Apakah pembuatan tujuan melibatkan masukan/sudut pandang pihak eksternal?"
+              ]
+            },
+            {
+              "letter": "R",
+              "name": "Relevant",
+              "questions": [
+                "Apakah tujuan relevan dengan misi dan masuk akal?",
+                "Apakah tujuan menempatkan murid sehingga mampu memperkuat kompetensinya?"
+              ]
+            },
+            {
+              "letter": "T",
+              "name": "Time Bound",
+              "questions": [
+                "Apakah tujuan memiliki alokasi waktu yang lebih fleksibel dengan lini masa yang disesuaikan dengan kebutuhan?",
+                "Apakah tujuan melibatkan semua pendidik dalam pembuatan lini masa tersebut?"
+              ]
+            },
+            {
+              "letter": "E",
+              "name": "Evaluated",
+              "text": "tujuan perlu dievaluasi untuk memastikan pencapaiannya, secara berkala menyediakan waktu untuk mendiskusikan bersama warga satuan pendidikan."
+            },
+            {
+              "letter": "R",
+              "name": "Reviewed",
+              "text": "tujuan juga perlu ditinjau secara berkelanjutan, direfleksikan bersama, dan didiskusikan modifikasi yang perlu dilakukan."
+            }
+          ],
+          "steps": [
+            "Dari kalimat misi yang dibuat, deskripsikan langkah yang dilakukan agar misi tersebut dapat diselesaikan.",
+            "Pastikan setiap kalimat tujuan dibuat dengan spesifik, dapat diukur, dan memiliki alokasi waktu yang jelas.",
+            "Contoh berikut dapat digunakan untuk mengecek setiap kalimat tujuan sudah memenuhi prinsip SMART …"
+          ],
+          "pages": [74, 75]
+        }
+      },
+      "alignment_checklist": {
+        "tip": "Saat melakukan analisis lingkungan belajar, pastikan visi, misi, dan tujuan tidak bertentangan dengan kerangka kurikulum yang ditetapkan oleh pusat: tujuan pendidikan nasional dan struktur kurikulum.",
+        "questions": [
+          {"target": "visi", "text": "Apakah visi menggambarkan harapan seluruh warga satuan pendidikan?"},
+          {"target": "visi", "text": "Apakah visi menyatakan tujuan besar yang ingin dicapai satuan pendidikan?"},
+          {"target": "visi", "text": "Apakah visi sudah berpusat pada murid?"},
+          {"target": "misi", "text": "Apakah misi jelas menyatakan hal-hal yang perlu dilakukan untuk mencapai visi?"},
+          {"target": "misi", "text": "Apakah semua warga satuan pendidikan memahami hal-hal yang menjadi prioritas untuk mencapai visi?"},
+          {"target": "tujuan", "text": "Apakah tujuan sudah secara jelas menyatakan hasil aksi yang perlu dilakukan untuk mencapai misi?"},
+          {"target": "tujuan", "text": "Apakah cara/strategi untuk mencapai misi realistis untuk dijalankan?"}
+        ],
+        "pages": [29]
+      }
+    },
+    {
+      "key": "learning_organisation",
+      "number": 3,
+      "name": "Pengorganisasian Pembelajaran",
+      "review_cycle": "setiap tahun",
+      "must_contain": {
+        "text": "Cara satuan pendidikan mengatur muatan kurikulum dalam satu rentang waktu dan beban belajar, serta cara mengelola pembelajaran untuk mendukung pencapaian delapan (8) dimensi profil lulusan",
+        "pages": [19]
+      },
+      "definition": {
+        "text": "Pengorganisasian pembelajaran adalah cara satuan pendidikan mengatur pembelajaran muatan kurikulum dalam satu rentang waktu. Pengorganisasian struktur kurikulum mengatur tentang kompetensi, muatan pembelajaran, dan beban belajar. Untuk dapat mengorganisasi program pembelajaran secara efektif, satuan pendidikan perlu membuat perencanaan berbasis data. …",
+        "pages": [31]
+      },
+      "reference_documents": {
+        "text": "Kerangka Dasar Kurikulum dan Struktur Kurikulum; Panduan Kokurikuler; Panduan Pembelajaran dan Asesmen",
+        "items": [
+          "Kerangka Dasar Kurikulum dan Struktur Kurikulum",
+          "Panduan Kokurikuler",
+          "Panduan Pembelajaran dan Asesmen"
+        ],
+        "pages": [31]
+      },
+      "curriculum_structure_terms": [
+        {
+          "text": "Struktur Kurikulum merupakan pengorganisasian atas kompetensi, muatan pembelajaran, dan beban belajar.",
+          "key": "struktur_kurikulum",
+          "pages": [32]
+        },
+        {
+          "text": "Kompetensi merupakan kesatuan sikap, keterampilan, dan pengetahuan yang menunjukkan kemampuan Murid sebagai hasil dari proses pembelajaran.",
+          "key": "kompetensi",
+          "pages": [32]
+        },
+        {
+          "text": "Muatan pembelajaran merupakan susunan materi atau isi yang disampaikan pada proses pembelajaran, mencakup sikap, keterampilan, dan pengetahuan yang diharapkan dikuasai oleh Murid sesuai dengan kebutuhan belajar.",
+          "key": "muatan_pembelajaran",
+          "pages": [32]
+        },
+        {
+          "text": "Beban belajar sebagaimana merupakan alokasi waktu pembelajaran untuk mencapai kompetensi Murid.",
+          "key": "beban_belajar",
+          "pages": [32]
+        }
+      ],
+      "sub_components": [
+        {
+          "key": "intrakurikuler",
+          "name": "Intrakurikuler",
+          "definition": {
+            "text": "Intrakurikuler, berisi kegiatan pembelajaran untuk mencapai tujuan belajar sesuai jadwal dan beban belajar pada struktur kurikulum.",
+            "pages": [19]
+          },
+          "content": {
+            "text": "kegiatan intrakurikuler berisi muatan pembelajaran yang ditetapkan dalam bentuk mata pelajaran wajib, mata pelajaran pilihan, dan atau muatan lokal.",
+            "forms": ["mata pelajaran wajib", "mata pelajaran pilihan", "muatan lokal"],
+            "pages": [32]
+          }
+        },
+        {
+          "key": "kokurikuler",
+          "name": "Kokurikuler",
+          "definition": {
+            "text": "Kokurikuler merupakan kegiatan pembelajaran yang dilaksanakan untuk penguatan, pendalaman, dan/atau pengayaan kegiatan Intrakurikuler dalam rangka pengembangan kompetensi, terutama penguatan karakter.",
+            "pages": [19]
+          },
+          "content": {
+            "text": "Kegiatan kokurikuler berisi muatan pembelajaran yang ditetapkan berupa tema. Tema dikembangkan oleh Satuan Pendidikan. Kegiatan Kokurikuler juga memuat alur perkembangan kompetensi yang diturunkan dari delapan dimensi profil lulusan.",
+            "pages": [32]
+          },
+          "forms": {
+            "text": "Kegiatan kokurikuler dilaksanakan dalam bentuk pembelajaran kolaboratif lintas disiplin ilmu, penguatan karakter melalui gerakan tujuh kebiasaan anak Indonesia hebat, dan/atau cara lainnya.",
+            "items": [
+              "pembelajaran kolaboratif lintas disiplin ilmu",
+              "gerakan tujuh kebiasaan anak Indonesia hebat (7KAIH)",
+              "cara lainnya"
+            ],
+            "pages": [32]
+          }
+        },
+        {
+          "key": "ekstrakurikuler",
+          "name": "Ekstrakurikuler",
+          "definition": {
+            "text": "Ekstrakurikuler, merupakan kegiatan pengembangan karakter dalam rangka perluasan potensi, bakat, minat, kemampuan kepribadian, kerja sama, dan kemandirian murid secara optimal yang dilakukan dengan bimbingan dan pengawasan satuan pendidikan.",
+            "pages": [19]
+          },
+          "content": {
+            "text": "Kegiatan ekstrakurikuler merupakan kegiatan yang dikembangkan untuk mengambangkan minat dan bakat murid serta sesuai dengan karakteristik satuan pendidikan. Satuan Pendidikan sekurang-kurangnya menyediakan Ekstrakurikuler kepramukaan atau kepanduan lainnya.",
+            "mandatory_minimum": "kepramukaan atau kepanduan lainnya",
+            "pages": [32]
+          }
+        }
+      ],
+      "needs_analysis_principles": {
+        "text": "Mengidentifikasi kebutuhan merupakan proses awal dalam menyusun pengorganisasian pembelajaran. …",
+        "items": [
+          "memprioritaskan kebutuhan murid",
+          "menyesuaikan sumber daya pendidik dan tenaga kependidikan",
+          "mempertimbangkan ketersediaan sarana dan prasarana satuan pendidikan"
+        ],
+        "rapor_pendidikan": "Selain itu, menggunakan hasil Rapor Pendidikan sebagai perencanaan berbasis data akan sangat bermanfaat untuk mengorganisasi serta merencanakan kegiatan pembelajaran yang sesuai kebutuhan dan konteks satuan pendidikan. … Pembenahan pembelajaran tersebut dapat terwujud dalam proses pembelajaran intrakurikuler, kokurikuler, ekstrakurikuler, serta program-program satuan pendidikan yang disusun dalam satu tahun ajaran.",
+        "pages": [33],
+        "summary": "SMK/SMALB (dunia kerja) and SPK (LPA) principles skipped."
+      },
+      "organisation_models": {
+        "intro": {
+          "text": "Terdapat 4 (empat) pengorganisasian yang dapat digunakan oleh satuan pendidikan dalam mengorganisasikan muatan pembelajaran disesuaikan dengan kondisi dan tujuan masing-masing satuan pendidikan.",
+          "pages": [34]
+        },
+        "sd_rule": {
+          "text": "SD/MI dapat mengorganisasikan muatan pembelajaran berdasarkan mata pelajaran atau secara tematik.",
+          "summary": "Explicit SD/MI option: subject-based or thematic.",
+          "pages": [34]
+        },
+        "combination": {
+          "text": "Satuan pendidikan dapat memilih salah satu atau mengkombinasikan pengorganisasian tersebut. Misalnya dengan menggunakan pengorganisasian pembelajaran secara integrasi dan blocking secara bersamaan.",
+          "pages": [35]
+        },
+        "scheduling_tip": {
+          "text": "Pengorganisasian pembelajaran akan memengaruhi satuan pendidikan dalam mengelola waktu (penjadwalan) dan sumber dayanya. Oleh karena itu, perlu mempertimbangkan jumlah pendidik dan murid, beban mengajar, dan kesiapan satuan pendidikan.",
+          "pages": [35]
+        },
+        "protected_subjects": {
+          "text": "Untuk menguatkan jati diri bangsa, mata pelajaran yang tidak diperkenankan untuk dilebur menjadi unit pelajaran dengan nama yang berbeda adalah Pendidikan Agama dan Budi Pekerti, Bahasa Indonesia, dan Pendidikan Pancasila.",
+          "subjects": ["Pendidikan Agama dan Budi Pekerti", "Bahasa Indonesia", "Pendidikan Pancasila"],
+          "summary": "Hard rule for integrated units: these three subjects keep their own names.",
+          "pages": [41]
+        },
+        "allocation_still_applies": {
+          "text": "Catatan: Pengorganisasian intrakurikuler secara terintegrasi tetap mengikuti acuan alokasi waktu per mata pelajaran yang terdapat dalam Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 13 Tahun 2025.",
+          "summary": "Printed under an SMP example but states a general rule.",
+          "pages": [85]
+        },
+        "models": [
+          {
+            "key": "subject_based",
+            "number": 1,
+            "name": "Berdasarkan mata pelajaran",
+            "description": {
+              "text": "Setiap pembelajaran dilakukan terpisah antara satu mata pelajaran dengan mata pelajaran lainnya. Tatap muka dilakukan secara reguler setiap minggu, dengan jumlah jam tatap muka sesuai dengan yang ditetapkan oleh masing-masing satuan pendidikan berdasarkan ketentuan minimal dari pemerintah.",
+              "pages": [34]
+            },
+            "how": {
+              "text": "Pengorganisasian pembelajaran berdasarkan mata pelajaran bertujuan untuk mencapai Capaian Pembelajaran di masing-masing mata pelajaran. Saat perencanaan pembelajaran, pendidik dan wakil kepala satuan pendidikan bidang kurikulum melihat tujuan pembelajaran dan merancang asesmen dan kegiatan untuk setiap mata pelajaran. Jadwal disusun berdasarkan mata pelajaran dengan masing-masing alokasi jam pelajaran tiap tahunnya.",
+              "pages": [37]
+            },
+            "advantages": [
+              "Memudahkan satuan pendidikan dalam pembuatan jadwal pembelajaran di satuan pendidikan."
+            ],
+            "considerations": [
+              "Beban yang harus dihadapi murid setiap minggu harus diperhitungkan sedemikian rupa, sehingga murid tidak terbebani dengan banyaknya beban mata pelajaran.",
+              "Daya serap murid terhadap mata pelajaran akan sangat berpengaruh jika macam mata pelajaran yang diberikan dalam satu waktu tertentu terlampau banyak. …",
+              "Perlunya koordinasi antar pendidik pengampu mata pelajaran. Pengaturan harus dilakukan sedemikian rupa, sehingga tidak memberikan tugas dalam waktu yang bersamaan."
+            ],
+            "pages": [34, 35, 36, 37]
+          },
+          {
+            "key": "thematic",
+            "number": 2,
+            "name": "Secara tematik",
+            "description": {
+              "text": "Pembelajaran disusun berdasarkan tema yang menaungi kompetensi-kompetensi dari berbagai mata pelajaran. Pengorganisasian pembelajaran yang mengintegrasikan berbagai kompetensi dari berbagai mata pelajaran ke dalam berbagai tema.",
+              "pages": [34]
+            },
+            "characteristics": [
+              "Memiliki tema yang dekat dengan kehidupan murid.",
+              "Tema diibaratkan sebagai payung yang menaungi kompetensi-kompetensi dari berbagai mata pelajaran.",
+              "Berpusat pada murid dan bersifat fleksibel.",
+              "Pemisahan antar mata pelajaran tidak terlihat secara jelas.",
+              "Materi yang diajarkan bersifat relevan dengan kebutuhan murid sehingga pembelajaran menjadi lebih bermakna.",
+              "Hubungan antara kompetensi terlihat jelas di dalam aktivitas yang dilakukan."
+            ],
+            "starter_questions": [
+              "Apakah ada tema yang kontekstual sesuai dengan karakteristik satuan pendidikan?",
+              "Apakah satuan pendidikan memiliki pendidik yang cukup mumpuni untuk menggali informasi dan pengetahuan terkait materi pembelajaran?",
+              "Apakah satuan pendidikan menyesuaikan ruang lingkup tema dengan usia dan perkembangan murid (minat kebutuhan, dan kemampuan)?",
+              "Apakah satuan pendidikan cukup fleksibilitas di dalam menyusun tema-tema pembelajaran?",
+              "Apakah model yang dipilih sudah sesuai dengan konteks satuan pendidikan?",
+              "Apakah satuan pendidikan telah memikirkan cara penilaian yang komprehensif dalam menyusun tema-tema pembelajaran?"
+            ],
+            "advantages": [
+              "Adanya tema sebagai payung besar yang menaungi kompetensi-kompetensi dari berbagai mata pelajaran.",
+              "Mengembangkan kompetensi pengetahuan, keterampilan, dan sikap murid",
+              "Menyajikan kegiatan yang bersifat pragmatis",
+              "Berpusat pada murid, menghadirkan tema-tema yang relevan serta kontekstual dan berkaitan dengan kehidupan riil murid, memadukan konsep-konsep dari berbagai mata pelajaran, bersifat fleksibel, menghasilkan pembelajaran yang menggembirakan."
+            ],
+            "considerations": [
+              "Penentuan tema tidak harus diawali dari pemetaan kompetensi-kompetensi dari berbagai mata pelajaran.",
+              "Satuan pendidikan memberikan keleluasaan kepada pendidik untuk menentukan tema yang relevan dan kontekstual.",
+              "Satuan pendidikan memberikan fleksibilitas bagi pendidik untuk menyatukan konsep dari berbagai mata pelajaran atau dikaitkan dengan kehidupan murid",
+              "Satuan pendidikan memfasilitasi pendidik untuk berkolaborasi dalam merancang pembelajaran."
+            ],
+            "schedule_note": "Untuk pembelajaran tematik, dapat menggunakan contoh jadwal yang sama, tetapi setiap materi di mata pelajaran konteksnya dikaitkan dengan tema.",
+            "pages": [34, 35, 36, 39, 82]
+          },
+          {
+            "key": "integrated",
+            "number": 3,
+            "name": "Secara terintegrasi",
+            "description": {
+              "text": "Konsep-konsep dan keterampilan tertentu dari mata pelajaran diajarkan secara kolaboratif (team teaching). Pendidik berkolaborasi sedemikian rupa untuk merencanakan, melaksanakan, dan melakukan asesmen untuk suatu pembelajaran yang terpadu. Sebagai contoh, satuan pendidikan mengajarkan muatan Ilmu Pengetahuan Alam atau Ilmu Pengetahuan Sosial secara terintegrasi.",
+              "pages": [34]
+            },
+            "concept": {
+              "text": "Pengorganisasian pembelajaran secara terintegrasi diibaratkan jus, di mana bermacam bahan dilebur dan sudah tidak dapat dipilah. Pembelajaran integratif berfokus membangun pemahaman terhadap satu ide besar (konsep).",
+              "pages": [40]
+            },
+            "fogarty_models": {
+              "text": "Menurut Forgaty (2009), terdapat sepuluh model pendekatan integratif:",
+              "items": [
+                {"number": 1, "name": "fragmented", "text": "Model penggalan (fragmented)"},
+                {"number": 2, "name": "connected", "text": "Model keterhubungan (connected)"},
+                {"number": 3, "name": "nested", "text": "Model sarang (nested)"},
+                {"number": 4, "name": "sequenced", "text": "Model urutan/rangkaian (sequenced)"},
+                {"number": 5, "name": "shared", "text": "Model bagian (shared)"},
+                {"number": 6, "name": "webbed", "text": "Model jaring laba-laba (webbed)"},
+                {"number": 7, "name": "threaded", "text": "Model galur/benang (threated)"},
+                {"number": 8, "name": "integrated", "text": "Model keterpaduan (integrated)"},
+                {"number": 9, "name": "immersed", "text": "Model celupan (immersed)"},
+                {"number": 10, "name": "networked", "text": "Model jaringan (networked)"}
+              ],
+              "pages": [40],
+              "note": "Names only (Indonesian label as printed); one-line definitions on the cited page."
+            },
+            "how": [
+              "Saat menyusun pengorganisasian pembelajaran, pendidik dan wakil kepala satuan pendidikan bidang kurikulum melihat tujuan pembelajaran dan merancang sebuah ide besar (konsep) yang menjadi tujuan akhir proses pembelajaran.",
+              "Jadwal disusun dengan meleburkan beberapa mata pelajaran dan sudah menjadi satu unit pembelajaran integratif sehingga jam pelajaran tidak berdasarkan pada masing-masing mata pelajaran itu sendiri."
+            ],
+            "framework_examples": [
+              {
+                "big_idea": "Membudidayakan tanaman obat untuk kehidupan rumah tangga dapat memengaruhi pilihan keluarga dalam merawat diri dan lingkungannya.",
+                "performance_task": "Membuat tanaman obat keluarga (TOGA) dengan menanam beberapa tanaman obat, seperti jahe, kunyit, kencur di rumah.",
+                "subjects": "IPA, Seni, dan Prakarya."
+              },
+              {
+                "big_idea": "Pengolahan dan penyajian data terhadap sebuah fenomena dapat menjadi salah satu cara berkomunikasi yang efektif dan menarik.",
+                "performance_task": "Membuat data statistik mengenai jumlah pengangguran di suatu daerah tertentu.",
+                "subjects": "Matematika, IPS, dan Informatika."
+              }
+            ],
+            "pages": [34, 35, 36, 40, 41],
+            "summary": "The guide lists SD/MI as subject-based or thematic; the integrated examples (Seni and Prakarya, Informatika, IPS) read as SMP-level and are kept as generic patterns.",
+            "advantages_considerations_note": "Kelebihan and 'hal yang perlu dipertimbangkan' for this model are on PDF 35-36; not transcribed because SD/MI is directed to subject-based or thematic organisation (PDF 34)."
+          },
+          {
+            "key": "block",
+            "number": 4,
+            "name": "Secara bergantian dalam blok waktu terpisah",
+            "description": {
+              "text": "Pembelajaran dikelola dalam bentuk blok-blok waktu dengan berbagai macam pengelompokan. … Contoh lain, mengajarkan muatan Ilmu Pengetahuan Alam atau Ilmu Pengetahuan Sosial secara bergantian dalam blok waktu yang terpisah.",
+              "pages": [34]
+            },
+            "definition": {
+              "text": "Pengorganisasian pembelajaran secara bergantian dalam blok waktu terpisah merupakan suatu sistem pembelajaran yang mengatur atau mengelompokkan jam pelajaran menjadi lebih panjang dari biasanya yang bertujuan agar murid dapat mengalami proses pembelajaran lebih maksimal. …",
+              "pages": [42]
+            },
+            "how": [
+              "Pendekatan ini mengelompokkan jam belajar efektif dalam satuan waktu yang terangkum.",
+              "Jadwal disusun per tahun ajaran dengan membentuk blok-blok yang terdiri dari beberapa mata pelajaran.",
+              "Penyusunan jadwal mengatur periode kelas menjadi sedikit, tetapi lebih lama sehingga memungkinkan aktivitas pembelajaran yang lebih fleksibel.",
+              "Pengaturan dalam satu tahun ajaran tergantung kepada kesiapan satuan pendidikan dan sumber daya."
+            ],
+            "tips": [
+              "Pertimbangkan alokasi waktu mata pelajaran, jumlah ketersediaan pendidik dan tenaga kependidikan, jumlah murid, dan jumlah paralel kelas.",
+              "Pertimbangkan bobot kesulitan dan kekhasan dari masing-masing mata pelajaran sehingga murid memiliki jadwal pelajaran yang seimbang pada tahun ajaran tersebut."
+            ],
+            "pages": [34, 35, 36, 42],
+            "advantages_considerations_note": "Kelebihan and 'hal yang perlu dipertimbangkan' for this model are on PDF 35-36; not transcribed because SD/MI is directed to subject-based or thematic organisation (PDF 34)."
+          }
+        ]
+      },
+      "subject_based_examples_fase_b": {
+        "text": "Examples printed under 'Pengorganisasian pembelajaran berdasarkan mata pelajaran': CP excerpt (Fase B) and a derived tujuan pembelajaran.",
+        "rows": [
+          {
+            "subject": "Matematika",
+            "cp_excerpt": "Mengidentifikasi, meniru, dan mengembangkan pola gambar atau objek sederhana dan pola bilangan membesar dan mengecil yang melibatkan penjumlahan dan pengurangan pada bilangan cacah sampai 100 (Fase B, Elemen Aljabar).",
+            "tp": "Murid mengembangkan pola gambar atau objek sederhana dan pola bilangan membesar dan mengecil yang melibatkan berbagai operasi hitung.",
+            "pages": [37]
+          },
+          {
+            "subject": "Bahasa Indonesia",
+            "cp_excerpt": "Menulis berbagai tipe teks sederhana dengan rangkaian kalimat yang beragam; dan menggunakan kaidah kebahasaan dan kosakata baru yang memiliki makna denotatif untuk menulis teks sesuai dengan konteks (Fase B, Elemen Menulis).",
+            "tp": "Murid menyusun teks deskriptif sederhana dengan menggunakan kalimat lengkap dan beragam untuk menggambarkan benda atau tempat di sekitarnya",
+            "pages": [37]
+          },
+          {
+            "subject": "Pendidikan Pancasila",
+            "cp_excerpt": "Menunjukkan makna sila-sila Pancasila, dan penerapannya dalam kehidupan sehari-hari; mengenal karakter para perumus Pancasila; menunjukkan sikap bangga menjadi anak Indonesia yang memiliki bahasa Indonesia sebagai bahasa persatuan di lingkungan keluarga, sekolah, dan masyarakat (Fase B, Elemen Pancasila).",
+            "tp": "Murid menuliskan aksi nyata sebagai penerapan Pancasila di rumah, sekolah, dan masyarakat melalui sebuah jurnal harian.",
+            "pages": [38]
+          },
+          {
+            "subject": "Seni Musik",
+            "cp_excerpt": "Mengenali nada dan pola irama menggunakan anggota tubuh maupun alat musik (Fase B, Elemen Mengalami/Experiencing).",
+            "tp": "Murid mengenali dan menirukan tinggi rendah nada melalui gerakan anggota tubuh (seperti tepuk, langkah, atau hentakan kaki.",
+            "pages": [38]
+          }
+        ],
+        "pages": [37, 38]
+      },
+      "sdlb_pointer": {
+        "text": "Struktur kurikulum SLB mengacu kepada struktur kurikulum SD/MI, SMP/MTs, dan SMA/MA yang disesuaikan untuk murid berkebutuhan khusus dengan hambatan intelektual. Murid yang tidak mengalami hambatan intelektual dapat menggunakan struktur kurikulum SD/MI, SMP/MTs, dan SMA/MA dengan memperhatikan akomodasi kurikulum. …",
+        "summary": "Pointer only; SLB detail skipped.",
+        "pages": [44]
+      }
+    },
+    {
+      "key": "learning_planning",
+      "number": 4,
+      "name": "Perencanaan Pembelajaran",
+      "review_cycle": "setiap tahun",
+      "must_contain": {
+        "text": "Perencanaan pembelajaran meliputi ruang lingkup satuan pendidikan dan ruang lingkup kelas.",
+        "school_scope": {
+          "text": "Rencana pembelajaran untuk ruang lingkup satuan pendidikan memuat alur tujuan pembelajaran beserta gambaran besar asesmen pembelajaran untuk kegiatan intrakurikuler, serta memuat tema pada bentuk kegiatan kokurikuler yang dilakukan.",
+          "pages": [19]
+        },
+        "class_scope": {
+          "text": "Rencana pembelajaran untuk ruang lingkup kelas memuat perencanaan pembelajaran seperti perencanaan pembelajaran (RPP), modul ajar, atau bentuk lainnya. Untuk dokumentasi rencana pembelajaran ini, satuan pendidikan cukup melampirkan beberapa contoh perencanaan pembelajaran atau bentuk rencana kegiatan yang mewakili inti dari rangkaian pembelajaran pada bagian Lampiran 9.",
+          "summary": "The KSP only needs a few sample lesson plans attached, not all of them.",
+          "pages": [19]
+        },
+        "pages": [19, 47]
+      },
+      "use_of_government_examples": [
+        {
+          "text": "Satuan pendidikan dapat menggunakan, memodifikasi, atau mengadaptasi contoh perencanaan pembelajaran yang disediakan Pemerintah. Satuan pendidikan cukup melampirkan beberapa perencanaan pembelajaran …",
+          "pages": [47]
+        },
+        {
+          "text": "Satuan pendidikan dan pendidik memiliki keleluasaan untuk menentukan kegiatan pembelajaran dan perangkat ajar sesuai dengan tujuan pembelajaran, konteks satuan pendidikan, dan karakteristik murid.",
+          "pages": [47]
+        },
+        {
+          "text": "Pendidik dapat (1) mengembangkan sepenuhnya alur tujuan pembelajaran dan/atau perencanaan pembelajaran, (2) mengembangkan alur tujuan pembelajaran dan/atau rencana pembelajaran berdasarkan contoh-contoh yang disediakan Pemerintah, atau (3) menggunakan contoh yang disediakan.",
+          "options": [
+            "mengembangkan sepenuhnya",
+            "mengembangkan berdasarkan contoh Pemerintah",
+            "menggunakan contoh yang disediakan"
+          ],
+          "pages": [50]
+        }
+      ],
+      "deep_learning": {
+        "definition": {
+          "text": "Pembelajaran mendalam didefinisikan sebagai pendekatan yang memuliakan dengan menekankan pada penciptaan suasana belajar dan proses pembelajaran berkesadaran, bermakna, dan menggembirakan melalui olah pikir, olah hati, olah rasa, dan olah raga secara holistik dan terpadu.",
+          "pages": [48]
+        },
+        "rules": [
+          {
+            "text": "Dalam merencanakan pembelajaran mendalam, satuan pendidikan perlu memperhatikan prinsip-prinsip pembelajaran dan asesmen.",
+            "pages": [48]
+          },
+          {
+            "text": "Prinsip pembelajaran dan asesmen harus digunakan secara terintegrasi sebagai pertimbangan utama dalam merancang struktur kurikulum satuan pendidikan.",
+            "pages": [48]
+          },
+          {"text": "Satuan pendidikan dapat menggunakan Panduan Pembelajaran dan Asesmen sebagai panduan terkait.", "pages": [48]}
+        ],
+        "learning_principles": [
+          {
+            "text": "Berkesadaran, memiliki kesadaran untuk menjadi pembelajar yang aktif dan mampu meregulasi diri.",
+            "key": "berkesadaran",
+            "pages": [48]
+          },
+          {"text": "Bermakna, menerapkan pengetahuannya secara kontekstual.", "key": "bermakna", "pages": [48]},
+          {
+            "text": "Menggembirakan, suasana belajar yang positif, menantang, menyenangkan, dan memotivasi agar murid terhubung secara emosional untuk lebih mudah memahami, mengingat, dan menerapkan pengetahuan.",
+            "key": "menggembirakan",
+            "pages": [48]
+          }
+        ],
+        "assessment_principles": [
+          {
+            "text": "Penilaian hasil belajar murid dilakukan sesuai dengan tujuan penilaian secara berkeadilan; pendidik melakukan penilaian yang tidak bias oleh latar belakang, identitas, atau kebutuhan khusus murid.",
+            "key": "berkeadilan",
+            "pages": [48]
+          },
+          {
+            "text": "Penilaian hasil belajar murid dilakukan sesuai dengan tujuan penilaian secara objektif.",
+            "key": "objektif",
+            "pages": [48]
+          },
+          {
+            "text": "Penilaian hasil belajar murid dilakukan sesuai dengan tujuan penilaian secara edukatif.",
+            "key": "edukatif",
+            "pages": [48]
+          }
+        ],
+        "learning_experiences": {
+          "text": "Pembelajaran mendalam memberikan pengalaman belajar kepada murid dengan memahami, mengaplikasi, dan merefleksi. Pengalaman belajar ini merupakan aktivitas yang direncanakan dan diberikan oleh pendidik.",
+          "items": ["memahami", "mengaplikasi", "merefleksi"],
+          "pages": [49]
+        },
+        "checklist": {
+          "text": "Pertanyaan pemantik dalam menyusun pembelajaran mendalam, apakah satuan pendidikan telah:",
+          "items": [
+            "mendorong murid untuk memahami, mengaplikasi, dan merefleksikan pengetahuan dalam berbagai disiplin ilmu?",
+            "menyusun materi pembelajaran yang membantu murid sampai pada pemahaman konseptual, bukan hanya sekadar mengingat?",
+            "mengaitkan materi dengan konteks nyata dan relevan bagi kehidupan murid?",
+            "mengembangkan strategi agar murid tidak hanya memahami materi, tetapi juga dapat mengaplikasikan ke dalam kehidupan sehari-hari?",
+            "menciptakan rasa senang, antusiasme, dan rasa aman bagi murid untuk belajar?",
+            "membantu siswa menghubungkan pengetahuan awal mereka dengan pengetahuan baru yang akan dipelajari?",
+            "mengajak murid untuk berpikir kritis, berefleksi, berkolaborasi, dan memecahkan masalah dalam konteks nyata?",
+            "menyusun asesmen untuk membantu murid memahami kekuatan dan kelemahan mereka dalam belajar?"
+          ],
+          "pages": [49]
+        }
+      },
+      "intrakurikuler_planning": {
+        "flow": {
+          "text": "Menganalisis Capaian Pembelajaran (CP) → Menyusun Tujuan Pembelajaran dan Alurnya → Merencanakan Pembelajaran dan Asesmen",
+          "steps": [
+            "Menganalisis Capaian Pembelajaran (CP)",
+            "Menyusun Tujuan Pembelajaran dan Alurnya",
+            "Merencanakan Pembelajaran dan Asesmen"
+          ],
+          "pages": [50]
+        },
+        "related_document": "Panduan Pembelajaran dan Asesmen",
+        "rules": [
+          {
+            "text": "Capaian Pembelajaran (CP) adalah kompetensi pembelajaran yang harus dicapai murid pada setiap fase, dimulai dari fase fondasi pada PAUD. Capaian Pembelajaran ditetapkan oleh Pemerintah dan disusun dalam fase-fase.",
+            "key": "cp",
+            "pages": [50]
+          },
+          {
+            "text": "Capaian Pembelajaran diuraikan menjadi tujuan-tujuan pembelajaran yang bersifat operasional dan konkret. Perumusan tujuan pembelajaran meliputi kompetensi dan lingkup materi.",
+            "key": "tp",
+            "pages": [50]
+          },
+          {
+            "text": "Tujuan-tujuan pembelajaran tersebut kemudian diurutkan menjadi alur tujuan pembelajaran. Alur tujuan pembelajaran adalah rangkaian tujuan pembelajaran yang disusun secara logis menurut urutan pembelajaran sejak awal hingga akhir suatu fase. Alur ini disusun secara linear sebagaimana urutan kegiatan pembelajaran yang dilakukan dari hari ke hari. Prinsip penyusunan alur tujuan pembelajaran: esensial, berkesinambungan, kontekstual, dan sederhana.",
+            "key": "atp",
+            "atp_principles": ["esensial", "berkesinambungan", "kontekstual", "sederhana"],
+            "pages": [50]
+          },
+          {
+            "text": "Proses merancang pembelajaran dan asesmen meliputi tujuan pembelajaran yang telah dibuat sebelumnya, langkah-langkah pembelajaran, dan asesmen pembelajaran yang disusun dalam bentuk dokumen yang fleksibel, sederhana, dan kontekstual. Dokumen tersebut digunakan oleh pendidik dalam upaya mencapai dimensi profil lulusan dan Capaian Pembelajaran (CP). Dalam proses merancang pembelajaran, pendidik dapat mengembangkan alur tujuan pembelajaran dan rencana pembelajaran secara mandiri.",
+            "key": "lesson_design",
+            "pages": [50]
+          }
+        ],
+        "atp_thinking": [
+          {
+            "text": "Proses perancangan pembelajaran disesuaikan dengan karakteristik satuan pendidikan, kebutuhan murid, serta kesiapan satuan pendidikan.",
+            "pages": [51]
+          },
+          {"text": "2 (Dua) aspek tujuan pembelajaran adalah kompetensi dan ruang lingkup materi.", "pages": [51]},
+          {
+            "text": "Tujuan pembelajaran yang tersusun dalam alur tujuan pembelajaran akan menjadi dasar bagi pendidik untuk menyusun perencanaan pembelajaran.",
+            "pages": [51]
+          },
+          {
+            "text": "Fase A dimulai di kelas 1 … Fase A berakhir di kelas 2; Capaian Pembelajaran: Kompetensi yang diharapkan dapat dicapai oleh peserta didik di akhir Fase A; Tujuan Pembelajaran 1, 2, 3, 4, 5 … (n) membentuk Alur Tujuan Pembelajaran.",
+            "summary": "Diagram: CP for Fase A (grades 1-2) broken into TP 1..n in sequence = ATP.",
+            "pages": [51]
+          }
+        ],
+        "atp_stage_questions": [
+          {
+            "text": "Tahap awal:sudahkah mendapatkan contoh alur tujuan pembelajaran? Contoh manakah yang paling sesuai dengan satuan pendidikan Anda?",
+            "stage": "awal",
+            "pages": [51]
+          },
+          {"text": "Tahap berkembang: dari contoh yang ada, bagian manakah yang hendak dimodifikasi?", "stage": "berkembang", "pages": [51]},
+          {
+            "text": "Tahap siap: apakah ada bagian lain yang akan ditambahkan sesuai dengan kebutuhan murid?",
+            "stage": "siap",
+            "pages": [51]
+          },
+          {
+            "text": "Tahap mahir: apakah ada diskusi bersama kepala satuan pendidikan di dalam menyusun alur tujuan pembelajaran?",
+            "stage": "mahir",
+            "pages": [51]
+          }
+        ]
+      },
+      "kokurikuler_planning": {
+        "related_document": "Panduan Kokurikuler",
+        "purpose": {
+          "text": "Kokurikuler bertujuan untuk penguatan, pendalaman, dan/atau pengayaan kegiatan intrakurikuler dalam rangka pengembangan kompetensi dan karakter murid. Kompetensi dan karakter yang dimaksud adalah delapan dimensi profil lulusan yang selanjutnya dimaknai sebagai alur perkembangan kompetensi.",
+          "pages": [52]
+        },
+        "steps": [
+          {
+            "text": "Pembentukan tim kerja dilakukan untuk memastikan bahwa perencanaan, pelaksanaan, dan evaluasi kegiatan kokurikuler berjalan secara terstruktur, kolaboratif, dan berkesinambungan. Tim kerja berperan sebagai perancang, pengelola, pendamping.",
+            "number": 1,
+            "name": "Penentuan tim Kerja Kokurikuler",
+            "pages": [52]
+          },
+          {
+            "text": "Analisis yang dimaksud dalam perencanaan kokurikuler dapat memanfaatkan hasil analisis satuan pendidikan terkait sumber daya yang dimiliki dan kebutuhan belajar murid sehingga sumber daya yang dimiliki oleh satuan pendidikan mengakomodir kebutuhan murid secara optimal.",
+            "number": 2,
+            "name": "Analisis Satuan Pendidikan",
+            "pages": [52]
+          },
+          {
+            "text": "Dari hasil analisis yang telah dilakukan, satuan pendidikan menentukan dimensi profil lulusan yang akan dipilih, tema dalam kegiatan kokurikuler sehingga membantu dalam memberikan konteks, dan bentuk kegiatan pembelajaran kolaboratif lintas disiplin ilmu, Gerakan 7 Kebiasaan Anak Indonesia Hebat (7KAIH), kegiatan kokurikuler melalui cara lain.",
+            "number": 3,
+            "name": "Membuat Perencanaan Berdasarkan hasil analisis",
+            "pages": [52]
+          }
+        ]
+      },
+      "paud_sd_transition": {
+        "principle": {
+          "text": "Satuan pendidikan perlu memperhatikan prinsip-prinsip pembelajaran dan asesmen ketika merencanakan pembelajaran dan asesmen yang mendukung transisi PAUD-SD yang menyenangkan dan sesuai dengan tahapan usia murid di Fase A.",
+          "pages": [89]
+        },
+        "no_calistung_test": {
+          "text": "Satuan pendidikan dapat memanfaatkan momentum Sistem Penerimaan Murid Baru (SPMB) untuk tidak menggunakan tes terkait calistung (baca, tulis, hitung) sebagai pertimbangan kriteria masuknya murid kelas 1 SD. … teknik asesmen yang berupa tes dan yang bersifat high-risk tidak tepat diberikan pada murid di fase A.",
+          "pages": [89]
+        },
+        "mpls_two_weeks": {
+          "text": "Selanjutnya satuan pendidikan diharapkan melangsungkan Masa Pengenalan Lingkungan Sekolah (MPLS) yang lebih lama selama 2 minggu dengan tujuan: masa perkenalan murid terhadap lingkungannya; periode untuk pendidik melakukan asesmen awal demi mendapat gambaran kemampuan fondasi murid. Hal ini diperlukan untuk merencanakan penyesuaian pembelajaran jika diperlukan.",
+          "weeks": 2,
+          "pages": [89]
+        },
+        "pointer": {
+          "text": "Terkait contoh asesmen awal yang dilakukan di awal tahun ajaran dan penyesuaian pembelajaran yang mendukung transisi PAUD ke SD lebih lanjut dapat dipelajari di dalam modul-modul transisi PAUD SD.",
+          "pages": [89]
+        }
+      }
+    },
+    {
+      "key": "evaluation_development_mentoring",
+      "number": 5,
+      "name": "Evaluasi, Pengembangan Profesional, dan Pendampingan",
+      "summary": "Chapter 5 of the guide; step 5 of the development cycle. Not listed among the 'komponen' on PDF 18-19 but treated as a required part of the KSP (supervision checks alignment with the minimum components).",
+      "relationship": {
+        "text": "Evaluasi berdasarkan proses refleksi dan pemberian umpan balik yang dilakukan secara terus menerus dalam keseharian belajar mengajar penting untuk dilakukan oleh pendidik. Pendampingan dan pengembangan profesional pendidik dalam pembelajaran merupakan salah satu tindak lanjut dari evaluasi. Pendidik dapat melakukan refleksi mandiri terhadap kriteria kesuksesan yang telah ditetapkan (tujuan pembelajaran, capaian pembelajaran, dan delapan dimensi profil lulusan).",
+        "pages": [53]
+      },
+      "cycle_diagram": {
+        "text": "Perencanaan, pelaksanaan, dan evaluasi sebagai satu siklus yang saling berkaitan",
+        "summary": "Inner circle PERENCANAAN-PELAKSANAAN-EVALUASI, ring 'REFLEKSI DAN UMPAN BALIK', outer arrow 'PENGEMBANGAN PROFESIONAL DAN PENDAMPINGAN' (from the image).",
+        "pages": [54]
+      },
+      "evaluation_principles": [
+        {
+          "text": "Evaluasi pembelajaran dan evaluasi Kurikulum Satuan Pendidikan dilakukan secara mandiri dan berkala oleh satuan pendidikan.",
+          "pages": [54]
+        },
+        {
+          "text": "Evaluasi pembelajaran secara menyeluruh bertujuan untuk mengukur keberhasilan pendidik dalam memfasilitasi pembelajaran.",
+          "pages": [54]
+        },
+        {
+          "text": "Evaluasi Kurikulum Satuan Pendidikan bertujuan untuk mengukur keberhasilan kepala satuan pendidikan dan pendidik dalam menjalankan seluruh program pendidikan yang direncanakan dengan tujuan untuk memahami apakah visi, misi dan tujuan satuan pendidikan telah tercapai. Evaluasi pembelajaran menjadi salah satu bagian penting dari evaluasi Kurikulum Satuan Pendidikan.",
+          "pages": [54]
+        },
+        {
+          "text": "Kedua proses ini saling berkaitan, tetapi mempunyai sasaran evaluasi yang berbeda. Sasaran langsung dari evaluasi pembelajaran adalah murid dan pendidik, sedangkan sasaran utama evaluasi Kurikulum Satuan Pendidikan adalah kepala satuan pendidikan dan pendidik, di mana murid menjadi sasaran tidak langsung.",
+          "pages": [54]
+        },
+        {
+          "text": "Proses ini dikelola oleh para kepala satuan pendidikan dan/atau pendidik yang dianggap sudah mampu untuk melakukan peran ini.",
+          "pages": [54]
+        },
+        {
+          "text": "Evaluasi dilakukan secara bertahap dan mandiri agar terjadi peningkatan kualitas secara berkelanjutan di satuan pendidikan, sesuai dengan kemampuan satuan pendidikan.",
+          "pages": [54]
+        }
+      ],
+      "how_to_evaluate_steps": [
+        {"text": "Menetapkan tujuan evaluasi yang akan dilakukan", "number": 1, "pages": [55]},
+        {"text": "Menetapkan data/informasi yang ingin didapatkan dalam kegiatan peninjauan", "number": 2, "pages": [55]},
+        {
+          "text": "Menentukan bentuk asesmen yang akan dilakukan untuk mendapatkan data/informasi yang diinginkan",
+          "number": 3,
+          "pages": [55]
+        },
+        {
+          "text": "Merancang aktivitas evaluasi yang bersifat reflektif dan dapat dijadikan perencanaan dan pengembangan bagi pendidik dan pelaksana program",
+          "number": 4,
+          "pages": [55]
+        },
+        {"text": "Menggunakan alat penilaian pencapaian yang jelas dan terukur", "number": 5, "pages": [55]}
+      ],
+      "when": [
+        {
+          "text": "Per semester: setelah 1 semester selesai, kepala satuan pendidikan dan tim pengembang kurikulum dapat melihat rangkaian pencapaian pembelajaran.",
+          "scope": "school",
+          "frequency": "semester",
+          "pages": [55]
+        },
+        {
+          "text": "Per tahun: kepala satuan pendidikan, tim pengembang kurikulum, pendidik, komite sekolah, dan pengawas sekolah melakukan evaluasi terhadap pencapaian dan proses pembelajaran dalam satu tahun.",
+          "scope": "school",
+          "frequency": "year",
+          "pages": [55]
+        },
+        {
+          "text": "Per hari: pendidik membuat jurnal harian dan/atau catatan anekdotal secara informal mengenai bagaimana proses belajar berjalan, bagaimana tujuan belajar tercapai, bagaimana murid merespons proses kegiatan belajar.",
+          "scope": "class",
+          "frequency": "day",
+          "pages": [55]
+        },
+        {
+          "text": "Per unit pembelajaran: setelah melakukan asesmen formatif, secara individual maupun tim, pendidik bisa mengkaji ulang proses belajar dan tercapainya tujuan dan melakukan perbaikan maupun penyesuaian terhadap proses belajar.",
+          "scope": "class",
+          "frequency": "unit",
+          "pages": [55]
+        }
+      ],
+      "why_review": {
+        "items": [
+          "Meningkatkan hasil belajar murid, keterlibatan, kepuasan belajar",
+          "Menunjukkan kekuatan dan tantangan pelaksanaan program belajar sebagai implementasi kurikulum",
+          "Mengevaluasi perubahan terkini dari implementasi yang dilakukan",
+          "Mengidentifikasi program belajar yang perlu diperbaiki",
+          "Mengukur ketercapaian visi dan misi lewat program yang diajarkan di satuan pendidikan.",
+          "Merupakan sarana pemberian umpan balik pada kompetensi mengajar pendidik, yang selaras dengan tujuan dan kebutuhan belajar murid …"
+        ],
+        "pages": [56]
+      },
+      "what_to_review": {
+        "items": [
+          "Alur pembelajaran, mutu dan relevansi hasil belajar dan prosesnya, untuk menentukan Tujuan Pembelajaran berikutnya.",
+          "Kompetensi utuh murid yang memuat pengetahuan, keterampilan, dan sikap yang akan dituju (mengacu kepada delapan dimensi profil lulusan), dengan mempertimbangkan aspek penting di setiap mata pelajaran (kecuali PAUD) dan kokurikuler.",
+          "Asesmen pembelajaran",
+          "Sumber materi ajar, perlengkapan visual maupun auditori, kesesuaian dengan tahapan perkembangan anak",
+          "Persepsi murid dalam menjalani proses belajar.",
+          "Peningkatan kompetensi dan pengelolaan kinerja pendidik dan tenaga kependidikan agar mereka dapat bekerja dengan efektif.",
+          "Proses dan program yang dianggap paling berhasil serta indikator keberhasilannya",
+          "Proses dan program apa yang perlu dikembangkan serta bagian-bagian yang paling penting untuk dikembangkan.",
+          "Untuk pendidikan khusus, kesesuaian layanan pendidikan inklusif dan khusus dengan potensi dan kebutuhan murid"
+        ],
+        "pages": [56]
+      },
+      "how_principles": [
+        {"text": "Kolaboratif: melibatkan seluruh pemangku kepentingan terkait, termasuk murid", "key": "collaborative", "pages": [57]},
+        {
+          "text": "Reflektif: melihat kembali pencapaian dan kekurangan dari berbagai aspek, jujur, dan berdasarkan bukti",
+          "key": "reflective",
+          "pages": [57]
+        },
+        {
+          "text": "Berdasarkan data: membuat kesimpulan berdasarkan fakta yang dikumpulkan dari berbagai sumber dan yang ditelaah secara saksama",
+          "key": "data_based",
+          "pages": [57]
+        },
+        {
+          "text": "Berpusat pada murid: mengedepankan kepentingan murid dalam mengambil kesimpulan maupun keputusan",
+          "key": "student_centred",
+          "pages": [57]
+        },
+        {"text": "Fokus pada perbaikan dan pengembangan kualitas pembelajaran murid", "key": "improvement", "pages": [57]}
+      ],
+      "who_is_involved": {
+        "items": [
+          "Kepala satuan Pendidikan",
+          "Wakil kepala satuan pendidikan bidang Kurikulum (bila ada)",
+          "Pendidik",
+          "Tenaga kependidikan",
+          "Murid",
+          "Orang tua murid",
+          "Pengawas atau penilik satuan pendidikan",
+          "Mitra (dunia kerja, organisasi komunitas, dll)",
+          "Pakar",
+          "Balai Guru Pembelajar"
+        ],
+        "pages": [57],
+        "summary": "Kepala Program Keahlian (SMK) skipped."
+      },
+      "data_sources": {
+        "items": [
+          "Data asesmen: hasil asesmen murid per unit, projek murid, survei lulusan, refleksi proses belajar oleh pendidik, observasi kepala satuan pendidikan, Rapor Pendidikan",
+          "Hasil belajar murid: portofolio, produk, hasil karya, dsb.",
+          "Proses refleksi pendidik: jurnal harian, catatan anekdotal",
+          "Rapor Pendidikan"
+        ],
+        "pages": [58]
+      },
+      "collection_methods": [
+        {"text": "Menganalisis informasi dari hasil rapor pendidikan", "name": "Rapor pendidikan", "pages": [58]},
+        {
+          "text": "Melakukan asesmen berupa observasi dan refleksi mandiri secara individual terhadap kriteria kesuksesan yang telah ditetapkan (tujuan belajar, capaian pembelajaran, delapan dimensi profil lulusan).",
+          "name": "Observasi dan refleksi mandiri",
+          "pages": [58]
+        },
+        {
+          "text": "Melakukan diskusi terpumpun yang dilakukan secara kelompok untuk melihat hubungan antar data yang dimiliki pada catatan anekdotal, hasil belajar murid, serta refleksi dalam self-study, untuk menganalisis masalah dan menarik kesimpulan, serta mengambil keputusan untuk melakukan perbaikan.",
+          "name": "FGD (Focus Group Discussion)",
+          "pages": [58]
+        },
+        {
+          "text": "Mengumpulkan persepsi murid terhadap proses belajar, kualitas sarana prasarana, materi/bahan ajar, serta bagaimana murid memaknai hasil belajarnya.",
+          "name": "Kuesioner murid",
+          "pages": [58]
+        },
+        {
+          "text": "Mengumpulkan persepsi pendidik mengenai proses belajar dan mengajar, serta kualitas sarana, prasarana, dan fasilitas yang mendukung terciptanya ekosistem belajar yang optimal.",
+          "name": "Kuesioner pendidik",
+          "pages": [58]
+        },
+        {"text": "Mengumpulkan persepsi orang tua terhadap perkembangan belajar murid.", "name": "Kuesioner orang tua", "pages": [58]}
+      ],
+      "strategy_tips": {
+        "items": [
+          "mengidentifikasi hal-hal yang menjadi akar permasalahan. Untuk setiap permasalahan perlu didesain proses evaluasi, dan mencari data yang spesifik.",
+          "menentukan cara untuk mencari data; melalui observasi, penilaian, wawancara, diskusi terpumpun ataupun melalui rapor pendidikan",
+          "menjalankan prosedur pencarian dan pengumpulan data secara objektif dan sistematis"
+        ],
+        "pages": [59],
+        "note": "Three of nine tips kept (root cause, data methods, objective collection); the others cover meetings with parents, scoping, observing the programme, understanding concerns, organising findings and choosing the report format."
+      },
+      "professional_development": {
+        "guiding_questions": {
+          "items": [
+            "Bagaimana kepala satuan pendidikan dapat mendukung pengembangan profesional pendidik?",
+            "Siapa saja pihak dari dalam satuan pendidikan yang dapat dilibatkan untuk membantu proses pengembangan profesional dan pendampingan pendidik?",
+            "Apakah metode pengembangan profesional dan pendampingan pendidik yang sesuai dengan kebutuhan pendidik dan karakteristik satuan pendidikan?",
+            "Apa saja hal-hal yang dibutuhkan untuk mengembangkan kualitas pengajaran?"
+          ],
+          "pages": [60]
+        },
+        "head_role": {
+          "text": "pengembangan profesional dan pendampingan ditekankan pada prinsip reflektif dan pengembangan diri bagi pendidik, serta menggunakan alat penilaian yang jelas dan terukur. Kepala satuan pendidikan merancang dan melakukan proses pengembangan profesional dan pendampingan sesuai kebutuhan sebagai tindak lanjut dari hasil pengamatan dan evaluasi dengan melibatkan pengawas. …",
+          "pages": [60]
+        },
+        "forms": [
+          {
+            "text": "Coaching: proses pendampingan untuk mencapai tujuan dengan menggali pemikiran-pemikiran seseorang terhadap suatu masalah.",
+            "key": "coaching",
+            "pages": [60]
+          },
+          {
+            "text": "Mentoring: proses pendampingan dengan berbagi pengalaman/pengetahuan untuk mengatasi suatu kendala",
+            "key": "mentoring",
+            "pages": [60]
+          },
+          {
+            "text": "Pelatihan: proses pendampingan dengan menguatkan pengetahuan dan keterampilan yang berkaitan dengan kinerja, dengan narasumber internal atau eksternal (menyesuaikan dengan kemampuan satuan pendidikan)",
+            "key": "training",
+            "pages": [60]
+          }
+        ],
+        "principles": [
+          {
+            "text": "Pengembangan profesional dan pendampingan sebagai aktivitas yang dilakukan berdasarkan hasil kegiatan evaluasi disesuaikan dengan karakteristik dan kebutuhan satuan pendidikan …",
+            "number": 1,
+            "pages": [61]
+          },
+          {
+            "text": "Satuan pendidikan menetapkan ruang lingkup pengembangan profesional dan pendampingan, serta menentukan area yang perlu diperbaiki apakah dari perencanaan program atau pelaksana program.",
+            "number": 2,
+            "pages": [61]
+          },
+          {
+            "text": "Pengembangan profesional dan pendampingan dilakukan secara terencana dan strategis untuk mencapai suatu tujuan dalam jangka waktu tertentu, dan orang yang tepat untuk melakukan aktivitas pembinaan tersebut.",
+            "number": 3,
+            "pages": [61]
+          },
+          {
+            "text": "Pengembangan profesional dan pendampingan dilakukan secara bertahap dan mandiri agar terjadi peningkatan kualitas secara berkelanjutan di satuan pendidikan, sesuai dengan kemampuan satuan pendidikan.",
+            "number": 4,
+            "pages": [61]
+          },
+          {
+            "text": "Pengembangan profesional dan pendampingan adalah sebuah proses kolaboratif dalam satuan pendidikan antara pendamping dan pendidik, demi tercapainya tujuan bersama.",
+            "number": 5,
+            "pages": [61]
+          }
+        ]
+      },
+      "planning_from_evaluation": {
+        "why": {
+          "text": "Perencanaan penting untuk membantu kepala satuan pendidikan dalam menindaklanjuti hasil evaluasi dan refleksi pembelajaran secara sistematis. …",
+          "pages": [62]
+        },
+        "considerations": [
+          {
+            "text": "Perencanaan disusun berdasarkan hasil evaluasi dari pengorganisasian dan perencanaan pembelajaran yang dilakukan secara berkala dari berbagai perspektif pemangku kepentingan.",
+            "pages": [62]
+          },
+          {"text": "Perencanaan disusun dengan memperhatikan alokasi sumber daya yang dimiliki dan diperlukan.", "pages": [62]},
+          {"text": "Perencanaan dapat disusun dengan memasukkan lini masa yang dapat diubah jika diperlukan.", "pages": [62]},
+          {
+            "text": "Perencanaan yang telah disusun dibagikan kepada warga satuan pendidikan (pendidik, tenaga kependidikan, murid, dan orang tua/wali murid) sesuai dengan kebutuhannya sebagai rujukan bersama dalam menjalankan proses pembelajaran.",
+            "pages": [62]
+          },
+          {
+            "text": "Perencanaan dapat disusun per semester atau per tahun sesuai dengan kebutuhan dan kesepakatan para pemangku kepentingan di satuan pendidikan masing-masing.",
+            "pages": [62]
+          },
+          {
+            "text": "Perencanaan disusun dengan memperhatikan fungsi dan tujuannya. Sebagai contoh, RKAS (Rencana Kegiatan dan Anggaran Sekolah) bertujuan untuk merencanakan pengelolaan dan pembiayaan satuan pendidikan. RKT (Rencana Kinerja Tahunan) bertujuan untuk merencanakan kegiatan satuan pendidikan dalam kurun waktu satu tahun yang bersifat strategis. Kalender akademik berisi jadwal penyelenggaraan program dan kegiatan satuan pendidikan. …",
+            "documents": ["RKAS", "RKT", "Kalender akademik"],
+            "pages": [62]
+          }
+        ]
+      }
+    }
+  ],
+  "sd_examples": {
+    "note": "All examples in the guide that are about SD (or generic and usable by SD). The guide prints no SD JP-per-subject table; the only SD time table is the Kelas 1 thematic example.",
+    "thematic_grade1": {
+      "title": "Contoh pengorganisasian pembelajaran secara tematik — Kelas 1 SD",
+      "unit": "JP",
+      "semesters": [
+        {
+          "semester": 1,
+          "rows": [
+            {"theme": "Aku Siapa?", "jp": 72},
+            {"theme": "Hobiku", "jp": 72},
+            {"theme": "Apa Kegiatanku?", "jp": 72},
+            {"theme": "Bahagia Bersama Keluargaku", "jp": 72},
+            {"theme": "Aku Punya Pengalaman Menarik", "jp": 72},
+            {"theme": "Senangnya Naik Kendaraan", "jp": 72},
+            {"theme": "Kokurikuler", "jp": 108, "is_kokurikuler": true}
+          ],
+          "total_weeks": 18,
+          "total_jp": 540,
+          "total_printed": "18 minggu (540 JP)"
+        },
+        {
+          "semester": 2,
+          "rows": [
+            {"theme": "Bersihnya Lingkunganku", "jp": 72},
+            {"theme": "Temukan Benda di Sekitarmu", "jp": 72},
+            {"theme": "Yuk, Amati Peristiwa Alam!", "jp": 72},
+            {"theme": "Kebersihan Pangkal Kesehatan", "jp": 72},
+            {"theme": "Tugasku", "jp": 72},
+            {"theme": "Temanku Sahabatku", "jp": 72},
+            {"theme": "Kokurikuler", "jp": 108, "is_kokurikuler": true}
+          ],
+          "total_weeks": 18,
+          "total_jp": 540,
+          "total_printed": "18 minggu (540 JP)"
+        }
+      ],
+      "checks": {
+        "sum_ok": true,
+        "derived": "6 × 72 + 108 = 540 JP per semester; 1080 JP per year; 30 JP per week (540 / 18); kokurikuler 216 JP per year = 20% of the total. Derived, not printed.",
+        "jp_minutes": null
+      },
+      "pages": [80]
+    },
+    "rapor_pendidikan_sd_a": {
+      "title": "Contoh penggunaan Rapor Pendidikan untuk perencanaan pembelajaran di SD A",
+      "summary_text": {
+        "text": "Dari seluruh capaian tahun ini, karakter SD A menjadi indikator pencapaian terbaik. Meski demikian, kemampuan literasi, numerasi, dan iklim kebinekaan adalah indikator dengan pencapaian 'kurang'.",
+        "pages": [64]
+      },
+      "indicators": [
+        {"indicator": "Kemampuan literasi", "result": "Kurang"},
+        {"indicator": "Kemampuan numerasi", "result": "Kurang"},
+        {"indicator": "Karakter", "result": "Baik"},
+        {"indicator": "Pengalaman pelatihan PTK", "result": "Baik"},
+        {"indicator": "Kualitas pembelajaran", "result": "Sedang"},
+        {"indicator": "Refleksi dan perbaikan pembelajaran oleh guru", "result": "Sedang"},
+        {"indicator": "Kepemimpinan instruksional", "result": "Sedang"},
+        {"indicator": "Iklim keamanan satuan pendidikan", "result": "Sedang"},
+        {"indicator": "Iklim kesetaraan gender", "result": "Baik"},
+        {"indicator": "Iklim kebinekaan", "result": "Kurang"},
+        {"indicator": "Iklim inklusivitas", "result": "Sedang"},
+        {"indicator": "Partisipasi warga satuan pendidikan", "result": "Baik"},
+        {"indicator": "Proporsi pemanfaatan sumber daya sekolah untuk peningkatan mutu", "result": "Baik"},
+        {"indicator": "Pemanfaatan TIK untuk pengelolaan anggaran", "result": "Sedang"},
+        {"indicator": "Program dan kebijakan satuan pendidikan", "result": "Baik"}
+      ],
+      "result_scale": ["Baik", "Sedang", "Kurang"],
+      "benahi_columns": [
+        "Identifikasi: Indikator 1 (Indikator Utama)",
+        "Akar Masalah: Indikator 2 (Subindikator akar masalah)",
+        "Kegiatan Benahi",
+        "Inspirasi Kegiatan Benahi"
+      ],
+      "benahi_rows": [
+        {
+          "indicator": "Kemampuan literasi",
+          "root_cause": "Kompetensi membaca teks sastra",
+          "activity": "Dalam mata pelajaran Bahasa Indonesia, pendidik memfasilitasi pembacaan cerita sastra (dongeng, fabel, legenda) setiap minggu, lalu murid diminta menanggapi cerita melalui menggambar tokoh, menulis ulang, atau berdiskusi dalam circle time.",
+          "inspiration": "Kepala satuan pendidikan dan pendidik meningkatkan kompetensi memahami teks sastra murid melalui pembiasaan membaca hening buku cerita sastra selama 15 menit sebelum pembelajaran dimulai dan diskusi sastra saat pembelajaran berlangsung.",
+          "pages": [65]
+        },
+        {
+          "indicator": "Kemampuan literasi",
+          "root_cause": "Kompetensi membaca teks informasi",
+          "activity": "Di mata pelajaran Pendidikan Pancasila, IPA, IPS, dan/atau Bahasa Indonesia, murid diberi tugas membaca artikel pendek (tentang sains, sejarah, atau peristiwa terkini) lalu mempresentasikan kembali dalam bentuk poster, infografis, atau paparan lisan.",
+          "inspiration": "Kepala satuan pendidikan merancang pembelajaran lintas mata pelajaran berbasis informasi aktual, serta membimbing menggunakan berbagai sumber teks informasi untuk memperkuat keterampilan menyimpulkan dan mengevaluasi bacaan. Pembiasaan berbagi informasi terkait pemaknaan isi teks yang relevan bagi murid dari berbagai sumber media informasi di dalam kelompok sebelum pembelajaran dimulai dan saat pembelajaran berlangsung.",
+          "pages": [65]
+        },
+        {
+          "indicator": "Kemampuan numerasi",
+          "root_cause": "Kompetensi pada Domain Aljabar",
+          "activity": "Pada mata pelajaran Matematika, pendidik memberikan soal cerita kontekstual seputar perbandingan harga, pembagian makanan, atau penjumlahan waktu yang menstimulasi pemahaman aljabar dasar (variabel, pola, dan relasi bilangan).",
+          "inspiration": "Kepala satuan pendidikan mendukung pembelajaran numerasi kontekstual dengan menyediakan pelatihan soal berpola dan refleksi pendidik, agar numerasi tidak diajarkan secara prosedural saja melainkan bermakna bagi murid. Pembiasaan mengerjakan soal cerita berisi permasalahan sehari-hari yang sering dijumpai pada materi aljabar.",
+          "pages": [66]
+        },
+        {
+          "indicator": "Kemampuan numerasi",
+          "root_cause": "Kompetensi pada Domain Geometri",
+          "activity": "Pada mata pelajaran Seni Rupa dan Matematika, murid membangun model bangun datar dan bangun ruang dari kertas lipat, plastisin, atau bahan bekas. Kegiatan ini memperkuat pemahaman bentuk dan ruang secara visual dan kinestetik.",
+          "inspiration": "Kepala Satuan Pendidikan mendorong kolaborasi antar pendidik dalam merancang pembelajaran geometris berbasis proyek seni, serta penggunaan alat konkret dan observasi lingkungan sebagai media eksplorasi konsep bentuk dan ukuran.",
+          "pages": [66]
+        },
+        {
+          "indicator": "Iklim kebinekaan",
+          "root_cause": "Komitmen kebangsaan",
+          "activity": "Pada mata pelajaran Pendidikan Pancasila, IPS, dan pembelajaran kokurikuler, murid diajak mengenal tokoh nasional, cerita daerah, dan keragaman budaya lewat video, pameran budaya mini, serta sesi refleksi.",
+          "inspiration": "Kepala sekolah mengembangkan program pembelajaran lintas budaya yang terstruktur, serta mendorong pendidik memilih materi dan kegiatan yang mencerminkan dimensi kewargaan.",
+          "pages": [66]
+        }
+      ],
+      "pages": [64, 65, 66]
+    },
+    "swot_analysis": {
+      "title": "Contoh untuk Seluruh Jenjang: Analisis Karakteristik Satuan Pendidikan (SWOT)",
+      "stage_siap": {
+        "text": "Satuan pendidikan dapat mengidentifikasi analisis kekuatan, kelemahan, peluang, serta ancaman sebagai dasar penyusunan strategi untuk mengatasi permasalahan yang ada dengan mempertimbangkan sudut pandang murid dan orang tua. … Satuan pendidikan dapat menggunakan metode lainnya untuk melakukan analisis ini.",
+        "quadrants": [
+          {
+            "key": "S",
+            "name": "STRENGTH (KEKUATAN)",
+            "scope": "internal",
+            "definition": "Situasi atau kondisi yang merupakan kekuatan yang dimiliki satuan pendidikan yang dapat memberikan pengaruh positif pada saat ini atau pun di masa yang akan datang.",
+            "questions": [
+              "Kekuatan atau kelebihan apa yang dimiliki satuan pendidikan?",
+              "Apa yang membuat satuan pendidikan lebih baik dari satuan pendidikan lainnya?"
+            ]
+          },
+          {
+            "key": "W",
+            "name": "WEAKNESS (KELEMAHAN)",
+            "scope": "internal",
+            "definition": "Situasi atau kondisi yang merupakan kelemahan yang dimiliki satuan pendidikan yang dapat memberikan pengaruh negatif pada saat ini atau pun di masa yang akan datang.",
+            "questions": [
+              "Apa yang belum berjalan dengan baik?",
+              "Apa saja kebutuhan murid, pendidik, dan tenaga kependidikan yang belum terpenuhi di satuan pendidikan?"
+            ]
+          },
+          {
+            "key": "O",
+            "name": "OPPORTUNITY (PELUANG)",
+            "scope": "eksternal",
+            "definition": "Situasi atau kondisi yang merupakan peluang atau kesempatan di luar satuan pendidikan yang dapat memberikan peluang untuk berkembang di kemudian hari.",
+            "questions": [
+              "Apa sumber daya dari lingkungan sekitar yang dapat dimanfaatkan oleh satuan pendidikan dalam proses belajar?",
+              "Apa saja perkembangan pola pikir orang tua yang bisa membantu satuan pendidikan mengembangkan kompetensi murid dengan lebih optimal?"
+            ]
+          },
+          {
+            "key": "T",
+            "name": "THREAT (ANCAMAN)",
+            "scope": "eksternal",
+            "definition": "Ancaman atau tantangan apa saja yang mungkin akan dihadapi satuan pendidikan yang dapat menghambat laju perkembangan satuan pendidikan.",
+            "questions": [
+              "Hambatan apa yang sedang dihadapi sekarang?",
+              "Adakah perubahan peraturan pemerintah yang akan berdampak bagi perkembangan satuan pendidikan?"
+            ]
+          }
+        ],
+        "pages": [67]
+      },
+      "stage_mahir_note": {
+        "text": "Pada Tahap Mahir the same SWOT adds the perspective of kebijakan daerah/nasional and internal/external stakeholders (e.g. 'Keunikan apa yang dimiliki oleh satuan pendidikan?', 'Tren apa yang menyebabkan ancaman bagi satuan pendidikan? Misalnya: Perkembangan Teknologi'). Full question list not transcribed.",
+        "pages": [68, 69]
+      }
+    },
+    "vision_mission_goal_examples": {
+      "alignment_questions_awal_berkembang": {
+        "text": "Visi dan misi perlu dikomunikasikan dengan jelas kepada seluruh warga satuan pendidikan untuk membantu mereka memahami dampak peran masing-masing terhadap pencapaian visi satuan pendidikan. Semua program prioritas dan tugas yang dilaksanakan oleh setiap warga satuan pendidikan harus selaras dengan visi dan misi satuan pendidikan.",
+        "items": [
+          "Apakah pendidik, tenaga kependidikan, dan warga sekolah lainnya memahami visi, misi, dan tujuan satuan pendidikan?",
+          "Apakah pendidik, tenaga kependidikan, dan warga sekolah lainnya memahami keterkaitan antara visi, misi, dan tujuan satuan pendidikan?",
+          "Bagaimana kepala satuan pendidikan menyelaraskan visi, misi, dan tujuan satuan pendidikan dengan praktik keseharian?",
+          "Apakah strategi yang disusun mendukung pencapaian visi dan selaras dengan misi satuan pendidikan?",
+          "Apakah program yang diprioritaskan sudah mendukung pencapaian visi dan selaras dengan misi satuan pendidikan?",
+          "Apakah program prioritas sudah menjawab kebutuhan murid?"
+        ],
+        "pages": [70]
+      },
+      "vision_tahap_siap": {
+        "tips": [
+          "Sesuaikan pertanyaan untuk murid dengan tahapan perkembangan/belajarnya",
+          "Tenaga kependidikan terkadang tidak melihat dirinya sebagai pendidik. Berikan pengantar bahwa bekerja di satuan pendidikan adalah pendidik, apapun perannya.",
+          "Untuk wakil orang tua, perlu cermat memilih perwakilan agar perwakilan representatif (orang tua baru dan lama, orang tua yang kritis terhadap tujuan pendidikan untuk murid dan paham alasan memilih satuan pendidikan tersebut)."
+        ],
+        "steps": [
+          "Lakukan wawancara atau survei terhadap murid, pendidik dan tenaga kependidikan, dan orang tua untuk mendapatkan informasi sebagai bahan diskusi.",
+          "Dari jawaban mereka, buatlah keterkaitan/benang merah",
+          "Letakkan jawaban-jawaban ketiga kelompok tersebut sehingga semuanya terlihat.",
+          "Telisik persamaan dan perbedaannya: a. Kumpulkan sebanyak mungkin persamaannya. Kumpulan persamaan ini merepresentasikan harapan bersama warga satuan pendidikan. b. Bahas perbedaan yang ditemukan. Apa saja kemungkinan yang membuat perbedaan tersebut? c. Apa kaitannya dengan persamaan yang ditemukan?",
+          "Mengubah kesimpulan yang didapatkan menjadi kalimat visi.",
+          "Menentukan komponen utama visi yang diturunkan menjadi indikator-indikator pencapaian visi."
+        ],
+        "survey_questions": [
+          {
+            "group": "Murid",
+            "questions": [
+              "Apa kebutuhan yang ingin dipenuhi di satuan pendidikan?",
+              "Satuan pendidikan seperti apa yang kamu inginkan?",
+              "Hal apa yang paling ingin didapat/dipelajari/dikuasai di satuan pendidikan?",
+              "Apa yang paling penting bagi kamu di satuan pendidikan?"
+            ]
+          },
+          {
+            "group": "Pendidik dan Tenaga Kependidikan",
+            "questions": [
+              "Mengapa memilih profesi sebagai pendidik/bekerja di satuan pendidikan? Apa yang ingin dicapai?",
+              "Apa harapan bagi murid yang ada di satuan pendidikan ini? Jika mereka keluar atau sudah lulus ingin mereka jadi individu seperti apa?",
+              "Apa nilai-nilai yang Anda percayai? Bagaimana menanamkan itu pada murid? Apa perubahan diri yang diharapkan terjadi?"
+            ]
+          },
+          {
+            "group": "Orang tua",
+            "questions": [
+              "Mengapa memilih satuan pendidikan ini?",
+              "Apa harapannya terhadap satuan pendidikan?",
+              "Pribadi murid seperti apa yang diharapkan?",
+              "Kalau bisa menentukan hal paling penting yang perlu dipelajari di satuan pendidikan, apakah itu?"
+            ]
+          }
+        ],
+        "pages": [71],
+        "summary": "Printed step numbering repeats '4' (1,2,3,4,4,5); listed here in order."
+      },
+      "mission_tahap_siap": {
+        "tip": "Untuk membuat kalimat aksi yang jelas, gunakan kata kerja operasional yang bersifat umum yang masih bisa diterjemahkan menjadi pernyataan spesifik.",
+        "sample_sentences": [
+          "Menjadi satuan pendidikan yang menginspirasi perubahan.",
+          "Menginisiasi aksi-aksi nyata dalam rangka mendidik masyarakat mengenai cara hidup ramah lingkungan."
+        ],
+        "steps": [
+          "Membuat misi dapat dilakukan dalam kelompok-kelompok diskusi. Setiap kelompok dapat ditugaskan untuk membuat sebanyak mungkin kalimat aksi dari satu indikator pencapaian visi.",
+          "Kelompok membuat kalimat-kalimat aksi yang sesuai dengan indikator pencapaian visi yang dimaksud.",
+          "Dalam rapat pleno, semua kalimat aksi yang telah dibuat direviu bersama, dikelompokkan berdasarkan kemiripan dan mengarah pada komponen visi yang serupa. Kemudian dirumuskan dalam kalimat aksi yang lebih sederhana, tetapi dengan cakupan yang lebih luas. Satu indikator pencapaian visi dapat dibuat ke dalam 1-3 kalimat misi.",
+          "Cek kembali kalimat misi yang sudah dibuat dengan pertanyaan pemantik berikut"
+        ],
+        "mission_checklist": [
+          "Apakah misi sudah berupa kalimat tindakan?",
+          "Apakah misi menjelaskan pencapaian indikator visi?",
+          "Apakah misi sudah dinyatakan dengan jelas dan tidak multitafsir?",
+          "Apakah misi menunjukkan keberpihakan pada murid?"
+        ],
+        "missions_per_vision_indicator": {"min": 1, "max": 3},
+        "pages": [72]
+      },
+      "goal_example_smart": {
+        "goal_sentence": "Menyelenggarakan program unggulan yang bertujuan untuk meningkatkan kompetensi murid satu kali setiap akhir semester.",
+        "breakdown": [
+          {
+            "letter": "S",
+            "name": "Specific",
+            "meaning": "Sederhana dan jelas",
+            "applied": "Menyelenggarakan program unggulan satuan pendidikan"
+          },
+          {
+            "letter": "M",
+            "name": "Measurable",
+            "meaning": "Ada satuan ukuran atau kriteria ketercapaian",
+            "applied": "Dapat diukur dengan contoh kriteria: Satuan pendidikan jadi perintis dalam penyelenggaraan program; Program berkualitas; Program yang dipahami dan menjadi komitmen seluruh warga satuan pendidikan"
+          },
+          {
+            "letter": "A",
+            "name": "Attainable",
+            "meaning": "Masuk akal dan dapat dicapai",
+            "applied": "Menyelenggarakan program dengan alokasi waktu yang tertera masuk akal dan dapat dicapai"
+          },
+          {
+            "letter": "R",
+            "name": "Relevant",
+            "meaning": "Relevan dengan misi dan berpihak pada murid",
+            "applied": "Tujuan untuk meningkatkan kompetensi murid"
+          },
+          {"letter": "T", "name": "Time bound", "meaning": "Ada alokasi waktu pencapaian", "applied": "Satu kali setiap akhir semester"}
+        ],
+        "pages": [76]
+      },
+      "vision_sample_from_paud_example": {
+        "text": "menjadi satuan pendidikan yang menginisiasi aksi nyata mengenai cara hidup ramah lingkungan.",
+        "summary": "Only printed full vision sentence in the guide; it belongs to the PAUD example but is level-neutral.",
+        "pages": [77]
+      }
+    },
+    "academic_calendar_pattern": {
+      "text": {
+        "text": "Kalender akademik berisi jadwal penyelenggaraan program dan kegiatan satuan pendidikan.",
+        "pages": [62]
+      },
+      "example_note": "The only calendar example (Kalender Akademik Tahun Ajaran 2025/2026) is for 'SMP Merdeka'; there is no SD calendar. Its evaluation-driven entries are level-neutral and listed as a pattern.",
+      "entries": [
+        {"date": "2025-07-01", "text": "Rapat kerja: evaluasi dan perencanaan TA 25/26"},
+        {
+          "date": "2025-07-17/18",
+          "text": "MPLS kelas 7",
+          "summary": "SMP-specific; for SD this would be MPLS kelas 1 (2 minggu, PDF 89)."
+        },
+        {"date": "2025-07-21", "text": "Hari pertama masuk sekolah TA 25/26"},
+        {"date": "2025-07-23", "text": "Pertemuan orang tua murid"},
+        {"date": "2025-07-25", "text": "Hari evaluasi dan perencanaan pembelajaran"},
+        {"date": "2025-07-30", "text": "Promosi dan pemilihan ekstrakurikuler"},
+        {"date": "2025-08-01", "text": "Pelatihan guru"},
+        {"date": "2025-08-04", "text": "Ekstrakurikuler TA 25/26 dimulai"},
+        {"date": "2025-08-17", "text": "Upacara bendera"},
+        {"date": "2025-08-18", "text": "Perayaan HUT ke-80 RI"},
+        {"date": "2025-08-22", "text": "Rapat akademik"},
+        {"date": "2025-08-29", "text": "Hari evaluasi dan perencanaan pembelajaran"}
+      ],
+      "pages": [95],
+      "reasons_note": "The page explains five entries (pertemuan orang tua, hari evaluasi dan perencanaan, promosi ekstrakurikuler, pelatihan guru, rapat akademik kokurikuler) as follow-ups of the previous year's evaluation."
+    },
+    "data_driven_cycle": {
+      "title": "Contoh Ilustrasi Perencanaan Berbasis Data dalam Siklus Kerja Kepala Satuan Pendidikan",
+      "phases": [
+        {"name": "Identifikasi", "text": "Kumpulkan dan maknai data kondisi layanan satuan pendidikan"},
+        {"name": "Refleksi", "text": "Tetapkan prioritas peningkatan layanan yang paling menjadi kebutuhan"},
+        {"name": "Benahi Perencanaan", "text": "Rencanakan upaya peningkatan layanan"},
+        {"name": "Benahi Implementasi", "text": "Implementasi dan evaluasi hasilnya secara berkala"}
+      ],
+      "centre": "Pengawas dan Penilik Satuan Pendidikan menjadi pendamping dan fasilitator",
+      "eight_actions": [
+        {"number": 1, "text": "Mengikuti Asesmen Nasional sebagai upaya mendapatkan data kondisi layanan."},
+        {
+          "number": 2,
+          "text": "Kepala Satuan pendidikan memimpin diskusi bersama warga satuan pendidikan untuk mengidentifikasi kondisi layanannya menggunakan Rapor Pendidikan dan sumber data lain."
+        },
+        {"number": 3, "text": "Kepala satuan pendidikan memimpin refleksi penentuan fokus peningkatan layanan untuk setahun ke depan."},
+        {
+          "number": 4,
+          "text": "Bersama warga satuan pendidikan, kepala satuan pendidikan memimpin penyusunan pengorganisasian dan perencanaan pembelajaran di tingkat satuan pendidikan dengan menggunakan Kurikulum Merdeka. Hasilnya dituang dalam kalender akademik."
+        },
+        {
+          "number": 5,
+          "text": "Memetakan kebutuhan peningkatan kompetensi, agar pendidik dan tenaga kependidikan mampu melaksanakan perbaikan layanan."
+        },
+        {
+          "number": 6,
+          "text": "Merekap program, kegiatan serta anggaran di dalam rencana kegiatan tahunan dan RKAS*.",
+          "footnote": "Bagi penerima BOSP, perubahan meliputi melaporkan pemanfaatan dan rencana pemanfaatan anggaran"
+        },
+        {
+          "number": 7,
+          "text": "Implementasi rencana pada tahun ajaran baru dan memanfaatkan komunitas belajar untuk meningkatkan kompetensi PTK."
+        },
+        {
+          "number": 8,
+          "text": "Revisi perencanaan dan penganggaran berdasarkan hasil refleksi dan kebutuhan yang baru diketahui setelah implementasi berjalan."
+        }
+      ],
+      "head_competence": "Dalam implementasi, kepala satuan pendidikan perlu memiliki kompetensi dan alat bantu untuk melakukan setiap tahapan pada siklus ini. Pengawas atau penilik satuan pendidikan yang mumpuni dapat menjadi pendamping bagi kepala satuan pendidikan yang memerlukannya.",
+      "pages": [96, 97]
+    },
+    "penetapan_sd": {
+      "title": "Contoh 1 Lembar Penetapan Kurikulum Satuan Pendidikan SD Merdeka",
+      "text": "Setelah dilakukan serangkaian kegiatan evaluasi, perencanaan, dan lokakarya penyusunan Kurikulum Satuan Pendidikan yang melibatkan kepala sekolah, wakil kepala sekolah, pendidik, guru bimbingan konseling, pengawas sekolah, komite sekolah, maka Kurikulum Sekolah Dasar Merdeka ditetapkan untuk dijalankan pada Tahun Pelajaran 2025/2026.",
+      "place_date": "Jakarta, Juli 2025",
+      "signatory": "Kepala SD Merdeka (tanda tangan) Renjani Dhruvi, M.Pd.",
+      "fields_for_template": [
+        "process statement (kegiatan yang dilakukan dan pihak yang dilibatkan)",
+        "nama satuan pendidikan",
+        "tahun pelajaran berlaku",
+        "tempat dan bulan-tahun",
+        "jabatan, tanda tangan, nama kepala satuan pendidikan"
+      ],
+      "pages": [98],
+      "summary": "fields_for_template is an English reading aid derived from the example (and from the SMA example's 'Nama Sekolah / Alamat' header), not printed as a list."
+    },
+    "sample_ksp_links": {
+      "text": "Satuan pendidikan dapat menggunakan tautan yang telah disediakan untuk mengakses beberapa contoh dokumen Kurikulum Satuan Pendidikan …: 1. kurikulum.kemdikbud.go.id 2. Rumah Pendidikan Ruang GTK",
+      "links": ["kurikulum.kemdikbud.go.id", "Rumah Pendidikan Ruang GTK"],
+      "pages": [100]
+    }
+  },
+  "implementation_stages": {
+    "note": "Lampiran 10 grades each component on four readiness stages (awal, berkembang, siap, mahir). Useful as a self-assessment rubric. SMK/PKL clauses removed.",
+    "stage_order": ["awal", "berkembang", "siap", "mahir"],
+    "ksp_process": [
+      {
+        "text": "Berefleksi sebelum melakukan penyesuaian sederhana dari contoh kurikulum yang disediakan oleh Kemendikdasmen berdasarkan hasil evaluasi dari kepala satuan pendidikan dan/atau pimpinan satuan pendidikan.",
+        "stage": "awal",
+        "pages": [101]
+      },
+      {
+        "text": "Berefleksi sebelum melakukan penyesuaian sederhana dari contoh kurikulum yang disediakan oleh Kemendikdasmen berdasarkan hasil evaluasi yang melibatkan pimpinan dan pendidik satuan pendidikan.",
+        "stage": "berkembang",
+        "pages": [101]
+      },
+      {
+        "text": "Mengembangkan kurikulum satuan pendidikan dengan proses refleksi berdasarkan hasil evaluasi yang melibatkan pimpinan satuan pendidikan, pendidik, perwakilan orang tua, dan/atau murid.",
+        "stage": "siap",
+        "pages": [101]
+      },
+      {
+        "text": "Mengembangkan kurikulum satuan pendidikan dari proses refleksi berdasarkan hasil evaluasi yang melibatkan pimpinan satuan pendidikan, pendidik, perwakilan orang tua, dan murid dengan mempertimbangkan konteks daerah sekitar dan/atau perkembangan dunia pendidikan.",
+        "stage": "mahir",
+        "pages": [101]
+      }
+    ],
+    "school_characteristics": [
+      {
+        "stage": "awal",
+        "descriptor": "Analisis kekuatan dan perbaikan dari satuan pendidikan dalam ranah perencanaan dan pengelolaan pembelajaran.",
+        "head_and_supervisor": "Pada tahapan ini, kepala satuan pendidikan memahami struktur kurikulum sebelum membentuk dan memimpin tim untuk mengembangkan kurikulum satuan pendidikan. …",
+        "data": [
+          "Rapor Pendidikan: mutu dan hasil belajar, kompetensi dan kinerja pendidik dan tenaga kependidikan, mutu dan relevansi pembelajaran",
+          "Hasil observasi pembelajaran"
+        ],
+        "questions": [
+          "Apa yang sudah berjalan baik?",
+          "Apa pencapaian yang sudah pernah satuan pendidikan raih?",
+          "Apa strategi yang diimplementasikan oleh satuan pendidikan untuk meraih keberhasilan?",
+          "Apa rencana yang belum tercapai? Apa yang membuatnya belum dapat tercapai?"
+        ],
+        "worksheet": {
+          "columns": ["Contoh Pertanyaan", "Berjalan Baik", "Perlu Perbaikan"],
+          "questions": [
+            "Bagaimana proses pembelajaran yang dilaksanakan di satuan pendidikan?",
+            "Bagaimana proses penentuan strategi implementasi untuk perkembangan satuan pendidikan?",
+            "Bagaimana proses pendidik merancang dan melaksanakan pembelajarannya?",
+            "Bagaimana keterlibatan murid di dalam pembelajarannya?",
+            "Bagaimana pendidik merancang dan melaksanakan asesmen?"
+          ]
+        },
+        "pages": [102, 103]
+      },
+      {
+        "stage": "berkembang",
+        "descriptor": "Analisis kekuatan dan perbaikan dari satuan pendidikan dalam ranah perencanaan dan pengelolaan pembelajaran dengan mempertimbangkan sudut pandang murid.",
+        "head_and_supervisor": "Pada tahapan ini, kepala satuan pendidikan melibatkan pendidik dalam mengembangkan kurikulumnya. …",
+        "data": [
+          "Rapor Pendidikan: mutu dan hasil belajar, kompetensi dan kinerja pendidik dan tenaga kependidikan, mutu dan relevansi pembelajaran",
+          "Hasil observasi pembelajaran",
+          "Hasil diskusi dengan pendidik dan tenaga kependidikan"
+        ],
+        "questions": [
+          "Apa program/kegiatan/aspek yang menunjukkan keterlibatan tinggi dari murid?",
+          "Apa kesulitan yang dialami oleh murid?",
+          "Bagaimana kompetensi pendidik dalam menjalankan proses pembelajaran?",
+          "Bagaimana keterlibatan orang tua dalam proses pembelajaran murid?"
+        ],
+        "worksheet": {
+          "columns": ["Contoh Pertanyaan", "Berjalan Baik", "Perlu Perbaikan"],
+          "groups": [
+            {
+              "group": "Murid",
+              "questions": [
+                "Bagaimana proses satuan pendidikan mengklasifikasi murid?",
+                "Dari klasifikasi tersebut, bagaimana satuan pendidikan mengidentifikasi kebutuhan masing-masing kelompok? Bagaimana proses pemberian perhatian dan pendampingan bagi kelompok yang membutuhkannya? Bagaimana pemberian pilihan tantangan belajar yang lebih tinggi bagi kelompok murid tertentu?"
+              ]
+            },
+            {
+              "group": "Pendidik dan tenaga kependidikan",
+              "questions": [
+                "Bagaimana proses satuan pendidikan mengidentifikasi profil atau kompetensi pendidik dan tenaga kependidikan untuk pembelajaran yang optimal sesuai dengan karakteristik murid?",
+                "Bagaimana proses satuan pendidikan mengklasifikasi pendidik dan tenaga kependidikan?",
+                "Dari klasifikasi tersebut, bagaimana satuan pendidikan mengidentifikasi kebutuhan masing-masing kelompok? Bagaimana proses pemberian bantuan/pendampingan bagi kelompok yang membutuhkannya?",
+                "Bagaimana proses pendidik dan tenaga kependidikan melakukan fasilitasi terhadap murid dengan berbagai latar belakang dan kebutuhan?"
+              ]
+            },
+            {
+              "group": "Sarana dan prasarana",
+              "questions": [
+                "Bagaimana satuan pendidikan menyediakan sarana dan prasarana yang dibutuhkan untuk pembelajaran yang optimal?",
+                "Bagaimana proses satuan pendidikan menyediakan lingkungan yang aman dan sehat (fisik dan mental) bagi warganya?",
+                "Bagaimana satuan pendidikan menyiapkan perangkat yang memadai untuk menyelenggarakan pembelajaran yang optimal dan mengelola data?"
+              ]
+            }
+          ]
+        },
+        "pages": [102, 104, 105, 106]
+      },
+      {
+        "stage": "siap",
+        "descriptor": "Analisis kekuatan dan perbaikan di dalam satuan pendidikan, serta kesempatan dan ancaman terhadap satuan pendidikan dengan mempertimbangkan sudut pandang murid dan orang tua.",
+        "head_and_supervisor": "Pada tahap siap, kepala satuan pendidikan menangkap aspirasi murid dan/atau orang tua dalam mengembangkan kurikulum satuan pendidikan. …",
+        "data": [
+          "Rapor pendidikan: mutu dan hasil belajar, kompetensi dan kinerja pendidik dan tenaga kependidikan, mutu dan relevansi pembelajaran",
+          "Hasil observasi pembelajaran",
+          "Masukan dari pendidik, murid, dan/atau orang tua murid"
+        ],
+        "questions": [
+          "Bagaimana pencapaian satuan pendidikan saat ini?",
+          "Apa kekuatan sekolah yang harus ditonjolkan?",
+          "Apa pembelajaran terpenting yang murid dapatkan selama belajar di satuan pendidikan?",
+          "Apa sumber daya atau kesempatan belajar yang dapat dimanfaatkan untuk pembelajaran murid?"
+        ],
+        "tool": "SWOT (PDF 67)",
+        "pages": [102, 106]
+      },
+      {
+        "stage": "mahir",
+        "descriptor": "Analisis kekuatan dan perbaikan di dalam satuan pendidikan, serta kesempatan dan ancaman terhadap satuan pendidikan dengan mempertimbangkan sudut pandang kebijakan daerah/nasional dan sudut pandang/masukan berbagai pemangku kepentingan (pihak internal dan eksternal satuan pendidikan).",
+        "head_and_supervisor": "Pada tahap mahir, kepala satuan pendidikan melibatkan berbagai pemangku kepentingan dalam mengembangkan kurikulum. …",
+        "data": [
+          "Rapor Pendidikan: mutu dan hasil belajar, kompetensi dan kinerja pendidik dan tenaga kependidikan, mutu dan relevansi pembelajaran.",
+          "Hasil observasi pembelajaran.",
+          "Masukan dari pendidik, murid, orang tua murid, mitra (organisasi, komunitas, dll)",
+          "Visi, misi, dan tujuan daerah setempat.",
+          "Data terkait informasi sistem, sumber daya, fasilitas, dan mitra yang tersedia."
+        ],
+        "questions": [
+          "Apakah ada sumber daya dari lingkungan sekitar yang dapat dimanfaatkan oleh satuan pendidikan dalam proses belajar?",
+          "Apa saja visi, misi, dan tujuan daerah?",
+          "Apa saja kebijakan satuan pendidikan terkait indikator kebijakan daerah?",
+          "Siapa saja pihak-pihak yang dapat dilibatkan untuk mendukung program satuan pendidikan? (organisasi, komunitas, tokoh, dll.)"
+        ],
+        "tool": "Analisis SWOT, Root Cause analysis, Fish Bone diagram",
+        "pages": [102, 107]
+      }
+    ],
+    "vision_mission_goals": [
+      {
+        "stage": "awal",
+        "descriptor": "Menggunakan visi, misi, dan tujuan satuan pendidikan yang sudah ada.",
+        "detail": "Pada tahap awal, kepala satuan pendidikan membantu anggota satuan pendidikan untuk memahami dan berkomitmen terhadap visi, misi, dan tujuan satuan pendidikan. …",
+        "questions": [
+          "Apakah semua warga satuan pendidikan memahami hal-hal yang menjadi prioritas untuk mencapai visi?",
+          "Apakah cara/strategi untuk mencapai misi realistis untuk dijalankan?",
+          "Bagaimana satuan pendidikan mengorganisasi dan merancang pembelajarannya untuk mencapai tujuan?"
+        ],
+        "pages": [108, 109]
+      },
+      {
+        "stage": "berkembang",
+        "descriptor": "Meninjau ulang visi, misi, dan tujuan satuan pendidikan serta melakukan penyesuaian sederhana terhadap tujuan yang disesuaikan dengan kondisi lingkungan internal satuan pendidikan.",
+        "detail": "Pada tahap berkembang, kepala satuan pendidikan melakukan analisis keselarasan tujuan satuan pendidikan dengan visi dan misi. …",
+        "questions": [
+          "Apa yang menjadi prioritas bagi satuan pendidikan … dalam mendukung kompetensi murid?",
+          "Apa yang mendasari tujuan ini?",
+          "Kompetensi apa saja yang perlu dimiliki oleh murid?",
+          "Mengapa kompetensi ini dianggap penting?",
+          "Apa karakteristik individu yang ingin dibangun?"
+        ],
+        "pages": [108, 109]
+      },
+      {
+        "stage": "siap",
+        "descriptor": "Meninjau ulang visi, misi, dan tujuan satuan pendidikan serta menyesuaikannya berdasarkan hasil evaluasi dan disesuaikan dengan kondisi lingkungan internal dan eksternal satuan pendidikan, karakteristik murid, dan aspirasi orang tua.",
+        "detail": "… kepala satuan pendidikan meninjau ulang visi, misi, dan tujuan satuan pendidikan dan melakukan revisi untuk menajamkan aspek yang belum selaras dengan pencapaian delapan dimensi profil lulusan atau yang belum sesuai dengan kondisi riil satuan pendidikan, kebutuhan murid, dan umpan balik dari orang tua. …",
+        "questions": [
+          "Bagian mana yang perlu ditajamkan dalam visi dan misi?",
+          "Apakah perlu membuat visi dan misi baru yang lebih sesuai dengan kondisi lingkungan dan karakteristik murid?",
+          "Apa saja prioritasnya?"
+        ],
+        "pages": [108, 110]
+      },
+      {
+        "stage": "mahir",
+        "descriptor": "Mempertimbangkan sudut pandang/masukan dari berbagai pemangku kepentingan satuan pendidikan dalam meninjau ulang secara menyeluruh dan merumuskan kembali visi, misi, dan tujuan berdasarkan analisis karakteristik satuan pendidikan.",
+        "detail": "… kepala satuan pendidikan merumuskan ulang visi, misi, dan tujuan satuan pendidikan agar lebih selaras dengan pencapaian delapan dimensi profil lulusan … Pengawas sekolah atau penilik dapat memantau proses perumusan ulang visi-misi-tujuan, menjadi coach jika diperlukan oleh satuan pendidikan.. …",
+        "questions": [
+          "Seperti apakah gambaran ideal tentang masa depan yang ingin diwujudkan oleh satuan pendidikan?",
+          "Bagaimana satuan pendidikan bisa mencapai gambaran ideal tersebut?",
+          "Bagaimana menggunakan aset yang dimiliki untuk membantu kemajuan/perkembangan satuan pendidikan?"
+        ],
+        "pages": [108, 110]
+      }
+    ],
+    "learning_organisation": [
+      {
+        "stage": "awal",
+        "descriptor": "Menggunakan inspirasi atau meneruskan untuk menyusun pengorganisasian pembelajaran dari dokumen yang sudah ada, seperti struktur kurikulum (intrakurikuler, kokurikuler, ekstrakurikuler …).",
+        "questions": [
+          "Apakah satuan pendidikan telah membuat pengaturan waktu belajar berdasarkan pengorganisasian pembelajaran yang dipilih sesuai dengan inspirasi pada panduan ini?",
+          "Apakah satuan pendidikan telah mengacu kepada panduan kokurikuler?",
+          "Apakah satuan pendidikan telah menemukan inspirasi terkait kokurikuler?",
+          "Apakah satuan pendidikan telah memilih tema-tema yang akan digunakan untuk kokurikuler?",
+          "Apakah satuan pendidikan telah menuliskan jenis-jenis ekstrakurikuler yang hendak dilaksanakan?"
+        ],
+        "pages": [111, 112]
+      },
+      {
+        "stage": "berkembang",
+        "descriptor": "Melakukan modifikasi terhadap dokumen untuk menyusun pengorganisasian pembelajaran, seperti struktur kurikulum (intrakurikuler, kokurikuler, ekstrakurikuler … dan pendekatan mata pelajaran atau tematik berdasarkan kebutuhan satuan pendidikan.",
+        "questions": [
+          "Dari inspirasi yang telah didapat, apakah ada yang ingin dimodifikasi? Bagian mana yang perlu disesuaikan dengan konteks satuan pendidikan?",
+          "Apakah satuan pendidikan pernah mengorganisasi pembelajaran berdasarkan mata pelajaran atau ingin mencoba pengorganisasian lainnya?",
+          "Apakah satuan pendidikan telah memilih tema-tema yang akan digunakan untuk kokurikuler?",
+          "Apakah satuan pendidikan telah menyesuaikan kokurikuler sesuai dengan panduan kokurikuler?",
+          "Apakah satuan pendidikan telah menemukan inspirasi ekstrakurikuler yang sesuai dengan kebutuhan murid?",
+          "Apakah ada bagian dari hasil rapor pendidikan yang dapat ditindaklanjuti melalui pengorganisasian pembelajaran?"
+        ],
+        "pages": [111, 113]
+      },
+      {
+        "stage": "siap",
+        "descriptor": "Mengembangkan elemen-elemen dalam pengorganisasian pembelajaran seperti struktur kurikulum (intrakurikuler, kokurikuler, ekstrakurikuler …, pendekatan muatan pembelajaran dari beragam sumber berdasarkan hasil analisis dan refleksi terhadap kondisi, sarana, prasarana, tenaga pendidik sesuai dengan kebutuhan satuan pendidikan.",
+        "questions": [
+          "Apakah satuan pendidikan telah mencoba dan memodifikasi beberapa pengorganisasian pembelajaran lain yang sesuai dengan kebutuhan?",
+          "Apakah ada tema-tema lain untuk kokurikuler yang sesuai dengan perkembangan lingkungan satuan pendidikan?",
+          "Apakah ada permasalahan di sekitar satuan pendidikan yang ingin diselesaikan melalui kokurikuler? Apakah satuan pendidikan telah bertanya kepada beberapa pihak di lingkungan satuan pendidikan terkait isu terkini yang dapat dipecahkan melalui kokurikuler?",
+          "Apakah ada program ekstrakurikuler yang ingin ditambahkan sesuai kebutuhan murid dan perkembangan zaman?",
+          "Apakah ada sumber-sumber lain sebagai inspirasi di dalam menentukan ekstrakurikuler dan pengaturan waktu belajar?",
+          "Apakah ada strategi yang dibuat oleh satuan pendidikan sebagai tindak lanjut dari evaluasi hasil rapor pendidikan?",
+          "Apakah satuan pendidikan memiliki sarana, prasarana, dan sumber daya yang memadai untuk menyelenggarakan mata pelajaran pilihan Koding dan Kecerdasan Artifisial?"
+        ],
+        "pages": [111, 114]
+      },
+      {
+        "stage": "mahir",
+        "descriptor": "Merancang pengorganisasian pembelajaran secara mandiri, melaksanakan kokurikuler dengan idenya sendiri dan relevan, menyediakan pilihan-pilihan ekstrakurikuler yang beragam. Satuan pendidikan secara fleksibel dan dinamis mengembangkan pendekatan pembelajaran sesuai dengan kebutuhannya.",
+        "detail": "Satuan pendidikan merancang pengorganisasian pembelajaran secara mandiri, telah memiliki struktur kurikulum yang ajek, …",
+        "questions": [
+          "Di antara keempat pengorganisasian pembelajaran, manakah yang paling sesuai dengan kebutuhan satuan pendidikan dan akan diterapkan secara efektif?",
+          "Untuk mengembangkan relasi kemitraan, apakah ada projek bersama yang hendak dilakukan untuk memecahkan masalah tertentu di lingkungan satuan pendidikan?",
+          "Tema-tema dalam kokurikuler manakah yang perlu digali lebih mendalam?",
+          "Apakah ada kegiatan ekstrakurikuler yang kurang mengembangkan potensi murid?",
+          "Apakah ada inovasi yang akan dikembangkan melalui kegiatan ekstrakurikuler untuk meningkatkan kualitas satuan pendidikan?",
+          "Apakah ada inovasi yang akan dikembangkan oleh satuan pendidikan sebagai tindak lanjut dari evaluasi hasil rapor pendidikan?"
+        ],
+        "pages": [111, 115]
+      }
+    ],
+    "learning_planning": [
+      {
+        "stage": "awal",
+        "descriptor": "Menggunakan inspirasi dokumen perencanaan pembelajaran, seperti Alur Tujuan Pembelajaran, Perangkat Ajar, dan diakhiri dengan refleksi pembelajaran.",
+        "questions": [
+          "Apakah satuan pendidikan telah memiliki Capaian Pembelajaran (CP) untuk semua mata pelajaran?",
+          "Apakah satuan pendidikan telah membuat alur tujuan pembelajaran sesuai dengan inspirasi pada panduan terkait?",
+          "Apakah kepala satuan pendidikan telah mengimbau pendidik dan tenaga pendidik untuk membaca Capaian Pembelajaran (CP), alur tujuan pembelajaran, dan perangkat ajar sesuai dengan mata pelajaran yang diampunya?",
+          "Apakah kepala satuan pendidikan telah memastikan bahwa pendidik dan tenaga pendidik sudah mendapatkan perangkat ajar?"
+        ],
+        "pages": [116, 117]
+      },
+      {
+        "stage": "berkembang",
+        "descriptor": "Melakukan modifikasi terhadap dokumen-dokumen penyusun perencanaan pembelajaran berdasarkan inspirasi yang ada, seperti Alur Tujuan Pembelajaran dan Perangkat Ajar. Modifikasi dilakukan agar sesuai dengan karakteristik murid dan kondisi satuan pendidikan.",
+        "questions": [
+          "Dari inspirasi yang telah dikumpulkan, apakah ada yang sesuai dengan konteks dan kebutuhan satuan pendidikan?",
+          "Penyesuaian apa yang dilakukan di dalam merancang alur tujuan pembelajaran dan perangkat ajar?",
+          "Berdasarkan analisis rapor pendidikan, apakah ada hal penting yang perlu dibenahi melalui kegiatan pembelajaran?"
+        ],
+        "pages": [116, 117]
+      },
+      {
+        "stage": "siap",
+        "descriptor": "Mengembangkan dokumen seperti Alur Tujuan Pembelajaran dan Perangkat Ajar berdasarkan refleksi yang telah dilakukan dan pencarian sumber-sumber lain yang diperoleh tanpa mengabaikan prinsip-prinsip penyusunan.",
+        "questions": [
+          "Sejauh mana hasil refleksi yang telah dilakukan oleh pendidik berpengaruh dalam memodifikasi dokumen perencanaan pembelajaran?",
+          "Berdasarkan riset/observasi/pencarian sumber-sumber inspirasi, apakah ada strategi yang hendak diterapkan untuk perencanaan pembelajaran selanjutnya?",
+          "Apakah dilakukan diskusi terpimpin atau FGD per rumpun mata pelajaran dalam melakukan refleksi pembelajaran?",
+          "Apakah ada strategi-strategi yang sudah tidak sesuai dengan pembelajaran tertentu?",
+          "Apakah ada sumber ajar lain yang dapat mendukung proses pembelajaran?",
+          "Berdasarkan analisis rapor pendidikan, apakah ada hal penting yang perlu dibenahi melalui kegiatan pembelajaran?",
+          "Apakah satuan pendidikan telah mengembangkan perencanaan pembelajaran untuk menyelenggarakan mata pelajaran pilihan Koding dan Kecerdasan Artifisial?"
+        ],
+        "pages": [116, 118]
+      },
+      {
+        "stage": "mahir",
+        "descriptor": "Mengembangkan dokumen perencanaan pembelajaran, seperti Alur Tujuan Pembelajaran dan Perangkat Ajar yang kontekstual dan bervariasi, serta dapat menjadi inspirasi untuk dapat diterapkan oleh satuan pendidikan lainnya. Selain itu, satuan pendidikan memanfaatkan teknologi di dalam menyusun perencanaan pembelajaran untuk menghasilkan proses pembelajaran yang inovatif.",
+        "questions": [
+          "Apakah ada sistem informasi khusus sebagai inventory yang dapat membantu pendidik dan tenaga kependidikan dalam merencanakan pembelajaran?",
+          "Berdasarkan hasil evaluasi pembelajaran yang dilakukan secara berkala, konten apa yang paling sesuai dengan konteks satuan pendidikan dan kebutuhan murid?",
+          "Berdasarkan analisis rapor pendidikan, apakah ada hal penting yang perlu dibenahi melalui kegiatan pembelajaran?",
+          "Apakah perangkat ajar telah dikembangkan secara digital yang dapat diakses oleh seluruh pendidik, tenaga kependidikan, murid, dan orang tua?",
+          "Apakah ada tim khusus yang melakukan verifikasi dokumen perencanaan yang telah dibuat oleh pendidik?",
+          "Apakah satuan pendidikan telah memiliki lini masa yang ajek di dalam proses penyusunan, pengumpulan, penelaahan perencanaan pembelajaran?"
+        ],
+        "pages": [116, 118]
+      }
+    ],
+    "evaluation": {
+      "rule": {
+        "text": "Evaluasi kurikulum satuan pendidikan dilaksanakan mandiri dan bertahap sesuai dengan konteks, kebutuhan, dan kemampuan satuan pendidikan.",
+        "pages": [119]
+      },
+      "stages": [
+        {
+          "stage": "awal",
+          "descriptor": "Satuan pendidikan melakukan evaluasi yang fokus kepada evaluasi pembelajaran oleh pendidik.",
+          "scope": "intrakurikuler dan kokurikuler",
+          "criteria": ["Capaian pembelajaran", "Delapan dimensi profil lulusan", "Hasil asesmen pembelajaran"],
+          "questions": [
+            "Apakah tujuan evaluasi yang diharapkan?",
+            "Apa saja asesmen pembelajaran yang digunakan oleh pendidik dalam mengukur proses dan hasil pembelajaran murid?",
+            "Siapa saja yang terlibat dalam proses mengukur hasil pembelajaran ini?",
+            "Apa saja data proses dan hasil pembelajaran yang dimiliki oleh satuan pendidikan?",
+            "Apa dimensi profil lulusan yang sudah disasar oleh pendidik dalam pembelajaran intrakurikuler?",
+            "Apa dimensi profil lulusan yang sudah disasar oleh pendidik dalam pembelajaran kokurikuler?",
+            "Dimensi profil lulusan apa yang sudah berkembang dengan baik?",
+            "Dimensi apa yang harapannya akan dikembangkan dalam pembelajaran berikutnya?",
+            "Apa saja proses pembelajaran yang sudah berjalan dengan baik?",
+            "Apa saja proses pembelajaran yang masih perlu untuk terus ditingkatkan?",
+            "Bagian kurikulum apa yang perlu disesuaikan?"
+          ],
+          "pages": [119, 121]
+        },
+        {
+          "stage": "berkembang",
+          "descriptor": "Satuan pendidikan melakukan evaluasi dengan memperhatikan perspektif.",
+          "scope": "intrakurikuler, kokurikuler, … dan ekstrakurikuler",
+          "criteria": [
+            "Capaian pembelajaran",
+            "Delapan dimensi profil lulusan",
+            "Hasil asesmen pembelajaran",
+            "Kualitas pengajaran pendidik dan penggunaan perangkat ajar",
+            "Umpan balik dari peserta didik mengenai pengalaman belajar peserta didik"
+          ],
+          "pages": [119, 122],
+          "summary": "Two questions still use the old 'profil pelajar Pancasila'/'projek penguatan profil pelajar Pancasila' wording; see open_points.",
+          "questions_added": [
+            "Apakah peserta didik terlibat dalam proses evaluasi pembelajaran ini? Apa pendapat mereka mengenai pengalaman belajar mereka?",
+            "Apa dimensi, elemen, dan subelemen profil pelajar Pancasila yang sudah disasar oleh pendidik dalam pembelajaran projek penguatan profil pelajar Pancasila?",
+            "Dimensi profil pelajar Pancasila apa yang sudah berkembang dengan baik?"
+          ]
+        },
+        {
+          "stage": "siap",
+          "descriptor": "Satuan pendidikan melakukan evaluasi dengan memperhatikan perspektif murid dan orang tua.",
+          "scope": "intrakurikuler, kokurikuler, … dan ekstrakurikuler",
+          "criteria": [
+            "Capaian pembelajaran",
+            "Delapan dimensi profil lulusan",
+            "Hasil asesmen pembelajaran",
+            "Kualitas pengajaran pendidik dan penggunaan perangkat ajar",
+            "Keselarasan dengan visi, misi, tujuan, dan kekhasan satuan pendidikan",
+            "Umpan balik dari murid dan orang tua mengenai pengalaman belajar murid"
+          ],
+          "pages": [120, 123],
+          "questions_added": [
+            "Apakah orang tua terlibat dalam proses evaluasi pembelajaran ini? Apa pendapat mereka mengenai pengalaman belajar anaknya?",
+            "Apa strategi, kebijakan, dan/atau program yang akan diperkenalkan untuk meningkatkan kurikulum yang ada?"
+          ]
+        },
+        {
+          "stage": "mahir",
+          "descriptor": "Satuan Pendidikan melakukan evaluasi dengan memperhatikan sudut pandang kebijakan daerah/nasional dan masukan berbagai pemangku kepentingan (pihak internal dan eksternal satuan pendidikan)",
+          "scope": "intrakurikuler, kokurikuler, … dan ekstrakurikuler",
+          "criteria": [
+            "Capaian pembelajaran",
+            "Delapan dimensi profil lulusan",
+            "Hasil asesmen pembelajaran",
+            "Kualitas pengajaran pendidik dan penggunaan perangkat ajar",
+            "Keselarasan dengan visi, misi, tujuan dan kekhasan satuan pendidikan",
+            "Umpan balik dari murid dan orang tua mengenai pengalaman belajar murid",
+            "Kesuksesan implementasi program satuan pendidikan dengan mitra"
+          ],
+          "pages": [120, 124],
+          "questions_added": [
+            "Apakah asesmen pembelajaran yang digunakan oleh pendidik dalam mengukur proses dan hasil pembelajaran murid sudah dikomunikasikan dan dipahami oleh murid?",
+            "Apakah murid, orang tua, dan mitra satuan pendidikan terlibat dalam proses evaluasi pembelajaran? Apa pendapat mereka mengenai proses dan hasil pembelajaran yang ada?",
+            "Apa saja data proses dan hasil pembelajaran (internal dan eksternal) yang dimiliki oleh satuan pendidikan?",
+            "Apakah ada kesinambungan antara dimensi profil lulusan yang dikembangkan di dalam intrakurikuler dengan kegiatan kokurikuler?",
+            "Organisasi dan/atau pihak luar mana yang dapat diajak kerja sama untuk mengoptimalkan proses dan hasil pembelajaran di satuan pendidikan?"
+          ]
+        }
+      ],
+      "questions_note": "Stage awal lists every question; berkembang, siap and mahir list only questions_added (the other questions repeat the earlier stage, with minor wording changes such as 'peserta didik' for 'murid')."
+    }
+  },
+  "review_checklists": {
+    "note": "Ready-made checklists pulled from the sections above for a KSP review screen. Each item points back to its source page. The guide prints no scored rubric; the stage descriptors in implementation_stages are the closest thing.",
+    "supervisor_minimum_check": {
+      "text": "Dinas pendidikan diwakili pengawas sekolah atau penilik melakukan supervisi … untuk memastikan dokumen Kurikulum Satuan Pendidikan sudah selaras dengan prinsip pengembangan dan komponen minimum Kurikulum Satuan Pendidikan.",
+      "checks": [
+        "principles (PDF 9)",
+        "school_characteristics (PDF 18)",
+        "vision_mission_goals (PDF 18)",
+        "learning_organisation: intrakurikuler, kokurikuler, ekstrakurikuler (PDF 19)",
+        "learning_planning: lingkup satuan pendidikan + lingkup kelas (PDF 19)",
+        "evaluation_development_mentoring (PDF 13, 53)"
+      ],
+      "summary": "checks is an English mapping by the extractor, not printed as a list.",
+      "pages": [16]
+    },
+    "lists": [
+      {"key": "vmt_alignment", "source": "components[vision_mission_goals].alignment_checklist", "pages": [29]},
+      {
+        "key": "mission_quality",
+        "source": "sd_examples.vision_mission_goal_examples.mission_tahap_siap.mission_checklist",
+        "pages": [72]
+      },
+      {"key": "goal_smart_er", "source": "components[vision_mission_goals].goals.smart_er", "pages": [74, 75]},
+      {
+        "key": "vmt_communication",
+        "source": "sd_examples.vision_mission_goal_examples.alignment_questions_awal_berkembang",
+        "pages": [70]
+      },
+      {
+        "key": "thematic_readiness",
+        "source": "components[learning_organisation].organisation_models.models[thematic].starter_questions",
+        "pages": [39]
+      },
+      {"key": "deep_learning", "source": "components[learning_planning].deep_learning.checklist", "pages": [49]},
+      {"key": "review_starters", "source": "development_cycle.starter_questions_review", "pages": [14]},
+      {"key": "stage_self_assessment", "source": "implementation_stages", "pages": [101, 124]}
+    ]
+  },
+  "glossary": [
+    {
+      "text": "Berbentuk cerita singkat yang menarik dan mengesankan, biasanya mengenai hal penting dan berdasarkan kejadian yang sebenarnya.",
+      "term": "Anekdotal",
+      "pages": [63]
+    },
+    {
+      "text": "Melakukan penyelidikan dan penjelajahan lapangan dengan tujuan memperoleh pengetahuan dan kemampuan yang lebih banyak.",
+      "term": "Eksplorasi",
+      "pages": [63]
+    },
+    {
+      "text": "Kerangka berpikir yang memandang bahwa setiap hal baru bisa dimaknai dengan baik jika dilihat secara utuh dan menyeluruh serta saling terhubung antar bagiannya.",
+      "term": "Holistik",
+      "pages": [63]
+    },
+    {"text": "Pelaksanaan di lapangan.", "term": "Implementasi", "pages": [63]},
+    {
+      "text": "Bersifat kolaborasi; memiliki ciri-ciri dapat melakukan upaya saling membantu dan berbagi peran untuk menuntaskan sebuah pekerjaan atau mencapai tujuan bersama.",
+      "term": "Kolaboratif",
+      "pages": [63]
+    },
+    {
+      "text": "Sesuai dengan kondisi nyata dalam kehidupan sehari-hari. Sesuatu yang bersifat kontekstual pasti memiliki keterkaitan dengan pengalaman yang dapat langsung dirasakan.",
+      "term": "Kontekstual",
+      "pages": [63]
+    },
+    {
+      "text": "Tenaga kependidikan yang berkualifikasi sebagai guru, dosen, konselor, pamong belajar, widyaiswara, tutor, instruktur, fasilitator, dan sebutan lain yang sesuai dengan kekhususannya, serta berpartisipasi dalam menyelenggarakan pendidikan (Pasal 1 angka 6 Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional).",
+      "term": "Pendidik",
+      "pages": [63]
+    },
+    {
+      "text": "Kumpulan dokumen hasil penilaian, penghargaan, dan karya murid dalam bidang tertentu yang mencerminkan perkembangan dalam kurun waktu tertentu.",
+      "term": "Portofolio",
+      "pages": [63]
+    }
+  ],
+  "open_points": [
+    {
+      "text": "The guide has no SD/MI JP-per-subject table, no SD weekly JP totals, no rule on kokurikuler JP share for SD, no SD muatan lokal limit, and no SD JP for Bahasa Inggris or the Koding dan Kecerdasan Artifisial (KKA) elective. Take those from Permendikdasmen 13/2025 / Kepmen struktur kurikulum (and KMA 1503/2025 for MI), not from this file.",
+      "pages": [80, 82, 114, 118]
+    },
+    {
+      "text": "Kelas 1 SD thematic example (PDF 80) totals 540 JP per 18-week semester (30 JP/week, kokurikuler 108 JP per semester = 20%). It is labelled 'Contoh' and does not state the JP length or which subjects each theme covers; check against the national SD structure before using it as a default schedule.",
+      "pages": [80]
+    },
+    {
+      "text": "The only muatan lokal limit printed ('paling banyak 2 JP per minggu atau 72 JP per tahun') is a footnote under the SMP tables; whether it also applies to SD is not stated here.",
+      "pages": [82, 83]
+    },
+    {
+      "text": "KKA is mentioned only as a readiness question (sarana for 'mata pelajaran pilihan Koding dan Kecerdasan Artifisial', planning for it) without naming levels or grades.",
+      "pages": [114, 118]
+    },
+    {
+      "text": "Evaluation stage 'berkembang' still uses the superseded 'profil pelajar Pancasila' and 'projek penguatan profil pelajar Pancasila' wording (other stages use 'delapan dimensi profil lulusan'); PDF 97 and 103 still say 'Kurikulum Merdeka'. Treat as leftovers from the earlier edition; SIGRAK should use 'dimensi profil lulusan' and 'kokurikuler'.",
+      "pages": [97, 103, 122]
+    },
+    {
+      "text": "Pengorganisasian pembelajaran and the 'Evaluasi, Pengembangan Profesional, dan Pendampingan' chapter: PDF 18-19 table lists four components (karakteristik, visi-misi-tujuan, pengorganisasian, perencanaan) while the development cycle and chapter 5 add evaluation/professional development/mentoring as step 5. The guide does not say plainly whether step 5 is a mandatory 'komponen minimum'; Permendikbudristek 12/2024 as amended should settle it.",
+      "pages": [13, 18, 19, 53]
+    },
+    {
+      "text": "The printed text order on PDF 13 lists 'Menyusun RENCANA PEMBELAJARAN' near step 05; the diagram (image) numbers it 04, with 03 = pengorganisasian and 05 = evaluasi. This file follows the diagram.",
+      "pages": [13, 15]
+    },
+    {
+      "text": "SD/MI may organise content by subject or thematically (PDF 34), but PDF 113 lets every school choose mata pelajaran/tematik/terintegrasi/blok. Whether SD may also use integrated or block organisation is not stated explicitly.",
+      "pages": [34, 113]
+    },
+    {
+      "text": "No SD sample ATP, modul ajar, or KSP document is printed; Lampiran 9 only points to kurikulum.kemdikbud.go.id and Rumah Pendidikan Ruang GTK. Reporting cadence for SD rapor is not set here (only PAUD/SMK/SLB/Kesetaraan are mentioned in Lampiran 5).",
+      "pages": [89, 100]
+    }
+  ]
+}
