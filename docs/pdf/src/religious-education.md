@@ -1,6 +1,6 @@
 # Kurikulum Pendidikan Agama (SD dan MI)
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/religious-education.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/religious-education.md</code> pada 8 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-07
@@ -44,7 +44,7 @@ Keenamnya masuk v1. Setiap agama adalah mata pelajaran tersendiri; siswa mengiku
   - Kristen memberi satu CP per subelemen, ditambah ringkasan fase. "Allah Penyelamat" dan "Allah Pembaru" tidak punya CP di Fase A.
   - Katolik memberi satu CP per elemen, ditambah ringkasan fase.
   - Buddha punya tiga CP panjang per fase.
-- **JP:** setiap mata pelajaran agama memakai alokasi yang sama dengan PAI di struktur nasional: 3 JP per minggu, 54/54 JP per semester untuk kelas 1–5 dan 54/42 untuk kelas 6. Ini mengandaikan struktur kurikulum punya satu baris "Pendidikan Agama dan Budi Pekerti" untuk agama apa pun. Pastikan dengan struktur kurikulum.
+- **JP:** setiap mata pelajaran agama memakai alokasi yang sama dengan PAI di struktur nasional: 3 JP per minggu, 54/54 JP per semester untuk kelas 1–5 dan 54/42 untuk kelas 6. Sudah dipastikan oleh Permendikdasmen 13/2025, Lampiran II B, Tabel 1–5: keenam agama berbagi satu baris (108 JP intrakurikuler per tahun, 96 di kelas 6, ditambah 36 atau 32 JP kokurikuler). Data: `curriculum-structure-permendikdasmen-13-2025.json`.
 - **Guru:** secara bawaan setiap mata pelajaran agama diajar guru mapel (D-032), satu guru per agama. Sekolah kecil bisa punya satu guru yang mengajar beberapa kelas.
 
 ## MI: mata pelajaran Kemenag (D-035)
@@ -61,8 +61,9 @@ MI tidak mengajarkan satu mata pelajaran PAI. MI mengikuti struktur Kementerian 
 
 *Angka JP sudah dicocokkan dengan KMA 1503/2025 Lampiran II, Tabel 1–5 (hlm. 28–31). Alokasi MI lengkap untuk setiap mata pelajaran: `mi-allocation-kma-1503-2025.json`.*
 
+- **MI tetap memakai tabel KMA 1503/2025.** Permendikdasmen 13/2025 menyebut MI dalam tabel SD-nya, tetapi madrasah mengikuti KMA 1503/2025 (D-038). Di sana, JP kokurikuler diambil dari sebagian mata pelajaran per kelas, bukan dari setiap mata pelajaran seperti di SD.
 - **36 minggu per tahun, 32 di kelas 6. 1 JP = 35 menit.** Madrasah boleh menambah sampai 6 JP per minggu (KMA 1503/2025, hlm. 32). JP "koku" dialihkan ke program kokurikuler. Penjadwalan RPM hanya menghitung JP intrakurikuler, dan JP kokurikuler milik modul Kokurikuler.
-- **Mata pelajaran MI lainnya** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS mulai kelas 3, PJOK, Seni dan Budaya, Bahasa Inggris mulai kelas 3, Koding dan KA sebagai pilihan di kelas 5–6, Muatan Lokal) memakai CP nasional, tetapi dengan tabel alokasi MI sendiri dari KMA 1503/2025 (`mi-allocation-kma-1503-2025.json`). Muatan Lokal mengambil 72–216 JP per tahun (64–192 di kelas 6), dan siswa memilih satu seni (Seni Musik, Rupa, Teater, atau Tari).
+- **Mata pelajaran MI lainnya** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS mulai kelas 3, PJOK, Seni dan Budaya, Bahasa Inggris mulai kelas 3, Koding dan KA (mata pelajaran pilihan di kelas 5–6 menurut KMA 1503/2025; di SIGRAK berjalan lewat kokurikuler, D-208), Muatan Lokal) memakai CP nasional, tetapi dengan tabel alokasi MI sendiri dari KMA 1503/2025 (`mi-allocation-kma-1503-2025.json`). Muatan Lokal mengambil 72–216 JP per tahun (64–192 di kelas 6), dan siswa memilih satu seni (Seni Musik, Rupa, Teater, atau Tari).
 - **Data CP:** `cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` berisi teks Fase A–C untuk kelima mata pelajaran, diambil dari lapisan teks PDF dan disusun menjadi baris elemen dan subelemen di P2-02 (D-039). Enam bacaan Bahasa Arab diketik ulang dari gambar halaman. Teks ditampilkan sesuai cetakan, dan sembilan baris yang mungkin memuat kesalahan sumber diberi `review_notes` (D-127). Tim Validasi SIGRAK masih harus meninjau dan menyetujui data sebelum diimpor (D-113).
 - **Bahan ajar:** Kemenag menerbitkan Buku Teks Utama (BTU) gratis untuk mata pelajaran ini yang selaras dengan KMA 1503/2025. Buku ini sumber rujukan yang wajar untuk RPM, seperti buku Parijatha untuk Bahasa Jawa.
 - **Guru:** kelima mata pelajaran diajar **guru mapel** (D-037). Secara bawaan statusnya `subject_teacher`, dan operator tetap bisa menugaskan ulang per kelas.

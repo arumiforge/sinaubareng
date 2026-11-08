@@ -72,6 +72,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-01 | Buku Induk and Dapodik sync design | blocked (upcoming, D-161) | main | D-157, D-158 | `docs/drafts/buku-induk-dapodik.md` |
 | P4-02 | Game kelas: IFP learning mode for SD/MI (benchmark + design) | review | sky/inspiring-volta-3bdmuq | D-011, D-014, D-158 | `docs/drafts/ifp-classroom.md` |
 | P4-03 | Official documents (`docs/dokumen-resmi/`) → SD/MI data | done | p4/p4-03-dokumen-resmi-data | — | `docs/data/regulations/`, `docs/drafts/dokumen-resmi-sd-mi.md` |
+| P4-03b | Apply P4-03 findings to `docs/final/` + Indonesian PDFs | review | p4/p4-03b-final-docs | P4-03, D-203…D-209 | `docs/final/{content-engine,data-model,product-concept,religious-education}.md`, `docs/pdf/` |
 
 ### Phase 5 — v1 build · todo
 
@@ -108,6 +109,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
+- 2026-11-08 — P4-03b in review: `docs/final/` now follows the official 2025 documents and D-204…D-209. Changes: SD allocation version `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, optional Bahasa Inggris/IPAS grades 1–2, the eight dimensi profil lulusan, RPM INTI steps, kokurikuler plan schema, rapor tables (`report_cards`, `report_extracurriculars`), and the KSP starter template. PDFs rebuilt.
 - 2026-11-08 — P4-03 done (PR #56): SD/MI data from the eight official documents is in `docs/data/regulations/` (draft until Tim Validasi review, D-113). The PDFs are now in `docs/sources/` under descriptive names (D-203). Owner decisions: D-204…D-209. Next (not yet a task): apply the `docs/final/` updates listed in §10 of `docs/drafts/dokumen-resmi-sd-mi.md`, plus the matching PDFs.
 - 2026-11-07 — P5-03b done (PR #55): sign-in, reset, invitations (staff invite the first operator/principal, the operator invites teachers), Akun, role switch, and console pages for memberships and supervisor assignments. D-182…D-184. Supervisor accounts come with P5-09 (D-184); server mail is set. Next: P5-03c, then P5-03d.
 - 2026-11-04 — P4-02 in review: `docs/drafts/ifp-classroom.md` maps IFP use on papaninteraktif.com and game.digitaleducation.id and designs Game kelas as an RPM-driven IFP mode. Owner interview done: D-171…D-181. Open: Android/WebView version on a real Kemendikdasmen IFP, Kode Tayang hostname; final docs still list the old D-014 game list (update when the draft moves to final).

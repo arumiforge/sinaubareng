@@ -1,6 +1,6 @@
 # Konsep Produk SIGRAK
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/product-concept.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/product-concept.md</code> pada 8 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-02
@@ -81,7 +81,7 @@ Kepala sekolah, operator, atau pengawas yang juga mengajar tetap punya lima menu
 
 ## Pasar
 
-- **Jenjang:** SD/MI, kelas 1–6. Kelas 7–12 disembunyikan sampai data kurikulumnya ada (data saat ini, KM-SD-2026-R2, hanya mencakup SD/MI). SD menawarkan keenam mata pelajaran agama (D-034). MI mengikuti Kementerian Agama: Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, dan Bahasa Arab sebagai ganti satu mata pelajaran PAI (D-035). Rinciannya di `religious-education.md`.
+- **Jenjang:** SD/MI, kelas 1–6. Kelas 7–12 disembunyikan sampai data kurikulumnya ada (data saat ini, KM-SD-2026-R2, hanya mencakup SD/MI). Struktur dan JP mengikuti Permendikdasmen 13/2025 untuk SD dan KMA 1503/2025 untuk MI. Bahasa Inggris dan IPAS di kelas 1–2 adalah konten opsional yang bisa dinyalakan sekolah (D-204). SD menawarkan keenam mata pelajaran agama (D-034). MI mengikuti Kementerian Agama: Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, dan Bahasa Arab sebagai ganti satu mata pelajaran PAI (D-035). Rinciannya di `religious-education.md`.
 - **Wilayah:** seluruh Indonesia (D-018). Muatan lokal (misalnya Bahasa Jawa) dan kalender pendidikan (kaldik) bisa diatur per daerah dan per sekolah. Kudus menjadi uji coba, jadi Bahasa Jawa dan kalender Kudus hanya menjadi nilai bawaan untuk sekolah di Kudus.
 - **Risiko nama:** "Sigrak" berasal dari bahasa Jawa. Kata ini mungkin kurang dikenal di luar Jawa, yang penting karena pasarnya kini nasional. Nama cadangan dari catatan rebranding adalah **Kapur**. Nama ini tetap nama sementara sampai pemeriksaan PDKI selesai (lihat Pertanyaan terbuka).
 
@@ -222,7 +222,7 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 | Buat | Kurikulum (CP, TP, ATP, Prota, Promes) | Gabung | Buat > Kurikulum | Dasar perencanaan dan konten |
 | Buat | Generator RPM | Pertahankan | Buat > templat RPM, 4 langkah (Kapan, Apa, Cara, Periksa) di mesin templat | Fitur paling berharga |
 | Buat | Modul mandiri (mode manual) | Gabung | Pilihan "RPM lepas jadwal" di langkah 1 | Satu pintu untuk setiap RPM |
-| Buat | Modul kokurikuler (7 KAIH, projek, lintas disiplin) | Pertahankan | Buat > Kokurikuler, varian templat RPM yang membaca rencana sekolah | Fitur yang sudah ada |
+| Buat | Modul kokurikuler (7 KAIH, projek, lintas disiplin) | Pertahankan | Buat > Kokurikuler, varian templat RPM yang membaca rencana sekolah. Bentuknya mengikuti Panduan Kokurikuler 2025: Lintas Disiplin, 7 KAIH, Cara Lainnya (projek termasuk di sini). Koding dan Kecerdasan Artifisial berjalan di sini (D-208) | Fitur yang sudah ada |
 | Buat | Worksheet / LKPD | Gabung | Buat > templat LKPD. Juga lampiran RPM | LKPD bagian dari rencana |
 | Buat | Bank Modul / penyimpanan RPM | Gabung | Dokumen Saya | Satu arsip untuk setiap dokumen |
 | Buat | Unduh / impor cadangan | Ganti | Simpan otomatis di server. Ekspor data lengkap di Akun | Cadangan manual membuat guru ragu datanya aman |
@@ -232,7 +232,7 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 | Asesmen | "Mode Ujian" Bank Soal | Nanti (tidak aktif) | — | Dimatikan untuk sementara (D-026). Ujian latihan TKA satu-satunya ujian online di v1 |
 | Asesmen | Program penilaian | Gabung | Asesmen > Rencana Penilaian | |
 | Asesmen | Analisis nilai, taraf serap | Pertahankan | Asesmen > Analisis, otomatis per TP | |
-| Asesmen | Leger dan "inject e-Rapor" | Ganti | Asesmen > Rapor: leger, draf deskripsi, format ekspor e-Rapor | "Inject" terlalu teknis |
+| Asesmen | Leger dan "inject e-Rapor" | Ganti | Asesmen > Rapor: leger, draf deskripsi, format ekspor e-Rapor. Rapor memuat isi minimum resmi: nilai hanya dari hasil sumatif, deskripsi capaian kompetensi, deskripsi kokurikuler, ekstrakurikuler, kehadiran, catatan wali kelas, tanggapan orang tua (D-205) | "Inject" terlalu teknis |
 | Asesmen | Jenjang SMP–SMK, kelas 7–12 | Hapus | Kembali bila data SMP/MTs ada | Pilihan tanpa data berakhir dengan galat |
 | Di Kelas | Absensi | Ganti | Di Kelas > Absensi: **harian** (D-029), bawaan "semua hadir", ketuk yang tidak hadir, bekerja offline | Diisi di ponsel pada awal hari |
 | Di Kelas | Jurnal dan refleksi | Ganti | Di Kelas > Jurnal terisi dari RPM. Refleksi disusun dari jurnal | Lebih sedikit mengetik ulang |
@@ -266,7 +266,8 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 | Baru | Beberapa kunci AI (paket gratis Gemini) dengan rotasi dan failover | Tambah | Kunci AI Saya | D-012, D-023 |
 | Baru | Riwayat pemakaian AI | Tambah | Kunci AI Saya > Riwayat | Guru melihat mengapa AI berhenti |
 | Baru | Revisi satu bagian dengan AI | Tambah | "Perbaiki bagian ini" di setiap bagian pratinjau | Tanpa membuat ulang seluruhnya |
-| Baru | Draf deskripsi rapor per TP | Tambah | Asesmen > Rapor | |
+| Baru | Draf deskripsi rapor per TP | Tambah | Asesmen > Rapor | Disusun dari capaian TP formatif tertinggi dan terendah (D-205) |
+| Baru | Templat awal KSP (Kurikulum Satuan Pendidikan) | Tambah | Portal Kepala Sekolah > Program Sekolah | Format KSP bebas; SIGRAK memberi draf awal yang mengikuti komponen resmi, lalu sekolah menyesuaikannya (D-209) |
 | Baru | Di Kelas offline | Tambah | Menu Di Kelas | D-016 |
 | Baru | Validasi kurikulum guru → kepala sekolah → pengawas | Tambah | Status di Dokumen Saya + antrean portal | D-019 |
 | Baru | Komentar kepala sekolah/pengawas pada dokumen | Tambah | Tampilan dokumen | D-019 |
