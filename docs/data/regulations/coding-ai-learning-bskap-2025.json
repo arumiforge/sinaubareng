@@ -1,0 +1,839 @@
+{
+  "dataset": "coding_ai_learning",
+  "version_code": "PEMBELAJARAN-KKA-BSKAP-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "SD/MI-relevant content of the BSKAP academic paper (naskah akademik) on Coding and Artificial Intelligence (Koding dan KA): status options, recommended grades and JP, the Fase C elements, materials and learning outcomes, methods, example problems/projects, evaluation and teacher requirements. It is a policy recommendation, not a binding decree; SIGRAK may use the Fase C table to seed an elective KKA subject for grades 5-6, but binding status comes from Kepmendikdasmen 127/P/2025 (see coding-ai-kepmendikdasmen-127-p-2025.json) and any later CP decree.",
+  "source": {
+    "title": "Naskah Akademik Pembelajaran Koding dan Kecerdasan Artifisial Pada Pendidikan Dasar dan Menengah",
+    "number": null,
+    "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah Republik Indonesia; penerbit Pusat Kurikulum dan Pembelajaran & Pusat Standar dan Kebijakan Pendidikan",
+    "issued_on": null,
+    "year": 2025,
+    "file": "docs/sources/Pembelajaran_Koding_dan_Kecerdasan_Artifisial_BSKAP_2025.pdf",
+    "received_as": "docs/dokumen-resmi/pembelajaran-kka.pdf (moved to docs/sources/ unchanged, D-203)",
+    "sha256": "8d931982de0108a8e8c8bb019d08fac178b2f8db0fbd39eb8ea4f8b52ea1ab35",
+    "pages_total": 110,
+    "pages_note": "Page refs are PDF page numbers. Printed body page n = PDF page n+13 (PDF 14 = printed 1, PDF 70 = printed 57); front matter is roman (PDF 3 = ii ... PDF 12 = xi). Dated 'Februari, 2025' on the cover and imprint (PDF 1, 2, 4); no day given. Running footers say 'Naskah Akademik' / 'Pembelajaran Koding dan Kecerdasan Artifisial'."
+  },
+  "extraction": {
+    "method": "pdftotext -layout (born-digital PDF, two-column layout) read page by page; every table transcribed (Tabel 3, 4, 5, 6, 10, 11) and Gambar 4 compared against page images rendered with pdftoppm; image-only/blank pages viewed.",
+    "date": "2026-11-07",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import (D-113).",
+    "checked_against_images": [
+      1,
+      5,
+      7,
+      9,
+      13,
+      58,
+      61,
+      63,
+      64,
+      69,
+      70,
+      78,
+      89,
+      97,
+      110
+    ],
+    "skipped": [
+      "Fase D (SMP kelas 7-9) elements, materials and outcomes with Informatika comparison, Tabel 7 (PDF 70-72).",
+      "Fase E/F (SMA/SMK kelas 10 and 11-12) elements, materials and outcomes, Tabel 8-9 (PDF 72-76).",
+      "SMP and SMA/SMK columns of Tabel 4, 5, 10, 11 and the SMP/SMA/SMK teacher-competence text (PDF 63-64, 69, 78, 82-83).",
+      "Allocation recommendations for SMP, SMA (up to 5 JP in grades 11-12) and SMK (up to 4 JP in grades 11-12) (PDF 12, 95).",
+      "Background chapters: Pendahuluan, Landasan filosofis/sosiologis/yuridis/empiris, concept definitions, international practice (Tabel 1 country comparison), Indonesian school practice examples at SMP/SMA (PDF 14-56), kept only where an SD-specific statement appears.",
+      "Team lists, foreword, table of contents, bibliography (PDF 3-8, 98-109); blank pages 5, 7, 9, 13, 61, 93, 97 and covers 1, 110."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values are quoted in Indonesian as printed (light whitespace/hyphenation cleanup only).",
+      "Element keys and phase keys (A, B, C) are shared with coding-ai-kepmendikdasmen-127-p-2025.json.",
+      "The source only defines SD content for Fase C (kelas 5-6); Fase A and B are present as keys with null content and a note.",
+      "JP figures are as printed (jam pelajaran per minggu); per-year values are not printed and are not derived here."
+    ]
+  },
+  "document_nature": {
+    "type": "naskah_akademik",
+    "text": "Naskah ini disusun sebagai landasan akademik untuk mendukung implementasi Pembelajaran Koding dan KA di Indonesia …",
+    "summary": "Academic paper with policy recommendations; the decree that adopts it is Kepmendikdasmen 127/P/2025 (BAB II A of that decree says BSKAP drafts the naskah akademik as a reference for the CP document).",
+    "pages": [
+      6
+    ]
+  },
+  "kka_status": {
+    "options_considered": [
+      {
+        "key": "mandatory_subject",
+        "label": "Koding dan KA sebagai Mata Pelajaran Wajib",
+        "text": "Mata pelajaran wajib adalah mata pelajaran yang harus diikuti oleh semua peserta didik dalam suatu jenjang pendidikan.",
+        "sd_considerations": "Tantangan terbesar adalah pada jenjang SD, khususnya SD Negeri, di mana guru yang mengampu pembelajaran sehari-hari adalah guru kelas dengan kualifikasi pendidikan guru SD. Hal ini menjadikan pelatihan bagi seluruh guru kelas sangat esensial sebelum menerapkan mata pelajaran ini.",
+        "pages": [
+          65,
+          66
+        ]
+      },
+      {
+        "key": "elective_subject",
+        "label": "Koding dan KA sebagai Mata Pelajaran Pilihan",
+        "text": "Mata pelajaran pilihan adalah mata pelajaran yang dapat dipilih oleh peserta didik sesuai dengan minat dan bakatnya.",
+        "sd_considerations": "Dengan menjadikan Koding dan KA sebagai mata pelajaran pilihan, tidak semua sekolah diharuskan menyediakan guru pengampu untuk mata pelajaran tersebut. Guru pengampu bisa ditugaskan dari guru yang sudah ada. … sekolah yang belum mampu menyediakan sarana dan prasarana TIK memiliki pilihan untuk tidak melaksanakan mata pelajaran ini.",
+        "pages": [
+          66,
+          67
+        ]
+      },
+      {
+        "key": "cocurricular_or_integrated",
+        "label": "Koding dan KA sebagai Kokurikuler atau Terintegrasi pada Mata Pelajaran yang Sudah Ada",
+        "text": "Pada jenjang SD, kemampuan yang perlu dikuasai peserta didik pada pembelajaran Koding dan KA dapat terintegrasi dengan mata pelajaran umum seperti matematika, bahasa, dan IPAS atau sebagai kokurikuler pada mata pelajaran tersebut. Misalnya, pembelajaran bahasa Indonesia dengan menyajikan teks eksposisi tentang etika penggunaan KA.",
+        "sd_considerations": "Dengan menjadikan Koding dan KA sebagai muatan yang terintegrasi atau kokurikuler, satuan pendidikan tidak perlu menyediakan guru khusus. … Salah satu kelebihan penerapan Koding dan KA sebagai muatan yang terintegrasi atau kokurikuler adalah tidak diperlukannya penambahan beban belajar pada struktur kurikulum. … dibutuhkan naskah-naskah inspiratif pembelajaran berupa model-model perangkat pembelajaran (Rencana Pelaksanaan Pembelajaran, modul ajar, bahan ajar, perangkat asesmen) …",
+        "pages": [
+          67
+        ]
+      },
+      {
+        "key": "extracurricular",
+        "label": "Koding dan KA sebagai Ekstrakurikuler",
+        "text": "Penerapan Koding dan KA sebagai ekstrakurikuler juga dapat menjadi alternatif bagi satuan pendidikan yang ingin memberikan pendalaman bagi peserta didik yang sudah mempelajari Koding dan KA melalui intrakurikuler. Umumnya kegiatan ekstrakurikuler tidak diwajibkan di sekolah …",
+        "pages": [
+          68
+        ]
+      }
+    ],
+    "recommendation": {
+      "text": "Menetapkan Koding dan KA sebagai mata pelajaran pilihan pada jenjang SD (kelas 5 dan 6), SMP (kelas 7, 8, dan 9), serta SMA/SMK (kelas 10) dengan alokasi waktu 2 jam pelajaran per minggu.",
+      "flexibility": "Memberikan fleksibilitas bagi satuan pendidikan untuk tetap mengembangkan Koding dan KA dalam bentuk ekstrakurikuler atau mengintegrasikannya ke dalam mata pelajaran lain yang relevan.",
+      "regulation": "Melakukan revisi regulasi terkait struktur kurikulum guna mencantumkan Koding dan KA sebagai mata pelajaran pilihan di setiap jenjang.",
+      "cp_alignment": "Menyusun dan menyesuaikan capaian pembelajaran untuk mata pelajaran Koding dan KA agar selaras dengan capaian pembelajaran Informatika.",
+      "summary": "Elective subject for SD grades 5-6 only (Fase C); grades 1-4 get no KKA subject in this paper.",
+      "pages": [
+        12,
+        95,
+        96
+      ]
+    },
+    "executive_summary_options": {
+      "text": "Penerapan pembelajaran Koding dan KA dapat dilakukan melalui beberapa opsi, yaitu sebagai mata pelajaran wajib, mata pelajaran pilihan, atau terintegrasi dengan mata pelajaran lain. Setiap opsi memiliki pertimbangan tersendiri, seperti ketersediaan guru, sarana prasarana, dan beban belajar peserta didik.",
+      "pages": [
+        11
+      ]
+    },
+    "current_practice_in_indonesia": {
+      "text": "… terdapat tiga bentuk penerapan pembelajaran koding dan KA yang selama ini telah dilakukan oleh sekolah-sekolah di Indonesia, yaitu terintegrasi ke dalam mata pelajaran yang ada, menjadi mata pelajaran pilihan, dan menjadi bagian dari kegiatan ekstrakurikuler (lihat Tabel 2).",
+      "sd_example": "… kompetisi koding dan KA juga dilakukan sebagai upaya mendorong kreativitas dan memperkenalkan siswa pada pengetahuan mengenai koding dan KA, seperti yang dilakukan di SDK Penabur, Jakarta.",
+      "pages": [
+        54,
+        55
+      ]
+    },
+    "informatika_relation": {
+      "text": "Terdapat perbedaan yang cukup mencolok antara Informatika dan Koding dan KA. Informatika sedari awal merupakan mata pelajaran yang dikembangkan untuk meningkatkan kemampuan dasar teknologi informasi dan komunikasi (basic ICT), sedangkan Koding dan KA dikembangkan dengan fokus pada kemampuan berpikir komputasional, pengembangan perangkat lunak, dan pemanfaatan perangkat KA.",
+      "sd_note": "Sebagai gambaran, saat ini tidak ada mata pelajaran Informatika pada jenjang SD.",
+      "pages": [
+        68,
+        85
+      ]
+    }
+  },
+  "implementation_strategies": {
+    "intro": {
+      "text": "Muatan Koding dan KA secara umum dapat diterapkan melalui intrakurikuler, kokurikuler, dan ekstrakurikuler.",
+      "pages": [
+        64,
+        65
+      ]
+    },
+    "intracurricular_elective": {
+      "label": "Koding dan KA sebagai Mata Pelajaran Pilihan",
+      "text": "Mata pelajaran pilihan adalah mata pelajaran yang dapat dipilih oleh peserta didik sesuai dengan minat dan bakatnya.",
+      "recommended": true,
+      "pages": [
+        66,
+        67
+      ]
+    },
+    "integrated_other_subjects": {
+      "label": "Koding dan KA sebagai Kokurikuler atau Terintegrasi pada Mata Pelajaran yang Sudah Ada",
+      "text": "Pada jenjang SD, kemampuan yang perlu dikuasai peserta didik pada pembelajaran Koding dan KA dapat terintegrasi dengan mata pelajaran umum seperti matematika, bahasa, dan IPAS atau sebagai kokurikuler pada mata pelajaran tersebut. Misalnya, pembelajaran bahasa Indonesia dengan menyajikan teks eksposisi tentang etika penggunaan KA.",
+      "pages": [
+        67
+      ]
+    },
+    "cocurricular": {
+      "label": "Koding dan KA sebagai Kokurikuler atau Terintegrasi pada Mata Pelajaran yang Sudah Ada",
+      "text": "Pada jenjang SD, kemampuan yang perlu dikuasai peserta didik pada pembelajaran Koding dan KA dapat terintegrasi dengan mata pelajaran umum seperti matematika, bahasa, dan IPAS atau sebagai kokurikuler pada mata pelajaran tersebut.",
+      "pages": [
+        67
+      ]
+    },
+    "extracurricular": {
+      "label": "Koding dan KA sebagai Ekstrakurikuler",
+      "text": "Penerapan Koding dan KA sebagai ekstrakurikuler juga dapat menjadi alternatif bagi satuan pendidikan yang ingin memberikan pendalaman bagi peserta didik yang sudah mempelajari Koding dan KA melalui intrakurikuler. Umumnya kegiatan ekstrakurikuler tidak diwajibkan di sekolah …",
+      "pages": [
+        68
+      ]
+    },
+    "mandatory_subject_considered": {
+      "label": "Koding dan KA sebagai Mata Pelajaran Wajib",
+      "recommended": false,
+      "text": "Pilihan Koding dan KA sebagai mata pelajaran wajib merupakan pilihan ideal jika ingin memaksimalkan dampak yang merata. Namun, … pemerintah dan satuan pendidikan harus menyiapkan daya dukung yang maksimal serta waktu persiapan yang panjang.",
+      "pages": [
+        66
+      ]
+    }
+  },
+  "delivery_modes": {
+    "internet_based": {
+      "label": "Pembelajaran Berbasis Internet (Internet-Based Learning)",
+      "text": "Metode pembelajaran ini memanfaatkan konektivitas internet untuk mengakses materi, menggunakan perangkat lunak, dan berkomunikasi. … Pada pembelajaran Koding dan KA, pembelajaran berbasis internet dapat digunakan saat mempraktikkan koding pada perangkat lunak pemrograman dan menerapkan prompting pada aplikasi kecerdasan artifisial generatif.",
+      "pages": [
+        79,
+        80
+      ]
+    },
+    "plugged": {
+      "label": "Pembelajaran Berbasis Perangkat Digital (Plugged Learning)",
+      "text": "Metode pembelajaran ini memanfaatkan perangkat keras (hardware) dan perangkat lunak (software) tertentu, seperti komputer, tablet, ponsel pintar, atau perangkat keras lain yang terhubung dengan komputer atau tablet. … Melalui pendekatan ini, penerapan Koding dan KA dapat dilakukan melalui projek langsung.",
+      "pages": [
+        80
+      ]
+    },
+    "unplugged": {
+      "label": "Pembelajaran Tanpa Perangkat Digital (Unplugged Learning)",
+      "text": "Metode pembelajaran tanpa perangkat digital merupakan pendekatan pembelajaran ilmu komputer yang berbasis aktivitas melalui simulasi, permainan, dan aktivitas fisik lainnya. … Pada pembelajaran Koding dan KA, pembelajaran ini dapat melibatkan penggunaan permainan papan, kartu, balok bersusun, atau aktivitas yang melibatkan gerakan fisik untuk memahami prinsip koding dan pengembangan algoritma, seperti mensimulasikan “robot/mesin” yang mampu berpikir dengan melibatkan peserta didik.",
+      "pages": [
+        80
+      ]
+    }
+  },
+  "sd_allocation": {
+    "grades": [
+      5,
+      6
+    ],
+    "phase": "C",
+    "jp_per_week": 2,
+    "jp_per_year": null,
+    "jp_per_year_note": "Not printed in the source.",
+    "text": "… dengan alokasi waktu 2 jam pelajaran per minggu.",
+    "screen_time_rationale": "Pembelajaran Koding dan KA dapat memberikan banyak manfaat bagi peserta didik, tetapi penting untuk memastikan bahwa mereka tidak menghabiskan terlalu banyak waktu di depan layar. Dengan mempertimbangkan batasan tersebut, mata pelajaran Koding dan KA dapat diajarkan selama 2 jam pelajaran tiap minggu dengan peningkatan secara bertahap pada tiap jenjang.",
+    "load_note": "Dengan menerapkan Koding dan KA sebagai mata pelajaran pilihan, maka peserta didik yang tidak berminat, tidak mengalami penambahan beban belajar.",
+    "grade_rationale": "Berdasarkan teori Piaget, anak normal mencapai puncak kematangan berpikir logis dan sistematis selambatnya pada usia 11 tahun (fase operasional konkret) atau setara kelas 5 SD. Pada jenjang SD, pembelajaran Koding dan KA masuk pada penanaman fondasi atau pradasar. Mengingat kelas 5 dan 6 merupakan fase terakhir sebelum masuk ke jenjang SMP di mana nantinya ada mata pelajaran Informatika sebagai mata pelajaran wajib, elemen, materi, dan capaian belajar Koding dan KA harus mendukung pembelajaran di fase berikutnya.",
+    "pages": [
+      12,
+      65,
+      66,
+      69,
+      95
+    ]
+  },
+  "competency_stages": {
+    "table": "Tabel 4 | Tahapan Kemampuan yang Dikuasai Peserta Didik (kolom SD/MI)",
+    "sd_mi": {
+      "koding": [
+        "Menghasilkan solusi untuk masalah sehari-hari secara terstruktur menggunakan alat bantu seperti balok susun atau kepingan gambar",
+        "Menyusun langkah sistematis dan logis dengan kosakata terbatas atau simbol dari pengalaman (perintah sederhana/algoritma dasar)",
+        "Menjalankan urutan instruksi bersyarat sederhana (baris-berbaris atau menggunakan program berbasis blok dengan logika percabangan dan pengulangan)",
+        "Memahami distopia teknologi"
+      ],
+      "kecerdasan_artifisial": [
+        "Memahami dampak kecerdasan artifisial dalam kehidupan sehari-hari",
+        "Menggunakan kecerdasan artifisial dengan memegang etika (keadaban): 1. kecerdasan artifisial tidak 100% benar; 2. perlindungan data pribadi; 3. kecerdasan artifisial harus digunakan untuk kebaikan;",
+        "Membedakan antara teknologi kecerdasan artifisial dan non kecerdasan artifisial;",
+        "Memahami konsep dasar input-proses-output"
+      ]
+    },
+    "references": "UNESCO ICT Competency Framework for Teachers (2018), UNESCO AI Competency Framework for Students (2024), UNESCO K-12 AI Curricula (2022), dan Computer Science Teachers Association (CSTA) K-12 Computer Science Standards (2017).",
+    "pages": [
+      63,
+      64
+    ]
+  },
+  "learning_stages": {
+    "table": "Tabel 5 | Tahapan Pembelajaran Informatika dan Koding dan KA (kolom SD)",
+    "sd_level": "pradasar",
+    "informatika_sd": "Fondasi pemanfaatan perangkat komputasi secara bijak dan beretika.",
+    "koding_ka_sd": "Fondasi berpikir secara logis dan sistematis melalui berpikir komputasional, literasi digital, dan etika.",
+    "minimum_note": "Perlu diingat bahwa materi dan capaian belajar ini bersifat minimum sehingga satuan pendidikan dapat meningkatkan atau mengembangkan capaian belajar dalam bentuk tujuan pembelajaran sesuai karakteristik peserta didiknya.",
+    "pages": [
+      69
+    ]
+  },
+  "curriculum": {
+    "elements_all_levels": {
+      "text": "Berdasarkan tahapan penguasaan kompetensi Koding dan KA tiap jenjang, maka dapat dirumuskan elemen pembelajaran sebagai berikut: a. berpikir komputasional; b. literasi digital; c. algoritma pemrograman; d. analisis data; e. literasi dan etika kecerdasan artifisial; dan f. pemanfaatan dan pengembangan kecerdasan artifisial.",
+      "upper_level_note": "Elemen algoritma pemrograman dan analisis data dipelajari pada jenjang SMA/SMK sebagai pendalaman dari elemen berpikir komputasional dan literasi digital. Pendalaman tersebut diwujudkan dalam praktik koding dan pengolahan data.",
+      "pages": [
+        68
+      ]
+    },
+    "elements": [
+      {
+        "key": "computational_thinking",
+        "name": "Berpikir Komputasional",
+        "sd_phases": [
+          "C"
+        ],
+        "note": null,
+        "pages": [
+          68,
+          70
+        ]
+      },
+      {
+        "key": "digital_literacy",
+        "name": "Literasi Digital",
+        "sd_phases": [
+          "C"
+        ],
+        "note": null,
+        "pages": [
+          68,
+          70
+        ]
+      },
+      {
+        "key": "programming_algorithms",
+        "name": "Algoritma Pemrograman",
+        "sd_phases": [],
+        "note": "Dipelajari pada jenjang SMA/SMK (PDF 68); not in Fase C.",
+        "pages": [
+          68,
+          70
+        ]
+      },
+      {
+        "key": "data_analysis",
+        "name": "Analisis Data",
+        "sd_phases": [],
+        "note": "Dipelajari pada jenjang SMA/SMK (PDF 68); not in Fase C.",
+        "pages": [
+          68,
+          70
+        ]
+      },
+      {
+        "key": "ai_literacy_ethics",
+        "name": "Literasi dan Etika Kecerdasan Artifisial",
+        "sd_phases": [
+          "C"
+        ],
+        "note": null,
+        "pages": [
+          68,
+          70
+        ]
+      },
+      {
+        "key": "ai_use_development",
+        "name": "Pemanfaatan dan Pengembangan Kecerdasan Artifisial",
+        "sd_phases": [
+          "C"
+        ],
+        "note": null,
+        "pages": [
+          68,
+          70
+        ]
+      }
+    ],
+    "phases": {
+      "A": null,
+      "B": null,
+      "C": {
+        "grades": [
+          5,
+          6
+        ],
+        "label": "Fase C (Kelas 5-6 SD)",
+        "table": "Tabel 6 | Elemen, Materi, dan Capaian Belajar Koding dan KA untuk Fase C (Kelas 5-6 SD)",
+        "elements": [
+          {
+            "key": "computational_thinking",
+            "element": "Berpikir Komputasional",
+            "materials": [
+              "Pemecahan masalah sehari-hari",
+              "Pemrograman (tingkat pradasar)",
+              "Instruksi",
+              "Praktik pemrograman"
+            ],
+            "materials_note": "'Instruksi' and 'Praktik pemrograman' are sub-bullets of 'Pemrograman (tingkat pradasar)'.",
+            "outcomes": [
+              "Peserta didik mampu memahami permasalahan sederhana dalam kehidupan sehari-hari, menerapkan pemecahan masalah secara sistematis, serta menuliskan instruksi logis dan terstruktur menggunakan sekumpulan kosakata atau simbol."
+            ],
+            "pages": [
+              70
+            ]
+          },
+          {
+            "key": "digital_literacy",
+            "element": "Literasi Digital",
+            "materials": [
+              "Manfaat dan dampak teknologi digital",
+              "Produksi dan diseminasi konten digital (tingkat pradasar)",
+              "Internet",
+              "Sistem komputer (tingkat pradasar)",
+              "Keamanan informasi pribadi"
+            ],
+            "outcomes": [
+              "Peserta didik mampu memahami konsep dasar, manfaat, dan dampak teknologi digital, memahami sistem komputer tingkat pradasar, menerapkan pengamanan informasi pribadi dalam komunikasi daring, memanfaatkan internet, dan memproduksi serta mendiseminasi konten digital dalam bentuk teks dan gambar."
+            ],
+            "pages": [
+              70
+            ]
+          },
+          {
+            "key": "ai_literacy_ethics",
+            "element": "Literasi dan Etika Kecerdasan Artifisial",
+            "materials": [
+              "Konsep Kecerdasan Artifisial (tingkat pradasar)",
+              "Cara kerja Kecerdasan Artifisial (tingkat pradasar)",
+              "Manfaat dan dampak Kecerdasan Artifisial pada kehidupan sehari-hari",
+              "Etika (keadaban) penggunaan Kecerdasan Artifisial"
+            ],
+            "outcomes": [
+              "Peserta didik mampu memahami konsep KA sederhana, manfaat dan dampak KA pada kehidupan sehari-hari, prinsip bahwa KA dikembangkan untuk meningkatkan kesejahteraan manusia dan tidak boleh merugikan manusia, mengetahui perbedaan manusia dan komputer dalam melakukan penginderaan, dan mengetahui perbedaan antara mesin cerdas dan mesin non-cerdas.",
+              "Peserta didik mampu memahami etika dasar penggunaan KA seperti empati dan tidak menyakiti orang lain."
+            ],
+            "pages": [
+              70
+            ]
+          },
+          {
+            "key": "ai_use_development",
+            "element": "Pemanfaatan dan Pengembangan Kecerdasan Artifisial",
+            "materials": [
+              "Cara kerja Kecerdasan Artifisial (tingkat pradasar)"
+            ],
+            "outcomes": [
+              "Peserta didik mampu menyimulasikan secara sederhana kerja KA saat mengenali pola, mengklasifikasi benda konkret berdasarkan sifatnya, dan mengetahui bagaimana prediksi sistem KA dipengaruhi input benda konkret."
+            ],
+            "pages": [
+              70
+            ]
+          }
+        ],
+        "not_in_phase": [
+          "programming_algorithms",
+          "data_analysis"
+        ],
+        "after_table_note": "Konsep fondasional KA dapat dipelajari melalui bagaimana makhluk hidup dan perangkat elektronika mampu melakukan penginderaan (sensing), mengenali objek, dan menjadikan hal itu sebagai pengetahuan mereka.",
+        "pages": [
+          69,
+          70
+        ]
+      }
+    },
+    "phases_note": "The paper defines SD content only for Fase C (kelas 5-6). There are no elements, materials or outcomes for Fase A (kelas 1-2) or Fase B (kelas 3-4)."
+  },
+  "learning_approach": {
+    "sd_approach": {
+      "text": "Lebih jauh, strategi implementasi di setiap jenjang pendidikan harus disesuaikan dengan tahap perkembangan kognitif peserta didik. Pada tingkat SD, pendekatan berbasis permainan dan pembelajaran unplugged (tidak menggunakan perangkat digital) dapat digunakan untuk mengenalkan dasar-dasar berpikir komputasional.",
+      "pages": [
+        19
+      ]
+    },
+    "unplugged_tools": {
+      "text": "… tidak hanya bergantung pada teknologi, pembelajaran juga dapat dilaksanakan secara unplugged dengan perangkat pendidikan seperti menggunakan balok susun, puzzle, dan sejenisnya.",
+      "pages": [
+        19
+      ]
+    },
+    "sd_tools_literature": {
+      "text": "Di tingkat SD, anak mulai dikenalkan dengan pemrograman dasar menggunakan Scratch dan Python. Sementara pemanfaatan KA mulai digunakan pada tingkat SMP dan SMA.",
+      "summary": "Cited from literature (Su, Zhong & Ng 2022), not a national rule; it conflicts with the Fase C outcomes, which ask SD pupils to use AI ethically (Tabel 4).",
+      "pages": [
+        44
+      ]
+    },
+    "methods": [
+      {
+        "key": "problem_based",
+        "label": "Pembelajaran Berbasis Masalah (Problem-based Learning)",
+        "text": "… model pembelajaran yang dirancang untuk membantu siswa mengembangkan keterampilan berpikir dan pemecahan masalah, serta menjadi pembelajar mandiri melalui keterlibatan dalam situasi nyata atau simulasi (Arends, 2012).",
+        "pages": [
+          77
+        ]
+      },
+      {
+        "key": "project_based",
+        "label": "Pembelajaran Berbasis Projek (Project-based Learning)",
+        "text": "… hasil projek dapat berfungsi sebagai portofolio. Metode ini dapat diterapkan sejak jenjang SD hingga SMA/SMK dengan penyesuaian.",
+        "pages": [
+          77
+        ]
+      },
+      {
+        "key": "inquiry",
+        "label": "Pembelajaran Inkuiri (Inquiry Learning)",
+        "text": "Guru berperan sebagai fasilitator yang memberikan pertanyaan pemantik dan tantangan untuk memicu rasa ingin tahu peserta didik. Contohnya, peserta didik dapat diajak untuk memecahkan masalah sederhana, seperti merancang algoritma untuk menyusun langkah-langkah membuat minuman tradisional atau menyelesaikan masalah matematika menggunakan logika pemrograman.",
+        "pages": [
+          78,
+          79
+        ]
+      },
+      {
+        "key": "gamification",
+        "label": "Pembelajaran Gamifikasi (Gamification)",
+        "text": "Gamifikasi adalah penerapan elemen permainan untuk meningkatkan motivasi, partisipasi, dan keterlibatan peserta didik. Salah satu teori gamifikasi adalah Octalysis … (Yu-Kai Chou, 2015).",
+        "core_drives": [
+          "Epic Meaning & Calling",
+          "Development & Accomplishment",
+          "Empowerment of Creativity & Feedback",
+          "Ownership & Possession",
+          "Social Influence & Relatedness",
+          "Scarcity & Impatience",
+          "Unpredictability & Curiosity",
+          "Loss & Avoidance"
+        ],
+        "pages": [
+          79
+        ]
+      }
+    ],
+    "media": [
+      {
+        "key": "digital_devices",
+        "label": "Perangkat Digital",
+        "text": "Perangkat digital seperti komputer, laptop, tablet, ponsel cerdas dapat digunakan dalam pendidikan untuk membuat pembelajaran Koding dan KA lebih interaktif, fleksibel, dan menarik.",
+        "pages": [
+          80,
+          81
+        ]
+      },
+      {
+        "key": "digital_platforms",
+        "label": "Platform Digital",
+        "text": "Platform yang digunakan adalah yang menyediakan antarmuka yang ramah pengguna, dilengkapi dengan tutorial interaktif, dan projek-projek kecil yang memudahkan peserta didik memahami konsep pemrograman.",
+        "pages": [
+          81
+        ]
+      },
+      {
+        "key": "interactive_modules",
+        "label": "Modul Interaktif",
+        "text": "Modul ini biasanya berbasis web atau aplikasi, dilengkapi dengan animasi, video penjelasan, dan latihan-latihan praktis. … sambil mengerjakan projek-projek kreatif seperti membuat gim (game) atau animasi.",
+        "pages": [
+          81
+        ]
+      },
+      {
+        "key": "cards_and_boards",
+        "label": "Kartu dan Papan",
+        "text": "Penggunaan kartu berupa kartu instruksi atau kartu bergambar dapat berguna untuk menggambarkan bagaimana mesin mengeksekusi instruksi dan melakukan sortasi suatu data. Papan dapat digunakan peserta didik untuk menggambarkan alur pengambilan keputusan atau mensimulasikan basis data.",
+        "pages": [
+          81
+        ]
+      }
+    ]
+  },
+  "example_activities": {
+    "problem_examples_sd": {
+      "table": "Tabel 10 | Contoh Masalah Koding dan KA pada Pembelajaran Berbasis Masalah",
+      "level": "SD (pra dasar)",
+      "items": [
+        "Bagaimana merencanakan perjalanan ke sekolah dengan waktu tercepat?",
+        "Bagaimana mengampanyekan etika kecerdasan artifisial?"
+      ],
+      "pages": [
+        78
+      ]
+    },
+    "project_examples_sd": {
+      "table": "Tabel 11 | Contoh Projek Koding dan KA pada Pembelajaran Berbasis Projek",
+      "level": "SD (pradasar)",
+      "coding_project": "Pengembangan aplikasi gambar bergerak",
+      "ai_project": "Pengembangan kampanye penggunaan kecerdasan artifisial yang aman",
+      "pages": [
+        78
+      ]
+    },
+    "inquiry_examples": {
+      "items": [
+        "merancang algoritma untuk menyusun langkah-langkah membuat minuman tradisional",
+        "menyelesaikan masalah matematika menggunakan logika pemrograman"
+      ],
+      "level_note": "Not tied to a level in the source.",
+      "pages": [
+        78,
+        79
+      ]
+    },
+    "integration_example_sd": {
+      "text": "Misalnya, pembelajaran bahasa Indonesia dengan menyajikan teks eksposisi tentang etika penggunaan KA.",
+      "pages": [
+        67
+      ]
+    },
+    "atp_or_module_examples": null,
+    "atp_note": "The paper contains no ATP, module or lesson-plan example for SD; it says model learning tools (RPP, modul ajar, bahan ajar, perangkat asesmen) are still needed."
+  },
+  "assessment": {
+    "purpose": {
+      "text": "Evaluasi pembelajaran Koding dan KA dilaksanakan guna melakukan perbaikan perencanaan dan pelaksanaan pembelajaran berdasarkan capaian belajar peserta didik.",
+      "pages": [
+        81
+      ]
+    },
+    "by_teacher": {
+      "text": "Evaluasi oleh guru dapat dilaksanakan dengan pengamatan proses pembelajaran, diskusi sesama guru, dan analisis hasil penilaian hasil belajar peserta didik. Penilaian hasil belajar peserta didik berupa penilaian autentik direkomendasikan guna memberikan gambaran nyata kemampuan peserta didik.",
+      "pages": [
+        81
+      ]
+    },
+    "competency_certificates": {
+      "text": "Jika penilaian hasil belajar peserta didik diselenggarakan melalui uji kompetensi atau sertifikasi, maka keberhasilan peserta didik mendapatkan sertifikat kompetensi dapat dijadikan pertimbangan dalam evaluasi pembelajaran.",
+      "pages": [
+        81,
+        82
+      ]
+    },
+    "by_principal": {
+      "text": "Evaluasi oleh kepala satuan pendidikan dapat dilaksanakan melalui supervisi akademik, manajerial, klinis, dan evaluatif terhadap kegiatan perencanaan dan pelaksanaan pembelajaran.",
+      "pages": [
+        82
+      ]
+    },
+    "by_student": {
+      "text": "Evaluasi oleh peserta didik dapat dilaksanakan dalam bentuk refleksi kegiatan pembelajaran.",
+      "pages": [
+        82
+      ]
+    },
+    "portfolio": {
+      "text": "… hasil projek dapat berfungsi sebagai portofolio.",
+      "pages": [
+        77
+      ]
+    },
+    "rapor_note": "The paper gives no rapor, grading scale or KKTP rule for KKA."
+  },
+  "teacher_requirements": {
+    "qualification": {
+      "text": "Kualifikasi guru yang dapat mengajar Koding dan KA adalah D4/S1, disesuaikan dengan linieritas mengacu kepada peraturan yang berlaku. Selain itu, pengajar koding dan KA dapat diampu oleh guru atau praktisi dengan portofolio/pengalaman di bidang tersebut. Untuk mengajar Koding dan KA, guru juga diharapkan memiliki minat dan ketertarikan untuk mengajar Koding dan KA.",
+      "basis": "Permendiknas No. 16 Tahun 2007 tentang Standar Kualifikasi Akademik dan Kompetensi Guru",
+      "pages": [
+        82
+      ]
+    },
+    "sd_teacher": {
+      "text": "Pada jenjang SD, guru kelas yang memiliki minat, portofolio, atau pengalaman di bidang koding dan KA dapat dimungkinkan untuk mengajar Koding dan KA.",
+      "pages": [
+        82
+      ]
+    },
+    "competencies": {
+      "text": "Guru pengajar Koding dan KA perlu menguasai empat kompetensi dasar yang terdiri atas kompetensi profesional, pedagogik, kepribadian, dan sosial.",
+      "sd_focus": "Jenjang SD dan SMP akan lebih fokus pada berpikir komputasional, literasi digital, dan kecerdasan artifisial, sedangkan jenjang SMA dan SMK, selain berpikir komputasional, literasi digital, dan kecerdasan artifisial, terdapat penambahan materi algoritma pemrograman dan analisis data.",
+      "sd_professional_ct": "Kompetensi berpikir komputasional pada jenjang SD (kelas 5 dan 6) lebih mengarah pada bagaimana guru mampu memfasilitasi peserta didik menghasilkan solusi untuk masalah sehari-hari secara terstruktur menggunakan alat bantu sederhana, menyusun, dan menjalankan urutan perintah sederhana secara sistematis dan logis, serta memahami distopia teknologi yaitu sebuah momen di mana kemajuan teknologi justru membawa dampak negatif bagi masyarakat.",
+      "sd_professional_ai": "Kompetensi profesional guru SD (kelas 5 dan 6) terkait kecerdasan artifisial diarahkan pada kemampuan guru untuk membuat peserta didik memahami dampak kecerdasan artifisial dalam kehidupan sehari-hari, bagaimana memanfaatkan kecerdasan artifisial dengan tetap memegang etika (keadaban), kecerdasan artifisial tidak 100% benar dengan memberikan simulasi yang mudah dipahami sesuai dengan usia; perlindungan data pribadi; kecerdasan artifisial harus digunakan untuk kebaikan; membedakan antara teknologi kecerdasan artifisial dan non kecerdasan artifisial; serta memahami konsep dasar input-proses-output dalam kaitan pemanfaatan teknologi kecerdasan artifisial.",
+      "pedagogic": "Penguatan kompetensi pedagogik dilakukan dengan mendesain perencanaan pembelajaran dengan berbagai model pembelajaran. Pembelajaran dapat menggunakan model inkuiri, diskoveri, project-based, problem-based atau model lain yang relevan. … guru juga perlu menguasai kompetensi dalam penilaian pembelajaran dan refleksi kualitas pembelajaran.",
+      "personality": "Penguatan kompetensi kepribadian berkenaan dengan sosok guru sebagai teladan dalam pembelajaran. … dikuatkan tentang etos kerja, tanggung jawab, rasa bangga menjadi guru, dan rasa percaya diri.",
+      "social": "… kompetensi sosial guru dalam pembelajaran Koding dan KA terkait kemampuan dalam bermitra dengan peserta didik, sesama guru, dan pemangku kepentingan lainnya. … guru menunjukkan inkuiri kolaboratif dalam komunitas belajar/kelompok kerja, baik di satuan pendidikan maupun kelompok kerja di gugus/ kabupaten/ kota.",
+      "pages": [
+        82,
+        83,
+        84
+      ]
+    },
+    "training": {
+      "sd_target": "Pelatihan Guru Koding dan KA untuk jenjang SD diperuntukkan bagi guru kelas ataupun guru informatika sedangkan jenjang SMP, SMA, SMK diperuntukkan bagi guru informatika. Namun, jika tidak terdapat guru informatika maka dapat dilakukan oleh guru serumpun yaitu MIPA. Selanjutnya jika tidak ada guru serumpun maka alternatif terakhir adalah guru mata pelajaran lain dengan keterampilan di bidang informatika, Koding ataupun KA, disertai dengan bukti pernah mengikuti pelatihan informatika, Koding ataupun KA.",
+      "provider": "Pelatihan Guru Mata Pelajaran Koding dan KA dilakukan oleh Unit Pelaksana Teknis (UPT) Ditjen GTK-PG serta lembaga penyelenggara pelatihan lainnya yang ditetapkan Kemendikdasmen.",
+      "pattern": "IN-1 (In-Service Training 1, memahami, diakhiri penugasan RTL) → ON (On-the-Job Training, mengaplikasi di satuan pendidikan) → IN-2 (In-Service Training 2, merefleksi dan berbagi hasil) → berbagi di komunitas belajar/kelompok kerja (KKG/MGMP).",
+      "ratio": "Metode pelatihan akan lebih banyak dilakukan dengan praktik (70%) dan konseptual (30%).",
+      "practice_pct": 70,
+      "concept_pct": 30,
+      "sd_content_focus": "Praktik Koding dan KA dengan pemanfaatan teknologi akan mendominasi pembelajaran pada pelatihan guru khususnya untuk jenjang SMP, SMA dan SMK sementara untuk jenjang SD akan lebih banyak ke pembelajaran berfikir komputasional dan literasi digital dasar.",
+      "mode_note": "Catatan: Moda Bimtek dan Pelatihan dapat dilakukan secara daring, luring maupun campuran.",
+      "bimtek": "Bimbingan teknis (bimtek) Koding dan KA dilakukan oleh Direktorat Jenderal GTK-PG untuk menyiapkan calon pengajar pelatihan di tingkat daerah … calon pengajar berasal dari unsur Widyaiswara dan Pengembang Teknologi Pembelajaran (PTP) di UPT Ditjen GTK dan Vokasi PKPLK, serta Praktisi Pendidikan pada Lembaga Penyelenggara Diklat (LPD) yang ditetapkan Kemendikdasmen.",
+      "recommendation": "Melaksanakan pelatihan intensif bagi guru SD yang berpotensi mengampu mata pelajaran Koding dan KA.",
+      "certification": "Menyediakan program sertifikasi bagi guru Koding dan KA guna meningkatkan kompetensi dan profesionalisme. Melakukan revisi regulasi terkait kesesuaian mata pelajaran dengan sertifikasi guru, dengan menambahkan Koding dan KA sebagai bidang yang diakui.",
+      "pages": [
+        12,
+        86,
+        87,
+        88,
+        89,
+        96
+      ]
+    }
+  },
+  "infrastructure": {
+    "sd_gap": {
+      "text": "Saat ini belum semua sekolah (utamanya SD) memiliki sarana dan prasarana TIK yang ideal untuk melayani seluruh peserta didiknya.",
+      "pages": [
+        65
+      ]
+    },
+    "sd_computers": {
+      "text": "… data menunjukkan hanya 22% SD yang memiliki komputer lebih dari 15 unit. Jumlah ini dapat dikatakan kurang memadai jika dibandingkan dengan rata-rata jumlah siswa SD yang ada di setiap sekolah.",
+      "sd_pct_more_than_15_computers": 22,
+      "pages": [
+        57
+      ]
+    },
+    "dapodik_2024_sd": {
+      "table": "Tabel 3 | Jumlah Sekolah berdasarkan Ketersediaan Listrik, Internet, dan Komputer (Sumber: diolah dari Dapodik, 2024), baris SD",
+      "schools": 149477,
+      "with_electricity": 147184,
+      "with_electricity_pct": 98.5,
+      "with_internet": 121647,
+      "with_internet_pct": 81.4,
+      "with_computer": 110058,
+      "with_computer_pct": 73.6,
+      "pages": [
+        58
+      ]
+    },
+    "ideal_requirement": {
+      "text": "Pembelajaran Koding dan KA idealnya memerlukan sarana dan prasarana TIK (utamanya komputer dan internet) yang mumpuni.",
+      "pages": [
+        65,
+        66
+      ]
+    },
+    "government_support": {
+      "text": "… pemerintah Indonesia melalui program Digitalisasi Sekolah telah menyediakan perangkat teknologi, seperti laptop, tablet, dan projektor ke sekolah-sekolah, terutama di daerah 3T (tertinggal, terdepan, dan terluar).",
+      "pages": [
+        80,
+        81
+      ]
+    },
+    "asymmetric_policy": {
+      "text": "Tantangan ini menyiratkan perlunya kebijakan asimetris terhadap sekolah atau daerah dengan kondisi yang beragam.",
+      "pages": [
+        57,
+        58
+      ]
+    },
+    "parents": {
+      "text": "Selain itu, peran orang tua juga penting, khususnya pada siswa sekolah dasar yang relatif masih memerlukan banyak pendampingan belajar. Peran orang tua ini diperlukan utamanya dalam mengawasi interaksi siswa dengan perangkat teknologi/gawai setelah aktivitas pembelajaran berakhir atau ketika siswa berada di rumah.",
+      "pages": [
+        59,
+        60
+      ]
+    }
+  },
+  "implementation_strategy": {
+    "phased": {
+      "text": "… penerapan kebijakan pembelajaran Koding dan KA akan dilakukan secara bertahap disesuaikan dengan kesiapan sekolah. Pendekatan bertahap dalam penerapan kebijakan ini mencakup dua tahap strategi yaitu: pelaksanaan terbatas di awal masa implementasi kebijakan sesuai dengan kondisi sekolah; dan penyebarluasan (scaling out dan scaling up) di masa berikutnya.",
+      "pages": [
+        84
+      ]
+    },
+    "school_selection_criteria": [
+      {
+        "text": "Pertama, kesiapan infrastruktur teknologi pendukung di sekolah.",
+        "pages": [
+          85
+        ]
+      },
+      {
+        "text": "Kedua, kesiapan tenaga pengajar di sekolah.",
+        "pages": [
+          85
+        ]
+      },
+      {
+        "text": "Ketiga, kemampuan sumber daya pendukung yang dimiliki terutama dalam peningkatan kapasitas guru melalui pelatihan dan pendampingan dalam implementasi kebijakan pembelajaran Koding dan KA.",
+        "pages": [
+          85
+        ]
+      }
+    ],
+    "compliance_warning": {
+      "text": "… penting juga memastikan bahwa kebijakan ini dapat dijalankan secara fleksibel sesuai kondisi dan kebutuhan sekolah, agar tidak dipersepsikan hanya sebagai kewajiban yang harus dijalankan (compliance), sehingga menambah beban mengajar guru dan beban pembelajaran bagi peserta didik.",
+      "pages": [
+        60
+      ]
+    },
+    "scaling": {
+      "school": "Di tingkat sekolah, perlu didorong pengimbasan pembelajaran Koding dan KA melalui komunitas belajar (misalnya KKG, MGMP, KKKS, MKKS, dan lain-lain) …",
+      "region": "Di tingkat daerah, diperlukan keterlibatan pemerintah daerah terutama dalam menyiapkan infrastruktur teknologi pendukung dan menyiapkan tenaga pengajar pada sekolah-sekolah yang belum mengimplementasikan kebijakan ini.",
+      "centre": "Sementara di tingkat pusat, diperlukan pelatihan-pelatihan yang menyasar pada guru-guru di sekolah yang tertarik untuk mengimplementasikan pembelajaran Koding dan KA, tetapi belum memiliki guru dengan kompetensi yang memadai.",
+      "pages": [
+        85
+      ]
+    }
+  },
+  "roles": {
+    "central_government": {
+      "text": "Pemerintah, melalui Kementerian Pendidikan Dasar dan Menengah (Kemendikdasmen), berperan dalam merumuskan kebijakan dan regulasi pendukung, kurikulum, peningkatan kapasitas guru, serta memastikan ketersediaan infrastruktur dan sumber daya pembelajaran yang merata.",
+      "pages": [
+        89
+      ]
+    },
+    "regional_government": {
+      "text": "Pemerintah daerah juga berperan dalam mendukung implementasi kebijakan ini melalui pengadaan fasilitas di sekolah, penyediaan tenaga pengajar, program peningkatan kapasitas guru serta memfasilitasi terbentuknya Musyawarah Guru Mata Pelajaran (MGMP) Koding dan KA.",
+      "pages": [
+        89,
+        90
+      ]
+    },
+    "universities": {
+      "text": "Perguruan tinggi dan lembaga riset berperan dalam mengembangkan metode pembelajaran inovatif serta menyediakan pelatihan bagi pendidik dalam bentuk kursus daring terbuka (Massive Open Online Course/MOOC) dan lokakarya akademik.",
+      "pages": [
+        90
+      ]
+    },
+    "private_sector": {
+      "text": "Pihak swasta termasuk perusahaan teknologi, edukasi, dan/atau perusahaan sejenis lainnya memainkan peran penting dalam mendukung implementasi pembelajaran Koding dan KA. … penyelenggaraan bootcamp (kamp pelatihan intensif) …",
+      "pages": [
+        90
+      ]
+    },
+    "communities_ngo": {
+      "text": "Komunitas teknologi dan lembaga non-pemerintah (NGO) juga memiliki kontribusi dalam memperluas akses pembelajaran Koding dan KA. … Komunitas juga dapat bekerja sama dengan sekolah untuk menyediakan guru pendamping dalam pembelajaran Koding dan KA.",
+      "pages": [
+        90
+      ]
+    },
+    "media": {
+      "text": "Media berperan dalam peningkatan kesadaran masyarakat akan pentingnya pembelajaran Koding dan KA …",
+      "pages": [
+        90
+      ]
+    },
+    "school": {
+      "text": "Penerapan Koding dan KA sebagai muatan yang terintegrasi atau kokurikuler … membutuhkan kemampuan guru untuk memetakan kompetensi yang dapat diselaraskan dengan Koding dan KA dan mengintegrasikan pembelajarannya pada materi yang sudah ada.",
+      "summary": "The paper has no separate school-role list; see Kepmendikdasmen 127/P/2025 BAB III C for the binding list.",
+      "pages": [
+        67
+      ]
+    },
+    "parents": {
+      "text": "… peran orang tua juga penting, khususnya pada siswa sekolah dasar …",
+      "pages": [
+        59,
+        60
+      ]
+    }
+  },
+  "monitoring_evaluation": {
+    "aims": "… (1) menilai proses implementasi kebijakan pembelajaran Koding dan KA; (2) memberikan umpan balik untuk memperbaiki kualitas implementasi kebijakan pembelajaran Koding dan KA; serta (3) menilai dampak dari kebijakan pembelajaran Koding dan KA terutama dalam menumbuhkan kemampuan berpikir kritis dan komputasional peserta didik, misalnya dengan melihat capaian mutu dan hasil belajar peserta didik.",
+    "impact_evaluation": "Evaluasi dampak dilakukan melalui uji statistik untuk membandingkan nilai perubahan mutu sekolah yang menerapkan kebijakan pembelajaran Koding dan KA dengan sekolah lain dengan kondisi yang relatif sama tetapi tidak menerapkan pembelajaran Koding dan KA.",
+    "executor": "Pelaksana pemantauan dan evaluasi kebijakan pembelajaran dan kecerdasan artifisial di tingkat pusat adalah Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP) melalui Pusat Standar dan Kebijakan Pendidikan.",
+    "pages": [
+      91,
+      92
+    ]
+  },
+  "open_points": [
+    "Fase A and B: the paper sets no KKA elements or outcomes for grades 1-4; KKA as a subject starts in grade 5. Whether SIGRAK should offer anything for grades 1-4 (e.g. integrated unplugged CT) needs an owner decision; the Kepmen does not set grades either.",
+    "JP per year and JP length are not printed; only '2 jam pelajaran per minggu' for SD grades 5-6. Per-year JP must come from the curriculum-structure regulation (the paper recommends revising it).",
+    "The paper is a naskah akademik dated Februari 2025, before Kepmendikdasmen 127/P/2025 (4 September 2025). The Kepmen adopts 'mata pelajaran pilihan' but names no grades and no JP; the 'kelas 5 dan 6, 2 JP/minggu' figure is only a recommendation here.",
+    "Tabel 6 is labelled 'Capaian Belajar' and the text calls it minimum; a formal CP decree for KKA (BSKAP task in Kepmen BAB III A.5.b) is not among the P4-03 source documents. Check whether a later CP KKA document supersedes this table before import.",
+    "Tabel 4 (SD/MI Koding) lists 'Memahami distopia teknologi' and 'program berbasis blok dengan logika percabangan dan pengulangan', but Tabel 6 (Fase C) has neither item; it only shows four elements (no Algoritma Pemrograman, no Analisis Data).",
+    "PDF 44 cites literature saying SD pupils start with Scratch and Python and that AI use starts in SMP; this conflicts with the Fase C outcomes that include using AI ethically. Treat PDF 44 as literature review, not policy.",
+    "Training rule on PDF 87: the MIPA/other-teacher fallback sentence follows the SMP/SMA/SMK clause; it is unclear whether it also applies to SD (where guru kelas is the primary target).",
+    "Integration subjects differ: this paper names matematika, bahasa, IPAS (example: Bahasa Indonesia exposition text on AI ethics); the Kepmen names Pendidikan Pancasila (etika KA) and Matematika (analisis data).",
+    "Bimtek trainer pool differs: this paper says Widyaiswara, PTP at UPT and LPD practitioners; the Kepmen says LPD or other parties set by Kemendikdasmen."
+  ]
+}

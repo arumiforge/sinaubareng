@@ -937,3 +937,38 @@ Reason: the email is both the sign-in name and the invitation address, so changi
 Accepted · 2026-11-07 · P5-03b · owner's choice
 How pengawas/korwil accounts are created is decided and built with the supervisor portal (P5-09). Until then, Penugasan pengawas in the staff console assigns existing user accounts only.
 Reason: invitations always name a school role; a supervisor has none, and the portal defines what the account needs.
+
+### D-203 — Official 2025 documents as SD/MI data in `docs/data/regulations/`
+Accepted · 2026-11-08 · P4-03 · owner's choice
+The eight official documents supplied in `docs/dokumen-resmi/` are moved unchanged to `docs/sources/` under descriptive names, and listed in `docs/sources/README.md`. The JSON files keep the original path in `source.received_as`. Their SD/MI parts (SD, MI, Fase A–C, plus rules shared by all levels) are stored as one JSON file per document in `docs/data/regulations/`. Each file has `status: draft`, source metadata (title, number, year, file, SHA-256), and PDF page references on every item. Tim Validasi SIGRAK checks them before import (D-113). What the final docs need is listed in `docs/drafts/dokumen-resmi-sd-mi.md`. The owner approves those changes before anything in `docs/final/` changes.
+Reason: the same draft, source-quoted, page-referenced shape as `docs/data/curriculum/`, kept apart because these are rules and guides rather than CP or allocation rows.
+
+### D-204 — Optional SD content: Bahasa Inggris and IPAS in grades 1–2, Tata Boga
+Accepted · 2026-11-08 · P4-03 · owner's choice
+Permendikdasmen 13/2025 has no Bahasa Inggris in grades 1–2. SIGRAK keeps the KM-SD-2026-R2 Bahasa Inggris topics for grades 1–2 as content a school can switch on, off by default. IPAS in grades 1–2 (also not in the structure; IPAS starts in grade 3) is optional in the same way. When a school switches either on, it is not a required rapor subject: it carries no rapor grade unless the school chooses to report it. KM-SD-2026-R2 has no IPAS topics for grades 1–2, so they still have to be written. Keterampilan Tata Boga becomes a school-optional muatan lokal. The SD muatan lokal cap of 72 JP per year (64 in grade 6) still applies per school. MI keeps 72–216 JP (KMA 1503/2025).
+Reason: schools that teach these keep using them, without making them look compulsory. Resolves C1 and C2 in `docs/drafts/dokumen-resmi-sd-mi.md`.
+
+### D-205 — Rapor v1: ekstrakurikuler row; descriptions from formative highs and lows
+Accepted · 2026-11-08 · P4-03 · owner's choice · narrows D-161
+(1) The v1 rapor shows ekstrakurikuler per student (activity and qualitative description). Fuller ekstrakurikuler records and the Dapodik sync stay out of v1 (D-161). (2) Formative scores never appear as rapor grades. The competency description per subject is drafted from the highest and lowest TP achievement in the formative results.
+Reason: Panduan Pembelajaran dan Asesmen lists ekstrakurikuler among the rapor minimum and asks for the highest and lowest achievement in the description; formative stays out of grades.
+
+### D-206 — Written tests in Fase A are optional
+Accepted · 2026-11-08 · P4-03 · owner's choice
+For grades 1–2, Bank Soal still offers written items as an option. The guide recommends observation and performance in Fase A, but SIGRAK does not block written tests.
+Reason: the guide does not recommend written tests in Fase A, but some schools still use them.
+
+### D-207 — 7 KAIH label "Tidur Cepat"
+Accepted · 2026-11-08 · P4-03 · owner's choice
+The seventh habit of Gerakan 7 KAIH is labelled "Tidur Cepat". "Tidur tepat waktu" is used only as its explanation.
+Reason: Panduan Kokurikuler uses both. The label follows the main text.
+
+### D-208 — KKA runs through kokurikuler
+Accepted · 2026-11-08 · P4-03 · owner's choice (confirmed 2026-11-08)
+In SIGRAK, Koding dan Kecerdasan Artifisial is delivered through the kokurikuler programme, one of the options in Kepmendikdasmen 127/P/2025. It is not set up as an intrakurikuler subject with its own allocation. The Koding dan KA rows for grades 5–6 in KM-SD-2026-R2 move to kokurikuler as well.
+Reason: KKA is an elective with no CP decree yet. Kokurikuler lets a school offer it without a fixed weekly slot.
+
+### D-209 — KSP: free format, with a starter template
+Accepted · 2026-11-08 · P4-03 · owner's choice
+The KSP format is free (Panduan KSP), so SIGRAK provides a starter KSP template that each school adapts. The template follows the guide's components and five-step cycle, and nothing in it is mandatory.
+Reason: gives schools a head start without imposing a uniform format.
