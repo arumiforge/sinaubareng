@@ -98,6 +98,7 @@ return [
             'save' => 'Simpan',
             'edit' => 'Ubah',
             'delete' => 'Hapus kelas',
+            'timetable' => 'Jadwal',
             'back' => 'Kembali ke daftar kelas',
         ],
         'dialogs' => [

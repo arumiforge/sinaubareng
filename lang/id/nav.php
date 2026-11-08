@@ -10,6 +10,7 @@ return [
         'create' => 'Buat',
         'assessments' => 'Asesmen',
         'my_classes' => 'Kelas Saya',
+        'my_timetable' => 'Kelas Saya · Jadwal',
         'teachers' => 'Guru',
         'academic_years' => 'Tahun Ajaran',
         'classes' => 'Kelas',

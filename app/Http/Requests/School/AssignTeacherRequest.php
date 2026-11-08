@@ -6,10 +6,12 @@ namespace App\Http\Requests\School;
 
 use App\Actions\SchoolYear\ClassSubjects;
 use App\Actions\SchoolYear\TeacherOptions;
+use App\Actions\Timetable\TimetableClashes;
 use App\Curriculum\SubjectOffer;
 use App\Models\SchoolClass;
 use App\Models\Subject;
 use App\Models\TeachingAssignment;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Validator;
 
@@ -51,6 +53,21 @@ final class AssignTeacherRequest extends FormRequest
 
             if ($this->filled('teacher') && $this->teacherId() === null) {
                 $validator->errors()->add('teacher', __('classes.classes.errors.teacher_missing'));
+
+                return;
+            }
+
+            // The new teacher may not have a lesson elsewhere at this subject's times (D-248).
+            $teacherId = $this->teacherId();
+            $subject = $this->subject();
+
+            if ($teacherId !== null && $subject !== null) {
+                $clashes = app(TimetableClashes::class);
+                $clash = $clashes->forSubject($teacherId, $this->schoolClass(), $subject->id);
+
+                if ($clash !== null) {
+                    $validator->errors()->add('teacher', $clashes->message($clash, (string) User::query()->whereKey($teacherId)->value('name')));
+                }
             }
         }];
     }
