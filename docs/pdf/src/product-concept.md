@@ -205,7 +205,7 @@ Paket dibayar per tahun ajaran (Juli–Juni) **hanya oleh guru dan sekolah**. Si
 | Fitur tambahan | Satu sekolah yang berlangganan Sigrak Sekolah | Satu fitur tambahan, diaktifkan sekolah untuk semua akunnya (D-158) | Rp50.000 per fitur | Sekolah (dana non-BOS) |
 | Sigrak Binaan | Satu pengawas atau gugus KKG | Portal pengawas. Tidak dijual: terbuka gratis begitu 5 atau lebih sekolah binaannya berlangganan Sigrak Sekolah | Gratis | — |
 
-**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik (segera hadir, D-161) · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul. Guru boleh mencoba Game kelas selama 7 hari, satu kali, walaupun sekolahnya belum mengaktifkannya (D-159).
+**Fitur tambahan (D-158):** Simulasi TKA · Buku Induk dan sinkronisasi Dapodik (segera hadir, D-161) · Keuangan dan Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*; berkembang menjadi mode belajar IFP, D-171, [`ifp-classroom.md`](ifp-classroom.md)) · Rapor (leger, draf deskripsi, ekspor rapor). Fitur tambahan lain bisa menyusul. Guru boleh mencoba Game kelas selama 7 hari, satu kali, walaupun sekolahnya belum mengaktifkannya (D-159).
 
 ## Status fitur
 
@@ -278,7 +278,7 @@ Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai
 | Baru | Mengundang guru | Tambah | Portal operator > Guru | Pengganti kata sandi bawaan |
 | Baru | Bawaan muatan lokal dan kalender per daerah | Tambah | Konsol internal + Pengaturan Sekolah | D-018 |
 | Baru | Pengenalan 3 langkah | Tambah | Tampil sekali setelah mendaftar: kelas, jadwal, siswa | Siap sejak hari pertama |
-| Nanti | Drag & Drop, Word Puzzle, Maze Challenge, Flashcard | Nanti | Templat game berikutnya | Setelah Quiz Battle membuktikan polanya |
+| Nanti | Templat game menurut fungsi belajar: Lomba Tim, Pilah & Kelompokkan, Pasangkan lebih dulu, lalu Urutkan, Papan Petak, Kotak Kejutan, Tiket Keluar, Pemanasan TKA | Nanti | Templat game berikutnya di Game kelas ([`ifp-classroom.md`](ifp-classroom.md)) | Setelah Quiz Battle siap untuk IFP (D-176 menggantikan daftar "nanti" di D-014) |
 | Nanti | Kode game buatan AI atas permintaan | Nanti | Butuh rancangan sandbox dan tinjauan | D-015 |
 | Nanti | Canva Connect API (impor langsung ke Canva guru) | Nanti | | Tombol tingkat 1 cukup untuk v1 |
 | Nanti | Offline di luar Di Kelas | Nanti | | D-016 |

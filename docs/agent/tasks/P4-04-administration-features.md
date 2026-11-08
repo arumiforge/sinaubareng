@@ -14,7 +14,7 @@ Research every class administration and school administration feature an SD/MI n
 
 - `docs/agent/CONTEXT.md`, `docs/agent/PROGRESS.md`
 - `docs/final/product-concept.md`, `docs/final/data-model.md` (skim)
-- `docs/drafts/buku-induk-dapodik.md` (P4-01, on hold), `docs/drafts/ifp-classroom.md` (P4-02)
+- `docs/drafts/buku-induk-dapodik.md` (P4-01, on hold), `docs/final/ifp-classroom.md` (P4-02)
 - `docs/dokumen-resmi/` (SD/MI parts only; moved to `docs/sources/` by P4-03, D-203)
 - `docs/agent/DECISIONS.md` where a recommendation touches an earlier decision
 

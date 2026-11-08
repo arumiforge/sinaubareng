@@ -201,7 +201,7 @@ Plans are paid per academic year (July–June) by **teachers and schools only**.
 | Add-on feature | One school with Sigrak Sekolah | One extra feature, switched on by the school for all its accounts (D-158) | Rp50.000 each | School (non-BOS funds) |
 | Sigrak Binaan | One supervisor or KKG cluster | Supervisor portal. Not sold: it opens free once 5 or more of the supervised schools have Sigrak Sekolah | Free | — |
 
-**Add-on features (D-158):** Simulasi TKA · Buku Induk and Dapodik sync (upcoming, D-161) · Keuangan and Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*) · Rapor (leger, description drafts, report export). More add-ons may follow. A teacher may try Game kelas for 7 days, once, even when the school has not switched it on (D-159).
+**Add-on features (D-158):** Simulasi TKA · Buku Induk and Dapodik sync (upcoming, D-161) · Keuangan and Inventaris kelas · Buku Sekolah · Game kelas (Quiz Battle, *Tayangkan*, *Unduh game*; grows into the IFP learning mode, D-171, [`ifp-classroom.md`](ifp-classroom.md)) · Rapor (leger, description drafts, report export). More add-ons may follow. A teacher may try Game kelas for 7 days, once, even when the school has not switched it on (D-159).
 
 ## Feature status
 
@@ -274,7 +274,7 @@ This is the old 43 EDUNEXA features plus new ones, revised for the new concept. 
 | New | Invite teachers | Add | Operator portal > Guru | Replaces default passwords |
 | New | Regional local content and calendar defaults | Add | Internal console + Pengaturan Sekolah | D-018 |
 | New | 3-step onboarding | Add | Shown once after sign-up: class, timetable, students | Ready on day one |
-| Later | Drag & Drop, Word Puzzle, Maze Challenge, Flashcard | Later | More game templates | After Quiz Battle proves the pattern |
+| Later | Game templates by learning function: Lomba Tim, Pilah & Kelompokkan, Pasangkan first, then Urutkan, Papan Petak, Kotak Kejutan, Tiket Keluar, Pemanasan TKA | Later | More game templates in Game kelas ([`ifp-classroom.md`](ifp-classroom.md)) | After Quiz Battle is IFP-ready (D-176 replaces D-014's later list) |
 | Later | AI-written game code on request | Later | Needs sandbox and review design | D-015 |
 | Later | Canva Connect API (direct import into the teacher's Canva) | Later | | Level 1 button is enough for v1 |
 | Later | Offline beyond Di Kelas | Later | | D-016 |
