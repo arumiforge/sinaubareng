@@ -1,7 +1,7 @@
 # P4-12 — Teacher supervision instruments for SD/MI
 
 - **Phase:** P4
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** p4/p4-04-administration-features
 - **Depends on:** D-217 (supervisi akademik in scope), D-221 (owner samples as starting formats)
 - **Can run in parallel with:** P4-05…P4-11
@@ -22,11 +22,11 @@ Map every instrument a principal uses to supervise SD/MI teachers (guru kelas, g
 
 ## Done when
 
-- [ ] Map of instrument types with purpose, who, when, basis
-- [ ] First draft of each instrument (components, indicators, scoring, follow-up)
-- [ ] How each instrument reads data SIGRAK already has
-- [ ] Owner questions listed
+- [x] Map of instrument types with purpose, who, when, basis
+- [x] First draft of each instrument (components, indicators, scoring, follow-up)
+- [x] How each instrument reads data SIGRAK already has
+- [x] Owner questions listed (answers pending)
 
 ## Result
 
-Filled in on finish.
+Draft written 2026-11-08: rules behind teacher supervision (Permendikdasmen 1/2026 Pasal 15–19 and 26/2025 Pasal 22–23, Perdirjen GTK 7607/2023 Forms A–D and the 8 observation focuses, Kepmendikdasmen 271/O/2025, BAN-PDM IA 2024, the madrasah Panduan with Panca Cinta), a comparison with the owner's sample, a map of 18 instruments (S-00…S-17) for guru kelas, guru mapel, and wali kelas, scoring rules, a first draft of each instrument, and how they reuse SIGRAK data. Waiting for the owner's answers to §7 (instrument set, scales, bands, observers, pengawas view, murid feedback).
