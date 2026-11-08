@@ -11,6 +11,8 @@ return [
         'assessments' => 'Asesmen',
         'my_classes' => 'Kelas Saya',
         'teachers' => 'Guru',
+        'academic_years' => 'Tahun Ajaran',
+        'classes' => 'Kelas',
     ],
     'account' => 'Akun',
     'sign_out' => 'Keluar',
