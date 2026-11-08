@@ -50,6 +50,27 @@ return [
             'has_classes' => 'Tahun ajaran :name masih punya kelas. Hapus kelasnya dulu.',
         ],
     ],
+    'copy' => [
+        'title' => 'Salin kelas dari :name',
+        'hint' => 'Kelas tahun lalu disalin dengan tingkat naik satu (4A menjadi 5A). Kelas 6 tidak disalin karena sudah lulus. Wali kelas dan guru mapel dikosongkan supaya dipilih lagi. Siswa dipindah lewat Kenaikan nanti.',
+        'field' => 'Salin kelas dari tahun ajaran :name',
+        'grade_one' => 'Buat juga kelas 1 seperti tahun lalu untuk murid baru',
+        'preview' => 'Kelas yang akan dibuat (:count)',
+        'new_intake' => 'murid baru',
+        'rename_hint' => 'Nama kelas yang tidak diawali angka tingkat tetap sama. Anda bisa menggantinya nanti di halaman kelas.',
+        'actions' => [
+            'open' => 'Salin kelas',
+            'confirm' => 'Salin :count kelas',
+        ],
+        'toasts' => [
+            'copied' => ':count kelas disalin ke tahun ajaran :name. Pilih wali kelas dan guru mapelnya.',
+            'created_with_classes' => 'Tahun ajaran :name tersimpan dengan :count kelas. Pilih wali kelas dan guru mapelnya.',
+        ],
+        'errors' => [
+            'not_empty' => 'Tahun ajaran :name sudah punya kelas, jadi kelas tidak disalin.',
+            'nothing' => 'Tidak ada kelas yang bisa disalin dari tahun ajaran sebelumnya.',
+        ],
+    ],
     'classes' => [
         'titles' => [
             'index' => 'Kelas',

@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-241 (D-185…D-202 unused; D-235…D-239 reserved). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-246 (D-185…D-202 unused; D-235…D-239 reserved). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -118,6 +118,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
+- 2026-11-09 — P5-03h done (branch `p5/p5-03h-copy-classes`): Tahun Ajaran can copy the previous year's classes into a new or empty year, one grade up, without teachers or students (D-242). Owner chose: grade 6 not copied (D-243), optional new grade 1 classes (D-244), free names kept (D-245), only into an empty year (D-246). Next: P5-03e (timetable).
 - 2026-11-09 — P5-03d done (branch `p5/p5-03d-school-year`): operator pages Tahun Ajaran (`/tahun-ajaran`) and Kelas (`/kelas`), tables `academic_years`, `classes`, `teaching_assignments`. A class's homeroom teacher gets the class-teacher subjects; the operator picks guru mapel per subject (D-240). Years and classes have a `public_id` (D-241). Not built: the `school_subjects` switches and the D-232 muatan lokal warning (with that page later). Next: P5-03e (timetable).
 - 2026-11-08 — Owner approvals applied (branch `p5/owner-approvals-2026-11-08`): P5-03f and P5-03g done; P4-02 done and `ifp-classroom.md` plus `local-setup-wsl2.md` moved to `docs/final/` with Indonesian PDFs. D-233: Kode Tayang page at `/pid` on the app host. D-234: `curriculum:import` trims Tata Boga grade 6 semester 2 (`KM-SD-2026-R2-KTB-K6-04`) to 28 JP over weeks 1–14 (`app/Curriculum/Import/SourceOverrides.php`); the source file is unchanged and the import now reports no mismatch. `product-concept.md` and `content-engine.md` follow D-176. Still open for Game kelas: the Android/WebView check on a real IFP (D-179).
 - 2026-11-08 — P5-03c done (PR #60): curriculum tables, `learning_outcomes` for CP (D-226), and `php artisan curriculum:import` (D-227…D-230). It loads all curriculum files, KM-SD-2026-R2 included, as `draft` versions. One data mismatch: Tata Boga grade 6 semester 2 (P5-03g C4), now trimmed at import (D-234). Owner: Seni Suara Daerah is school-optional (D-231); the muatan lokal cap warns for now (D-232). After deploy, run `php artisan curriculum:import`. Next: P5-03d.

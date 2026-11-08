@@ -65,6 +65,7 @@ Route::middleware('auth')->group(function (): void {
             ->except('show')
             ->parameters(['tahun-ajaran' => 'academicYear'])
             ->names('academic_years');
+        Route::post('/tahun-ajaran/{academicYear}/salin-kelas', [AcademicYearController::class, 'copyClasses'])->name('academic_years.copy_classes');
         // /kelas, /kelas/buat, /kelas/{class}, /kelas/{class}/ubah
         Route::resource('kelas', SchoolClassController::class)
             ->parameters(['kelas' => 'class'])
