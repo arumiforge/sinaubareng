@@ -11,7 +11,8 @@
     "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah (Pusat Kurikulum dan Pembelajaran)",
     "issued_on": null,
     "year": 2025,
-    "file": "docs/dokumen-resmi/kokurikuler.pdf",
+    "file": "docs/sources/Panduan_Kokurikuler_BSKAP_2025.pdf",
+    "received_as": "docs/dokumen-resmi/kokurikuler.pdf (moved to docs/sources/ unchanged, D-203)",
     "sha256": "340d1fc4ffb35572acc4da8b452fb295161021a2147e948f54f76ebf77f7ee46",
     "pages_total": 74,
     "pages_note": "All page refs are PDF page numbers. PDF pages 1-6 are covers, credits, foreword (printed iv) and contents (printed v-vi); from PDF page 7 on, printed page = PDF page - 6 (PDF 7 = printed 1, PDF 73 = printed 67). PDF 74 is the back cover. No issue date is printed; the year 2025 is printed on the title page (p. 2) and credits (p. 3)."

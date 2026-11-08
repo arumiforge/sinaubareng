@@ -15,7 +15,8 @@
     "issued_by": "Badan Standar, Kurikulum, dan Asesmen Pendidikan (BSKAP), Kementerian Pendidikan Dasar dan Menengah Republik Indonesia; penerbit Pusat Kurikulum dan Pembelajaran & Pusat Standar dan Kebijakan Pendidikan",
     "issued_on": null,
     "year": 2025,
-    "file": "docs/dokumen-resmi/pembelajaran-kka.pdf",
+    "file": "docs/sources/Pembelajaran_Koding_dan_Kecerdasan_Artifisial_BSKAP_2025.pdf",
+    "received_as": "docs/dokumen-resmi/pembelajaran-kka.pdf (moved to docs/sources/ unchanged, D-203)",
     "sha256": "8d931982de0108a8e8c8bb019d08fac178b2f8db0fbd39eb8ea4f8b52ea1ab35",
     "pages_total": 110,
     "pages_note": "Page refs are PDF page numbers. Printed body page n = PDF page n+13 (PDF 14 = printed 1, PDF 70 = printed 57); front matter is roman (PDF 3 = ii ... PDF 12 = xi). Dated 'Februari, 2025' on the cover and imprint (PDF 1, 2, 4); no day given. Running footers say 'Naskah Akademik' / 'Pembelajaran Koding dan Kecerdasan Artifisial'."
@@ -828,7 +829,7 @@
     "Fase A and B: the paper sets no KKA elements or outcomes for grades 1-4; KKA as a subject starts in grade 5. Whether SIGRAK should offer anything for grades 1-4 (e.g. integrated unplugged CT) needs an owner decision; the Kepmen does not set grades either.",
     "JP per year and JP length are not printed; only '2 jam pelajaran per minggu' for SD grades 5-6. Per-year JP must come from the curriculum-structure regulation (the paper recommends revising it).",
     "The paper is a naskah akademik dated Februari 2025, before Kepmendikdasmen 127/P/2025 (4 September 2025). The Kepmen adopts 'mata pelajaran pilihan' but names no grades and no JP; the 'kelas 5 dan 6, 2 JP/minggu' figure is only a recommendation here.",
-    "Tabel 6 is labelled 'Capaian Belajar' and the text calls it minimum; a formal CP decree for KKA (BSKAP task in Kepmen BAB III A.5.b) is not in docs/dokumen-resmi. Check whether a later CP KKA document supersedes this table before import.",
+    "Tabel 6 is labelled 'Capaian Belajar' and the text calls it minimum; a formal CP decree for KKA (BSKAP task in Kepmen BAB III A.5.b) is not among the P4-03 source documents. Check whether a later CP KKA document supersedes this table before import.",
     "Tabel 4 (SD/MI Koding) lists 'Memahami distopia teknologi' and 'program berbasis blok dengan logika percabangan dan pengulangan', but Tabel 6 (Fase C) has neither item; it only shows four elements (no Algoritma Pemrograman, no Analisis Data).",
     "PDF 44 cites literature saying SD pupils start with Scratch and Python and that AI use starts in SMP; this conflicts with the Fase C outcomes that include using AI ethically. Treat PDF 44 as literature review, not policy.",
     "Training rule on PDF 87: the MIPA/other-teacher fallback sentence follows the SMP/SMA/SMK clause; it is unclear whether it also applies to SD (where guru kelas is the primary target).",

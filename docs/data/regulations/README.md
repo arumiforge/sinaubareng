@@ -1,6 +1,6 @@
 # Regulations and official guides (SD/MI extract)
 
-Structured SD/MI data from the eight official documents in [`docs/dokumen-resmi/`](../../dokumen-resmi/) (task P4-03, D-203). Each file covers only SD, MI, and Fase A–C. It also keeps rules that apply to every level and so bind SD. PAUD, SMP, SMA, SMK, and Fase D–F parts are listed under `extraction.skipped`, with their pages.
+Structured SD/MI data from eight official documents, supplied by the owner in `docs/dokumen-resmi/` and moved unchanged to [`docs/sources/`](../../sources/README.md) under descriptive names (task P4-03, D-203). `source.file` is the current path and `source.received_as` the original one. Each file covers only SD, MI, and Fase A–C. It also keeps rules that apply to every level and so bind SD. PAUD, SMP, SMA, SMK, and Fase D–F parts are listed under `extraction.skipped`, with their pages.
 
 Every file is `status: draft` and `extraction.verified: false`. Tim Validasi SIGRAK checks the rows against the cited pages before anything is imported or quoted in the UI (D-113). Comparison with the final docs: [`docs/drafts/dokumen-resmi-sd-mi.md`](../../drafts/dokumen-resmi-sd-mi.md).
 
@@ -17,7 +17,7 @@ Every file is `status: draft` and `extraction.verified: false`. Tim Validasi SIG
 
 ## Conventions
 
-- Top-level keys: `dataset`, `version_code`, `status`, `level`, `phases`, `note`, `source` (title, number, issuer, year, file, sha256, page count, page note), `extraction` (method, date, pages checked against images, skipped parts, conventions), content sections, `open_points`.
+- Top-level keys: `dataset`, `version_code`, `status`, `level`, `phases`, `note`, `source` (title, number, issuer, year, file, received_as, sha256, page count, page note), `extraction` (method, date, pages checked against images, skipped parts, conventions), content sections, `open_points`.
 - Every content item has `pages` with **PDF page numbers**. `source.pages_note` gives the offset to printed page numbers.
 - Keys are English snake_case. Text values quote the Indonesian source as printed, with only light whitespace and hyphenation cleanup. Optional English `summary` fields are notes for developers, not source text.
 - JP and other figures are numbers. A value that was worked out rather than printed (for example JP per week) is marked as derived.

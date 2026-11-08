@@ -15,7 +15,7 @@ Turn the eight official documents in `docs/dokumen-resmi/` into structured JSON 
 - `docs/agent/CONTEXT.md`
 - `docs/data/curriculum/` and `docs/data/tka/` (format conventions)
 - `docs/final/product-concept.md`, `docs/final/content-engine.md`, `docs/final/religious-education.md` (for the comparison)
-- The PDFs in `docs/dokumen-resmi/` (input only, never edited)
+- The PDFs, received in `docs/dokumen-resmi/`, now in `docs/sources/` (input only, never edited)
 
 ## Output
 
@@ -39,5 +39,5 @@ Turn the eight official documents in `docs/dokumen-resmi/` into structured JSON 
   - Conflicts: Bahasa Inggris grades 1–2, Tata Boga vs the muatan lokal cap, and SD kokurikuler JP missing from the data.
   - Proposed updates: eight profile dimensions as an enum; RPM INTI as Memahami/Mengaplikasi/Merefleksi; kokurikuler type "Cara lainnya" and the official plan schema; rapor minimum content (including ekstrakurikuler, which conflicts with D-161); Fase A without written tests.
   - KKA confirmed as an elective in grades 5–6, 2 JP, Fase C reference content only.
-- **Decision:** D-203 (proposed).
-- **Open:** six owner questions in §12 of the draft note, including moving the PDFs to `docs/sources/` (§11). `docs/final/` is untouched.
+- **Decisions:** D-203 (data location; PDFs moved to `docs/sources/`), and D-204…D-209 from the owner's answers on 2026-11-08: optional Bahasa Inggris 1–2 and Tata Boga, ekstrakurikuler and formative-based descriptions in the rapor, optional Fase A written tests, "Tidur Cepat", KKA through kokurikuler, KSP starter template.
+- **Open:** owner approval of the `docs/final/` updates in §10 of the draft note (a follow-up task). `docs/final/` is untouched.

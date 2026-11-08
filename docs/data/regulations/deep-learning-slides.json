@@ -15,7 +15,8 @@
     "issued_by": "Kementerian Pendidikan Dasar dan Menengah Republik Indonesia (logo/name on cover and last slide); content credited to Tim Pengembangan Pembelajaran Mendalam (TPPM)",
     "issued_on": null,
     "year": null,
-    "file": "docs/dokumen-resmi/paparan-pembelajaran-mendalam.pdf",
+    "file": "docs/sources/Paparan_Pembelajaran_Mendalam_Kemendikdasmen.pdf",
+    "received_as": "docs/dokumen-resmi/paparan-pembelajaran-mendalam.pdf (moved to docs/sources/ unchanged, D-203)",
     "sha256": "5c76281c3ef13a43ba36b19f7df23ba55967aa31e5c25b510c7f245b653ec604",
     "pages_total": 62,
     "pages_note": "All page refs are PDF page numbers (one slide per page). Each content slide prints 'Hal. N' in the footer; N equals the PDF page except PDF 29 (prints Hal. 31), PDF 30 (Hal. 29) and PDF 31 (Hal. 30). Section dividers (PDF 3, 7, 12, 35, 59) carry no number."

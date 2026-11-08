@@ -15,7 +15,8 @@
     "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
     "issued_on": "2025-09-04",
     "year": 2025,
-    "file": "docs/dokumen-resmi/1758017435_manage_file.pdf",
+    "file": "docs/sources/Kepmendikdasmen_No_127_P_2025_Pedoman_Implementasi_Koding_dan_Kecerdasan_Artifisial.pdf",
+    "received_as": "docs/dokumen-resmi/1758017435_manage_file.pdf (moved to docs/sources/ unchanged, D-203)",
     "sha256": "8441abc021bbb4598b34fbdc1300ceb26b34394fd343a0e74c73ca6369a480a2",
     "pages_total": 28,
     "pages_note": "Page refs are PDF page numbers. PDF 1-3 are the decree body (printed '-2-', '-3-' on PDF 2-3). The Lampiran starts on PDF 4; Lampiran printed page n = PDF page n+3 (PDF 6 = '-3-', PDF 15 = '-12-', PDF 26 = '-23-'). The file is a scanned 'SALINAN' with an OCR text layer."
@@ -744,7 +745,7 @@
     "Integration examples differ from the naskah akademik: decree names Pendidikan Pancasila (etika KA) and Matematika (analisis data); the naskah akademik names matematika, bahasa, IPAS and a Bahasa Indonesia example. Kokurikuler in the decree is 'berbasis teknologi atau rekayasa (engineering)'.",
     "Bimtek trainers: decree says 'Calon pengajar berasal dari unsur LPD atau pihak lain yang ditetapkan Kemendikdasmen' (PDF 8); the naskah akademik says Widyaiswara and PTP at UPT plus LPD practitioners. Training providers: decree says LPD; naskah akademik says UPT Ditjen GTK-PG.",
     "The decree has no teacher eligibility rule for SD (guru kelas vs. other teachers) and no classroom assessment/rapor rule for KKA.",
-    "The decree addresses Kementerian Agama in its objectives but has no MI-specific provision; whether madrasah follow it depends on a Kemenag instrument not in docs/dokumen-resmi.",
+    "The decree addresses Kementerian Agama in its objectives but has no MI-specific provision; whether madrasah follow it depends on a Kemenag instrument not among the P4-03 source documents.",
     "The KEDUA dictum applies the guideline 'mulai tahun ajaran 2025/2026', while the timeline calls 2025-2026 'Tahun Pertama'."
   ]
 }
