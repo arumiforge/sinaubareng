@@ -1,7 +1,7 @@
 # P4-03 — Official documents to SD/MI data
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done
 - **Owner:** p4/p4-03-dokumen-resmi-data
 - **Depends on:** —
 - **Can run in parallel with:** P4-04 (reads the same PDFs; new decisions use only D-203…D-209)
