@@ -31,7 +31,7 @@
         teacher_name: string | null;
         jp_per_week: number | null;
         scheduled_jp: number;
-        status: 'complete' | 'under' | 'over' | 'free';
+        status: 'complete' | 'under' | 'over' | 'free' | 'not_counted';
     }
 
     let {
@@ -182,6 +182,8 @@
                                 <span class="block font-semibold text-danger">{t('timetable.status.under')}</span>
                             {:else if subject.status === 'over'}
                                 <span class="block font-semibold text-danger">{t('timetable.status.over')}</span>
+                            {:else if subject.status === 'not_counted'}
+                                <span class="block text-muted">{t('timetable.status.not_counted')}</span>
                             {:else if subject.status === 'complete'}
                                 <span class="block font-semibold text-brand-strong">{t('timetable.status.ok')}</span>
                             {/if}

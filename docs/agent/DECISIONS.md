@@ -1152,3 +1152,8 @@ Reason: one place to set teachers; a copied column could drift from the assignme
 Accepted · 2026-11-09 · P5-03e · owner's choice
 A subject's JP per week on the timetable must equal its allocation for the class (`SubjectsForGrade`, D-230). A row that would put a subject over its allocation is refused; the Jadwal page lists each subject's scheduled and allocated JP and calls the timetable complete only when every allocated subject matches. Subjects without an allocation (optional content) have no cap. 1 JP = 35 minutes (data model); the JP of a row is suggested from its length and the operator may change it (1–4).
 Reason: the curriculum allocation is binding; the timetable is filled row by row, so "under" can only be shown, not refused.
+
+### D-251 — Timetable: religion lessons run in parallel
+Accepted · 2026-11-09 · P5-03e · owner's choice, refines D-248 and D-250
+Lessons of different religion subjects (the six Pendidikan Agama subjects) may share the same time in a class, since students split by religion; any other overlap in a class is still refused, and every teacher is still checked for clashes. A religion subject counts towards "complete" only when it has a teacher in that class; a religion without a teacher is shown as not counted.
+Reason: all six religions are in the structure at 3 JP, but a class only teaches the religions of its students, at the same hour.

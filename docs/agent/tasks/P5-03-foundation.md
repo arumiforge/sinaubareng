@@ -1,7 +1,7 @@
 # P5-03 — Slice 1: Foundation
 
 - **Phase:** P5
-- **Status:** in-progress
+- **Status:** done
 - **Owner:** pw/lucid-fermi-pxp4d5
 - **Depends on:** P5-01
 - **Can run in parallel with:** P5-02
@@ -29,7 +29,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03b | Auth and invitations: sign-in (`/masuk`), sign-out, password reset (`/lupa-kata-sandi`), `invitations` and acceptance (`/undangan/{invitation}`), throttling, Akun (profile, password), role switch. Staff invite a school's first operator or principal from the console; the operator invites teachers | a | Controllers, Svelte pages, mail, tests | done |
 | P5-03c | Curriculum tables and `curriculum:import`: `curriculum_versions`, `subjects`, `subject_allocations`, `topics`, `focus_items`, `learning_objectives`, `focus_item_objectives`, `region_subjects`, `school_subjects`. Imports the files in `docs/data/curriculum/` and, once supplied, KM-SD-2026-R2 | — (parallel with a) | `app/Curriculum`, migrations, import command, tests | done |
 | P5-03d | Academic year, classes, teaching assignments: operator pages Tahun Ajaran and Kelas; default teaching assignments from `subjects.default_teacher` (D-032), reassignment by the operator | a, b, c | Operator portal pages, policies, IDOR tests | done |
-| P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | in-progress |
+| P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | done |
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | done |
 | P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the EDUNEXA portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | done |
 | P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | done |
@@ -38,11 +38,11 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 
 ## Done when
 
-- [ ] Every table above has its migration with the keys, FKs, and CHECKs from the data model.
-- [ ] Each school-owned resource has an IDOR test (school A cannot read school B).
-- [ ] Only sign-in, invitation acceptance, and password reset work without a session.
+- [x] Every table above has its migration with the keys, FKs, and CHECKs from the data model.
+- [x] Each school-owned resource has an IDOR test (school A cannot read school B).
+- [x] Only sign-in, invitation acceptance, and password reset work without a session.
 - [x] `curriculum:import` is idempotent by `code` and reports mismatches.
-- [ ] All UI text in `lang/id`; CI green; each sub-task merged and its branch deleted.
+- [x] All UI text in `lang/id`; CI green; each sub-task merged and its branch deleted (the last branches are deleted by the owner, since cloud sessions cannot delete remote branches).
 
 ## Blockers
 
@@ -96,4 +96,11 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 - No homeroom teacher and no `teaching_assignments` rows: under D-240 a missing row already means "no teacher yet", and the Kelas page lists every subject from `SubjectsForGrade` for the new grade. No students move (Kenaikan, student slice).
 - Operator UI (lang file `classes`, keys `classes.copy.*`): Tahun Ajaran > Tambah has "Salin kelas dari tahun ajaran …" (on by default) with the grade 1 checkbox and a preview of the new class names; an empty year in the list has a "Salin kelas" button with the same panel. Route `POST /tahun-ajaran/{academicYear}/salin-kelas` (`academic_years.copy_classes`), policy `AcademicYearPolicy::copyClasses` (operator only).
 - Tests: `tests/Feature/SchoolYear/CopyClassesTest.php` (15: copy rules, grade 1 option, name rules and clashes, refusal on a second copy, nothing to copy, source choice, create form, list, role 403s, IDOR both ways).
+
+**P5-03e** (done):
+- Table `timetable_slots` (`public_id`, class FK CASCADE, subject FK RESTRICT; unique `class_id, weekday, period_no`; CHECKs for weekday 1–6, `starts_at < ends_at`, `kind` from `App\Enums\TimetableSlotKind`, and lesson ⇔ subject with `jp` 1–4, other rows `jp` 0). It differs from the data model on owner decisions: `kind` and `label` for Istirahat, Upacara, and Kegiatan rows (D-247), and no `teacher_id`: the teacher is the class's teaching assignment for the subject (D-249). Add both, and `public_id`, to `docs/final/data-model.md` with the next data-model update (e.g. P4-05).
+- Rules (`SaveTimetableSlotRequest`, `app/Actions/Timetable`): no overlap in a class except lessons of different religions (D-251); a lesson needs a subject the grade takes that has a teacher (D-249); no subject over its weekly allocation, and the timetable is "complete" only when every allocated subject matches, religions without a teacher not counted (D-250, D-251); no teacher clash with another class of the same year (`TimetableClashes`, D-248), also checked when the operator picks a guru mapel on the Kelas page; a clash left by a homeroom change shows as a warning. `period_no` is recomputed from start times (D-247).
+- Operator: Kelas > a class > Jadwal at `/kelas/{class}/jadwal` (add, change, delete rows per day; JP per subject against the allocation). Teacher: Kelas Saya > Jadwal at `/kelas-saya/jadwal` (own lessons this year with total JP, plus the full timetable of each homeroom class), linked in the menu for the teacher role. Lang file `timetable`. Policies: `SchoolClassPolicy::view/update` (operator), `viewOwnTimetable` (teacher).
+- Tests: `tests/Feature/Timetable/TimetableTest.php` (26: rows and numbering, validation, overlap, no teacher, allocation and completeness, parallel religions, clashes incl. other years and the Kelas page, renumbering, role 403s, IDOR for classes, rows of another class, and another school's lessons, teacher view, DB constraints). Checked on a 375 px phone viewport: no horizontal scroll.
+- Later: RPM scheduling on the timetable (`meetings`, P5-04), principal view, copy a day or a class's timetable.
 

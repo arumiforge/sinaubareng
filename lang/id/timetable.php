@@ -25,7 +25,7 @@ return [
         'label' => 'Keterangan',
     ],
     'hints' => [
-        'page' => 'Isi jadwal per hari. Urutan jam mengikuti jam mulai. Guru setiap mapel diambil dari halaman kelas.',
+        'page' => 'Isi jadwal per hari. Urutan jam mengikuti jam mulai. Guru setiap mapel diambil dari halaman kelas. Pendidikan Agama yang berbeda boleh di jam yang sama.',
         'jp' => '1 JP = :minutes menit. JP diisi otomatis dari lamanya, bisa diubah.',
         'label' => 'Boleh dikosongkan. Contoh: Senam, Literasi, Sholat Dhuha.',
         'subject_no_teacher' => 'belum ada guru',
@@ -50,6 +50,7 @@ return [
         'under' => 'Kurang',
         'over' => 'Lebih',
         'ok' => 'Pas',
+        'not_counted' => 'Tidak dihitung (belum ada guru)',
     ],
     'summary' => 'JP per mata pelajaran',
     'total_jp' => 'Total :jp JP per minggu',

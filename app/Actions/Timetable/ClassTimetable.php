@@ -73,6 +73,8 @@ final readonly class ClassTimetable
                 'scheduled_jp' => $jp,
                 'status' => match (true) {
                     $offer->jpPerWeek === null => 'free',
+                    // D-251: a religion the class has no teacher for is not taught there.
+                    $offer->subject->religion !== null && ! $assignments->has($offer->subject->id) && $jp === 0 => 'not_counted',
                     $jp === $offer->jpPerWeek => 'complete',
                     $jp < $offer->jpPerWeek => 'under',
                     default => 'over',
@@ -83,7 +85,7 @@ final readonly class ClassTimetable
         return [
             'rows' => $rows,
             'subjects' => $subjects,
-            'is_complete' => collect($subjects)->every(fn (array $subject): bool => in_array($subject['status'], ['complete', 'free'], true)),
+            'is_complete' => collect($subjects)->every(fn (array $subject): bool => in_array($subject['status'], ['complete', 'free', 'not_counted'], true)),
         ];
     }
 }

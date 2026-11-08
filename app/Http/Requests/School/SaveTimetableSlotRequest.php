@@ -9,6 +9,7 @@ use App\Actions\Timetable\TimetableClashes;
 use App\Curriculum\SubjectOffer;
 use App\Enums\TimetableSlotKind;
 use App\Models\SchoolClass;
+use App\Models\Subject;
 use App\Models\TeachingAssignment;
 use App\Models\TimetableSlot;
 use Illuminate\Foundation\Http\FormRequest;
@@ -18,7 +19,7 @@ use Illuminate\Validation\Validator;
 /**
  * Create or change one row of a class's timetable (D-247…D-250):
  *
- * - rows of a class may not overlap on a day;
+ * - rows of a class may not overlap on a day, except lessons of different religions (D-251);
  * - a lesson needs a subject the class takes that already has a teacher (D-249);
  * - a subject may not go over its weekly JP allocation (D-250);
  * - the teacher may not have a lesson in another class at the same time (D-248).
@@ -79,14 +80,21 @@ final class SaveTimetableSlotRequest extends FormRequest
             $class = $this->schoolClass();
             [$weekday, $startsAt, $endsAt] = [$this->integer('weekday'), $this->time('starts_at'), $this->time('ends_at')];
 
-            $overlap = $class->timetableSlots()
+            $overlapping = $class->timetableSlots()
                 ->when($this->slot(), fn ($query, TimetableSlot $slot) => $query->whereKeyNot($slot->id))
                 ->where('weekday', $weekday)
                 ->where('starts_at', '<', $endsAt)
                 ->where('ends_at', '>', $startsAt)
-                ->exists();
+                ->with('subject:id,code,religion')
+                ->get();
 
-            if ($overlap) {
+            // D-251: lessons of different religion subjects may share a time; nothing else may overlap.
+            $code = $this->input('kind') === TimetableSlotKind::Lesson->value ? $this->string('subject')->toString() : null;
+            $religionOnly = $code !== null
+                && Subject::query()->where('code', $code)->whereNotNull('religion')->exists()
+                && $overlapping->every(fn (TimetableSlot $other): bool => $other->subject?->religion !== null && $other->subject->code !== $code);
+
+            if ($overlapping->isNotEmpty() && ! $religionOnly) {
                 $validator->errors()->add('starts_at', __('timetable.errors.overlap'));
 
                 return;
