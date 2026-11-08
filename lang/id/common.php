@@ -7,6 +7,7 @@ return [
     'actions' => [
         'open_menu' => 'Buka menu',
         'close_menu' => 'Tutup menu',
+        'cancel' => 'Batal',
     ],
     'empty' => [
         'page' => 'Halaman ini sedang disiapkan.',

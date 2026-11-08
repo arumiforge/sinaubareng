@@ -9,8 +9,11 @@ use App\Http\Controllers\Auth\InvitationAcceptanceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\School\AcademicYearController;
 use App\Http\Controllers\School\InvitationController;
+use App\Http\Controllers\School\SchoolClassController;
 use App\Http\Controllers\School\TeacherController;
+use App\Http\Controllers\School\TeachingAssignmentController;
 use Illuminate\Support\Facades\Route;
 
 // School app (app.<domain>, `web` guard). Paths are Indonesian, names English (D-149).
@@ -54,5 +57,18 @@ Route::middleware('auth')->group(function (): void {
         Route::post('/guru/undangan', [InvitationController::class, 'store'])->name('invitations.store');
         Route::post('/guru/undangan/{invitation}/kirim-ulang', [InvitationController::class, 'resend'])->name('invitations.resend');
         Route::delete('/guru/undangan/{invitation}', [InvitationController::class, 'destroy'])->name('invitations.destroy');
+    });
+
+    Route::middleware('translations:classes')->group(function (): void {
+        // /tahun-ajaran, /tahun-ajaran/buat, /tahun-ajaran/{academicYear}/ubah
+        Route::resource('tahun-ajaran', AcademicYearController::class)
+            ->except('show')
+            ->parameters(['tahun-ajaran' => 'academicYear'])
+            ->names('academic_years');
+        // /kelas, /kelas/buat, /kelas/{class}, /kelas/{class}/ubah
+        Route::resource('kelas', SchoolClassController::class)
+            ->parameters(['kelas' => 'class'])
+            ->names('classes');
+        Route::put('/kelas/{class}/guru-mapel', [TeachingAssignmentController::class, 'update'])->name('classes.assignments.update');
     });
 });
