@@ -1,6 +1,6 @@
 # Teacher Supervision Instruments for SD/MI
 
-- **Status:** draft, waiting for the owner's choices (§7)
+- **Status:** draft; owner decided 2026-11-08 (D-222…D-225), see [§7](#7-owner-decisions-2026-11-08). MI version is a first draft (§8)
 - **Task:** P4-12
 - **Last updated:** 2026-11-08
 - **Scope:** the principal (kepala sekolah/madrasah) supervising SD/MI teachers: guru kelas, guru mapel, and the wali kelas role. The pengawas supervising the principal or the school is **out of scope**.
@@ -19,7 +19,7 @@ This draft maps **every instrument a principal uses for SD/MI teachers**, then g
 | Permendikdasmen 26/2025 (Standar Pengelolaan), Pasal 22–23 | Oversight is regular and continuous through **pemantauan, supervisi, evaluasi**. The principal supervises the curriculum and learning process (goals reached, murid-centred) and how staff work, grow, and **reflect**. Pasal 11(4) allows kelas rangkap in SD/MI | Regulation text (pasal.id mirror; check article numbers against the PDF) |
 | Permendikdasmen 1/2026 (Standar Proses), Pasal 4–19 | A plan has at least **tujuan, langkah, asesmen**, format free. Delivery: memahami–mengaplikasi–merefleksi with the principles berkesadaran, bermakna, menggembirakan, and the frame praktik pedagogis, kemitraan, lingkungan, pemanfaatan digital. **Penilaian proses pembelajaran** has four forms, each **at least once a semester**: self-assessment, peers, the principal (**supervisi akademik, analisis hasil belajar murid, umpan balik**, Pasal 18), and murid | Regulation text |
 | Panduan Pembelajaran dan Asesmen 2025 (BSKAP) | Planning steps: Identifikasi → Desain pembelajaran → Pengalaman belajar → Asesmen (awal, proses, akhir). Asesmen awal, kemitraan, and pemanfaatan digital are optional. Principal reflection is dialogic, with random class visits, and must not add heavy paperwork. Self-reflection questions. KKTP stays | Guide (in `docs/sources/` via P4-03) |
-| Perdirjen GTK 7607/B.B1/HK.03/2023 (Pengelolaan Kinerja, Ruang GTK) | Classroom observation on **8 focuses** in 3 groups. The teacher picks at least one with the principal. Forms A (diskusi persiapan), B (observasi: recommended and avoided behaviours, evidence, recommendation), C (tindak lanjut), D (refleksi tindak lanjut). B scores **Belum dilakukan / Dilakukan tapi belum efektif / Dilakukan dan efektif** | Regulation text (uploads.belajar.id) |
+| Perdirjen GTK 7607/B.B1/HK.03/2023 and the Panduan Substansi Pengelolaan Kinerja (Ruang GTK, Dec 2023), both in `docs/sources/` | Classroom observation on **8 focuses**, which are the sub-indicators of Rapor Pendidikan D1 (kualitas pembelajaran); the teacher picks one per period with the principal. Cycle **A diskusi persiapan → B observasi kinerja → C diskusi tindak lanjut → D upaya tindak lanjut → E refleksi tindak lanjut** (Forms A, B, C, D). The observation sets a **baseline and is not an assessment**. Form B lists recommended and avoided behaviours, scores **Belum dilakukan / Dilakukan tetapi belum efektif / Dilakukan dan efektif**, with notes and a recommendation. Forms C and D record the principal's view of the teacher's awareness (*tidak sadar / sadar kesulitan / sadar dampak kesulitan*). Periods Jan–Jun and Jul–Dec. Teacher accountability documents: KOSP, SK tugas tambahan, kehadiran di kelas | Regulation and guide text, supplied by the owner |
 | Kepmendikdasmen 271/O/2025 (Pedoman Pengelolaan Kinerja PTK) | Cycle: pra-perencanaan → perencanaan → pelaksanaan, pemantauan, pembinaan → penilaian → tindak lanjut. The principal is the teacher's PPK. Schools with more than 10 teachers may form a tim kinerja | Salinan read; rubric wording for 2026 not confirmed |
 | BAN-PDM IA 2024 (guide version 2025), Komponen 1 Kinerja Pendidik | Four items: social-emotional support, safe and orderly class, effective and meaningful learning, faith/nationhood/reasoning/character. 4 levels, triangulated by observation, interview, and documents. Judges **quality of service, not document completeness** | Guide text |
 | Kemenag Panduan Pembelajaran dan Asesmen madrasah (B-572/Dt.I.I/PP.00/11/2025), KMA 1503/2025, KBC (6077/2025) | Lesson plan has a **minimum** and a **complete** version. The minimum Identifikasi includes the DPL, **Topik Panca Cinta**, and KBC integration material. Principal reflection is part of the kepala madrasah's supervision duty; self-reflection is framed as *muhasabah* | Guide text |
@@ -60,7 +60,7 @@ Who: **GK** guru kelas, **GM** guru mapel, **WK** wali kelas. "Auto" = SIGRAK pr
 | S-10 | Pemantauan RTL | Observation cycle | GK, GM | 4–8 weeks later | Perdirjen 7607 Form D | RTL from S-09 |
 | S-11 | Refleksi diri guru | Reflection | All | At least once a semester | 1/2026 Pasal 16; Panduan 2025 ch. 6 | Same as A4 (journals, scores) |
 | S-12 | Umpan balik murid | Reflection | All | At least once a semester per subject | 1/2026 Pasal 19 | Teacher enters the class summary (murid are not users, D-010) |
-| S-13 | Refleksi dan observasi sejawat | Reflection | All | At least once a semester | 1/2026 Pasal 17 | Uses S-08 in peer mode |
+| S-13 | Refleksi sejawat (discussion record, no scores, D-224) | Reflection | All | At least once a semester | 1/2026 Pasal 17 | — |
 | S-14 | Telaah kokurikuler (incl. 7 KAIH) | Kokurikuler | GK, WK, kokurikuler team | Each semester | Panduan Kokurikuler 2025 | Kokurikuler plan, A5, A6 |
 | S-15 | Administrasi wali kelas | Homeroom | WK | Start and end of semester | Customary; Panduan Asesmen 2025 (rapor); 6/2026 | Mostly (Siswa, Absensi, Catatan, H2, H6, Rapor) |
 | S-16 | Rekap dan laporan hasil supervisi | Management | Principal | End of semester/year | 26/2025 Pasal 22 (evaluasi) | All of the above |
@@ -192,17 +192,18 @@ When the plan is a SIGRAK RPM, items 1, 3, 4, 6, 7, 13 are checked from its fiel
 5. Hasil tindak lanjut tercatat (asesmen ulang) [W]
 6. Hasil dipakai untuk memperbaiki perencanaan berikutnya [W]
 
-### S-07 Pra-observasi (form, no score)
+### S-07 Pra-observasi (form, no score; Ruang GTK Form A)
 
 - Kelas, mata pelajaran, tanggal dan jam (from the timetable), the RPM of that lesson
 - Fokus observasi yang disepakati (1–2 domains of S-08, or the 8 Ruang GTK focuses)
 - Yang ingin guru mendapat masukan
 - Tantangan kelas yang perlu diketahui pengamat
 - Kesepakatan: posisi pengamat, durasi, apakah murid diberi tahu
+- Ruang GTK fields: periode (Januari–Juni or Juli–Desember), rencana hasil kerja (one of the 8 focuses), fokus perilaku, upaya mempelajari, perangkat ajar
 
 ### S-08 Observasi pelaksanaan pembelajaran (24 items, 3 levels)
 
-The domains bridge Standar Proses (1/2026 Pasal 9–12), the Ruang GTK focuses (in brackets), and BAN-PDM Komponen 1. For a Ruang GTK observation, only the agreed focus domains are scored; the full form is a formative snapshot.
+The domains bridge Standar Proses (1/2026 Pasal 9–12), the Ruang GTK focuses (in brackets), and BAN-PDM Komponen 1. For a Ruang GTK observation, only the agreed focus is scored (as a baseline, not an assessment); the full form is a formative snapshot. Each item shows the recommended and avoided behaviours as hints, so the principal records evidence rather than a feeling.
 
 1. **Lingkungan dan manajemen kelas**
    1. Suasana kelas teratur, waktu belajar efektif (keteraturan suasana kelas)
@@ -248,16 +249,16 @@ Each item has an evidence note. The form ends with *Kekuatan*, *Prioritas perbai
 | S-08c Bahasa Inggris | Bahasa Inggris dipakai dalam instruksi; murid berbicara (lagu, permainan, TPR); suasana tidak menekan |
 | S-08d Kelas rangkap | Pengelompokan per kelas/fase; tugas mandiri jelas saat guru mendampingi kelompok lain; rotasi waktu; TP berbeda per kelompok |
 
-### S-09 Pasca-observasi (form, no score)
+### S-09 Pasca-observasi (form, no score; Ruang GTK Form C)
 
 - Refleksi guru: apa yang berjalan baik, apa yang ingin diubah, dampak ke murid
 - Umpan balik pengamat: kekuatan (from S-08), 1–2 prioritas
 - Kesadaran guru atas tantangan: *belum menyadari / menyadari / menyadari dampaknya* (Form C)
 - Rencana tindak lanjut (RTL): tujuan, langkah, dukungan yang dibutuhkan (coaching, KKG, contoh praktik, pelatihan Ruang GTK), batas waktu
 
-### S-10 Pemantauan RTL (form)
+### S-10 Pemantauan RTL (form; Ruang GTK Form D)
 
-- Capaian RTL, tantangan, upaya berikutnya; status *selesai / berlanjut*. A continuing RTL becomes the focus of the next S-07.
+- Per RTL row from S-09: tujuan, upaya, kapan, dukungan (copied), then capaian, tantangan, upaya peningkatan; the principal's awareness rating again; status *selesai / berlanjut*. A continuing RTL becomes the focus of the next S-07.
 
 ### S-11 Refleksi diri guru
 
@@ -267,9 +268,9 @@ The Panduan questions (8 in the madrasah edition, 7 in the general one), pre-fil
 
 Murid are not users (D-010). The teacher runs a short class activity (emoji cards for grades 1–3, a 5-question sheet for 4–6; printable) and enters the class count per answer: saya paham tujuan belajar; saya berani bertanya; kegiatannya menyenangkan; guru membantu saat saya kesulitan; saya ingin belajar lagi. Only class totals are stored.
 
-### S-13 Refleksi dan observasi sejawat
+### S-13 Refleksi sejawat
 
-S-07 to S-09 run in peer mode: a fellow teacher observes, no score goes to the principal unless the observed teacher shares it. Optional evidence for Pasal 17.
+A discussion record only (D-224): date, colleague, topic (a plan, a lesson video, or a shared practice), what was learned, what to try. No observation scores. Evidence for Pasal 17.
 
 ### S-14 Telaah kokurikuler (8 items, 1–4)
 
@@ -314,28 +315,51 @@ Rows: kebutuhan (from S-16), kegiatan (coaching, KKG/komunitas belajar, contoh p
 | Templates, not hard-coded | Each instrument is a versioned template (items, tags, scale, bands) in the database. Tim SIGRAK ships the defaults above; a school can copy and edit (D-221). A visit stores the template version it used |
 | Data already in SIGRAK | S-01, S-04, S-06, S-11, S-15 pre-fill from Kurikulum, RPM, Jurnal, Asesmen, Absensi, Catatan Siswa |
 | Phone use | S-08 works on a phone during the lesson, one domain per screen. Offline is not needed in v1 (D-016) |
-| Teacher view | The teacher sees every result about them, comments, and signs. Results are visible to the teacher, the principal, and (aggregates only) the supervisor |
+| Teacher view | The teacher sees every result about them, comments, and signs. Only the principal fills the forms (D-224) |
 | Ruang GTK | K3 bundles S-07 to S-10 and S-11 for the teacher's own upload; no integration |
 | AI | Optional: draft the feedback paragraph from scores and evidence notes. No teacher or murid names in the prompt (D-036) |
-| Supervisor (pengawas) | Sees school-level S-16 aggregates only, not teacher-level scores, unless the owner decides otherwise |
+| Supervisor (pengawas) | Sees school-level S-16 aggregates only, never teacher-level scores (D-224) |
 
 Data model additions (for P4-08): `supervision_templates`, `supervision_template_items`, `supervision_programs`, `supervision_visits` (teacher, template version, date, status), `supervision_scores` (item, level, evidence note), `supervision_followups` (RTL rows). All school-scoped (`BelongsToSchool`).
 
-## 7. Questions for the owner
+## 7. Owner decisions (2026-11-08)
 
-1. **Instrument set.** Build all 18 (S-00 to S-17), or start with a core set: S-00, S-01, S-04, S-06, S-07, S-08 (+ variants), S-09, S-10, S-11, S-15, S-16? (Suggested: the core set first.)
-2. **Observation scale.** Use the official Ruang GTK 3-level scale for S-08 (suggested), or keep the sample's 0/1/2?
-3. **Review scale.** 1–4 with descriptors for S-02 to S-06 (suggested), or 0/1/2 like the sample?
-4. **Bands.** Keep the sample's bands (91–100 Sangat Baik, 81–90 Baik, 71–80 Cukup, < 71 Kurang) as the default?
-5. **Who may observe.** Only the principal, or also a teacher the principal appoints (tim kinerja for schools over 10 teachers, Kepmendikdasmen 271/O/2025), plus peers in S-13?
-6. **Pengawas view.** School aggregates only (suggested), or teacher-level results too?
-7. **Murid feedback (S-12).** Class totals entered by the teacher, as proposed?
+| Question | Choice | Decision |
+|---|---|---|
+| Instrument set | All 18 at once (S-00…S-17 with S-08 variants) | D-222 |
+| Observation scale | Ruang GTK 3 levels | D-223 |
+| Review scale | 1–4 with a descriptor per item; checklists keep 0/1/2 | D-223 |
+| Bands | As in the sample, changeable by the school | D-223 |
+| Who observes | Only the principal; S-13 peer reflection without scores | D-224 |
+| Pengawas view | School recap only | D-224 |
+| Murid feedback | Class totals entered by the teacher | D-225 |
+
+The SK pembagian tugas sample is kept in `docs/sources/` as received (owner's choice). The Ruang GTK documents the owner supplied are in `docs/sources/` too.
+
+Still open: the per-item descriptors for the 1–4 scale (S-02…S-06, S-14) and the recommended/avoided behaviour hints for S-08 are written in P4-08, from the Ruang GTK rubric shown in the platform (not in the supplied PDFs).
+
+## 8. MI version (first draft)
+
+The same 18 instruments apply to MI, with these changes. A revised version follows once Kemenag publishes or the owner supplies a madrasah instrument (none found for 2025–2026).
+
+| Area | MI change |
+|---|---|
+| Names | *Kepala madrasah*, *madrasah*, *guru kelas/guru mapel MI*. S-11 is titled *Refleksi Diri (Muhasabah) Guru* |
+| Basis | KMA 1503/2025 (amends KMA 450/2024), Panduan Pembelajaran dan Asesmen madrasah (B-572/Dt.I.I/PP.00/11/2025), KBC (Kepdirjen Pendis 6077/2025), beban kerja KMA 736/2026 |
+| S-01 | Add: perencanaan memuat integrasi KBC |
+| S-03 | JP per subject from KMA 1503/2025 (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, muatan lokal 72–216 JP) |
+| S-04 | The [MI] item (Topik Panca Cinta and KBC integration material) is wajib. The madrasah *minimum* plan (Identifikasi: DPL, Panca Cinta, KBC material; Desain: TP, praktik pedagogis, lingkungan; Pengalaman belajar; Asesmen) is enough for a full score; *complete* items score N/A when absent |
+| S-08 | Item 19 (Panca Cinta and adab) applies; S-08b is the default variant for the five Kemenag subjects |
+| S-14 | Kokurikuler may carry Panca Cinta themes |
+| S-15 | Same items |
+| Performance | Ruang GTK forms apply to madrasah teachers registered there; teacher data of record is EMIS GTK, not Dapodik |
 
 ## Sources
 
 All accessed 2026-11-08.
 
 - Owner's sample: [`Contoh_Instrumen_Supervisi_Guru_SD_2026.pdf`](../sources/Contoh_Instrumen_Supervisi_Guru_SD_2026.pdf)
+- Owner-supplied Ruang GTK documents: [`Perdirjen_GTK_7607_B.B1_HK.03_2023_Juknis_Pengelolaan_Kinerja_Guru_dan_Kepala_Sekolah.pdf`](../sources/Perdirjen_GTK_7607_B.B1_HK.03_2023_Juknis_Pengelolaan_Kinerja_Guru_dan_Kepala_Sekolah.pdf), [`Panduan_Substansi_Pengelolaan_Kinerja_Guru_dan_Kepala_Sekolah_2023.pdf`](../sources/Panduan_Substansi_Pengelolaan_Kinerja_Guru_dan_Kepala_Sekolah_2023.pdf)
 - Permendikdasmen 1/2026: https://pasal.id/peraturan/permen/permendikdasmen-no-1-tahun-2026 · https://www.peraturan.go.id/filespengundangan/Permendikdasmen-no-1-tahun-2026.pdf
 - Permendikdasmen 26/2025: https://pasal.id/peraturan/permen/permendikdasmen-no-26-tahun-2025 · https://peraturan.go.id/files/Permendikdasmen-no-26-tahun-2025.pdf
 - Panduan Pembelajaran dan Asesmen 2025 (BSKAP): copy supplied by the owner (moved to `docs/sources/` by P4-03); mirror https://kurikulummerdeka.com/panduan-pembelajaran-mendalam-dan-asesmen-edisi-revisi-tahun-2025/

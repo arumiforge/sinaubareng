@@ -997,3 +997,23 @@ Reason: owner's choice; the parent portal would reopen D-010 when it starts.
 Accepted · 2026-11-08 · P4-04 · owner's choice
 The SK pembagian tugas lampiran and the supervision instrument start from samples the owner supplies (one SD's SK lampiran and the owner's instrument). They are first drafts: the school or Tim SIGRAK adjusts them as rules change, so they are kept as editable templates, not hard-coded.
 Reason: matches what schools already use, while staying adjustable.
+
+### D-222 — All 18 teacher supervision instruments in one go
+Accepted · 2026-11-08 · P4-12 · owner's choice
+The supervision module ships all 18 instruments of `docs/drafts/teacher-supervision-instruments.md` (S-00…S-17, with the PJOK, religion/MI, Bahasa Inggris, and kelas rangkap variants of S-08) together, as editable templates (D-221). The MI version is a first draft and gets a revised version later.
+Reason: owner's choice; schools are supervised on the whole set.
+
+### D-223 — Supervision scales and bands
+Accepted · 2026-11-08 · P4-12 · owner's choice
+Classroom observation (S-08 and variants) uses the 3 Ruang GTK levels: Belum dilakukan, Dilakukan tetapi belum efektif, Dilakukan dan efektif (Perdirjen GTK 7607/2023). Document reviews (S-02…S-06, S-14) use 1–4 with a short descriptor per item. Checklists (S-01, S-15) keep 0/1/2 from the owner's sample. Final value bands follow the sample (91–100 Sangat Baik, 81–90 Baik, 71–80 Cukup, below 71 Kurang), and a school can change them. Items not applicable or not seen are left out of the total.
+Reason: the observation scale carries over to Ruang GTK; descriptors make reviews consistent; the bands match local practice.
+
+### D-224 — Only the principal observes; supervisors see school totals
+Accepted · 2026-11-08 · P4-12 · owner's choice
+Only the principal fills observation and review instruments for a teacher; no tim kinerja or appointed teachers. Peer reflection (S-13) stays as a discussion record without scores. The pengawas sees school-level recaps (S-16) only, never teacher-level results.
+Reason: owner's choice; keeps supervision results between the teacher and the principal.
+
+### D-225 — Murid feedback as class totals
+Accepted · 2026-11-08 · P4-12 · owner's choice
+Murid feedback (S-12) is gathered in class on paper or cards, and the teacher enters only the count per answer for the class. No per-murid answers are stored, since murid are not users (D-010).
+Reason: Permendikdasmen 1/2026 asks for murid reflection each semester; class totals meet it without student data.
