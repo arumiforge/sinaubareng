@@ -1,13 +1,13 @@
 # Class and School Administration Features for SD/MI
 
-- **Status:** draft, waiting for the owner's choices
+- **Status:** draft; owner decided 2026-11-08 (D-210…D-221), see [§7](#7-owner-decisions-2026-11-08)
 - **Task:** P4-04
-- **Last updated:** 2026-11-07
+- **Last updated:** 2026-11-08
 - **Scope:** SD (Kemendikdasmen) and MI (Kemenag), grades 1–6. SMP and above are out of scope.
 
 ## Purpose
 
-SIGRAK already covers the teacher's daily administration (Di Kelas), assessment and report cards (Asesmen), class data (Kelas Saya), and the principal, operator, and supervisor portals ([`product-concept.md`](../final/product-concept.md)). This draft lists **every other administration feature an SD/MI could need**, checks each against current rules (2025–2026) and against comparable apps, and recommends which should become main features. The owner decides; the decision list is in [§5](#5-decision-list).
+SIGRAK already covers the teacher's daily administration (Di Kelas), assessment and report cards (Asesmen), class data (Kelas Saya), and the principal, operator, and supervisor portals ([`product-concept.md`](../final/product-concept.md)). This draft lists **every other administration feature an SD/MI could need**, checks each against current rules (2025–2026) and against comparable apps, and recommends which should become main features. The owner's choices are in [§7](#7-owner-decisions-2026-11-08).
 
 The rule for picking stays the same as for content: build what a school must do anyway, from data SIGRAK already has, so nobody types anything twice (product principles 4 and 7).
 
@@ -107,6 +107,7 @@ Columns: **Basis** (rule or guide; *customary* = expected in supervision but no 
 | O6 | **Ekspor e-Rapor SD / RDM** | Score and description export in the import layout of e-Rapor SD and RDM | Practice (both widely used) | M (in practice) | Rapor | M | ★★★ (already *later*, D-144) |
 | O7 | **Kartu pelajar dan cetak massal** | Student ID cards, class lists, attendance sheets to print | Customary | N | Siswa, print | S | ★ |
 | O8 | **SPMB online** | Public enrolment form | 3/2025 | — | — | L | Not a fit: needs public pages (D-010) |
+| T1 | **Tabungan murid** | Savings ledger per student (deposit, withdrawal, balance), recap per class and school, printable passbook page | Customary | N (common) | Keuangan kelas, print | S–M | ★★ (added by the owner, D-219) |
 | O9 | **BOS/RKAS, SPP** | Budget and fee collection | 8/2026; e-RKAM | — | — | L | Not a fit: ARKAS/e-RKAM own this; SPP is sensitive (D-025) |
 
 ### 4.5 Supervisor (pengawas, korwil)
@@ -120,7 +121,7 @@ Columns: **Basis** (rule or guide; *customary* = expected in supervision but no 
 
 Parents are not users (D-010), and no public share links exist. Parent-facing value can still come through the teacher: H6 (WhatsApp messages from the teacher's own phone), the printed 7 KAIH home sheet (A6), and tanggapan orang tua on the rapor (H1). A **parent portal** would reverse D-010 and add personal-data duties; it is listed only so the owner can confirm it stays out.
 
-## 5. Strongest candidates
+## 5. Strongest candidates (before the owner's choices)
 
 Ranked by "must do anyway × data already in SIGRAK × sales value". Each extends the CP → RPM → jurnal → asesmen → rapor chain that no competitor covers.
 
@@ -137,7 +138,7 @@ Ranked by "must do anyway × data already in SIGRAK × sales value". Each extend
 
 Lower priority: A2, A6, H4, H5 (with D-161), H6, K5, K7, K8, O3, O4, P1, P2. Out of scope unless the owner says otherwise: O8 SPMB, O9 BOS/SPP, parent portal, K10 MBG, O5 Perpustakaan.
 
-## 6. Decision list
+## 6. Decision list (as presented)
 
 The owner answers each with **Ya** (include, add to the build plan), **Nanti** (later candidate), or **Tidak** (exclude). Suggested answer in brackets.
 
@@ -180,6 +181,54 @@ Open questions:
 - **Q2 Wali kelas JTM.** Use 2 JTM for SD and 6 JTM for MI as the default, editable by the school? (The two ministries differ.)
 - **Q3 Catatan wali kelas by AI.** OK to draft it with AI from notes and attendance counts, sending no names or personal data (`PromptDataGuard`)?
 - **Q4 Regional formats.** Can the owner send the Kudus formats for Laporan bulanan, SK pembagian tugas, and supervisi instruments used by the local dinas/Kemenag?
+
+## 7. Owner decisions (2026-11-08)
+
+All new rules in §1 are applied to the product (D-210). Every accepted feature starts as **core**; Tim SIGRAK decides later in the console which ones become add-ons (D-211).
+
+| # | Feature | Choice | Decision | Build fit |
+|---|---|---|---|---|
+| 1 | H1 Rapor 12 komponen, Fase A without numbers | Ya | D-214, D-213 | P5-08 |
+| 2 | A5 Asesmen kokurikuler | Ya | D-214 | P5-08 |
+| 3 | A1 Remedial dan pengayaan | Ya | D-214 | P5-08 (+ template later) |
+| 4 | A3 KKTP per TP | Ya | D-214 | P5-08 |
+| 5 | A2 Asesmen diagnostik | Ya | D-214 | P5-08 |
+| 6 | A4 Refleksi guru | Ya | D-214 | P5-07/P5-08 |
+| 7 | A6 7 KAIH | Ya | D-214 | P5-07 |
+| 8 | A7 Analisis butir soal | Ya | D-214 | P5-08 |
+| 9 | A8 Kesepakatan kelas, disiplin positif | Ya | D-214 | P5-07 |
+| 10 | A10 Portofolio foto | Ya | D-214 | P5-08 (disk limits to design) |
+| 11 | A11 Minggu efektif | Ya | D-214 | P5-04 (Prota/Promes print) |
+| 12 | H2 Peringatan dini kehadiran | Ya | D-215 | P5-07 |
+| 13 | H3 Kenaikan kelas | Ya | D-215 | P5-08 |
+| 14 | H4 Kelulusan kelas 6 | Ya | D-215 | P5-08 |
+| 15 | H5 Ekstrakurikuler and Pramuka | Ya, early in v1 | D-216 | P5-07 |
+| 16 | H6 Pesan ke orang tua | Ya, plain `wa.me` text only | D-215 | P5-07 |
+| 17 | H7, H8 Kunjungan rumah, kesehatan | Ya | D-215 | P5-07 |
+| 18 | K1, K6 Penyusun and evaluasi KSP | Ya, after v1 | D-217, D-209 | After v1 |
+| 19 | K2 Supervisi PM | Ya | D-217, D-221 | P5-09 |
+| 20 | K3 Bukti kinerja Ruang GTK | Ya | D-217 | P5-09 |
+| 21 | K4 Pembagian tugas, JTM, SK | Ya | D-217, D-212, D-221 | P5-09 |
+| 22 | K5 Laporan bulanan | Nanti; BOS/RKAS reports never | D-219, D-220 | — |
+| 23 | K7 Kesiapan akreditasi | Nanti | D-220 | — |
+| 24 | K8 Budaya sekolah aman | Ya | D-217 | P5-09 |
+| 25 | K9 Presensi guru dan tendik | Tidak (staffing systems cover it) | D-217 | — |
+| 26 | O2 Mutasi siswa lengkap | Ya | D-217 | P5-09 |
+| 27 | O3 Persuratan | Nanti | D-220 | — |
+| 28 | O4 Inventaris sekolah | Ya | D-217 | P5-09 |
+| 29 | O5 Perpustakaan, O7 kartu pelajar | Upcoming / Nanti | D-220 | — |
+| 30 | O6 Ekspor e-Rapor SD and RDM | Ya, right after slice 6 | D-218 | After P5-08 |
+| 31 | P1, P2 Pendampingan PM, rekap lintas sekolah | Ya | D-217 | P5-09 |
+| — | T1 Tabungan murid | Ya (added by the owner) | D-219 | P5-07 (with Keuangan kelas) |
+| — | Parent portal, SPP, MBG log, perpustakaan | Upcoming | D-220 | — |
+
+Answers to the open questions: Q1 → D-211; Q2 → D-212; Q3 → D-213; Q4 → D-219 and D-221.
+
+**Still open**
+
+- The owner's sample **SK pembagian tugas lampiran** and **supervision instrument** (D-221) did not reach the repository. Put them in `docs/sources/` (kept as received) before the P5-09 design starts.
+- Portfolio photo limits (size, count, retention) to fit the 320 GB disk (D-096, D-114).
+- The "murid" term (D-210) changes the glossary and UI copy; done in the final-docs update task.
 
 ## Sources
 

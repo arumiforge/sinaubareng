@@ -937,3 +937,63 @@ Reason: the email is both the sign-in name and the invitation address, so changi
 Accepted · 2026-11-07 · P5-03b · owner's choice
 How pengawas/korwil accounts are created is decided and built with the supervisor portal (P5-09). Until then, Penugasan pengawas in the staff console assigns existing user accounts only.
 Reason: invitations always name a school role; a supervisor has none, and the portal defines what the account needs.
+
+### D-210 — The product follows the 2025–2026 rules
+Accepted · 2026-11-08 · P4-04 · owner's choice
+Every new rule found in P4-04 (`docs/drafts/administration-features.md` §1) is applied to SIGRAK: the rapor has the 12 minimum components of Panduan Pembelajaran dan Asesmen 2025; kokurikuler is assessed on the 8 dimensi profil lulusan (Permendikdasmen 10/2025, 13/2025); ekstrakurikuler with Pramuka or another kepanduan is offered (13/2025 Pasal 22); teacher workload counts JTM under Permendikdasmen 11/2025 and KMA 736/2026; class agreements and positive discipline follow Permendikdasmen 6/2026; teachers reflect at least once a semester; transfers follow Permendikdasmen 3/2025; the UI term for students follows Permendikdasmen 1/2026 ("murid"). KKA stays inside kokurikuler (D-208). The final docs and the glossary are updated in a follow-up task.
+Reason: the owner wants the app aligned with the current rules, which every SD/MI is checked against.
+
+### D-211 — New administration features are core; plan mapping set in the console
+Accepted · 2026-11-08 · P4-04 · owner's choice · changes D-158
+Every feature accepted in P4-04 starts as a core feature. Which features are core and which are add-ons is not fixed in code: Tim SIGRAK sets it per feature in the internal console (admin role), and the app reads that mapping. The D-158 add-on list becomes the starting configuration, changeable the same way.
+Reason: the owner wants to decide packaging later, from real use, without a release.
+
+### D-212 — Wali kelas JTM default: 2 for SD, 6 for MI
+Accepted · 2026-11-08 · P4-04 · owner's choice
+The workload calculation counts wali kelas as 2 JTM in SD (Kepmendikdasmen 221/P/2025) and 6 JTM in MI (KMA 736/2026) by default. A school can change these values and the other extra-duty values.
+Reason: the two ministries differ, and regional practice varies.
+
+### D-213 — AI drafts the catatan wali kelas
+Accepted · 2026-11-08 · P4-04 · owner's choice
+The rapor's catatan wali kelas may be drafted by AI from attendance counts, note types, and per-TP results, under the existing rule that no student name or personal data goes into a prompt (`PromptDataGuard`, D-036). The homeroom teacher edits and approves the draft.
+Reason: saves the homeroom teacher time on 20–30 notes per semester, without exposing student data.
+
+### D-214 — Teacher assessment and class features accepted
+Accepted · 2026-11-08 · P4-04 · owner's choice
+In scope: full 12-component rapor with a Fase A "without numbers" option (H1), kokurikuler assessment per dimensi profil lulusan (A5), remedial and enrichment from per-TP analysis (A1), KKTP per TP (A3), start-of-year diagnostic assessment (A2), semester teacher reflection pre-filled from journals and scores (A4), 7 KAIH tracker with a printable home sheet (A6), item analysis (A7), class agreement and positive-discipline notes (A8), student work portfolio with photos (A10), and effective weeks printed with Prota/Promes (A11).
+Reason: these extend the CP → RPM → jurnal → asesmen → rapor chain no competitor covers.
+
+### D-215 — Homeroom features accepted; parent messages as plain WhatsApp links
+Accepted · 2026-11-08 · P4-04 · owner's choice
+In scope: early absence warning (H2), kenaikan kelas meeting sheet and berita acara (H3), grade 6 graduation with SKL and ijazah data (H4), home visits and light health data (H7, H8), and messages to parents (H6). Parent messages are ready text opened in the teacher's own WhatsApp through a plain `wa.me` link: no WhatsApp API, no links into SIGRAK, and a contact log. A fuller parent channel is later. Health data is sensitive: never sent to AI, visible to the class's teachers, operator, and principal only.
+Reason: owner's choice; keeps D-010 (no parent accounts, no public links).
+
+### D-216 — Ekstrakurikuler and Pramuka early in v1
+Accepted · 2026-11-08 · P4-04 · owner's choice · narrows D-161, extends D-205
+Ekstrakurikuler records (activities, pembina, members, attendance, rapor description), with Pramuka offered by default, are built early in v1 rather than held with Buku Induk. The Dapodik import of ekstrakurikuler members stays with P4-01 (D-161).
+Reason: Permendikdasmen 13/2025 makes kepanduan mandatory to offer, and the rapor needs it.
+
+### D-217 — Principal, operator, and supervisor features
+Accepted · 2026-11-08 · P4-04 · owner's choice
+In scope: supervisi akademik for Pembelajaran Mendalam (K2), bukti dukung kinerja download for Ruang GTK (K3), pembagian tugas with JTM and an SK (K4), budaya sekolah aman with tata tertib, SOP, and an internal incident log but no public channel (K8), complete student transfers with the 14-working-day Dapodik reminder (O2), school inventory (O4), cross-school recap (P2) and Pembelajaran Mendalam mentoring for supervisors (P1). Penyusun KSP and evaluasi KSP (K1, K6) come after v1 and build on the starter template (D-209). Not needed now: teacher and staff attendance (K9), since schools already have it from staffing systems.
+Reason: owner's choice.
+
+### D-218 — e-Rapor SD and RDM export after the Asesmen slice
+Accepted · 2026-11-08 · P4-04 · owner's choice · updates D-144
+The export in the import layout of e-Rapor SD and RDM (Rapor Digital Madrasah) is built right after slice 6 (Asesmen), not left as an open later item.
+Reason: removes double entry, the strongest argument for MI.
+
+### D-219 — No BOS/RKAS reports; student savings recap in scope
+Accepted · 2026-11-08 · P4-04 · owner's choice
+Reports tied to BOS or RKAS are not in the app. A student savings (tabungan) ledger and recap per class and per school is in scope, next to Keuangan kelas: integer rupiah, deposits and withdrawals per student, printable recap.
+Reason: ARKAS and e-RKAM own BOS reporting (see also D-025); savings are common in SD/MI and kept by hand today.
+
+### D-220 — Upcoming and later features
+Accepted · 2026-11-08 · P4-04 · owner's choice
+Shown as upcoming (future features): parent portal, SPP, MBG log, perpustakaan. Later candidates, not shown: kartu pelajar, persuratan, monthly school report (laporan bulanan), accreditation readiness.
+Reason: owner's choice; the parent portal would reopen D-010 when it starts.
+
+### D-221 — Owner samples as starting formats for SK and supervision
+Accepted · 2026-11-08 · P4-04 · owner's choice
+The SK pembagian tugas lampiran and the supervision instrument start from samples the owner supplies (one SD's SK lampiran and the owner's instrument). They are first drafts: the school or Tim SIGRAK adjusts them as rules change, so they are kept as editable templates, not hard-coded.
+Reason: matches what schools already use, while staying adjustable.
