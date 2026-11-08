@@ -31,6 +31,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03d | Academic year, classes, teaching assignments: operator pages Tahun Ajaran and Kelas; default teaching assignments from `subjects.default_teacher` (D-032), reassignment by the operator | a, b, c | Operator portal pages, policies, IDOR tests | todo |
 | P5-03e | Timetable: `timetable_slots`, operator page Jadwal per class, teacher view Kelas Saya > Jadwal | d | Pages, policies, tests | todo |
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | review |
+| P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the EDUNEXA portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | review |
 
 Not in this slice: students and enrollments, school calendar (Kaldik), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 
@@ -44,7 +45,7 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 
 ## Blockers
 
-- KM-SD-2026-R2 source files (`data_kurikulum_dengan_cp.json`, `struktur_alokasi_sd.json`) are not in the repository. P5-03c can import everything else first.
+- ~~KM-SD-2026-R2 source files are not in the repository.~~ Resolved by P5-03g (2026-11-08): `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` are in `docs/data/curriculum/`. Open owner question for the import: Seni Suara Daerah (new subject) and the muatan lokal cap, see the P5-03g Result.
 
 ## Result
 
@@ -65,3 +66,10 @@ Not in this slice: students and enrollments, school calendar (Kaldik), school tr
 - Server: invitations and resets send mail through the queue and SMTP (D-110); the owner set `MAIL_*` on the server on 2026-11-07.
 
 **P5-03f** (review): `school_directory_entries` from referensi.data.kemendikdasmen.go.id, fetched 2026-11-03: Kudus 570 (code `031900`), Jepara 772 (`032000`), Pati 825 (`031800`) SD/MI, in `docs/data/schools/`. Refresh one regency with `node scripts/school-directory/fetch.cjs <code> docs/data/schools/<name>.json`, then run `php artisan school-directory:import docs/data/schools/<name>.json` on each server; another regency uses its own code from the site's URL. Typing a known NPSN in Sekolah > Buat fills the empty fields. Sebaran sekolah (`/sebaran-sekolah`) shows customers and prospects per district, with a summary-per-group switch and an Excel download of the filtered rows; Peta sekolah (`/peta-sekolah`) shows them on a map; the Sekolah list shows which schools match the directory (D-170). Coordinates come from each school's detail page: `node scripts/school-directory/fetch.cjs --coordinates <file>` (one request per school, resumable).
+
+**P5-03g** (review; needs the owner's call on C5/C6): the KM-SD-2026-R2 files from the EDUNEXA portal, downloaded 2026-11-08 and kept byte-for-byte, are in `docs/data/curriculum/`. Provenance (URL, size, SHA-256) in `docs/data/curriculum/README.md`; full findings in `docs/drafts/km-sd-2026-r2-source-check.md`. For P5-03c:
+- 432 topics, 2,021 fokus, 1,372 TP, 12 subjects, 58 `alokasi[]` rows (the mapping doc had 401 / 1,900 / 1,272 / 11 / 52). Every source field in the data model exists; no duplicate topic, ATP, fokus, or TP codes; fokus JP and allocations all add up. Matematika grade 4 semester 2 is now 90 JP (the known issue is fixed in the source).
+- JSON columns are real objects/arrays, not strings. No subject code field: the code is inside `ID_Kurikulum`, and Seni dan Budaya uses five codes (`MUS`, `SM`, `SMU`, `SR`, `SRP`) with `urutan_semester` restarting per `Cabang_Seni`. `Status_Mapel` is free text (10 values). `focus_items.allocation_status` source values are sentences.
+- Legacy IDs: 73 rows have no `Legacy_ID`; 5 `Legacy_ID` values sit on 2–3 rows; 16 aliases map to several rows and 20 aliases equal another row's current `ID_Kurikulum` (grade 5 renumbering). Look up `topics.code` first, aliases second, and report ambiguous aliases.
+- D-204: Bahasa Inggris grades 1–2 come as kokurikuler (`kokurikuler_default[]`), no IPAS grades 1–2: as expected. D-208: Koding grades 5–6 has two intrakurikuler `alokasi[]` rows the import must skip. Tata Boga: no allocation row, and grade 6 semester 2 has 34 JP in a 14-week semester (data fix). PAI is named `PAI dan Budi Pekerti` and maps to the Islam religion subject.
+- **New: Seni Suara Daerah** (grades 1–6, 31 topics, 2 JP/week, muatan lokal for Jawa Tengah, CP written by the system and marked "PERLU VERIFIKASI"). It is in no decision. With Bahasa Jawa it doubles the 72 JP muatan lokal cap. Owner decision needed (C5, C6 in the draft); proposed data-model changes are in its section 6.
