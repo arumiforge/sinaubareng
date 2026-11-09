@@ -1661,3 +1661,58 @@ Reason: children's sensitive data and the risk of labelling.
 Accepted · 2026-11-09 · P4-18 · owner's choice (AQ8)
 Wave A: Peta Asesmen data v1 (literacy, numeracy, DPL, readiness domains; purposes; methods), tags on Bank Soal and LKPD, Rubrik Kinerja, Observasi DPL with phone entry, Cek Kesiapan Awal, and misconception tags on distractors. P5-08 (Asesmen v1) is unchanged.
 Reason: paper-first, low risk, builds on v1.
+
+### D-352 — SIGRAK's position: grounded in policy, free to innovate
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ1)
+SIGRAK's position is *Berpijak pada kebijakan, leluasa berinovasi*. National standards fix the what and the limits (outcomes, structure, minimum document content, child protection). The school and the teacher choose the how. SIGRAK gives them tools for new ways of learning, and every innovation can show which national element it serves (`docs/drafts/policy-innovation-layers.md` §1–§3).
+Reason: the 2025–2026 rules lock outcomes and structure, not methods; aligning with them makes innovation applicable and accountable.
+
+### D-353 — Rule strength decides how the app reacts
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ2), extends the `force` tags of D-203
+Every rule carries a strength: `mandatory`, `minimum`, `maximum`, `recommended`, `not_recommended`, `example`, `school_discretion`, `teacher_discretion`, `free`. The app blocks only clear L1/L2 mandatory rules, warns below a minimum or above a maximum (as D-232), shows a hint for recommended and not recommended (as D-206), and leaves the rest free. Defaults that are only examples are labelled "Contoh". Layers L0–L6 follow §2 of the P4-21 draft.
+Reason: a guardrail, not a gate; schools that innovate are never stopped.
+
+### D-354 — Regulations and rule sets are versioned data
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ3), extends D-229 and D-317
+Target model: `regulations` (legal documents with issue, promulgation, and effective dates, status, verification level), `regulation_relations` (amends, revokes, implements, references), `rule_sets` (a versioned package per domain with `applies_from_school_year`, level and region scope, transition, supersedes), and `rules` (key, strength, value, source reference). `curriculum_versions` becomes the curriculum kind of rule set by adding columns. The policy in force is resolved from school year, level, and region. A document stores the rule-set codes it was made under and never changes silently. Rules published mid-year apply from the next school year unless the regulation says otherwise.
+Reason: rules change every year; schools and documents must stay traceable.
+
+### D-355 — Minimal versioning before P5-04
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ4)
+Before P5-04 (content core): `curriculum_versions` gets `effective_on`, `applies_from_school_year`, and `supersedes_id`; a policy-profile resolver replaces the `config/curriculum.php` `allocation_versions` pointer (D-230 behaviour unchanged); the Profil Jenjang data (D-356) exists. The full `regulations` and `rules` tables, the console for every domain, and Kabar Regulasi come with P5-09 or their own slice.
+Reason: an RPM must record its rule set from the first one made.
+
+### D-356 — Profil Jenjang: SD and MI as data over one core
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ5)
+One codebase with a shared core. Each level (`sd`, `mi`) has a versioned Profil Jenjang record: ministry, rule-set codes per domain, character frameworks on (MI adds KBC), RPM extra fields, rapor export target (e-Rapor or RDM), wali kelas JTM defaults (D-212), external assessments. Code reads the profile and never branches on `level == mi`. New levels become new profiles.
+Reason: SD and MI share the national standards and differ in a few domains; data keeps that cheap and safe.
+
+### D-357 — Master taxonomy
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ6)
+One master taxonomy in `docs/data/taxonomy/` (`status: draft` until Tim Validasi review, D-113) with facets A Policy, B Curriculum structure, C Profile and character, D Learning, E Assessment (Peta Asesmen, D-344), F Content, G Context, H Administration. Each node has a stable code, Indonesian label, parent, level scope, source, strength, status, and version, plus crosswalks between versions (e.g. Profil Pelajar Pancasila → 8 DPL, P5 → kokurikuler). Closed lists only where a rule fixes them; schools may add local items to open lists. Seed data is task P4-22; it joins the legacy app catalogs (P4-15) instead of duplicating them.
+Reason: one name and code per concept lets features tag content and show which standard an innovation serves.
+
+### D-358 — Dasar Kebijakan panel and Cek Keselarasan
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ7)
+Every document shows a short Dasar Kebijakan panel (CP, TP, DPL, principles, regulation and rule-set version), read from its taxonomy tags. One checker, Cek Keselarasan, returns block, warning, and hint lines by rule strength (D-353) on save and in principal and supervisor review; it never rewrites the teacher's work. Both start with the RPM in P5-04 and grow with each slice.
+Reason: makes innovation accountable without slowing teachers.
+
+### D-359 — KMA 512/2026 is the KBC source
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ8), updates the source of D-126
+Keputusan Menteri Agama No. 512 Tahun 2026 (Pedoman Kurikulum Berbasis Cinta, set 31 March 2026, in force on that date; official PDF supplied by the owner, `docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`) replaces SK Dirjen Pendis 6077/2025 as the KBC source. It keeps Panca Cinta (cinta Tuhan, cinta diri dan sesama manusia, cinta lingkungan, cinta ilmu, cinta tanah air) and adds six nilai dasar (spiritual, personal, sosial, ekologis, kebangsaan, intelektual), six principles, 12 suggested methods, 10 assessment instruments, and three levels of practice (merintis, berkembang, mekar). KBC is not a subject; results are reported through Akhlak or Budi Pekerti and the attitude notes, never as labels or rankings. D-126 stays as it is (MI only). The KMA also covers religion teachers in general schools, SD included; whether SIGRAK offers KBC fields to SD religion teachers is an open question (`docs/drafts/open-questions.md`).
+Reason: the official KMA supersedes the Dirjen guide; the SD scope needs the owner's call.
+
+### D-360 — The repository drops the legacy brand
+Accepted · 2026-11-09 · owner's choice
+Current files no longer name the owner's previous app. English text says "the legacy app"; Indonesian text says "aplikasi lama"; curriculum data notes say "SIGRAK". Files with the old name were renamed (e.g. `docs/drafts/legacy-upgrade-01.md`, `app/Curriculum/Import/Formats/KmSdTopics.php`). As an exception to "kept as received", owner sources in `docs/sources/` may be renamed and edited for the brand only; the old functionality PDF is kept under a new name with its content unchanged. Git history is not rewritten. Decision entries before this one keep their meaning; their wording was updated in place for the brand only.
+Reason: the owner wants the repository focused on the new brand.
+
+### D-361 — Developer handbook
+Accepted · 2026-11-09 · owner's choice
+`docs/final/developer-handbook.md` tells the whole SIGRAK process end to end for developers (position, users, policy layers, the flow from school setup to rapor and portals, architecture, data, AI, exports, operations, way of working, decision map, glossary), marking what is built and what is still design. Its Indonesian PDF, `docs/pdf/developer-handbook.pdf`, is the one complete reading for a new developer. Update it when a phase ends or a major decision changes the flow.
+Reason: the owner wants one complete reading for developers.
+
+### D-362 — Research digest
+Accepted · 2026-11-09 · owner's choice
+`docs/final/research-digest.md` (with its Indonesian PDF) collects every research finding so far: regulations, field and journal studies, benchmarks, technical research, with source, date checked, verification level, implication, and related decisions. Before new research, check it; after research, add the findings to it.
+Reason: avoid repeating research across sessions.

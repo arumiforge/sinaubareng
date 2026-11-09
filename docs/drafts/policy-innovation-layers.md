@@ -1,6 +1,6 @@
 # Policy Foundation and Innovation Layers
 
-- **Status:** draft (needs owner review, questions PQ1–PQ8 in §12)
+- **Status:** draft; owner decided 2026-11-09 (D-352…D-359, see §12). Accepted parts move to `docs/final/` in P4-24
 - **Task:** P4-21
 - **Last updated:** 2026-11-09
 - **Input:** owner idea of 2026-11-09: "build on national curriculum and policy first, then give the widest room for innovation on top of that foundation"
@@ -49,7 +49,7 @@ The learning and assessment guide data already tags each rule with `force` (`man
 | `maximum` | Cap; less is allowed | **Warn** above the cap | Muatan lokal 72 JP/year in SD (D-232) |
 | `recommended` | The guide advises it | **Suggest** (shown as a hint, default on) | Two-component TP wording |
 | `not_recommended` | The guide advises against it | **Suggest** (hint, default off, still allowed) | Written tests in Fase A (D-206) |
-| `example` | Given as a model only | **Default** that can be replaced | Government ATP, RPM layout, KBC indicators (6077 p. 12) |
+| `example` | Given as a model only | **Default** that can be replaced | Government ATP, RPM layout, KBC methods and instruments (KMA 512/2026 pp. 16–21) |
 | `school_discretion` | The school decides | Free, set by the principal or operator | KKTP approach, promotion criteria, kokurikuler themes |
 | `teacher_discretion` | The teacher decides | Free, set by the teacher | Methods, media, instruments |
 | `free` | No rule at all | Free | SIGRAK's own features |
@@ -71,7 +71,7 @@ Sources: repo extracts (`docs/drafts/dokumen-resmi-sd-mi.md`, `docs/data/regulat
 | **Asesmen** (Panduan Pembelajaran dan Asesmen 2025) | Formative is never used for rapor, promotion, or graduation; rapor 12 minimum components; competency description names highest and lowest achievement; report at least each semester | ATP format ("Tidak ada format komponen yang ditetapkan oleh Pemerintah", pp. 31–32); KKTP approach and threshold (p. 53, "keleluasaan"); description wording; Fase A without numeric grades; promotion criteria | repo extract with `force` tags |
 | **Kokurikuler** (Panduan Kokurikuler 2025) | Yearly JP taken from compulsory subjects; strengthens one or more of the 8 DPL | Themes "dikembangkan oleh Satuan Pendidikan"; form (lintas disiplin, 7 KAIH, other) and timing | repo extract |
 | **KSP** (Panduan KSP 2025, Pengelolaan 26/2025) | KSP exists and is set by the principal | "kewenangan untuk menentukan bentuk dan sistematika" (p. 7); not uniform administration (p. 10) | repo extract |
-| **Madrasah** (KMA 1503/2025, SK Dirjen 9941/2025, 6077/2025) | MI structure and JP; CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab | Up to 6 extra JP per week; KBC aspects and indicators are examples | repo extract; KMA 512/2026 unverified (§11) |
+| **Madrasah** (KMA 1503/2025, SK Dirjen 9941/2025, KMA 512/2026) | MI structure and JP; CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab; KBC as value education across intra-, ko-, and ekstrakurikuler and school culture (KMA 512 Diktum KEDUA–KEEMPAT) | Up to 6 extra JP per week; KBC methods (12 suggested) and instruments (10 listed) are chosen to fit the context (KMA 512 pp. 16–21) | repo extract; KMA 512 official PDF |
 | **Child protection and data** (6/2026, UU PDP) | Safe school culture, confidential complaints, personal data protection | — (SIGRAK adds its own stricter rules: D-023, D-347, D-350) | secondary |
 
 ### 3.1 Do national standards limit method innovation?
@@ -108,7 +108,7 @@ Layer = where the rule that bounds the component comes from. Strength = the stro
 | Optional subjects (Bahasa Inggris 1–2, KKA, Seni Suara Daerah, Tata Boga) | L1/L3 | school_discretion; Bahasa Inggris becomes mandatory 2027/2028 | School | Yes | Yes | D-204, D-208 |
 | CP | L2 | mandatory content | Staff | Yes | Yes | D-226, D-139, D-145 |
 | TP / ATP | L2 example → L4 | example | School, teacher | Yes (defaults) | Yes | D-019, D-276 |
-| Topics, fokus (KM-SD data) | L2-derived (EDUNEXA) | example | Staff, school | Yes | SD only | D-020 |
+| Topics, fokus (KM-SD data) | L2-derived (legacy app data) | example | Staff, school | Yes | SD only | D-020 |
 | 8 DPL | L1 | mandatory list | Nobody | Yes | Same | D-210 |
 | Pembelajaran mendalam principles and experiences | L1/L2 | mandatory list, free practice | Nobody (list); teacher (practice) | Yes | Same | — |
 | RPM | L5 inside L1 minimum | minimum content (TP, steps, assessment) | Teacher | Template versions | MI adds KBC fields | D-024, D-126 |
@@ -120,7 +120,7 @@ Layer = where the rule that bounds the component comes from. Strength = the stro
 | Promotion and graduation | L1 → L4 | school_discretion within Standar Penilaian | School | Yes | Same | — |
 | Kokurikuler themes, 7 KAIH | L2 → L4 | school_discretion | School | Yes (forms) | MI adds KBC | D-207 |
 | Ekstrakurikuler, Pramuka | L1 | minimum (Pramuka offered) | School | Yes | Same | D-216 |
-| KBC / Panca Cinta | L2 (MI) | example | Madrasah | Yes | MI only | D-126 |
+| KBC / Panca Cinta, six nilai dasar | L2 (KMA 512/2026) | example (methods), mandatory to implement in madrasah | Madrasah | Yes | MI; SD religion teachers open (D-359) | D-126, D-359 |
 | KSP | L1 → L4 | mandatory to exist; free form | Principal | Starter template only | Small | D-209 |
 | Kalender pendidikan | L3 | mandatory dates; school adds events | Region, school | Yearly | Yes (Kemenag) | D-253, D-256, D-323 |
 | Timetable | L4 | school_discretion within JP | Operator | No | Same | D-247…D-251 |
@@ -281,10 +281,10 @@ SD and MI follow the same national standards (PP 57/2021; SKL, Isi, Proses, Peni
 | D-139 / D-145 (one version per CP set) | Fits rule sets of domain `cp` | Keep |
 | D-229 (import never changes status) | Fits draft-first | Keep; apply to every rule set |
 | D-317 (curriculum console) | Covers only curriculum | Extend to every rule-set domain |
-| D-020 (EDUNEXA curriculum import) | KM-SD data is L2-derived, not a regulation | Label it `example` / derived; CP text from official decrees wins where they differ |
+| D-020 (legacy app curriculum import) | KM-SD data is L2-derived, not a regulation | Label it `example` / derived; CP text from official decrees wins where they differ |
 | D-113 (Tim Validasi) | Same gate | Keep for taxonomy and rule sets |
 | D-344 (Peta Asesmen dataset) | Becomes facet E | Keep the dataset; register its codes in the taxonomy |
-| D-126 (KBC in the MI RPM) | Becomes a Profil Jenjang setting | Keep; source may move to KMA 512/2026 once verified |
+| D-126 (KBC in the MI RPM) | Becomes a Profil Jenjang setting | Keep; source is now KMA 512/2026 (D-359) |
 | D-212 (JTM 2 vs 6) | Becomes a Profil Jenjang setting | Keep |
 | Old terms in official guides (P5, Profil Pelajar Pancasila, Kurikulum Merdeka) | Guides lag behind the Permen | Use the Permen term in the UI; keep crosswalks |
 
@@ -298,10 +298,12 @@ Cited in the repo or found on the web but **not yet in `docs/sources/`**:
 - Permendikdasmen 10/2025 (SKL), 12/2025 (Standar Isi), 26/2025 (Pengelolaan), 9/2026 (AN), 6/2026 (Budaya Sekolah) with Kepmendikdasmen 17/2026.
 - The base Permendikbudristek 12/2024 (only the 13/2025 changes are in the repo) and Permendikbudristek 21/2022.
 - The base Kepka BSKAP 046/H/KR/2025 (general-subject CP).
-- **KMA 512/2026, Pedoman Kurikulum Berbasis Cinta**, reportedly set 31 March 2026. Found only on secondary sites (yunandra.com, bukuyunandra.com); one page writes "KMA 521". If confirmed, it lifts KBC from SK Dirjen 6077/2025 to KMA level and may change D-126's source.
+- **KMA 512/2026, resolved.** The owner supplied the official PDF on 2026-11-09 (`docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`). Set 31 March 2026 and in force on that date, it replaces SK Dirjen Pendis 6077/2025 as the KBC source (D-359). Its scope covers Kemenag schools *and* religion teachers in general schools, SD included (Lampiran §C, p. 6); see the open question in `docs/drafts/open-questions.md`.
 - Open facts: who sets the KKTP at article level; AKMI for MI in 2026; official e-Rapor SD and RDM 2026 specs.
 
 ## 12. Owner questions
+
+**Answered 2026-11-09, all as recommended:** PQ1 → D-352, PQ2 → D-353, PQ3 → D-354, PQ4 → D-355, PQ5 → D-356, PQ6 → D-357, PQ7 → D-358, PQ8 → D-359.
 
 **PQ1. Position statement.** Adopt *"Berpijak pada kebijakan, leluasa berinovasi"* as SIGRAK's position, with the meaning in §1? *Recommended: yes.*
 
@@ -313,11 +315,11 @@ Cited in the repo or found on the web but **not yet in `docs/sources/`**:
 
 **PQ5. Profil Jenjang.** SD and MI as data profiles over one shared core (§8), no `if level == mi` in code? *Recommended: yes.*
 
-**PQ6. Master taxonomy.** Build `docs/data/taxonomy/` with facets A–H, stable codes, strengths, and crosswalks (§9), reviewed by Tim Validasi, joining Peta Asesmen and the EDUNEXA catalogs? *Recommended: yes, as task P4-22.*
+**PQ6. Master taxonomy.** Build `docs/data/taxonomy/` with facets A–H, stable codes, strengths, and crosswalks (§9), reviewed by Tim Validasi, joining Peta Asesmen and the legacy app catalogs? *Recommended: yes, as task P4-22.*
 
 **PQ7. Dasar Kebijakan panel and Cek Keselarasan.** Show the policy panel on every document and run one checker for blocks, warnings, and hints (§4)? *Recommended: yes; panel in P5-04 for RPM first, checker grows with each slice.*
 
-**PQ8. KMA 512/2026.** Can the owner get the official PDF (Kanwil, KKM, or JDIH Kemenag)? Until then SIGRAK keeps SK Dirjen 6077/2025 as the KBC source. *Recommended: get the PDF; keep 6077 meanwhile.*
+**PQ8. KMA 512/2026.** Can the owner get the official PDF? *Recommended: get the PDF; keep 6077 meanwhile.* Answer: PDF supplied; KMA 512/2026 is the KBC source (D-359).
 
 ## 13. Phasing and follow-up tasks
 
@@ -343,5 +345,5 @@ Web (checked 2026-11-09; official JDIH sites returned 503/403 that day):
 - Permendikdasmen 12/2025, BPK: https://peraturan.bpk.go.id/Details/322494
 - Permendikdasmen 9/2026, BPK: https://peraturan.bpk.go.id/Details/345735
 - Permendikbudristek 21/2022, pasal.id mirror: https://pasal.id/peraturan/permen/permendikbudriset-no-21-tahun-2022
-- KMA 512/2026 (secondary only): https://bukuyunandra.com/?p=9845 ; https://yunandra.com/pembudayaan-nilai-kbc-kma-512-tahun-2026/
+- KMA 512/2026: official PDF in `docs/sources/` (owner, 2026-11-09). Earlier secondary summaries: https://bukuyunandra.com/?p=9845 ; https://yunandra.com/pembudayaan-nilai-kbc-kma-512-tahun-2026/
 - Ministry statement that 13/2025 is not a new curriculum: https://www.metrotvnews.com/read/NLMCJ6Vj-mendikdasmen-tegaskan-tidak-ada-perubahan-kurikulum

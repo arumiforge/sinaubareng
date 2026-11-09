@@ -1,7 +1,7 @@
 # P4-21 — Policy foundation and innovation layers
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done
 - **Owner:** sky/optimistic-thompson-2qmlfz
 - **Depends on:** P4-03, P4-04, P4-18, D-113, D-203…D-210, D-317
 - **Can run in parallel with:** P4-14, P4-15, P4-19, P4-20
@@ -31,8 +31,10 @@ Set SIGRAK's position: national curriculum and policy as the foundation, the wid
 - [x] SD and MI configuration (§8)
 - [x] Master taxonomy (§9)
 - [x] Clash check with earlier decisions (§10)
-- [ ] Owner answers PQ1–PQ8, recorded as decisions
+- [x] Owner answers PQ1–PQ8, recorded as decisions (D-352…D-359)
 
 ## Result
 
 Draft written 2026-11-09 from the repo and a web check of the 2025–2026 rules (official JDIH sites were down; mirrors and secondary sources are marked). No decision is overturned; the only behaviour change proposed is moving the `config/curriculum.php` version pointer into data. Open: owner answers PQ1–PQ8; KMA 512/2026 (KBC) is unverified. Follow-ups proposed: P4-22 (taxonomy and regulation registry data), P4-23 (missing regulation sources), P4-24 (apply to final docs).
+
+Owner answered on 2026-11-09: PQ1–PQ8 all as recommended (D-352…D-359), and supplied the official KMA 512/2026 PDF, now the KBC source (D-359). New open question: KBC for SD religion teachers. Same day, the owner also asked for the legacy brand to be removed from the repository (D-360), a developer handbook (D-361), and a research digest (D-362); done in the same branch.
