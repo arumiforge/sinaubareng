@@ -107,9 +107,9 @@ Answered on 2026-11-09:
 - **RQ1** powers in code, scopes editable (D-338).
 - **RQ2** all 11 roles active now (D-339), so §7 "start small" is replaced.
 - **RQ3** Keuangan or the owner confirms payments (D-340).
-- **RQ4** support may view school data without a school grant: read-only, logged, visible to the school, health and religion hidden (D-341), which replaces §4.
+- **RQ4** support may view school data under the school MoU: read-only, health and religion hidden, one internal row per support session, no log shown to schools (D-341). This replaces §4.
 - **RQ5** partner programme for teacher communities (incl. KKG/KKM) and resellers, designed later (D-342).
-- **RQ6** 2FA required for owner and admin only (D-343).
+- **RQ6** 2FA with an authenticator app (TOTP), required for owner and admin, optional for others and later for teachers; no recovery codes; a SIGRAK admin resets it (D-343).
 
 
 | # | Question | Options |

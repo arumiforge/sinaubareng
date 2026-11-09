@@ -119,7 +119,7 @@ Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 Reason: see `docs/final/ai-provider-engine.md`. Awaiting owner review.
 
 ### D-023 — AI keys: Gemini free tier only
-Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged) · limited student data for assessment AI, conditional, by D-347
+Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged)
 Only Google Gemini keys are accepted, and the design targets the free tier: few calls per generation, stable models only, no background pings. Multi-key rotation stays, at the teacher's own risk. Google's API terms forbid circumventing limits, so the second and later keys need explicit consent. No student personal data goes into prompts, because free-tier prompts may be read by Google's reviewers. AI users are adults (teachers) only.
 Reason: owner's decision; Gemini API Additional Terms and Google APIs Terms checked 2026-10-30.
 
@@ -1610,21 +1610,19 @@ Accepted · 2026-11-09 · P4-17 · owner's choice (RQ3)
 Penjualan records a payment claim; Keuangan confirms it, or the owner while no one holds the Keuangan role.
 Reason: the person who records a payment is not the one who confirms it.
 
-### D-341 — Support may view school data without a school grant
-Accepted · 2026-11-09 · P4-17 · owner's choice (RQ4)
-Support can open a school's view read-only without the school granting access first. Every view is written to the audit log, and the school can see that log. Health and religion data stay hidden (D-036, D-215). The privacy notice for schools says that Tim SIGRAK support can view school data to help them.
-Reason: owner's choice; faster help. The log and the notice keep it transparent.
-
+### D-341 — Support may view school data under the school MoU
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ4, refined the same day)
+Support can open a school's view read-only without a separate grant, because the MoU signed with each school says Tim SIGRAK support helps the school, including viewing its accounts and data. Religion and health data stay hidden (D-036, D-215). No access log is shown to schools. Tim SIGRAK keeps one internal row per support session (staff member, school, start and end time), not per page view.
+Reason: many schools will ask for help; the MoU covers access, and a per-session row is small enough to keep.
 ### D-342 — Partner programme: teacher communities and resellers
 Accepted · 2026-11-09 · P4-17 · owner's choice (RQ5)
 Partners (*Mitra*) are teacher communities, including KKG and KKM, and resellers. They get a referral code and a partner report, not a console account. Terms and rewards are designed in a later task.
 Reason: owner's choice; partners reach schools in their region.
 
-### D-343 — 2FA for owner and admin
-Accepted · 2026-11-09 · P4-17 · owner's choice (RQ6)
-Two-factor sign-in is required for the Pemilik and Admin roles and optional for the other staff roles.
-Reason: owner's choice; the strongest powers get the strongest sign-in.
-
+### D-343 — 2FA with an authenticator app (TOTP)
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ6, refined the same day)
+Two-factor sign-in uses a 6-digit code from an authenticator app (TOTP, for example 482 913), built with a mature library (Laravel Fortify), not our own engine. It is required for the Pemilik and Admin roles now and optional for other staff. It can later be offered to every account, teachers included, since teachers already know this flow. There are no recovery codes: a user who loses access asks a SIGRAK admin, who resets the 2FA so the user can enrol the authenticator again. Every reset is logged.
+Reason: familiar to teachers, standard, and simple to support.
 ### D-344 — Peta Asesmen is one curated dataset
 Accepted · 2026-11-09 · P4-18 · owner's choice (AQ1)
 The assessment taxonomy (domains, purposes, methods, media, scoring, uses) lives in `docs/data/assessment/` with `status: draft` until Tim Validasi review, plus `docs/drafts/assessment-landscape.md`. The owner's MAP-01…MAP-08 codes are kept as section references, not separate documents. Every instrument carries its tags.
@@ -1640,11 +1638,10 @@ Accepted · 2026-11-09 · P4-18 · owner's choice (AQ3), follows D-024
 New templates, one per kind: Rubrik Kinerja (practice, demonstration, project, product, MI ibadah practice), Observasi DPL (behaviour indicators per dimensi profil lulusan, observed several times, shown as trends), Cek Kesiapan Awal (grade 1 and new students; result is a profile, not a score), Akomodasi Murid (per-student accommodations), and self and peer assessment cards.
 Reason: covers what written tests cannot measure.
 
-### D-347 — AI in assessment may use limited student data
-Accepted · 2026-11-09 · P4-18 · owner's choice (AQ4), amends D-023 for assessment only
-Now: teacher-side AI makes instruments, tags misconceptions, and drafts feedback from class patterns. Approved direction: assessment AI may use a minimal set of student data (name and class number only, never religion, health, or sensitive results) so the teacher need not match names on paper to the roster by hand. Reading handwriting, voice, and essays comes later. Before any student data goes to an AI provider, the route must have terms that allow it. The Gemini unpaid tier asks users not to submit personal information and may have people review inputs, so it does not qualify. Options are a paid tier or provider with a data agreement, on-device recognition, or matching by class number and QR (as Pindai LJK, D-287). PromptDataGuard stays on for every other template.
-Reason: owner's choice to save teachers' checking time; the provider condition keeps it within the provider's terms and UU PDP.
-
+### D-347 — Assessment AI without student data; names read on the device
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ4, refined the same day), keeps D-023
+Teacher-side AI makes instruments, tags misconceptions, and drafts feedback from class patterns. Student names on paper are read by text recognition on the teacher's device and matched to the roster there, so the teacher need not check names by hand. Multiple-choice answers are read by OMR on SIGRAK's own server (Pindai LJK, D-286). The text of an essay answer, without any student data, may be sent to Google AI for scoring help, and the teacher decides the score. Reading handwriting and voice with AI comes later. No student personal data goes to an AI provider (D-023).
+Reason: saves teachers' checking time while staying inside the Gemini terms and UU PDP.
 ### D-348 — GPK is a teacher assignment
 Accepted · 2026-11-09 · P4-18 · owner's choice (AQ5)
 A guru pendamping khusus is a teacher assigned to certain students, not a new school role. School roles stay teacher, principal, operator, supervisor.

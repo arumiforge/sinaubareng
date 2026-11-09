@@ -192,7 +192,7 @@ Answered on 2026-11-09:
 - **AQ1** one dataset (D-344).
 - **AQ2** a separate design task, P4-19 (D-345).
 - **AQ3** all instrument templates (D-346).
-- **AQ4** teacher-side AI now. Limited student data (name and class number) is approved for assessment AI, but only through a provider route whose terms allow it; reading handwriting, voice, and essays comes later (D-347).
+- **AQ4** teacher-side AI now. Names are read on the device, multiple choice by OMR on SIGRAK's server, and essay text without student data may go to Google AI; reading handwriting and voice with AI comes later (D-347).
 - **AQ5** GPK as a teacher assignment (D-348).
 - **AQ6** offline entry (D-349).
 - **AQ7** health-data rule (D-350).
