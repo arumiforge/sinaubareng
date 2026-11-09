@@ -94,6 +94,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-25 | Developer handbook (whole SIGRAK process) + Indonesian PDF (D-361) | done | sky/optimistic-thompson-2qmlfz | D-352…D-360 | `docs/final/developer-handbook.md`, `docs/pdf/developer-handbook.pdf` |
 | P4-26 | Research digest of all research so far + Indonesian PDF (D-362) | done | sky/optimistic-thompson-2qmlfz | — | `docs/final/research-digest.md`, `docs/pdf/research-digest.pdf` |
 | P4-27 | Remove the legacy brand from current files (D-360) | done | sky/optimistic-thompson-2qmlfz | — | code, data, sources, docs, PDFs |
+| P4-28 | SIGRAK curriculum dataset: one format, SIGRAK codes, curation per subject, crosswalk, SIGRAK catalogs (incl. P4-15) | in-progress | sky/optimistic-thompson-2qmlfz | D-140, D-360 | `tasks/P4-28-sigrak-curriculum-dataset.md` |
 | P4-22 | Data: `docs/data/taxonomy/` seed (facets A–H, codes, strengths, crosswalks) + regulation registry JSON, Tim Validasi review | todo | — | P4-21 answers | `docs/data/taxonomy/` |
 | P4-23 | Get and extract missing regulations (Permendikdasmen 1/2026, 10/2025, 12/2025, 26/2025, 9/2026, 6/2026; base 12/2024, 21/2022, BSKAP 046/H/KR/2025; verify KMA 512/2026) | todo | — | — | `docs/sources/`, `docs/data/regulations/` |
 | P4-24 | Apply accepted P4-21 answers to `docs/final/` (product-concept, data-model, architecture, content-engine) + Indonesian PDFs | todo | — | P4-21 answers | `docs/final/*.md`, `docs/pdf/` |
