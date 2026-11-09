@@ -1,7 +1,7 @@
 # P4-16 — LKPD exploration
 
 - **Phase:** P4
-- **Status:** in-progress
+- **Status:** review
 - **Owner:** sky/determined-bardeen-p9fbn7
 - **Depends on:** D-024 (one template per content type), D-296 (LKPD blocks for grades 1–3)
 - **Can run in parallel with:** P4-14, P4-15
@@ -22,13 +22,13 @@ Explore LKPD forms that change what students do, not only how the paper looks, f
 
 ## Done when
 
-- [ ] Catalogue of LKPD forms by format and grade, with the student experience each changes
-- [ ] Tested 2025–2026 Indonesian SD studies mapped to feature ideas
-- [ ] Third-party AR/VR/interactive embed options with risks
-- [ ] Clash check against existing decisions
-- [ ] Risks, strengths, and weaknesses of the starter-then-adapt model
-- [ ] Owner questions listed
+- [x] Catalogue of LKPD forms by format and grade, with the student experience each changes
+- [x] Tested 2025–2026 Indonesian SD studies mapped to feature ideas
+- [x] Third-party AR/VR/interactive embed options with risks
+- [x] Clash check against existing decisions
+- [x] Risks, strengths, and weaknesses of the starter-then-adapt model
+- [ ] Owner questions answered (§13, Q1–Q9)
 
 ## Result
 
-Filled in on finish.
+Draft written 2026-11-09 in `docs/drafts/lkpd-exploration.md`: student-experience shift, five formats, 18 patterns in five groups, block library for grades 4–6, local-context profile and kokurikuler link, starter-then-adapt flow with school presets, research basis (~35 tested studies, evidence strength per pattern, caveats), third-party AR/VR/3D/simulation shortlist and risks, clash check C1–C16, strengths/weaknesses/risks R1–R11, phasing (v1 unchanged, Waves 1–3), owner questions Q1–Q9. Open: owner answers; manual checks of Assemblr EDU plans, PhET and GeoGebra commercial licences, Wordwall embed on the free plan.

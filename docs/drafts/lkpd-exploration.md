@@ -39,6 +39,8 @@ The owner listed five formats. They are not separate products; one LKPD can be p
 
 ## 4. Pattern catalogue (*Bentuk LKPD*)
 
+Evidence per pattern is in §8.2. Local-context, unplugged CT, model-based, and differentiated patterns have tested studies; escape room, treasure hunt, board game, and lapbook (G2–G4, S4) are good classroom practice but have no tested SD study from 2025–2026.
+
 Prep: ● low (print and go) ●● medium (cutting, grouping) ●●● high (stations, materials, devices). Grades: A = Fase A (1–2), B = Fase B (3–4), C = Fase C (5–6).
 
 ### 4.1 Literacy
@@ -129,7 +131,83 @@ This keeps D-013: patterns and blocks live in code; a school preset is a saved d
 
 ## 8. Research basis
 
-To be filled from the literature search (§8.1 by theme, §8.2 caveats).
+Literature scan on 2026-11-09 of Indonesian journal articles from 2025–2026 on LKPD/e-LKPD for SD/MI with a trial. About 60 primary studies and 6 reviews were found. The list below holds the most useful ones. Each abstract was read on the journal site; the full methods sections were not. Abbreviations: Val = validity, NG = N-gain (Hake), *Pendas* = *Pendas: Jurnal Ilmiah Pendidikan Dasar* (Unpas), JPPGSD = *Jurnal Penelitian Pendidikan Guru SD* (Unesa), JPPSD = *Jurnal Pendidikan & Pembelajaran SD* (UNM).
+
+### 8.1 Studies by theme
+
+| Theme | Study | Grade, form | Result | Supports |
+|---|---|---|---|---|
+| Literacy | Syahputri et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/52308/30269) | IV, print LKPD on local Riau stories, reading comprehension | Val 77–98%, NG 0.74 | L1, L5, local context |
+| Literacy | Lestari & Rigianti 2026, *CJPE* 9(1), [link](https://e-journal.my.id/cjpe/article/download/8015/5135/38784) | V, deep-learning LKPD, reading and writing | Pre 52 → post 72, one class | L1, L2 |
+| Literacy | Zahranisa & Damayanti 2025, JPPGSD 13(3), [doi](https://doi.org/10.26740/jppgsd.v13i3.68449) | I, interactive early-reading module by level | NG 0.66 (still developing readers), 0.82 (proficient) | L3, L5, D1 |
+| Numeracy | Siswardani et al. 2025, *Pendas* 10(4), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/37391/22839) | III, numeracy e-LKPD on multiplication | NG 0.69 | N1, N2 |
+| Numeracy | Markhamah et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/52097/30123) | III, numeracy with Islamic values | NG 0.54, t-test p = 0.000 | MI overlay (D-142) |
+| Numeracy | Handayani et al. 2026, *Didaktika* 15(1), [doi](https://doi.org/10.58230/27454312.3431) | V, ethnomathematics with a batik motif, plane shapes | NG 0.80, Wilcoxon p < 0.05 | N5 |
+| Game | Kalyana et al. 2026, JPPGSD 14(5), [doi](https://doi.org/10.26740/jppgsd.v14i5.77872) | V, game e-LKPD with levels, ecosystems, n = 24 | NG 0.65 | G1 |
+| Game | Alawiah et al. 2026, *CJPE* 9(2), [link](https://e-journal.my.id/cjpe/article/view/8819) | IV, traditional game "Simar", mixed operations, two schools | Validity only | G3, G5, local context |
+| Game (review) | Isti'ana et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/52771/31855) | SLR, 23 studies on gamified e-LKPD | Moderate–high NG; points and instant feedback raise motivation | G1, G2 |
+| Digital | Inanta et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/52516/30338) | V, Liveworksheets guided inquiry | NG 0.78 | Offline HTML self-check |
+| Digital | Noor et al. 2025, *J. Educ. Sciences* 9(4), [link](https://jes.ejournal.unri.ac.id/index.php/JES/article/download/581/424) | IV, Liveworksheets, Pendidikan Pancasila, three schools | Mann–Whitney p = 0.000 | Instant feedback |
+| Digital | Rahma et al. 2025, *Paedagogi* 11(2), [link](https://jurnal.unimed.ac.id/2012/index.php/PAEDAGOGI/article/view/66767/28877) | V, IPAS "Daerahku Kebanggaanku" | NG 0.79 | Local context |
+| Hybrid | Nugroho et al. 2025, *JPIM* 2(1), [link](https://ojs.ruangpublikasi.com/index.php/jpim/article/view/611) | IV, printed IPS LKPD with QR codes | NG 0.76 | `qr_link` |
+| Hybrid (review) | Afifah & Hasyim 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/view/59844) | SLR, 20 studies on QR e-LKPD | Positive on motivation; narrative only | `qr_link` |
+| Deep learning | Rosyada & Rezania 2026, *Elementary School* 13(1), [link](https://es.upy.ac.id/index.php/es/article/download/4684/2772/12935) | IV, IPS | NG 0.61, p < 0.001 | Three-experience steps |
+| Deep learning | Isnaeni & Indrawati 2026, JPPGSD 14(9), [doi](https://doi.org/10.26740/jppgsd.v14i9.80935) | III, multiplication, n = 30 | NG 0.41 | Three-experience steps |
+| Deep learning | Karnila et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/view/60615) | V, qualitative | Barriers: time, facilities, mixed ability | Low-prep patterns, D1 |
+| Needs | Putri, Wiguna & Suardipa 2026, *Cetta* 9(2), [link](https://jayapanguspress.penerbit.org/index.php/cetta/article/download/5457/2611/23906) | II, needs analysis (4 teachers, 48 students) | Users asked for pictures, simple instructions, short video, instant feedback, step-by-step work, phone access | Wizard defaults, blocks |
+| Local | Nomleni et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/57378/34736) | III, Timor (NTT) ceremony, Pendidikan Pancasila | NG 0.68 | Local context |
+| Local | Wiratama et al. 2025, *Mitra PGMI* 11(1), [doi](https://doi.org/10.46963/mpgmi/v11i1.2380) | MI, ethnoscience e-LKPD, with a control class | NG 0.79, p = 0.001 | Local context, MI |
+| Local | Purwanti et al. 2026, *Al-Madrasah* 10(2), [doi](https://doi.org/10.35931/am.v10i2.6448) | V, Lampung local ecosystem, 27 vs 27 students | NG 0.68 vs 0.52 (control) | Local context |
+| Local | Sutriono et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/47440/26618/173393) | V, Javanese culture e-LKPD, needs survey | 70% of students bored by monotonous LKPD; 65% found non-contextual LKPD hard | Why patterns matter |
+| Model | Hafshah et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/view/63580) | IV, PjBL, number patterns, n = 28 | NG 0.76 | S2 |
+| Model | Nuwair et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/59498/33316) | RADEC with LKPD, 24 vs 24 students | NG 0.64 vs 0.25, p = 0.000 | Model presets |
+| Model | Agustina et al. 2026, *SSA* 4(1), [link](https://ejournal.insuriponorogo.ac.id/index.php/ssa/article/view/9546) | IV, TaRL LKPD, n = 16 | NG 0.62 | D1 |
+| Model | Apriliana et al. 2025, *JPMS* 13, [doi](https://doi.org/10.21831/jpms.v13iSpecial_issue.89002) | V, STEM, quasi-experiment, n = 47 | Effect size 0.63 | S1, S3 |
+| AR | Nanda et al. 2026, *Elementary* 6(2), [doi](https://doi.org/10.51878/elementary.v6i2.10013) | IV, LKPD with Assemblr EDU, plant parts, n = 37 | Val 88–100%, response 93% | §9 Assemblr |
+| AR | Anggraini et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/57274/32244) | V, AR LKPD, volume of cubes and cuboids | Post-test effectiveness 90% | `model-viewer` |
+| Unplugged CT | Fahrudin et al. 2026, *JUDIKDAS* 5(2), [doi](https://doi.org/10.51574/judikdas.v5i2.5688) | IPAS, grid maps and instruction cards, 60 students with a control class | NG 0.63 vs 0.34 | S5 (strongest design found) |
+| Unplugged CT (review) | Meyrena et al. 2025, *Pendas* 10(4), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/36104/25242/164534) | SLR, 13 studies | Consistently effective; suits low-tech schools | S5, D-208 |
+| CT | Saputra et al. 2025, *J. Review Pend. Dasar* 11(2), [doi](https://doi.org/10.26740/jrpd.v11n2.p184-207) | IV, problem-solving worksheets for CT, fractions, n = 23 | NG 0.42, Cohen's d 1.18 | S5 |
+| AI use | Putri, Dwiani et al. 2026, *Pendas* 11(3), [link](https://journal.unpas.ac.id/index.php/pendas/article/download/62646/36846) | Teachers and students, qualitative | Teachers use AI most to plan modul ajar and LKPD; risks of dependency and misinformation | Teacher-side AI with review |
+| Inclusive | Sa'diyah & Arifin 2025, *Educate* 10(1), [doi](https://doi.org/10.32832/educate.v10i1.18159) | Slow learners, case study | Same material, easier questions per student | D1 "Mulai" path |
+| Science (review) | Fikria et al. 2026, *Pendas* 11(2), [link](https://journal.unpas.ac.id/index.php/pendas/article/view/45152) | SLR, 20 studies on LKPD in IPA SD | Moderate–high NG; PBL, discovery, STEM, and technology-based forms the most effective | Model presets |
+
+### 8.2 What the evidence supports, and how strongly
+
+| Pattern or feature | Evidence |
+|---|---|
+| Local context (§6) | **Strongest and most consistent:** many studies across regions, including two with a control class |
+| Unplugged CT (S5) | **Strong:** a controlled study plus a review |
+| Learning-model presets (PBL, PjBL, RADEC, TaRL, STEM) | Good: many one-group studies, a few with control classes |
+| Deep-learning steps | Moderate: one-group studies, NG 0.41–0.61 |
+| Digital self-check / instant feedback | Moderate: many Liveworksheets studies; the effect may partly be novelty |
+| QR hybrid | Moderate: one trial plus a narrative review |
+| Differentiated paths (D1) | Moderate: TaRL and slow-learner studies, small samples |
+| AR | Weak: validity and practicality only, or post-test only |
+| Game mechanics (G1) | Moderate for digital levels; **no tested escape-room, treasure-hunt, or board-game LKPD for SD found** (G2–G4 are practice-based) |
+| Lapbook, foldable, pop-up (S4) | **Not tested as LKPD**; only as "media" |
+| Kokurikuler / P5 LKPD | **No field trial found** |
+| Special-needs LKPD | **No tested study found** beyond one case study |
+
+### 8.3 Caveats
+
+1. **Small designs.** Most studies are R&D (ADDIE or 4D) in one school, often one class of 10–30 students, with a one-group pre/post test and no control group. Only a handful had a comparison class.
+2. **Weak validity.** Validity comes from 2–3 expert validators, often colleagues of the authors. Some report impossible numbers (for example "102%").
+3. **Practicality ceiling.** Practicality is a satisfaction questionnaire, almost always 85–100%: a ceiling and novelty effect, not usage data.
+4. **"Effective" means different things:** N-gain, mastery above KKTP, or a post-test percentage. N-gain usually sits between 0.4 and 0.8.
+5. **No retention studies.** No delayed post-tests, no replications in other schools, and no use by teachers outside the research team.
+6. **Positive bias.** Almost every study concludes "valid, practical, effective". Many come from student theses and fast journals.
+7. **Terminology.** "Deep learning" in these papers means the 2025 pedagogical approach, not AI.
+8. **Regional skew.** Regional coverage skews to Java, Sumatra, and NTT. The sample also leans on *Pendas* (Unpas) because its PDFs download freely.
+9. **No pooled meta-analysis.** No true 2025–2026 meta-analysis that pools LKPD effects for SD was found.
+
+So SIGRAK should present these studies as **inspiration and direction, not proof** (R10), and measure its own use.
+
+### 8.4 Feature ideas that come straight from the literature
+
+- **Learning-model presets** inside the LKPD wizard, reusing the RPM's model choice (PBL, PjBL, Inkuiri/Discovery, Problem Solving, GBL), and later RADEC, TaRL, CTL, and STEM.
+- **Instant self-check** for closed items in the offline HTML (code lock, auto-check).
+- **Uji LKPD helper** (optional, later): the dominant research method among teachers doing PTK or *skripsi* is a pre/post test with N-gain. A small helper could compute N-gain from Asesmen scores of a class before and after an LKPD, with no new student data. This is a candidate only; it is not in the current scope.
 
 ## 9. Third-party AR, VR, 3D, and simulations
 
@@ -254,8 +332,8 @@ Web scan of 2025–2026 vendor pages, checked 2026-11-09. Prices and plan limits
 | Wave | Scope | Fits |
 |---|---|---|
 | **v1 (P5-05, unchanged)** | LKPD as decided + D-296 blocks for grades 1–3. Add only the `pattern` field to the output schema so later waves need no migration | Current plan |
-| **Wave 1 (v1.x)** | 6 print-first patterns with low prep: Detektif Teks (L1), Peta Cerita (L2), Data Kelasku (N3), Misi Petualangan (G1), Tiga Jalur (D1), Tiket Keluar (D2). Numeracy and literacy blocks. Local context profile + Kudus/Jepara/Pati seed lists. Wizard suggests patterns from the RPM model | Literacy and numeracy first; cheapest to build |
-| **Wave 2** | Kotak Terkunci (G2) with the offline HTML self-check, Pasar Numerasi (N1), Lab Mini (S1), Jurnal Proyek (S2) linked to the kokurikuler variant, Pikir Komputasional (S5). `qr_link` block with an allowlist. `ifp_step` to Game kelas. School presets | Hybrid and kokurikuler |
+| **Wave 1 (v1.x)** | 7 print-first patterns with low prep and the best evidence (§8.2): Detektif Teks (L1), Peta Cerita (L2), Data Kelasku (N3), Etnomatematika (N5), Misi Petualangan (G1), Tiga Jalur (D1), Tiket Keluar (D2). Learning-model presets reuse the RPM model. Numeracy and literacy blocks. Local context profile + Kudus/Jepara/Pati seed lists. Wizard suggests patterns from the RPM model | Literacy and numeracy first; cheapest to build |
+| **Wave 2** | Kotak Terkunci (G2) with the offline HTML self-check, Pasar Numerasi (N1), Lab Mini (S1), Jurnal Proyek (S2) linked to the kokurikuler variant, Pikir Komputasional (S5, strong evidence, D-208). `qr_link` block with an allowlist. `ifp_step` to Game kelas. School presets | Hybrid and kokurikuler |
 | **Wave 3** | Self-hosted H5P player and `model-viewer` 3D/AR with a curated model library; embeds of PhET, GeoGebra, YouTube nocookie, and Assemblr after its terms are checked; remaining patterns; more regions' seed lists | New technology |
 | **Later / needs decision** | Student answers from a device, a public QR redirect, a cross-school preset marketplace, TTS audio | C1, C9, C15 |
 
