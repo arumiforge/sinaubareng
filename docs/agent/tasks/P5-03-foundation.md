@@ -1,7 +1,7 @@
 # P5-03 — Slice 1: Foundation
 
 - **Phase:** P5
-- **Status:** done
+- **Status:** in-progress (reopened 2026-11-09 for P5-03i and P5-03j, D-252)
 - **Owner:** pw/lucid-fermi-pxp4d5
 - **Depends on:** P5-01
 - **Can run in parallel with:** P5-02
@@ -33,8 +33,10 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | done |
 | P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the EDUNEXA portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | done |
 | P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | done |
+| P5-03i | Calendar (D-252…D-261): `national_holidays` and `calendar:import-holidays` after the online SKB check (D-254); region reference calendars for Kudus, Jepara, Pati; "Salin dari kalender wilayah" and "Terapkan perubahan wilayah"; `calendar_events.class_id`; `EffectiveDays`; `ConflictChecker`; impact preview. Plan in `docs/drafts/edunexa-upgrade-01.md` §2.1 | e | `app/Calendar`, migrations, operator and wali kelas pages, console page, tests | todo |
+| P5-03j | Draft timetable generator (D-262): one class or all, draft with comparison, reasons for unplaced JP, preference switches per school, `default` queue job | e, i | Action, job, operator UI, property tests against D-248…D-251 | todo |
 
-Not in this slice: students and enrollments, school calendar (Kaldik), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
+Not in this slice: students and enrollments, the school calendar beyond P5-03i, school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 
 ## Done when
 

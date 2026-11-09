@@ -1,13 +1,13 @@
 # EDUNEXA Upgrade: Decision Coordination (usulan-01 + Part B)
 
-- **Status:** in progress · coordinator session `claude/review-proposal-coverage-tzqbk4`
+- **Status:** done 2026-11-09 · all six sessions answered; outcome in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md), decisions D-252…D-322
 - **Task:** P4-13 (proposal → decisions; no app code)
 - **Last updated:** 2026-11-09
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (Indonesian, owner source, items U-01…U-15, open questions T-1…T-11), [`usulan-01/data/`](../sources/usulan-01/data/README.md), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B, items B-01…B-16, owner answers Q1…Q10)
 
 ## Purpose
 
-Two proposals reached the repo on the same day and overlap. The session that produced usulan-01 (an EDUNEXA portal walk-through) also raised ideas that neither file carries. This file lists what is covered, what conflicts, and how the open decisions are split across parallel sessions. Nothing here is decided yet; existing decisions win until the owner rules (usulan-01 §0.3).
+Two proposals reached the repo on the same day and overlap. The session that produced usulan-01 (an EDUNEXA portal walk-through) also raised ideas that neither file carries. This file records what was covered, what conflicted, and how the decisions were split across parallel sessions. It is kept as the record of the process; the outcome is in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md).
 
 ## 1. Conflicts between the two proposals
 
@@ -69,6 +69,20 @@ Already covered by Part B: transfer rules (B-14), Kabar actions (B-12, partly G-
 
 Rules for every session: interview the owner in small rounds (one topic at a time, a recommendation first); change nothing in the repo; send the result to the coordinator, which assigns D-numbers (from D-252) and asks the owner before applying anything.
 
+## 4. Outcome
+
+| Session | Answered | Decisions |
+|---|---|---|
+| S1 Completeness and RPM flow | 4 rounds | D-263…D-273, D-276, D-277 (class events merged into D-258) |
+| S2 Calendar and timetable | 4 rounds | D-252…D-262 |
+| S3 Package, print, approval | 4 rounds | D-278…D-285 |
+| S4 Assessment and rapor | 5 rounds | D-286…D-295 |
+| S5 Kelas Saya and homeroom | 5 rounds | D-297…D-305 |
+| S6 Portals and console | 4 rounds | D-308…D-321 |
+| Coordinator | Part B answers without a session, G-23, final round | D-274, D-275, D-296, D-306, D-307, D-322; Berkas range, retention and revoke rules in D-278 and D-281; attendance rule in D-303; retention floors in D-318 |
+
+Conflicts C-1…C-9 and gaps G-1…G-24 are all closed (see the map in `edunexa-upgrade-01.md` §2–3).
+
 ## Open questions
 
-- Each session's result is pending. The coordinator merges them into one apply plan: `docs/drafts/edunexa-upgrade-01.md`, D-252 onward, task files, and the doc updates in usulan-01 §6.2 and Part B §5.
+- None for this process. Remaining data and build questions are in `edunexa-upgrade-01.md`.

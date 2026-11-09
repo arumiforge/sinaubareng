@@ -1,6 +1,6 @@
 # EDUNEXA Overlap: Adjustments to Same or Similar Features (Part B)
 
-- **Status:** draft; owner answered Q1–Q10 on 2026-11-09 (§4); ready to record as D-numbers and apply
+- **Status:** decided 2026-11-09 · recorded in D-252…D-322 via [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md); Q5 replaced by D-286 (scanning is core in P5-08)
 - **Task:** proposal, not yet a task (Part B of the EDUNEXA comparison)
 - **Last updated:** 2026-11-09
 - **Read with:** [`product-concept.md`](../final/product-concept.md#feature-status) (fate of the 43 EDUNEXA features), [`content-engine.md`](../final/content-engine.md), [`data-model.md`](../final/data-model.md), [`administration-features.md`](administration-features.md) (P4-04, D-210…D-221), [`ifp-classroom.md`](../final/ifp-classroom.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
