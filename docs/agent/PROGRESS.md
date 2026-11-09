@@ -85,6 +85,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-13 | EDUNEXA upgrade decisions: usulan-01 (U-01…U-15) + Part B (B-01…B-16) + walk-through gaps, owner interviews in six parallel sessions | review | claude/review-proposal-coverage-tzqbk4 | D-251 | `docs/drafts/edunexa-upgrade-01.md`, `edunexa-coordination.md`, D-252…D-328 |
 | P4-14 | Apply the EDUNEXA upgrade to `docs/final/` and drafts (list in `edunexa-upgrade-01.md` §4) + Indonesian PDFs | todo | — | P4-13 | `docs/final/*.md`, `docs/pdf/` |
 | P4-15 | Import the EDUNEXA catalogs (kokurikuler, ekstrakurikuler, class inventory, form options) to `docs/data/catalogs/`, Tim Validasi review (D-305) | todo | — | — | `docs/data/catalogs/` |
+| P4-16 | LKPD exploration: new LKPD forms (print, no-device, digital, hybrid, new tech), tested 2025–2026 Indonesian SD studies, third-party AR/VR embeds, local context, starter-then-adapt model, risks, clash check | in-progress | sky/determined-bardeen-p9fbn7 | D-024, D-296 | `docs/drafts/lkpd-exploration.md` |
 
 ### Phase 5 — v1 build · todo
 
