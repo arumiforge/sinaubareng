@@ -1,0 +1,326 @@
+{
+  "dataset": "teaching_administration_components",
+  "version_code": "KOMPONEN-ADM-KUDUS-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "kepala-sekolah/principal-supervision.js",
+        "bytes": 159572,
+        "sha256": "451fc3cdf6b378d41f01698dc1688b1ef2d455778f3398e02f74621cdd1f7aae"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK (D-113)",
+    "note": "Konstanta ADM_KELAS (24 komponen, guru kelas) dan ADM_MAPEL (18 komponen, guru mapel) pada instrumen Telaah Administrasi 'format Kudus', skala 1–5. Kolom sigrak_* adalah usulan pemetaan, bukan isi sumber."
+  },
+  "scale_in_source": "1–5 per komponen; skor terisi otomatis dari progres guru bila kunci sumber terisi, selain itu manual",
+  "sigrak_instruments": "docs/drafts/teacher-supervision-instruments.md S-01 (10 butir, 0–2) dan S-15 (12 butir, 0–2)",
+  "guru_kelas": [
+    {
+      "order": 1,
+      "edunexa_label": "Kalender Pendidikan",
+      "edunexa_source_key": "kaldik",
+      "sigrak_label": "Kalender pendidikan dan rincian minggu efektif",
+      "sigrak_source": "calendars + calendar_events + tabel hari efektif (U-05)",
+      "sigrak_instrument_item": "S-01.1"
+    },
+    {
+      "order": 2,
+      "edunexa_label": "Notulen Rapat",
+      "edunexa_source_key": "minutes",
+      "sigrak_label": "Notulen rapat",
+      "sigrak_source": "school_books (notulen)",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 3,
+      "edunexa_label": "Program Tahunan",
+      "edunexa_source_key": "module|ada",
+      "sigrak_label": "Program tahunan (Prota) dan program semester (Promes)",
+      "sigrak_source": "Prota/Promes dari kurikulum + kalender (A11)",
+      "sigrak_instrument_item": "S-01.2"
+    },
+    {
+      "order": 4,
+      "edunexa_label": "Pemanfaatan Hasil Asesmen Awal",
+      "edunexa_source_key": "initial-assessment",
+      "sigrak_label": "Hasil asesmen diagnostik dan pemanfaatannya",
+      "sigrak_source": "asesmen diagnostik (A2)",
+      "sigrak_instrument_item": "S-01.4 (dilipat ke perencanaan)"
+    },
+    {
+      "order": 5,
+      "edunexa_label": "CP, ATP dan Perencanaan Pembelajaran (intra & kokurikuler)",
+      "edunexa_source_key": "module",
+      "sigrak_label": "CP, ATP, dan perencanaan pembelajaran (RPM) intrakurikuler dan kokurikuler",
+      "sigrak_source": "documents (RPM, kokurikuler)",
+      "sigrak_instrument_item": "S-01.3, S-01.4"
+    },
+    {
+      "order": 6,
+      "edunexa_label": "Bahan Ajar/Buku Guru dan Buku Siswa",
+      "edunexa_source_key": "bahan-ajar",
+      "sigrak_label": "Bahan ajar (buku guru, buku murid, LKPD)",
+      "sigrak_source": "documents (LKPD) + daftar rujukan buku",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 7,
+      "edunexa_label": "Jadwal Pelajaran",
+      "edunexa_source_key": "schedule",
+      "sigrak_label": "Jadwal pelajaran",
+      "sigrak_source": "timetable_slots",
+      "sigrak_instrument_item": "S-01.5"
+    },
+    {
+      "order": 8,
+      "edunexa_label": "Program Penilaian",
+      "edunexa_source_key": "assessment-program",
+      "sigrak_label": "Program asesmen dan instrumen, termasuk KKTP",
+      "sigrak_source": "assessment_plans + KKTP (A3)",
+      "sigrak_instrument_item": "S-01.7"
+    },
+    {
+      "order": 9,
+      "edunexa_label": "Daftar Nilai / Hasil Asesmen",
+      "edunexa_source_key": "assessment",
+      "sigrak_label": "Daftar nilai",
+      "sigrak_source": "assessments + scores",
+      "sigrak_instrument_item": "S-01.8"
+    },
+    {
+      "order": 10,
+      "edunexa_label": "Daftar Kelas",
+      "edunexa_source_key": "students",
+      "sigrak_label": "Data murid kelas",
+      "sigrak_source": "students + enrollments",
+      "sigrak_instrument_item": "S-15.1"
+    },
+    {
+      "order": 11,
+      "edunexa_label": "Jurnal Harian",
+      "edunexa_source_key": "journal",
+      "sigrak_label": "Jurnal mengajar",
+      "sigrak_source": "journals",
+      "sigrak_instrument_item": "S-01.6"
+    },
+    {
+      "order": 12,
+      "edunexa_label": "Absensi Murid",
+      "edunexa_source_key": "attendance",
+      "sigrak_label": "Daftar hadir murid",
+      "sigrak_source": "attendance_records",
+      "sigrak_instrument_item": "S-01.10, S-15.2"
+    },
+    {
+      "order": 13,
+      "edunexa_label": "Analisis Nilai",
+      "edunexa_source_key": "assessment-analysis",
+      "sigrak_label": "Analisis hasil asesmen",
+      "sigrak_source": "analisis per TP dan butir soal (A7)",
+      "sigrak_instrument_item": "S-01.8"
+    },
+    {
+      "order": 14,
+      "edunexa_label": "Perbaikan dan Pengayaan",
+      "edunexa_source_key": "assessment-analysis|ada",
+      "sigrak_label": "Program remedial dan pengayaan",
+      "sigrak_source": "remedial/pengayaan (A1)",
+      "sigrak_instrument_item": "S-01.9"
+    },
+    {
+      "order": 15,
+      "edunexa_label": "Buku Refleksi Pembelajaran",
+      "edunexa_source_key": "reflection",
+      "sigrak_label": "Refleksi guru",
+      "sigrak_source": "refleksi semester (A4)",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 16,
+      "edunexa_label": "Data Pencapaian Target dan Daya Serap",
+      "edunexa_source_key": "assessment-taraf",
+      "sigrak_label": "Ketercapaian TP dan daya serap",
+      "sigrak_source": "analisis per TP",
+      "sigrak_instrument_item": "S-01.8"
+    },
+    {
+      "order": 17,
+      "edunexa_label": "Buku Bimbingan Konseling",
+      "edunexa_source_key": "counseling",
+      "sigrak_label": "Catatan bimbingan dan konseling",
+      "sigrak_source": "student_notes (counselling; hanya jumlah yang tampil)",
+      "sigrak_instrument_item": "S-15.5"
+    },
+    {
+      "order": 18,
+      "edunexa_label": "Buku Mutasi",
+      "edunexa_source_key": "mutation",
+      "sigrak_label": "Buku mutasi murid",
+      "sigrak_source": "mutasi murid (O2)",
+      "sigrak_instrument_item": "S-15.1"
+    },
+    {
+      "order": 19,
+      "edunexa_label": "Buku Inventaris Kelas",
+      "edunexa_source_key": "inventory",
+      "sigrak_label": "Buku inventaris kelas",
+      "sigrak_source": "class_inventory_items",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 20,
+      "edunexa_label": "Kartu Inventaris Ruang",
+      "edunexa_source_key": "inventory|ada",
+      "sigrak_label": "Kartu inventaris ruang (KIR)",
+      "sigrak_source": "class_inventory_items (cetak KIR)",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 21,
+      "edunexa_label": "Buku Kenaikan Kelas",
+      "edunexa_source_key": "promotion",
+      "sigrak_label": "Kenaikan kelas",
+      "sigrak_source": "kenaikan kelas (H3)",
+      "sigrak_instrument_item": "S-15.12"
+    },
+    {
+      "order": 22,
+      "edunexa_label": "Buku Prestasi Akademik dan Non Akademik",
+      "edunexa_source_key": "achievements",
+      "sigrak_label": "Catatan prestasi murid",
+      "sigrak_source": "student_notes (achievement)",
+      "sigrak_instrument_item": "S-15.5"
+    },
+    {
+      "order": 23,
+      "edunexa_label": "Buku Tamu Kelas",
+      "edunexa_source_key": "guest-book",
+      "sigrak_label": "Buku tamu kelas",
+      "sigrak_source": "school_books (tamu) — usulan cakupan kelas",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 24,
+      "edunexa_label": "Buku Hubungan Masyarakat",
+      "edunexa_source_key": "public-relations",
+      "sigrak_label": "Buku komunikasi dengan orang tua dan masyarakat",
+      "sigrak_source": "log pesan orang tua (H6) + school_books (humas)",
+      "sigrak_instrument_item": "S-15.7"
+    }
+  ],
+  "guru_mapel": [
+    {
+      "order": 1,
+      "edunexa_label": "Kalender Pendidikan",
+      "sigrak_label": "Kalender pendidikan dan rincian minggu efektif",
+      "sigrak_instrument_item": "S-01.1"
+    },
+    {
+      "order": 2,
+      "edunexa_label": "Notulen Rapat",
+      "sigrak_label": "Notulen rapat",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 3,
+      "edunexa_label": "Program Tahunan",
+      "sigrak_label": "Prota dan Promes",
+      "sigrak_instrument_item": "S-01.2"
+    },
+    {
+      "order": 4,
+      "edunexa_label": "Pemanfaatan Hasil Asesmen Awal",
+      "sigrak_label": "Hasil asesmen diagnostik dan pemanfaatannya",
+      "sigrak_instrument_item": "S-01.4"
+    },
+    {
+      "order": 5,
+      "edunexa_label": "CP, ATP dan Modul Ajar (mapel dan P5)",
+      "sigrak_label": "CP, ATP, dan perencanaan pembelajaran (RPM) mapel dan kokurikuler",
+      "sigrak_instrument_item": "S-01.3, S-01.4"
+    },
+    {
+      "order": 6,
+      "edunexa_label": "Bahan Ajar/Buku Guru dan Buku Siswa",
+      "sigrak_label": "Bahan ajar (buku guru, buku murid, LKPD)",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 7,
+      "edunexa_label": "Jadwal Pelajaran",
+      "sigrak_label": "Jadwal pelajaran",
+      "sigrak_instrument_item": "S-01.5"
+    },
+    {
+      "order": 8,
+      "edunexa_label": "Program Penilaian",
+      "sigrak_label": "Program asesmen dan instrumen, termasuk KKTP",
+      "sigrak_instrument_item": "S-01.7"
+    },
+    {
+      "order": 9,
+      "edunexa_label": "Daftar Nilai / Hasil Asesmen",
+      "sigrak_label": "Daftar nilai",
+      "sigrak_instrument_item": "S-01.8"
+    },
+    {
+      "order": 10,
+      "edunexa_label": "Agenda Harian",
+      "sigrak_label": "Jurnal mengajar",
+      "sigrak_instrument_item": "S-01.6"
+    },
+    {
+      "order": 11,
+      "edunexa_label": "Absensi Murid",
+      "sigrak_label": "Daftar hadir murid (tidak wajib bagi guru mapel, D-029)",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 12,
+      "edunexa_label": "Analisis Nilai",
+      "sigrak_label": "Analisis hasil asesmen",
+      "sigrak_instrument_item": "S-01.8"
+    },
+    {
+      "order": 13,
+      "edunexa_label": "Perbaikan dan Pengayaan",
+      "sigrak_label": "Program remedial dan pengayaan",
+      "sigrak_instrument_item": "S-01.9"
+    },
+    {
+      "order": 14,
+      "edunexa_label": "Buku Refleksi Pembelajaran",
+      "sigrak_label": "Refleksi guru",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 15,
+      "edunexa_label": "Buku Bimbingan Konseling",
+      "sigrak_label": "Catatan bimbingan dan konseling",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 16,
+      "edunexa_label": "Buku Inventaris Mapel",
+      "sigrak_label": "Inventaris alat/media mapel",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 17,
+      "edunexa_label": "Buku Prestasi Akademik dan Non Akademik",
+      "sigrak_label": "Catatan prestasi murid",
+      "sigrak_instrument_item": "—"
+    },
+    {
+      "order": 18,
+      "edunexa_label": "Buku Hubungan Masyarakat",
+      "sigrak_label": "Buku komunikasi dengan orang tua dan masyarakat",
+      "sigrak_instrument_item": "—"
+    }
+  ]
+}

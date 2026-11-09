@@ -1,0 +1,69 @@
+{
+  "dataset": "print_conventions_reference",
+  "version_code": "CETAK-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "edunexa-cover.js",
+        "bytes": 9099,
+        "sha256": "7661557bb709166f6c91395dc625c3b78f70ac0475ed90c246556f2abe9c4a9e"
+      },
+      {
+        "path": "kepala-sekolah/principal-document-output.js",
+        "bytes": 34517,
+        "sha256": "e68689e049dbc0c92eae649fe6af5c59ff0a951cd66d32069ce88217c11a683a"
+      }
+    ],
+    "status": "draft",
+    "note": "Aturan dibaca dari komentar dan konstanta kode. Nilai ini rujukan, bukan aturan SIGRAK."
+  },
+  "default_page_margin_mm": {
+    "top": 15,
+    "right": 12,
+    "bottom": 15,
+    "left": 25,
+    "reason": "kiri 25 mm untuk ruang jilid; dipakai bawaan Portal Kepala Sekolah"
+  },
+  "orientation": {
+    "modes": [
+      "portrait",
+      "landscape",
+      "auto"
+    ],
+    "auto_rule": "landscape bila dokumen memuat tabel dengan 9 kolom atau lebih"
+  },
+  "empty_data_rule": "Dokumen tetap terbentuk walau data kosong: tabel tanpa baris diberi satu baris 'NIHIL' selebar tabel; sel/blok keterangan kosong diganti 'NIHIL'.",
+  "cover": {
+    "applies_to": [
+      "Administrasi kelas",
+      "Penilaian",
+      "Dokumen kepala sekolah"
+    ],
+    "order_top_to_bottom": [
+      "Logo dinas",
+      "Kata 'BUKU' / judul dokumen",
+      "Kelas, mata pelajaran (bila ada), semester, tahun ajaran",
+      "Disusun oleh (nama + NIP penyusun)",
+      "Dinas pendidikan, nama sekolah, tahun dokumen"
+    ],
+    "style": "hitam-putih agar tajam di printer sekolah",
+    "orientation": "mengikuti dokumen",
+    "paper": "mengikuti pengaturan (A4/F4)",
+    "document_year_rule": "Semester 1 -> tahun pertama tahun ajaran; semester 2 -> tahun kedua; dokumen tahunan -> tahun berjalan bila masih di dalam tahun ajaran, selain itu tahun pertama.",
+    "title_rule": "Judul ditulis sebagai judul kalimat dengan kata 'BUKU' terpisah, mis. 'JADWAL PIKET KELAS' -> 'Jadwal Piket Kelas'."
+  },
+  "preview": {
+    "notes": [
+      "Bilah gulir pratinjau selalu terlihat",
+      "Jeda abu-abu di antara halaman pada pratinjau saja",
+      "Ukuran panel pratinjau mengikuti orientasi kertas",
+      "Perbesar/perkecil pratinjau"
+    ]
+  },
+  "principal_signature_block": "Pada dokumen yang sudah disahkan dan isinya tidak berubah, kode QR dan kode pengesahan dicetak di kolom tanda tangan kepala sekolah.",
+  "supervision_signature_block": "3 kolom: guru, pelaksana supervisi, kepala sekolah ('Mengetahui')"
+}

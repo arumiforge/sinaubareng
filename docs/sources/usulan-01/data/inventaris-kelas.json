@@ -1,0 +1,64 @@
+{
+  "dataset": "class_inventory_catalog",
+  "version_code": "INVENTARIS-KELAS-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "administrasi.html",
+        "bytes": 1591555,
+        "sha256": "fdac11659fdb24677d4aa9441bf16a7e50414da23ad89ac861442ff16015404a",
+        "element": "select#iv_kategori"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK sebelum diimpor (D-113)",
+    "note": "30 pilihan barang. Diubah ke istilah standar: 'Meja/Kursi Siswa' -> 'Meja/Kursi Murid' (D-210); 'Whiteboard Elektronik' -> 'Papan Interaktif Digital (IFP)'; 'Kamera Pengawas atau CCTV' -> 'Kamera Pengawas (CCTV)'. Pilihan kondisi dan sumber dana di EDUNEXA masing-masing 3, isinya belum terbaca dan diusulkan baru di bawah."
+  },
+  "items": [
+    "Meja Murid",
+    "Kursi Murid",
+    "Meja Guru",
+    "Kursi Guru",
+    "Papan Tulis",
+    "Lemari Kelas",
+    "Rak Buku",
+    "Jam Dinding",
+    "Peta Indonesia",
+    "Globe",
+    "Lambang Garuda Pancasila",
+    "Gambar Presiden dan Wakil Presiden",
+    "Tiang Bendera Kelas",
+    "Tempat Sampah",
+    "Kipas Angin",
+    "Proyektor",
+    "Layar Proyektor",
+    "Komputer atau Laptop Kelas",
+    "Speaker",
+    "Printer",
+    "Kotak P3K",
+    "Alat Peraga Pembelajaran",
+    "Papan Pajangan Kelas",
+    "Dispenser",
+    "Karpet Kelas",
+    "Rak Sepatu",
+    "Tirai atau Gorden",
+    "Papan Interaktif Digital (IFP)",
+    "Kamera Pengawas (CCTV)",
+    "Lainnya"
+  ],
+  "condition_options_proposed": [
+    "Baik",
+    "Rusak ringan",
+    "Rusak berat"
+  ],
+  "funding_source_options_proposed": [
+    "Dana sekolah",
+    "Sumbangan/hibah",
+    "Lainnya"
+  ],
+  "proposal_note": "Pilihan kondisi mengikuti istilah umum inventaris barang milik daerah (Baik, Rusak Ringan, Rusak Berat). Sumber dana sengaja tidak menyebut BOS (D-025, D-219)."
+}

@@ -1,0 +1,123 @@
+{
+  "dataset": "admin_progress_rules_reference",
+  "version_code": "PROGRES-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "edunexa-progres.js",
+        "bytes": 158672,
+        "sha256": "b8703ddfc7049355812bba616ae0a5f796f0a4484ee6e9416af434aa14bc8ebd"
+      },
+      {
+        "path": "kepala-sekolah/principal-conflict-guard.js",
+        "bytes": 11713
+      },
+      {
+        "path": "edunexa-pengesahan.js",
+        "bytes": 50794,
+        "sha256": "5f83ad12d8bd11c61cd4663aa449ace32ea0e32f79c6fd55aff121b0ee1dd47a"
+      },
+      {
+        "path": "sandi.html",
+        "bytes": 409187,
+        "sha256": "e9576057ab958c91fa984296b3e768165ef148f0457311c86033389cffc6eade"
+      },
+      {
+        "path": "edx-bunyi.js",
+        "bytes": 4669
+      }
+    ],
+    "status": "draft",
+    "note": "Ringkasan aturan dari komentar kode dan layar EDUNEXA. Untuk acuan perilaku, bukan untuk disalin."
+  },
+  "progress_engine": {
+    "single_source": "Satu mesin dipakai Portal Guru, Super Admin, dan Monitor Pengawas agar angka identik.",
+    "columns": [
+      "Target",
+      "Tersedia",
+      "Belum",
+      "Status"
+    ],
+    "targeted_rows": {
+      "Modul Ajar": "jumlah pertemuan terjadwal dalam rentang tanggal, dikurangi pertemuan yang ditandai 'tidak terlaksana' di jurnal",
+      "Jurnal Pembelajaran": "sama dengan pertemuan terjadwal sampai hari ini",
+      "Refleksi Pembelajaran": "satu refleksi terkonfirmasi per pertemuan terlaksana (sama dengan target Modul Ajar); hari Kegiatan Sekolah tidak punya pertemuan",
+      "Absensi Siswa": "hari sekolah dalam rentang (wali kelas)"
+    },
+    "exclusions": [
+      "Mapel yang diampu guru mapel pengguna aplikasi tidak dihitung sebagai target guru kelas",
+      "Mapel yang dipegang guru mapel yang belum memakai aplikasi didaftar terpisah dan tidak dihitung",
+      "Kokurikuler yang ditandai 'diampu guru mapel' menjadi target guru mapel tersebut"
+    ],
+    "untargeted_rows": "Kaldik, Jadwal, Data Siswa, Penilaian, Program Penilaian, Analisis Nilai, Taraf Serap, Bank Soal, Piket, Keuangan, Mutasi, Kenaikan, Anekdot, BK, Buku Tamu, Buku Humas, Prestasi, Notulen, Inventaris, Asesmen Awal: hanya jumlah entri",
+    "detail": "Rincian hanya menampilkan yang belum tersedia (modul, jurnal, absensi) beserta hari dan tanggalnya",
+    "principal_rows": "Dokumen kepala sekolah tanpa target: tiap baris melaporkan ada/tidak dan jumlah; persentase = baris berisi / jumlah baris; dokumen kelulusan dihitung mulai 1 Mei tahun kedua tahun ajaran"
+  },
+  "date_range_default_example": {
+    "from": "tanggal mulai tahun ajaran",
+    "to": "hari ini"
+  },
+  "not_held_meeting": "Pertemuan yang ditandai tidak terlaksana tidak dihitung target RPM dan refleksi; RPM digeser otomatis ke slot JP berikutnya.",
+  "effective_day_definition": "Hari efektif = hari yang ada jadwal pelajarannya dan tidak ditandai libur, PTS, SAS, atau kegiatan. Minggu efektif = hari efektif / hari sekolah per minggu (contoh 143 hari / 6 = 23,8 minggu).",
+  "effective_days_table_columns": [
+    "Bulan",
+    "Hari berjadwal",
+    "Libur",
+    "PTS/SAS",
+    "Kegiatan",
+    "Hari efektif"
+  ],
+  "conflict_guard": {
+    "blocks": [
+      "Jadwal pelajaran beririsan pada hari dan kelas yang sama",
+      "Supervisi beririsan jam untuk guru, kelas, atau pelaksana yang sama"
+    ],
+    "warns": [
+      "Rapat/agenda berdekatan atau bersamaan",
+      "Hari Minggu",
+      "Libur nasional/cuti bersama"
+    ],
+    "assumed_event_minutes": 60,
+    "known_limit": "Bentrok guru lintas kelas tidak terdeteksi karena jadwal tidak menyimpan guru (SIGRAK menyimpannya lewat teaching_assignments, D-249)"
+  },
+  "document_approval": {
+    "fingerprint": "SHA-256 atas teks kanonik isi dokumen cetak",
+    "qr_rule": "QR + kode pengesahan dicetak di kolom tanda tangan kepala sekolah hanya bila dokumen sudah disahkan DAN isinya identik dengan yang disahkan",
+    "verification": "halaman /v/?k=KODE (publik di EDUNEXA)",
+    "status_writer": "hanya server (Cloud Functions)"
+  },
+  "omr": {
+    "sheet": "Lembar jawaban dicetak aplikasi; 4 kotak hitam di sudut + kode QR; letak bulatan diketahui pasti",
+    "scannable": [
+      "PG",
+      "PG kompleks",
+      "Isian"
+    ],
+    "manual": [
+      "Pernyataan",
+      "Uraian"
+    ],
+    "isian_reading": "potongan kotak Isian dikirim ke Gemini dengan kunci API guru (SIGRAK mengusulkan tidak melakukan ini)",
+    "capture": "Kamera HP langsung (dibaca saat posisi stabil, pembacaan akhir dari bingkai resolusi penuh) atau foto dari galeri",
+    "review": "Semua hasil diperiksa guru, lalu 'Isi ke Tabel Analisis'",
+    "lazy_loading": "Pustaka QR dan pemindai dimuat hanya saat dipakai"
+  },
+  "completion_sound": {
+    "patterns": [
+      "Chime",
+      "Lonceng",
+      "Bip tegas"
+    ],
+    "repeat": 2,
+    "toggle": [
+      "Bunyi hidup",
+      "Bunyi mati"
+    ],
+    "screen_notification": "hanya bila tab sedang tidak terlihat; perlu izin notifikasi peramban",
+    "storage": "localStorage per perangkat"
+  }
+}

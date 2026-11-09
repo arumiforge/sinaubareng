@@ -82,6 +82,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-10 | Design: e-Rapor SD and RDM export | todo | — | D-218, P5-08 | Draft |
 | P4-11 | Design: Penyusun KSP and evaluasi KSP (after v1) | todo | — | D-209, D-217 | Draft |
 | P4-12 | Teacher supervision instruments for SD/MI (map + first draft, principal → guru kelas, guru mapel, wali kelas) | done | p4/p4-04-administration-features | D-217, D-221 | `docs/drafts/teacher-supervision-instruments.md` |
+| P4-13 | EDUNEXA upgrade decisions: usulan-01 (U-01…U-15) + Part B overlap (B-01…B-16), conflicts and gaps split over six parallel owner-interview sessions | in-progress | claude/review-proposal-coverage-tzqbk4 | D-251 | `docs/drafts/edunexa-coordination.md`, then `docs/drafts/edunexa-upgrade-01.md`, D-252… |
 
 ### Phase 5 — v1 build · todo
 

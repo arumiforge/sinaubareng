@@ -1,0 +1,228 @@
+{
+  "dataset": "form_option_lists",
+  "version_code": "PILIHAN-ISIAN-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "administrasi.html",
+        "bytes": 1591555,
+        "sha256": "fdac11659fdb24677d4aa9441bf16a7e50414da23ad89ac861442ff16015404a"
+      },
+      {
+        "path": "sandi.html",
+        "bytes": 409187,
+        "sha256": "e9576057ab958c91fa984296b3e768165ef148f0457311c86033389cffc6eade"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK (D-113)",
+    "note": "Daftar pilihan dari formulir EDUNEXA. 'edunexa' = label asli, 'sigrak' = label standar usulan."
+  },
+  "diagnostic_assessment": {
+    "edunexa_form": "Asesmen Awal",
+    "sigrak_name": "Asesmen diagnostik awal pembelajaran (A2)",
+    "cognitive": {
+      "aspects": [
+        "Literasi (membaca dan menulis)",
+        "Numerasi (berhitung dasar)"
+      ],
+      "levels": [
+        "Belum",
+        "Sebagian",
+        "Sudah"
+      ],
+      "extra": "Aspek lain dan hasilnya (opsional, teks)"
+    },
+    "non_cognitive": {
+      "learning_preference": {
+        "edunexa_label": "Gaya Belajar",
+        "sigrak_label": "Preferensi belajar",
+        "options": [
+          "Visual",
+          "Auditori",
+          "Kinestetik",
+          "Campuran"
+        ],
+        "note": "Dipakai sebagai informasi pendukung saja, bukan label tetap murid; jangan dipakai untuk mengelompokkan murid."
+      },
+      "interest_talent": "Minat dan bakat (teks)",
+      "social_emotional": {
+        "edunexa_options": [
+          "Percaya diri",
+          "Pemalu / kurang percaya diri",
+          "Mudah emosi",
+          "Sulit berkonsentrasi",
+          "Perlu perhatian khusus"
+        ],
+        "sigrak_options": [
+          "Percaya diri",
+          "Masih malu atau ragu",
+          "Perlu dukungan mengelola emosi",
+          "Perlu dukungan berkonsentrasi",
+          "Perlu pendampingan khusus"
+        ],
+        "note": "Diubah ke kalimat kebutuhan, bukan label sifat murid."
+      },
+      "home_support": [
+        "Dukungan cukup",
+        "Dukungan sedang",
+        "Dukungan kurang"
+      ],
+      "special_notes": "Catatan khusus (teks)"
+    },
+    "follow_up": {
+      "text": "Tindak lanjut (saran otomatis, bisa diubah)",
+      "status": [
+        "Direncanakan",
+        "Berjalan",
+        "Selesai"
+      ],
+      "evaluation": "Evaluasi / hasil tindak lanjut (teks)"
+    },
+    "privacy": "Isian non-kognitif tidak pernah dikirim ke AI (D-036) dan hanya terlihat guru kelas tersebut, operator, dan kepala sekolah."
+  },
+  "achievement": {
+    "fields": [
+      "Tanggal",
+      "Nama murid",
+      "Nama prestasi / lomba",
+      "Bidang",
+      "Tingkat",
+      "Peringkat / capaian",
+      "Keterangan"
+    ],
+    "fields_options": {
+      "Bidang": [
+        "Akademik",
+        "Olahraga",
+        "Seni dan budaya",
+        "Keagamaan",
+        "Keterampilan",
+        "Lainnya"
+      ],
+      "Tingkat": [
+        "Kelas",
+        "Sekolah",
+        "Kecamatan",
+        "Kabupaten/Kota",
+        "Provinsi",
+        "Nasional",
+        "Internasional"
+      ]
+    }
+  },
+  "meeting_minutes": {
+    "fields": [
+      "Tanggal",
+      "Waktu",
+      "Tempat",
+      "Jenis rapat",
+      "Agenda",
+      "Peserta",
+      "Pembahasan",
+      "Keputusan dan tindak lanjut"
+    ],
+    "meeting_types": [
+      "Rapat dewan guru",
+      "Rapat dengan orang tua/wali murid",
+      "Rapat komite sekolah",
+      "Rapat kelas",
+      "Lainnya"
+    ],
+    "note": "Label asli: 'Rapat guru', 'Rapat dengan wali murid', 'Rapat komite'."
+  },
+  "student_transfer": {
+    "edunexa": [
+      "Masuk",
+      "Keluar",
+      "Pindah Rombel"
+    ],
+    "sigrak": [
+      "Mutasi masuk",
+      "Mutasi keluar",
+      "Pindah rombongan belajar"
+    ]
+  },
+  "assessment_kinds_bank_soal": {
+    "edunexa": [
+      "Penilaian Harian",
+      "Perbaikan",
+      "Pengayaan",
+      "Sumatif Tengah Semester",
+      "Sumatif Akhir Semester",
+      "Ujian Sekolah / Madrasah"
+    ],
+    "sigrak": [
+      "Asesmen sumatif lingkup materi",
+      "Remedial",
+      "Pengayaan",
+      "Asesmen sumatif tengah semester (STS)",
+      "Asesmen sumatif akhir semester (SAS)",
+      "Asesmen akhir jenjang (sesuai kebijakan satuan pendidikan)"
+    ]
+  },
+  "item_types": {
+    "edunexa": [
+      "Pilihan Ganda",
+      "PG Kompleks",
+      "Benar Salah",
+      "Isian Singkat",
+      "Uraian"
+    ],
+    "sigrak": [
+      "Pilihan ganda",
+      "Pilihan ganda kompleks",
+      "Benar-salah",
+      "Isian singkat",
+      "Uraian"
+    ],
+    "omr_scannable": [
+      "Pilihan ganda",
+      "Pilihan ganda kompleks",
+      "Benar-salah"
+    ]
+  },
+  "difficulty": [
+    "Mudah",
+    "Sedang",
+    "Sulit",
+    "Campuran"
+  ],
+  "grade_formats": {
+    "edunexa": [
+      "Format Nilai",
+      "Format Ketercapaian (T/R)"
+    ],
+    "sigrak": [
+      "Angka 0–100",
+      "Deskripsi ketercapaian (untuk Fase A tanpa angka, D-214 H1)"
+    ]
+  },
+  "attendance_status": {
+    "sigrak": [
+      "Hadir",
+      "Sakit",
+      "Izin",
+      "Tanpa keterangan"
+    ],
+    "note": "Sesuai data model (present, sick, permitted, absent)."
+  },
+  "voluntary_contribution": {
+    "edunexa": [
+      "Jenis keuangan",
+      "Nominal bayar",
+      "Total bayar",
+      "Kurang bayar"
+    ],
+    "sigrak": [
+      "Jenis sumbangan",
+      "Nominal kesepakatan (opsional)",
+      "Jumlah diterima",
+      "Sisa dari kesepakatan"
+    ]
+  }
+}
