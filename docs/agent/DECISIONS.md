@@ -1549,3 +1549,18 @@ Reason: Kudus schools and supervisors already use these forms; the regional-vari
 Accepted · 2026-11-09 · P5-09 · owner's choice, keeps D-220
 In the principal's administration review, items SIGRAK does not produce are scored by hand by the pengawas, and the school may upload an evidence file for each (optional). This covers dokumen pendirian, RKAS, SPJ BOS, surat masuk/keluar, buku klaper, buku induk guru, buku tamu, and similar. SIGRAK builds no RKAS, BOS, or letter module for this (D-220; O3 stays deferred). Items backed by SIGRAK data get a suggested score that the pengawas confirms, as in D-312: kalender pendidikan, KSP, 7 KAIH, supervision documents, school inventory, mutasi, ekstrakurikuler, new intake and graduation.
 Reason: the pengawas can review everything on the form without SIGRAK taking on finance or correspondence.
+
+### D-329 — LKPD v1 unchanged; patterns come in waves
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q1)
+The v1 LKPD template (P5-05) stays as decided: the current output plus the D-296 blocks. Its output schema gains only a `pattern` field, so the pattern library (*Bentuk LKPD*) in `docs/drafts/lkpd-exploration.md` can arrive in later waves without a migration.
+Reason: keeps v1 on schedule; the patterns need their own schemas, layouts, and seed data.
+
+### D-330 — LKPD QR codes point straight to the third-party URL
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q4), keeps D-010
+A `qr_link` block encodes the allowlisted third-party URL itself. There is no public SIGRAK redirect route. A dead link on paper is handled by the stored title and description and the printed no-device fallback task, and by a link checker that warns the teacher in the app.
+Reason: no new public route; D-010 stays whole.
+
+### D-331 — Interactive LKPD runs online; a student session is planned
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q5), opens a later exception to D-010
+Interactive LKPD steps (embeds, H5P, self-check) run online, in the teacher's app and in the IFP present session. A student session for working on a device comes later, with its own design task. It is session-scoped like the exam site (D-027): no student accounts, a code or card per session, no student data beyond the session, and no AI facing students (Gemini terms bar users under 18). Until then, answers come back through paper (Pindai LJK, D-286; Kartu Jawab, D-174) or the teacher's checklist.
+Reason: owner's choice; the exam site already shows how a session-scoped student access can stay inside the privacy rules.

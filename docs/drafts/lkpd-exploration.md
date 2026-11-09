@@ -339,6 +339,8 @@ Web scan of 2025–2026 vendor pages, checked 2026-11-09. Prices and plan limits
 
 ## 13. Owner questions
 
+Answered on 2026-11-09: **Q1** yes, v1 unchanged (D-329). **Q4** straight to the third-party URL (D-330), which settles C15 as option A. **Q5** interactive LKPD runs online, and a student session comes later (D-331), which settles C1. The other questions are still open.
+
 | # | Question | Options |
 |---|---|---|
 | Q1 | Keep v1 LKPD as decided and start patterns in v1.x? | Yes (recommended) / Add Wave 1 to P5-05 |
