@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('curriculum_version_id')->constrained()->cascadeOnDelete();
             $table->string('code', 96)->unique();
-            $table->json('legacy_codes')->comment('EDUNEXA Legacy_ID aliases; [] when there are none');
+            $table->json('legacy_codes')->comment('Legacy app Legacy_ID aliases; [] when there are none');
             $table->foreignId('subject_id')->constrained()->restrictOnDelete();
             $table->unsignedTinyInteger('grade');
             $table->char('phase', 1);
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('week_end');
             $table->json('weekly_distribution');
             $table->json('references');
-            $table->json('audit')->nullable()->comment('EDUNEXA Audit_Data; NULL when the source has none');
+            $table->json('audit')->nullable()->comment('Legacy app Audit_Data; NULL when the source has none');
             $table->json('extras')->nullable()->comment('sub_element, art branch, science process skills; NULL when the source has none');
             $table->timestamps();
             $table->index(['curriculum_version_id', 'subject_id', 'grade', 'semester'], 'topics_lookup_index');

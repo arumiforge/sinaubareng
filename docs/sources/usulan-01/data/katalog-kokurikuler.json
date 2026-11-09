@@ -1,9 +1,9 @@
 {
   "dataset": "cocurricular_activity_catalog",
-  "version_code": "KATALOG-KOKURIKULER-EDUNEXA-5.20",
+  "version_code": "KATALOG-KOKURIKULER-APLIKASI-LAMA-5.20",
   "provenance": {
-    "source_app": "EDUNEXA (portal milik pemilik produk)",
-    "source_base_url": "https://portal-edunexa.web.app",
+    "source_app": "aplikasi lama (portal milik pemilik produk)",
+    "source_base_url": "portal aplikasi lama (alamat disimpan pemilik)",
     "fetched_on": "2026-11-09",
     "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
     "files": [
@@ -20,7 +20,7 @@
     ],
     "status": "draft",
     "verify_by": "Tim Validasi SIGRAK sebelum diimpor (D-113)",
-    "note": "Daftar kegiatan dan tema dari COCURRICULAR_ACTIVITY_PRESETS/COCURRICULAR_THEMES; bentuk, dimensi, mapel terkait, dan kebiasaan 7 KAIH adalah keluaran resolveCocurricularAutofill() milik EDUNEXA untuk tiap kegiatan. Tema adalah tema contoh lokal, bukan tema resmi; Panduan Kokurikuler 2025 menyerahkan tema ke satuan pendidikan."
+    "note": "Daftar kegiatan dan tema dari COCURRICULAR_ACTIVITY_PRESETS/COCURRICULAR_THEMES; bentuk, dimensi, mapel terkait, dan kebiasaan 7 KAIH adalah keluaran resolveCocurricularAutofill() milik aplikasi lama untuk tiap kegiatan. Tema adalah tema contoh lokal, bukan tema resmi; Panduan Kokurikuler 2025 menyerahkan tema ke satuan pendidikan."
   },
   "standard_forms": [
     {

@@ -1,14 +1,14 @@
 {
   "dataset": "admin_progress_rules_reference",
-  "version_code": "PROGRES-EDUNEXA-5.20",
+  "version_code": "PROGRES-APLIKASI-LAMA-5.20",
   "provenance": {
-    "source_app": "EDUNEXA (portal milik pemilik produk)",
-    "source_base_url": "https://portal-edunexa.web.app",
+    "source_app": "aplikasi lama (portal milik pemilik produk)",
+    "source_base_url": "portal aplikasi lama (alamat disimpan pemilik)",
     "fetched_on": "2026-11-09",
     "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
     "files": [
       {
-        "path": "edunexa-progres.js",
+        "path": "aplikasi-lama-progres.js",
         "bytes": 158672,
         "sha256": "b8703ddfc7049355812bba616ae0a5f796f0a4484ee6e9416af434aa14bc8ebd"
       },
@@ -17,7 +17,7 @@
         "bytes": 11713
       },
       {
-        "path": "edunexa-pengesahan.js",
+        "path": "aplikasi-lama-pengesahan.js",
         "bytes": 50794,
         "sha256": "5f83ad12d8bd11c61cd4663aa449ace32ea0e32f79c6fd55aff121b0ee1dd47a"
       },
@@ -32,7 +32,7 @@
       }
     ],
     "status": "draft",
-    "note": "Ringkasan aturan dari komentar kode dan layar EDUNEXA. Untuk acuan perilaku, bukan untuk disalin."
+    "note": "Ringkasan aturan dari komentar kode dan layar aplikasi lama. Untuk acuan perilaku, bukan untuk disalin."
   },
   "progress_engine": {
     "single_source": "Satu mesin dipakai Portal Guru, Super Admin, dan Monitor Pengawas agar angka identik.",
@@ -87,7 +87,7 @@
   "document_approval": {
     "fingerprint": "SHA-256 atas teks kanonik isi dokumen cetak",
     "qr_rule": "QR + kode pengesahan dicetak di kolom tanda tangan kepala sekolah hanya bila dokumen sudah disahkan DAN isinya identik dengan yang disahkan",
-    "verification": "halaman /v/?k=KODE (publik di EDUNEXA)",
+    "verification": "halaman /v/?k=KODE (publik di aplikasi lama)",
     "status_writer": "hanya server (Cloud Functions)"
   },
   "omr": {

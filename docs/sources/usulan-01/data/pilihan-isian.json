@@ -1,9 +1,9 @@
 {
   "dataset": "form_option_lists",
-  "version_code": "PILIHAN-ISIAN-EDUNEXA-5.20",
+  "version_code": "PILIHAN-ISIAN-APLIKASI-LAMA-5.20",
   "provenance": {
-    "source_app": "EDUNEXA (portal milik pemilik produk)",
-    "source_base_url": "https://portal-edunexa.web.app",
+    "source_app": "aplikasi lama (portal milik pemilik produk)",
+    "source_base_url": "portal aplikasi lama (alamat disimpan pemilik)",
     "fetched_on": "2026-11-09",
     "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
     "files": [
@@ -20,10 +20,10 @@
     ],
     "status": "draft",
     "verify_by": "Tim Validasi SIGRAK (D-113)",
-    "note": "Daftar pilihan dari formulir EDUNEXA. 'edunexa' = label asli, 'sigrak' = label standar usulan."
+    "note": "Daftar pilihan dari formulir aplikasi lama. 'legacy' = label asli, 'sigrak' = label standar usulan."
   },
   "diagnostic_assessment": {
-    "edunexa_form": "Asesmen Awal",
+    "legacy_form": "Asesmen Awal",
     "sigrak_name": "Asesmen diagnostik awal pembelajaran (A2)",
     "cognitive": {
       "aspects": [
@@ -39,7 +39,7 @@
     },
     "non_cognitive": {
       "learning_preference": {
-        "edunexa_label": "Gaya Belajar",
+        "legacy_label": "Gaya Belajar",
         "sigrak_label": "Preferensi belajar",
         "options": [
           "Visual",
@@ -51,7 +51,7 @@
       },
       "interest_talent": "Minat dan bakat (teks)",
       "social_emotional": {
-        "edunexa_options": [
+        "legacy_options": [
           "Percaya diri",
           "Pemalu / kurang percaya diri",
           "Mudah emosi",
@@ -136,7 +136,7 @@
     "note": "Label asli: 'Rapat guru', 'Rapat dengan wali murid', 'Rapat komite'."
   },
   "student_transfer": {
-    "edunexa": [
+    "legacy": [
       "Masuk",
       "Keluar",
       "Pindah Rombel"
@@ -148,7 +148,7 @@
     ]
   },
   "assessment_kinds_bank_soal": {
-    "edunexa": [
+    "legacy": [
       "Penilaian Harian",
       "Perbaikan",
       "Pengayaan",
@@ -166,7 +166,7 @@
     ]
   },
   "item_types": {
-    "edunexa": [
+    "legacy": [
       "Pilihan Ganda",
       "PG Kompleks",
       "Benar Salah",
@@ -193,7 +193,7 @@
     "Campuran"
   ],
   "grade_formats": {
-    "edunexa": [
+    "legacy": [
       "Format Nilai",
       "Format Ketercapaian (T/R)"
     ],
@@ -212,7 +212,7 @@
     "note": "Sesuai data model (present, sick, permitted, absent)."
   },
   "voluntary_contribution": {
-    "edunexa": [
+    "legacy": [
       "Jenis keuangan",
       "Nominal bayar",
       "Total bayar",

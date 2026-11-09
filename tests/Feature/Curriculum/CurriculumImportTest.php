@@ -222,7 +222,7 @@ it('rolls back a catalogue that fails half way', function (): void {
         ->and(Region::query()->count())->toBe(0);
 });
 
-it('reads the EDUNEXA shapes, JSON strings included', function (): void {
+it('reads the legacy app shapes, JSON strings included', function (): void {
     importCatalogue();
     $structure = app(CurriculumImporter::class)->import(curriculumFixture('km-struktur.json'));
     $topics = app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));

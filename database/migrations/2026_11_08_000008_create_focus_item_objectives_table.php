@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-// Which TP a fokus serves (finding 3 of the EDUNEXA mapping doc).
+// Which TP a fokus serves (finding 3 of the legacy app mapping doc).
 return new class extends Migration
 {
     public function up(): void

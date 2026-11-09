@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Curriculum\Import;
 
 use App\Curriculum\Import\Formats\DataModelTopics;
-use App\Curriculum\Import\Formats\EdunexaAllocation;
-use App\Curriculum\Import\Formats\EdunexaTopics;
+use App\Curriculum\Import\Formats\KmSdAllocation;
+use App\Curriculum\Import\Formats\KmSdTopics;
 use App\Curriculum\Import\Formats\LearningOutcomes;
 use App\Curriculum\Import\Formats\MiAllocation;
 use App\Curriculum\Import\Formats\SdStructure;
@@ -27,9 +27,9 @@ final readonly class CurriculumImporter
         LearningOutcomes::class,
         SdStructure::class,
         MiAllocation::class,
-        EdunexaAllocation::class,
+        KmSdAllocation::class,
         DataModelTopics::class,
-        EdunexaTopics::class,
+        KmSdTopics::class,
     ];
 
     public function __construct(private Container $container) {}

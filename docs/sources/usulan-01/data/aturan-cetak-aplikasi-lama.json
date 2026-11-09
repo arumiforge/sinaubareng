@@ -1,14 +1,14 @@
 {
   "dataset": "print_conventions_reference",
-  "version_code": "CETAK-EDUNEXA-5.20",
+  "version_code": "CETAK-APLIKASI-LAMA-5.20",
   "provenance": {
-    "source_app": "EDUNEXA (portal milik pemilik produk)",
-    "source_base_url": "https://portal-edunexa.web.app",
+    "source_app": "aplikasi lama (portal milik pemilik produk)",
+    "source_base_url": "portal aplikasi lama (alamat disimpan pemilik)",
     "fetched_on": "2026-11-09",
     "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
     "files": [
       {
-        "path": "edunexa-cover.js",
+        "path": "aplikasi-lama-cover.js",
         "bytes": 9099,
         "sha256": "7661557bb709166f6c91395dc625c3b78f70ac0475ed90c246556f2abe9c4a9e"
       },
