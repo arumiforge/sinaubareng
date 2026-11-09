@@ -21,14 +21,14 @@ use App\Models\Subject;
 use App\Models\SubjectAllocation;
 
 /**
- * EDUNEXA struktur_alokasi_sd.json (KM-SD-2026-R2): `alokasi[]` rows with semester
+ * KM-SD struktur_alokasi_sd.json (KM-SD-2026-R2): `alokasi[]` rows with semester
  * figures (docs/drafts/km-sd-2026-r2-source-check.md).
  *
  * `kokurikuler_default[]` (Bahasa Inggris grades 1–2) is not imported: it is optional
  * content a school switches on in school_subjects (D-204). Koding dan KA is not an
  * intrakurikuler allocation (D-208).
  */
-final readonly class EdunexaAllocation implements CurriculumFormat
+final readonly class KmSdAllocation implements CurriculumFormat
 {
     public const DEFAULT_VERSION = 'KM-SD-2026-R2';
 
@@ -48,7 +48,7 @@ final readonly class EdunexaAllocation implements CurriculumFormat
         $data = $file->data();
         $code = $data->nullableString('versi') ?? $data->nullableString('versi_kurikulum') ?? self::DEFAULT_VERSION;
 
-        $version = $this->versions->upsert($code, "{$code}: struktur alokasi SD (EDUNEXA)", $file, array_filter([
+        $version = $this->versions->upsert($code, "{$code}: struktur alokasi SD (KM-SD)", $file, array_filter([
             'dataset' => 'struktur_alokasi_sd',
             'jp_minutes' => $data->raw('jp_menit'),
             'default_weeks' => $data->raw('default_minggu'),

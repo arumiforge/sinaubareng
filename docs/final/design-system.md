@@ -3,17 +3,17 @@
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
 - **Last updated:** 2026-11-01
-- **Sources:** [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
+- **Sources:** [`Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`](../sources/Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
 
 ## Purpose
 
-This document defines how SIGRAK looks and speaks: tokens, components, mobile rules, voice, and terms. The tokens and rules come from the EDUNEXA notes, adapted to the repo stack (Tailwind + TailAdmin, ported to Svelte). It is for anyone building screens or writing UI copy. UI copy itself is Indonesian and lives in `lang/id`. This doc is English, with the Indonesian copy quoted as data.
+This document defines how SIGRAK looks and speaks: tokens, components, mobile rules, voice, and terms. The tokens and rules come from the legacy app notes, adapted to the repo stack (Tailwind + TailAdmin, ported to Svelte). It is for anyone building screens or writing UI copy. UI copy itself is Indonesian and lives in `lang/id`. This doc is English, with the Indonesian copy quoted as data.
 
 ## Direction
 
 The app should look like a tidy teacher's workbook: plain background, one brand colour, thin lines, and type that is easy to read on a phone. It is a calm work tool, not a poster.
 
-| Remove (seen in EDUNEXA) | Use instead |
+| Remove (seen in the legacy app) | Use instead |
 |---|---|
 | Glassmorphism, gradients, glow, blur | Plain surfaces: very light grey page, white cards, 1 px borders |
 | A different accent colour per card or icon | One brand colour + status colours only |
@@ -174,13 +174,13 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | Edit / Reset / Timpa | Ubah / Kembalikan, Atur ulang / Ganti | |
 | Presensi / Kehadiran / Daftar Hadir | Absensi | |
 | Mutasi siswa | Pindah dan keluar | |
-| Master EDUNEXA | Kurikulum bawaan | |
+| Master + old app name | Kurikulum bawaan | |
 | Gagal … | … belum berhasil | Calmer, still clear |
 | `...` / `&` | `…` (one character) / "dan" | |
 
 ## Copy source and localization
 
-- `Parafrase_Teks_UI_Sigrak.xlsx` holds 1,499 old → new strings across 10 EDUNEXA pages (Administrasi Kelas 608, Beranda & akun 272, Portal Kepala Sekolah 199, Generator RPM 112, shared 70, Super Admin 65, Tutorial 62, Bank Soal 58, Worksheet/LKPD 27, Portal Pengawas 26).
+- `Parafrase_Teks_UI_Sigrak.xlsx` holds 1,499 old → new strings across 10 legacy app pages (Administrasi Kelas 608, Beranda & akun 272, Portal Kepala Sekolah 199, Generator RPM 112, shared 70, Super Admin 65, Tutorial 62, Bank Soal 58, Worksheet/LKPD 27, Portal Pengawas 26).
 - When a screen is built, its strings move into `lang/id/*.php` with English keys (repo convention). The spreadsheet's "Teks baru" column is the starting copy, checked against the terms above.
 - `{…}` placeholders in the spreadsheet become Laravel `:placeholder` parameters.
 - Strings for pages that no longer exist (Super Admin → internal console, Tutorial → Bantuan) are used only where the new screen still needs them.

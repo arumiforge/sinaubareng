@@ -1,4 +1,4 @@
-# Rebranding dan Perombakan Fitur EDUNEXA
+# Rebranding dan Perombakan Fitur Aplikasi Lama
 
 Oct 29, 2026 · @j
 
@@ -204,7 +204,7 @@ Dari 43 fitur yang ada, 10 dipertahankan, 12 digabung, 18 diganti, dan 3 dihapus
 | --- | --- | --- | --- | --- |
 | Beranda | Beranda: progres administrasi | Ganti | Hari Ini: daftar yang harus diisi hari ini + progres minggu ini | Guru perlu tahu apa yang harus dikerjakan sekarang, bukan hanya persentase |
 | Beranda | Papan informasi siaran | Gabung | Kabar (bersama Pemberitahuan) | Dua tempat pengumuman membingungkan |
-| Beranda | Papan "Quote EDUNEXA hari ini" dan "Tips & motivasi" | Hapus | — | Hiasan yang memakan layar HP |
+| Beranda | Papan "Quote aplikasi lama hari ini" dan "Tips & motivasi" | Hapus | — | Hiasan yang memakan layar HP |
 | Beranda | Pemberitahuan | Gabung | Kabar | Satu kotak masuk untuk semua kabar |
 | Beranda | Mode Pemeriksaan / Data Demo | Ganti | Mode Contoh untuk presentasi ke sekolah | Namanya lebih jelas bagi calon pembeli |
 | Beranda | Sesi diputus setelah 15 menit tidak aktif | Ganti | Sesi tetap; isian tersimpan otomatis | Guru sering berhenti di tengah isian; alasan biaya hilang setelah pindah ke SQL |
@@ -268,7 +268,7 @@ Dari 43 fitur yang ada, 10 dipertahankan, 12 digabung, 18 diganti, dan 3 dihapus
 
 ## Sumber
 
-- Halaman publik portal yang dibaca 29 Oktober 2026 (tanpa data pribadi): [index.html](https://portal-edunexa.web.app/index.html), [rpm-generator.html](https://portal-edunexa.web.app/rpm-generator.html), [bank-soal.html](https://portal-edunexa.web.app/bank-soal.html), [administrasi.html](https://portal-edunexa.web.app/administrasi.html), [worksheet-generator.html](https://portal-edunexa.web.app/worksheet-generator.html), [/kepala-sekolah/](https://portal-edunexa.web.app/kepala-sekolah/), [/pengawas/](https://portal-edunexa.web.app/pengawas/), [tutorial.html](https://portal-edunexa.web.app/tutorial.html)
+- Halaman publik portal yang dibaca 29 Oktober 2026 (tanpa data pribadi): `index.html`, `rpm-generator.html`, `bank-soal.html`, `administrasi.html`, `worksheet-generator.html`, `/kepala-sekolah/`, `/pengawas/`, `tutorial.html`
 - Status domain: RDAP [rdap.org](https://rdap.org) (diteruskan ke Verisign untuk .com dan PANDI untuk .id); isi situs yang aktif dicek langsung
 - Konteks: [Catatan Pengembang](https://claude.ai/artifact/WqzXi3r4pN89ZEHQChVbm8), [Pemetaan Data Materi](https://claude.ai/artifact/Qtp98W2tt6s5pezxXnTHKW)
 - Pendamping: spreadsheet Parafrase\_Teks\_UI\_Sigrak.xlsx dan presentasi "Sigrak untuk Kepala Sekolah dan Pengawas"

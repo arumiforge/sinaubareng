@@ -3,7 +3,7 @@
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-02
 - **Last updated:** 2026-11-01
-- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`](../sources/Rebranding_dan_Perombakan_Fitur_EDUNEXA.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
+- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`](../sources/Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md), [`Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf`](../sources/Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf)
 
 ## Purpose
 
@@ -14,14 +14,14 @@ This document defines what SIGRAK is, who uses it, and what v1 contains. It is t
 SIGRAK (working name) is a web app for SD/MI teachers and school leaders. It does two jobs, and both ship in v1:
 
 1. **Content creation with AI help.** Teachers make RPM, question banks, LKPD, classroom games, and TKA practice packages. They pick a template and answer pedagogical questions. They never write a prompt. Developer-built templates fix the structure and design, and AI only fills in the content. There is no generic "make anything" generator, because a teacher can already get that from Gemini directly (D-024).
-2. **School administration.** Attendance, teaching journal, student notes, assessment and report cards, class data, and the principal and supervisor portals carried over from EDUNEXA.
+2. **School administration.** Attendance, teaching journal, student notes, assessment and report cards, class data, and the principal and supervisor portals carried over from the legacy app.
 3. **TKA practice exam (CBT).** A computer-based exam that works like the national Tes Kemampuan Akademik for grade 6. Students take it on a separate exam site with an exam card and a proctor token (D-026, D-027).
 
 Students are not users of the app. Every page sits behind login, and there are no public pages. The one place students touch is the exam site, and only with a one-session exam card.
 
-## What changed from the EDUNEXA notes
+## What changed from the legacy app notes
 
-| Topic | EDUNEXA notes (29 Oct) | SIGRAK now | Decision |
+| Topic | Legacy app notes (29 Oct) | SIGRAK now | Decision |
 |---|---|---|---|
 | Product core | Administration ("Administrasi beres sambil mengajar") | Content creation **and** administration | D-009 |
 | Stack | CodeIgniter 4 + MySQL 8 + vanilla JS + PWA | Laravel + MySQL 8 + Inertia/Svelte + Tailwind/TailAdmin + Filament. Vanilla JS is used only for the game runtime | D-003, D-007, D-008 |
@@ -34,7 +34,7 @@ Students are not users of the app. Every page sits behind login, and there are n
 | Teacher menu | Hari Ini · Di Kelas · Rencana · Asesmen · Kelas Saya | Hari Ini · Di Kelas · **Buat** · Asesmen · Kelas Saya | D-021 |
 | Migration | Staged Firebase → SQL with `legacy_id` | Fresh build. Only curriculum data is imported, and teachers are re-invited | D-020 |
 
-Everything else agreed in the EDUNEXA notes still holds: text-based PDF with per-school print settings, the "Buka di Canva" button, the material validation flow, and Di Kelas working without signal.
+Everything else agreed in the legacy app notes still holds: text-based PDF with per-school print settings, the "Buka di Canva" button, the material validation flow, and Di Kelas working without signal.
 
 ## Positioning and principles
 
@@ -205,9 +205,9 @@ Plans are paid per academic year (July–June) by **teachers and schools only**.
 
 ## Feature status
 
-This is the old 43 EDUNEXA features plus new ones, revised for the new concept. Status values: **Keep**, **Merge**, **Replace**, **Remove**, **Add**, **Later**. Everything not marked *Remove* or *Later* is in v1.
+This is the old 43 legacy app features plus new ones, revised for the new concept. Status values: **Keep**, **Merge**, **Replace**, **Remove**, **Add**, **Later**. Everything not marked *Remove* or *Later* is in v1.
 
-| Area | Current feature (EDUNEXA) | Status | Becomes | Reason |
+| Area | Current feature (legacy app) | Status | Becomes | Reason |
 |---|---|---|---|---|
 | Home | Beranda: administration progress | Replace | Hari Ini: what to fill today + progress this week | Teachers need to know what to do now |
 | Home | Broadcast board | Merge | Kabar (with Pemberitahuan) | Two news places confuse |

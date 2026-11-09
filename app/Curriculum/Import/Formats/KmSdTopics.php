@@ -22,7 +22,7 @@ use App\Models\Subject;
 use App\Models\SubjectAllocation;
 
 /**
- * EDUNEXA data_kurikulum_dengan_cp.json (KM-SD-2026-R2): one row per topic, with
+ * KM-SD data_kurikulum_dengan_cp.json (KM-SD-2026-R2): one row per topic, with
  * Data_Tujuan, Data_ATP, Data_Fokus, Referensi, and Audit_Data as JSON objects (or JSON
  * strings in older exports). Findings on the shape: docs/drafts/km-sd-2026-r2-source-check.md.
  * `Fokus_Materi` duplicates Data_Fokus and is dropped. Data_ATP keys without a column,
@@ -30,7 +30,7 @@ use App\Models\SubjectAllocation;
  * struktur_alokasi_sd.json first so the semester totals can be checked. Owner-approved
  * corrections (SourceOverrides, D-234) are applied after a row is read.
  */
-final readonly class EdunexaTopics implements CurriculumFormat
+final readonly class KmSdTopics implements CurriculumFormat
 {
     /** Data_ATP keys stored in topic columns. */
     private const ATP_COLUMNS = ['kode_atp', 'urutan_semester', 'alokasi_jp', 'jp_per_minggu', 'minggu_mulai', 'minggu_selesai', 'distribusi_mingguan'];
@@ -60,7 +60,7 @@ final readonly class EdunexaTopics implements CurriculumFormat
         }
 
         $statuses = array_values(array_unique(array_map(fn (Data $row): string => (string) $row->nullableString('Status_Versi'), $rows)));
-        $version = $this->versions->upsert($codes[0], "{$codes[0]}: materi pokok, TP, ATP, fokus (EDUNEXA)", $file, [
+        $version = $this->versions->upsert($codes[0], "{$codes[0]}: materi pokok, TP, ATP, fokus (KM-SD)", $file, [
             'dataset' => 'data_kurikulum_dengan_cp',
         ], $report, $statuses === ['Aktif'] ? 'active' : null);
 

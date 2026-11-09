@@ -3,7 +3,7 @@
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-03
 - **Last updated:** 2026-11-01
-- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
+- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md)
 
 ## Purpose
 
@@ -151,7 +151,7 @@ Document saved: content JSON + template key + template version
 | KBC (MI only) | For MI schools, the wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. Both fields are optional: the AI pre-fills a suggestion from the CP and material, and the teacher may change or clear them, so an RPM can be generated without them (D-142). This applies to every MI subject and does not apply to SD (D-126) |
 | Kokurikuler variant | Separate output schema, one plan per kokurikuler activity, following Panduan Kokurikuler 2025: header (school, class, theme, time allocation in JP, location), A *Dimensi Profil Lulusan*, B *Tujuan Pembelajaran* (competence and content), C *Praktik Pedagogis*, D *Lingkungan Pembelajaran*, E *Kemitraan Pembelajaran*, F *Pemanfaatan Digital*, G *Kegiatan* (Memahami, Mengaplikasi, Merefleksi), H *Asesmen* (formative, plus summative with a 4-level rubric). Forms, which may be combined: *Pembelajaran Kolaboratif Lintas Disiplin* (related subjects listed), *Gerakan 7 Kebiasaan Anak Indonesia Hebat* (7 KAIH), and *Cara Lainnya* (for example a project). The seventh habit is labelled "Tidur Cepat", with "tidur tepat waktu" as its explanation (D-207). Koding dan Kecerdasan Artifisial runs here as kokurikuler content (D-208). Reads the school's annual kokurikuler plan (dimensions, theme, form, related subjects, JP, yearly phases, monitoring), approved by the principal |
 | Rules | Meeting count and minutes equal the computed values. Every TP of the topic appears in at least one meeting or indicator. The rubric has exactly 4 levels (sangat baik, baik, berkembang, perlu bimbingan). No empty sections |
-| Scheduling | Meetings are placed on the class timetable. A meeting marked "tidak terlaksana" in the journal shifts the rest to the next JP slot. Semester 2 RPMs wait for the even-semester start date (behaviour carried over from EDUNEXA's scheduler) |
+| Scheduling | Meetings are placed on the class timetable. A meeting marked "tidak terlaksana" in the journal shifts the rest to the next JP slot. Semester 2 RPMs wait for the even-semester start date (behaviour carried over from the legacy app's scheduler) |
 
 ### Bank Soal
 

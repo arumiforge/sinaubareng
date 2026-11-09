@@ -1,30 +1,30 @@
-# Usulan 01 — Peta Fitur EDUNEXA ke SIGRAK: Administrasi Pembelajaran, Kalender, Jadwal, Asesmen, dan Cetak
+# Usulan 01 — Peta Fitur Aplikasi Lama ke SIGRAK: Administrasi Pembelajaran, Kalender, Jadwal, Asesmen, dan Cetak
 
 - **Status:** usulan pemilik, siap diolah menjadi draft dan tugas
 - **Tanggal:** 9 November 2026
 - **Penyusun:** pemilik produk (disusun bersama Claude)
 - **Basis repo:** `arumiforge/sinaubareng` commit `64aff02` (8 Nov 2026). Keputusan terakhir yang dirujuk: D-251
-- **Basis pembanding:** portal EDUNEXA versi 5.20.7xx–8xx (portal guru, portal kepala sekolah, portal pengawas, super admin), dibaca 8–9 November 2026
+- **Basis pembanding:** portal aplikasi lama versi 5.20.7xx–8xx (portal guru, portal kepala sekolah, portal pengawas, super admin), dibaca 8–9 November 2026
 - **Data pendukung:** folder [`data/`](data/README.md) di samping dokumen ini
 
 ## 0. Cara memakai dokumen ini (untuk Claude Code)
 
 1. Simpan dokumen ini dan folder `data/` apa adanya di `docs/sources/usulan-01/`. Dokumen ini berbahasa Indonesia karena bahan dari pemilik. `docs/sources/` memang tempat bahan pemilik yang disimpan apa adanya, dan pengecualian bahasanya sudah diatur di `CLAUDE.md`.
 2. Jangan langsung membangun. Ubah usulan ini menjadi:
-   - satu draft berbahasa Inggris, `docs/drafts/edunexa-upgrade-01.md`, mengikuti `docs/templates/DOC.md`;
+   - satu draft berbahasa Inggris, `docs/drafts/legacy-upgrade-01.md`, mengikuti `docs/templates/DOC.md`;
    - keputusan baru di `docs/agent/DECISIONS.md`, bernomor lanjutan dari D-251, untuk setiap butir di §3 yang disetujui pemilik;
    - tugas di `docs/agent/PROGRESS.md` dan `docs/agent/tasks/` sesuai peta slice di §6.
 3. Bila usulan bertentangan dengan keputusan yang sudah ada, keputusan yang ada menang sampai pemilik memutuskan lain. Daftar benturan yang sudah diketahui ada di §7.
 4. Pertanyaan yang masih terbuka ada di §8. Tanyakan ke pemilik sebelum mengunci desain butir terkait.
 5. Istilah di UI mengikuti glosarium §2, lalu masuk `lang/id` dengan kunci berbahasa Inggris.
 
-## 1. Posisi: peningkatan dari EDUNEXA, bukan salinan
+## 1. Posisi: peningkatan dari aplikasi lama, bukan salinan
 
-SIGRAK adalah generasi berikutnya dari EDUNEXA. EDUNEXA membuktikan apa yang dibutuhkan guru SD/MI di lapangan. SIGRAK membawa hal-hal yang terbukti itu, lalu memperbaiki fondasinya. Setiap usulan di dokumen ini wajib menjawab dua pertanyaan: *apa yang dipertahankan dari EDUNEXA* dan *apa yang membuatnya lebih baik di SIGRAK*.
+SIGRAK adalah generasi berikutnya dari aplikasi lama. Aplikasi lama membuktikan apa yang dibutuhkan guru SD/MI di lapangan. SIGRAK membawa hal-hal yang terbukti itu, lalu memperbaiki fondasinya. Setiap usulan di dokumen ini wajib menjawab dua pertanyaan: *apa yang dipertahankan dari aplikasi lama* dan *apa yang membuatnya lebih baik di SIGRAK*.
 
 ### 1.1 Tujuh pembeda yang dipegang di semua usulan
 
-| # | Pembeda | Di EDUNEXA | Di SIGRAK |
+| # | Pembeda | Di aplikasi lama | Di SIGRAK |
 |---|---|---|---|
 | P1 | **Satu sumber data, angka sama di semua peran** | Rumus progres disalin ke beberapa aplikasi, dan datanya diunduh ulang dari Firebase di setiap portal | Satu service di server di atas data relasional MySQL. Guru, kepala sekolah, dan pengawas membaca hasil hitungan yang sama, dan konsistensinya dibuktikan oleh test |
 | P2 | **Taat aturan 2025–2026** | Masih ada istilah lama: siswa, P5, taraf serap, ulangan, modul ajar sebagai satu-satunya nama, refleksi per pertemuan | Istilah dan alur mengikuti Permendikdasmen 1/2026 (murid), 13/2025 (struktur dan kokurikuler), Panduan Pembelajaran dan Asesmen 2025 (D-205, KKTP), Panduan Kokurikuler 2025 |
@@ -34,11 +34,11 @@ SIGRAK adalah generasi berikutnya dari EDUNEXA. EDUNEXA membuktikan apa yang dib
 | P6 | **Beban administrasi lebih ringan** | Refleksi diminta per pertemuan, dan ada banyak baris "aktivitas" tanpa makna | Refleksi per semester (D-214 A4). Progres hanya menuntut yang memang diwajibkan aturan. Sisanya ditampilkan sebagai "ada atau belum ada" |
 | P7 | **Cetak rapi dari server** | PDF dibuat dari tangkapan layar di peramban (html2pdf), dengan banyak tambalan versi | PDF teks dari Gotenberg (XP-6 s.d. XP-14). Margin, sampul, dan "NIHIL" diatur sekali di Pengaturan Cetak |
 
-## 2. Glosarium: istilah EDUNEXA ke istilah standar SIGRAK
+## 2. Glosarium: istilah aplikasi lama ke istilah standar SIGRAK
 
 Istilah di UI SIGRAK memakai kolom kanan. Istilah kiri tidak muncul di UI baru.
 
-| Istilah EDUNEXA | Istilah SIGRAK | Dasar |
+| Istilah aplikasi lama | Istilah SIGRAK | Dasar |
 |---|---|---|
 | Siswa | **Murid** | Permendikdasmen 1/2026, D-210 |
 | Guru Umum | Guru kelas | `product-concept.md` Roles |
@@ -105,18 +105,18 @@ Status: **Baru** = belum ada di dokumen SIGRAK. **Perluas** = sudah disebut, per
 
 ## 5. Rincian usulan
 
-Setiap butir memakai susunan yang sama: **Di EDUNEXA**, **Di SIGRAK sekarang**, **Usulan**, **Data**, **Pembeda**, **Kriteria terima**, dan **Terbuka** bila ada.
+Setiap butir memakai susunan yang sama: **Di aplikasi lama**, **Di SIGRAK sekarang**, **Usulan**, **Data**, **Pembeda**, **Kriteria terima**, dan **Terbuka** bila ada.
 
 ### U-01 Mesin Kelengkapan Administrasi (`app/Progress/`)
 
-**Di EDUNEXA.** Panel "Progres Administrasi" di portal guru berisi kolom Target, Tersedia, Belum, dan Status untuk rentang tanggal tertentu. Baris yang punya target: Modul Ajar, Jurnal, Refleksi, dan Absensi. Sekitar 20 baris lain hanya menampilkan jumlah "aktivitas". Rumus yang sama disalin ke super admin dan monitor pengawas. Aturan yang perlu diadopsi:
+**Di aplikasi lama.** Panel "Progres Administrasi" di portal guru berisi kolom Target, Tersedia, Belum, dan Status untuk rentang tanggal tertentu. Baris yang punya target: Modul Ajar, Jurnal, Refleksi, dan Absensi. Sekitar 20 baris lain hanya menampilkan jumlah "aktivitas". Rumus yang sama disalin ke super admin dan monitor pengawas. Aturan yang perlu diadopsi:
 
 - mapel yang diampu guru mapel pengguna aplikasi tidak dihitung sebagai target guru kelas;
 - mapel yang dipegang guru di luar aplikasi didaftar terpisah;
 - kokurikuler yang diampu guru mapel menjadi target guru mapel itu;
 - rincian hanya menampilkan yang belum ada, beserta hari dan tanggalnya.
 
-Lihat `data/aturan-progres-edunexa.json`.
+Lihat `data/aturan-progres-aplikasi-lama.json`.
 
 **Di SIGRAK sekarang.** Hari Ini ("yang masih perlu diisi, progres minggu ini") dan Ringkasan Kepala Sekolah ("kelengkapan per guru") sudah disebut di `product-concept.md`, tapi belum ada rumus atau service.
 
@@ -146,7 +146,7 @@ Lihat `data/aturan-progres-edunexa.json`.
    - **Kepala sekolah (Ringkasan, Pantau Guru):** per guru, dengan rincian.
    - **Pengawas:** **hanya rekap sekolah**, berupa persentase kelengkapan per jenis dan sebaran status, tanpa nama guru (D-224).
    - **Console Tim SIGRAK:** sama dengan pengawas. Detail per guru hanya dibuka saat menangani tiket bantuan, dan aksesnya dicatat.
-6. Kinerja: hasil per guru per hari disimpan di Redis dan dibuang ketika ada event yang mengubah sumbernya (jurnal disimpan, pertemuan berubah, jadwal berubah, kalender berubah). Setiap Senin pukul 00.30 WIB sebuah job menulis `progress_snapshots` per guru untuk grafik tren mingguan. Grafik tren ini tidak ada di EDUNEXA.
+6. Kinerja: hasil per guru per hari disimpan di Redis dan dibuang ketika ada event yang mengubah sumbernya (jurnal disimpan, pertemuan berubah, jadwal berubah, kalender berubah). Setiap Senin pukul 00.30 WIB sebuah job menulis `progress_snapshots` per guru untuk grafik tren mingguan. Grafik tren ini tidak ada di aplikasi lama.
 7. Komponen "format Kudus" (24 untuk guru kelas, 18 untuk guru mapel) dipakai sebagai **profil cetak opsional** untuk sekolah yang masih memakai instrumen itu (`data/komponen-administrasi-pembelajaran.json`). Profil bawaannya S-01 dan S-15.
 
 **Data.** Tabel baru `progress_snapshots` (`school_id`, `teacher_id`, `academic_year_id`, `week_starts_on`, `kind`, `target`, `available`), unik per (`teacher_id`, `week_starts_on`, `kind`). Tidak ada kolom progres di tabel lain.
@@ -159,11 +159,11 @@ Lihat `data/aturan-progres-edunexa.json`.
 - Test: pertemuan `not_done` mengurangi target RPM, tetapi tidak mengurangi target jurnal.
 - Test: rekap pengawas tidak memuat `teacher_id` maupun nama guru (uji bentuk respons Inertia).
 
-**Terbuka.** Rentang bawaan: "awal tahun ajaran sampai hari ini" (seperti EDUNEXA) atau "minggu ini" untuk Hari Ini? Usulan: Hari Ini memakai minggu ini, Pantau Guru memakai semester berjalan.
+**Terbuka.** Rentang bawaan: "awal tahun ajaran sampai hari ini" (seperti aplikasi lama) atau "minggu ini" untuk Hari Ini? Usulan: Hari Ini memakai minggu ini, Pantau Guru memakai semester berjalan.
 
 ### U-02 Pertemuan tidak terlaksana dan tanda "Kegiatan sekolah"
 
-**Di EDUNEXA.** Di jurnal, guru bisa menandai pertemuan "tidak terlaksana". Modulnya otomatis bergeser ke slot JP berikutnya, dan pertemuan itu tidak masuk target. Jurnal juga punya tombol "Kegiatan Sekolah" untuk hari tanpa pelajaran.
+**Di aplikasi lama.** Di jurnal, guru bisa menandai pertemuan "tidak terlaksana". Modulnya otomatis bergeser ke slot JP berikutnya, dan pertemuan itu tidak masuk target. Jurnal juga punya tombol "Kegiatan Sekolah" untuk hari tanpa pelajaran.
 
 **Di SIGRAK sekarang.** `meetings.status` sudah mengenal `not_done`, dan aturan penggeserannya ada di `content-engine.md`. Belum ada alasan, dan belum ada cara menandai satu hari sebagai kegiatan sekolah untuk satu kelas.
 
@@ -172,7 +172,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 1. `journals` dan `meetings` mendapat `not_done_reason` ∈ {`school_event`, `teacher_duty`, `students_absent`, `disaster_or_weather`, `other`} dan `not_done_note`. Labelnya: Kegiatan sekolah, Guru bertugas di luar, Murid tidak hadir, Bencana/cuaca, Lainnya.
 2. **Tanda hari "Kegiatan sekolah".** Wali kelas atau operator bisa menandai satu tanggal sebagai kegiatan sekolah untuk satu kelas atau seluruh sekolah. Usulannya `calendar_events` mendapat kolom `class_id` yang nullable. Bila diisi, kejadian itu hanya berlaku untuk kelas tersebut. Jenis `no_lessons` sudah tersedia. Hari itu tidak punya pertemuan, tidak masuk hari efektif kelas itu, dan pertemuan yang sudah dijadwalkan ikut bergeser.
 3. Penggeseran mengikuti aturan yang sudah ada, ditambah satu aturan: bila geseran membuat pertemuan melewati tanggal SAS semester itu, guru dan kepala sekolah menerima Kabar "n pertemuan tidak muat sebelum SAS".
-4. Alasan tidak terlaksana direkap untuk kepala sekolah, misalnya "Bulan ini 12 JP hilang karena kegiatan sekolah". Rekap ini bahan evaluasi kalender dan program sekolah, dan tidak ada di EDUNEXA.
+4. Alasan tidak terlaksana direkap untuk kepala sekolah, misalnya "Bulan ini 12 JP hilang karena kegiatan sekolah". Rekap ini bahan evaluasi kalender dan program sekolah, dan tidak ada di aplikasi lama.
 
 **Data.** `meetings.not_done_reason`, `journals.not_done_reason`, `journals.not_done_note`, `calendar_events.class_id` (nullable, FK ke `classes`, harus sekolah yang sama).
 
@@ -182,7 +182,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-03 Unduh Paket Administrasi Pembelajaran
 
-**Di EDUNEXA.** Tombol "Download Paket" mengunduh semua administrasi dalam rentang tanggal. Dokumen kosong tetap tercetak dengan tanda "NIHIL".
+**Di aplikasi lama.** Tombol "Download Paket" mengunduh semua administrasi dalam rentang tanggal. Dokumen kosong tetap tercetak dengan tanda "NIHIL".
 
 **Di SIGRAK sekarang.** Belum ada. XP-6 sudah mengatur bahwa satu paket dibuat dari satu view dengan pemisah halaman, tidak digabung.
 
@@ -214,7 +214,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-04 Pengesahan dokumen oleh kepala sekolah dengan kode verifikasi
 
-**Di EDUNEXA.** Guru menekan "Ajukan Pengesahan". Server menghitung sidik jari SHA-256 dari teks dokumen. Setelah kepala sekolah mengesahkan, kode QR dan kode pengesahan dicetak di kolom tanda tangan kepala sekolah, tetapi hanya selama isi dokumen sama persis dengan versi yang disahkan. QR mengarah ke halaman verifikasi publik.
+**Di aplikasi lama.** Guru menekan "Ajukan Pengesahan". Server menghitung sidik jari SHA-256 dari teks dokumen. Setelah kepala sekolah mengesahkan, kode QR dan kode pengesahan dicetak di kolom tanda tangan kepala sekolah, tetapi hanya selama isi dokumen sama persis dengan versi yang disahkan. QR mengarah ke halaman verifikasi publik.
 
 **Di SIGRAK sekarang.** D-019 mengatur validasi untuk perubahan kurikulum dan komentar pada dokumen. Pengesahan dokumen belum ada. D-010 melarang halaman publik.
 
@@ -224,7 +224,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 2. Saat disahkan, server menghitung `content_hash` = SHA-256 dari teks kanonik revisi itu (HTML tanpa tag, spasi dirapikan, Unicode NFC) dan membuat `code` berisi 10 karakter base32 tanpa huruf yang mirip (contoh: `K7QM-2XRA-9P`).
 3. Saat dokumen dicetak, bila revisi aktif sama dengan revisi yang disahkan, kolom tanda tangan kepala sekolah memuat QR, kode, dan tulisan "Disahkan melalui SIGRAK, [tanggal]". Bila isinya sudah berubah, QR tidak dicetak dan dokumen berstatus **Berubah setelah disahkan** sampai diajukan ulang.
 4. QR berisi URL di dalam aplikasi, `/verifikasi/{code}`, dan **hanya bisa dibuka setelah login**. Yang boleh melihat hasilnya: warga sekolah itu dan pengawas yang ditugaskan ke sekolah itu (`supervisor_assignments`). Selain itu yang muncul hanya "Kode tidak ditemukan atau Anda tidak berwenang", tanpa membedakan dua keadaan itu agar kode tidak bisa ditebak.
-5. Halaman verifikasi menampilkan: status (Sah, Berubah setelah disahkan, atau Dicabut), jenis dokumen, kelas, mapel, semester, nama sekolah, tanggal pengesahan, nama pengesah, dan sidik jari singkat. Ada juga tombol **Cocokkan berkas**: pengguna mengunggah PDF, server mengambil teksnya dan membandingkan hash. Fitur ini tidak ada di EDUNEXA.
+5. Halaman verifikasi menampilkan: status (Sah, Berubah setelah disahkan, atau Dicabut), jenis dokumen, kelas, mapel, semester, nama sekolah, tanggal pengesahan, nama pengesah, dan sidik jari singkat. Ada juga tombol **Cocokkan berkas**: pengguna mengunggah PDF, server mengambil teksnya dan membandingkan hash. Fitur ini tidak ada di aplikasi lama.
 6. Kode juga bisa diketik manual di menu **Periksa kode pengesahan** (portal kepala sekolah dan pengawas), untuk cetakan yang QR-nya rusak.
 7. Istilahnya **pengesahan dokumen**. Jangan menyebutnya "tanda tangan elektronik", karena istilah itu punya arti hukum tersendiri (UU ITE dan PP 71/2019; TTE tersertifikasi memerlukan penyelenggara sertifikasi). Pengesahan ini adalah bukti internal sekolah. Tanda tangan basah tetap bisa dibubuhkan.
 
@@ -238,7 +238,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-05 Kalender pendidikan: libur nasional, kalender rujukan, dan tabel hari efektif
 
-**Di EDUNEXA.** Kalender pendidikan disusun sekali lalu dipakai bersama oleh guru-guru satu sekolah. Ada fitur "Pilih rujukan". Libur nasional dan cuti bersama (25 tanggal untuk 2026/2027) sudah ditandai otomatis dari `libur-nasional.js`, yang bersumber dari SKB 3 Menteri. Tabel hari efektif menampilkan per bulan: hari berjadwal, libur, PTS/SAS, kegiatan, dan hari efektif. Ada juga total per semester dan per tahun, misalnya 143 + 136 = 279 hari ≈ 46,5 minggu.
+**Di aplikasi lama.** Kalender pendidikan disusun sekali lalu dipakai bersama oleh guru-guru satu sekolah. Ada fitur "Pilih rujukan". Libur nasional dan cuti bersama (25 tanggal untuk 2026/2027) sudah ditandai otomatis dari `libur-nasional.js`, yang bersumber dari SKB 3 Menteri. Tabel hari efektif menampilkan per bulan: hari berjadwal, libur, PTS/SAS, kegiatan, dan hari efektif. Ada juga total per semester dan per tahun, misalnya 143 + 136 = 279 hari ≈ 46,5 minggu.
 
 **Di SIGRAK sekarang.** `calendars` dimiliki wilayah atau sekolah, dan `calendar_events.kind` ∈ {holiday, exam, school_event, no_lessons}. A11 (minggu efektif dicetak bersama Prota/Promes) sudah disetujui. Belum ada data libur nasional dan belum ada tabel hari efektif.
 
@@ -246,7 +246,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 1. **Tabel rujukan `national_holidays`** (`date`, `name`, `kind` ∈ {`national_holiday`,`joint_leave`}, `decree`, `academic_year`). Ini bukan bagian dari `calendars`, karena berlaku nasional dan hanya-baca. Semua tampilan kalender menggabungkannya otomatis. Seed awal: `data/libur-nasional-cuti-bersama.json`, setelah dicocokkan dengan SKB resmi.
 2. Perintah `php artisan calendar:import-holidays <file>` (idempoten per tanggal). Setiap September, setelah SKB tahun berikutnya terbit, Tim SIGRAK memperbarui data lewat console. Sampai SKB terbit, tahun yang belum tercakup diisi dari libur bertanggal tetap (1 Januari, 1 Mei, 1 Juni, 17 Agustus, 25 Desember) dan diberi tanda "sementara".
-3. **Kalender rujukan wilayah** (sudah ada di model sebagai kalender milik `region`) dibuat Tim SIGRAK dari kalender pendidikan dinas, misalnya Kabupaten Kudus. Operator sekolah memakai **Salin dari kalender wilayah**, lalu menambah kegiatan sekolah. Yang menyusun kalender sekolah adalah operator, bukan guru per guru seperti di EDUNEXA. Guru hanya membaca, dan bisa menambah tanda kegiatan sekolah untuk kelasnya (U-02).
+3. **Kalender rujukan wilayah** (sudah ada di model sebagai kalender milik `region`) dibuat Tim SIGRAK dari kalender pendidikan dinas, misalnya Kabupaten Kudus. Operator sekolah memakai **Salin dari kalender wilayah**, lalu menambah kegiatan sekolah. Yang menyusun kalender sekolah adalah operator, bukan guru per guru seperti di aplikasi lama. Guru hanya membaca, dan bisa menambah tanda kegiatan sekolah untuk kelasnya (U-02).
 4. **Tabel hari efektif dan minggu efektif** dihitung per kelas, karena jadwal per kelas bisa berbeda (5 atau 6 hari):
    - hari efektif = hari yang punya slot pelajaran di jadwal kelas, dikurangi libur nasional, cuti bersama, kejadian `holiday`, `exam` (STS, SAS), `school_event` dan `no_lessons` sekolah atau kelas itu;
    - minggu efektif = hari efektif ÷ jumlah hari sekolah per minggu kelas itu, dibulatkan satu desimal di tampilan, dengan angka utuh disimpan;
@@ -258,13 +258,13 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 **Pembeda.** Kalender milik sekolah, bukan salinan per guru. Hari efektif per kelas. Data libur bisa diperbarui terpusat. Tanggal yang belum pasti diberi tanda sementara.
 
-**Kriteria terima.** Dengan kalender contoh 2026/2027 dan jadwal 6 hari, tabel hari efektif menghasilkan angka yang sama dengan contoh EDUNEXA (143 dan 136 hari) bila kejadiannya sama. Test: libur nasional tetap muncul walau sekolah belum membuat kalender.
+**Kriteria terima.** Dengan kalender contoh 2026/2027 dan jadwal 6 hari, tabel hari efektif menghasilkan angka yang sama dengan contoh aplikasi lama (143 dan 136 hari) bila kejadiannya sama. Test: libur nasional tetap muncul walau sekolah belum membuat kalender.
 
 **Terbuka.** Kabupaten mana saja yang perlu kalender rujukan selain Kudus (Jepara dan Pati sudah ada di direktori sekolah, D-170)?
 
 ### U-06 Susun draf jadwal otomatis
 
-**Di EDUNEXA.** Guru menekan "Susun Otomatis" dan mengisi jadwal kelasnya sendiri, satu kelas saja, tanpa mengetahui guru mapel yang mengajar di kelas lain.
+**Di aplikasi lama.** Guru menekan "Susun Otomatis" dan mengisi jadwal kelasnya sendiri, satu kelas saja, tanpa mengetahui guru mapel yang mengajar di kelas lain.
 
 **Di SIGRAK sekarang.** P5-03e (jadwal) sedang dikerjakan dengan aturan D-247 (baris istirahat, upacara, kegiatan), D-248 (bentrok guru ditolak), D-249 (guru diambil dari `teaching_assignments`), D-250 (JP harus sama dengan alokasi), dan D-251 (agama paralel). Operator mengisi jadwal baris demi baris.
 
@@ -291,7 +291,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-07 Kelompok piket otomatis
 
-**Di EDUNEXA.** Fitur "Susun Otomatis" membagi murid ke regu per hari, lalu guru bisa mengatur regu per hari.
+**Di aplikasi lama.** Fitur "Susun Otomatis" membagi murid ke regu per hari, lalu guru bisa mengatur regu per hari.
 
 **Di SIGRAK sekarang.** Menu Kelas Saya > Piket dan tabel `duty_rosters` sudah ada. Aturan pembagiannya belum ada.
 
@@ -309,7 +309,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-08 Pindai LJK lewat kamera (OMR), fitur inti P5-08
 
-**Di EDUNEXA.** Aplikasi mencetak lembar jawaban dengan 4 kotak hitam di sudut dan kode QR. Guru memindai dengan kamera HP. Soal PG dan PG kompleks dinilai langsung. Untuk soal isian, **potongan gambar tulisan tangan murid dikirim ke Gemini**. Semua hasil diperiksa guru, lalu dimasukkan ke tabel analisis.
+**Di aplikasi lama.** Aplikasi mencetak lembar jawaban dengan 4 kotak hitam di sudut dan kode QR. Guru memindai dengan kamera HP. Soal PG dan PG kompleks dinilai langsung. Untuk soal isian, **potongan gambar tulisan tangan murid dikirim ke Gemini**. Semua hasil diperiksa guru, lalu dimasukkan ke tabel analisis.
 
 **Di SIGRAK sekarang.** Belum ada. P5-08 mencakup analisis butir (A7) dan per TP. `assessment_items` sudah menyimpan `answer_key`.
 
@@ -317,7 +317,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 1. **Cetak LJK** dari halaman asesmen. Satu lembar per murid, nama murid tercetak, dengan 4 penanda sudut dan QR. QR hanya berisi `public_id` lembar (acak, bukan NISN atau nama). Server menyimpan pasangan lembar → asesmen → murid → versi tata letak. Tersedia ukuran A4 dan F4. Hitam-putih, aman untuk difotokopi.
 2. Bentuk soal yang dipindai: **pilihan ganda** (A–D atau A–E), **pilihan ganda kompleks** (lebih dari satu bulatan), dan **benar-salah**. Isian singkat dan uraian diisi manual di tabel nilai.
-3. **Tidak ada AI untuk membaca jawaban murid.** Tulisan tangan murid adalah karya murid, dan free tier Gemini bisa ditinjau manusia (`ai-provider-engine.md`). Ini pembeda privasi yang tegas dibanding EDUNEXA (P3, D-036).
+3. **Tidak ada AI untuk membaca jawaban murid.** Tulisan tangan murid adalah karya murid, dan free tier Gemini bisa ditinjau manusia (`ai-provider-engine.md`). Ini pembeda privasi yang tegas dibanding aplikasi lama (P3, D-036).
 4. **Pemindaian berjalan di perangkat.** Bingkai kamera diolah di peramban: deteksi penanda sudut, koreksi perspektif, lalu ukur tingkat gelap setiap bulatan. Pustaka dibundel dan versinya dikunci (D-033), dan dimuat hanya saat halaman pindai dibuka. Gambar lembar **tidak diunggah**. Yang dikirim ke server hanya jawaban terbaca dan skor keyakinan.
 5. Alur: arahkan kamera ke lembar → terbaca otomatis saat lembar stabil → bunyi pendek dan getar → lanjut ke lembar berikutnya. Jawaban dengan keyakinan rendah (bulatan tipis, dua bulatan, coretan) ditandai kuning di layar **Periksa hasil**. Setelah guru mengonfirmasi, tekan **Simpan ke nilai**, yang menulis ke `scores`. Pindai ulang lembar yang sama memperbarui hasil, tidak menggandakan.
 6. **Bisa dipakai tanpa sinyal.** Hasil pindaian antre di perangkat dan dikirim saat online, memakai pola `client_uuid` dari Di Kelas. Ini memperluas D-016 dan perlu keputusan baru.
@@ -337,14 +337,14 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-09 Pengolahan nilai rapor dengan bobot, hanya dari sumatif
 
-**Di EDUNEXA.** Fitur "Konversi" memakai Bobot TP (%), Bobot STS (%), dan Bobot SAS (%), dengan format nilai angka atau ketercapaian (T/R). Hasilnya nilai rapor, lalu ada "Inject e-Rapor".
+**Di aplikasi lama.** Fitur "Konversi" memakai Bobot TP (%), Bobot STS (%), dan Bobot SAS (%), dengan format nilai angka atau ketercapaian (T/R). Hasilnya nilai rapor, lalu ada "Inject e-Rapor".
 
 **Di SIGRAK sekarang.** D-205: nilai formatif tidak pernah menjadi nilai rapor, dan deskripsi diambil dari capaian TP tertinggi dan terendah pada asesmen formatif. D-214: KKTP per TP, dan Fase A boleh tanpa angka.
 
 **Usulan.**
 
 1. **Rumus nilai rapor per mapel** = rata-rata berbobot dari tiga komponen:
-   - rerata **asesmen sumatif lingkup materi** (pengganti "Bobot TP" EDUNEXA; bukan formatif);
+   - rerata **asesmen sumatif lingkup materi** (pengganti "Bobot TP" aplikasi lama; bukan formatif);
    - **STS**, bila sekolah melaksanakannya;
    - **SAS**.
 
@@ -363,7 +363,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-10 Kenaikan kelas membawa saldo tabungan
 
-**Di EDUNEXA.** Layar kenaikan kelas menampilkan kolom tabungan dan saldo di samping status Naik/Lulus. Tersedia tombol "Tandai semua naik", "Tandai semua lulus", "Simpan draf", dan "Tetapkan kenaikan kelas".
+**Di aplikasi lama.** Layar kenaikan kelas menampilkan kolom tabungan dan saldo di samping status Naik/Lulus. Tersedia tombol "Tandai semua naik", "Tandai semua lulus", "Simpan draf", dan "Tetapkan kenaikan kelas".
 
 **Di SIGRAK sekarang.** H3 (kenaikan dengan lembar rapat dan berita acara), H4 (kelulusan), dan T1 (tabungan murid, D-219) sudah disetujui, tetapi belum ada aturan tentang saldo saat murid pindah kelas.
 
@@ -382,7 +382,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-11 Sumbangan sukarela kelas
 
-**Di EDUNEXA.** Menu "Keuangan Lain" mencatat iuran per jenis (misalnya Komputer), lengkap dengan tanggal, nama siswa, nominal bayar, total bayar, dan **kurang bayar**.
+**Di aplikasi lama.** Menu "Keuangan Lain" mencatat iuran per jenis (misalnya Komputer), lengkap dengan tanggal, nama siswa, nominal bayar, total bayar, dan **kurang bayar**.
 
 **Di SIGRAK sekarang.** `class_finance_entries` (pemasukan dan pengeluaran kelas) bisa dimatikan sekolah, dan Keuangan serta Inventaris kelas adalah add-on (D-158). Pencatatan per murid per jenis belum ada.
 
@@ -403,7 +403,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-12 Status kesiapan RPM per mapel dan Kabar
 
-**Di EDUNEXA.** Kartu per mapel di generator RPM diberi warna: hijau "modul siap", kuning "segera habis", merah "ada hari tanpa modul". Per ATP terlihat rentang tanggal, jumlah fokus, JP, dan jumlah modul. Ada penanda "jadwal sisa 4 JP sebelum SAS" dan pesan "Belum ada modul sejak 14 Jul".
+**Di aplikasi lama.** Kartu per mapel di generator RPM diberi warna: hijau "modul siap", kuning "segera habis", merah "ada hari tanpa modul". Per ATP terlihat rentang tanggal, jumlah fokus, JP, dan jumlah modul. Ada penanda "jadwal sisa 4 JP sebelum SAS" dan pesan "Belum ada modul sejak 14 Jul".
 
 **Di SIGRAK sekarang.** Template RPM dan penjadwalan pertemuan sudah dirancang. Indikator kesiapan belum ada.
 
@@ -419,7 +419,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 2. **Neraca JP sebelum SAS** per mapel = JP dari ATP yang tersisa dibanding JP slot yang tersedia sampai tanggal SAS (U-05). Kemungkinan hasilnya:
    - **Pas**;
    - **Materi tidak muat: kurang n JP**, dengan saran digabung atau dipadatkan;
-   - **Ada n JP cadangan**, dengan saran dipakai untuk remedial atau pengayaan (A1). Saran ini tidak ada di EDUNEXA.
+   - **Ada n JP cadangan**, dengan saran dipakai untuk remedial atau pengayaan (A1). Saran ini tidak ada di aplikasi lama.
 3. Tampil di **Buat** (kartu mapel dengan bilah progres ATP), di **Hari Ini** (hanya yang kuning dan merah), dan di **Pantau Guru** milik kepala sekolah (jumlah mapel merah per guru).
 4. **Kabar** dikirim dalam dua bentuk: ringkasan setiap Senin pukul 06.00 WIB ("2 mapel perlu RPM minggu ini"), dan pemberitahuan langsung ketika sebuah mapel berubah menjadi merah (paling banyak 1 per mapel per hari).
 
@@ -429,13 +429,13 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-13 Kunci semester 2
 
-**Di EDUNEXA.** Modul semester 2 terkunci sampai guru mengisi "Tanggal Mulai Semester Genap" di profilnya.
+**Di aplikasi lama.** Modul semester 2 terkunci sampai guru mengisi "Tanggal Mulai Semester Genap" di profilnya.
 
 **Di SIGRAK sekarang.** **Sudah terpenuhi di tingkat data.** `academic_years.even_semester_starts_on` wajib diisi, dengan CHECK `starts_on < even_semester_starts_on < ends_on` (migrasi P5-03d). Tanggal ini diisi operator, bukan guru. `content-engine.md` sudah mengatur bahwa RPM semester 2 menunggu tanggal tersebut.
 
 **Usulan (penyempurnaan).**
 
-1. Guru **boleh menyiapkan RPM semester 2 lebih awal** (misalnya saat libur Desember) sebagai draf. Pertemuannya baru ditempatkan pada slot mulai `even_semester_starts_on`. Di Buat, tampil keterangan "Dijadwalkan mulai [tanggal]". Ini pengganti kunci keras ala EDUNEXA.
+1. Guru **boleh menyiapkan RPM semester 2 lebih awal** (misalnya saat libur Desember) sebagai draf. Pertemuannya baru ditempatkan pada slot mulai `even_semester_starts_on`. Di Buat, tampil keterangan "Dijadwalkan mulai [tanggal]". Ini pengganti kunci keras ala aplikasi lama.
 2. Bila operator mengubah `even_semester_starts_on`, pertemuan semester 2 dijadwal ulang otomatis, guru terdampak menerima Kabar, dan riwayat jadwal disimpan (`meeting_schedule_history`).
 3. Tabel hari efektif (U-05) memakai tanggal ini sebagai batas semester.
 
@@ -443,7 +443,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-14 Bunyi dan notifikasi layar saat pembuatan selesai
 
-**Di EDUNEXA.** Pengaturan "Bunyi Saat Modul Selesai" menyediakan pola Chime, Lonceng, dan Bip tegas, dibunyikan 2 kali, dengan tombol hidup/mati. Notifikasi layar hanya muncul bila tab tidak terlihat. Semua pengaturan tersimpan per perangkat.
+**Di aplikasi lama.** Pengaturan "Bunyi Saat Modul Selesai" menyediakan pola Chime, Lonceng, dan Bip tegas, dibunyikan 2 kali, dengan tombol hidup/mati. Notifikasi layar hanya muncul bila tab tidak terlihat. Semua pengaturan tersimpan per perangkat.
 
 **Di SIGRAK sekarang.** Pembuatan konten berjalan di latar belakang dan guru diberi tahu setelah selesai (`product-concept.md`). `design-system.md` mewajibkan tombol untuk mematikan suara.
 
@@ -453,7 +453,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 2. Selalu ada **toast** dan entri **Kabar**. Bunyi dan notifikasi hanya tambahan, sehingga informasi tidak pernah bergantung pada suara saja.
 3. **Bunyi**: tiga pola pendek (Lembut, Lonceng, Tegas) yang disintesis dengan Web Audio, tanpa berkas audio. Hanya dibunyikan bila tab sedang terlihat. Bunyi gagal dibedakan dari bunyi selesai.
 4. **Notifikasi layar** lewat Notification API, hanya bila tab tidak terlihat. Mengekliknya membuka hasil. Izin peramban **diminta pada saat pembuatan pertama**, bukan saat halaman dibuka.
-5. Pengaturan di **Akun > Tampilan**: bunyi hidup/mati, pola, dan notifikasi layar hidup/mati. Pengaturan **disimpan di server per pengguna**, jadi ikut ke HP dan laptop. Di EDUNEXA pengaturan ini per perangkat.
+5. Pengaturan di **Akun > Tampilan**: bunyi hidup/mati, pola, dan notifikasi layar hidup/mati. Pengaturan **disimpan di server per pengguna**, jadi ikut ke HP dan laptop. Di aplikasi lama pengaturan ini per perangkat.
 6. Web Push (notifikasi saat aplikasi tertutup) **tidak** masuk usulan ini. Itu butuh service worker dan kunci VAPID, dan bisa diusulkan terpisah.
 
 **Kriteria terima.** Test komponen: dengan bunyi dimatikan tidak ada `AudioContext` yang dibuat. Test bahwa izin notifikasi tidak diminta saat halaman dimuat.
@@ -462,7 +462,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 ### U-15 Sampul dokumen bersama, margin bawaan, dan Pengaturan Cetak
 
-**Di EDUNEXA.** Satu desain sampul hitam-putih untuk semua dokumen cetak. Urutannya dari atas: logo dinas; kata "BUKU"/judul; kelas, mapel, semester, tahun ajaran; disusun oleh (nama dan NIP); dinas, nama sekolah, tahun dokumen. Margin bawaan atas 15, kanan 12, bawah 15, kiri 25 mm (kiri untuk jilid). Orientasi otomatis menjadi lanskap bila tabel punya 9 kolom atau lebih. Tabel kosong diberi baris "NIHIL". Lihat `data/aturan-cetak-edunexa.json`.
+**Di aplikasi lama.** Satu desain sampul hitam-putih untuk semua dokumen cetak. Urutannya dari atas: logo dinas; kata "BUKU"/judul; kelas, mapel, semester, tahun ajaran; disusun oleh (nama dan NIP); dinas, nama sekolah, tahun dokumen. Margin bawaan atas 15, kanan 12, bawah 15, kiri 25 mm (kiri untuk jilid). Orientasi otomatis menjadi lanskap bila tabel punya 9 kolom atau lebih. Tabel kosong diberi baris "NIHIL". Lihat `data/aturan-cetak-aplikasi-lama.json`.
 
 **Di SIGRAK sekarang.** XP-7 (kertas dan margin dari Pengaturan Cetak), XP-8 (kop berupa gambar, hanya di halaman pertama, D-031), XP-10 (nomor halaman), D-125 (dua huruf cetak). `school_print_settings` sudah punya margin, tetapi hanya satu nilai untuk semua dokumen. Sampul belum ada.
 
@@ -475,7 +475,7 @@ Lihat `data/aturan-progres-edunexa.json`.
    - disusun oleh (nama, NIP bila ada, jabatan);
    - tahun dokumen.
 
-   **Aturan tahun dokumen** diambil dari EDUNEXA: semester 1 memakai tahun pertama tahun ajaran, semester 2 tahun kedua, dokumen tahunan memakai tahun berjalan.
+   **Aturan tahun dokumen** diambil dari aplikasi lama: semester 1 memakai tahun pertama tahun ajaran, semester 2 tahun kedua, dokumen tahunan memakai tahun berjalan.
 
    **Logo sampul opsional**: sekolah mengunggah satu logo (PNG, latar transparan) di Pengaturan Cetak. Tanpa logo, sampul tetap rapi. SIGRAK tidak membundel logo resmi pemerintah. Desain hitam-putih. Sampul tidak diberi nomor halaman.
 2. **Profil margin per jenis dokumen** di Pengaturan Cetak (`school_print_settings.margin_profiles` JSON):
@@ -498,7 +498,7 @@ Lihat `data/aturan-progres-edunexa.json`.
    - **XP-43 Paket:** daftar isi dengan nomor halaman, halaman judul bagian, ringkasan kelengkapan (U-03);
    - **XP-44 LJK:** tata letak tetap per `layout_version`, penanda sudut, tanpa skala "fit to page" (U-08).
 
-**Pembeda.** Margin per jenis dokumen (EDUNEXA hanya punya satu nilai bawaan untuk portal kepala sekolah), cetak bolak-balik, PDF teks dari server, logo opsional tanpa membundel logo resmi.
+**Pembeda.** Margin per jenis dokumen (aplikasi lama hanya punya satu nilai bawaan untuk portal kepala sekolah), cetak bolak-balik, PDF teks dari server, logo opsional tanpa membundel logo resmi.
 
 **Kriteria terima.** Test visual (snapshot PDF ke PNG) untuk sampul A4 dan F4. Test: margin kiri halaman genap menjadi margin kanan saat cetak bolak-balik aktif. Test: tabel 9 kolom menghasilkan halaman lanskap.
 
@@ -510,7 +510,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 | Tugas usulan | Isi | Bergantung pada |
 |---|---|---|
-| **P4-13** Draft `edunexa-upgrade-01.md` (bahasa Inggris) dan keputusan baru | Menerjemahkan dan merapikan dokumen ini, mencatat W-1…W-4 dan jawaban §8 sebagai D-252 dst. | Jawaban pemilik untuk §8 |
+| **P4-13** Draft `legacy-upgrade-01.md` (bahasa Inggris) dan keputusan baru | Menerjemahkan dan merapikan dokumen ini, mencatat W-1…W-4 dan jawaban §8 sebagai D-252 dst. | Jawaban pemilik untuk §8 |
 | **P5-03h** Libur nasional dan hari efektif | `national_holidays`, `calendar:import-holidays`, `EffectiveDays`, kalender rujukan Kudus (U-05) | P5-03e, validasi data libur |
 | **P5-03e2** Draf jadwal otomatis | U-06 | P5-03e selesai |
 | P5-04 (tambahan) | U-12, U-13, U-14, U-15 | P5-03h |
@@ -536,7 +536,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 | # | Keputusan | Benturan | Usulan penyelesaian |
 |---|---|---|---|
-| B-1 | D-010 (tanpa halaman publik) | Verifikasi pengesahan di EDUNEXA bersifat publik | **Selesai lewat W-2**: verifikasi hanya untuk yang login (U-04) |
+| B-1 | D-010 (tanpa halaman publik) | Verifikasi pengesahan di aplikasi lama bersifat publik | **Selesai lewat W-2**: verifikasi hanya untuk yang login (U-04) |
 | B-2 | D-016 (luring hanya Di Kelas) | Pindai LJK perlu jalan tanpa sinyal di kelas | Perluas D-016: hasil pindai LJK ikut antre luring dengan pola `client_uuid` (U-08) |
 | B-3 | D-031 ("PDF merging is not needed") | Paket satu tahun bisa sangat tebal | Izinkan merge Gotenberg **hanya** untuk paket bila satu view terlalu berat (U-03) |
 | B-4 | D-153 (simpan 5 revisi terakhir) | Revisi yang disahkan bisa terpangkas | Revisi yang terkait `document_approvals` berstatus `approved` dikecualikan dari pemangkasan (U-04) |
@@ -563,7 +563,7 @@ Lihat `data/aturan-progres-edunexa.json`.
 
 **Repo `arumiforge/sinaubareng`.** `CLAUDE.md`, `docs/agent/DECISIONS.md` (D-010, D-016, D-019, D-029, D-031, D-036, D-153, D-158, D-205, D-210, D-213…D-219, D-221, D-224, D-240, D-247…D-251), `docs/final/product-concept.md`, `docs/final/data-model.md`, `docs/final/content-engine.md`, `docs/final/export-localization.md`, `docs/final/design-system.md`, `docs/drafts/administration-features.md`, `docs/drafts/teacher-supervision-instruments.md`, `docs/data/regulations/cocurricular-guide-bskap.json`, dan migrasi `academic_years`.
 
-**EDUNEXA (aset statis, dibaca 8–9 November 2026).** `libur-nasional.js`, `shared-cocurricular-catalog.js`, `shared-cocurricular-autofill.js`, `edunexa-progres.js`, `edunexa-cover.js`, `edunexa-pengesahan.js`, `edx-bunyi.js`, `administrasi.html`, `sandi.html`, `rpm-generator.html`, `kepala-sekolah/principal-supervision.js`, `kepala-sekolah/principal-document-output.js`, `kepala-sekolah/principal-conflict-guard.js`, `pengawas/`, `superadmin.html`. Ukuran dan SHA-256 tercatat di `data/*.json`.
+**Aplikasi lama (aset statis, dibaca 8–9 November 2026).** `libur-nasional.js`, `shared-cocurricular-catalog.js`, `shared-cocurricular-autofill.js`, `aplikasi-lama-progres.js`, `aplikasi-lama-cover.js`, `aplikasi-lama-pengesahan.js`, `edx-bunyi.js`, `administrasi.html`, `sandi.html`, `rpm-generator.html`, `kepala-sekolah/principal-supervision.js`, `kepala-sekolah/principal-document-output.js`, `kepala-sekolah/principal-conflict-guard.js`, `pengawas/`, `superadmin.html`. Ukuran dan SHA-256 tercatat di `data/*.json`.
 
 **Aturan (perlu dicek ke dokumen resmi saat dipakai).**
 - Permendikdasmen 1/2026 (istilah murid), 13/2025 (struktur kurikulum, kokurikuler, ekstrakurikuler), dan 3/2025 (mutasi).

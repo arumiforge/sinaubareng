@@ -113,9 +113,9 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 ### 2.1 Mapping rule
 
 - **LOC-14** *Teks baru* is the starting copy. *Teks lama* is never used. The *Catatan* note and the [terms](design-system.md#terms) win over *Teks baru* where they differ (for example, "Templat" vs "template" once decided).
-- **LOC-15** **File** comes from the new screen that shows the text, not from the EDUNEXA page. The old page is only a hint:
+- **LOC-15** **File** comes from the new screen that shows the text, not from the legacy app page. The old page is only a hint:
 
-| *Halaman* (EDUNEXA) | Usual file(s) |
+| *Halaman* (legacy app) | Usual file(s) |
 |---|---|
 | Semua halaman | `common`, `terms` |
 | Beranda & akun | `auth`, `account`, `today`, `classes`, `ai_keys` |

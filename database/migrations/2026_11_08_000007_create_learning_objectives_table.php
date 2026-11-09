@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-// Tujuan pembelajaran (TP, EDUNEXA Data_Tujuan).
+// Tujuan pembelajaran (TP, legacy Data_Tujuan).
 return new class extends Migration
 {
     public function up(): void

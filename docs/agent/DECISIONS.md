@@ -38,7 +38,7 @@ Reason: owner's requirement for staged, parallel, consistent, token-efficient wo
 ### D-007 — Database: MySQL 8
 Accepted · 2026-10-30 · supersedes D-004
 MySQL 8 (CHECK constraints from 8.0.16, mature JSON columns). Migrations may use MySQL 8 features.
-Reason: owner's choice in the 2026-10-30 interview; matches the EDUNEXA developer notes.
+Reason: owner's choice in the 2026-10-30 interview; matches the legacy app developer notes.
 
 ### D-008 — Frontend: Inertia.js + plain Svelte
 Accepted · 2026-10-30 · supersedes D-005
@@ -47,7 +47,7 @@ Reason: owner confirmed the recommendation in D-005.
 
 ### D-009 — Product scope: content creation + administration from v1
 Accepted · 2026-10-30
-SIGRAK (working name) is an AI-assisted platform for making teaching content (Guided Generator, Template Engine, AI Provider Engine) and keeps EDUNEXA's school administration features. Both ship in v1. See `docs/final/product-concept.md`.
+SIGRAK (working name) is an AI-assisted platform for making teaching content (Guided Generator, Template Engine, AI Provider Engine) and keeps the legacy app's school administration features. Both ship in v1. See `docs/final/product-concept.md`.
 Reason: owner's concept message and interview.
 
 ### D-010 — Users and access
@@ -62,7 +62,7 @@ Reason: students are not users and there are no public pages (D-010), but studen
 
 ### D-012 — AI keys are teacher-owned, several per teacher
 Accepted · 2026-10-30
-Each teacher adds one or more Gemini keys from Google projects they own. Round robin + failover run only within that teacher's keys. No school or platform key. Principals need no key. AI cost is never a SIGRAK cost. Supersedes the optional school fallback key in the EDUNEXA notes.
+Each teacher adds one or more Gemini keys from Google projects they own. Round robin + failover run only within that teacher's keys. No school or platform key. Principals need no key. AI cost is never a SIGRAK cost. Supersedes the optional school fallback key in the legacy app notes.
 Reason: owner's concept message and interview. Gemini quota is per project.
 
 ### D-013 — Template storage: code + DB registry
@@ -98,11 +98,11 @@ Reason: owner's choice. Supersedes "Kudus only" in the rebranding notes.
 ### D-019 — Validation flow
 Accepted · 2026-10-30
 Generated content is usable at once. Principal and supervisor can view and comment. Only school-changed or school-added curriculum goes through teacher → principal → supervisor.
-Reason: owner kept the EDUNEXA rule.
+Reason: owner kept the legacy app rule.
 
 ### D-020 — Fresh build, curriculum-only import
 Accepted · 2026-10-30
-No Firebase migration of accounts, RPM, questions, or scores. Only curriculum JSON (KM-SD-2026-R2) is imported. Teachers are re-invited. Supersedes the staged migration plan in the EDUNEXA notes.
+No Firebase migration of accounts, RPM, questions, or scores. Only curriculum JSON (KM-SD-2026-R2) is imported. Teachers are re-invited. Supersedes the staged migration plan in the legacy app notes.
 Reason: owner's choice. A new stack and a new data model.
 
 ### D-021 — Teacher navigation
@@ -710,7 +710,7 @@ Reason: PAI stays in KM-SD-2026-R2.
 
 ### D-140 — Religion TP/ATP in the data-model shape
 Accepted by D-143 · 2026-10-31 · P2-09
-The data is stored in the data model's English-keyed shape (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not in the EDUNEXA row shape. The importer accepts both.
+The data is stored in the data model's English-keyed shape (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not in the legacy row shape. The importer accepts both.
 Reason: matches the target schema directly.
 
 ### D-141 — Religion allocation follows PAI
@@ -1070,7 +1070,7 @@ Reason: `subjects.default_teacher` and `religion` are NOT NULL or meaningful for
 
 ### D-229 — Import rules for `curriculum:import`
 Accepted · 2026-11-08 · P5-03c · implements D-020, D-113
-Each file is one transaction: an invalid file writes nothing. A version made from several files (KM-SD-2026-R2) records each file's hash and reference data under `meta.files`; its name comes from the file that creates it. Rows are matched by `code` (allocations by version, subject, grade, and learning type) and never deleted; a row missing from a newer file is reported and kept. A new version is `draft`; an import never changes the status of an existing version, whatever the file says. Data mismatches (JP sums, phase vs grade, printed totals, fokus–TP links outside the topic, subject code differences) are listed and do not stop the import unless `--strict` is given. Sources that print only JP per year get 18 effective weeks in semester 1 and the rest in semester 2 (14 in grade 6), as in KM-SD-2026-R2. The muatan lokal limits go to the version's `meta`. The EDUNEXA `kokurikuler_default` rows (Bahasa Inggris grades 1–2) are not imported, since that is optional content (D-204). Fokus–TP links are synced only when the file has them, so a KM-SD-2026-R2 re-import keeps links a data task added. `legacy_codes` holds `Legacy_ID` and its aliases minus the topic's own code; aliases are a fallback lookup after `topics.code`, and aliases shared by several topics or equal to another topic's code are reported. A topic that runs past its semester's effective weeks (18, or 14 in grade 6 semester 2) is a mismatch.
+Each file is one transaction: an invalid file writes nothing. A version made from several files (KM-SD-2026-R2) records each file's hash and reference data under `meta.files`; its name comes from the file that creates it. Rows are matched by `code` (allocations by version, subject, grade, and learning type) and never deleted; a row missing from a newer file is reported and kept. A new version is `draft`; an import never changes the status of an existing version, whatever the file says. Data mismatches (JP sums, phase vs grade, printed totals, fokus–TP links outside the topic, subject code differences) are listed and do not stop the import unless `--strict` is given. Sources that print only JP per year get 18 effective weeks in semester 1 and the rest in semester 2 (14 in grade 6), as in KM-SD-2026-R2. The muatan lokal limits go to the version's `meta`. The KM-SD `kokurikuler_default` rows (Bahasa Inggris grades 1–2) are not imported, since that is optional content (D-204). Fokus–TP links are synced only when the file has them, so a KM-SD-2026-R2 re-import keeps links a data task added. `legacy_codes` holds `Legacy_ID` and its aliases minus the topic's own code; aliases are a fallback lookup after `topics.code`, and aliases shared by several topics or equal to another topic's code are reported. A topic that runs past its semester's effective weeks (18, or 14 in grade 6 semester 2) is a mismatch.
 Reason: repeatable imports that report data issues without losing data or approvals.
 
 ### D-230 — A class's subjects
@@ -1171,7 +1171,7 @@ Reason: holidays apply nationally and change once a year; one copy keeps every s
 ### D-254 — Holiday data is checked against the official SKB online
 Accepted · 2026-11-09 · P5-03i · owner's choice, applies D-113 to holiday data
 Before import, an agent finds the official SKB 3 Menteri for 2026 and 2027 on government sites (Kemenag, KemenPANRB, Kemnaker) and checks every date, name, and kind in `docs/sources/usulan-01/data/libur-nasional-cuti-bersama.json`, including the unchecked 2027 SKB number. It records the source URLs, the check date, and any differences; Tim Validasi SIGRAK signs off. The data stays `draft` until then.
-Reason: the file was copied from EDUNEXA; an online check is quick, and sign-off keeps the D-113 pattern.
+Reason: the file was copied from the legacy app; an online check is quick, and sign-off keeps the D-113 pattern.
 
 ### D-255 — Joint leave is a holiday by default
 Accepted · 2026-11-09 · P5-03i · owner's choice
@@ -1206,7 +1206,7 @@ Reason: one place for clash rules without holding the calendar back until P5-09.
 ### D-261 — Calendar change impact preview
 Accepted · 2026-11-09 · P5-03i, P5-04 · owner's choice
 When the operator or a wali kelas saves an event, or applies region updates, and the change would move RPM meetings, they first see the impact ("12 pertemuan RPM di 6 kelas akan bergeser") and confirm. Nothing is shown when there is no impact. Afterwards teachers get the shift preview with Batalkan (D-274). There is no draft calendar table.
-Reason: keeps EDUNEXA's kaldik calon idea without a second calendar.
+Reason: keeps the legacy app's kaldik calon idea without a second calendar.
 
 ### D-262 — Draft timetable generator
 Accepted · 2026-11-09 · P5-03j · owner's choice
@@ -1286,7 +1286,7 @@ Reason: a safe way back without losing history.
 ### D-277 — Automatic annual kokurikuler JP target
 Accepted · 2026-11-09 · P5-04, P5-07 · owner's choice
 The school's annual kokurikuler plan takes its JP target from `subject_allocations` (`cocurricular`): SD 216/216/252/252/252/224 for grades 1–6 (Permendikdasmen 13/2025), MI per KMA 1503/2025. The school may adjust it with a note. Completeness counts held kokurikuler JP against it, and kokurikuler taught by a guru mapel becomes that guru mapel's target.
-Reason: follows the 2025 structure and EDUNEXA's guru mapel rule.
+Reason: follows the 2025 structure and the legacy app's guru mapel rule.
 
 ### D-278 — Berkas Administrasi: one semester bundle
 Accepted · 2026-11-09 · P5-07 (teacher), P5-09 (principal) · owner's choice, merges usulan-01 U-03 and Part B B-10 (Q6)
@@ -1423,9 +1423,9 @@ Accepted · 2026-11-09 · P5-08 (kenaikan), P5-09 (mutasi) · owner's choice
 Kenaikan (naik, tinggal, lulus) and mutasi (masuk, keluar, pindah rombel) are saved as drafts that can be edited and printed; the kenaikan draft feeds the H3 meeting sheet. Nothing changes (enrolments, piket, savings) until *Tetapkan*. "Tandai semua naik/lulus" works on the draft.
 Reason: the decision comes from the dewan guru meeting; a draft avoids moving students by mistake.
 
-### D-305 — EDUNEXA catalogs: one reviewed import task
+### D-305 — Legacy app catalogs: one reviewed import task
 Accepted · 2026-11-09 · new data task · owner's choice, applies D-113
-One task copies the usulan-01 data files to `docs/data/catalogs/` (`cocurricular-activities.json`, `extracurricular.json`, `class-inventory.json`, `form-options.json` from pilihan-isian), keeping provenance and `status: draft`. Tim Validasi SIGRAK reviews them before seeders read them from `docs/data/`. Only the `sigrak` labels reach the UI; the `edunexa` labels stay as reference.
+One task copies the usulan-01 data files to `docs/data/catalogs/` (`cocurricular-activities.json`, `extracurricular.json`, `class-inventory.json`, `form-options.json` from pilihan-isian), keeping provenance and `status: draft`. Tim Validasi SIGRAK reviews them before seeders read them from `docs/data/`. Only the `sigrak` labels reach the UI; the `legacy` labels stay as reference.
 Reason: one review pass, one place for the data, and no slice blocked on it.
 
 ### D-306 — Class inventory is the room view of school inventory
@@ -1508,9 +1508,9 @@ Accepted · 2026-11-09 · P5-07 · owner's choice
 After a new release, the app (PWA, including offline Di Kelas) shows "Versi baru tersedia, muat ulang". The offline queue is synced before the reload.
 Reason: prevents stale assets and lost offline data after a deploy.
 
-### D-322 — EDUNEXA features not carried over
+### D-322 — Legacy app features not carried over
 Accepted · 2026-11-09 · P4-13 · from the usulan-01 walk-through, consistent with earlier decisions
-Not re-adopted from EDUNEXA: the free generator and Bahan Tayang, SMP–SMA levels, a mandatory AI key at activation, default passwords, browser-screenshot PDFs (html2canvas/html2pdf), the 15-minute idle logout, exam mode (D-026), AI reading student handwriting (D-287), public verification pages (D-010, D-281), and the terms siswa, P5, taraf serap, and teguran. Deferred to a later proposal (usulan-02): an AI draft score for S-04 Telaah RPM and "Cocokkan berkas" (comparing an uploaded PDF with an approval).
+Not re-adopted from the legacy app: the free generator and Bahan Tayang, SMP–SMA levels, a mandatory AI key at activation, default passwords, browser-screenshot PDFs (html2canvas/html2pdf), the 15-minute idle logout, exam mode (D-026), AI reading student handwriting (D-287), public verification pages (D-010, D-281), and the terms siswa, P5, taraf serap, and teguran. Deferred to a later proposal (usulan-02): an AI draft score for S-04 Telaah RPM and "Cocokkan berkas" (comparing an uploaded PDF with an approval).
 Reason: these either conflict with existing decisions or the 2025–2026 rules, or need more testing first.
 
 ### D-323 — One Jawa Tengah reference calendar, 6-day version, for Kudus, Pati, and Jepara
@@ -1661,3 +1661,58 @@ Reason: children's sensitive data and the risk of labelling.
 Accepted · 2026-11-09 · P4-18 · owner's choice (AQ8)
 Wave A: Peta Asesmen data v1 (literacy, numeracy, DPL, readiness domains; purposes; methods), tags on Bank Soal and LKPD, Rubrik Kinerja, Observasi DPL with phone entry, Cek Kesiapan Awal, and misconception tags on distractors. P5-08 (Asesmen v1) is unchanged.
 Reason: paper-first, low risk, builds on v1.
+
+### D-352 — SIGRAK's position: grounded in policy, free to innovate
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ1)
+SIGRAK's position is *Berpijak pada kebijakan, leluasa berinovasi*. National standards fix the what and the limits (outcomes, structure, minimum document content, child protection). The school and the teacher choose the how. SIGRAK gives them tools for new ways of learning, and every innovation can show which national element it serves (`docs/drafts/policy-innovation-layers.md` §1–§3).
+Reason: the 2025–2026 rules lock outcomes and structure, not methods; aligning with them makes innovation applicable and accountable.
+
+### D-353 — Rule strength decides how the app reacts
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ2), extends the `force` tags of D-203
+Every rule carries a strength: `mandatory`, `minimum`, `maximum`, `recommended`, `not_recommended`, `example`, `school_discretion`, `teacher_discretion`, `free`. The app blocks only clear L1/L2 mandatory rules, warns below a minimum or above a maximum (as D-232), shows a hint for recommended and not recommended (as D-206), and leaves the rest free. Defaults that are only examples are labelled "Contoh". Layers L0–L6 follow §2 of the P4-21 draft.
+Reason: a guardrail, not a gate; schools that innovate are never stopped.
+
+### D-354 — Regulations and rule sets are versioned data
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ3), extends D-229 and D-317
+Target model: `regulations` (legal documents with issue, promulgation, and effective dates, status, verification level), `regulation_relations` (amends, revokes, implements, references), `rule_sets` (a versioned package per domain with `applies_from_school_year`, level and region scope, transition, supersedes), and `rules` (key, strength, value, source reference). `curriculum_versions` becomes the curriculum kind of rule set by adding columns. The policy in force is resolved from school year, level, and region. A document stores the rule-set codes it was made under and never changes silently. Rules published mid-year apply from the next school year unless the regulation says otherwise.
+Reason: rules change every year; schools and documents must stay traceable.
+
+### D-355 — Minimal versioning before P5-04
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ4)
+Before P5-04 (content core): `curriculum_versions` gets `effective_on`, `applies_from_school_year`, and `supersedes_id`; a policy-profile resolver replaces the `config/curriculum.php` `allocation_versions` pointer (D-230 behaviour unchanged); the Profil Jenjang data (D-356) exists. The full `regulations` and `rules` tables, the console for every domain, and Kabar Regulasi come with P5-09 or their own slice.
+Reason: an RPM must record its rule set from the first one made.
+
+### D-356 — Profil Jenjang: SD and MI as data over one core
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ5)
+One codebase with a shared core. Each level (`sd`, `mi`) has a versioned Profil Jenjang record: ministry, rule-set codes per domain, character frameworks on (MI adds KBC), RPM extra fields, rapor export target (e-Rapor or RDM), wali kelas JTM defaults (D-212), external assessments. Code reads the profile and never branches on `level == mi`. New levels become new profiles.
+Reason: SD and MI share the national standards and differ in a few domains; data keeps that cheap and safe.
+
+### D-357 — Master taxonomy
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ6)
+One master taxonomy in `docs/data/taxonomy/` (`status: draft` until Tim Validasi review, D-113) with facets A Policy, B Curriculum structure, C Profile and character, D Learning, E Assessment (Peta Asesmen, D-344), F Content, G Context, H Administration. Each node has a stable code, Indonesian label, parent, level scope, source, strength, status, and version, plus crosswalks between versions (e.g. Profil Pelajar Pancasila → 8 DPL, P5 → kokurikuler). Closed lists only where a rule fixes them; schools may add local items to open lists. Seed data is task P4-22; it joins the legacy app catalogs (P4-15) instead of duplicating them.
+Reason: one name and code per concept lets features tag content and show which standard an innovation serves.
+
+### D-358 — Dasar Kebijakan panel and Cek Keselarasan
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ7)
+Every document shows a short Dasar Kebijakan panel (CP, TP, DPL, principles, regulation and rule-set version), read from its taxonomy tags. One checker, Cek Keselarasan, returns block, warning, and hint lines by rule strength (D-353) on save and in principal and supervisor review; it never rewrites the teacher's work. Both start with the RPM in P5-04 and grow with each slice.
+Reason: makes innovation accountable without slowing teachers.
+
+### D-359 — KMA 512/2026 is the KBC source
+Accepted · 2026-11-09 · P4-21 · owner's choice (PQ8), updates the source of D-126
+Keputusan Menteri Agama No. 512 Tahun 2026 (Pedoman Kurikulum Berbasis Cinta, set 31 March 2026, in force on that date; official PDF supplied by the owner, `docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`) replaces SK Dirjen Pendis 6077/2025 as the KBC source. It keeps Panca Cinta (cinta Tuhan, cinta diri dan sesama manusia, cinta lingkungan, cinta ilmu, cinta tanah air) and adds six nilai dasar (spiritual, personal, sosial, ekologis, kebangsaan, intelektual), six principles, 12 suggested methods, 10 assessment instruments, and three levels of practice (merintis, berkembang, mekar). KBC is not a subject; results are reported through Akhlak or Budi Pekerti and the attitude notes, never as labels or rankings. D-126 stays as it is (MI only). The KMA also covers religion teachers in general schools, SD included; whether SIGRAK offers KBC fields to SD religion teachers is an open question (`docs/drafts/open-questions.md`).
+Reason: the official KMA supersedes the Dirjen guide; the SD scope needs the owner's call.
+
+### D-360 — The repository drops the legacy brand
+Accepted · 2026-11-09 · owner's choice
+Current files no longer name the owner's previous app. English text says "the legacy app"; Indonesian text says "aplikasi lama"; curriculum data notes say "SIGRAK". Files with the old name were renamed (e.g. `docs/drafts/legacy-upgrade-01.md`, `app/Curriculum/Import/Formats/KmSdTopics.php`). As an exception to "kept as received", owner sources in `docs/sources/` may be renamed and edited for the brand only; the old functionality PDF is kept under a new name with its content unchanged. Git history is not rewritten. Decision entries before this one keep their meaning; their wording was updated in place for the brand only.
+Reason: the owner wants the repository focused on the new brand.
+
+### D-361 — Developer handbook
+Accepted · 2026-11-09 · owner's choice
+`docs/final/developer-handbook.md` tells the whole SIGRAK process end to end for developers (position, users, policy layers, the flow from school setup to rapor and portals, architecture, data, AI, exports, operations, way of working, decision map, glossary), marking what is built and what is still design. Its Indonesian PDF, `docs/pdf/developer-handbook.pdf`, is the one complete reading for a new developer. Update it when a phase ends or a major decision changes the flow.
+Reason: the owner wants one complete reading for developers.
+
+### D-362 — Research digest
+Accepted · 2026-11-09 · owner's choice
+`docs/final/research-digest.md` (with its Indonesian PDF) collects every research finding so far: regulations, field and journal studies, benchmarks, technical research, with source, date checked, verification level, implication, and related decisions. Before new research, check it; after research, add the findings to it.
+Reason: avoid repeating research across sessions.

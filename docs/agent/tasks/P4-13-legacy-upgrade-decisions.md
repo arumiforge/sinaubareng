@@ -1,4 +1,4 @@
-# P4-13 — EDUNEXA upgrade decisions (usulan-01 + Part B)
+# P4-13 — Legacy app upgrade decisions (usulan-01 + Part B)
 
 - **Phase:** P4
 - **Status:** review
@@ -8,20 +8,20 @@
 
 ## Goal
 
-Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overlap draft) cover the EDUNEXA walk-through session, settle their conflicts and gaps with the owner, and record the result as decisions. No app code.
+Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overlap draft) cover the legacy app walk-through session, settle their conflicts and gaps with the owner, and record the result as decisions. No app code.
 
 ## Read first
 
-- `docs/sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md`, `docs/sources/usulan-01/data/README.md`
-- `docs/drafts/edunexa-overlap-adjustments.md`
-- `docs/drafts/edunexa-coordination.md`
+- `docs/sources/usulan-01/usulan-01-peta-fitur-aplikasi-lama-ke-sigrak.md`, `docs/sources/usulan-01/data/README.md`
+- `docs/drafts/legacy-overlap-adjustments.md`
+- `docs/drafts/legacy-coordination.md`
 
 ## Output
 
 - `docs/sources/usulan-01/` (owner source, kept as received) and a row in `docs/sources/README.md`
-- `docs/drafts/edunexa-overlap-adjustments.md` (Part B, as received)
-- `docs/drafts/edunexa-coordination.md` (conflicts C-1…C-9, gaps G-1…G-24, sessions S1…S6, outcome)
-- `docs/drafts/edunexa-upgrade-01.md` (item → decision map, doc changes, tasks)
+- `docs/drafts/legacy-overlap-adjustments.md` (Part B, as received)
+- `docs/drafts/legacy-coordination.md` (conflicts C-1…C-9, gaps G-1…G-24, sessions S1…S6, outcome)
+- `docs/drafts/legacy-upgrade-01.md` (item → decision map, doc changes, tasks)
 - `docs/agent/DECISIONS.md` D-252…D-328; status notes on D-016, D-023, D-031, D-117, D-153, D-174
 - `docs/sources/Pedoman_Kalender_Pendidikan_Prov_Jawa_Tengah_2026_2027.pdf` (owner-supplied provincial kaldik)
 - `docs/sources/Instrumen_Supervisi_Kudus_Pra_Observasi_Pasca.docx` (owner-supplied Kudus supervision set)
@@ -46,7 +46,7 @@ Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overl
   - P4-14: update `docs/final/` and the PDFs.
   - P4-15: catalog import.
   - P5-03i and P5-03j.
-  - The slice additions listed in `edunexa-upgrade-01.md` §5.
+  - The slice additions listed in `legacy-upgrade-01.md` §5.
 - Later on 2026-11-09 the owner sent the Jawa Tengah kaldik and a photo of a school's answer sheet, and asked about AI providers. That gave D-323…D-326:
   - one provincial reference calendar, 6-day version, Maulid on 25 August;
   - PKKS from the rules now, with regional variants later;
@@ -54,4 +54,4 @@ Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overl
   - console adapters for OpenAI-compatible APIs and Anthropic, with teachers staying on Gemini.
   The photo shows a real student's name and score, so it was not stored.
 - The owner then sent the Kudus supervision set: D-327 (regional variant, source scales, SIGRAK terms) and D-328 (manual score and optional evidence for principal items SIGRAK has no data for).
-- Open data: the Kudus binder order. Tim Validasi checks the two calendar points listed in `edunexa-upgrade-01.md`.
+- Open data: the Kudus binder order. Tim Validasi checks the two calendar points listed in `legacy-upgrade-01.md`.

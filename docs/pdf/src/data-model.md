@@ -5,11 +5,11 @@
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-05
 - **Terakhir diperbarui:** 2026-11-01
-- **Sumber:** `Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`, `Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`, `EDUNEXA-Dokumentasi-Fungsionalitas.pdf` (semuanya di `docs/sources/`)
+- **Sumber:** `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`, `Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md`, `Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf` (semuanya di `docs/sources/`)
 
 ## Tujuan
 
-Ini adalah model relasional SIGRAK di MySQL 8 (D-007), direvisi dari catatan pengembang EDUNEXA agar sesuai dengan konsep baru: siswa berupa catatan data, konten berasal dari templat, dan guru memiliki beberapa kunci AI. Dokumen ini menetapkan batas entitas, key, invarian, dan kepemilikan. Dokumen ini **bukan** spesifikasi migrasi: setiap tabel mendapat tinjauan skema sendiri saat migrasinya ditulis.
+Ini adalah model relasional SIGRAK di MySQL 8 (D-007), direvisi dari catatan pengembang aplikasi lama agar sesuai dengan konsep baru: siswa berupa catatan data, konten berasal dari templat, dan guru memiliki beberapa kunci AI. Dokumen ini menetapkan batas entitas, key, invarian, dan kepemilikan. Dokumen ini **bukan** spesifikasi migrasi: setiap tabel mendapat tinjauan skema sendiri saat migrasinya ditulis.
 
 ## Konvensi
 
@@ -80,7 +80,7 @@ Kurikulum dipisah menjadi **bawaan global yang berversi** dan **perubahan per se
 
 | Kode | Isi | Data sumber |
 |---|---|---|
-| `KM-SD-2026-R2` | Mata pelajaran SD nasional dengan topik, TP, ATP, fokus, JP (termasuk PAI) | Berkas JSON EDUNEXA |
+| `KM-SD-2026-R2` | Mata pelajaran SD nasional dengan topik, TP, ATP, fokus, JP (termasuk PAI) | Berkas JSON aplikasi lama |
 | `CP-PABP-BKPDM-020-2026` | CP enam mata pelajaran agama, SD Fase A–C | `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json` (ditranskripsi, dicocokkan dengan pindaian di P2-01) |
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP mata pelajaran Kemenag di MI, Fase A–C | `docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` (disusun menjadi baris elemen di P2-02, D-039) |
 | `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | Alokasi SD: JP intrakurikuler dan kokurikuler per mata pelajaran dan kelas (36 JP kokurikuler per mata pelajaran wajib per tahun, 32 di kelas 6, tidak ada untuk Bahasa Inggris), batas muatan lokal | `docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json` (Lampiran II B, Tabel 1–5; draf sampai ditinjau, D-113). Mengisi baris `cocurricular` di `subject_allocations` untuk SD. JP intrakurikulernya sama dengan KM-SD-2026-R2 |
@@ -88,7 +88,7 @@ Kurikulum dipisah menjadi **bawaan global yang berversi** dan **perubahan per se
 
 Topik, TP, ATP, fokus, dan JP untuk lima agama selain Islam dan lima mata pelajaran MI sudah dibuat drafnya di `tp-atp-pendidikan-agama-sd-2026.json` (`TPATP-PABP-SD-2026-R1`) dan `tp-atp-pai-bahasa-arab-mi-2026.json` (`TPATP-PAI-BA-MI-2026-R1`), dengan bentuk tabel model data ini (D-140), menunggu tinjauan Tim Validasi SIGRAK. Versi yang hanya berisi CP sudah cukup bagi wizard RPM untuk menampilkan CP dan elemen.
 
-**Impor.** `php artisan curriculum:import <file>` memuat `data_kurikulum_dengan_cp.json` dan `struktur_alokasi_sd.json`. Perintah ini idempoten berdasarkan `code`, menyimpan alias `Legacy_ID` di `legacy_codes`, dan melaporkan data yang tidak cocok. Hanya data kurikulum yang diimpor dari EDUNEXA (D-020).
+**Impor.** `php artisan curriculum:import <file>` memuat `data_kurikulum_dengan_cp.json` dan `struktur_alokasi_sd.json`. Perintah ini idempoten berdasarkan `code`, menyimpan alias `Legacy_ID` di `legacy_codes`, dan melaporkan data yang tidak cocok. Hanya data kurikulum yang diimpor dari aplikasi lama (D-020).
 
 **Masalah data yang terbawa** (dari dokumen pemetaan, masih terbuka):
 
@@ -109,7 +109,7 @@ Topik, TP, ATP, fokus, dan JP untuk lima agama selain Islam dan lima mata pelaja
 | `calendars` | `region_id` nullable / `school_id` nullable, `academic_year` | Tepat satu pemilik: CHECK (`region_id` IS NULL) <> (`school_id` IS NULL). Kalender daerah adalah bawaan yang ditimpa kalender sekolah |
 | `calendar_events` | `calendar_id` FK CASCADE, `starts_on`, `ends_on`, `kind` ∈ {`holiday`,`exam`,`school_event`,`no_lessons`}, `title` | CHECK `starts_on <= ends_on` |
 | `timetable_slots` | `school_id`, `class_id`, `weekday` 1–6, `period_no`, `starts_at`, `ends_at`, `subject_id`, `teacher_id`, `jp` | Unik (`class_id`, `weekday`, `period_no`). 1 JP = 35 menit untuk SD |
-| `meetings` | `school_id`, `document_id` FK CASCADE (RPM-nya), `number`, `focus_item_id`, `jp`, `minutes`, `planned_on` nullable (NULL untuk "RPM lepas jadwal"), `status` ∈ {`planned`,`done`,`not_done`} | Unik (`document_id`, `number`). Pertemuan `not_done` menggeser pertemuan berikutnya ke slot selanjutnya (perilaku penjadwal EDUNEXA). Tiga versi jadwal terakhir disimpan di `meeting_schedule_history` |
+| `meetings` | `school_id`, `document_id` FK CASCADE (RPM-nya), `number`, `focus_item_id`, `jp`, `minutes`, `planned_on` nullable (NULL untuk "RPM lepas jadwal"), `status` ∈ {`planned`,`done`,`not_done`} | Unik (`document_id`, `number`). Pertemuan `not_done` menggeser pertemuan berikutnya ke slot selanjutnya (perilaku penjadwal aplikasi lama). Tiga versi jadwal terakhir disimpan di `meeting_schedule_history` |
 
 ## Konten
 
@@ -135,7 +135,7 @@ Butir Bank Soal tetap berada di `content` dokumen (satu sumber untuk tampilan). 
 | `ai_credential_cooldowns` | `ai_credential_id` FK CASCADE, `model`, `until`, `reason` ∈ {`rate_minute`,`rate_daily`} | Unik (`ai_credential_id`, `model`). Cermin cooldown Redis untuk UI |
 | `ai_usage_logs` | `user_id`, `school_id` nullable (NULL untuk pengawas tanpa sekolah), `ai_credential_id` FK SET NULL, `generation_id` FK SET NULL, `step_key`, `attempt`, `purpose`, `model`, `outcome` (berhasil atau kelas galat), `http_status` nullable, `input_tokens`, `output_tokens`, `latency_ms`, `created_at` | Hanya ditambah. Indeks (`user_id`, `created_at`), (`school_id`, `created_at`). Tanpa kunci, tanpa teks prompt |
 
-## Administrasi (dipertahankan dari EDUNEXA, dimodelkan secara relasional)
+## Administrasi (dipertahankan dari aplikasi lama, dimodelkan secara relasional)
 
 | Tabel | Kolom utama | Catatan dan invarian |
 |---|---|---|

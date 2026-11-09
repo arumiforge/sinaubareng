@@ -2,7 +2,7 @@
 
 - **Status:** draft (owner review)
 - **Task:** P1-08
-- **Last updated:** 2026-11-01
+- **Last updated:** 2026-11-09
 
 ## Purpose
 
@@ -54,6 +54,7 @@ One list of every unresolved open question from the Phase 1 drafts, so the owner
 | An official-channel copy of SK Dirjen Pendis 9941/2025. Low priority: a second copy from another source (2026-10-31) has identical text, but neither comes from kemenag.go.id | [religious-education.md](../final/religious-education.md#open-questions) | owner + team |
 | SD religion JP: confirm that the national structure has one "Pendidikan Agama dan Budi Pekerti" row (3 JP per week) for every religion | [religious-education.md](../final/religious-education.md#sd-six-religion-subjects-d-034) | team |
 | Known curriculum data issues: Matematika grade 4 semester 2 (80 of 90 JP), Keterampilan Tata Boga target, TP↔fokus links | [data-model.md](../final/data-model.md#curriculum) | team, with the curriculum owner |
+| KMA 512/2026 also covers religion teachers in general schools, SD included. Offer the KBC fields (Tema KBC, Materi Insersi, six nilai dasar) to SD religion teachers as an option, or keep KBC for MI only (D-126)? | [policy-innovation-layers.md](policy-innovation-layers.md) §11, D-359 | owner |
 
 The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 

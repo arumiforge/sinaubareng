@@ -1,4 +1,4 @@
-# Pemetaan Data Materi EDUNEXA untuk Refactor RPM Generator
+# Pemetaan Data Materi Aplikasi Lama untuk Refactor RPM Generator
 
 Oct 29, 2026 · @j
 
@@ -12,7 +12,7 @@ Seluruh data materi RPM Generator bersumber dari dua file statis versi **KM-SD-2
 - Dua mapel ada di kurikulum tapi tidak punya target alokasi: **Keterampilan Tata Boga** (kelas 3–6) dan **Bahasa Inggris kelas 1–2** (kokurikuler).
 - Data siswa dan identitas guru tidak dipetakan; bagian administrasi hanya memuat struktur, bukan isi.
 
-Tabel lengkap per fokus materi ada di spreadsheet pendamping (`pemetaan_materi_edunexa.xlsx`).
+Tabel lengkap per fokus materi ada di spreadsheet pendamping (`pemetaan_materi_aplikasi_lama.xlsx`).
 
 ## Skema data materi
 
@@ -122,7 +122,7 @@ Bagian ini hanya memetakan struktur penyimpanan dan alur. Koleksi berisi data si
 
 - Ada di dasbor utama (`index.html`), dengan aktivitas: Penilaian, Program Penilaian, Analisis Nilai, Taraf Serap. Kartu menu: observasi pengolahan nilai, cetak leger, inject e-Rapor.
 - Konfigurasi satu penilaian: `jenisPenilaian`, `mapel`, `materi`, `tanggalValue`, `items`, `format`, `period`. Jenis dibagi Formatif dan Sumatif.
-- Cadangan lokal di IndexedDB `edunexa_penilaian_backup_v1` (`nilai`, `pengaturan`).
+- Cadangan lokal di IndexedDB `legacy_penilaian_backup_v1` (`nilai`, `pengaturan`).
 
 ### Administrasi kelas (`administrasi.html`)
 

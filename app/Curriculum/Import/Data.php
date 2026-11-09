@@ -78,7 +78,7 @@ final readonly class Data
     }
 
     /**
-     * An object, or a JSON string holding one (EDUNEXA stores some objects as strings).
+     * An object, or a JSON string holding one (the legacy app stores some objects as strings).
      */
     public function object(string $key): self
     {

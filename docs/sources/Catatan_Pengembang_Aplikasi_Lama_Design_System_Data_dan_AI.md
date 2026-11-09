@@ -1,10 +1,10 @@
-# Catatan Pengembang EDUNEXA: Design System, Data, dan AI
+# Catatan Pengembang Aplikasi Lama: Design System, Data, dan AI
 
 Oct 29, 2026 · @j
 
 ## Ringkasan keputusan
 
-Rekomendasi utama: pindah ke basis data relasional, tetapi bertahap. Data EDUNEXA (kurikulum, jadwal, modul, nilai, sekolah binaan) saling berelasi dan dipakai lintas sekolah, jadi SQL lebih cocok daripada dokumen NoSQL.
+Rekomendasi utama: pindah ke basis data relasional, tetapi bertahap. Data aplikasi lama (kurikulum, jadwal, modul, nilai, sekolah binaan) saling berelasi dan dipakai lintas sekolah, jadi SQL lebih cocok daripada dokumen NoSQL.
 
 | Topik | Keputusan | Alasan singkat |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ Rekomendasi utama: pindah ke basis data relasional, tetapi bertahap. Data EDUNEX
 
 ## Kondisi sekarang
 
-&#91;embedded content: dibaca dari kode portal-edunexa.web.app, 29 Okt 2026\]
+&#91;embedded content: dibaca dari kode portal aplikasi lama, 29 Okt 2026\]
 
 Tidak ada server aplikasi: setiap halaman membawa logikanya sendiri, sehingga aturan yang sama (filter mapel, hitung JP, ekspor) ditulis ulang di beberapa file. Kotak kuning menandai titik paling rawan, yaitu kunci AI yang keluar dari perangkat guru tanpa perantara.
 
@@ -88,7 +88,7 @@ Kunci per guru memang benar, tapi itu baru efektif jika tiap guru membuat kunci 
 
 Kondisi sekarang (dari kode):
 
-- Tiap akun guru sudah diminta kunci sendiri; tersimpan di `localStorage` (`edunexa_gemini_key_{username}`) dan disalin ke `users/{username}/profile.apiKey` di Realtime Database.
+- Tiap akun guru sudah diminta kunci sendiri; tersimpan di `localStorage` (`legacy_gemini_key_{username}`) dan disalin ke `users/{username}/profile.apiKey` di Realtime Database.
 - Profil Kepala Sekolah juga mewajibkan "API Key Gemini".
 - Panggilan ke Gemini langsung dari browser, jadi kunci terlihat di DevTools dan di jaringan.
 

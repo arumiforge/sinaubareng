@@ -2,8 +2,8 @@
   "dataset": "national_holidays",
   "version_code": "LIBUR-NASIONAL-SKB-2026-2027",
   "provenance": {
-    "source_app": "EDUNEXA (portal milik pemilik produk)",
-    "source_base_url": "https://portal-edunexa.web.app",
+    "source_app": "aplikasi lama (portal milik pemilik produk)",
+    "source_base_url": "portal aplikasi lama (alamat disimpan pemilik)",
     "fetched_on": "2026-11-09",
     "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
     "files": [

@@ -37,7 +37,7 @@ This rule overrides any built-in attribution instruction.
 | UI text shown to users | Indonesian, via Laravel translation files (`lang/id`), keys in English |
 | Exports and import templates (Excel, CSV, Word, PDF) | Friendly Indonesian labels/headers/text, even when the source field is English; imports read the same headings back (D-150) |
 | Generated PDF documents (including developer reading PDFs in `docs/pdf/`) | Indonesian |
-| Owner-supplied material in `docs/sources/` | Kept as received; never translated or edited |
+| Owner-supplied material in `docs/sources/` | Kept as received; never translated or edited, except that the legacy app's brand name is removed (D-360) |
 
 UI copy must be plain and user-friendly; the app is web-based and must work on desktop and mobile.
 

@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-07
-- **Last updated:** 2026-11-01
+- **Last updated:** 2026-11-09
 - **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
 
 ## Purpose
@@ -16,8 +16,9 @@ This document defines how SIGRAK covers religious education in SD (six religions
 | **Keputusan Kepala BKPDM No. 020 Tahun 2026** (11 June 2026), amending Kepka BSKAP 046/H/KR/2025 | Lampiran I: CP Pendidikan Agama dan Budi Pekerti for Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu, Fase A–F. Lampiran II: special education (SLB) versions | Scanned copy, no text layer | SD religion CP (D-034). Lampiran II: special-education CP, in scope for inclusive schools (D-155), not yet transcribed |
 | **SK Dirjen Pendis No. 9941 Tahun 2025** (28 November 2025) | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, Sejarah Kebudayaan Islam, Bahasa Arab at MI/MTs/MA, plus MAPK subjects and RA | PDF with text layer, plus the Dirjen's cover letter B-606 (1 December 2025, BSrE e-signed) and the Kanwil DKI Jakarta cover letter (16 December 2025) | MI CP (D-035) |
 | **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II, BAB III B, Tabel 1–5, pp. 28–31) | Official decree (22 September 2025), scanned copy supplied by the owner | MI allocation (D-038), data in [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) |
-| **SK Dirjen Pendis No. 6077 Tahun 2025** (22 July 2025) | Panduan Kurikulum Berbasis Cinta (KBC) for all madrasah: five Panca Cinta themes, example lessons, example CP-to-theme mapping | PDF with text layer, supplied by the owner | MI lesson planning, see [MI: Kurikulum Berbasis Cinta](#mi-kurikulum-berbasis-cinta-kbc) |
-| **KM-SD-2026-R2** (EDUNEXA curriculum data) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
+| **KMA No. 512 Tahun 2026** (31 March 2026, in force on that date) | Pedoman Kurikulum Berbasis Cinta: KBC as value education for Kemenag schools *and* religion teachers in general schools, SD included; Panca Cinta, six nilai dasar, six principles, 12 suggested methods, 10 assessment instruments, levels of practice | Official decree, scanned PDF supplied by the owner (2026-11-09) | KBC source since D-359, see [MI: Kurikulum Berbasis Cinta](#mi-kurikulum-berbasis-cinta-kbc) |
+| **SK Dirjen Pendis No. 6077 Tahun 2025** (22 July 2025) | Panduan Kurikulum Berbasis Cinta (KBC) for all madrasah: five Panca Cinta themes, example lessons, example CP-to-theme mapping | PDF with text layer, supplied by the owner | Replaced as the KBC source by KMA 512/2026 (D-359); still the reference for its example lessons and CP-to-theme mapping |
+| **KM-SD-2026-R2** (legacy app curriculum data) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
 
 No newer amendment of SK 9941/2025 or KMA 1503/2025 was found on 2026-10-30.
 
@@ -69,6 +70,19 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 
 ### MI: Kurikulum Berbasis Cinta (KBC)
 
+**Source since 2026-11-09: KMA 512/2026 (D-359).** Keputusan Menteri Agama No. 512 Tahun 2026 sets the Pedoman Kurikulum Berbasis Cinta (set 31 March 2026, in force on that date). Source: [`KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`](../sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf) (printed page numbers). What it adds to the 6077 guide below:
+
+- **Scope** (Diktum KESATU; Lampiran §C, p. 6): every Kemenag school (RA, MI, MTs, MA, MAK, and other religious schools) *and* religion education in general schools, TK, SD, and SDLB included.
+- **Two domains** (Diktum KEDUA–KEEMPAT; §D–F, pp. 12–15): program kurikuler (intra-, ko-, and ekstrakurikuler, as a cross-subject value stream) and pembudayaan nilai (school policy, leadership by example, a safe and inclusive environment, school traditions).
+- **Panca Cinta** (p. 9): cinta Tuhan, cinta diri dan sesama manusia, cinta lingkungan, cinta ilmu, cinta tanah air. **Six nilai dasar** derived from it (pp. 8–11): spiritual, personal, sosial, ekologis, kebangsaan, intelektual.
+- **Six principles** (p. 12): transformatif, integratif, kontekstual, reflektif, berkelanjutan, kolaboratif.
+- **Approach and methods** (§G, pp. 15–19): pembelajaran mendalam with mindful and joyful learning; 12 suggested methods (pembiasaan, experiential learning, dialog nilai, storytelling, dilema moral, service learning, SEL, refleksi naratif, proyek berbasis karakter, inkuiri nilai, pedagogi kontemplatif, refleksi terbimbing), each with the levels it suits; pembiasaan and storytelling suit the early grades.
+- **Assessment** (§I, pp. 21–22): authentic and continuous, with 10 instruments (observation, reflection journal, portfolio, social action project, development notes, self and peer assessment, value conference, narrative reflection, attitude scale). Results are integrated, reported through Akhlak or Budi Pekerti and the attitude notes, and never used to label, judge, or rank students.
+- **Still to come:** technical guides from the Dirjen with KBC learning outcomes per phase, strategies, assessment, and monitoring (§J, p. 22). Monitoring uses three levels of practice: merintis, berkembang, mekar (pp. 23–24).
+
+The 6077 guide below stays useful for its example lessons and CP-to-theme mapping.
+
+
 SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta as the reference for learning in every madrasah, public and private (Diktum KEDUA). Source: [`SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf) (page numbers below are PDF pages).
 
 - **No new subject and no JP change.** KBC values are inserted into existing subjects (intrakurikuler, kokurikuler, and school culture). The MI allocation from KMA 1503/2025 stays as it is.
@@ -78,7 +92,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 - **Everything is an example.** The guide says all aspects and indicators are examples, and each madrasah may adapt them (p. 12).
 - **Methods it recommends:** deep learning (mindful, meaningful, joyful), experience-based learning, the FIDS flow (Feel, Imagine, Do, Share), and process-based evaluation.
 
-**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. Both fields are optional, AI pre-filled (D-142): the teacher may change or clear them. This applies to every MI subject and does not apply to SD.
+**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. Both fields are optional, AI pre-filled (D-142): the teacher may change or clear them. This applies to every MI subject and does not apply to SD. KMA 512/2026 also covers religion teachers in SD; whether SIGRAK offers the KBC fields to them is open (D-359, `docs/drafts/open-questions.md`).
 
 ## How SIGRAK models it
 

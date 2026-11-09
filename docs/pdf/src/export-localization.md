@@ -115,9 +115,9 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 ### 2.1 Aturan pemetaan
 
 - **LOC-14** *Teks baru* adalah teks awal. *Teks lama* tidak pernah dipakai. Catatan di kolom *Catatan* dan daftar istilah di `design-system.md` lebih diutamakan daripada *Teks baru* bila berbeda (misalnya "Templat" vs "template" setelah diputuskan).
-- **LOC-15** **Berkas** ditentukan oleh layar baru yang menampilkan teks itu, bukan oleh halaman EDUNEXA. Halaman lama hanya petunjuk:
+- **LOC-15** **Berkas** ditentukan oleh layar baru yang menampilkan teks itu, bukan oleh halaman aplikasi lama. Halaman lama hanya petunjuk:
 
-| *Halaman* (EDUNEXA) | Berkas yang biasa |
+| *Halaman* (aplikasi lama) | Berkas yang biasa |
 |---|---|
 | Semua halaman | `common`, `terms` |
 | Beranda & akun | `auth`, `account`, `today`, `classes`, `ai_keys` |

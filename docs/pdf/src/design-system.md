@@ -5,17 +5,17 @@
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-06
 - **Terakhir diperbarui:** 2026-11-01
-- **Sumber:** `Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`, `Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`, `Parafrase_Teks_UI_Sigrak.xlsx` (semuanya di `docs/sources/`)
+- **Sumber:** `Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`, `Parafrase_Teks_UI_Sigrak.xlsx` (semuanya di `docs/sources/`)
 
 ## Tujuan
 
-Dokumen ini menetapkan tampilan dan gaya bahasa SIGRAK: token, komponen, aturan ponsel, nada, dan istilah. Token dan aturannya berasal dari catatan EDUNEXA, disesuaikan dengan stack repo (Tailwind + TailAdmin, diporting ke Svelte). Dokumen ini untuk siapa pun yang membangun layar atau menulis teks UI. Teks UI sendiri berbahasa Indonesia dan disimpan di `lang/id`. Dokumen sumbernya berbahasa Inggris, dengan teks UI Indonesia dikutip sebagai data.
+Dokumen ini menetapkan tampilan dan gaya bahasa SIGRAK: token, komponen, aturan ponsel, nada, dan istilah. Token dan aturannya berasal dari catatan aplikasi lama, disesuaikan dengan stack repo (Tailwind + TailAdmin, diporting ke Svelte). Dokumen ini untuk siapa pun yang membangun layar atau menulis teks UI. Teks UI sendiri berbahasa Indonesia dan disimpan di `lang/id`. Dokumen sumbernya berbahasa Inggris, dengan teks UI Indonesia dikutip sebagai data.
 
 ## Arah
 
 Aplikasi harus terlihat seperti buku kerja guru yang rapi: latar polos, satu warna brand, garis tipis, dan huruf yang mudah dibaca di ponsel. Ini alat kerja yang tenang, bukan poster.
 
-| Dihapus (terlihat di EDUNEXA) | Gantinya |
+| Dihapus (terlihat di aplikasi lama) | Gantinya |
 |---|---|
 | Glassmorphism, gradien, glow, blur | Permukaan polos: halaman abu-abu sangat muda, kartu putih, garis 1 px |
 | Warna aksen berbeda untuk tiap kartu atau ikon | Satu warna brand + warna status saja |
@@ -176,13 +176,13 @@ Ini istilah baku dari lembar *Istilah* di spreadsheet (37 entri; daftar lengkapn
 | Edit / Reset / Timpa | Ubah / Kembalikan, Atur ulang / Ganti | |
 | Presensi / Kehadiran / Daftar Hadir | Absensi | |
 | Mutasi siswa | Pindah dan keluar | |
-| Master EDUNEXA | Kurikulum bawaan | |
+| Master + nama aplikasi lama | Kurikulum bawaan | |
 | Gagal … | … belum berhasil | Lebih tenang, tetap jelas |
 | `...` / `&` | `…` (satu karakter) / "dan" | |
 
 ## Sumber teks dan lokalisasi
 
-- `Parafrase_Teks_UI_Sigrak.xlsx` berisi 1.499 teks lama → baru dari 10 halaman EDUNEXA (Administrasi Kelas 608, Beranda & akun 272, Portal Kepala Sekolah 199, Generator RPM 112, bersama 70, Super Admin 65, Tutorial 62, Bank Soal 58, Worksheet/LKPD 27, Portal Pengawas 26).
+- `Parafrase_Teks_UI_Sigrak.xlsx` berisi 1.499 teks lama → baru dari 10 halaman aplikasi lama (Administrasi Kelas 608, Beranda & akun 272, Portal Kepala Sekolah 199, Generator RPM 112, bersama 70, Super Admin 65, Tutorial 62, Bank Soal 58, Worksheet/LKPD 27, Portal Pengawas 26).
 - Saat sebuah layar dibangun, teksnya dipindahkan ke `lang/id/*.php` dengan key bahasa Inggris (konvensi repo). Kolom "Teks baru" di spreadsheet menjadi teks awal, dicocokkan dengan istilah di atas.
 - Placeholder `{…}` di spreadsheet menjadi parameter Laravel `:placeholder`.
 - Teks untuk halaman yang sudah tidak ada (Super Admin → konsol internal, Tutorial → Bantuan) hanya dipakai bila layar baru masih membutuhkannya.

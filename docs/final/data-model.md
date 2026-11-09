@@ -3,11 +3,11 @@
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-05
 - **Last updated:** 2026-11-01
-- **Sources:** [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md), [`Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
+- **Sources:** [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md), [`Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md`](../sources/Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md), [`Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf`](../sources/Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf)
 
 ## Purpose
 
-This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the EDUNEXA developer notes to fit the new concept: students are records, content comes from templates, and teachers own several AI keys. It sets entity boundaries, keys, invariants, and ownership. It is **not** a migration spec: each table gets its own schema review when its migration is written.
+This is the relational model for SIGRAK on MySQL 8 (D-007), revised from the legacy app developer notes to fit the new concept: students are records, content comes from templates, and teachers own several AI keys. It sets entity boundaries, keys, invariants, and ownership. It is **not** a migration spec: each table gets its own schema review when its migration is written.
 
 ## Conventions
 
@@ -78,7 +78,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 
 | Code | Content | Source data |
 |---|---|---|
-| `KM-SD-2026-R2` | National SD subjects with topics, TP, ATP, fokus, JP (incl. PAI) | EDUNEXA JSON files |
+| `KM-SD-2026-R2` | National SD subjects with topics, TP, ATP, fokus, JP (incl. PAI) | Legacy app JSON files |
 | `CP-PABP-BKPDM-020-2026` | CP for the six religion subjects, SD Fase A–C | [`docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`](../data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json) (transcribed, verified against the scan in P2-01) |
 | `CP-PAI-BA-MADRASAH-9941-2025` | CP for MI's Kemenag subjects, Fase A–C | [`docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json`](../data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json) (structured into element rows in P2-02, D-039) |
 | `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | SD allocation: intrakurikuler and kokurikuler JP per subject and grade (36 kokurikuler JP per compulsory subject per year, 32 in grade 6, none for Bahasa Inggris), muatan lokal cap | [`docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json`](../data/regulations/curriculum-structure-permendikdasmen-13-2025.json) (Lampiran II B, Tabel 1–5; draft until reviewed, D-113). Fills the `cocurricular` rows of `subject_allocations` for SD. Its intrakurikuler JP equal KM-SD-2026-R2 |
@@ -86,7 +86,7 @@ Curriculum is split into **global, versioned defaults** and **per-school changes
 
 Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI subjects are drafted in [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (`TPATP-PABP-SD-2026-R1`) and [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (`TPATP-PAI-BA-MI-2026-R1`), in this data model's table shape (D-140), pending Tim Validasi SIGRAK review. CP-only versions are already enough for the RPM wizard to show CP and elements.
 
-**Import.** `php artisan curriculum:import <file>` loads `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json`. It is idempotent by `code`, keeps `Legacy_ID` aliases in `legacy_codes`, and reports any data mismatches. Only curriculum data is imported from EDUNEXA (D-020).
+**Import.** `php artisan curriculum:import <file>` loads `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json`. It is idempotent by `code`, keeps `Legacy_ID` aliases in `legacy_codes`, and reports any data mismatches. Only curriculum data is imported from the legacy app (D-020).
 
 **Known data issues to carry over** (from the mapping doc, still open):
 
@@ -107,7 +107,7 @@ Topics, TP, ATP, fokus, and JP for the five non-Islam religions and the five MI 
 | `calendars` | `region_id` nullable / `school_id` nullable, `academic_year` | Exactly one owner: CHECK (`region_id` IS NULL) <> (`school_id` IS NULL). Region calendars are defaults that a school calendar overrides |
 | `calendar_events` | `calendar_id` FK CASCADE, `starts_on`, `ends_on`, `kind` ∈ {`holiday`,`exam`,`school_event`,`no_lessons`}, `title` | CHECK `starts_on <= ends_on` |
 | `timetable_slots` | `school_id`, `class_id`, `weekday` 1–6, `period_no`, `starts_at`, `ends_at`, `subject_id`, `teacher_id`, `jp` | Unique (`class_id`, `weekday`, `period_no`). 1 JP = 35 minutes for SD |
-| `meetings` | `school_id`, `document_id` FK CASCADE (the RPM), `number`, `focus_item_id`, `jp`, `minutes`, `planned_on` nullable (NULL for "RPM lepas jadwal"), `status` ∈ {`planned`,`done`,`not_done`} | Unique (`document_id`, `number`). A `not_done` meeting shifts later meetings to the next slot (EDUNEXA scheduler behaviour). The last 3 schedule versions are kept in `meeting_schedule_history` |
+| `meetings` | `school_id`, `document_id` FK CASCADE (the RPM), `number`, `focus_item_id`, `jp`, `minutes`, `planned_on` nullable (NULL for "RPM lepas jadwal"), `status` ∈ {`planned`,`done`,`not_done`} | Unique (`document_id`, `number`). A `not_done` meeting shifts later meetings to the next slot (legacy app scheduler behaviour). The last 3 schedule versions are kept in `meeting_schedule_history` |
 
 ## Content
 
@@ -133,7 +133,7 @@ Bank Soal items stay inside the document's `content` (one source for rendering).
 | `ai_credential_cooldowns` | `ai_credential_id` FK CASCADE, `model`, `until`, `reason` ∈ {`rate_minute`,`rate_daily`} | Unique (`ai_credential_id`, `model`). Mirror of the Redis cooldowns for the UI |
 | `ai_usage_logs` | `user_id`, `school_id` nullable (NULL for a supervisor with no school), `ai_credential_id` FK SET NULL, `generation_id` FK SET NULL, `step_key`, `attempt`, `purpose`, `model`, `outcome` (success or error class), `http_status` nullable, `input_tokens`, `output_tokens`, `latency_ms`, `created_at` | Append-only. Index (`user_id`, `created_at`), (`school_id`, `created_at`). No key, no prompt text |
 
-## Administration (kept from EDUNEXA, modelled relationally)
+## Administration (kept from the legacy app, modelled relationally)
 
 | Table | Key columns | Notes and invariants |
 |---|---|---|

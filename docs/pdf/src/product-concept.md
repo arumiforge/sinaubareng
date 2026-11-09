@@ -5,7 +5,7 @@
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-02
 - **Terakhir diperbarui:** 2026-11-01
-- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Rebranding_dan_Perombakan_Fitur_EDUNEXA.md`, `EDUNEXA-Dokumentasi-Fungsionalitas.pdf` (di `docs/sources/`)
+- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`, `Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf` (di `docs/sources/`)
 
 ## Tujuan
 
@@ -16,14 +16,14 @@ Dokumen ini menetapkan apa itu SIGRAK, siapa penggunanya, dan apa isi v1. Dokume
 SIGRAK (nama sementara) adalah aplikasi web untuk guru dan pimpinan SD/MI. Aplikasi ini mengerjakan dua hal, dan keduanya ada di v1:
 
 1. **Pembuatan konten dengan bantuan AI.** Guru membuat RPM, bank soal, LKPD, game kelas, dan paket latihan TKA. Guru memilih templat dan menjawab pertanyaan pedagogis. Guru tidak pernah menulis prompt. Templat buatan pengembang menetapkan struktur dan desain, dan AI hanya mengisi kontennya. Tidak ada generator umum "buat apa saja", karena guru sudah bisa mendapatkannya langsung dari Gemini (D-024).
-2. **Administrasi sekolah.** Absensi, jurnal mengajar, catatan siswa, asesmen dan rapor, data kelas, serta portal kepala sekolah dan pengawas yang dibawa dari EDUNEXA.
+2. **Administrasi sekolah.** Absensi, jurnal mengajar, catatan siswa, asesmen dan rapor, data kelas, serta portal kepala sekolah dan pengawas yang dibawa dari aplikasi lama.
 3. **Ujian latihan TKA (CBT).** Ujian berbasis komputer yang bekerja seperti Tes Kemampuan Akademik nasional untuk kelas 6. Siswa mengerjakannya di situs ujian terpisah dengan kartu ujian dan token proktor (D-026, D-027).
 
 Siswa bukan pengguna aplikasi. Setiap halaman ada di balik login, dan tidak ada halaman publik. Satu-satunya tempat yang disentuh siswa adalah situs ujian, dan hanya dengan kartu ujian untuk satu sesi.
 
-## Yang berubah dari catatan EDUNEXA
+## Yang berubah dari catatan aplikasi lama
 
-| Topik | Catatan EDUNEXA (29 Okt) | SIGRAK sekarang | Keputusan |
+| Topik | Catatan aplikasi lama (29 Okt) | SIGRAK sekarang | Keputusan |
 |---|---|---|---|
 | Inti produk | Administrasi ("Administrasi beres sambil mengajar") | Pembuatan konten **dan** administrasi | D-009 |
 | Stack | CodeIgniter 4 + MySQL 8 + vanilla JS + PWA | Laravel + MySQL 8 + Inertia/Svelte + Tailwind/TailAdmin + Filament. Vanilla JS hanya untuk runtime game | D-003, D-007, D-008 |
@@ -36,7 +36,7 @@ Siswa bukan pengguna aplikasi. Setiap halaman ada di balik login, dan tidak ada 
 | Menu guru | Hari Ini · Di Kelas · Rencana · Asesmen · Kelas Saya | Hari Ini · Di Kelas · **Buat** · Asesmen · Kelas Saya | D-021 |
 | Migrasi | Firebase → SQL bertahap dengan `legacy_id` | Dibangun baru. Hanya data kurikulum yang diimpor, dan guru diundang ulang | D-020 |
 
-Semua yang lain yang disepakati di catatan EDUNEXA tetap berlaku: PDF berbasis teks dengan pengaturan cetak per sekolah, tombol "Buka di Canva", alur validasi materi, dan Di Kelas yang bisa dipakai tanpa sinyal.
+Semua yang lain yang disepakati di catatan aplikasi lama tetap berlaku: PDF berbasis teks dengan pengaturan cetak per sekolah, tombol "Buka di Canva", alur validasi materi, dan Di Kelas yang bisa dipakai tanpa sinyal.
 
 ## Posisi dan prinsip
 
@@ -209,9 +209,9 @@ Paket dibayar per tahun ajaran (Juli–Juni) **hanya oleh guru dan sekolah**. Si
 
 ## Status fitur
 
-Ini 43 fitur lama EDUNEXA ditambah fitur baru, direvisi untuk konsep baru. Nilai status: **Pertahankan**, **Gabung**, **Ganti**, **Hapus**, **Tambah**, **Nanti**. Semua yang tidak bertanda *Hapus* atau *Nanti* masuk v1.
+Ini 43 fitur aplikasi lama ditambah fitur baru, direvisi untuk konsep baru. Nilai status: **Pertahankan**, **Gabung**, **Ganti**, **Hapus**, **Tambah**, **Nanti**. Semua yang tidak bertanda *Hapus* atau *Nanti* masuk v1.
 
-| Area | Fitur lama (EDUNEXA) | Status | Menjadi | Alasan |
+| Area | Fitur aplikasi lama | Status | Menjadi | Alasan |
 |---|---|---|---|---|
 | Beranda | Beranda: kemajuan administrasi | Ganti | Hari Ini: yang harus diisi hari ini + kemajuan minggu ini | Guru perlu tahu apa yang harus dikerjakan sekarang |
 | Beranda | Papan pengumuman | Gabung | Kabar (dengan Pemberitahuan) | Dua tempat berita membingungkan |
