@@ -4,7 +4,7 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 
 ## Product
 
-**SIGRAK** (working name): a web app for SD/MI teachers and school leaders. It does AI-assisted content creation (RPM, Bank Soal, LKPD, Quiz Battle, Paket Soal TKA) through one dedicated template per content type (no generic generator), plus school administration and a TKA practice exam (CBT). Teachers never write prompts. Students are records, never users. They only touch the separate exam site, with per-session exam cards. Login-only, no public pages. Each teacher brings their own Gemini **free-tier** keys (several, rotated, at their own risk). No student personal data in prompts.
+**SIGRAK** (working name): a web app for SD/MI teachers and school leaders. It does AI-assisted content creation (RPM, Bank Soal, LKPD, Quiz Battle, Paket Soal TKA) through one dedicated template per content type (no generic generator), plus school administration and a TKA practice exam (CBT). Teachers never write prompts. Students are records, never users. They only touch the separate exam site, with per-session exam cards. Login-only, no public pages. Each teacher brings their own Gemini **free-tier** keys (several, rotated, at their own risk). No student personal data in prompts (assessment AI too: names are read on the device, essay text goes without student data, D-347).
 
 - Product: `docs/final/product-concept.md`
 - Content engine: `docs/final/content-engine.md` · AI layer: `docs/final/ai-provider-engine.md`

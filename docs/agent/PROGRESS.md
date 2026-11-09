@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-328 (D-185…D-202 unused; D-235…D-239 reserved). D-252…D-328 are the EDUNEXA upgrade (P4-13, `docs/drafts/edunexa-upgrade-01.md`). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-351 (D-185…D-202 unused; D-235…D-239 reserved). D-252…D-328 are the EDUNEXA upgrade (P4-13, `docs/drafts/edunexa-upgrade-01.md`). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -85,6 +85,11 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-13 | EDUNEXA upgrade decisions: usulan-01 (U-01…U-15) + Part B (B-01…B-16) + walk-through gaps, owner interviews in six parallel sessions | review | claude/review-proposal-coverage-tzqbk4 | D-251 | `docs/drafts/edunexa-upgrade-01.md`, `edunexa-coordination.md`, D-252…D-328 |
 | P4-14 | Apply the EDUNEXA upgrade to `docs/final/` and drafts (list in `edunexa-upgrade-01.md` §4) + Indonesian PDFs | todo | — | P4-13 | `docs/final/*.md`, `docs/pdf/` |
 | P4-15 | Import the EDUNEXA catalogs (kokurikuler, ekstrakurikuler, class inventory, form options) to `docs/data/catalogs/`, Tim Validasi review (D-305) | todo | — | — | `docs/data/catalogs/` |
+| P4-16 | LKPD exploration: new LKPD forms (print, no-device, digital, hybrid, new tech), tested 2025–2026 Indonesian SD studies, third-party AR/VR embeds, local context, starter-then-adapt model, risks, clash check | done | sky/determined-bardeen-p9fbn7 | D-024, D-296 | `docs/drafts/lkpd-exploration.md` |
+| P4-17 | Internal roles for Tim SIGRAK: role catalogue, editable scopes (region, level, field), access matrix, support access, clash check | done | sky/determined-bardeen-p9fbn7 | D-167, D-314 | `docs/drafts/internal-roles.md` |
+| P4-18 | Assessment landscape SD/MI (owner's Master Assessment Landscape) translated to SIGRAK features: map vs existing, Peta Asesmen dataset, instrument templates, five-questions wizard, cautions, phasing; input for P4-06 | done | sky/determined-bardeen-p9fbn7 | P5-08 decisions, D-331 | `docs/drafts/assessment-landscape.md` |
+| P4-19 | Design: assessment landscape (Peta Asesmen dataset shape, instrument tags, five-questions wizard, D-346 templates, Wave A) | todo | — | D-344…D-351, P4-18 | Draft + `docs/data/assessment/` |
+| P4-20 | Apply D-329…D-351 to `docs/final/` (content-engine LKPD, data-model staff roles and assessment tags, architecture console, product-concept) + Indonesian PDFs | todo | — | P4-16…P4-18 | `docs/final/*.md`, `docs/pdf/` |
 
 ### Phase 5 — v1 build · todo
 
@@ -121,6 +126,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
+- 2026-11-09 — P4-16, P4-17, P4-18 done (branch `sky/determined-bardeen-p9fbn7`, PR #66): owner answered every question. D-332…D-337 (LKPD Wave 1 nine patterns, local context, self-hosted H5P/model-viewer, presets per school, all LKPD core, embeds only with a clear licence), D-338…D-343 (11 staff roles active, scopes editable, payments by Keuangan/owner, support views school data under the school MoU with one internal row per session, partner programme, TOTP 2FA for owner/admin reset by a SIGRAK admin), D-344…D-351 (Peta Asesmen dataset, own design task P4-19, new instruments, assessment AI without student data (names read on the device, essay text only), GPK as assignment, offline observation entry, sensitive results like health data, Wave A). Next: P4-19, P4-20.
 - 2026-11-09 — P4-13 in review (branch `claude/review-proposal-coverage-tzqbk4`): usulan-01 (`docs/sources/usulan-01/`) and Part B (`docs/drafts/edunexa-overlap-adjustments.md`) were checked against the EDUNEXA walk-through session; 9 conflicts and 24 gaps went to six parallel owner interviews. Result: D-252…D-328 and `docs/drafts/edunexa-upgrade-01.md` (item → D map, doc changes, task additions). Next: P4-14 (final docs + PDFs), P4-15 (catalogs), P5-03i (calendar; Jawa Tengah kaldik now in `docs/sources/`, D-323), then P5-04.
 - 2026-11-09 — P5-03e done (branch `p5/p5-03e-timetable`), so **P5-03 (Foundation) is done**. Jadwal per class at `/kelas/{class}/jadwal` and Kelas Saya > Jadwal at `/kelas-saya/jadwal`, table `timetable_slots`. Owner chose D-247…D-251: break/ceremony/activity rows, teacher clashes refused, teacher from the class's assignments (no `teacher_id` column), JP must match the allocation, religions in parallel. `data-model.md` still lacks these and `learning_outcomes`/`public_id` columns (next data-model update). Next: P5-04 (content core) or P5-07/P5-09/P5-10, which only need P5-03.
 - 2026-11-09 — P5-03h done (branch `p5/p5-03h-copy-classes`): Tahun Ajaran can copy the previous year's classes into a new or empty year, one grade up, without teachers or students (D-242). Owner chose: grade 6 not copied (D-243), optional new grade 1 classes (D-244), free names kept (D-245), only into an empty year (D-246). Next: P5-03e (timetable).
