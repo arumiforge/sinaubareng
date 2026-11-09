@@ -1,6 +1,6 @@
 # EDUNEXA Upgrade 01: Decided Changes
 
-- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-322); `docs/final/` not yet updated
+- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-326); `docs/final/` not yet updated
 - **Task:** P4-13
 - **Last updated:** 2026-11-09
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (owner source, Indonesian), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B), [`edunexa-coordination.md`](edunexa-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
@@ -49,6 +49,7 @@ The UI terms in usulan-01 §2 apply, with these changes:
 | G-6 conflict checker | D-260 |
 | B-11 calendar change impact preview | D-261 |
 | U-06 draft timetable | D-262 |
+| Jawa Tengah kaldik, 6-day version, for Kudus, Pati, Jepara | D-323 |
 
 ### 2.2 Completeness and RPM flow (P5-04, P5-07)
 
@@ -98,6 +99,7 @@ The UI terms in usulan-01 §2 apply, with these changes:
 | B-05 item library (Q4) | D-294 |
 | B-07 daya serap, Kelompok belajar | D-295 |
 | B-16 LKPD blocks (Q10) | D-296 |
+| LJK layout from the schools' own sheet (crossed letter boxes, partial scores for Isian/Uraian) | D-325 |
 
 ### 2.5 Kelas Saya and homeroom (P5-07, P5-08, P5-09)
 
@@ -118,7 +120,7 @@ The UI terms in usulan-01 §2 apply, with these changes:
 
 | Item | Decision |
 |---|---|
-| G-1 PKKS and principal performance evidence | D-308 |
+| G-1 PKKS and principal performance evidence | D-308, D-324 (rules now, regional variants later) |
 | G-2 sekolah binaan requests | D-309 |
 | G-7 Pusat Tindak Lanjut | D-310 |
 | G-15 Pengingat | D-311 |
@@ -126,6 +128,7 @@ The UI terms in usulan-01 §2 apply, with these changes:
 | G-5 findings bank | D-313 |
 | G-8 console access | D-314 |
 | G-10 AI model per purpose (amends D-117) | D-315 |
+| Console AI adapters: OpenAI-compatible (OpenAI, OpenRouter, DeepSeek) and Anthropic; teachers stay on Gemini | D-326 |
 | G-11 Kesehatan Sistem | D-316 |
 | G-9 curriculum console | D-317 |
 | G-12 Arsip Tahun Ajaran, retention | D-318 |
@@ -178,7 +181,7 @@ These stay as written in Part B and are built in their slice:
 |---|---|---|
 | P4-14 | Apply §4 to `docs/final/` and the drafts, and rebuild the PDFs | P4-13 |
 | P4-15 | Catalog import to `docs/data/catalogs/` and Tim Validasi review (D-305) | — |
-| P5-03i | Calendar: D-253…D-261. First step: the online SKB check (D-254). Needs the 2026/2027 dinas kaldik for Kudus, Jepara, and Pati | P5-03e |
+| P5-03i | Calendar: D-253…D-261, D-323. First step: the online SKB check (D-254) and the Jawa Tengah 6-day calendar from `docs/sources/Pedoman_Kalender_Pendidikan_Prov_Jawa_Tengah_2026_2027.pdf` | P5-03e |
 | P5-03j | Draft timetable (D-262) | P5-03i |
 | P5-04 (added) | D-267 (enums), D-269 (calculation), D-270, D-272…D-277, D-283…D-285; console parts D-315, D-316 | P5-03i |
 | P5-05 (added) | D-293, D-294 (index and reuse), D-296 | P5-04 |
@@ -191,14 +194,14 @@ These stay as written in Part B and are built in their slice:
 
 ## Open questions
 
-- **Data needed before P5-03i:** 2026/2027 dinas kaldik for Kudus, Jepara, and Pati (D-257).
-- **Owner sample:** a local PKKS / supervisi manajerial instrument, if one exists (D-308).
-- **Pilot schools:**
-  - the answer-sheet layout Kudus schools already use (D-287);
-  - the binder order the Kudus region expects (D-278, Format Kudus).
+- **Tim Validasi, before importing the Jawa Tengah calendar (D-323):**
+  - The guide gives the end of the 6-day semester-1 break as 1 January 2027 in Pasal 23 and as 2 January in Lampiran I. The Lampiran XIII count (24 effective days in January) matches 1 January, so 2 January is a school day.
+  - For 2027 the guide lists estimated holidays only. The EDUNEXA file has cuti bersama dates that the guide lacks (5 Feb, 12 and 15 Mar, 25 Mar, 18–19 May). The guide is the initial data; an admin updates cuti bersama in the console once the 2027 SKB is out (D-253, D-254).
+- **Pilot schools:** the binder order the Kudus region expects (D-278, Format Kudus).
 - **Settle in the build:**
   - the OMR library (a one-day spike on a low-end Android phone, D-287);
   - the maximum number of Menjodohkan pairs per item on the sheet (P4-06);
-  - where Tim SIGRAK's test key is stored (env or console, D-315);
+  - where Tim SIGRAK's test keys are stored (env or console, D-315, D-326);
   - how held kokurikuler JP is recorded (kokurikuler module design, D-277).
+- **Owner, before a teacher-facing purpose uses a Tim SIGRAK key from another provider:** who pays for it (D-326).
 - **Tim SIGRAK, console plan mapping (D-158, D-211):** whether the leger lock and weights sit in core Asesmen or the Rapor add-on, and whether sumbangan and savings sit in the Keuangan add-on.

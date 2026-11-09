@@ -119,7 +119,7 @@ Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 Reason: see `docs/final/ai-provider-engine.md`. Awaiting owner review.
 
 ### D-023 — AI keys: Gemini free tier only
-Accepted · 2026-10-30 · refines D-012
+Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged)
 Only Google Gemini keys are accepted, and the design targets the free tier: few calls per generation, stable models only, no background pings. Multi-key rotation stays, at the teacher's own risk. Google's API terms forbid circumventing limits, so the second and later keys need explicit consent. No student personal data goes into prompts, because free-tier prompts may be read by Google's reviewers. AI users are adults (teachers) only.
 Reason: owner's decision; Gemini API Additional Terms and Google APIs Terms checked 2026-10-30.
 
@@ -1512,3 +1512,23 @@ Reason: prevents stale assets and lost offline data after a deploy.
 Accepted · 2026-11-09 · P4-13 · from the usulan-01 walk-through, consistent with earlier decisions
 Not re-adopted from EDUNEXA: the free generator and Bahan Tayang, SMP–SMA levels, a mandatory AI key at activation, default passwords, browser-screenshot PDFs (html2canvas/html2pdf), the 15-minute idle logout, exam mode (D-026), AI reading student handwriting (D-287), public verification pages (D-010, D-281), and the terms siswa, P5, taraf serap, and teguran. Deferred to a later proposal (usulan-02): an AI draft score for S-04 Telaah RPM and "Cocokkan berkas" (comparing an uploaded PDF with an approval).
 Reason: these either conflict with existing decisions or the 2025–2026 rules, or need more testing first.
+
+### D-323 — One Jawa Tengah reference calendar, 6-day version, for Kudus, Pati, and Jepara
+Accepted · 2026-11-09 · P5-03i · owner's choice, refines D-254, D-256, and D-257
+Kudus, Pati, and Jepara follow the provincial kaldik (Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah 400.3/23862/2026, in `docs/sources/`), and their schools use a 6-day week. Tim SIGRAK builds one Jawa Tengah reference calendar from the guide's **6-day** dates, owned by a province-level region; every regency of the province uses it unless that regency gets its own calendar. The 5-day dates are not imported. Where the guide disagrees with itself, the owner's reading applies: Maulid Nabi Muhammad SAW is on 25 August 2026. The guide is the initial data. When the government publishes newer holiday or cuti bersama dates (for 2027 the guide lists estimates), an admin replaces them in the console (D-253). Each school still copies the calendar and adds its own events (D-256). Acceptance check for `EffectiveDays` (D-259), SD/MI with a 6-day week: 254 effective days (134 in semester 1, 120 in semester 2), as in Lampiran XIII.
+Reason: the three regencies use the provincial guide with a 6-day week; one calendar is kept once, and schools keep their own context.
+
+### D-324 — PKKS instruments from the rules now, regional variants later
+Accepted · 2026-11-09 · P4-08 · owner's choice, refines D-308
+The PKKS / supervisi manajerial instruments are drafted from current rules only; no local sample is awaited. They are kept as templates (D-221) that can have a variant per region (for example Kudus, Pati, Jepara) when a local sample or a regional rule differs; a school uses its region's variant, or the default.
+Reason: the rules are enough for a first draft, and regional formats can be added as data later.
+
+### D-325 — Answer-sheet layout follows the schools' own format
+Accepted · 2026-11-09 · P5-08 · owner's choice, refines D-287
+The printed LJK looks like the sheet schools already use: a header with Mata Pelajaran, Kelas, Nama, and Nomor; PG items in two columns of letter boxes (A–D, or A–E when used) that the student crosses out; numbered lines for Isian Singkat and Uraian. SIGRAK adds four corner markers and the QR (D-287). The scanner accepts a cross or a filled box; two marks or a scribbled correction are marked yellow for the teacher to check. The other scanned forms (PG Kompleks, Benar-Salah, Menjodohkan) use the same letter-box style. Isian and Uraian take a per-item score that can be above 1 (partial credit), entered in the score grid.
+Reason: students and teachers already know this sheet; SD students need no training for bubbles.
+
+### D-326 — Console AI adapters: OpenAI-compatible and Anthropic; teachers stay on Gemini
+Accepted · 2026-11-09 · console, with P5-04 · owner's choice, extends D-116 and D-315, keeps D-023 for teacher keys
+Besides Gemini, `app/AI/` gets two adapters: OpenAI-compatible (base URL, key, model; covers OpenAI, OpenRouter, DeepSeek) and Anthropic (Claude models through the Anthropic API). In the console an admin can test a key of any of these providers and pick them as model or fallback per purpose (D-315), with every change logged. Teacher keys stay Gemini only (D-023); teacher keys from other providers are deferred to usulan-02, after every template has been tested per provider. Before a purpose that runs on teachers' generations uses a Tim SIGRAK key from another provider, the owner decides who pays for it.
+Reason: more providers for Tim SIGRAK's own work without changing the teacher's free-tier model.
