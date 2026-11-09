@@ -133,7 +133,59 @@ To be filled from the literature search (§8.1 by theme, §8.2 caveats).
 
 ## 9. Third-party AR, VR, 3D, and simulations
 
-To be filled from the tool scan.
+Web scan of 2025–2026 vendor pages, checked 2026-11-09. Prices and plan limits change often, so re-check each one before building. Items marked *unverified* could not be opened.
+
+### 9.1 Two findings that shape the design
+
+1. **Gemini terms rule out AI that students use.** The Gemini API terms (effective 2026-03-23) require users to be 18 or older. They also bar use in a service "directed towards or likely to be accessed by individuals under the age of 18". On the unpaid tier, human reviewers may read inputs and outputs ([terms](https://ai.google.dev/gemini-api/terms)). SIGRAK's teacher-side generation is fine. A student chatbot, AI read-aloud feedback, or sending photos of student handwriting to Gemini is not (see C10).
+2. **Indonesian child-data rules favour tools with no student accounts.**
+   - UU 27/2022 (PDP) Art. 25 requires special handling and parental consent for children's data.
+   - PP 17/2025 ("PP Tunas"), in force since March 2026 as reported in the news, sets age tiers and age checks for digital platforms.
+   - Rule for SIGRAK: support only targets that a student opens **without logging in**, and send no student data.
+
+### 9.2 Shortlist
+
+| Priority | Tool | Use in LKPD | Why | Watch out |
+|---|---|---|---|---|
+| 1 | **H5P, self-hosted** through `h5p-standalone` (MIT) | Interactive drag, sort, fill, and interactive-book steps in the app, on the IFP, and offline | Content and data stay on our server, no student account, can be cached | Authoring through the free Lumi desktop app or our own blocks. The H5P PHP library is GPL, so use only the standalone player |
+| 2 | **Google `<model-viewer>`** (Apache-2.0), self-hosted | 3D model in the app; "Lihat di ruangan" AR on phones without installing an app | The answer to "AR without our own engine". No third party at view time | We need a curated library of CC-BY GLB models (solids, organs, planets, rumah adat). iOS needs USDZ. Android needs Google Play Services for AR, otherwise it falls back to 3D |
+| 3 | **PhET** | IPAS simulations as iframe or QR | Free, Indonesian translations, no student data, downloadable HTML | Commercial use of CC-BY sims needs a separate licence from PhET; confirm, since SIGRAK is paid |
+| 4 | **GeoGebra** | Math applets as iframe or QR | Indonesian UI, no account to use | Free only for non-commercial use; a paid product needs a licence (office@geogebra.org) |
+| 5 | **YouTube** (incl. 360°) | Short video or 360° tour, using the `youtube-nocookie.com` domain | Everyone has it; no account to watch | Ads and recommendations; heavy on bandwidth; 360° in mobile embeds is uneven |
+| 6 | **Assemblr EDU** (Indonesian) | AR/3D as link or QR, embed for 3D view | Local company, Indonesian UI, used in many SD IPAS studies. belajar.id teachers get a free quota (10 Edu Kits a day, 1000+ objects; post dated 2025-05-02) | *Unverified:* rupiah prices, whether embeds need a paid plan, whether students can open a shared link without login. Test before promising |
+| 7 | **Wordwall**, **Wayground** (ex-Quizizz) | Link or QR to a teacher's own activity | Popular with Indonesian teachers; students join without an account | Free tiers are small (Wordwall Basic: 3 activities) and change often |
+| 8 | **Scratch**, **Code.org** | KKA links for kokurikuler (D-208) | Free, Indonesian UI, no sign-in needed to try | Progress tracking needs accounts; link only |
+
+**Generic fallback:** a "tautan apa saja → QR + link" block for any https URL, with embeds limited to an allowlist of domains.
+
+**Avoid:**
+- **8th Wall:** the hosted platform closed on 2026-02-28, and hosted projects are deleted after 2027-02-28.
+- Small free plans or plans that need accounts: MyWebAR free, ZapWorks, Blippar, JigSpace free, Merge Cube, ThingLink, Frame VR, Delightex/CoSpaces.
+- For students: Liveworksheets free (ads), Padlet (user posts), Book Creator and Canva (student accounts).
+- Google Expeditions has been dead since 2021.
+
+**Government content:**
+- Rumah Belajar became **Rumah Pendidikan / Ruang Murid** in January 2025. It has no embed API and its URLs may change, so use link or QR only.
+- Buku Kemendikdasmen (SIBI) can be linked by book and page.
+- Many Rumah Pendidikan pieces run on the IFP that almost every SD/MI now has (D-179), so the online view must work well on a large touch screen.
+
+### 9.3 Other technology
+
+| Idea | Verdict |
+|---|---|
+| QR codes on print | Yes. Generate them server-side. Better: point the QR at **our own short redirect** so a dead link can be fixed after printing. This needs a public route, which clashes with D-010 (C15) |
+| Text-to-speech for early reading | Web Speech API in Chrome on Android, but an `id-ID` voice depends on the device. Fallback: pre-generated audio inside the offline HTML |
+| Photo scan of printed answers | Closed items only, through Pindai LJK (D-286), on the device. No handwriting sent to Gemini |
+| NFC cards | Web NFC is Chrome on Android only and experimental. Skip |
+| VR headsets | Skip. 360° on the IFP or a phone covers the SD use cases |
+
+### 9.4 Main risks
+
+- **Link rot:** Expeditions, 8th Wall, the move from Sketchfab to Fab, and ministry rebrands. Mitigations: our own redirect, a scheduled link checker, a stored title and description, and a printed fallback task.
+- **Accounts and child privacy:** support no-login targets only.
+- **Ads**, for example on YouTube and the Liveworksheets free plan.
+- **Licence or price changes:** GeoGebra, PhET, Wordwall, Assemblr.
+- **Bandwidth:** 360° video and large 3D files. Show the size, add a "perlu internet" label, and prefer content that can be cached (H5P, model-viewer, PhET HTML).
 
 ## 10. Clash check against existing decisions
 
@@ -152,16 +204,71 @@ To be filled from the tool scan.
 | C11 | Local content | Curated data reviewed by Tim Validasi (D-113) | No | Seed lists reviewed before use; the AI uses only listed items |
 | C12 | Camera AR / movement activities | Camera and movement only when tied to a TP (D-180) | No | AR only when the 3D view is the learning (anatomy, bangun ruang, planets) |
 | C13 | LKPD blocks for grades 1–3 | Decided for v1 (D-296) | No | This exploration extends it to grades 4–6 |
+| C15 | QR on paper points to our own short redirect, so dead links can be fixed after printing | Login-only; no public pages or share links (D-010) | **Yes** | Option A: QR goes straight to the third-party URL (no clash, but dead links stay dead on paper). Option B: a public redirect route that only 302s to allowlisted URLs and shows nothing of SIGRAK (needs a decision) |
+| C16 | Self-hosted H5P player and 3D models | Bundled libraries, no CDN (D-033); local disk storage (D-114) | No | Bundle `h5p-standalone`/`model-viewer` with Vite; models and H5P packages as curated assets on local disk |
 | C14 | Supervision evidence | Supervision item 25 "LKPD, bahan bacaan, media" (`teacher-supervision-instruments.md`) | No | The LKPD pattern and its link to the RPM give supervision evidence for free |
 
 ## 11. Strengths, weaknesses, risks of the starter-then-adapt model
 
-To be filled.
+### 11.1 Strengths
+
+| Strength | Why it matters |
+|---|---|
+| Fast first draft tied to curriculum data | TP, CP, fokus, and the RPM meeting are already in SIGRAK; the teacher starts at 70% instead of 0% |
+| Teacher keeps control | The final LKPD reflects the class, which supervision and *pembelajaran mendalam* both expect |
+| Flexible across schools | A city school with devices and a village school with only paper use the same pattern in different formats |
+| Local relevance at scale | One school profile makes every LKPD local without the teacher typing context |
+| Consistent quality floor | Patterns and blocks are designed and tested once; AI fills text, not layout or logic (D-015, D-030) |
+| Reuse inside the school | School presets save parallel-class teachers from redoing work (as D-275) |
+| Evidence loop | LKPD → Game kelas / Pindai LJK / checklist → "Perlu diulang" → next LKPD |
+
+### 11.2 Weaknesses
+
+| Weakness | Effect |
+|---|---|
+| Choice overload | Around 18 patterns × 5 formats × blocks can confuse a busy teacher |
+| "Starter" used as final | Many teachers will print the draft unchanged, so generic content reaches the class |
+| Paper experience is hard to measure | Most pattern value (talk, movement, collaboration) leaves no data in SIGRAK |
+| Bigger build | Each pattern needs an output schema, rules, a PDF layout, and maybe an offline HTML runtime |
+| Print cost | Colour, many pages, cards, and boards cost schools money; black-and-white layouts must still work |
+| No student devices in most classes | "Digital interaktif" mostly means the IFP or the teacher's phone |
+
+### 11.3 Risks and mitigations
+
+| # | Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|---|
+| R1 | AI invents wrong local facts or stereotypes a region | Medium | High | AI uses only items from the reviewed seed list and school profile (C11); a "Periksa fakta lokal" checkbox before printing |
+| R2 | Content unsuitable for children (tobacco, violence, myths presented as fact) | Low–medium | High | Exclusion list in the seed data; prompt rules; Tim Validasi review |
+| R3 | Pedagogical quality drops after teacher edits | Medium | Medium | Rules re-check on save (TP still covered, instructions not empty); principal validation flow already exists |
+| R4 | Gemini free-tier limits with multi-step, richer LKPDs | High | Medium | Keep each LKPD to one or two calls; blocks drawn by code, not AI; reuse presets without AI |
+| R5 | Third-party link rot, ads, price or licence changes | High | Medium | Allowlist, link checker, stored title, fallback task, prefer self-hosted (H5P, model-viewer) |
+| R6 | Child privacy (UU PDP, PP Tunas) and Gemini terms | Medium | High | No student accounts, no student data in prompts, no student-facing AI (C1, C10) |
+| R7 | Feature sprawl delays v1 (P5-05) | High | High | v1 keeps the decided LKPD + D-296 blocks; patterns come in waves (§12) |
+| R8 | Overlap with Game kelas causes two places for the same activity | Medium | Low | LKPD = paper and group, Game kelas = panel; one content source (C8) |
+| R9 | Copyright of embedded or adapted content (book pages, videos, school presets copied from elsewhere) | Medium | Medium | Link instead of copy; licence field on uploaded media; presets stay inside the school |
+| R10 | Research evidence is thinner than it looks (small samples, local trials) | High | Low | Present studies as inspiration, not proof; measure our own use (pattern chosen, printed, edited, repeated) |
+| R11 | Maintenance of many patterns across template versions | Medium | Medium | Patterns are versioned with the template (D-013); retire unused patterns based on usage |
 
 ## 12. Suggested phasing
 
-To be filled.
+| Wave | Scope | Fits |
+|---|---|---|
+| **v1 (P5-05, unchanged)** | LKPD as decided + D-296 blocks for grades 1–3. Add only the `pattern` field to the output schema so later waves need no migration | Current plan |
+| **Wave 1 (v1.x)** | 6 print-first patterns with low prep: Detektif Teks (L1), Peta Cerita (L2), Data Kelasku (N3), Misi Petualangan (G1), Tiga Jalur (D1), Tiket Keluar (D2). Numeracy and literacy blocks. Local context profile + Kudus/Jepara/Pati seed lists. Wizard suggests patterns from the RPM model | Literacy and numeracy first; cheapest to build |
+| **Wave 2** | Kotak Terkunci (G2) with the offline HTML self-check, Pasar Numerasi (N1), Lab Mini (S1), Jurnal Proyek (S2) linked to the kokurikuler variant, Pikir Komputasional (S5). `qr_link` block with an allowlist. `ifp_step` to Game kelas. School presets | Hybrid and kokurikuler |
+| **Wave 3** | Self-hosted H5P player and `model-viewer` 3D/AR with a curated model library; embeds of PhET, GeoGebra, YouTube nocookie, and Assemblr after its terms are checked; remaining patterns; more regions' seed lists | New technology |
+| **Later / needs decision** | Student answers from a device, a public QR redirect, a cross-school preset marketplace, TTS audio | C1, C9, C15 |
 
 ## 13. Owner questions
 
-To be filled.
+| # | Question | Options |
+|---|---|---|
+| Q1 | Keep v1 LKPD as decided and start patterns in v1.x? | Yes (recommended) / Add Wave 1 to P5-05 |
+| Q2 | Which patterns go first? | Wave 1 list in §12 / Owner picks from §4 |
+| Q3 | Local context profile per school, with seed lists reviewed by Tim Validasi? | Yes, Kudus/Jepara/Pati first / Later |
+| Q4 | QR on paper: straight to third-party URLs or through a public SIGRAK redirect (C15)? | Straight (no new public route) / Redirect (fixable links, new exception to D-010) |
+| Q5 | Interactive LKPD for students: offline HTML self-check (no data back) only, or also a student session like the exam site (C1)? | Offline HTML + IFP only / Plan a student session later |
+| Q6 | Self-host H5P and `model-viewer` with our own model library (Wave 3)? | Yes / Third-party links only |
+| Q7 | School presets: inside one school only, or shared across schools later? | One school / Across schools later (moderation needed) |
+| Q8 | Is LKPD part of Sigrak Guru core, with the IFP and embed parts in the Game kelas add-on (D-158, D-175)? | Core + add-on split / All core |
+| Q9 | Check PhET and GeoGebra commercial licences, and Assemblr EDU terms, before Wave 3? | Yes / Link-only use, no embed |
