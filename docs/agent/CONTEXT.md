@@ -13,6 +13,9 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 - Religious education (SD six religions, MI Kemenag subjects): `docs/final/religious-education.md` · prepared data: `docs/data/`
 - Official 2025 curriculum rules and guides (structure and JP, deep learning, KKA, kokurikuler, KSP, assessment), SD/MI extract: `docs/data/regulations/` (draft, D-203)
 - Owner's original material: `docs/sources/` (input only; drafts win where they differ)
+- Developer handbook (whole process, start here): `docs/final/developer-handbook.md`, PDF `docs/pdf/developer-handbook.pdf` (D-361) · Research digest (check before any research, add after): `docs/final/research-digest.md` (D-362)
+- Policy foundation: national policy first, innovation on top; rule strengths, versioned rule sets, Profil Jenjang, master taxonomy (D-352…D-358, `docs/drafts/policy-innovation-layers.md`)
+- The owner's previous app is "the legacy app" / "aplikasi lama"; never use its old brand name (D-360)
 
 Do not invent features beyond these documents.
 

@@ -3,7 +3,7 @@
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-04
 - **Last updated:** 2026-11-01
-- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md)
+- **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md)
 - **Facts checked on 2026-10-30** against Google's [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [troubleshooting](https://ai.google.dev/gemini-api/docs/troubleshooting), [API errors](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), and [Google APIs Terms](https://developers.google.com/terms) pages, and Laravel's [AI SDK docs](https://laravel.com/docs/ai-sdk).
 
 ## Purpose
@@ -95,7 +95,7 @@ app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, Revis
 
 - The secret is stored in `ai_credentials.secret` with Laravel's `encrypted` cast (APP_KEY; rotate with `APP_PREVIOUS_KEYS`). A fingerprint (`HMAC-SHA256(secret, app key)`) detects duplicates, and `secret_last4` is kept for display.
 - **Write-only.** The secret is never sent to the browser (Inertia props carry labels, last four characters, and status only) and never decrypted outside `ApiKeyManager`/`GeminiClient`.
-- Sent as the `x-goog-api-key` header, **never** in the URL query string (EDUNEXA put it in the query string).
+- Sent as the `x-goog-api-key` header, **never** in the URL query string (the legacy app put it in the query string).
 - It is never logged. HTTP client logging excludes headers, and Telescope hides `x-goog-api-key` (`Telescope::hideRequestHeaders`).
 - Authorization: only the owner's generations may use a key. Principals, operators, supervisors, and staff can see that a teacher has keys and their status, never the secret.
 

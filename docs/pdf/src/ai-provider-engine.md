@@ -5,7 +5,7 @@
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-04
 - **Terakhir diperbarui:** 2026-11-01
-- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md` (di `docs/sources/`)
+- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md` (di `docs/sources/`)
 - **Fakta dicek pada 2026-10-30** terhadap halaman Google tentang [batas laju](https://ai.google.dev/gemini-api/docs/rate-limits), [pemecahan masalah](https://ai.google.dev/gemini-api/docs/troubleshooting), [galat API](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), dan [Google APIs Terms](https://developers.google.com/terms), serta [dokumentasi AI SDK](https://laravel.com/docs/ai-sdk) Laravel.
 
 ## Tujuan
@@ -97,7 +97,7 @@ app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, Revis
 
 - Rahasia disimpan di `ai_credentials.secret` dengan cast `encrypted` Laravel (APP_KEY; dirotasi dengan `APP_PREVIOUS_KEYS`). Fingerprint (`HMAC-SHA256(secret, app key)`) mendeteksi duplikat, dan `secret_last4` disimpan untuk ditampilkan.
 - **Hanya tulis.** Rahasia tidak pernah dikirim ke browser (prop Inertia hanya membawa label, empat karakter terakhir, dan status) dan tidak pernah didekripsi di luar `ApiKeyManager`/`GeminiClient`.
-- Dikirim sebagai header `x-goog-api-key`, **tidak pernah** di query string URL (EDUNEXA menaruhnya di query string).
+- Dikirim sebagai header `x-goog-api-key`, **tidak pernah** di query string URL (aplikasi lama menaruhnya di query string).
 - Tidak pernah dicatat di log. Logging klien HTTP tidak menyertakan header, dan Telescope menyembunyikan `x-goog-api-key` (`Telescope::hideRequestHeaders`).
 - Otorisasi: hanya pembuatan konten milik pemiliknya yang boleh memakai sebuah kunci. Kepala sekolah, operator, pengawas, dan staf bisa melihat bahwa seorang guru punya kunci beserta statusnya, tidak pernah rahasianya.
 

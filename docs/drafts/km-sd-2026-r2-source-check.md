@@ -2,7 +2,7 @@
 
 - **Task:** P5-03g · **Status:** draft · **Date:** 2026-11-08
 - **Files:** [`docs/data/curriculum/data_kurikulum_dengan_cp.json`](../data/curriculum/data_kurikulum_dengan_cp.json), [`docs/data/curriculum/struktur_alokasi_sd.json`](../data/curriculum/struktur_alokasi_sd.json) (provenance in the [README](../data/curriculum/README.md))
-- **Checked against:** [`docs/final/data-model.md`](../final/data-model.md) (Curriculum), the mapping doc [`Pemetaan_Data_Materi_EDUNEXA…`](../sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md), D-204, D-208
+- **Checked against:** [`docs/final/data-model.md`](../final/data-model.md) (Curriculum), the mapping doc [`Pemetaan_Data_Materi_Aplikasi_Lama…`](../sources/Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md), D-204, D-208
 
 This note is input for P5-03c (`curriculum:import`) and for a later `docs/final/data-model.md` update. Nothing in `docs/final/` was changed.
 

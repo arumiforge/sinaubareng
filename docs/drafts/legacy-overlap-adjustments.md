@@ -1,19 +1,19 @@
-# EDUNEXA Overlap: Adjustments to Same or Similar Features (Part B)
+# Legacy App Overlap: Adjustments to Same or Similar Features (Part B)
 
-- **Status:** decided 2026-11-09 · recorded in D-252…D-322 via [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md); Q5 replaced by D-286 (scanning is core in P5-08)
-- **Task:** proposal, not yet a task (Part B of the EDUNEXA comparison)
+- **Status:** decided 2026-11-09 · recorded in D-252…D-322 via [`legacy-upgrade-01.md`](legacy-upgrade-01.md); Q5 replaced by D-286 (scanning is core in P5-08)
+- **Task:** proposal, not yet a task (Part B of the legacy app comparison)
 - **Last updated:** 2026-11-09
-- **Read with:** [`product-concept.md`](../final/product-concept.md#feature-status) (fate of the 43 EDUNEXA features), [`content-engine.md`](../final/content-engine.md), [`data-model.md`](../final/data-model.md), [`administration-features.md`](administration-features.md) (P4-04, D-210…D-221), [`ifp-classroom.md`](../final/ifp-classroom.md), [`EDUNEXA-Dokumentasi-Fungsionalitas.pdf`](../sources/EDUNEXA-Dokumentasi-Fungsionalitas.pdf)
+- **Read with:** [`product-concept.md`](../final/product-concept.md#feature-status) (fate of the 43 legacy app features), [`content-engine.md`](../final/content-engine.md), [`data-model.md`](../final/data-model.md), [`administration-features.md`](administration-features.md) (P4-04, D-210…D-221), [`ifp-classroom.md`](../final/ifp-classroom.md), [`Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf`](../sources/Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf)
 
 ## Purpose
 
-SIGRAK must be an upgrade of EDUNEXA, not a copy. Many SIGRAK features exist in EDUNEXA in the same or a similar form (status *Keep*, *Merge*, or *Replace* in the feature status table). The concept already moved them to a new stack and a cleaner menu, but in several places the **behaviour** is still EDUNEXA's. This draft lists those places and proposes adjustments that give each shared feature a clear step up, using data SIGRAK already has.
+SIGRAK must be an upgrade of the legacy app, not a copy. Many SIGRAK features exist in the legacy app in the same or a similar form (status *Keep*, *Merge*, or *Replace* in the feature status table). The concept already moved them to a new stack and a cleaner menu, but in several places the **behaviour** is still the legacy app's. This draft lists those places and proposes adjustments that give each shared feature a clear step up, using data SIGRAK already has.
 
 Out of scope here: features only SIGRAK has (templates, games, TKA, AI keys), and the new administration features already decided in P4-04 (A1…A11, H1…H8, K1…K10, O1…O9). Where a proposal touches one of them, it links instead of repeating it.
 
 ## 1. How each item is written
 
-Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK now** (what the final docs say) · **Gap** (why it is still a copy or a regression) · **Proposal** · **Reuses** · **Effort** (S ≈ days, M ≈ 1–3 weeks, L ≈ a slice) · **Fits** (build slice) · **Decision** (an owner question in §4, if any).
+Each item has: **Legacy app** (how it worked, from the functional map) · **SIGRAK now** (what the final docs say) · **Gap** (why it is still a copy or a regression) · **Proposal** · **Reuses** · **Effort** (S ≈ days, M ≈ 1–3 weeks, L ≈ a slice) · **Fits** (build slice) · **Decision** (an owner question in §4, if any).
 
 ## 2. Summary
 
@@ -33,27 +33,27 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 | B-12 | Hari Ini | Broadcast, pemberitahuan | Kabar items carry their action; reminders are rate-limited | S | — |
 | B-13 | Kelas Saya | Piket, Keuangan, Inventaris | Piket rotation generated from the roster; class inventory becomes a room view of school inventory; monthly class-cash message | S–M | Q7 |
 | B-14 | Akun | Pindah Sekolah | Define what leaves with the teacher and what stays with the school | S | Q8 |
-| B-15 | Offline | Service Worker + IndexedDB cache | Today's and tomorrow's RPM meetings readable offline (EDUNEXA had this; SIGRAK lost it) | S–M | Q9 |
+| B-15 | Offline | Service Worker + IndexedDB cache | Today's and tomorrow's RPM meetings readable offline (the legacy app had this; SIGRAK lost it) | S–M | Q9 |
 | B-16 | Buat | Worksheet generator | LKPD blocks for grades 1–3 (trace, cut-and-stick, colour, match, pictogram) drawn by the renderer | M | Q10 |
 
 ## 3. Proposals
 
 ### B-01 Hari Ini: one completeness ledger, plus "Siapkan besok"
 
-- **EDUNEXA.** The administration dashboard showed Target, Tersedia, Belum, Status, and Aksi per document type over a date range the teacher picked. Targets came from scheduled meetings; a guru mapel's target skipped subjects taught by others.
+- **Legacy app.** The administration dashboard showed Target, Tersedia, Belum, Status, and Aksi per document type over a date range the teacher picked. Targets came from scheduled meetings; a guru mapel's target skipped subjects taught by others.
 - **SIGRAK now.** *Hari Ini* shows what to fill today and progress this week. The principal's *Ringkasan* shows completeness per teacher. P4-04 adds K3 (bukti kinerja) and P2 (cross-school recap). Each would compute "complete" on its own.
 - **Gap.** Four screens, four formulas: the teacher, principal, supervisor, and the Ruang GTK download could show different numbers for the same week. The date-range picker is gone, but nothing replaced its "what is missing in this period" view.
 - **Proposal.**
   1. One service, `CompletenessLedger`, that turns timetable slots × meetings × journals × attendance into rows `(teacher, class, subject, date, item, state)`, with `item` ∈ {rpm_meeting, attendance, journal} and `state` ∈ {done, missing, not_due, excused (holiday or `no_lessons` event)}. Every screen reads it; none counts on its own.
-  2. Fixed windows instead of a picker: *Hari ini*, *Minggu ini*, *Semester ini*. The semester view replaces EDUNEXA's range table.
+  2. Fixed windows instead of a picker: *Hari ini*, *Minggu ini*, *Semester ini*. The semester view replaces the legacy app's range table.
   3. **Siapkan besok:** tomorrow's slots without an RPM meeting show one button that opens the RPM wizard with class, subject, date, and the next ATP topic already chosen.
-  4. Each missing row links to the exact screen that fixes it (EDUNEXA's *Aksi* column, kept).
+  4. Each missing row links to the exact screen that fixes it (the legacy app's *Aksi* column, kept).
 - **Reuses.** `timetable_slots`, `meetings`, `journals`, attendance, `calendar_events`.
 - **Effort / fits.** M · P5-07 (teacher side), reused by P5-09 (portals, K3, P2).
 
 ### B-02 RPM scheduling: visible shifts, early capacity warning, Promes plan vs actual
 
-- **EDUNEXA.** `rpm-scheduler.js` placed modules on JP slots and silently reflowed them when a meeting was marked not done. Semester 2 waited for the even-semester start.
+- **Legacy app.** `rpm-scheduler.js` placed modules on JP slots and silently reflowed them when a meeting was marked not done. Semester 2 waited for the even-semester start.
 - **SIGRAK now.** Same behaviour, carried over on purpose (`meetings.status = not_done` shifts later meetings; the last 3 schedule versions are kept in `meeting_schedule_history`). Calendar changes adjust automatically and post a Kabar notice.
 - **Gap.** The teacher still cannot see *what* moved, cannot undo it, and learns too late that the semester has no room left for the remaining ATP topics. That is the main complaint a reflow engine causes.
 - **Proposal.**
@@ -66,7 +66,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-03 Jurnal: "terlaksana sebagian"
 
-- **EDUNEXA.** A meeting is either done or not done. Not done shifts the whole module.
+- **Legacy app.** A meeting is either done or not done. Not done shifts the whole module.
 - **SIGRAK now.** `journals.status` and `meetings.status` keep the two states.
 - **Gap.** In SD the usual case is a lesson that ran out of time: *Memahami* and *Mengaplikasi* were done, *Merefleksi* was not. Marking it "not done" repeats the whole meeting; marking it "done" hides the gap.
 - **Proposal.** Add `partial`. The teacher ticks which learning experiences were not finished (the RPM meeting already splits them into *Memahami*, *Mengaplikasi*, *Merefleksi*). The unfinished part is attached to the next meeting as a carry-over block shown at the top of that meeting and in Game kelas; no reflow happens. Three `partial` in a row for one subject triggers the B-02 capacity check.
@@ -76,7 +76,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-04 RPM for parallel classes, and attaching a "lepas jadwal" RPM later
 
-- **EDUNEXA.** Generated RPMs were cached per school, year, class, and user. *Modul mandiri* made an RPM outside the scheduler.
+- **Legacy app.** Generated RPMs were cached per school, year, class, and user. *Modul mandiri* made an RPM outside the scheduler.
 - **SIGRAK now.** One RPM document has its own `meetings` tied to one class's timetable. "RPM lepas jadwal" has `planned_on = NULL` and no ATP progress.
 - **Gap.** A guru mapel (PJOK, PAI, Bahasa Inggris) teaches the same topic to 4A, 4B, and 4C. Today they would run the wizard three times and spend three times the AI quota. A "lepas jadwal" RPM can never join the schedule later.
 - **Proposal.**
@@ -88,7 +88,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-05 Bank Soal: item library across documents
 
-- **EDUNEXA.** Questions lived in the browser (IndexedDB), per device. An "evaluation mode" ran tests.
+- **Legacy app.** Questions lived in the browser (IndexedDB), per device. An "evaluation mode" ran tests.
 - **SIGRAK now.** Items sit inside each Bank Soal document's `content`. When an assessment uses the document, items are copied into `assessment_items` with `kode_tp`. Exam mode is off (D-026).
 - **Gap.** Items are trapped in the document that made them. To build an STS a teacher regenerates questions that already exist in earlier PH documents, which wastes quota and repeats items students have seen.
 - **Proposal.**
@@ -101,7 +101,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-06 Nilai: fast entry and scanned answer sheets
 
-- **EDUNEXA.** SANDI: typed score entry and recap per student, Excel and PDF exports.
+- **Legacy app.** SANDI: typed score entry and recap per student, Excel and PDF exports.
 - **SIGRAK now.** Asesmen > Nilai; Kartu Jawab (D-174) gives per-student formative data from printed cards, as the last Game kelas step.
 - **Gap.** Typing 28 students × 25 items on a phone is the slowest job in the app, and per-TP analysis needs item-level scores, not one total.
 - **Proposal.**
@@ -113,7 +113,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-07 Analisis per TP: keep the familiar print, add groups for the next lesson
 
-- **EDUNEXA.** *Analisis Nilai* and *Taraf Serap* as separate pages.
+- **Legacy app.** *Analisis Nilai* and *Taraf Serap* as separate pages.
 - **SIGRAK now.** Asesmen > Analisis, automatic per TP; A1 adds remedial and enrichment.
 - **Gap.** Teachers and supervisors still ask for a page titled "Analisis Daya Serap"; a modern screen with no matching print looks like a missing feature.
 - **Proposal.** Keep "Daya serap" as a print layout and a search alias of Analisis (no separate page). Add **Kelompok belajar**: from per-TP results, three groups per TP (perlu bimbingan, cukup, siap pengayaan) the teacher can adjust; the next RPM wizard for that subject offers the group sizes as *kondisi murid*. Only counts go to the prompt, never names (`PromptDataGuard`).
@@ -121,7 +121,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-08 Rapor: readiness check and a locked leger
 
-- **EDUNEXA.** Leger plus a technical "inject e-Rapor" step.
+- **Legacy app.** Leger plus a technical "inject e-Rapor" step.
 - **SIGRAK now.** Asesmen > Rapor with the 12 components (D-214) and e-Rapor/RDM export (D-218).
 - **Gap.** Neither app tells the homeroom teacher, before printing, which student is still missing a score, a description, kokurikuler, or ekstrakurikuler data.
 - **Proposal.** **Cek kesiapan rapor:** a per-student checklist of the 12 components with links to fix each gap. After the principal signs off, the leger is locked; reopening needs a reason, which is logged. Exports always come from the locked version.
@@ -129,7 +129,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-09 Catatan Siswa: faster capture, BK kept out of bundles
 
-- **EDUNEXA.** Separate books for anecdotes, BK, and achievements.
+- **Legacy app.** Separate books for anecdotes, BK, and achievements.
 - **SIGRAK now.** One form with a kind; BK visible only to author, homeroom teacher, and principal.
 - **Proposal.**
   1. **One-tap capture:** a short list of school-set tags ("membantu teman", "terlambat", "juara lomba") so most notes take one tap plus an optional sentence; works offline.
@@ -139,7 +139,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-10 Berkas Administrasi: semester bundle with a generated cover
 
-- **EDUNEXA.** "Download Paket" exported administration documents; `edunexa-cover.js` built cover pages (book title, semester, year, paper, dinas name).
+- **Legacy app.** "Download Paket" exported administration documents; `aplikasi-lama-cover.js` built cover pages (book title, semester, year, paper, dinas name).
 - **SIGRAK now.** Export per document only. K3 bundles evidence for Ruang GTK. No cover generator.
 - **Gap.** At the end of a semester every teacher hands in a binder: cover, contents, Prota, Promes, RPMs, journal recap, attendance recap, scores, analysis. SIGRAK makes every part but not the binder.
 - **Proposal.** **Berkas Administrasi** in Dokumen Saya: pick a semester, tick parts (all on by default, in the order supervisors expect), get a cover page and a contents page generated from school data and the print settings (letterhead image, signers, A4/F4), then all parts. The same builder serves K3 with a different preset. The principal can download a whole school's set.
@@ -149,23 +149,23 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-11 Kaldik: preview the effect of a calendar change
 
-- **EDUNEXA.** `institution_kaldik` plus `kaldik_calon` (a draft calendar).
+- **Legacy app.** `institution_kaldik` plus `kaldik_calon` (a draft calendar).
 - **SIGRAK now.** Region defaults that a school calendar overrides; schedule changes adjust RPMs automatically with a Kabar notice.
-- **Proposal.** When a region default or a school event changes, the operator first sees the impact ("12 RPM di 6 kelas akan bergeser"), applies it, and teachers get the B-02 preview with undo. This keeps the idea of EDUNEXA's draft calendar without a second calendar table.
+- **Proposal.** When a region default or a school event changes, the operator first sees the impact ("12 RPM di 6 kelas akan bergeser"), applies it, and teachers get the B-02 preview with undo. This keeps the idea of the legacy app's draft calendar without a second calendar table.
 - **Effort / fits.** S · P5-04 (with B-02).
 
 ### B-12 Kabar: items carry their action
 
-- **EDUNEXA.** A broadcast board and a separate notification centre.
+- **Legacy app.** A broadcast board and a separate notification centre.
 - **SIGRAK now.** Both merged into Kabar; a notice when a generation finishes (D-152).
 - **Proposal.** Every Kabar item has a kind and one action button (*Buka RPM*, *Isi jurnal*, *Lihat komentar*). The principal's *Ingatkan* is limited to one reminder per item per teacher per week, so it nudges without nagging. Old items fold into a weekly digest.
 - **Effort / fits.** S · P5-07/P5-09.
 
 ### B-13 Kelas Saya: Piket, Keuangan, Inventaris
 
-- **EDUNEXA.** Three manual tables kept per class.
+- **Legacy app.** Three manual tables kept per class.
 - **SIGRAK now.** *Keep* for all three; Keuangan and Inventaris kelas are an add-on; tabungan joins Keuangan (D-219); school inventory O4 is in scope (D-217).
-- **Gap.** These are the plainest copies of EDUNEXA. Class inventory and school inventory (O4) would be typed twice.
+- **Gap.** These are the plainest copies of the legacy app. Class inventory and school inventory (O4) would be typed twice.
 - **Proposal.**
   1. **Piket:** generated rotation from the roster (balanced by count and gender, skips absent students for the day), printable, and shown in Game kelas idle screen if the school wants.
   2. **Inventaris:** class inventory becomes the room view of school inventory: an item belongs to the school and sits in a room; the wali kelas edits condition and count for their room. One record, two views.
@@ -175,7 +175,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-14 Pindah Sekolah: what moves with the teacher
 
-- **EDUNEXA.** Transfer requests approved by a super admin; data keyed by username, so it moved loosely with the person.
+- **Legacy app.** Transfer requests approved by a super admin; data keyed by username, so it moved loosely with the person.
 - **SIGRAK now.** *Akun > Pindah Sekolah*, approved by the target school. Principle 6: school data belongs to the school. Not yet written: what happens to the teacher's documents.
 - **Proposal.** Split by owner. Stays with the old school: attendance, journals, scores, notes, rapor, and a read-only copy of the teacher's documents for supervision history. Moves with the teacher: their own documents (RPM, Bank Soal, LKPD, games) as copies, their AI keys, their plan. School-specific data inside a document (letterhead, school name) is replaced on first export at the new school.
 - **Effort / fits.** S · P5-09.
@@ -183,7 +183,7 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-15 Offline: read today's lesson without signal
 
-- **EDUNEXA.** The service worker and IndexedDB cached the RPM schedule and RPMs, so a teacher could read the lesson plan offline.
+- **Legacy app.** The service worker and IndexedDB cached the RPM schedule and RPMs, so a teacher could read the lesson plan offline.
 - **SIGRAK now.** Offline is limited to Absensi, Jurnal, and Catatan Siswa (D-016, D-093).
 - **Gap.** This is a **regression**: the teacher fills the journal offline but cannot open the lesson the journal is about.
 - **Proposal.** The Di Kelas cache also stores, **read-only**, the RPM meetings for today and tomorrow (text only, no exports, no editing), refreshed whenever the app is online. Editing and AI stay online-only, so D-016's intent (small PWA scope) holds.
@@ -192,9 +192,9 @@ Each item has: **EDUNEXA** (how it worked, from the functional map) · **SIGRAK 
 
 ### B-16 LKPD: blocks for the lower grades
 
-- **EDUNEXA.** A worksheet generator with a component engine, theme registry, and layout engine.
+- **Legacy app.** A worksheet generator with a component engine, theme registry, and layout engine.
 - **SIGRAK now.** The LKPD template outputs title, goal, instructions, steps, table, questions, and reflection, with an A4/F4 print layout.
-- **Gap.** That fits grades 4–6. Grades 1–3 worksheets are mostly visual (tracing letters and numbers, cut and stick, colouring, matching with lines, counting pictures). EDUNEXA's component idea served this; SIGRAK's current schema does not.
+- **Gap.** That fits grades 4–6. Grades 1–3 worksheets are mostly visual (tracing letters and numbers, cut and stick, colouring, matching with lines, counting pictures). The legacy app's component idea served this; SIGRAK's current schema does not.
 - **Proposal.** A fixed set of **LKPD blocks** owned by the renderer, as with TKA visuals (D-030, no AI images): `trace` (letters, numbers, Arabic letters for MI), `match_lines`, `cut_and_stick`, `colour_by_rule`, `count_pictures` (bundled pictograms), `fill_table`, `short_answer`. The AI picks blocks and fills text and data; the renderer draws them. The wizard suggests blocks by phase (Fase A first).
 - **Reuses.** TKA figure set and renderer approach, LKPD print layout.
 - **Effort / fits.** M · P5-05.
@@ -206,7 +206,7 @@ Suggested answer in brackets.
 
 | # | Question | Options | Suggested | Owner answer |
 |---|---|---|---|---|
-| Q1 | B-02: how should RPM shifts behave? | (a) automatic with a preview and *Batalkan*; (b) always ask first; (c) silent, as in EDUNEXA | (a), and ask first only when a shift pushes a topic past the semester end | Automatic with preview and *Batalkan* (2026-11-09) |
+| Q1 | B-02: how should RPM shifts behave? | (a) automatic with a preview and *Batalkan*; (b) always ask first; (c) silent, as in the legacy app | (a), and ask first only when a shift pushes a topic past the semester end | Automatic with preview and *Batalkan* (2026-11-09) |
 | Q2 | B-03: add "terlaksana sebagian" to Jurnal? | Ya / Tidak | Ya | Ya (2026-11-09) |
 | Q3 | B-04: RPM for parallel classes | (a) copy per class, no AI call; (b) one shared RPM for several classes; (c) not in v1 | (a) | Copy per class, no AI call (2026-11-09) |
 | Q4 | B-05: item library across Bank Soal documents | Ya in P5-05 / Nanti / Tidak | Ya in P5-05 | Ya in P5-05 (2026-11-09) |

@@ -1,22 +1,22 @@
-# EDUNEXA Upgrade 01: Decided Changes
+# Legacy App Upgrade 01: Decided Changes
 
 - **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); `docs/final/` not yet updated
 - **Task:** P4-13
 - **Last updated:** 2026-11-09
-- **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (owner source, Indonesian), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B), [`edunexa-coordination.md`](edunexa-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
+- **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-aplikasi-lama-ke-sigrak.md) (owner source, Indonesian), [`legacy-overlap-adjustments.md`](legacy-overlap-adjustments.md) (Part B), [`legacy-coordination.md`](legacy-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
 
 ## Purpose
 
-SIGRAK is the next generation of EDUNEXA, not a copy. Two proposals covered the same ground on 2026-11-09:
+SIGRAK is the next generation of the legacy app, not a copy. Two proposals covered the same ground on 2026-11-09:
 
-- **usulan-01** maps EDUNEXA features to SIGRAK as U-01…U-15, with the open questions T-1…T-11.
+- **usulan-01** maps legacy app features to SIGRAK as U-01…U-15, with the open questions T-1…T-11.
 - **Part B** adjusts the shared features as B-01…B-16, with the owner's answers Q1…Q10.
 
-The walk-through of the EDUNEXA portals also raised ideas that neither proposal carried (G-1…G-24). Six parallel sessions interviewed the owner on 2026-11-09, and this session merged their results. This draft is the single English record of the outcome. It is the input for P4-14 (update `docs/final/` and the PDFs) and for the build slices.
+The walk-through of the legacy app portals also raised ideas that neither proposal carried (G-1…G-24). Six parallel sessions interviewed the owner on 2026-11-09, and this session merged their results. This draft is the single English record of the outcome. It is the input for P4-14 (update `docs/final/` and the PDFs) and for the build slices.
 
 Each decision text lives in `DECISIONS.md`. This file only maps each item to its D-number and lists what each doc and task still needs.
 
-## 1. Guiding differences from EDUNEXA
+## 1. Guiding differences from the legacy app
 
 These hold for every item. They come from usulan-01 §1.1.
 
@@ -149,7 +149,7 @@ These stay as written in Part B and are built in their slice:
 
 | Item | Outcome | Decision |
 |---|---|---|
-| EDUNEXA features listed in G-23 | Not carried over | D-322 |
+| Legacy app features listed in G-23 | Not carried over | D-322 |
 | G-4 AI draft score for S-04 Telaah RPM | Deferred to usulan-02 | D-322 |
 | U-04 "Cocokkan berkas" | Deferred to usulan-02 | D-322 |
 | G-9 AI draft from Buku Guru | Rejected (SIBI licence) | D-317 |
@@ -198,7 +198,7 @@ These stay as written in Part B and are built in their slice:
 
 - **Tim Validasi, before importing the Jawa Tengah calendar (D-323):**
   - The guide gives the end of the 6-day semester-1 break as 1 January 2027 in Pasal 23 and as 2 January in Lampiran I. The Lampiran XIII count (24 effective days in January) matches 1 January, so 2 January is a school day.
-  - For 2027 the guide lists estimated holidays only. The EDUNEXA file has cuti bersama dates that the guide lacks (5 Feb, 12 and 15 Mar, 25 Mar, 18–19 May). The guide is the initial data; an admin updates cuti bersama in the console once the 2027 SKB is out (D-253, D-254).
+  - For 2027 the guide lists estimated holidays only. The legacy app file has cuti bersama dates that the guide lacks (5 Feb, 12 and 15 Mar, 25 Mar, 18–19 May). The guide is the initial data; an admin updates cuti bersama in the console once the 2027 SKB is out (D-253, D-254).
 - **Pilot schools:** the binder order the Kudus region expects (D-278, Format Kudus; its component list now comes from D-327).
 - **Settle in the build:**
   - the OMR library (a one-day spike on a low-end Android phone, D-287);

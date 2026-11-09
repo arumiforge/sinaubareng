@@ -14,7 +14,7 @@ Draft topics (materi pokok/ATP), TP, fokus materi, and JP for Pendidikan Agama K
 
 - `docs/final/religious-education.md` (SD section, Data work item 3)
 - `docs/final/data-model.md` (Curriculum)
-- `docs/sources/Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md` (KM-SD-2026-R2 shape and PAI allocation)
+- `docs/sources/Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md` (KM-SD-2026-R2 shape and PAI allocation)
 - `docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json`
 
 ## Output
@@ -56,9 +56,9 @@ Drafted `docs/data/curriculum/tp-atp-pendidikan-agama-sd-2026.json` (version `TP
 
 **Follow-ups:**
 - `docs/final/religious-education.md`, Data work item 3, and `docs/final/data-model.md` ("built by the team") should link this file once it is approved.
-- The importer needs to accept this file. Its shape is the data model's (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not the EDUNEXA JSON-string columns.
+- The importer needs to accept this file. Its shape is the data model's (`topics`, `learning_objectives`, `focus_items`, `focus_item_objectives`), not the legacy JSON-string columns.
 
 **Decisions to record:**
 - New curriculum version `TPATP-PABP-SD-2026-R1` for the five non-Islam SD religion subjects, with subject codes PAKR, PAKT, PAH, PAB, and PAKH.
-- Religion TP/ATP data is stored in the data model's English-keyed shape, not in the EDUNEXA row shape.
+- Religion TP/ATP data is stored in the data model's English-keyed shape, not in the legacy row shape.
 - Allocation follows PAI (3 JP/week, 5 topics per semester), with one fokus per week of 3 JP.

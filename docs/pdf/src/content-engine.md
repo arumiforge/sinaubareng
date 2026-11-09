@@ -5,7 +5,7 @@
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-03
 - **Terakhir diperbarui:** 2026-11-01
-- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Pemetaan_Data_Materi_EDUNEXA_untuk_Refactor_RPM_Generator.md`, `Catatan_Pengembang_EDUNEXA_Design_System_Data_dan_AI.md` (di `docs/sources/`)
+- **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md` (di `docs/sources/`)
 
 ## Tujuan
 
@@ -153,7 +153,7 @@ Document saved: content JSON + template key + template version
 | KBC (hanya MI) | Untuk sekolah MI, wizard menambahkan *Tema KBC* (satu atau lebih tema Panca Cinta) dan *Materi Insersi*, dan AI merangkainya ke TP, kegiatan, dan asesmen. Kedua kolom opsional: AI mengisi saran awal dari CP dan materi, dan guru boleh mengubah atau mengosongkannya, sehingga RPM tetap bisa dibuat tanpanya (D-142). Ini berlaku untuk setiap mata pelajaran MI dan tidak berlaku untuk SD (D-126) |
 | Varian kokurikuler | Skema keluaran tersendiri, satu rencana per kegiatan kokurikuler, mengikuti Panduan Kokurikuler 2025: kepala (satuan pendidikan, kelas, tema, alokasi waktu dalam JP, lokasi), A *Dimensi Profil Lulusan*, B *Tujuan Pembelajaran* (kompetensi dan materi), C *Praktik Pedagogis*, D *Lingkungan Pembelajaran*, E *Kemitraan Pembelajaran*, F *Pemanfaatan Digital*, G *Kegiatan* (Memahami, Mengaplikasi, Merefleksi), H *Asesmen* (formatif, ditambah sumatif dengan rubrik 4 tingkat). Bentuknya, yang boleh digabung: *Pembelajaran Kolaboratif Lintas Disiplin* (mata pelajaran terkait dicantumkan), *Gerakan 7 Kebiasaan Anak Indonesia Hebat* (7 KAIH), dan *Cara Lainnya* (misalnya projek). Kebiasaan ketujuh diberi label "Tidur Cepat", dengan "tidur tepat waktu" sebagai penjelasannya (D-207). Koding dan Kecerdasan Artifisial berjalan di sini sebagai isi kokurikuler (D-208). Membaca rencana kokurikuler tahunan sekolah (dimensi, tema, bentuk, mata pelajaran terkait, JP, tahapan tahunan, pemantauan) yang disetujui kepala sekolah |
 | Aturan | Jumlah pertemuan dan menit sama dengan nilai hasil hitungan. Setiap TP dari topik muncul di sedikitnya satu pertemuan atau indikator. Rubrik punya tepat 4 tingkat (sangat baik, baik, berkembang, perlu bimbingan). Tidak ada bagian kosong |
-| Penjadwalan | Pertemuan ditempatkan di jadwal pelajaran kelas. Pertemuan yang ditandai "tidak terlaksana" di jurnal menggeser sisanya ke slot JP berikutnya. RPM semester 2 menunggu tanggal mulai semester genap (perilaku yang dibawa dari penjadwal EDUNEXA) |
+| Penjadwalan | Pertemuan ditempatkan di jadwal pelajaran kelas. Pertemuan yang ditandai "tidak terlaksana" di jurnal menggeser sisanya ke slot JP berikutnya. RPM semester 2 menunggu tanggal mulai semester genap (perilaku yang dibawa dari penjadwal aplikasi lama) |
 
 ### Bank Soal
 

@@ -8,7 +8,7 @@
 
 ## Goal
 
-Keep the owner's material as received and settle the decisions that conflict between the EDUNEXA notes, the SIGRAK concept, and repo rules.
+Keep the owner's material as received and settle the decisions that conflict between the legacy app notes, the SIGRAK concept, and repo rules.
 
 ## Read first
 

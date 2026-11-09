@@ -8,7 +8,7 @@
 
 ## Goal
 
-Adapt the EDUNEXA tokens, voice, writing rules, and terms to Tailwind/TailAdmin/Svelte and the new concept.
+Adapt the legacy app tokens, voice, writing rules, and terms to Tailwind/TailAdmin/Svelte and the new concept.
 
 ## Read first
 

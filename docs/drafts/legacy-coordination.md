@@ -1,13 +1,13 @@
-# EDUNEXA Upgrade: Decision Coordination (usulan-01 + Part B)
+# Legacy App Upgrade: Decision Coordination (usulan-01 + Part B)
 
-- **Status:** done 2026-11-09 · all six sessions answered; outcome in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md), decisions D-252…D-328
+- **Status:** done 2026-11-09 · all six sessions answered; outcome in [`legacy-upgrade-01.md`](legacy-upgrade-01.md), decisions D-252…D-328
 - **Task:** P4-13 (proposal → decisions; no app code)
 - **Last updated:** 2026-11-09
-- **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (Indonesian, owner source, items U-01…U-15, open questions T-1…T-11), [`usulan-01/data/`](../sources/usulan-01/data/README.md), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B, items B-01…B-16, owner answers Q1…Q10)
+- **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-aplikasi-lama-ke-sigrak.md) (Indonesian, owner source, items U-01…U-15, open questions T-1…T-11), [`usulan-01/data/`](../sources/usulan-01/data/README.md), [`legacy-overlap-adjustments.md`](legacy-overlap-adjustments.md) (Part B, items B-01…B-16, owner answers Q1…Q10)
 
 ## Purpose
 
-Two proposals reached the repo on the same day and overlap. The session that produced usulan-01 (an EDUNEXA portal walk-through) also raised ideas that neither file carries. This file records what was covered, what conflicted, and how the decisions were split across parallel sessions. It is kept as the record of the process; the outcome is in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md).
+Two proposals reached the repo on the same day and overlap. The session that produced usulan-01 (a walk-through of the legacy portals) also raised ideas that neither file carries. This file records what was covered, what conflicted, and how the decisions were split across parallel sessions. It is kept as the record of the process; the outcome is in [`legacy-upgrade-01.md`](legacy-upgrade-01.md).
 
 ## 1. Conflicts between the two proposals
 
@@ -81,8 +81,8 @@ Rules for every session: interview the owner in small rounds (one topic at a tim
 | S6 Portals and console | 4 rounds | D-308…D-321 |
 | Coordinator | Part B answers without a session, G-23, final round, follow-up (kaldik Jateng, LJK photo, AI providers, Kudus supervision set: D-323…D-328) | D-274, D-275, D-296, D-306, D-307, D-322; Berkas range, retention and revoke rules in D-278 and D-281; attendance rule in D-303; retention floors in D-318 |
 
-Conflicts C-1…C-9 and gaps G-1…G-24 are all closed (see the map in `edunexa-upgrade-01.md` §2–3).
+Conflicts C-1…C-9 and gaps G-1…G-24 are all closed (see the map in `legacy-upgrade-01.md` §2–3).
 
 ## Open questions
 
-- None for this process. Remaining data and build questions are in `edunexa-upgrade-01.md`.
+- None for this process. Remaining data and build questions are in `legacy-upgrade-01.md`.
