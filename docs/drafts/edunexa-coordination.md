@@ -1,6 +1,6 @@
 # EDUNEXA Upgrade: Decision Coordination (usulan-01 + Part B)
 
-- **Status:** done 2026-11-09 · all six sessions answered; outcome in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md), decisions D-252…D-326
+- **Status:** done 2026-11-09 · all six sessions answered; outcome in [`edunexa-upgrade-01.md`](edunexa-upgrade-01.md), decisions D-252…D-328
 - **Task:** P4-13 (proposal → decisions; no app code)
 - **Last updated:** 2026-11-09
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (Indonesian, owner source, items U-01…U-15, open questions T-1…T-11), [`usulan-01/data/`](../sources/usulan-01/data/README.md), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B, items B-01…B-16, owner answers Q1…Q10)
@@ -79,7 +79,7 @@ Rules for every session: interview the owner in small rounds (one topic at a tim
 | S4 Assessment and rapor | 5 rounds | D-286…D-295 |
 | S5 Kelas Saya and homeroom | 5 rounds | D-297…D-305 |
 | S6 Portals and console | 4 rounds | D-308…D-321 |
-| Coordinator | Part B answers without a session, G-23, final round, follow-up (kaldik Jateng, LJK photo, AI providers: D-323…D-326) | D-274, D-275, D-296, D-306, D-307, D-322; Berkas range, retention and revoke rules in D-278 and D-281; attendance rule in D-303; retention floors in D-318 |
+| Coordinator | Part B answers without a session, G-23, final round, follow-up (kaldik Jateng, LJK photo, AI providers, Kudus supervision set: D-323…D-328) | D-274, D-275, D-296, D-306, D-307, D-322; Berkas range, retention and revoke rules in D-278 and D-281; attendance rule in D-303; retention floors in D-318 |
 
 Conflicts C-1…C-9 and gaps G-1…G-24 are all closed (see the map in `edunexa-upgrade-01.md` §2–3).
 

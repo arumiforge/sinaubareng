@@ -1532,3 +1532,20 @@ Reason: students and teachers already know this sheet; SD students need no train
 Accepted · 2026-11-09 · console, with P5-04 · owner's choice, extends D-116 and D-315, keeps D-023 for teacher keys
 Besides Gemini, `app/AI/` gets two adapters: OpenAI-compatible (base URL, key, model; covers OpenAI, OpenRouter, DeepSeek) and Anthropic (Claude models through the Anthropic API). In the console an admin can test a key of any of these providers and pick them as model or fallback per purpose (D-315), with every change logged. Teacher keys stay Gemini only (D-023); teacher keys from other providers are deferred to usulan-02, after every template has been tested per provider. Before a purpose that runs on teachers' generations uses a Tim SIGRAK key from another provider, the owner decides who pays for it.
 Reason: more providers for Tim SIGRAK's own work without changing the teacher's free-tier model.
+
+### D-327 — Kudus supervision instruments as a regional variant
+Accepted · 2026-11-09 · P4-08, P5-09 · owner's choice, applies D-324, extends D-221…D-223
+The owner's Kudus instrument set (`docs/sources/Instrumen_Supervisi_Kudus_Pra_Observasi_Pasca.docx`) becomes the Kudus variant of these instruments; other regions may choose it, and the standard SIGRAK instruments (D-222, D-223) stay the default elsewhere:
+- Telaah administrasi pembelajaran (S-01): 24 components for guru kelas, 18 for guru mapel; this is also the Format Kudus profile of Berkas Administrasi (D-278).
+- Telaah perencanaan pembelajaran (S-04 and S-07): 20 items, Ya/Tidak.
+- Observasi (S-08): 27 items in parts A–F, scored 1–4 with an evidence column.
+- Pasca-observasi (S-09): 5 reflection questions, feedback on 5 aspects, and an RTL table.
+- Telaah administrasi kepala sekolah: 24 components, filled by the pengawas (D-308, D-328).
+
+Item order and scales stay as in the source (1–5, Ya/Tidak, 1–4), with final score = score ÷ maximum × 100 and the bands 91–100 Sangat Baik, 81–90 Baik, 71–80 Cukup, below 71 Kurang. The maximum is always computed as items × top score: the source's "Skor Maksimal (24)" for guru mapel becomes 90. Labels use SIGRAK terms (RPM for RPP/MA, kokurikuler for P5, jurnal mengajar for agenda harian, kehadiran for absensi), with the content of each item unchanged.
+Reason: Kudus schools and supervisors already use these forms; the regional-variant model keeps the national default clean.
+
+### D-328 — Principal administration items without SIGRAK data
+Accepted · 2026-11-09 · P5-09 · owner's choice, keeps D-220
+In the principal's administration review, items SIGRAK does not produce are scored by hand by the pengawas, and the school may upload an evidence file for each (optional). This covers dokumen pendirian, RKAS, SPJ BOS, surat masuk/keluar, buku klaper, buku induk guru, buku tamu, and similar. SIGRAK builds no RKAS, BOS, or letter module for this (D-220; O3 stays deferred). Items backed by SIGRAK data get a suggested score that the pengawas confirms, as in D-312: kalender pendidikan, KSP, 7 KAIH, supervision documents, school inventory, mutasi, ekstrakurikuler, new intake and graduation.
+Reason: the pengawas can review everything on the form without SIGRAK taking on finance or correspondence.

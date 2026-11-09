@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-326 (D-185…D-202 unused; D-235…D-239 reserved). D-252…D-326 are the EDUNEXA upgrade (P4-13, `docs/drafts/edunexa-upgrade-01.md`). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234 and D-240…D-328 (D-185…D-202 unused; D-235…D-239 reserved). D-252…D-328 are the EDUNEXA upgrade (P4-13, `docs/drafts/edunexa-upgrade-01.md`). No open PRs, no running tasks. Only `main` exists on the remote (D-148). P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Phase 5 (v1 build) is next:** P5-01 and P5-02 can start now (D-162).
 
 ## Open decisions blocking work
 
@@ -82,7 +82,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-10 | Design: e-Rapor SD and RDM export | todo | — | D-218, P5-08 | Draft |
 | P4-11 | Design: Penyusun KSP and evaluasi KSP (after v1) | todo | — | D-209, D-217 | Draft |
 | P4-12 | Teacher supervision instruments for SD/MI (map + first draft, principal → guru kelas, guru mapel, wali kelas) | done | p4/p4-04-administration-features | D-217, D-221 | `docs/drafts/teacher-supervision-instruments.md` |
-| P4-13 | EDUNEXA upgrade decisions: usulan-01 (U-01…U-15) + Part B (B-01…B-16) + walk-through gaps, owner interviews in six parallel sessions | review | claude/review-proposal-coverage-tzqbk4 | D-251 | `docs/drafts/edunexa-upgrade-01.md`, `edunexa-coordination.md`, D-252…D-326 |
+| P4-13 | EDUNEXA upgrade decisions: usulan-01 (U-01…U-15) + Part B (B-01…B-16) + walk-through gaps, owner interviews in six parallel sessions | review | claude/review-proposal-coverage-tzqbk4 | D-251 | `docs/drafts/edunexa-upgrade-01.md`, `edunexa-coordination.md`, D-252…D-328 |
 | P4-14 | Apply the EDUNEXA upgrade to `docs/final/` and drafts (list in `edunexa-upgrade-01.md` §4) + Indonesian PDFs | todo | — | P4-13 | `docs/final/*.md`, `docs/pdf/` |
 | P4-15 | Import the EDUNEXA catalogs (kokurikuler, ekstrakurikuler, class inventory, form options) to `docs/data/catalogs/`, Tim Validasi review (D-305) | todo | — | — | `docs/data/catalogs/` |
 
@@ -121,7 +121,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 
 Short notes for the next agent (newest first, max ~10 lines; delete stale ones). Older notes: `archive/handoff-notes-2026-10-30-to-11-01.md`.
 
-- 2026-11-09 — P4-13 in review (branch `claude/review-proposal-coverage-tzqbk4`): usulan-01 (`docs/sources/usulan-01/`) and Part B (`docs/drafts/edunexa-overlap-adjustments.md`) were checked against the EDUNEXA walk-through session; 9 conflicts and 24 gaps went to six parallel owner interviews. Result: D-252…D-326 and `docs/drafts/edunexa-upgrade-01.md` (item → D map, doc changes, task additions). Next: P4-14 (final docs + PDFs), P4-15 (catalogs), P5-03i (calendar; Jawa Tengah kaldik now in `docs/sources/`, D-323), then P5-04.
+- 2026-11-09 — P4-13 in review (branch `claude/review-proposal-coverage-tzqbk4`): usulan-01 (`docs/sources/usulan-01/`) and Part B (`docs/drafts/edunexa-overlap-adjustments.md`) were checked against the EDUNEXA walk-through session; 9 conflicts and 24 gaps went to six parallel owner interviews. Result: D-252…D-328 and `docs/drafts/edunexa-upgrade-01.md` (item → D map, doc changes, task additions). Next: P4-14 (final docs + PDFs), P4-15 (catalogs), P5-03i (calendar; Jawa Tengah kaldik now in `docs/sources/`, D-323), then P5-04.
 - 2026-11-09 — P5-03e done (branch `p5/p5-03e-timetable`), so **P5-03 (Foundation) is done**. Jadwal per class at `/kelas/{class}/jadwal` and Kelas Saya > Jadwal at `/kelas-saya/jadwal`, table `timetable_slots`. Owner chose D-247…D-251: break/ceremony/activity rows, teacher clashes refused, teacher from the class's assignments (no `teacher_id` column), JP must match the allocation, religions in parallel. `data-model.md` still lacks these and `learning_outcomes`/`public_id` columns (next data-model update). Next: P5-04 (content core) or P5-07/P5-09/P5-10, which only need P5-03.
 - 2026-11-09 — P5-03h done (branch `p5/p5-03h-copy-classes`): Tahun Ajaran can copy the previous year's classes into a new or empty year, one grade up, without teachers or students (D-242). Owner chose: grade 6 not copied (D-243), optional new grade 1 classes (D-244), free names kept (D-245), only into an empty year (D-246). Next: P5-03e (timetable).
 - 2026-11-09 — P5-03d done (branch `p5/p5-03d-school-year`): operator pages Tahun Ajaran (`/tahun-ajaran`) and Kelas (`/kelas`), tables `academic_years`, `classes`, `teaching_assignments`. A class's homeroom teacher gets the class-teacher subjects; the operator picks guru mapel per subject (D-240). Years and classes have a `public_id` (D-241). Not built: the `school_subjects` switches and the D-232 muatan lokal warning (with that page later). Next: P5-03e (timetable).

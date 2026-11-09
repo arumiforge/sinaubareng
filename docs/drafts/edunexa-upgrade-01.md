@@ -1,6 +1,6 @@
 # EDUNEXA Upgrade 01: Decided Changes
 
-- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-326); `docs/final/` not yet updated
+- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); `docs/final/` not yet updated
 - **Task:** P4-13
 - **Last updated:** 2026-11-09
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-edunexa-ke-sigrak.md) (owner source, Indonesian), [`edunexa-overlap-adjustments.md`](edunexa-overlap-adjustments.md) (Part B), [`edunexa-coordination.md`](edunexa-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
@@ -121,6 +121,8 @@ The UI terms in usulan-01 §2 apply, with these changes:
 | Item | Decision |
 |---|---|
 | G-1 PKKS and principal performance evidence | D-308, D-324 (rules now, regional variants later) |
+| Kudus supervision instruments (teacher S-01, S-04/S-07, S-08, S-09; principal administration) as a regional variant | D-327 |
+| Principal administration items without SIGRAK data: manual score + optional evidence | D-328 |
 | G-2 sekolah binaan requests | D-309 |
 | G-7 Pusat Tindak Lanjut | D-310 |
 | G-15 Pengingat | D-311 |
@@ -197,7 +199,7 @@ These stay as written in Part B and are built in their slice:
 - **Tim Validasi, before importing the Jawa Tengah calendar (D-323):**
   - The guide gives the end of the 6-day semester-1 break as 1 January 2027 in Pasal 23 and as 2 January in Lampiran I. The Lampiran XIII count (24 effective days in January) matches 1 January, so 2 January is a school day.
   - For 2027 the guide lists estimated holidays only. The EDUNEXA file has cuti bersama dates that the guide lacks (5 Feb, 12 and 15 Mar, 25 Mar, 18–19 May). The guide is the initial data; an admin updates cuti bersama in the console once the 2027 SKB is out (D-253, D-254).
-- **Pilot schools:** the binder order the Kudus region expects (D-278, Format Kudus).
+- **Pilot schools:** the binder order the Kudus region expects (D-278, Format Kudus; its component list now comes from D-327).
 - **Settle in the build:**
   - the OMR library (a one-day spike on a low-end Android phone, D-287);
   - the maximum number of Menjodohkan pairs per item on the sheet (P4-06);

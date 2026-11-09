@@ -22,8 +22,9 @@ Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overl
 - `docs/drafts/edunexa-overlap-adjustments.md` (Part B, as received)
 - `docs/drafts/edunexa-coordination.md` (conflicts C-1…C-9, gaps G-1…G-24, sessions S1…S6, outcome)
 - `docs/drafts/edunexa-upgrade-01.md` (item → decision map, doc changes, tasks)
-- `docs/agent/DECISIONS.md` D-252…D-326; status notes on D-016, D-023, D-031, D-117, D-153, D-174
+- `docs/agent/DECISIONS.md` D-252…D-328; status notes on D-016, D-023, D-031, D-117, D-153, D-174
 - `docs/sources/Pedoman_Kalender_Pendidikan_Prov_Jawa_Tengah_2026_2027.pdf` (owner-supplied provincial kaldik)
+- `docs/sources/Instrumen_Supervisi_Kudus_Pra_Observasi_Pasca.docx` (owner-supplied Kudus supervision set)
 - `docs/agent/PROGRESS.md`, `tasks/P5-03-foundation.md` (P5-03i, P5-03j)
 
 ## Done when
@@ -52,4 +53,5 @@ Check that the two owner proposals of 2026-11-09 (usulan-01 and the Part B overl
   - the LJK layout follows the schools' own sheet;
   - console adapters for OpenAI-compatible APIs and Anthropic, with teachers staying on Gemini.
   The photo shows a real student's name and score, so it was not stored.
+- The owner then sent the Kudus supervision set: D-327 (regional variant, source scales, SIGRAK terms) and D-328 (manual score and optional evidence for principal items SIGRAK has no data for).
 - Open data: the Kudus binder order. Tim Validasi checks the two calendar points listed in `edunexa-upgrade-01.md`.
