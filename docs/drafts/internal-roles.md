@@ -102,6 +102,16 @@ With a small team, start with **six roles**: Pemilik, Admin, Validator, Penyusun
 
 ## 8. Owner questions
 
+Answered on 2026-11-09:
+
+- **RQ1** powers in code, scopes editable (D-338).
+- **RQ2** all 11 roles active now (D-339), so §7 "start small" is replaced.
+- **RQ3** Keuangan or the owner confirms payments (D-340).
+- **RQ4** support may view school data without a school grant: read-only, logged, visible to the school, health and religion hidden (D-341), which replaces §4.
+- **RQ5** partner programme for teacher communities (incl. KKG/KKM) and resellers, designed later (D-342).
+- **RQ6** 2FA required for owner and admin only (D-343).
+
+
 | # | Question | Options |
 |---|---|---|
 | RQ1 | Keep powers fixed in code with only scopes editable (keeps D-314)? | Yes (recommended) / Editable powers (supersedes D-314) |

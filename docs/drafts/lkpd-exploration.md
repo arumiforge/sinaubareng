@@ -332,14 +332,14 @@ Web scan of 2025–2026 vendor pages, checked 2026-11-09. Prices and plan limits
 | Wave | Scope | Fits |
 |---|---|---|
 | **v1 (P5-05, unchanged)** | LKPD as decided + D-296 blocks for grades 1–3. Add only the `pattern` field to the output schema so later waves need no migration | Current plan |
-| **Wave 1 (v1.x)** | 7 print-first patterns with low prep and the best evidence (§8.2): Detektif Teks (L1), Peta Cerita (L2), Data Kelasku (N3), Etnomatematika (N5), Misi Petualangan (G1), Tiga Jalur (D1), Tiket Keluar (D2). Learning-model presets reuse the RPM model. Numeracy and literacy blocks. Local context profile + Kudus/Jepara/Pati seed lists. Wizard suggests patterns from the RPM model | Literacy and numeracy first; cheapest to build |
+| **Wave 1 (v1.x)** | Decided (D-332): the 7 print-first patterns below plus Kotak Terkunci (G2) and Pikir Komputasional (S5). Originally proposed: 7 print-first patterns with low prep and the best evidence (§8.2): Detektif Teks (L1), Peta Cerita (L2), Data Kelasku (N3), Etnomatematika (N5), Misi Petualangan (G1), Tiga Jalur (D1), Tiket Keluar (D2). Learning-model presets reuse the RPM model. Numeracy and literacy blocks. Local context profile + Kudus/Jepara/Pati seed lists. Wizard suggests patterns from the RPM model | Literacy and numeracy first; cheapest to build |
 | **Wave 2** | Kotak Terkunci (G2) with the offline HTML self-check, Pasar Numerasi (N1), Lab Mini (S1), Jurnal Proyek (S2) linked to the kokurikuler variant, Pikir Komputasional (S5, strong evidence, D-208). `qr_link` block with an allowlist. `ifp_step` to Game kelas. School presets | Hybrid and kokurikuler |
 | **Wave 3** | Self-hosted H5P player and `model-viewer` 3D/AR with a curated model library; embeds of PhET, GeoGebra, YouTube nocookie, and Assemblr after its terms are checked; remaining patterns; more regions' seed lists | New technology |
 | **Later / needs decision** | Student answers from a device, a public QR redirect, a cross-school preset marketplace, TTS audio | C1, C9, C15 |
 
 ## 13. Owner questions
 
-Answered on 2026-11-09: **Q1** yes, v1 unchanged (D-329). **Q4** straight to the third-party URL (D-330), which settles C15 as option A. **Q5** interactive LKPD runs online, and a student session comes later (D-331), which settles C1. The other questions are still open.
+Answered on 2026-11-09: **Q1** yes, v1 unchanged (D-329). **Q4** straight to the third-party URL (D-330), which settles C15 as option A. **Q5** interactive LKPD runs online, and a student session comes later (D-331), which settles C1. Later the same day: **Q2** nine patterns in Wave 1, adding Kotak Terkunci and Pikir Komputasional (D-332); **Q3** local context profile, Kudus/Jepara/Pati seed lists first (D-333); **Q6** self-host H5P and `model-viewer` (D-334); **Q7** presets inside one school (D-335); **Q8** all LKPD features core (D-336); **Q9** embed only where the licence clearly allows it, otherwise link or QR (D-337). All questions are answered.
 
 | # | Question | Options |
 |---|---|---|

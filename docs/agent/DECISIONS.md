@@ -81,7 +81,7 @@ Games are built only from template runtimes. AI supplies content and allowed con
 Reason: quality, consistency, and security.
 
 ### D-016 — Offline: Di Kelas only
-Accepted · 2026-10-30 · amended by D-289
+Accepted · 2026-10-30 · amended by D-289 · observation and rubric entry by D-349
 Attendance, journal, and student notes work offline and sync by `client_uuid`. Everything else needs a connection.
 Reason: owner's choice. Keeps the PWA scope small.
 
@@ -119,7 +119,7 @@ Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 Reason: see `docs/final/ai-provider-engine.md`. Awaiting owner review.
 
 ### D-023 — AI keys: Gemini free tier only
-Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged)
+Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged) · limited student data for assessment AI, conditional, by D-347
 Only Google Gemini keys are accepted, and the design targets the free tier: few calls per generation, stable models only, no background pings. Multi-key rotation stays, at the teacher's own risk. Google's API terms forbid circumventing limits, so the second and later keys need explicit consent. No student personal data goes into prompts, because free-tier prompts may be read by Google's reviewers. AI users are adults (teachers) only.
 Reason: owner's decision; Gemini API Additional Terms and Google APIs Terms checked 2026-10-30.
 
@@ -848,7 +848,7 @@ Developers on Windows run the app in WSL2 with Ubuntu 24.04, not Laragon. PHP, M
 Reason: Horizon needs `pcntl`/`posix`, which Windows PHP lacks. Ubuntu 24.04 matches the VPS (D-086), so local behaviour stays close to staging and production.
 
 ### D-167 — Staff console access by staff role
-Accepted · 2026-11-03 · P5-03a
+Accepted · 2026-11-03 · P5-03a · role catalogue replaced by D-339
 `admin` manages everything in the console, including staff accounts. `support` manages regions and schools. `content` gets the template registry when it is built and sees nothing else yet. The first admin on a server is made with `php artisan staff:create <email>`.
 Reason: the data model names the three roles but not their reach; this is the smallest split that keeps staff accounts with admins only.
 
@@ -1564,3 +1564,103 @@ Reason: no new public route; D-010 stays whole.
 Accepted · 2026-11-09 · P4-16 · owner's choice (Q5), opens a later exception to D-010
 Interactive LKPD steps (embeds, H5P, self-check) run online, in the teacher's app and in the IFP present session. A student session for working on a device comes later, with its own design task. It is session-scoped like the exam site (D-027): no student accounts, a code or card per session, no student data beyond the session, and no AI facing students (Gemini terms bar users under 18). Until then, answers come back through paper (Pindai LJK, D-286; Kartu Jawab, D-174) or the teacher's checklist.
 Reason: owner's choice; the exam site already shows how a session-scoped student access can stay inside the privacy rules.
+
+### D-332 — LKPD Wave 1: nine patterns
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q2)
+The first patterns after v1 are Detektif Teks, Peta Cerita, Data Kelasku, Etnomatematika, Misi Petualangan, Tiga Jalur, Tiket Keluar, Kotak Terkunci, and Pikir Komputasional Tanpa Komputer. The Kotak Terkunci code is checked on the teacher's sheet, in the app, or on the IFP (online, D-331).
+Reason: owner's choice; adds the escape-room pattern and unplugged computational thinking (strong evidence, KKA through kokurikuler, D-208).
+
+### D-333 — Local context profile per school, seed lists first for Kudus, Jepara, Pati
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q3)
+A school sets a *Konteks Daerah* profile: local language, foods, crafts, places, festivals, occupations, stories, and themes to avoid. Seed lists start with Kudus, Jepara, and Pati and are reviewed by Tim Validasi SIGRAK (D-113). The AI uses only items from the profile and the seed list, and the teacher confirms them. Items unsuitable for children (for example tobacco) are excluded in the seed data.
+Reason: local context has the most consistent research support; the AI must not invent local facts.
+
+### D-334 — Self-hosted H5P player and 3D/AR viewer
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q6), within D-033
+Wave 3 bundles `h5p-standalone` (MIT, not the GPL H5P PHP library) and Google `model-viewer` (Apache-2.0), with a curated library of CC-BY 3D models and H5P packages on local disk (D-114). No student account and no third party at view time.
+Reason: AR and interactive content without building an engine and without sending students to outside services.
+
+### D-335 — LKPD school presets stay inside one school
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q7)
+A teacher can offer an adapted LKPD to the school library; other teachers of the same school start from it without AI. Sharing across schools is not planned.
+Reason: no moderation or licence questions across schools.
+
+### D-336 — All LKPD features are core
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q8), under D-211
+Every LKPD feature (patterns, blocks, local context, school presets, QR, embeds, interactive steps, and the step that continues in Game kelas) starts as a core Sigrak Guru feature. Game kelas templates stay in the Game kelas add-on (D-158, D-175). The console mapping can still change this (D-211).
+Reason: owner's choice; the LKPD is a daily teacher tool.
+
+### D-337 — Third-party embeds only where the licence clearly allows it
+Accepted · 2026-11-09 · P4-16 · owner's choice (Q9)
+A third-party tool (PhET, GeoGebra, Assemblr EDU, others) is embedded only when its licence clearly allows use inside a paid product like SIGRAK. Otherwise SIGRAK shows a link or QR only (D-330). The licence check is recorded in the embed allowlist.
+Reason: PhET and GeoGebra restrict commercial use; Assemblr EDU terms are unverified.
+
+### D-338 — Staff powers fixed in code, scopes editable
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ1), keeps D-314
+What each staff role may do stays in code. The admin edits only each staff member's scope: region (province, kabupaten, kecamatan) or a named school list, level (SD/MI), and field (subject group or religion). Scope changes are logged.
+Reason: fixed powers are testable and safe; scopes change with the team.
+
+### D-339 — Eleven staff roles, all active
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ2), amends D-167
+Staff roles: Pemilik (`owner`), Admin (`admin`), Validator (`validator`), Penyusun Konten (`content`), Kurator Kurikulum (`curriculum`), Support (`support`), Pemasaran (`marketing`), Penjualan (`sales`), Koordinator Wilayah (`regional_lead`), Keuangan (`finance`), Teknis (`engineer`). All are available from the start. A person may hold several roles, each with its own scope (`staff_role_assignments` replaces `staff_users.role`). Prices and AI models move from admin to owner. Powers per role: `docs/drafts/internal-roles.md`. A validator never signs off their own work.
+Reason: more content, curated data, and a regional sales network need clear, limited powers.
+
+### D-340 — Payments are confirmed by Keuangan or the owner
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ3)
+Penjualan records a payment claim; Keuangan confirms it, or the owner while no one holds the Keuangan role.
+Reason: the person who records a payment is not the one who confirms it.
+
+### D-341 — Support may view school data without a school grant
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ4)
+Support can open a school's view read-only without the school granting access first. Every view is written to the audit log, and the school can see that log. Health and religion data stay hidden (D-036, D-215). The privacy notice for schools says that Tim SIGRAK support can view school data to help them.
+Reason: owner's choice; faster help. The log and the notice keep it transparent.
+
+### D-342 — Partner programme: teacher communities and resellers
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ5)
+Partners (*Mitra*) are teacher communities, including KKG and KKM, and resellers. They get a referral code and a partner report, not a console account. Terms and rewards are designed in a later task.
+Reason: owner's choice; partners reach schools in their region.
+
+### D-343 — 2FA for owner and admin
+Accepted · 2026-11-09 · P4-17 · owner's choice (RQ6)
+Two-factor sign-in is required for the Pemilik and Admin roles and optional for the other staff roles.
+Reason: owner's choice; the strongest powers get the strongest sign-in.
+
+### D-344 — Peta Asesmen is one curated dataset
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ1)
+The assessment taxonomy (domains, purposes, methods, media, scoring, uses) lives in `docs/data/assessment/` with `status: draft` until Tim Validasi review, plus `docs/drafts/assessment-landscape.md`. The owner's MAP-01…MAP-08 codes are kept as section references, not separate documents. Every instrument carries its tags.
+Reason: one source; tags let one instrument serve several purposes.
+
+### D-345 — Assessment landscape design is its own task
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ2)
+The assessment landscape gets its own design task (P4-19), separate from P4-06 (assessment and rapor extensions). The two link where they meet (diagnostic, item analysis, rapor).
+Reason: owner's choice; the landscape is wider than the rapor extensions.
+
+### D-346 — New assessment instrument templates
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ3), follows D-024
+New templates, one per kind: Rubrik Kinerja (practice, demonstration, project, product, MI ibadah practice), Observasi DPL (behaviour indicators per dimensi profil lulusan, observed several times, shown as trends), Cek Kesiapan Awal (grade 1 and new students; result is a profile, not a score), Akomodasi Murid (per-student accommodations), and self and peer assessment cards.
+Reason: covers what written tests cannot measure.
+
+### D-347 — AI in assessment may use limited student data
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ4), amends D-023 for assessment only
+Now: teacher-side AI makes instruments, tags misconceptions, and drafts feedback from class patterns. Approved direction: assessment AI may use a minimal set of student data (name and class number only, never religion, health, or sensitive results) so the teacher need not match names on paper to the roster by hand. Reading handwriting, voice, and essays comes later. Before any student data goes to an AI provider, the route must have terms that allow it. The Gemini unpaid tier asks users not to submit personal information and may have people review inputs, so it does not qualify. Options are a paid tier or provider with a data agreement, on-device recognition, or matching by class number and QR (as Pindai LJK, D-287). PromptDataGuard stays on for every other template.
+Reason: owner's choice to save teachers' checking time; the provider condition keeps it within the provider's terms and UU PDP.
+
+### D-348 — GPK is a teacher assignment
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ5)
+A guru pendamping khusus is a teacher assigned to certain students, not a new school role. School roles stay teacher, principal, operator, supervisor.
+Reason: keeps school roles simple.
+
+### D-349 — Observation and rubric entry works offline
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ6), amends D-016
+Observation and rubric results are entered on the phone in Di Kelas offline and sync by `client_uuid`, like attendance.
+Reason: practice and observation often happen outside the classroom without signal.
+
+### D-350 — Sensitive assessment results follow the health-data rule
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ7), applies D-215
+Social-emotional, special-needs, and interest-or-talent results are visible to the class's teachers (and the assigned GPK), the operator, and the principal only, never sent to AI, and never shown as permanent labels or diagnoses. Supervisors see class or school totals only.
+Reason: children's sensitive data and the risk of labelling.
+
+### D-351 — Assessment Wave A scope
+Accepted · 2026-11-09 · P4-18 · owner's choice (AQ8)
+Wave A: Peta Asesmen data v1 (literacy, numeracy, DPL, readiness domains; purposes; methods), tags on Bank Soal and LKPD, Rubrik Kinerja, Observasi DPL with phone entry, Cek Kesiapan Awal, and misconception tags on distractors. P5-08 (Asesmen v1) is unchanged.
+Reason: paper-first, low risk, builds on v1.
