@@ -663,3 +663,611 @@ Principal and supervisor can comment on any document (`document_comments`).
 **Status:** **Built:** the console pages listed as Built above, `php artisan staff:create`, three staff roles. **Designed:** slice P5-10 (trial, subscriptions, add-ons, manual payment, Mode Contoh) and the console features, many of them alongside P5-04 and P5-09.
 
 Read more: [`product-concept.md`](product-concept.md#navigation), [`docs/drafts/teacher-supervision-instruments.md`](../drafts/teacher-supervision-instruments.md), [`docs/drafts/administration-features.md`](../drafts/administration-features.md), [`docs/drafts/internal-roles.md`](../drafts/internal-roles.md), [`docs/drafts/legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md), D-019, D-090, D-091, D-157…D-160, D-209…D-212, D-217, D-221…D-224, D-263…D-271, D-278…D-282, D-308…D-328, D-338…D-343.
+
+## 5. Architecture
+
+### 5.1 One app, one server
+
+SIGRAK is **one Laravel 13 application** on **one Ubuntu Server 24.04 VPS** (IDCloudHost, Jakarta; 8 vCPU, 16 GB RAM, 320 GB NVMe) behind Cloudflare, reached only through a Cloudflare Tunnel (D-070, D-086…D-088, D-096). It serves three front ends on three hostnames, each with its own guard ([section 2.4](#24-guards-and-hosts)). Background work runs on Redis queues under Horizon. Gotenberg is the only Docker service. The only outside service the server calls is the Gemini API (plus the mail server).
+
+```
+Users -> Cloudflare (DNS, proxy, TLS, WAF)
+      -> Cloudflare Tunnel (outbound only)
+      -> Nginx 127.0.0.1:8080 (app., ujian., admin.)
+      -> PHP-FPM: Laravel (web / exam / staff guards)
+           -> MySQL 8.4   -> Redis 8.2   -> local disk
+Supervisor -> Horizon (ai, exports, default) + schedule:work
+Docker     -> Gotenberg 8 (localhost, basic auth, no egress)
+Outbound   -> Gemini API, Gmail SMTP
+```
+
+### 5.2 Front ends
+
+- **School app:** Inertia.js with plain Svelte 5 (runes) and TypeScript, Vite build, Tailwind with TailAdmin components ported to Svelte (D-008, D-075, D-076). Pages live in `resources/js/Pages/<Area>/<Name>.svelte`. URLs come from Ziggy's typed `route()`; each root view sends only its own route group, so staff and vendor routes never reach a browser (D-163). UI text comes from `lang/id` through a shared Inertia prop and one `t()` helper (D-080, D-097).
+- **Exam client:** its own Inertia + Svelte entry and root view in `resources/exam-client/`, its own guard and hostname, sharing no bundle with the school app; answer autosave and the heartbeat go through one small JSON endpoint (D-094).
+- **Staff console:** Filament 5, with its own theme using the brand colour (design system).
+- **Game runtime:** vanilla JS and CSS per game template in `resources/game-runtime/`, typed with JSDoc and `// @ts-check`, playable standalone and offline (D-011, D-075).
+- **Libraries:** three.js, KaTeX, ApexCharts, Lucide, Plus Jakarta Sans, and an Arabic font, all pinned to exact versions and bundled, never from a CDN; heavy ones are lazy-loaded (D-033, D-083, SV-11).
+
+### 5.3 Module boundaries
+
+```
+app/
+  AI/          Gemini only: keys, selection, errors, privacy guard,
+               usage logs. Knows nothing about education.
+  Content/     Templates, generation pipeline, export.
+               Knows nothing about Gemini.
+  Tenancy/     School context, BelongsToSchool, memberships, invitations
+  Curriculum/  Import, versions, SubjectsForGrade, school changes
+  Classroom/   Di Kelas: attendance, journal, notes, offline sync
+  Exam/        TKA sessions, snapshot, cards, token, scoring
+  Calendar/    EffectiveDays, ConflictChecker (designed)
+  Progress/    CompletenessLedger, ProgressReport (designed)
+  Filament/    Staff console only
+```
+
+`Exam` and `Classroom` never depend on `AI`; `Content` uses `AI` only through `AIGateway`; `Filament` is the normal place to bypass the school scope (D-049; Pest architecture tests enforce the rules, D-074). Business operations live in single-purpose Action classes with one `handle()` method, inside the module folder or in `app/Actions/<Domain>/` (D-078). **Built today:** `app/Tenancy`, `app/Curriculum`, `app/Actions/SchoolYear`, `app/Actions/Timetable`, `app/Filament`, `app/Enums`. `app/AI`, `app/Content`, `app/Classroom`, `app/Exam`, `app/Calendar`, and `app/Progress` do not exist yet.
+
+### 5.4 Queues, Horizon, and the scheduler
+
+- Three queues: `ai` (generation), `exports` (PDF, DOCX, Excel, game HTML, Berkas), `default` (mail, notifications, scoring, imports, the draft timetable). Horizon gives `ai` its own supervisor so long AI calls never block exports or mail.
+- Generation jobs have `tries = 1`, no queue-level retries, and use `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping` keyed by the generation id, so a job can re-dispatch itself for the next step (D-050).
+- Worker timeouts sit above the longest AI client timeout (180 s for long RPM steps), and `retry_after` above that.
+- Supervisor runs Horizon and `schedule:work`; there is no cron entry (D-064). Scheduled work includes the stuck-step sweeper, revision and usage-log pruning, exam housekeeping, export cache cleanup, and later the weekly completeness snapshot and the Monday Kabar (D-265, D-271).
+- Redis uses separate databases (or prefixes) for cache, sessions, queues/Horizon, and AI state, so `cache:clear` never wipes sessions, jobs, or key cooldowns (D-053). Redis runs with `noeviction` and AOF (D-058).
+- Horizon mails long waits per queue (`ai` 600 s, `exports` 120 s, `default` 60 s), and the scheduler pings a heartbeat (D-137).
+
+> **Differs from the final docs.** `architecture.md` shows the scheduler as a cron entry running `schedule:run`; D-064 (and `server-setup.md`) runs `schedule:work` under Supervisor.
+
+### 5.5 Gotenberg
+
+`gotenberg/gotenberg:8.39.0-chromium`, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit, on its own Docker network with no outbound connections (D-059). Every asset (HTML, fonts, scripts, images, the letterhead) is sent inside the request (D-052), so a malicious string in a document cannot make Chromium fetch anything. Laravel calls it through `spatie/laravel-pdf` with its Gotenberg driver (D-028, D-073). Only Berkas Administrasi uses the merge route (D-280).
+
+### 5.6 PWA and offline
+
+The school app is an installable PWA (manifest, icons, service worker). The exam site is not installable (D-093). The service worker caches the Di Kelas shell; IndexedDB holds today's data and the offline queue, synced by `client_uuid` through the web session and CSRF (D-016, D-051, D-289, D-349). A "Versi baru tersedia" banner reloads after syncing (D-321). Details are in [section 4.5](#45-in-class-di-kelas-offline-sync-attendance-journal-observation-class-tools).
+
+### 5.7 File storage
+
+Files (letterheads, exports, uploads) live on the VPS's local disk. Cloudflare R2 is only an optional store for small, rarely read files within the free tier, and the off-site backup target (D-071, D-114). Exports are cached in `document_exports` by content hash and served through an authorized route, never a public URL. Disk use is bounded by retention settings (D-318) and the 7-day Berkas file life (D-278); portfolio photo limits are still to be designed.
+
+### 5.8 Security boundaries in short
+
+Three guards with separate tables and host-only cookies; login-only; fail-closed tenancy with a `BelongsToSchool` global scope, policies on every action, and an IDOR test per resource; roles from memberships; sensitive data rules ([section 2.6](#26-visibility-of-sensitive-data)); write-only AI keys; prompt privacy; AI output rendered as text only; exam isolation; no-network game files; Gotenberg without egress; Cloudflare WAF and no public IP. The full table is in [`architecture.md`](architecture.md#security-boundaries).
+
+Read more: [`architecture.md`](architecture.md), [`coding-standards.md`](coding-standards.md), D-048…D-055, D-059, D-064, D-074…D-083, D-093, D-094, D-114, D-163, D-164.
+
+## 6. Data model tour
+
+This chapter explains the shape. Column lists are in [`data-model.md`](data-model.md); the migrations in `database/migrations/` are the truth for what is built.
+
+### 6.1 Conventions that shape every table
+
+- English, plural snake_case tables; singular StudlyCase models.
+- `bigint` primary keys for joins. Rows exposed in URLs or props also get a `public_id` (UUIDv7), and the bigint id never appears in a URL or prop (DB-11).
+- Every foreign key is declared and indexed with an explicit `ON DELETE`.
+- Fixed sets are a `varchar` plus a `CHECK (col IN (…))` generated from a PHP backed enum in `app/Enums/`.
+- Money is integer rupiah (`bigint`); scores are `decimal(5,2)`.
+- Times are stored and shown in WIB: `config/app.php` uses `Asia/Jakarta` and the MySQL session `+07:00`; the server OS stays UTC (D-165).
+- **No soft deletes.** Hard delete after a confirmation that names the item; lifecycles use an explicit `status`.
+- JSON only for template-defined content and imported reference blobs, never for queryable fields.
+- Every school-owned table has `school_id NOT NULL`, indexed, first in composite indexes.
+- Migrations are forward-only; `down()` is optional (D-085).
+
+### 6.2 The main groups and how they connect
+
+```
+regions ─< schools ─< school_memberships >─ users
+                  └─< invitations
+users ─< supervisor_assignments >─ schools      (no school scope)
+schools ─< academic_years ─< classes ─< teaching_assignments
+classes ─< timetable_slots          classes ─< enrollments >─ students
+curriculum_versions ─< topics ─< focus_items / learning_objectives
+curriculum_versions ─< subject_allocations, learning_outcomes
+subjects ─< region_subjects, school_subjects, topics
+users ─< ai_credentials ;  users ─< generations ─< generation_steps
+generations ─> documents ─< revisions, comments, exports, meetings
+meetings ─< journals ;  assessments ─< assessment_items ─< scores
+documents (tka_package) ─> exam_sessions ─< exam_items, participants
+```
+
+- **Accounts and schools (Built).** `regions`, `schools`, `users` (no role column), `school_memberships` (role ∈ principal, operator, teacher; one active principal per school), `supervisor_assignments`, `staff_users`, `invitations` (token hash, `invited_by` or `invited_by_staff_id`), and the reference table `school_directory_entries`.
+- **School year (Built).** `academic_years`, `classes`, `teaching_assignments` (unique class and subject; `teacher_id NOT NULL`), `timetable_slots` (kind lesson, break, ceremony, activity; teacher through the assignment).
+- **Students (Designed).** `students` (a record, never an account; `religion` sensitive) and `enrollments` (one active enrollment per student per year; covers transfers and promotion).
+- **Curriculum (Built).** `curriculum_versions`, `subjects`, `subject_allocations`, `learning_outcomes`, `topics`, `focus_items`, `learning_objectives`, `focus_item_objectives`, `region_subjects`, `school_subjects`. Designed: `school_topic_changes`, `curriculum_validations`.
+- **Calendar and meetings (Designed).** `calendars`, `calendar_events` (with `class_id`), `national_holidays`, `meetings` (status derived from the journal), `meeting_schedule_history`.
+- **Content (Designed).** `templates`, `template_versions` (immutable once used), `generations` (unique user and client token), `generation_steps` (output written once by compare-and-set), `documents`, `document_revisions`, `document_comments`, `document_exports`, `template_feature_requests`; later `question_items`, `document_approvals`.
+- **AI (Designed).** `ai_credentials` (no `school_id`: keys belong to the teacher), `ai_credential_cooldowns`, `ai_usage_logs` (no key, no prompt text).
+- **Administration (Designed).** `journals`, `attendance_records`, `student_notes`, `assessment_plans`, `assessments`, `assessment_items`, `scores`, `report_descriptions`, `report_cards`, `report_extracurriculars`, `class_finance_entries`, inventory, rosters, Kabar, Pengingat, supervisions, school books and programmes, `school_print_settings`, `letterheads`, `subscriptions`, `school_addons`.
+- **Exam (Designed).** `exam_sessions`, `exam_items` (frozen snapshot), `exam_participants`, `exam_answers` (upsert only when `client_seq` is higher), `exam_results`, `exam_events` (append-only).
+
+**Snapshots across boundaries.** Bank Soal items are copied into `assessment_items`; a TKA package is copied into `exam_items`; a generation stores its specification and step outputs. Later edits to a source never change a running exam or a past score.
+
+### 6.3 Tables added by later decisions
+
+`legacy-upgrade-01.md` §4 lists what P4-14 must add to `data-model.md`. The main ones: `national_holidays`, `progress_snapshots`, `document_approvals`, a Berkas job record, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, leger state with confirmations and an unlock log, retention and AI-model settings with logs, staff announcements with targets, help-request status; new columns such as `calendar_events.class_id`, `journals.status` with `partial` and the not-done reason, `school_print_settings.margin_profiles`, `schools.district`, a request status on `supervisor_assignments`, and a closed flag on `academic_years`. Internal roles add `staff_role_assignments` (D-339).
+
+### 6.4 Versioning tables, now and planned
+
+| Area | Now | Planned |
+|---|---|---|
+| Curriculum and rules | `curriculum_versions` (code, status, meta); config pointer for allocations | `effective_on`, `applies_from_school_year`, `supersedes_id` before P5-04 (D-355); then `regulations`, `regulation_relations`, `rule_sets`, `rules` (D-354) |
+| Subjects | Global, not versioned | `since_rule_set`, `retired_in_rule_set` (`policy-innovation-layers.md` §6.2) |
+| Templates | — | `template_versions`, immutable once used (D-013) |
+| Documents | — | Store template version and rule-set codes; `document_revisions` (last 5, approved kept) |
+| Meetings | — | `meeting_schedule_history` for undo (D-274) |
+| Levels | `schools.level` | Versioned Profil Jenjang (D-356) |
+| Taxonomy | — | `docs/data/taxonomy/` codes with `since` and `retired_in` (D-357) |
+
+Read more: [`data-model.md`](data-model.md), [`coding-standards.md`](coding-standards.md#4-migrations-and-database), [`docs/drafts/legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) §4, D-007, D-085, D-165, D-182, D-226, D-240, D-241, D-247…D-249, D-354…D-357.
+
+## 7. AI layer and child data protection
+
+### 7.1 The rules in one list
+
+1. **Gemini free tier only, teacher-owned keys.** Each teacher adds one or more keys from Google projects they own. There is no school or platform key, and AI cost is never a SIGRAK cost (D-012, D-023).
+2. **Adults only.** AI users are teachers. Students never use or trigger the AI, and the exam site, Tayangkan, and downloaded games serve only finished, teacher-checked content (D-027, D-124).
+3. **No student personal data in any prompt:** no names, NISN, birth dates, attendance, notes, religion, health data, or individual scores tied to an identity. `app/AI/Privacy/PromptDataGuard` checks every request built from school data (D-023, D-036, D-215, D-347, D-350).
+4. **Templates, not prompts.** Teachers answer pedagogical questions; instructions come only from the template; teacher notes and curriculum text go into delimited data blocks; output is accepted only through schema validation (D-024).
+5. **The teacher decides.** AI suggests; every result is editable; AI never scores a child on its own (D-347).
+
+### 7.2 Keys and rotation
+
+- **Storage.** The secret uses Laravel's `encrypted` cast; a fingerprint (HMAC-SHA256) detects duplicates; only the last four characters are shown. Keys are write-only: never in Inertia props, never in logs, decrypted only in `ApiKeyManager` and `GeminiClient`, sent only as the `x-goog-api-key` header, never in a URL.
+- **Quotas are per Google project and per model,** and the daily quota resets at midnight Pacific (14:00 or 15:00 WIB). Two keys from one project share one quota.
+- **Consent.** The second and later keys need an explicit consent tick, because rotating several free projects may count as circumventing limits; the risk is the teacher's. SIGRAK never creates projects or keys for teachers (D-023).
+- **Selection.** Round robin over the teacher's usable keys, filtered by state and per-model cooldown, with a sticky key per generation, failover on failover-class errors, a circuit breaker per key, and backup keys last (D-119). At most 2 running generations per teacher.
+- **Daily counter.** SIGRAK counts each key's requests per model per day in Redis and skips a key at its limit until the reset; *Kunci AI Saya* and the wizard show "sekitar N RPM lagi hari ini" (D-128). Any 429 that still arrives gets a 60-second cooldown.
+- **Errors** are classified once (rate limited per minute or per day, bad request, project unavailable, key invalid, model unavailable, transient, timeout, blocked, malformed output), and each class has one action. At most 4 attempts and 5 minutes per step.
+- **Duplicates.** Gemini has no idempotency key, so a timeout retries once on the same key before failing over, every attempt is logged, a step's output is accepted exactly once, and double clicks are stopped by a client token.
+
+### 7.3 Free tier and models
+
+The default model is Gemini 3.8 Flash; its free-tier limits when checked were 5 requests per minute, 250,000 tokens per minute, and 20 requests per day per project (D-117). Templates name a **purpose** (for example `document_long`, `repair`), never a model. `config/ai.php` holds the starting purpose-to-model map; an admin sets the active model and an ordered fallback list per purpose in the console, logged (D-315). No `temperature`, `top_p`, or `top_k` is sent. Generations use as few calls as possible: no background pings, no automatic regeneration, stable models only.
+
+### 7.4 Where student-related AI is allowed
+
+| Use | Allowed input |
+|---|---|
+| Rapor description draft | Per-TP mastery levels for an anonymous "Murid A"; the name is merged on the server afterwards |
+| Catatan wali kelas draft | Attendance counts, note types, per-TP results; no name or personal data (D-213) |
+| Next RPM after analysis | Group counts per TP, never names (D-295) |
+| Game kelas follow-up | TP and wrong-answer pattern of the class (D-172) |
+| Essay scoring help | The essay text only, without any student data; the teacher decides the score (D-347) |
+| Misconception tags | Made when the distractor is written, before any student answers |
+
+Names on paper are read on the teacher's device, never by an AI provider (D-347). Reading handwriting or voice with AI is later.
+
+### 7.5 Usage and visibility
+
+`ai_usage_logs` has one row per attempt (user, school, key id, generation, step, model, purpose, outcome, tokens, latency), never the key and never the prompt or response text. Detail rows are kept 1 month, then pruned; monthly aggregates stay (D-118). The teacher sees each key's status and recent failures; the principal sees per-teacher totals only; Tim SIGRAK sees errors by class and template in the console.
+
+### 7.6 Console providers
+
+Console-only adapters for an OpenAI-compatible API and one more commercial provider exist for Tim SIGRAK's own work (D-326). They never change the teacher's key model. See [section 4.10](#410-internal-console-and-business).
+
+**Status:** **Designed** (P5-04). Nothing in `app/AI` is built yet.
+
+> **Differs from the final docs.** `ai-provider-engine.md` says no second provider is planned and that models change only in config; D-315 and D-326 add console model settings and console adapters, while teacher keys stay Gemini only. It also mentions plain `ShouldBeUnique`; D-050 uses `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping`.
+
+Read more: [`ai-provider-engine.md`](ai-provider-engine.md), D-012, D-022…D-024, D-036, D-050, D-116…D-119, D-124, D-128, D-152, D-213, D-315, D-326, D-347, D-350.
+
+## 8. Exports, localization, and UI writing
+
+### 8.1 Indonesian UI through `lang/id`
+
+- All user-visible text lives in `lang/id/*.php`, one file per area, with English keys that name the meaning (`journals.saved`). There are no string literals in PHP, Blade, or Svelte, and there is no `lang/en`; locale and fallback are both `id` (TR-1…TR-8).
+- `common`, `nav`, `terms`, and `enums` are always shared. A page adds its files with the `translations:<files>` route middleware; server-only files (`export`, `mail`, `notifications`, `validation`) are refused (D-097). Svelte reads text through one `t('key', params)` helper (D-080).
+- The glossary of standard terms lives in `lang/id/terms.php`, and a test rejects banned old terms in any value (D-098). A `lang:audit` command reports missing, unused, and hard-coded strings; missing keys fail CI (D-100).
+- Validation messages start from a one-time copy of the MIT `laravel-lang` Indonesian file, edited to SIGRAK's voice (D-101). Database notifications store a key and parameters, so copy changes reach old notifications (D-102).
+- **Built:** the `translations:` middleware (`ShareTranslations`), the shared prop, and filled `auth`, `account`, `school`, `classes`, `timetable`, and `validation` files.
+
+### 8.2 UI writing
+
+SIGRAK speaks like a quick, polite fellow teacher (design system):
+
+- Verbs on buttons ("Buat RPM", "Simpan jurnal", "Unduh PDF", "Tayangkan").
+- Sentence case, no ALL-CAPS.
+- One term per thing.
+- Errors say what happened and what to do, with technical detail behind "Lihat detail".
+- A delete confirmation names the item and the consequence.
+- "Anda" for every role.
+- No emoji, and no "cerdas", "canggih", or "AI" as decoration.
+- **Never ask for a prompt.**
+
+Fixed terms include *Unduh* (never Download), *Buat* (never Generate), *Templat* (KBBI spelling, D-151), *Kunci AI*, *Kop*, *Kabar*, *Pengingat*, *Simulasi TKA*, *Kartu login*, *Dokumen Saya*, *RPM lepas jadwal*. Later decisions add *Kehadiran* (D-302), *murid* (D-210), *Berkas Administrasi*, *pengesahan dokumen*, *Sumbangan sukarela*, and the banned words *tunggakan*, *kurang bayar*, *belum lunas*, *teguran*, and *tanda tangan elektronik* (D-281, D-300, D-311).
+
+The look is a tidy teacher's workbook: plain surfaces, one teal brand colour, thin lines, Plus Jakarta Sans, Lucide icons with text, tokens as CSS custom properties mapped into Tailwind. Every screen is checked at 360 px and 1280 px wide; tables become card lists below 640 px; touch targets are at least 44 px; status is never colour alone (SV-8…SV-10). Copy comes from the paraphrase spreadsheet of 1,499 legacy strings, tracked row by row in `docs/data/ui-copy/key-map.csv` (D-099).
+
+### 8.3 URLs
+
+Paths people see are plain Indonesian in kebab-case (`/masuk`, `/lupa-kata-sandi`, `/dokumen/{document}/ubah`, `/kunci-ai/{credential}`); resource verbs are `buat` and `ubah` through `Route::resourceVerbs`; route names, parameters, and code stay English (`login`, `documents.edit`). Technical paths nobody reads (`/up`, built assets) may stay English (D-149).
+
+### 8.4 Dates, numbers, money
+
+All formatting goes through `App\Support\IndonesianFormat` (PHP) and `resources/js/lib/format.ts` (TS), which share one API and one set of test fixtures (XP-26):
+
+| Value | Output |
+|---|---|
+| Date | `31/10/2026` |
+| Date in prose | `31 Oktober 2026` |
+| Time | `14.00` ("WIB" only for outside events such as the quota reset and exam windows, D-108) |
+| Number | `1.234.567,89` |
+| Rupiah | `Rp1.234.567` (no space, no decimals, not built by ICU, D-104) |
+| Score | `76,67` |
+
+### 8.5 PDF, DOCX, Excel, CSV
+
+- **Common (XP-1…XP-5).** Rendered from content JSON or query data, never a screenshot; on the `exports` queue when it may take more than about 2 seconds; every label from `lang/id/export.php`; never more data than the user can see in the app; religion only for those allowed to see it.
+- **PDF (Gotenberg).** One Blade view per PDF. Paper A4 or F4 (215 × 330 mm, D-109). The letterhead is **one uploaded image** (school default, or the teacher's own), placed at the top of the first page, at most 4 cm high (D-031); a school without one can press "Buat kop otomatis" (D-284). Print font Arial or Times New Roman, rendered as Liberation Sans or Serif; Arabic in Noto Naskh Arabic; math in KaTeX fonts (D-105, D-125). Page numbers "Halaman X dari Y"; signers as text; headings repeat on each page; no watermark. Print rules: a shared black-and-white cover for book-type documents, three school-editable margin profiles plus a duplex option, landscape for tables with 9 or more columns, and a "NIHIL" row for empty tables (D-283).
+- **DOCX (PhpWord).** SIGRAK's own layout per template, built in code; letterhead in the first-page header; `id-ID` language; Word heading styles; no uploaded Word templates (XP-15…XP-19).
+- **Excel (Laravel Excel 4).** Indonesian headings and sheet names; real cell types (numbers, Excel dates, "Ya"/"Tidak"); NISN, NIP, and NPSN as text; a separate "Info" sheet; protection against formula injection (XP-20…XP-23).
+- **CSV.** `;` separator, UTF-8 with BOM, CRLF, comma decimals; XLSX is the default (D-103).
+- **Imports read back what exports write.** Headings match regardless of case, extra spaces, a trailing `*` or `:`, or column order; old heading labels stay valid forever as aliases; Indonesian values ("Hadir", "Ya", `dd/mm/yyyy`, comma decimals) are read back to English database values (D-150).
+- **File names.** `<kind>-<context>-<date>.<ext>`, at most 80 characters, no student or teacher names (`rapor-kelas-6a-no-07-semester-1.pdf`) (D-107, XP-31…XP-34).
+- **Arabic and RTL.** `dir="auto"` and `<bdi>` for mixed text, separate RTL blocks for `arabic_passages`, RTL runs in DOCX, RTL reading order in Excel (LOC-32…XP-38).
+
+**Built:** the Sebaran sekolah Excel export (`app/Exports/SchoolDirectoryExport`). Everything else in this chapter is **Designed** and lands with P5-04 onward.
+
+Read more: [`export-localization.md`](export-localization.md), [`design-system.md`](design-system.md), [`coding-standards.md`](coding-standards.md) §7–§8, D-031, D-097…D-109, D-125, D-149…D-151, D-280, D-283, D-284.
+
+## 9. Infrastructure and operations
+
+### 9.1 Production
+
+| Item | Choice | Decision |
+|---|---|---|
+| Server | IDCloudHost Cloud VPS, Jakarta, 8 vCPU / 16 GB / 320 GB NVMe | D-070, D-087, D-096 |
+| OS | Ubuntu Server 24.04 LTS, server clock in UTC | D-086, D-066 |
+| Web | Ubuntu's Nginx package on `127.0.0.1:8080` | D-061, D-088 |
+| PHP | 8.5 (≥ 8.5.12) from `ppa:ondrej/php`, PHP-FPM | D-056 |
+| Database | MySQL 8.4 LTS from Oracle's repository | D-007, D-057 |
+| Cache, queues | Redis 8.2, `noeviction`, AOF | D-058 |
+| PDF | Gotenberg 8.39.0 (Chromium) in Docker | D-028, D-059 |
+| Node | 24 LTS, for builds only (preferably in CI) | D-060 |
+| Domain | `sigrak.com`: `app.`, `ujian.`, `admin.`, `ssh.` | D-069 |
+| Mail | Gmail SMTP with an App Password, transactional only | D-110 |
+
+**Cloudflare Tunnel.** The VPS has **no public IP**. A locally managed `cloudflared` tunnel routes `app.`, `ujian.`, `admin.`, and `ssh.` to localhost. UFW denies all incoming traffic. SSH and `admin.` sit behind Cloudflare Access. Nginx restores the real client IP from `CF-Connecting-IP`, trusted only from 127.0.0.1. Authenticated HTML is never cached by Cloudflare (D-088).
+
+**Deploys.** Release folders (`releases/`, `shared/`, a `current` symlink), keeping 5 releases; PHP-FPM is reloaded on each deploy because OPcache does not check timestamps (D-063). Assets are built in CI or locally. After deploys that bring new reference data, run the import commands (`curriculum:import`, `school-directory:import`). The server `.env` needs `APP_HOST`, `EXAM_HOST`, `ADMIN_HOST`, the Gotenberg keys, and the mail keys (D-073, D-164).
+
+### 9.2 Staging
+
+Staging is a second site on the production VPS, isolated by its own system user, PHP-FPM pool, database and database user, Redis database numbers and prefixes, and Horizon and scheduler programs. It uses `staging-app.`, `staging-ujian.`, and `staging-admin.sigrak.com` on the same tunnel behind Cloudflare Access, with seeded data only. MySQL, Redis, and Gotenberg are shared, so only app releases are staged; OS and service upgrades are rehearsed on a temporary VM or snapshot (D-095). Telescope is allowed on staging, never public in production.
+
+### 9.3 Backups
+
+Daily at 01:30 WIB: `mysqldump` plus a `storage/app` tarball. Kept 14 days locally and 30 days off-site on Cloudflare R2 through an encrypted `rclone` crypt remote with a bucket-scoped token. Restore test monthly; off-site restore twice a year. `APP_KEY` stays in the password manager, never in a backup (D-065, D-071). The backup script pings a heartbeat at start, success, and failure (D-136).
+
+### 9.4 Monitoring
+
+- **Healthchecks.io** (free Hobbyist) is the main alerting service, as a push-based dead man's switch that suits a server without a public IP. 13 checks; urgent ones go to Telegram and email, minor ones to email only. Alerts go to the owner only (D-129, D-130, D-144).
+- One script, `/usr/local/sbin/sigrak-health`, runs every minute, every 15 minutes, and daily; a check must fail twice in a row before it reports (D-131).
+- UptimeRobot (free) checks `app.` and `ujian.` `/up` from outside (D-132). Cloudflare Tunnel notifications go by email (D-133).
+- Thresholds: urgent at disk ≥ 90%, RAM available < 1.5 GB, an OOM kill, or Redis ≥ 90% of `maxmemory`; minor at disk ≥ 80%, swap ≥ 50%, load15 ≥ 8, MySQL connections ≥ 160, Redis ≥ 70%, ≥ 5 failed jobs in 15 minutes, or pending security updates (D-135). Staging alerts by email only (D-138).
+- The console's *Kesehatan Sistem* page will show queues, failed jobs, disk, generations, AI errors, and the last backup; alerts stay with the server monitoring (D-316).
+
+**Status:** P5-02 (server, staging, and monitoring setup) is **todo**: the guides are final, but the running VPS is not yet a recorded output. The owner set the server mail keys on 2026-11-07 (P5-03b result).
+
+### 9.5 Local development (WSL2)
+
+Developers on Windows use WSL2 with Ubuntu 24.04, not Laragon, because Horizon needs `pcntl` and `posix`, and Ubuntu 24.04 matches the VPS (D-166). PHP, MySQL, Redis, and Node run inside Ubuntu; Gotenberg runs in Docker Desktop with WSL integration. Keep the code inside Linux (`~/sigrak`), never under `/mnt/c`. First run: `composer install && npm ci`, then `php artisan key:generate && php artisan migrate --seed`. Daily: `composer dev` (serve on port 8000, `queue:listen`, `pail`, Vite); `php artisan horizon` to try the named queues. Local hosts are `app.`, `ujian.`, and `admin.sigrak.localhost:8000`. Before a push, run the same checks CI runs ([section 10.5](#105-coding-standards-tests-and-ci)).
+
+Read more: [`server-setup.md`](server-setup.md), [`server-monitoring.md`](server-monitoring.md), [`local-setup-wsl2.md`](local-setup-wsl2.md), D-056…D-073, D-086…D-088, D-095, D-096, D-110, D-129…D-138, D-166.
+
+## 10. How we work
+
+### 10.1 Phases and tasks
+
+Work is split into **phases** (`P0`, `P1`, …) and each phase into **tasks** (`P5-03`, `P5-03e`, …), small enough for one agent or session, with clear inputs, outputs, and dependencies. Tasks without mutual dependencies run in parallel, as sub-agents or separate sessions; two tasks never edit the same file. Each task has a file in `docs/agent/tasks/` (from `docs/templates/TASK.md`) (D-006, `WORKFLOW.md`).
+
+| Phase | Content | Status |
+|---|---|---|
+| P0 | Repository conventions | Done |
+| P1 | Product concept docs | Done |
+| P2 | Data and technical docs | Done |
+| P3 | Final docs and Indonesian PDFs, PDF build script | Done |
+| P4 | Add-on and follow-up designs | Some done, others todo or on hold |
+| P5 | v1 build | P5-01 done; P5-03 open for P5-03i and P5-03j; the rest todo |
+
+### 10.2 The agent files
+
+- The repository rules file at the root is the entry point and holds the hard rules. `docs/agent/CONTEXT.md` is the stack and convention summary. Read these two, then `PROGRESS.md`, then your task file.
+- `docs/agent/PROGRESS.md` is the single source of truth for what is happening: phases, task status (`todo`, `in-progress`, `blocked`, `review`, `done`), owners, and short handoff notes, newest first.
+- `docs/agent/DECISIONS.md` is an append-only log, one entry per decision (`D-NNN`, status, date, decision, reason). A changed decision is a new entry that supersedes the old one. Read it when a choice touches an earlier decision.
+- `docs/agent/WORKFLOW.md` describes claiming, splitting, and finishing tasks.
+
+**Task lifecycle.** Claim in `PROGRESS.md` (set `in-progress` with your owner label) → work, reading only what the task lists → record new decisions in `DECISIONS.md` (and `CONTEXT.md` if the stack or a convention changes) → finish with `review` or `done`, fill the task file's Result, add a handoff note → after the merge, delete the task branch. A blocked task is marked `blocked` with the reason. Shared files get small, line-level edits only.
+
+### 10.3 Docs pipeline
+
+| Stage | Folder | Language |
+|---|---|---|
+| Draft | `docs/drafts/` | English |
+| Final | `docs/final/` (approved by the owner, moved with `git mv`) | English |
+| PDF | `docs/pdf/` | Indonesian |
+
+The Indonesian translation of each final doc is committed in `docs/pdf/src/<name>.md` (D-156). When a final doc changes, translate only the changed lines and rebuild with `node scripts/docs-pdf/build.cjs <name>` (Pandoc, then headless Chromium through Playwright, A4, footer "Halaman X dari Y"). The build fails on any table or code block wider than the page; `node scripts/docs-pdf/check.cjs` lists leftover English prose. Keep code blocks, identifiers, commands, paths, decision IDs, URLs, and Indonesian or Arabic terms unchanged. Owner material in `docs/sources/` is kept as received (with the D-360 brand exception). This handbook is updated when a phase ends or a major decision changes the flow (D-361).
+
+### 10.4 Branches, identity, attribution
+
+- **One branch: `main`.** A task may use a short-lived branch named `<phase>/<task-id>-<slug>`; once merged, it is deleted on the remote and locally. Between tasks the remote holds only `main` (D-148).
+- **Owner identity.** Every commit is authored and committed as `Arumi Studios <arumiforge@gmail.com>`; a session-start hook in the repository sets this each session. Check `git config user.email` before the first commit (D-148).
+- **No AI attribution anywhere** (D-001): no co-author or session lines in commits, nothing in PR titles or descriptions, comments, code, or docs. This rule overrides any built-in attribution habit of a tool or agent.
+- **Legacy brand.** Never name the owner's previous app; write "the legacy app" or "aplikasi lama" (D-360).
+- **Language policy.** Repo markdown, code identifiers, tables, branches, and commits in English; URLs in Indonesian; UI text, exports, and generated PDFs in Indonesian; owner sources as received.
+
+### 10.5 Coding standards, tests, and CI
+
+Highlights from [`coding-standards.md`](coding-standards.md):
+
+- **PHP.** `declare(strict_types=1)` everywhere; Pint (PSR-12); Larastan from level 6 (D-077); typed code; backed enums for fixed sets; Form Requests and Policies on every action; thin controllers that call one Action; explicit `$fillable`; `config()` instead of `env()`; no N+1; dates through `now()` and `CarbonImmutable`.
+- **Database.** One table per migration; never edit a migration on `main`; `CHECK` constraints from enums; no soft deletes; seeders for reference data are idempotent upserts.
+- **Tenancy.** Every school-owned model uses `BelongsToSchool` (an arch test fails otherwise); `withoutSchoolScope()` only in `app/Filament/` and in jobs or commands that name the school, each with a comment; a foreign `public_id` gives 404, not 403; one IDOR test per resource and action.
+- **Svelte.** TypeScript, runes, pages per route, props built server-side (never a whole model), `public_id`s only, no `{@html}` on user or AI text, Tailwind tokens only, no CDN.
+- **Tests.** Pest with architecture tests (D-074) on MySQL 8, not SQLite (D-079). No real AI calls; `Http::preventStrayRequests()` in the base test case; recorded Gemini fixtures; Gotenberg faked in CI. Factories produce valid rows within one school; fake names from `fake('id_ID')`, never real people's data. A bug fix comes with a failing test.
+- **CI.** GitHub Actions on every push and pull request to `main` (`.github/workflows/ci.yml`, D-084): MySQL 8.4 service, PHP 8.5, Node 24, `composer audit`, `npm audit --omit=dev`, Pint, Larastan, Pest, ESLint, `svelte-check`, and the build. A PR merges only when green. Locally: `vendor/bin/pint --test && vendor/bin/phpstan analyse --memory-limit=1G && composer test`, then `npm run lint && npm run check && npm run build`.
+- **Commits and PRs.** English, imperative, subject at most 72 characters; one task per branch and PR; the PR says what changed, why (task and decision IDs), how it was tested, with phone and laptop screenshots for UI; never commit `.env`, keys, real student data, dumps, or build output.
+- **Dependencies.** Lock files committed; exact pins for output-affecting front-end libraries; Docker images pinned to a tag; a new dependency needs a reason, its licence, and its maintenance state.
+
+### 10.6 Research digest rule
+
+Before any research (a regulation, a field or journal study, a benchmark, a vendor's terms), check [`docs/final/research-digest.md`](research-digest.md). Use a listed finding and follow its link; re-check only when it is old, marked secondary or unverified, or touches money, law, or a vendor's terms. After researching, add the findings there in the same shape (source, date checked, verification level, finding, implication, decisions, repo doc) and put the detail in the task's draft (D-362).
+
+Read more: [`docs/agent/WORKFLOW.md`](../agent/WORKFLOW.md), [`docs/agent/PROGRESS.md`](../agent/PROGRESS.md), [`coding-standards.md`](coding-standards.md), [`scripts/docs-pdf/README.md`](../../scripts/docs-pdf/README.md), D-001, D-002, D-006, D-074…D-085, D-148, D-149, D-156, D-360…D-362.
+
+## 11. Roadmap
+
+### 11.1 Phase 4: open design and data tasks
+
+| Task | Content | Status | Depends on |
+|---|---|---|---|
+| P4-01 | Buku Induk and Dapodik sync design | Blocked, held as upcoming (D-161) | Owner restart |
+| P4-05 | Final docs and glossary for the 2025–2026 rules ("murid", 12-component rapor, ekskul, JTM) + PDFs | Todo | D-210…D-221 |
+| P4-06 | Design: assessment and rapor extensions | Todo | P4-05 |
+| P4-07 | Design: class and homeroom extensions | Todo | D-214…D-219 |
+| P4-08 | Design: principal, operator, supervisor administration (per-item descriptors) | Todo | P4-12 |
+| P4-09 | Design: console mapping of core vs add-on | Todo | D-211 |
+| P4-10 | Design: e-Rapor SD and RDM export | Todo | D-218, P5-08 |
+| P4-11 | Design: Penyusun KSP and evaluasi KSP (after v1) | Todo | D-209, D-217 |
+| P4-13 | Legacy app upgrade decisions | Review | D-251 |
+| P4-14 | Apply the legacy upgrade to `docs/final/` + PDFs | Todo | P4-13 |
+| P4-15 | Import the legacy app catalogs to `docs/data/catalogs/` | Todo | — |
+| P4-19 | Design: assessment landscape (Peta Asesmen, tags, wizard, Wave A) | Todo | D-344…D-351 |
+| P4-20 | Apply D-329…D-351 to `docs/final/` + PDFs | Todo | P4-16…P4-18 |
+| P4-22 | Taxonomy seed and regulation registry in `docs/data/taxonomy/` | Todo | P4-21 |
+| P4-23 | Get and extract missing regulations, verify KMA 512/2026 | Todo | — |
+| P4-24 | Apply the policy foundation to `docs/final/` + PDFs | Todo | P4-21 |
+
+Done in Phase 4: P4-02 (Game kelas), P4-03 and P4-03b (official documents), P4-04 (administration features), P4-12 (supervision instruments), P4-16 (LKPD), P4-17 (internal roles), P4-18 (assessment landscape), P4-21 (policy foundation), P4-25 (this handbook), P4-26 (research digest), P4-27 (legacy brand removal).
+
+The doc-update tasks P4-05, P4-14, P4-20, and P4-24 together close the gaps this handbook flags between the final docs and later decisions.
+
+### 11.2 Phase 5: the v1 slices in order
+
+The owner confirmed the order (D-162): foundation, content core, more templates, TKA, Di Kelas, Asesmen, portals, business, after the scaffold and the server.
+
+| Slice | Content | Status | Depends on |
+|---|---|---|---|
+| P5-01 | Project scaffold and CI | Done | — |
+| P5-02 | Server, staging, and monitoring setup | Todo | — |
+| P5-03 | Foundation: auth, invitations, schools and roles, years and classes, curriculum import, timetable, school directory, copy classes | Done except P5-03i, P5-03j | P5-01 |
+| P5-03i | Calendar (D-252…D-261, D-323) | Todo | P5-03e |
+| P5-03j | Draft timetable generator (D-262) | Todo | P5-03i |
+| P5-04 | Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | Todo | P5-03 incl. P5-03i, D-355 minimum |
+| P5-05 | Bank Soal, LKPD, Quiz Battle | Todo | P5-04 |
+| P5-06 | TKA: package, exam site, sessions, cards, token, results (2028 season) | Todo | P5-05 |
+| P5-07 | Di Kelas with offline sync, Jurnal from RPM | Todo | P5-03 (and P5-04 for the RPM flow) |
+| P5-08 | Asesmen: plan, scores, per-TP analysis, rapor, Pindai LJK | Todo | P5-05 |
+| — | e-Rapor SD and RDM export, right after P5-08 | Todo | P5-08 (D-218) |
+| P5-09 | Portals: principal, operator, supervisor; validation and comments | Todo | P5-03 |
+| P5-10 | Business: trial, subscriptions, add-ons, manual payment, Mode Contoh | Todo | P5-03 |
+
+```
+P5-01 ─► P5-03 (a…h done) ─► P5-03i ─► P5-03j
+                         │        │
+                         │        └─► D-355 minimum ─► P5-04 ─► P5-05
+                         │                                       │
+                         │                     P5-06 ◄───────────┤
+                         │                     P5-08 ◄───────────┘
+                         │                       └─► e-Rapor / RDM export
+                         ├─► P5-07 (needs P5-04 for RPM-driven journal)
+                         ├─► P5-09
+                         └─► P5-10
+P5-02 runs in parallel with all of it.
+```
+
+### 11.3 What to build next
+
+1. **P5-03i, the calendar,** starting with the online SKB check (D-254) and the Jawa Tengah 6-day reference calendar (D-323). P5-04 needs effective days for Prota, Promes, and RPM scheduling (D-252).
+2. **The D-355 versioning minimum,** before P5-04: version columns on `curriculum_versions`, a policy-profile resolver in place of `config/curriculum.php` `allocation_versions` (same behaviour), and the Profil Jenjang data. The first RPM must already store its rule set.
+3. **P5-03j,** the draft timetable, in parallel with P5-04.
+4. **P5-04, the content core,** with the decisions added by P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) and the console parts D-315 and D-316, plus the Dasar Kebijakan panel and the first Cek Keselarasan rules on the RPM (D-358).
+5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), P4-15 (catalogs), Tim Validasi review of the curriculum and regulation data, and the doc updates P4-14, P4-20, P4-24.
+
+Additions by slice from the legacy upgrade are listed in `legacy-upgrade-01.md` §5: P5-05 gets D-293, D-294, D-296; P5-07 gets D-263…D-271 (teacher side), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 gets D-286…D-292, D-295, D-301, D-304; P5-09 gets the portal views and D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; the console gets D-314 and D-317…D-320.
+
+Read more: [`docs/agent/PROGRESS.md`](../agent/PROGRESS.md), [`docs/agent/tasks/P5-03-foundation.md`](../agent/tasks/P5-03-foundation.md), [`docs/drafts/legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) §5, D-162, D-252, D-355.
+
+## 12. Decision map
+
+Decisions live in [`docs/agent/DECISIONS.md`](../agent/DECISIONS.md). The ranges below group them by topic. D-185…D-202 are unused and D-235…D-239 are reserved.
+
+| Range | Topic | In one line |
+|---|---|---|
+| D-001…D-006 | Repository rules | No AI attribution, language policy, core stack, docs pipeline |
+| D-007…D-037 | Product foundation | MySQL, Svelte, scope, users, games, teacher keys, templates, exams, documents, religion |
+| D-038…D-047 | Curriculum and TKA data | MI allocation, MI CP shape, TKA categories, forms, scoring |
+| D-048…D-055 | Architecture | One codebase, three hosts and guards, modules, jobs, Redis, exam limits |
+| D-056…D-073 | Server | PHP 8.5, MySQL 8.4, Redis 8.2, Gotenberg, deploys, backups, domain, VPS |
+| D-074…D-085 | Code and CI | Pest, TypeScript, runes, Larastan, Actions, MySQL tests, CI, forward-only migrations |
+| D-086…D-096 | Owner choices | Ubuntu 24.04, VPS size, tunnel, TKA as practice, Mode Contoh, manual payment, PWA, staging |
+| D-097…D-110 | Localization and print | Translation groups, glossary, CSV, rupiah, fonts, F4, file names, mail |
+| D-111…D-128 | Data review and AI | AN competencies, Tim Validasi, storage, model, backup keys, approvals, KBC, daily counter |
+| D-129…D-147 | Monitoring and religion data | Healthchecks.io, thresholds, religion and MI TP/ATP versions |
+| D-148…D-156 | Repo identity and docs | Only `main`, owner author, Indonesian URLs, imports, Templat, revisions, translations |
+| D-157…D-162 | Business and order | Prices, add-ons, trials, Buku Induk on hold, v1 build order |
+| D-163…D-170 | Scaffold and foundation | Ziggy, hosts from env, WIB, WSL2, staff roles, supervisor scope, school directory |
+| D-171…D-181 | Game kelas | IFP mode, class results, Kode Tayang, Kartu Jawab, templates, content packs |
+| D-182…D-184 | Auth | Invitations, passwords, supervisor accounts later |
+| D-203…D-209 | Official 2025 documents | Regulation data, optional content, rapor rows, Fase A, 7 KAIH, KKA, KSP |
+| D-210…D-221 | Administration features | Follow 2025–2026 rules, core features, JTM, rapor, homeroom, portals |
+| D-222…D-225 | Teacher supervision | 18 instruments, scales, principal-only observation, murid feedback |
+| D-226…D-234 | Curriculum import | CP table, subjects, import rules, class subjects, muatan lokal, Kode Tayang path |
+| D-240…D-251 | School year and timetable | Assignments, years, classes, copy classes, timetable rules |
+| D-252…D-262 | Calendar | Holidays, region calendars, class events, effective days, conflicts, draft timetable |
+| D-263…D-277 | Completeness and RPM flow | One completeness service, journal outcomes, JP balance, readiness, shifts |
+| D-278…D-285 | Berkas and print | Berkas Administrasi, merge, pengesahan, print rules, kop otomatis, sound |
+| D-286…D-296 | Assessment and rapor | Pindai LJK, offline scope, weights, remedial, leger lock, Bank Soal, LKPD blocks |
+| D-297…D-307 | Kelas Saya | Piket, class cash, contributions, savings, Kehadiran, drafts, catalogs, transfer |
+| D-308…D-313 | Supervision portals | PKKS, sekolah binaan requests, follow-up, Pengingat, suggested scores |
+| D-314…D-321 | Console | Fixed roles, AI model per purpose, system health, curriculum console, retention |
+| D-322…D-328 | Legacy upgrade wrap-up | Not carried over, Jawa Tengah calendar, regional instruments, LJK layout, console adapters |
+| D-329…D-337 | LKPD | Patterns in waves, QR, student session later, Wave 1, local context, embeds |
+| D-338…D-343 | Internal roles | Scopes, eleven roles, payments, support access, partners, 2FA |
+| D-344…D-351 | Assessment landscape | Peta Asesmen, instruments, AI without student data, GPK, offline, Wave A |
+| D-352…D-359 | Policy foundation | Position, rule strength, versioning, Profil Jenjang, taxonomy, panel, KMA 512 |
+| D-360…D-362 | Repository and docs | Legacy brand removed, this handbook, research digest |
+
+### 12.1 Where final docs and later decisions differ
+
+This handbook follows the later decision in each case. The doc-update tasks (P4-05, P4-14, P4-20, P4-24) will bring the final docs in line.
+
+| Final doc says | Later decision |
+|---|---|
+| Menu *Absensi*; "siswa" in UI copy | *Kehadiran* (D-302); "murid" (D-210) |
+| Offline: Absensi, Jurnal, Catatan Siswa only | Plus read-only RPM meetings, the scan queue, observation entry (D-289, D-349) |
+| `journals.status` done/not_done; `meetings.status` without partial | `partial`, reasons, derived meeting status (D-267, D-268) |
+| `timetable_slots.teacher_id` | No teacher column; `kind` and `label` (D-247, D-249) |
+| Region calendar as an override default | School copies the region calendar, with offered updates (D-256) |
+| Last 5 revisions, pruned | Approved revisions never pruned (D-282) |
+| One PDF per download, no merge | Merge for Berkas Administrasi only (D-280) |
+| Print margins as plain settings | Three margin profiles, duplex, cover, landscape, NIHIL (D-283) |
+| LKPD output without blocks | Grade 1–3 blocks and a `pattern` field (D-296, D-329) |
+| Bank Soal exports only | Per-item data, six derived prints, item library (D-293, D-294) |
+| TKA: four categories incl. Istimewa | Three categories plus an Istimewa predicate (D-041, D-120) |
+| PGK Kategori pair "mendukung/tidak mendukung" | Dropped (D-045) |
+| `staff_users.role` ∈ admin, support, content | Eleven roles with scopes (D-338, D-339); code still has three |
+| Add-on list fixed | Mapping set in the console (D-211) |
+| Scheduler by cron | Supervisor runs `schedule:work` (D-064) |
+| No second AI provider; models in config | Console model per purpose and console adapters (D-315, D-326) |
+| Plain `ShouldBeUnique` (AI doc) | `ShouldBeUniqueUntilProcessing` + `WithoutOverlapping` (D-050) |
+| Data model lacks `learning_outcomes`, `public_id` on years, classes, memberships | Added (D-226, D-182, D-241) |
+| Support access granted by the school, logged for it (internal-roles draft §4) | MoU-based read-only access, one internal row per session (D-341) |
+| `curriculum_versions` without dates; config pointer | Versioning columns and resolver before P5-04 (D-355) |
+
+One inconsistency inside the decisions themselves: D-287 and D-289 put answer-sheet scanning on the teacher's device, while D-347 says multiple-choice answers are read by OMR on SIGRAK's own server. Confirm before P5-08 ([section 4.6](#46-assessment)).
+
+## 13. Glossary
+
+Indonesian education and product terms used in this handbook and in the code comments. "SIGRAK" marks a product term.
+
+| Term | Meaning |
+|---|---|
+| AKM | Asesmen Kompetensi Minimum, the literacy and numeracy part of AN |
+| AKMI | Asesmen Kompetensi Madrasah Indonesia (Kemenag); its 2026 status is unverified |
+| AN | Asesmen Nasional, a national system survey, not a student score |
+| ATP | Alur Tujuan Pembelajaran: the ordered flow of TP; in the data, topics (materi pokok) |
+| Berkas Administrasi | SIGRAK: the semester bundle of a teacher's documents (D-278) |
+| BK | Bimbingan dan Konseling (counselling); BK notes are restricted |
+| BOS | Bantuan Operasional Sekolah, the school operating grant; never a payment source for SIGRAK |
+| CP | Capaian Pembelajaran: learning outcomes per subject and phase, set nationally |
+| Cuti bersama | Joint leave days set by the SKB; a holiday by default (D-255) |
+| Dapodik | Kemendikdasmen's school data system of record for SD |
+| DPL | Dimensi Profil Lulusan: the 8 graduate profile dimensions (DPL1…DPL8) |
+| e-Rapor SD | The government report-card app for SD; SIGRAK exports to its import layout |
+| EMIS | Kemenag's data system of record for madrasah |
+| Fase | Phase: A (grades 1–2), B (3–4), C (5–6) |
+| Fokus (materi) | A focus item inside a topic, usually one per week |
+| GPK | Guru Pendamping Khusus; in SIGRAK a teacher assignment, not a role (D-348) |
+| Guru kelas | Class teacher who teaches the class subjects of one class |
+| Guru mapel | Subject teacher of one special subject across classes |
+| IFP | Interactive Flat Panel, the classroom touch screen |
+| JP | Jam Pelajaran: one lesson period, 35 minutes in SD/MI |
+| JTM | Jam Tatap Muka: a teacher's weekly workload unit |
+| Kabar | SIGRAK: the in-app inbox for news and notifications |
+| Kaldik | Kalender pendidikan, the school calendar |
+| KAIH | Gerakan 7 Kebiasaan Anak Indonesia Hebat: seven habits, the seventh "Tidur Cepat" |
+| KBC | Kurikulum Berbasis Cinta (KMA 512/2026), value education in madrasah |
+| Kenaikan | Promotion to the next grade, decided by the school |
+| KKA | Koding dan Kecerdasan Artifisial; in SIGRAK through kokurikuler (D-208) |
+| KKG / KKM | Teacher working groups (Kelompok Kerja Guru / Madrasah) |
+| KKTP | Kriteria Ketercapaian Tujuan Pembelajaran: criteria for reaching a TP |
+| Kokurikuler | Co-curricular learning that strengthens the DPL; replaced P5 |
+| Kop | Letterhead; in SIGRAK one uploaded image |
+| Korwil | Koordinator wilayah, a regional supervisor role in schools |
+| KSP | Kurikulum Satuan Pendidikan: the school's own curriculum, set by the principal |
+| Leger | The class grade ledger behind the rapor |
+| LJK | Lembar Jawaban Komputer, the answer sheet; *Pindai LJK* scans it |
+| LKPD | Lembar Kerja Peserta Didik: student worksheet |
+| MI | Madrasah Ibtidaiyah: Islamic primary school under Kemenag |
+| Muatan lokal | Local content subject (for example Bahasa Jawa) |
+| Murid | Student; the current official UI term (D-210) |
+| Mutasi | Student transfer in or out, or between rombel |
+| NISN, NIP, NPSN | National student number, civil-servant number, school number |
+| Operator | School staff member who administers school data |
+| Panca Cinta | The five love themes of KBC |
+| Pembelajaran Mendalam | Deep learning: principles berkesadaran, bermakna, menggembirakan; experiences memahami, mengaplikasi, merefleksi |
+| Pengawas | School supervisor who oversees several schools |
+| Pengesahan dokumen | SIGRAK: the principal's internal approval of a document, with a code (D-281) |
+| PG, PGK MCMA, PGK Kategori | Multiple choice; complex multiple choice; true/false per statement |
+| PKKS | Penilaian Kinerja Kepala Sekolah: principal supervision by the pengawas |
+| Prota, Promes | Yearly and semester programmes |
+| Rapor | Report card |
+| RDM | Rapor Digital Madrasah, Kemenag's report-card app |
+| Rombel | Rombongan belajar, a class group in Dapodik |
+| RPM | SIGRAK's lesson plan (Rencana Pembelajaran Mendalam), replacing RPP/modul ajar |
+| RTL | Rencana Tindak Lanjut: follow-up plan after supervision |
+| Ruang GTK | The national teacher and staff performance platform |
+| SAS, STS | End-of-semester and mid-semester summative assessments |
+| SD | Sekolah Dasar: primary school under Kemendikdasmen |
+| Simulasi TKA | SIGRAK: the TKA practice exam |
+| SKB | Joint ministerial decree on holidays and cuti bersama |
+| SKL | Standar Kompetensi Lulusan: graduate standards |
+| Tayangkan | SIGRAK: present mode on a projector or IFP |
+| Tim Validasi SIGRAK | SIGRAK's review team that signs off curated data (D-113) |
+| TKA | Tes Kemampuan Akademik: the national academic test for grade 6 |
+| TP | Tujuan Pembelajaran: learning objective |
+| Wali kelas | Homeroom teacher of a class |
+
+## 14. Where to read more
+
+**Final docs** (English in `docs/final/`, Indonesian PDFs in `docs/pdf/`):
+
+| Doc | Read it for |
+|---|---|
+| [`product-concept.md`](product-concept.md) | Product, roles, navigation, flows, plans, feature status |
+| [`content-engine.md`](content-engine.md) | Templates, wizards, pipeline, RPM, Bank Soal, LKPD, games, TKA, export |
+| [`ai-provider-engine.md`](ai-provider-engine.md) | Keys, selection, errors, duplicates, privacy, usage logs |
+| [`data-model.md`](data-model.md) | Tables, keys, invariants, tenancy |
+| [`architecture.md`](architecture.md) | Components, modules, flows, deployment, security |
+| [`design-system.md`](design-system.md) | Tokens, components, voice, terms |
+| [`coding-standards.md`](coding-standards.md) | PHP, database, tenancy, Svelte, tests, commits |
+| [`export-localization.md`](export-localization.md) | `lang/id`, export rules, formatting, RTL |
+| [`religious-education.md`](religious-education.md) | Six SD religions, MI subjects, KBC |
+| [`ifp-classroom.md`](ifp-classroom.md) | Game kelas and the IFP |
+| [`server-setup.md`](server-setup.md) | The VPS, step by step |
+| [`server-monitoring.md`](server-monitoring.md) | Health checks and alerts |
+| [`local-setup-wsl2.md`](local-setup-wsl2.md) | Local development on Windows |
+| [`research-digest.md`](research-digest.md) | Every research finding so far; check before researching (D-362) |
+
+**Key drafts** (accepted designs not yet in the final docs):
+
+| Draft | Content |
+|---|---|
+| [`policy-innovation-layers.md`](../drafts/policy-innovation-layers.md) | Layers, rule strength, versioning, Profil Jenjang, taxonomy (D-352…D-359) |
+| [`legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) | Legacy app upgrade map to D-252…D-328, doc and task changes |
+| [`administration-features.md`](../drafts/administration-features.md) | 2025–2026 rules and administration features (D-210…D-221) |
+| [`teacher-supervision-instruments.md`](../drafts/teacher-supervision-instruments.md) | The 18 supervision instruments (D-222…D-225) |
+| [`assessment-landscape.md`](../drafts/assessment-landscape.md) | Peta Asesmen and new instruments (D-344…D-351) |
+| [`lkpd-exploration.md`](../drafts/lkpd-exploration.md) | LKPD patterns, blocks, local context (D-329…D-337) |
+| [`internal-roles.md`](../drafts/internal-roles.md) | Staff roles, scopes, matrix (D-338…D-343) |
+| [`dokumen-resmi-sd-mi.md`](../drafts/dokumen-resmi-sd-mi.md) | What the official 2025 documents change (D-203…D-209) |
+| [`buku-induk-dapodik.md`](../drafts/buku-induk-dapodik.md) | Buku Induk and Dapodik sync, on hold (D-161) |
+| [`km-sd-2026-r2-source-check.md`](../drafts/km-sd-2026-r2-source-check.md) | Findings on the KM-SD-2026-R2 source files |
+| [`open-questions.md`](../drafts/open-questions.md) | Remaining owner questions |
+
+**Data:** [`docs/data/curriculum/README.md`](../data/curriculum/README.md) (curriculum files and provenance), [`docs/data/regulations/README.md`](../data/regulations/README.md) (official 2025 rules as data), `docs/data/schools/` (school directory), `docs/data/tka/` (TKA framework). Planned: `docs/data/taxonomy/`, `docs/data/assessment/`, `docs/data/catalogs/`.
+
+**Agent files:** [`CONTEXT.md`](../agent/CONTEXT.md), [`PROGRESS.md`](../agent/PROGRESS.md), [`DECISIONS.md`](../agent/DECISIONS.md), [`WORKFLOW.md`](../agent/WORKFLOW.md), and the task files in [`docs/agent/tasks/`](../agent/tasks/).
