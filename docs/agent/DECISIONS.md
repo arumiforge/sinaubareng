@@ -81,7 +81,7 @@ Games are built only from template runtimes. AI supplies content and allowed con
 Reason: quality, consistency, and security.
 
 ### D-016 — Offline: Di Kelas only
-Accepted · 2026-10-30
+Accepted · 2026-10-30 · amended by D-289
 Attendance, journal, and student notes work offline and sync by `client_uuid`. Everything else needs a connection.
 Reason: owner's choice. Keeps the PWA scope small.
 
@@ -119,7 +119,7 @@ Accepted by D-116 · 2026-10-30 · item 2 superseded by D-024
 Reason: see `docs/final/ai-provider-engine.md`. Awaiting owner review.
 
 ### D-023 — AI keys: Gemini free tier only
-Accepted · 2026-10-30 · refines D-012
+Accepted · 2026-10-30 · refines D-012 · console adapters added by D-326 (teacher keys unchanged)
 Only Google Gemini keys are accepted, and the design targets the free tier: few calls per generation, stable models only, no background pings. Multi-key rotation stays, at the teacher's own risk. Google's API terms forbid circumventing limits, so the second and later keys need explicit consent. No student personal data goes into prompts, because free-tier prompts may be read by Google's reviewers. AI users are adults (teachers) only.
 Reason: owner's decision; Gemini API Additional Terms and Google APIs Terms checked 2026-10-30.
 
@@ -159,7 +159,7 @@ Figures come from a bundled set (SVG) chosen by id. Cube stacks are drawn from a
 Reason: owner's choice. AI is unreliable at spatial reasoning and image generation.
 
 ### D-031 — Letterhead is an uploaded image
-Accepted · 2026-10-30 · refines D-028
+Accepted · 2026-10-30 · refines D-028 · amended by D-280 (PDF merge for Berkas) and D-284 (kop otomatis)
 The school uploads a default letterhead image, and a teacher may upload their own, which replaces it on their documents. The layout and logo live in the image. Rules: PNG/JPG, ≥ 2,000 px wide, ratio 4:1–8:1, ≤ 2 MB, printed height ≤ 4 cm, previewed on A4/F4. As a result, Word-to-PDF conversion and PDF merging are not needed: one HTML view → one PDF, and DOCX is built from SIGRAK's own layouts.
 Reason: owner — simpler for teachers. Removes per-field letterhead settings.
 
@@ -589,7 +589,7 @@ Accepted · 2026-10-31 · accepts D-022 items 1, 3, 4
 Reason: owner approved.
 
 ### D-117 — Default model and free-tier limits
-Accepted · 2026-10-31 · within D-023
+Accepted · 2026-10-31 · within D-023 · amended by D-315 (model per purpose set in the console)
 The default model for generation is Gemini 3.8 Flash (text-out), as listed in AI Studio on 2026-10-31. Its free-tier limits are 5 requests per minute, 250,000 tokens per minute, and 20 requests per day, per Google Cloud project. The model id and limits live in `config/ai.php` (purpose → models, with fallbacks) and are re-checked in AI Studio at build time and when Google changes them. Key selection and cooldowns use these limits.
 Reason: owner's choice from AI Studio.
 
@@ -774,7 +774,7 @@ When an AI generation finishes, the teacher gets a database notification in *Kab
 Reason: owner's decision; teachers often leave the page before a long generation is done.
 
 ### D-153 — Keep the last 5 document revisions
-Accepted · 2026-11-01 · replaces the proposed "last 10"
+Accepted · 2026-11-01 · replaces the proposed "last 10" · amended by D-282
 `document_revisions` keeps the last 5 revisions per document; the daily prune job removes older ones.
 Reason: owner's decision.
 
@@ -884,7 +884,7 @@ On the shared IFP the teacher does not type a password. The IFP shows a 6-digit 
 Reason: one panel is shared by several classes; a teacher session left open on it is a risk.
 
 ### D-174 — Kartu Jawab, last step
-Accepted · 2026-11-04 · P4-02 · owner's choice
+Accepted · 2026-11-04 · P4-02 · owner's choice · reuses the Pindai LJK camera code (D-286)
 Per-student responses come only from Kartu Jawab: printed numbered cards with sides A–D, scanned with the teacher's phone camera and mapped to the roster on the phone. Names never show on the IFP. It is built after the class-level loop (D-172) is in use.
 Reason: owner's choice; most SD/MI classes have no student devices.
 
@@ -1157,3 +1157,395 @@ Reason: the curriculum allocation is binding; the timetable is filled row by row
 Accepted · 2026-11-09 · P5-03e · owner's choice, refines D-248 and D-250
 Lessons of different religion subjects (the six Pendidikan Agama subjects) may share the same time in a class, since students split by religion; any other overlap in a class is still refused, and every teacher is still checked for clashes. A religion subject counts towards "complete" only when it has a teacher in that class; a religion without a teacher is shown as not counted.
 Reason: all six religions are in the structure at 3 JP, but a class only teaches the religions of its students, at the same hour.
+
+### D-252 — Calendar work is P5-03i; draft timetable is P5-03j
+Accepted · 2026-11-09 · P4-13 · owner's choice, reopens P5-03
+National holidays, region calendars, school calendar copy and updates, class-level events, effective days, the conflict checker, and the calendar impact preview are task P5-03i, done before P5-04. The draft timetable generator is P5-03j, after P5-03i and in parallel with P5-04. usulan-01's names P5-03h (taken by copy classes) and P5-03e2 are not used.
+Reason: follows the P5-03f/g/h pattern; P5-04 (Prota/Promes, RPM scheduling) needs effective days.
+
+### D-253 — National holidays: one central read-only table
+Accepted · 2026-11-09 · P5-03i · owner's choice, refines the data model's `calendars`
+`national_holidays` (`date`, `name`, `kind` ∈ {`national_holiday`,`joint_leave`}, `decree`, `academic_year`, `is_provisional`) sits outside `calendars` and is merged into every calendar view, even when a school has no calendar yet. Tim SIGRAK updates it in the console each year when the new SKB is out (usually September); `php artisan calendar:import-holidays <file>` imports a file, idempotent per date. Years not yet covered by an SKB get the fixed-date holidays (1 Jan, 1 May, 1 Jun, 17 Aug, 25 Dec), marked "sementara".
+Reason: holidays apply nationally and change once a year; one copy keeps every school's effective days right.
+
+### D-254 — Holiday data is checked against the official SKB online
+Accepted · 2026-11-09 · P5-03i · owner's choice, applies D-113 to holiday data
+Before import, an agent finds the official SKB 3 Menteri for 2026 and 2027 on government sites (Kemenag, KemenPANRB, Kemnaker) and checks every date, name, and kind in `docs/sources/usulan-01/data/libur-nasional-cuti-bersama.json`, including the unchecked 2027 SKB number. It records the source URLs, the check date, and any differences; Tim Validasi SIGRAK signs off. The data stays `draft` until then.
+Reason: the file was copied from EDUNEXA; an online check is quick, and sign-off keeps the D-113 pattern.
+
+### D-255 — Joint leave is a holiday by default
+Accepted · 2026-11-09 · P5-03i · owner's choice
+Cuti bersama dates are non-effective days by default. A region or school calendar may mark a single joint-leave date as a school day when the dinas calendar differs.
+Reason: most kaldik follow the SKB, but some dinas keep school open on some joint-leave days.
+
+### D-256 — School calendar is copied from the region calendar, with offered updates
+Accepted · 2026-11-09 · P5-03i · owner's choice, replaces the data model's "region defaults that a school calendar overrides"
+Tim SIGRAK builds region reference calendars from the dinas kaldik. The operator copies one with "Salin dari kalender wilayah" and adds school events. When the region calendar changes later, the operator sees "Terapkan perubahan wilayah" with the list of changes and the impact preview (D-261), and applies or skips them. Teachers only read the calendar, except as in D-257.
+Reason: the school owns its calendar but still hears about dinas changes instead of drifting silently.
+
+### D-257 — Region calendars for Kudus, Jepara, and Pati in v1
+Accepted · 2026-11-09 · P5-03i · owner's choice, applies D-018 and D-170
+2026/2027 region reference calendars for Kabupaten Kudus, Jepara, and Pati are required before the calendar feature ships. Other regencies are added later as data, with no code change.
+Reason: all three are in the school directory (D-170) and are the first market.
+
+### D-258 — Calendar events for one class
+Accepted · 2026-11-09 · P5-03i · owner's choice
+`calendar_events` gets `class_id` (nullable, FK to `classes` of the calendar's school). When set, the event applies only to that class; a `no_lessons` event for a class means no meetings and no effective day for that class, and its meetings shift (teachers get the D-274 preview). The operator may add events for any class or the whole school, a wali kelas only for their own class; guru mapel only read.
+Reason: a class trip must not remove lessons from other classes.
+
+### D-259 — Effective days and weeks per class
+Accepted · 2026-11-09 · P5-03i · owner's choice
+`app/Calendar/EffectiveDays` counts per class: days with a lesson slot in the class timetable, minus national holidays, active joint leave, and `holiday`, `exam`, `school_event`, and `no_lessons` events of the school or the class. Effective weeks = effective days ÷ the class's school days per week; the full value is stored and shown to one decimal. The table has Bulan, Hari sekolah, Libur, Asesmen, Kegiatan, Hari efektif, Minggu efektif, with subtotals for semester 1 and 2 (split at `even_semester_starts_on`) and a year total. It feeds S-01.1, Prota/Promes (A11), completeness targets, RPM readiness, the JP balance, and RPM scheduling.
+Reason: timetables differ per class (5 or 6 days); one service gives every role the same numbers.
+
+### D-260 — One conflict checker, rules added per slice
+Accepted · 2026-11-09 · P5-03i · owner's choice
+`app/Calendar/ConflictChecker` checks every dated item with the same messages. P5-03i covers calendar events and the timetable; supervision schedules and Agenda & Rapat add their rules in P5-09. Refused: an assessment (STS/SAS) on a national holiday or an active joint-leave day. Warning only: an event on a Sunday or outside the class's school days, an event at the same time as a meeting (rapat), supervision on a non-effective day.
+Reason: one place for clash rules without holding the calendar back until P5-09.
+
+### D-261 — Calendar change impact preview
+Accepted · 2026-11-09 · P5-03i, P5-04 · owner's choice
+When the operator or a wali kelas saves an event, or applies region updates, and the change would move RPM meetings, they first see the impact ("12 pertemuan RPM di 6 kelas akan bergeser") and confirm. Nothing is shown when there is no impact. Afterwards teachers get the shift preview with Batalkan (D-274). There is no draft calendar table.
+Reason: keeps EDUNEXA's kaldik calon idea without a second calendar.
+
+### D-262 — Draft timetable generator
+Accepted · 2026-11-09 · P5-03j · owner's choice
+"Susun draf jadwal" for one class or all classes uses the operator's day frame, the JP allocation (D-230), the teaching assignments, and locked slots. Hard limits (D-248…D-251, locked slots untouched) cannot be changed. Soft preferences are on/off switches per school, without numeric weights: at most 2 consecutive JP per subject per day (3 for PJOK), PJOK before 10.00, Matematika and Bahasa Indonesia early, spread over the week, no split across a break. The output is always a draft with a comparison screen and the reasons for JP that could not be placed; every save passes the D-248…D-251 validator. It runs as a `default` queue job (about 10 s per school), with Acak ulang.
+Reason: P5-03e (manual) is done; switches are simpler for operators than weights.
+
+### D-263 — One completeness service for every screen
+Accepted · 2026-11-09 · P5-07 (teacher), P5-09 (portals) · owner's choice, merges usulan-01 U-01 and Part B B-01
+One domain, `app/Progress/`. Its base, `CompletenessLedger`, produces slot rows (`teacher`, `class`, `subject`, `date`, `item`, `state`) with state ∈ {done, missing, not_due, excused (holiday, `no_lessons`, class event)}. The per-teacher `ProgressReport` and the school report are built only from these rows. Kinds: RPM, Jurnal, Kehadiran (wali kelas only, D-029), Refleksi guru (1 per semester, D-214 A4), Prota / Promes / rencana asesmen (present or not), asesmen diagnostik (wali kelas, start of year), kokurikuler JP (D-277), and untargeted rows shown as "Ada (n entri)" or "Belum ada". Statuses are text plus colour: Lengkap, Belum lengkap: n, Belum dimulai, Tidak berlaku. Only subjects the teacher holds in `teaching_assignments` count (D-240); subjects with no teacher show as information. The supervisor and the console get school totals only (D-224).
+Reason: one formula gives the same numbers in every role.
+
+### D-264 — Completeness windows
+Accepted · 2026-11-09 · P5-07, P5-09 · owner's choice
+Windows: Hari ini, Minggu ini, Semester ini. Hari Ini opens on Minggu ini, Pantau Guru on Semester ini. The principal and the supervisor may also pick a free date range for prints and reports; teachers get the fixed windows only.
+Reason: a simple teacher view, while leaders still get report periods.
+
+### D-265 — Weekly completeness snapshots
+Accepted · 2026-11-09 · P5-07 · owner's choice
+Every Monday at 00.30 WIB a job writes `progress_snapshots` (`school_id`, `teacher_id`, `academic_year_id`, `week_starts_on`, `kind`, `target`, `available`), unique (`teacher_id`, `week_starts_on`, `kind`), for trend charts. Live results are cached per teacher per day in Redis and dropped on source events (journal, meeting, timetable, or calendar change). No progress columns on other tables.
+Reason: the principal sees a trend, not only today's number.
+
+### D-266 — "Siapkan besok"
+Accepted · 2026-11-09 · P5-07 · owner's choice
+On Hari Ini, tomorrow's slots without an RPM meeting show one button that opens the RPM wizard with class, subject, date, and the next ATP topic filled in. Every missing row links to the screen that fixes it.
+Reason: turns the completeness list into the next action.
+
+### D-267 — The journal records a meeting's outcome; "terlaksana sebagian"
+Accepted · 2026-11-09 · P5-04, P5-07 · owner's choice, refines the data model's `meetings` and `journals`
+`journals.status` ∈ {`done`,`partial`,`not_done`} with `not_done_reason`, `not_done_note`, and `unfinished_experiences` (a subset of memahami, mengaplikasi, merefleksi, for `partial`). `meetings.status` ∈ {`planned`,`done`,`partial`,`not_done`} is derived from the meeting's journal and stores no reason. `not_done` shifts later meetings (D-274). `partial` does not shift: the unfinished experiences become a "Lanjutan" block at the top of the next meeting and in Game kelas, and 3 partials in a row for one class and subject trigger the JP balance (D-269). For completeness, `done` and `partial` count as RPM and journal present; `not_done` with a reason counts as a journal and removes the slot from the RPM target.
+Reason: one place records the outcome, so nothing is duplicated, and a partial lesson neither repeats the meeting nor hides the gap.
+
+### D-268 — Not-done reasons are required; lost JP recap
+Accepted · 2026-11-09 · P5-07, P5-09 · owner's choice
+Marking a journal `not_done` needs a reason: Kegiatan sekolah (`school_event`), Guru bertugas di luar (`teacher_duty`), Murid tidak hadir (`students_absent`), Bencana/cuaca (`disaster_or_weather`), Lainnya (`other`, note required). Pantau Guru shows JP lost per reason ("Bulan ini 12 JP hilang karena kegiatan sekolah").
+Reason: the recap feeds the review of the calendar and school programme.
+
+### D-269 — One JP balance before SAS (Neraca JP)
+Accepted · 2026-11-09 · P5-04, P5-07 · owner's choice, merges U-02 item 3, U-12 item 2, and B-02 item 2
+One calculation per class and subject: remaining ATP JP against available slot JP up to the semester's SAS (the calendar's SAS exam event), recomputed after every shift (journal, calendar, timetable, change of the semester-2 start) and after 3 partials in a row. Results: Pas, Kurang n JP, Ada n JP cadangan. When short, one warning with three actions: padatkan or merge meetings (AI section revision), move the topic to the next semester, or accept with a note that appears in the teacher's semester reflection (A4). With a surplus, the app suggests remedial or pengayaan (A1).
+Reason: one warning instead of three for the same problem.
+
+### D-270 — RPM readiness per subject
+Accepted · 2026-11-09 · P5-04, P5-07 · owner's choice
+`app/Content/Readiness/RpmReadiness` per class and subject: Siap (all slots in the next 10 effective days have a meeting), Segera habis (meetings run out within 4–10), Perlu RPM (an empty slot within 3 effective days, or a past slot without RPM, naming the first empty date), and grey Tidak ada jadwal / Belum ada ATP. Shown in Buat (subject card with ATP progress), Hari Ini (yellow and red only), and Pantau Guru (counts). The defaults 10 and 3 are set by Tim SIGRAK in the console; a school operator may override them for the school, not per teacher.
+Reason: central defaults, with room for schools with a different rhythm.
+
+### D-271 — Readiness and JP balance Kabar go to teachers only
+Accepted · 2026-11-09 · P5-07 · owner's choice
+Teachers get a Monday 06.00 WIB summary ("2 mapel perlu RPM, 1 mapel kurang JP") and an immediate Kabar when a subject turns Perlu RPM or its balance turns Kurang, at most once per subject per day, each with an action button. The principal gets no Kabar for these and sees per-teacher counts in Pantau Guru only.
+Reason: nudges the teacher without flooding the principal.
+
+### D-272 — Semester-2 RPMs may be drafted early
+Accepted · 2026-11-09 · P5-04 · owner's choice, clarifies `content-engine.md` scheduling
+Teachers may create semester-2 RPMs at any time. Their meetings are placed only from `academic_years.even_semester_starts_on`, and Buat shows "Dijadwalkan mulai [tanggal]". When the operator changes that date, semester-2 meetings are rescheduled with the D-274 preview, a Kabar, and a `meeting_schedule_history` version.
+Reason: teachers plan in the December break without breaking the data rule.
+
+### D-273 — "Pasang ke jadwal" for RPM lepas jadwal
+Accepted · 2026-11-09 · P5-04 · owner's choice
+An RPM lepas jadwal (`planned_on` NULL) can be placed on one class's timetable from a start date, with the same preview as a shift. From then on it counts in ATP progress, readiness, the JP balance, and completeness.
+Reason: a stand-alone RPM can still join the plan later.
+
+### D-274 — RPM shifts are automatic, shown, and undoable; Promes shows plan vs actual
+Accepted · 2026-11-09 · P5-04 · owner's choice (Part B Q1)
+Every shift (journal, calendar, timetable change) applies automatically and shows "2 pertemuan bergeser: Pertemuan 3 → Kamis 13/11, …" with Batalkan, which restores the previous `meeting_schedule_history` version. The Promes print gets a second view, Realisasi, built from journals: planned week against actual week per topic.
+Reason: the reflow stays, but the teacher sees what moved and can undo it.
+
+### D-275 — RPM copy for a parallel class, without AI
+Accepted · 2026-11-09 · P5-04 · owner's choice (Part B Q3)
+"Pakai untuk kelas lain" copies an RPM to a parallel class of the same grade and subject with no AI call; its meetings are placed on the target class's timetable. Each copy then lives on its own (edits, journals, shifts).
+Reason: a guru mapel teaches the same topic to several classes; this saves quota.
+
+### D-276 — Restore curriculum defaults
+Accepted · 2026-11-09 · P5-04 · owner's choice
+Kurikulum gets "Pulihkan bawaan" per topic and "Reset semua penyesuaian". Only the principal or operator can use them, with confirmation and an audit log. Old `school_topic_changes` stay as history (marked reverted) and are never deleted. Existing RPMs do not change.
+Reason: a safe way back without losing history.
+
+### D-277 — Automatic annual kokurikuler JP target
+Accepted · 2026-11-09 · P5-04, P5-07 · owner's choice
+The school's annual kokurikuler plan takes its JP target from `subject_allocations` (`cocurricular`): SD 216/216/252/252/252/224 for grades 1–6 (Permendikdasmen 13/2025), MI per KMA 1503/2025. The school may adjust it with a note. Completeness counts held kokurikuler JP against it, and kokurikuler taught by a guru mapel becomes that guru mapel's target.
+Reason: follows the 2025 structure and EDUNEXA's guru mapel rule.
+
+### D-278 — Berkas Administrasi: one semester bundle
+Accepted · 2026-11-09 · P5-07 (teacher), P5-09 (principal) · owner's choice, merges usulan-01 U-03 and Part B B-10 (Q6)
+The feature is named **Berkas Administrasi** ("Paket" stays for Paket Soal TKA and XP-6 packages). Its home is Dokumen Saya; the principal opens it for one teacher from Pantau Guru; Hari Ini shows a shortcut only near the end of a semester. Profiles: Standar SIGRAK (default; S-01 order, plus S-15 for a wali kelas), Format Kudus (24 components for guru kelas, 18 for guru mapel), and a K3 preset on the same builder. Range: current semester, school year, or free dates, for teachers too. Contents: cover, completeness summary sheet (D-263), contents page, a title page per part, and a NIHIL page for an empty part; BK notes are never included. Output: one merged PDF by default, a ZIP of separate PDFs as an option, no DOCX. Files are kept 7 days, then deleted, and reused while the data is unchanged.
+Reason: "Berkas" does not clash with Paket Soal TKA, and one builder serves the teacher, the principal, and K3.
+
+### D-279 — Principal downloads a whole school's Berkas
+Accepted · 2026-11-09 · P5-09 · owner's choice
+The principal can download every teacher's Berkas Administrasi for a semester as one ZIP with one PDF per teacher, built as a job on the `exports` queue.
+Reason: one PDF per teacher avoids a single thousand-page file.
+
+### D-280 — PDF merge for Berkas Administrasi only
+Accepted · 2026-11-09 · P5-07 · owner's choice, amends D-031 and XP-6
+Berkas Administrasi renders each part as its own PDF (also used for the ZIP) and joins them with Gotenberg's merge route; the contents page takes page numbers from each part's page count, so there is no two-pass render. Every other document stays one view → one PDF, no merge.
+Reason: the ZIP option already needs per-part PDFs; one code path is simpler than a merge fallback for thick bundles.
+
+### D-281 — Document approval (pengesahan) with a verification code
+Accepted · 2026-11-09 · P5-09 · owner's choice (usulan-01 W-2), keeps D-010
+RPM, Prota, Promes, rencana asesmen, and Berkas Administrasi can be sent with **Ajukan pengesahan**; the principal approves or returns them with a note in the Validasi queue (apart from the D-019 curriculum flow). Approval stores a SHA-256 `content_hash` of the canonical revision text and a 10-character code. Prints carry QR, code, and "Disahkan melalui SIGRAK, [tanggal]" only while the active revision equals the approved one; otherwise the status is "Berubah setelah disahkan". For a Berkas the one QR sits in the principal's signature column on the summary sheet. `/verifikasi/{code}` and "Periksa kode pengesahan" work only after login, for that school's members and its assigned supervisor; anyone else gets "Kode tidak ditemukan atau Anda tidak berwenang". Only a principal of that school can revoke an approval. The term is "pengesahan dokumen", never "tanda tangan elektronik".
+Reason: internal school proof without a public page and without a legal e-signature claim.
+
+### D-282 — Approved revisions are never pruned
+Accepted · 2026-11-09 · P5-09 · owner's choice, amends D-153
+The daily prune keeps the last 5 revisions per document, but never removes a revision linked to an `approved` `document_approvals` row.
+Reason: a verification code must stay checkable after later edits.
+
+### D-283 — Print rules: cover, margin profiles, landscape, NIHIL
+Accepted · 2026-11-09 · P5-04 · owner's choice, refines XP-7 and D-031
+A shared black-and-white cover for book-type documents and Berkas: no page number; document year by semester (semester 1 = first year of the school year, semester 2 = second year, annual = current year); optional school logo upload, no bundled government logos; the letterhead goes on the first content page after the cover. `school_print_settings.margin_profiles` holds three school-editable profiles in mm: Buku administrasi 15/12/15/25, Dokumen ajar 20/20/20/20, Lembar tunggal 15/15/15/15, plus a duplex option that mirrors left and right margins on even pages. Tables with 9 or more columns print landscape unless the template says otherwise. An empty table gets one full-width "NIHIL" row.
+Reason: owner accepted the four usulan-01 U-15 rules and their defaults.
+
+### D-284 — Automatic letterhead from the school profile
+Accepted · 2026-11-09 · P5-04 · owner's choice, extends D-031
+A school without a letterhead image can press "Buat kop otomatis": SIGRAK composes a PNG from the logo, name, address, and contact in the school profile and saves it as an ordinary, replaceable letterhead. The letterhead stays an image.
+Reason: helps schools with no designed kop while keeping the one-image model.
+
+### D-285 — Completion sound and screen notification
+Accepted · 2026-11-09 · P5-04 · owner's choice
+When an AI generation finishes or fails, an export or Berkas is ready, or an answer-sheet sync finishes, there is always a toast and a Kabar entry; sound only adds to that. Sound is on by default with the Lembut pattern (three Web Audio patterns: Lembut, Lonceng, Tegas; failure sounds different) and plays only while the tab is visible. A screen notification shows only while the tab is hidden; permission is asked at the first generation. Settings live in Akun > Tampilan and are stored on the server per user. Web Push is out of scope.
+Reason: information never depends on sound alone, and settings follow the user across devices.
+
+### D-286 — Answer-sheet scanning (Pindai LJK) is core in P5-08
+Accepted · 2026-11-09 · P5-08 · owner's choice (usulan-01 W-3), replaces Part B Q5
+Pindai LJK is built in the Asesmen slice as its own task. Kartu Jawab (D-174) later reuses its camera and roster-mapping code. The fast score grid (grid cepat) also stays in P5-08.
+Reason: summative scores should not wait for the last Game kelas step.
+
+### D-287 — Answer-sheet content and scanned forms
+Accepted · 2026-11-09 · P5-08 · owner's choice
+The QR holds only the sheet's random `public_id`; the server maps sheet → assessment → student → `layout_version`. Scanned forms: PG (A–D or A–E), PG Kompleks (MCMA), Benar-Salah and PGK Kategori (one B/S row per statement), and Menjodohkan (one bubble row per pair). Isian and Uraian are entered by hand. No AI reads student answers, scanning runs on the device, and sheet images are never uploaded.
+Reason: no guessable student data on paper, and every auto-gradable Bank Soal form is covered.
+
+### D-288 — Answer sheet as paper backup for Simulasi TKA, later
+Accepted · 2026-11-09 · after P5-08 · owner's choice
+The same answer sheet becomes the paper fallback for Simulasi TKA when a school lacks devices, added after Pindai LJK exists. It is not part of P5-06.
+Reason: keeps the slice order.
+
+### D-289 — Offline: read-only RPM meetings and the scan queue
+Accepted · 2026-11-09 · P5-07, P5-08 · owner's choice (Part B Q9), amends D-016
+Besides attendance, journal, and student notes, two things work offline. (1) The Di Kelas cache holds today's and tomorrow's RPM meetings, read-only, text only. (2) Pindai LJK: the assessment data (key, roster, sheet map) is downloaded when the scan page opens online; scan results (answers read and confidence, no images) queue on the phone with `client_uuid`; the teacher can review and confirm offline. Confirmed results reach `scores` only after sync, and a Kabar reports sync done or a conflict. Editing, AI, and everything else stay online-only.
+Reason: classrooms often lack signal; the PWA scope otherwise stays small.
+
+### D-290 — Rapor grade from weighted summative components
+Accepted · 2026-11-09 · P5-08 · owner's choice, follows D-205
+A subject's rapor grade is the weighted mean of the summative lingkup materi average, STS, and SAS: default 50/25/25, set per school in Pengaturan Asesmen, totalling 100%. A component not held is dropped and the other weights are normalised. A formative assessment can never be a component (server check, tested). Fase A without numbers (`numeric_grades = false`) gives descriptions only.
+Reason: transparent weights that follow D-205.
+
+### D-291 — Remedial cap
+Accepted · 2026-11-09 · P5-08 · owner's choice
+A remedial score replaces the lingkup materi score, capped at the KKTP by default; a school may switch to no cap. When the KKTP is not a number, the cap is a school-wide numeric threshold set in Pengaturan Asesmen. The pre-remedial score is kept.
+Reason: matches common practice and keeps the history.
+
+### D-292 — Leger: teacher confirmations, principal sign-off locks it
+Accepted · 2026-11-09 · P5-08 · owner's choice, merges usulan-01 U-09 and Part B B-08
+Each guru mapel confirms their subject's grades, the wali kelas confirms the class leger, then the principal signs off and the leger locks. Rapor prints and exports (including e-Rapor/RDM, D-218) always come from the locked version. Only the principal can unlock, with a required reason that is logged; teachers can ask for an unlock; after unlocking, the leger is confirmed and signed off again. "Cek kesiapan rapor" (12 components per student, with links to fix each gap) warns but does not block: the wali kelas confirms after ticking "tetap lanjutkan".
+Reason: teachers own their numbers, the principal owns the final version.
+
+### D-293 — Bank Soal output: per-item data, six derived prints
+Accepted · 2026-11-09 · P5-05 · owner's choice
+The AI fills only per-item data (type, stem, options, key, explanation, indicator, `kode_tp`, cognitive level, difficulty). Kisi-kisi, naskah, kunci, pembahasan, indikator, and kartu soal are rendered from that data with no extra AI call and follow item edits.
+Reason: always consistent, and cheaper on quota.
+
+### D-294 — Item library across Bank Soal documents
+Accepted · 2026-11-09 · P5-05, P5-08 · owner's choice (Part B Q4)
+`question_items` indexes every Bank Soal item (document, position, type, `kode_tp`, cognitive level, difficulty, last use, stats) and stays in sync with the document content, which remains the source for rendering. The wizard's "Ambil dari soal saya dulu" fills the composition from matching items and asks the AI only for the gap; recently used items are not skipped but marked "pernah dipakai" with date and class. After an assessment, item analysis (A7) writes real difficulty and discrimination back to the item.
+Reason: SD item pools are small; a hard skip would force more AI calls.
+
+### D-295 — Daya serap print and Kelompok belajar
+Accepted · 2026-11-09 · P5-08 · owner's choice
+"Analisis Daya Serap" is a print layout and search alias of Analisis per TP, not a separate page. Kelompok belajar per TP (perlu bimbingan, cukup, siap pengayaan) can be adjusted by the teacher; the next RPM wizard for that subject offers the group counts as kondisi murid, counts only, never names (PromptDataGuard).
+Reason: the familiar print stays, and the result feeds the next lesson.
+
+### D-296 — LKPD blocks for grades 1–3
+Accepted · 2026-11-09 · P5-05 · owner's choice (Part B Q10)
+A fixed set of LKPD blocks drawn by the renderer, as with TKA figures (D-030, no AI images): `trace` (letters, numbers, Arabic letters for MI), `match_lines`, `cut_and_stick`, `colour_by_rule`, `count_pictures` (bundled pictograms), `fill_table`, `short_answer`. The AI picks blocks and fills text and data; the wizard suggests blocks by phase, Fase A first.
+Reason: lower-grade worksheets are mostly visual.
+
+### D-297 — Piket: generated groups with rotation, tasks, and absence marks
+Accepted · 2026-11-09 · P5-07 · owner's choice, merges usulan-01 U-07 and Part B B-13.1
+*Bagi otomatis* splits the class's active students over its school days (5 or 6), balanced by count and by gender (each difference at most 1); optional rotation every 1, 2, or 4 weeks; optional per-student tasks rotating inside the group, with a list the wali kelas can edit. The result is a draft, editable by drag and drop, then saved and printable. Mutasi keluar removes a student from the group; a new student joins the smallest group and the wali kelas gets a Kabar. A student recorded absent today is only marked "tidak hadir" on today's list, and their task passes to another member of the same group: no substitute from another group, no "owed" duty.
+Reason: keeps the roster correct without punishing absence.
+
+### D-298 — Piket on the Game kelas idle screen, school's choice
+Accepted · 2026-11-09 · P5-07 · owner's choice
+Today's piket group and tasks may show on the Game kelas idle screen when the school switches it on (off by default), with first or short names only.
+Reason: the school decides what goes on the shared screen.
+
+### D-299 — Class-cash report may be shared by hand; no money reminders
+Accepted · 2026-11-09 · P5-07 · owner's choice, applies D-215 (H6)
+The wali kelas may share a class-cash transparency report (income including voluntary contributions, expenses, balance) as `wa.me` text or a print, sent by hand from their own WhatsApp whenever they choose; the app never schedules or reminds. There is no collection template and no per-student money message to parents. The shared report shows totals by default; the wali kelas may choose to include per-student detail.
+Reason: transparency to the paguyuban without pressure to pay.
+
+### D-300 — Voluntary class contributions (sumbangan sukarela)
+Accepted · 2026-11-09 · P5-07 · owner's choice (usulan-01 W-4), within D-158 and D-211
+Kelas Saya > Keuangan gets *Sumbangan sukarela*: kinds (`class_contribution_kinds`: name, purpose, optional agreed amount per student, period, optional link to meeting minutes) and receipts per student (`class_contributions`), each receipt automatically one `class_finance_entries` income row. The recap shows the total received, the number of contributors, and "sisa dari kesepakatan" only when an agreed amount is set. The words "tunggakan", "kurang bayar", and "belum lunas" are never used in UI, prints, or `lang/id` (tested). It follows the school's Keuangan switch, and switching it on shows a note that mandatory fees are not allowed in public schools.
+Reason: matches how classes collect money, in rule-compliant language, with one cash source.
+
+### D-301 — Student savings follow the student; handover on leaving
+Accepted · 2026-11-09 · P5-07, P5-08 · owner's choice, details D-219
+The savings book belongs to the student: `savings_entries` (`school_id`, `student_id`, `class_id` at transaction time, `kind` ∈ {`deposit`,`withdrawal`,`closing_withdrawal`}, `amount` bigint > 0, `occurred_on`, `recorded_by`); balance = sum per student per school. When kenaikan is set, the balance moves with the student without a transfer entry, and the old class recap closes with "Saldo dibawa ke kelas [x]". On graduation or mutasi keluar with a balance above 0, the app prepares a berita acara penyerahan tabungan (signed by wali kelas, parent or guardian, and principal) and a closing withdrawal, recorded in `handover_records` (`student_id`, `amount`, `reason` ∈ {`graduation`,`transfer_out`}, `handed_over_on`, `document_id`). Graduation or transfer is not blocked; "Tabungan belum diserahkan" stays in the wali kelas's Kabar until closed. The kenaikan screen shows balance per student and the class total.
+Reason: a balance never stays behind in an old class, and handover leaves a paper trail.
+
+### D-302 — Menu name "Kehadiran"
+Accepted · 2026-11-09 · P5-07 · owner's choice, changes the `product-concept.md` menu
+Di Kelas > Absensi is renamed *Kehadiran* in UI and prints; help search still finds "absensi". Table names stay (`attendance_records`); the URL path follows D-149 (`/kehadiran`).
+Reason: matches the rapor term (ketidakhadiran) and the 2025 assessment guide.
+
+### D-303 — Attendance recap per period and early warning
+Accepted · 2026-11-09 · P5-07 · owner's choice, details D-215 (H2)
+Kehadiran has a recap per week, month, and semester (print and Excel, D-150). The early warning has two triggers, both changeable or switchable off by the school: days without explanation (tanpa keterangan) bring attendance below 90% in a calendar month (sakit and izin are not counted), and 3 consecutive school days absent without explanation. A flag shows on the wali kelas's Hari Ini and to the principal, with a suggested action (call via H6, home visit H7).
+Reason: a percentage rule as the owner prefers, plus a consecutive-days rule that catches a sudden drop.
+
+### D-304 — Kenaikan and mutasi are drafts until set
+Accepted · 2026-11-09 · P5-08 (kenaikan), P5-09 (mutasi) · owner's choice
+Kenaikan (naik, tinggal, lulus) and mutasi (masuk, keluar, pindah rombel) are saved as drafts that can be edited and printed; the kenaikan draft feeds the H3 meeting sheet. Nothing changes (enrolments, piket, savings) until *Tetapkan*. "Tandai semua naik/lulus" works on the draft.
+Reason: the decision comes from the dewan guru meeting; a draft avoids moving students by mistake.
+
+### D-305 — EDUNEXA catalogs: one reviewed import task
+Accepted · 2026-11-09 · new data task · owner's choice, applies D-113
+One task copies the usulan-01 data files to `docs/data/catalogs/` (`cocurricular-activities.json`, `extracurricular.json`, `class-inventory.json`, `form-options.json` from pilihan-isian), keeping provenance and `status: draft`. Tim Validasi SIGRAK reviews them before seeders read them from `docs/data/`. Only the `sigrak` labels reach the UI; the `edunexa` labels stay as reference.
+Reason: one review pass, one place for the data, and no slice blocked on it.
+
+### D-306 — Class inventory is the room view of school inventory
+Accepted · 2026-11-09 · P5-09 · owner's choice (Part B Q7), refines D-217 (O4)
+An inventory item belongs to the school and sits in a room; the wali kelas edits condition and count for their own room. One record, two views. Tim SIGRAK sets in the console whether the room view needs the class add-on (D-158).
+Reason: the same item is not typed twice.
+
+### D-307 — Teacher transfer: what moves and what stays
+Accepted · 2026-11-09 · P5-09 · owner's choice (Part B Q8)
+On Pindah Sekolah the old school keeps attendance, journals, scores, notes, rapor, and a read-only copy of the teacher's documents. The teacher takes copies of their own documents (RPM, Bank Soal, LKPD, games), their AI keys, and their plan. School-specific parts inside a document (letterhead, school name) are replaced on the first export at the new school.
+Reason: school data belongs to the school; the teacher's own work goes with them.
+
+### D-308 — Principal supervision (PKKS / supervisi manajerial) in v1
+Accepted · 2026-11-09 · P4-08, P5-09 · owner's choice, extends D-221…D-224
+The pengawas supervises the principal in v1: a PKKS / supervisi manajerial instrument set filled by the pengawas, plus a Kinerja Kepala Sekolah evidence download (K3 extended to the principal, for Ruang GTK). The instruments are drafted from current rules (principal performance management, Permendikdasmen 26/2025, IA 2024), checked against a local sample if the owner supplies one, and kept as editable templates (D-221). Only the assessed principal and that pengawas see a PKKS result. D-224 still holds for teachers.
+Reason: the pengawas portal needs its own supervision duty, and principals need Ruang GTK evidence too.
+
+### D-309 — Pengawas requests sekolah binaan; Tim SIGRAK approves
+Accepted · 2026-11-09 · P5-09 · owner's choice, extends D-168 and D-184
+A pengawas picks a school (from the NPSN directory or the school list) and requests it as sekolah binaan. Tim SIGRAK approves or rejects in the console, and the principal is notified. Staff can still assign and revoke directly. School data opens only after approval.
+Reason: cross-school access stays under Tim SIGRAK's control.
+
+### D-310 — Pusat Tindak Lanjut
+Accepted · 2026-11-09 · P5-09 · owner's choice
+One follow-up list per role that reads existing records, with no new table: RTL from S-09/S-10, the S-17 programme, pengawas visit follow-ups (P1), PKKS follow-ups, and returned validations, each with status and due date. Teachers see their own, the principal the school's, the pengawas school-level and PKKS items only (D-224).
+Reason: follow-ups spread across modules get lost.
+
+### D-311 — Pengingat with read and acted-on status; never "teguran"
+Accepted · 2026-11-09 · P5-09 · owner's choice
+The word "teguran" is not used. A Pengingat from the principal to a teacher moves Terkirim → Dibaca → Ditindaklanjuti; the teacher marks the last step. The pengawas sends pengingat to the principal, never to teachers. The B-12 limit of one Ingatkan per item per teacher per week applies.
+Reason: a supportive tone, while the sender still sees the result.
+
+### D-312 — Suggested scores for S-01 and S-15
+Accepted · 2026-11-09 · P5-09 · owner's choice, refines D-222 and D-223
+For the S-01 and S-15 checklists, SIGRAK suggests 0 when the data is missing and 1 ("ada, belum diperiksa") when it exists, taken from the completeness service (D-263). The principal raises an item to 2 ("sesuai") or changes it; an item counts toward the total only after the principal confirms it.
+Reason: saves the principal's time while the judgment stays with them.
+
+### D-313 — Findings bank per supervision item
+Accepted · 2026-11-09 · P5-09 · owner's choice
+Each instrument item has ready phrases for strengths, priorities, and RTL, seeded by Tim SIGRAK as editable template data (D-221); a school can add its own. The principal picks a phrase and edits it. No AI.
+Reason: faster, more consistent feedback.
+
+### D-314 — Console access stays role-based, with a read-only matrix
+Accepted · 2026-11-09 · console · owner's choice, keeps D-167
+Staff roles stay fixed in code (admin, support, content). Every new console feature names the roles that may use it, and a read-only "Hak akses" page shows the matrix. An editable permission matrix is rejected.
+Reason: a small team; fixed roles are testable and safe.
+
+### D-315 — AI model per purpose set in the console
+Accepted · 2026-11-09 · console, with P5-04 · owner's choice, amends D-117
+An admin sets the active model and an ordered fallback list per purpose (not per template) in the console. `config/ai.php` holds the starting values, and every change is logged. A test button calls the model with a Tim SIGRAK key, never a teacher's key.
+Reason: model names change often; switching should not need a deploy.
+
+### D-316 — Kesehatan Sistem page
+Accepted · 2026-11-09 · console, with P5-04 · owner's choice
+One Filament page shows queue sizes and failed jobs (Horizon), free disk, generations per day, AI errors per day, and the last backup time. Alerts stay with the server monitoring (`server-monitoring.md`).
+Reason: one place for staff to see the system's state.
+
+### D-317 — Curriculum console: compare, publish, roll back, impact, JP audit
+Accepted · 2026-11-09 · console · owner's choice, extends D-229
+Staff compare a draft curriculum version with the active one, publish it, roll it back to the previous version, and see an impact report (schools and RPMs affected). A JP audit flags RPMs whose JP no longer match the latest ATP; the teacher gets a Kabar and decides. No AI draft from Buku Guru (SIBI licence; books are references only).
+Reason: curriculum files change between years, and publishing must be safe and visible.
+
+### D-318 — Read-only Arsip Tahun Ajaran; retention set in the console
+Accepted · 2026-11-09 · console, school app · owner's choice
+A closed academic year becomes read-only: it can be viewed and downloaded but not changed. Retention per data type is set by an admin in the console, starting from the current values (D-118 usage logs 1 month, D-153 last 5 revisions); every change is logged. Floors the console enforces: rapor, leger, graduation data, and buku induk are never deleted automatically, and supervision and PKKS results are kept at least 5 years.
+Reason: older years stay available for accreditation, and storage stays within the 320 GB disk (D-096).
+
+### D-319 — Targeted Kabar from Tim SIGRAK; kecamatan on schools
+Accepted · 2026-11-09 · console · owner's choice, extends D-169
+A Kabar from Tim SIGRAK targets all schools, a kabupaten, a kecamatan, a level (SD/MI), and/or roles, with a start and end date. `schools` gets a district (kecamatan) column filled from the NPSN directory, so console lists of schools and users filter and group by kabupaten and kecamatan.
+Reason: regional notices reach only the people they concern.
+
+### D-320 — Help-request status
+Accepted · 2026-11-09 · console · owner's choice
+Minta Bantuan requests have the statuses Baru, Diproses, Selesai, visible to the sender. Staff change the status in the console, and the sender gets a Kabar.
+Reason: users see that their request is handled.
+
+### D-321 — "Versi baru tersedia" banner
+Accepted · 2026-11-09 · P5-07 · owner's choice
+After a new release, the app (PWA, including offline Di Kelas) shows "Versi baru tersedia, muat ulang". The offline queue is synced before the reload.
+Reason: prevents stale assets and lost offline data after a deploy.
+
+### D-322 — EDUNEXA features not carried over
+Accepted · 2026-11-09 · P4-13 · from the usulan-01 walk-through, consistent with earlier decisions
+Not re-adopted from EDUNEXA: the free generator and Bahan Tayang, SMP–SMA levels, a mandatory AI key at activation, default passwords, browser-screenshot PDFs (html2canvas/html2pdf), the 15-minute idle logout, exam mode (D-026), AI reading student handwriting (D-287), public verification pages (D-010, D-281), and the terms siswa, P5, taraf serap, and teguran. Deferred to a later proposal (usulan-02): an AI draft score for S-04 Telaah RPM and "Cocokkan berkas" (comparing an uploaded PDF with an approval).
+Reason: these either conflict with existing decisions or the 2025–2026 rules, or need more testing first.
+
+### D-323 — One Jawa Tengah reference calendar, 6-day version, for Kudus, Pati, and Jepara
+Accepted · 2026-11-09 · P5-03i · owner's choice, refines D-254, D-256, and D-257
+Kudus, Pati, and Jepara follow the provincial kaldik (Peraturan Kepala Dinas Pendidikan Provinsi Jawa Tengah 400.3/23862/2026, in `docs/sources/`), and their schools use a 6-day week. Tim SIGRAK builds one Jawa Tengah reference calendar from the guide's **6-day** dates, owned by a province-level region; every regency of the province uses it unless that regency gets its own calendar. The 5-day dates are not imported. Where the guide disagrees with itself, the owner's reading applies: Maulid Nabi Muhammad SAW is on 25 August 2026. The guide is the initial data. When the government publishes newer holiday or cuti bersama dates (for 2027 the guide lists estimates), an admin replaces them in the console (D-253). Each school still copies the calendar and adds its own events (D-256). Acceptance check for `EffectiveDays` (D-259), SD/MI with a 6-day week: 254 effective days (134 in semester 1, 120 in semester 2), as in Lampiran XIII.
+Reason: the three regencies use the provincial guide with a 6-day week; one calendar is kept once, and schools keep their own context.
+
+### D-324 — PKKS instruments from the rules now, regional variants later
+Accepted · 2026-11-09 · P4-08 · owner's choice, refines D-308
+The PKKS / supervisi manajerial instruments are drafted from current rules only; no local sample is awaited. They are kept as templates (D-221) that can have a variant per region (for example Kudus, Pati, Jepara) when a local sample or a regional rule differs; a school uses its region's variant, or the default.
+Reason: the rules are enough for a first draft, and regional formats can be added as data later.
+
+### D-325 — Answer-sheet layout follows the schools' own format
+Accepted · 2026-11-09 · P5-08 · owner's choice, refines D-287
+The printed LJK looks like the sheet schools already use: a header with Mata Pelajaran, Kelas, Nama, and Nomor; PG items in two columns of letter boxes (A–D, or A–E when used) that the student crosses out; numbered lines for Isian Singkat and Uraian. SIGRAK adds four corner markers and the QR (D-287). The scanner accepts a cross or a filled box; two marks or a scribbled correction are marked yellow for the teacher to check. The other scanned forms (PG Kompleks, Benar-Salah, Menjodohkan) use the same letter-box style. Isian and Uraian take a per-item score that can be above 1 (partial credit), entered in the score grid.
+Reason: students and teachers already know this sheet; SD students need no training for bubbles.
+
+### D-326 — Console AI adapters: OpenAI-compatible and Anthropic; teachers stay on Gemini
+Accepted · 2026-11-09 · console, with P5-04 · owner's choice, extends D-116 and D-315, keeps D-023 for teacher keys
+Besides Gemini, `app/AI/` gets two adapters: OpenAI-compatible (base URL, key, model; covers OpenAI, OpenRouter, DeepSeek) and Anthropic (Claude models through the Anthropic API). In the console an admin can test a key of any of these providers and pick them as model or fallback per purpose (D-315), with every change logged. Teacher keys stay Gemini only (D-023); teacher keys from other providers are deferred to usulan-02, after every template has been tested per provider. Before a purpose that runs on teachers' generations uses a Tim SIGRAK key from another provider, the owner decides who pays for it.
+Reason: more providers for Tim SIGRAK's own work without changing the teacher's free-tier model.
+
+### D-327 — Kudus supervision instruments as a regional variant
+Accepted · 2026-11-09 · P4-08, P5-09 · owner's choice, applies D-324, extends D-221…D-223
+The owner's Kudus instrument set (`docs/sources/Instrumen_Supervisi_Kudus_Pra_Observasi_Pasca.docx`) becomes the Kudus variant of these instruments; other regions may choose it, and the standard SIGRAK instruments (D-222, D-223) stay the default elsewhere:
+- Telaah administrasi pembelajaran (S-01): 24 components for guru kelas, 18 for guru mapel; this is also the Format Kudus profile of Berkas Administrasi (D-278).
+- Telaah perencanaan pembelajaran (S-04 and S-07): 20 items, Ya/Tidak.
+- Observasi (S-08): 27 items in parts A–F, scored 1–4 with an evidence column.
+- Pasca-observasi (S-09): 5 reflection questions, feedback on 5 aspects, and an RTL table.
+- Telaah administrasi kepala sekolah: 24 components, filled by the pengawas (D-308, D-328).
+
+Item order and scales stay as in the source (1–5, Ya/Tidak, 1–4), with final score = score ÷ maximum × 100 and the bands 91–100 Sangat Baik, 81–90 Baik, 71–80 Cukup, below 71 Kurang. The maximum is always computed as items × top score: the source's "Skor Maksimal (24)" for guru mapel becomes 90. Labels use SIGRAK terms (RPM for RPP/MA, kokurikuler for P5, jurnal mengajar for agenda harian, kehadiran for absensi), with the content of each item unchanged.
+Reason: Kudus schools and supervisors already use these forms; the regional-variant model keeps the national default clean.
+
+### D-328 — Principal administration items without SIGRAK data
+Accepted · 2026-11-09 · P5-09 · owner's choice, keeps D-220
+In the principal's administration review, items SIGRAK does not produce are scored by hand by the pengawas, and the school may upload an evidence file for each (optional). This covers dokumen pendirian, RKAS, SPJ BOS, surat masuk/keluar, buku klaper, buku induk guru, buku tamu, and similar. SIGRAK builds no RKAS, BOS, or letter module for this (D-220; O3 stays deferred). Items backed by SIGRAK data get a suggested score that the pengawas confirms, as in D-312: kalender pendidikan, KSP, 7 KAIH, supervision documents, school inventory, mutasi, ekstrakurikuler, new intake and graduation.
+Reason: the pengawas can review everything on the form without SIGRAK taking on finance or correspondence.

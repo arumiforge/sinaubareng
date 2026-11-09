@@ -1,0 +1,539 @@
+{
+  "dataset": "cocurricular_activity_catalog",
+  "version_code": "KATALOG-KOKURIKULER-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "shared-cocurricular-catalog.js",
+        "bytes": 5950,
+        "sha256": "1fe2471f744ffbea427c85b1adc49283e96a685c45fe62c5ded7cb2ffd0da42b"
+      },
+      {
+        "path": "shared-cocurricular-autofill.js",
+        "bytes": 13363,
+        "sha256": "57cfbbf301dd67b13653ae08feadaa52cbbbdcc1440f6a0e4a79ffcac359f764"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK sebelum diimpor (D-113)",
+    "note": "Daftar kegiatan dan tema dari COCURRICULAR_ACTIVITY_PRESETS/COCURRICULAR_THEMES; bentuk, dimensi, mapel terkait, dan kebiasaan 7 KAIH adalah keluaran resolveCocurricularAutofill() milik EDUNEXA untuk tiap kegiatan. Tema adalah tema contoh lokal, bukan tema resmi; Panduan Kokurikuler 2025 menyerahkan tema ke satuan pendidikan."
+  },
+  "standard_forms": [
+    {
+      "key": "lintas_disiplin",
+      "label": "Pembelajaran kolaboratif lintas disiplin ilmu",
+      "min_subjects": 2
+    },
+    {
+      "key": "gerakan_7_kaih",
+      "label": "Gerakan 7 Kebiasaan Anak Indonesia Hebat (7 KAIH)"
+    },
+    {
+      "key": "cara_lainnya",
+      "label": "Cara lainnya (mis. projek), mengacu KSP dan/atau kebijakan pemerintah"
+    }
+  ],
+  "standard_forms_source": "docs/data/regulations/cocurricular-guide-bskap.json (forms)",
+  "graduate_profile_dimensions": [
+    "Keimanan dan ketakwaan",
+    "Kewargaan",
+    "Penalaran kritis",
+    "Kreativitas",
+    "Kolaborasi",
+    "Kemandirian",
+    "Kesehatan",
+    "Komunikasi"
+  ],
+  "habits_7kaih": [
+    "Bangun Pagi",
+    "Beribadah",
+    "Berolahraga",
+    "Makan Sehat dan Bergizi",
+    "Gemar Belajar",
+    "Bermasyarakat",
+    "Tidur Cepat"
+  ],
+  "themes": [
+    {
+      "key": "body-and-soul",
+      "label": "Bangunlah Jiwa Raganya",
+      "legacy": false
+    },
+    {
+      "key": "religious-character",
+      "label": "Generasi Anak Sholeh dan Sholihah",
+      "legacy": false
+    },
+    {
+      "key": "global-generation",
+      "label": "Generasi Cerdas di Era Global",
+      "legacy": false
+    },
+    {
+      "key": "engineering-technology",
+      "label": "Rekayasa & Teknologi",
+      "legacy": false
+    },
+    {
+      "key": "literacy-numeracy",
+      "label": "Literasi & Numerasi",
+      "legacy": false
+    },
+    {
+      "key": "local-wisdom",
+      "label": "Kearifan Lokal",
+      "legacy": false
+    },
+    {
+      "key": "unity-in-diversity",
+      "label": "Bhinneka Tunggal Ika",
+      "legacy": false
+    },
+    {
+      "key": "healthy-life",
+      "label": "Budaya Kerja / Hidup Sehat",
+      "legacy": false
+    },
+    {
+      "key": "entrepreneurship",
+      "label": "Kewirausahaan",
+      "legacy": false
+    },
+    {
+      "key": "arts-expression",
+      "label": "Seni & Ekspresi Budaya",
+      "legacy": false
+    },
+    {
+      "key": "learning-by-practice",
+      "label": "Belajar Lewat Praktik",
+      "legacy": false
+    },
+    {
+      "key": "sustainable-lifestyle",
+      "label": "Gaya Hidup Berkelanjutan (lama)",
+      "legacy": true
+    },
+    {
+      "key": "democracy",
+      "label": "Suara Demokrasi (lama)",
+      "legacy": true
+    },
+    {
+      "key": "other",
+      "label": "Lainnya",
+      "legacy": false
+    }
+  ],
+  "activities": [
+    {
+      "name": "Senam Anak Indonesia Hebat",
+      "subtitle": "bergerak ceria bersama setiap pagi",
+      "theme_key": "body-and-soul",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Kemandirian",
+        "Kesehatan"
+      ],
+      "related_subjects": [
+        "PJOK"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Berolahraga"
+      ],
+      "movement_form_7kaih": "Pembiasaan Rutin",
+      "review_flags": []
+    },
+    {
+      "name": "Isi Piringku",
+      "subtitle": "bekal bergizi seimbang dan makan bersama",
+      "theme_key": "body-and-soul",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Kemandirian",
+        "Kesehatan"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "IPAS"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Makan Sehat dan Bergizi"
+      ],
+      "movement_form_7kaih": "Pembiasaan Rutin",
+      "review_flags": []
+    },
+    {
+      "name": "Napas Tenang dan Anti-Perundungan",
+      "subtitle": "kelola emosi, kelas ramah",
+      "theme_key": "body-and-soul",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Kesehatan",
+        "Kewargaan"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "Pendidikan Pancasila"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Bermasyarakat",
+        "Tidur Cepat"
+      ],
+      "movement_form_7kaih": "Kampanye dan Edukasi",
+      "review_flags": [
+        "Kebiasaan 'Tidur Cepat' kurang relevan dengan kegiatan; periksa."
+      ]
+    },
+    {
+      "name": "Pagi Mengaji",
+      "subtitle": "baca tulis Al-Qur'an sejak dini",
+      "theme_key": "religious-character",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Keimanan dan ketakwaan",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "Pendidikan Agama Islam dan Budi Pekerti",
+        "Pendidikan Pancasila"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Beribadah"
+      ],
+      "movement_form_7kaih": "Pembiasaan Rutin",
+      "review_flags": []
+    },
+    {
+      "name": "Yasin, Tahlil, dan Doa Harian bersama",
+      "subtitle": null,
+      "theme_key": "religious-character",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Keimanan dan ketakwaan",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "Pendidikan Agama Islam dan Budi Pekerti",
+        "Pendidikan Pancasila"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Beribadah"
+      ],
+      "movement_form_7kaih": "Pembiasaan Rutin",
+      "review_flags": []
+    },
+    {
+      "name": "Good Morning English",
+      "subtitle": "sapaan, lagu, dan permainan berbahasa Inggris",
+      "theme_key": "global-generation",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Penalaran kritis",
+        "Komunikasi"
+      ],
+      "related_subjects": null,
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memasang SEMUA mapel sebagai mapel terkait (pola cadangan). Pilih minimal 2 mapel yang relevan saat validasi."
+      ]
+    },
+    {
+      "name": "Jelajah Komputer dan Koding",
+      "subtitle": "mengenal TIK, mengetik, blok kode",
+      "theme_key": "engineering-technology",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Penalaran kritis",
+        "Komunikasi"
+      ],
+      "related_subjects": [
+        "Bahasa Indonesia",
+        "Matematika"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": []
+    },
+    {
+      "name": "Laboratorium Cilik",
+      "subtitle": "penjernih air dan maket jembatan",
+      "theme_key": "engineering-technology",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Penalaran kritis",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "Matematika"
+      ],
+      "output": "Produk/Karya",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    },
+    {
+      "name": "Cantik Menulis Tegak Bersambung",
+      "subtitle": null,
+      "theme_key": "literacy-numeracy",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Kemandirian",
+        "Komunikasi"
+      ],
+      "related_subjects": null,
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memasang SEMUA mapel sebagai mapel terkait (pola cadangan). Pilih minimal 2 mapel yang relevan saat validasi."
+      ]
+    },
+    {
+      "name": "Asah Hitung Dasar",
+      "subtitle": "pendalaman berhitung lewat permainan",
+      "theme_key": "literacy-numeracy",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Penalaran kritis",
+        "Kemandirian"
+      ],
+      "related_subjects": null,
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memasang SEMUA mapel sebagai mapel terkait (pola cadangan). Pilih minimal 2 mapel yang relevan saat validasi."
+      ]
+    },
+    {
+      "name": "Aksara dan Literasi Jawa",
+      "subtitle": "menulis aksara, cerita rakyat, tembang dolanan",
+      "theme_key": "local-wisdom",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Penalaran kritis",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "Bahasa Jawa",
+        "Bahasa Indonesia"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": []
+    },
+    {
+      "name": "Kriya Nusantara",
+      "subtitle": "berkarya dengan kerajinan khas daerah",
+      "theme_key": "local-wisdom",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Kreativitas",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "Seni dan Budaya",
+        "IPAS"
+      ],
+      "output": "Produk/Karya",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    },
+    {
+      "name": "Karnaval Pakaian Adat dan Peta Keberagaman",
+      "subtitle": null,
+      "theme_key": "unity-in-diversity",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Kewargaan",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "Pendidikan Pancasila",
+        "Bahasa Indonesia"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": []
+    },
+    {
+      "name": "Pojok Dolanan Anak Tradisional",
+      "subtitle": null,
+      "theme_key": "unity-in-diversity",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Kewargaan",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "Pendidikan Pancasila",
+        "Bahasa Indonesia"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": []
+    },
+    {
+      "name": "Semut Beraksi",
+      "subtitle": "pungut sampah dan Bebas Plastik",
+      "theme_key": "healthy-life",
+      "form": "gerakan_7_kaih",
+      "form_label_source": "Gerakan 7 KAIH",
+      "dimensions": [
+        "Kewargaan",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "Pendidikan Pancasila"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "Bermasyarakat"
+      ],
+      "movement_form_7kaih": "Aksi Bersama",
+      "review_flags": []
+    },
+    {
+      "name": "Komposter Mini dan Kebun Cilik",
+      "subtitle": null,
+      "theme_key": "healthy-life",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Penalaran kritis",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "Matematika"
+      ],
+      "output": "Produk/Karya",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    },
+    {
+      "name": "Bergerak Aman",
+      "subtitle": "simulasi mitigasi bencana",
+      "theme_key": "healthy-life",
+      "form": "lintas_disiplin",
+      "form_label_source": "Pembelajaran Kolaboratif Lintas Disiplin",
+      "dimensions": [
+        "Kesehatan",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "IPAS"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": []
+    },
+    {
+      "name": "Market Day",
+      "subtitle": "jual camilan sehat dan celengan target",
+      "theme_key": "entrepreneurship",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Kewargaan",
+        "Kemandirian"
+      ],
+      "related_subjects": [
+        "Pendidikan Pancasila",
+        "Bahasa Indonesia",
+        "Matematika"
+      ],
+      "output": "Aksi Nyata",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    },
+    {
+      "name": "Panggung Nusantara",
+      "subtitle": "drama, pameran lukisan, perkusi barang bekas",
+      "theme_key": "arts-expression",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Kreativitas",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "Seni dan Budaya",
+        "IPAS"
+      ],
+      "output": "Pertunjukan",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    },
+    {
+      "name": "Aksi Praktik Langsung",
+      "subtitle": "belajar sambil mencoba, membuat, dan membuktikan sendiri",
+      "theme_key": "learning-by-practice",
+      "form": "cara_lainnya",
+      "form_label_source": "Projek",
+      "dimensions": [
+        "Kemandirian",
+        "Kreativitas",
+        "Kolaborasi"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "Seni dan Budaya"
+      ],
+      "output": "Produk/Karya",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_flags": [
+        "Sumber memakai label 'Projek'; Panduan Kokurikuler 2025 menyebut 'cara lainnya'. Projek dicatat sebagai cara lainnya."
+      ]
+    }
+  ]
+}

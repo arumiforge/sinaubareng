@@ -1,0 +1,198 @@
+{
+  "dataset": "national_holidays",
+  "version_code": "LIBUR-NASIONAL-SKB-2026-2027",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "libur-nasional.js",
+        "bytes": 4012,
+        "sha256": "19d0209a39cb5c040825381faf43f2955a6863035c7d97faea2e9e6648481ad7"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK sebelum diimpor (D-113)",
+    "note": "Disalin dari objek DATA di libur-nasional.js. Nama hari dan tanggal apa adanya; 'jenis' dipetakan: nasional -> libur_nasional, cuti -> cuti_bersama."
+  },
+  "legal_basis_as_stated_by_source": [
+    {
+      "year": 2026,
+      "decree": "SKB Menteri Agama, Menteri Ketenagakerjaan, dan Menteri PANRB No. 1497 Tahun 2025, No. 2 Tahun 2025, No. 5 Tahun 2025",
+      "set_on": "2025-09-19"
+    },
+    {
+      "year": 2027,
+      "decree": "SKB Menteri Agama, Menteri Ketenagakerjaan, dan Menteri PANRB No. 1205 Tahun 2026, No. 3 Tahun 2026, No. 2 Tahun 2026",
+      "set_on": "2026-09-15"
+    }
+  ],
+  "verification_required": "Cocokkan setiap tanggal dengan salinan resmi SKB sebelum impor. Nomor SKB 2027 dicatat sesuai sumber dan belum diperiksa terhadap dokumen resmi.",
+  "fallback_rule_from_source": "Tanggal setelah 'covered_until' diisi dari libur bertanggal tetap (1 Januari, 1 Mei, 1 Juni, 17 Agustus, 25 Desember); hari raya keagamaan menunggu SKB terbit (biasanya September).",
+  "academic_years": [
+    {
+      "academic_year": "2026/2027",
+      "covered_until": "2027-06-30",
+      "days": [
+        {
+          "date": "2026-08-17",
+          "name": "Hari Proklamasi Kemerdekaan RI",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2026-08-25",
+          "name": "Maulid Nabi Muhammad SAW",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2026-12-24",
+          "name": "Cuti Bersama Hari Raya Natal",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2026-12-25",
+          "name": "Hari Raya Natal",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-01-01",
+          "name": "Tahun Baru 2027 Masehi",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-01-05",
+          "name": "Isra Mikraj Nabi Muhammad SAW",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-02-05",
+          "name": "Cuti Bersama Tahun Baru Imlek 2578 Kongzili",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-02-06",
+          "name": "Tahun Baru Imlek 2578 Kongzili",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-03-08",
+          "name": "Hari Suci Nyepi (Tahun Baru Saka 1949)",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-03-09",
+          "name": "Cuti Bersama Hari Raya Idulfitri 1448 H",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-03-10",
+          "name": "Hari Raya Idulfitri 1448 H",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-03-11",
+          "name": "Hari Raya Idulfitri 1448 H",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-03-12",
+          "name": "Cuti Bersama Hari Raya Idulfitri 1448 H",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-03-15",
+          "name": "Cuti Bersama Hari Raya Idulfitri 1448 H",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-03-25",
+          "name": "Cuti Bersama Wafat Yesus Kristus",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-03-26",
+          "name": "Wafat Yesus Kristus",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-03-28",
+          "name": "Kebangkitan Yesus Kristus (Paskah)",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-05-01",
+          "name": "Hari Buruh Internasional",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-05-06",
+          "name": "Kenaikan Yesus Kristus",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-05-17",
+          "name": "Hari Raya Iduladha 1448 H",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-05-18",
+          "name": "Cuti Bersama Hari Raya Iduladha 1448 H",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-05-19",
+          "name": "Cuti Bersama Hari Raya Waisak 2571 BE",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-05-20",
+          "name": "Hari Raya Waisak 2571 BE",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-06-01",
+          "name": "Hari Lahir Pancasila",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-06-06",
+          "name": "Tahun Baru Islam 1 Muharam 1449 H",
+          "kind": "libur_nasional"
+        }
+      ]
+    },
+    {
+      "academic_year": "2027/2028",
+      "covered_until": "2027-12-31",
+      "days": [
+        {
+          "date": "2027-08-15",
+          "name": "Maulid Nabi Muhammad SAW",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-08-17",
+          "name": "Hari Proklamasi Kemerdekaan RI",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-12-24",
+          "name": "Cuti Bersama Hari Raya Natal",
+          "kind": "cuti_bersama"
+        },
+        {
+          "date": "2027-12-25",
+          "name": "Hari Raya Natal",
+          "kind": "libur_nasional"
+        },
+        {
+          "date": "2027-12-26",
+          "name": "Isra Mikraj Nabi Muhammad SAW",
+          "kind": "libur_nasional"
+        }
+      ]
+    }
+  ]
+}

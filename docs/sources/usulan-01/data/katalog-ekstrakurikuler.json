@@ -1,0 +1,101 @@
+{
+  "dataset": "extracurricular_catalog",
+  "version_code": "KATALOG-EKSKUL-EDUNEXA-5.20",
+  "provenance": {
+    "source_app": "EDUNEXA (portal milik pemilik produk)",
+    "source_base_url": "https://portal-edunexa.web.app",
+    "fetched_on": "2026-11-09",
+    "fetched_via": "browser pengguna (aset statis publik, tanpa data pengguna)",
+    "files": [
+      {
+        "path": "shared-cocurricular-catalog.js",
+        "bytes": 5950,
+        "sha256": "1fe2471f744ffbea427c85b1adc49283e96a685c45fe62c5ded7cb2ffd0da42b"
+      }
+    ],
+    "status": "draft",
+    "verify_by": "Tim Validasi SIGRAK sebelum diimpor (D-113)",
+    "note": "EXTRACURRICULAR_CATEGORIES dan EXTRACURRICULAR_DAYS apa adanya."
+  },
+  "rule_note": "Permendikdasmen 13/2025 Pasal 22: satuan pendidikan wajib menyediakan ekstrakurikuler Pramuka atau kepanduan lain (lihat D-210). 'Pramuka' tidak boleh dihapus dari daftar bawaan.",
+  "days": [
+    "Senin",
+    "Selasa",
+    "Rabu",
+    "Kamis",
+    "Jumat",
+    "Sabtu",
+    "Minggu"
+  ],
+  "categories": [
+    {
+      "key": "leadership",
+      "label": "Kepemimpinan",
+      "activities": [
+        "Pramuka",
+        "Polisi Cilik"
+      ],
+      "purpose": "Wahana murid berlatih berorganisasi, terampil dan mandiri, memiliki jiwa sosial, bekerja sama, dan menyelesaikan permasalahan.",
+      "format": "Kelompok"
+    },
+    {
+      "key": "sports",
+      "label": "Olahraga",
+      "activities": [
+        "Sepak Bola",
+        "Futsal",
+        "Bulu Tangkis",
+        "Bola Voli",
+        "Renang"
+      ],
+      "purpose": "Mengembangkan kebugaran, sportivitas, disiplin, kerja sama, serta bakat murid dalam bidang olahraga.",
+      "format": "Kelompok/Individual"
+    },
+    {
+      "key": "arts",
+      "label": "Seni dan Budaya",
+      "activities": [
+        "Tari",
+        "Seni Lukis",
+        "Paduan Suara",
+        "Drumband",
+        "Rebana"
+      ],
+      "purpose": "Mengembangkan apresiasi, kreativitas, ekspresi, dan keterampilan murid dalam bidang seni dan budaya.",
+      "format": "Kelompok/Individual"
+    },
+    {
+      "key": "martial",
+      "label": "Bela Diri",
+      "activities": [
+        "Karate",
+        "Silat",
+        "Taekwondo"
+      ],
+      "purpose": "Melatih kebugaran, disiplin, pengendalian diri, keberanian, dan sportivitas murid.",
+      "format": "Individual/Kelompok"
+    },
+    {
+      "key": "health",
+      "label": "Kesehatan",
+      "activities": [
+        "PMR",
+        "Dokter Kecil"
+      ],
+      "purpose": "Mengembangkan kepedulian, keterampilan hidup sehat, kesiapsiagaan, dan kemampuan menolong sesama.",
+      "format": "Kelompok"
+    },
+    {
+      "key": "technology",
+      "label": "Teknologi dan Sains",
+      "activities": [
+        "Sains",
+        "Komputer",
+        "Coding",
+        "Robotika"
+      ],
+      "purpose": "Mengembangkan rasa ingin tahu, penalaran, kreativitas, serta keterampilan murid dalam teknologi dan sains.",
+      "format": "Klasikal/Kelompok"
+    }
+  ]
+}
