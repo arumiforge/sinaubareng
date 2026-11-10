@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "catalog": "class_inventory",
+    "title": "Katalog barang inventaris kelas",
+    "version": "SIGRAK-KAT-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "source_ref": "docs/sources/usulan-01/data/inventaris-kelas.json",
+    "source_sha256": "8bf91339880d715bfae8c2bc0770d05392cc4617d85bdabec81e02578d7ccdf8",
+    "converted_on": "2026-11-09",
+    "decisions": {
+      "D-210": "UI term for students is 'murid' (Meja/Kursi Murid).",
+      "D-217": "School inventory (O4) is in scope.",
+      "D-219": "No BOS/RKAS reports; funding sources do not name BOS (see also D-025).",
+      "D-305": "Catalog copied from usulan-01 for one Tim Validasi review.",
+      "D-306": "An inventory item belongs to the school and sits in a room; the wali kelas edits condition and count for their own room. This list is the item picker for both views.",
+      "D-367": "Curated with SIGRAK names, keys, and codes."
+    },
+    "conventions": [
+      "Keys are English snake_case and never change once seeded; labels and other text shown to users are Indonesian.",
+      "Codes follow SIGRAK-KAT-<AREA>-NN for the main items of a file and SIGRAK-KAT-<AREA>-<LIST>-NN for its secondary lists (see README.md). Codes are stable: a retired item keeps its code, and new items take the next free number.",
+      "No identifier from the legacy app is carried over. Where a decision keeps an old label for reference (D-305), it sits in legacy_label and is never shown in the UI.",
+      "review_notes are Indonesian notes for Tim Validasi SIGRAK; they are not shown to teachers.",
+      "items is the suggested item list for class_inventory_items (docs/final/data-model.md); a school can type any other item through 'other'.",
+      "conditions and funding_sources are proposals (origin = proposed): the legacy app had three options each, but their text was not readable in the source.",
+      "conditions follow the usual terms of the regional asset register (Baik, Rusak ringan, Rusak berat)."
+    ]
+  },
+  "items": [
+    {
+      "code": "SIGRAK-KAT-INV-01",
+      "key": "student_desk",
+      "label": "Meja Murid"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-02",
+      "key": "student_chair",
+      "label": "Kursi Murid"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-03",
+      "key": "teacher_desk",
+      "label": "Meja Guru"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-04",
+      "key": "teacher_chair",
+      "label": "Kursi Guru"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-05",
+      "key": "writing_board",
+      "label": "Papan Tulis"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-06",
+      "key": "class_cupboard",
+      "label": "Lemari Kelas"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-07",
+      "key": "bookshelf",
+      "label": "Rak Buku"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-08",
+      "key": "wall_clock",
+      "label": "Jam Dinding"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-09",
+      "key": "indonesia_map",
+      "label": "Peta Indonesia"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-10",
+      "key": "globe",
+      "label": "Globe"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-11",
+      "key": "garuda_pancasila_emblem",
+      "label": "Lambang Garuda Pancasila"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-12",
+      "key": "president_vice_president_portraits",
+      "label": "Gambar Presiden dan Wakil Presiden"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-13",
+      "key": "class_flagpole",
+      "label": "Tiang Bendera Kelas"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-14",
+      "key": "waste_bin",
+      "label": "Tempat Sampah"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-15",
+      "key": "electric_fan",
+      "label": "Kipas Angin"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-16",
+      "key": "projector",
+      "label": "Proyektor"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-17",
+      "key": "projector_screen",
+      "label": "Layar Proyektor"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-18",
+      "key": "class_computer",
+      "label": "Komputer atau Laptop Kelas"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-19",
+      "key": "speaker",
+      "label": "Speaker"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-20",
+      "key": "printer",
+      "label": "Printer"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-21",
+      "key": "first_aid_kit",
+      "label": "Kotak P3K"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-22",
+      "key": "teaching_aids",
+      "label": "Alat Peraga Pembelajaran"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-23",
+      "key": "display_board",
+      "label": "Papan Pajangan Kelas"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-24",
+      "key": "water_dispenser",
+      "label": "Dispenser"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-25",
+      "key": "class_carpet",
+      "label": "Karpet Kelas"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-26",
+      "key": "shoe_rack",
+      "label": "Rak Sepatu"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-27",
+      "key": "curtains",
+      "label": "Tirai atau Gorden"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-28",
+      "key": "interactive_flat_panel",
+      "label": "Papan Interaktif Digital (IFP)"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-29",
+      "key": "cctv_camera",
+      "label": "Kamera Pengawas (CCTV)"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-30",
+      "key": "other",
+      "label": "Lainnya",
+      "free_text": true
+    }
+  ],
+  "conditions": [
+    {
+      "code": "SIGRAK-KAT-INV-KON-01",
+      "key": "good",
+      "label": "Baik",
+      "origin": "proposed"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-KON-02",
+      "key": "minor_damage",
+      "label": "Rusak ringan",
+      "origin": "proposed"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-KON-03",
+      "key": "major_damage",
+      "label": "Rusak berat",
+      "origin": "proposed"
+    }
+  ],
+  "funding_sources": [
+    {
+      "code": "SIGRAK-KAT-INV-DNA-01",
+      "key": "school_funds",
+      "label": "Dana sekolah",
+      "origin": "proposed"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-DNA-02",
+      "key": "donation_grant",
+      "label": "Sumbangan/hibah",
+      "origin": "proposed"
+    },
+    {
+      "code": "SIGRAK-KAT-INV-DNA-03",
+      "key": "other",
+      "label": "Lainnya",
+      "origin": "proposed",
+      "free_text": true
+    }
+  ]
+}
