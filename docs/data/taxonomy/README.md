@@ -10,7 +10,7 @@ Seed data for the master taxonomy (D-357) and the regulation registry (D-354), t
 | `facet-b-curriculum-structure.json` | B Struktur kurikulum | Level, phase, grade, semester, learning type, kokurikuler forms, subject kinds; links to subjects, CP, topics, TP, ATP, fokus, kokurikuler themes and activities, ekstrakurikuler | 43 |
 | `facet-c-profile-character.json` | C Profil dan karakter | 8 DPL, Panca Cinta, KBC nilai dasar and levels, safe school culture; link to 7 KAIH | 35 |
 | `facet-d-learning.json` | D Pembelajaran | Deep-learning principles, experiences, framework; practices, modes, media (open) | 34 |
-| `facet-e-assessment.json` | E Asesmen | Core codes for Peta Asesmen: types, functions, purposes, domains, techniques, instruments, responses, KKTP, score processing, analysis, follow-up; link to assessment kinds | 78 |
+| `facet-e-assessment.json` | E Asesmen | Core codes for Peta Asesmen: types, functions, purposes, domains, techniques, instruments, responses, KKTP, score processing, analysis, follow-up; TKA result levels (D-371); link to assessment kinds | 83 |
 | `facet-f-content.json` | F Konten | Content types, LKPD Wave 1 patterns, Game kelas templates; links to item types and difficulty | 36 |
 | `facet-g-context.json` | G Konteks | Region levels, muatan lokal, local languages, Konteks Daerah kinds, regional calendar | 13 |
 | `facet-h-administration.json` | H Administrasi | School roles, teacher duties, staff roles, people (murid), school documents, supervision instruments; link to Berkas Administrasi | 41 |

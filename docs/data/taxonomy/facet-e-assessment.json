@@ -1535,6 +1535,102 @@
         "path": "groups[].lists[code=SIGRAK-KAT-OPS-JAS].options[]",
         "code_field": "code"
       }
+    },
+    {
+      "code": "TKA-TINGKAT",
+      "facet": "E",
+      "label_id": "Tingkat hasil TKA",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-56-2026",
+        "article": "BAB X",
+        "pages": null,
+        "note": "Shown as four levels; stored as official category plus the Istimewa predicate (D-371)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "TKA-TINGKAT.ISTIMEWA",
+      "facet": "E",
+      "label_id": "Istimewa",
+      "parent": "TKA-TINGKAT",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-56-2026",
+        "article": "BAB X",
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "outstanding",
+      "stored_as": "predicate",
+      "min_score": 95
+    },
+    {
+      "code": "TKA-TINGKAT.BAIK",
+      "facet": "E",
+      "label_id": "Baik",
+      "parent": "TKA-TINGKAT",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-56-2026",
+        "article": "BAB X",
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "good",
+      "stored_as": "category"
+    },
+    {
+      "code": "TKA-TINGKAT.MEMADAI",
+      "facet": "E",
+      "label_id": "Memadai",
+      "parent": "TKA-TINGKAT",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-56-2026",
+        "article": "BAB X",
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "adequate",
+      "stored_as": "category"
+    },
+    {
+      "code": "TKA-TINGKAT.KURANG",
+      "facet": "E",
+      "label_id": "Kurang",
+      "parent": "TKA-TINGKAT",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-56-2026",
+        "article": "BAB X",
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "insufficient",
+      "stored_as": "category"
     }
   ]
 }

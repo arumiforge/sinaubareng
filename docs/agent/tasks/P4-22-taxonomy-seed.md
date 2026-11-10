@@ -35,7 +35,7 @@ Seed `docs/data/taxonomy/` with the master taxonomy (facets A–H, stable codes,
 
 ## Result
 
-321 nodes (A 41, B 43, C 35, D 34, E 78, F 36, G 13, H 41; 12 retired nodes for crosswalks), 38 regulations, 28 relations. Conventions and open points: `docs/data/taxonomy/README.md`.
+326 nodes (A 41, B 43, C 35, D 34, E 83, F 36, G 13, H 41; 12 retired nodes for crosswalks), 38 regulations, 28 relations. Conventions and open points: `docs/data/taxonomy/README.md`.
 
 Choices made inside the task (data conventions, no owner decision needed):
 - Catalog-backed lists are one node with `members_from`; tags store node code + member code.
