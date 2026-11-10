@@ -1741,3 +1741,28 @@ Reason: one source of truth for allocation, and data fixes live in the data.
 Accepted · 2026-11-09 · P4-15 · owner's choice, refines D-305
 The usulan-01 catalogs are curated into `docs/data/catalogs/` (`cocurricular-themes.json`, `extracurriculars.json`, `class-inventory.json`, `form-options.json`, `admin-document-components.json`) with English keys, Indonesian labels, `SIGRAK-KAT-…` codes, `source_ref`, and `status: draft` (D-113). Print/progress rules and holidays are not catalogs (D-280…D-283, D-263, P5-03i).
 Reason: one reviewed place for the option lists, under SIGRAK names.
+
+### D-368 — KBC fields for SD are off by default, admin can switch them on
+Accepted · 2026-11-10 · owner's choice, answers the open question of D-359
+SD religion teachers do not see the KBC fields (Tema KBC, Materi Insersi, nilai dasar) by default. A SIGRAK admin can switch them on when needed, as a Profil Jenjang (D-356) or console setting. D-126 stays: KBC fields for every MI subject.
+Reason: KMA 512/2026 covers SD religion teachers, but SD schools follow Kemendikdasmen; keep it optional.
+
+### D-369 — Answer sheets are read in the teacher's browser; only results go to the server
+Accepted · 2026-11-10 · owner's choice, confirms D-287 and D-289, replaces the "OMR on SIGRAK's own server" wording of D-347
+Pindai LJK reads the bubbles in the browser on the teacher's phone with a JavaScript OMR library. Only the answers read and their confidence go to the server; sheet photos are not uploaded. The offline queue of D-289 stays.
+Reason: saves server resources, and mature OMR engines exist for JavaScript (and PHP).
+
+### D-370 — Reading essay and handwritten answers on the phone
+Accepted · 2026-11-10 · owner's choice, extends D-347; built after Pindai LJK in P5-08
+The teacher's phone reads handwritten answers (Uraian, Isian) into text. The teacher sees the photo and the text side by side and corrects misread text; the photo never leaves the phone. Only the answer text, without the student's name, goes to the AI with the key or rubric, tagged with a code of **nomor absen + nomor soal** (e.g. `12-3`). The AI suggests a score and feedback; the teacher decides the score (D-347). SIGRAK maps the code back to the student in that class, so the teacher knows whose answer it is when checking again. The absence number is printed on the sheet. Built as a follow-up task after Pindai LJK, once the text-recognition engine has been tested on samples of SD handwriting.
+Reason: saves teachers' checking time while keeping photos and names of children off AI services.
+
+### D-371 — TKA results: four levels shown, official category and predicate stored
+Accepted · 2026-11-10 · owner's choice, completes D-041 and D-120
+Teachers and students see four levels: Istimewa, Baik, Memadai, Kurang. Data and exports store the official category (Baik, Memadai, Kurang) plus the Istimewa predicate for scores of 95,00 or more (Kepmendikdasmen 56/2026), so they match the SHTKA. The scale is 0–100. Level texts: Istimewa, the top predicate; Baik, good command of the tested competencies; Memadai, basic command with material to improve; Kurang, needs further improvement. SIGRAK results are practice results; the UI notes that official TKA results (SHTKA) complement and validate rapor scores in jalur prestasi and SPMB. `exam_results` stores category and predicate separately.
+Reason: the owner's four-level view, kept consistent with the 2026 decree.
+
+### D-372 — P4-13 closed
+Accepted · 2026-11-10 · owner's confirmation
+The legacy app upgrade decisions (P4-13, D-252…D-328) are done. Applying them to the final docs stays in the docs consolidation task.
+Reason: owner confirmed.

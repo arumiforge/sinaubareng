@@ -1,7 +1,7 @@
 # P4-13 — Legacy app upgrade decisions (usulan-01 + Part B)
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done
 - **Owner:** claude/review-proposal-coverage-tzqbk4
 - **Depends on:** D-251
 - **Can run in parallel with:** P5 slices (docs only)
