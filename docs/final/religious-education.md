@@ -18,7 +18,7 @@ This document defines how SIGRAK covers religious education in SD (six religions
 | **KMA 450 Tahun 2024 as amended by KMA 1503 Tahun 2025** | Madrasah curriculum guideline, including the MI subject structure and JP (Lampiran II, BAB III B, Tabel 1–5, pp. 28–31) | Official decree (22 September 2025), scanned copy supplied by the owner | MI allocation (D-038), data in [`mi-allocation-kma-1503-2025.json`](../data/curriculum/mi-allocation-kma-1503-2025.json) |
 | **KMA No. 512 Tahun 2026** (31 March 2026, in force on that date) | Pedoman Kurikulum Berbasis Cinta: KBC as value education for Kemenag schools *and* religion teachers in general schools, SD included; Panca Cinta, six nilai dasar, six principles, 12 suggested methods, 10 assessment instruments, levels of practice | Official decree, scanned PDF supplied by the owner (2026-11-09) | KBC source since D-359, see [MI: Kurikulum Berbasis Cinta](#mi-kurikulum-berbasis-cinta-kbc) |
 | **SK Dirjen Pendis No. 6077 Tahun 2025** (22 July 2025) | Panduan Kurikulum Berbasis Cinta (KBC) for all madrasah: five Panca Cinta themes, example lessons, example CP-to-theme mapping | PDF with text layer, supplied by the owner | Replaced as the KBC source by KMA 512/2026 (D-359); still the reference for its example lessons and CP-to-theme mapping |
-| **KM-SD-2026-R2** (legacy app curriculum data) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
+| **SIGRAK-SD-2026-R1** (`sigrak-sd-2026-r1-umum.json`, converted from the legacy app curriculum data, D-363) | PAI SD with topics, TP, ATP, fokus, JP | JSON | Already references "CP PAI 020/2026", the same decree |
 
 No newer amendment of SK 9941/2025 or KMA 1503/2025 was found on 2026-10-30.
 
@@ -30,7 +30,7 @@ All six ship in v1. Each religion is a separate subject; students take the one m
 
 | Religion | Subject | Elements (sub-elements) | SD CP pages | Data status |
 |---|---|---|---|---|
-| Islam | Pendidikan Agama Islam dan Budi Pekerti | Al-Qur'an Hadis, Akidah, Akhlak, Fikih, Sejarah Peradaban Islam | 6–8 | **Complete** in KM-SD-2026-R2 (topics, TP, fokus, JP). Cross-check its CP text against the decree |
+| Islam | Pendidikan Agama Islam dan Budi Pekerti | Al-Qur'an Hadis, Akidah, Akhlak, Fikih, Sejarah Peradaban Islam | 6–8 | **Complete** in SIGRAK-SD-2026-R1 (topics, TP, fokus, JP; curation status `converted`, D-364). Cross-check its CP text against the decree |
 | Kristen | Pendidikan Agama Kristen dan Budi Pekerti | Allah Berkarya (Pencipta, Pemelihara, Penyelamat, Pembaru); Manusia dan Nilai-nilai Kristiani (Hakikat Manusia, Nilai-nilai Kristiani); Gereja dan Masyarakat Majemuk (Tugas Panggilan Gereja, Masyarakat Majemuk); Alam dan Lingkungan Hidup (Alam Ciptaan Allah, Tanggung Jawab Manusia terhadap Alam) | 12–14 | CP only |
 | Katolik | Pendidikan Agama Katolik dan Budi Pekerti | Pribadi murid, Yesus Kristus, Gereja, Masyarakat | 20–23 | CP only |
 | Hindu | Pendidikan Agama Hindu dan Budi Pekerti | Kitab Suci Weda, Śraddhā dan Bhākti, Susila, Acara, Sejarah Agama Hindu | 29 | CP only |
@@ -97,7 +97,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 ## How SIGRAK models it
 
 - **School level decides the subject set.** `schools.level` = `sd` gives the six religion subjects. `mi` gives the Kemenag subjects plus MI's own allocation table.
-- **Curriculum versions:** `KM-SD-2026-R2` (national SD subjects incl. PAI topics), `CP-PABP-BKPDM-020-2026` (six religions, CP), `CP-PAI-BA-MADRASAH-9941-2025` (MI PAI + Bahasa Arab, CP), and `ALOKASI-MI-KMA-1503-2025` (MI allocation). See [`data-model.md`](data-model.md#curriculum).
+- **Curriculum versions:** `SIGRAK-SD-2026-R1` (SD topics: general subjects incl. PAI, and the five other religions), `SIGRAK-MI-2026-R1` (MI Kemenag subject topics), `CP-PABP-BKPDM-020-2026` (six religions, CP), `CP-PAI-BA-MADRASAH-9941-2025` (MI PAI + Bahasa Arab, CP), and `ALOKASI-MI-KMA-1503-2025` (MI allocation). See [`data-model.md`](data-model.md#curriculum).
 - **Student religion (D-036)** is recorded per student so religion classes can be grouped. For a religion subject, the journal, student notes, assessment, and report card list only that religion's students. Attendance stays daily and class-wide.
 - **Privacy (D-036):** religion is sensitive personal data.
   - It is visible to the class's teachers, the operator, and the principal.
@@ -112,10 +112,10 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 ## Data work (Phase 2)
 
 1. ~~**Verify the SD religion CP transcription**~~ Done in P2-01 (`verified: true`).
-2. **Cross-check PAI in KM-SD-2026-R2** against the decree's Islam CP.
-3. **Build topics, TP, ATP, fokus, and JP** — draft done in P2-09: [`tp-atp-pendidikan-agama-sd-2026.json`](../data/curriculum/tp-atp-pendidikan-agama-sd-2026.json) (D-139…D-141). For Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as KM-SD-2026-R2. AI may draft from the CP. **Tim Validasi SIGRAK reviews and signs off each set** (D-113), and the dataset records "Tim Validasi SIGRAK" and the review date (D-112). The same applies to the MI subjects and to the CP data.
+2. **Cross-check PAI in SIGRAK-SD-2026-R1** against the decree's Islam CP (curation task P4-31, D-364).
+3. **Build topics, TP, ATP, fokus, and JP** — draft done in P2-09, now [`sigrak-sd-2026-r1-agama.json`](../data/curriculum/sigrak-sd-2026-r1-agama.json) (D-139…D-141, D-363). For Kristen, Katolik, Hindu, Buddha, and Khonghucu (grades 1–6, two semesters), in the same shape as the general SD subjects. AI may draft from the CP. **Tim Validasi SIGRAK reviews and signs off each set** (D-113), and the dataset records "Tim Validasi SIGRAK" and the review date (D-112). The same applies to the MI subjects and to the CP data.
 4. ~~**Structure the MI CP**~~ Done in P2-02 (element rows, Arabic retyped).
-5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects — draft done in P2-10: [`tp-atp-pai-bahasa-arab-mi-2026.json`](../data/curriculum/tp-atp-pai-bahasa-arab-mi-2026.json) (D-145, D-146). Both sets wait for Tim Validasi SIGRAK review.
+5. **Build topics, TP, ATP, fokus, and JP** for the five MI subjects — draft done in P2-10, now [`sigrak-mi-2026-r1.json`](../data/curriculum/sigrak-mi-2026-r1.json) (D-145, D-146, D-363). Both sets have curation status `in_review` and wait for Tim Validasi SIGRAK review (D-364, task P4-31).
 6. **Transcribe the special-education CP** (Lampiran II of BKPDM 020/2026) for the six religions, in the same shape as the SD religion CP, for inclusive schools (D-155). The decree is a scanned copy without a text layer, so the text is typed and then checked by Tim Validasi SIGRAK (D-113).
 
 ## Open questions

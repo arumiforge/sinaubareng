@@ -1,7 +1,7 @@
 # P4-28 — SIGRAK curriculum dataset (one format, new codes) and SIGRAK catalogs
 
 - **Phase:** P4
-- **Status:** in-progress (data converted; code, docs, catalogs to do)
+- **Status:** done (2026-11-10, PR #68)
 - **Owner:** sky/optimistic-thompson-2qmlfz
 - **Depends on:** D-140, D-229, D-234, D-360
 - **Can run in parallel with:** P4-22, P4-23
@@ -10,7 +10,7 @@
 
 The owner wants one curriculum view curated by SIGRAK, with nothing that looks like the legacy app: one data format, SIGRAK codes, curation per subject, and SIGRAK catalogs. Owner interview of 2026-11-09 chose: convert everything to SIGRAK's own format now and curate subject by subject (only curated subjects become active for teachers); keep old codes only in an internal crosswalk; name versions `SIGRAK-SD-2026-R1` / `SIGRAK-MI-2026-R1` (topic `SIGRAK-SD-2026-R1-PP-K1-01`, TP `…-TP01`, fokus `…-FM01`); scope: general SD topics, drop the legacy SD allocation file, recode the SD and MI religion drafts, curate the usulan-01 catalogs (P4-15).
 
-## Decisions to record in `docs/agent/DECISIONS.md` (not yet written)
+## Decisions recorded in `docs/agent/DECISIONS.md`
 
 - **D-363 One SIGRAK curriculum format.** All topics/TP/ATP/fokus use the D-140 shape, one version per level and year (`SIGRAK-SD-2026-R1`, `SIGRAK-MI-2026-R1`), superseding "one version per CP set" of D-139/D-145 for topics. Official CP versions and structure versions stay separate. The importer reads only the SIGRAK format.
 - **D-364 Curation per subject.** Each subject has `curation.status` ∈ {`converted`, `in_review`, `curated`} with reviewer and date; only `curated` subjects are active for teachers (enforced from P5-04). Checklist: CP matches the official decree, TP cover the CP, ATP order and JP match Permendikdasmen 13/2025 / KMA 1503, fokus linked to TP, known issues closed, references recorded.
@@ -33,10 +33,13 @@ The owner wants one curriculum view curated by SIGRAK, with nothing that looks l
 
 ## Done when
 
-- [ ] `grep -rn "KM-SD\|Legacy_ID\|KmSd\|data_kurikulum_dengan_cp\|struktur_alokasi_sd\|TPATP-"` in `app/ config/ tests/ docs/final/ docs/pdf/src/ docs/data/` is empty except the crosswalk
-- [ ] CI green; PDFs rebuilt; no AI attribution, no legacy brand
-- [ ] Decisions D-363…D-367 recorded
+- [x] `grep -rn "KM-SD\|Legacy_ID\|KmSd\|data_kurikulum_dengan_cp\|struktur_alokasi_sd\|TPATP-"` in `app/ config/ tests/ docs/final/ docs/pdf/src/ docs/data/` is empty except the crosswalk
+- [x] CI green; PDFs rebuilt; no AI attribution, no legacy brand
+- [x] Decisions D-363…D-367 recorded
 
 ## Result
 
-Filled in on finish.
+- Data: three SIGRAK files plus crosswalk (retired IDs added); legacy topic, allocation, and religion draft files deleted; notes reworded (no dropped file names or legacy internals). README with provenance, curation table, sha256; `scripts/curriculum/README.md`.
+- Code: importer reads only the SIGRAK format, refuses the legacy shapes and earlier draft datasets; `DataModelTopics` reads `extras`, `curation_notes`, and `curation` (kept in the file meta); stale-topic check limited to the file's subjects so two files can share a version; `SourceOverrides` empty with an injectable list; migration `2026_11_10_000001` drops `legacy_codes`, renames `audit` → `curation_notes`. Tests replaced (`sigrak-topics.json` fixture; merge, curation, refusal, D-234 in data, override mechanism).
+- Catalogs: `docs/data/catalogs/` (five files + README), P4-15 done.
+- Docs: data model, handbook, product concept, religious education, research digest + PDFs rebuilt; source check renamed to `curriculum-source-check-2026.md`; D-363…D-367; CONTEXT; PROGRESS with P4-29…P4-31.

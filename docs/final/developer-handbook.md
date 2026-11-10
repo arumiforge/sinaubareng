@@ -19,7 +19,7 @@ Three build-status labels appear throughout:
 
 Some rules to keep in mind while reading:
 
-- **Later decisions win.** The final docs in `docs/final/` were approved on 2026-10-31 (D-123) and updated in places since. Many decisions after that date (D-203 onward, and especially D-252…D-362) are not yet applied to every final doc. Where a final doc and a later decision differ, this handbook follows the later decision and says so. The list of known differences is in [chapter 12](#12-decision-map).
+- **Later decisions win.** The final docs in `docs/final/` were approved on 2026-10-31 (D-123) and updated in places since. Many decisions after that date (D-203 onward, and especially D-252…D-367) are not yet applied to every final doc. Where a final doc and a later decision differ, this handbook follows the later decision and says so. The list of known differences is in [chapter 12](#12-decision-map).
 - **Nothing here is new.** This handbook only retells what the final docs, the accepted drafts, the decisions, and the code already say. If something is not in those sources, it is not in SIGRAK.
 - **Names.** The owner's previous product is always called "the legacy app" in English and "aplikasi lama" in Indonesian (D-360).
 - **Research.** Before you research a regulation, a study, or a vendor, read [`docs/final/research-digest.md`](research-digest.md) first, and add what you find to it afterwards (D-362).
@@ -269,7 +269,7 @@ One master taxonomy names every concept once, with a stable code, an Indonesian 
 | G Context | Province, regency, local context, local languages, muatan lokal |
 | H Administration | School and staff roles, documents, performance indicators, supervision instruments |
 
-Lists are closed only where a rule fixes them (8 DPL, 3 principles, phases); open lists (methods, media, local context) let a school add its own items. The seed data is task P4-22, which joins the Peta Asesmen dataset and the legacy app catalogs (P4-15) instead of duplicating them. **Status: Designed; the seed data is not written yet.**
+Lists are closed only where a rule fixes them (8 DPL, 3 principles, phases); open lists (methods, media, local context) let a school add its own items. The seed data is task P4-22, which joins the Peta Asesmen dataset and the SIGRAK catalogs in `docs/data/catalogs/` (P4-15, D-367) instead of duplicating them. **Status: Designed; the seed data is not written yet.**
 
 ### 3.6 Dasar Kebijakan panel and Cek Keselarasan
 
@@ -392,19 +392,22 @@ Portals: principal and pengawas see the same data, validate, supervise
 | File | Content |
 |---|---|
 | `subjects.json` | Subject catalogue: codes, kinds, default teacher, religion, level, aliases, regional defaults (D-227) |
-| `data_kurikulum_dengan_cp.json`, `struktur_alokasi_sd.json` | KM-SD-2026-R2 from the legacy app: 432 topics, 2,021 fokus, 1,372 TP, 12 subjects |
 | `curriculum-structure-permendikdasmen-13-2025.json` | SD structure and JP, including kokurikuler |
 | `mi-allocation-kma-1503-2025.json` | MI structure and JP (verified, D-038) |
 | `cp-pendidikan-agama-sd-bkpdm-020-2026.json` | CP for six SD religions |
 | `cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` | CP for the MI Kemenag subjects and Bahasa Arab |
-| `tp-atp-pendidikan-agama-sd-2026.json` | Draft TP/ATP for five non-Islam SD religions |
-| `tp-atp-pai-bahasa-arab-mi-2026.json` | Draft TP/ATP for the five MI subjects |
+| `sigrak-sd-2026-r1-umum.json` | SIGRAK SD topics for the general subjects, PAI, muatan lokal, and KKA: 432 topics, 1,372 TP, 2,021 fokus, 12 subjects |
+| `sigrak-sd-2026-r1-agama.json` | SIGRAK SD topics for the five other religions: 300 topics |
+| `sigrak-mi-2026-r1.json` | SIGRAK MI topics for the five Kemenag subjects: 224 topics |
+| `crosswalk-legacy-2026.json` | Team only, never imported: old codes to SIGRAK codes (D-365) |
 
 **The shape.** A subject has topics (materi pokok, the ATP rows) per grade and semester, with JP, weeks, and references. Each topic has fokus items and learning objectives (TP). `focus_item_objectives` links fokus to TP and is filled by a data task. CP-only versions store CP rows in `learning_outcomes` (D-226). `subject_allocations` holds JP per subject, grade, and learning type (intrakurikuler or kokurikuler).
 
-**The import (`php artisan curriculum:import`).** With no file named, it loads the files listed in `config/curriculum.php` in order. Rules (D-229): each file is one transaction; rows are matched by `code` and never deleted; a new version is `draft` and an import never changes an existing version's status; mismatches (JP sums, phase vs grade, fokus–TP links outside the topic) are reported and do not stop the import unless `--strict` is given; legacy IDs are kept as aliases in `legacy_codes`. Documented corrections live in `app/Curriculum/Import/SourceOverrides.php` while the source files stay byte-for-byte (D-234 trims Tata Boga grade 6 semester 2 to 28 JP). KKA rows for grades 5–6 are not imported as intrakurikuler; KKA runs through kokurikuler (D-208).
+**The import (`php artisan curriculum:import`).** With no file named, it loads the files listed in `config/curriculum.php` in order. Rules (D-229): each file is one transaction; rows are matched by `code` and never deleted; a new version is `draft` and an import never changes an existing version's status; mismatches (JP sums against each subject's semester targets, phase vs grade, fokus–TP links outside the topic) are reported and do not stop the import unless `--strict` is given. Topics come only from SIGRAK files (D-363); the legacy app format is refused, and old codes stay in the crosswalk (D-365). Files that share a version each answer for their own subjects. The D-234 Tata Boga trim is in the data; `app/Curriculum/Import/SourceOverrides.php` is empty but kept for a future owner-approved fix (D-366). KKA rows for grades 5–6 are not imported as intrakurikuler; KKA runs through kokurikuler (D-208).
 
-**Versions in v1.** `KM-SD-2026-R2`, `CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`, `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `ALOKASI-MI-KMA-1503-2025`, `TPATP-PABP-SD-2026-R1`, `TPATP-PAI-BA-MI-2026-R1` (data model; D-139, D-145). The versioning additions of D-355 come before P5-04 ([section 3.3](#33-versioned-rule-sets-and-the-policy-profile-per-school-year)).
+**Versions in v1.** `SIGRAK-SD-2026-R1`, `SIGRAK-MI-2026-R1` (topics, one version per level and year, D-363), `CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`, `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `ALOKASI-MI-KMA-1503-2025` (data model). The SD allocation comes only from the official structure (D-366).
+
+**Curation per subject (D-364).** Each subject in a SIGRAK file has `curation.status` ∈ {`converted`, `in_review`, `curated`} with reviewer and date; only `curated` subjects are active for teachers (enforced from P5-04). The general SD subjects start as `converted`, the religion drafts as `in_review`. Curation tasks P4-29…P4-31 follow a checklist: CP matches the official decree, TP cover the CP, ATP order and JP match the structure, fokus linked to TP, known issues closed, references recorded. The versioning additions of D-355 come before P5-04 ([section 3.3](#33-versioned-rule-sets-and-the-policy-profile-per-school-year)).
 
 **The CP → TP → ATP → fokus chain in the app.** In every wizard the chain is pick-only: Kelas → Mata pelajaran → Semester → Materi pokok (ATP) → Fokus → TP, all read from the data (content engine, wizard rule 4). Teachers never type CP or JP.
 
@@ -416,9 +419,9 @@ Portals: principal and pengawas see the same data, validate, supervise
 
 **Religion.** SD offers six religion subjects (D-034), each 3 JP per week (D-141). MI teaches the Kemenag subjects instead of one PAI subject (D-035, D-146). `students.religion` exists only to group religion classes and is sensitive (D-036). Pendidikan Kepercayaan is not in v1 (D-037); the special-education CP is in scope for inclusive schools and still to be transcribed (D-155).
 
-**Status:** **Built** (P5-03c, P5-03g): curriculum tables, `learning_outcomes`, the import command, the subject catalogue, `SubjectsForGrade`. **Designed:** versioning columns and resolver (D-355), school topic changes and validation (P5-09), the curriculum console (D-317), Kabar Regulasi. **Data still draft:** every curriculum and regulation file awaits Tim Validasi review.
+**Status:** **Built** (P5-03c, P5-03g, P4-28): curriculum tables, `learning_outcomes`, the import command, the subject catalogue, `SubjectsForGrade`, the SIGRAK R1 dataset with per-subject curation status. **Designed:** versioning columns and resolver (D-355), school topic changes and validation (P5-09), the curriculum console (D-317), Kabar Regulasi. **Data still draft:** every curriculum and regulation file awaits Tim Validasi review.
 
-Read more: [`data-model.md`](data-model.md#curriculum), [`religious-education.md`](religious-education.md), [`docs/data/curriculum/README.md`](../data/curriculum/README.md), [`docs/drafts/km-sd-2026-r2-source-check.md`](../drafts/km-sd-2026-r2-source-check.md), D-019, D-020, D-113, D-204, D-208, D-226…D-234, D-276, D-317.
+Read more: [`data-model.md`](data-model.md#curriculum), [`religious-education.md`](religious-education.md), [`docs/data/curriculum/README.md`](../data/curriculum/README.md), [`docs/drafts/curriculum-source-check-2026.md`](../drafts/curriculum-source-check-2026.md), D-019, D-020, D-113, D-204, D-208, D-226…D-234, D-276, D-317, D-363…D-366.
 
 ### 4.4 AI content creation: keys, templates, wizards, documents, exports
 
@@ -1033,14 +1036,16 @@ Read more: [`docs/agent/WORKFLOW.md`](../agent/WORKFLOW.md), [`docs/agent/PROGRE
 | P4-11 | Design: Penyusun KSP and evaluasi KSP (after v1) | Todo | D-209, D-217 |
 | P4-13 | Legacy app upgrade decisions | Review | D-251 |
 | P4-14 | Apply the legacy upgrade to `docs/final/` + PDFs | Todo | P4-13 |
-| P4-15 | Import the legacy app catalogs to `docs/data/catalogs/` | Todo | — |
+| P4-29 | Curate SD core subjects (PP, BIN, MTK, IPAS) | Todo | P4-23 |
+| P4-30 | Curate the other SD subjects (SB, PJOK, BIG, BJW, KTB, SSD, KKA) | Todo | P4-23 |
+| P4-31 | Curate the religion subjects, SD and MI | Todo | P4-23 |
 | P4-19 | Design: assessment landscape (Peta Asesmen, tags, wizard, Wave A) | Todo | D-344…D-351 |
 | P4-20 | Apply D-329…D-351 to `docs/final/` + PDFs | Todo | P4-16…P4-18 |
 | P4-22 | Taxonomy seed and regulation registry in `docs/data/taxonomy/` | Todo | P4-21 |
 | P4-23 | Get and extract missing regulations, verify KMA 512/2026 | Todo | — |
 | P4-24 | Apply the policy foundation to `docs/final/` + PDFs | Todo | P4-21 |
 
-Done in Phase 4: P4-02 (Game kelas), P4-03 and P4-03b (official documents), P4-04 (administration features), P4-12 (supervision instruments), P4-16 (LKPD), P4-17 (internal roles), P4-18 (assessment landscape), P4-21 (policy foundation), P4-25 (this handbook), P4-26 (research digest), P4-27 (legacy brand removal).
+Done in Phase 4: P4-02 (Game kelas), P4-03 and P4-03b (official documents), P4-04 (administration features), P4-12 (supervision instruments), P4-16 (LKPD), P4-17 (internal roles), P4-18 (assessment landscape), P4-21 (policy foundation), P4-25 (this handbook), P4-26 (research digest), P4-27 (legacy brand removal), P4-28 (SIGRAK curriculum dataset), P4-15 (SIGRAK catalogs).
 
 The doc-update tasks P4-05, P4-14, P4-20, and P4-24 together close the gaps this handbook flags between the final docs and later decisions.
 
@@ -1084,7 +1089,7 @@ P5-02 runs in parallel with all of it.
 2. **The D-355 versioning minimum,** before P5-04: version columns on `curriculum_versions`, a policy-profile resolver in place of `config/curriculum.php` `allocation_versions` (same behaviour), and the Profil Jenjang data. The first RPM must already store its rule set.
 3. **P5-03j,** the draft timetable, in parallel with P5-04.
 4. **P5-04, the content core,** with the decisions added by P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) and the console parts D-315 and D-316, plus the Dasar Kebijakan panel and the first Cek Keselarasan rules on the RPM (D-358).
-5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), P4-15 (catalogs), Tim Validasi review of the curriculum and regulation data, and the doc updates P4-14, P4-20, P4-24.
+5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), the curriculum curation P4-29…P4-31, Tim Validasi review of the catalogs and regulation data, and the doc updates P4-14, P4-20, P4-24.
 
 Additions by slice from the legacy upgrade are listed in `legacy-upgrade-01.md` §5: P5-05 gets D-293, D-294, D-296; P5-07 gets D-263…D-271 (teacher side), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 gets D-286…D-292, D-295, D-301, D-304; P5-09 gets the portal views and D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; the console gets D-314 and D-317…D-320.
 
@@ -1129,6 +1134,7 @@ Decisions live in [`docs/agent/DECISIONS.md`](../agent/DECISIONS.md). The ranges
 | D-344…D-351 | Assessment landscape | Peta Asesmen, instruments, AI without student data, GPK, offline, Wave A |
 | D-352…D-359 | Policy foundation | Position, rule strength, versioning, Profil Jenjang, taxonomy, panel, KMA 512 |
 | D-360…D-362 | Repository and docs | Legacy brand removed, this handbook, research digest |
+| D-363…D-367 | SIGRAK curriculum and catalogs | One curriculum format, curation per subject, crosswalk, SD allocation from the structure, catalogs |
 
 ### 12.1 Where final docs and later decisions differ
 
@@ -1265,9 +1271,9 @@ Indonesian education and product terms used in this handbook and in the code com
 | [`internal-roles.md`](../drafts/internal-roles.md) | Staff roles, scopes, matrix (D-338…D-343) |
 | [`dokumen-resmi-sd-mi.md`](../drafts/dokumen-resmi-sd-mi.md) | What the official 2025 documents change (D-203…D-209) |
 | [`buku-induk-dapodik.md`](../drafts/buku-induk-dapodik.md) | Buku Induk and Dapodik sync, on hold (D-161) |
-| [`km-sd-2026-r2-source-check.md`](../drafts/km-sd-2026-r2-source-check.md) | Findings on the KM-SD-2026-R2 source files |
+| [`curriculum-source-check-2026.md`](../drafts/curriculum-source-check-2026.md) | Findings on the legacy curriculum source files (history) |
 | [`open-questions.md`](../drafts/open-questions.md) | Remaining owner questions |
 
-**Data:** [`docs/data/curriculum/README.md`](../data/curriculum/README.md) (curriculum files and provenance), [`docs/data/regulations/README.md`](../data/regulations/README.md) (official 2025 rules as data), `docs/data/schools/` (school directory), `docs/data/tka/` (TKA framework). Planned: `docs/data/taxonomy/`, `docs/data/assessment/`, `docs/data/catalogs/`.
+**Data:** [`docs/data/curriculum/README.md`](../data/curriculum/README.md) (curriculum files and provenance), [`docs/data/regulations/README.md`](../data/regulations/README.md) (official 2025 rules as data), [`docs/data/catalogs/README.md`](../data/catalogs/README.md) (SIGRAK catalogs, D-367), `docs/data/schools/` (school directory), `docs/data/tka/` (TKA framework). Planned: `docs/data/taxonomy/`, `docs/data/assessment/`, `docs/data/catalogs/`.
 
 **Agent files:** [`CONTEXT.md`](../agent/CONTEXT.md), [`PROGRESS.md`](../agent/PROGRESS.md), [`DECISIONS.md`](../agent/DECISIONS.md), [`WORKFLOW.md`](../agent/WORKFLOW.md), and the task files in [`docs/agent/tasks/`](../agent/tasks/).

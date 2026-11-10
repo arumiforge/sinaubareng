@@ -1,7 +1,7 @@
 {
   "dataset": "subjects",
   "status": "draft",
-  "note": "Subject catalogue for curriculum:import (D-227). Every other curriculum file names its subjects by code, name, or one of the aliases; matching ignores case, punctuation, and spaces. Codes follow the topic IDs of KM-SD-2026-R2 (P5-03g); Seni dan Budaya keeps one subject for the five codes its topic IDs use (MUS, SM, SMU, SR, SRP). Seni Suara Daerah (SSD) is new in KM-SD-2026-R2 and waits for the owner's decision (C5 in docs/drafts/km-sd-2026-r2-source-check.md); until then it is school-optional muatan lokal, like Tata Boga.",
+  "note": "Subject catalogue for curriculum:import (D-227). Every other curriculum file names its subjects by code, name, or one of the aliases; matching ignores case, punctuation, and spaces. Codes follow the topic codes of the SIGRAK curriculum files (P5-03g, D-363); Seni dan Budaya keeps one subject for the five codes its topic IDs use (MUS, SM, SMU, SR, SRP). Seni Suara Daerah (SSD) came new with the legacy data and waits for the owner's decision (C5 in docs/drafts/curriculum-source-check-2026.md); until then it is school-optional muatan lokal, like Tata Boga.",
   "conventions": [
     "kind: compulsory (intrakurikuler subject of the national or Kemenag structure), local_content (muatan lokal), cocurricular (delivered through kokurikuler only; Koding dan KA, D-208).",
     "default_teacher follows D-032: Pendidikan Agama (SD six religions, and the MI Kemenag subjects that replace it), PJOK, Bahasa Inggris, and muatan lokal go to a guru mapel; the rest to the guru kelas. D-228 adds the MI subjects and Tata Boga.",
@@ -270,7 +270,7 @@
       "regency": "Kabupaten Kudus",
       "subject": "BJW",
       "allocation": 2,
-      "note": "Kudus pilot default (D-018, data model region_subjects). Allocation in JP per week, as in KM-SD-2026-R2 (36 JP per semester)."
+      "note": "Kudus pilot default (D-018, data model region_subjects). Allocation in JP per week (36 JP per semester)."
     }
   ]
 }

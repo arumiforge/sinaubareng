@@ -72,14 +72,14 @@ Panduan dari BSKAP (semuanya **resmi**, PDF-nya di `docs/sources/`, diekstrak ke
 
 | Temuan | Sumber, tingkat | Dampak | Keputusan, repo |
 |---|---|---|---|
-| JP intrakurikuler SD dari aplikasi lama (set data KM-SD-2026-R2) sama persis dengan Tabel 1–5 Permendikdasmen 13/2025 | 13/2025 hlm. 15–21, resmi | Diimpor apa adanya | D-204, `dokumen-resmi-sd-mi.md` §2 |
+| JP intrakurikuler SD dari aplikasi lama (kini target semester SIGRAK-SD-2026-R1) sama persis dengan Tabel 1–5 Permendikdasmen 13/2025 | 13/2025 hlm. 15–21, resmi | Diimpor apa adanya | D-204, `dokumen-resmi-sd-mi.md` §2 |
 | Bahasa Inggris dan IPAS tidak ada di struktur kelas 1–2 | 13/2025 hlm. 15–18, resmi | Konten opsional sekolah, mati secara bawaan, bukan mata pelajaran rapor wajib | D-204 |
 | Batas muatan lokal SD: 72 JP per tahun (64 di kelas 6); Bahasa Jawa memakai seluruhnya; MI boleh 72–216 | 13/2025 hlm. 16, hlm. 21; KMA 1503/2025 | Tata Boga opsional sekolah; batas ditegakkan per sekolah | D-204, `data-model.md` |
 | Total kokurikuler SD: 216 / 216 / 252 / 252 / 252 / 224 JP per tahun (kelas 1–6) | 13/2025, Panduan Kokurikuler hlm. 35, resmi | Versi alokasi baru `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | `dokumen-resmi-sd-mi.md` C3 |
 | 8 dimensi profil lulusan: keimanan dan ketakwaan, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, komunikasi | 13/2025 Pasal 17, resmi | Daftar tetap DPL1–DPL8 di RPM dan kokurikuler | `content-engine.md` |
 | Pembelajaran mendalam: prinsip berkesadaran, bermakna, menggembirakan; pengalaman memahami, mengaplikasi, merefleksi; empat bagian kerangka | 126/P/2025, resmi | Langkah inti RPM mengikuti tiga pengalaman dengan tanda prinsip | `content-engine.md` |
 | "Deep learning" di artikel Indonesia berarti pendekatan 2025, bukan AI | Penelusuran literatur LKPD, 2026-11-09 | Perhatikan istilah di UI dan kutipan | `lkpd-exploration.md` §8.3 |
-| Berkas kurikulum aplikasi lama (diunduh 2026-11-08): 432 topik, 2.021 fokus, 1.372 TP, 58 baris alokasi, 12 mata pelajaran (baru: Seni Suara Daerah) | Portal publik aplikasi lama, dikelola pemilik; SHA-256 dicatat | Disimpan persis seperti diterima; impor menerapkan D-204 dan D-208 | `docs/drafts/km-sd-2026-r2-source-check.md`, `docs/data/curriculum/README.md` |
+| Berkas kurikulum aplikasi lama (diunduh 2026-11-08): 432 topik, 2.021 fokus, 1.372 TP, 58 baris alokasi, 12 mata pelajaran (baru: Seni Suara Daerah) | Portal publik aplikasi lama, dikelola pemilik; SHA-256 dicatat | Dikonversi ke dataset SIGRAK R1 pada 2026-11-09 lalu dihapus; kode lama di crosswalk (D-363, D-365); impor menerapkan D-204 dan D-208 | `docs/drafts/curriculum-source-check-2026.md`, `docs/data/curriculum/README.md` |
 | KSP: disetujui kepala sekolah, format bebas | Panduan KSP hlm. 7, hlm. 10, resmi | Templat awal yang disesuaikan sekolah | D-209 |
 
 ## 4. Madrasah dan Kemenag
@@ -317,7 +317,7 @@ Versi dicek 2026-10-30; alat pemantauan 2026-10-31. Rincian: `docs/final/server-
 | Kaldik Jawa Tengah 2026/2027 (Perkadin 400.3/23862/2026, 29 Mei 2026): hari efektif SD/MI 207 (5 hari) dan 254 (6 hari; 134 + 120) | PDF dari pemilik | resmi | D-323 (hanya versi 6 hari; Maulid 25 Agu 2026) |
 | Libur nasional dan cuti bersama 2026/2027 (25 tanggal) dan 2027/2028 (5 tanggal) | Aset publik aplikasi lama, 2026-11-09 | belum terverifikasi sampai dicocokkan dengan SKB 3 Menteri | D-253, D-254: dicek daring beserta URL sumbernya sebelum impor |
 | Kalender wilayah ditetapkan dinas provinsi atau kabupaten; madrasah mengikuti Kepdirjen Pendis 4860/2026 | Laporan aturan P4-04 | sekunder | D-256, D-257 |
-| Data katalog aplikasi lama (contoh kokurikuler, ekstrakurikuler, inventaris kelas, komponen administrasi, pilihan isian) | Aset publik aplikasi lama, 2026-11-09 | draf, ditinjau sesuai D-113 | `docs/sources/usulan-01/data/README.md`, `docs/drafts/legacy-upgrade-01.md` |
+| Data katalog aplikasi lama (contoh kokurikuler, ekstrakurikuler, inventaris kelas, komponen administrasi, pilihan isian) | Aset publik aplikasi lama, 2026-11-09 | draf, ditinjau sesuai D-113; dikurasi ke `docs/data/catalogs/` (D-367) | `docs/sources/usulan-01/data/README.md`, `docs/data/catalogs/README.md`, `docs/drafts/legacy-upgrade-01.md` |
 
 ## 16. Celah riset yang masih terbuka
 

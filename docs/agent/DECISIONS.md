@@ -1060,7 +1060,7 @@ Reason: the data model lists these versions for v1 but none of its tables holds 
 
 ### D-227 — Subject catalogue file
 Accepted · 2026-11-08 · P5-03c
-`docs/data/curriculum/subjects.json` (`status: draft`) is the source of `subjects`: code, name, kind, default teacher, religion, level, and aliases, plus regional local content defaults (Kudus: Bahasa Jawa, 2 JP per week). Other files name subjects by code, name, or alias; matching ignores case, punctuation, and spaces, and an unknown subject makes the file invalid. Codes follow the KM-SD-2026-R2 topic IDs (`PP`, `BIN`, `MTK`, `IPAS`, `PJOK`, `BIG`, `BJW`, `PAI`, `KKA`, `KTB`, `SSD`) and the religion and MI TP/ATP files. Seni dan Budaya is one subject `SB`, and the five codes its topic IDs use (`MUS`, `SM`, `SMU`, `SR`, `SRP`) are aliases. Seni Suara Daerah (`SSD`) is school-optional muatan lokal for SD until the owner decides C5 of `docs/drafts/km-sd-2026-r2-source-check.md`; it is not a region default.
+`docs/data/curriculum/subjects.json` (`status: draft`) is the source of `subjects`: code, name, kind, default teacher, religion, level, and aliases, plus regional local content defaults (Kudus: Bahasa Jawa, 2 JP per week). Other files name subjects by code, name, or alias; matching ignores case, punctuation, and spaces, and an unknown subject makes the file invalid. Codes follow the KM-SD-2026-R2 topic IDs (`PP`, `BIN`, `MTK`, `IPAS`, `PJOK`, `BIG`, `BJW`, `PAI`, `KKA`, `KTB`, `SSD`) and the religion and MI TP/ATP files. Seni dan Budaya is one subject `SB`, and the five codes its topic IDs use (`MUS`, `SM`, `SMU`, `SR`, `SRP`) are aliases. Seni Suara Daerah (`SSD`) is school-optional muatan lokal for SD until the owner decides C5 of `docs/drafts/curriculum-source-check-2026.md`; it is not a region default.
 Reason: KM-SD-2026-R2 has no subject code field, and every source names subjects differently.
 
 ### D-228 — Subject defaults not covered by D-032
@@ -1079,12 +1079,12 @@ A class takes the compulsory subjects with an intrakurikuler allocation for its 
 Reason: one rule set for P5-03d (default teaching assignments) and later the timetable and rapor.
 
 ### D-231 — Seni Suara Daerah is school-optional muatan lokal
-Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C5 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C5 of `docs/drafts/curriculum-source-check-2026.md`
 Seni Suara Daerah (`SSD`, KM-SD-2026-R2) is imported as optional muatan lokal for SD that a school switches on in `school_subjects`; it is off by default and is not a region default. Its CP and JP stay `draft` until Tim Validasi SIGRAK reviews them (D-113).
 Reason: owner's choice; the CP is a system draft marked "PERLU VERIFIKASI".
 
 ### D-232 — Muatan lokal cap warns, for now
-Accepted · 2026-11-08 · P5-03c · owner's choice · provisional · resolves C6 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Accepted · 2026-11-08 · P5-03c · owner's choice · provisional · resolves C6 of `docs/drafts/curriculum-source-check-2026.md`
 When a school's muatan lokal (Bahasa Jawa, Tata Boga, Seni Suara Daerah, or other local subjects) goes over the SD cap of 72 JP per year (64 in grade 6, D-204), SIGRAK warns and does not block. The owner will revisit this once field practice is clear. The check itself is built with the operator pages that switch subjects on (P5-03d or later).
 Reason: owner's choice; practice in schools is not settled yet and may change.
 
@@ -1094,7 +1094,7 @@ The Kode Tayang page for Game kelas is at the path `/pid` on the app host (`APP_
 Reason: owner's choice; one hostname less to set up and route.
 
 ### D-234 — Tata Boga grade 6 semester 2 trimmed to 28 JP at import
-Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C4 of `docs/drafts/km-sd-2026-r2-source-check.md`
+Accepted · 2026-11-08 · P5-03c · owner's choice · resolves C4 of `docs/drafts/curriculum-source-check-2026.md`
 Keterampilan Tata Boga grade 6 semester 2 (`KM-SD-2026-R2-KTB-K6-04`) has 34 JP over weeks 1–17 in the source, but that semester has 14 effective weeks. SIGRAK trims it to 28 JP (14 weeks × 2 JP, weeks 1–14, 14 JP per fokus) at import, as an explicit correction in `app/Curriculum/Import/SourceOverrides.php` that keeps the source values in the topic's `extras.import_override`. The source file in `docs/data/curriculum/` stays exactly as received. The correction applies only while the source still has 34 JP to week 17.
 Reason: owner's choice; the source is kept byte-for-byte (P5-03g) and the topic must fit its semester.
 
@@ -1716,3 +1716,28 @@ Reason: the owner wants one complete reading for developers.
 Accepted · 2026-11-09 · owner's choice
 `docs/final/research-digest.md` (with its Indonesian PDF) collects every research finding so far: regulations, field and journal studies, benchmarks, technical research, with source, date checked, verification level, implication, and related decisions. Before new research, check it; after research, add the findings to it.
 Reason: avoid repeating research across sessions.
+
+### D-363 — One SIGRAK curriculum format
+Accepted · 2026-11-09 · P4-28 · owner's choice (interview 2026-11-09), supersedes "one version per CP set" of D-139/D-145 for topics
+All topics, TP, ATP, and fokus use the D-140 shape in SIGRAK files, one version per level and year: `SIGRAK-SD-2026-R1` (`sigrak-sd-2026-r1-umum.json`, `sigrak-sd-2026-r1-agama.json`) and `SIGRAK-MI-2026-R1` (`sigrak-mi-2026-r1.json`). Codes: topic `SIGRAK-SD-2026-R1-PP-K1-01`, TP `…-TP01`, fokus `…-FM01`. Official CP versions and structure versions stay separate. The importer reads only the SIGRAK format and refuses the legacy app format. Earlier decision entries and archived drafts keep old version codes as history; active docs, code, and data use the new names.
+Reason: one curriculum view curated by SIGRAK, with nothing that looks like the legacy app.
+
+### D-364 — Curation per subject
+Accepted · 2026-11-09 · P4-28 · owner's choice
+Each subject in a SIGRAK file has `curation.status` ∈ {`converted`, `in_review`, `curated`} with `since`, `reviewed_by`, `reviewed_on`, and `note`; the import keeps it in the version's file meta. Only `curated` subjects are active for teachers (enforced from P5-04). Checklist: CP matches the official decree; TP cover the CP; ATP order and JP match Permendikdasmen 13/2025 or KMA 1503/2025; fokus linked to TP; known issues closed; references recorded. Tasks P4-29…P4-31.
+Reason: subjects can go live one by one as they are checked, instead of waiting for the whole dataset.
+
+### D-365 — Old codes only in a crosswalk
+Accepted · 2026-11-09 · P4-28 · owner's choice
+`docs/data/curriculum/crosswalk-legacy-2026.json` maps old topic, TP, and fokus codes (legacy IDs, aliases, earlier draft codes) to SIGRAK codes, with retired IDs. It is for the team and never imported. A forward-only migration drops `topics.legacy_codes` and renames `topics.audit` to `curation_notes` (D-085).
+Reason: old codes stay traceable without leaking into the product.
+
+### D-366 — SD allocation only from the official structure
+Accepted · 2026-11-09 · P4-28 · owner's choice, refines D-234
+The legacy SD allocation file is removed; `subject_allocations` for SD come only from Permendikdasmen 13/2025. Semester JP targets the topics are checked against live in the SIGRAK files (`subjects[].allocations`); weekly distribution stays a default until the school calendar computes it (P5-03i). The D-234 Tata Boga trim is applied in the data, and `SourceOverrides` is empty (mechanism kept).
+Reason: one source of truth for allocation, and data fixes live in the data.
+
+### D-367 — SIGRAK catalogs
+Accepted · 2026-11-09 · P4-15 · owner's choice, refines D-305
+The usulan-01 catalogs are curated into `docs/data/catalogs/` (`cocurricular-themes.json`, `extracurriculars.json`, `class-inventory.json`, `form-options.json`, `admin-document-components.json`) with English keys, Indonesian labels, `SIGRAK-KAT-…` codes, `source_ref`, and `status: draft` (D-113). Print/progress rules and holidays are not catalogs (D-280…D-283, D-263, P5-03i).
+Reason: one reviewed place for the option lists, under SIGRAK names.
