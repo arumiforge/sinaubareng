@@ -20,7 +20,7 @@ Dokumen ini menetapkan cara SIGRAK mencakup pendidikan agama di SD (enam agama) 
 | **KMA 450 Tahun 2024 sebagaimana diubah KMA 1503 Tahun 2025** | Pedoman kurikulum madrasah, termasuk struktur mata pelajaran dan JP MI (Lampiran II, BAB III B, Tabel 1–5, hlm. 28–31) | Keputusan resmi (22 September 2025), salinan pindaian dari pemilik | Alokasi MI (D-038), data di `mi-allocation-kma-1503-2025.json` |
 | **KMA No. 512 Tahun 2026** (31 Maret 2026, berlaku sejak tanggal ditetapkan) | Pedoman Kurikulum Berbasis Cinta: KBC sebagai pendidikan nilai untuk satuan pendidikan Kemenag *dan* guru pendidikan agama di sekolah umum, termasuk SD; Panca Cinta, enam nilai dasar, enam prinsip, 12 metode yang disarankan, 10 instrumen asesmen, tingkat praktik | Keputusan resmi, PDF hasil pindai dari owner (9 November 2026) | Sumber KBC sejak D-359, lihat bagian MI: Kurikulum Berbasis Cinta |
 | **SK Dirjen Pendis No. 6077 Tahun 2025** (22 Juli 2025) | Panduan Kurikulum Berbasis Cinta (KBC) untuk semua madrasah: lima tema Panca Cinta, contoh pembelajaran, contoh pemetaan CP ke tema | PDF dengan lapisan teks, dari pemilik | Digantikan KMA 512/2026 sebagai sumber KBC (D-359); tetap menjadi acuan untuk contoh pembelajaran dan pemetaan CP ke tema |
-| **KM-SD-2026-R2** (data kurikulum aplikasi lama) | PAI SD dengan topik, TP, ATP, fokus, JP | JSON | Sudah merujuk "CP PAI 020/2026", keputusan yang sama |
+| **SIGRAK-SD-2026-R1** (`sigrak-sd-2026-r1-umum.json`, dikonversi dari data kurikulum aplikasi lama, D-363) | PAI SD dengan topik, TP, ATP, fokus, JP | JSON | Sudah merujuk "CP PAI 020/2026", keputusan yang sama |
 
 Tidak ditemukan perubahan yang lebih baru atas SK 9941/2025 maupun KMA 1503/2025 pada 2026-10-30.
 
@@ -32,7 +32,7 @@ Keenamnya masuk v1. Setiap agama adalah mata pelajaran tersendiri; siswa mengiku
 
 | Agama | Mata pelajaran | Elemen (subelemen) | Halaman CP SD | Status data |
 |---|---|---|---|---|
-| Islam | Pendidikan Agama Islam dan Budi Pekerti | Al-Qur'an Hadis, Akidah, Akhlak, Fikih, Sejarah Peradaban Islam | 6–8 | **Lengkap** di KM-SD-2026-R2 (topik, TP, fokus, JP). Cocokkan teks CP-nya dengan keputusan |
+| Islam | Pendidikan Agama Islam dan Budi Pekerti | Al-Qur'an Hadis, Akidah, Akhlak, Fikih, Sejarah Peradaban Islam | 6–8 | **Lengkap** di SIGRAK-SD-2026-R1 (topik, TP, fokus, JP; status kurasi `converted`, D-364). Cocokkan teks CP-nya dengan keputusan |
 | Kristen | Pendidikan Agama Kristen dan Budi Pekerti | Allah Berkarya (Pencipta, Pemelihara, Penyelamat, Pembaru); Manusia dan Nilai-nilai Kristiani (Hakikat Manusia, Nilai-nilai Kristiani); Gereja dan Masyarakat Majemuk (Tugas Panggilan Gereja, Masyarakat Majemuk); Alam dan Lingkungan Hidup (Alam Ciptaan Allah, Tanggung Jawab Manusia terhadap Alam) | 12–14 | Hanya CP |
 | Katolik | Pendidikan Agama Katolik dan Budi Pekerti | Pribadi murid, Yesus Kristus, Gereja, Masyarakat | 20–23 | Hanya CP |
 | Hindu | Pendidikan Agama Hindu dan Budi Pekerti | Kitab Suci Weda, Śraddhā dan Bhākti, Susila, Acara, Sejarah Agama Hindu | 29 | Hanya CP |
@@ -98,7 +98,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 menetapkan Panduan Kurikulum Berbasis Cinta
 ## Cara SIGRAK memodelkannya
 
 - **Jenjang sekolah menentukan daftar mata pelajaran.** `schools.level` = `sd` memberi enam mata pelajaran agama. `mi` memberi mata pelajaran Kemenag ditambah tabel alokasi MI sendiri.
-- **Versi kurikulum:** `KM-SD-2026-R2` (mata pelajaran SD nasional termasuk topik PAI), `CP-PABP-BKPDM-020-2026` (enam agama, CP), `CP-PAI-BA-MADRASAH-9941-2025` (PAI + Bahasa Arab MI, CP), dan `ALOKASI-MI-KMA-1503-2025` (alokasi MI). Lihat `data-model.md` (bagian Kurikulum).
+- **Versi kurikulum:** `SIGRAK-SD-2026-R1` (topik SD: mapel umum termasuk PAI, dan lima agama lainnya), `SIGRAK-MI-2026-R1` (topik mapel Kemenag MI), `CP-PABP-BKPDM-020-2026` (enam agama, CP), `CP-PAI-BA-MADRASAH-9941-2025` (PAI + Bahasa Arab MI, CP), dan `ALOKASI-MI-KMA-1503-2025` (alokasi MI). Lihat `data-model.md` (bagian Kurikulum).
 - **Agama siswa (D-036)** dicatat per siswa agar kelas agama bisa dikelompokkan. Untuk mata pelajaran agama, jurnal, catatan siswa, asesmen, dan rapor hanya mencantumkan siswa beragama itu. Absensi tetap harian dan untuk seluruh kelas.
 - **Privasi (D-036):** agama adalah data pribadi yang sensitif.
   - Agama terlihat oleh guru kelas itu, operator, dan kepala sekolah.
@@ -113,10 +113,10 @@ SK Dirjen Pendis No. 6077 Tahun 2025 menetapkan Panduan Kurikulum Berbasis Cinta
 ## Pekerjaan data (Fase 2)
 
 1. ~~**Verifikasi transkripsi CP agama SD**~~ Selesai di P2-01 (`verified: true`).
-2. **Cocokkan PAI di KM-SD-2026-R2** dengan CP Islam di keputusan.
-3. **Susun topik, TP, ATP, fokus, dan JP** — draf selesai di P2-09: `tp-atp-pendidikan-agama-sd-2026.json` (D-139…D-141). Untuk Kristen, Katolik, Hindu, Buddha, dan Khonghucu (kelas 1–6, dua semester), dengan bentuk yang sama seperti KM-SD-2026-R2. AI boleh membuat draf dari CP. **Tim Validasi SIGRAK meninjau dan menyetujui setiap set** (D-113), dan dataset mencatat "Tim Validasi SIGRAK" serta tanggal tinjauan (D-112). Hal yang sama berlaku untuk mata pelajaran MI dan data CP.
+2. **Cocokkan PAI di SIGRAK-SD-2026-R1** dengan CP Islam di keputusan (tugas kurasi P4-31, D-364).
+3. **Susun topik, TP, ATP, fokus, dan JP** — draf selesai di P2-09, kini `sigrak-sd-2026-r1-agama.json` (D-139…D-141, D-363). Untuk Kristen, Katolik, Hindu, Buddha, dan Khonghucu (kelas 1–6, dua semester), dengan bentuk yang sama seperti mapel umum SD. AI boleh membuat draf dari CP. **Tim Validasi SIGRAK meninjau dan menyetujui setiap set** (D-113), dan dataset mencatat "Tim Validasi SIGRAK" serta tanggal tinjauan (D-112). Hal yang sama berlaku untuk mata pelajaran MI dan data CP.
 4. ~~**Susun struktur CP MI**~~ Selesai di P2-02 (baris elemen, teks Arab diketik ulang).
-5. **Susun topik, TP, ATP, fokus, dan JP** untuk lima mata pelajaran MI — draf selesai di P2-10: `tp-atp-pai-bahasa-arab-mi-2026.json` (D-145, D-146). Kedua set menunggu tinjauan Tim Validasi SIGRAK.
+5. **Susun topik, TP, ATP, fokus, dan JP** untuk lima mata pelajaran MI — draf selesai di P2-10, kini `sigrak-mi-2026-r1.json` (D-145, D-146, D-363). Kedua set berstatus kurasi `in_review` dan menunggu tinjauan Tim Validasi SIGRAK (D-364, tugas P4-31).
 6. **Transkripsi CP pendidikan khusus** (Lampiran II BKPDM 020/2026) untuk enam agama, dengan bentuk yang sama seperti CP agama SD, untuk sekolah inklusi (D-155). Keputusan itu berupa salinan pindaian tanpa lapisan teks, jadi teksnya diketik lalu diperiksa Tim Validasi SIGRAK (D-113).
 
 ## Pertanyaan terbuka

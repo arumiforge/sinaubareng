@@ -70,14 +70,14 @@ Guides from BSKAP (all **official**, PDFs in `docs/sources/`, extracted to `docs
 
 | Finding | Source, level | Implication | Decisions, repo |
 |---|---|---|---|
-| The legacy app's SD intrakurikuler JP (data set KM-SD-2026-R2) match 13/2025 Tabel 1–5 exactly | 13/2025 pp. 15–21, official | Import as is | D-204, `dokumen-resmi-sd-mi.md` §2 |
+| The legacy app's SD intrakurikuler JP (now the semester targets of SIGRAK-SD-2026-R1) match 13/2025 Tabel 1–5 exactly | 13/2025 pp. 15–21, official | Import as is | D-204, `dokumen-resmi-sd-mi.md` §2 |
 | Bahasa Inggris and IPAS are not in the grades 1–2 structure | 13/2025 pp. 15–18, official | School-optional content, off by default, not a required rapor subject | D-204 |
 | SD muatan lokal cap: 72 JP per year (64 in grade 6); Bahasa Jawa uses all of it; MI may have 72–216 | 13/2025 p. 16, p. 21; KMA 1503/2025 | Tata Boga is school-optional; cap enforced per school | D-204, `data-model.md` |
 | SD kokurikuler totals: 216 / 216 / 252 / 252 / 252 / 224 JP per year (grades 1–6) | 13/2025, Panduan Kokurikuler p. 35, official | New allocation version `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | `dokumen-resmi-sd-mi.md` C3 |
 | 8 dimensi profil lulusan: keimanan dan ketakwaan, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, komunikasi | 13/2025 Pasal 17, official | Fixed list DPL1–DPL8 in RPM and kokurikuler | `content-engine.md` |
 | Pembelajaran mendalam: principles berkesadaran, bermakna, menggembirakan; experiences memahami, mengaplikasi, merefleksi; four framework parts | 126/P/2025, official | RPM core steps follow the three experiences with principle tags | `content-engine.md` |
 | "Deep learning" in Indonesian papers means the 2025 approach, not AI | LKPD literature scan, 2026-11-09 | Watch wording in UI and citations | `lkpd-exploration.md` §8.3 |
-| Legacy curriculum files (downloaded 2026-11-08): 432 topics, 2,021 fokus, 1,372 TP, 58 allocation rows, 12 subjects (new: Seni Suara Daerah) | Legacy app public portal, owner-run; SHA-256 recorded | Kept exactly as received; import applies D-204 and D-208 | [`km-sd-2026-r2-source-check.md`](../drafts/km-sd-2026-r2-source-check.md), `docs/data/curriculum/README.md` |
+| Legacy curriculum files (downloaded 2026-11-08): 432 topics, 2,021 fokus, 1,372 TP, 58 allocation rows, 12 subjects (new: Seni Suara Daerah) | Legacy app public portal, owner-run; SHA-256 recorded | Converted to the SIGRAK R1 dataset on 2026-11-09 and removed; old codes in the crosswalk (D-363, D-365); import applies D-204 and D-208 | [`curriculum-source-check-2026.md`](../drafts/curriculum-source-check-2026.md), `docs/data/curriculum/README.md` |
 | KSP: principal approves, format free | KSP guide p. 7, p. 10, official | Starter template that schools adapt | D-209 |
 
 ## 4. Madrasah and Kemenag
@@ -315,7 +315,7 @@ Versions checked 2026-10-30; monitoring tools 2026-10-31. Detail: [`server-setup
 | Jawa Tengah kaldik 2026/2027 (Perkadin 400.3/23862/2026, 29 May 2026): SD/MI effective days 207 (5-day) and 254 (6-day; 134 + 120) | PDF supplied by the owner | official | D-323 (6-day only; Maulid on 25 Aug 2026) |
 | National holidays and cuti bersama 2026/2027 (25 dates) and 2027/2028 (5 dates) | Legacy app public assets, 2026-11-09 | unverified until checked against the SKB 3 Menteri | D-253, D-254: check online with source URLs before import |
 | Region calendars are set by provincial or district dinas; madrasah follow Kepdirjen Pendis 4860/2026 | P4-04 rules report | secondary | D-256, D-257 |
-| Legacy catalog data (kokurikuler examples, ekstrakurikuler, class inventory, administration components, form choices) | Legacy app public assets, 2026-11-09 | draft, D-113 review | [`usulan-01/data`](../sources/usulan-01/data/README.md), [`legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) |
+| Legacy catalog data (kokurikuler examples, ekstrakurikuler, class inventory, administration components, form choices) | Legacy app public assets, 2026-11-09 | draft, D-113 review; curated into `docs/data/catalogs/` (D-367) | [`usulan-01/data`](../sources/usulan-01/data/README.md), [`docs/data/catalogs/`](../data/catalogs/README.md), [`legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) |
 
 ## 16. Open research gaps
 

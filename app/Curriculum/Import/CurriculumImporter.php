@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Curriculum\Import;
 
 use App\Curriculum\Import\Formats\DataModelTopics;
-use App\Curriculum\Import\Formats\KmSdAllocation;
-use App\Curriculum\Import\Formats\KmSdTopics;
 use App\Curriculum\Import\Formats\LearningOutcomes;
 use App\Curriculum\Import\Formats\MiAllocation;
 use App\Curriculum\Import\Formats\SdStructure;
@@ -27,9 +25,7 @@ final readonly class CurriculumImporter
         LearningOutcomes::class,
         SdStructure::class,
         MiAllocation::class,
-        KmSdAllocation::class,
         DataModelTopics::class,
-        KmSdTopics::class,
     ];
 
     public function __construct(private Container $container) {}
@@ -86,6 +82,22 @@ final readonly class CurriculumImporter
             }
         }
 
+        if ($this->isLegacyShape($file->json)) {
+            throw new InvalidCurriculumFile("{$file->relativePath}: the legacy app format is no longer imported; topics come only from SIGRAK curriculum files (D-363).");
+        }
+
         throw new InvalidCurriculumFile("{$file->relativePath}: not a curriculum file this import knows.");
+    }
+
+    /**
+     * The legacy app's row-per-topic export or its SD allocation table.
+     *
+     * @param  array<array-key, mixed>  $json
+     */
+    private function isLegacyShape(array $json): bool
+    {
+        $rows = array_is_list($json) ? $json : ($json['data'] ?? null);
+
+        return isset($json['alokasi']) || (is_array($rows) && is_array($rows[0] ?? null) && isset($rows[0]['ID_Kurikulum']));
     }
 }

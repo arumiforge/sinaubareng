@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "catalog": "admin_document_components",
+    "title": "Komponen administrasi pembelajaran",
+    "version": "SIGRAK-KAT-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "source_ref": "docs/sources/usulan-01/data/komponen-administrasi-pembelajaran.json",
+    "source_sha256": "59b833172451c857c320f4a4ecb16f83f346a783cb8d11c49d2cc010ed46cec7",
+    "converted_on": "2026-11-09",
+    "decisions": {
+      "D-029": "Daily attendance is the homeroom teacher's; it is not required of a guru mapel.",
+      "D-263": "Completeness of each component comes from the one completeness service.",
+      "D-278": "Berkas Administrasi profiles: Standar SIGRAK (default, S-01 order plus S-15 for a wali kelas) and Format Kudus (24 components for guru kelas, 18 for guru mapel). BK notes are never included.",
+      "D-305": "Catalog copied from usulan-01 for one Tim Validasi review.",
+      "D-367": "Curated with SIGRAK names, keys, and codes."
+    },
+    "conventions": [
+      "Keys are English snake_case and never change once seeded; labels and other text shown to users are Indonesian.",
+      "Codes follow SIGRAK-KAT-<AREA>-NN for the main items of a file and SIGRAK-KAT-<AREA>-<LIST>-NN for its secondary lists (see README.md). Codes are stable: a retired item keeps its code, and new items take the next free number.",
+      "No identifier from the legacy app is carried over. Where a decision keeps an old label for reference (D-305), it sits in legacy_label and is never shown in the UI.",
+      "review_notes are Indonesian notes for Tim Validasi SIGRAK; they are not shown to teachers.",
+      "components is the union of both Format Kudus lists (24 for guru kelas plus 1 found only for guru mapel). label is the SIGRAK label shown in the app.",
+      "profiles list the components in the Format Kudus order. format_label is the component name as written in the Format Kudus instrument (scale 1–5 in that instrument), used only when printing that profile. label on a profile entry overrides the component label for that profile.",
+      "instrument_items name the SIGRAK supervision checklist items (S-01, S-15; docs/drafts/teacher-supervision-instruments.md, 0–2 scale) the component serves as evidence for. The mapping is a proposal.",
+      "data_source says where SIGRAK takes the component from (table names from docs/final/data-model.md, feature IDs from docs/drafts/administration-features.md)."
+    ]
+  },
+  "components": [
+    {
+      "code": "SIGRAK-KAT-ADM-01",
+      "key": "education_calendar",
+      "label": "Kalender pendidikan dan rincian minggu efektif",
+      "data_source": "calendars, calendar_events, and the effective-days table (U-05)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-02",
+      "key": "meeting_minutes",
+      "label": "Notulen rapat",
+      "data_source": "school_books (minutes)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-03",
+      "key": "annual_semester_programmes",
+      "label": "Program tahunan (Prota) dan program semester (Promes)",
+      "data_source": "Prota and Promes built from the curriculum and the calendar (A11)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-04",
+      "key": "diagnostic_assessment",
+      "label": "Hasil asesmen diagnostik dan pemanfaatannya",
+      "data_source": "diagnostic assessment (A2)",
+      "review_notes": [
+        "Di format guru kelas, butir S-01.4 dilipat ke perencanaan."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-05",
+      "key": "learning_plans",
+      "label": "CP, ATP, dan perencanaan pembelajaran (RPM) intrakurikuler dan kokurikuler",
+      "data_source": "documents (RPM, kokurikuler)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-06",
+      "key": "teaching_materials",
+      "label": "Bahan ajar (buku guru, buku murid, LKPD)",
+      "data_source": "documents (LKPD) and the book reference list",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-07",
+      "key": "timetable",
+      "label": "Jadwal pelajaran",
+      "data_source": "timetable_slots",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-08",
+      "key": "assessment_programme",
+      "label": "Program asesmen dan instrumen, termasuk KKTP",
+      "data_source": "assessment_plans and KKTP (A3)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-09",
+      "key": "grade_list",
+      "label": "Daftar nilai",
+      "data_source": "assessments and scores",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-10",
+      "key": "class_student_data",
+      "label": "Data murid kelas",
+      "data_source": "students and enrollments",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-11",
+      "key": "teaching_journal",
+      "label": "Jurnal mengajar",
+      "data_source": "journals",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-12",
+      "key": "student_attendance",
+      "label": "Daftar hadir murid",
+      "data_source": "attendance_records",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-13",
+      "key": "assessment_analysis",
+      "label": "Analisis hasil asesmen",
+      "data_source": "per-TP and per-item analysis (A7)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-14",
+      "key": "remedial_enrichment",
+      "label": "Program remedial dan pengayaan",
+      "data_source": "remedial and enrichment (A1)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-15",
+      "key": "teacher_reflection",
+      "label": "Refleksi guru",
+      "data_source": "semester teacher reflection (A4)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-16",
+      "key": "tp_achievement",
+      "label": "Ketercapaian TP dan daya serap",
+      "data_source": "per-TP analysis",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-17",
+      "key": "counselling_notes",
+      "label": "Catatan bimbingan dan konseling",
+      "data_source": "student_notes (counselling); only counts are shown",
+      "in_berkas": false,
+      "review_notes": [
+        "Catatan BK tidak pernah dimasukkan ke Berkas Administrasi (D-278); yang tampil hanya jumlah."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-18",
+      "key": "student_transfer_book",
+      "label": "Buku mutasi murid",
+      "data_source": "student transfers (O2)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-19",
+      "key": "class_inventory_book",
+      "label": "Buku inventaris kelas",
+      "data_source": "class_inventory_items",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-20",
+      "key": "room_inventory_card",
+      "label": "Kartu inventaris ruang (KIR)",
+      "data_source": "class_inventory_items (KIR print)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-21",
+      "key": "class_promotion",
+      "label": "Kenaikan kelas",
+      "data_source": "kenaikan kelas (H3)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-22",
+      "key": "student_achievements",
+      "label": "Catatan prestasi murid",
+      "data_source": "student_notes (achievement)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-23",
+      "key": "class_guest_book",
+      "label": "Buku tamu kelas",
+      "data_source": "school_books (guest), proposed class scope",
+      "review_notes": [
+        "Cakupan per kelas untuk buku tamu masih usulan."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-24",
+      "key": "public_relations_book",
+      "label": "Buku komunikasi dengan orang tua dan masyarakat",
+      "data_source": "parent message log (H6) and school_books (public relations)",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-ADM-25",
+      "key": "subject_inventory",
+      "label": "Inventaris alat dan media mapel",
+      "data_source": "not modelled yet: subject tools and media inventory",
+      "review_notes": [
+        "Hanya ada di format guru mapel. Belum ada tabel di data model; tentukan apakah memakai inventaris sekolah (D-306)."
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "key": "kudus_class_teacher",
+      "label": "Format Kudus — guru kelas",
+      "role": "class_teacher",
+      "components": [
+        {
+          "order": 1,
+          "component": "SIGRAK-KAT-ADM-01",
+          "format_label": "Kalender Pendidikan",
+          "instrument_items": [
+            "S-01.1"
+          ]
+        },
+        {
+          "order": 2,
+          "component": "SIGRAK-KAT-ADM-02",
+          "format_label": "Notulen Rapat",
+          "instrument_items": []
+        },
+        {
+          "order": 3,
+          "component": "SIGRAK-KAT-ADM-03",
+          "format_label": "Program Tahunan",
+          "instrument_items": [
+            "S-01.2"
+          ]
+        },
+        {
+          "order": 4,
+          "component": "SIGRAK-KAT-ADM-04",
+          "format_label": "Pemanfaatan Hasil Asesmen Awal",
+          "instrument_items": [
+            "S-01.4"
+          ]
+        },
+        {
+          "order": 5,
+          "component": "SIGRAK-KAT-ADM-05",
+          "format_label": "CP, ATP dan Perencanaan Pembelajaran (intra & kokurikuler)",
+          "instrument_items": [
+            "S-01.3",
+            "S-01.4"
+          ]
+        },
+        {
+          "order": 6,
+          "component": "SIGRAK-KAT-ADM-06",
+          "format_label": "Bahan Ajar/Buku Guru dan Buku Siswa",
+          "instrument_items": []
+        },
+        {
+          "order": 7,
+          "component": "SIGRAK-KAT-ADM-07",
+          "format_label": "Jadwal Pelajaran",
+          "instrument_items": [
+            "S-01.5"
+          ]
+        },
+        {
+          "order": 8,
+          "component": "SIGRAK-KAT-ADM-08",
+          "format_label": "Program Penilaian",
+          "instrument_items": [
+            "S-01.7"
+          ]
+        },
+        {
+          "order": 9,
+          "component": "SIGRAK-KAT-ADM-09",
+          "format_label": "Daftar Nilai / Hasil Asesmen",
+          "instrument_items": [
+            "S-01.8"
+          ]
+        },
+        {
+          "order": 10,
+          "component": "SIGRAK-KAT-ADM-10",
+          "format_label": "Daftar Kelas",
+          "instrument_items": [
+            "S-15.1"
+          ]
+        },
+        {
+          "order": 11,
+          "component": "SIGRAK-KAT-ADM-11",
+          "format_label": "Jurnal Harian",
+          "instrument_items": [
+            "S-01.6"
+          ]
+        },
+        {
+          "order": 12,
+          "component": "SIGRAK-KAT-ADM-12",
+          "format_label": "Absensi Murid",
+          "instrument_items": [
+            "S-01.10",
+            "S-15.2"
+          ]
+        },
+        {
+          "order": 13,
+          "component": "SIGRAK-KAT-ADM-13",
+          "format_label": "Analisis Nilai",
+          "instrument_items": [
+            "S-01.8"
+          ]
+        },
+        {
+          "order": 14,
+          "component": "SIGRAK-KAT-ADM-14",
+          "format_label": "Perbaikan dan Pengayaan",
+          "instrument_items": [
+            "S-01.9"
+          ]
+        },
+        {
+          "order": 15,
+          "component": "SIGRAK-KAT-ADM-15",
+          "format_label": "Buku Refleksi Pembelajaran",
+          "instrument_items": []
+        },
+        {
+          "order": 16,
+          "component": "SIGRAK-KAT-ADM-16",
+          "format_label": "Data Pencapaian Target dan Daya Serap",
+          "instrument_items": [
+            "S-01.8"
+          ]
+        },
+        {
+          "order": 17,
+          "component": "SIGRAK-KAT-ADM-17",
+          "format_label": "Buku Bimbingan Konseling",
+          "instrument_items": [
+            "S-15.5"
+          ]
+        },
+        {
+          "order": 18,
+          "component": "SIGRAK-KAT-ADM-18",
+          "format_label": "Buku Mutasi",
+          "instrument_items": [
+            "S-15.1"
+          ]
+        },
+        {
+          "order": 19,
+          "component": "SIGRAK-KAT-ADM-19",
+          "format_label": "Buku Inventaris Kelas",
+          "instrument_items": []
+        },
+        {
+          "order": 20,
+          "component": "SIGRAK-KAT-ADM-20",
+          "format_label": "Kartu Inventaris Ruang",
+          "instrument_items": []
+        },
+        {
+          "order": 21,
+          "component": "SIGRAK-KAT-ADM-21",
+          "format_label": "Buku Kenaikan Kelas",
+          "instrument_items": [
+            "S-15.12"
+          ]
+        },
+        {
+          "order": 22,
+          "component": "SIGRAK-KAT-ADM-22",
+          "format_label": "Buku Prestasi Akademik dan Non Akademik",
+          "instrument_items": [
+            "S-15.5"
+          ]
+        },
+        {
+          "order": 23,
+          "component": "SIGRAK-KAT-ADM-23",
+          "format_label": "Buku Tamu Kelas",
+          "instrument_items": []
+        },
+        {
+          "order": 24,
+          "component": "SIGRAK-KAT-ADM-24",
+          "format_label": "Buku Hubungan Masyarakat",
+          "instrument_items": [
+            "S-15.7"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kudus_subject_teacher",
+      "label": "Format Kudus — guru mapel",
+      "role": "subject_teacher",
+      "components": [
+        {
+          "order": 1,
+          "component": "SIGRAK-KAT-ADM-01",
+          "format_label": "Kalender Pendidikan",
+          "instrument_items": [
+            "S-01.1"
+          ]
+        },
+        {
+          "order": 2,
+          "component": "SIGRAK-KAT-ADM-02",
+          "format_label": "Notulen Rapat",
+          "instrument_items": []
+        },
+        {
+          "order": 3,
+          "component": "SIGRAK-KAT-ADM-03",
+          "format_label": "Program Tahunan",
+          "instrument_items": [
+            "S-01.2"
+          ],
+          "label": "Prota dan Promes"
+        },
+        {
+          "order": 4,
+          "component": "SIGRAK-KAT-ADM-04",
+          "format_label": "Pemanfaatan Hasil Asesmen Awal",
+          "instrument_items": [
+            "S-01.4"
+          ]
+        },
+        {
+          "order": 5,
+          "component": "SIGRAK-KAT-ADM-05",
+          "format_label": "CP, ATP dan Modul Ajar (mapel dan P5)",
+          "instrument_items": [
+            "S-01.3",
+            "S-01.4"
+          ],
+          "label": "CP, ATP, dan perencanaan pembelajaran (RPM) mapel dan kokurikuler"
+        },
+        {
+          "order": 6,
+          "component": "SIGRAK-KAT-ADM-06",
+          "format_label": "Bahan Ajar/Buku Guru dan Buku Siswa",
+          "instrument_items": []
+        },
+        {
+          "order": 7,
+          "component": "SIGRAK-KAT-ADM-07",
+          "format_label": "Jadwal Pelajaran",
+          "instrument_items": [
+            "S-01.5"
+          ]
+        },
+        {
+          "order": 8,
+          "component": "SIGRAK-KAT-ADM-08",
+          "format_label": "Program Penilaian",
+          "instrument_items": [
+            "S-01.7"
+          ]
+        },
+        {
+          "order": 9,
+          "component": "SIGRAK-KAT-ADM-09",
+          "format_label": "Daftar Nilai / Hasil Asesmen",
+          "instrument_items": [
+            "S-01.8"
+          ]
+        },
+        {
+          "order": 10,
+          "component": "SIGRAK-KAT-ADM-11",
+          "format_label": "Agenda Harian",
+          "instrument_items": [
+            "S-01.6"
+          ]
+        },
+        {
+          "order": 11,
+          "component": "SIGRAK-KAT-ADM-12",
+          "format_label": "Absensi Murid",
+          "instrument_items": [],
+          "optional": true,
+          "note": "Tidak wajib bagi guru mapel (D-029)."
+        },
+        {
+          "order": 12,
+          "component": "SIGRAK-KAT-ADM-13",
+          "format_label": "Analisis Nilai",
+          "instrument_items": [
+            "S-01.8"
+          ]
+        },
+        {
+          "order": 13,
+          "component": "SIGRAK-KAT-ADM-14",
+          "format_label": "Perbaikan dan Pengayaan",
+          "instrument_items": [
+            "S-01.9"
+          ]
+        },
+        {
+          "order": 14,
+          "component": "SIGRAK-KAT-ADM-15",
+          "format_label": "Buku Refleksi Pembelajaran",
+          "instrument_items": []
+        },
+        {
+          "order": 15,
+          "component": "SIGRAK-KAT-ADM-17",
+          "format_label": "Buku Bimbingan Konseling",
+          "instrument_items": []
+        },
+        {
+          "order": 16,
+          "component": "SIGRAK-KAT-ADM-25",
+          "format_label": "Buku Inventaris Mapel",
+          "instrument_items": [],
+          "label": "Inventaris alat/media mapel"
+        },
+        {
+          "order": 17,
+          "component": "SIGRAK-KAT-ADM-22",
+          "format_label": "Buku Prestasi Akademik dan Non Akademik",
+          "instrument_items": []
+        },
+        {
+          "order": 18,
+          "component": "SIGRAK-KAT-ADM-24",
+          "format_label": "Buku Hubungan Masyarakat",
+          "instrument_items": []
+        }
+      ]
+    }
+  ]
+}

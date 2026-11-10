@@ -1,7 +1,8 @@
-# KM-SD-2026-R2 source files: check against the data model
+# Legacy curriculum source files: check against the data model
 
 - **Task:** P5-03g · **Status:** draft · **Date:** 2026-11-08
-- **Files:** [`docs/data/curriculum/data_kurikulum_dengan_cp.json`](../data/curriculum/data_kurikulum_dengan_cp.json), [`docs/data/curriculum/struktur_alokasi_sd.json`](../data/curriculum/struktur_alokasi_sd.json) (provenance in the [README](../data/curriculum/README.md))
+- **Files:** the legacy app topic export and SD allocation file, version `KM-SD-2026-R2` (removed on 2026-11-10, in the git history; converted to the SIGRAK R1 dataset, see the [README](../data/curriculum/README.md))
+- **History note:** kept as a record of what the legacy data held. Since P4-28 the topics live in `sigrak-sd-2026-r1-umum.json` under `SIGRAK-SD-2026-R1` codes (D-363), old codes only in the crosswalk (D-365), and the SD allocation comes from the official structure (D-366).
 - **Checked against:** [`docs/final/data-model.md`](../final/data-model.md) (Curriculum), the mapping doc [`Pemetaan_Data_Materi_Aplikasi_Lama…`](../sources/Pemetaan_Data_Materi_Aplikasi_Lama_untuk_Refactor_RPM_Generator.md), D-204, D-208
 
 This note is input for P5-03c (`curriculum:import`) and for a later `docs/final/data-model.md` update. Nothing in `docs/final/` was changed.

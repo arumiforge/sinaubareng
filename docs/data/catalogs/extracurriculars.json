@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "catalog": "extracurriculars",
+    "title": "Katalog ekstrakurikuler",
+    "version": "SIGRAK-KAT-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "source_ref": "docs/sources/usulan-01/data/katalog-ekstrakurikuler.json",
+    "source_sha256": "8c6203fa5512c69ba8b73dacfc78a3b739d61e96e4b150cdf9f3d23ab4a762cc",
+    "converted_on": "2026-11-09",
+    "decisions": {
+      "D-210": "Ekstrakurikuler with Pramuka or another kepanduan is offered (Permendikdasmen 13/2025 Pasal 22).",
+      "D-216": "Ekstrakurikuler records (activities, pembina, members, attendance, rapor description) are built early in v1, with Pramuka offered by default.",
+      "D-305": "Catalog copied from usulan-01 for one Tim Validasi review.",
+      "D-367": "Curated with SIGRAK names, keys, and codes."
+    },
+    "conventions": [
+      "Keys are English snake_case and never change once seeded; labels and other text shown to users are Indonesian.",
+      "Codes follow SIGRAK-KAT-<AREA>-NN for the main items of a file and SIGRAK-KAT-<AREA>-<LIST>-NN for its secondary lists (see README.md). Codes are stable: a retired item keeps its code, and new items take the next free number.",
+      "No identifier from the legacy app is carried over. Where a decision keeps an old label for reference (D-305), it sits in legacy_label and is never shown in the UI.",
+      "review_notes are Indonesian notes for Tim Validasi SIGRAK; they are not shown to teachers.",
+      "items are the ekstrakurikuler a school can switch on; each belongs to one category. A school may add its own items.",
+      "mandatory_to_offer = true means the item cannot be removed from the school's list (Pramuka). offered_by_default = true means it is switched on for a new school.",
+      "formats lists the usual ways a category runs: group (Kelompok), individual (Individual), classical (Klasikal), in the source's order.",
+      "days use ISO weekday numbers (1 = Monday); ekstrakurikuler may run on Saturday or Sunday, unlike timetable_slots (weekday 1–6)."
+    ]
+  },
+  "formats": [
+    {
+      "key": "group",
+      "label": "Kelompok"
+    },
+    {
+      "key": "individual",
+      "label": "Individual"
+    },
+    {
+      "key": "classical",
+      "label": "Klasikal"
+    }
+  ],
+  "days": [
+    {
+      "key": "monday",
+      "iso_weekday": 1,
+      "label": "Senin"
+    },
+    {
+      "key": "tuesday",
+      "iso_weekday": 2,
+      "label": "Selasa"
+    },
+    {
+      "key": "wednesday",
+      "iso_weekday": 3,
+      "label": "Rabu"
+    },
+    {
+      "key": "thursday",
+      "iso_weekday": 4,
+      "label": "Kamis"
+    },
+    {
+      "key": "friday",
+      "iso_weekday": 5,
+      "label": "Jumat"
+    },
+    {
+      "key": "saturday",
+      "iso_weekday": 6,
+      "label": "Sabtu"
+    },
+    {
+      "key": "sunday",
+      "iso_weekday": 7,
+      "label": "Minggu"
+    }
+  ],
+  "categories": [
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-01",
+      "key": "scouting_leadership",
+      "label": "Kepramukaan dan Kepemimpinan",
+      "purpose": "Wahana murid berlatih berorganisasi, terampil dan mandiri, memiliki jiwa sosial, bekerja sama, dan menyelesaikan permasalahan.",
+      "formats": [
+        "group"
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-02",
+      "key": "sports",
+      "label": "Olahraga",
+      "purpose": "Mengembangkan kebugaran, sportivitas, disiplin, kerja sama, serta bakat murid dalam bidang olahraga.",
+      "formats": [
+        "group",
+        "individual"
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-03",
+      "key": "arts_culture",
+      "label": "Seni dan Budaya",
+      "purpose": "Mengembangkan apresiasi, kreativitas, ekspresi, dan keterampilan murid dalam bidang seni dan budaya.",
+      "formats": [
+        "group",
+        "individual"
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-04",
+      "key": "martial_arts",
+      "label": "Bela Diri",
+      "purpose": "Melatih kebugaran, disiplin, pengendalian diri, keberanian, dan sportivitas murid.",
+      "formats": [
+        "individual",
+        "group"
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-05",
+      "key": "health",
+      "label": "Kesehatan",
+      "purpose": "Mengembangkan kepedulian, keterampilan hidup sehat, kesiapsiagaan, dan kemampuan menolong sesama.",
+      "formats": [
+        "group"
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-KEL-06",
+      "key": "science_technology",
+      "label": "Teknologi dan Sains",
+      "purpose": "Mengembangkan rasa ingin tahu, penalaran, kreativitas, serta keterampilan murid dalam teknologi dan sains.",
+      "formats": [
+        "classical",
+        "group"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "code": "SIGRAK-KAT-EKS-01",
+      "key": "pramuka",
+      "label": "Pramuka",
+      "category": "scouting_leadership",
+      "mandatory_to_offer": true,
+      "offered_by_default": true,
+      "review_notes": [
+        "Wajib disediakan (Permendikdasmen 13/2025 Pasal 22; D-210, D-216). Tidak boleh dihapus dari daftar bawaan; sekolah boleh menambah kepanduan lain."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-02",
+      "key": "junior_police",
+      "label": "Polisi Cilik",
+      "category": "scouting_leadership",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-03",
+      "key": "football",
+      "label": "Sepak Bola",
+      "category": "sports",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-04",
+      "key": "futsal",
+      "label": "Futsal",
+      "category": "sports",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-05",
+      "key": "badminton",
+      "label": "Bulu Tangkis",
+      "category": "sports",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-06",
+      "key": "volleyball",
+      "label": "Bola Voli",
+      "category": "sports",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-07",
+      "key": "swimming",
+      "label": "Renang",
+      "category": "sports",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-08",
+      "key": "dance",
+      "label": "Tari",
+      "category": "arts_culture",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-09",
+      "key": "painting",
+      "label": "Seni Lukis",
+      "category": "arts_culture",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-10",
+      "key": "choir",
+      "label": "Paduan Suara",
+      "category": "arts_culture",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-11",
+      "key": "drum_band",
+      "label": "Drum Band",
+      "category": "arts_culture",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": [
+        "Label sumber 'Drumband' diganti 'Drum Band'."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-12",
+      "key": "rebana",
+      "label": "Rebana",
+      "category": "arts_culture",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-13",
+      "key": "karate",
+      "label": "Karate",
+      "category": "martial_arts",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-14",
+      "key": "pencak_silat",
+      "label": "Pencak Silat",
+      "category": "martial_arts",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": [
+        "Label sumber 'Silat' diganti 'Pencak Silat'."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-15",
+      "key": "taekwondo",
+      "label": "Taekwondo",
+      "category": "martial_arts",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-16",
+      "key": "youth_red_cross",
+      "label": "PMR",
+      "category": "health",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-17",
+      "key": "little_doctor",
+      "label": "Dokter Kecil",
+      "category": "health",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-18",
+      "key": "science_club",
+      "label": "Sains",
+      "category": "science_technology",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-19",
+      "key": "computer",
+      "label": "Komputer",
+      "category": "science_technology",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-20",
+      "key": "coding",
+      "label": "Koding",
+      "category": "science_technology",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": [
+        "Label sumber 'Coding' diganti 'Koding'.",
+        "Bedakan dari KKA, yang berjalan lewat kokurikuler (D-208)."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-EKS-21",
+      "key": "robotics",
+      "label": "Robotika",
+      "category": "science_technology",
+      "mandatory_to_offer": false,
+      "offered_by_default": false,
+      "review_notes": []
+    }
+  ]
+}

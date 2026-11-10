@@ -1,0 +1,727 @@
+{
+  "meta": {
+    "catalog": "form_options",
+    "title": "Pilihan isian formulir",
+    "version": "SIGRAK-KAT-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "source_ref": "docs/sources/usulan-01/data/pilihan-isian.json",
+    "source_sha256": "86f7d97ecd0a0e639838df34a9c5ad2c7a2211fbf71ec53b1cffcfafbeedd00d",
+    "converted_on": "2026-11-09",
+    "decisions": {
+      "D-029": "Attendance is daily and recorded by the homeroom teacher.",
+      "D-036": "Non-cognitive diagnostic answers never go to the AI.",
+      "D-214": "A2 diagnostic assessment and the H1 Fase A rapor without numbers are in scope.",
+      "D-304": "Mutasi is saved as a draft until it is set.",
+      "D-305": "Only the SIGRAK labels reach the UI; legacy labels stay as reference (legacy_label).",
+      "D-367": "Curated with SIGRAK names, keys, and codes."
+    },
+    "conventions": [
+      "Keys are English snake_case and never change once seeded; labels and other text shown to users are Indonesian.",
+      "Codes follow SIGRAK-KAT-<AREA>-NN for the main items of a file and SIGRAK-KAT-<AREA>-<LIST>-NN for its secondary lists (see README.md). Codes are stable: a retired item keeps its code, and new items take the next free number.",
+      "No identifier from the legacy app is carried over. Where a decision keeps an old label for reference (D-305), it sits in legacy_label and is never shown in the UI.",
+      "review_notes are Indonesian notes for Tim Validasi SIGRAK; they are not shown to teachers.",
+      "groups bundle the fields and option lists of one form. A list has a code SIGRAK-KAT-OPS-<LIST>; each option has SIGRAK-KAT-OPS-<LIST>-NN.",
+      "fields describe free-entry inputs (type: text, date, time, student, option, rupiah, rupiah_computed); they have keys but no codes.",
+      "Keys match the data model where a column exists: attendance_records.status, student_notes.kind, report_cards.numeric_grades."
+    ]
+  },
+  "groups": [
+    {
+      "key": "diagnostic_assessment",
+      "label": "Asesmen diagnostik awal pembelajaran",
+      "used_by": [
+        "A2"
+      ],
+      "privacy": "Isian non-kognitif tidak pernah dikirim ke AI (D-036) dan hanya terlihat oleh guru kelas tersebut, operator, dan kepala sekolah.",
+      "fields": [
+        {
+          "key": "other_aspects",
+          "label": "Aspek lain dan hasilnya",
+          "type": "text",
+          "required": false,
+          "part": "cognitive"
+        },
+        {
+          "key": "interests_talents",
+          "label": "Minat dan bakat",
+          "type": "text",
+          "required": false,
+          "part": "non_cognitive"
+        },
+        {
+          "key": "special_notes",
+          "label": "Catatan khusus",
+          "type": "text",
+          "required": false,
+          "part": "non_cognitive"
+        },
+        {
+          "key": "follow_up",
+          "label": "Tindak lanjut",
+          "type": "text",
+          "required": false,
+          "part": "follow_up",
+          "note": "Diisi saran otomatis; guru boleh mengubahnya."
+        },
+        {
+          "key": "follow_up_evaluation",
+          "label": "Evaluasi hasil tindak lanjut",
+          "type": "text",
+          "required": false,
+          "part": "follow_up"
+        }
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-ASP",
+          "key": "cognitive_aspects",
+          "label": "Aspek kognitif",
+          "part": "cognitive",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-ASP-01",
+              "key": "literacy",
+              "label": "Literasi (membaca dan menulis)"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-ASP-02",
+              "key": "numeracy",
+              "label": "Numerasi (berhitung dasar)"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-CAP",
+          "key": "cognitive_levels",
+          "label": "Capaian",
+          "part": "cognitive",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-CAP-01",
+              "key": "not_yet",
+              "label": "Belum"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-CAP-02",
+              "key": "partly",
+              "label": "Sebagian"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-CAP-03",
+              "key": "achieved",
+              "label": "Sudah"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-PRF",
+          "key": "learning_preferences",
+          "label": "Preferensi belajar",
+          "part": "non_cognitive",
+          "legacy_label": "Gaya Belajar",
+          "note": "Informasi pendukung saja, bukan label tetap murid; jangan dipakai untuk mengelompokkan murid.",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-PRF-01",
+              "key": "visual",
+              "label": "Visual"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-PRF-02",
+              "key": "auditory",
+              "label": "Auditori"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-PRF-03",
+              "key": "kinesthetic",
+              "label": "Kinestetik"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-PRF-04",
+              "key": "mixed",
+              "label": "Campuran"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-SOS",
+          "key": "social_emotional",
+          "label": "Kondisi sosial-emosional",
+          "part": "non_cognitive",
+          "note": "Ditulis sebagai kebutuhan dukungan, bukan label sifat murid.",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-SOS-01",
+              "key": "confident",
+              "label": "Percaya diri"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-SOS-02",
+              "key": "shy_or_unsure",
+              "label": "Masih malu atau ragu",
+              "legacy_label": "Pemalu / kurang percaya diri"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-SOS-03",
+              "key": "needs_emotion_support",
+              "label": "Perlu dukungan mengelola emosi",
+              "legacy_label": "Mudah emosi"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-SOS-04",
+              "key": "needs_focus_support",
+              "label": "Perlu dukungan berkonsentrasi",
+              "legacy_label": "Sulit berkonsentrasi"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-SOS-05",
+              "key": "needs_special_assistance",
+              "label": "Perlu pendampingan khusus",
+              "legacy_label": "Perlu perhatian khusus"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-DUK",
+          "key": "home_support",
+          "label": "Dukungan dari rumah",
+          "part": "non_cognitive",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-DUK-01",
+              "key": "sufficient",
+              "label": "Dukungan cukup"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-DUK-02",
+              "key": "moderate",
+              "label": "Dukungan sedang"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-DUK-03",
+              "key": "insufficient",
+              "label": "Dukungan kurang"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-TLJ",
+          "key": "follow_up_status",
+          "label": "Status tindak lanjut",
+          "part": "follow_up",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-TLJ-01",
+              "key": "planned",
+              "label": "Direncanakan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TLJ-02",
+              "key": "in_progress",
+              "label": "Berjalan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TLJ-03",
+              "key": "done",
+              "label": "Selesai"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "achievement",
+      "label": "Catatan prestasi murid",
+      "used_by": [
+        "student_notes (kind = achievement)"
+      ],
+      "fields": [
+        {
+          "key": "date",
+          "label": "Tanggal",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "student",
+          "label": "Nama murid",
+          "type": "student",
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Nama prestasi atau lomba",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "field",
+          "label": "Bidang",
+          "type": "option",
+          "required": true
+        },
+        {
+          "key": "level",
+          "label": "Tingkat",
+          "type": "option",
+          "required": true
+        },
+        {
+          "key": "rank",
+          "label": "Peringkat atau capaian",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "notes",
+          "label": "Keterangan",
+          "type": "text",
+          "required": false
+        }
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-BID",
+          "key": "achievement_fields",
+          "label": "Bidang",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-BID-01",
+              "key": "academic",
+              "label": "Akademik"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BID-02",
+              "key": "sports",
+              "label": "Olahraga"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BID-03",
+              "key": "arts_culture",
+              "label": "Seni dan budaya"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BID-04",
+              "key": "religious",
+              "label": "Keagamaan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BID-05",
+              "key": "skills",
+              "label": "Keterampilan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BID-06",
+              "key": "other",
+              "label": "Lainnya"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-TKT",
+          "key": "achievement_levels",
+          "label": "Tingkat",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-01",
+              "key": "class",
+              "label": "Kelas"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-02",
+              "key": "school",
+              "label": "Sekolah"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-03",
+              "key": "subdistrict",
+              "label": "Kecamatan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-04",
+              "key": "regency_city",
+              "label": "Kabupaten/Kota"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-05",
+              "key": "province",
+              "label": "Provinsi"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-06",
+              "key": "national",
+              "label": "Nasional"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-TKT-07",
+              "key": "international",
+              "label": "Internasional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "meeting_minutes",
+      "label": "Notulen rapat",
+      "used_by": [
+        "school_books (minutes)"
+      ],
+      "fields": [
+        {
+          "key": "date",
+          "label": "Tanggal",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "time",
+          "label": "Waktu",
+          "type": "time",
+          "required": true
+        },
+        {
+          "key": "place",
+          "label": "Tempat",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "meeting_type",
+          "label": "Jenis rapat",
+          "type": "option",
+          "required": true
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "participants",
+          "label": "Peserta",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "discussion",
+          "label": "Pembahasan",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "decisions_follow_up",
+          "label": "Keputusan dan tindak lanjut",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-RAP",
+          "key": "meeting_types",
+          "label": "Jenis rapat",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-RAP-01",
+              "key": "teacher_council",
+              "label": "Rapat dewan guru",
+              "legacy_label": "Rapat guru"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-RAP-02",
+              "key": "parents",
+              "label": "Rapat dengan orang tua/wali murid",
+              "legacy_label": "Rapat dengan wali murid"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-RAP-03",
+              "key": "school_committee",
+              "label": "Rapat komite sekolah",
+              "legacy_label": "Rapat komite"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-RAP-04",
+              "key": "class",
+              "label": "Rapat kelas"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-RAP-05",
+              "key": "other",
+              "label": "Lainnya"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "student_transfer",
+      "label": "Mutasi murid",
+      "used_by": [
+        "O2",
+        "enrollments"
+      ],
+      "note": "Mutasi disimpan sebagai draf sampai ditetapkan (D-304).",
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-MUT",
+          "key": "transfer_types",
+          "label": "Jenis mutasi",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-MUT-01",
+              "key": "transfer_in",
+              "label": "Mutasi masuk",
+              "legacy_label": "Masuk"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-MUT-02",
+              "key": "transfer_out",
+              "label": "Mutasi keluar",
+              "legacy_label": "Keluar"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-MUT-03",
+              "key": "class_change",
+              "label": "Pindah rombongan belajar",
+              "legacy_label": "Pindah Rombel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "question_bank",
+      "label": "Bank Soal",
+      "used_by": [
+        "Bank Soal",
+        "assessment_items"
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-JAS",
+          "key": "assessment_kinds",
+          "label": "Jenis asesmen",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-01",
+              "key": "summative_scope",
+              "label": "Asesmen sumatif lingkup materi",
+              "legacy_label": "Penilaian Harian"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-02",
+              "key": "remedial",
+              "label": "Remedial",
+              "legacy_label": "Perbaikan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-03",
+              "key": "enrichment",
+              "label": "Pengayaan"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-04",
+              "key": "summative_midterm",
+              "label": "Asesmen sumatif tengah semester (STS)",
+              "legacy_label": "Sumatif Tengah Semester"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-05",
+              "key": "summative_end_semester",
+              "label": "Asesmen sumatif akhir semester (SAS)",
+              "legacy_label": "Sumatif Akhir Semester"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-JAS-06",
+              "key": "end_of_level",
+              "label": "Asesmen akhir jenjang (sesuai kebijakan satuan pendidikan)",
+              "legacy_label": "Ujian Sekolah / Madrasah"
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-BSO",
+          "key": "item_types",
+          "label": "Bentuk soal",
+          "note": "omr_scannable = true: jawaban bisa dipindai dari lembar jawaban.",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-BSO-01",
+              "key": "multiple_choice",
+              "label": "Pilihan ganda",
+              "legacy_label": "Pilihan Ganda",
+              "omr_scannable": true
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BSO-02",
+              "key": "complex_multiple_choice",
+              "label": "Pilihan ganda kompleks",
+              "legacy_label": "PG Kompleks",
+              "omr_scannable": true
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BSO-03",
+              "key": "true_false",
+              "label": "Benar-salah",
+              "legacy_label": "Benar Salah",
+              "omr_scannable": true
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BSO-04",
+              "key": "short_answer",
+              "label": "Isian singkat",
+              "legacy_label": "Isian Singkat",
+              "omr_scannable": false
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-BSO-05",
+              "key": "essay",
+              "label": "Uraian",
+              "omr_scannable": false
+            }
+          ]
+        },
+        {
+          "code": "SIGRAK-KAT-OPS-KSK",
+          "key": "difficulty_levels",
+          "label": "Tingkat kesukaran",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-KSK-01",
+              "key": "easy",
+              "label": "Mudah"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-KSK-02",
+              "key": "medium",
+              "label": "Sedang"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-KSK-03",
+              "key": "hard",
+              "label": "Sulit"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-KSK-04",
+              "key": "mixed",
+              "label": "Campuran"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "grading",
+      "label": "Format nilai",
+      "used_by": [
+        "report_cards.numeric_grades",
+        "D-214 H1"
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-FNL",
+          "key": "grade_formats",
+          "label": "Format nilai",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-FNL-01",
+              "key": "numeric",
+              "label": "Angka 0–100",
+              "legacy_label": "Format Nilai",
+              "numeric_grades": true
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-FNL-02",
+              "key": "achievement_description",
+              "label": "Deskripsi ketercapaian",
+              "legacy_label": "Format Ketercapaian (T/R)",
+              "numeric_grades": false,
+              "note": "Rapor tanpa angka, pilihan sekolah untuk Fase A (D-214 H1)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "attendance",
+      "label": "Kehadiran murid",
+      "used_by": [
+        "attendance_records.status"
+      ],
+      "lists": [
+        {
+          "code": "SIGRAK-KAT-OPS-HDR",
+          "key": "attendance_status",
+          "label": "Status kehadiran",
+          "note": "Kunci sama dengan attendance_records.status di data model.",
+          "options": [
+            {
+              "code": "SIGRAK-KAT-OPS-HDR-01",
+              "key": "present",
+              "label": "Hadir"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-HDR-02",
+              "key": "sick",
+              "label": "Sakit"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-HDR-03",
+              "key": "permitted",
+              "label": "Izin"
+            },
+            {
+              "code": "SIGRAK-KAT-OPS-HDR-04",
+              "key": "absent",
+              "label": "Tanpa keterangan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "voluntary_contribution",
+      "label": "Sumbangan sukarela",
+      "used_by": [
+        "Keuangan kelas"
+      ],
+      "fields": [
+        {
+          "key": "contribution_type",
+          "label": "Jenis sumbangan",
+          "legacy_label": "Jenis keuangan",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "agreed_amount",
+          "label": "Nominal kesepakatan (opsional)",
+          "legacy_label": "Nominal bayar",
+          "type": "rupiah",
+          "required": false
+        },
+        {
+          "key": "received_amount",
+          "label": "Jumlah diterima",
+          "legacy_label": "Total bayar",
+          "type": "rupiah",
+          "required": true
+        },
+        {
+          "key": "remaining_amount",
+          "label": "Sisa dari kesepakatan",
+          "legacy_label": "Kurang bayar",
+          "type": "rupiah_computed",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

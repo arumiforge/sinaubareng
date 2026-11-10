@@ -1,0 +1,640 @@
+{
+  "meta": {
+    "catalog": "cocurricular_themes",
+    "title": "Katalog tema dan contoh kegiatan kokurikuler",
+    "version": "SIGRAK-KAT-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "source_ref": "docs/sources/usulan-01/data/katalog-kokurikuler.json",
+    "source_sha256": "227e038b3e13e9e0246eb1272631d13ebccd08d1da38b1570487a682ff86cecd",
+    "converted_on": "2026-11-09",
+    "decisions": {
+      "D-207": "The seventh 7 KAIH habit is labelled 'Tidur Cepat'; 'Tidur tepat waktu' is only its explanation.",
+      "D-208": "KKA runs through kokurikuler.",
+      "D-210": "Kokurikuler is assessed on the 8 dimensi profil lulusan.",
+      "D-277": "The annual kokurikuler JP target comes from subject_allocations (cocurricular), not from this catalog; activities here carry no JP.",
+      "D-305": "Catalog copied from usulan-01 for one Tim Validasi review.",
+      "D-367": "Curated with SIGRAK names, keys, and codes."
+    },
+    "conventions": [
+      "Keys are English snake_case and never change once seeded; labels and other text shown to users are Indonesian.",
+      "Codes follow SIGRAK-KAT-<AREA>-NN for the main items of a file and SIGRAK-KAT-<AREA>-<LIST>-NN for its secondary lists (see README.md). Codes are stable: a retired item keeps its code, and new items take the next free number.",
+      "No identifier from the legacy app is carried over. Where a decision keeps an old label for reference (D-305), it sits in legacy_label and is never shown in the UI.",
+      "review_notes are Indonesian notes for Tim Validasi SIGRAK; they are not shown to teachers.",
+      "Themes are local sample themes, not official ones: Panduan Kokurikuler 2025 leaves themes to each school, so a school may add its own. offered = false keeps an old theme readable but hides it from new activities.",
+      "form uses the keys of docs/data/regulations/cocurricular-guide-bskap.json (forms.items): cross_disciplinary_collaborative (minimum 2 subjects), g7kaih, other_ways.",
+      "dimensions use the keys of docs/data/regulations/cocurricular-guide-bskap.json (graduate_profile_dimensions.items).",
+      "related_subjects use subject codes from docs/data/curriculum/subjects.json. An empty list means the subjects still have to be chosen (see review_notes).",
+      "habits_7kaih, movement_form_7kaih, and output use the keys of the lookup lists in this file.",
+      "Activities are starting suggestions for Buat > Kokurikuler (P5-04); the teacher edits them freely."
+    ]
+  },
+  "themes": [
+    {
+      "code": "SIGRAK-KAT-KOK-01",
+      "key": "body_and_soul",
+      "label": "Bangunlah Jiwa Raganya",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-02",
+      "key": "religious_character",
+      "label": "Generasi Anak Sholeh dan Sholihah",
+      "offered": true,
+      "review_notes": [
+        "Label bernuansa Islam. Untuk SD dengan murid beragam agama, pertimbangkan label netral (mis. 'Generasi Berakhlak Mulia') atau batasi ke MI."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-03",
+      "key": "global_generation",
+      "label": "Generasi Cerdas di Era Global",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-04",
+      "key": "engineering_technology",
+      "label": "Rekayasa & Teknologi",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-05",
+      "key": "literacy_numeracy",
+      "label": "Literasi & Numerasi",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-06",
+      "key": "local_wisdom",
+      "label": "Kearifan Lokal",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-07",
+      "key": "unity_in_diversity",
+      "label": "Bhinneka Tunggal Ika",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-08",
+      "key": "healthy_life",
+      "label": "Budaya Kerja / Hidup Sehat",
+      "offered": true,
+      "review_notes": [
+        "Label menggabungkan dua gagasan; 'Budaya Kerja' kurang cocok untuk SD. Periksa apakah cukup 'Hidup Sehat'."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-09",
+      "key": "entrepreneurship",
+      "label": "Kewirausahaan",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-10",
+      "key": "arts_expression",
+      "label": "Seni & Ekspresi Budaya",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-11",
+      "key": "learning_by_practice",
+      "label": "Belajar Lewat Praktik",
+      "offered": true,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-12",
+      "key": "sustainable_lifestyle",
+      "label": "Gaya Hidup Berkelanjutan",
+      "offered": false,
+      "review_notes": [
+        "Tema projek kurikulum sebelumnya (P5). Disimpan agar data lama tetap terbaca, tidak ditawarkan untuk kegiatan baru."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-13",
+      "key": "democracy",
+      "label": "Suara Demokrasi",
+      "offered": false,
+      "review_notes": [
+        "Tema projek kurikulum sebelumnya (P5). Disimpan agar data lama tetap terbaca, tidak ditawarkan untuk kegiatan baru."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-14",
+      "key": "other",
+      "label": "Lainnya",
+      "offered": true,
+      "free_text": true,
+      "review_notes": []
+    }
+  ],
+  "habits_7kaih": [
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-01",
+      "key": "wake_up_early",
+      "label": "Bangun Pagi"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-02",
+      "key": "worship",
+      "label": "Beribadah"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-03",
+      "key": "exercise",
+      "label": "Berolahraga"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-04",
+      "key": "healthy_eating",
+      "label": "Makan Sehat dan Bergizi"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-05",
+      "key": "love_of_learning",
+      "label": "Gemar Belajar"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-06",
+      "key": "community",
+      "label": "Bermasyarakat"
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KAIH-07",
+      "key": "sleep_early",
+      "label": "Tidur Cepat",
+      "explanation": "Tidur tepat waktu"
+    }
+  ],
+  "movement_forms_7kaih": [
+    {
+      "key": "routine_habit",
+      "label": "Pembiasaan Rutin"
+    },
+    {
+      "key": "campaign_education",
+      "label": "Kampanye dan Edukasi"
+    },
+    {
+      "key": "joint_action",
+      "label": "Aksi Bersama"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "product_work",
+      "label": "Produk/Karya"
+    },
+    {
+      "key": "real_action",
+      "label": "Aksi Nyata"
+    },
+    {
+      "key": "performance",
+      "label": "Pertunjukan"
+    }
+  ],
+  "activities": [
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-01",
+      "key": "morning_exercise",
+      "name": "Senam Anak Indonesia Hebat",
+      "subtitle": "bergerak ceria bersama setiap pagi",
+      "theme": "body_and_soul",
+      "form": "g7kaih",
+      "dimensions": [
+        "independence",
+        "health"
+      ],
+      "related_subjects": [
+        "PJOK"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "exercise"
+      ],
+      "movement_form_7kaih": "routine_habit",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-02",
+      "key": "balanced_plate",
+      "name": "Isi Piringku",
+      "subtitle": "bekal bergizi seimbang dan makan bersama",
+      "theme": "body_and_soul",
+      "form": "g7kaih",
+      "dimensions": [
+        "independence",
+        "health"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "IPAS"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "healthy_eating"
+      ],
+      "movement_form_7kaih": "routine_habit",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-03",
+      "key": "calm_breathing_anti_bullying",
+      "name": "Napas Tenang dan Anti-Perundungan",
+      "subtitle": "kelola emosi, kelas ramah",
+      "theme": "body_and_soul",
+      "form": "g7kaih",
+      "dimensions": [
+        "health",
+        "citizenship"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "PP"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "community",
+        "sleep_early"
+      ],
+      "movement_form_7kaih": "campaign_education",
+      "review_notes": [
+        "Kebiasaan 'Tidur Cepat' kurang relevan dengan kegiatan; periksa."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-04",
+      "key": "morning_quran_reading",
+      "name": "Pagi Mengaji",
+      "subtitle": "baca tulis Al-Qur'an sejak dini",
+      "theme": "religious_character",
+      "form": "g7kaih",
+      "dimensions": [
+        "faith_piety",
+        "independence"
+      ],
+      "related_subjects": [
+        "PAI",
+        "PP"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "worship"
+      ],
+      "movement_form_7kaih": "routine_habit",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-05",
+      "key": "daily_prayers_together",
+      "name": "Yasin, Tahlil, dan Doa Harian bersama",
+      "subtitle": null,
+      "theme": "religious_character",
+      "form": "g7kaih",
+      "dimensions": [
+        "faith_piety",
+        "independence"
+      ],
+      "related_subjects": [
+        "PAI",
+        "PP"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "worship"
+      ],
+      "movement_form_7kaih": "routine_habit",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-06",
+      "key": "good_morning_english",
+      "name": "Good Morning English",
+      "subtitle": "sapaan, lagu, dan permainan berbahasa Inggris",
+      "theme": "global_generation",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "critical_reasoning",
+        "communication"
+      ],
+      "related_subjects": [],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Mapel terkait belum ditentukan di sumber (semua mapel terpasang). Pilih minimal 2 mapel yang relevan untuk bentuk lintas disiplin."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-07",
+      "key": "computer_and_coding",
+      "name": "Jelajah Komputer dan Koding",
+      "subtitle": "mengenal TIK, mengetik, blok kode",
+      "theme": "engineering_technology",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "critical_reasoning",
+        "communication"
+      ],
+      "related_subjects": [
+        "BIN",
+        "MTK"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Untuk kelas 5–6, kegiatan ini bisa menjadi wadah Koding dan Kecerdasan Artifisial (KKA, D-208). Periksa mapel terkaitnya."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-08",
+      "key": "little_laboratory",
+      "name": "Laboratorium Cilik",
+      "subtitle": "penjernih air dan maket jembatan",
+      "theme": "engineering_technology",
+      "form": "other_ways",
+      "dimensions": [
+        "critical_reasoning",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "MTK"
+      ],
+      "output": "product_work",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-09",
+      "key": "joined_handwriting",
+      "name": "Cantik Menulis Tegak Bersambung",
+      "subtitle": null,
+      "theme": "literacy_numeracy",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "independence",
+        "communication"
+      ],
+      "related_subjects": [],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Mapel terkait belum ditentukan di sumber (semua mapel terpasang). Pilih minimal 2 mapel yang relevan untuk bentuk lintas disiplin."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-10",
+      "key": "basic_arithmetic_practice",
+      "name": "Asah Hitung Dasar",
+      "subtitle": "pendalaman berhitung lewat permainan",
+      "theme": "literacy_numeracy",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "critical_reasoning",
+        "independence"
+      ],
+      "related_subjects": [],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Mapel terkait belum ditentukan di sumber (semua mapel terpasang). Pilih minimal 2 mapel yang relevan untuk bentuk lintas disiplin."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-11",
+      "key": "javanese_script_literacy",
+      "name": "Aksara dan Literasi Jawa",
+      "subtitle": "menulis aksara, cerita rakyat, tembang dolanan",
+      "theme": "local_wisdom",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "critical_reasoning",
+        "independence"
+      ],
+      "related_subjects": [
+        "BJW",
+        "BIN"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-12",
+      "key": "nusantara_crafts",
+      "name": "Kriya Nusantara",
+      "subtitle": "berkarya dengan kerajinan khas daerah",
+      "theme": "local_wisdom",
+      "form": "other_ways",
+      "dimensions": [
+        "creativity",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "SB",
+        "IPAS"
+      ],
+      "output": "product_work",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-13",
+      "key": "traditional_dress_carnival",
+      "name": "Karnaval Pakaian Adat dan Peta Keberagaman",
+      "subtitle": null,
+      "theme": "unity_in_diversity",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "citizenship",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "PP",
+        "BIN"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-14",
+      "key": "traditional_games_corner",
+      "name": "Pojok Dolanan Anak Tradisional",
+      "subtitle": null,
+      "theme": "unity_in_diversity",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "citizenship",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "PP",
+        "BIN"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-15",
+      "key": "litter_picking_action",
+      "name": "Semut Beraksi",
+      "subtitle": "pungut sampah dan Bebas Plastik",
+      "theme": "healthy_life",
+      "form": "g7kaih",
+      "dimensions": [
+        "citizenship",
+        "independence"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "PP"
+      ],
+      "output": null,
+      "habits_7kaih": [
+        "community"
+      ],
+      "movement_form_7kaih": "joint_action",
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-16",
+      "key": "mini_compost_garden",
+      "name": "Komposter Mini dan Kebun Cilik",
+      "subtitle": null,
+      "theme": "healthy_life",
+      "form": "other_ways",
+      "dimensions": [
+        "critical_reasoning",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "MTK"
+      ],
+      "output": "product_work",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-17",
+      "key": "disaster_safety_drill",
+      "name": "Bergerak Aman",
+      "subtitle": "simulasi mitigasi bencana",
+      "theme": "healthy_life",
+      "form": "cross_disciplinary_collaborative",
+      "dimensions": [
+        "health",
+        "independence"
+      ],
+      "related_subjects": [
+        "PJOK",
+        "IPAS"
+      ],
+      "output": null,
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": []
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-18",
+      "key": "market_day",
+      "name": "Market Day",
+      "subtitle": "jual camilan sehat dan celengan target",
+      "theme": "entrepreneurship",
+      "form": "other_ways",
+      "dimensions": [
+        "citizenship",
+        "independence"
+      ],
+      "related_subjects": [
+        "PP",
+        "BIN",
+        "MTK"
+      ],
+      "output": "real_action",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-19",
+      "key": "nusantara_stage",
+      "name": "Panggung Nusantara",
+      "subtitle": "drama, pameran lukisan, perkusi barang bekas",
+      "theme": "arts_expression",
+      "form": "other_ways",
+      "dimensions": [
+        "creativity",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "SB",
+        "IPAS"
+      ],
+      "output": "performance",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    },
+    {
+      "code": "SIGRAK-KAT-KOK-KEG-20",
+      "key": "hands_on_practice",
+      "name": "Aksi Praktik Langsung",
+      "subtitle": "belajar sambil mencoba, membuat, dan membuktikan sendiri",
+      "theme": "learning_by_practice",
+      "form": "other_ways",
+      "dimensions": [
+        "independence",
+        "creativity",
+        "collaboration"
+      ],
+      "related_subjects": [
+        "IPAS",
+        "SB"
+      ],
+      "output": "product_work",
+      "habits_7kaih": [],
+      "movement_form_7kaih": null,
+      "review_notes": [
+        "Di sumber berlabel 'Projek'; dicatat sebagai cara lainnya sesuai Panduan Kokurikuler 2025."
+      ]
+    }
+  ]
+}

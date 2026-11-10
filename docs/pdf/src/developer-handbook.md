@@ -21,7 +21,7 @@ Tiga label status pembangunan dipakai di seluruh buku:
 
 Beberapa aturan yang perlu diingat selama membaca:
 
-- **Keputusan yang lebih baru menang.** Dokumen final di `docs/final/` disetujui pada 2026-10-31 (D-123) dan di beberapa bagian sudah diperbarui sejak itu. Banyak keputusan setelah tanggal itu (D-203 dan seterusnya, terutama D-252…D-362) belum diterapkan ke setiap dokumen final. Bila dokumen final dan keputusan yang lebih baru berbeda, buku ini mengikuti keputusan yang lebih baru dan menyebutkannya. Daftar perbedaan yang diketahui ada di bab 12.
+- **Keputusan yang lebih baru menang.** Dokumen final di `docs/final/` disetujui pada 2026-10-31 (D-123) dan di beberapa bagian sudah diperbarui sejak itu. Banyak keputusan setelah tanggal itu (D-203 dan seterusnya, terutama D-252…D-367) belum diterapkan ke setiap dokumen final. Bila dokumen final dan keputusan yang lebih baru berbeda, buku ini mengikuti keputusan yang lebih baru dan menyebutkannya. Daftar perbedaan yang diketahui ada di bab 12.
 - **Tidak ada yang baru di sini.** Buku ini hanya menceritakan ulang apa yang sudah ada di dokumen final, draf yang diterima, keputusan, dan kode. Jika sesuatu tidak ada di sumber itu, berarti tidak ada di SIGRAK.
 - **Nama.** Produk pemilik sebelumnya selalu disebut "aplikasi lama" dalam bahasa Indonesia dan "the legacy app" dalam bahasa Inggris (D-360).
 - **Riset.** Sebelum meneliti sebuah peraturan, studi, atau vendor, baca dulu `docs/final/research-digest.md`, lalu tambahkan temuan Anda ke sana sesudahnya (D-362).
@@ -271,7 +271,7 @@ Satu taksonomi induk menamai setiap konsep satu kali, dengan kode tetap, label b
 | G Konteks | Provinsi, kabupaten, konteks lokal, bahasa daerah, muatan lokal |
 | H Administrasi | Peran sekolah dan staf, dokumen, indikator kinerja, instrumen supervisi |
 
-Daftar ditutup hanya bila aturan menetapkannya (8 DPL, 3 prinsip, fase); daftar terbuka (metode, media, konteks lokal) memungkinkan sekolah menambah butirnya sendiri. Data awalnya adalah tugas P4-22, yang menggabungkan dataset Peta Asesmen dan katalog aplikasi lama (P4-15) alih-alih menduplikasinya. **Status: Didesain; data awalnya belum ditulis.**
+Daftar ditutup hanya bila aturan menetapkannya (8 DPL, 3 prinsip, fase); daftar terbuka (metode, media, konteks lokal) memungkinkan sekolah menambah butirnya sendiri. Data awalnya adalah tugas P4-22, yang menggabungkan dataset Peta Asesmen dan katalog SIGRAK di `docs/data/catalogs/` (P4-15, D-367) alih-alih menduplikasinya. **Status: Didesain; data awalnya belum ditulis.**
 
 ### 3.6 Panel Dasar Kebijakan dan Cek Keselarasan
 
@@ -396,19 +396,22 @@ Ringkasan diagram: Tim SIGRAK membuat sekolah dan mengundang operator atau kepal
 | File | Isi |
 |---|---|
 | `subjects.json` | Katalog mapel: kode, jenis, guru bawaan, agama, jenjang, alias, bawaan daerah (D-227) |
-| `data_kurikulum_dengan_cp.json`, `struktur_alokasi_sd.json` | KM-SD-2026-R2 dari aplikasi lama: 432 topik, 2.021 fokus, 1.372 TP, 12 mapel |
 | `curriculum-structure-permendikdasmen-13-2025.json` | Struktur dan JP SD, termasuk kokurikuler |
 | `mi-allocation-kma-1503-2025.json` | Struktur dan JP MI (terverifikasi, D-038) |
 | `cp-pendidikan-agama-sd-bkpdm-020-2026.json` | CP enam agama SD |
 | `cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` | CP mapel Kemenag MI dan Bahasa Arab |
-| `tp-atp-pendidikan-agama-sd-2026.json` | Draf TP/ATP lima agama SD selain Islam |
-| `tp-atp-pai-bahasa-arab-mi-2026.json` | Draf TP/ATP lima mapel MI |
+| `sigrak-sd-2026-r1-umum.json` | Topik SIGRAK SD untuk mapel umum, PAI, muatan lokal, dan KKA: 432 topik, 1.372 TP, 2.021 fokus, 12 mapel |
+| `sigrak-sd-2026-r1-agama.json` | Topik SIGRAK SD untuk lima agama lainnya: 300 topik |
+| `sigrak-mi-2026-r1.json` | Topik SIGRAK MI untuk lima mapel Kemenag: 224 topik |
+| `crosswalk-legacy-2026.json` | Khusus tim, tidak pernah diimpor: kode lama ke kode SIGRAK (D-365) |
 
 **Bentuknya.** Sebuah mapel punya topik (materi pokok, baris ATP) per kelas dan semester, dengan JP, minggu, dan rujukan. Setiap topik punya butir fokus dan tujuan pembelajaran (TP). `focus_item_objectives` menghubungkan fokus ke TP dan diisi lewat tugas data. Versi yang hanya berisi CP menyimpan baris CP di `learning_outcomes` (D-226). `subject_allocations` menyimpan JP per mapel, kelas, dan jenis pembelajaran (intrakurikuler atau kokurikuler).
 
-**Impor (`php artisan curriculum:import`).** Tanpa nama file, perintah ini memuat file yang tercantum di `config/curriculum.php` secara berurutan. Aturannya (D-229): setiap file satu transaksi; baris dicocokkan menurut `code` dan tidak pernah dihapus; versi baru berstatus `draft` dan impor tidak pernah mengubah status versi yang sudah ada; ketidakcocokan (jumlah JP, fase dan kelas, tautan fokus–TP di luar topiknya) dilaporkan dan tidak menghentikan impor kecuali `--strict` dipakai; ID lama disimpan sebagai alias di `legacy_codes`. Koreksi yang terdokumentasi ada di `app/Curriculum/Import/SourceOverrides.php`, sementara file sumber tetap persis seperti diterima (D-234 memangkas Tata Boga kelas 6 semester 2 menjadi 28 JP). Baris KKA kelas 5–6 tidak diimpor sebagai intrakurikuler; KKA berjalan lewat kokurikuler (D-208).
+**Impor (`php artisan curriculum:import`).** Tanpa nama file, perintah ini memuat file yang tercantum di `config/curriculum.php` secara berurutan. Aturannya (D-229): setiap file satu transaksi; baris dicocokkan menurut `code` dan tidak pernah dihapus; versi baru berstatus `draft` dan impor tidak pernah mengubah status versi yang sudah ada; ketidakcocokan (jumlah JP terhadap target semester tiap mapel, fase dan kelas, tautan fokus–TP di luar topiknya) dilaporkan dan tidak menghentikan impor kecuali `--strict` dipakai. Topik hanya datang dari berkas SIGRAK (D-363); format aplikasi lama ditolak, dan kode lama tetap di crosswalk (D-365). Berkas yang berbagi satu versi masing-masing bertanggung jawab atas mapelnya sendiri. Pemangkasan Tata Boga D-234 sudah ada di data; `app/Curriculum/Import/SourceOverrides.php` kosong tetapi dipertahankan untuk koreksi yang disetujui pemilik di kemudian hari (D-366). Baris KKA kelas 5–6 tidak diimpor sebagai intrakurikuler; KKA berjalan lewat kokurikuler (D-208).
 
-**Versi di v1.** `KM-SD-2026-R2`, `CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`, `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `ALOKASI-MI-KMA-1503-2025`, `TPATP-PABP-SD-2026-R1`, `TPATP-PAI-BA-MI-2026-R1` (model data; D-139, D-145). Tambahan versi dari D-355 datang sebelum P5-04 (bagian 3.3).
+**Versi di v1.** `SIGRAK-SD-2026-R1`, `SIGRAK-MI-2026-R1` (topik, satu versi per jenjang dan tahun, D-363), `CP-PABP-BKPDM-020-2026`, `CP-PAI-BA-MADRASAH-9941-2025`, `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `ALOKASI-MI-KMA-1503-2025` (model data). Alokasi SD hanya berasal dari struktur resmi (D-366).
+
+**Kurasi per mata pelajaran (D-364).** Setiap mapel di berkas SIGRAK punya `curation.status` ∈ {`converted`, `in_review`, `curated`} beserta peninjau dan tanggal; hanya mapel `curated` yang aktif bagi guru (ditegakkan mulai P5-04). Mapel umum SD mulai sebagai `converted`, draf agama sebagai `in_review`. Tugas kurasi P4-29…P4-31 mengikuti daftar periksa: CP sesuai keputusan resmi, TP mencakup CP, urutan ATP dan JP sesuai struktur, fokus tertaut ke TP, masalah yang diketahui ditutup, rujukan dicatat. Tambahan versi dari D-355 datang sebelum P5-04 (bagian 3.3).
 
 **Rantai CP → TP → ATP → fokus di aplikasi.** Di setiap wizard rantai ini hanya dipilih: Kelas → Mata pelajaran → Semester → Materi pokok (ATP) → Fokus → TP, semuanya dibaca dari data (mesin konten, aturan wizard 4). Guru tidak pernah mengetik CP atau JP.
 
@@ -420,9 +423,9 @@ Ringkasan diagram: Tim SIGRAK membuat sekolah dan mengundang operator atau kepal
 
 **Agama.** SD menawarkan enam mapel agama (D-034), masing-masing 3 JP per minggu (D-141). MI mengajarkan mapel Kemenag alih-alih satu mapel PAI (D-035, D-146). `students.religion` hanya ada untuk mengelompokkan kelas agama dan bersifat sensitif (D-036). Pendidikan Kepercayaan tidak ada di v1 (D-037); CP pendidikan khusus termasuk cakupan untuk sekolah inklusif dan masih harus ditranskripsi (D-155).
 
-**Status:** **Dibangun** (P5-03c, P5-03g): tabel kurikulum, `learning_outcomes`, perintah impor, katalog mapel, `SubjectsForGrade`. **Didesain:** kolom versi dan resolver (D-355), perubahan topik sekolah dan validasi (P5-09), konsol kurikulum (D-317), Kabar Regulasi. **Data masih draf:** setiap file kurikulum dan peraturan menunggu tinjauan Tim Validasi.
+**Status:** **Dibangun** (P5-03c, P5-03g, P4-28): tabel kurikulum, `learning_outcomes`, perintah impor, katalog mapel, `SubjectsForGrade`, dataset SIGRAK R1 dengan status kurasi per mapel. **Didesain:** kolom versi dan resolver (D-355), perubahan topik sekolah dan validasi (P5-09), konsol kurikulum (D-317), Kabar Regulasi. **Data masih draf:** setiap file kurikulum dan peraturan menunggu tinjauan Tim Validasi.
 
-Bacaan lanjutan: `data-model.md`, `religious-education.md`, `docs/data/curriculum/README.md`, `docs/drafts/km-sd-2026-r2-source-check.md`, D-019, D-020, D-113, D-204, D-208, D-226…D-234, D-276, D-317.
+Bacaan lanjutan: `data-model.md`, `religious-education.md`, `docs/data/curriculum/README.md`, `docs/drafts/curriculum-source-check-2026.md`, D-019, D-020, D-113, D-204, D-208, D-226…D-234, D-276, D-317, D-363…D-366.
 
 ### 4.4 Pembuatan konten dengan AI: kunci, templat, wizard, dokumen, ekspor
 
@@ -1047,14 +1050,16 @@ Bacaan lanjutan: `docs/agent/WORKFLOW.md`, `docs/agent/PROGRESS.md`, `coding-sta
 | P4-11 | Desain: Penyusun KSP dan evaluasi KSP (setelah v1) | Todo | D-209, D-217 |
 | P4-13 | Keputusan peningkatan aplikasi lama | Review | D-251 |
 | P4-14 | Terapkan peningkatan aplikasi lama ke `docs/final/` + PDF | Todo | P4-13 |
-| P4-15 | Impor katalog aplikasi lama ke `docs/data/catalogs/` | Todo | — |
+| P4-29 | Kurasi mapel inti SD (PP, BIN, MTK, IPAS) | Todo | P4-23 |
+| P4-30 | Kurasi mapel SD lainnya (SB, PJOK, BIG, BJW, KTB, SSD, KKA) | Todo | P4-23 |
+| P4-31 | Kurasi mapel agama, SD dan MI | Todo | P4-23 |
 | P4-19 | Desain: lanskap asesmen (Peta Asesmen, label, wizard, Gelombang A) | Todo | D-344…D-351 |
 | P4-20 | Terapkan D-329…D-351 ke `docs/final/` + PDF | Todo | P4-16…P4-18 |
 | P4-22 | Data awal taksonomi dan registri peraturan di `docs/data/taxonomy/` | Todo | P4-21 |
 | P4-23 | Ambil dan ekstrak peraturan yang belum ada, verifikasi KMA 512/2026 | Todo | — |
 | P4-24 | Terapkan fondasi kebijakan ke `docs/final/` + PDF | Todo | P4-21 |
 
-Yang sudah selesai di Fase 4: P4-02 (Game kelas), P4-03 dan P4-03b (dokumen resmi), P4-04 (fitur administrasi), P4-12 (instrumen supervisi), P4-16 (LKPD), P4-17 (peran internal), P4-18 (lanskap asesmen), P4-21 (fondasi kebijakan), P4-25 (buku panduan ini), P4-26 (ringkasan riset), P4-27 (penghapusan merek lama).
+Yang sudah selesai di Fase 4: P4-02 (Game kelas), P4-03 dan P4-03b (dokumen resmi), P4-04 (fitur administrasi), P4-12 (instrumen supervisi), P4-16 (LKPD), P4-17 (peran internal), P4-18 (lanskap asesmen), P4-21 (fondasi kebijakan), P4-25 (buku panduan ini), P4-26 (ringkasan riset), P4-27 (penghapusan merek lama), P4-28 (dataset kurikulum SIGRAK), P4-15 (katalog SIGRAK).
 
 Tugas pembaruan dokumen P4-05, P4-14, P4-20, dan P4-24 bersama-sama menutup selisih yang ditandai buku ini antara dokumen final dan keputusan yang lebih baru.
 
@@ -1100,7 +1105,7 @@ Ringkasan diagram: setelah P5-01 dan P5-03a…h, jalurnya P5-03i lalu P5-03j; da
 2. **Minimum versi D-355,** sebelum P5-04: kolom versi di `curriculum_versions`, resolver profil kebijakan sebagai pengganti `config/curriculum.php` `allocation_versions` (perilaku sama), dan data Profil Jenjang. RPM pertama sudah harus menyimpan set aturannya.
 3. **P5-03j,** draf jadwal, paralel dengan P5-04.
 4. **P5-04, inti konten,** dengan keputusan tambahan dari P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) dan bagian konsol D-315 dan D-316, ditambah panel Dasar Kebijakan dan aturan Cek Keselarasan pertama pada RPM (D-358).
-5. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: P4-22 (taksonomi), P4-23 (peraturan yang belum ada), P4-15 (katalog), tinjauan Tim Validasi atas data kurikulum dan peraturan, serta pembaruan dokumen P4-14, P4-20, P4-24.
+5. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: P4-22 (taksonomi), P4-23 (peraturan yang belum ada), kurasi kurikulum P4-29…P4-31, tinjauan Tim Validasi atas katalog dan data peraturan, serta pembaruan dokumen P4-14, P4-20, P4-24.
 
 Tambahan per slice dari peningkatan aplikasi lama tercantum di `legacy-upgrade-01.md` §5: P5-05 mendapat D-293, D-294, D-296; P5-07 mendapat D-263…D-271 (sisi guru), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 mendapat D-286…D-292, D-295, D-301, D-304; P5-09 mendapat tampilan portal serta D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; konsol mendapat D-314 dan D-317…D-320.
 
@@ -1145,6 +1150,7 @@ Keputusan disimpan di `docs/agent/DECISIONS.md`. Rentang di bawah mengelompokkan
 | D-344…D-351 | Lanskap asesmen | Peta Asesmen, instrumen, AI tanpa data murid, GPK, luring, Gelombang A |
 | D-352…D-359 | Fondasi kebijakan | Posisi, kekuatan aturan, versi, Profil Jenjang, taksonomi, panel, KMA 512 |
 | D-360…D-362 | Repositori dan dokumen | Merek lama dihapus, buku panduan ini, ringkasan riset |
+| D-363…D-367 | Kurikulum dan katalog SIGRAK | Satu format kurikulum, kurasi per mapel, crosswalk, alokasi SD dari struktur, katalog |
 
 ### 12.1 Di mana dokumen final berbeda dari keputusan yang lebih baru
 
@@ -1281,9 +1287,9 @@ Istilah pendidikan Indonesia dan istilah produk yang dipakai di buku ini dan di 
 | `internal-roles.md` | Peran staf, cakupan, matriks (D-338…D-343) |
 | `dokumen-resmi-sd-mi.md` | Apa yang diubah dokumen resmi 2025 (D-203…D-209) |
 | `buku-induk-dapodik.md` | Buku Induk dan sinkronisasi Dapodik, ditahan (D-161) |
-| `km-sd-2026-r2-source-check.md` | Temuan tentang file sumber KM-SD-2026-R2 |
+| `curriculum-source-check-2026.md` | Temuan tentang file sumber kurikulum lama (riwayat) |
 | `open-questions.md` | Pertanyaan yang masih menunggu pemilik |
 
-**Data:** `docs/data/curriculum/README.md` (file kurikulum dan asal-usulnya), `docs/data/regulations/README.md` (aturan resmi 2025 sebagai data), `docs/data/schools/` (direktori sekolah), `docs/data/tka/` (kerangka TKA). Direncanakan: `docs/data/taxonomy/`, `docs/data/assessment/`, `docs/data/catalogs/`.
+**Data:** `docs/data/curriculum/README.md` (file kurikulum dan asal-usulnya), `docs/data/regulations/README.md` (aturan resmi 2025 sebagai data), `docs/data/catalogs/README.md` (katalog SIGRAK, D-367), `docs/data/schools/` (direktori sekolah), `docs/data/tka/` (kerangka TKA). Direncanakan: `docs/data/taxonomy/`, `docs/data/assessment/`, `docs/data/catalogs/`.
 
 **File agen:** `docs/agent/CONTEXT.md`, `docs/agent/PROGRESS.md`, `docs/agent/DECISIONS.md`, `docs/agent/WORKFLOW.md`, dan file tugas di `docs/agent/tasks/`.

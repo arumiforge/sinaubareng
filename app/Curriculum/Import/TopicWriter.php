@@ -15,7 +15,7 @@ use App\Models\Topic;
  */
 final readonly class TopicWriter
 {
-    /** Grade 6 ends early for the final exams (KM-SD-2026-R2, Permendikdasmen 13/2025: 32 weeks). */
+    /** Grade 6 ends early for the final exams (Permendikdasmen 13/2025: 32 weeks). */
     private const GRADE_6_SECOND_SEMESTER_WEEKS = 14;
 
     public function __construct(private RowWriter $rows) {}
@@ -48,7 +48,11 @@ final readonly class TopicWriter
             }
         }
 
-        foreach (Topic::query()->whereBelongsTo($version)->whereNotIn('code', $codes)->pluck('code') as $stale) {
+        // Several files can share a version (SD general subjects and SD religions), so a
+        // file only answers for the subjects it holds.
+        $subjectIds = array_values(array_unique(array_map(fn (TopicInput $input): int => $input->subject->id, $topics)));
+
+        foreach (Topic::query()->whereBelongsTo($version)->whereIn('subject_id', $subjectIds)->whereNotIn('code', $codes)->pluck('code') as $stale) {
             $report->mismatch("Topic {$stale} is in the database but not in the file; it is kept.");
         }
     }
@@ -111,7 +115,6 @@ final readonly class TopicWriter
     {
         $topic = $this->rows->upsert(Topic::class, ['code' => $input->code], [
             'curriculum_version_id' => $version->id,
-            'legacy_codes' => $input->legacyCodes,
             'subject_id' => $input->subject->id,
             'grade' => $input->grade,
             'phase' => $input->phase->value,
@@ -127,7 +130,7 @@ final readonly class TopicWriter
             'week_end' => $input->weekEnd,
             'weekly_distribution' => $input->weeklyDistribution,
             'references' => $input->references,
-            'audit' => $input->audit,
+            'curation_notes' => $input->curationNotes,
             'extras' => $input->extras,
         ], $report);
 
@@ -148,7 +151,7 @@ final readonly class TopicWriter
             ], $report);
             $focusIds[] = $item->id;
 
-            // Files without links (KM-SD-2026-R2) leave the links a data task filled in alone.
+            // Fokus without links in the file leave the links a data task filled in alone.
             if ($focus['objective_codes'] !== null) {
                 $this->link($item, $focus['objective_codes'], $objectiveIds, $report);
             }

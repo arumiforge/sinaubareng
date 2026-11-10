@@ -5,32 +5,30 @@ declare(strict_types=1);
 namespace App\Curriculum\Import;
 
 /**
- * Owner-approved corrections applied to a topic at import. The source file in
- * docs/data/curriculum/ stays exactly as received; each correction names its decision.
+ * Owner-approved corrections applied to a topic at import, without editing the file
+ * in docs/data/curriculum/; each correction names its decision.
  * A correction applies only while the source still has the values it was written for,
  * so a fixed or changed source is imported as it is and reported.
  */
 final readonly class SourceOverrides
 {
     /**
-     * D-234: Keterampilan Tata Boga grade 6 semester 2 has 34 JP over weeks 1–17, but
-     * that semester has 14 effective weeks. It is trimmed to 28 JP (14 weeks × 2 JP).
+     * Corrections by topic code. Empty since D-366: the D-234 Tata Boga trim is now in
+     * the SIGRAK data itself. Add an entry here only for an owner-approved fix that
+     * cannot wait for the data to be corrected.
      *
      * @var array<string, array{decision: string, source: array{jp_total: int, week_end: int}, jp_total: int, week_end: int, focus_jp: array<string, int>}>
      */
-    private const TOPICS = [
-        'KM-SD-2026-R2-KTB-K6-04' => [
-            'decision' => 'D-234',
-            'source' => ['jp_total' => 34, 'week_end' => 17],
-            'jp_total' => 28,
-            'week_end' => 14,
-            'focus_jp' => ['FM-KTB-K6-04-01' => 14, 'FM-KTB-K6-04-02' => 14],
-        ],
-    ];
+    private const TOPICS = [];
+
+    /**
+     * @param  array<string, array{decision: string, source: array{jp_total: int, week_end: int}, jp_total: int, week_end: int, focus_jp: array<string, int>}>  $topics
+     */
+    public function __construct(private array $topics = self::TOPICS) {}
 
     public function apply(TopicInput $input, ImportReport $report): TopicInput
     {
-        $override = self::TOPICS[$input->code] ?? null;
+        $override = $this->topics[$input->code] ?? null;
 
         if ($override === null) {
             return $input;
@@ -54,7 +52,6 @@ final readonly class SourceOverrides
 
         return new TopicInput(
             code: $input->code,
-            legacyCodes: $input->legacyCodes,
             subject: $input->subject,
             grade: $input->grade,
             phase: $input->phase,
@@ -70,7 +67,7 @@ final readonly class SourceOverrides
             weekEnd: $override['week_end'],
             weeklyDistribution: array_slice($input->weeklyDistribution, 0, $override['week_end'] - $input->weekStart + 1),
             references: $input->references,
-            audit: $input->audit,
+            curationNotes: $input->curationNotes,
             extras: [...$input->extras ?? [], 'import_override' => [
                 'decision' => $override['decision'],
                 'source' => [

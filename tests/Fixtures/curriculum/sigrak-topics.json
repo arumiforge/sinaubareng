@@ -1,0 +1,313 @@
+{
+  "dataset": "sigrak_curriculum_topics",
+  "version_code": "SIGRAK-TEST-2026-R1",
+  "status": "active",
+  "scope": "SIGRAK-TEST-2026-R1: test topics",
+  "part": "General SD subjects",
+  "subjects": [
+    {
+      "code": "MTK",
+      "name": "Matematika",
+      "curation": {
+        "status": "curated",
+        "since": "2026-11-09",
+        "reviewed_by": "Tim Validasi SIGRAK",
+        "reviewed_on": "2026-11-09",
+        "note": "Fixture"
+      },
+      "allocations": [
+        {
+          "grade": 4,
+          "phase": "B",
+          "jp_per_week": 5,
+          "s1_jp": 90,
+          "s1_effective_weeks": 18,
+          "s2_jp": 90,
+          "s2_effective_weeks": 18
+        }
+      ],
+      "topics": [
+        {
+          "code": "SIGRAK-TEST-2026-R1-MTK-K4-01",
+          "grade": 4,
+          "phase": "B",
+          "semester": 1,
+          "order_in_semester": 1,
+          "element": "Bilangan; Aljabar",
+          "title": "Bilangan Cacah",
+          "cp_text": "CP Bilangan Cacah",
+          "atp_code": "ATP-MTK-K4-BAB-01",
+          "jp_total": 90,
+          "jp_per_week": 5,
+          "week_start": 1,
+          "week_end": 18,
+          "weekly_distribution": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "learning_objectives": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-MTK-K4-01-TP01",
+              "order": 1,
+              "text": "Murid membaca bilangan."
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-MTK-K4-01-FM01",
+              "order": 1,
+              "title": "Membaca bilangan",
+              "estimated_jp": 45,
+              "allocation_status": "sesuai"
+            },
+            {
+              "code": "SIGRAK-TEST-2026-R1-MTK-K4-01-FM02",
+              "order": 2,
+              "title": "Menulis bilangan",
+              "estimated_jp": 45,
+              "allocation_status": "sesuai"
+            }
+          ],
+          "references": {
+            "cp_source": "CP 2025",
+            "book_pages": "1-10"
+          },
+          "curation_notes": {
+            "source_status": "disesuaikan",
+            "notes": [
+              "Diselaraskan dengan buku guru."
+            ]
+          },
+          "extras": {
+            "subject_status": "Wajib",
+            "atp": {
+              "order_in_year": 1
+            }
+          }
+        },
+        {
+          "code": "SIGRAK-TEST-2026-R1-MAT-K4-02",
+          "grade": 4,
+          "phase": "B",
+          "semester": 2,
+          "order_in_semester": 1,
+          "element": "Bilangan; Aljabar",
+          "title": "Pecahan",
+          "cp_text": "CP Pecahan",
+          "atp_code": "ATP-MAT-K4-BAB-01",
+          "jp_total": 80,
+          "jp_per_week": 5,
+          "week_start": 1,
+          "week_end": 16,
+          "weekly_distribution": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "learning_objectives": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-MAT-K4-02-TP01",
+              "order": 1,
+              "text": "Murid mengenal pecahan."
+            },
+            {
+              "code": "SIGRAK-TEST-2026-R1-MAT-K4-02-TP02",
+              "order": 2,
+              "text": "Murid membandingkan pecahan."
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-MAT-K4-02-FM01",
+              "order": 1,
+              "title": "Pecahan senilai",
+              "estimated_jp": 40,
+              "allocation_status": "sesuai"
+            },
+            {
+              "code": "SIGRAK-TEST-2026-R1-MAT-K4-02-FM02",
+              "order": 2,
+              "title": "Membandingkan pecahan",
+              "estimated_jp": 40,
+              "allocation_status": "sesuai"
+            }
+          ],
+          "references": {
+            "cp_source": "CP 2025",
+            "book_pages": "1-10"
+          }
+        }
+      ]
+    },
+    {
+      "code": "BIG",
+      "name": "Bahasa Inggris",
+      "curation": {
+        "status": "converted",
+        "since": "2026-11-09",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "note": "Fixture"
+      },
+      "allocations": [],
+      "topics": [
+        {
+          "code": "SIGRAK-TEST-2026-R1-BIG-K1-01",
+          "grade": 1,
+          "phase": "A",
+          "semester": 1,
+          "order_in_semester": 1,
+          "element": "Bilangan; Aljabar",
+          "title": "Greetings",
+          "cp_text": "CP Greetings",
+          "atp_code": "ATP-BIG-K1-BAB-01",
+          "jp_total": 36,
+          "jp_per_week": 2,
+          "week_start": 1,
+          "week_end": 18,
+          "weekly_distribution": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "learning_objectives": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-BIG-K1-01-TP01",
+              "order": 1,
+              "text": "Murid menyapa."
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-BIG-K1-01-FM01",
+              "order": 1,
+              "title": "Hello",
+              "estimated_jp": 36,
+              "allocation_status": "sesuai"
+            }
+          ],
+          "references": {
+            "cp_source": "CP 2025",
+            "book_pages": "1-10"
+          }
+        }
+      ]
+    },
+    {
+      "code": "KKA",
+      "name": "Koding dan Kecerdasan Artifisial",
+      "curation": {
+        "status": "converted",
+        "since": "2026-11-09",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "note": "Fixture"
+      },
+      "allocations": [],
+      "topics": [
+        {
+          "code": "SIGRAK-TEST-2026-R1-KKA-K5-01",
+          "grade": 5,
+          "phase": "C",
+          "semester": 1,
+          "order_in_semester": 1,
+          "element": "Bilangan; Aljabar",
+          "title": "Berpikir Komputasional",
+          "cp_text": "CP Berpikir Komputasional",
+          "atp_code": "ATP-KKA-K5-BAB-01",
+          "jp_total": 36,
+          "jp_per_week": 2,
+          "week_start": 1,
+          "week_end": 18,
+          "weekly_distribution": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "learning_objectives": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-KKA-K5-01-TP01",
+              "order": 1,
+              "text": "Murid mengurutkan langkah."
+            }
+          ],
+          "focus_items": [
+            {
+              "code": "SIGRAK-TEST-2026-R1-KKA-K5-01-FM01",
+              "order": 1,
+              "title": "Algoritma",
+              "estimated_jp": 36,
+              "allocation_status": "sesuai"
+            }
+          ],
+          "references": {
+            "cp_source": "CP 2025",
+            "book_pages": "1-10"
+          },
+          "extras": {
+            "learning_type": "Kokurikuler"
+          }
+        }
+      ]
+    }
+  ]
+}

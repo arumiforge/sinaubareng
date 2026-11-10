@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * A global, versioned curriculum default, e.g. KM-SD-2026-R2 (data model, Curriculum).
+ * A global, versioned curriculum default, e.g. SIGRAK-SD-2026-R1 (data model, Curriculum).
  * Rows come only from `curriculum:import`.
  *
  * @property string $code

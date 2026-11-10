@@ -19,16 +19,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Phase $phase
  * @property int $semester
  * @property int $jp_total
- * @property list<string> $legacy_codes
  * @property list<int> $weekly_distribution
  * @property array<string, mixed> $references
- * @property array<string, mixed>|null $audit
+ * @property array<string, mixed>|null $curation_notes
  * @property array<string, mixed>|null $extras
  */
 #[Fillable([
-    'curriculum_version_id', 'code', 'legacy_codes', 'subject_id', 'grade', 'phase', 'semester', 'elements', 'title',
+    'curriculum_version_id', 'code', 'subject_id', 'grade', 'phase', 'semester', 'elements', 'title',
     'cp_text', 'atp_code', 'order_in_semester', 'jp_total', 'jp_per_week', 'week_start', 'week_end',
-    'weekly_distribution', 'references', 'audit', 'extras',
+    'weekly_distribution', 'references', 'curation_notes', 'extras',
 ])]
 final class Topic extends Model
 {
@@ -68,10 +67,9 @@ final class Topic extends Model
     {
         return [
             'phase' => Phase::class,
-            'legacy_codes' => 'array',
             'weekly_distribution' => 'array',
             'references' => 'array',
-            'audit' => 'array',
+            'curation_notes' => 'array',
             'extras' => 'array',
         ];
     }

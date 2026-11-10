@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('order');
             $table->string('title');
             $table->unsignedSmallInteger('estimated_jp');
-            $table->string('allocation_status')->comment('As printed in the source: a short word (sesuai) or a sentence (KM-SD-2026-R2)');
+            $table->string('allocation_status')->comment('As printed in the source: a short word (sesuai) or a sentence');
             $table->timestamps();
             $table->unique(['topic_id', 'order']);
         });

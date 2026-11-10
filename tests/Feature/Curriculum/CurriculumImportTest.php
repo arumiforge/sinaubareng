@@ -60,10 +60,9 @@ it('imports every curriculum file in the repository as draft versions', function
         'ALOKASI-MI-KMA-1503-2025' => 'draft',
         'CP-PABP-BKPDM-020-2026' => 'draft',
         'CP-PAI-BA-MADRASAH-9941-2025' => 'draft',
-        'KM-SD-2026-R2' => 'draft',
+        'SIGRAK-MI-2026-R1' => 'draft',
+        'SIGRAK-SD-2026-R1' => 'draft',
         'STRUKTUR-SD-PERMENDIKDASMEN-13-2025' => 'draft',
-        'TPATP-PABP-SD-2026-R1' => 'draft',
-        'TPATP-PAI-BA-MI-2026-R1' => 'draft',
     ])
         ->and(Subject::query()->count())->toBe(22)
         ->and(LearningOutcome::query()->count())->toBe(199)
@@ -142,16 +141,16 @@ it('reports data mismatches and still imports the rows', function (): void {
     $report = app(CurriculumImporter::class)->import(curriculumFixture('topics-with-mismatches.json'));
 
     expect($report->mismatches())->toBe([
-        'Topic TPATP-TEST-R1-PAKR-K1-02: grade 1 is in Fase A, the file says Fase B.',
-        'Topic TPATP-TEST-R1-PAKR-K1-02: fokus JP add up to 6, jp_total is 9.',
-        'Topic TPATP-TEST-R1-PAKR-K1-02: weekly distribution adds up to 6, jp_total is 9.',
-        'Fokus FM-T-PAKR-K1-02-01 names TP TP-T-PAKR-K1-01-01, which is not a TP of its topic; link skipped.',
+        'Topic SIGRAK-TEST-2026-R1-PAKR-K1-02: grade 1 is in Fase A, the file says Fase B.',
+        'Topic SIGRAK-TEST-2026-R1-PAKR-K1-02: fokus JP add up to 6, jp_total is 9.',
+        'Topic SIGRAK-TEST-2026-R1-PAKR-K1-02: weekly distribution adds up to 6, jp_total is 9.',
+        'Fokus SIGRAK-TEST-2026-R1-PAKR-K1-02-FM01 names TP SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01, which is not a TP of its topic; link skipped.',
         'PAKR grade 1 semester 1: topics add up to 15 JP, the allocation is 12 JP.',
     ])
         ->and(Topic::query()->count())->toBe(2)
-        ->and(FocusItem::query()->where('code', 'FM-T-PAKR-K1-01-02')->sole()->learningObjectives->pluck('code')->all())->toBe(['TP-T-PAKR-K1-01-02'])
-        ->and(FocusItem::query()->where('code', 'FM-T-PAKR-K1-02-01')->sole()->learningObjectives)->toBeEmpty()
-        ->and(Topic::query()->where('code', 'TPATP-TEST-R1-PAKR-K1-01')->sole()->extras)->toBe(['sub_element' => 'Allah Pencipta']);
+        ->and(FocusItem::query()->where('code', 'SIGRAK-TEST-2026-R1-PAKR-K1-01-FM02')->sole()->learningObjectives->pluck('code')->all())->toBe(['SIGRAK-TEST-2026-R1-PAKR-K1-01-TP02'])
+        ->and(FocusItem::query()->where('code', 'SIGRAK-TEST-2026-R1-PAKR-K1-02-FM01')->sole()->learningObjectives)->toBeEmpty()
+        ->and(Topic::query()->where('code', 'SIGRAK-TEST-2026-R1-PAKR-K1-01')->sole()->extras)->toBe(['sub_element' => 'Allah Pencipta']);
 });
 
 it('fails on mismatches only with --strict', function (): void {
@@ -175,10 +174,10 @@ it('updates changed rows and keeps and reports rows a newer file no longer has',
     $json['subjects'][0]['topics'][0]['title'] = 'Judul baru';
     $report = app(CurriculumImporter::class)->import(curriculumTempFile($json));
 
-    expect(Topic::query()->where('code', 'TPATP-TEST-R1-PAKR-K1-01')->value('title'))->toBe('Judul baru')
+    expect(Topic::query()->where('code', 'SIGRAK-TEST-2026-R1-PAKR-K1-01')->value('title'))->toBe('Judul baru')
         ->and(Topic::query()->count())->toBe(2)
         ->and($report->counts()['topics'])->toBe(['created' => 0, 'updated' => 1, 'unchanged' => 0])
-        ->and($report->mismatches())->toContain('Topic TPATP-TEST-R1-PAKR-K1-02 is in the database but not in the file; it is kept.');
+        ->and($report->mismatches())->toContain('Topic SIGRAK-TEST-2026-R1-PAKR-K1-02 is in the database but not in the file; it is kept.');
 });
 
 it('refuses an invalid file and writes nothing from it', function (Closure $file, string $message): void {
@@ -201,10 +200,10 @@ it('refuses an invalid file and writes nothing from it', function (Closure $file
     }, "unknown subject 'XYZ'"],
     'duplicate code' => [function (): string {
         $json = curriculumJson(curriculumFixture('topics-with-mismatches.json'));
-        $json['subjects'][0]['topics'][1]['learning_objectives'][0]['code'] = 'TP-T-PAKR-K1-01-01';
+        $json['subjects'][0]['topics'][1]['learning_objectives'][0]['code'] = 'SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01';
 
         return curriculumTempFile($json);
-    }, 'Code TP-T-PAKR-K1-01-01 appears more than once'],
+    }, 'Code SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01 appears more than once'],
     'bad semester' => [function (): string {
         $json = curriculumJson(curriculumFixture('topics-with-mismatches.json'));
         $json['subjects'][0]['topics'][1]['semester'] = 3;
@@ -222,89 +221,129 @@ it('rolls back a catalogue that fails half way', function (): void {
         ->and(Region::query()->count())->toBe(0);
 });
 
-it('reads the legacy app shapes, JSON strings included', function (): void {
+it('reads a SIGRAK file with curation, curation notes, and extras', function (): void {
     importCatalogue();
-    $structure = app(CurriculumImporter::class)->import(curriculumFixture('km-struktur.json'));
-    $topics = app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));
-    $version = CurriculumVersion::query()->where('code', 'KM-SD-2026-R2')->sole();
-    $topic = Topic::query()->where('code', 'KM-SD-2026-R2-MAT-K4-01')->sole();
+    $report = app(CurriculumImporter::class)->import(curriculumFixture('sigrak-topics.json'));
+    $version = CurriculumVersion::query()->where('code', 'SIGRAK-TEST-2026-R1')->sole();
+    $topic = Topic::query()->where('code', 'SIGRAK-TEST-2026-R1-MTK-K4-01')->sole();
+    $meta = $version->meta['files']['tests/Fixtures/curriculum/sigrak-topics.json'];
 
     expect($version->status)->toBe(CurriculumVersionStatus::Draft)
-        ->and(SubjectAllocation::query()->whereBelongsTo($version)->with('subject')->get()->map(fn ($row) => "{$row->subject->code}-{$row->grade}")->sort()->values()->all())
-        ->toBe(['BJW-1', 'MTK-4'])
-        ->and($structure->notes())->toContain('Koding dan Kecerdasan Artifisial grade 5 is not imported as an intrakurikuler allocation; it runs through kokurikuler (D-208).')
-        ->and($structure->notes())->toContain('kokurikuler_default Bahasa Inggris grade 1 is not imported: optional content that a school switches on (D-204).')
+        ->and($meta['dataset'])->toBe('sigrak_curriculum_topics')
+        ->and(collect($meta['curation'])->map(fn (array $curation): string => $curation['status'])->sortKeys()->all())->toBe(['BIG' => 'converted', 'KKA' => 'converted', 'MTK' => 'curated'])
+        ->and($meta['curation']['MTK']['reviewed_by'])->toBe('Tim Validasi SIGRAK')
         ->and($topic->semester)->toBe(1)
-        ->and($topic->legacy_codes)->toBe(['CUR-1', 'CUR-1-OLD'])
         ->and($topic->elements)->toBe('Bilangan; Aljabar')
         ->and($topic->references)->toMatchArray(['cp_source' => 'CP 2025', 'book_pages' => '1-10'])
-        ->and($topic->audit)->toMatchArray(['status' => 'disesuaikan'])
-        ->and($topic->learningObjectives->pluck('code')->all())->toBe(['TP-MAT-K4-01-01'])
+        ->and($topic->curation_notes)->toMatchArray(['source_status' => 'disesuaikan'])
+        ->and($topic->extras)->toEqual(['subject_status' => 'Wajib', 'atp' => ['order_in_year' => 1]])
+        ->and(Topic::query()->where('code', 'SIGRAK-TEST-2026-R1-BIG-K1-01')->sole()->only(['curation_notes', 'extras']))->toBe(['curation_notes' => null, 'extras' => null])
+        ->and($topic->learningObjectives->pluck('code')->all())->toBe(['SIGRAK-TEST-2026-R1-MTK-K4-01-TP01'])
         ->and($topic->focusItems->pluck('estimated_jp')->all())->toBe([45, 45])
-        ->and($topics->mismatches())->toContain('MTK grade 4 semester 2: topics add up to 80 JP, the allocation is 90 JP.')
-        ->and($topics->mismatches())->toContain('Topic KM-SD-2026-R2-MAT-K4-01 uses subject code MAT; the catalogue code for Matematika is MTK.')
-        ->and($topics->notes())->toContain('Koding dan Kecerdasan Artifisial grade 5: topics are kept as kokurikuler content (D-208).')
-        ->and($topics->notes())->toContain('Bahasa Inggris grade 1: optional content, off until a school switches it on (D-204).')
-        ->and($topics->notes())->toContain("The file says status 'active'; the version keeps status 'draft' until Tim Validasi SIGRAK signs it off (D-113).");
-});
-
-it('keeps fokus–TP links a data task added when KM-SD-2026-R2 is imported again', function (): void {
-    importCatalogue();
-    app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));
-    $focus = FocusItem::query()->where('code', 'FM-MAT-K4-02-01')->sole();
-    $focus->learningObjectives()->attach(LearningObjective::query()->where('code', 'TP-MAT-K4-02-02')->value('id'));
-
-    app(CurriculumImporter::class)->import(curriculumFixture('km-topics.json'));
-
-    expect($focus->learningObjectives()->pluck('code')->all())->toBe(['TP-MAT-K4-02-02']);
-});
-
-it('imports the KM-SD-2026-R2 files and reports what the source check found', function (): void {
-    importCatalogue();
-    app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/struktur_alokasi_sd.json'));
-    $report = app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/data_kurikulum_dengan_cp.json'));
-    $version = CurriculumVersion::query()->where('code', 'KM-SD-2026-R2')->sole();
-    $topic = Topic::query()->where('code', 'KM-SD-2026-R2-PP-K1-01')->sole();
-
-    expect($report->mismatches())->toBe([])
-        ->and(array_keys($version->meta['files']))->toEqualCanonicalizing(['docs/data/curriculum/data_kurikulum_dengan_cp.json', 'docs/data/curriculum/struktur_alokasi_sd.json'])
-        ->and($topic->weekly_distribution)->toBe([4, 4, 4, 4, 4, 4, 4, 4, 1])
-        ->and($topic->legacy_codes)->toBe(['CUR-256333696'])
-        ->and($topic->extras['atp']['urutan_tahunan'] ?? null)->toBe(1)
-        ->and($topic->extras['subject_status'] ?? null)->toBe('Wajib')
-        ->and(Topic::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'SB')->count())->toBe(61)
-        ->and(Topic::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'PAI')->count())->toBe(60)
-        ->and(SubjectAllocation::query()->whereBelongsTo($version)->whereRelation('subject', 'code', 'KKA')->exists())->toBeFalse();
-
-    // D-234: Tata Boga grade 6 semester 2 is trimmed to its 14 effective weeks at import.
-    $tataBoga = Topic::query()->where('code', 'KM-SD-2026-R2-KTB-K6-04')->sole();
-    expect($tataBoga->only(['jp_total', 'week_start', 'week_end']))->toBe(['jp_total' => 28, 'week_start' => 1, 'week_end' => 14])
-        ->and($tataBoga->weekly_distribution)->toBe(array_fill(0, 14, 2))
-        ->and($tataBoga->focusItems()->orderBy('order')->pluck('estimated_jp')->all())->toBe([14, 14])
-        ->and($tataBoga->extras['import_override'])->toEqual([
-            'decision' => 'D-234',
-            'source' => ['jp_total' => 34, 'week_end' => 17, 'focus_jp' => ['FM-KTB-K6-04-01' => 17, 'FM-KTB-K6-04-02' => 17]],
+        ->and($report->mismatches())->toBe([
+            'Topic SIGRAK-TEST-2026-R1-MAT-K4-02 uses subject code MAT; the catalogue code for Matematika is MTK.',
+            'MTK grade 4 semester 2: topics add up to 80 JP, the allocation is 90 JP.',
         ])
-        ->and($tataBoga->extras['atp']['durasi_minggu'] ?? null)->toBe(17)
-        ->and($report->notes())->toContain('Topic KM-SD-2026-R2-KTB-K6-04: trimmed from 34 JP over weeks 1–17 to 28 JP over weeks 1–14 (D-234).')
-        ->and(Topic::query()->where('code', 'KM-SD-2026-R2-KTB-K6-03')->value('jp_total'))->toBe(34);
+        ->and($report->notes())->toContain('Koding dan Kecerdasan Artifisial grade 5: topics are kept as kokurikuler content (D-208).')
+        ->and($report->notes())->toContain('Bahasa Inggris grade 1: optional content, off until a school switches it on (D-204).')
+        ->and($report->notes())->toContain("The file says status 'active'; the version keeps status 'draft' until Tim Validasi SIGRAK signs it off (D-113).");
+});
 
-    // A second run of both files leaves the shared version alone.
-    $again = app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/struktur_alokasi_sd.json'))->changedRows()
-        + app(CurriculumImporter::class)->import(base_path('docs/data/curriculum/data_kurikulum_dengan_cp.json'))->changedRows();
+it('merges two files that share a version and keeps each file\'s curation', function (): void {
+    importCatalogue();
+    app(CurriculumImporter::class)->import(curriculumFixture('sigrak-topics.json'));
+    $second = app(CurriculumImporter::class)->import(curriculumFixture('topics-with-mismatches.json'));
+    $version = CurriculumVersion::query()->sole();
+
+    expect($version->code)->toBe('SIGRAK-TEST-2026-R1')
+        ->and(array_keys($version->meta['files']))->toBe(['tests/Fixtures/curriculum/sigrak-topics.json', 'tests/Fixtures/curriculum/topics-with-mismatches.json'])
+        ->and(array_keys($version->meta['files']['tests/Fixtures/curriculum/topics-with-mismatches.json']['curation']))->toBe(['PAKR'])
+        ->and(Topic::query()->whereBelongsTo($version)->count())->toBe(6)
+        ->and(collect($second->mismatches())->filter(fn (string $line): bool => str_contains($line, 'not in the file'))->all())->toBe([]);
+
+    // A second run of both files changes nothing.
+    $again = app(CurriculumImporter::class)->import(curriculumFixture('sigrak-topics.json'))->changedRows()
+        + app(CurriculumImporter::class)->import(curriculumFixture('topics-with-mismatches.json'))->changedRows();
     expect($again)->toBe(0);
 });
 
-it('leaves a corrected topic alone once the source no longer has the values the correction was written for', function (): void {
-    $input = new TopicInput(
-        code: 'KM-SD-2026-R2-KTB-K6-04', legacyCodes: [], subject: new Subject, grade: 6, phase: Phase::C, semester: 2,
-        elements: 'Wirausaha Bidang Boga', title: 'Wirausaha Bidang Boga', cpText: 'CP', atpCode: 'ATP-KTB-K6-BAB-04',
-        orderInSemester: 2, jpTotal: 28, jpPerWeek: 2, weekStart: 1, weekEnd: 14, weeklyDistribution: array_fill(0, 14, 2),
-        references: [], audit: null, extras: null, objectives: [],
-        focusItems: [['code' => 'FM-KTB-K6-04-01', 'order' => 1, 'title' => 'Fokus', 'estimated_jp' => 28, 'allocation_status' => '', 'objective_codes' => null]],
-    );
-    $report = new ImportReport('test.json');
+it('keeps fokus–TP links a data task added when a file without links is imported again', function (): void {
+    importCatalogue();
+    app(CurriculumImporter::class)->import(curriculumFixture('sigrak-topics.json'));
+    $focus = FocusItem::query()->where('code', 'SIGRAK-TEST-2026-R1-MAT-K4-02-FM01')->sole();
+    $focus->learningObjectives()->attach(LearningObjective::query()->where('code', 'SIGRAK-TEST-2026-R1-MAT-K4-02-TP02')->value('id'));
 
-    expect((new SourceOverrides)->apply($input, $report))->toBe($input)
-        ->and($report->notes())->toBe(['Topic KM-SD-2026-R2-KTB-K6-04: the source no longer has 34 JP to week 17, so the D-234 correction is not applied.']);
+    app(CurriculumImporter::class)->import(curriculumFixture('sigrak-topics.json'));
+
+    expect($focus->learningObjectives()->pluck('code')->all())->toBe(['SIGRAK-TEST-2026-R1-MAT-K4-02-TP02']);
+});
+
+it('refuses the legacy app format and earlier draft datasets', function (Closure $json, string $message): void {
+    importCatalogue();
+
+    expect(fn () => app(CurriculumImporter::class)->import(curriculumTempFile($json())))->toThrow(InvalidCurriculumFile::class, $message)
+        ->and(CurriculumVersion::query()->count())->toBe(0)
+        ->and(Topic::query()->count())->toBe(0);
+})->with([
+    'legacy topic rows' => [fn (): array => [['ID_Kurikulum' => 'X-1', 'Mata Pelajaran' => 'Matematika']], 'the legacy app format is no longer imported'],
+    'legacy SD allocation' => [fn (): array => ['versi_kurikulum' => 'X', 'alokasi' => [['kelas' => 4]]], 'the legacy app format is no longer imported'],
+    'earlier draft dataset' => [fn (): array => [...curriculumJson(curriculumFixture('topics-with-mismatches.json')), 'dataset' => 'tp_atp_pendidikan_agama_sd'], "dataset 'tp_atp_pendidikan_agama_sd' is not a SIGRAK curriculum file"],
+    'missing curation' => [function (): array {
+        $json = curriculumJson(curriculumFixture('topics-with-mismatches.json'));
+        unset($json['subjects'][0]['curation']);
+
+        return $json;
+    }, 'subjects[0].curation is missing'],
+    'unknown curation status' => [function (): array {
+        $json = curriculumJson(curriculumFixture('topics-with-mismatches.json'));
+        $json['subjects'][0]['curation']['status'] = 'approved';
+
+        return $json;
+    }, "'approved' must be one of converted, in_review, curated"],
+]);
+
+it('keeps the D-234 Tata Boga trim in the SIGRAK data itself', function (): void {
+    $this->artisan('curriculum:import')->assertSuccessful();
+    $tataBoga = Topic::query()->where('code', 'SIGRAK-SD-2026-R1-KTB-K6-04')->sole();
+
+    expect($tataBoga->only(['jp_total', 'week_start', 'week_end']))->toBe(['jp_total' => 28, 'week_start' => 1, 'week_end' => 14])
+        ->and($tataBoga->weekly_distribution)->toBe(array_fill(0, 14, 2))
+        ->and($tataBoga->focusItems()->pluck('estimated_jp')->all())->toBe([14, 14])
+        ->and($tataBoga->extras)->not->toHaveKey('import_override')
+        ->and(CurriculumVersion::query()->where('code', 'SIGRAK-SD-2026-R1')->sole()->meta['files'])->toHaveKeys([
+            'docs/data/curriculum/sigrak-sd-2026-r1-agama.json',
+            'docs/data/curriculum/sigrak-sd-2026-r1-umum.json',
+        ]);
+});
+
+function sourceOverrideInput(int $jpTotal, int $weekEnd): TopicInput
+{
+    return new TopicInput(
+        code: 'SIGRAK-TEST-2026-R1-KTB-K6-04', subject: new Subject, grade: 6, phase: Phase::C, semester: 2,
+        elements: 'Wirausaha Bidang Boga', title: 'Wirausaha Bidang Boga', cpText: 'CP', atpCode: 'ATP-KTB-K6-BAB-04',
+        orderInSemester: 2, jpTotal: $jpTotal, jpPerWeek: 2, weekStart: 1, weekEnd: $weekEnd, weeklyDistribution: array_fill(0, $weekEnd, 2),
+        references: [], curationNotes: null, extras: null, objectives: [],
+        focusItems: [['code' => 'SIGRAK-TEST-2026-R1-KTB-K6-04-FM01', 'order' => 1, 'title' => 'Fokus', 'estimated_jp' => $jpTotal, 'allocation_status' => '', 'objective_codes' => null]],
+    );
+}
+
+it('applies a listed correction only while the source still has the values it was written for', function (): void {
+    $overrides = new SourceOverrides([
+        'SIGRAK-TEST-2026-R1-KTB-K6-04' => [
+            'decision' => 'D-000', 'source' => ['jp_total' => 34, 'week_end' => 17], 'jp_total' => 28, 'week_end' => 14,
+            'focus_jp' => ['SIGRAK-TEST-2026-R1-KTB-K6-04-FM01' => 28],
+        ],
+    ]);
+    $report = new ImportReport('test.json');
+    $trimmed = $overrides->apply(sourceOverrideInput(34, 17), $report);
+    $fixed = sourceOverrideInput(28, 14);
+
+    expect([$trimmed->jpTotal, $trimmed->weekEnd, count($trimmed->weeklyDistribution), $trimmed->focusItems[0]['estimated_jp']])->toBe([28, 14, 14, 28])
+        ->and($trimmed->extras['import_override']['decision'] ?? null)->toBe('D-000')
+        ->and($overrides->apply($fixed, $report))->toBe($fixed)
+        ->and($report->notes())->toBe([
+            'Topic SIGRAK-TEST-2026-R1-KTB-K6-04: trimmed from 34 JP over weeks 1–17 to 28 JP over weeks 1–14 (D-000).',
+            'Topic SIGRAK-TEST-2026-R1-KTB-K6-04: the source no longer has 34 JP to week 17, so the D-000 correction is not applied.',
+        ])
+        ->and((new SourceOverrides)->apply($fixed, $report))->toBe($fixed);
 });

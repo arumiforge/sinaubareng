@@ -39,7 +39,7 @@ function allocationRow(array $overrides = []): array
 function topicRow(array $overrides = []): array
 {
     return [
-        'curriculum_version_id' => curriculumVersionRow(), 'code' => 'T-1', 'legacy_codes' => '[]',
+        'curriculum_version_id' => curriculumVersionRow(), 'code' => 'T-1',
         'subject_id' => Subject::factory()->create()->id, 'grade' => 1, 'phase' => 'A', 'semester' => 1,
         'elements' => 'E', 'title' => 'T', 'cp_text' => 'CP', 'atp_code' => 'ATP-1', 'order_in_semester' => 1,
         'jp_total' => 6, 'jp_per_week' => 3, 'week_start' => 1, 'week_end' => 2,
