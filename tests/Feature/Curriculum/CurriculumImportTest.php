@@ -236,7 +236,7 @@ it('reads a SIGRAK file with curation, curation notes, and extras', function ():
         ->and($topic->elements)->toBe('Bilangan; Aljabar')
         ->and($topic->references)->toMatchArray(['cp_source' => 'CP 2025', 'book_pages' => '1-10'])
         ->and($topic->curation_notes)->toMatchArray(['source_status' => 'disesuaikan'])
-        ->and($topic->extras)->toBe(['subject_status' => 'Wajib', 'atp' => ['order_in_year' => 1]])
+        ->and($topic->extras)->toEqual(['subject_status' => 'Wajib', 'atp' => ['order_in_year' => 1]])
         ->and(Topic::query()->where('code', 'SIGRAK-TEST-2026-R1-BIG-K1-01')->sole()->only(['curation_notes', 'extras']))->toBe(['curation_notes' => null, 'extras' => null])
         ->and($topic->learningObjectives->pluck('code')->all())->toBe(['SIGRAK-TEST-2026-R1-MTK-K4-01-TP01'])
         ->and($topic->focusItems->pluck('estimated_jp')->all())->toBe([45, 45])
