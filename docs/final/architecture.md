@@ -2,8 +2,8 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-04
-- **Last updated:** 2026-11-01
-- **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037)
+- **Last updated:** 2026-11-10 (P4-24: later decisions D-050, D-064, D-259…D-370 applied)
+- **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037, later D-050, D-064, D-259…D-370)
 
 ## Purpose
 
@@ -13,7 +13,7 @@ Server installation steps belong to `server-setup.md` (P2-05). Code style belong
 
 ## System at a glance
 
-One Laravel application on one Ubuntu 24.04 VPS behind Cloudflare, reached only through a Cloudflare Tunnel (D-086, D-088). It serves three front ends on three hostnames, and each has its own login guard. Background work runs on Redis queues under Horizon. Gotenberg is the only Docker service. The only outside service the server calls is the Gemini API.
+One Laravel application on one Ubuntu 24.04 VPS behind Cloudflare, reached only through a Cloudflare Tunnel (D-086, D-088). It serves three front ends on three hostnames, and each has its own login guard. Background work runs on Redis queues under Horizon. Gotenberg is the only Docker service. Teachers' generations call only the Gemini API with the teacher's own key; for console purposes Tim SIGRAK may also pick an OpenAI-compatible or Anthropic model with its own key (D-315, D-326).
 
 ```mermaid
 flowchart LR
@@ -39,7 +39,7 @@ flowchart LR
             CON[Staff console<br/>Filament + Horizon<br/>guard: staff]
         end
         W[Queue workers<br/>Horizon: ai · exports · default]
-        SCH[Scheduler<br/>schedule:run]
+        SCH[Scheduler<br/>schedule:work]
         R[(Redis<br/>cache · sessions · queues · AI state)]
         DB[(MySQL 8)]
         FS[(Local disk<br/>letterheads · export cache)]
@@ -56,25 +56,28 @@ flowchart LR
     W --> GOT
     SCH --> R
     W -- HTTPS, teacher's key --> GEM[Google Gemini API<br/>free tier]
+    W -. console purposes, Tim SIGRAK key .-> OAI[OpenAI-compatible<br/>or Anthropic API]
 ```
 
-The exam site and its workers never call Gemini (D-027). Only jobs on the `ai` queue, and the key test in *Kunci AI Saya*, reach Google.
+The exam site and its workers never call Gemini (D-027). Only jobs on the `ai` queue, the key test in *Kunci AI Saya*, and the console's model test (D-315) reach an AI provider.
 
 ## Components
 
 | Component | What it is | Runs as | Talks to | Source |
 |---|---|---|---|---|
 | **School app** | Every screen for teachers, principals, operators, supervisors. Inertia.js + plain Svelte, Tailwind with ported TailAdmin components, `lang/id` copy. Teacher menu: Hari Ini · Di Kelas · Buat · Asesmen · Kelas Saya, plus the role portals | PHP-FPM behind Nginx, Vite bundle | MySQL, Redis, local disk, queues | D-008, D-010, D-021 |
-| **Di Kelas offline part** | Service worker and IndexedDB queue for Absensi, Jurnal, Catatan Siswa only | In the teacher's browser | Sync endpoint of the school app | D-016 |
+| **Di Kelas offline part** | Service worker and IndexedDB queue for Kehadiran, Jurnal, student notes, observation and rubric entry, and Pindai LJK results; read-only cache of today's and tomorrow's RPM meetings (text only). Shows "Versi baru tersedia, muat ulang" after a release and syncs the queue before the reload | In the teacher's browser | Sync endpoint of the school app | D-016, D-289, D-321, D-349 |
+| **Pindai LJK reader** | A JavaScript OMR library reads the answer-sheet bubbles in the browser; only answers and confidence are sent, sheet photos never leave the phone; results queue offline. Later (after Pindai LJK in P5-08): handwritten Uraian/Isian read into text on the phone, sent to the AI as text with a `nomor absen-nomor soal` code (e.g. `12-3`), the teacher decides the score | In the teacher's browser | Sync endpoint; the AI only through the server, text only | D-287, D-289, D-369, D-370 |
 | **Game runtime** | Vanilla JS + CSS bundle per game template (Quiz Battle in v1). Used by *Tayangkan* inside the app, and inlined into the *Unduh game* HTML file | Browser | Nothing (the downloaded file has a CSP that blocks all network) | D-011, D-015 |
 | **Exam site** | The TKA practice exam client: question area, number grid, *ragu-ragu*, timer, font size. Own Inertia + Svelte entry (`resources/exam-client/`, D-094) on its own subdomain, sharing no bundle with the school app | Same Laravel app, own route group and guard | Exam endpoints only | D-026, D-027 |
-| **Staff console** | Filament panel for Tim SIGRAK: template registry and prompt overrides, schools and subscriptions, regional defaults, support, AI error overview. Horizon dashboard sits behind the same guard | Same Laravel app, own route group and guard | MySQL, Redis | D-010, D-013 |
+| **Staff console** | Filament panel for Tim SIGRAK: template registry and prompt overrides, schools and subscriptions, regional defaults, support, AI error overview. Also: read-only Hak akses matrix (D-314), AI model and fallbacks per purpose (D-315, D-326), Kesehatan Sistem (D-316), curriculum compare, publish, roll back, impact, JP audit (D-317), retention per data type (D-318), targeted Kabar (D-319), help-request status (D-320). Horizon dashboard sits behind the same guard | Same Laravel app, own route group and guard | MySQL, Redis | D-010, D-013, D-314…D-320 |
 | **MySQL 8** | The only system of record. Schema in [`data-model.md`](data-model.md) | systemd service on the VPS | — | D-007 |
 | **Redis** | Cache, sessions, queues, Horizon metadata, and AI runtime state (round-robin counters, cooldowns, circuit state, per-teacher funnel) | systemd service on the VPS | — | D-003 |
-| **Queue workers** | Horizon supervisors per queue: `ai` (generation jobs), `exports` (PDF, DOCX, Excel, game HTML), `default` (mail, notifications, scoring, imports) | Horizon under Supervisor (or systemd) | MySQL, Redis, Gotenberg, Gemini | [`ai-provider-engine.md`](ai-provider-engine.md#queues-and-progress) |
-| **Scheduler** | `php artisan schedule:run` every minute: stuck-step sweeper, data pruning, exam housekeeping (see [Scheduled jobs](#scheduled-jobs)) | cron | MySQL, Redis | — |
+| **Queue workers** | Horizon supervisors per queue: `ai` (generation jobs), `exports` (PDF, DOCX, Excel, game HTML, Berkas Administrasi and the school ZIP, D-278…D-280), `default` (mail, notifications, scoring, imports, draft timetable, D-262) | Horizon under Supervisor | MySQL, Redis, Gotenberg, AI providers | [`ai-provider-engine.md`](ai-provider-engine.md#queues-and-progress) |
+| **Scheduler** | `php artisan schedule:work`: stuck-step sweeper, data pruning, exam housekeeping, weekly snapshots and Kabar (see [Scheduled jobs](#scheduled-jobs)) | Supervisor, no cron entry | MySQL, Redis | D-064 |
 | **Gotenberg 8** | Headless Chromium for HTML → PDF, called through `spatie/laravel-pdf` | Docker container, pinned image, bound to localhost, basic auth | Nothing outbound | D-028, D-031 |
-| **Gemini API** | Google's `generateContent`, free tier, with each teacher's own keys | External | — | D-012, D-023 |
+| **Gemini API** | Google's `generateContent`, free tier, with each teacher's own keys (teacher keys are Gemini only) | External | — | D-012, D-023, D-326 |
+| **Console AI providers** | OpenAI-compatible (OpenAI, OpenRouter, DeepSeek) and Anthropic, with Tim SIGRAK keys only, picked per purpose in the console | External | — | D-315, D-326 |
 | **Cloudflare** | DNS, proxy, TLS, WAF in front of every hostname | External | Nginx | D-003 |
 | **Telescope** | Request, query, and job inspector | Local and staging only, never public in production | — | D-003 |
 | **Python (optional)** | Only for data work Laravel/Node cannot do well, in its own folder with pinned dependencies. No runtime role is planned | CLI | — | CONTEXT |
@@ -97,15 +100,21 @@ The code is split by responsibility. The arrows are the only allowed dependencie
 
 ```
 app/
-├── AI/            Gemini only. Keys, selection, errors, privacy guard, usage logs.
-│                  Knows nothing about education. Entry point: AIGateway.
+├── AI/            Gemini adapter (teacher keys); OpenAI-compatible and Anthropic adapters
+│                  (Tim SIGRAK keys only, D-326). Keys, selection, errors, privacy guard,
+│                  usage logs. Knows nothing about education. Entry point: AIGateway.
 ├── Content/       Templates, generation pipeline, export. Knows nothing about Gemini.
 │   ├── Templates/   one folder per content type (Rpm, BankSoal, Lkpd, QuizBattle, TkaPackage)
 │   ├── Generation/  SpecificationBuilder, PromptBuilder, OutputValidator, OutputRepairer, GenerationRunner
-│   └── Export/      PdfExporter, DocxExporter, ExcelExporter, GameExporter
+│   ├── Export/      PdfExporter, DocxExporter, ExcelExporter, GameExporter
+│   ├── Readiness/   RpmReadiness per class and subject (D-270)
+│   └── Alignment/   Cek Keselarasan checker (planned, D-358)
 ├── Tenancy/       Current school context, BelongsToSchool scope, membership and role switch   (proposed)
 ├── Curriculum/    Import command, curriculum versions, school changes and validation          (proposed)
-├── Classroom/     Di Kelas: attendance, journal, student notes, offline sync endpoint          (proposed)
+│   └── Policy/      PolicyProfileResolver, Profil Jenjang (planned before P5-04, D-355, D-356)
+├── Calendar/      EffectiveDays, ConflictChecker (D-259, D-260)
+├── Progress/      CompletenessLedger, ProgressReport, weekly snapshots (D-263, D-265)
+├── Classroom/     Di Kelas: attendance, journal, notes, observations, offline sync endpoint    (proposed)
 ├── Exam/          TKA sessions, snapshot, cards, token, exam client API, scoring              (proposed)
 ├── Filament/      Staff console resources only
 └── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
@@ -117,11 +126,15 @@ app/
 | Module | May use | Must not use | Why |
 |---|---|---|---|
 | `AI` | Laravel HTTP client, Redis, `ai_*` tables | `Content`, `Exam`, student models | Keeps provider logic replaceable and testable with a fake (D-022 item 4) |
-| `Content` | `AI` through `AIGateway` only, `Curriculum` (read), `Tenancy` | `AI` internals, Gemini types | Templates name a *purpose*, never a model |
-| `Curriculum` | `Tenancy` | `AI`, `Content` | Pure reference data plus the validation flow (D-019) |
+| `Content` | `AI` through `AIGateway` only, `Curriculum` (read), `Calendar` (read, for readiness), `Tenancy` | `AI` internals, Gemini types | Templates name a *purpose*, never a model |
+| `Curriculum` | `Tenancy` | `AI`, `Content` | Pure reference data plus the validation flow (D-019). `Curriculum\Policy` resolves the policy profile for every module |
+| `Calendar` | `Tenancy`, `Curriculum` (read) | `AI` | One count of effective days and one clash checker for every role (D-259, D-260) |
+| `Progress` | `Tenancy`, `Calendar`, `Content` and `Classroom` (read) | `AI`; writing outside `progress_snapshots` | Same completeness numbers in every role (D-263, D-265) |
 | `Classroom` | `Tenancy`, `Curriculum` (read), `Content` (read meetings for Jurnal) | `AI` | Offline data never touches AI |
 | `Exam` | `Tenancy`, `Content` (read a `tka_package` document once, to snapshot it) | `AI`, anything after the snapshot | Exam isolation (D-027). A running exam reads only `exam_*` tables |
 | `Filament` | Everything, with `withoutSchoolScope()` where needed | — | Staff tooling; the only place bypassing the scope is normal |
+
+**Policy layer (planned, D-354…D-358).** `app/Curriculum/Policy/` holds the policy-profile resolver: `PolicyProfileResolver` returns a `PolicyProfile` from school year, level, and region. It replaces the `config/curriculum.php` `allocation_versions` pointer (D-230 behaviour unchanged) and reads `curriculum_versions` with `effective_on`, `applies_from_school_year`, and `supersedes_id`, plus the versioned Profil Jenjang record per level (`sd`, `mi`). Code reads the profile and never branches on `level == mi`. Both come before P5-04 (D-355, D-356). Documents store the rule-set codes they were made under (D-354). Cek Keselarasan (`app/Content/Alignment/`) returns block, warning, and hint lines by rule strength (D-353) on save and in review and never rewrites the teacher's work; the Dasar Kebijakan panel reads the document's taxonomy tags. Both start with the RPM in P5-04 (D-358). Target later (P5-09 or own slice): `regulations`, `regulation_relations`, `rule_sets`, `rules`, a console for every domain, and Kabar Regulasi (D-354, D-355).
 
 **Data that crosses a boundary is a snapshot.** Bank Soal items are copied into `assessment_items`; a TKA package is copied into `exam_items` when a session is scheduled; a generation stores its specification and step outputs. Later edits to the source never change a running exam or a past score.
 
@@ -172,20 +185,22 @@ Key rules, all from [`ai-provider-engine.md`](ai-provider-engine.md) and [`conte
 - Data fields (identity, CP, TP codes, meetings, minutes) are merged from the database after generation; AI output for them is ignored.
 - *Perbaiki bagian ini* runs `ReviseSection` the same way, with the document's own template version, and keeps the previous content as a revision.
 
-**Job uniqueness and self-re-dispatch (*proposed* detail).** The drafts say each job is `ShouldBeUnique` by generation id *and* re-dispatches itself. With plain `ShouldBeUnique` the lock is held until the job finishes, so the re-dispatch from inside `handle()` would be dropped. Use `ShouldBeUniqueUntilProcessing` (the lock is released when the job starts) together with the `WithoutOverlapping` job middleware keyed by generation id. Then a double dispatch is still blocked, two runs of one generation never overlap, and the next step can be queued.
+**Job uniqueness and self-re-dispatch (D-050).** The drafts say each job is `ShouldBeUnique` by generation id *and* re-dispatches itself. With plain `ShouldBeUnique` the lock is held until the job finishes, so the re-dispatch from inside `handle()` would be dropped. Use `ShouldBeUniqueUntilProcessing` (the lock is released when the job starts) together with the `WithoutOverlapping` job middleware keyed by generation id. Then a double dispatch is still blocked, two runs of one generation never overlap, and the next step can be queued.
 
 ### 2. Export (PDF, DOCX, Excel, game file)
 
 1. The teacher presses *Unduh PDF/Word/Excel* or *Unduh game*. The controller checks `document_exports` for a row with the same `content_hash`, template version, and print settings. A hit is served straight from disk.
 2. A miss queues an export job on `exports` and the page shows progress (same polling pattern as generation).
 3. The job renders from the document's content JSON, never from a screenshot:
-   - **PDF:** one Blade view per template → `spatie/laravel-pdf` → Gotenberg over `http://127.0.0.1` with basic auth. JavaScript runs before capture (`waitUntilReady`) so KaTeX, ApexCharts, and three.js render. The letterhead image (teacher's own, else the school's; D-031), and print settings are part of the view. One view → one PDF, no merging.
+   - **PDF:** one Blade view per template → `spatie/laravel-pdf` → Gotenberg over `http://127.0.0.1` with basic auth. JavaScript runs before capture (`waitUntilReady`) so KaTeX, ApexCharts, and three.js render. The letterhead image (teacher's own, else the school's; D-031), and print settings are part of the view. One view → one PDF; only Berkas Administrasi merges PDFs (below, D-280).
    - **DOCX:** PhpWord from SIGRAK's own layout per template, letterhead image in the header.
    - **Excel:** Laravel Excel, Indonesian headers through translation keys, numbers stored as numbers.
    - **Game HTML:** `GameExporter` inlines the runtime bundle of the document's template version, embeds content as escaped JSON, and adds the no-network CSP meta tag.
 4. The file is stored on local disk, recorded in `document_exports`, and downloaded through an authorized route (never a public URL).
 
 Exam cards and TKA result reports use the same path.
+
+**Berkas Administrasi (D-278…D-280).** An `exports` job renders each part as its own PDF and joins them with Gotenberg's merge route (contents page numbers come from each part's page count), or zips them. Files are kept 7 days and reused while the data is unchanged. The principal's whole-school download is one ZIP with one PDF per teacher, also on `exports`.
 
 **Gotenberg gets everything it needs in the request (*proposed*).** The HTML, fonts, scripts, and images are sent as files in the multipart request (or inlined as `data:` URIs). The container has no route to the app and no outbound internet, so a malicious string in a document cannot make Chromium fetch anything.
 
@@ -198,8 +213,9 @@ Open Di Kelas while online
   service worker caches the Di Kelas shell
   IndexedDB caches today's classes, students, slots  ◄── GET (session cookie)
 Signal drops
-  Absensi / Jurnal / Catatan Siswa saved to
-  IndexedDB with a client_uuid, shown as
+  Kehadiran, Jurnal, notes, observations, and
+  Pindai LJK results saved to IndexedDB with
+  a client_uuid, shown as
   "tersimpan di perangkat"
 Signal returns (or app reopened)
   queue sent in batches ───────────────────────────►  POST /sync (session cookie + CSRF)
@@ -209,7 +225,8 @@ Signal returns (or app reopened)
   rows marked sent      ◄───────────────────────────   per-row result
 ```
 
-- Only Absensi, Jurnal, and Catatan Siswa work offline (D-016). Every other screen needs a connection.
+- Offline writes: Kehadiran, Jurnal, student notes (D-016), observation and rubric entry (D-349), and Pindai LJK results (answers and confidence, no images), which reach `scores` only after sync and the teacher's confirmation (D-289, D-369). Offline reads: today's and tomorrow's RPM meetings, read-only, text only (D-289). Editing, AI, and every other screen need a connection.
+- **New release (D-321):** the service worker detects a new build and the app shows "Versi baru tersedia, muat ulang"; the offline queue is synced before the reload.
 - Last write wins per row; `recorded_at_device` keeps the device time next to the server timestamps.
 - **Auth (*proposed*):** the sync endpoint uses the normal web session cookie and CSRF token, not a separate API token. The drafts keep the session alive (no 15-minute idle cut) and the app is same-origin, so no extra token type is needed. If the session has expired, queued rows stay in IndexedDB until the teacher logs in again; they are never dropped.
 - **Device data (*proposed*):** cached student names and queued rows live only in IndexedDB for the logged-in teacher and are cleared on logout. Religion is not cached (it is not needed to take attendance; D-036).
@@ -263,7 +280,10 @@ These use the same building blocks and need no extra components:
 - **Template prompt override:** staff edit in Filament → new immutable `template_versions` row, no deploy (D-013).
 - **RPM scheduling:** meetings are placed on the timetable; a journal entry marked "tidak terlaksana" shifts later meetings to the next slot (`meetings`, `meeting_schedule_history`).
 - **Buka di Canva (level 1):** an export download plus a link that opens canva.com. No server call to Canva.
-- **Kabar:** announcements, reminders, and database notifications (generation done, key invalid) in one inbox.
+- **Kabar:** announcements, reminders, and database notifications (generation done, key invalid) in one inbox. Tim SIGRAK Kabar can target region, level, and roles (D-319); readiness and JP balance Kabar go to teachers only (D-271).
+- **Calendar and progress:** `EffectiveDays` feeds completeness, RPM readiness, the JP balance, and RPM scheduling (D-259); `ConflictChecker` checks every dated item (D-260); every completeness screen is built from `CompletenessLedger` rows, live results cached per teacher per day in Redis (D-263, D-265); `RpmReadiness` shows Siap, Segera habis, Perlu RPM (D-270).
+- **Draft timetable:** "Susun draf jadwal" runs as a `default` queue job; the output is always a draft (D-262).
+- **Pengesahan dokumen:** approval stores a `content_hash` and a 10-character code; `/verifikasi/{code}` works only after login, for that school's members and its assigned supervisor (D-281).
 - **Plan limits:** a small entitlement check reads `subscriptions` and `school_addons` before a feature, generation, or export is used. After the 1-week trial (D-160), an account without a plan can only view and download; add-on features need the school's add-on, except a teacher's one-time 7-day Game kelas trial (D-157, D-158, D-159).
 
 ## Deployment topology
@@ -290,10 +310,11 @@ Everything runs on one VPS. This is enough for the pilot and is the stated stack
 │                      └── storage/       (letterheads, exports)       │
 │                                                                      │
 │  Supervisor ── Horizon ── supervisors: ai · exports · default        │
-│  cron ──────── php artisan schedule:run (every minute)               │
+│  Supervisor ── php artisan schedule:work (no cron, D-064)            │
 │  Docker ────── gotenberg:8.x (pinned)  127.0.0.1 only, basic auth    │
 │                                                                      │
-│  Outbound: generativelanguage.googleapis.com (Gemini), mail provider │
+│  Outbound: generativelanguage.googleapis.com (Gemini), mail provider,│
+│            console AI providers (OpenAI-compatible, Anthropic)       │
 └──────────────────────────────────────────────────────────────────────┘
 
 Build: Vite assets built in CI or locally, shipped as files. Node.js is not
@@ -310,10 +331,14 @@ Notes:
 
 ### Scheduled jobs
 
+All run from `schedule:work` under Supervisor (D-064); times are WIB. Retention periods start from the values below and are set in the console (D-318).
+
 | Job | Frequency | Source |
 |---|---|---|
 | Stuck-step sweeper: resume generations whose step is `running` past timeout + margin, log the attempt as `unknown` | every minute | AI draft, duplicates rule 7 |
-| Prune `document_revisions` beyond the last 5 per document (D-153) | daily | data model |
+| Prune `document_revisions` beyond the last 5 per document, never a revision linked to an `approved` `document_approvals` row | daily | D-153, D-282 |
+| Weekly completeness snapshot into `progress_snapshots` | Monday 00.30 | D-265 |
+| Readiness and JP balance summary Kabar to teachers | Monday 06.00 | D-271 |
 | Prune `ai_usage_logs` detail rows past retention, keep monthly aggregates | daily | D-118 (1 month) |
 | Purge `exam_participants.password` 30 days after the session closes | daily | data model |
 | Close exam sessions past `closes_at`, force-submit open attempts | every minute | data model, content engine |
@@ -326,17 +351,18 @@ Notes:
 | Boundary | Rule | Enforced by |
 |---|---|---|
 | **Three guards** | `web` (school users), `exam` (session-scoped participants), `staff` (Tim SIGRAK). Separate tables, separate hostnames, host-only session cookies. A school account can never become staff; a participant can never reach the app | Guards + route groups per domain (D-010, D-027) |
-| **Login-only** | No public pages. Only login, invitation acceptance, and password reset without a session. Accounts by invitation only | Middleware on every route group (D-010) |
+| **Login-only** | No public pages. Only login, invitation acceptance, and password reset without a session. Accounts by invitation only. `/verifikasi/{code}` also needs login (D-281) | Middleware on every route group (D-010) |
 | **Tenancy** | `school_id` on every school-owned table. `BelongsToSchool` global scope from the current membership, fail-closed. `withoutSchoolScope()` only in the staff console and in jobs that name the school. Policies on every action. An IDOR test per resource | `app/Tenancy` + policies + feature tests ([data model](data-model.md#tenancy-and-access)) |
 | **Roles** | From `school_memberships`, not a role column. Supervisors read across assigned schools only, read-only, and never see student-level rows | Policies, `supervisor_assignments` |
 | **Sensitive student data** | Religion visible to the class's teachers, operator, principal only; hidden from supervisors; never in prompts, never on the exam site (D-036). BK notes: author, homeroom teacher, principal | Policies, `PromptDataGuard`, exam API resources |
-| **AI keys** | Teacher-owned. Encrypted cast (APP_KEY, rotate with `APP_PREVIOUS_KEYS`), fingerprint for duplicates, last 4 for display. Write-only: never in Inertia props, never in logs, sent only as the `x-goog-api-key` header. Decrypted only in `ApiKeyManager`/`GeminiClient`. Only the owner's generations may use a key | `app/AI/KeyManager`, Telescope header hiding (D-012, D-023) |
-| **Prompt privacy** | No student personal data in any prompt. Teacher notes and curriculum text go in delimited data blocks; instructions come only from the template; output accepted only through schema validation | `PromptDataGuard`, `PromptBuilder`, `OutputValidator` |
+| **AI keys** | Teacher-owned, Gemini only (D-326). Encrypted cast (APP_KEY, rotate with `APP_PREVIOUS_KEYS`), fingerprint for duplicates, last 4 for display. Write-only: never in Inertia props, never in logs, sent only as the `x-goog-api-key` header. Decrypted only in `ApiKeyManager`/`GeminiClient`. Only the owner's generations may use a key | `app/AI/KeyManager`, Telescope header hiding (D-012, D-023) |
+| **Prompt privacy** | No student personal data in any prompt. Teacher notes and curriculum text go in delimited data blocks; instructions come only from the template; output accepted only through schema validation. Handwritten answers go as text with a `nomor absen-nomor soal` code, no name (D-370) | `PromptDataGuard`, `PromptBuilder`, `OutputValidator` |
 | **AI output in the UI** | Rendered as text (Svelte escaping, never `{@html}` on AI output). The game runtime uses `textContent` | Code review rule, game runtime |
 | **Exam isolation** | The exam site never calls the AI, links nowhere into the app, and reads only the participant's own exam. Credentials are session-scoped and expire on close. Token is TOTP-style from an encrypted per-session secret | `app/Exam`, `exam` guard (D-027) |
+| **Answer sheets** | Bubbles read in the teacher's browser; sheet photos never uploaded; the QR holds only a random `public_id` | Pindai LJK client code (D-287, D-325, D-369) |
 | **Downloaded games** | Teaching content only, no student data, CSP blocks all network | `GameExporter` (D-011) |
 | **Gotenberg** | Localhost only, basic auth, pinned image, no outbound network, all assets passed in the request | Docker network settings (D-028) |
-| **Staff console** | Separate guard and table; Horizon gated to staff; Telescope never public in production | Filament panel config, Horizon gate |
+| **Staff console** | Separate guard and table. Eleven staff roles with scopes, powers fixed in code (D-338, D-339; code still has admin, support, content); read-only Hak akses page (D-314). TOTP 2FA via Fortify, required for owner and admin, reset by an admin and logged (D-343). Support views a school read-only under the MoU, religion and health hidden, one internal row per support session (D-341). Horizon gated to staff; Telescope never public in production | Filament panel config, `staff_role_assignments`, Fortify, Horizon gate |
 | **Edge** | Cloudflare WAF and TLS; no public IP, traffic only through the Cloudflare Tunnel (D-088); Nginx restores the real client IP so Laravel's rate limits and logs see real addresses | Cloudflare, ufw, Nginx |
 
 **Rate limits on the exam site (*proposed*).** A whole class signs in from one school network, so many students share one public IP. Login throttling on `ujian.<domain>` is keyed by session and username, not by IP alone, and Cloudflare bot or rate rules for that hostname must allow bursts of 30–40 logins from one IP within a few minutes.
@@ -346,8 +372,8 @@ Notes:
 New choices this document makes. They get numbered when the parallel work is integrated.
 
 1. **One codebase, three hostnames, three guards.** School app, exam site, and staff console are domain-routed groups in one Laravel app (`app.`, `ujian.`, `admin.<domain>`), each with its own guard and a host-only session cookie. Reason: one deploy and one data model on one VPS, while keeping D-010 and D-027 isolation.
-2. **Module folders beyond `app/AI` and `app/Content`:** `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, with the dependency rules in [Module boundaries](#module-boundaries). `Exam` and `Classroom` never depend on `AI`.
-3. **Generation job uniqueness:** `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping` keyed by generation id, instead of plain `ShouldBeUnique`, so a job can re-dispatch itself for the next step (refines D-024 and the AI draft's queue rules).
+2. **Module folders beyond `app/AI` and `app/Content`:** `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, with the dependency rules in [Module boundaries](#module-boundaries). `Exam` and `Classroom` never depend on `AI`. Later added: `app/Calendar`, `app/Progress` (D-259, D-260, D-263) and the planned `app/Curriculum/Policy` (D-355).
+3. **Generation job uniqueness:** `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping` keyed by generation id, instead of plain `ShouldBeUnique`, so a job can re-dispatch itself for the next step (refines D-024 and the AI draft's queue rules; recorded as D-050).
 4. **Offline sync uses the web session + CSRF**, not a separate API token. Queued rows survive an expired session until the next login. Cached student data is cleared on logout and excludes religion.
 5. **Gotenberg is fed all assets in the request** and has no outbound network.
 6. **Separate Redis databases** for cache, sessions, queues/Horizon, and AI state.
