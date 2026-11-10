@@ -116,3 +116,7 @@ Done 2026-11-10 on branch `p4/p4-final-docs-sync`. Eleven final docs changed (pr
 - `lang/id` (session B): "Siswa" → "Murid" (e.g. `classes.php`), "Catatan Siswa" → "Catatan Murid", `terms.attendance` → "Kehadiran", banned-words test (LOC-35), new keys listed in the PR.
 - `CONTEXT.md` (coordinator): planned module paths `app/Curriculum/Policy/` (PolicyProfileResolver, Profil Jenjang) and `app/Content/Alignment/` (Cek Keselarasan); handbook §12.1 now empty.
 - D-314 ("roles stay admin, support, content") is superseded in practice by D-339; the docs follow D-339 and note the code still has three roles.
+- D-315 says an admin sets AI models; D-339 moves that power to the owner. The docs follow D-339.
+- D-323 needs a province-level region (Jawa Tengah reference calendar), but the `regions` migration has `regency` NOT NULL with unique (`province`, `regency`); settle in P5-03i.
+- D-161 kept ekstrakurikuler records with Buku Induk; D-216 brings them into v1 early. The docs follow D-216.
+- Tables without decided column names (support sessions, Berkas jobs, school and user settings, leger state, observation results, Konteks Daerah, console tables) are described in words in `data-model.md`; names are set in their build slices.
