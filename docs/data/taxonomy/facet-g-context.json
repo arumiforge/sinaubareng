@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "G",
+    "facet_name": "Context",
+    "title": "Taksonomi SIGRAK — Faset G: Konteks daerah",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "WILAYAH",
+      "facet": "G",
+      "label_id": "Wilayah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "Province and kabupaten/kota use the official region codes; the dataset is not in the repo yet."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "WILAYAH.PROVINSI",
+      "facet": "G",
+      "label_id": "Provinsi",
+      "parent": "WILAYAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "province"
+    },
+    {
+      "code": "WILAYAH.KABKOTA",
+      "facet": "G",
+      "label_id": "Kabupaten/kota",
+      "parent": "WILAYAH.PROVINSI",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "regency"
+    },
+    {
+      "code": "MULOK",
+      "facet": "G",
+      "label_id": "Muatan lokal",
+      "parent": null,
+      "level_scope": "both",
+      "force": "maximum",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": "Pasal 26",
+        "pages": null,
+        "note": "SD cap 72 JP per year warns (D-232). Local subjects are the local_content rows of subjects.json."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/curriculum/subjects.json"
+        ],
+        "path": "subjects[kind=local_content]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "BAHASA-DAERAH",
+      "facet": "G",
+      "label_id": "Bahasa daerah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "BAHASA-DAERAH.JAWA",
+      "facet": "G",
+      "label_id": "Bahasa Jawa",
+      "parent": "BAHASA-DAERAH",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "javanese"
+    },
+    {
+      "code": "KONTEKS",
+      "facet": "G",
+      "label_id": "Jenis konteks daerah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333",
+        "note": "Konteks Daerah items are added per school or region (scope: school)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "KONTEKS.CERITA",
+      "facet": "G",
+      "label_id": "Cerita dan tokoh lokal",
+      "parent": "KONTEKS",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "story"
+    },
+    {
+      "code": "KONTEKS.PRODUK",
+      "facet": "G",
+      "label_id": "Produk dan kerajinan lokal",
+      "parent": "KONTEKS",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "product"
+    },
+    {
+      "code": "KONTEKS.TEMPAT",
+      "facet": "G",
+      "label_id": "Tempat dan lingkungan sekitar",
+      "parent": "KONTEKS",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "place"
+    },
+    {
+      "code": "KONTEKS.TRADISI",
+      "facet": "G",
+      "label_id": "Tradisi dan budaya",
+      "parent": "KONTEKS",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "tradition"
+    },
+    {
+      "code": "KONTEKS.BAHASA",
+      "facet": "G",
+      "label_id": "Bahasa daerah",
+      "parent": "KONTEKS",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-333"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "language"
+    },
+    {
+      "code": "KALENDER-DAERAH",
+      "facet": "G",
+      "label_id": "Kalender pendidikan daerah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERKADIS-JATENG-400-3-23862-2026",
+        "article": null,
+        "pages": null,
+        "note": "Reference calendar for Kudus, Pati, Jepara (D-323); other regions add their own."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "D",
+    "facet_name": "Learning",
+    "title": "Taksonomi SIGRAK — Faset D: Pembelajaran",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "PM-PRINSIP",
+      "facet": "D",
+      "label_id": "Prinsip pembelajaran mendalam",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          5,
+          14,
+          28
+        ],
+        "note": "'Memuliakan' is the overarching value; the three principles sit under it."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PM-PRINSIP.01",
+      "facet": "D",
+      "label_id": "Berkesadaran",
+      "parent": "PM-PRINSIP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "mindful"
+    },
+    {
+      "code": "PM-PRINSIP.02",
+      "facet": "D",
+      "label_id": "Bermakna",
+      "parent": "PM-PRINSIP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "meaningful"
+    },
+    {
+      "code": "PM-PRINSIP.03",
+      "facet": "D",
+      "label_id": "Menggembirakan",
+      "parent": "PM-PRINSIP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          5,
+          14,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "joyful"
+    },
+    {
+      "code": "PM-PENGALAMAN",
+      "facet": "D",
+      "label_id": "Pengalaman belajar",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          12
+        ],
+        "note": "Labels follow the slides and the RPM layout; the decree says memahami, menerapkan, melakukan refleksi.",
+        "also": [
+          {
+            "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM"
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PM-PENGALAMAN.01",
+      "facet": "D",
+      "label_id": "Memahami",
+      "parent": "PM-PENGALAMAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          12
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "understanding"
+    },
+    {
+      "code": "PM-PENGALAMAN.02",
+      "facet": "D",
+      "label_id": "Mengaplikasi",
+      "parent": "PM-PENGALAMAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          12
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "applying"
+    },
+    {
+      "code": "PM-PENGALAMAN.03",
+      "facet": "D",
+      "label_id": "Merefleksi",
+      "parent": "PM-PENGALAMAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          12
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "reflecting"
+    },
+    {
+      "code": "PM-KERANGKA",
+      "facet": "D",
+      "label_id": "Kerangka pembelajaran",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          17
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PM-KERANGKA.01",
+      "facet": "D",
+      "label_id": "Praktik pedagogis",
+      "parent": "PM-KERANGKA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          17
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "pedagogical_practice"
+    },
+    {
+      "code": "PM-KERANGKA.02",
+      "facet": "D",
+      "label_id": "Kemitraan pembelajaran",
+      "parent": "PM-KERANGKA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          17
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "learning_partnership"
+    },
+    {
+      "code": "PM-KERANGKA.03",
+      "facet": "D",
+      "label_id": "Lingkungan pembelajaran",
+      "parent": "PM-KERANGKA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          17
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "learning_environment"
+    },
+    {
+      "code": "PM-KERANGKA.04",
+      "facet": "D",
+      "label_id": "Pemanfaatan digital",
+      "parent": "PM-KERANGKA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-126-P-2025",
+        "article": null,
+        "pages": [
+          17
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "digital_utilization"
+    },
+    {
+      "code": "PRAKTIK",
+      "facet": "D",
+      "label_id": "Model dan praktik pedagogis",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ],
+        "note": "The slides list examples ending in 'dan sebagainya'; schools may add local items."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "PRAKTIK.INKUIRI",
+      "facet": "D",
+      "label_id": "Pembelajaran berbasis inkuiri",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "inquiry"
+    },
+    {
+      "code": "PRAKTIK.PJBL",
+      "facet": "D",
+      "label_id": "Pembelajaran berbasis proyek",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "project_based"
+    },
+    {
+      "code": "PRAKTIK.PBL",
+      "facet": "D",
+      "label_id": "Pembelajaran berbasis masalah",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "problem_based"
+    },
+    {
+      "code": "PRAKTIK.KOLABORATIF",
+      "facet": "D",
+      "label_id": "Pembelajaran kolaboratif",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "collaborative"
+    },
+    {
+      "code": "PRAKTIK.STEM",
+      "facet": "D",
+      "label_id": "Pembelajaran STEM",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "stem"
+    },
+    {
+      "code": "PRAKTIK.DIFERENSIASI",
+      "facet": "D",
+      "label_id": "Pembelajaran berdiferensiasi",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PAPARAN-PEMBELAJARAN-MENDALAM",
+        "article": null,
+        "pages": [
+          27,
+          28
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "differentiated"
+    },
+    {
+      "code": "PRAKTIK.GBL",
+      "facet": "D",
+      "label_id": "Pembelajaran berbasis permainan",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "policy-innovation-layers.md §7"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "game_based"
+    },
+    {
+      "code": "PRAKTIK.LUAR-KELAS",
+      "facet": "D",
+      "label_id": "Belajar di luar kelas",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "policy-innovation-layers.md §7"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "outdoor"
+    },
+    {
+      "code": "PRAKTIK.TUTOR-SEBAYA",
+      "facet": "D",
+      "label_id": "Tutor sebaya",
+      "parent": "PRAKTIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "policy-innovation-layers.md §7"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "peer_teaching"
+    },
+    {
+      "code": "MODA",
+      "facet": "D",
+      "label_id": "Moda pembelajaran",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "policy-innovation-layers.md §7, §9.3"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "MODA.TATAP-MUKA",
+      "facet": "D",
+      "label_id": "Tatap muka di kelas",
+      "parent": "MODA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "face_to_face"
+    },
+    {
+      "code": "MODA.LUAR-KELAS",
+      "facet": "D",
+      "label_id": "Di luar kelas",
+      "parent": "MODA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "outdoor"
+    },
+    {
+      "code": "MODA.PAPAN-INTERAKTIF",
+      "facet": "D",
+      "label_id": "Papan interaktif (IFP)",
+      "parent": "MODA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-171"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "interactive_board"
+    },
+    {
+      "code": "MODA.TANPA-PERANGKAT",
+      "facet": "D",
+      "label_id": "Tanpa perangkat",
+      "parent": "MODA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "no_device"
+    },
+    {
+      "code": "MEDIA",
+      "facet": "D",
+      "label_id": "Media",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344",
+        "note": "Shared by facet D (learning) and facet E (assessment media); P4-19 reuses these codes."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "MEDIA.KERTAS",
+      "facet": "D",
+      "label_id": "Kertas (cetak)",
+      "parent": "MEDIA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "paper"
+    },
+    {
+      "code": "MEDIA.DIGITAL",
+      "facet": "D",
+      "label_id": "Digital",
+      "parent": "MEDIA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "digital"
+    },
+    {
+      "code": "MEDIA.PAPAN-INTERAKTIF",
+      "facet": "D",
+      "label_id": "Papan interaktif (IFP)",
+      "parent": "MEDIA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "interactive_board"
+    },
+    {
+      "code": "MEDIA.CAMPURAN",
+      "facet": "D",
+      "label_id": "Campuran",
+      "parent": "MEDIA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "mixed"
+    },
+    {
+      "code": "MEDIA.BENDA-KONKRET",
+      "facet": "D",
+      "label_id": "Benda konkret",
+      "parent": "MEDIA",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "concrete_objects"
+    }
+  ]
+}

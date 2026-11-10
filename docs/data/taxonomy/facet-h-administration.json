@@ -1,0 +1,765 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "H",
+    "facet_name": "Administration",
+    "title": "Taksonomi SIGRAK — Faset H: Administrasi",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "PERAN-SEKOLAH",
+      "facet": "H",
+      "label_id": "Peran di sekolah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348",
+        "note": "School roles stay four; GPK is an assignment."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PERAN-SEKOLAH.GURU",
+      "facet": "H",
+      "label_id": "Guru",
+      "parent": "PERAN-SEKOLAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "teacher"
+    },
+    {
+      "code": "PERAN-SEKOLAH.KEPALA-SEKOLAH",
+      "facet": "H",
+      "label_id": "Kepala sekolah",
+      "parent": "PERAN-SEKOLAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "principal"
+    },
+    {
+      "code": "PERAN-SEKOLAH.OPERATOR",
+      "facet": "H",
+      "label_id": "Operator",
+      "parent": "PERAN-SEKOLAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "operator"
+    },
+    {
+      "code": "PERAN-SEKOLAH.PENGAWAS",
+      "facet": "H",
+      "label_id": "Pengawas",
+      "parent": "PERAN-SEKOLAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "supervisor"
+    },
+    {
+      "code": "TUGAS-GURU",
+      "facet": "H",
+      "label_id": "Tugas guru",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-11-2025",
+        "article": null,
+        "pages": null,
+        "note": "Wali kelas JTM: SD 2, MI 6 (D-212; KMA 736/2026)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "TUGAS-GURU.GURU-KELAS",
+      "facet": "H",
+      "label_id": "Guru kelas",
+      "parent": "TUGAS-GURU",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-032"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "class_teacher"
+    },
+    {
+      "code": "TUGAS-GURU.GURU-MAPEL",
+      "facet": "H",
+      "label_id": "Guru mata pelajaran",
+      "parent": "TUGAS-GURU",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-032"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "subject_teacher"
+    },
+    {
+      "code": "TUGAS-GURU.WALI-KELAS",
+      "facet": "H",
+      "label_id": "Wali kelas",
+      "parent": "TUGAS-GURU",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-11-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "KMA-736-2026"
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "homeroom"
+    },
+    {
+      "code": "TUGAS-GURU.GPK",
+      "facet": "H",
+      "label_id": "Guru pendamping khusus",
+      "parent": "TUGAS-GURU",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-348"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "special_assistant"
+    },
+    {
+      "code": "TUGAS-GURU.PEMBINA-EKSKUL",
+      "facet": "H",
+      "label_id": "Pembina ekstrakurikuler",
+      "parent": "TUGAS-GURU",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-216"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "extracurricular_coach"
+    },
+    {
+      "code": "PERAN-STAF",
+      "facet": "H",
+      "label_id": "Peran staf SIGRAK",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PERAN-STAF.OWNER",
+      "facet": "H",
+      "label_id": "Pemilik",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "owner"
+    },
+    {
+      "code": "PERAN-STAF.ADMIN",
+      "facet": "H",
+      "label_id": "Admin",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "admin"
+    },
+    {
+      "code": "PERAN-STAF.VALIDATOR",
+      "facet": "H",
+      "label_id": "Validator",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "validator"
+    },
+    {
+      "code": "PERAN-STAF.CONTENT",
+      "facet": "H",
+      "label_id": "Penyusun Konten",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "content"
+    },
+    {
+      "code": "PERAN-STAF.CURRICULUM",
+      "facet": "H",
+      "label_id": "Kurator Kurikulum",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "curriculum"
+    },
+    {
+      "code": "PERAN-STAF.SUPPORT",
+      "facet": "H",
+      "label_id": "Support",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "support"
+    },
+    {
+      "code": "PERAN-STAF.MARKETING",
+      "facet": "H",
+      "label_id": "Pemasaran",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "marketing"
+    },
+    {
+      "code": "PERAN-STAF.SALES",
+      "facet": "H",
+      "label_id": "Penjualan",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "sales"
+    },
+    {
+      "code": "PERAN-STAF.REGIONAL-LEAD",
+      "facet": "H",
+      "label_id": "Koordinator Wilayah",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "regional_lead"
+    },
+    {
+      "code": "PERAN-STAF.FINANCE",
+      "facet": "H",
+      "label_id": "Keuangan",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "finance"
+    },
+    {
+      "code": "PERAN-STAF.ENGINEER",
+      "facet": "H",
+      "label_id": "Teknis",
+      "parent": "PERAN-STAF",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-339"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "engineer"
+    },
+    {
+      "code": "PIHAK",
+      "facet": "H",
+      "label_id": "Pihak sekolah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-210"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PIHAK.MURID",
+      "facet": "H",
+      "label_id": "Murid",
+      "parent": "PIHAK",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-1-2026",
+        "article": null,
+        "pages": null,
+        "note": "UI term 'murid' (D-210)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "PESERTA-DIDIK",
+          "type": "renamed",
+          "note": "Older regulations and guides say 'peserta didik'; the UI says 'murid'."
+        }
+      ],
+      "key": "student"
+    },
+    {
+      "code": "PIHAK.ORANG-TUA",
+      "facet": "H",
+      "label_id": "Orang tua/wali",
+      "parent": "PIHAK",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-215"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "parent"
+    },
+    {
+      "code": "PESERTA-DIDIK",
+      "facet": "H",
+      "label_id": "Peserta didik",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null,
+        "note": "Term used by 12/2024, 13/2025, and the 2025 guides."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "DOKUMEN",
+      "facet": "H",
+      "label_id": "Dokumen sekolah",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "Berkas Administrasi components are in the catalog (DOKUMEN-BERKAS)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "DOKUMEN.KSP",
+      "facet": "H",
+      "label_id": "Kurikulum Satuan Pendidikan (KSP)",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-26-2025",
+        "article": null,
+        "pages": null,
+        "note": "Set by the principal; also Panduan KSP 2025."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "ksp"
+    },
+    {
+      "code": "DOKUMEN.SK-TUGAS",
+      "facet": "H",
+      "label_id": "SK pembagian tugas",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-221"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "duty_decree"
+    },
+    {
+      "code": "DOKUMEN.RAPOR",
+      "facet": "H",
+      "label_id": "Rapor",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "minimum",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-21-2022",
+        "article": null,
+        "pages": null,
+        "note": "Minimum 12 components (D-205).",
+        "also": [
+          {
+            "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025"
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "report_card"
+    },
+    {
+      "code": "DOKUMEN.RKJM",
+      "facet": "H",
+      "label_id": "Rencana Kerja Jangka Menengah (RKJM)",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-26-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "medium_term_plan"
+    },
+    {
+      "code": "DOKUMEN.RKT",
+      "facet": "H",
+      "label_id": "Rencana Kerja Tahunan (RKT)",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-26-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "annual_plan"
+    },
+    {
+      "code": "DOKUMEN.TATA-TERTIB",
+      "facet": "H",
+      "label_id": "Tata tertib sekolah",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-6-2026",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "school_rules"
+    },
+    {
+      "code": "DOKUMEN.KESEPAKATAN-KELAS",
+      "facet": "H",
+      "label_id": "Kesepakatan kelas",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-6-2026",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "class_agreement"
+    },
+    {
+      "code": "DOKUMEN-BERKAS",
+      "facet": "H",
+      "label_id": "Komponen Berkas Administrasi (katalog)",
+      "parent": "DOKUMEN",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/admin-document-components.json"
+        ],
+        "path": "components[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "SUPERVISI",
+      "facet": "H",
+      "label_id": "Instrumen supervisi",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERDIRJEN-GTK-7607-2023",
+        "article": null,
+        "pages": null,
+        "note": "Regional variants per D-324, D-327; detail in docs/drafts/teacher-supervision-instruments.md."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "SUPERVISI.TELAAH-ADMINISTRASI",
+      "facet": "H",
+      "label_id": "Telaah administrasi pembelajaran",
+      "parent": "SUPERVISI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERDIRJEN-GTK-7607-2023",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "admin_review"
+    },
+    {
+      "code": "SUPERVISI.TELAAH-PERENCANAAN",
+      "facet": "H",
+      "label_id": "Telaah perencanaan pembelajaran",
+      "parent": "SUPERVISI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERDIRJEN-GTK-7607-2023",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "plan_review"
+    },
+    {
+      "code": "SUPERVISI.OBSERVASI",
+      "facet": "H",
+      "label_id": "Observasi pembelajaran",
+      "parent": "SUPERVISI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERDIRJEN-GTK-7607-2023",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "observation"
+    },
+    {
+      "code": "SUPERVISI.PASCA-OBSERVASI",
+      "facet": "H",
+      "label_id": "Pasca-observasi dan refleksi",
+      "parent": "SUPERVISI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERDIRJEN-GTK-7607-2023",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "post_observation"
+    }
+  ]
+}

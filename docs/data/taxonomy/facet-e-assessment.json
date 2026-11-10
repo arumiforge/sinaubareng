@@ -1,0 +1,1540 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "E",
+    "facet_name": "Assessment",
+    "title": "Taksonomi SIGRAK — Faset E: Asesmen",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "ASES-JENIS",
+      "facet": "E",
+      "label_id": "Jenis asesmen",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          44,
+          45,
+          46,
+          54
+        ],
+        "note": "Formative and summative results are never mixed (no_mixing_rule)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "ASES-JENIS.FORMATIF-AWAL",
+      "facet": "E",
+      "label_id": "Asesmen awal (diagnostik)",
+      "parent": "ASES-JENIS",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          44,
+          45
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "formative_initial",
+      "category": "formative",
+      "feeds_report": false
+    },
+    {
+      "code": "ASES-JENIS.FORMATIF-PROSES",
+      "facet": "E",
+      "label_id": "Asesmen dalam proses pembelajaran",
+      "parent": "ASES-JENIS",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          44
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "formative_process",
+      "category": "formative",
+      "feeds_report": false
+    },
+    {
+      "code": "ASES-JENIS.SUMATIF",
+      "facet": "E",
+      "label_id": "Asesmen sumatif",
+      "parent": "ASES-JENIS",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          46,
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "summative",
+      "category": "summative",
+      "feeds_report": true
+    },
+    {
+      "code": "ASES-FUNGSI",
+      "facet": "E",
+      "label_id": "Fungsi asesmen",
+      "parent": null,
+      "level_scope": "both",
+      "force": "recommended",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          47,
+          48
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "ASES-FUNGSI.AS",
+      "facet": "E",
+      "label_id": "Asesmen sebagai pembelajaran",
+      "parent": "ASES-FUNGSI",
+      "level_scope": "both",
+      "force": "recommended",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          47,
+          48
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "as_learning",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-FUNGSI.FOR",
+      "facet": "E",
+      "label_id": "Asesmen untuk pembelajaran",
+      "parent": "ASES-FUNGSI",
+      "level_scope": "both",
+      "force": "recommended",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          47,
+          48
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "for_learning",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-FUNGSI.OF",
+      "facet": "E",
+      "label_id": "Asesmen atas pembelajaran",
+      "parent": "ASES-FUNGSI",
+      "level_scope": "both",
+      "force": "recommended",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          47,
+          48
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "of_learning",
+      "maps_to": "ASES-JENIS.SUMATIF"
+    },
+    {
+      "code": "ASES-TUJUAN",
+      "facet": "E",
+      "label_id": "Tujuan asesmen (Peta Asesmen)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344",
+        "note": "Core list from the owner's map (assessment-landscape.md §3); each maps to an official type. P4-19 purposes.json reuses these codes."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-TUJUAN.PENAPISAN",
+      "facet": "E",
+      "label_id": "Penapisan",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "screening",
+      "maps_to": "ASES-JENIS.FORMATIF-AWAL"
+    },
+    {
+      "code": "ASES-TUJUAN.PENEMPATAN",
+      "facet": "E",
+      "label_id": "Penempatan",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "placement",
+      "maps_to": "ASES-JENIS.FORMATIF-AWAL"
+    },
+    {
+      "code": "ASES-TUJUAN.DIAGNOSTIK",
+      "facet": "E",
+      "label_id": "Diagnostik",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "diagnostic",
+      "maps_to": "ASES-JENIS.FORMATIF-AWAL"
+    },
+    {
+      "code": "ASES-TUJUAN.KESIAPAN",
+      "facet": "E",
+      "label_id": "Kesiapan belajar",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "readiness",
+      "maps_to": "ASES-JENIS.FORMATIF-AWAL"
+    },
+    {
+      "code": "ASES-TUJUAN.FORMATIF",
+      "facet": "E",
+      "label_id": "Formatif",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "formative",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-TUJUAN.PEMANTAUAN",
+      "facet": "E",
+      "label_id": "Pemantauan kemajuan",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "progress_monitoring",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-TUJUAN.DINAMIS",
+      "facet": "E",
+      "label_id": "Asesmen dinamis",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "dynamic",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-TUJUAN.SUMATIF",
+      "facet": "E",
+      "label_id": "Sumatif",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "summative",
+      "maps_to": "ASES-JENIS.SUMATIF"
+    },
+    {
+      "code": "ASES-TUJUAN.TRANSISI",
+      "facet": "E",
+      "label_id": "Transisi",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "transition",
+      "maps_to": "ASES-JENIS.FORMATIF-AWAL"
+    },
+    {
+      "code": "ASES-TUJUAN.TINDAK-LANJUT",
+      "facet": "E",
+      "label_id": "Tindak lanjut",
+      "parent": "ASES-TUJUAN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "follow_up",
+      "maps_to": "ASES-JENIS.FORMATIF-PROSES"
+    },
+    {
+      "code": "ASES-RANAH",
+      "facet": "E",
+      "label_id": "Ranah asesmen (Peta Asesmen)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344",
+        "note": "Top domains from the owner's need groups (assessment-landscape.md §2.1). P4-19 adds subdomains and indicators as children (ASES-RANAH.LIT.BACA …)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-RANAH.KESIAPAN",
+      "facet": "E",
+      "label_id": "Kesiapan dan profil awal",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "readiness",
+      "sensitive": false,
+      "wave": "A"
+    },
+    {
+      "code": "ASES-RANAH.AKADEMIK",
+      "facet": "E",
+      "label_id": "Kompetensi akademik mata pelajaran",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "academic",
+      "sensitive": false,
+      "wave": null
+    },
+    {
+      "code": "ASES-RANAH.LIT",
+      "facet": "E",
+      "label_id": "Literasi",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "literacy",
+      "sensitive": false,
+      "wave": "A"
+    },
+    {
+      "code": "ASES-RANAH.NUM",
+      "facet": "E",
+      "label_id": "Numerasi",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "numeracy",
+      "sensitive": false,
+      "wave": "A"
+    },
+    {
+      "code": "ASES-RANAH.DPL",
+      "facet": "E",
+      "label_id": "Karakter dan profil lulusan",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "character",
+      "sensitive": false,
+      "wave": "A",
+      "links_to": "DPL"
+    },
+    {
+      "code": "ASES-RANAH.SOSEMO",
+      "facet": "E",
+      "label_id": "Sosial-emosional dan kesejahteraan",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-350"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "social_emotional",
+      "sensitive": true,
+      "wave": null
+    },
+    {
+      "code": "ASES-RANAH.KINERJA",
+      "facet": "E",
+      "label_id": "Keterampilan dan kinerja",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "performance",
+      "sensitive": false,
+      "wave": null
+    },
+    {
+      "code": "ASES-RANAH.METAKOGNISI",
+      "facet": "E",
+      "label_id": "Metakognisi dan proses belajar",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-351"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "metacognition",
+      "sensitive": false,
+      "wave": null
+    },
+    {
+      "code": "ASES-RANAH.MINAT",
+      "facet": "E",
+      "label_id": "Minat, bakat, dan potensi",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-350"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "interest",
+      "sensitive": true,
+      "wave": null
+    },
+    {
+      "code": "ASES-RANAH.INKLUSI",
+      "facet": "E",
+      "label_id": "Kebutuhan dukungan belajar",
+      "parent": "ASES-RANAH",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-350"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "inclusion",
+      "sensitive": true,
+      "wave": null
+    },
+    {
+      "code": "ASES-TEKNIK",
+      "facet": "E",
+      "label_id": "Teknik asesmen",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-TEKNIK.OBSERVASI",
+      "facet": "E",
+      "label_id": "Observasi",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "observation"
+    },
+    {
+      "code": "ASES-TEKNIK.KINERJA",
+      "facet": "E",
+      "label_id": "Kinerja",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "performance"
+    },
+    {
+      "code": "ASES-TEKNIK.PROJEK",
+      "facet": "E",
+      "label_id": "Projek",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "project"
+    },
+    {
+      "code": "ASES-TEKNIK.TES-TERTULIS",
+      "facet": "E",
+      "label_id": "Tes tertulis",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "written_test"
+    },
+    {
+      "code": "ASES-TEKNIK.TES-LISAN",
+      "facet": "E",
+      "label_id": "Tes lisan",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "oral_test"
+    },
+    {
+      "code": "ASES-TEKNIK.PENUGASAN",
+      "facet": "E",
+      "label_id": "Penugasan",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "assignment"
+    },
+    {
+      "code": "ASES-TEKNIK.PORTOFOLIO",
+      "facet": "E",
+      "label_id": "Portofolio",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "portfolio"
+    },
+    {
+      "code": "ASES-TEKNIK.CATS",
+      "facet": "E",
+      "label_id": "Teknik asesmen kelas (CATs)",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "classroom_assessment_technique"
+    },
+    {
+      "code": "ASES-TEKNIK.TIKET-KELUAR",
+      "facet": "E",
+      "label_id": "Tiket keluar",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          55
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "exit_ticket"
+    },
+    {
+      "code": "ASES-TEKNIK.PENILAIAN-DIRI",
+      "facet": "E",
+      "label_id": "Penilaian diri",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "self_assessment"
+    },
+    {
+      "code": "ASES-TEKNIK.PENILAIAN-ANTARTEMAN",
+      "facet": "E",
+      "label_id": "Penilaian antarteman",
+      "parent": "ASES-TEKNIK",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "peer_assessment"
+    },
+    {
+      "code": "ASES-INSTRUMEN",
+      "facet": "E",
+      "label_id": "Instrumen asesmen",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-INSTRUMEN.RUBRIK",
+      "facet": "E",
+      "label_id": "Rubrik",
+      "parent": "ASES-INSTRUMEN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "rubric"
+    },
+    {
+      "code": "ASES-INSTRUMEN.CEKLIS",
+      "facet": "E",
+      "label_id": "Ceklis",
+      "parent": "ASES-INSTRUMEN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "checklist"
+    },
+    {
+      "code": "ASES-INSTRUMEN.CATATAN-ANEKDOTAL",
+      "facet": "E",
+      "label_id": "Catatan anekdotal",
+      "parent": "ASES-INSTRUMEN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "anecdotal_record"
+    },
+    {
+      "code": "ASES-INSTRUMEN.GRAFIK-PERKEMBANGAN",
+      "facet": "E",
+      "label_id": "Grafik perkembangan (kontinum)",
+      "parent": "ASES-INSTRUMEN",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          54
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "progress_chart"
+    },
+    {
+      "code": "ASES-RESPONS",
+      "facet": "E",
+      "label_id": "Bentuk respons",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "note": "Item types for written items stay in the catalog list SIGRAK-KAT-OPS-BSO (facet F SOAL-BENTUK)."
+    },
+    {
+      "code": "ASES-RESPONS.MEMILIH",
+      "facet": "E",
+      "label_id": "Memilih jawaban",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "selected"
+    },
+    {
+      "code": "ASES-RESPONS.MENULIS",
+      "facet": "E",
+      "label_id": "Menulis jawaban",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "written"
+    },
+    {
+      "code": "ASES-RESPONS.LISAN",
+      "facet": "E",
+      "label_id": "Lisan",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "oral"
+    },
+    {
+      "code": "ASES-RESPONS.UNJUK-KERJA",
+      "facet": "E",
+      "label_id": "Unjuk kerja",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "performance"
+    },
+    {
+      "code": "ASES-RESPONS.PRODUK",
+      "facet": "E",
+      "label_id": "Produk atau karya",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "product"
+    },
+    {
+      "code": "ASES-RESPONS.GAMBAR",
+      "facet": "E",
+      "label_id": "Gambar atau diagram",
+      "parent": "ASES-RESPONS",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "drawing"
+    },
+    {
+      "code": "ASES-KKTP",
+      "facet": "E",
+      "label_id": "Pendekatan KKTP",
+      "parent": null,
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "ASES-KKTP.DESKRIPSI",
+      "facet": "E",
+      "label_id": "Deskripsi kriteria",
+      "parent": "ASES-KKTP",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "criteria_description"
+    },
+    {
+      "code": "ASES-KKTP.RUBRIK",
+      "facet": "E",
+      "label_id": "Rubrik",
+      "parent": "ASES-KKTP",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "rubric"
+    },
+    {
+      "code": "ASES-KKTP.INTERVAL",
+      "facet": "E",
+      "label_id": "Interval nilai",
+      "parent": "ASES-KKTP",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "score_interval"
+    },
+    {
+      "code": "ASES-KKTP.PERSENTASE",
+      "facet": "E",
+      "label_id": "Persentase",
+      "parent": "ASES-KKTP",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "percentage"
+    },
+    {
+      "code": "ASES-OLAH",
+      "facet": "E",
+      "label_id": "Pengolahan nilai sumatif",
+      "parent": null,
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          64,
+          65,
+          66
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "ASES-OLAH.PEMBOBOTAN",
+      "facet": "E",
+      "label_id": "Pembobotan",
+      "parent": "ASES-OLAH",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          64,
+          65,
+          66
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "weighting"
+    },
+    {
+      "code": "ASES-OLAH.PERSENTASE",
+      "facet": "E",
+      "label_id": "Persentase",
+      "parent": "ASES-OLAH",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          64,
+          65,
+          66
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "percentage"
+    },
+    {
+      "code": "ASES-OLAH.RATA-RATA",
+      "facet": "E",
+      "label_id": "Rata-rata",
+      "parent": "ASES-OLAH",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PANDUAN-PEMBELAJARAN-ASESMEN-BSKAP-2025",
+        "article": null,
+        "pages": [
+          64,
+          65,
+          66
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "average"
+    },
+    {
+      "code": "ASES-SKOR",
+      "facet": "E",
+      "label_id": "Cara analisis hasil",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344",
+        "note": "Owner's map MAP-06; P4-19 scoring.json reuses these codes."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-SKOR.KRITERIA",
+      "facet": "E",
+      "label_id": "Acuan kriteria",
+      "parent": "ASES-SKOR",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "criterion"
+    },
+    {
+      "code": "ASES-SKOR.RUBRIK",
+      "facet": "E",
+      "label_id": "Tingkat rubrik",
+      "parent": "ASES-SKOR",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "rubric_level"
+    },
+    {
+      "code": "ASES-SKOR.ANALISIS-BUTIR",
+      "facet": "E",
+      "label_id": "Analisis butir soal",
+      "parent": "ASES-SKOR",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "item_analysis"
+    },
+    {
+      "code": "ASES-SKOR.MISKONSEPSI",
+      "facet": "E",
+      "label_id": "Analisis kesalahan dan miskonsepsi",
+      "parent": "ASES-SKOR",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "misconception"
+    },
+    {
+      "code": "ASES-SKOR.PERTUMBUHAN",
+      "facet": "E",
+      "label_id": "Pertumbuhan (ipsatif)",
+      "parent": "ASES-SKOR",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "growth"
+    },
+    {
+      "code": "ASES-TL",
+      "facet": "E",
+      "label_id": "Tindak lanjut hasil",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344",
+        "note": "Owner's map MAP-01; P4-19 uses.json reuses these codes."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open"
+    },
+    {
+      "code": "ASES-TL.REMEDIAL",
+      "facet": "E",
+      "label_id": "Remedial",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "remedial"
+    },
+    {
+      "code": "ASES-TL.PENGAYAAN",
+      "facet": "E",
+      "label_id": "Pengayaan",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "enrichment"
+    },
+    {
+      "code": "ASES-TL.KELOMPOK",
+      "facet": "E",
+      "label_id": "Pengelompokan belajar",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "grouping"
+    },
+    {
+      "code": "ASES-TL.DUKUNGAN",
+      "facet": "E",
+      "label_id": "Dukungan khusus",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "support"
+    },
+    {
+      "code": "ASES-TL.RAPOR",
+      "facet": "E",
+      "label_id": "Laporan hasil belajar",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "report"
+    },
+    {
+      "code": "ASES-TL.ORANG-TUA",
+      "facet": "E",
+      "label_id": "Komunikasi dengan orang tua",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "parent_talk"
+    },
+    {
+      "code": "ASES-TL.EVALUASI-PROGRAM",
+      "facet": "E",
+      "label_id": "Evaluasi program",
+      "parent": "ASES-TL",
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-344"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "programme_review"
+    },
+    {
+      "code": "ASES-KEGIATAN",
+      "facet": "E",
+      "label_id": "Kegiatan asesmen sekolah (katalog)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/form-options.json"
+        ],
+        "path": "groups[].lists[code=SIGRAK-KAT-OPS-JAS].options[]",
+        "code_field": "code"
+      }
+    }
+  ]
+}
