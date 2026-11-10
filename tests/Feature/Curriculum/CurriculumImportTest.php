@@ -230,7 +230,7 @@ it('reads a SIGRAK file with curation, curation notes, and extras', function ():
 
     expect($version->status)->toBe(CurriculumVersionStatus::Draft)
         ->and($meta['dataset'])->toBe('sigrak_curriculum_topics')
-        ->and(array_map(fn (array $curation): string => $curation['status'], $meta['curation']))->toBe(['MTK' => 'curated', 'BIG' => 'converted', 'KKA' => 'converted'])
+        ->and(collect($meta['curation'])->map(fn (array $curation): string => $curation['status'])->sortKeys()->all())->toBe(['BIG' => 'converted', 'KKA' => 'converted', 'MTK' => 'curated'])
         ->and($meta['curation']['MTK']['reviewed_by'])->toBe('Tim Validasi SIGRAK')
         ->and($topic->semester)->toBe(1)
         ->and($topic->elements)->toBe('Bilangan; Aljabar')
