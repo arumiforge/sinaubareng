@@ -2,7 +2,7 @@
 
 - **Phase:** P5
 - **Status:** in-progress (reopened 2026-11-09 for P5-03i and P5-03j, D-252)
-- **Owner:** pw/lucid-fermi-pxp4d5
+- **Owner:** p5/p5-03ij-calendar-timetable-versioning
 - **Depends on:** P5-01
 - **Can run in parallel with:** P5-02
 
