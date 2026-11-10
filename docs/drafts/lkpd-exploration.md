@@ -1,8 +1,8 @@
 # LKPD Exploration: from worksheet to learning experience
 
-- **Status:** draft (exploration, needs owner review)
+- **Status:** draft; owner decided 2026-11-09 (D-329…D-337). Accepted parts applied to `docs/final/` 2026-11-10 (P4-24); this draft stays the pattern library for later waves
 - **Task:** P4-16
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Builds on:** [`content-engine.md`](../final/content-engine.md#lkpd) (LKPD template), D-296 (LKPD blocks for grades 1–3), [`ifp-classroom.md`](../final/ifp-classroom.md) (Game kelas)
 
 ## 1. Summary

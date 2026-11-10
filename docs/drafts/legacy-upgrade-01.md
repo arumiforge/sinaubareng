@@ -1,8 +1,8 @@
 # Legacy App Upgrade 01: Decided Changes
 
-- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); `docs/final/` not yet updated
+- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); P4-13 closed (D-372); §4 applied to `docs/final/` and the drafts 2026-11-10 (P4-24)
 - **Task:** P4-13
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-aplikasi-lama-ke-sigrak.md) (owner source, Indonesian), [`legacy-overlap-adjustments.md`](legacy-overlap-adjustments.md) (Part B), [`legacy-coordination.md`](legacy-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
 
 ## Purpose
@@ -162,6 +162,8 @@ These stay as written in Part B and are built in their slice:
 | Part B Q5 (scanning with Kartu Jawab) | Replaced | D-286 |
 
 ## 4. Doc changes for P4-14
+
+**Applied 2026-11-10** in P4-24 (which absorbed P4-14); see the Status column and [`P4-24-final-docs-sync.md`](../agent/tasks/P4-24-final-docs-sync.md).
 
 | Doc | Changes |
 |---|---|
