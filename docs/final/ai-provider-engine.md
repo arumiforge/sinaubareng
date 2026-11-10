@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-04
-- **Last updated:** 2026-11-01
+- **Last updated:** 2026-11-10 (console model settings and adapters D-315, D-326; job uniqueness D-050; assessment privacy D-213, D-295, D-333, D-347, D-350, D-369, D-370)
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md)
 - **Facts checked on 2026-10-30** against Google's [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [troubleshooting](https://ai.google.dev/gemini-api/docs/troubleshooting), [API errors](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), and [Google APIs Terms](https://developers.google.com/terms) pages, and Laravel's [AI SDK docs](https://laravel.com/docs/ai-sdk).
 
@@ -12,7 +12,9 @@ This document specifies the one layer that talks to AI providers: teachers' Gemi
 
 ## Scope: Gemini free tier only
 
-SIGRAK supports **only Google Gemini API keys, and is designed for the free tier** (unpaid quota) (D-023). Keys from other AI providers are not accepted. Paid-tier Gemini keys work technically, but nothing is designed around them. The `AIProvider` interface stays, because it keeps the Gemini code isolated and lets tests use a fake. No second provider is planned.
+SIGRAK supports **only Google Gemini API keys, and is designed for the free tier** (unpaid quota) (D-023). Keys from other AI providers are not accepted from teachers. Paid-tier Gemini keys work technically, but nothing is designed around them. The `AIProvider` interface stays, because it keeps the Gemini code isolated and lets tests use a fake.
+
+**Console providers for Tim SIGRAK (D-326).** Besides Gemini, `app/AI/` gets two adapters for Tim SIGRAK's own work: **OpenAI-compatible** (base URL, key, model; covers OpenAI, OpenRouter, DeepSeek) and **Anthropic**. In the console an admin can test a key of any of these providers and pick them as model or fallback per purpose (see [Models and requests](#models-and-requests)). Teacher keys stay Gemini only (D-023); teacher keys from other providers are deferred to usulan-02, after every template has been tested per provider. Before a purpose that runs on teachers' generations uses a Tim SIGRAK key, the owner decides who pays for it.
 
 Designing for the free tier means:
 
@@ -64,6 +66,8 @@ app/AI/
 ├── Providers/Gemini/
 │   ├── GeminiProvider.php        # AIRequest → generateContent body; response/error → AIResponse/AIErrorClass
 │   └── GeminiClient.php          # thin client on Laravel's HTTP client; key passed per call
+├── Providers/OpenAICompatible/   # console only, Tim SIGRAK keys (D-326)
+├── Providers/Anthropic/          # console only, Tim SIGRAK keys (D-326)
 ├── KeyManager/
 │   ├── ApiKeyManager.php         # add, test, disable, delete; the encryption boundary
 │   ├── KeySelector.php           # round robin + filters + sticky per generation
@@ -80,7 +84,7 @@ app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, Revis
 
 ## Keys
 
-**Ownership (D-012, D-023).** Keys are Gemini free-tier keys that belong to a teacher (`user_id`), never to a school, and SIGRAK has no platform key. A principal needs no key unless they make content. Default limit: 5 keys per teacher (config). The second and later keys need the consent described above.
+**Ownership (D-012, D-023).** Keys are Gemini free-tier keys that belong to a teacher (`user_id`), never to a school, and teachers' generations use no platform key. Tim SIGRAK's own keys exist only for the console test button and Tim SIGRAK's own work (D-315, D-326), and a teacher-facing purpose uses one only after the owner decides who pays. A principal needs no key unless they make content. Default limit: 5 keys per teacher (config). The second and later keys need the consent described above.
 
 **Adding a key** (*Kunci AI Saya*, also asked inline the first time a teacher uses an AI feature):
 
@@ -178,13 +182,13 @@ Gemini's `generateContent` has no idempotency key. A call that times out on our 
 2. **On timeout, retry once on the same key before failing over.** Any duplicate cost stays on the same project, and the sticky selection holds.
 3. **Every attempt is logged** with its attempt number, so duplicates are visible in usage history.
 4. **A step's result is accepted exactly once.** `generation_steps` is unique on (`generation_id`, `step_key`) and moves `running → succeeded` with a compare-and-set, so a late duplicate cannot overwrite an accepted output.
-5. **No queue-level retries.** Every generation job has `tries = 1` and implements `ShouldBeUnique` by generation id. Retries happen inside the gateway under the rules above. On resume, steps already marked `succeeded` are skipped.
+5. **No queue-level retries.** Every generation job has `tries = 1` and uses `ShouldBeUniqueUntilProcessing` plus the `WithoutOverlapping` middleware, both keyed by the generation id (D-050). Plain `ShouldBeUnique` would stop a job from re-dispatching itself for the next step. Retries happen inside the gateway under the rules above. On resume, steps already marked `succeeded` are skipped.
 6. **Double clicks.** The *Buat* button sends a client token (UUID). `generations` is unique on (`user_id`, `client_token`), so a double submit creates one generation.
 7. **Crashed workers.** A scheduled sweeper finds steps stuck in `running` longer than timeout + margin, marks the attempt `unknown` in the log, and resumes the generation from that step. A possible duplicate cost is logged.
 
 ## Models and requests
 
-- `config/ai.php` maps a **purpose** (for example `document_long`, `document_short`, `game_content`, `repair`) to an ordered list of models. Templates name a purpose, never a model. Model names change only in config/env. The default is **Gemini 3.8 Flash** (text-out; free tier 5 RPM, 250k TPM, 20 RPD per project, AI Studio 2026-10-31; D-117). Fallbacks and limits live in config and are re-checked at build time.
+- Each **purpose** (for example `document_long`, `document_short`, `game_content`, `repair`) has an active model and an ordered fallback list. Templates name a purpose, never a model. An admin sets these per purpose (not per template) in the console and they are stored in the database; `config/ai.php` holds only the starting values. Every change is logged (D-315, amends D-117). The console's test button calls the model with a Tim SIGRAK key, never a teacher's key. The default is **Gemini 3.8 Flash** (text-out; free tier 5 RPM, 250k TPM, 20 RPD per project, AI Studio 2026-10-31; D-117). Limits are re-checked at build time and when Google changes them.
 - Structured output: `responseMimeType: application/json` with the template's output schema in the JSON-schema field the current API version supports.
 - Do not send `temperature`, `top_p`, or `top_k` (see Key facts).
 - Teacher notes and curriculum text go inside clearly delimited data blocks. Instructions come only from the template. Output is accepted only through schema validation. These are the prompt-injection guards.
@@ -202,9 +206,14 @@ Free-tier prompts and responses are used by Google to improve its products, and 
 
 1. **No student personal data ever goes into a prompt:** no names, NISN, birth dates, attendance, notes, or individual scores tied to an identity. `PromptDataGuard` checks every request built from school data, and generation code receives student data only in the forms allowed below.
 2. **Report description drafts** (Asesmen > Rapor) send only per-TP mastery levels for an anonymous student ("Murid A"). The real name is merged in after generation, on our server.
-3. **The teacher's note** field shows a hint: "Jangan tulis nama atau data pribadi siswa." Notes are free text, so this is guidance, not a guarantee.
+3. **The teacher's note** field shows a hint: "Jangan tulis nama atau data pribadi murid." (D-210) Notes are free text, so this is guidance, not a guarantee.
 4. **Curriculum data, teacher answers, and generated content** are fine to send. They hold no personal data.
 5. The exam site (TKA) holds student credentials and answers and **never** calls the AI.
+6. **Catatan wali kelas drafts** use attendance counts, note types, and per-TP results only, never names or personal data; the homeroom teacher edits and approves (D-213).
+7. **Kelompok belajar** per TP reaches the next RPM wizard as group counts only (perlu bimbingan, cukup, siap pengayaan), never names (D-295).
+8. **Assessment AI** makes instruments, tags misconceptions, and drafts feedback from class patterns (D-347). Names on paper are read by text recognition on the teacher's device and matched to the roster there. Pindai LJK reads the bubbles in the teacher's browser with a JavaScript OMR library; only answers and confidence reach the server, and photos are not uploaded (D-369). Handwritten Uraian/Isian answers are read on the phone; only the answer text, tagged with a `nomor absen-nomor soal` code (for example `12-3`) and without the name, goes to the AI with the key or rubric. The AI suggests a score and feedback, the teacher decides, and SIGRAK maps the code back to the student (D-370, target P5-08 after Pindai LJK).
+9. **Sensitive results** (social-emotional, special needs, interest or talent) are never sent to the AI (D-350).
+10. **Local context** (*Konteks Daerah*): the AI uses only items from the school's profile and the reviewed seed list, and the teacher confirms them; it never invents local facts (D-333).
 
 ## Usage logs and visibility
 
@@ -214,7 +223,7 @@ Free-tier prompts and responses are used by Google to improve its products, and 
 |---|---|
 | Teacher | *Kunci AI Saya*: each key's status, cooldowns, last success, daily counts, recent failures with plain reasons |
 | Principal | Per-teacher totals: generations made, failures caused by key problems. No keys, no per-key detail |
-| Tim SIGRAK | Errors by class and template in Filament, plus Horizon. Telescope on local/staging only |
+| Tim SIGRAK | Errors by class and template in Filament, plus Horizon. Telescope on local/staging only. The console's model-per-purpose change log (D-315) |
 
 Retention (D-118): detailed rows for 1 month, monthly aggregates kept.
 
