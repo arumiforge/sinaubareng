@@ -13,7 +13,7 @@ use App\Models\SubjectAllocation;
 /**
  * Writes subject_allocations rows. Regulations print JP per year only, so the week
  * and semester figures are derived: semester 1 has 18 effective weeks and semester 2
- * the rest (18, or 14 in grade 6), as in KM-SD-2026-R2.
+ * the rest (18, or 14 in grade 6), as in the SIGRAK curriculum files.
  */
 final readonly class AllocationWriter
 {

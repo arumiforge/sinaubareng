@@ -156,7 +156,8 @@
         "CUR-1056405748",
         "CUR-1521440633"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-01"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-01",
+      "legacy_index": 0
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-02",
@@ -164,7 +165,8 @@
       "legacy_aliases": [
         "CUR-1549702355"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-02"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-02",
+      "legacy_index": 2
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-03",
@@ -172,7 +174,8 @@
       "legacy_aliases": [
         "CUR-1753046409"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-03"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-03",
+      "legacy_index": 3
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-04",
@@ -180,7 +183,8 @@
       "legacy_aliases": [
         "CUR-1311774891"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-04"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-04",
+      "legacy_index": 4
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-05",
@@ -188,7 +192,8 @@
       "legacy_aliases": [
         "CUR-1572710946"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-05"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-05",
+      "legacy_index": 5
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-06",
@@ -197,7 +202,8 @@
         "CUR-1546588758",
         "CUR-1456671911"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-06"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-06",
+      "legacy_index": 0
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-07",
@@ -205,7 +211,8 @@
       "legacy_aliases": [
         "CUR-917290255"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-07"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-07",
+      "legacy_index": 2
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-08",
@@ -213,7 +220,8 @@
       "legacy_aliases": [
         "CUR-648461090"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-08"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-08",
+      "legacy_index": 3
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-09",
@@ -221,7 +229,8 @@
       "legacy_aliases": [
         "CUR-1570541654"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-09"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-09",
+      "legacy_index": 4
     },
     {
       "old": "KM-SD-2026-R2-BIG-K1-10",
@@ -229,7 +238,8 @@
       "legacy_aliases": [
         "CUR-715360684"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K1-10"
+      "new": "SIGRAK-SD-2026-R1-BIG-K1-10",
+      "legacy_index": 5
     },
     {
       "old": "KM-SD-2026-R2-PJOK-K1-01",
@@ -412,7 +422,11 @@
         "CUR-335423549",
         "KM-SD-2026-R2-BJW-K1-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-01",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K1-PAR-02",
@@ -423,7 +437,11 @@
         "CUR-1884399540",
         "KM-SD-2026-R2-BJW-K1-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-02",
+      "legacy_index": [
+        2,
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K1-PAR-03",
@@ -442,7 +460,11 @@
         "CUR-1031098464",
         "KM-SD-2026-R2-BJW-K1-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-04"
+      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-04",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K1-PAR-05",
@@ -452,7 +474,10 @@
         "CUR-1084243027",
         "KM-SD-2026-R2-BJW-K1-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K1-PAR-05",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K1-PAR-06",
@@ -544,7 +569,8 @@
       "legacy_aliases": [
         "CUR-1703154878"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-01"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-01",
+      "legacy_index": 0
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-02",
@@ -552,7 +578,8 @@
       "legacy_aliases": [
         "CUR-1409129318"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-02"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-02",
+      "legacy_index": 1
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-03",
@@ -560,7 +587,8 @@
       "legacy_aliases": [
         "CUR-2134415778"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-03"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-03",
+      "legacy_index": 2
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-04",
@@ -568,7 +596,8 @@
       "legacy_aliases": [
         "CUR-1374777243"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-04"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-04",
+      "legacy_index": 3
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-05",
@@ -576,7 +605,8 @@
       "legacy_aliases": [
         "CUR-719882937"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-05"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-05",
+      "legacy_index": 4
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-06",
@@ -584,7 +614,8 @@
       "legacy_aliases": [
         "CUR-352881532"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-06"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-06",
+      "legacy_index": 0
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-07",
@@ -592,7 +623,8 @@
       "legacy_aliases": [
         "CUR-626260048"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-07"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-07",
+      "legacy_index": 1
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-08",
@@ -600,7 +632,8 @@
       "legacy_aliases": [
         "CUR-1870260649"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-08"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-08",
+      "legacy_index": 2
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-09",
@@ -608,7 +641,8 @@
       "legacy_aliases": [
         "CUR-1899180850"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-09"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-09",
+      "legacy_index": 3
     },
     {
       "old": "KM-SD-2026-R2-BIG-K2-10",
@@ -616,7 +650,8 @@
       "legacy_aliases": [
         "CUR-1932193140"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIG-K2-10"
+      "new": "SIGRAK-SD-2026-R1-BIG-K2-10",
+      "legacy_index": 4
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-01",
@@ -627,7 +662,11 @@
         "CUR-1521837451",
         "KM-SD-2026-R2-BJW-K2-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-01",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-02",
@@ -636,7 +675,10 @@
         "CUR-2007266374",
         "KM-SD-2026-R2-BJW-K2-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-02",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-03",
@@ -645,7 +687,10 @@
         "CUR-1837537959",
         "KM-SD-2026-R2-BJW-K2-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-03"
+      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-03",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-04",
@@ -664,7 +709,11 @@
         "CUR-338548159",
         "KM-SD-2026-R2-BJW-K2-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-05",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-06",
@@ -674,7 +723,10 @@
         "CUR-1187068131",
         "KM-SD-2026-R2-BJW-K2-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-06"
+      "new": "SIGRAK-SD-2026-R1-BJW-K2-PAR-06",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K2-PAR-07",
@@ -1094,7 +1146,10 @@
         "KM-SD-2026-R2-BJW-K3-01",
         "KM-SD-2026-R2-BJW-K3-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-01",
+      "legacy_index": [
+        0
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K3-PAR-02",
@@ -1103,7 +1158,10 @@
         "CUR-1558981582",
         "KM-SD-2026-R2-BJW-K3-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-02",
+      "legacy_index": [
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K3-PAR-03",
@@ -1130,7 +1188,11 @@
         "CUR-1433434721",
         "KM-SD-2026-R2-BJW-K3-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-05",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K3-PAR-06",
@@ -1139,7 +1201,10 @@
         "CUR-1885937591",
         "KM-SD-2026-R2-BJW-K3-08"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-06"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-06",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K3-PAR-07",
@@ -1148,7 +1213,10 @@
         "CUR-1952969986",
         "KM-SD-2026-R2-BJW-K3-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-07"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-07",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K3-PAR-08",
@@ -1157,7 +1225,10 @@
         "CUR-691987669",
         "KM-SD-2026-R2-BJW-K3-10"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-08"
+      "new": "SIGRAK-SD-2026-R1-BJW-K3-PAR-08",
+      "legacy_index": [
+        4
+      ]
     },
     {
       "old": "KM-SD-2026-R2-IPAS-K3-01",
@@ -1596,7 +1667,11 @@
         "CUR-759832478",
         "KM-SD-2026-R2-BJW-K4-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-01",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-02",
@@ -1605,7 +1680,10 @@
         "CUR-241911408",
         "KM-SD-2026-R2-BJW-K4-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-02",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-03",
@@ -1614,7 +1692,10 @@
         "CUR-1120138722",
         "KM-SD-2026-R2-BJW-K4-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-03"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-03",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-04",
@@ -1633,7 +1714,11 @@
         "CUR-1448133750",
         "KM-SD-2026-R2-BJW-K4-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-05",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-06",
@@ -1642,7 +1727,10 @@
         "CUR-1435873883",
         "KM-SD-2026-R2-BJW-K4-08"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-06"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-06",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-07",
@@ -1651,7 +1739,10 @@
         "CUR-1079195746",
         "KM-SD-2026-R2-BJW-K4-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-07"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-07",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K4-PAR-08",
@@ -1660,7 +1751,10 @@
         "CUR-237821683",
         "KM-SD-2026-R2-BJW-K4-10"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-08"
+      "new": "SIGRAK-SD-2026-R1-BJW-K4-PAR-08",
+      "legacy_index": [
+        4
+      ]
     },
     {
       "old": "KM-SD-2026-R2-IPAS-K4-01",
@@ -1983,7 +2077,8 @@
         "ATP-BIN-K5-01",
         "CUR-BIN-K5-BAB-01"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-01"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-01",
+      "legacy_index": 0
     },
     {
       "old": "KM-SD-2026-R2-BIN-K5-02",
@@ -1994,7 +2089,8 @@
         "ATP-BIN-K5-02",
         "CUR-BIN-K5-BAB-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-02"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-02",
+      "legacy_index": 1
     },
     {
       "old": "KM-SD-2026-R2-BIN-K5-03",
@@ -2004,7 +2100,8 @@
         "ATP-BIN-K5-03",
         "CUR-BIN-K5-BAB-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-03"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-03",
+      "legacy_index": 2
     },
     {
       "old": "KM-SD-2026-R2-BIN-K5-04",
@@ -2015,7 +2112,8 @@
         "ATP-BIN-K5-04",
         "CUR-BIN-K5-BAB-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-04"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-04",
+      "legacy_index": 3
     },
     {
       "old": "KM-SD-2026-R2-BIN-K5-05",
@@ -2025,7 +2123,8 @@
         "ATP-BIN-K5-05",
         "CUR-BIN-K5-BAB-05"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-05"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-05",
+      "legacy_index": 4
     },
     {
       "old": "KM-SD-2026-R2-BIN-K5-06",
@@ -2035,7 +2134,8 @@
         "ATP-BIN-K5-06",
         "CUR-BIN-K5-BAB-06"
       ],
-      "new": "SIGRAK-SD-2026-R1-BIN-K5-06"
+      "new": "SIGRAK-SD-2026-R1-BIN-K5-06",
+      "legacy_index": 5
     },
     {
       "old": "KM-SD-2026-R2-BIG-K5-01",
@@ -2117,7 +2217,11 @@
         "CUR-1868796637",
         "KM-SD-2026-R2-BJW-K5-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-01",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-02",
@@ -2126,7 +2230,10 @@
         "CUR-144978140",
         "KM-SD-2026-R2-BJW-K5-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-02",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-03",
@@ -2135,7 +2242,10 @@
         "CUR-504860638",
         "KM-SD-2026-R2-BJW-K5-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-03"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-03",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-04",
@@ -2154,7 +2264,11 @@
         "CUR-693181692",
         "KM-SD-2026-R2-BJW-K5-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-05",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-06",
@@ -2163,7 +2277,10 @@
         "CUR-7247635",
         "KM-SD-2026-R2-BJW-K5-08"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-06"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-06",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-07",
@@ -2172,7 +2289,10 @@
         "CUR-1248821259",
         "KM-SD-2026-R2-BJW-K5-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-07"
+      "new": "SIGRAK-SD-2026-R1-BJW-K5-PAR-07",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K5-PAR-08",
@@ -2839,7 +2959,11 @@
         "CUR-1206373052",
         "KM-SD-2026-R2-BJW-K6-02"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-01"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-01",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-02",
@@ -2848,7 +2972,10 @@
         "CUR-588767815",
         "KM-SD-2026-R2-BJW-K6-03"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-02"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-02",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-03",
@@ -2857,7 +2984,10 @@
         "CUR-1222549907",
         "KM-SD-2026-R2-BJW-K6-04"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-03"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-03",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-04",
@@ -2866,7 +2996,10 @@
         "CUR-271141699",
         "KM-SD-2026-R2-BJW-K6-05"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-04"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-04",
+      "legacy_index": [
+        4
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-05",
@@ -2877,7 +3010,11 @@
         "CUR-1736125487",
         "KM-SD-2026-R2-BJW-K6-07"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-05"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-05",
+      "legacy_index": [
+        0,
+        1
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-06",
@@ -2886,7 +3023,10 @@
         "CUR-1792474331",
         "KM-SD-2026-R2-BJW-K6-08"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-06"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-06",
+      "legacy_index": [
+        2
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-07",
@@ -2895,7 +3035,10 @@
         "CUR-1837723804",
         "KM-SD-2026-R2-BJW-K6-09"
       ],
-      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-07"
+      "new": "SIGRAK-SD-2026-R1-BJW-K6-PAR-07",
+      "legacy_index": [
+        3
+      ]
     },
     {
       "old": "KM-SD-2026-R2-BJW-K6-PAR-08",
@@ -33657,6 +33800,20 @@
     {
       "old": "FM-BAR-K6-08-03",
       "new": "SIGRAK-MI-2026-R1-BAR-K6-08-FM03"
+    }
+  ],
+  "retired": [
+    {
+      "merged_into": "SIGRAK-SD-2026-R1-BIN-K5-06",
+      "old": [
+        "CUR-171329721",
+        "ATP-BIN-K5-07",
+        "CUR-1416103938",
+        "ATP-BIN-K5-08",
+        "CUR-2104384183",
+        "ATP-BIN-K5-09",
+        "ATP-BIN-K5-10"
+      ]
     }
   ]
 }

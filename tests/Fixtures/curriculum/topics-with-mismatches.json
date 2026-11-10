@@ -1,6 +1,6 @@
 {
-  "dataset": "tp_atp_test",
-  "version_code": "TPATP-TEST-R1",
+  "dataset": "sigrak_curriculum_topics",
+  "version_code": "SIGRAK-TEST-2026-R1",
   "status": "draft",
   "scope": "Test topics",
   "subjects": [
@@ -8,6 +8,13 @@
       "religion": "kristen",
       "code": "PAKR",
       "name": "Pendidikan Agama Kristen dan Budi Pekerti",
+      "curation": {
+        "status": "in_review",
+        "since": "2026-11-09",
+        "reviewed_by": null,
+        "reviewed_on": null,
+        "note": "Fixture"
+      },
       "allocations": [
         {
           "grade": 1,
@@ -21,7 +28,7 @@
       ],
       "topics": [
         {
-          "code": "TPATP-TEST-R1-PAKR-K1-01",
+          "code": "SIGRAK-TEST-2026-R1-PAKR-K1-01",
           "grade": 1,
           "phase": "A",
           "semester": 1,
@@ -41,35 +48,35 @@
           ],
           "learning_objectives": [
             {
-              "code": "TP-T-PAKR-K1-01-01",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01",
               "order": 1,
               "text": "TP satu"
             },
             {
-              "code": "TP-T-PAKR-K1-01-02",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-01-TP02",
               "order": 2,
               "text": "TP dua"
             }
           ],
           "focus_items": [
             {
-              "code": "FM-T-PAKR-K1-01-01",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-01-FM01",
               "order": 1,
               "title": "Fokus satu",
               "estimated_jp": 3,
               "allocation_status": "sesuai",
               "objective_codes": [
-                "TP-T-PAKR-K1-01-01"
+                "SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01"
               ]
             },
             {
-              "code": "FM-T-PAKR-K1-01-02",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-01-FM02",
               "order": 2,
               "title": "Fokus dua",
               "estimated_jp": 3,
               "allocation_status": "sesuai",
               "objective_codes": [
-                "TP-T-PAKR-K1-01-02"
+                "SIGRAK-TEST-2026-R1-PAKR-K1-01-TP02"
               ]
             }
           ],
@@ -80,7 +87,7 @@
           }
         },
         {
-          "code": "TPATP-TEST-R1-PAKR-K1-02",
+          "code": "SIGRAK-TEST-2026-R1-PAKR-K1-02",
           "grade": 1,
           "phase": "B",
           "semester": 1,
@@ -100,20 +107,20 @@
           ],
           "learning_objectives": [
             {
-              "code": "TP-T-PAKR-K1-02-01",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-02-TP01",
               "order": 1,
               "text": "TP"
             }
           ],
           "focus_items": [
             {
-              "code": "FM-T-PAKR-K1-02-01",
+              "code": "SIGRAK-TEST-2026-R1-PAKR-K1-02-FM01",
               "order": 1,
               "title": "Fokus",
               "estimated_jp": 6,
               "allocation_status": "sesuai",
               "objective_codes": [
-                "TP-T-PAKR-K1-01-01"
+                "SIGRAK-TEST-2026-R1-PAKR-K1-01-TP01"
               ]
             }
           ],

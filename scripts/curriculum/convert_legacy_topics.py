@@ -84,6 +84,32 @@ def rename(mapping, values):
     return out
 
 
+# Wording cleanup for the general SD notes: they named the dropped allocation file
+# and the legacy app's internals. The meaning stays; old IDs move to the crosswalk.
+TEXT_FIXES = [
+    (re.compile(r'\s*--\s*sebelumnya tidak ikut ter-update.*?\(sudah diperbaiki\)\.?'), '.'),
+    (re.compile(r'struktur_alokasi_sd(\.json)?'), 'target alokasi semester SD'),
+]
+RETIRED_IDS = re.compile(r'identitas lamanya dicatat sebagai entri yang dipensiunkan: ([^.]+)\.')
+
+
+def clean_text(value, code, crosswalk):
+    if isinstance(value, dict):
+        return OrderedDict((k, clean_text(v, code, crosswalk)) for k, v in value.items())
+    if isinstance(value, list):
+        return [clean_text(v, code, crosswalk) for v in value]
+    if not isinstance(value, str):
+        return value
+    for pattern, replacement in TEXT_FIXES:
+        value = pattern.sub(replacement, value)
+    value = value.replace('..', '.')
+    match = RETIRED_IDS.search(value)
+    if match:
+        crosswalk['retired'].append({'merged_into': code, 'old': [i.strip() for i in match.group(1).split(',')]})
+        value = RETIRED_IDS.sub('kode lamanya dicatat di crosswalk tim (D-365).', value)
+    return value
+
+
 def curation(status, note):
     return {'status': status, 'since': TODAY, 'reviewed_by': None, 'reviewed_on': None, 'note': note}
 
@@ -155,8 +181,15 @@ def convert_general(crosswalk):
             topic['curation_notes'].setdefault('notes', []).append(
                 'D-234: trimmed from 34 JP over weeks 1-17 to 28 JP over weeks 1-14, the effective weeks of grade 6 semester 2.')
 
-        crosswalk['topics'].append({'old': old, 'legacy_id': row['Legacy_ID'],
-                                    'legacy_aliases': [a for a in row['Legacy_ID_Aliases'] if a != old], 'new': code})
+        legacy_index = topic['curation_notes'].pop('indeks_sumber_lama', None)
+        topic['curation_notes'] = clean_text(topic['curation_notes'], code, crosswalk)
+        if 'extras' in topic:
+            topic['extras'] = clean_text(topic['extras'], code, crosswalk)
+        entry = {'old': old, 'legacy_id': row['Legacy_ID'],
+                 'legacy_aliases': [a for a in row['Legacy_ID_Aliases'] if a != old], 'new': code}
+        if legacy_index not in (None, []):
+            entry['legacy_index'] = legacy_index
+        crosswalk['topics'].append(entry)
         groups.setdefault(subject['code'], {'subject': subject, 'topics': []})['topics'].append(topic)
 
     allocations = {}
@@ -271,7 +304,7 @@ def main():
         ('dataset', 'curriculum_crosswalk'),
         ('purpose', 'Team-only map from legacy and earlier draft codes to the SIGRAK R1 codes (D-365). Never imported.'),
         ('created_on', TODAY),
-        ('topics', []), ('learning_objectives', []), ('focus_items', []),
+        ('topics', []), ('learning_objectives', []), ('focus_items', []), ('retired', []),
     ])
     general = convert_general(crosswalk)
     religion_sd = recode_religion(RELIGION_SD, SD, crosswalk, 'Pendidikan Agama Kristen, Katolik, Hindu, Buddha, and Khonghucu dan Budi Pekerti')
