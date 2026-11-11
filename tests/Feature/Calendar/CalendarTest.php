@@ -69,6 +69,19 @@ function eventInput(array $overrides = []): array
     return ['title' => 'Karyawisata', 'kind' => 'no_lessons', 'starts_on' => '2026-11-18', 'ends_on' => '2026-11-18', ...$overrides];
 }
 
+/**
+ * The national holiday dates of the data file within a range, in order.
+ *
+ * @return list<string>
+ */
+function holidayDates(string $from, string $to): array
+{
+    $data = json_decode((string) file_get_contents(base_path(HOLIDAYS)), true);
+
+    return collect($data['academic_years'])->flatMap(fn (array $year): array => array_column($year['days'], 'date'))
+        ->filter(fn (string $date): bool => $date >= $from && $date <= $to)->sort()->values()->all();
+}
+
 function effective(SchoolClass $class): array
 {
     return inSchool($class->school, fn (): array => app(EffectiveDays::class)->forClass($class->fresh())->toArray());
@@ -114,7 +127,9 @@ it('copies the province calendar for a Kudus school and shows it on the page (D-
         ->and($calendar->joint_leave_school_days)->toContain('2027-02-05');
 
     actingAs($this->operator)->get(route('calendar.show'))
-        ->assertInertia(fn (Assert $page) => $page->where('calendar.region_changes', [])->has('holidays', 25)->where('effective_days.year.effective_days', 254));
+        ->assertInertia(fn (Assert $page) => $page->where('calendar.region_changes', [])
+            ->where('holidays', fn ($holidays): bool => expect(collect($holidays)->pluck('date')->all())->toBe(holidayDates('2026-07-13', '2027-06-19')) !== null)
+            ->where('effective_days.year.effective_days', 254));
 });
 
 it('offers later region changes, then applies or skips them (D-256)', function (): void {
