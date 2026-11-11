@@ -12,7 +12,6 @@ use App\Enums\TimetableSlotKind;
 use App\Models\SchoolCalendar;
 use App\Models\SchoolClass;
 use Carbon\CarbonImmutable;
-use Carbon\CarbonPeriod;
 
 /**
  * One checker for every dated item, with the same messages everywhere (D-260). P5-03i
@@ -52,7 +51,13 @@ final readonly class ConflictChecker
             }
         }
 
-        $days = collect(CarbonPeriod::create($startsOn, $endsOn))->map(fn ($day): CarbonImmutable => CarbonImmutable::instance($day));
+        $list = [];
+
+        for ($day = $startsOn; $day->lte($endsOn); $day = $day->addDay()) {
+            $list[] = $day;
+        }
+
+        $days = collect($list);
 
         if ($days->contains(fn (CarbonImmutable $day): bool => $day->isSunday())) {
             $conflicts[] = new Conflict(Conflict::WARNING, __('calendar.conflicts.sunday'));

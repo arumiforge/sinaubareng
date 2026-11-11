@@ -28,7 +28,7 @@ final readonly class BuildDraftPlans
      */
     public function handle(AcademicYear $year, Collection $classes, DayFrame $frame): array
     {
-        $classIds = $classes->modelKeys();
+        $classIds = $classes->pluck('id')->all();
         $busy = [];
 
         // Lessons that stay: every lesson of the year's other classes, and locked lessons of the classes in the run.

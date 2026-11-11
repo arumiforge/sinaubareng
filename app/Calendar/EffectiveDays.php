@@ -36,7 +36,7 @@ final readonly class EffectiveDays
         $fromTimetable = $weekdays !== [];
 
         if (! $fromTimetable) {
-            $weekdays = range(1, $calendar?->sourceCalendar?->school_days_per_week ?? self::DEFAULT_DAYS_PER_WEEK);
+            $weekdays = range(1, $calendar?->sourceCalendar->school_days_per_week ?? self::DEFAULT_DAYS_PER_WEEK);
         }
 
         return self::compute(
