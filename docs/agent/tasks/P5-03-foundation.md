@@ -120,6 +120,8 @@ Not in this slice: students and enrollments, the school calendar beyond P5-03i, 
 - `DraftGenerator` is pure and seeded: hard limits never break (property test), switches only change the score, best of `config('timetable.attempts')` tries.
 - Tests: `tests/Feature/Timetable/DraftTimetableTest.php`.
 
+**Follow-up: owner answers** (D-379…D-382): calendar proposals (`calendar_change_requests`; the same Kalender form sends a proposal for teachers and the principal; the operator sees pending proposals with Setujui and Tolak; a proposal is checked again on approval); "absensi" in the banned-words test. Tests in `tests/Feature/Calendar/CalendarTest.php`.
+
 **P5-03k / P5-03l** (review, PR #72): see D-378. `curriculum_versions` has the three version columns, filled by `curriculum:import` from `docs/data/profiles/`; `App\Curriculum\Policy\PolicyProfileResolver` replaces `allocation_versions`; `SubjectsForGrade::forSchool()` takes the school year (`ClassSubjects` passes the class's year). Tests: `tests/Feature/Curriculum/PolicyProfileTest.php`.
 
 ## Open questions
@@ -130,18 +132,18 @@ Undecided choices, the default this PR uses meanwhile, and deferred work. "Owner
 
 | # | Question | Default used now | Who |
 |---|---|---|---|
-| 1 | D-259 counts `exam` days as non-effective, but the Jawa Tengah guide (Lampiran XIII) counts the SAS and Sumatif Akhir Tahun weeks as effective; only TKA days are taken out. Should STS/SAS days count as effective? | Follow D-259 (exam days not effective). The region data keeps SAS weeks as notes (`assessment_windows`), not events, so the region total is 254; a school that enters SAS events gets a lower count | Owner |
+| 1 | ~~D-259 counts `exam` days as non-effective, but the Jawa Tengah guide counts SAS weeks as effective~~ | **Answered: D-379**, STS/SAS days are not effective | Owner |
 | 2 | Jawa Tengah May and June 2027: Lampiran XIII takes a kelulusan day out of May that SD/MI do not have | Kelulusan on 7 June (Pasal 22). Year and semester totals match the guide; May and June differ by one day | Team (Tim Validasi) |
 | 3 | `effective_on` of KMA 1503/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025 | NULL. `applies_from_school_year` follows D-354 (mid-year rules apply from the next school year) | Team (Tim Validasi) |
 | 4 | Idul Fitri and Idul Adha 2027 depend on the Menteri Agama's decision after sidang isbat | SKB dates, not marked provisional | Team (recheck in 2027) |
 | 5 | When does a region calendar become visible to schools? | Imported as `draft`; schools only see `active` ones; a console user activates it after sign-off | Team (Tim Validasi) |
 | 6 | A class with no lessons on its timetable yet: which days count? | The region calendar's school days per week, else 6, with a note on the page | Team |
 | 7 | A day that is both a holiday and an assessment or activity | Counted once, in this order: Libur, Asesmen, Kegiatan | Team |
-| 8 | Who may edit the calendar? | Operator: everything. Wali kelas: events of their own class. Guru mapel and principal: read only | Owner (principal role) |
+| 8 | ~~Who may edit the calendar?~~ | **Answered: D-380**, only the operator edits; wali kelas, guru mapel, and the principal propose, the operator approves (built in the follow-up PR) | Owner |
 | 9 | A school year before any listed rule set has started | The resolver uses the earliest listed rule set (D-378) | Team |
 | 10 | Draft generator details: breaks the same for every day; Upacara and other fixed rows come from locked rows; optional content (no allocation) is not placed; the religion group gets the JP all religions share; soft-switch weights are fixed in code | As listed | Team |
-| 11 | Saving a draft replaces every unlocked row of each class in the draft | As stated, after a confirm dialog | Owner |
-| 12 | Banning "Absensi" in `lang/id` (from PR #70) | Not banned yet; the LOC-35 test covers siswa, teguran, tunggakan, kurang bayar, belum lunas, tanda tangan elektronik | Owner |
+| 11 | ~~Saving a draft replaces every unlocked row~~ | **Answered: D-381**, as built | Owner |
+| 12 | ~~Banning "Absensi" in `lang/id`~~ | **Answered: D-382**, use standard words (kehadiran, ketidakhadiran); added to the LOC-35 test | Owner |
 
 **Deferred work**
 

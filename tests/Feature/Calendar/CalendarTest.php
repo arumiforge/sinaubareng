@@ -10,6 +10,7 @@ use App\Calendar\NationalHolidays;
 use App\Enums\CalendarEventKind;
 use App\Enums\CalendarStatus;
 use App\Models\AcademicYear;
+use App\Models\CalendarChangeRequest;
 use App\Models\NationalHoliday;
 use App\Models\Region;
 use App\Models\RegionCalendar;
@@ -236,27 +237,64 @@ it('asks before a change that moves RPM meetings (D-261)', function (): void {
     expect($calendar->events()->where('title', 'Karyawisata')->exists())->toBeTrue();
 });
 
-it('lets a wali kelas add events for their own class only, and guru mapel only read (D-258)', function (): void {
+it('lets only the operator change the calendar; teachers and the principal propose (D-380)', function (): void {
     $subjectTeacher = User::factory()->teacherAt($this->school)->create();
+    $principal = User::factory()->principalAt($this->school)->create();
     $calendar = copyCalendar($this->operator, $this->year);
+    $events = $calendar->events()->count();
 
     actingAs($this->teacher)->get(route('calendar.show'))
-        ->assertInertia(fn (Assert $page) => $page->where('can_manage', false)->where('selected_class', $this->class->public_id)->where('classes.0.editable', true)->where('classes.1.editable', false));
+        ->assertInertia(fn (Assert $page) => $page->where('can_manage', false)->where('can_propose', true)->where('selected_class', $this->class->public_id));
+
+    // A wali kelas, a guru mapel, and the principal each send a proposal; nothing changes yet.
+    actingAs($this->teacher)->post(route('calendar.events.store', $calendar), eventInput(['class' => $this->class->public_id, 'reason' => 'Karyawisata ke museum']))
+        ->assertSessionHasNoErrors()->assertSessionHas('toast', 'Usulan dikirim ke operator sekolah.');
+    $schoolEvent = $calendar->events()->whereNull('class_id')->orderBy('starts_on')->first();
+    actingAs($subjectTeacher)->put(route('calendar.events.update', [$calendar, $schoolEvent]), eventInput(['title' => 'Hari pertama, MPLS', 'starts_on' => $schoolEvent->starts_on->toDateString(), 'ends_on' => $schoolEvent->starts_on->toDateString(), 'kind' => 'school_event']))
+        ->assertSessionHasNoErrors();
+    actingAs($principal)->delete(route('calendar.events.destroy', [$calendar, $schoolEvent]), ['reason' => 'Tidak diperlukan'])
+        ->assertSessionHas('toast', 'Usulan dikirim ke operator sekolah.');
+
+    expect($calendar->events()->count())->toBe($events)
+        ->and(CalendarChangeRequest::withoutSchoolScope()->where('status', 'pending')->count())->toBe(3);
+
+    // A proposal that breaks a rule is refused when it is sent.
+    actingAs($this->teacher)->post(route('calendar.events.store', $calendar), eventInput(['kind' => 'exam', 'exam_type' => 'sas', 'starts_on' => '2026-12-25', 'ends_on' => '2026-12-25']))
+        ->assertSessionHasErrors('starts_on');
+
+    // Only the operator decides, and sees every pending proposal.
+    $proposals = CalendarChangeRequest::withoutSchoolScope()->orderBy('id')->get();
+    actingAs($this->teacher)->post(route('calendar.changes.approve', [$calendar, $proposals[0]]))->assertForbidden();
+    actingAs($this->operator)->get(route('calendar.show'))->assertInertia(fn (Assert $page) => $page->has('change_requests', 3));
+
+    actingAs($this->operator)->post(route('calendar.changes.approve', [$calendar, $proposals[0]]))->assertSessionHas('toast', 'Usulan disetujui dan kalender diperbarui.');
+    actingAs($this->operator)->post(route('calendar.changes.approve', [$calendar, $proposals[1]]))->assertSessionHasNoErrors();
+    actingAs($this->operator)->post(route('calendar.changes.reject', [$calendar, $proposals[2]]), ['note' => 'Tetap dipakai'])->assertSessionHas('toast', 'Usulan ditolak.');
+    actingAs($this->operator)->post(route('calendar.changes.approve', [$calendar, $proposals[2]]))->assertSessionHasErrors('change');
+
+    expect($calendar->events()->where('title', 'Karyawisata')->where('class_id', $this->class->id)->exists())->toBeTrue()
+        ->and($schoolEvent->fresh()->title)->toBe('Hari pertama, MPLS')
+        ->and(effective($this->class)['year']['effective_days'])->toBe(253)
+        ->and(effective($this->other)['year']['effective_days'])->toBe(254);
+
+    actingAs($principal)->get(route('calendar.show'))
+        ->assertInertia(fn (Assert $page) => $page->has('change_requests', 1)->where('change_requests.0.status', 'rejected')->where('change_requests.0.decision_note', 'Tetap dipakai'));
+
+    // The operator still edits directly.
+    actingAs($this->operator)->post(route('calendar.events.store', $calendar), eventInput(['title' => 'Rapat orang tua', 'kind' => 'school_event']))
+        ->assertSessionHas('toast', 'Kalender tersimpan.');
+});
+
+it('checks a proposal again when it is approved (D-380)', function (): void {
+    $calendar = copyCalendar($this->operator, $this->year);
 
     actingAs($this->teacher)->post(route('calendar.events.store', $calendar), eventInput(['class' => $this->class->public_id]))->assertSessionHasNoErrors();
-    actingAs($this->teacher)->post(route('calendar.events.store', $calendar), eventInput(['class' => $this->other->public_id]))->assertForbidden();
-    actingAs($this->teacher)->post(route('calendar.events.store', $calendar), eventInput())->assertForbidden();
-    actingAs($this->teacher)->post(route('calendar.store'), ['tahun' => $this->year->public_id])->assertForbidden();
-    actingAs($this->teacher)->post(route('calendar.region_changes', $calendar), ['action' => 'skip'])->assertForbidden();
+    $proposal = CalendarChangeRequest::withoutSchoolScope()->sole();
+    $this->class->delete();
 
-    $schoolEvent = $calendar->events()->whereNull('class_id')->first();
-    actingAs($this->teacher)->delete(route('calendar.events.destroy', [$calendar, $schoolEvent]))->assertForbidden();
-    $own = $calendar->events()->where('class_id', $this->class->id)->sole();
-    actingAs($this->teacher)->put(route('calendar.events.update', [$calendar, $own]), eventInput(['class' => $this->class->public_id, 'title' => 'Kunjungan museum']))->assertSessionHasNoErrors();
-    actingAs($this->teacher)->delete(route('calendar.events.destroy', [$calendar, $own]))->assertSessionHas('toast', 'Acara dihapus.');
-
-    actingAs($subjectTeacher)->get(route('calendar.show'))->assertOk();
-    actingAs($subjectTeacher)->post(route('calendar.events.store', $calendar), eventInput(['class' => $this->class->public_id]))->assertForbidden();
+    actingAs($this->operator)->post(route('calendar.changes.approve', [$calendar, $proposal]))
+        ->assertSessionHasErrors(['change' => 'Kelas tidak ditemukan di tahun ajaran ini.']);
+    expect($proposal->fresh()->status->value)->toBe('pending');
 });
 
 it('keeps calendars and events of another school out of reach (IDOR)', function (): void {

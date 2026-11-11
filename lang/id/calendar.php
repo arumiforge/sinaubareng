@@ -8,7 +8,7 @@ return [
     'no_year' => 'Belum ada tahun ajaran. Operator sekolah perlu menambahkannya dulu.',
     'hints' => [
         'page' => 'Libur nasional dan cuti bersama sudah masuk otomatis. Tambahkan kegiatan sekolah atau kelas di sini.',
-        'read_only' => 'Kalender diatur operator sekolah. Wali kelas bisa menambah acara untuk kelasnya sendiri.',
+        'read_only' => 'Kalender diatur operator sekolah. Anda bisa mengusulkan acara atau perubahan; operator yang menyetujuinya.',
         'no_calendar' => 'Sekolah belum punya kalender untuk tahun ajaran ini. Libur nasional tetap ditampilkan.',
         'copy' => 'Tersedia :name. Salin sebagai kalender sekolah, lalu tambahkan acara sekolah sendiri.',
         'no_region' => 'Belum ada kalender wilayah untuk daerah sekolah ini. Buat kalender kosong, lalu isi acaranya.',
@@ -26,6 +26,7 @@ return [
         'ends_on' => 'Tanggal selesai',
         'class' => 'Kelas',
         'year' => 'Tahun ajaran',
+        'reason' => 'Alasan',
     ],
     'sections' => [
         'events' => 'Acara dan libur',
@@ -91,5 +92,36 @@ return [
         'class_missing' => 'Kelas tidak ditemukan di tahun ajaran ini.',
         'outside_year' => 'Tanggal harus di dalam tahun ajaran :year.',
         'not_joint_leave' => 'Tanggal ini bukan cuti bersama.',
+    ],
+    'proposals' => [
+        'title_pending' => 'Usulan perubahan menunggu persetujuan',
+        'title_mine' => 'Usulan saya',
+        'by' => 'diusulkan :name',
+        'reason' => 'Alasan: :reason',
+        'note' => 'Catatan operator: :note',
+        'hints' => [
+            'reason' => 'Boleh dikosongkan. Membantu operator memutuskan.',
+        ],
+        'actions' => [
+            'add' => 'Usulkan acara',
+            'edit' => 'Usulkan perubahan',
+            'delete' => 'Usulkan hapus',
+            'send' => 'Kirim usulan',
+            'approve' => 'Setujui',
+            'reject' => 'Tolak',
+        ],
+        'dialogs' => [
+            'delete' => 'Usulkan agar acara :title dihapus? Tulis alasannya (boleh kosong).',
+            'reject' => 'Tolak usulan ini? Tulis catatan untuk pengusul (boleh kosong).',
+        ],
+        'toasts' => [
+            'sent' => 'Usulan dikirim ke operator sekolah.',
+            'approved' => 'Usulan disetujui dan kalender diperbarui.',
+            'rejected' => 'Usulan ditolak.',
+        ],
+        'errors' => [
+            'event_gone' => 'Acara yang diusulkan untuk diubah sudah tidak ada.',
+            'decided' => 'Usulan ini sudah diputuskan.',
+        ],
     ],
 ];
