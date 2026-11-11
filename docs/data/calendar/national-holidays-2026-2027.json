@@ -1,0 +1,437 @@
+{
+  "dataset": "national_holidays",
+  "code": "LIBUR-NASIONAL-SKB-2026-2027",
+  "status": "draft",
+  "verify_by": "Tim Validasi SIGRAK (D-113, D-254)",
+  "check": {
+    "checked_on": "2026-11-10",
+    "method": "online check of the official SKB (D-254)",
+    "input": {
+      "path": "docs/sources/usulan-01/data/libur-nasional-cuti-bersama.json",
+      "sha256": "82e7ed33d8614269e1a2bcccd7adf75a9d0a92e75b751c9ddbe67d75e1aefab6"
+    },
+    "sources": [
+      {
+        "url": "https://jdih.kemnaker.go.id/asset/data_puu/2025kb002.pdf",
+        "title": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri PANRB Nomor 1497 Tahun 2025, Nomor 2 Tahun 2025, Nomor 5 Tahun 2025 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2026 (JDIH Kemnaker, signed scan)",
+        "what": "Official text and annex for 2026: numbers, set on 19 September 2025, every date, name and kind. sha256 of the PDF: fead795bdcd98c384db2761a46d19ba643a80d8779fbb0040a938ba57896bd24"
+      },
+      {
+        "url": "https://jdih.kemnaker.go.id/peraturan/detail/2723/keputusan-bersama-menteri-agama-menteri-ketenagakerjaan-dan-menteri-pendayagunaan-aparatur-negara-dan-reformasi-birokrasi-republik-indonesia-nomor-2-tahun-2025",
+        "title": "JDIH Kemnaker: Keputusan Bersama Nomor 2 Tahun 2025",
+        "what": "Catalogue entry for the 2026 SKB; confirms set on 19 September 2025 in Jakarta"
+      },
+      {
+        "url": "https://jdih.kemnaker.go.id/asset/data_puu/2026skb003.pdf",
+        "title": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri PANRB Nomor 1205 Tahun 2026, Nomor 3 Tahun 2026, Nomor 2 Tahun 2026 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2027 (JDIH Kemnaker)",
+        "what": "Official text and annex for 2027: numbers, set on 15 September 2026, every date, name and kind. sha256 of the PDF: a1ba243d5fa40ae4345bc5306075b5ed4208b77ce738b8278ef4b17571422cfe"
+      },
+      {
+        "url": "https://jdih.kemnaker.go.id/peraturan/detail/3089/keputusan-menteri-ketenagakerjaan-nomor-3-tahun-2026",
+        "title": "JDIH Kemnaker: Keputusan Bersama Nomor 3 Tahun 2026",
+        "what": "Catalogue entry for the 2027 SKB; set on 15 September 2026, status in force"
+      },
+      {
+        "url": "https://www.setneg.go.id/baca/index/inilah_skb_3_menteri_libur_nasional_dan_cuti_bersama_2026",
+        "title": "Kemensetneg: Inilah SKB 3 Menteri Libur Nasional dan Cuti Bersama 2026",
+        "what": "Cross-check of the 2026 list"
+      },
+      {
+        "url": "https://www.setneg.go.id/baca/index/inilah_skb_3_menteri_libur_nasional_dan_cuti_bersama_2027",
+        "title": "Kemensetneg: Inilah SKB 3 Menteri Libur Nasional dan Cuti Bersama 2027",
+        "what": "Cross-check of the 2027 list and set date"
+      },
+      {
+        "url": "https://kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027",
+        "title": "Kemenko PMK: Pemerintah Tetapkan 18 Hari Libur Nasional dan 8 Cuti Bersama Tahun 2027",
+        "what": "Cross-check of the 2027 totals (18 holiday days, 8 joint leave days) and signatories"
+      },
+      {
+        "url": "https://aceh.kemenag.go.id/informasi/skb-tiga-menteri-tentang-hari-libur-nasional-dan-cuti-bersama-tahun-2027",
+        "title": "Kanwil Kemenag Aceh: SKB Tiga Menteri tentang Hari Libur Nasional dan Cuti Bersama Tahun 2027",
+        "what": "Cross-check of the 2027 decree numbers and list"
+      }
+    ],
+    "summary": "Both decree numbers and set dates in the input match the official SKB. Every date and every kind (national holiday or joint leave) from July 2026 to December 2027 matches; no official day is missing and the input has no extra day. Only names differ: the input used its own wording, which is replaced by the SKB wording.",
+    "differences": [
+      {
+        "date": "2026-08-17",
+        "input": "Hari Proklamasi Kemerdekaan RI (national_holiday)",
+        "official": "Proklamasi Kemerdekaan (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2026-08-25",
+        "input": "Maulid Nabi Muhammad SAW (national_holiday)",
+        "official": "Maulid Nabi Muhammad S.A.W. (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2026-12-24",
+        "input": "Cuti Bersama Hari Raya Natal (joint_leave)",
+        "official": "Kelahiran Yesus Kristus (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2026-12-25",
+        "input": "Hari Raya Natal (national_holiday)",
+        "official": "Kelahiran Yesus Kristus (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-01-05",
+        "input": "Isra Mikraj Nabi Muhammad SAW (national_holiday)",
+        "official": "Isra Mikraj Nabi Muhammad S.A.W. 1448 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match); the SKB annex misspells 'Hijirah', written here as 'Hijriah'"
+      },
+      {
+        "date": "2027-02-05",
+        "input": "Cuti Bersama Tahun Baru Imlek 2578 Kongzili (joint_leave)",
+        "official": "Tahun Baru Imlek 2578 Kongzili (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-09",
+        "input": "Cuti Bersama Hari Raya Idulfitri 1448 H (joint_leave)",
+        "official": "Idul Fitri 1448 Hijriah (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-10",
+        "input": "Hari Raya Idulfitri 1448 H (national_holiday)",
+        "official": "Idul Fitri 1448 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-11",
+        "input": "Hari Raya Idulfitri 1448 H (national_holiday)",
+        "official": "Idul Fitri 1448 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-12",
+        "input": "Cuti Bersama Hari Raya Idulfitri 1448 H (joint_leave)",
+        "official": "Idul Fitri 1448 Hijriah (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-15",
+        "input": "Cuti Bersama Hari Raya Idulfitri 1448 H (joint_leave)",
+        "official": "Idul Fitri 1448 Hijriah (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-03-25",
+        "input": "Cuti Bersama Wafat Yesus Kristus (joint_leave)",
+        "official": "Wafat Yesus Kristus (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-05-17",
+        "input": "Hari Raya Iduladha 1448 H (national_holiday)",
+        "official": "Idul Adha 1448 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-05-18",
+        "input": "Cuti Bersama Hari Raya Iduladha 1448 H (joint_leave)",
+        "official": "Idul Adha 1448 Hijriah (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-05-19",
+        "input": "Cuti Bersama Hari Raya Waisak 2571 BE (joint_leave)",
+        "official": "Hari Raya Waisak 2571 BE (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-06-06",
+        "input": "Tahun Baru Islam 1 Muharam 1449 H (national_holiday)",
+        "official": "1 Muharam Tahun Baru Islam 1449 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-08-15",
+        "input": "Maulid Nabi Muhammad SAW (national_holiday)",
+        "official": "Maulid Nabi Muhammad S.A.W. (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-08-17",
+        "input": "Hari Proklamasi Kemerdekaan RI (national_holiday)",
+        "official": "Proklamasi Kemerdekaan (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-12-24",
+        "input": "Cuti Bersama Hari Raya Natal (joint_leave)",
+        "official": "Kelahiran Yesus Kristus (joint_leave)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-12-25",
+        "input": "Hari Raya Natal (national_holiday)",
+        "official": "Kelahiran Yesus Kristus (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      },
+      {
+        "date": "2027-12-26",
+        "input": "Isra Mikraj Nabi Muhammad SAW (national_holiday)",
+        "official": "Isra Mikraj Nabi Muhammad S.A.W. 1449 Hijriah (national_holiday)",
+        "action": "name set to the SKB wording (date and kind match)"
+      }
+    ],
+    "unresolved": [
+      {
+        "item": "Idul Fitri 1448 H (2027-03-10, 2027-03-11) and Idul Adha 1448 H (2027-05-17)",
+        "note": "Diktum KEDUA of the 2027 SKB leaves the final dates of 1 Ramadan, Idul Fitri and Idul Adha 1448 H to a Keputusan Menteri Agama (sidang isbat). The dates follow the SKB and stay non-provisional; re-check after the isbat and amend the related joint leave days if the SKB is changed."
+      },
+      {
+        "item": "Joint leave for ASN in 2027",
+        "note": "Under Diktum KELIMA, joint leave for ASN follows separate rules (a Keputusan Presiden); joint leave for private institutions is set by each institution (Diktum KEENAM). Whether schools close on joint leave days is a school-calendar setting, not part of this dataset."
+      },
+      {
+        "item": "2027/2028 after 2027-12-31",
+        "note": "Days from January to June 2028 are not covered: the 2028 SKB is normally set around September 2027. Add them when it is published."
+      }
+    ]
+  },
+  "decrees": [
+    {
+      "year": 2026,
+      "decree": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 1497 Tahun 2025, Nomor 2 Tahun 2025, Nomor 5 Tahun 2025 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2026",
+      "short": "SKB 1497/2/5 Tahun 2025",
+      "set_on": "2025-09-19"
+    },
+    {
+      "year": 2027,
+      "decree": "Keputusan Bersama Menteri Agama, Menteri Ketenagakerjaan, dan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 1205 Tahun 2026, Nomor 3 Tahun 2026, Nomor 2 Tahun 2026 tentang Hari Libur Nasional dan Cuti Bersama Tahun 2027",
+      "short": "SKB 1205/3/2 Tahun 2026",
+      "set_on": "2026-09-15"
+    }
+  ],
+  "academic_years": [
+    {
+      "academic_year": "2026/2027",
+      "covered_until": "2027-06-30",
+      "days": [
+        {
+          "date": "2026-08-17",
+          "name": "Proklamasi Kemerdekaan",
+          "kind": "national_holiday",
+          "decree": "SKB 1497/2/5 Tahun 2025",
+          "is_provisional": false
+        },
+        {
+          "date": "2026-08-25",
+          "name": "Maulid Nabi Muhammad S.A.W.",
+          "kind": "national_holiday",
+          "decree": "SKB 1497/2/5 Tahun 2025",
+          "is_provisional": false
+        },
+        {
+          "date": "2026-12-24",
+          "name": "Kelahiran Yesus Kristus",
+          "kind": "joint_leave",
+          "decree": "SKB 1497/2/5 Tahun 2025",
+          "is_provisional": false
+        },
+        {
+          "date": "2026-12-25",
+          "name": "Kelahiran Yesus Kristus",
+          "kind": "national_holiday",
+          "decree": "SKB 1497/2/5 Tahun 2025",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-01-01",
+          "name": "Tahun Baru 2027 Masehi",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-01-05",
+          "name": "Isra Mikraj Nabi Muhammad S.A.W. 1448 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-02-05",
+          "name": "Tahun Baru Imlek 2578 Kongzili",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-02-06",
+          "name": "Tahun Baru Imlek 2578 Kongzili",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-08",
+          "name": "Hari Suci Nyepi (Tahun Baru Saka 1949)",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-09",
+          "name": "Idul Fitri 1448 Hijriah",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-10",
+          "name": "Idul Fitri 1448 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-11",
+          "name": "Idul Fitri 1448 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-12",
+          "name": "Idul Fitri 1448 Hijriah",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-15",
+          "name": "Idul Fitri 1448 Hijriah",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-25",
+          "name": "Wafat Yesus Kristus",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-26",
+          "name": "Wafat Yesus Kristus",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-03-28",
+          "name": "Kebangkitan Yesus Kristus (Paskah)",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-01",
+          "name": "Hari Buruh Internasional",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-06",
+          "name": "Kenaikan Yesus Kristus",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-17",
+          "name": "Idul Adha 1448 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-18",
+          "name": "Idul Adha 1448 Hijriah",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-19",
+          "name": "Hari Raya Waisak 2571 BE",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-05-20",
+          "name": "Hari Raya Waisak 2571 BE",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-06-01",
+          "name": "Hari Lahir Pancasila",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-06-06",
+          "name": "1 Muharam Tahun Baru Islam 1449 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        }
+      ]
+    },
+    {
+      "academic_year": "2027/2028",
+      "covered_until": "2027-12-31",
+      "days": [
+        {
+          "date": "2027-08-15",
+          "name": "Maulid Nabi Muhammad S.A.W.",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-08-17",
+          "name": "Proklamasi Kemerdekaan",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-12-24",
+          "name": "Kelahiran Yesus Kristus",
+          "kind": "joint_leave",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-12-25",
+          "name": "Kelahiran Yesus Kristus",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        },
+        {
+          "date": "2027-12-26",
+          "name": "Isra Mikraj Nabi Muhammad S.A.W. 1449 Hijriah",
+          "kind": "national_holiday",
+          "decree": "SKB 1205/3/2 Tahun 2026",
+          "is_provisional": false
+        }
+      ]
+    }
+  ]
+}

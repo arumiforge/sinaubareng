@@ -73,7 +73,7 @@ final class SchoolResource extends Resource
                     ->required(),
                 Select::make('region_id')
                     ->label(__('console.schools.fields.region'))
-                    ->relationship('region', 'regency', fn (Builder $query): Builder => $query->orderBy('province')->orderBy('regency'))
+                    ->relationship('region', 'regency', fn (Builder $query): Builder => $query->whereNotNull('regency')->orderBy('province')->orderBy('regency'))
                     ->getOptionLabelFromRecordUsing(fn (Region $record): string => "{$record->regency}, {$record->province}")
                     ->searchable(['province', 'regency'])
                     ->preload()

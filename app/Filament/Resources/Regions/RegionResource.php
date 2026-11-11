@@ -53,9 +53,11 @@ final class RegionResource extends Resource
                     ->label(__('console.regions.fields.province'))
                     ->required()
                     ->maxLength(255),
+                // Empty for a province-level region, which owns the province's reference calendar (D-323).
                 TextInput::make('regency')
                     ->label(__('console.regions.fields.regency'))
-                    ->required()
+                    ->helperText(__('console.regions.hints.regency'))
+                    ->nullable()
                     ->maxLength(255)
                     ->unique(ignoreRecord: true, modifyRuleUsing: fn (Unique $rule, callable $get): Unique => $rule->where('province', $get('province'))),
             ]);
@@ -74,6 +76,7 @@ final class RegionResource extends Resource
                     ->sortable(),
                 TextColumn::make('regency')
                     ->label(__('console.regions.fields.regency'))
+                    ->placeholder(__('console.regions.whole_province'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('schools_count')

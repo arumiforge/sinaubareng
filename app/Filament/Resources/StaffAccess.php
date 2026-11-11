@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
+use App\Enums\CalendarEventKind;
+use App\Enums\CalendarStatus;
+use App\Enums\ExamType;
 use App\Enums\MembershipRole;
 use App\Enums\MembershipStatus;
+use App\Enums\NationalHolidayKind;
 use App\Enums\SchoolLevel;
 use App\Enums\StaffRole;
 use App\Models\StaffUser;
@@ -25,7 +29,7 @@ final class StaffAccess
     /**
      * Enum cases as select options with their Indonesian labels.
      *
-     * @param  class-string<MembershipRole|MembershipStatus|SchoolLevel|StaffRole>  $enum
+     * @param  class-string<MembershipRole|MembershipStatus|SchoolLevel|StaffRole|NationalHolidayKind|CalendarEventKind|ExamType|CalendarStatus>  $enum
      * @return array<string, string>
      */
     public static function options(string $enum): array

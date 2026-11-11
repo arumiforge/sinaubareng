@@ -10,11 +10,13 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\School\AcademicYearController;
+use App\Http\Controllers\School\CalendarController;
 use App\Http\Controllers\School\InvitationController;
 use App\Http\Controllers\School\SchoolClassController;
 use App\Http\Controllers\School\TeacherController;
 use App\Http\Controllers\School\TeachingAssignmentController;
 use App\Http\Controllers\School\TimetableController;
+use App\Http\Controllers\School\TimetableDraftController;
 use App\Http\Controllers\Teacher\MyTimetableController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,9 +84,29 @@ Route::middleware('auth')->group(function (): void {
         Route::scopeBindings()->group(function (): void {
             Route::put('/kelas/{class}/jadwal/{timetableSlot}', [TimetableController::class, 'update'])->name('classes.timetable.update');
             Route::delete('/kelas/{class}/jadwal/{timetableSlot}', [TimetableController::class, 'destroy'])->name('classes.timetable.destroy');
+            Route::put('/kelas/{class}/jadwal/{timetableSlot}/kunci', [TimetableController::class, 'lock'])->name('classes.timetable.lock');
         });
+
+        // Operator: Susun draf jadwal (D-262).
+        Route::get('/jadwal/susun-draf', [TimetableDraftController::class, 'show'])->name('timetable.draft.show');
+        Route::post('/jadwal/susun-draf', [TimetableDraftController::class, 'store'])->name('timetable.draft.store');
+        Route::put('/jadwal/susun-draf/pengaturan', [TimetableDraftController::class, 'settings'])->name('timetable.draft.settings');
+        Route::post('/jadwal/susun-draf/{draft}/simpan', [TimetableDraftController::class, 'save'])->name('timetable.draft.save');
 
         // Teacher: Kelas Saya > Jadwal.
         Route::get('/kelas-saya/jadwal', MyTimetableController::class)->name('my_classes.timetable');
+    });
+
+    // Kalender (D-253…D-261): every member reads it; the operator manages it; a wali kelas adds events for their class.
+    Route::middleware('translations:calendar')->group(function (): void {
+        Route::get('/kalender', [CalendarController::class, 'show'])->name('calendar.show');
+        Route::post('/kalender', [CalendarController::class, 'store'])->name('calendar.store');
+        Route::post('/kalender/{calendar}/perubahan-wilayah', [CalendarController::class, 'regionChanges'])->name('calendar.region_changes');
+        Route::put('/kalender/{calendar}/cuti-bersama', [CalendarController::class, 'jointLeave'])->name('calendar.joint_leave');
+        Route::post('/kalender/{calendar}/acara', [CalendarController::class, 'storeEvent'])->name('calendar.events.store');
+        Route::scopeBindings()->group(function (): void {
+            Route::put('/kalender/{calendar}/acara/{event}', [CalendarController::class, 'updateEvent'])->name('calendar.events.update');
+            Route::delete('/kalender/{calendar}/acara/{event}', [CalendarController::class, 'destroyEvent'])->name('calendar.events.destroy');
+        });
     });
 });
