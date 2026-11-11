@@ -111,7 +111,7 @@ Order confirmed by D-162. P5-01 and P5-02 run in parallel. Each slice gets its t
 |---|---|---|---|---|---|
 | P5-01 | Project scaffold and CI | done | pw/jolly-fermi-c64iie | — | Laravel app at the repo root, `.github/workflows/` |
 | P5-02 | Server, staging, and monitoring setup | todo | — | — | Running VPS (no repo output) |
-| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | done (P5-03i, P5-03j, P5-03k D-355, P5-03l D-356; PR #72) | p5/p5-03ij-calendar-timetable-versioning | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
+| P5-03 | Slice 1 — Foundation: auth, invitations, schools and roles, academic year and classes, curriculum import, timetable | review (P5-03i…l done in PR #72; follow-up for owner answers D-379…D-382) | p5/p5-03ij-calendar-timetable-versioning | P5-01 | App code; split in `tasks/P5-03-foundation.md` |
 | P5-04 | Slice 2 — Content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export | todo | — | P5-03 (incl. P5-03i) | App code |
 | P5-05 | Slice 3 — More templates: Bank Soal, LKPD, Quiz Battle | todo | — | P5-04 | App code |
 | P5-06 | Slice 4 — TKA: package template, exam site, sessions, cards, token, results (target: 2028 season) | todo | — | P5-05 | App code |

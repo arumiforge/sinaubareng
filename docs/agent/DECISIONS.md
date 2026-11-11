@@ -1776,3 +1776,23 @@ Reason: D-323 needs a calendar owned by a province, and the data model ties cale
 Accepted · 2026-11-11 · P5-03k, P5-03l · implements D-355 and D-356
 The Profil Jenjang is `docs/data/profiles/<level>.json`, read by `App\Curriculum\Policy\LevelProfiles`; each file holds versions with `applies_from_school_year`. A database table and console editing come with the full rule-set model (P5-09). `curriculum:import` copies each rule set's `effective_on`, `applies_from_school_year`, and predecessor onto `curriculum_versions`. `PolicyProfileResolver` picks, per domain, the listed version that is not retired and has started by the school year (a province entry beats a national one); when none has started it uses the earliest listed one; results are cached per school year and refreshed by every import. `config/curriculum.php` no longer has `allocation_versions`.
 Reason: data first, with no second source to drift; a table can come once the console edits profiles.
+
+### D-379 — STS and SAS days are not effective days
+Accepted · 2026-11-11 · P5-03i · owner's choice, confirms D-259
+Days of an STS or SAS (`exam` events) count as non-effective days, as D-259 says, even where a provincial kaldik counts assessment weeks as effective. The Jawa Tengah reference calendar keeps its SAS windows as notes; a school enters its own STS and SAS dates, and its effective days drop accordingly.
+Reason: no lessons run on assessment days, so they cannot hold RPM meetings.
+
+### D-380 — One school calendar, kept by the operator; others propose changes
+Accepted · 2026-11-11 · P5-03i · owner's choice, replaces the wali kelas edits of D-258
+Each school has one calendar of its own. Only the operator changes it directly. Wali kelas, guru mapel, and the principal propose a new event, a change, or a deletion (with an optional reason); the operator approves or rejects with an optional note. A proposal is checked by the same rules when sent and again when approved (ConflictChecker, the school year, the class); the D-261 impact preview runs at approval. Class events (`calendar_events.class_id`, D-258) stay.
+Reason: one owner keeps the calendar consistent; teachers still bring their class plans in.
+
+### D-381 — Saving a draft timetable replaces the unlocked rows
+Accepted · 2026-11-11 · P5-03j · owner's confirmation of D-262
+Saving a draft replaces every unlocked row of each class in the draft, after a confirm dialog; locked rows stay.
+Reason: as built in P5-03j; the owner confirmed it.
+
+### D-382 — Standard words instead of "absensi"
+Accepted · 2026-11-11 · owner's choice, extends D-302 and LOC-35
+UI text never uses "absensi". It uses standard Indonesian words such as kehadiran, ketidakhadiran, and hadir. The banned-words test covers it; help search may still find the old word.
+Reason: the owner prefers standard spelling (ejaan baku).
