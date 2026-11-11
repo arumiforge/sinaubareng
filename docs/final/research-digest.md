@@ -1,7 +1,7 @@
 # Research Digest
 
 - **Status:** final (owner request 2026-11-09, D-362)
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-11
 - **Purpose:** one place that summarises every piece of research done for SIGRAK so far: official regulations, journal and field studies, app benchmarks, and technical research. It is a digest with pointers, not a copy. Details stay in the linked repo documents.
 - **Indonesian PDF:** `docs/pdf/research-digest.pdf`
 
@@ -22,7 +22,7 @@ Product copy and in-app rule text must re-check any regulation number on jdih.ke
 
 ## 2. Regulations and national standards (Kemendikdasmen)
 
-Checked 2026-10-30 to 2026-11-09. On 2026-11-08 and 2026-11-09 the official JDIH sites often returned 403, 429, or 503, so several rows rest on the pasal.id mirror.
+Checked 2026-10-30 to 2026-11-11. On 2026-11-08 and 2026-11-09 the official JDIH sites often returned 403, 429, or 503, so several rows rest on the pasal.id mirror. In P4-23 (2026-11-10/11) jdih.kemendikdasmen.go.id, peraturan.go.id, and peraturan.bpk.go.id could not be reached from the work environment; six PDFs were taken from www.kemendikdasmen.go.id, a ministry unit, or regional education offices, each with its `verification` level in [`docs/sources/README.md`](../sources/README.md) and extracted to [`docs/data/regulations/`](../data/regulations/README.md).
 
 | Instrument | Issuer, date | What it governs (SD/MI view) | Level | Detail in repo |
 |---|---|---|---|---|
@@ -31,12 +31,12 @@ Checked 2026-10-30 to 2026-11-09. On 2026-11-08 and 2026-11-09 the official JDIH
 | Kepmendikdasmen 126/P/2025 | 4 Sep 2025 | Pedoman Pembelajaran Mendalam: principles, learning experiences, framework, roles | official | `deep-learning-kepmendikdasmen-126-p-2025.json` |
 | Kepmendikdasmen 127/P/2025 | 4 Sep 2025 | Pedoman Koding dan Kecerdasan Artifisial: status, delivery modes, risks; no SD grades or JP | official | `coding-ai-kepmendikdasmen-127-p-2025.json` |
 | Permendikdasmen 1/2026 (Standar Proses) | set 2 Jan, in force 5 Jan 2026; revokes Permendikbudristek 16/2022 | Planning by the teacher (Pasal 4(2)); plan "paling sedikit memuat" objectives, steps, assessment (Pasal 5); process review by self, peers, principal, and murid at least once a semester (Pasal 15–18); term *murid* | mirror (Pasal 9 unreadable) | [`administration-features.md`](../drafts/administration-features.md) §1, [`teacher-supervision-instruments.md`](../drafts/teacher-supervision-instruments.md) §1 |
-| Permendikdasmen 10/2025 (SKL) | Jun 2025 (exact date unverified) | 8 dimensi profil lulusan as the graduate standard | secondary | `policy-innovation-layers.md` §3 |
-| Permendikdasmen 12/2025 (Standar Isi) | 2025 | "Kriteria minimal" for scope of material | secondary | same |
-| Permendikbudristek 21/2022 (Standar Penilaian) | still in force | Results reported in rapor or other reports | mirror | same |
-| Permendikdasmen 26/2025 (Standar Pengelolaan) | 2025 | KSP required and set by the principal; RKJM (4 years) and RKT with the komite; SD rombel at most 28; oversight through pemantauan, supervisi, evaluasi (Pasal 22–23); kelas rangkap allowed (Pasal 11(4)) | mirror | `administration-features.md` §1 |
+| Permendikdasmen 10/2025 (SKL) | set 10 Jun, in force 13 Jun 2025 (BN 2025/410); revokes Permendikbudristek 5/2022 | 8 dimensi profil lulusan with definitions (Pasal 4); SD/MI competency description per dimension (Pasal 7 a–h); SKL guides graduation (Pasal 3) and every other standard (Pasal 2(4)); dasar focus on faith, Pancasila character, literacy and numeracy (Pasal 6) | official | `graduate-competency-standard-permendikdasmen-10-2025.json` (P4-23) |
+| Permendikdasmen 12/2025 (Standar Isi) | set 10 Jul, in force 15 Jul 2025 (BN 2025/502); revokes Permendikbudristek 8/2024 | "Kriteria minimal" for scope of material; 11 muatan wajib, English the compulsory foreign language (Pasal 3); religion content with Kemenag, muatan lokal by the Pemda (Pasal 7); SD scope per muatan in Lampiran II B, with **Teknologi Digital (computational thinking, digital literacy, basic AI) under Matematika** | official | `content-standard-permendikdasmen-12-2025.json` (P4-23) |
+| Permendikbudristek 21/2022 (Standar Penilaian) | set 26 Apr, in force 28 Apr 2022 (BN 2022/460); no replacement found | Assessment berkeadilan, objektif, edukatif; five steps; formative at every level, summative from SD for promotion and graduation against kriteria ketercapaian tujuan pembelajaran (Pasal 9); report at least states achievement, in rapor or another form (Pasal 8); **SD graduation looks at kelas V and VI** (Pasal 10(2)); mechanism set by the school on the BSKAP guide (Pasal 11–12) | mirror (salinan from a Dinas site) | `assessment-standard-permendikbudristek-21-2022.json` (P4-23) |
+| Permendikdasmen 26/2025 (Standar Pengelolaan) | set 16 Dec, in force 17 Dec 2025 (BN 2025/1079); revokes Permendikbudristek 47/2023 | Plan made with the komite and set by the principal (Pasal 4); RKJM (4 years) and RKT (Pasal 5); KSP, program pembelajaran, program penilaian as minimum outputs (Pasal 7); SD rombel at most 28, at most 24 rombel per SD (Pasal 8–9); kelas rangkap allowed (Pasal 11(4)); **one learning session per day, 3-year transition** (Pasal 17, 26); oversight through pemantauan, supervisi, evaluasi (Pasal 22–23) | mirror (JDIH salinan from a Dinas site) | `management-standard-permendikdasmen-26-2025.json` (P4-23), `administration-features.md` §1 |
 | Permendikdasmen 11/2025 + Kepmendikdasmen 221/P/2025 | 2025 (221/P around 12 Nov 2025, secondary) | Teacher workload 24–40 JTM; wali kelas 2 JTM in SD; other extra duties up to 6 JTM; counts only with an SK and in Dapodik; revokes Kepmen 495/M/2024 | secondary | `administration-features.md` §1 |
-| Permendikdasmen 6/2026 (Budaya Sekolah Aman dan Nyaman) | set 8 Jan 2026; revokes 46/2023 | Tata tertib, SOP, confidential complaints, class agreements, yearly monev; TPPK ends, cases go to a regional Pokja within 6 months; guru kelas leads class conditions in SD (Pasal 13); implementing Kepmendikdasmen 17/2026 (secondary) | official PDF linked; class duties not read in full | `administration-features.md`, `teacher-supervision-instruments.md` |
+| Permendikdasmen 6/2026 (Budaya Sekolah Aman dan Nyaman) | set 8 Jan, in force 9 Jan 2026 (BN 2026/11); revokes 46/2023 | Tata tertib, kode etik, SOP (Pasal 13); early detection with a confidential complaint channel (Pasal 12); kesepakatan kelas drafted with students (Pasal 19); yearly monev reported to the Pokja (Pasal 41); TPPK and Satgas end, cases go to a regional Pokja formed within 6 months (Pasal 43–44); **in SD the guru kelas leads class conditions; "wali kelas" as class manager is named only for SMP/SMA/SMK** (Pasal 18(3)); implementing Kepmendikdasmen 17/2026 (not obtained) | official | `safe-school-culture-permendikdasmen-6-2026.json` (P4-23), `administration-features.md`, `teacher-supervision-instruments.md` |
 | Permendikdasmen 3/2025 (SPMB) | 2025 | Transfers allowed except in the last semester of grade 6; receiving school updates Dapodik within 14 working days | mirror | `administration-features.md` §1 |
 | Permendikbudristek 58/2024 (ijazah) | about Oct 2024 (date unverified) | Ijazah signed by the principal; e-ijazah printed by the school from 2025 (secondary) | official PDF linked | same |
 | Permendikdasmen 9/2025 (TKA) and 9/2026 (AN) | 2025, 2026 | TKA optional for grade 6; AN in the final grade | official PDF linked (9/2026), mirror (9/2025) | same, §6 below |
@@ -84,7 +84,7 @@ Guides from BSKAP (all **official**, PDFs in `docs/sources/`, extracted to `docs
 
 | Instrument or fact | Date | Finding | Level | Decisions, repo |
 |---|---|---|---|---|
-| **KMA 512/2026, Pedoman Kurikulum Berbasis Cinta** | set 31 Mar 2026, in force on setting | Replaces SK Dirjen Pendis 6077/2025 as the KBC source. Keeps Panca Cinta (cinta Tuhan, cinta diri dan sesama manusia, cinta lingkungan, cinta ilmu, cinta tanah air); adds six nilai dasar, six principles, 12 suggested methods, 10 assessment instruments, three practice levels (merintis, berkembang, mekar). KBC is not a subject; results go through Akhlak or Budi Pekerti and attitude notes. Applies to Kemenag schools **and to religion teachers in general schools, SD included** | official (scanned PDF supplied by the owner on 2026-11-09; earlier only secondary, with one page writing "KMA 521") | D-359, D-126; `docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`; SD scope is an open question in `open-questions.md` |
+| **KMA 512/2026, Pedoman Kurikulum Berbasis Cinta** | set 31 Mar 2026, in force on setting | Replaces SK Dirjen Pendis 6077/2025 as the KBC source. Keeps Panca Cinta (cinta Tuhan, cinta diri dan sesama manusia, cinta lingkungan, cinta ilmu, cinta tanah air); adds six nilai dasar, six principles, 12 suggested methods, 10 assessment instruments, three practice levels (merintis, berkembang, mekar). KBC is not a subject; results go through Akhlak or Budi Pekerti and attitude notes. Applies to Kemenag schools **and to religion teachers in general schools, SD included** | official (scanned PDF supplied by the owner on 2026-11-09; earlier only secondary, with one page writing "KMA 521") | D-359, D-126; `docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`; SD scope decided in D-368 (KBC fields off for SD by default). P4-23 re-check: sha256 matches the README record; the decree page (PDF p. 3) confirms set 31 Mar 2026, in force on setting; no official-channel copy fetched (jdih.kemenag.go.id unreachable) |
 | SK Dirjen Pendis 6077/2025 (Panduan KBC) | 22 Jul 2025 | Five themes, example lessons with fields "Tema Kurikulum Berbasis Cinta" and "Materi Insersi"; all marked as examples | official | D-126, D-142, [`religious-education.md`](religious-education.md) |
 | KMA 1503/2025 (amends KMA 450/2024) | 22 Sep 2025 | Madrasah curriculum with pembelajaran mendalam and KBC; MI structure and JP (Lampiran II, BAB III B, Tabel 1–5); MI may add up to 6 JP per week | official | D-038, `mi-allocation-kma-1503-2025.json` |
 | SK Dirjen Pendis 9941/2025 | 28 Nov 2025 | CP for Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab | mirror (two copies with identical text; no kemenag.go.id link found) | D-035 |
@@ -103,7 +103,7 @@ Guides from BSKAP (all **official**, PDFs in `docs/sources/`, extracted to `docs
 |---|---|---|---|
 | Kepka BKPDM 020/2026 (11 Jun 2026), amends Kepka BSKAP 046/H/KR/2025 | CP Pendidikan Agama dan Budi Pekerti for six religions, Fase A–F (Lampiran I); special-education CP (Lampiran II, not yet transcribed) | official (scan, no text layer) | D-034, `cp-pendidikan-agama-sd-bkpdm-020-2026.json` |
 | 13/2025 structure | One "Pendidikan Agama dan Budi Pekerti" row, 3 JP per week, for every religion | official | `religious-education.md` |
-| Base Kepka BSKAP 046/H/KR/2025 (general-subject CP) | Not in the repo | — | Gap, §16 |
+| Base Kepka BSKAP 046/H/KR/2025 (16 Jul 2025; revokes 32/H/KR/2024) | CP for all subjects (1,691 pages); SD/MI in Lampiran II (pp. 23–347); Fase A = kelas I–II, B = III–IV, C = V–VI; Bahasa Inggris compulsory from Fase B; IPAS from Fase B; KKA Fase C only. Religion CP superseded by BKPDM 020/2026 | official (ministry unit copy) | `cp-decree-sd-index-kepka-bskap-046-h-kr-2025.json` (page index, P4-23); CP curation P4-29/P4-30 |
 
 No newer amendment of SK 9941/2025 or KMA 1503/2025 was found on 2026-10-30.
 
@@ -321,11 +321,11 @@ Versions checked 2026-10-30; monitoring tools 2026-10-31. Detail: [`server-setup
 
 | Gap | Why it matters | Where tracked |
 |---|---|---|
-| Official PDFs not in the repo: Permendikdasmen 1/2026, 10/2025, 12/2025, 26/2025, 9/2026, 6/2026 (+ Kepmendikdasmen 17/2026); base Permendikbudristek 12/2024 and 21/2022; Kepka BSKAP 046/H/KR/2025 | Most rows in §2 rest on mirrors | P4-23 |
+| Official PDFs still not in the repo: Permendikdasmen 1/2026 (Standar Proses) and 9/2026 (AN), Kepmendikdasmen 17/2026 (BSAN guide), base Permendikbudristek 12/2024. Mirror copies to swap for JDIH files: Permendikdasmen 26/2025, Permendikbudristek 21/2022 (P4-23 got the rest, 2026-11-11) | Standar Proses rows still rest on pasal.id; official channels were unreachable from the work environment | P4-23 follow-up |
 | TKA category limits, item count, and PGK partial credit in an official text | Scoring of the practice exam | `kerangka-tka-sd.json` |
 | AKMI for MI in 2026; official e-Rapor SD and RDM 2026 import specs | Exports (D-218) | P4-10, `policy-innovation-layers.md` §11 |
-| Who sets the KKTP at article level | Asesmen rules | same |
-| 2026 Ruang GTK wording of the 8 observation focuses and behaviour rubrics; any Kemenag 2025–2026 PKG instrument; wali kelas duties in Permendikdasmen 6/2026 | Supervision instruments | P4-08 |
+| Who sets the KKTP at article level (21/2022 only says the teacher picks or develops instruments, Pasal 5, and compares against kriteria ketercapaian tujuan pembelajaran, Pasal 9(8); the rest is in the BSKAP guide) | Asesmen rules | same |
+| 2026 Ruang GTK wording of the 8 observation focuses and behaviour rubrics; any Kemenag 2025–2026 PKG instrument (wali kelas duties in 6/2026: answered in §2, guru kelas in SD) | Supervision instruments | P4-08 |
 | Dapodik 2026 export column layout (anonymised samples from the owner) | Buku Induk import | `buku-induk-dapodik.md` |
 | SKB 3 Menteri holiday dates and the 2027 SKB number | Effective days | D-254 |
 | Kemendikdasmen IFP Android and WebView versions | Game kelas | D-179 |
@@ -335,7 +335,6 @@ Versions checked 2026-10-30; monitoring tools 2026-10-31. Detail: [`server-setup
 | Legal retention periods for rapor, ijazah data, supervision results | Console retention settings (D-318) | P4-13 S6 open question |
 | PKKS sample from Kudus pengawas | PKKS instrument match (D-324) | owner |
 | Field evidence: escape-room, board-game, lapbook, kokurikuler, and special-needs LKPD; retention or replication studies | LKPD patterns rest on practice, not trials | `lkpd-exploration.md` §8.2 |
-| KBC fields for SD religion teachers (KMA 512/2026 scope) | Owner decision, not research | `open-questions.md` |
 | PDKI trademark check | Brand | `product-concept.md` |
 
 ## 17. Where the raw research lives
@@ -347,5 +346,6 @@ Versions checked 2026-10-30; monitoring tools 2026-10-31. Detail: [`server-setup
 | Eksplorasi konsep LKPD untuk Sigrak | Journal report (about 60 studies) and vendor scan | Top 35 in `lkpd-exploration.md`; the rest in §7.2 above |
 | P4-13 S1…S6, Review proposal coverage | Owner interviews and decisions on the legacy app comparison (no web research) | D-252…D-328, `legacy-upgrade-01.md`, [`legacy-coordination.md`](../drafts/legacy-coordination.md), [`legacy-overlap-adjustments.md`](../drafts/legacy-overlap-adjustments.md) |
 | Sigrak positioning dan kebijakan pendidikan | 2025–2026 standards check | `policy-innovation-layers.md` |
+| P4-23: Get and extract missing regulations (2026-11-10/11) | Download of six regulation PDFs, SD/MI extracts, KMA 512/2026 re-check | Fully: `docs/sources/`, `docs/data/regulations/`, `docs/agent/tasks/P4-23-missing-regulations.md` |
 
 Earlier research (Oct 2026) is in the final docs themselves: TKA framework (`content-engine.md`, `kerangka-tka-sd.json`), religion sources (`religious-education.md`), Gemini terms (`ai-provider-engine.md`), and server versions (`server-setup.md`, `server-monitoring.md`).
