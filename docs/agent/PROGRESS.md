@@ -99,7 +99,7 @@ Later candidates (not yet tasks): curriculum data fixes (Matematika K4 S2, Tata 
 | P4-30 | Curate the other SD subjects (SB, PJOK, BIG, BJW, KTB, SSD, KKA) with the D-364 checklist (CP vs official decree, TP cover CP, ATP order and JP vs 13/2025, fokus linked to TP, known issues closed, references) | todo | — | P4-23, D-364 | `docs/data/curriculum/sigrak-sd-2026-r1-umum.json` |
 | P4-31 | Curate the religion subjects, SD (PAI, PAKR, PAKT, PAH, PAB, PAKH) and MI (QH, AA, FIK, SKI, BAR), with the D-364 checklist; set `curation.status: curated` with reviewer and date | todo | — | P4-23, D-364 | `docs/data/curriculum/sigrak-*.json` |
 | P4-22 | Data: `docs/data/taxonomy/` seed (facets A–H, codes, strengths, crosswalks) + regulation registry JSON, Tim Validasi review | todo | — | P4-21 answers | `docs/data/taxonomy/` |
-| P4-23 | Get and extract missing regulations (Permendikdasmen 1/2026, 10/2025, 12/2025, 26/2025, 9/2026, 6/2026; base 12/2024, 21/2022, BSKAP 046/H/KR/2025; verify KMA 512/2026) | todo | — | — | `docs/sources/`, `docs/data/regulations/` |
+| P4-23 | Get and extract missing regulations (Permendikdasmen 1/2026, 10/2025, 12/2025, 26/2025, 9/2026, 6/2026; base 12/2024, 21/2022, BSKAP 046/H/KR/2025; verify KMA 512/2026) | review | `p4/p4-23-missing-regulations` | — | `docs/sources/`, `docs/data/regulations/` |
 | P4-24 | Apply accepted P4-21 answers to `docs/final/` (product-concept, data-model, architecture, content-engine) + Indonesian PDFs | review | p4/p4-final-docs-sync | P4-21 answers | `docs/final/*.md`, `docs/pdf/` |
 
 ### Phase 5 — v1 build · todo

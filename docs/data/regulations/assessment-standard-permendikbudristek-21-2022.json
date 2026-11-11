@@ -1,0 +1,160 @@
+{
+  "dataset": "assessment_standard",
+  "version_code": "STANDAR-PENILAIAN-PERMENDIKBUDRISTEK-21-2022",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "The whole operative text of the Standar Penilaian (it is short and applies to every level): principles (berkeadilan, objektif, edukatif), five-step procedure, formative and summative assessment, report content, promotion and graduation bases (SD graduation looks at kelas V and VI), and the delegation of guidelines to the head of the curriculum and assessment unit (BSKAP).",
+  "source": {
+    "file": "docs/sources/Permendikbudristek_No_21_Tahun_2022_Standar_Penilaian_Pendidikan.pdf",
+    "sha256": "cd412d083cf5dbfe7dc0b05c41f536d378d7fcaa9fc2421b92f2124e7b732fc9",
+    "regulation_code": "PERMENDIKBUDRISTEK-21-2022",
+    "title": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia Nomor 21 Tahun 2022 tentang Standar Penilaian Pendidikan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "21 Tahun 2022",
+    "issued_by": "Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia (Nadiem Anwar Makarim)",
+    "issued_on": "2022-04-26",
+    "promulgated_on": "2022-04-28",
+    "effective_on": "2022-04-28",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2022 Nomor 460",
+    "revokes": "Permendikbud 23/2016 (Standar Penilaian), Permendikbud 53/2015, the assessment parts of Permendikbud 137/2014 and 34/2018, and the school-exam parts of Permendikbud 43/2019 (Pasal 13)",
+    "status_note": "Still in force as far as found: no replacing Permendikdasmen standar penilaian was found on 2026-11-11 (secondary check only).",
+    "downloaded_from": "https://disdikbud.batangkab.go.id/lamp/info/20230306074603-14-0-Permendikbudristek_no_212022_Standar_Penilaian_Pendidikan.pdf (Dinas Pendidikan dan Kebudayaan Kabupaten Batang)",
+    "downloaded_on": "2026-11-11",
+    "copy_type": "SALINAN with the jdih.kemdikbud.go.id footer, certified by Kepala Biro Hukum (Dian Wahyuni)",
+    "verification": "mirror",
+    "verification_note": "Copy of the JDIH salinan re-hosted by a regional education office. Official channels were unreachable from the work environment. Replace with the JDIH file and compare sha256 when reachable.",
+    "pages_total": 9,
+    "pages_note": "PDF page = printed page."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF from Word), cut into verbatim spans per Pasal by script. Whole body kept because every article binds SD.",
+    "checked_against_images": [],
+    "skipped": [
+      "Konsiderans and Mengingat (pp. 1-2)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace and hyphenation cleanup only).",
+      "pages are PDF page numbers; pages_note gives the printed numbering.",
+      "summary fields are short English notes for developers, not source text.",
+      "The text uses the older term 'Peserta Didik'; later standards use 'Murid'."
+    ]
+  },
+  "definitions": {
+    "text": "Pasal 1 Dalam Peraturan Menteri ini yang dimaksud dengan: 1. Standar Penilaian Pendidikan adalah kriteria minimal mengenai mekanisme penilaian hasil belajar peserta didik. 2. Penilaian adalah proses pengumpulan dan pengolahan informasi untuk mengetahui kebutuhan belajar dan capaian perkembangan atau hasil belajar peserta didik. 3. Peserta Didik adalah anggota masyarakat yang berusaha mengembangkan potensi diri melalui proses pembelajaran yang tersedia pada jalur, jenjang, dan jenis pendidikan tertentu. 4. Pendidik adalah tenaga kependidikan yang berkualifikasi sebagai guru, pamong belajar, tutor, instruktur, dan sebutan lain yang sesuai dengan kekhususannya, serta berpartisipasi dalam menyelenggarakan pendidikan. 5. Satuan Pendidikan Anak Usia Dini, Pendidikan Dasar, dan Pendidikan Menengah yang selanjutnya disebut Satuan Pendidikan adalah kelompok layanan pendidikan yang menyelenggarakan pendidikan pada jalur formal dan nonformal pada pendidikan anak usia dini, pendidikan dasar, dan pendidikan menengah.",
+    "pages": [
+      2,
+      3
+    ]
+  },
+  "principles": {
+    "text": "Pasal 2 (1) Penilaian hasil belajar Peserta Didik dilakukan sesuai dengan tujuan Penilaian secara berkeadilan, objektif, dan edukatif. (2) Penilaian hasil belajar secara berkeadilan sebagaimana dimaksud pada ayat (1) merupakan Penilaian yang tidak bias oleh latar belakang, identitas, atau kebutuhan khusus Peserta Didik. (3) Penilaian hasil belajar secara objektif sebagaimana dimaksud pada ayat (1) merupakan Penilaian yang didasarkan pada informasi faktual atas pencapaian perkembangan atau hasil belajar Peserta Didik. (4) Penilaian hasil belajar secara edukatif sebagaimana dimaksud pada ayat (1) merupakan Penilaian yang hasilnya digunakan sebagai umpan balik bagi Pendidik, Peserta Didik, dan orang tua untuk meningkatkan proses pembelajaran dan hasil belajar.",
+    "pages": [
+      3
+    ],
+    "force": "mandatory"
+  },
+  "procedure": {
+    "text": "Pasal 3 (1) Prosedur Penilaian hasil belajar Peserta Didik meliputi: a. perumusan tujuan Penilaian; b. pemilihan dan/atau pengembangan instrumen Penilaian; c. pelaksanaan Penilaian; d. pengolahan hasil Penilaian; dan e. pelaporan hasil Penilaian. (2) Prosedur Penilaian hasil belajar sebagaimana dimaksud pada ayat (1) disesuaikan dengan karakteristik jalur, jenjang, dan jenis Satuan Pendidikan.",
+    "pages": [
+      4
+    ],
+    "force": "mandatory"
+  },
+  "objectives_in_lesson_plan": {
+    "text": "Pasal 4 (1) Perumusan tujuan Penilaian sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a memperhatikan keselarasan dengan tujuan pembelajaran yang merujuk pada kurikulum yang digunakan Satuan Pendidikan. (2) Hasil perumusan tujuan Penilaian sebagaimana dimaksud pada ayat (1) dimuat dalam perencanaan pembelajaran.",
+    "pages": [
+      4
+    ]
+  },
+  "instruments_by_teacher": {
+    "text": "Pasal 5 Pemilihan dan/atau pengembangan instrumen Penilaian sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf b dilaksanakan oleh Pendidik dengan: a. mempertimbangkan karakteristik kebutuhan Peserta Didik; dan b. berdasarkan rencana Penilaian yang termuat dalam perencanaan pembelajaran.",
+    "pages": [
+      4
+    ]
+  },
+  "timing": {
+    "text": "Pasal 6 Pelaksanaan Penilaian sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf c dapat dilakukan sebelum, pada saat, dan/atau setelah pembelajaran.",
+    "pages": [
+      4
+    ]
+  },
+  "processing": {
+    "text": "Pasal 7 Pengolahan hasil Penilaian sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf d dilakukan dengan menganalisis secara kuantitatif dan/atau kualitatif terhadap data hasil pelaksanaan Penilaian yang berupa angka dan/atau deskripsi.",
+    "pages": [
+      5
+    ]
+  },
+  "reporting": {
+    "text": "Pasal 8 (1) Pelaporan hasil Penilaian sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf e dituangkan dalam bentuk laporan kemajuan belajar. (2) Laporan kemajuan belajar sebagaimana dimaksud pada ayat (1) berupa laporan hasil belajar yang disusun berdasarkan pengolahan hasil Penilaian. (3) Laporan hasil belajar sebagaimana dimaksud pada ayat (2) paling sedikit memuat informasi mengenai pencapaian hasil belajar Peserta Didik. (4) Selain memuat informasi sebagaimana dimaksud pada ayat (3), laporan hasil belajar untuk pendidikan anak usia dini juga memuat informasi mengenai pertumbuhan dan perkembangan anak. (5) Laporan hasil belajar sebagaimana dimaksud pada ayat (3) dan ayat (4) tertuang dalam rapor atau bentuk laporan hasil Penilaian lainnya.",
+    "pages": [
+      5
+    ],
+    "force": "minimum",
+    "summary": "Laporan hasil belajar at least states achievement; it is the rapor or another report form."
+  },
+  "formative_and_summative": {
+    "text": "Pasal 9 (1) Penilaian hasil belajar Peserta Didik dengan prosedur sebagaimana dimaksud dalam Pasal 3 sampai dengan Pasal 8 berbentuk: a. Penilaian formatif; dan b. Penilaian sumatif. (2) Penilaian formatif sebagaimana dimaksud pada ayat (1) huruf a dilaksanakan pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah. (3) Penilaian sumatif sebagaimana dimaksud pada ayat (1) huruf b dilaksanakan pada jenjang pendidikan dasar dan jenjang pendidikan menengah. (4) Penilaian formatif sebagaimana dimaksud pada ayat (1) huruf a bertujuan untuk memantau dan memperbaiki proses pembelajaran serta mengevaluasi pencapaian tujuan pembelajaran. (5) Penilaian formatif sebagaimana dimaksud pada ayat (4) dilakukan dengan mengumpulkan informasi mengenai: a. Peserta Didik yang mengalami hambatan atau kesulitan belajar; dan b. perkembangan belajar Peserta Didik. (6) Informasi sebagaimana dimaksud pada ayat (5) digunakan sebagai umpan balik bagi: a. Peserta Didik untuk mengembangkan kemampuan dalam memonitor proses dan kemajuan belajar sebagai bagian dari keterampilan belajar sepanjang hayat; dan b. Pendidik untuk merefleksikan dan meningkatkan efektivitas pembelajaran. (7) Penilaian sumatif pada jenjang pendidikan dasar dan jenjang pendidikan menengah sebagaimana dimaksud pada ayat (3) bertujuan untuk menilai pencapaian hasil belajar Peserta Didik sebagai dasar penentuan: a. kenaikan kelas; dan b. kelulusan dari Satuan Pendidikan. (8) Penilaian pencapaian hasil belajar Peserta Didik sebagaimana dimaksud pada ayat (7) dilakukan dengan membandingkan pencapaian hasil belajar Peserta Didik dengan kriteria ketercapaian tujuan pembelajaran.",
+    "pages": [
+      5,
+      6
+    ],
+    "force": "mandatory",
+    "summary": "Formative at every level, summative from SD; summative is the basis for promotion and graduation, judged against kriteria ketercapaian tujuan pembelajaran."
+  },
+  "promotion_and_graduation": {
+    "text": "Pasal 10 (1) Penentuan kenaikan kelas sebagaimana dimaksud dalam Pasal 9 ayat (7) huruf a dilakukan dengan mempertimbangkan laporan kemajuan belajar yang mencerminkan pencapaian Peserta Didik pada semua mata pelajaran dan ekstrakurikuler serta prestasi lain selama 1 (satu) tahun ajaran. (2) Penentuan kelulusan dari Satuan Pendidikan sebagaimana dimaksud dalam Pasal 9 ayat (7) huruf b dilakukan dengan mempertimbangkan laporan kemajuan belajar yang mencerminkan pencapaian Peserta Didik pada semua mata pelajaran dan ekstrakurikuler serta prestasi lain pada: a. kelas V dan kelas VI untuk sekolah dasar atau bentuk lain yang sederajat; dan b. setiap tingkatan kelas untuk sekolah menengah pertama atau bentuk lain yang sederajat dan sekolah menengah atas atau bentuk lain yang sederajat.",
+    "pages": [
+      6,
+      7
+    ],
+    "summary": "Promotion considers one school year of all subjects, extracurricular, and other achievements; SD graduation considers kelas V and VI."
+  },
+  "school_sets_mechanism": {
+    "text": "Pasal 11 Satuan Pendidikan menetapkan mekanisme penentuan kenaikan kelas dan kelulusan dari Satuan Pendidikan berdasarkan pedoman yang ditetapkan oleh kepala unit utama yang membidangi kurikulum dan asesmen.",
+    "pages": [
+      7
+    ]
+  },
+  "guideline_delegation": {
+    "text": "Pasal 12 Pedoman penyusunan prosedur dan bentuk Penilaian hasil belajar Peserta Didik ditetapkan oleh kepala unit utama yang membidangi kurikulum dan asesmen.",
+    "pages": [
+      7
+    ]
+  },
+  "revocations": {
+    "text": "Pasal 13 Pada saat Peraturan Menteri ini mulai berlaku: a. ketentuan mengenai Standar Penilaian Pendidikan yang diatur dalam Peraturan Menteri Pendidikan dan Kebudayaan Nomor 137 Tahun 2014 tentang Standar Nasional Pendidikan Anak Usia Dini (Berita Negara Republik Indonesia Tahun 2014 Nomor 1668); b. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 53 Tahun 2015 tentang Penilaian Hasil Belajar oleh Pendidik dan Satuan Pendidikan pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2015 Nomor 1868); c. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 23 Tahun 2016 tentang Standar Penilaian Pendidikan (Berita Negara Republik Indonesia Tahun 2016 Nomor 897); d. ketentuan mengenai Standar Penilaian Pendidikan yang diatur dalam Peraturan Menteri Pendidikan dan Kebudayaan Nomor 34 Tahun 2018 tentang Standar Nasional Pendidikan Sekolah Menengah Kejuruan/Madrasah Aliyah Kejuruan (Berita Negara Republik Indonesia Tahun 2018 Nomor 1689); dan e. ketentuan mengenai ujian yang diselenggarakan Satuan Pendidikan yang diatur dalam Peraturan Menteri Pendidikan dan Kebudayaan Nomor 43 Tahun 2019 tentang Penyelenggaraan Ujian yang Diselenggarakan Satuan Pendidikan dan Ujian Nasional (Berita Negara Republik Indonesia Tahun 2019 Nomor 1590), dicabut dan dinyatakan tidak berlaku.",
+    "pages": [
+      7,
+      8
+    ]
+  },
+  "entry_into_force": {
+    "text": "Pasal 14 Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.",
+    "pages": [
+      8
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        7
+      ],
+      "text": "Pasal 11-12 delegate the promotion/graduation mechanism and assessment guidelines to the head of the curriculum and assessment unit (BSKAP), i.e. the Panduan Pembelajaran dan Asesmen (learning-assessment-guide-bskap.json). Who sets the KKTP at article level stays open: the regulation only says the teacher picks or develops instruments (Pasal 5) and the comparison is against kriteria ketercapaian tujuan pembelajaran (Pasal 9 ayat 8)."
+    },
+    {
+      "pages": [
+        6,
+        7
+      ],
+      "text": "SD graduation (Pasal 10 ayat 2 huruf a) looks at kelas V and VI reports; SIGRAK graduation helpers should read both years."
+    }
+  ]
+}
