@@ -4,25 +4,18 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\School;
 
-use App\Actions\SchoolYear\ClassSubjects;
-use App\Actions\Timetable\TimetableClashes;
+use App\Actions\Timetable\TimetableRules;
 use App\Curriculum\SubjectOffer;
 use App\Enums\TimetableSlotKind;
 use App\Models\SchoolClass;
-use App\Models\Subject;
-use App\Models\TeachingAssignment;
 use App\Models\TimetableSlot;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 
 /**
- * Create or change one row of a class's timetable (D-247…D-250):
- *
- * - rows of a class may not overlap on a day, except lessons of different religions (D-251);
- * - a lesson needs a subject the class takes that already has a teacher (D-249);
- * - a subject may not go over its weekly JP allocation (D-250);
- * - the teacher may not have a lesson in another class at the same time (D-248).
+ * Create or change one row of a class's timetable; the rules are TimetableRules
+ * (D-247…D-251), shared with saving a draft (D-262).
  */
 final class SaveTimetableSlotRequest extends FormRequest
 {
@@ -77,73 +70,19 @@ final class SaveTimetableSlotRequest extends FormRequest
                 return;
             }
 
-            $class = $this->schoolClass();
-            [$weekday, $startsAt, $endsAt] = [$this->integer('weekday'), $this->time('starts_at'), $this->time('ends_at')];
+            $offer = null;
+            $broken = app(TimetableRules::class)->check($this->schoolClass(), [
+                'weekday' => $this->integer('weekday'),
+                'starts_at' => $this->time('starts_at'),
+                'ends_at' => $this->time('ends_at'),
+                'kind' => $this->string('kind')->toString(),
+                'subject' => $this->input('kind') === TimetableSlotKind::Lesson->value ? $this->string('subject')->toString() : null,
+                'jp' => $this->integer('jp'),
+            ], $this->slot(), $offer);
+            $this->offer = $offer;
 
-            $overlapping = $class->timetableSlots()
-                ->when($this->slot(), fn ($query, TimetableSlot $slot) => $query->whereKeyNot($slot->id))
-                ->where('weekday', $weekday)
-                ->where('starts_at', '<', $endsAt)
-                ->where('ends_at', '>', $startsAt)
-                ->with('subject:id,code,religion')
-                ->get();
-
-            // D-251: lessons of different religion subjects may share a time; nothing else may overlap.
-            $code = $this->input('kind') === TimetableSlotKind::Lesson->value ? $this->string('subject')->toString() : null;
-            $religionOnly = $code !== null
-                && Subject::query()->where('code', $code)->whereNotNull('religion')->exists()
-                && $overlapping->every(fn (TimetableSlot $other): bool => $other->subject?->religion !== null && $other->subject->code !== $code);
-
-            if ($overlapping->isNotEmpty() && ! $religionOnly) {
-                $validator->errors()->add('starts_at', __('timetable.errors.overlap'));
-
-                return;
-            }
-
-            if ($this->input('kind') !== TimetableSlotKind::Lesson->value) {
-                return;
-            }
-
-            $code = $this->string('subject')->toString();
-            $this->offer = app(ClassSubjects::class)->handle($class)->first(fn (SubjectOffer $offer): bool => $offer->subject->code === $code);
-
-            if ($this->offer === null) {
-                $validator->errors()->add('subject', __('classes.assignments.errors.subject_missing'));
-
-                return;
-            }
-
-            $subject = $this->offer->subject;
-            $assignment = TeachingAssignment::query()->where('class_id', $class->id)->where('subject_id', $subject->id)->with('teacher:id,name')->first();
-
-            if ($assignment === null) {
-                $validator->errors()->add('subject', __('timetable.errors.no_teacher', ['subject' => $subject->name]));
-
-                return;
-            }
-
-            if ($this->offer->jpPerWeek !== null) {
-                $scheduled = (int) $class->timetableSlots()
-                    ->when($this->slot(), fn ($query, TimetableSlot $slot) => $query->whereKeyNot($slot->id))
-                    ->where('subject_id', $subject->id)
-                    ->sum('jp');
-
-                if ($scheduled + $this->integer('jp') > $this->offer->jpPerWeek) {
-                    $validator->errors()->add('jp', __('timetable.errors.over_allocation', [
-                        'subject' => $subject->name,
-                        'allocated' => $this->offer->jpPerWeek,
-                        'left' => max(0, $this->offer->jpPerWeek - $scheduled),
-                    ]));
-
-                    return;
-                }
-            }
-
-            $clashes = app(TimetableClashes::class);
-            $clash = $clashes->find($assignment->teacher_id, $class, $weekday, $startsAt, $endsAt);
-
-            if ($clash !== null) {
-                $validator->errors()->add('starts_at', $clashes->message($clash, $assignment->teacher->name));
+            if ($broken !== null) {
+                $validator->errors()->add(...$broken);
             }
         }];
     }

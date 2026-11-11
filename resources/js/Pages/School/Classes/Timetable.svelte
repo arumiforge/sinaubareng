@@ -21,6 +21,7 @@
         subject_name: string | null;
         teacher_name: string | null;
         jp: number;
+        is_locked: boolean;
         is_offered: boolean;
         clash: string | null;
     }
@@ -151,6 +152,11 @@
         router.delete(route('classes.timetable.destroy', { class: school_class.id, timetableSlot: row.id }), { preserveScroll: true });
     }
 
+    // D-262: a locked row stays when a draft timetable is made or saved.
+    function toggleLock(row: Row): void {
+        router.put(route('classes.timetable.lock', { class: school_class.id, timetableSlot: row.id }), {}, { preserveScroll: true });
+    }
+
     function statusLabel(subject: Subject): string {
         if (subject.status === 'free') return t('timetable.jp_free', { scheduled: subject.scheduled_jp });
         return t('timetable.jp_progress', { scheduled: subject.scheduled_jp, allocated: subject.jp_per_week ?? 0 });
@@ -267,7 +273,9 @@
                             {#each dayRows as row (row.id)}
                                 <li class="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between">
                                     <div class="min-w-0">
-                                        <p class="text-label text-muted">{row.period_no}. {row.starts_at}–{row.ends_at}</p>
+                                        <p class="text-label text-muted">
+                                            {row.period_no}. {row.starts_at}–{row.ends_at}{row.is_locked ? ` · ${t('timetable.locked')}` : ''}
+                                        </p>
                                         <p class="font-semibold {row.kind === 'lesson' ? '' : 'text-muted'}">
                                             {title(row)}
                                             {#if row.kind === 'lesson'}
@@ -284,7 +292,15 @@
                                             <p class="text-label font-semibold text-danger" role="alert">{row.clash}</p>
                                         {/if}
                                     </div>
-                                    <div class="flex shrink-0 gap-2">
+                                    <div class="flex shrink-0 flex-wrap gap-2">
+                                        <button
+                                            type="button"
+                                            class="min-h-11 rounded-input border border-line px-3 text-body font-semibold"
+                                            aria-pressed={row.is_locked}
+                                            onclick={() => toggleLock(row)}
+                                        >
+                                            {row.is_locked ? t('timetable.actions.unlock') : t('timetable.actions.lock')}
+                                        </button>
                                         <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold" onclick={() => openEdit(row)}>
                                             {t('timetable.actions.edit')}
                                         </button>

@@ -29,8 +29,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int|null $subject_id
  * @property string|null $label
  * @property int $jp
+ * @property bool $is_locked kept by the draft generator (D-262)
  */
-#[Fillable(['school_id', 'class_id', 'weekday', 'period_no', 'starts_at', 'ends_at', 'kind', 'subject_id', 'label', 'jp'])]
+#[Fillable(['school_id', 'class_id', 'weekday', 'period_no', 'starts_at', 'ends_at', 'kind', 'subject_id', 'label', 'jp', 'is_locked'])]
 final class TimetableSlot extends Model
 {
     use BelongsToSchool;
@@ -79,6 +80,7 @@ final class TimetableSlot extends Model
             'period_no' => 'integer',
             'kind' => TimetableSlotKind::class,
             'jp' => 'integer',
+            'is_locked' => 'boolean',
         ];
     }
 }

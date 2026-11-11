@@ -25,7 +25,7 @@ final readonly class ClassTimetable
 
     /**
      * @return array{
-     *     rows: list<array{id: string, weekday: int, period_no: int, starts_at: string, ends_at: string, kind: string, kind_label: string, label: string|null, subject: string|null, subject_name: string|null, teacher_name: string|null, jp: int, is_offered: bool, clash: string|null}>,
+     *     rows: list<array{id: string, weekday: int, period_no: int, starts_at: string, ends_at: string, kind: string, kind_label: string, label: string|null, subject: string|null, subject_name: string|null, teacher_name: string|null, jp: int, is_locked: bool, is_offered: bool, clash: string|null}>,
      *     subjects: list<array{code: string, name: string, teacher_name: string|null, jp_per_week: int|null, scheduled_jp: int, status: string}>,
      *     is_complete: bool,
      * }
@@ -55,6 +55,7 @@ final readonly class ClassTimetable
                 'subject_name' => $slot->subject?->name,
                 'teacher_name' => $assignment?->teacher->name,
                 'jp' => $slot->jp,
+                'is_locked' => $slot->is_locked,
                 'is_offered' => $slot->kind !== TimetableSlotKind::Lesson || $offers->has((int) $slot->subject_id),
                 'clash' => $clash === null ? null : $this->clashes->message($clash, $assignment->teacher->name),
             ];
