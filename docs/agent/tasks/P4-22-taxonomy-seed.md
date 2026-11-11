@@ -47,6 +47,6 @@ Open questions (for Tim Validasi, none for the owner):
 - DPL sub-dimensions, CP element codes, region code list, missing articles: after P4-23.
 
 Follow-ups:
-- Coordinator, after P4-23 merges: fill `source_file`, `sha256`, `verification`, full titles and dates of the ten `pending_p4_23` entries.
+- Done 2026-11-11 (coordinator, in PR #71): the six regulations P4-23 got are filled (source_file, sha256, verification, dates, data_files); the four it could not reach keep `pending_p4_23: true` until P4-32.
 - P4-19: build `docs/data/assessment/` on facet E codes (README rule 4).
 - Docs consolidation (P4-24): mention `docs/data/taxonomy/` in `docs/final/` data docs and CONTEXT.md.

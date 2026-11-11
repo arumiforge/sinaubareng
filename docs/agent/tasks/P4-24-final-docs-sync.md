@@ -1,7 +1,7 @@
 # P4-24 — Final docs sync (P4-05, P4-14, P4-20, P4-24 combined)
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done (merged 2026-11-11, PR #70)
 - **Owner:** p4/p4-final-docs-sync
 - **Depends on:** P4-03b, P4-13 (D-252…D-328), P4-16…P4-18 (D-329…D-351), P4-21 (D-352…D-359), owner answers D-368…D-371
 - **Can run in parallel with:** P4-22, P4-23, P5-03i/j and the D-355 build (other sessions; no shared files except the PROGRESS rows)

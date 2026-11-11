@@ -11,11 +11,13 @@ Compact reference for agents. Update when the stack or a convention changes; rec
 - Data model: `docs/final/data-model.md` · Design and UI copy: `docs/final/design-system.md`
 - Architecture: `docs/final/architecture.md` · Server setup: `docs/final/server-setup.md` · Coding standards: `docs/final/coding-standards.md` · Export and localization: `docs/final/export-localization.md`
 - Religious education (SD six religions, MI Kemenag subjects): `docs/final/religious-education.md` · prepared data: `docs/data/`
-- Official 2025 curriculum rules and guides (structure and JP, deep learning, KKA, kokurikuler, KSP, assessment), SD/MI extract: `docs/data/regulations/` (draft, D-203)
+- Official rules and guides, SD/MI extract: `docs/data/regulations/` (draft, D-203): 2025 curriculum (structure and JP, deep learning, KKA, kokurikuler, KSP, assessment) and the national standards (SKL 10/2025, Isi 12/2025, Pengelolaan 26/2025, Penilaian 21/2022, Budaya Sekolah Aman 6/2026, CP decree index BSKAP 046/H/KR/2025)
+- Master taxonomy (facets A–H) and the regulation registry with relations: `docs/data/taxonomy/` (draft, D-357; Peta Asesmen in P4-19 reuses facet E codes)
+- Profil Jenjang per level: `docs/data/profiles/` (read by `app/Curriculum/Policy`, D-356, D-378) · calendar data (national holidays, region reference calendars): `docs/data/calendar/` (draft, D-254, D-323)
 - Curriculum data: one SIGRAK format, `SIGRAK-SD-2026-R1` / `SIGRAK-MI-2026-R1` in `docs/data/curriculum/sigrak-*.json`; only `curated` subjects are active for teachers; old codes only in the team crosswalk; SD allocation only from Permendikdasmen 13/2025 (D-363…D-366) · SIGRAK catalogs: `docs/data/catalogs/` (D-367)
 - Owner's original material: `docs/sources/` (input only; drafts win where they differ)
 - Developer handbook (whole process, start here): `docs/final/developer-handbook.md`, PDF `docs/pdf/developer-handbook.pdf` (D-361) · Research digest (check before any research, add after): `docs/final/research-digest.md` (D-362)
-- Policy foundation: national policy first, innovation on top; rule strengths, versioned rule sets, Profil Jenjang, master taxonomy (D-352…D-358, `docs/drafts/policy-innovation-layers.md`)
+- Policy foundation: national policy first, innovation on top; rule strengths, versioned rule sets, Profil Jenjang, master taxonomy (D-352…D-358, `docs/drafts/policy-innovation-layers.md`). Code reads `PolicyProfileResolver` (`app/Curriculum/Policy`), never `config` pointers or `if level == mi`; Cek Keselarasan comes in `app/Content/Alignment` with P5-04
 - The owner's previous app is "the legacy app" / "aplikasi lama"; never use its old brand name (D-360)
 
 Do not invent features beyond these documents.

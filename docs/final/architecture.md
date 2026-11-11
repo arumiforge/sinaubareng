@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-04
-- **Last updated:** 2026-11-10 (P4-24: later decisions D-050, D-064, D-259…D-370 applied)
+- **Last updated:** 2026-11-11 (P5-03i…l modules; earlier: P4-24, D-050, D-064, D-259…D-370)
 - **Builds on:** [`product-concept.md`](product-concept.md), [`content-engine.md`](content-engine.md), [`ai-provider-engine.md`](ai-provider-engine.md), [`data-model.md`](data-model.md), [`religious-education.md`](religious-education.md), [`../agent/DECISIONS.md`](../agent/DECISIONS.md) (D-007…D-037, later D-050, D-064, D-259…D-370)
 
 ## Purpose
@@ -111,14 +111,18 @@ app/
 │   └── Alignment/   Cek Keselarasan checker (planned, D-358)
 ├── Tenancy/       Current school context, BelongsToSchool scope, membership and role switch   (proposed)
 ├── Curriculum/    Import command, curriculum versions, school changes and validation          (proposed)
-│   └── Policy/      PolicyProfileResolver, Profil Jenjang (planned before P5-04, D-355, D-356)
-├── Calendar/      EffectiveDays, ConflictChecker (D-259, D-260)
+│   └── Policy/      PolicyProfileResolver, LevelProfiles, LevelProfile, RuleSetDates, SchoolYear
+│                    (built in P5-03k/l, D-355, D-356, D-378)
+├── Calendar/      NationalHolidays, EffectiveDays, ConflictChecker, RegionCalendarSync,
+│                  Impact\MeetingImpact (D-253…D-261)
+├── Actions/Timetable/Draft/  draft timetable generator (pure, seeded) and save (D-262)
 ├── Progress/      CompletenessLedger, ProgressReport, weekly snapshots (D-263, D-265)
 ├── Classroom/     Di Kelas: attendance, journal, notes, observations, offline sync endpoint    (proposed)
 ├── Exam/          TKA sessions, snapshot, cards, token, exam client API, scoring              (proposed)
 ├── Filament/      Staff console resources only
-└── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
-                      GenerateTkaPackage, ReviseSection (one job per content type, D-024)
+├── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
+│                     GenerateTkaPackage, ReviseSection (one job per content type, D-024)
+└── Jobs/GenerateTimetableDraft  draft timetable on the `default` queue (D-262)
 ```
 
 `app/AI/` and `app/Content/` are fixed by the drafts. The other folder names are *proposed*; administration features without a strong boundary (assessment, report cards, portals, finance, inventory) stay in Laravel's default `Models`, `Http`, `Policies` layout until they grow.
@@ -134,7 +138,7 @@ app/
 | `Exam` | `Tenancy`, `Content` (read a `tka_package` document once, to snapshot it) | `AI`, anything after the snapshot | Exam isolation (D-027). A running exam reads only `exam_*` tables |
 | `Filament` | Everything, with `withoutSchoolScope()` where needed | — | Staff tooling; the only place bypassing the scope is normal |
 
-**Policy layer (planned, D-354…D-358).** `app/Curriculum/Policy/` holds the policy-profile resolver: `PolicyProfileResolver` returns a `PolicyProfile` from school year, level, and region. It replaces the `config/curriculum.php` `allocation_versions` pointer (D-230 behaviour unchanged) and reads `curriculum_versions` with `effective_on`, `applies_from_school_year`, and `supersedes_id`, plus the versioned Profil Jenjang record per level (`sd`, `mi`). Code reads the profile and never branches on `level == mi`. Both come before P5-04 (D-355, D-356). Documents store the rule-set codes they were made under (D-354). Cek Keselarasan (`app/Content/Alignment/`) returns block, warning, and hint lines by rule strength (D-353) on save and in review and never rewrites the teacher's work; the Dasar Kebijakan panel reads the document's taxonomy tags. Both start with the RPM in P5-04 (D-358). Target later (P5-09 or own slice): `regulations`, `regulation_relations`, `rule_sets`, `rules`, a console for every domain, and Kabar Regulasi (D-354, D-355).
+**Policy layer (D-354…D-358).** `app/Curriculum/Policy/` holds the policy-profile resolver, built in P5-03k and P5-03l: `PolicyProfileResolver` returns a `PolicyProfile` from school year, level, and region, cached per school year and refreshed by every import. `config/curriculum.php` `profiles` replaces the old `allocation_versions` pointer (D-230 behaviour unchanged). It reads `curriculum_versions` with `effective_on`, `applies_from_school_year`, and `supersedes_id`, plus the versioned Profil Jenjang files `docs/data/profiles/<level>.json` through `LevelProfiles` (D-378; a table and console editing come with P5-09). Code reads the profile and never branches on `level == mi`; a test fails if it does (D-355, D-356). Documents store the rule-set codes they were made under (D-354). Cek Keselarasan (`app/Content/Alignment/`) returns block, warning, and hint lines by rule strength (D-353) on save and in review and never rewrites the teacher's work; the Dasar Kebijakan panel reads the document's taxonomy tags. Both start with the RPM in P5-04 (D-358). Target later (P5-09 or own slice): `regulations`, `regulation_relations`, `rule_sets`, `rules`, a console for every domain, and Kabar Regulasi (D-354, D-355).
 
 **Data that crosses a boundary is a snapshot.** Bank Soal items are copied into `assessment_items`; a TKA package is copied into `exam_items` when a session is scheduled; a generation stores its specification and step outputs. Later edits to the source never change a running exam or a past score.
 

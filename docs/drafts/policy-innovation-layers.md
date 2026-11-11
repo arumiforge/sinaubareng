@@ -292,12 +292,17 @@ No decision is overturned. The only behaviour change proposed is moving one conf
 
 ## 11. Sources still needed
 
-Cited in the repo or found on the web but **not yet in `docs/sources/`**:
+**Got in P4-23 (2026-11-11), now in `docs/sources/`** with sha256, extracts in `docs/data/regulations/`, and entries in `docs/data/taxonomy/regulations.json`:
+
+- Permendikdasmen 10/2025 (SKL), 12/2025 (Standar Isi), 6/2026 (Budaya Sekolah Aman dan Nyaman): official copies.
+- Kepka BSKAP 046/H/KR/2025 (general-subject CP, 1,691 pages, kept whole): copy from a ministry unit.
+- Permendikdasmen 26/2025 (Pengelolaan) and Permendikbudristek 21/2022 (Penilaian): **mirror** copies (JDIH salinan re-hosted by regional education offices). Kept until a JDIH copy can be fetched, then replaced and re-hashed (owner, 2026-11-11).
+
+**Still not in `docs/sources/`** (JDIH, peraturan.go.id, and BPK were unreachable from the build environment; task P4-32, the owner fetches them):
 
 - Permendikdasmen 1/2026 (Standar Proses). Pasal 9 could not be read from the mirror.
-- Permendikdasmen 10/2025 (SKL), 12/2025 (Standar Isi), 26/2025 (Pengelolaan), 9/2026 (AN), 6/2026 (Budaya Sekolah) with Kepmendikdasmen 17/2026.
-- The base Permendikbudristek 12/2024 (only the 13/2025 changes are in the repo) and Permendikbudristek 21/2022.
-- The base Kepka BSKAP 046/H/KR/2025 (general-subject CP).
+- Permendikdasmen 9/2026 (AN) and Kepmendikdasmen 17/2026 (pelaksanaan Budaya Sekolah Aman dan Nyaman).
+- The base Permendikbudristek 12/2024 (only the 13/2025 changes are in the repo).
 - **KMA 512/2026, resolved.** The owner supplied the official PDF on 2026-11-09 (`docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`). Set 31 March 2026 and in force on that date, it replaces SK Dirjen Pendis 6077/2025 as the KBC source (D-359). Its scope covers Kemenag schools *and* religion teachers in general schools, SD included (Lampiran §C, p. 6); see the open question in `docs/drafts/open-questions.md`.
 - Open facts: who sets the KKTP at article level; AKMI for MI in 2026; official e-Rapor SD and RDM 2026 specs.
 

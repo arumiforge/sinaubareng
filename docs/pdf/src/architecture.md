@@ -1,10 +1,10 @@
 # Gambaran Arsitektur
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 10 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 11 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-04
-- **Terakhir diperbarui:** 2026-11-10 (P4-24: keputusan lanjutan D-050, D-064, D-259…D-370 diterapkan)
+- **Terakhir diperbarui:** 2026-11-11 (modul P5-03i…l; sebelumnya: P4-24, D-050, D-064, D-259…D-370)
 - **Melanjutkan:** `product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`, `docs/agent/DECISIONS.md` (D-007…D-037, kemudian D-050, D-064, D-259…D-370)
 
 ## Tujuan
@@ -115,17 +115,21 @@ app/
 │   └── Alignment/   Cek Keselarasan checker (planned, D-358)
 ├── Tenancy/       Current school context, BelongsToSchool scope, membership and role switch   (proposed)
 ├── Curriculum/    Import command, curriculum versions, school changes and validation          (proposed)
-│   └── Policy/      PolicyProfileResolver, Profil Jenjang (planned before P5-04, D-355, D-356)
-├── Calendar/      EffectiveDays, ConflictChecker (D-259, D-260)
+│   └── Policy/      PolicyProfileResolver, LevelProfiles, LevelProfile, RuleSetDates, SchoolYear
+│                    (built in P5-03k/l, D-355, D-356, D-378)
+├── Calendar/      NationalHolidays, EffectiveDays, ConflictChecker, RegionCalendarSync,
+│                  Impact\MeetingImpact (D-253…D-261)
+├── Actions/Timetable/Draft/  draft timetable generator (pure, seeded) and save (D-262)
 ├── Progress/      CompletenessLedger, ProgressReport, weekly snapshots (D-263, D-265)
 ├── Classroom/     Di Kelas: attendance, journal, notes, observations, offline sync endpoint    (proposed)
 ├── Exam/          TKA sessions, snapshot, cards, token, exam client API, scoring              (proposed)
 ├── Filament/      Staff console resources only
-└── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
-                      GenerateTkaPackage, ReviseSection (one job per content type, D-024)
+├── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
+│                     GenerateTkaPackage, ReviseSection (one job per content type, D-024)
+└── Jobs/GenerateTimetableDraft  draft timetable on the `default` queue (D-262)
 ```
 
-Ringkasan susunan folder: `AI/` berisi adapter Gemini (kunci guru) serta adapter yang kompatibel dengan OpenAI dan Anthropic (hanya kunci Tim SIGRAK, D-326), ditambah kunci, pemilihan, galat, penjaga privasi, log pemakaian; pintu masuknya `AIGateway`, dan tidak tahu apa pun tentang pendidikan. `Content/` berisi templat, pipeline pembuatan, ekspor, `Readiness/` (`RpmReadiness`, D-270), dan `Alignment/` (Cek Keselarasan, direncanakan, D-358), dan tidak tahu apa pun tentang Gemini. `Tenancy/`, `Curriculum/`, `Classroom/` (Di Kelas, observasi, dan sinkronisasi offline), dan `Exam/` (sesi TKA, kartu, token, penilaian) adalah usulan. `Curriculum/Policy/` berisi resolver profil kebijakan dan Profil Jenjang (direncanakan sebelum P5-04, D-355, D-356). `Calendar/` berisi `EffectiveDays` dan `ConflictChecker` (D-259, D-260); `Progress/` berisi `CompletenessLedger`, `ProgressReport`, dan snapshot mingguan (D-263, D-265). `Filament/` hanya berisi resource konsol staf, dan `Jobs/Generation/` berisi satu job per jenis konten (D-024).
+Ringkasan susunan folder: `AI/` berisi adapter Gemini (kunci guru) serta adapter yang kompatibel dengan OpenAI dan Anthropic (hanya kunci Tim SIGRAK, D-326), ditambah kunci, pemilihan, galat, penjaga privasi, log pemakaian; pintu masuknya `AIGateway`, dan tidak tahu apa pun tentang pendidikan. `Content/` berisi templat, pipeline pembuatan, ekspor, `Readiness/` (`RpmReadiness`, D-270), dan `Alignment/` (Cek Keselarasan, direncanakan, D-358), dan tidak tahu apa pun tentang Gemini. `Tenancy/`, `Curriculum/`, `Classroom/` (Di Kelas, observasi, dan sinkronisasi offline), dan `Exam/` (sesi TKA, kartu, token, penilaian) adalah usulan. `Curriculum/Policy/` berisi resolver profil kebijakan dan pembaca Profil Jenjang (sudah dibangun di P5-03k/l, D-355, D-356, D-378). `Calendar/` berisi `NationalHolidays`, `EffectiveDays`, `ConflictChecker`, `RegionCalendarSync`, dan `Impact\MeetingImpact` (D-253…D-261); `Actions/Timetable/Draft/` berisi penyusun draf jadwal yang murni dan ber-seed beserta penyimpanannya (D-262); `Progress/` berisi `CompletenessLedger`, `ProgressReport`, dan snapshot mingguan (D-263, D-265). `Filament/` hanya berisi resource konsol staf, `Jobs/Generation/` berisi satu job per jenis konten (D-024), dan `Jobs/GenerateTimetableDraft` menyusun draf jadwal di antrean `default` (D-262).
 
 `app/AI/` dan `app/Content/` sudah ditetapkan oleh draf. Nama folder lainnya *usulan*; fitur administrasi tanpa batas yang kuat (asesmen, rapor, portal, keuangan, inventaris) tetap di susunan bawaan Laravel `Models`, `Http`, `Policies` sampai fiturnya membesar.
 
@@ -140,7 +144,7 @@ Ringkasan susunan folder: `AI/` berisi adapter Gemini (kunci guru) serta adapter
 | `Exam` | `Tenancy`, `Content` (membaca dokumen `tka_package` sekali, untuk dibuat snapshot) | `AI`, apa pun setelah snapshot | Isolasi ujian (D-027). Ujian yang berjalan hanya membaca tabel `exam_*` |
 | `Filament` | Semuanya, dengan `withoutSchoolScope()` bila perlu | — | Alat staf; satu-satunya tempat melewati scope dianggap wajar |
 
-**Lapisan kebijakan (direncanakan, D-354…D-358).** `app/Curriculum/Policy/` berisi resolver profil kebijakan: `PolicyProfileResolver` mengembalikan `PolicyProfile` dari tahun ajaran, jenjang, dan daerah. Resolver ini menggantikan penunjuk `allocation_versions` di `config/curriculum.php` (perilaku D-230 tidak berubah) dan membaca `curriculum_versions` dengan `effective_on`, `applies_from_school_year`, dan `supersedes_id`, ditambah catatan Profil Jenjang berversi per jenjang (`sd`, `mi`). Kode membaca profil dan tidak pernah bercabang pada `level == mi`. Keduanya hadir sebelum P5-04 (D-355, D-356). Dokumen menyimpan kode rule set yang berlaku saat dokumen dibuat (D-354). Cek Keselarasan (`app/Content/Alignment/`) mengembalikan baris blokir, peringatan, dan petunjuk sesuai kekuatan aturan (D-353) saat menyimpan dan saat review, dan tidak pernah menulis ulang pekerjaan guru; panel Dasar Kebijakan membaca tag taksonomi dokumen. Keduanya dimulai dengan RPM di P5-04 (D-358). Target nanti (P5-09 atau slice sendiri): `regulations`, `regulation_relations`, `rule_sets`, `rules`, konsol untuk setiap domain, dan Kabar Regulasi (D-354, D-355).
+**Lapisan kebijakan (D-354…D-358).** `app/Curriculum/Policy/` berisi resolver profil kebijakan yang dibangun di P5-03k dan P5-03l: `PolicyProfileResolver` mengembalikan `PolicyProfile` dari tahun ajaran, jenjang, dan daerah, di-cache per tahun ajaran dan disegarkan setiap impor. `profiles` di `config/curriculum.php` menggantikan penunjuk lama `allocation_versions` (perilaku D-230 tidak berubah). Resolver membaca `curriculum_versions` dengan `effective_on`, `applies_from_school_year`, dan `supersedes_id`, ditambah berkas Profil Jenjang berversi `docs/data/profiles/<level>.json` lewat `LevelProfiles` (D-378; tabel dan penyuntingan di konsol menyusul di P5-09). Kode membaca profil dan tidak pernah bercabang pada `level == mi`; ada tes yang gagal bila itu terjadi (D-355, D-356). Dokumen menyimpan kode rule set yang berlaku saat dokumen dibuat (D-354). Cek Keselarasan (`app/Content/Alignment/`) mengembalikan baris blokir, peringatan, dan petunjuk sesuai kekuatan aturan (D-353) saat menyimpan dan saat review, dan tidak pernah menulis ulang pekerjaan guru; panel Dasar Kebijakan membaca tag taksonomi dokumen. Keduanya dimulai dengan RPM di P5-04 (D-358). Target nanti (P5-09 atau slice sendiri): `regulations`, `regulation_relations`, `rule_sets`, `rules`, konsol untuk setiap domain, dan Kabar Regulasi (D-354, D-355).
 
 **Data yang melintasi batas berupa snapshot.** Butir Bank Soal disalin ke `assessment_items`; paket TKA disalin ke `exam_items` saat sesi dijadwalkan; sebuah generation menyimpan spesifikasi dan keluaran langkahnya. Perubahan sumber di kemudian hari tidak pernah mengubah ujian yang sedang berjalan atau nilai yang sudah lewat.
 

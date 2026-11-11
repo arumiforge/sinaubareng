@@ -1,7 +1,7 @@
 # P5-03 — Slice 1: Foundation
 
 - **Phase:** P5
-- **Status:** review (reopened 2026-11-09 for P5-03i and P5-03j, D-252; P5-03k and P5-03l added 2026-11-10)
+- **Status:** done (merged 2026-11-11, PR #72; reopened 2026-11-09 for P5-03i and P5-03j, D-252; P5-03k and P5-03l added 2026-11-10)
 - **Owner:** p5/p5-03ij-calendar-timetable-versioning
 - **Depends on:** P5-01
 - **Can run in parallel with:** P5-02
