@@ -67,7 +67,6 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 | Question | Source | Who answers |
 |---|---|---|
-| Fetch the four regulation PDFs the build environment could not reach (Permendikdasmen 1/2026 Standar Proses, 9/2026 AN, Kepmendikdasmen 17/2026 BSAN, base Permendikbudristek 12/2024) from an Indonesian connection (JDIH or peraturan.go.id) and add them to `docs/sources/`; then the team extracts them and fills the registry (task P4-32) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md), [policy-innovation-layers.md](policy-innovation-layers.md#11-sources-still-needed) | owner, then team |
 | Replace the two mirror copies (Permendikdasmen 26/2025, Permendikbudristek 21/2022) with JDIH copies when they can be fetched, and re-hash (owner chose to keep the mirrors until then) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md) | team |
 
 ## Docs consolidation (P4-24, 2026-11-11)

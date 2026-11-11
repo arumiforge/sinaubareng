@@ -1,0 +1,580 @@
+{
+  "dataset": "safe_school_culture_guide",
+  "version_code": "BSAN-PEDOMAN-KEPMENDIKDASMEN-17-2026",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman (BSAN guide) implementing Permendikdasmen 6/2026. Rows that bind or guide SD/MI and class teachers: the guide's status, the minimum forms per aspect that touch the class and personal data, early detection and the complaint channel, minimum content of tata tertib, kode etik and POS, roles in PAUD and SD (Tabel 3.5: \"Guru Kelas atau Wali Kelas\"), kesepakatan kelas (minimum content and stages), the violation examples for teachers, collaborative handling and referral to the Pokja, recovery, and the principal's monitoring and yearly report. Everything in the Lampiran is stated as a guide that schools may adapt (\"dapat dimodifikasi dan dikembangkan\") unless it says \"paling sedikit\" or \"setidaknya\".",
+  "source": {
+    "file": "docs/sources/Kepmendikdasmen_No_17_Tahun_2026_Pedoman_Penyelenggaraan_Budaya_Sekolah_Aman_dan_Nyaman.pdf",
+    "sha256": "e5e71f11b49bb27997e964066110488ef68345c67c88b6931950aa60e1f0aab1",
+    "regulation_code": "KEPMENDIKDASMEN-17-2026",
+    "title": "Keputusan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 17 Tahun 2026 tentang Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman",
+    "number": "17 Tahun 2026",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2026-02-06",
+    "promulgated_on": null,
+    "effective_on": "2026-02-06",
+    "implements": "Permendikdasmen Nomor 6 Tahun 2026 tentang Budaya Sekolah Aman dan Nyaman, Pasal 27 (konsiderans huruf b, p. 1)",
+    "received_as": "KEPMENDIKDASMEN_NO_17_TH_2026.pdf (owner upload, 2026-11-11)",
+    "received_on": "2026-11-11",
+    "copy_type": "SALINAN certified by the Kepala Biro Hukum Kemendikdasmen (Muhammad Ravii) with the jdih.kemendikdasmen.go.id footer on every page (pp. 2, 80). No electronic signature. The file was re-saved with PlotSoft PDFill (2026-02-09) and every page carries an invisible text layer spelling a third-party URL (https://www.komunitasbelajar.id/2026/02/kepmendikdasmen-nomor-17-tahun-2026.html, reconstructed from fragments); it does not show on the page images.",
+    "verification": "mirror",
+    "verification_note": "Supplied by the owner (task P4-32). The content is the JDIH salinan, but this copy was re-hosted and altered (hidden watermark text) by a non-government community website, so it is a mirror. Replace with the JDIH file and re-hash when jdih.kemendikdasmen.go.id can be reached.",
+    "pages_total": 80,
+    "pages_note": "PDF 1-2 = the decree (printed 1-2). The Lampiran starts at PDF 3 with its own numbering: printed page = PDF page minus 2 (PDF 33 = printed -31-). In the text layer, short watermark fragments (for example \"u\", \"n-2\", \"sm\", \".ko\") are mixed into the lines; they were removed before quoting."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF), watermark fragments filtered by script, then quoted by hand per section; tables read from the text layer and the SD role table checked on the page image.",
+    "checked_against_images": [
+      1,
+      33
+    ],
+    "skipped": [
+      "Konsiderans and Mengingat (pp. 1-2).",
+      "BAB II B aspect tables 2.1-2.8, 2.11-2.14 (spiritual, physical, inclusion, digital civility) beyond their titles (pp. 6-16); only the rows that touch the class or personal data are quoted.",
+      "BAB III B education detail: capacity-building topics for teachers and murid, Sahabat Hebat, Forum Murid, examples of integration in intra-, ko- and ekstrakurikuler (pp. 26-32); summarised only.",
+      "Tabel 3.6 roles in SMP and SMA/SMK (pp. 34-35): kept only as a contrast list.",
+      "Tabel 3.8-3.11 role-modelling behaviour examples and the positive-culture practices (pp. 38-42): summarised only.",
+      "Tabel 4.2 legal references for violations of law (pp. 45-47).",
+      "BAB V A ministry tasks and B Pokja formation, membership, tasks and complaint channels (pp. 59-71): only the Pokja deadline and fallback are kept.",
+      "BAB V C roles of masyarakat and media (pp. 74-76)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace cleanup only).",
+      "summary fields are short English notes for developers, not source text.",
+      "pages are PDF page numbers; pages_note gives the printed Lampiran numbering.",
+      "force: mandatory = the guide says \"paling sedikit\", \"setidaknya\" or \"harus\"; recommended = \"dianjurkan\"; example = stated as an example or as \"dapat dimodifikasi dan dikembangkan\"."
+    ]
+  },
+  "decree": {
+    "text": "KESATU : Menetapkan Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman sebagaimana tercantum dalam Lampiran yang merupakan bagian tidak terpisahkan dari Keputusan Menteri ini. KEDUA : Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman sebagaimana dimaksud dalam Diktum KESATU merupakan acuan dalam menyelenggarakan budaya sekolah yang aman dan nyaman bagi kementerian, pemerintah daerah, sekolah, dan pemangku kepentingan. KETIGA : Keputusan Menteri ini mulai berlaku pada tanggal ditetapkan.",
+    "summary": "The guide is the reference (acuan) for ministry, Pemda, schools and stakeholders; in force on setting, 6 February 2026.",
+    "pages": [
+      2
+    ]
+  },
+  "targets": {
+    "text": "Sasaran Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman meliputi: 1. pemerintah pusat; 2. pemerintah daerah; 3. kepala sekolah 4. guru; 5. murid; 6. tenaga kependidikan selain pendidik; 7. badan penyelenggara satuan pendidikan; 8. orang tua atau wali murid; 9. komite sekolah; 10. masyarakat; dan 11. media.",
+    "pages": [
+      4
+    ]
+  },
+  "concept": {
+    "principles_text": "Budaya Sekolah Aman dan Nyaman memiliki 9 (sembilan) asas yang menjadi landasan fundamental, yaitu humanis, komprehensif, partisipatif, kepentingan terbaik bagi anak, nondiskriminatif, inklusif, keadilan dan kesetaraan gender, harmonis, dan berkelanjutan.",
+    "principles": [
+      "humanis",
+      "komprehensif",
+      "partisipatif",
+      "kepentingan terbaik bagi anak",
+      "nondiskriminatif",
+      "inklusif",
+      "keadilan dan kesetaraan gender",
+      "harmonis",
+      "berkelanjutan"
+    ],
+    "means_text": "Budaya Sekolah Aman dan Nyaman diselenggarakan melalui: a. penguatan tata kelola sekolah; b. edukasi warga sekolah; c. penguatan peran warga sekolah; d. respons dan penanganan pelanggaran; e. tanggung jawab kementerian dan pemerintah daerah; dan f. peran orang tua atau wali murid, komite sekolah, masyarakat, dan media.",
+    "approach_summary": "Promotive, preventive and collaborative first; curative and rehabilitative when a violation happens (p. 6).",
+    "pages": [
+      5,
+      6
+    ]
+  },
+  "aspect_forms": {
+    "summary": "Each of the four aspects (kebutuhan spiritual; pelindungan fisik; kesejahteraan psikologis dan keamanan sosiokultural; keadaban dan keamanan digital) has tables of \"bentuk penerapan\", stated as minimum forms that schools may modify and extend. Only rows that touch the class or personal data are quoted.",
+    "force": "example",
+    "tables": [
+      {
+        "table": "Tabel 2.1-2.3",
+        "aspect": "Pemenuhan Kebutuhan Spiritual",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "table": "Tabel 2.4-2.8",
+        "aspect": "Pelindungan Fisik",
+        "pages": [
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "table": "Tabel 2.9-2.12",
+        "aspect": "Kesejahteraan Psikologis dan Keamanan Sosiokultural",
+        "pages": [
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "table": "Tabel 2.13-2.15",
+        "aspect": "Keadaban dan Keamanan Digital",
+        "pages": [
+          15,
+          16,
+          17
+        ]
+      }
+    ],
+    "class_rows": [
+      {
+        "table": "Tabel 2.2",
+        "no": 3,
+        "text": "Membiasakan berdoa sesuai dengan agama dan kepercayaan masing-masing sebelum memulai kegiatan pembelajaran di kelas.",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "table": "Tabel 2.9",
+        "no": 4,
+        "text": "Menyusun kesepakatan kelas dengan melibatkan semua murid secara aktif dan bermakna.",
+        "pages": [
+          13
+        ]
+      },
+      {
+        "table": "Tabel 2.9",
+        "no": 5,
+        "text": "Memberikan kesempatan yang sama kepada semua murid dalam pemilihan pengurus kelas.",
+        "pages": [
+          13
+        ]
+      },
+      {
+        "table": "Tabel 2.10",
+        "no": 1,
+        "text": "Memperkuat peran guru Bimbingan dan Konseling (BK), guru mata pelajaran, wali kelas, dan guru wali untuk pendampingan psikososial, dan/atau menyediakan konselor/psikolog profesional.",
+        "pages": [
+          13
+        ]
+      },
+      {
+        "table": "Tabel 2.11",
+        "no": 3,
+        "text": "Membentuk kepengurusan kelas maupun organisasi kesiswaan di sekolah yang tidak berdasarkan pada pelabelan identitas tertentu.",
+        "pages": [
+          14
+        ]
+      }
+    ],
+    "personal_data_rows": [
+      {
+        "table": "Tabel 2.14",
+        "no": 3,
+        "text": "Membekali murid mengenai pelindungan data pribadi, seperti nomor ponsel, alamat rumah, riwayat kesehatan, termasuk kata sandi akun media sosial.",
+        "pages": [
+          16
+        ]
+      },
+      {
+        "table": "Tabel 2.15",
+        "no": 1,
+        "text": "Menyebarluaskan data pembelajaran yang memuat data pribadi, seperti data nilai ujian/asesmen murid, data murid, data guru, hanya kepada pihak yang berwenang.",
+        "pages": [
+          17
+        ]
+      },
+      {
+        "table": "Tabel 2.15",
+        "no": 2,
+        "text": "Memiliki media penyimpanan data pribadi warga sekolah yang aman secara digital dan dikelola hanya oleh pihak yang ditunjuk.",
+        "pages": [
+          17
+        ]
+      },
+      {
+        "table": "Tabel 2.15",
+        "no": 3,
+        "text": "Menggunakan data pribadi warga sekolah secara etis dan bertanggung jawab hanya untuk kebutuhan pembelajaran.",
+        "pages": [
+          17
+        ]
+      }
+    ]
+  },
+  "governance": {
+    "early_detection": {
+      "text": "Deteksi dini dilakukan kepala sekolah dibantu oleh guru dan tenaga kependidikan selain pendidik secara rutin.",
+      "steps_summary": "Five steps: (1) get to know each murid's characteristics and needs from admission or MPLS (personal traits, background, family and caregiver, academic, health, disability); (2) watch for behaviour changes that suggest psychosocial problems (drop in results, attendance pattern, withdrawal, physical signs, unusual emotions); (3) identify school members who may disturb safety (physical, psychological, social, sexual, learning-process signs, incl. recording teachers or murid without permission); (4) map risky spots; (5) provide complaint and aspiration channels.",
+      "pages": [
+        18,
+        19,
+        20
+      ]
+    },
+    "complaint_channel": {
+      "text": "5) Penyediaan kanal pengaduan dan aspirasi, seperti: a) kotak kritik dan saran di lokasi strategis (dekat ruang guru, kantin, tempat ibadah, ruang piket, dan sebagainya); b) formulir daring dan anonim yang dikelola sekolah; dan c) aplikasi pesan singkat. Penerimaan pengaduan dan aspirasi melalui kanal pengaduan dan aspirasi di atas diterima dan direspons oleh kepala sekolah dari guru, tenaga kependidikan selain pendidik, murid atau pihak lain yang berada di sekolah. Pengelolaan kanal pengaduan dan aspirasi sesuai dengan pilihan di atas juga perlu memperhatikan beberapa aspek seperti: 1) mudah diakses, termasuk untuk penyandang disabilitas; 2) terhubung langsung dengan kepala sekolah dan/atau guru yang ditunjuk; 3) jaminan kerahasiaan bagi pelapor; 4) perlindungan pelapor dari pembalasan; dan 5) respons cepat yang dianjurkan paling lambat 24 (dua puluh empat) jam untuk respons awal.",
+      "force": "recommended",
+      "initial_response_hours": 24,
+      "summary": "Complaints are received and answered by the principal; a first response within 24 hours is recommended.",
+      "pages": [
+        20
+      ]
+    },
+    "detection_follow_up": {
+      "text": "Setelah melakukan deteksi dini, kepala sekolah menentukan perlakuan yang tepat berdasarkan kapasitas dan kewenangan sekolah, antara lain: 1) pendampingan dan pendekatan personal kepada murid sesuai dengan karakteristik dan kebutuhan perkembangan murid; 2) mentoring dan peningkatan kompetensi bagi guru dan tenaga kependidikan selain pendidik; 3) laporan perkembangan murid yang disampaikan kepada orang tua atau wali murid; 4) perbaikan sarana dan prasarana sekolah untuk mendukung terciptanya lingkungan pembelajaran yang aman dan nyaman; dan 5) dasar permintaan dukungan intervensi kepada pokja dan pemangku kepentingan lainnya.",
+      "pages": [
+        20,
+        21
+      ]
+    },
+    "rules_drafting_stages": {
+      "stages": [
+        "Tahap Pembentukan Tim Perumus",
+        "Tahap Penyusunan Tata Tertib, Kode Etik, dan POS",
+        "Tahap Diskusi dan Masukan",
+        "Tahap Finalisasi dan Pengesahan oleh Kepala Sekolah",
+        "Tahap Sosialisasi kepada Seluruh Warga Sekolah",
+        "Tahap Reviu Berkala"
+      ],
+      "review_text": "sekolah melaksanakan reviu terhadap tata tertib, kode etik, dan POS paling sedikit 1 (satu) kali dalam satu tahun.",
+      "review_force": "mandatory",
+      "approval_text": "Setelah dilakukan finalisasi, kepala sekolah menetapkan tata tertib, kode etik, dan POS dalam bentuk surat keputusan atau sejenisnya.",
+      "existing_rules_summary": "A school that already has tata tertib, kode etik and POS need not redraft them; it may review and adjust them (p. 26).",
+      "pages": [
+        21,
+        22,
+        26
+      ]
+    },
+    "rules_minimum_content": {
+      "text": "Tata tertib dan kode etik paling sedikit memuat: a. nilai-nilai pokok yang mencerminkan karakter sekolah (contoh: beriman dan bertakwa kepada Tuhan Yang Maha Esa, berintegritas, saling menghormati, dan peduli); b. hak dan kewajiban warga sekolah, mencakup: 1) guru; 2) tenaga kependidikan selain pendidik; dan 3) murid. c. perilaku yang diharapkan dalam berbagai situasi, yaitu: 1) di dalam kelas; 2) di luar kelas/lingkungan sekolah; 3) dalam kegiatan ekstrakurikuler; dan 4) dalam media sosial/digital; d. konsekuensi mendidik, yaitu: 1) proporsional, berorientasi pada pembedaan bentuk pelanggaran, frekuensi (antara pelanggaran pertama atau berulang), pelanggar (antara pelanggaran dilakukan oleh orang dewasa atau anak), dan/atau kekhususan yang dimiliki oleh pelanggar; dan 2) berorientasi pada perbaikan perilaku, yaitu memberikan efek jera tanpa merendahkan martabat kemanusiaan dan memberikan kesempatan pelanggar untuk tidak mengulangi pelanggaran.",
+      "force": "mandatory",
+      "items": [
+        "nilai-nilai pokok",
+        "hak dan kewajiban warga sekolah",
+        "perilaku yang diharapkan dalam berbagai situasi",
+        "konsekuensi mendidik"
+      ],
+      "wording_summary": "Tata tertib is recommended to use positive-discipline sentences (\"Berjalan dengan tenang di koridor\" instead of \"Dilarang berlari di koridor\"), Tabel 3.1-3.2.",
+      "pages": [
+        23,
+        24
+      ]
+    },
+    "sop_minimum_content": {
+      "text": "POS setidaknya memuat: a. nama POS; b. tujuan POS; c. alur POS; dan d. penanggung jawab dan kontak.",
+      "force": "mandatory",
+      "sop_kinds": [
+        "POS Penanganan Kekerasan terhadap Murid",
+        "POS Penanganan Kekerasan terhadap Guru",
+        "POS Penjemputan Murid di Sekolah",
+        "POS Penanganan Keadaan Darurat, seperti kebakaran, gempa",
+        "POS Penggunaan Fasilitas Sekolah, seperti ruang kelas, perpustakaan, dan lapangan",
+        "POS Pelaksanaan Kegiatan di Luar Sekolah, seperti kunjungan lapangan (field trip) atau kunjungan pembelajaran (study tour)",
+        "POS Kegiatan Ekstrakurikuler, seperti Pramuka dan Palang Merah Remaja",
+        "POS lain yang sesuai dengan kebutuhan sekolah"
+      ],
+      "example_summary": "Tabel 3.3 gives an example POS Penjemputan Murid; the guard or guru piket checks with the principal or the wali kelas before a stranger may pick up a child (pp. 24-25).",
+      "pages": [
+        24,
+        25
+      ]
+    }
+  },
+  "roles": {
+    "principal": {
+      "table": "Tabel 3.4",
+      "items": [
+        "Menetapkan tata tertib, kode etik, dan prosedur operasional standar.",
+        "Merencanakan kegiatan dan anggaran sekolah untuk implementasi Budaya Sekolah Aman dan Nyaman.",
+        "Melakukan supervisi dan pembinaan terhadap pelaksanaan tugas guru dan tenaga kependidikan selain pendidik.",
+        "Memberi edukasi kepada warga sekolah.",
+        "Deteksi dini, respons, dan penanganan pelanggaran dalam hal terjadi pelanggaran terhadap Budaya Sekolah Aman dan Nyaman",
+        "Kemitraan dengan orang tua atau wali murid dan pemangku kepentingan dalam menciptakan dan menjaga Budaya Sekolah Aman dan Nyaman"
+      ],
+      "pages": [
+        33
+      ]
+    },
+    "paud_and_sd": {
+      "table": "Tabel 3.5. Peran Guru dan Tenaga Kependidikan selain Pendidik pada PAUD dan SD dalam Penguatan Peran Warga Sekolah",
+      "rows": [
+        {
+          "no": 1,
+          "who": "Guru Kelas atau Wali Kelas",
+          "role": "Menjadi penanggung jawab utama kondisi kelas yang meliputi penyambutan dan pemantauan kondisi fisik dan emosi murid secara rutin, deteksi dini, serta respons dan penanganan pelanggaran antarmurid."
+        },
+        {
+          "no": 2,
+          "who": "Guru yang mengampu muatan pendidikan agama dan budi pekerti",
+          "role": "Menguatkan nilai spiritual, moral, dan etika murid sebagai landasan budaya sekolah."
+        },
+        {
+          "no": 3,
+          "who": "Guru yang mengampu muatan pendidikan jasmani, olahraga, dan kesehatan",
+          "role": "Menjaga keamanan fisik murid selama aktivitas fisik, membangun sportivitas dan kerja sama tim, serta mencegah kontak fisik yang mengarah pada pelanggaran keamanan dan kenyamanan saat aktivitas fisik."
+        },
+        {
+          "no": 4,
+          "who": "Tenaga Kependidikan selain Pendidik",
+          "role": "Mendukung terciptanya lingkungan yang aman dan nyaman sesuai dengan tugas dan tanggung jawabnya."
+        }
+      ],
+      "summary": "For PAUD and SD the guide names the class role \"Guru Kelas atau Wali Kelas\" (checked on the page image), while Permendikdasmen 6/2026 Pasal 18 ayat (3) huruf a angka 1 says only \"guru kelas\". The duty is the same: main responsibility for class conditions (welcome, daily check of physical and emotional state, early detection, handling of violations between murid).",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    "smp_sma_contrast": {
+      "table": "Tabel 3.6",
+      "roles": [
+        "Wakil Kepala Sekolah bidang Kesiswaan",
+        "Wakil Kepala Sekolah bidang Sarana Prasarana",
+        "Guru Bimbingan dan Konseling",
+        "Guru Wali",
+        "Wali Kelas",
+        "Guru Mata Pelajaran",
+        "Tenaga Kependidikan selain Pendidik"
+      ],
+      "summary": "Not for SD; kept so the SD list can be compared. Here the wali kelas is \"manajer pengelolaan kelas\" (attendance and behaviour, link to parents, facilitates the kesepakatan kelas).",
+      "pages": [
+        34,
+        35
+      ]
+    },
+    "murid": {
+      "table": "Tabel 3.7",
+      "items": [
+        "Partisipasi aktif dalam penyusunan kesepakatan kelas, tata tertib, dan kode etik sekolah.",
+        "Pengembangan forum komunikasi antarmurid.",
+        "Penerapan metode pendidik sebaya, tutor sebaya, atau pendekatan serupa dalam pengembangan Budaya Sekolah Aman dan Nyaman"
+      ],
+      "pages": [
+        35
+      ]
+    }
+  },
+  "class_agreement": {
+    "minimum_content": {
+      "text": "Manajemen kelas diterapkan oleh guru untuk membangun suasana pembelajaran yang aman dan nyaman serta mengelola perilaku dan kebiasaan murid sesuai kesepakatan bersama. Dalam menerapkan manajemen kelas, guru menyusun kesepakatan kelas dengan melibatkan murid secara aktif dan bermakna. Kesepakatan kelas setidaknya memuat: a. nilai kebajikan; b. interaksi yang saling menghargai dan menghormati; dan c. tindakan pembinaan yang mendidik terhadap pelanggaran kesepakatan bersama.",
+      "force": "mandatory",
+      "items": [
+        "nilai kebajikan",
+        "interaksi yang saling menghargai dan menghormati",
+        "tindakan pembinaan yang mendidik terhadap pelanggaran kesepakatan bersama"
+      ],
+      "pages": [
+        35
+      ]
+    },
+    "stages": {
+      "force": "example",
+      "items": [
+        {
+          "stage": "Tahap Persiapan",
+          "summary": "Teacher sets core values, prepares stimuli (video, story, case) and a documentation format."
+        },
+        {
+          "stage": "Tahap Eksplorasi",
+          "summary": "Teacher and murid discuss the \"kelas impian\", behaviours that help or hinder it, and brainstorm values."
+        },
+        {
+          "stage": "Tahap Perumusan",
+          "summary": "Statements written as positive values and behaviour, not prohibitions; logical, educative consequences; forms of appreciation."
+        },
+        {
+          "stage": "Tahap Penyepakatan dan Implementasi",
+          "summary": "Signed by every member of the class, displayed in a visible place, reviewed regularly."
+        }
+      ],
+      "text_note": "Introduced with \"dapat mengadopsi tahapan berikut ini\" (p. 36).",
+      "pages": [
+        36
+      ]
+    },
+    "example": {
+      "summary": "Example agreement \"KELAS KITA, RUMAH KITA BERSAMA\" written for kelas 7B (SMP): four commitments, consequences (teguran pribadi, refleksi tertulis, meminta maaf), appreciation (piagam each semester end, letter to parents). Stated as modifiable.",
+      "force": "example",
+      "pages": [
+        37
+      ]
+    },
+    "upkeep": {
+      "text": "Guru menerapkan pengingat rutin dengan membacakan atau meninjau kembali kesepakatan kelas secara singkat di awal Minggu untuk penguatan komitmen bersama. Untuk memperkuat kesinambungan kesepakatan kelas, guru juga melakukan komunikasi dengan orang ua atau wali murid dengan cara membagikan kesepakatan kelas beserta perkembangan penerapannya.",
+      "summary": "Weekly reminder at the start of the week; share the agreement and how it is going with parents. (\"orang ua\" is a typo in the source.)",
+      "pages": [
+        37
+      ]
+    }
+  },
+  "positive_culture": {
+    "values_text": "Nilai karakter tersebut meliputi nilai religius, jujur, toleran, disiplin, bekerja keras, kreatif, mandiri, demokratis, rasa ingin tahu, semangat kebangsaan, cinta tanah air, menghargai prestasi, komunikatif, cinta damai, gemar membaca, peduli lingkungan, peduli sosial, dan bertanggung jawab.",
+    "summary": "Eighteen character values to build into learning, class management, ko- and ekstrakurikuler. Practice examples: 3S at the gate, apel pagi, end-of-week reflection, student or teacher of the month (by character, not grades), kindness wall, thank-you notes, classroom meetings, cross-grade buddies, community projects, positive displays, quiet and reading corners.",
+    "force": "example",
+    "pages": [
+      40,
+      41
+    ]
+  },
+  "violations": {
+    "area": {
+      "summary": "BSAN covers the school grounds, learning places outside school (incl. trips), and digital spaces tied to school activity (video calls, chat groups, learning management systems, social media).",
+      "pages": [
+        43
+      ]
+    },
+    "categories": [
+      "pelanggaran terhadap tata tertib dan/atau kode etik",
+      "pelanggaran terhadap ketentuan peraturan perundang-undangan"
+    ],
+    "teacher_examples": {
+      "table": "Tabel 4.1",
+      "tata_tertib": [
+        "mangkir dari tugas mengajar",
+        "merokok di lingkungan sekolah",
+        "membuang sampah tidak pada tempatnya",
+        "terlambat hadir dalam pembelajaran",
+        "mengakhiri pelajaran jauh lebih awal tanpa alasan pembelajaran"
+      ],
+      "kode_etik": [
+        "tidak menjalankan tugas dengan sungguh-sungguh",
+        "berperilaku diskriminatif dan intoleran terhadap murid",
+        "memberikan tugas dan nilai secara subjektif berdasarkan preferensi pribadi",
+        "tidak menjaga kerahasiaan informasi sekolah atau privasi murid",
+        "merekam dan menyebarluaskan foto dan/atau video selama pembelajaran tanpa izin murid dan/atau orang tua atau wali murid"
+      ],
+      "force": "example",
+      "pages": [
+        43,
+        44
+      ]
+    },
+    "handled_by": {
+      "text": "Sekolah memiliki tugas untuk menangani bentuk-bentuk pelanggaran terhadap tata tertib dan kode etik sekolah. Pokja memiliki tugas untuk menangani pelanggaran terhadap peraturan perundang-undangan dilakukan melalui mekanisme rujukan dari sekolah.",
+      "pages": [
+        47
+      ]
+    }
+  },
+  "handling": {
+    "collaborative": {
+      "steps": [
+        "Identifikasi dan klasifikasi laporan atau temuan dugaan pelanggaran",
+        "penanganan dugaan pelanggaran",
+        "penyusunan kesimpulan dan rekomendasi"
+      ],
+      "who_text": "kepala sekolah menugaskan wali kelas, guru BK, guru wali, atau guru lain yang dipandang kompeten untuk melakukan wawancara terpisah terhadap korban, terduga pelanggar, dan saksi dengan pendekatan empatik tanpa menghakimi.",
+      "summary": "The principal receives the report and may appoint a teacher to classify it; a violation of law goes to the Pokja. Otherwise separate interviews, evidence (notes, digital messages, observation), a meeting focused on repair, and a written agreement signed by school, victim and offender. An accused murid found not guilty gets name, rights and psychological support restored. For SD the guide names the wali kelas, guru BK and guru wali here, roles that Tabel 3.5 does not list for SD; \"guru lain yang dipandang kompeten\" covers the guru kelas.",
+      "pages": [
+        49,
+        50,
+        51
+      ]
+    },
+    "referral_to_pokja": {
+      "key_questions_table": "Tabel 4.5",
+      "rule_text": "Dalam hal 1 (satu) atau lebih pertanyaan indikator memiliki jawaban ‘YA’, mekanisme rujukan oleh kepala sekolah ke pokja harus segera dilakukan.",
+      "force": "mandatory",
+      "questions": [
+        "Apakah ada pihak yang dirugikan luka fisik dan memerlukan penanganan medis darurat?",
+        "Apakah ada unsur intimidasi, pemaksaan, atau ancaman senjata?",
+        "Apakah perbuatan tersebut di luar pelanggaran terhadap tata tertib dan kode etik?",
+        "Apakah ada indikasi sebagai kekerasan seksual?",
+        "Apakah terduga pelanggar adalah orang dewasa yang menunjukkan pola perilaku kriminal?",
+        "Apakah insiden ini terjadi di luar lingkungan Sekolah dan melibatkan pihak eksternal?"
+      ],
+      "report_without_names_text": "deskripsi singkat insiden (apa, siapa, dimana, dan kapan) tanpa menyebutkan nama korban/terduga pelanggar (jika korban dan/atau terduga pelanggar adalah murid)",
+      "summary": "The principal, the deputy for student affairs, or an appointed teacher reports to the Pokja; when the people involved are murid, their names are left out of the first report. The school logs the time, the Pokja officer contacted, and the follow-up, and appoints a liaison teacher (guru BK or another competent teacher recommended).",
+      "pages": [
+        52,
+        53,
+        54,
+        56
+      ]
+    },
+    "recovery": {
+      "summary": "Handling must not cut a murid off from learning. A murid found not guilty gets name, rights and psychological support restored (Tabel 4.7: remove the record of the alleged violation from internal school documents, written statement, reasonable academic adjustment, counselling).",
+      "pages": [
+        57,
+        58
+      ]
+    }
+  },
+  "regional_pokja": {
+    "text": "Permendikdasmen Nomor 6 Tahun 2026 tentang Budaya Sekolah Aman dan Nyaman memandatkan kepada seluruh kepala daerah untuk membentuk Pokja Budaya Sekolah Aman dan Nyaman paling lambat 9 Juli 2026 atau 6 (enam) bulan sejak peraturan menteri tersebut diundangkan, yaitu 9 Januari 2026. Setelah dibentuk, Pokja memiliki masa tugas selama 4 (empat) tahun dan dapat diangkat kembali dalam 1 (satu) kali masa jabatan. Dalam hal Pokja belum terbentuk, fungsi koordinasi dan rujukan dilaksanakan oleh perangkat daerah yang menyelenggarakan urusan pemerintahan bidang pendidikan, bekerja sama dengan perangkat daerah yang menyelenggarakan urusan pemerintahan bidang pemberdayaan perempuan dan perlindungan anak.",
+    "deadline": "2026-07-09",
+    "summary": "Pokja per province and kabupaten/kota, chaired by the sekretaris daerah, coordinated by the dinas pendidikan; until it exists, the dinas pendidikan handles coordination and referral together with the women and child protection office. National dashboard: https://cerdasberkarakter.kemendikdasmen.go.id/budayasekolahamannyaman/ (p. 59).",
+    "pages": [
+      59,
+      60,
+      61
+    ]
+  },
+  "monitoring": {
+    "principal": {
+      "text": "Kepala sekolah selaku penanggung jawab penyelenggaraan Budaya Sekolah Aman dan Nyaman di tingkat sekolah melakukan pemantauan dan evaluasi secara berkala yang mencakup: a. kegiatan yang berkaitan dengan penyelenggaraan Budaya Sekolah Aman dan Nyaman yang sudah dilakukan, seperti pelaksanaan deteksi dini; penyusunan tata tertib, kode etik, POS; edukasi kepada warga sekolah, serta penguatan peran warga sekolah; pelibatan orang tua atau wali murid, komite sekolah, masyarakat, dan media. b. data pelaporan dan penanganan pelanggaran; c. kegiatan penanganan pelanggaran yang telah dan sedang dilakukan; dan d. kegiatan fasilitasi pendampingan dan pemulihan korban, saksi, dan terduga pelanggar yang berstatus murid.",
+      "pages": [
+        77
+      ]
+    },
+    "reporting": {
+      "text": "Kepala sekolah melaporkan hasil pemantauan dan evaluasi kepada pokja melalui dinas pendidikan selaku koordinator pokja. Hasil pemantauan dan evaluasi merupakan bagian dari laporan monitoring dan evaluasi sekolah yang dilaporkan kepada dinas pendidikan setiap tahunnya.",
+      "summary": "The school's BSAN monitoring is part of its yearly monev report to the dinas pendidikan, which coordinates the Pokja.",
+      "pages": [
+        78
+      ]
+    }
+  },
+  "stakeholders": {
+    "summary": "Parents align home rules with school values, keep in touch, watch digital activity, may form a communication forum and a parents' class; the komite advises on policy and budget, raises voluntary funds, oversees, and follows up complaints (pp. 72-74).",
+    "pages": [
+      72,
+      73,
+      74
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        33
+      ],
+      "text": "Tabel 3.5 names the SD class role \"Guru Kelas atau Wali Kelas\"; Permendikdasmen 6/2026 Pasal 18 ayat (3) names only \"guru kelas\" for SD. Both point to the same duty. SIGRAK can keep \"guru kelas\" as the SD term and accept \"wali kelas\" as an alias in SD (Tim Validasi to confirm)."
+    },
+    {
+      "pages": [
+        50,
+        51
+      ],
+      "text": "The collaborative-handling steps name the wali kelas, guru BK, guru wali, or another competent teacher; SD has no guru BK or guru wali role in Tabel 3.5, so in SD this falls to the guru kelas or another teacher the principal appoints."
+    },
+    {
+      "pages": [
+        35,
+        36,
+        37
+      ],
+      "text": "Kesepakatan kelas: three minimum contents are mandatory (\"setidaknya memuat\"); the four stages and the kelas 7B example are guidance. A SIGRAK template should require the three contents and offer the stages as steps."
+    },
+    {
+      "pages": [
+        17,
+        44,
+        54
+      ],
+      "text": "Personal data: share learning data with personal data only with authorised parties (Tabel 2.15); recording or sharing photos or video of lessons without consent is a code-of-ethics breach (Tabel 4.1); the first report to the Pokja leaves out murid names. These match SIGRAK's child-data rules (D-023, D-347, D-350)."
+    },
+    {
+      "pages": [
+        1
+      ],
+      "text": "This copy carries hidden third-party watermark text; replace it with the JDIH file when reachable (verification: mirror)."
+    }
+  ]
+}

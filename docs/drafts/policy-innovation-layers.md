@@ -298,12 +298,14 @@ No decision is overturned. The only behaviour change proposed is moving one conf
 - Kepka BSKAP 046/H/KR/2025 (general-subject CP, 1,691 pages, kept whole): copy from a ministry unit.
 - Permendikdasmen 26/2025 (Pengelolaan) and Permendikbudristek 21/2022 (Penilaian): **mirror** copies (JDIH salinan re-hosted by regional education offices). Kept until a JDIH copy can be fetched, then replaced and re-hashed (owner, 2026-11-11).
 
-**Still not in `docs/sources/`** (JDIH, peraturan.go.id, and BPK were unreachable from the build environment; task P4-32, the owner fetches them):
+**Got in P4-32 (2026-11-11), supplied by the owner from an Indonesian connection**, with sha256, extracts in `docs/data/regulations/`, and registry entries:
 
-- Permendikdasmen 1/2026 (Standar Proses). Pasal 9 could not be read from the mirror.
-- Permendikdasmen 9/2026 (AN) and Kepmendikdasmen 17/2026 (pelaksanaan Budaya Sekolah Aman dan Nyaman).
-- The base Permendikbudristek 12/2024 (only the 13/2025 changes are in the repo).
+- Permendikdasmen 1/2026 (Standar Proses), 9/2026 (amends Permendikbudristek 17/2021 on AN), and the base Permendikbudristek 12/2024 (Kurikulum): official copies (the e-signed promulgated PDFs). Pasal 9 of 1/2026 is now read: it covers the learning atmosphere and the teacher roles; the planning-document minimum is Pasal 5.
+- Kepmendikdasmen 17/2026 (Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman): **mirror** copy (JDIH salinan re-saved by a non-government site with hidden watermark text); replace with the JDIH copy and re-hash when it can be fetched.
 - **KMA 512/2026, resolved.** The owner supplied the official PDF on 2026-11-09 (`docs/sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf`). Set 31 March 2026 and in force on that date, it replaces SK Dirjen Pendis 6077/2025 as the KBC source (D-359). Its scope covers Kemenag schools *and* religion teachers in general schools, SD included (Lampiran §C, p. 6); see the open question in `docs/drafts/open-questions.md`.
+
+**Still needed:**
+
 - Open facts: who sets the KKTP at article level; AKMI for MI in 2026; official e-Rapor SD and RDM 2026 specs.
 
 ## 12. Owner questions
