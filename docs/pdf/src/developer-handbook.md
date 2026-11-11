@@ -1,9 +1,9 @@
 # Buku Panduan Pengembang SIGRAK
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/developer-handbook.md</code> pada 10 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/developer-handbook.md</code> pada 11 November 2026.</p>
 
 - **Status:** final (permintaan pemilik 2026-11-09, D-361)
-- **Terakhir diperbarui:** 2026-11-10
+- **Terakhir diperbarui:** 2026-11-11 (P5-03i…l dibangun: kalender, draf jadwal, kolom versi, Profil Jenjang)
 - **Pembaca:** setiap pengembang atau agen baru yang bergabung dengan SIGRAK, sebelum membaca dokumen lain. PDF berbahasa Indonesia ini, `docs/pdf/developer-handbook.pdf`, adalah satu bacaan lengkap untuk pengembang baru (D-361).
 - **PDF berbahasa Indonesia:** `docs/pdf/developer-handbook.pdf`, diterjemahkan di `docs/pdf/src/developer-handbook.md`
 
@@ -232,9 +232,9 @@ Aturan berubah setiap tahun, jadi aturan disimpan sebagai data dengan tanggal be
 - **Dokumen mengingat set aturannya.** RPM, rencana asesmen, atau rapor menyimpan kode set aturan saat dokumen itu dibuat, sama seperti dokumen menyimpan versi templatnya. Perubahan aturan tidak pernah diam-diam mengubah dokumen yang sudah ada.
 - **Aturan mengikuti tahun ajaran.** Aturan yang terbit di tengah tahun berlaku mulai tahun ajaran berikutnya, kecuali peraturannya sendiri menetapkan tanggal lebih awal. Contoh: Bahasa Inggris menjadi wajib di SD/MI mulai 2027/2028, sehingga set aturan struktur 2027/2028 menandainya wajib, sementara 2026/2027 masih mencantumkannya sebagai pilihan.
 
-**Yang sudah ada hari ini (Dibangun):** `curriculum_versions` dengan `code`, `name`, `status` (draft, active, retired), `meta`, dan `imported_at`; versi yang berlaku ditunjuk lewat konfigurasi, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
+**Yang sudah ada hari ini (Dibangun):** `curriculum_versions` dengan `code`, `name`, `status` (draft, active, retired), `meta`, `imported_at`, dan sejak P5-03k `effective_on`, `applies_from_school_year`, serta `supersedes_id`. Versi yang berlaku diambil dari `PolicyProfileResolver` yang membaca berkas Profil Jenjang di `docs/data/profiles/` (D-378); sebelum P5-03k versi itu ditunjuk lewat konfigurasi, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
 
-**Minimum sebelum P5-04 (D-355):** `curriculum_versions` mendapat `effective_on`, `applies_from_school_year`, dan `supersedes_id`; resolver profil kebijakan menggantikan penunjuk `allocation_versions` tanpa mengubah perilaku; dan data Profil Jenjang sudah ada. Alasannya: RPM pertama yang dibuat sudah harus mencatat set aturannya. Tabel `regulations` dan `rules` lengkap, konsol untuk setiap domain, dan *Kabar Regulasi* (pemberitahuan ke sekolah saat set aturan baru terbit, beserta dokumen yang terdampak) datang bersama P5-09 atau slice tersendiri.
+**Minimum sebelum P5-04 (D-355), selesai di P5-03k dan P5-03l:** `curriculum_versions` mendapat `effective_on`, `applies_from_school_year`, dan `supersedes_id`; resolver profil kebijakan menggantikan penunjuk `allocation_versions` tanpa mengubah perilaku; dan data Profil Jenjang sudah ada. Alasannya: RPM pertama yang dibuat sudah harus mencatat set aturannya. Tabel `regulations` dan `rules` lengkap, konsol untuk setiap domain, dan *Kabar Regulasi* (pemberitahuan ke sekolah saat set aturan baru terbit, beserta dokumen yang terdampak) datang bersama P5-09 atau slice tersendiri.
 
 Alur kerja untuk peraturan baru: pantau kanal resmi (situs JDIH, peraturan.go.id, situs kurikulum dan Kemenag); simpan PDF-nya di `docs/sources/` dengan SHA-256 dan tingkat verifikasi; susun draf set aturan dengan rujukan halaman (Kurator Kurikulum); tinjau oleh Tim Validasi (D-113); terbitkan lewat konsol kurikulum dengan perbandingan, laporan dampak, dan pembatalan (D-317); beri tahu sekolah lewat Kabar Regulasi.
 
@@ -371,7 +371,7 @@ Ringkasan diagram: Tim SIGRAK membuat sekolah dan mengundang operator atau kepal
 - Bentrok guru dengan kelas lain ditolak, dengan menyebut kelas dan jamnya. Baris dalam satu kelas tidak boleh tumpang tindih, kecuali enam mapel agama yang boleh berjalan bersamaan.
 - JP mingguan sebuah mapel harus sama dengan alokasinya. Melebihi alokasi ditolak; kekurangan ditampilkan, dan jadwal dianggap "lengkap" hanya bila semuanya cocok. 1 JP = 35 menit.
 
-**Kalender (Kaldik).** Didesain rinci di P5-03i (D-252…D-261, D-323):
+**Kalender (Kaldik).** Dibangun di P5-03i (D-252…D-261, D-323, D-377), di `/kalender` untuk setiap peran, dengan halaman konsol Libur nasional dan Kalender wilayah:
 
 - `national_holidays` adalah satu tabel pusat baca-saja (libur nasional dan cuti bersama, dengan dasar keputusan dan penanda sementara), digabungkan ke setiap tampilan kalender dan diperbarui Tim SIGRAK setiap tahun setelah SKB terbit; `php artisan calendar:import-holidays <file>` memuatnya, setelah pengecekan daring terhadap SKB resmi dan pengesahan Tim Validasi (D-253, D-254). Cuti bersama bawaannya dihitung libur (D-255).
 - Tim SIGRAK menyusun kalender rujukan wilayah. Untuk Kudus, Pati, dan Jepara, ini satu kalender Jawa Tengah dari tanggal versi 6 hari di pedoman provinsi (D-257, D-323). Operator menyalinnya dengan "Salin dari kalender wilayah", menambah kegiatan sekolah, dan nanti melihat "Terapkan perubahan wilayah" saat kalender wilayah berubah (D-256).
@@ -379,9 +379,9 @@ Ringkasan diagram: Tim SIGRAK membuat sekolah dan mengundang operator atau kepal
 - `app/Calendar/EffectiveDays` menghitung hari dan minggu efektif per kelas. Uji penerimaan: SD/MI 6 hari di Jawa Tengah tahun 2026/2027 punya 254 hari efektif (134 + 120) (D-259, D-323).
 - `app/Calendar/ConflictChecker` memberi satu set pesan bentrok (D-260); pratinjau dampak ("12 pertemuan RPM di 6 kelas akan bergeser") muncul sebelum sebuah perubahan menggeser pertemuan RPM (D-261).
 
-**Penyusun draf jadwal (P5-03j, D-262).** "Susun draf jadwal" untuk satu kelas atau semua kelas, dari kerangka hari, alokasi, penugasan, dan slot yang dikunci. Batas keras tidak bisa diubah; preferensi lunak berupa sakelar nyala/mati per sekolah (tanpa bobot angka). Hasilnya selalu draf dengan layar perbandingan. Pekerjaan ini berjalan di antrean `default`.
+**Penyusun draf jadwal (P5-03j, D-262).** Dibangun di `/jadwal/susun-draf`: "Susun draf jadwal" untuk satu kelas atau semua kelas, dari kerangka hari, alokasi, penugasan, dan slot yang dikunci. Batas keras tidak bisa diubah; preferensi lunak berupa sakelar nyala/mati per sekolah (tanpa bobot angka). Hasilnya selalu draf dengan layar perbandingan. Pekerjaan ini berjalan di antrean `default`.
 
-**Data:** `academic_years`, `classes`, `teaching_assignments`, `timetable_slots`, `school_subjects`, `region_subjects`; nanti `calendars`, `calendar_events`, `national_holidays`.
+**Data:** `academic_years`, `classes`, `teaching_assignments`, `timetable_slots` (dengan `is_locked`), `timetable_settings`, `timetable_drafts`, `school_subjects`, `region_subjects`, `calendars`, `calendar_events`, `national_holidays`. Berkas data kalender: `docs/data/calendar/` (draf sampai disetujui Tim Validasi).
 
 **Status:** **Dibangun** (P5-03d, P5-03e, P5-03h): tahun ajaran, kelas, salin kelas, penugasan mengajar, jadwal dengan semua pemeriksaannya. **Didesain:** halaman sakelar mapel sekolah dan peringatan muatan lokal, kalender (P5-03i), penyusun draf jadwal (P5-03j). P5-03 dibuka lagi untuk P5-03i dan P5-03j (D-252); keduanya datang sebelum atau bersamaan dengan P5-04.
 
@@ -1089,11 +1089,10 @@ Ringkasan diagram: setelah P5-01 dan P5-03a…h, jalurnya P5-03i lalu P5-03j; da
 
 ### 11.3 Yang dibangun berikutnya
 
-1. **P5-03i, kalender,** dimulai dengan pengecekan SKB secara daring (D-254) dan kalender rujukan Jawa Tengah versi 6 hari (D-323). P5-04 membutuhkan hari efektif untuk Prota, Promes, dan penjadwalan RPM (D-252).
-2. **Minimum versi D-355,** sebelum P5-04: kolom versi di `curriculum_versions`, resolver profil kebijakan sebagai pengganti `config/curriculum.php` `allocation_versions` (perilaku sama), dan data Profil Jenjang. RPM pertama sudah harus menyimpan set aturannya.
-3. **P5-03j,** draf jadwal, paralel dengan P5-04.
-4. **P5-04, inti konten,** dengan keputusan tambahan dari P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) dan bagian konsol D-315 dan D-316, ditambah panel Dasar Kebijakan dan aturan Cek Keselarasan pertama pada RPM (D-358).
-5. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: P4-22 (taksonomi), P4-23 (peraturan yang belum ada), kurasi kurikulum P4-29…P4-31, serta tinjauan Tim Validasi atas katalog dan data peraturan.
+Selesai pada 2026-11-11: P5-03i (kalender), P5-03j (draf jadwal), minimum versi D-355 dan data Profil Jenjang (P5-03k, P5-03l), P4-22 (benih taksonomi, dalam tinjauan Tim Validasi), dan P4-23 (enam dari sepuluh peraturan yang belum ada; empat menunggu owner, P4-32).
+
+1. **P5-04, inti konten,** dengan keputusan tambahan dari P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) dan bagian konsol D-315 dan D-316, ditambah panel Dasar Kebijakan dan aturan Cek Keselarasan pertama pada RPM (D-358).
+2. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: kurasi kurikulum P4-29…P4-31, empat PDF peraturan yang belum ada (P4-32), serta tinjauan Tim Validasi atas katalog, taksonomi, kalender, dan data peraturan. Pertanyaan owner yang masih terbuka dikumpulkan di `docs/drafts/open-questions.md`.
 
 Tambahan per slice dari peningkatan aplikasi lama tercantum di `legacy-upgrade-01.md` §5: P5-05 mendapat D-293, D-294, D-296; P5-07 mendapat D-263…D-271 (sisi guru), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 mendapat D-286…D-292, D-295, D-301, D-304; P5-09 mendapat tampilan portal serta D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; konsol mendapat D-314 dan D-317…D-320.
 

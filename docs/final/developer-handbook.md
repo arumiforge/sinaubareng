@@ -1,7 +1,7 @@
 # SIGRAK Developer Handbook
 
 - **Status:** final (owner request 2026-11-09, D-361)
-- **Last updated:** 2026-11-10
+- **Last updated:** 2026-11-11 (P5-03i…l built: calendar, draft timetable, versioning columns, Profil Jenjang)
 - **Audience:** every new developer or agent who joins SIGRAK, before they read any other document. The Indonesian PDF of this handbook, `docs/pdf/developer-handbook.pdf`, is the one complete reading for a new developer (D-361).
 - **Indonesian PDF:** [`docs/pdf/developer-handbook.pdf`](../pdf/developer-handbook.pdf), translated in [`docs/pdf/src/developer-handbook.md`](../pdf/src/developer-handbook.md)
 
@@ -230,9 +230,9 @@ Rules change every year, so they are data with effective dates, not code constan
 - **Documents remember their rule set.** An RPM, an assessment plan, or a rapor stores the rule-set codes it was made under, the same way a document stores its template version. A rule change never silently changes an existing document.
 - **Rules follow the school year.** A rule published mid-year applies from the next school year unless the regulation itself sets an earlier date. Example: Bahasa Inggris becomes compulsory in SD/MI from 2027/2028, so the 2027/2028 structure rule set marks it mandatory while 2026/2027 still lists it as optional.
 
-**What exists today (Built):** `curriculum_versions` with `code`, `name`, `status` (draft, active, retired), `meta`, and `imported_at`; the version in force is a config pointer, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
+**What exists today (Built):** `curriculum_versions` with `code`, `name`, `status` (draft, active, retired), `meta`, `imported_at`, and since P5-03k `effective_on`, `applies_from_school_year`, and `supersedes_id`. The version in force comes from `PolicyProfileResolver` reading the Profil Jenjang files in `docs/data/profiles/` (D-378); before P5-03k it was a config pointer, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
 
-**The minimum before P5-04 (D-355):** `curriculum_versions` gets `effective_on`, `applies_from_school_year`, and `supersedes_id`; a policy-profile resolver replaces the `allocation_versions` pointer with no change in behaviour; and the Profil Jenjang data exists. The reason: the first RPM ever made must already record its rule set. The full `regulations` and `rules` tables, a console for every domain, and *Kabar Regulasi* (a notice to schools when a new rule set is published, with the affected documents) come with P5-09 or their own slice.
+**The minimum before P5-04 (D-355), done in P5-03k and P5-03l:** `curriculum_versions` gets `effective_on`, `applies_from_school_year`, and `supersedes_id`; a policy-profile resolver replaces the `allocation_versions` pointer with no change in behaviour; and the Profil Jenjang data exists. The reason: the first RPM ever made must already record its rule set. The full `regulations` and `rules` tables, a console for every domain, and *Kabar Regulasi* (a notice to schools when a new rule set is published, with the affected documents) come with P5-09 or their own slice.
 
 The workflow for a new regulation is: watch the official channels (JDIH sites, peraturan.go.id, the curriculum and Kemenag sites); capture the PDF in `docs/sources/` with SHA-256 and a verification level; draft the rule set with page references (Kurator Kurikulum); review by Tim Validasi (D-113); publish through the curriculum console with compare, impact report, and roll back (D-317); tell schools through Kabar Regulasi.
 
@@ -367,7 +367,7 @@ Portals: principal and pengawas see the same data, validate, supervise
 - A teacher clash with another class is refused, naming the class and time. Rows of one class may not overlap, except that the six religion subjects may run in parallel.
 - A subject's weekly JP must equal its allocation. Over the allocation is refused; under is shown, and the timetable is "complete" only when everything matches. 1 JP = 35 minutes.
 
-**Calendar (Kaldik).** Designed in detail in P5-03i (D-252…D-261, D-323):
+**Calendar (Kaldik).** Built in P5-03i (D-252…D-261, D-323, D-377), at `/kalender` for every role, with console pages Libur nasional and Kalender wilayah:
 
 - `national_holidays` is one central read-only table (national holidays and cuti bersama, with decree and a provisional flag), merged into every calendar view and updated by Tim SIGRAK each year after the SKB; `php artisan calendar:import-holidays <file>` loads it, after an online check of the official SKB and Tim Validasi sign-off (D-253, D-254). Cuti bersama counts as a holiday by default (D-255).
 - Tim SIGRAK builds region reference calendars. For Kudus, Pati, and Jepara this is one Jawa Tengah calendar from the provincial guide's 6-day dates (D-257, D-323). The operator copies it with "Salin dari kalender wilayah", adds school events, and later sees "Terapkan perubahan wilayah" when the region calendar changes (D-256).
@@ -375,9 +375,9 @@ Portals: principal and pengawas see the same data, validate, supervise
 - `app/Calendar/EffectiveDays` counts effective days and weeks per class. Acceptance check: a 6-day SD/MI in Jawa Tengah 2026/2027 has 254 effective days (134 + 120) (D-259, D-323).
 - `app/Calendar/ConflictChecker` gives one set of clash messages (D-260); an impact preview ("12 pertemuan RPM di 6 kelas akan bergeser") appears before a change moves RPM meetings (D-261).
 
-**Draft timetable generator (P5-03j, D-262).** "Susun draf jadwal" for one class or all, from the day frame, allocations, assignments, and locked slots. Hard limits cannot be changed; soft preferences are on/off switches per school (no numeric weights). The output is always a draft with a comparison screen. It runs on the `default` queue.
+**Draft timetable generator (P5-03j, D-262).** Built at `/jadwal/susun-draf`: "Susun draf jadwal" for one class or all, from the day frame, allocations, assignments, and locked slots. Hard limits cannot be changed; soft preferences are on/off switches per school (no numeric weights). The output is always a draft with a comparison screen. It runs on the `default` queue.
 
-**Data:** `academic_years`, `classes`, `teaching_assignments`, `timetable_slots`, `school_subjects`, `region_subjects`; later `calendars`, `calendar_events`, `national_holidays`.
+**Data:** `academic_years`, `classes`, `teaching_assignments`, `timetable_slots` (with `is_locked`), `timetable_settings`, `timetable_drafts`, `school_subjects`, `region_subjects`, `calendars`, `calendar_events`, `national_holidays`. Calendar data files: `docs/data/calendar/` (draft until Tim Validasi signs off).
 
 **Status:** **Built** (P5-03d, P5-03e, P5-03h): academic years, classes, copy classes, teaching assignments, the timetable with all its checks. **Designed:** the school-subject switches page and muatan lokal warning, the calendar (P5-03i), the draft timetable generator (P5-03j). P5-03 was reopened for P5-03i and P5-03j (D-252); both come before or alongside P5-04.
 
@@ -1073,11 +1073,10 @@ P5-02 runs in parallel with all of it.
 
 ### 11.3 What to build next
 
-1. **P5-03i, the calendar,** starting with the online SKB check (D-254) and the Jawa Tengah 6-day reference calendar (D-323). P5-04 needs effective days for Prota, Promes, and RPM scheduling (D-252).
-2. **The D-355 versioning minimum,** before P5-04: version columns on `curriculum_versions`, a policy-profile resolver in place of `config/curriculum.php` `allocation_versions` (same behaviour), and the Profil Jenjang data. The first RPM must already store its rule set.
-3. **P5-03j,** the draft timetable, in parallel with P5-04.
-4. **P5-04, the content core,** with the decisions added by P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) and the console parts D-315 and D-316, plus the Dasar Kebijakan panel and the first Cek Keselarasan rules on the RPM (D-358).
-5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), the curriculum curation P4-29…P4-31, and Tim Validasi review of the catalogs and regulation data.
+Done on 2026-11-11: P5-03i (calendar), P5-03j (draft timetable), the D-355 versioning minimum and the Profil Jenjang data (P5-03k, P5-03l), P4-22 (taxonomy seed, in Tim Validasi review), and P4-23 (six of the ten missing regulations; four wait for the owner, P4-32).
+
+1. **P5-04, the content core,** with the decisions added by P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) and the console parts D-315 and D-316, plus the Dasar Kebijakan panel and the first Cek Keselarasan rules on the RPM (D-358).
+2. In parallel, data and doc work that unblocks later slices: the curriculum curation P4-29…P4-31, the four missing regulation PDFs (P4-32), and Tim Validasi review of the catalogs, taxonomy, calendar, and regulation data. Open owner questions are collected in `docs/drafts/open-questions.md`.
 
 Additions by slice from the legacy upgrade are listed in `legacy-upgrade-01.md` §5: P5-05 gets D-293, D-294, D-296; P5-07 gets D-263…D-271 (teacher side), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 gets D-286…D-292, D-295, D-301, D-304; P5-09 gets the portal views and D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; the console gets D-314 and D-317…D-320.
 

@@ -1,7 +1,7 @@
 # P4-23 — Get and extract missing regulations
 
 - **Phase:** P4
-- **Status:** review
+- **Status:** done (merged 2026-11-11, PR #73; the four regulations not reached moved to P4-32)
 - **Owner:** `p4/p4-23-missing-regulations`
 - **Depends on:** —
 - **Can run in parallel with:** P4-22 (taxonomy and regulation registry), P5-03i/j, docs consolidation

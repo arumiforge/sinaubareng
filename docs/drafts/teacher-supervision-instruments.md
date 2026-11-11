@@ -23,7 +23,7 @@ This draft maps **every instrument a principal uses for SD/MI teachers**, then g
 | Kepmendikdasmen 271/O/2025 (Pedoman Pengelolaan Kinerja PTK) | Cycle: pra-perencanaan → perencanaan → pelaksanaan, pemantauan, pembinaan → penilaian → tindak lanjut. The principal is the teacher's PPK. Schools with more than 10 teachers may form a tim kinerja | Salinan read; rubric wording for 2026 not confirmed |
 | BAN-PDM IA 2024 (guide version 2025), Komponen 1 Kinerja Pendidik | Four items: social-emotional support, safe and orderly class, effective and meaningful learning, faith/nationhood/reasoning/character. 4 levels, triangulated by observation, interview, and documents. Judges **quality of service, not document completeness** | Guide text |
 | Kemenag Panduan Pembelajaran dan Asesmen madrasah (B-572/Dt.I.I/PP.00/11/2025), KMA 1503/2025, KBC (6077/2025) | Lesson plan has a **minimum** and a **complete** version. The minimum Identifikasi includes the DPL, **Topik Panca Cinta**, and KBC integration material. Principal reflection is part of the kepala madrasah's supervision duty; self-reflection is framed as *muhasabah* | Guide text |
-| Permendikdasmen 6/2026 (Budaya Sekolah Aman dan Nyaman) | Class agreements, positive discipline, safe class (used in the wali kelas instrument) | Regulation; class-level duties not read in full |
+| Permendikdasmen 6/2026 (Budaya Sekolah Aman dan Nyaman) | Class agreements, positive discipline, safe class (used in the wali kelas instrument) | Regulation. Class duties are in Pasal 18(3); in SD the *guru kelas* holds them, and "wali kelas" is named only for SMP/SMA/SMK (read in P4-23; naming question in `open-questions.md`) |
 
 Terms used throughout the new instruments: **murid** (not peserta didik/siswa, D-210), **Dimensi Profil Lulusan (DPL)** with its 8 dimensions (keimanan dan ketakwaan, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, komunikasi) instead of Profil Pelajar Pancasila and HOTS/4C, and **perencanaan pembelajaran (RPM/RPP/modul ajar)**. The guide itself still says "RPP atau modul ajar", and SIGRAK's template is the RPM, so the instrument accepts any format.
 
@@ -388,4 +388,4 @@ All accessed 2026-11-08.
 - Permendikdasmen 6/2026: https://peraturan.go.id/files/Permendikdasmen-no-6-tahun-2026.pdf
 - Ruang GTK 2026 observation (secondary): https://www.dealearningcenter.id/cara-mengisi-e-kinerja-guru-2026-ruang-gtk/
 
-Not verified: the 2026 Ruang GTK wording of the 8 focuses (the 2023 wording is used), the full text of Kepmendikdasmen 126/P/2025 on supervision, class-level duties in Permendikdasmen 6/2026, and any 2025–2026 Kemenag teacher-observation instrument (none found).
+Not verified: the 2026 Ruang GTK wording of the 8 focuses (the 2023 wording is used), the full text of Kepmendikdasmen 126/P/2025 on supervision, and any 2025–2026 Kemenag teacher-observation instrument (none found).
