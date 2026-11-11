@@ -15,7 +15,7 @@
     ],
     "created_on": "2026-11-10",
     "conventions": "docs/data/taxonomy/README.md",
-    "pending_p4_23": "Entries with pending_p4_23: true are the regulations P4-23 could not fetch; they get source_file and sha256 once the PDF is in docs/sources/."
+    "pending_p4_23": "Entries with pending_p4_23: true are regulations whose PDF is not yet in docs/sources/. Since P4-32 (2026-11-11) every entry is false."
   },
   "regulations": [
     {
@@ -111,17 +111,20 @@
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2024,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2024-03-25",
+      "promulgated_on": "2024-03-26",
+      "effective_on": "2024-03-26",
       "status": "amended",
-      "source_file": null,
-      "sha256": null,
-      "source_url": "https://pasal.id/peraturan/permen/permendikbudristek-no-12-tahun-2024",
-      "verification": "mirror",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Base text not in the repo; only the 13/2025 changes are. Berita Negara 2024 Nomor 172. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
+      "source_file": "docs/sources/Permendikbudristek_No_12_Tahun_2024_Kurikulum.pdf",
+      "sha256": "fb2f3ee0fe3af14a348c0c3c274095d6aaeab0d3896188cb0c507e8df1617c3f",
+      "source_url": null,
+      "verification": "official_copy",
+      "data_files": [
+        "docs/data/regulations/curriculum-base-permendikbudristek-12-2024.json",
+        "docs/data/regulations/curriculum-structure-permendikdasmen-13-2025.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Base text; 13/2025 replaced Pasal 3, 6, 16-19, 22, 32 and Lampiran I-III and inserted Pasal 32A. Still in force from the base text: CP set centrally (Pasal 11), SD content as subjects (Pasal 13), KSP minimum content and approval by the principal (Pasal 29-30), Kurikulum 2013 allowed until 2025/2026 (Pasal 31), Bahasa Inggris in SD/MI elective until 2026/2027 and compulsory from 2027/2028 (Pasal 33). Berita Negara 2024 Nomor 172. Official copy: the e-signed promulgated PDF supplied by the owner in P4-32 (download URL not given)."
     },
     {
       "code": "PERMENDIKDASMEN-13-2025",
@@ -202,16 +205,18 @@
       "layer": "L1",
       "year": 2026,
       "issued_on": "2026-01-02",
-      "promulgated_on": null,
+      "promulgated_on": "2026-01-05",
       "effective_on": "2026-01-05",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Permendikdasmen_No_1_Tahun_2026_Standar_Proses.pdf",
+      "sha256": "4438bf42fe4c5624cea5514284fb08a68fbd44b91860b82fff102ebbd452b857",
       "source_url": "https://www.peraturan.go.id/files/Permendikdasmen-no-1-tahun-2026.pdf",
-      "verification": "mirror",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Pasal 9 unreadable on the mirror. Revokes Permendikbudristek 16/2022. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
+      "verification": "official_copy",
+      "data_files": [
+        "docs/data/regulations/process-standard-permendikdasmen-1-2026.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Planning document minimum: tujuan, langkah, asesmen (Pasal 5); Pasal 9 is the learning atmosphere and the teacher roles keteladanan, pendampingan, fasilitasi. Process review: teacher self-reflection required; peers, principal and murid optional, each at least once a semester when done (Pasal 15-19). Berita Negara 2026 Nomor 1. Revokes Permendikbudristek 16/2022 and Permendiknas 3/2008. Official copy: the e-signed promulgated PDF supplied by the owner in P4-32 (same file name as on peraturan.go.id; download URL not given)."
     },
     {
       "code": "PERMENDIKBUDRISTEK-16-2022",
@@ -328,43 +333,47 @@
       "code": "KEPMENDIKDASMEN-17-2026",
       "kind": "kepmen",
       "number": "17 Tahun 2026",
-      "title": "Pelaksanaan Budaya Sekolah Aman dan Nyaman",
+      "title": "Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman",
       "issuer": "Menteri Pendidikan Dasar dan Menengah",
       "ministry": "kemendikdasmen",
       "layer": "L2",
       "year": 2026,
-      "issued_on": null,
+      "issued_on": "2026-02-06",
       "promulgated_on": null,
-      "effective_on": null,
+      "effective_on": "2026-02-06",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Kepmendikdasmen_No_17_Tahun_2026_Pedoman_Penyelenggaraan_Budaya_Sekolah_Aman_dan_Nyaman.pdf",
+      "sha256": "e5e71f11b49bb27997e964066110488ef68345c67c88b6931950aa60e1f0aab1",
       "source_url": null,
-      "verification": "secondary",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Implements Permendikdasmen 6/2026. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
+      "verification": "mirror",
+      "data_files": [
+        "docs/data/regulations/safe-school-culture-guide-kepmendikdasmen-17-2026.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Implements Permendikdasmen 6/2026 (Pasal 27). For PAUD and SD the class role is \"Guru Kelas atau Wali Kelas\" (Tabel 3.5, PDF p. 33); kesepakatan kelas has three minimum contents; tata tertib, kode etik and POS are reviewed at least once a year. In force on setting. Mirror: the JDIH salinan (certified by the Biro Hukum) re-saved by a non-government site with hidden watermark text, supplied by the owner in P4-32; replace with the JDIH copy and re-hash when it can be fetched."
     },
     {
       "code": "PERMENDIKDASMEN-9-2026",
       "kind": "permen",
       "number": "9 Tahun 2026",
-      "title": "Asesmen Nasional",
+      "title": "Perubahan atas Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 17 Tahun 2021 tentang Asesmen Nasional",
       "issuer": "Menteri Pendidikan Dasar dan Menengah",
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2026,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2026-02-11",
+      "promulgated_on": "2026-02-12",
+      "effective_on": "2026-02-12",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Permendikdasmen_No_9_Tahun_2026_Perubahan_Permendikbudristek_17_2021_Asesmen_Nasional.pdf",
+      "sha256": "737f5f07af7893d77fb33ab75e36798ff507d43a0eadd1271ea906221be4f716",
       "source_url": "https://peraturan.bpk.go.id/Details/345735",
       "verification": "official_copy",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Official PDF linked, not yet in docs/sources/. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
+      "data_files": [
+        "docs/data/regulations/national-assessment-permendikdasmen-9-2026.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Amends Permendikbudristek 17/2021 (Pasal 3, 5, 6, 9A, 12; the base text is not in the repo). AN participants: murid in the final grade (SD/MI kelas VI), every pendidik, and the principal (Pasal 5 ayat 3); survei karakter on the 8 dimensi profil lulusan (Pasal 3); literacy and numeracy may be folded into academic-achievement measurement (Pasal 9A). Berita Negara 2026 Nomor 98. Official copy: the e-signed promulgated PDF supplied by the owner in P4-32 (download URL not given)."
     },
     {
       "code": "PERMENDIKDASMEN-9-2025",
@@ -874,7 +883,7 @@
       "from": "PERMENDIKDASMEN-1-2026",
       "to": "PERMENDIKBUDRISTEK-16-2022",
       "type": "revokes",
-      "articles": null,
+      "articles": "Pasal 20 huruf b",
       "note": null
     },
     {
@@ -888,8 +897,8 @@
       "from": "KEPMENDIKDASMEN-17-2026",
       "to": "PERMENDIKDASMEN-6-2026",
       "type": "implements",
-      "articles": null,
-      "note": "Secondary source; check after P4-23."
+      "articles": "Pasal 27",
+      "note": "Konsiderans huruf b of the decree (checked in P4-32)."
     },
     {
       "from": "KEPMENDIKDASMEN-126-P-2025",
@@ -908,9 +917,9 @@
     {
       "from": "KEPMENDIKDASMEN-56-2026",
       "to": "PERMENDIKDASMEN-9-2026",
-      "type": "references",
-      "articles": null,
-      "note": "Guideline for TKA together with AN; change to implements once the legal basis is checked."
+      "type": "implements",
+      "articles": "Pasal 12",
+      "note": "Kepmendikdasmen 56/2026 cites Pasal 12 of 9/2026 in its konsiderans (checked in P4-32)."
     },
     {
       "from": "KEPMENDIKDASMEN-56-2026",
@@ -1028,7 +1037,7 @@
       "from": "PERMENDIKDASMEN-1-2026",
       "to": "PP-57-2021",
       "type": "implements",
-      "articles": null,
+      "articles": "Pasal 15",
       "note": null
     },
     {
@@ -1049,7 +1058,7 @@
       "from": "PERMENDIKBUDRISTEK-12-2024",
       "to": "PP-57-2021",
       "type": "implements",
-      "articles": null,
+      "articles": "Pasal 37 ayat (1)",
       "note": null
     }
   ]

@@ -57,7 +57,7 @@ Codes: `<KIND-OR-ISSUER>-<NUMBER>-<YEAR>` in uppercase, `/` and `.` become `-`: 
 
 `regulation_relations`: `{from, to, type, articles, note}` with type `amends`, `revokes`, `implements`, or `references`. Where the legal basis is not yet checked, the relation is `references` with a note.
 
-Entries with `pending_p4_23: true` (Permendikbudristek 12/2024 and 21/2022, Permendikdasmen 1/2026, 10/2025, 12/2025, 26/2025, 6/2026, 9/2026, Kepmendikdasmen 17/2026, Kepka BSKAP 046/H/KR/2025) have `source_file` and `sha256` null. After the P4-23 PR merges, fill them, update `verification`, titles, and dates from the official copy, and set the flag to false. The test checks every non-null `sha256` against its file.
+`pending_p4_23: true` marks a regulation whose PDF is not yet in `docs/sources/` (`source_file` and `sha256` null). P4-23 filled six such entries and P4-32 the last four (Permendikdasmen 1/2026 and 9/2026, Kepmendikdasmen 17/2026, base Permendikbudristek 12/2024), so every entry is now `false`. The test checks every non-null `sha256` against its file.
 
 ## Open points for Tim Validasi
 

@@ -1,0 +1,376 @@
+{
+  "dataset": "curriculum_base",
+  "version_code": "KURIKULUM-PERMENDIKBUDRISTEK-12-2024",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Articles of the base curriculum regulation that Permendikdasmen 13/2025 did not amend and that bind SD/MI: phases and grades, who sets CP, CP for special needs, SD content as subjects, yearly load, ekstrakurikuler, responsibilities of the ministry, Pemda and school, KSP minimum content and approval, transition to the curriculum (Pasal 31), and Bahasa Inggris in SD/MI (Pasal 33). Amended articles and the three annexes are only listed, with a pointer to the 13/2025 extract.",
+  "source": {
+    "file": "docs/sources/Permendikbudristek_No_12_Tahun_2024_Kurikulum.pdf",
+    "sha256": "fb2f3ee0fe3af14a348c0c3c274095d6aaeab0d3896188cb0c507e8df1617c3f",
+    "regulation_code": "PERMENDIKBUDRISTEK-12-2024",
+    "title": "Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "12 Tahun 2024",
+    "issued_by": "Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia (Nadiem Anwar Makarim)",
+    "issued_on": "2024-03-25",
+    "promulgated_on": "2024-03-26",
+    "effective_on": "2024-03-26",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2024 Nomor 172",
+    "amended_by": "Permendikdasmen 13/2025 (PERMENDIKDASMEN-13-2025), see curriculum-structure-permendikdasmen-13-2025.json",
+    "implements": "Pasal 37 ayat (1) Peraturan Pemerintah Nomor 57 Tahun 2021 sebagaimana telah diubah dengan PP 4/2022 (konsiderans huruf c, p. 1)",
+    "received_as": "permendikbudristek-no-12-tahun-2024.pdf (owner upload, 2026-11-11)",
+    "received_on": "2026-11-11",
+    "copy_type": "Promulgated electronic original: signed with electronic certificates by the Minister (26 Mar 2024), two Kemendikbudristek signatures (Alpius Sarumaha), and the Dirjen Peraturan Perundang-undangan Kemenkumham Asep N. Mulyana (1 Apr 2024); all four signatures validate (pdfsig), the certificates have since expired. The promulgation date and Berita Negara number are stamped as images on p. 14. No \"Salinan sesuai dengan aslinya\" note.",
+    "verification": "official_copy",
+    "verification_note": "Supplied by the owner from an Indonesian connection (task P4-32); the download URL was not given. Treated as an official copy because it is the e-signed promulgated text with the Berita Negara number.",
+    "pages_total": 71,
+    "pages_note": "Body: PDF 1-14 = printed 1-14. Lampiran I starts at PDF 15; Lampiran printed page = PDF page minus 14 (PDF 68 = printed -54-). The text layer of p. 1 holds a hidden leftover heading line (\"MENTERI ... / ANCANGAN\") that is not visible on the page image."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF from Word), cut into verbatim spans per Pasal by script; pp. 1 and 14 checked on the page image.",
+    "checked_against_images": [
+      1,
+      14
+    ],
+    "skipped": [
+      "Konsiderans and Mengingat (pp. 1-2); legal basis kept in source.implements.",
+      "Pasal 3, 6, 16, 17, 18, 19, 22, 32 (pp. 3-8, 11): replaced by Permendikdasmen 13/2025; listed in amended_articles only, text in curriculum-structure-permendikdasmen-13-2025.json.",
+      "Lampiran I Kerangka Dasar (pp. 15-17), Lampiran II Struktur Kurikulum (pp. 18-67), Lampiran III Pengembangan Ekstrakurikuler (pp. 68-71): all replaced by the 13/2025 annexes.",
+      "Pasal 12 (PAUD content) and Pasal 14 (SMK/MAK subjects) (p. 6).",
+      "Pasal 34 letters that revoke PAUD, SMP, SMA, SMK or SMALB rules (pp. 11-13); the SD-relevant letters are named in revocation.summary."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace cleanup only).",
+      "pages are PDF page numbers.",
+      "summary fields are short English notes for developers, not source text."
+    ]
+  },
+  "amended_articles": {
+    "by": "Permendikdasmen 13/2025 (PERMENDIKDASMEN-13-2025), see curriculum-structure-permendikdasmen-13-2025.json",
+    "replaced": [
+      "Pasal 3",
+      "Pasal 6",
+      "Pasal 16",
+      "Pasal 17",
+      "Pasal 18",
+      "Pasal 19",
+      "Pasal 22",
+      "Pasal 32",
+      "Lampiran I",
+      "Lampiran II",
+      "Lampiran III"
+    ],
+    "inserted": [
+      "Pasal 32A"
+    ],
+    "still_in_force_from_this_text": [
+      "Pasal 1",
+      "Pasal 2",
+      "Pasal 4",
+      "Pasal 5",
+      "Pasal 7",
+      "Pasal 8",
+      "Pasal 9",
+      "Pasal 10",
+      "Pasal 11",
+      "Pasal 12",
+      "Pasal 13",
+      "Pasal 14",
+      "Pasal 15",
+      "Pasal 20",
+      "Pasal 21",
+      "Pasal 23",
+      "Pasal 24",
+      "Pasal 25",
+      "Pasal 26",
+      "Pasal 27",
+      "Pasal 28",
+      "Pasal 29",
+      "Pasal 30",
+      "Pasal 31",
+      "Pasal 33",
+      "Pasal 34",
+      "Pasal 35"
+    ],
+    "summary": "Taken from the 13/2025 extract (amended_articles). Every article not listed there keeps its 2024 wording."
+  },
+  "definitions": {
+    "article": "Pasal 1",
+    "text": "Pasal 1 Dalam Peraturan Menteri ini yang dimaksud dengan: 1. Kurikulum adalah seperangkat rencana dan pengaturan mengenai tujuan, isi, dan bahan pelajaran serta cara yang digunakan sebagai pedoman penyelenggaraan kegiatan pembelajaran untuk mencapai tujuan pendidikan tertentu. 2. Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah yang selanjutnya disebut Kurikulum Merdeka adalah kurikulum yang memberi fleksibilitas dan berfokus pada materi esensial untuk mengembangkan kompetensi peserta didik sebagai pelajar sepanjang hayat yang berkarakter Pancasila. 3. Peserta Didik adalah anggota masyarakat yang berusaha mengembangkan potensi diri melalui proses pembelajaran yang tersedia pada jalur, jenjang, dan jenis pendidikan tertentu. 4. Pendidik adalah tenaga kependidikan yang berkualifikasi sebagai guru, dosen, konselor, pamong belajar, widyaiswara, tutor, instruktur, fasilitator, dan sebutan lain yang sesuai dengan kekhususannya, serta berpartisipasi dalam menyelenggarakan pendidikan. 5. Satuan Pendidikan adalah kelompok layanan pendidikan yang menyelenggarakan pendidikan pada jalur formal, nonformal, dan informal pada setiap jenjang dan jenis pendidikan. 6. Intrakurikuler adalah kegiatan pembelajaran untuk mencapai tujuan belajar sesuai jadwal dan beban belajar pada struktur Kurikulum. 7. Kokurikuler adalah kegiatan pembelajaran yang dilaksanakan untuk penguatan, pendalaman, dan/atau pengayaan kegiatan Intrakurikuler dalam rangka pengembangan karakter dan kompetensi Peserta Didik. 8. Ekstrakurikuler adalah kegiatan pengembangan karakter dalam rangka perluasan potensi, bakat, minat, kemampuan, kepribadian, kerja sama, dan kemandirian Peserta Didik secara optimal yang dilakukan dengan bimbingan dan pengawasan Satuan Pendidikan. 9. Capaian Pembelajaran adalah kompetensi pembelajaran yang harus dicapai Peserta Didik di akhir setiap fase. 10. Fase adalah tahapan perkembangan belajar Peserta Didik. 11. Penilaian adalah proses pengumpulan dan pengolahan informasi untuk mengetahui kebutuhan belajar dan capaian perkembangan atau hasil belajar Peserta Didik. 12. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang pendidikan. 13. Kementerian adalah kementerian yang menyelenggarakan urusan pemerintahan di bidang pendidikan. 14. Pemerintah Daerah adalah kepala daerah sebagai unsur penyelenggara pemerintahan daerah yang memimpin pelaksanaan urusan pemerintahan yang menjadi kewenangan daerah otonom.",
+    "pages": [
+      2,
+      3
+    ],
+    "summary": "Definitions of Kurikulum, Kurikulum Merdeka, Peserta Didik, Pendidik, Intrakurikuler, Kokurikuler, Ekstrakurikuler, Capaian Pembelajaran (\"di akhir setiap fase\"), Fase, Penilaian. 13/2025 did not amend Pasal 1, so the name \"Kurikulum Merdeka\" is still the defined term here."
+  },
+  "scope": {
+    "article": "Pasal 2",
+    "text": "Pasal 2 Kurikulum Merdeka mencakup: a. kerangka dasar Kurikulum; dan b. struktur Kurikulum.",
+    "pages": [
+      3
+    ]
+  },
+  "structure_general": [
+    {
+      "article": "Pasal 5",
+      "text": "Pasal 5 (1) Struktur Kurikulum sebagaimana dimaksud dalam Pasal 2 huruf b merupakan pengorganisasian atas kompetensi, muatan pembelajaran, dan beban belajar. (2) Kompetensi sebagaimana dimaksud pada ayat (1) merupakan kesatuan sikap, keterampilan, dan pengetahuan yang menunjukkan kemampuan Peserta Didik sebagai hasil dari proses pembelajaran. (3) Muatan pembelajaran sebagaimana dimaksud pada ayat (1) merupakan susunan materi atau isi yang disampaikan pada proses pembelajaran, mencakup sikap, keterampilan, dan pengetahuan yang diharapkan dikuasai oleh Peserta Didik sesuai dengan kebutuhan belajar. (4) Beban belajar sebagaimana dimaksud pada ayat (1) merupakan alokasi waktu pembelajaran untuk mencapai kompetensi Peserta Didik.",
+      "pages": [
+        4
+      ],
+      "summary": "Structure organises competence, content, and load; load is the time allocation."
+    },
+    {
+      "article": "Pasal 7",
+      "text": "Pasal 7 (1) Struktur Kurikulum sebagaimana dimaksud dalam Pasal 6 memuat: a. Intrakurikuler; dan b. Kokurikuler. (2) Selain Intrakurikuler dan Kokurikuler sebagaimana dimaksud pada ayat (1), struktur Kurikulum dapat memuat Ekstrakurikuler sesuai dengan karakteristik Satuan Pendidikan.",
+      "pages": [
+        4,
+        5
+      ],
+      "summary": "Every structure has intrakurikuler and kokurikuler; ekstrakurikuler may be added."
+    },
+    {
+      "article": "Pasal 8",
+      "text": "Pasal 8 Intrakurikuler sebagaimana dimaksud dalam Pasal 7 ayat (1) huruf a memuat: a. kompetensi; b. muatan pembelajaran; dan c. beban belajar.",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "phases_and_cp": {
+    "phases": {
+      "article": "Pasal 9",
+      "text": "Pasal 9 (1) Kompetensi sebagaimana dimaksud dalam Pasal 8 huruf a dirumuskan dalam bentuk Capaian Pembelajaran. (2) Capaian Pembelajaran sebagaimana dimaksud pada ayat (1) terdiri atas: a. Capaian Pembelajaran pada Fase fondasi pada pendidikan anak usia dini; b. Capaian Pembelajaran pada Fase A untuk kelas I sampai dengan kelas II pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; c. Capaian Pembelajaran pada Fase B untuk kelas III sampai dengan kelas IV pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; d. Capaian Pembelajaran pada Fase C untuk kelas V sampai dengan kelas VI pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; e. Capaian Pembelajaran pada Fase D untuk kelas VII sampai dengan kelas IX pada sekolah menengah pertama, madrasah tsanawiyah, program paket B, atau bentuk lain yang sederajat; f. Capaian Pembelajaran pada Fase E untuk kelas X pada sekolah menengah atas, sekolah menengah kejuruan, madrasah aliyah, madrasah aliyah kejuruan, program paket C, atau bentuk lain yang sederajat; dan g. Capaian Pembelajaran pada Fase F untuk: 1. kelas XI sampai dengan kelas XII pada sekolah menengah atas, madrasah aliyah, program paket C, atau bentuk lain yang sederajat dan sekolah menengah kejuruan atau madrasah aliyah kejuruan program 3 (tiga) tahun; dan 2. kelas XI sampai dengan kelas XIII pada sekolah menengah kejuruan atau madrasah aliyah kejuruan program 4 (empat) Tahun. (3) Capaian Pembelajaran sebagaimana dimaksud pada ayat (2) disusun untuk mencapai kompetensi Peserta Didik.",
+      "pages": [
+        5
+      ],
+      "summary": "Competence is stated as CP per phase. SD/MI: Fase A = kelas I-II, Fase B = kelas III-IV, Fase C = kelas V-VI.",
+      "sd_phases": [
+        {
+          "phase": "A",
+          "grades": [
+            1,
+            2
+          ]
+        },
+        {
+          "phase": "B",
+          "grades": [
+            3,
+            4
+          ]
+        },
+        {
+          "phase": "C",
+          "grades": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    "special_needs_cp": {
+      "article": "Pasal 10",
+      "text": "Pasal 10 Capaian Pembelajaran bagi Peserta Didik berkebutuhan khusus disusun dengan ketentuan: a. Peserta Didik berkebutuhan khusus dengan hambatan intelektual menggunakan Capaian Pembelajaran pendidikan khusus yang mengacu pada perkembangan Peserta Didik dan usia mental disertai dengan penyediaan akomodasi yang layak; dan b. Peserta Didik berkebutuhan khusus tanpa hambatan intelektual menggunakan Capaian Pembelajaran sebagaimana dimaksud dalam Pasal 9 disertai dengan penyediaan akomodasi yang layak.",
+      "pages": [
+        6
+      ],
+      "summary": "Learners with intellectual disability use the special-education CP; others with special needs use the general CP with reasonable accommodation."
+    },
+    "who_sets_cp": {
+      "article": "Pasal 11",
+      "text": "Pasal 11 (1) Capaian Pembelajaran sebagaimana dimaksud dalam Pasal 9 dan Capaian Pembelajaran pendidikan khusus sebagaimana dimaksud dalam Pasal 10 huruf a ditetapkan oleh pejabat pimpinan tinggi madya yang melaksanakan tugas di bidang Kurikulum. (2) Capaian Pembelajaran untuk mata Pelajaran kekhasan keagamaan berdasarkan penetapan oleh menteri yang menyelenggarakan urusan pemerintahan di bidang agama.",
+      "pages": [
+        6
+      ],
+      "summary": "CP are set by the senior (pimpinan tinggi madya) official for curriculum; CP for subjects specific to religious schools are set by the Minister of Religious Affairs. The current CP decree is Kepka BSKAP 046/H/KR/2025."
+    }
+  },
+  "content_and_load": {
+    "sd_content_as_subjects": {
+      "article": "Pasal 13",
+      "text": "Pasal 13 Muatan pembelajaran pada jenjang pendidikan dasar dan pendidikan menengah dirumuskan dalam bentuk mata pelajaran.",
+      "pages": [
+        6
+      ],
+      "summary": "In pendidikan dasar (SD/MI) content is organised as subjects (mata pelajaran)."
+    },
+    "yearly_load": {
+      "article": "Pasal 15",
+      "text": "Pasal 15 Beban belajar sebagaimana dimaksud dalam Pasal 8 huruf c dirumuskan dalam bentuk alokasi waktu dalam 1 (satu) tahun pelajaran.",
+      "pages": [
+        6
+      ],
+      "summary": "Intrakurikuler load is a time allocation per school year."
+    },
+    "annex_reference": {
+      "article": "Pasal 20",
+      "text": "Pasal 20 Struktur Kurikulum sebagaimana dimaksud dalam Pasal 5 sampai dengan Pasal 19 tercantum dalam Lampiran II yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.",
+      "pages": [
+        8
+      ],
+      "summary": "Points to Lampiran II, now replaced by the 13/2025 Lampiran II."
+    }
+  },
+  "ekstrakurikuler": [
+    {
+      "article": "Pasal 21",
+      "text": "Pasal 21 (1) Ekstrakurikuler sebagaimana dimaksud dalam Pasal 7 ayat (2) memuat: a. kompetensi; b. muatan pembelajaran; dan c. beban belajar. (2) Ekstrakurikuler sebagaimana dimaksud pada ayat (1) ditujukan untuk mengembangkan minat dan bakat Peserta Didik. (3) Satuan Pendidikan dapat mengembangkan Ekstrakurikuler sebagaimana dimaksud pada ayat (1). (4) Pengembangan Ekstrakurikuler sebagaimana dimaksud pada ayat (3) mengacu pada: a. komponen; b. jenis dan format kegiatan; c. prinsip pengembangan; d. mekanisme; e. evaluasi; f. daya dukung; dan g. pihak yang terlibat. (5) Pengembangan Ekstrakurikuler sebagaimana dimaksud pada ayat (4) tercantum dalam Lampiran III yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.",
+      "pages": [
+        8
+      ],
+      "summary": "Schools may develop ekstrakurikuler following Lampiran III (now the 13/2025 Lampiran III)."
+    },
+    {
+      "article": "Pasal 23",
+      "text": "Pasal 23 Ekstrakurikuler dilaksanakan dengan memperhatikan ketersediaan sumber daya Satuan Pendidikan dan Peserta Didik.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "article": "Pasal 24",
+      "text": "Pasal 24 Keikutsertaan Peserta Didik dalam Ekstrakurikuler bersifat sukarela.",
+      "pages": [
+        8
+      ],
+      "summary": "Taking part is voluntary. Not amended; 13/2025 Pasal 22 only obliges the school to offer at least kepramukaan."
+    }
+  ],
+  "responsibilities": {
+    "ministry": {
+      "article": "Pasal 25",
+      "text": "Pasal 25 Dalam mendukung implementasi Kurikulum Merdeka, pejabat pimpinan tinggi madya sesuai tugas dan fungsinya bertanggung jawab untuk: a. menyediakan panduan implementasi Kurikulum Merdeka; b. menyediakan buku teks utama; c. menyediakan perangkat ajar selain buku teks utama yang dapat langsung digunakan, dimodifikasi, atau dijadikan referensi; d. menyediakan sumber belajar dan pelatihan untuk Pendidik dan tenaga kependidikan; e. melakukan advokasi dan pendampingan implementasi Kurikulum Merdeka; dan f. melakukan pemantauan dan evaluasi secara berkala.",
+      "pages": [
+        9
+      ],
+      "summary": "The ministry provides guides, buku teks utama, ready-to-use teaching materials, learning resources and training, advocacy, and regular monitoring."
+    },
+    "pemda": {
+      "article": "Pasal 26",
+      "text": "Pasal 26 Dalam mendukung implementasi Kurikulum Merdeka, Pemerintah Daerah bertanggung jawab untuk: a. menyusun dan menetapkan muatan lokal; b. memfasilitasi pengembangan perangkat ajar muatan lokal; c. menetapkan kualifikasi akademik dan kompetensi Pendidik muatan lokal; d. melaksanakan fasilitasi dan pendampingan implementasi Kurikulum Merdeka ke Satuan Pendidikan; e. memfasilitasi Pendidik dan kepala Satuan Pendidikan dalam mempelajari dan mengimplementasikan Kurikulum Merdeka untuk meningkatkan kualitas pembelajaran; dan f. memfasilitasi Pendidik dan kepala Satuan Pendidikan dalam mengaktifkan komunitas belajar pada Satuan Pendidikan dan antarsatuan pendidikan.",
+      "pages": [
+        9
+      ],
+      "summary": "The Pemda sets muatan lokal, supports its teaching materials, sets muatan lokal teacher qualifications, and supports schools and learning communities."
+    },
+    "school": {
+      "article": "Pasal 27",
+      "text": "Pasal 27 Dalam mengimplementasikan Kurikulum Merdeka, Satuan Pendidikan bertanggung jawab untuk: a. mengembangkan dan menetapkan Kurikulum Satuan Pendidikan berdasarkan kerangka dasar Kurikulum dan struktur Kurikulum yang ditetapkan oleh Kementerian; b. menyediakan layanan program kebutuhan khusus sesuai dengan kondisi Peserta Didik berkebutuhan khusus bagi sekolah yang menyelenggarakan layanan program kebutuhan khusus; c. melakukan refleksi, evaluasi, dan perbaikan implementasi Kurikulum Satuan Pendidikan untuk meningkatkan kualitas pembelajaran; dan d. berpartisipasi aktif dalam komunitas belajar pada Satuan Pendidikan dan/atau antar Satuan Pendidikan.",
+      "pages": [
+        9
+      ],
+      "summary": "The school develops and sets the KSP on the national framework and structure, serves special needs where it runs such a programme, reflects and improves, and joins learning communities."
+    },
+    "religious_schools": {
+      "article": "Pasal 28",
+      "text": "Pasal 28 Implementasi Kurikulum Merdeka pada Satuan Pendidikan keagamaan dilaksanakan oleh menteri yang menyelenggarakan urusan pemerintahan di bidang agama sesuai dengan ketentuan peraturan perundang-undangan.",
+      "pages": [
+        9,
+        10
+      ],
+      "summary": "In madrasah and other religious schools the curriculum is implemented by the Minister of Religious Affairs."
+    }
+  },
+  "school_curriculum": {
+    "minimum_content_and_development": {
+      "article": "Pasal 29",
+      "text": "Pasal 29 (1) Satuan Pendidikan mengembangkan Kurikulum Satuan Pendidikan paling sedikit memuat: a. karakteristik Satuan Pendidikan; b. visi, misi, dan tujuan Satuan Pendidikan; c. pengorganisasian pembelajaran; dan d. perencanaan pembelajaran. (2) Pengembangan Kurikulum Satuan Pendidikan sebagaimana dimaksud pada ayat (1) dilakukan dengan prinsip diversifikasi sesuai dengan Satuan Pendidikan, potensi daerah, dan Peserta Didik. (3) Pengembangan Kurikulum Satuan Pendidikan sebagaimana dimaksud pada ayat (1) dilakukan oleh Satuan Pendidikan atau kelompok Satuan Pendidikan. (4) Pengembangan kurikulum Satuan Pendidikan sebagaimana dimaksud pada ayat (3) melibatkan komite sekolah/madrasah di bawah koordinasi dan supervisi dinas pendidikan atau kantor kementerian yang menyelenggarakan urusan pemerintahan di bidang agama kabupaten/ kota. (5) Pengembangan Kurikulum Satuan Pendidikan sebagaimana dimaksud pada ayat (3) dapat melibatkan masyarakat. (6) Panduan pengembangan Kurikulum Satuan Pendidikan ditetapkan oleh pejabat pimpinan tinggi madya yang melaksanakan tugas di bidang Kurikulum.",
+      "pages": [
+        10
+      ],
+      "force": "mandatory",
+      "items": [
+        "karakteristik Satuan Pendidikan",
+        "visi, misi, dan tujuan Satuan Pendidikan",
+        "pengorganisasian pembelajaran",
+        "perencanaan pembelajaran"
+      ],
+      "summary": "KSP minimum content (four items), diversification principle, developed by the school or a group of schools with the komite under dinas or Kemenag kab/kota supervision; the community may take part; the KSP guide is set by the curriculum official."
+    },
+    "approval": {
+      "article": "Pasal 30",
+      "text": "Pasal 30 Kurikulum Satuan Pendidikan ditetapkan oleh kepala Satuan Pendidikan.",
+      "pages": [
+        10
+      ],
+      "summary": "The KSP is set (ditetapkan) by the principal."
+    }
+  },
+  "transition": {
+    "curriculum_adoption": {
+      "article": "Pasal 31",
+      "text": "Pasal 31 Pada saat Peraturan Menteri ini mulai berlaku: a. Satuan Pendidikan pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah yang belum melaksanakan Kurikulum Merdeka dapat melaksanakan Kurikulum 2013 sampai dengan tahun ajaran 2025/2026 dan memulai penerapan Kurikulum Merdeka paling lambat tahun ajaran 2026/2027; dan b. Satuan Pendidikan pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah di daerah tertinggal, terdepan, dan terluar yang belum melaksanakan Kurikulum Merdeka dapat melaksanakan Kurikulum 2013 sampai dengan tahun ajaran 2026/2027 dan memulai penerapan Kurikulum Merdeka paling lambat tahun ajaran 2027/2028.",
+      "pages": [
+        10
+      ],
+      "summary": "Schools not yet on this curriculum may run Kurikulum 2013 until 2025/2026 and must start this curriculum by 2026/2027 at the latest (3T regions: K13 until 2026/2027, start by 2027/2028). Not amended by 13/2025."
+    },
+    "bahasa_inggris_sd_mi": {
+      "article": "Pasal 33",
+      "text": "Pasal 33 Pada saat Peraturan Menteri ini mulai berlaku: a. mata pelajaran Bahasa Inggris pada sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat menjadi mata pelajaran pilihan yang dapat diselenggarakan berdasarkan kesiapan Satuan Pendidikan sampai dengan tahun ajaran 2026/2027 dan beralih menjadi mata pelajaran wajib pada tahun ajaran 2027/2028; b. Kementerian bertanggung jawab untuk mendukung proses transisi melalui penyediaan pelatihan guru yang akan mengajar Bahasa Inggris pada sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat dalam masa peralihan mata pelajaran Bahasa Inggris sebagaimana dimaksud dalam huruf a; dan c. Pemerintah Daerah bertanggung jawab untuk mendukung proses transisi melalui penyediaan guru Bahasa Inggris pada sekolah dasar, madrasah ibtidaiyah, atau bentuk lain yang sederajat dalam masa peralihan mata pelajaran Bahasa Inggris sebagaimana dimaksud dalam huruf a.",
+      "pages": [
+        11
+      ],
+      "elective_until": "2026/2027",
+      "compulsory_from": "2027/2028",
+      "summary": "Bahasa Inggris in SD/MI is an elective that schools may offer when ready until 2026/2027 and becomes compulsory in 2027/2028. The ministry trains teachers; the Pemda provides Bahasa Inggris teachers during the transition. Not amended by 13/2025."
+    },
+    "pasal_32_note": "Pasal 32 (phase-in by grade) was replaced by 13/2025; see that extract (transition.sd_mi_sdlb)."
+  },
+  "revocation": {
+    "article": "Pasal 34",
+    "text": "Pasal 34 Pada saat Peraturan Menteri ini mulai berlaku: a. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 40 Tahun 2014 tentang Kerangka Dasar dan Struktur Kurikulum Sekolah Menengah Atas Luar Biasa (Berita Negara Republik Indonesia Tahun 2014 Nomor 686); b. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 57 Tahun 2014 tentang Kurikulum 2013 Sekolah Dasar/ Madrasah Ibtidaiyah (Berita Negara Republik Indonesia Tahun 2014 Nomor 953); c. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 58 Tahun 2014 tentang Kurikulum 2013 Sekolah Menengah Pertama/Madrasah Tsanawiyah (Berita Negara Republik Indonesia Tahun 2014 Nomor 954) sebagaimana telah diubah dengan Peraturan Menteri Pendidikan dan Kebudayaan Nomor 35 Tahun 2018 tentang Perubahan atas Peraturan Menteri Pendidikan dan Kebudayaan Nomor 58 Tahun 2014 tentang Kurikulum 2013 Sekolah Menengah Pertama/Madrasah Tsanawiyah (Berita Negara Republik Indonesia Tahun 2018 Nomor 1690); d. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 59 Tahun 2014 tentang Kurikulum 2013 Sekolah Menengah Atas/Madrasah Aliyah (Berita Negara Republik Indonesia Tahun 2014 Nomor 955) sebagaimana telah diubah dengan Peraturan Menteri Pendidikan dan Kebudayaan Nomor 36 Tahun 2018 tentang Perubahan atas Peraturan Menteri Pendidikan dan Kebudayaan Nomor 58 Tahun 2014 tentang Kurikulum 2013 Sekolah Menengah Atas/Madrasah Aliyah (Berita Negara Republik Indonesia Tahun 2018 Nomor 1691); e. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 60 Tahun 2014 tentang Kurikulum 2013 Sekolah Menengah Kejuruan/Madrasah Aliyah Kejuruan (Berita Negara Republik Indonesia Tahun 2014 Nomor 956); f. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 61 Tahun 2014 tentang Kurikulum Tingkat Satuan Pendidikan pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 957); g. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 62 Tahun 2014 tentang Kegiatan Ekstrakurikuler pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 958); h. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 63 Tahun 2014 tentang Pendidikan Kepramukaan sebagai Kegiatan Ekstrakurikuler Wajib pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 959); i. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 64 Tahun 2014 tentang Peminatan pada Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 960); j. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 68 Tahun 2014 tentang Peran Guru Teknologi Informasi dan Komunikasi dan Guru Keterampilan Komputer dan Pengelolaan Informasi dalam Implementasi Kurikulum 2013 (Berita Negara Republik Indonesia Tahun 2014 Nomor 960) sebagaimana telah diubah dengan Peraturan Menteri Pendidikan dan Kebudayaan Nomor 45 Tahun 2015 tentang Perubahan atas Peraturan Menteri Pendidikan dan Kebudayaan Nomor 68 Tahun 2014 tentang Peran Guru Teknologi Informasi dan Komunikasi dan Guru Keterampilan Komputer dan Pengelolaan Informasi dalam Implementasi Kurikulum 2013 (Berita Negara Republik Indonesia Tahun 2015 Nomor 1905); k. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 103 Tahun 2014 tentang Pembelajaran pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 1506); l. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 105 Tahun 2014 tentang Pendampingan Pelaksanaan Kurikulum 2013 pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 1508); m. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 146 Tahun 2014 tentang Kurikulum 2013 Pendidikan Anak Usia Dini (Berita Negara Republik Indonesia Tahun 2014 Nomor 1679); n. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 157 Tahun 2014 tentang Kurikulum Pendidikan Khusus (Berita Negara Republik Indonesia Tahun 2014 Nomor 1690); o. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 158 Tahun 2014 tentang Penyelenggaraan Sistem Kredit Semester pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2014 Nomor 1691); p. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 159 Tahun 2014 tentang Evaluasi Kurikulum (Berita Negara Republik Indonesia Tahun 2014 Nomor 1692); q. Peraturan Menteri Pendidikan dan Kebudayaan Nomor 24 Tahun 2016 tentang Kompetensi Inti dan Kompetensi Dasar Pelajaran pada Kurikulum 2013 pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2016 Nomor 971) sebagaimana telah diubah dengan Peraturan Menteri Pendidikan dan Kebudayaan Nomor 37 tahun 2018 tentang Perubahan atas Peraturan Menteri Pendidikan dan Kebudayaan Nomor 24 tahun 2016 tentang Kompetensi Inti dan Kompetensi Dasar Pelajaran pada Kurikulum 2013 pada Pendidikan Dasar dan Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2018 Nomor 1692); dan r. ketentuan mengenai kegiatan Intrakurikuler, Kokurikuler, dan Ekstrakurikuler dalam Peraturan Menteri Pendidikan dan Kebudayaan Nomor 23 Tahun 2017 tentang Hari Sekolah (Berita Negara Republik Indonesia Tahun 2017 Nomor 829), dicabut dan dinyatakan tidak berlaku.",
+    "pages": [
+      11,
+      12,
+      13
+    ],
+    "summary": "SD-relevant revocations: Permendikbud 57/2014 (Kurikulum 2013 SD/MI, huruf b), 61/2014 (KTSP, huruf f), 62/2014 (ekstrakurikuler, huruf g), 63/2014 (Pramuka as compulsory ekstrakurikuler, huruf h), 103/2014 (pembelajaran, huruf k), 105/2014 (pendampingan K13, huruf l), 157/2014 (kurikulum pendidikan khusus, huruf n), 159/2014 (evaluasi kurikulum, huruf p), 24/2016 as amended by 37/2018 (KI-KD, huruf q), and the intra/ko/ekstrakurikuler rules in Permendikbud 23/2017 on Hari Sekolah (huruf r)."
+  },
+  "effective_date": {
+    "article": "Pasal 35",
+    "text": "Pasal 35 Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.",
+    "pages": [
+      13
+    ],
+    "promulgated_on": "2024-03-26",
+    "summary": "In force on promulgation, 26 March 2024 (date stamped on p. 14)."
+  },
+  "open_points": [
+    {
+      "pages": [
+        11
+      ],
+      "text": "Pasal 33 (not amended) makes Bahasa Inggris in SD/MI an elective until 2026/2027 and compulsory from 2027/2028, while the 13/2025 Lampiran II Tabel 3-5 already list it under Mata Pelajaran Wajib for kelas III-VI. Tim Validasi to confirm how the 2026/2027 rule set labels it (current reading in policy-innovation-layers.md §6.3: optional in 2026/2027, mandatory from 2027/2028)."
+    },
+    {
+      "pages": [
+        2,
+        9,
+        10,
+        11
+      ],
+      "text": "The name \"Kurikulum Merdeka\" stays in the unamended Pasal 1 angka 2, Pasal 2, 25-27, 31 and 33; 13/2025 uses \"Kurikulum sebagaimana tercantum pada Peraturan Menteri ini\" in the articles it rewrote. SIGRAK UI follows the current terms (D-210); this is only a reading note."
+    },
+    {
+      "pages": [
+        10
+      ],
+      "text": "Pasal 31: Kurikulum 2013 is allowed only until 2025/2026 (3T: 2026/2027). From 2026/2027 every SD/MI outside 3T regions runs this curriculum; SIGRAK needs no K13 rule set for 2026/2027 except for 3T schools."
+    },
+    {
+      "pages": [
+        8
+      ],
+      "text": "Pasal 24 (voluntary participation) is not amended, so Pramuka must be offered (13/2025 Pasal 22 ayat 2) but taking part stays voluntary."
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "dataset": "national_assessment_amendment",
+  "version_code": "AN-PERMENDIKDASMEN-9-2026",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "C"
+  ],
+  "note": "Permendikdasmen 9/2026 amends five points of Permendikbudristek 17/2021 on Asesmen Nasional (AN). Rows that bind SD/MI: what AN measures (AKM literasi membaca and numerasi, survei karakter on the eight dimensi profil lulusan, survei lingkungan belajar), who takes part (murid in the final grade of SD/MI, every pendidik, and the principal), registration in the ministry database, the option to fold literacy and numeracy into the measurement of academic achievement in certain subjects (Pasal 9A), and the guide set by the Minister (Pasal 12, now Kepmendikdasmen 56/2026). The base 17/2021 text is not in the repo.",
+  "source": {
+    "file": "docs/sources/Permendikdasmen_No_9_Tahun_2026_Perubahan_Permendikbudristek_17_2021_Asesmen_Nasional.pdf",
+    "sha256": "737f5f07af7893d77fb33ab75e36798ff507d43a0eadd1271ea906221be4f716",
+    "regulation_code": "PERMENDIKDASMEN-9-2026",
+    "title": "Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 9 Tahun 2026 tentang Perubahan atas Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 17 Tahun 2021 tentang Asesmen Nasional",
+    "number": "9 Tahun 2026",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2026-02-11",
+    "promulgated_on": "2026-02-12",
+    "effective_on": "2026-02-12",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2026 Nomor 98",
+    "amends": "Permendikbudristek Nomor 17 Tahun 2021 tentang Asesmen Nasional (Berita Negara Republik Indonesia Tahun 2021 Nomor 832); not in docs/sources/",
+    "implemented_by": "Kepmendikdasmen Nomor 56 Tahun 2026 (Pedoman Penyelenggaraan TKA dan AN), which cites Pasal 12 of this regulation in its konsiderans",
+    "received_as": "Permendikdasmen-no-9-tahun-2026.pdf (owner upload, 2026-11-11; same file name as the peraturan.go.id file linked in administration-features.md)",
+    "received_on": "2026-11-11",
+    "copy_type": "Promulgated electronic original: signed with BSrE certificates by the Minister (12 Feb 2026) and by Kementerian Hukum officials incl. Dirjen Peraturan Perundang-undangan Dhahana Putra (13 Feb 2026); all four signatures validate (pdfsig). The promulgation date and Berita Negara number are stamped as images on p. 5. No \"Salinan sesuai dengan aslinya\" note.",
+    "verification": "official_copy",
+    "verification_note": "Supplied by the owner from an Indonesian connection (task P4-32); the download URL was not given. Treated as an official copy because it is the e-signed promulgated text with the Berita Negara number.",
+    "pages_total": 5,
+    "pages_note": "PDF page = printed page. In the text layer the promulgation date, signature marks and Berita Negara number show as placeholder glyphs; read from the page image (p. 5)."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF from Word), copied per amended article; signature page read from the page image.",
+    "checked_against_images": [
+      5
+    ],
+    "skipped": [
+      "Konsiderans and Mengingat (pp. 1-2)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace cleanup only).",
+      "summary fields are short English notes for developers, not source text.",
+      "pages are PDF page numbers (= printed page numbers).",
+      "Each item quotes the article as it reads after the amendment; change says which ayat this regulation rewrote."
+    ]
+  },
+  "amendment_intro": {
+    "text": "Pasal I Beberapa ketentuan dalam Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 17 Tahun 2021 tentang Asesmen Nasional (Berita Negara Republik Indonesia Tahun 2021 Nomor 832) diubah sebagai berikut:",
+    "pages": [
+      2
+    ]
+  },
+  "amended_articles": [
+    {
+      "no": 1,
+      "article": "Pasal 3",
+      "change": "Ketentuan ayat (3) dan ayat (7) Pasal 3 diubah",
+      "text": "(1) Hasil belajar kognitif sebagaimana dimaksud dalam Pasal 2 huruf a mencakup literasi membaca dan numerasi. (2) Hasil belajar sebagaimana dimaksud pada ayat (1) diukur melalui asesmen kompetensi minimum. (3) Hasil belajar nonkognitif mencakup sikap yang melandasi karakter dalam delapan dimensi profil lulusan. (4) Hasil belajar nonkognitif sebagaimana dimaksud pada ayat (2) diukur melalui survei karakter. (5) Kualitas lingkungan belajar pada satuan pendidikan sebagaimana dimaksud dalam Pasal 2 huruf c mencakup: a. iklim keamanan; b. iklim inklusivitas dan kebinekaan; dan c. proses pembelajaran di satuan pendidikan. (6) Kualitas lingkungan belajar pada satuan pendidikan sebagaimana dimaksud pada ayat (5) diukur melalui survei lingkungan belajar. (7) Delapan dimensi profil lulusan sebagaimana dimaksud pada ayat (3) meliputi: a. keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa; b. kewargaan; c. penalaran kritis; d. kreativitas; e. kolaborasi; f. kemandirian; g. kesehatan; dan h. komunikasi.",
+      "instruments": [
+        {
+          "measures": "literasi membaca dan numerasi",
+          "instrument": "asesmen kompetensi minimum"
+        },
+        {
+          "measures": "sikap yang melandasi karakter dalam delapan dimensi profil lulusan",
+          "instrument": "survei karakter"
+        },
+        {
+          "measures": "iklim keamanan; iklim inklusivitas dan kebinekaan; proses pembelajaran di satuan pendidikan",
+          "instrument": "survei lingkungan belajar"
+        }
+      ],
+      "summary": "The survei karakter now uses the eight dimensi profil lulusan (same list as SKL 10/2025) instead of the Profil Pelajar Pancasila. Ayat (4) refers to \"ayat (2)\" as printed; it reads like a cross-reference slip for ayat (3).",
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "no": 2,
+      "article": "Pasal 5",
+      "change": "Ketentuan ayat (1) dan ayat (3) Pasal 5 diubah",
+      "text": "(1) Persiapan AN meliputi: a. penentuan waktu pelaksanaan; b. pendataan peserta AN oleh Kementerian, kementerian yang menyelenggarakan urusan pemerintahan di bidang agama, dan Pemerintah Daerah; c. penentuan tempat pelaksanaan oleh kementerian yang menyelenggarakan urusan pemerintahan di bidang agama dan Pemerintah Daerah; dan d. ketersediaan sarana prasarana dan sumber daya manusia di satuan pendidikan yang menjadi tempat pelaksanaan AN. (2) Waktu pelaksanaan AN sebagaimana dimaksud pada ayat (1) huruf a ditetapkan oleh Menteri. (3) Pendataan peserta AN sebagaimana dimaksud pada ayat (1) huruf b terdiri atas: a. peserta didik kelas akhir pada SD/MI/Sederajat, SMP/MTs/Sederajat, SMA/MA/Sederajat, dan SMK/MAK; b. pendidik pada setiap satuan pendidikan; dan c. kepala satuan pendidikan. (4) Tempat pelaksanaan AN sebagaimana dimaksud pada ayat (1) huruf c merupakan tempat yang memiliki akses jaringan internet yang memadai. (5) Ketersediaan sarana prasarana dan sumber daya manusia sebagaimana dimaksud pada ayat (1) huruf d menjadi tanggung jawab: a. kementerian yang menyelenggarakan urusan pemerintahan di bidang agama; b. Pemerintah Daerah; c. masyarakat penyelenggara pendidikan; dan d. Kementerian. (6) Tanggung jawab ketersediaan sumber daya AN sebagaimana dimaksud pada ayat (5) dilaksanakan sesuai dengan kewenangannya.",
+      "sd_mi_participants": [
+        {
+          "who": "peserta didik kelas akhir pada SD/MI/Sederajat",
+          "sd_grade": 6,
+          "grade_note": "kelas akhir of SD/MI is kelas VI (derived; the article says \"kelas akhir\")"
+        },
+        {
+          "who": "pendidik pada setiap satuan pendidikan"
+        },
+        {
+          "who": "kepala satuan pendidikan"
+        }
+      ],
+      "summary": "AN participants: murid in the final grade (SD/MI: kelas VI), every pendidik, and the principal. Timing is set by the Minister; the venue needs adequate internet access.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "no": 3,
+      "article": "Pasal 6",
+      "change": "Ketentuan ayat (2), ayat (3), dan ayat (4) Pasal 6 diubah",
+      "text": "(1) Peserta AN sebagaimana dimaksud dalam Pasal 5 ayat (3) berasal dari satuan pendidikan yang diselenggarakan oleh kementerian yang menyelenggarakan urusan pemerintahan di bidang agama, Pemerintah Daerah, atau masyarakat. (2) Peserta AN yang berasal dari peserta didik sebagaimana dimaksud dalam Pasal 5 ayat (3) huruf a: a. terdaftar dalam sistem basis data yang dikelola oleh Kementerian; dan b. mendaftar pada laman yang disediakan oleh Kementerian. (3) Peserta didik sebagaimana dimaksud pada ayat (2) ditetapkan oleh Pemerintah Daerah atau kementerian yang menyelenggarakan urusan pemerintahan di bidang agama sesuai dengan kewenangannya. (4) Pendidik dan kepala satuan pendidikan sebagaimana dimaksud dalam Pasal 5 ayat (3) huruf b dan huruf c terdaftar dalam sistem basis data yang dikelola oleh Kementerian.",
+      "summary": "Student participants must be in the ministry database and register on the ministry site; they are set by the Pemda (or Kemenag for madrasah). Teachers and principals must be in the ministry database.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "no": 4,
+      "article": "Pasal 9A",
+      "change": "Di antara Pasal 9 dan Pasal 10 disisipkan 1 (satu) pasal, yakni Pasal 9A",
+      "text": "(1) Pengukuran kompetensi literasi membaca dan numerasi sebagaimana dimaksud dalam Pasal 9 ayat (1) dapat diintegrasikan dalam pengukuran capaian akademik pada mata pelajaran tertentu. (2) Pengukuran capaian akademik sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.",
+      "summary": "Literacy and numeracy measurement may be folded into the measurement of academic achievement in certain subjects. This is the legal hook for running AN together with TKA (Kepmendikdasmen 56/2026). Pasal 9 of the base text was not read.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "no": 5,
+      "article": "Pasal 12",
+      "change": "Ketentuan Pasal 12 diubah",
+      "text": "Pedoman penyelenggaraan mengenai persiapan, pelaksanaan, dan pelaporan hasil AN ditetapkan oleh Menteri.",
+      "summary": "The AN guide is set by the Minister; Kepmendikdasmen 56/2026 cites this article.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "effective_date": {
+    "article": "Pasal II",
+    "text": "Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.",
+    "promulgated_on": "2026-02-12",
+    "summary": "In force on promulgation, 12 February 2026 (date stamped on p. 5).",
+    "pages": [
+      4,
+      5
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        3
+      ],
+      "text": "AN in SD/MI is taken by murid in the final grade (kelas VI), plus every pendidik and the principal. The base Permendikbudristek 17/2021 is not in the repo, so what changed in Pasal 5 ayat (3) compared with the 2021 wording (for example sampling or the grade) is not checked here."
+    },
+    {
+      "pages": [
+        2
+      ],
+      "text": "AN stays a system survey: the regulation sets what is measured and who takes part, not individual student scores. SIGRAK keeps AKM-style tags and stimuli only (assessment-landscape.md)."
+    },
+    {
+      "pages": [
+        3
+      ],
+      "text": "Pasal 3 ayat (4) cites \"ayat (2)\" where ayat (3) is meant; stored as printed."
+    },
+    {
+      "pages": [
+        4
+      ],
+      "text": "The registry relation KEPMENDIKDASMEN-56-2026 → PERMENDIKDASMEN-9-2026 can be \"implements\" (Pasal 12): Kepmendikdasmen 56/2026 cites Pasal 12 of this regulation in its konsiderans."
+    }
+  ]
+}
