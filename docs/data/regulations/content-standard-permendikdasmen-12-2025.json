@@ -1,0 +1,304 @@
+{
+  "dataset": "content_standard_sd",
+  "version_code": "STANDAR-ISI-SD-PERMENDIKDASMEN-12-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "SD/MI parts of the Standar Isi: the body (muatan wajib, who sets religion and muatan lokal content) and Lampiran II B-C, the ruang lingkup materi for SD/MI/SDLB/Paket A per muatan, plus the program kebutuhan khusus scope. It sets minimum scope, not a sequence or a grade split; the CP (Kepka BSKAP 046/H/KR/2025) turns it into phase outcomes.",
+  "source": {
+    "file": "docs/sources/Permendikdasmen_No_12_Tahun_2025_Standar_Isi.pdf",
+    "sha256": "184497add24f2baaf72e94d1fddfd842d1e3656d8bb37bb222bd41eaa7dbdd16",
+    "regulation_code": "PERMENDIKDASMEN-12-2025",
+    "title": "Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 12 Tahun 2025 tentang Standar Isi pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "12 Tahun 2025",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2025-07-10",
+    "promulgated_on": "2025-07-15",
+    "effective_on": "2025-07-15",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2025 Nomor 502",
+    "revokes": "Permendikbudristek Nomor 8 Tahun 2024 tentang Standar Isi (Berita Negara Republik Indonesia Tahun 2024 Nomor 169)",
+    "downloaded_from": "https://www.kemendikdasmen.go.id/download/file/1391 (same file as /download/file/1399)",
+    "downloaded_on": "2026-11-10",
+    "copy_type": "SALINAN certified by Kepala Biro Hukum (body p. 5 and Lampiran I p. 9); Lampiran II and III are typed SALINAN pages",
+    "verification": "official_copy",
+    "pages_total": 50,
+    "pages_note": "PDF page = printed page. Body pp. 1-5, Lampiran I (PAUD) pp. 6-9, Lampiran II (pendidikan dasar) pp. 10-24, Lampiran III (pendidikan menengah) pp. 25-50."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF, clean text layer), cut into verbatim spans by script per muatan. No tables or images in the SD part.",
+    "checked_against_images": [],
+    "skipped": [
+      "Lampiran I ruang lingkup materi PAUD (pp. 6-9).",
+      "Lampiran II D-E ruang lingkup materi SMP/MTs/SMPLB/Paket B and its program kebutuhan khusus (pp. 17-24).",
+      "Lampiran III pendidikan menengah (pp. 25-50)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace and hyphenation cleanup only).",
+      "pages are PDF page numbers; pages_note gives the printed numbering.",
+      "summary fields are short English notes for developers, not source text."
+    ]
+  },
+  "definition": {
+    "text": "1. Standar Isi adalah kriteria minimal yang mencakup ruang lingkup materi untuk mencapai kompetensi lulusan pada jalur, jenjang, dan jenis pendidikan tertentu.",
+    "pages": [
+      2
+    ]
+  },
+  "scope_basis": {
+    "text": "Pasal 2 (1) Standar Isi dikembangkan melalui perumusan ruang lingkup materi yang sesuai dengan kompetensi lulusan. (2) Ruang lingkup materi sebagaimana dimaksud pada ayat (1) merupakan bahan kajian dalam muatan pembelajaran. (3) Ruang lingkup materi pada PAUD dirumuskan berdasarkan standar tingkat pencapaian perkembangan anak. (4) Ruang lingkup materi pada jenjang Pendidikan Dasar dan Pendidikan Menengah dirumuskan berdasarkan: a. muatan wajib sesuai dengan ketentuan peraturan perundang-undangan; b. konsep keilmuan; dan c. jalur, jenjang, dan jenis pendidikan.",
+    "pages": [
+      3
+    ]
+  },
+  "mandatory_content": {
+    "text": "Pasal 3 (1) Muatan wajib sesuai dengan ketentuan peraturan perundang-undangan sebagaimana dimaksud dalam Pasal 2 ayat (4) huruf a meliputi: a. pendidikan agama; b. pendidikan Pancasila; c. pendidikan kewarganegaraan; d. bahasa; e. matematika; f. ilmu pengetahuan alam; g. ilmu pengetahuan sosial; h. seni dan budaya; i. pendidikan jasmani dan olahraga; j. keterampilan/kejuruan; dan k. muatan lokal. (2) Muatan wajib bahasa sebagaimana dimaksud pada ayat (1) huruf d meliputi: a. bahasa Indonesia; b. bahasa daerah; dan c. bahasa asing. (3) Muatan wajib bahasa daerah sebagaimana dimaksud pada ayat (2) huruf b dapat termuat dalam muatan lokal. (4) Muatan wajib bahasa asing sebagaimana dimaksud pada ayat (2) huruf c yaitu bahasa Inggris. (5) Selain muatan wajib bahasa asing sebagaimana dimaksud pada ayat (4), muatan bahasa asing lainnya diberikan sesuai dengan kebutuhan.",
+    "pages": [
+      3,
+      4
+    ],
+    "force": "mandatory",
+    "summary": "Eleven muatan wajib; bahasa covers Indonesian, regional (may sit in muatan lokal), and English as the compulsory foreign language."
+  },
+  "scientific_basis": {
+    "text": "Pasal 4 Ruang lingkup materi berdasarkan konsep keilmuan sebagaimana dimaksud dalam Pasal 2 ayat (4) huruf b dirumuskan sesuai dengan perkembangan ilmu pengetahuan, kemajuan teknologi, seni, dan budaya.",
+    "pages": [
+      4
+    ]
+  },
+  "path_level_type_basis": {
+    "text": "Pasal 5 Ruang lingkup materi berdasarkan jalur, jenjang, dan jenis pendidikan sebagaimana dimaksud dalam Pasal 2 ayat (4) huruf c dirumuskan sesuai dengan jalur, jenjang, dan jenis pendidikan pada jenjang Pendidikan Dasar dan Pendidikan Menengah.",
+    "pages": [
+      4
+    ]
+  },
+  "annex_map": {
+    "text": "Pasal 6 Ruang lingkup materi: a. PAUD tercantum dalam Lampiran I; b. jenjang Pendidikan Dasar tercantum dalam Lampiran II; dan c. jenjang Pendidikan Menengah tercantum dalam Lampiran III, yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.",
+    "pages": [
+      4
+    ]
+  },
+  "who_sets_religion_and_local_content": {
+    "text": "Pasal 7 (1) Muatan wajib pendidikan agama sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a disusun oleh Menteri berkoordinasi dengan menteri yang menyelenggarakan urusan pemerintahan di bidang agama. (2) Muatan wajib berupa muatan lokal sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf k disusun oleh pemerintah daerah sesuai dengan kewenangannya.",
+    "pages": [
+      4
+    ]
+  },
+  "revocation": {
+    "text": "Pasal 8 Pada saat Peraturan Menteri ini mulai berlaku, Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 8 Tahun 2024 tentang Standar Isi pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2024 Nomor 169), dicabut dan dinyatakan tidak berlaku.",
+    "pages": [
+      5
+    ]
+  },
+  "sd_background": {
+    "text": "A. Latar Belakang Mengacu pada Peraturan Pemerintah Nomor 57 Tahun 2021 tentang Standar Nasional Pendidikan sebagaimana telah diubah dengan Peraturan Pemerintah Nomor 4 Tahun 2022 tentang Perubahan atas Peraturan Pemerintah Nomor 57 Tahun 2021 tentang Standar Nasional Pendidikan, Standar Isi dikembangkan untuk menentukan kriteria ruang lingkup materi yang sesuai dengan kompetensi lulusan yang telah dirumuskan pada standar kompetensi lulusan. Penyusunan Standar Isi dilakukan dengan merumuskan ruang lingkup materi pembelajaran yang sesuai untuk mengembangkan kompetensi Murid sesuai standar kompetensi lulusan, melakukan penyesuaian dengan kemajuan pembelajaran (learning progression) Murid pada setiap jenjang, merumuskan ruang lingkup materi pembelajaran yang memberikan fleksibilitas kepada pendidik untuk memfasilitasi Murid mengembangkan kompetensinya, serta mengadopsi prinsip diferensiasi dalam mengembangkan ruang lingkup materi pembelajaran. Pengembangan Standar Isi mengacu pada standar kompetensi lulusan pada satuan pendidikan jenjang Pendidikan Dasar yang difokuskan pada hal-hal: 1. persiapan Murid menjadi anggota masyarakat yang beriman dan bertakwa kepada Tuhan Yang Maha Esa serta berakhlak mulia; 2. penanaman karakter yang sesuai dengan nilai-nilai Pancasila; dan 3. penumbuhan kompetensi literasi dan numerasi Murid untuk mengikuti pendidikan lebih lanjut. Standar Isi ini mencakup ruang lingkup materi Pendidikan Dasar pada jalur pendidikan formal dan nonformal. Standar Isi sekolah dasar luar biasa/paket A/bentuk lain yang sederajat sama dengan Standar Isi sekolah dasar/madrasah ibtidaiyah dan Standar Isi sekolah menengah pertama luar biasa/paket B/bentuk lain yang sederajat sama dengan Standar Isi sekolah menengah pertama/madrasah tsanawiyah. Standar Isi pendidikan kesetaraan (paket A, paket B, dan paket C) mengacu pada muatan wajib sesuai jenjangnya dengan menekankan muatan pemberdayaan dan keterampilan, memperhatikan konteks dan potensi lingkungan setempat, dan mempertimbangkan hal yang dapat dilakukan secara terintegrasi melalui projek atau pendekatan lain yang relevan. Muatan pemberdayaan dan keterampilan dapat diberikan melalui projek dan diarahkan untuk menumbuhkan kemandirian Murid baik dalam kehidupan individu maupun bermasyarakat. Ruang lingkup materi pada Standar Isi dikemas untuk memperkuat pengembangan diri, pengembangan kapasitas, dan penguatan sosial ekonomi. Muatan keterampilan dapat dikembangkan dengan memperhatikan ragam potensi sumber daya alam dan sosial budaya, perkembangan ilmu pengetahuan dan teknologi, dan/atau kesempatan bekerja dan berusaha. Standar Isi pada pendidikan khusus, selain berisi muatan wajib sesuai jenjangnya, juga ditambah dengan ruang lingkup materi program kebutuhan khusus dan keterampilan. Murid berkebutuhan khusus dapat mengikuti Standar Isi, dengan memperhatikan profil Murid berkebutuhan khusus.",
+    "pages": [
+      10,
+      11
+    ]
+  },
+  "sd_scope_heading": {
+    "text": "B. Ruang Lingkup Materi Sekolah Dasar/Madrasah Ibtidaiyah/Sekolah Dasar Luar Biasa/Paket A/Bentuk Lain yang Sederajat",
+    "pages": [
+      11
+    ]
+  },
+  "sd_scope": [
+    {
+      "key": "pendidikan_agama",
+      "pages": [
+        11,
+        12,
+        13
+      ],
+      "variants": [
+        {
+          "religion": "islam",
+          "text": "a. Pendidikan Agama Islam 1) Al-Qur'an dan hadis meliputi ayat-ayat, surat pendek, dan hadis pilihan; 2) akidah meliputi rukun iman, dan asmaulhusna; 3) akhlak meliputi akhlak terhadap Allah Swt., diri sendiri, sesama, dan makhluk lainnya; 4) fikih meliputi rukun Islam, ibadah wajib dan sunnah, serta makanan dan minuman halal; dan 5) sejarah peradaban Islam meliputi kisah para nabi dan rasul, Nabi Muhammad saw., serta khulafaurasyidin.",
+          "pages": [
+            11
+          ]
+        },
+        {
+          "religion": "kristen",
+          "text": "b. Pendidikan Agama Kristen 1) Allah berkarya a) Allah menciptakan Murid sebagai pribadi yang istimewa; b) tanggung jawab manusia meliputi konsep dan praktik hidup berpihak pada keselamatan dan pelestarian alam dan manusia; c) Allah menyelamatkan manusia dalam diri Yesus Kristus yang menjadi juru selamat manusia; dan d) Allah membarui hidup manusia dan manusia menyatakan dalam praktik sikap hidup manusia baru. 2) Manusia dan Nilai-nilai Kristiani a) hakikat manusia meliputi makhluk individu, makhluk sosial, makhluk berdosa yang membutuhkan pertobatan dan keselamatan; dan b) nilai-nilai Kristiani meliputikonsep nilai dan praktik nilai kristiani. 3) Gereja dan Masyarakat Majemuk a) tugas gereja meliputibersekutu, bersaksi, melayani; dan b) masyarakat majemuk meliputi keberagaman, solidaritas, kerukunan. 4) Alam dan Lingkungan Hidup a) alam dan lingkungan hidup meliputi fakta alam, flora, fauna; dan b) tanggung jawab manusia meliputi pencegahan, pemeliharaan, dan pelestarian.",
+          "pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "religion": "katolik",
+          "text": "c. Pendidikan Agama Katolik 1) Pribadi Murid a) manusia diciptakan Allah sebagai citra-Nya; b) tanggung jawab untuk mengembangkan diri sebagai citra Allah; dan c) lingkungan tempat bertumbuh dan berkembang. 2) Yesus Kristus a) penciptaan manusia dan alam semesta; b) bapa-bapa bangsa Israel dalam Kitab Suci Perjanjian Lama; c) para nabi dan perannya dalam nubuat tentang kedatangan Mesias bagi keselamatan manusia; dan d) Yesus Kristus sebagai pemenuhan janji Allah. 3) Gereja a) doa-doa dalam gereja Katolik; b) sakramen-sakramen dalam gereja Katolik; c) peran Roh Kudus dalam kehidupan gereja; d) makna beriman dalam gereja Katolik; dan e) sifat-sifat gereja: satu, kudus, katolik, apostolik. 4) Masyarakat a) hidup bersama dengan tetangga dan masyarakat; b) hidup bersama sebagai warga bangsa; c) hidup bersama dengan penganut agama dan kepercayaan lain, tanpa kehilangan identitasnya; d) relasi dengan alam ciptaan Allah; e) sepuluh perintah Allah sebagai pedoman hidup; dan f) tuntunan suara hati sebagai suara Tuhan.",
+          "pages": [
+            12
+          ]
+        },
+        {
+          "religion": "hindu",
+          "text": "b. Pendidikan Agama Hindu 1) Kitab Suci Weda yang meliputiRamayana, Mahabharata, Purana, Weda Sruti, dan Weda Smerti; 2) Sraddha dan Bhakti yang meliputi Hyang Widhi Wasa sebagai pencipta dan sumber hidup, Tri Murti, Cadu Sakti, Bhuana Agung, dan Bhuana Alit; 3) Susila yang meliputi Subha Karma, Asubha Karma, Tri Kaya Parisudha, Tri Parartha, Catur Paramitha, Catur Guru, dan Catur Asrama; 4) acara Agama Hindu yang meliputi Dainika Upasana, Sarana Persembahyangan, Hari Suci, Tempat Suci, Panca Yadnya, dan Manggalaning Yadnya; dan 5) sejarah Agama Hindu yang meliputi tokoh-tokoh kerajaan Hindu, tokoh penyebar agama Hindu, dan sejarah perkembangan agama Hindu di Indonesia.",
+          "pages": [
+            12
+          ]
+        },
+        {
+          "religion": "buddha",
+          "text": "c. Pendidikan Agama Buddha 1) sejarah tentang identitas diri Murid, Buddha, Bodhisattva, dan tokoh Buddhis. Buddha Sakyamuni, budaya, dan bahasa dalam agama Buddha; 2) ritual tentang simbol-simbol, agama dan kepercayaan, doa, identitas, tradisi agama Buddha, upacara puja, meditasi ketenangan, sikap bersatu, moderasi beragama. Nilai-nilai Buddhadharma, Pancasila Buddhis, Pancasila dasar negara; dan 3) etika tentang sopan-santun, pergaulan, dan musyawarah. Nilai-nilai Pancasila Buddhis, pāramitā, tolong-menolong, hak dan kewajiban, permasalahan dan solusi.",
+          "pages": [
+            13
+          ]
+        },
+        {
+          "religion": "khonghucu",
+          "text": "d. Pendidikan Agama Khonghucu 1) Keimanan meliputi Tian, Nabi Kŏngzĭ (孔子), peran leluhur, persembahyangan, iman, nilai-nilai delapan keimanan, hukum Yīnyáng (阴阳), dan Tiga Dasar Kenyataan (sāncái 三才).; 2) Kitab Suci meliputi ayat-ayat suci sederhana tentang berbakti (Xiao 孝) dalam Kitab Bakti (Xiaojing 孝经), Sìshū (四书) dan Wŭjīng (五经); 3) Tata Ibadah meliputi sikap hormat, doa, sembahyang dan hari raya keagamaan; 4) Perilaku Junzi meliputi sikap bakti, berdoa, teladan Nabi Kŏngzĭ (孔子) dan murid-muridnya, dan cinta tanah air; dan 5) Sejarah Suci meliputi riwayat Nabi Kŏngzĭ (孔子), teladan tokoh Khonghucu, dan sejarah agama Khonghucu di Indonesia.",
+          "pages": [
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pendidikan_pancasila",
+      "text": "2. Pendidikan Pancasila a. sejarah kelahiran Pancasila dan keteladanan para perumus Pancasila; b. makna sila-sila Pancasila sebagai satu kesatuan yang utuh; c. kedudukan Pancasila sebagai dasar negara dan pandangan hidup bangsa; d. pengamalan Pancasila dalam kehidupan sehari-hari sebagai identitas bangsa sesuai dengan budaya, agama, dan kepercayaannya masing-masing; dan e. simbol-simbol negara dan semboyan negara.",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "key": "pendidikan_kewarganegaraan",
+      "text": "3. Pendidikan Kewarganegaraan a. norma, aturan, hak, dan kewajiban di lingkungan keluarga dan sekolah; b. identitas diri, lingkungan tempat tinggal, masyarakat, dan bangsa sebagai bagian dari wilayah Negara Kesatuan Republik Indonesia; c. Pembukaan Undang-Undang Dasar Negara Republik Indonesia tahun 1945; dan d. musyawarah, kerja sama, dan gotong royong untuk menjaga persatuan dan kesatuan dalam kehidupan sehari-hari di lingkungan keluarga dan sekolah.",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "key": "bahasa",
+      "pages": [
+        14
+      ],
+      "variants": [
+        {
+          "language": "bahasa_indonesia",
+          "text": "a. Bahasa Indonesia 1) strategi berbahasa (menyimak, membaca dan memirsa, berbicara, menulis, dan mempresentasikan) secara santun untuk menghormati orang lain dan/atau menghindari konflik sesuai konteks sosial budaya masyarakat pada peringkat marginal (pemula); 2) jenis teks fiksi dan teks nonfiksi sederhana yang netral, ramah gender, dan/atau ramah keberagaman; 3) kaidah bahasa Indonesia yang membentuk teks sederhana; 4) kosakata bahasa Indonesia dan/atau kosakata bahasa Indonesia serapan dari bahasa daerah yang erat kaitannya dengan konteks diri sendiri, keluarga, dan/atau lingkungan satuan pendidikan; 5) struktur sastra dalam teks sastra sederhana; 6) kebahasaan dalam berbagai jenis teks sederhana; dan 7) struktur dan kohesi teks sederhana dalam wujud lisan, tulis, visual, dan/atau multimodal yang disajikan.",
+          "pages": [
+            14
+          ]
+        },
+        {
+          "language": "bahasa_daerah",
+          "text": "b. Bahasa Daerah 1) strategi berbahasa (menyimak, membaca dan memirsa, berbicara dan mempresentasikan dan/atau menulis) yang dapat dikembangkan sesuai dengan konteks daerah masing-masing; dan 2) lingkup materi bahasa daerah yang disesuaikan dengan tingkat perkembangan Murid.",
+          "pages": [
+            14
+          ]
+        },
+        {
+          "language": "bahasa_inggris",
+          "text": "c. Bahasa Inggris 1) teks interaksional dan transaksional sederhana dalam konteks diri sendiri, keluarga, dan/atau satuan pendidikan; 2) teks multimodal sederhana, berbagai jenis teks, dalam konteks diri sendiri, keluarga, dan/atau satuan pendidikan; 3) kosakata dan ungkapan sederhana dalam teks dengan konteks diri sendiri, keluarga, dan/atau satuan pendidikan; 4) ragam budaya pada konteks diri sendiri dan keluarga melalui teks sederhana; 5) gambar bergerak dan/atau tidak bergerak dalam teks sederhana sebagai bagian dari literasi visual; 6) kosakata yang berkaitan dengan pengembangan literasi visual; dan 7) strategi memahami isi teks sederhana.",
+          "pages": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "key": "matematika",
+      "pages": [
+        15
+      ],
+      "variants": [
+        {
+          "part": "matematika",
+          "text": "a. Matematika 1) konsep bilangan, hubungan antara bilangan serta sifat-sifat bilangan untuk menyatakan kuantitas dalam berbagai konteks yang sesuai; 2) operasi aritmatika (penjumlahan, pengurangan, perkalian, dan pembagian) pada bilangan cacah, pecahan, dan desimal dilakukan secara efisien untuk menyelesaikan masalah kontekstual; 3) identifikasi pola baik numerik maupun non-numerik untuk menjelaskan hal yang berulang; 4) spasial mengenai bangun datar dan bangun ruang serta sifat-sifatnya untuk menjelaskan lingkungan di sekitar; 5) pengukuran dan estimasi atribut benda yang dapat diukur menggunakan berbagai satuan (baik baku maupun yang tidak baku) serta membandingkan hasilnya; dan 6) interpretasi data yang menunjukkan keberagaman berdasarkan tampilan data untuk mengambil kesimpulan.",
+          "pages": [
+            15
+          ]
+        },
+        {
+          "part": "teknologi_digital",
+          "text": "b. Teknologi Digital 1) pemecahan masalah sederhana pada objek konkret secara sistematis, efektif, efisien, dan optimal dengan berpikir komputasional; 2) pengembangan instruksi logis dan terstruktur menggunakan sekumpulan kosakata atau simbol; 3) kecakapan bermedia digital, etika dan budaya digital, keamanan serta keseimbangan hidup di dunia digital; dan 4) pengenalan konsep dasar dan etika kecerdasan artifisial.",
+          "pages": [
+            15
+          ]
+        }
+      ],
+      "summary": "Under muatan 5 the decree lists both Matematika and Teknologi Digital (computational thinking, digital literacy, basic AI concepts and ethics). This is the Standar Isi basis for Koding dan Kecerdasan Artifisial content in SD."
+    },
+    {
+      "key": "ilmu_pengetahuan_alam",
+      "text": "6. Ilmu Pengetahuan Alam a. pengamatan sederhana, identifikasi pertanyaan ilmiah, eksperimen sederhana, pengolahan data, refleksi, dan komunikasi hasil penyelidikan; b. bentuk, fungsi struktur tubuh makhluk hidup, siklus hidup, interaksi antarmakhluk hidup dan lingkungan, pelestarian makhluk hidup, serta upaya mitigasi perubahan iklim; c. wujud zat, proses perubahan wujud zat, dan pemanfaatannya dalam kehidupan sehari-hari; d. gaya dan pengaruhnya terhadap gerak dan bentuk benda; e. energi dan perubahan bentuk energi, penghematan energi, dan serta penggunaan sumber energi alternatif sebagai upaya mitigasi perubahan iklim; f. pemanfaatan gelombang bunyi dan cahaya dalam kehidupan sehari hari; dan g. tata surya serta pengaruh gerak rotasi dan revolusi bumi.",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "key": "ilmu_pengetahuan_sosial",
+      "text": "7. Ilmu Pengetahuan Sosial a. proses awal sosialisasi dan interaksi sosial di masyarakat; b. kondisi geografis sekitar rumah, sekolah, dan daerahnya yang memengaruhi keberagaman hayati serta pemanfaatannya dalam kehidupan sehari-hari; c. perilaku manusia untuk memenuhi kebutuhan hidup dan penggunaan teknologi sederhana; dan d. sejarah masyarakat di sekitarnya dan peranan tokoh-tokoh lokal yang dapat diteladani.",
+      "pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "key": "seni_dan_budaya",
+      "text": "8. Seni dan Budaya a. pengenalan seni dan budaya untuk mengekspresikan diri menggunakan alat atau bahan sederhana; b. pengenalan bentuk seni dan budaya melalui pengalaman kontekstual; c. pengenalan proses penciptaan karya seni dan budaya; d. interpretasi berbagai pengalaman kontekstual ke dalam bentuk seni dan budaya; dan e. ekspresi dan apresiasi terhadap seni dan budaya sebagai upaya olah rasa.",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "key": "pendidikan_jasmani_dan_olahraga",
+      "text": "9. Pendidikan Jasmani dan Olahraga a. penyesuaian keterampilan gerak, transfer strategi gerak, uji efektivitas penerapan strategi gerak ke dalam berbagai situasi gerak. Investigasi berbagai konsep gerak untuk meningkatkan capaian keterampilan gerak; b. merancang peraturan alternatif dan modifikasi permainan untuk mendukung fair play dan partisipasi inklusif. Partisipasi secara positif dalam kelompok atau tim; c. partisipasi dalam aktivitas jasmani dan pengaruhnya terhadap kesehatan. Eksplorasi rekomendasi aktivitas jasmani serta pencegahan perilaku malas gerak (sedenter) dan strategi pencapaiannya; dan d. identifikasi risiko kesehatan akibat gaya hidup dan pencegahan melalui aktivitas jasmani berdasarkan rekomendasi otoritas kesehatan. Makanan sehat untuk menunjang aktivitas jasmani berdasarkan informasi kandungan gizi pada makanan. Praktik penanganan cedera sedang sesuai pemahaman tentang prinsip pertolongan pertama.",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "key": "muatan_lokal",
+      "text": "10. Muatan Lokal a. lingkup materi muatan lokal dikembangkan berdasarkan potensi, keunikan lokal, dan kearifan lokal; dan b. ruang lingkup materi muatan lokal disesuaikan dengan tingkat perkembangan Murid.",
+      "pages": [
+        16
+      ]
+    }
+  ],
+  "special_needs_program_scope": {
+    "text": "C. Ruang Lingkup Materi Program Kebutuhan Khusus Sekolah Dasar Luar Biasa dan Sekolah Dasar/Madrasah Ibtidaiyah/Paket A/Bentuk Lain yang Sederajat yang Mempunyai Murid Berkebutuhan Khusus Penyandang Disabilitas Ruang lingkup materi program kebutuhan khusus pada Sekolah Dasar Luar Biasa dan Sekolah Dasar/Madrasah Ibtidaiyah/Paket A/bentuk lain yang sederajat yang mempunyai Murid berkebutuhan khusus penyandang disabilitas terbagi menjadi dua, yakni materi umum dan materi khusus. Materi umum diberikan kepada seluruh Murid berkebutuhan khusus penyandang disabilitas. Sementara materi khusus diberikan kepada Murid berkebutuhan khusus penyandang disabilitas sesuai dengan kekhususannya. 1. Materi Umum a. pembinaan hidup sehat; b. adaptasi; c. keselamatan diri; d. pemanfaatan alat bantu/media adaptif dan teknologi bantu penglihatan, alat bantu gerak, dan/atau alat bantu pendengaran; dan e. pengembangan kemandirian. 2. Materi Khusus a. Murid berkebutuhan khusus penyandang disabilitas sensorik meliputi: 1) Murid berkebutuhan khusus penyandang disabilitas netra mencakup materi orientasi dan mobilitas, sikap sosial, dan Sistem Simbol Braille; dan 2) Murid berkebutuhan khusus penyandang disabilitas rungu mencakup materi pengembangan komunikasi, dan pengembangan persepsi bunyi dan irama, b. Murid berkebutuhan khusus penyandang disabilitas intelektual mencakup pengembangan diri; c. Murid berkebutuhan khusus penyandang disabilitas fisik mencakup pengembangan gerak ; dan d. Murid berkebutuhan khusus penyandang disabilitas mental mencakup: 1) pengembangan interaksi, komunikasi, dan perilaku; dan 2) pengembangan sensorik motorik.",
+    "pages": [
+      16,
+      17
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        12
+      ],
+      "text": "Lettering in Lampiran II B.1 runs a. Islam, b. Kristen, c. Katolik, b. Hindu, c. Buddha, d. Khonghucu (Hindu is printed as 'b.' after Katolik 'c.'). Stored by religion key, not by letter."
+    },
+    {
+      "pages": [
+        16
+      ],
+      "text": "Lampiran II B has no item for keterampilan/kejuruan (muatan wajib Pasal 3 ayat 1 huruf j) for SD; it lists ten items. Read as 'not applicable to SD', to confirm with Tim Validasi."
+    },
+    {
+      "pages": [
+        15
+      ],
+      "text": "Teknologi Digital sits under muatan 5 (Matematika) in the SD scope. Compare with KKA as an elective (Permendikdasmen 13/2025, coding-ai-*.json) before SIGRAK places KKA topics."
+    },
+    {
+      "pages": [
+        16
+      ],
+      "text": "PJOK scope items (e.g. \"penanganan cedera sedang\") read like Fase C content; the decree gives no phase split. The CP decides grade placement."
+    }
+  ]
+}

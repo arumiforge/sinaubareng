@@ -15,7 +15,7 @@
     ],
     "created_on": "2026-11-10",
     "conventions": "docs/data/taxonomy/README.md",
-    "pending_p4_23": "Entries with pending_p4_23: true get source_file and sha256 from the P4-23 PR (docs/sources/, docs/data/regulations/)."
+    "pending_p4_23": "Entries with pending_p4_23: true are the regulations P4-23 could not fetch; they get source_file and sha256 once the PDF is in docs/sources/."
   },
   "regulations": [
     {
@@ -121,7 +121,7 @@
       "verification": "mirror",
       "data_files": [],
       "pending_p4_23": true,
-      "notes": "Base text not in the repo; only the 13/2025 changes are. Berita Negara 2024 Nomor 172. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "notes": "Base text not in the repo; only the 13/2025 changes are. Berita Negara 2024 Nomor 172. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
     },
     {
       "code": "PERMENDIKDASMEN-13-2025",
@@ -155,17 +155,19 @@
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2025,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2025-06-10",
+      "promulgated_on": "2025-06-13",
+      "effective_on": "2025-06-13",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
-      "source_url": "https://pasal.id/en/peraturan/permen/permendikdasmen-no-10-tahun-2025",
-      "verification": "secondary",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "8 dimensi profil lulusan. Exact date unverified. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "source_file": "docs/sources/Permendikdasmen_No_10_Tahun_2025_Standar_Kompetensi_Lulusan.pdf",
+      "sha256": "207a66b76105aa3a180b6e50213be8ef44df15ff040efbcdb6305be86f7ae5b4",
+      "source_url": "https://www.kemendikdasmen.go.id",
+      "verification": "official_copy",
+      "data_files": [
+        "docs/data/regulations/graduate-competency-standard-permendikdasmen-10-2025.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "8 dimensi profil lulusan. Berita Negara 2025 Nomor 410. Revokes Permendikbudristek 5/2022. Official copy from www.kemendikdasmen.go.id (P4-23)."
     },
     {
       "code": "PERMENDIKDASMEN-12-2025",
@@ -176,17 +178,19 @@
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2025,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2025-07-10",
+      "promulgated_on": "2025-07-15",
+      "effective_on": "2025-07-15",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
-      "source_url": "https://peraturan.bpk.go.id/Details/322494",
-      "verification": "secondary",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "source_file": "docs/sources/Permendikdasmen_No_12_Tahun_2025_Standar_Isi.pdf",
+      "sha256": "184497add24f2baaf72e94d1fddfd842d1e3656d8bb37bb222bd41eaa7dbdd16",
+      "source_url": "https://www.kemendikdasmen.go.id",
+      "verification": "official_copy",
+      "data_files": [
+        "docs/data/regulations/content-standard-permendikdasmen-12-2025.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Berita Negara 2025 Nomor 502. Revokes Permendikbudristek 8/2024. Teknologi Digital sits under Matematika for SD. Official copy from www.kemendikdasmen.go.id (P4-23)."
     },
     {
       "code": "PERMENDIKDASMEN-1-2026",
@@ -207,7 +211,7 @@
       "verification": "mirror",
       "data_files": [],
       "pending_p4_23": true,
-      "notes": "Pasal 9 unreadable on the mirror. Revokes Permendikbudristek 16/2022. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "notes": "Pasal 9 unreadable on the mirror. Revokes Permendikbudristek 16/2022. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
     },
     {
       "code": "PERMENDIKBUDRISTEK-16-2022",
@@ -239,17 +243,19 @@
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2022,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2022-04-26",
+      "promulgated_on": "2022-04-28",
+      "effective_on": "2022-04-28",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Permendikbudristek_No_21_Tahun_2022_Standar_Penilaian_Pendidikan.pdf",
+      "sha256": "cd412d083cf5dbfe7dc0b05c41f536d378d7fcaa9fc2421b92f2124e7b732fc9",
       "source_url": "https://pasal.id/peraturan/permen/permendikbudriset-no-21-tahun-2022",
       "verification": "mirror",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Still in force. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "data_files": [
+        "docs/data/regulations/assessment-standard-permendikbudristek-21-2022.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Still in force. SD graduation considers kelas V and VI. Berita Negara 2022 Nomor 460. Mirror: JDIH salinan re-hosted by a regional education office; replace with the JDIH copy and re-hash when it can be fetched (owner, 2026-11-11)."
     },
     {
       "code": "PERMENDIKDASMEN-26-2025",
@@ -260,17 +266,19 @@
       "ministry": "kemendikdasmen",
       "layer": "L1",
       "year": 2025,
-      "issued_on": null,
-      "promulgated_on": null,
-      "effective_on": null,
+      "issued_on": "2025-12-16",
+      "promulgated_on": "2025-12-17",
+      "effective_on": "2025-12-17",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Permendikdasmen_No_26_Tahun_2025_Standar_Pengelolaan.pdf",
+      "sha256": "1f992433483d543c5d1e051518b082555f9e8932818fa13674cdb79ca0074500",
       "source_url": null,
       "verification": "mirror",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "KSP set by the principal; RKJM, RKT. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "data_files": [
+        "docs/data/regulations/management-standard-permendikdasmen-26-2025.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "KSP set by the principal; RKJM, RKT; one learning session per day (Pasal 17, 3-year transition in Pasal 26); at most 24 rombel per SD (Pasal 9). Berita Negara 2025 Nomor 1079. Revokes Permendikbudristek 47/2023. Mirror: JDIH salinan re-hosted by a regional education office; replace with the JDIH copy and re-hash when it can be fetched (owner, 2026-11-11)."
     },
     {
       "code": "PERMENDIKDASMEN-6-2026",
@@ -282,16 +290,18 @@
       "layer": "L1",
       "year": 2026,
       "issued_on": "2026-01-08",
-      "promulgated_on": null,
-      "effective_on": null,
+      "promulgated_on": "2026-01-09",
+      "effective_on": "2026-01-09",
       "status": "in_force",
-      "source_file": null,
-      "sha256": null,
-      "source_url": null,
+      "source_file": "docs/sources/Permendikdasmen_No_6_Tahun_2026_Budaya_Sekolah_Aman_dan_Nyaman.pdf",
+      "sha256": "3e6d3deab3fdad8f6dd0d57b5e22eebc396596bb45051ed7c14b66b5c4a7d36f",
+      "source_url": "https://www.kemendikdasmen.go.id",
       "verification": "official_copy",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "Official PDF read online, not yet in docs/sources/; class duties not read in full. Revokes Permendikbudristek 46/2023. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "data_files": [
+        "docs/data/regulations/safe-school-culture-permendikdasmen-6-2026.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "Class duties in Pasal 18(3): in SD the guru kelas holds them; \"wali kelas\" is named only for SMP/SMA/SMK. Berita Negara 2026 Nomor 11. Revokes Permendikbudristek 46/2023. Official copy from www.kemendikdasmen.go.id (P4-23)."
     },
     {
       "code": "PERMENDIKBUDRISTEK-46-2023",
@@ -333,7 +343,7 @@
       "verification": "secondary",
       "data_files": [],
       "pending_p4_23": true,
-      "notes": "Implements Permendikdasmen 6/2026. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "notes": "Implements Permendikdasmen 6/2026. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
     },
     {
       "code": "PERMENDIKDASMEN-9-2026",
@@ -354,7 +364,7 @@
       "verification": "official_copy",
       "data_files": [],
       "pending_p4_23": true,
-      "notes": "Official PDF linked, not yet in docs/sources/. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "notes": "Official PDF linked, not yet in docs/sources/. Short title; take the full title from the official copy. Not yet in docs/sources/: JDIH, peraturan.go.id and BPK were unreachable from the build environment in P4-23. Open question: the owner fetches the PDF from an Indonesian connection (docs/drafts/open-questions.md)."
     },
     {
       "code": "PERMENDIKDASMEN-9-2025",
@@ -476,17 +486,19 @@
       "ministry": "kemendikdasmen",
       "layer": "L2",
       "year": 2025,
-      "issued_on": null,
+      "issued_on": "2025-07-16",
       "promulgated_on": null,
-      "effective_on": null,
+      "effective_on": "2025-07-16",
       "status": "amended",
-      "source_file": null,
-      "sha256": null,
+      "source_file": "docs/sources/Kepka_BSKAP_No_046_H_KR_2025_Capaian_Pembelajaran.pdf",
+      "sha256": "45809d2c88a612f90ee5adbd60d71a8952527d6924c626d126ea6926ae3d3394",
       "source_url": null,
-      "verification": "unverified",
-      "data_files": [],
-      "pending_p4_23": true,
-      "notes": "General-subject CP; base decree not in the repo. Amended by BKPDM 020/2026. Short title; take the full title from the official copy. Pending P4-23: the coordinator fills source_file and sha256 after that PR merges."
+      "verification": "official_copy",
+      "data_files": [
+        "docs/data/regulations/cp-decree-sd-index-kepka-bskap-046-h-kr-2025.json"
+      ],
+      "pending_p4_23": false,
+      "notes": "General-subject CP (1,691 pages, kept whole, owner 2026-11-11). Revokes Kepka BSKAP 32/H/KR/2024. Amended by BKPDM 020/2026. Copy from a ministry unit (BPMP), not JDIH. The data file is a page index only; CP text is for P4-29/P4-30."
     },
     {
       "code": "BKPDM-020-2026",

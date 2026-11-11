@@ -1,7 +1,7 @@
 # SIGRAK Developer Handbook
 
 - **Status:** final (owner request 2026-11-09, D-361)
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Audience:** every new developer or agent who joins SIGRAK, before they read any other document. The Indonesian PDF of this handbook, `docs/pdf/developer-handbook.pdf`, is the one complete reading for a new developer (D-361).
 - **Indonesian PDF:** [`docs/pdf/developer-handbook.pdf`](../pdf/developer-handbook.pdf), translated in [`docs/pdf/src/developer-handbook.md`](../pdf/src/developer-handbook.md)
 
@@ -288,7 +288,7 @@ What it means for SIGRAK:
 
 - KBC is **not a subject** and changes no JP. Results are reported through Akhlak or Budi Pekerti and the attitude notes, never as labels or rankings.
 - For MI, the RPM wizard adds two optional fields, *Tema KBC* and *Materi Insersi*. The AI pre-fills a suggestion from the CP and the material; the teacher may change or clear both (D-126, D-142). **Status: Designed (P5-04).**
-- KMA 512/2026 also covers religion teachers in general schools, SD included. Whether SIGRAK offers the KBC fields to SD religion teachers is an **open owner question** (`docs/drafts/open-questions.md`). Until it is answered, KBC stays MI-only.
+- KMA 512/2026 also covers religion teachers in general schools, SD included. SD religion teachers do not see the KBC fields (Tema KBC, Materi Insersi, nilai dasar) by default; a SIGRAK admin can switch them on as a Profil Jenjang or console setting (D-368).
 
 ### 3.8 Where innovation is wide open
 
@@ -381,8 +381,6 @@ Portals: principal and pengawas see the same data, validate, supervise
 
 **Status:** **Built** (P5-03d, P5-03e, P5-03h): academic years, classes, copy classes, teaching assignments, the timetable with all its checks. **Designed:** the school-subject switches page and muatan lokal warning, the calendar (P5-03i), the draft timetable generator (P5-03j). P5-03 was reopened for P5-03i and P5-03j (D-252); both come before or alongside P5-04.
 
-> **Differs from the final docs.** `data-model.md` still shows `timetable_slots.teacher_id` and no `kind`/`label`; D-247 and D-249 win. It shows region calendars as "defaults a school calendar overrides"; D-256 replaces that with copy-plus-offered-updates. It also lacks the `public_id` columns on years, classes, and memberships (D-182, D-241).
-
 ### 4.3 Curriculum: data, import, versions, overrides, validation
 
 **Who:** Tim SIGRAK (data, import, console), Tim Validasi SIGRAK (review), the school (changes), the principal and pengawas (validation).
@@ -473,8 +471,6 @@ Game kelas (an add-on, D-171) grows this into an IFP learning mode: a playlist f
 
 **Status:** **Designed** for all of this section. Nothing of the content engine, the AI layer, Dokumen Saya, or the exports is built yet; it is P5-04 (content core: AI provider engine, template engine, RPM, Dokumen Saya, PDF/DOCX export) and P5-05 (Bank Soal, LKPD, Quiz Battle). The `lang/id` files for these areas exist only as placeholders. Game kelas beyond Quiz Battle, the LKPD waves, and the assessment templates are **Later** waves after v1.
 
-> **Differs from the final docs.** `content-engine.md` still describes the LKPD output without blocks or `pattern` (D-296, D-329), Bank Soal exports without the item library (D-293, D-294), RPM scheduling without `partial`, the JP balance, or undo (D-267…D-275), a PGK Kategori pair "mendukung/tidak mendukung" that D-045 dropped, and "one PDF per download, never a merge", which D-280 amends for Berkas Administrasi.
-
 ### 4.5 In class: Di Kelas, offline sync, attendance, journal, observation, class tools
 
 **Who:** teachers on a phone, mostly during or right after a lesson.
@@ -522,8 +518,6 @@ Sync uses the normal web session and CSRF token, not an API token. Queued rows s
 
 **Status:** **Built:** Kelas Saya > Jadwal only. **Designed:** everything else in this section is slice P5-07 (Di Kelas with offline sync, Jurnal from RPM), plus parts of P5-04 and P5-08.
 
-> **Differs from the final docs.** `product-concept.md` and `design-system.md` still use *Absensi* and "siswa"; D-302 and D-210 use *Kehadiran* and *murid*. `architecture.md` and `data-model.md` limit offline to three forms and `journals.status` to `done`/`not_done`; D-289, D-349, and D-267 widen both.
-
 Read more: [`content-engine.md`](content-engine.md), [`ifp-classroom.md`](ifp-classroom.md), [`docs/drafts/lkpd-exploration.md`](../drafts/lkpd-exploration.md), [`docs/drafts/legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md), [`docs/drafts/administration-features.md`](../drafts/administration-features.md), [`architecture.md`](architecture.md#3-offline-sync-di-kelas), D-011…D-016, D-024, D-029, D-171…D-181, D-263…D-278, D-289, D-293…D-303, D-329…D-337, D-349.
 
 ### 4.6 Assessment
@@ -540,7 +534,7 @@ Read more: [`content-engine.md`](content-engine.md), [`ifp-classroom.md`](ifp-cl
 
 **Pindai LJK (answer-sheet scanning).** Core in P5-08 (D-286). The printed sheet looks like the sheet schools already use: header with Mata Pelajaran, Kelas, Nama, Nomor; letter boxes the student crosses out; numbered lines for Isian and Uraian; four corner markers and a QR that holds only the sheet's random `public_id` (D-287, D-325). Scanned forms: PG, PG Kompleks, Benar-Salah and PGK Kategori, Menjodohkan. Isian and Uraian are entered by hand with partial credit. No AI reads student answers, and sheet images are never uploaded (D-287). The scan queue works offline and reaches `scores` only after sync and teacher confirmation (D-289). The same camera code later serves Kartu Jawab (D-174) and a paper fallback for Simulasi TKA (D-288, after P5-08).
 
-> **Open point.** D-287 and D-289 describe scanning on the teacher's device, with only the results synced. D-347, recorded later, says multiple-choice answers "are read by OMR on SIGRAK's own server". Both agree that no AI reads answers and no student data goes to an AI provider. Where the OMR runs (phone or server) should be confirmed in P4-19 or at the start of P5-08; the OMR library choice is already listed as a one-day spike on a low-end Android phone (`legacy-upgrade-01.md`, open questions).
+**Where the bubbles are read.** In the browser on the teacher's phone, with a JavaScript OMR library; only the answers read and their confidence go to the server (D-369, which replaces the "OMR on SIGRAK's own server" wording of D-347). **Handwritten answers** (Uraian, Isian) come after Pindai LJK: the phone reads them into text, the teacher corrects the text beside the photo (which never leaves the phone), and only the text, tagged with a nomor absen + nomor soal code such as `12-3`, goes to the AI with the key or rubric. The AI suggests a score and feedback; the teacher decides (D-370).
 
 **Peta Asesmen and the new instruments (Designed, D-344…D-351).** The owner's *Master Assessment Landscape* becomes one curated dataset in `docs/data/assessment/` (domains, purposes, methods, media, scoring, uses), reviewed by Tim Validasi, plus tags on every instrument (D-344). Its design is its own task, P4-19 (D-345). New templates: Rubrik Kinerja (practice, demonstration, project, product, MI ibadah practice), Observasi DPL (behaviour indicators observed several times, shown as trends), Cek Kesiapan Awal (a profile, not a score), Akomodasi Murid, and self and peer assessment cards (D-346). A guided "five questions" wizard in Asesmen (*Apa yang diukur? Untuk apa? Bagaimana? Bukti apa? Tindak lanjutnya apa?*) picks from the taxonomy. Wave A covers the dataset v1, tags on Bank Soal and LKPD, Rubrik Kinerja, Observasi DPL with phone entry, Cek Kesiapan Awal, and misconception tags on distractors (D-351). P5-08 itself is unchanged.
 
@@ -581,15 +575,13 @@ Read more: [`content-engine.md`](content-engine.md), [`ifp-classroom.md`](ifp-cl
 3. **Kartu login.** The system prints one card per student (name, class, session, username, password), several per page, through the `exports` queue. Credentials work only for that session.
 4. **Jalankan.** The proctor opens the session and reads out the current token: 6 characters derived from the session secret and the current 15-minute window (TOTP-style), so tokens are never stored (D-027). Students sign in on `ujian.sigrak.com` with username, password, and token. The proctor watches progress, can reset a stuck participant's login, or extend time for one participant; both are logged in `exam_events`.
 5. **The exam client.** A plain TKA-like screen: question area, number grid, *ragu-ragu* flag, timer, A−/A/A+ font control at the standard default size (D-121). Item and option order is shuffled per participant, with stimulus groups kept together. Every answer autosaves with a sequence number (idempotent), so a reconnect resumes where it stopped. Time is enforced by the server; the client timer only displays it. No AI calls, no links into the app, nothing beyond the participant's own exam (D-027, D-094).
-6. **Hasil.** Score 0–100 per subject, with partial credit for PGK forms, normalised and labelled as a practice estimate (D-030, D-042). The result shows the category (Baik, Memadai, Kurang) plus the Istimewa predicate for scores of 95 or more, for example "Baik-Istimewa" (D-041, D-120). Per-competency and per-item analysis, Excel and PDF export, and an optional copy into Asesmen.
+6. **Hasil.** Score 0–100 per subject, with partial credit for PGK forms, normalised and labelled as a practice estimate (D-030, D-042). Teachers and students see four levels: Istimewa, Baik, Memadai, Kurang. `exam_results` and exports store the official category (Baik, Memadai, Kurang) and the Istimewa predicate (95,00 or more) separately, matching the SHTKA (D-371, completing D-041 and D-120). The UI notes that these are practice results. Per-competency and per-item analysis, Excel and PDF export, and an optional copy into Asesmen.
 
 **Integrity and capacity.** Exam-site login throttling is keyed by session and username, not by IP, because a whole class shares one school IP; Cloudflare rules allow bursts of 30–40 logins from one IP (D-054). Passwords are encrypted so cards can be reprinted, and purged 30 days after the session closes. The exam site is not installable as a PWA (D-093).
 
 **Why students may use it.** Gemini's terms bar services likely to be used by people under 18. SIGRAK's answer: AI runs only in teachers' sessions *before* the exam to prepare questions; students receive finished, teacher-checked content and never use or trigger AI (D-124).
 
 **Status:** **Designed** (P5-06). Built so far: the `ujian.` route group and guard, its own Inertia + Svelte entry in `resources/exam-client/`, a placeholder home page, and the `ExamParticipant` model used by the `exam` guard.
-
-> **Differs from the final docs.** `content-engine.md` lists four categories "Kurang, Memadai, Baik, Istimewa" and `data-model.md` has `exam_results.category` ∈ {`kurang`, `memadai`, `baik`, `istimewa`}; D-041 and D-120 show three categories plus an Istimewa predicate ("Baik-Istimewa"). Settle the stored shape when P5-06 starts.
 
 Read more: [`content-engine.md`](content-engine.md#tka-practice-exam-cbt), [`architecture.md`](architecture.md#4-tka-exam-session), [`docs/drafts/assessment-landscape.md`](../drafts/assessment-landscape.md), [`docs/drafts/administration-features.md`](../drafts/administration-features.md), D-026, D-027, D-030, D-041…D-047, D-089, D-092, D-094, D-111, D-120, D-124, D-144, D-205, D-213…D-218, D-286…D-295, D-301, D-304, D-344…D-351.
 
@@ -720,8 +712,6 @@ app/
 - Redis uses separate databases (or prefixes) for cache, sessions, queues/Horizon, and AI state, so `cache:clear` never wipes sessions, jobs, or key cooldowns (D-053). Redis runs with `noeviction` and AOF (D-058).
 - Horizon mails long waits per queue (`ai` 600 s, `exports` 120 s, `default` 60 s), and the scheduler pings a heartbeat (D-137).
 
-> **Differs from the final docs.** `architecture.md` shows the scheduler as a cron entry running `schedule:run`; D-064 (and `server-setup.md`) runs `schedule:work` under Supervisor.
-
 ### 5.5 Gotenberg
 
 `gotenberg/gotenberg:8.39.0-chromium`, published on `127.0.0.1:3000` with basic auth and a 1 GB memory limit, on its own Docker network with no outbound connections (D-059). Every asset (HTML, fonts, scripts, images, the letterhead) is sent inside the request (D-052), so a malicious string in a document cannot make Chromium fetch anything. Laravel calls it through `spatie/laravel-pdf` with its Gotenberg driver (D-028, D-073). Only Berkas Administrasi uses the merge route (D-280).
@@ -788,7 +778,7 @@ documents (tka_package) ─> exam_sessions ─< exam_items, participants
 
 ### 6.3 Tables added by later decisions
 
-`legacy-upgrade-01.md` §4 lists what P4-14 must add to `data-model.md`. The main ones: `national_holidays`, `progress_snapshots`, `document_approvals`, a Berkas job record, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, leger state with confirmations and an unlock log, retention and AI-model settings with logs, staff announcements with targets, help-request status; new columns such as `calendar_events.class_id`, `journals.status` with `partial` and the not-done reason, `school_print_settings.margin_profiles`, `schools.district`, a request status on `supervisor_assignments`, and a closed flag on `academic_years`. Internal roles add `staff_role_assignments` (D-339).
+`legacy-upgrade-01.md` §4 listed what to add to `data-model.md`; P4-24 added it on 2026-11-10. The main ones: `national_holidays`, `progress_snapshots`, `document_approvals`, a Berkas job record, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, leger state with confirmations and an unlock log, retention and AI-model settings with logs, staff announcements with targets, help-request status; new columns such as `calendar_events.class_id`, `journals.status` with `partial` and the not-done reason, `school_print_settings.margin_profiles`, `schools.district`, a request status on `supervisor_assignments`, and a closed flag on `academic_years`. Internal roles add `staff_role_assignments` (D-339).
 
 ### 6.4 Versioning tables, now and planned
 
@@ -850,8 +840,6 @@ Names on paper are read on the teacher's device, never by an AI provider (D-347)
 Console-only adapters for an OpenAI-compatible API and one more commercial provider exist for Tim SIGRAK's own work (D-326). They never change the teacher's key model. See [section 4.10](#410-internal-console-and-business).
 
 **Status:** **Designed** (P5-04). Nothing in `app/AI` is built yet.
-
-> **Differs from the final docs.** `ai-provider-engine.md` says no second provider is planned and that models change only in config; D-315 and D-326 add console model settings and console adapters, while teacher keys stay Gemini only. It also mentions plain `ShouldBeUnique`; D-050 uses `ShouldBeUniqueUntilProcessing` plus `WithoutOverlapping`.
 
 Read more: [`ai-provider-engine.md`](ai-provider-engine.md), D-012, D-022…D-024, D-036, D-050, D-116…D-119, D-124, D-128, D-152, D-213, D-315, D-326, D-347, D-350.
 
@@ -1027,7 +1015,7 @@ Read more: [`docs/agent/WORKFLOW.md`](../agent/WORKFLOW.md), [`docs/agent/PROGRE
 | Task | Content | Status | Depends on |
 |---|---|---|---|
 | P4-01 | Buku Induk and Dapodik sync design | Blocked, held as upcoming (D-161) | Owner restart |
-| P4-05 | Final docs and glossary for the 2025–2026 rules ("murid", 12-component rapor, ekskul, JTM) + PDFs | Todo | D-210…D-221 |
+| P4-05 | Final docs and glossary for the 2025–2026 rules ("murid", 12-component rapor, ekskul, JTM) + PDFs | Review (done together in P4-24) | D-210…D-221 |
 | P4-06 | Design: assessment and rapor extensions | Todo | P4-05 |
 | P4-07 | Design: class and homeroom extensions | Todo | D-214…D-219 |
 | P4-08 | Design: principal, operator, supervisor administration (per-item descriptors) | Todo | P4-12 |
@@ -1035,19 +1023,19 @@ Read more: [`docs/agent/WORKFLOW.md`](../agent/WORKFLOW.md), [`docs/agent/PROGRE
 | P4-10 | Design: e-Rapor SD and RDM export | Todo | D-218, P5-08 |
 | P4-11 | Design: Penyusun KSP and evaluasi KSP (after v1) | Todo | D-209, D-217 |
 | P4-13 | Legacy app upgrade decisions | Review | D-251 |
-| P4-14 | Apply the legacy upgrade to `docs/final/` + PDFs | Todo | P4-13 |
+| P4-14 | Apply the legacy upgrade to `docs/final/` + PDFs | Review (done together in P4-24) | P4-13 |
 | P4-29 | Curate SD core subjects (PP, BIN, MTK, IPAS) | Todo | P4-23 |
 | P4-30 | Curate the other SD subjects (SB, PJOK, BIG, BJW, KTB, SSD, KKA) | Todo | P4-23 |
 | P4-31 | Curate the religion subjects, SD and MI | Todo | P4-23 |
 | P4-19 | Design: assessment landscape (Peta Asesmen, tags, wizard, Wave A) | Todo | D-344…D-351 |
-| P4-20 | Apply D-329…D-351 to `docs/final/` + PDFs | Todo | P4-16…P4-18 |
+| P4-20 | Apply D-329…D-351 to `docs/final/` + PDFs | Review (done together in P4-24) | P4-16…P4-18 |
 | P4-22 | Taxonomy seed and regulation registry in `docs/data/taxonomy/` | Todo | P4-21 |
 | P4-23 | Get and extract missing regulations, verify KMA 512/2026 | Todo | — |
-| P4-24 | Apply the policy foundation to `docs/final/` + PDFs | Todo | P4-21 |
+| P4-24 | Apply the policy foundation to `docs/final/` + PDFs | Review (done together in P4-24) | P4-21 |
 
 Done in Phase 4: P4-02 (Game kelas), P4-03 and P4-03b (official documents), P4-04 (administration features), P4-12 (supervision instruments), P4-16 (LKPD), P4-17 (internal roles), P4-18 (assessment landscape), P4-21 (policy foundation), P4-25 (this handbook), P4-26 (research digest), P4-27 (legacy brand removal), P4-28 (SIGRAK curriculum dataset), P4-15 (SIGRAK catalogs).
 
-The doc-update tasks P4-05, P4-14, P4-20, and P4-24 together close the gaps this handbook flags between the final docs and later decisions.
+The doc-update tasks P4-05, P4-14, P4-20, and P4-24 ran as one task (P4-24, 2026-11-10) and closed the gaps between the final docs and later decisions (§12.1).
 
 ### 11.2 Phase 5: the v1 slices in order
 
@@ -1089,7 +1077,7 @@ P5-02 runs in parallel with all of it.
 2. **The D-355 versioning minimum,** before P5-04: version columns on `curriculum_versions`, a policy-profile resolver in place of `config/curriculum.php` `allocation_versions` (same behaviour), and the Profil Jenjang data. The first RPM must already store its rule set.
 3. **P5-03j,** the draft timetable, in parallel with P5-04.
 4. **P5-04, the content core,** with the decisions added by P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) and the console parts D-315 and D-316, plus the Dasar Kebijakan panel and the first Cek Keselarasan rules on the RPM (D-358).
-5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), the curriculum curation P4-29…P4-31, Tim Validasi review of the catalogs and regulation data, and the doc updates P4-14, P4-20, P4-24.
+5. In parallel, data and doc work that unblocks later slices: P4-22 (taxonomy), P4-23 (missing regulations), the curriculum curation P4-29…P4-31, and Tim Validasi review of the catalogs and regulation data.
 
 Additions by slice from the legacy upgrade are listed in `legacy-upgrade-01.md` §5: P5-05 gets D-293, D-294, D-296; P5-07 gets D-263…D-271 (teacher side), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 gets D-286…D-292, D-295, D-301, D-304; P5-09 gets the portal views and D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; the console gets D-314 and D-317…D-320.
 
@@ -1135,35 +1123,11 @@ Decisions live in [`docs/agent/DECISIONS.md`](../agent/DECISIONS.md). The ranges
 | D-352…D-359 | Policy foundation | Position, rule strength, versioning, Profil Jenjang, taxonomy, panel, KMA 512 |
 | D-360…D-362 | Repository and docs | Legacy brand removed, this handbook, research digest |
 | D-363…D-367 | SIGRAK curriculum and catalogs | One curriculum format, curation per subject, crosswalk, SD allocation from the structure, catalogs |
+| D-368…D-372 | Owner answers 2026-11-10 | KBC for SD off by default, OMR in the browser, handwritten answers on the phone, TKA four levels, P4-13 closed |
 
 ### 12.1 Where final docs and later decisions differ
 
-This handbook follows the later decision in each case. The doc-update tasks (P4-05, P4-14, P4-20, P4-24) will bring the final docs in line.
-
-| Final doc says | Later decision |
-|---|---|
-| Menu *Absensi*; "siswa" in UI copy | *Kehadiran* (D-302); "murid" (D-210) |
-| Offline: Absensi, Jurnal, Catatan Siswa only | Plus read-only RPM meetings, the scan queue, observation entry (D-289, D-349) |
-| `journals.status` done/not_done; `meetings.status` without partial | `partial`, reasons, derived meeting status (D-267, D-268) |
-| `timetable_slots.teacher_id` | No teacher column; `kind` and `label` (D-247, D-249) |
-| Region calendar as an override default | School copies the region calendar, with offered updates (D-256) |
-| Last 5 revisions, pruned | Approved revisions never pruned (D-282) |
-| One PDF per download, no merge | Merge for Berkas Administrasi only (D-280) |
-| Print margins as plain settings | Three margin profiles, duplex, cover, landscape, NIHIL (D-283) |
-| LKPD output without blocks | Grade 1–3 blocks and a `pattern` field (D-296, D-329) |
-| Bank Soal exports only | Per-item data, six derived prints, item library (D-293, D-294) |
-| TKA: four categories incl. Istimewa | Three categories plus an Istimewa predicate (D-041, D-120) |
-| PGK Kategori pair "mendukung/tidak mendukung" | Dropped (D-045) |
-| `staff_users.role` ∈ admin, support, content | Eleven roles with scopes (D-338, D-339); code still has three |
-| Add-on list fixed | Mapping set in the console (D-211) |
-| Scheduler by cron | Supervisor runs `schedule:work` (D-064) |
-| No second AI provider; models in config | Console model per purpose and console adapters (D-315, D-326) |
-| Plain `ShouldBeUnique` (AI doc) | `ShouldBeUniqueUntilProcessing` + `WithoutOverlapping` (D-050) |
-| Data model lacks `learning_outcomes`, `public_id` on years, classes, memberships | Added (D-226, D-182, D-241) |
-| Support access granted by the school, logged for it (internal-roles draft §4) | MoU-based read-only access, one internal row per session (D-341) |
-| `curriculum_versions` without dates; config pointer | Versioning columns and resolver before P5-04 (D-355) |
-
-One inconsistency inside the decisions themselves: D-287 and D-289 put answer-sheet scanning on the teacher's device, while D-347 says multiple-choice answers are read by OMR on SIGRAK's own server. Confirm before P5-08 ([section 4.6](#46-assessment)).
+None at present. The docs consolidation task P4-24 (which absorbed P4-05, P4-14, and P4-20) applied every later decision to the final docs on 2026-11-10, including the earlier list in this section; its checklist is in [`docs/agent/tasks/P4-24-final-docs-sync.md`](../agent/tasks/P4-24-final-docs-sync.md). The inconsistency about where answer sheets are read was settled by D-369 (in the teacher's browser). When a new decision changes a final doc, update that doc and its PDF in the same task; list any gap left open here.
 
 ## 13. Glossary
 
@@ -1258,7 +1222,7 @@ Indonesian education and product terms used in this handbook and in the code com
 | [`local-setup-wsl2.md`](local-setup-wsl2.md) | Local development on Windows |
 | [`research-digest.md`](research-digest.md) | Every research finding so far; check before researching (D-362) |
 
-**Key drafts** (accepted designs not yet in the final docs):
+**Key drafts** (design detail behind the final docs; their accepted parts are in the final docs):
 
 | Draft | Content |
 |---|---|

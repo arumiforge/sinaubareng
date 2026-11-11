@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-05
-- **Last updated:** 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, 320 GB disk, staging on the same VPS)
+- **Last updated:** 2026-11-10 (scheduler wording aligned with `architecture.md`, D-064); 2026-10-31 (owner answers: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, 320 GB disk, staging on the same VPS)
 - **Versions checked online on 2026-10-30** (sources in [Versions](#versions)).
 
 ## Purpose
@@ -720,7 +720,7 @@ sudo supervisorctl reread && sudo supervisorctl update
 sudo supervisorctl status
 ```
 
-`schedule:work` under Supervisor replaces the usual cron line (`* * * * * php artisan schedule:run`), which is the form `architecture.md` shows. Both run the same schedule; use only one.
+`schedule:work` under Supervisor replaces the usual cron line (`* * * * * php artisan schedule:run`); there is no cron entry for the scheduler (D-064, as in `architecture.md`). Both forms run the same schedule; use only `schedule:work`.
 
 `stopwaitsecs=600` is longer than the longest AI step (5 minutes per step, D-022 draft), so a deploy lets running jobs finish. Keep the queue's `retry_after` above the longest job timeout, as the AI engine doc requires.
 
@@ -1037,7 +1037,7 @@ To be numbered during integration.
 7. **No public IP; Cloudflare Tunnel for all traffic** (owner, 2026-10-31): a locally-managed `cloudflared` tunnel per server routes `app.`, `ujian.`, `admin.`, and `ssh.` to localhost. Real IP from `CF-Connecting-IP` (trusted only from 127.0.0.1). UFW denies all incoming. SSH and `admin.` sit behind Cloudflare Access. This replaces the Origin CA / Authenticated Origin Pulls / Cloudflare IP allow-list design.
 8. **Three Nginx vhosts for one Laravel codebase** (`app.`, `ujian.`, `admin.`), as in `architecture.md`, with host-only session cookies (no shared `SESSION_DOMAIN`).
 9. **Release-folder deploys** (`releases/`, `shared/`, `current` symlink), keeping 5 releases; PHP-FPM reload on each deploy because OPcache does not check timestamps.
-10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler; `architecture.md` shows the equivalent cron form); worker counts live in `config/horizon.php`.
+10. **Supervisor runs Horizon and `schedule:work`** (no cron entry for the scheduler, D-064; `architecture.md` shows the same); worker counts live in `config/horizon.php`.
 11. **Backups:** daily 01:30 WIB (18:30 UTC) `mysqldump` + `storage/app` tarball, 14 days local, 30 days off-site through an encrypted `rclone` remote; monthly restore test, off-site restore twice a year. `APP_KEY` kept in the password manager, never in the backup.
 12. **Server and PHP run in UTC; the app runs in WIB** (`Asia/Jakarta`, D-165), and its MySQL session uses `+07:00` (as in `architecture.md`). Cron times in this guide are UTC.
 13. **Domain `sigrak.com`** with hostnames `app.`, `ujian.`, `admin.` (owner, 2026-10-31).

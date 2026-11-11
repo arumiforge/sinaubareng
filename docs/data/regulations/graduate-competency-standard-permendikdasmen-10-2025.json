@@ -1,0 +1,262 @@
+{
+  "dataset": "graduate_competency_standard",
+  "version_code": "SKL-PERMENDIKDASMEN-10-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "SD/MI parts of the Standar Kompetensi Lulusan (SKL): the eight dimensi profil lulusan with their definitions, the focus of SKL for pendidikan dasar, and the SD/MI competency descriptions (Pasal 7 a-h, one per dimension). SKL guides graduation (Pasal 3) and is the reference for every other national standard (Pasal 2 ayat 4).",
+  "source": {
+    "file": "docs/sources/Permendikdasmen_No_10_Tahun_2025_Standar_Kompetensi_Lulusan.pdf",
+    "sha256": "207a66b76105aa3a180b6e50213be8ef44df15ff040efbcdb6305be86f7ae5b4",
+    "regulation_code": "PERMENDIKDASMEN-10-2025",
+    "title": "Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 10 Tahun 2025 tentang Standar Kompetensi Lulusan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "10 Tahun 2025",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2025-06-10",
+    "promulgated_on": "2025-06-13",
+    "effective_on": "2025-06-13",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2025 Nomor 410",
+    "revokes": "Permendikbudristek Nomor 5 Tahun 2022 tentang Standar Kompetensi Lulusan (Berita Negara Republik Indonesia Tahun 2022 Nomor 161)",
+    "implements": "Pasal 7 Peraturan Pemerintah Nomor 57 Tahun 2021 sebagaimana telah diubah dengan PP 4/2022",
+    "downloaded_from": "https://www.kemendikdasmen.go.id/download/file/1390 (same file as /download/file/1396)",
+    "downloaded_on": "2026-11-10",
+    "copy_type": "SALINAN with the jdih.kemendikdasmen.go.id footer, certified by Kepala Biro Hukum",
+    "verification": "official_copy",
+    "pages_total": 12,
+    "pages_note": "PDF page = printed page (body only, no lampiran)."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF from Word, clean text layer), cut into verbatim spans by script and structured by hand. No tables or images.",
+    "checked_against_images": [],
+    "skipped": [
+      "Pasal 5 SKL PAUD (STPPA aspects and descriptions) (pp. 4-5).",
+      "Pasal 8 SKL SMP/MTs (pp. 7-8).",
+      "Pasal 9-11 SKL pendidikan menengah umum and kejuruan (pp. 8-11).",
+      "Konsiderans and Mengingat (pp. 1-2)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace and hyphenation cleanup only).",
+      "pages are PDF page numbers; pages_note gives the printed numbering.",
+      "summary fields are short English notes for developers, not source text."
+    ]
+  },
+  "definitions": {
+    "text": "1. Standar Kompetensi Lulusan adalah kriteria minimal tentang kesatuan sikap, keterampilan, dan pengetahuan yang menunjukkan capaian kemampuan Murid dari hasil pembelajarannya pada akhir Jenjang Pendidikan.",
+    "pages": [
+      2
+    ]
+  },
+  "murid_term": {
+    "text": "2. Murid adalah peserta didik pada jalur pendidikan formal, nonformal, dan informal pada pendidikan anak usia dini, jenjang pendidikan dasar, dan jenjang pendidikan menengah dari setiap jenis pendidikan.",
+    "pages": [
+      2
+    ]
+  },
+  "scope": {
+    "pasal_2": {
+      "text": "Pasal 2 (1) Standar Kompetensi Lulusan dirumuskan berdasarkan: a. tujuan pendidikan nasional; b. tingkat perkembangan Murid; c. kerangka kualifikasi nasional Indonesia; dan d. jalur, jenjang, dan jenis pendidikan. (2) Standar Kompetensi Lulusan terdiri atas: a. Standar Kompetensi Lulusan pada pendidikan anak usia dini; b. Standar Kompetensi Lulusan pada Jenjang Pendidikan dasar; dan c. Standar Kompetensi Lulusan pada Jenjang Pendidikan menengah. (3) Standar Kompetensi Lulusan sebagaimana dimaksud pada ayat (2) huruf b dan huruf c termasuk untuk program pendidikan kesetaraan. (4) Standar Kompetensi Lulusan sebagaimana dimaksud pada ayat (1) digunakan sebagai acuan dalam pengembangan standar isi, standar proses, standar penilaian pendidikan, standar tenaga kependidikan, standar sarana dan prasarana, standar pengelolaan, dan standar pembiayaan.",
+      "pages": [
+        3
+      ]
+    },
+    "pasal_3_graduation": {
+      "text": "Pasal 3 (1) Standar Kompetensi Lulusan digunakan sebagai pedoman dalam penentuan kelulusan Murid dari satuan pendidikan. (2) Penggunaan Standar Kompetensi Lulusan sebagaimana dimaksud pada ayat (1) dikecualikan bagi Murid pada pendidikan anak usia dini. (3) Dalam hal Murid berkebutuhan khusus dengan hambatan intelektual, penggunaan Standar Kompetensi Lulusan sebagaimana dimaksud pada ayat (1) mempertimbangkan kondisi dan kebutuhan Murid. (4) Kondisi dan kebutuhan Murid sebagaimana dimaksud pada ayat (3) ditentukan melalui asesmen yang dilakukan oleh ahli sesuai dengan ketentuan peraturan perundang-undangan.",
+      "pages": [
+        3
+      ]
+    },
+    "summary": "SKL rests on four bases, is the reference for the other seven standards, and is the guide for deciding graduation (with care for students with intellectual disabilities)."
+  },
+  "graduate_profile_dimensions": {
+    "pages": [
+      3,
+      4
+    ],
+    "intro": "(1) Standar Kompetensi Lulusan mencakup 8 (delapan) dimensi profil lulusan yang harus dikuasai pada akhir setiap jenjang pendidikan, yaitu:",
+    "force": "mandatory",
+    "items": [
+      {
+        "code": "keimanan_ketakwaan",
+        "name": "keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa",
+        "definition": "(2) Dimensi keimanan dan ketakwaan terhadap Tuhan Yang Maha Esa sebagaimana dimaksud pada ayat (1) huruf a mengacu pada individu yang memiliki keyakinan dan mengamalkan ajaran agama/kepercayaannya, berakhlak mulia, serta menjaga hubungan dengan Tuhan Yang Maha Esa, sesama manusia, dan lingkungan.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "kewargaan",
+        "name": "kewargaan",
+        "definition": "(3) Dimensi kewargaan sebagaimana dimaksud pada ayat (1) huruf b mengacu pada individu yang bangga akan identitas dan budayanya, menghargai keberagaman, menjaga persatuan bangsa, menaati aturan bernegara dan bermasyarakat, serta menjaga keberlanjutan kehidupan, lingkungan, dan harmoni antarbangsa.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "penalaran_kritis",
+        "name": "penalaran kritis",
+        "definition": "(4) Dimensi penalaran kritis sebagaimana dimaksud pada ayat (1) huruf c mengacu pada individu yang memiliki rasa ingin tahu, mampu berpikir logis dan analitis, serta mampu menganalisis dan menyelesaikan permasalahan, berargumentasi logis, dan memanfaatkan literasi dan numerasi untuk memecahkan masalah.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "kreativitas",
+        "name": "kreativitas",
+        "definition": "(5) Dimensi kreativitas sebagaimana dimaksud pada ayat (1) huruf d mengacu pada individu yang mampu berperilaku produktif, menciptakan inovasi, dan merumuskan solusi bagi permasalahan di sekitarnya.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "kolaborasi",
+        "name": "kolaborasi",
+        "definition": "(6) Dimensi kolaborasi sebagaimana dimaksud pada ayat (1) huruf e mengacu pada individu yang membiasakan diri untuk peduli dan berbagi, serta membangun kerja sama dengan berbagai kalangan di lingkungan sekitar.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "kemandirian",
+        "name": "kemandirian",
+        "definition": "(7) Dimensi kemandirian sebagaimana dimaksud pada ayat (1) huruf f mengacu pada individu yang mampu bertanggung jawab, berinisiatif, dan beradaptasi dalam pembelajaran dan pengembangan diri.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "kesehatan",
+        "name": "kesehatan",
+        "definition": "(8) Dimensi kesehatan sebagaimana dimaksud pada ayat (1) huruf g mengacu pada individu yang menjalankan pola hidup bersih dan sehat berdasarkan pemahaman tentang kebugaran, kesehatan fisik dan mental, dan berkontribusi secara positif terhadap lingkungannya.",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "code": "komunikasi",
+        "name": "komunikasi",
+        "definition": "(9) Dimensi komunikasi sebagaimana dimaksud pada ayat (1) huruf h mengacu pada individu yang memiliki kemampuan menyimak, membaca, berbicara, dan menulis dengan baik dan benar, sesuai etika dalam beragam konteks dan moda.",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  "basic_education_focus": {
+    "text": "Pasal 6 (1) Standar Kompetensi Lulusan pada Jenjang Pendidikan dasar sebagaimana dimaksud dalam Pasal 2 ayat (2) huruf b terdiri atas: a. Standar Kompetensi Lulusan pada sekolah dasar/madrasah ibtidaiyah/sekolah dasar luar biasa/paket A/bentuk lain yang sederajat; dan b. Standar Kompetensi Lulusan pada sekolah menengah pertama/madrasah tsanawiyah/sekolah menengah pertama luar biasa/paket B/bentuk lain yang sederajat. (2) Standar Kompetensi Lulusan pada Jenjang Pendidikan dasar sebagaimana dimaksud pada ayat (1) difokuskan pada: a. persiapan Murid menjadi anggota masyarakat yang beriman dan bertakwa kepada Tuhan Yang Maha Esa serta berakhlak mulia; b. penanaman karakter yang sesuai dengan nilai-nilai Pancasila; dan c. penumbuhan kompetensi literasi dan numerasi Murid untuk mengikuti pendidikan lebih lanjut.",
+    "pages": [
+      6
+    ]
+  },
+  "sd_mi_competencies": {
+    "pages": [
+      6,
+      7
+    ],
+    "intro": "Standar Kompetensi Lulusan pada sekolah dasar/madrasah ibtidaiyah/sekolah dasar luar biasa/paket A/bentuk lain yang sederajat sebagaimana dimaksud dalam Pasal 6 ayat (1) huruf a dirumuskan secara terpadu dalam bentuk deskripsi kompetensi yang terdiri atas:",
+    "force": "mandatory",
+    "summary": "One integrated competency description per dimension, in the same order as Pasal 4 (a = keimanan ... h = komunikasi).",
+    "items": [
+      {
+        "dimension": "keimanan_ketakwaan",
+        "text": "a. membiasakan diri dalam mengamalkan ajaran agama/kepercayaan yang dianut dan melaksanakan ibadah secara mandiri sesuai agamanya, berperilaku sesuai akhlak mulia dengan menunjukkan sikap kasih sayang, kejujuran, keadilan, dan tanggung jawab dalam kehidupan sehari-hari, serta memahami konsep hubungan dengan Tuhan Yang Maha Esa, sesama manusia, dan lingkungan sekitarnya;",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "dimension": "kewargaan",
+        "text": "b. mengenal dan mengekspresikan identitas diri dan budayanya, menghargai keragaman masyarakat dan budaya nasional serta mengenal budaya global, melakukan interaksi antarbudaya, dan mengklarifikasi prasangka dan stereotip, menaati aturan, serta berpartisipasi untuk menjaga Negara Kesatuan Republik Indonesia;",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "dimension": "penalaran_kritis",
+        "text": "c. memiliki rasa ingin tahu, mampu menganalisis permasalahan dan gagasan sederhana, menyampaikan argumentasi secara logis, mampu memilah informasi yang relevan, membuat keputusan yang tepat, dan menggunakan literasi dan numerasi dalam menyelesaikan masalah dalam kehidupan;",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "dimension": "kreativitas",
+        "text": "d. menunjukkan kemampuan menyampaikan gagasan dan membuat tindakan dan/atau karya sederhana yang kreatif, serta menemukan alternatif solusi dalam menyelesaikan permasalahan di lingkungan sekitar;",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "dimension": "kolaborasi",
+        "text": "e. menunjukkan sikap peduli dan perilaku berbagi, serta bekerja sama antarsesama dengan bimbingan di lingkungan satuan pendidikan dan keluarga;",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "dimension": "kemandirian",
+        "text": "f. menunjukkan sikap bertanggung jawab dan kemampuan mengatur diri dalam pembelajaran dan pengembangan diri, serta menunjukkan usaha untuk meningkatkan kemampuannya;",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "dimension": "kesehatan",
+        "text": "g. berperilaku hidup bersih dan sehat secara mandiri berdasarkan prinsip kebugaran, kesehatan fisik dan mental, serta menjaga kesehatan lingkungan; dan",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "dimension": "komunikasi",
+        "text": "h. memiliki kemampuan menyimak, berbicara, membaca, dan menulis dengan baik dan benar sesuai dengan etika dalam konteks pengalaman pribadi, interaksi sosial, dan tema pengetahuan, dengan menggunakan berbagai moda komunikasi verbal dan nonverbal.",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "revocation": {
+      "text": "Pasal 12 Pada saat Peraturan Menteri ini mulai berlaku, Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 5 Tahun 2022 tentang Standar Kompetensi Lulusan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah (Berita Negara Republik Indonesia Tahun 2022 Nomor 161), dicabut dan dinyatakan tidak berlaku.",
+      "pages": [
+        11
+      ]
+    },
+    "entry_into_force": {
+      "text": "Pasal 13 Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.",
+      "pages": [
+        11
+      ]
+    }
+  },
+  "open_points": [
+    {
+      "pages": [
+        6,
+        7
+      ],
+      "text": "SKL SD/MI is written as integrated descriptions per dimension, not as grade-level indicators. Any per-grade or per-phase indicator in SIGRAK (e.g. for rapor or Peta Asesmen) is SIGRAK content, not national text, and must be labelled as such (D-352, D-353)."
+    },
+    {
+      "pages": [
+        3
+      ],
+      "text": "Pasal 3 ayat (1) makes SKL the guide for graduation; the mechanism itself is set by the school under the assessment standard (Permendikbudristek 21/2022 Pasal 11) and the BSKAP guide. Check against learning-assessment-guide-bskap.json graduation rows."
+    }
+  ]
+}

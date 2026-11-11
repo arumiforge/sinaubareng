@@ -1,8 +1,8 @@
 # Legacy App Upgrade 01: Decided Changes
 
-- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); `docs/final/` not yet updated
+- **Status:** draft · decisions accepted 2026-11-09 (D-252…D-328); P4-13 closed (D-372); §4 applied to `docs/final/` and the drafts 2026-11-10 (P4-24)
 - **Task:** P4-13
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Read with:** [`usulan-01`](../sources/usulan-01/usulan-01-peta-fitur-aplikasi-lama-ke-sigrak.md) (owner source, Indonesian), [`legacy-overlap-adjustments.md`](legacy-overlap-adjustments.md) (Part B), [`legacy-coordination.md`](legacy-coordination.md) (conflicts, gaps, sessions), [`DECISIONS.md`](../agent/DECISIONS.md#d-252--calendar-work-is-p5-03i-draft-timetable-is-p5-03j)
 
 ## Purpose
@@ -163,19 +163,21 @@ These stay as written in Part B and are built in their slice:
 
 ## 4. Doc changes for P4-14
 
-| Doc | Changes |
-|---|---|
-| `docs/final/data-model.md` | **New tables:** `national_holidays`, `progress_snapshots`, `document_approvals`, a Berkas job record, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, leger state with confirmations and unlock log, retention settings with log, AI model settings with log, staff announcements with targets, help-request status.<br>**Columns:**<ul><li>`calendar_events.class_id`; an SAS/STS subtype on `exam` events (needed by D-269); a joint-leave school-day override</li><li>`journals.status` gains `partial`, plus `not_done_reason`, `not_done_note`, `unfinished_experiences`; `meetings.status` gains `partial` and is derived from the journal</li><li>`school_print_settings.margin_profiles`, `duplex`, `cover_logo_path`; a letterhead source flag</li><li>`school_topic_changes` reverted status</li><li>`schools.district`</li><li>`supervisor_assignments` request status</li><li>`academic_years` closed flag</li><li>remedial history on scores</li><li>`duty_rosters` groups and members</li><li>school settings: readiness thresholds, timetable preference switches, attendance thresholds, piket-on-idle switch, assessment weights and remedial cap</li><li>per-user sound and notification settings</li></ul>**Calendar note:** "school calendar copied from a region calendar, with offered updates" |
-| `docs/final/content-engine.md` | Scheduling: partial with Lanjutan, reasons, shift preview and undo, JP balance, readiness, early semester 2, Pasang ke jadwal, parallel copy, Promes Realisasi. Bank Soal: per-item output and item library. LKPD blocks |
-| `docs/final/product-concept.md` | Menus: Kehadiran, Berkas Administrasi, Pusat Tindak Lanjut, Arsip Tahun Ajaran, pengawas portal (Sekolah Binaan, PKKS). Feature-status rows (Add or Keep → upgrade) for every item in §2. Console list (D-314…D-320). Offline scope (D-289) |
-| `docs/final/export-localization.md` | XP-6 amended (D-280). XP-39 cover, XP-40 margin profiles and duplex, XP-41 auto landscape, XP-42 NIHIL, XP-43 Berkas, XP-44 answer sheet. Prints: Promes Realisasi, Daya Serap, locked leger, kehadiran recap, piket, berita acara tabungan, cash report. File names (XP-32) |
-| `docs/final/architecture.md` | `app/Progress/`, `app/Calendar/` (EffectiveDays, ConflictChecker), `RpmReadiness`. Jobs: Monday 00.30 snapshot, Monday 06.00 Kabar, Berkas and school ZIP, prune skipping approved revisions. On-device OMR with an offline queue, Di Kelas read-only RPM cache, version banner and service-worker update |
-| `docs/final/ai-provider-engine.md` | Model per purpose from the database, config as the default (D-315); test key owned by Tim SIGRAK |
-| `docs/final/design-system.md` | Terms (Berkas Administrasi, pengesahan dokumen, Kehadiran, Kelompok piket, Sumbangan sukarela, Sisa dari kesepakatan, Pengingat). Banned words: tunggakan, kurang bayar, belum lunas, teguran, tanda tangan elektronik. Status labels with text and colour. Sound rules |
-| `docs/final/ifp-classroom.md` | Lanjutan block in Game kelas; piket on the idle screen (D-298); Kartu Jawab reuses the LJK code (D-286) |
-| `docs/drafts/teacher-supervision-instruments.md` | Principal supervision now in scope (D-308); S-01/S-15 suggested scores from completeness (D-312) and the Berkas summary sheet; findings bank (D-313) |
-| `docs/drafts/administration-features.md` | K3 covers the principal; H2 thresholds (D-303); T1 detail (D-301); inventory room view (D-306) |
-| `docs/pdf/` | Indonesian PDFs of every changed final doc (D-156) |
+**Applied 2026-11-10** in P4-24 (which absorbed P4-14); see the Status column and [`P4-24-final-docs-sync.md`](../agent/tasks/P4-24-final-docs-sync.md).
+
+| Doc | Changes | Status |
+|---|---|---|
+| `docs/final/data-model.md` | **New tables:** `national_holidays`, `progress_snapshots`, `document_approvals`, a Berkas job record, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, leger state with confirmations and unlock log, retention settings with log, AI model settings with log, staff announcements with targets, help-request status.<br>**Columns:**<ul><li>`calendar_events.class_id`; an SAS/STS subtype on `exam` events (needed by D-269); a joint-leave school-day override</li><li>`journals.status` gains `partial`, plus `not_done_reason`, `not_done_note`, `unfinished_experiences`; `meetings.status` gains `partial` and is derived from the journal</li><li>`school_print_settings.margin_profiles`, `duplex`, `cover_logo_path`; a letterhead source flag</li><li>`school_topic_changes` reverted status</li><li>`schools.district`</li><li>`supervisor_assignments` request status</li><li>`academic_years` closed flag</li><li>remedial history on scores</li><li>`duty_rosters` groups and members</li><li>school settings: readiness thresholds, timetable preference switches, attendance thresholds, piket-on-idle switch, assessment weights and remedial cap</li><li>per-user sound and notification settings</li></ul>**Calendar note:** "school calendar copied from a region calendar, with offered updates" | applied 2026-11-10 |
+| `docs/final/content-engine.md` | Scheduling: partial with Lanjutan, reasons, shift preview and undo, JP balance, readiness, early semester 2, Pasang ke jadwal, parallel copy, Promes Realisasi. Bank Soal: per-item output and item library. LKPD blocks | applied 2026-11-10 |
+| `docs/final/product-concept.md` | Menus: Kehadiran, Berkas Administrasi, Pusat Tindak Lanjut, Arsip Tahun Ajaran, pengawas portal (Sekolah Binaan, PKKS). Feature-status rows (Add or Keep → upgrade) for every item in §2. Console list (D-314…D-320). Offline scope (D-289) | applied 2026-11-10 |
+| `docs/final/export-localization.md` | XP-6 amended (D-280). XP-39 cover, XP-40 margin profiles and duplex, XP-41 auto landscape, XP-42 NIHIL, XP-43 Berkas, XP-44 answer sheet. Prints: Promes Realisasi, Daya Serap, locked leger, kehadiran recap, piket, berita acara tabungan, cash report. File names (XP-32) | applied 2026-11-10 |
+| `docs/final/architecture.md` | `app/Progress/`, `app/Calendar/` (EffectiveDays, ConflictChecker), `RpmReadiness`. Jobs: Monday 00.30 snapshot, Monday 06.00 Kabar, Berkas and school ZIP, prune skipping approved revisions. On-device OMR with an offline queue, Di Kelas read-only RPM cache, version banner and service-worker update | applied 2026-11-10 |
+| `docs/final/ai-provider-engine.md` | Model per purpose from the database, config as the default (D-315); test key owned by Tim SIGRAK | applied 2026-11-10 |
+| `docs/final/design-system.md` | Terms (Berkas Administrasi, pengesahan dokumen, Kehadiran, Kelompok piket, Sumbangan sukarela, Sisa dari kesepakatan, Pengingat). Banned words: tunggakan, kurang bayar, belum lunas, teguran, tanda tangan elektronik. Status labels with text and colour. Sound rules | applied 2026-11-10 |
+| `docs/final/ifp-classroom.md` | Lanjutan block in Game kelas; piket on the idle screen (D-298); Kartu Jawab reuses the LJK code (D-286) | applied 2026-11-10 |
+| `docs/drafts/teacher-supervision-instruments.md` | Principal supervision now in scope (D-308); S-01/S-15 suggested scores from completeness (D-312) and the Berkas summary sheet; findings bank (D-313) | applied 2026-11-10 |
+| `docs/drafts/administration-features.md` | K3 covers the principal; H2 thresholds (D-303); T1 detail (D-301); inventory room view (D-306) | applied 2026-11-10 |
+| `docs/pdf/` | Indonesian PDFs of every changed final doc (D-156) | applied 2026-11-10 |
 
 ## 5. Tasks
 

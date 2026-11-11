@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
-- **Last updated:** 2026-11-01
+- **Last updated:** 2026-11-10 (terms, status labels, and sound rules from D-210, D-263…D-311, D-322, D-353, D-358, D-371)
 - **Sources:** [`Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`](../sources/Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
 
 ## Purpose
@@ -19,7 +19,7 @@ The app should look like a tidy teacher's workbook: plain background, one brand 
 | A different accent colour per card or icon | One brand colour + status colours only |
 | Tiny uppercase labels (`text-[9px] uppercase`) | Sentence-case labels, min 13 px, weight 600 |
 | Icon-only buttons | Icon + text. Icon alone only for universal actions (close, search, menu) with `aria-label` |
-| A "Kurang 232" badge on every row | Thin progress bar + number. Colour only when late |
+| A "Kurang 232" badge on every row | Thin progress bar + "Belum lengkap: 232" (D-263). Colour only when late |
 | `user-scalable=no` | Zoom allowed (accessibility) |
 | Tailwind CDN, `lucide@latest` | Tailwind through the Vite build. Icons pinned and bundled |
 
@@ -68,11 +68,33 @@ Rules:
 | Actions | Button (primary, secondary, text), icon button (close/search/menu only) |
 | Forms | Input, Select, Combobox (curriculum pickers), Checkbox, Radio cards (wizard choices), Textarea with counter (the optional AI note) |
 | Structure | Tabs, Table + card list for phones, Stepper (wizards), Bottom sheet, Dialog |
-| Feedback | Toast (one line, auto-hide), inline error, Empty state, Skeleton, Progress ("Langkah 2 dari 4") |
+| Feedback | Toast (one line, auto-hide), inline error, Empty state, Skeleton, Progress ("Langkah 2 dari 4"), Status chip (text + colour, see [Status labels](#status-labels)) |
 | Content engine | Template card (gallery), Section editor with "Perbaiki bagian ini", Revision compare (old/new), Generation status panel |
 | AI keys | Key row (label, project, last 4, status chip, cooldown time), Add-key sheet with test result and the multi-key consent box |
 | TKA exam | Session card, exam card sheet (print), proctor panel (current token with countdown, participant list with status), result table |
-| Print | Letterhead upload with A4/F4 preview and resolution warning, print settings form |
+| Print | Letterhead upload with A4/F4 preview and resolution warning, "Buat kop otomatis" (D-284), print settings form with margin profiles (D-283) |
+| Policy (from P5-04, D-358) | Dasar Kebijakan panel (CP, TP, DPL, principles, rule-set version); Cek Keselarasan lines: **block** (`--danger`, cannot save), **warning** (`--warn`), **hint** (`--info`), each with an icon and a text label, never colour alone; "Contoh" tag on example defaults (D-353) |
+
+## Status labels
+
+A status is always a text label plus a colour, never colour alone (D-263). The colour follows the status tokens; grey is `--text-muted` on `--surface`.
+
+| Where | Labels and colour | Decision |
+|---|---|---|
+| Completeness (teacher, portals) | Lengkap (ok), Belum lengkap: n (warn when late), Belum dimulai (grey), Tidak berlaku (grey) | D-263 |
+| RPM readiness | Siap (ok), Segera habis (warn), Perlu RPM (danger, names the first empty date); grey Tidak ada jadwal / Belum ada ATP. Hari Ini shows only yellow and red | D-270 |
+| Pengingat | Terkirim (grey), Dibaca (info), Ditindaklanjuti (ok) | D-311 |
+| Help request | Baru (grey), Diproses (info), Selesai (ok) | D-320 |
+| Pengesahan dokumen | Disahkan (ok), Berubah setelah disahkan (warn) | D-281 |
+
+## Sound and notifications
+
+When an AI generation finishes or fails, an export or Berkas Administrasi is ready, or an answer-sheet sync finishes (D-285):
+
+- There is always a toast and a Kabar entry. Sound only adds to that, so no information depends on sound.
+- Sound is on by default with the *Lembut* pattern. There are three Web Audio patterns (*Lembut*, *Lonceng*, *Tegas*), and a failure sounds different from a success. Sound plays only while the tab is visible.
+- A screen notification shows only while the tab is hidden. Permission is asked at the first generation, not on sign-in.
+- Settings live in Akun > Tampilan and are stored on the server per user. Web Push is out of scope.
 
 ## Mobile rules
 
@@ -102,6 +124,17 @@ The exam site is a separate front end for students (D-027). It should feel like 
 - No brand promotion, no links to the teacher app, no AI wording.
 - Copy is short and child-friendly: "Masukkan token dari pengawas", "Kirim jawaban", "Waktu tersisa 5 menit".
 
+**TKA result levels (D-371).** Teachers and students see four levels, each with a short text (copy in `lang/id`):
+
+| Level | Meaning shown |
+|---|---|
+| Istimewa | The top predicate (score 95,00 or more) |
+| Baik | Good command of the tested competencies |
+| Memadai | Basic command, with material to improve |
+| Kurang | Needs further improvement |
+
+Exports store the official category (Baik, Memadai, Kurang) and the Istimewa predicate separately ([export-localization XP-47](export-localization.md#44-prints-and-exports-from-later-decisions)). Every result screen notes that these are practice results, and that the official TKA results (SHTKA) complement and validate rapor scores in jalur prestasi and SPMB.
+
 ## Voice and tone
 
 Sigrak speaks like a quick, polite fellow teacher: straight to the point, courteous, never showing off technology.
@@ -126,13 +159,16 @@ Sigrak speaks like a quick, polite fellow teacher: straight to the point, courte
 8. "Anda" for every role. "Bapak/Ibu" only in broadcasts from the principal.
 9. **Never ask the teacher for a prompt.** Wizard questions are pedagogical and come with defaults (see [`content-engine.md`](content-engine.md#wizard-rules)).
 
+10. **No pressure words.** Money and follow-up copy stays supportive: "Sumbangan sukarela", "Sisa dari kesepakatan", "Pengingat". The [banned words](#banned-words) never appear.
+11. **Label example defaults "Contoh"** (D-353), so teachers see what is theirs to change.
+
 | Situation | Before | After |
 |---|---|---|
 | Main button | GENERATE MODUL | Buat RPM |
 | Error | Gagal memproses AI: {pesan} | RPM belum berhasil dibuat. Periksa kunci AI Anda, lalu coba lagi. |
 | All keys at limit | — | Semua kunci AI Anda sedang mencapai batas. Coba lagi pukul {jam}. |
 | Confirmation | Hapus jurnal? / Ya, Hapus | Hapus jurnal 12 Okt? Jurnal ini tidak bisa dikembalikan. / Hapus jurnal |
-| Empty | Data belum tersedia | Belum ada siswa. Tambahkan satu per satu atau impor dari Excel. |
+| Empty | Data belum tersedia | Belum ada murid. Tambahkan satu per satu atau impor dari Excel. |
 
 ## Terms
 
@@ -160,9 +196,9 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | API Key / API Key Gemini | Kunci AI | Plural "kunci AI", one per Google project |
 | Google Cloud Project | Project Google | **New**. The label teachers type for each key |
 | Penilaian (menu) | Asesmen | |
-| Administrasi Kelas | Kelas Saya (+ Di Kelas for absensi, jurnal, catatan) | |
+| Administrasi Kelas | Kelas Saya (+ Di Kelas for kehadiran, jurnal, catatan) | |
 | Pemberitahuan / broadcast board | Kabar | School to teacher |
-| Pemberitahuan (principal to teacher) | Pengingat | |
+| Pemberitahuan (principal to teacher) / teguran | Pengingat | **Updated**. Never "teguran" (D-311) |
 | Tutorial | Bantuan | |
 | Pengaturan / Pengaturan Portal | Akun (personal) / Pengaturan Sekolah (school) | |
 | Dashboard | Ringkasan (portal) / Hari Ini (teacher) | |
@@ -172,11 +208,30 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 | Role / Hak Akses | Peran | |
 | Cloud / Firestore / Firebase / sinkronisasi | tersimpan di akun | Technology names never shown |
 | Edit / Reset / Timpa | Ubah / Kembalikan, Atur ulang / Ganti | |
-| Presensi / Kehadiran / Daftar Hadir | Absensi | |
+| Absensi / Presensi | Kehadiran | **Updated**. Menu name (D-302); "Daftar hadir" stays for prints; help search still finds "absensi" |
 | Mutasi siswa | Pindah dan keluar | |
 | Master + old app name | Kurikulum bawaan | |
 | Gagal … | … belum berhasil | Calmer, still clear |
+| Siswa | Murid | **New**. UI term under Permendikdasmen 1/2026 (D-210); "siswa" only in table names and legacy quotes |
+| P5 / Projek Penguatan Profil Pelajar Pancasila | Kokurikuler | **New** (D-210, D-322) |
+| Taraf serap | Daya serap | **New** (D-322); print "Analisis Daya Serap" (D-295) |
+| Download Paket / Paket Administrasi | Berkas Administrasi | **New** (D-278). "Paket" stays for Paket Soal TKA |
+| Tanda tangan elektronik / TTE / Pengesahan elektronik | Pengesahan dokumen | **New** (D-281). An internal approval with a code, not a legal e-signature |
+| Regu piket | Kelompok piket | **New** (D-297) |
+| Keuangan lain / iuran | Sumbangan sukarela | **New** (D-300) |
+| Kurang bayar / tunggakan / belum lunas | Sisa dari kesepakatan | **New** (D-300). Shown only when an agreed amount is set |
+| Kurang 182 | Belum lengkap: 182 | **New** (D-263) |
+| Tingkat TKA (four categories) | Istimewa, Baik, Memadai, Kurang | **New** (D-371). See [TKA result levels](#exam-site-style-tka-practice) |
 | `...` / `&` | `…` (one character) / "dan" | |
+
+### Banned words
+
+These never appear in UI copy, prints, or `lang/id`; the banned-terms test fails on them ([export-localization LOC-35](export-localization.md#23-the-37-istilah-terms)):
+
+- tunggakan, kurang bayar, belum lunas (D-300)
+- teguran (D-311)
+- tanda tangan elektronik (D-281)
+- siswa, P5, taraf serap in UI copy (D-210, D-322)
 
 ## Copy source and localization
 
@@ -189,3 +244,4 @@ These are the standard terms from the spreadsheet's *Istilah* sheet (37 entries;
 
 - [x] UI copy uses "Templat" (KBBI), not "template" (D-151).
 - [x] Game runtime palette: a designer task, briefed together with the logo (D-154).
+- [x] Student term: "murid" (D-210). Attendance menu: *Kehadiran* (D-302).

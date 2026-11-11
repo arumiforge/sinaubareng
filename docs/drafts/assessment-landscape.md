@@ -1,8 +1,8 @@
 # Assessment Landscape SD/MI → SIGRAK features
 
-- **Status:** draft (needs owner review)
+- **Status:** draft; owner decided 2026-11-09 (D-344…D-351); D-347 refined 2026-11-10 by D-369 (OMR in the teacher's browser) and D-370 (handwritten answers read on the phone). Accepted parts applied to `docs/final/` 2026-11-10 (P4-24); design detail continues in P4-19
 - **Task:** P4-18
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Input:** the owner's *Master Assessment Landscape SD/MI* (owner message, 2026-11-09): 10 need groups, purposes, methods, media, analysis, users, AN/TKA, 18 modules, a master taxonomy, MAP-01…MAP-08, five principles
 - **Builds on:** P5-08 (Asesmen slice), D-213…D-215, D-286…D-295, D-172, D-174, D-026…D-030, P4-06 (assessment design, todo)
 
@@ -192,7 +192,7 @@ Answered on 2026-11-09:
 - **AQ1** one dataset (D-344).
 - **AQ2** a separate design task, P4-19 (D-345).
 - **AQ3** all instrument templates (D-346).
-- **AQ4** teacher-side AI now. Names are read on the device, multiple choice by OMR on SIGRAK's server, and essay text without student data may go to Google AI; reading handwriting and voice with AI comes later (D-347).
+- **AQ4** teacher-side AI now. Names are read on the device, multiple choice by OMR on SIGRAK's server, and essay text without student data may go to Google AI; reading handwriting and voice with AI comes later (D-347). *Amended 2026-11-10:* OMR runs in the teacher's browser and only results reach the server (D-369); handwritten Uraian/Isian are read into text on the phone, and only the text with a nomor absen + nomor soal code goes to the AI (D-370).
 - **AQ5** GPK as a teacher assignment (D-348).
 - **AQ6** offline entry (D-349).
 - **AQ7** health-data rule (D-350).

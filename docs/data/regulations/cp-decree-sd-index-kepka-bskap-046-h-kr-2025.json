@@ -1,0 +1,367 @@
+{
+  "dataset": "cp_decree_sd_index",
+  "version_code": "CP-INDEX-SD-KEPKA-BSKAP-046-H-KR-2025",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Page index of the SD/MI parts of the national CP decree, not a transcription. It records the decree body (diktum), which Lampiran holds SD/MI, and for each SD subject the section, page range, and the PDF page where each Fase A-C CP starts. CP text curation is P4-29 and P4-30 (D-364); the religion CP comes from Kepka BKPDM 020/2026, which amends this decree.",
+  "source": {
+    "file": "docs/sources/Kepka_BSKAP_No_046_H_KR_2025_Capaian_Pembelajaran.pdf",
+    "sha256": "45809d2c88a612f90ee5adbd60d71a8952527d6924c626d126ea6926ae3d3394",
+    "regulation_code": "BSKAP-046-H-KR-2025",
+    "title": "Keputusan Kepala Badan Standar, Kurikulum, dan Asesmen Pendidikan Kementerian Pendidikan Dasar dan Menengah Nomor 046/H/KR/2025 tentang Capaian Pembelajaran pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
+    "number": "046/H/KR/2025",
+    "issued_by": "Kepala Badan Standar, Kurikulum, dan Asesmen Pendidikan (Toni Toharudin)",
+    "issued_on": "2025-07-16",
+    "effective_on": "2025-07-16",
+    "revokes": "Keputusan Kepala BSKAP Nomor 32/H/KR/2024 tentang Capaian Pembelajaran (Diktum KETUJUH)",
+    "implements": "Pasal 11 ayat (1) Permendikbudristek 12/2024 as amended by Permendikdasmen 13/2025",
+    "amended_by": "Kepka BKPDM Nomor 020 Tahun 2026 (religion CP, Lampiran I; special education, Lampiran II), file docs/sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf",
+    "downloaded_from": "https://bpmpbabel.kemendikdasmen.go.id/PPID/wp-content/uploads/2025/07/KepKaBSKAP-046_2025-ttg-CP.pdf (PPID of BPMP Provinsi Kepulauan Bangka Belitung, a Kemendikdasmen technical unit)",
+    "downloaded_on": "2026-11-11",
+    "copy_type": "SALINAN certified by Kepala Bagian Keuangan dan Umum BSKAP (p. 6); 1,691 pages",
+    "verification": "official_copy",
+    "verification_note": "Hosted by a ministry technical unit (UPT) on a kemendikdasmen.go.id subdomain, not on JDIH or the BSKAP curriculum site (kurikulum.kemendikdasmen.go.id was unreachable). Treat as official_copy with this note; compare sha256 with the BSKAP copy when reachable.",
+    "pages_total": 1691,
+    "pages_note": "PDF page numbers. Body pp. 1-6; Lampiran I (PAUD) from p. 7; Lampiran II (SD/MI, SMP/MTs, SMA/MA) pp. 23-347; Lampiran III (SMK/MAK) from p. 348; Lampiran IV (Paket A/B/C) from p. 1191; Lampiran V (TKLB/SDLB/SMPLB/SMALB) from p. 1288."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "pdftotext -layout over all 1,691 pages; subject headings and Fase headings located by script and each stated Fase page re-checked by script against the heading text. No CP text transcribed.",
+    "checked_against_images": [],
+    "skipped": [
+      "All CP text (to be curated in P4-29/P4-30 against this file).",
+      "Lampiran I PAUD, Lampiran III SMK/MAK, Lampiran IV Paket A-C, Lampiran V SLB: only start pages noted.",
+      "Lampiran II subjects with no SD phase (Bahasa Indonesia/Matematika/Bahasa Inggris Tingkat Lanjut, IPA, Fisika, Kimia, Biologi, Informatika, IPS, Sejarah, Geografi, Ekonomi, Sosiologi, Antropologi, Prakarya, PKWU, foreign languages other than English)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace and hyphenation cleanup only).",
+      "pages are PDF page numbers; pages_note gives the printed numbering.",
+      "summary fields are short English notes for developers, not source text.",
+      "Subject codes follow the SIGRAK curriculum codes (sigrak-sd-2026-r1-*.json) where one exists; SMU/SRU/STA/STE are local codes for the four Seni options."
+    ]
+  },
+  "diktum": {
+    "kesatu_annexes": {
+      "text": "KESATU : Menetapkan Capaian Pembelajaran pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah meliputi: a. Capaian Pembelajaran pada Pendidikan Anak Usia Dini sebagaimana tercantum dalam Lampiran I; b. Capaian Pembelajaran pada SD/MI, SMP/MTs, SMA/MA sebagaimana tercantum dalam Lampiran II; c. Capaian Pembelajaran pada SMK/MAK sebagaimana tercantum dalam Lampiran III; d. Capaian Pembelajaran pada Program Paket A/Program Paket B/Program Paket C sebagaimana tercantum dalam Lampiran IV; dan e. Capaian Pembelajaran pada TKLB/SDLB/SMPLB/SMALB sebagaimana tercantum dalam Lampiran V, yang merupakan bagian tidak terpisahkan dari Keputusan Kepala Badan ini.",
+      "pages": [
+        3
+      ]
+    },
+    "kedua_per_subject": {
+      "text": "KEDUA : Capaian Pembelajaran sebagaimana dimaksud dalam Diktum KESATU huruf b sampai dengan huruf e dirumuskan untuk setiap mata pelajaran.",
+      "pages": [
+        3
+      ]
+    },
+    "keempat_phases": {
+      "text": "KEEMPAT : Capaian Pembelajaran sebagaimana dimaksud dalam Diktum KESATU huruf b sampai dengan huruf d terdiri atas: a. Capaian Pembelajaran pada Fase A untuk kelas I sampai dengan kelas II pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; b. Capaian Pembelajaran pada Fase B untuk kelas III sampai dengan kelas IV pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; c. Capaian Pembelajaran pada Fase C untuk kelas V sampai dengan kelas VI pada sekolah dasar, madrasah ibtidaiyah, program paket A, atau bentuk lain yang sederajat; d. Capaian Pembelajaran pada Fase D untuk kelas VII sampai dengan kelas IX pada sekolah menengah pertama, madrasah tsanawiyah, program paket B, atau bentuk lain yang sederajat; e. Capaian Pembelajaran pada Fase E untuk kelas X pada sekolah menengah atas, sekolah menengah kejuruan, madrasah aliyah, madrasah aliyah kejuruan, program paket C, atau bentuk lain yang sederajat; dan f. Capaian Pembelajaran pada Fase F untuk: 1. kelas XI sampai dengan kelas XII pada sekolah menengah atas, madrasah aliyah, program paket C, atau bentuk lain yang sederajat dan sekolah menengah kejuruan atau madrasah aliyah kejuruan program 3 (tiga) tahun; dan 2. kelas XI sampai dengan kelas XIII pada sekolah menengah kejuruan atau madrasah aliyah kejuruan program 4 (empat) Tahun.",
+      "pages": [
+        3,
+        4
+      ]
+    },
+    "kelima_slb_phases": {
+      "text": "KELIMA : Capaian Pembelajaran sebagaimana dimaksud dalam Diktum KESATU huruf e terdiri atas: a. Capaian Pembelajaran pada Fase fondasi pada TKLB; b. Capaian Pembelajaran pada Fase A untuk usia mental < 7 Tahun pada Kelas I dan Kelas II SDLB; c. Capaian Pembelajaran pada Fase B untuk usia mental ± 7 Tahun pada Kelas III dan Kelas IV SDLB; d. Capaian Pembelajaran pada Fase C untuk usia mental ± 8 Tahun pada Kelas V dan Kelas VI SDLB; e. Capaian Pembelajaran pada Fase D untuk untuk usia mental ± 9 Tahun pada Kelas VII sampai dengan Kelas IX SMPLB; f. Capaian Pembelajaran pada Fase E untuk untuk usia mental ± 10 Tahun pada kelas X SMALB; dan g. Capaian Pembelajaran pada Fase F untuk untuk usia mental ± 10 Tahun pada kelas XI-XII SMALB.",
+      "pages": [
+        4,
+        5
+      ]
+    },
+    "keenam_fase_a_foundation": {
+      "text": "KEENAM : Capaian Pembelajaran pada fase A disusun selaras dengan Capaian Pembelajaran pada fase fondasi untuk memastikan transisi pembelajaran yang berkesinambungan dari PAUD ke SD dengan memperhatikan 6 (enam) kemampuan fondasi sebagai berikut: a. mengenal nilai agama dan budi pekerti; b. kematangan emosi yang cukup untuk berkegiatan di lingkungan belajar; c. keterampilan sosial dan bahasa yang memadai untuk berinteraksi sehat dengan teman sebaya dan individu lainnya; d. pemaknaan terhadap belajar yang positif; e. pengembangan keterampilan motorik dan perawatan diri yang memadai untuk dapat berpartisipasi di lingkungan sekolah secara mandiri; dan f. kematangan kognitif untuk melakukan kegiatan belajar.",
+      "pages": [
+        5
+      ]
+    },
+    "ketujuh_revocation": {
+      "text": "KETUJUH : Pada saat Keputusan Kepala Badan ini berlaku Keputusan Kepala Badan Standar, Kurikulum, dan Asesmen Pendidikan Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 32/H/KR/2024 Tentang Capaian Pembelajaran Pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, Dan Jenjang Pendidikan Menengah Pada Kurikulum Merdeka dicabut dan dinyatakan tidak berlaku.",
+      "pages": [
+        5
+      ]
+    },
+    "kedelapan_effect": {
+      "text": "KEDELAPAN : Keputusan Kepala Badan ini mulai berlaku sejak tanggal ditetapkan",
+      "pages": [
+        6
+      ]
+    }
+  },
+  "sd_subjects": [
+    {
+      "code": "PAI",
+      "label": "Pendidikan Agama Islam dan Budi Pekerti",
+      "section": "II.I.1",
+      "pages": [
+        23,
+        29
+      ],
+      "fase_start_pages": {
+        "A": 26,
+        "B": 27,
+        "C": 28
+      },
+      "note": "Religion CP replaced by Kepka BKPDM 020/2026 (already in repo)."
+    },
+    {
+      "code": "PAKR",
+      "label": "Pendidikan Agama Kristen dan Budi Pekerti",
+      "section": "II.I.2",
+      "pages": [
+        30,
+        42
+      ],
+      "fase_start_pages": {
+        "A": 34,
+        "B": 35,
+        "C": 37
+      },
+      "note": "Replaced by Kepka BKPDM 020/2026."
+    },
+    {
+      "code": "PAKT",
+      "label": "Pendidikan Agama Katolik dan Budi Pekerti",
+      "section": "II.I.3",
+      "pages": [
+        43,
+        51
+      ],
+      "fase_start_pages": {
+        "A": 46,
+        "B": 47,
+        "C": 48
+      },
+      "note": "Replaced by Kepka BKPDM 020/2026."
+    },
+    {
+      "code": "PAH",
+      "label": "Pendidikan Agama Hindu dan Budi Pekerti",
+      "section": "II.I.4",
+      "pages": [
+        52,
+        58
+      ],
+      "fase_start_pages": {
+        "A": 56,
+        "B": 56,
+        "C": 57
+      },
+      "note": "Replaced by Kepka BKPDM 020/2026."
+    },
+    {
+      "code": "PAB",
+      "label": "Pendidikan Agama Buddha dan Budi Pekerti",
+      "section": "II.I.5",
+      "pages": [
+        59,
+        66
+      ],
+      "fase_start_pages": {
+        "A": 62,
+        "B": 63,
+        "C": 64
+      },
+      "note": "Replaced by Kepka BKPDM 020/2026."
+    },
+    {
+      "code": "PAKH",
+      "label": "Pendidikan Agama Khonghucu dan Budi Pekerti",
+      "section": "II.I.6",
+      "pages": [
+        67,
+        75
+      ],
+      "fase_start_pages": {
+        "A": 71,
+        "B": 72,
+        "C": 73
+      },
+      "note": "Replaced by Kepka BKPDM 020/2026."
+    },
+    {
+      "code": "PP",
+      "label": "Pendidikan Pancasila",
+      "section": "II.II",
+      "pages": [
+        76,
+        87
+      ],
+      "fase_start_pages": {
+        "A": 82,
+        "B": 83,
+        "C": 84
+      }
+    },
+    {
+      "code": "BIN",
+      "label": "Bahasa Indonesia",
+      "section": "II.III.1",
+      "pages": [
+        88,
+        99
+      ],
+      "fase_start_pages": {
+        "A": 94,
+        "B": 95,
+        "C": 95
+      }
+    },
+    {
+      "code": "MTK",
+      "label": "Matematika",
+      "section": "II.IV.1",
+      "pages": [
+        106,
+        119
+      ],
+      "fase_start_pages": {
+        "A": 111,
+        "B": 112,
+        "C": 114
+      }
+    },
+    {
+      "code": "BIG",
+      "label": "Bahasa Inggris",
+      "section": "II.V.1",
+      "pages": [
+        126,
+        138
+      ],
+      "fase_start_pages": {
+        "B": 133,
+        "C": 134
+      },
+      "note": "Compulsory from Fase B (p. 132). The Fase C heading on p. 134 prints 'Umumnya untuk Kelas III dan IV', a typo for V and VI."
+    },
+    {
+      "code": "IPAS",
+      "label": "Ilmu Pengetahuan Alam dan Sosial",
+      "section": "II.VI",
+      "pages": [
+        146,
+        152
+      ],
+      "fase_start_pages": {
+        "B": 149,
+        "C": 151
+      },
+      "note": "No Fase A CP."
+    },
+    {
+      "code": "SMU",
+      "label": "Seni Musik",
+      "section": "II.XVIII.1",
+      "pages": [
+        234,
+        242
+      ],
+      "fase_start_pages": {
+        "A": 238,
+        "B": 239,
+        "C": 240
+      }
+    },
+    {
+      "code": "SRU",
+      "label": "Seni Rupa",
+      "section": "II.XVIII.2",
+      "pages": [
+        243,
+        249
+      ],
+      "fase_start_pages": {
+        "A": 246,
+        "B": 247,
+        "C": 247
+      }
+    },
+    {
+      "code": "STA",
+      "label": "Seni Tari",
+      "section": "II.XVIII.3",
+      "pages": [
+        250,
+        259
+      ],
+      "fase_start_pages": {
+        "A": 256,
+        "B": 257,
+        "C": 258
+      }
+    },
+    {
+      "code": "STE",
+      "label": "Seni Teater",
+      "section": "II.XVIII.4",
+      "pages": [
+        260,
+        267
+      ],
+      "fase_start_pages": {
+        "A": 264,
+        "B": 264,
+        "C": 265
+      }
+    },
+    {
+      "code": "PJOK",
+      "label": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+      "section": "II.XXI",
+      "pages": [
+        302,
+        315
+      ],
+      "fase_start_pages": {
+        "A": 310,
+        "B": 311,
+        "C": 312
+      }
+    },
+    {
+      "code": "KKA",
+      "label": "Koding dan Kecerdasan Artifisial",
+      "section": "II.XXVIII",
+      "pages": [
+        338,
+        347
+      ],
+      "fase_start_pages": {
+        "C": 343
+      },
+      "note": "Fase C only (Kelas V dan VI SD/MI)."
+    }
+  ],
+  "not_in_decree": [
+    "Bahasa daerah / muatan lokal: content set by the regional government (Permendikdasmen 12/2025 Pasal 7 ayat 2).",
+    "MI-specific subjects (Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab): Kemenag, SK Dirjen Pendis 9941/2025."
+  ],
+  "open_points": [
+    {
+      "pages": [
+        134
+      ],
+      "text": "Bahasa Inggris Fase C heading reads 'Umumnya untuk Kelas III dan IV'; the Fase B heading on p. 133 says the same. Treat Fase C as kelas V-VI per Diktum KEEMPAT huruf c."
+    },
+    {
+      "pages": [
+        23,
+        75
+      ],
+      "text": "Religion CP in this decree is superseded by Kepka BKPDM 020/2026; SIGRAK uses cp-pendidikan-agama-sd-bkpdm-020-2026.json. Keep this file only for the general subjects."
+    },
+    {
+      "pages": [
+        6
+      ],
+      "text": "The salinan is certified by the Kepala Bagian Keuangan dan Umum of BSKAP, not the ministry Biro Hukum; normal for a Kepka, noted for Tim Validasi."
+    }
+  ]
+}
