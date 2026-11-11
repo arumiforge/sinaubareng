@@ -137,6 +137,6 @@ final class TimetableDraftController extends Controller
             throw ValidationException::withMessages(['draft' => $refused->getMessage()]);
         }
 
-        return to_route('timetable.draft.show', ['tahun' => $draft->academicYear->public_id])->with('toast', __('timetable.draft.toasts.saved'));
+        return to_route('timetable.draft.show', ['tahun' => $draft->loadMissing('academicYear')->academicYear->public_id])->with('toast', __('timetable.draft.toasts.saved'));
     }
 }

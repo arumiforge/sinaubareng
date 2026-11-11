@@ -22,7 +22,7 @@ final class RegionCalendarSync
     /** The active region calendar the school's region uses for the year, if any (D-323). */
     public function regionCalendarFor(School $school, AcademicYear $year): ?RegionCalendar
     {
-        return RegionCalendar::forRegion($school->region, $year->name);
+        return RegionCalendar::forRegion($school->loadMissing('region')->region, $year->name);
     }
 
     /** Copies the region calendar; the year must have no school calendar yet. */
@@ -61,7 +61,7 @@ final class RegionCalendarSync
      */
     public function changes(SchoolCalendar $calendar): array
     {
-        $region = $calendar->sourceCalendar;
+        $region = $calendar->loadMissing('sourceCalendar')->sourceCalendar;
 
         if ($region === null) {
             return [];
@@ -127,7 +127,7 @@ final class RegionCalendarSync
 
     private function markSeen(SchoolCalendar $calendar): void
     {
-        $calendar->forceFill(['source_version' => $calendar->sourceCalendar?->version])->save();
+        $calendar->forceFill(['source_version' => $calendar->loadMissing('sourceCalendar')->sourceCalendar?->version])->save();
     }
 
     private function copyEvent(SchoolCalendar $calendar, ?CalendarEvent $event): void

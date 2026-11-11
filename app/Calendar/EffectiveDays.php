@@ -29,7 +29,7 @@ final readonly class EffectiveDays
 
     public function forClass(SchoolClass $class): EffectiveDaysTable
     {
-        $year = $class->academicYear;
+        $year = $class->loadMissing('academicYear')->academicYear;
         $calendar = SchoolCalendar::query()->where('academic_year', $year->name)->with('sourceCalendar')->first();
 
         $weekdays = $class->timetableSlots()->where('kind', TimetableSlotKind::Lesson->value)->distinct()->orderBy('weekday')->pluck('weekday')->map(fn ($day): int => (int) $day)->all();

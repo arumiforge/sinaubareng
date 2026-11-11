@@ -35,7 +35,7 @@ final readonly class SaveDraft
             ->when($classIds !== null, fn ($items) => $items->whereIn('class', $classIds));
 
         DB::transaction(function () use ($draft, $results): void {
-            $classes = SchoolClass::query()->whereBelongsTo($draft->academicYear)->whereIn('public_id', $results->pluck('class'))->get()->keyBy('public_id');
+            $classes = SchoolClass::query()->where('academic_year_id', $draft->academic_year_id)->whereIn('public_id', $results->pluck('class'))->get()->keyBy('public_id');
 
             foreach ($classes as $class) {
                 $class->timetableSlots()->where('is_locked', false)->delete();

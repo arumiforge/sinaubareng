@@ -54,7 +54,7 @@ final class SchoolCalendarPolicy
             return false;
         }
 
-        return $this->manage($user, $calendar) || ($this->view($user, $calendar) && $this->isHomeroom($user, $event->schoolClass));
+        return $this->manage($user, $calendar) || ($this->view($user, $calendar) && $this->isHomeroom($user, $event->loadMissing('schoolClass')->schoolClass));
     }
 
     private function isHomeroom(User $user, ?SchoolClass $class): bool

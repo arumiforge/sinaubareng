@@ -35,7 +35,7 @@ return new class extends Migration
         DB::statement("ALTER TABLE calendar_events ADD CONSTRAINT calendar_events_kind_check CHECK (kind IN ('{$kinds}'))");
         DB::statement('ALTER TABLE calendar_events ADD CONSTRAINT calendar_events_dates_check CHECK (starts_on <= ends_on)');
         DB::statement("ALTER TABLE calendar_events ADD CONSTRAINT calendar_events_exam_type_check CHECK (
-            (kind = 'exam' AND exam_type IN ('{$types}')) OR (kind <> 'exam' AND exam_type IS NULL)
+            (kind = 'exam' AND exam_type IS NOT NULL AND exam_type IN ('{$types}')) OR (kind <> 'exam' AND exam_type IS NULL)
         )");
     }
 };

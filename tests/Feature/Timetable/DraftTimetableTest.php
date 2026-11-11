@@ -206,7 +206,7 @@ describe('the Susun draf jadwal page', function (): void {
     });
 
     it('gives the reason when a subject has no teacher', function (): void {
-        TeachingAssignment::query()->where('class_id', $this->class->id)->where('subject_id', Subject::query()->where('code', 'SB')->sole()->id)->delete();
+        TeachingAssignment::withoutSchoolScope()->where('class_id', $this->class->id)->where('subject_id', Subject::query()->where('code', 'SB')->sole()->id)->delete();
 
         actingAs($this->operator)->post(route('timetable.draft.store'), ['tahun' => $this->year->public_id, 'kelas' => $this->class->public_id]);
 
@@ -229,14 +229,16 @@ describe('the Susun draf jadwal page', function (): void {
     });
 
     it('lets only the operator in, and keeps another school out (IDOR)', function (): void {
+        // Made before the first request: a request leaves its school in the context.
+        $otherSchool = School::factory()->create(['region_id' => $this->school->region_id]);
+        $otherOperator = User::factory()->operatorAt($otherSchool)->create();
+
         actingAs($this->teachers[0])->get(route('timetable.draft.show'))->assertForbidden();
         actingAs($this->teachers[0])->post(route('timetable.draft.store'), ['tahun' => $this->year->public_id])->assertForbidden();
 
         actingAs($this->operator)->post(route('timetable.draft.store'), ['tahun' => $this->year->public_id]);
         $draft = TimetableDraft::withoutSchoolScope()->sole();
 
-        $otherSchool = School::factory()->create(['region_id' => $this->school->region_id]);
-        $otherOperator = User::factory()->operatorAt($otherSchool)->create();
         actingAs($otherOperator)->post(route('timetable.draft.save', $draft))->assertNotFound();
         actingAs($otherOperator)->post(route('timetable.draft.store'), ['tahun' => $this->year->public_id])->assertNotFound();
     });

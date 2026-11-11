@@ -222,8 +222,8 @@ it('asks before a change that moves RPM meetings (D-261)', function (): void {
 });
 
 it('lets a wali kelas add events for their own class only, and guru mapel only read (D-258)', function (): void {
-    $calendar = copyCalendar($this->operator, $this->year);
     $subjectTeacher = User::factory()->teacherAt($this->school)->create();
+    $calendar = copyCalendar($this->operator, $this->year);
 
     actingAs($this->teacher)->get(route('calendar.show'))
         ->assertInertia(fn (Assert $page) => $page->where('can_manage', false)->where('selected_class', $this->class->public_id)->where('classes.0.editable', true)->where('classes.1.editable', false));
@@ -245,11 +245,12 @@ it('lets a wali kelas add events for their own class only, and guru mapel only r
 });
 
 it('keeps calendars and events of another school out of reach (IDOR)', function (): void {
-    $calendar = copyCalendar($this->operator, $this->year);
-    $event = $calendar->events()->first();
+    // Made before the first request: a request leaves its school in the context.
     $otherSchool = School::factory()->create(['region_id' => $this->school->region_id]);
     $otherOperator = User::factory()->operatorAt($otherSchool)->create();
     $otherYear = AcademicYear::factory()->for($otherSchool)->starting(2026)->create();
+    $calendar = copyCalendar($this->operator, $this->year);
+    $event = $calendar->events()->first();
     $otherCalendar = copyCalendar($otherOperator, $otherYear);
 
     actingAs($otherOperator)->post(route('calendar.events.store', $calendar), eventInput())->assertNotFound();

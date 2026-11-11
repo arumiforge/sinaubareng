@@ -100,7 +100,6 @@ final class ImportRegionCalendar extends Command
         $calendar->status ??= CalendarStatus::Draft;
         $calendar->save();
 
-        $existing = $calendar->events()->get()->keyBy(fn (CalendarEvent $event): string => self::key($event->kind->value, $event->exam_type?->value, $event->title, $event->starts_on->toDateString(), $event->ends_on->toDateString()));
         $kept = [];
 
         /** @var list<array{kind: string, exam_type?: string|null, title: string, starts_on: string, ends_on: string}> $events */
@@ -108,25 +107,28 @@ final class ImportRegionCalendar extends Command
 
         foreach ($events as $row) {
             $examType = $row['kind'] === CalendarEventKind::Exam->value ? ($row['exam_type'] ?? ExamType::Other->value) : null;
-            $key = self::key($row['kind'], $examType, $row['title'], $row['starts_on'], $row['ends_on']);
-
-            if ($existing->has($key)) {
-                $kept[] = $key;
-
-                continue;
-            }
+            $same = CalendarEvent::query()
+                ->where('calendar_id', $calendar->id)
+                ->where('kind', $row['kind'])
+                ->where('title', $row['title'])
+                ->whereDate('starts_on', $row['starts_on'])
+                ->whereDate('ends_on', $row['ends_on'])
+                ->when($examType, fn ($query, string $type) => $query->where('exam_type', $type), fn ($query) => $query->whereNull('exam_type'))
+                ->whereNotIn('id', $kept)
+                ->value('id');
 
             // Saving or deleting a region event raises the calendar's version (CalendarEvent::booted).
-            $calendar->events()->create([...array_intersect_key($row, array_flip(['kind', 'title', 'starts_on', 'ends_on'])), 'exam_type' => $examType]);
+            $kept[] = $same ?? $calendar->events()->create([
+                'kind' => $row['kind'],
+                'exam_type' => $examType,
+                'title' => $row['title'],
+                'starts_on' => $row['starts_on'],
+                'ends_on' => $row['ends_on'],
+            ])->id;
         }
 
-        $existing->except($kept)->each(fn (CalendarEvent $event) => $event->delete());
+        CalendarEvent::query()->where('calendar_id', $calendar->id)->whereNotIn('id', $kept)->get()->each(fn (CalendarEvent $event) => $event->delete());
 
         return $calendar->refresh();
-    }
-
-    private static function key(string $kind, ?string $examType, string $title, string $startsOn, string $endsOn): string
-    {
-        return implode('|', [$kind, $examType ?? '', $title, $startsOn, $endsOn]);
     }
 }

@@ -31,7 +31,7 @@ final class PolicyProfileResolver
 
     public function forSchool(School $school, string $schoolYear): PolicyProfile
     {
-        return $this->resolve($schoolYear, $school->level, $school->region);
+        return $this->resolve($schoolYear, $school->level, $school->loadMissing('region')->region);
     }
 
     public function resolve(string $schoolYear, SchoolLevel $level, ?Region $region = null): PolicyProfile
