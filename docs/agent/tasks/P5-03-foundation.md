@@ -1,8 +1,8 @@
 # P5-03 — Slice 1: Foundation
 
 - **Phase:** P5
-- **Status:** in-progress (reopened 2026-11-09 for P5-03i and P5-03j, D-252)
-- **Owner:** pw/lucid-fermi-pxp4d5
+- **Status:** review (reopened 2026-11-09 for P5-03i and P5-03j, D-252; P5-03k and P5-03l added 2026-11-10)
+- **Owner:** p5/p5-03ij-calendar-timetable-versioning
 - **Depends on:** P5-01
 - **Can run in parallel with:** P5-02
 
@@ -33,10 +33,12 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03f | School directory: `school_directory_entries` from the Kemendikdasmen reference site (Kudus, Jepara, Pati); NPSN fills the console's school form; Sebaran sekolah list, map, and Excel for marketing (D-169, D-170) | a | `scripts/school-directory/`, `docs/data/schools/`, import command, tests | done |
 | P5-03g | KM-SD-2026-R2 source files: download `data_kurikulum_dengan_cp.json` and `struktur_alokasi_sd.json` from the owner's legacy portal into `docs/data/curriculum/`, record provenance, check them against the data model | — (unblocks the KM-SD-2026-R2 part of c) | `docs/data/curriculum/`, findings in Result | done |
 | P5-03h | Copy classes into a new academic year (D-242…D-246): on Tahun Ajaran, copy the previous year's classes one grade up, no teachers, no students | d | Action, operator UI, policies, tests | done |
-| P5-03i | Calendar (D-252…D-261): `national_holidays` and `calendar:import-holidays` after the online SKB check (D-254); region reference calendars for Kudus, Jepara, Pati; "Salin dari kalender wilayah" and "Terapkan perubahan wilayah"; `calendar_events.class_id`; `EffectiveDays`; `ConflictChecker`; impact preview. Plan in `docs/drafts/legacy-upgrade-01.md` §2.1 | e | `app/Calendar`, migrations, operator and wali kelas pages, console page, tests | todo |
-| P5-03j | Draft timetable generator (D-262): one class or all, draft with comparison, reasons for unplaced JP, preference switches per school, `default` queue job | e, i | Action, job, operator UI, property tests against D-248…D-251 | todo |
+| P5-03i | Calendar (D-252…D-261): `national_holidays` and `calendar:import-holidays` after the online SKB check (D-254); region reference calendars for Kudus, Jepara, Pati; "Salin dari kalender wilayah" and "Terapkan perubahan wilayah"; `calendar_events.class_id`; `EffectiveDays`; `ConflictChecker`; impact preview. Plan in `docs/drafts/legacy-upgrade-01.md` §2.1 | e | `app/Calendar`, migrations, operator and wali kelas pages, console page, tests | review |
+| P5-03j | Draft timetable generator (D-262): one class or all, draft with comparison, reasons for unplaced JP, preference switches per school, `default` queue job | e, i | Action, job, operator UI, property tests against D-248…D-251 | review |
+| P5-03k | Minimal versioning (D-355): `curriculum_versions.effective_on`, `applies_from_school_year`, `supersedes_id`; a policy-profile resolver (school year, level, region), cached per school year, replaces `config/curriculum.php` `allocation_versions` | c | Migration, `app/Curriculum/Policy`, tests | review |
+| P5-03l | Profil Jenjang (D-356): `sd` and `mi` as versioned data (ministry, rule-set codes per domain, character frameworks, RPM extra fields, rapor export target, JTM default, external assessments); code reads the profile, never the level | k | `docs/data/profiles/`, `app/Curriculum/Policy`, tests | review |
 
-Not in this slice: students and enrollments, the school calendar beyond P5-03i, school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
+Not in this slice: students and enrollments, the school calendar beyond P5-03i, the full `regulations`/`rules` tables and their console (P5-09, D-355), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 
 ## Done when
 
@@ -106,3 +108,50 @@ Not in this slice: students and enrollments, the school calendar beyond P5-03i, 
 - Tests: `tests/Feature/Timetable/TimetableTest.php` (26: rows and numbering, validation, overlap, no teacher, allocation and completeness, parallel religions, clashes incl. other years and the Kelas page, renumbering, role 403s, IDOR for classes, rows of another class, and another school's lessons, teacher view, DB constraints). Checked on a 375 px phone viewport: no horizontal scroll.
 - Later: RPM scheduling on the timetable (`meetings`, P5-04), principal view, copy a day or a class's timetable.
 
+**P5-03i** (review, PR #72):
+- Tables: `national_holidays` (D-253), `calendars` (region or school owner, CHECK exactly one; `version`, `source_calendar_id`, `source_version`, `joint_leave_school_days`, `school_days_per_week`, first/semester/last day), `calendar_events` (`class_id` D-258, `exam_type` sts/sas/other only on `exam`, `source_event_uid`). `regions.regency` is nullable for the province-level region (D-377).
+- Data in `docs/data/calendar/` (draft until Tim Validasi): `national-holidays-2026-2027.json`, checked online on 2026-11-10 against the signed SKB PDFs for 2026 (1497/2/5 Tahun 2025) and 2027 (1205/3/2 Tahun 2026) on JDIH Kemnaker (D-254): every date and kind matched, 21 names now follow the SKB wording; `region-jawa-tengah-2026-2027.json` from the provincial guide, 6-day dates only (D-323). Commands: `php artisan calendar:import-holidays <file>` and `php artisan calendar:import-region <file>` (both idempotent; a region calendar is created `draft`, and schools only see `active` ones).
+- `app/Calendar`: `NationalHolidays` (fixed-date "sementara" holidays after the last SKB date), `EffectiveDays` (D-259; the Jawa Tengah acceptance check gives 254 days, 134 + 120), `ConflictChecker` (D-260: STS/SAS on a holiday refused, Sunday and no-lesson days warned), `RegionCalendarSync` (copy, changes, apply, skip; D-256), `Impact\MeetingImpact` (D-261; no-op until P5-04 binds a counter over `meetings`).
+- Kalender page `/kalender` for every role (lang file `calendar`): copy from the region calendar or make an empty one, region changes banner, cuti bersama as school day (D-255), events for the school or a class (wali kelas: own class only), effective-days table per class. Console: Libur nasional (`/libur-nasional`) and Kalender wilayah (`/kalender-wilayah`, events as a relation; every change raises the version).
+- Tests: `tests/Feature/Calendar/CalendarTest.php`.
+
+**P5-03j** (review, PR #72):
+- "Susun Jadwal" at `/jadwal/susun-draf` (operator): day frame (start time and JP per weekday, breaks) and the five D-262 switches per school (`timetable_settings`); a draft for one class or all runs as `GenerateTimetableDraft` on the `default` queue (`timetable_drafts`, with the seed for Acak ulang); the result page compares each class's current and draft rows and lists unplaced JP with the reason; saving replaces unlocked rows and runs every row through `TimetableRules`, now shared with the manual Jadwal form. Rows can be locked on the Jadwal page (`timetable_slots.is_locked`).
+- `DraftGenerator` is pure and seeded: hard limits never break (property test), switches only change the score, best of `config('timetable.attempts')` tries.
+- Tests: `tests/Feature/Timetable/DraftTimetableTest.php`.
+
+**P5-03k / P5-03l** (review, PR #72): see D-378. `curriculum_versions` has the three version columns, filled by `curriculum:import` from `docs/data/profiles/`; `App\Curriculum\Policy\PolicyProfileResolver` replaces `allocation_versions`; `SubjectsForGrade::forSchool()` takes the school year (`ClassSubjects` passes the class's year). Tests: `tests/Feature/Curriculum/PolicyProfileTest.php`.
+
+## Open questions
+
+Undecided choices, the default this PR uses meanwhile, and deferred work. "Owner" decides product questions; "team" (Tim SIGRAK / Tim Validasi) settles data and build questions.
+
+**Undecided, default in use**
+
+| # | Question | Default used now | Who |
+|---|---|---|---|
+| 1 | D-259 counts `exam` days as non-effective, but the Jawa Tengah guide (Lampiran XIII) counts the SAS and Sumatif Akhir Tahun weeks as effective; only TKA days are taken out. Should STS/SAS days count as effective? | Follow D-259 (exam days not effective). The region data keeps SAS weeks as notes (`assessment_windows`), not events, so the region total is 254; a school that enters SAS events gets a lower count | Owner |
+| 2 | Jawa Tengah May and June 2027: Lampiran XIII takes a kelulusan day out of May that SD/MI do not have | Kelulusan on 7 June (Pasal 22). Year and semester totals match the guide; May and June differ by one day | Team (Tim Validasi) |
+| 3 | `effective_on` of KMA 1503/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025 | NULL. `applies_from_school_year` follows D-354 (mid-year rules apply from the next school year) | Team (Tim Validasi) |
+| 4 | Idul Fitri and Idul Adha 2027 depend on the Menteri Agama's decision after sidang isbat | SKB dates, not marked provisional | Team (recheck in 2027) |
+| 5 | When does a region calendar become visible to schools? | Imported as `draft`; schools only see `active` ones; a console user activates it after sign-off | Team (Tim Validasi) |
+| 6 | A class with no lessons on its timetable yet: which days count? | The region calendar's school days per week, else 6, with a note on the page | Team |
+| 7 | A day that is both a holiday and an assessment or activity | Counted once, in this order: Libur, Asesmen, Kegiatan | Team |
+| 8 | Who may edit the calendar? | Operator: everything. Wali kelas: events of their own class. Guru mapel and principal: read only | Owner (principal role) |
+| 9 | A school year before any listed rule set has started | The resolver uses the earliest listed rule set (D-378) | Team |
+| 10 | Draft generator details: breaks the same for every day; Upacara and other fixed rows come from locked rows; optional content (no allocation) is not placed; the religion group gets the JP all religions share; soft-switch weights are fixed in code | As listed | Team |
+| 11 | Saving a draft replaces every unlocked row of each class in the draft | As stated, after a confirm dialog | Owner |
+| 12 | Banning "Absensi" in `lang/id` (from PR #70) | Not banned yet; the LOC-35 test covers siswa, teguran, tunggakan, kurang bayar, belum lunas, tanda tangan elektronik | Owner |
+
+**Deferred work**
+
+| Item | Where | Who |
+|---|---|---|
+| Impact preview counts RPM meetings (D-261): `MeetingImpact` is a no-op until `meetings` exists | P5-04 | Team |
+| Conflict rules for supervision schedules and Agenda & Rapat (D-260) | P5-09 | Team |
+| Profil Jenjang as a table with console editing; the D-368 admin switch for SD KBC fields (data says "switchable", no switch stored yet) | P5-09 or own slice | Team |
+| `regulations`, `rule_sets`, `rules` tables and the console for every domain; Kabar Regulasi (D-354, D-355) | P5-09 or own slice | Team |
+| Region calendars for other provinces or regencies | Data, no code change (D-257) | Team |
+| New `lang/id` keys listed in PR #70 (not-done reasons, Lanjutan, Neraca JP, Dasar Kebijakan, Cek Keselarasan, TKA levels, …) | With their slices | Team |
+| Browser check at 375 px: the app cannot run in the build session (Symfony 8 needs PHP 8.4) | Before merge or on staging | Team |
+| `docs/final/` and `CONTEXT.md` updates (see the PR body) | Docs session | Team |

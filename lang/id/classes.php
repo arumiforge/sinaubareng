@@ -52,7 +52,7 @@ return [
     ],
     'copy' => [
         'title' => 'Salin kelas dari :name',
-        'hint' => 'Kelas tahun lalu disalin dengan tingkat naik satu (4A menjadi 5A). Kelas 6 tidak disalin karena sudah lulus. Wali kelas dan guru mapel dikosongkan supaya dipilih lagi. Siswa dipindah lewat Kenaikan nanti.',
+        'hint' => 'Kelas tahun lalu disalin dengan tingkat naik satu (4A menjadi 5A). Kelas 6 tidak disalin karena sudah lulus. Wali kelas dan guru mapel dikosongkan supaya dipilih lagi. Murid dipindah lewat Kenaikan nanti.',
         'field' => 'Salin kelas dari tahun ajaran :name',
         'grade_one' => 'Buat juga kelas 1 seperti tahun lalu untuk murid baru',
         'preview' => 'Kelas yang akan dibuat (:count)',

@@ -39,6 +39,7 @@
     const operatorItems = [
         { label: t('nav.items.academic_years'), icon: CalendarRange, route: 'academic_years.index' },
         { label: t('nav.items.classes'), icon: School, route: 'classes.index' },
+        { label: t('nav.items.timetable_draft'), icon: CalendarClock, route: 'timetable.draft.show' },
         { label: t('nav.items.teachers'), icon: GraduationCap, route: 'teachers.index' },
     ] as const;
 </script>
@@ -92,6 +93,18 @@
                         >
                             <CalendarClock size={20} strokeWidth={1.5} />
                             {t('nav.items.my_timetable')}
+                        </Link>
+                    </li>
+                {/if}
+                {#if role !== undefined}
+                    <!-- Kalender (P5-03i): everyone reads it; the operator and wali kelas add events. -->
+                    <li>
+                        <Link
+                            href={route('calendar.show')}
+                            class="flex min-h-11 items-center gap-3 rounded-input px-3 text-body font-semibold text-text hover:bg-brand-tint"
+                        >
+                            <CalendarDays size={20} strokeWidth={1.5} />
+                            {t('nav.items.calendar')}
                         </Link>
                     </li>
                 {/if}

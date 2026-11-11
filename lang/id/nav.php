@@ -14,6 +14,8 @@ return [
         'teachers' => 'Guru',
         'academic_years' => 'Tahun Ajaran',
         'classes' => 'Kelas',
+        'calendar' => 'Kalender',
+        'timetable_draft' => 'Susun Jadwal',
     ],
     'account' => 'Akun',
     'sign_out' => 'Keluar',

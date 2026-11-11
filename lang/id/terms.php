@@ -2,4 +2,7 @@
 
 declare(strict_types=1);
 
-return [];
+// Shared product terms (usulan-01 §2, D-302).
+return [
+    'attendance' => 'Kehadiran',
+];

@@ -10,6 +10,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * A regency, or a whole province when `regency` is NULL (D-323).
+ *
+ * @property int $id
+ * @property string $province
+ * @property string|null $regency
+ */
 #[Fillable(['province', 'regency'])]
 final class Region extends Model
 {

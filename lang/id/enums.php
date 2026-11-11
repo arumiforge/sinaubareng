@@ -12,6 +12,25 @@ return [
         'operator' => 'Operator sekolah',
         'teacher' => 'Guru',
     ],
+    'national_holiday_kind' => [
+        'national_holiday' => 'Libur nasional',
+        'joint_leave' => 'Cuti bersama',
+    ],
+    'calendar_event_kind' => [
+        'holiday' => 'Libur sekolah',
+        'exam' => 'Asesmen',
+        'school_event' => 'Kegiatan sekolah',
+        'no_lessons' => 'Tidak ada pelajaran',
+    ],
+    'exam_type' => [
+        'sts' => 'STS',
+        'sas' => 'SAS',
+        'other' => 'Asesmen lain',
+    ],
+    'calendar_status' => [
+        'draft' => 'Draf',
+        'active' => 'Aktif',
+    ],
     'timetable_slot_kind' => [
         'lesson' => 'Pelajaran',
         'break' => 'Istirahat',

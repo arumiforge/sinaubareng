@@ -1766,3 +1766,13 @@ Reason: the owner's four-level view, kept consistent with the 2026 decree.
 Accepted · 2026-11-10 · owner's confirmation
 The legacy app upgrade decisions (P4-13, D-252…D-328) are done. Applying them to the final docs stays in the docs consolidation task.
 Reason: owner confirmed.
+
+### D-377 — A province-level region has no regency
+Accepted · 2026-11-11 · P5-03i · implements D-323
+`regions.regency` is nullable; a row with only `province` is the province-level region that owns the province's reference calendar (Jawa Tengah, D-323). Uniqueness holds through a generated `regency_key` (`coalesce(regency, '')`). A school's region is always a regency; a school copies its regency's calendar, else its province's. Region calendars and school calendars share `calendars` as two models (`RegionCalendar`, `SchoolCalendar`), so the school scope never sees region rows.
+Reason: D-323 needs a calendar owned by a province, and the data model ties calendars to regions.
+
+### D-378 — Profil Jenjang lives in versioned data files; the resolver picks rule sets per school year
+Accepted · 2026-11-11 · P5-03k, P5-03l · implements D-355 and D-356
+The Profil Jenjang is `docs/data/profiles/<level>.json`, read by `App\Curriculum\Policy\LevelProfiles`; each file holds versions with `applies_from_school_year`. A database table and console editing come with the full rule-set model (P5-09). `curriculum:import` copies each rule set's `effective_on`, `applies_from_school_year`, and predecessor onto `curriculum_versions`. `PolicyProfileResolver` picks, per domain, the listed version that is not retired and has started by the school year (a province entry beats a national one); when none has started it uses the earliest listed one; results are cached per school year and refreshed by every import. `config/curriculum.php` no longer has `allocation_versions`.
+Reason: data first, with no second source to drift; a table can come once the console edits profiles.

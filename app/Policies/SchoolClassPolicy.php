@@ -43,6 +43,12 @@ final class SchoolClassPolicy
         return $this->view($user, $class);
     }
 
+    /** Susun draf jadwal (D-262): the operator only. */
+    public function arrangeTimetable(User $user): bool
+    {
+        return $this->isOperator();
+    }
+
     /** Kelas Saya > Jadwal: a teacher sees their own lessons and their homeroom classes' timetables. */
     public function viewOwnTimetable(User $user): bool
     {

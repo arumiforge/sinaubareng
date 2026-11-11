@@ -54,6 +54,16 @@ final class TimetableController extends Controller
         return to_route('classes.timetable.show', $class)->with('toast', __('timetable.toasts.saved'));
     }
 
+    /** A locked row stays when a draft is made or saved (D-262). */
+    public function lock(SchoolClass $class, TimetableSlot $timetableSlot): RedirectResponse
+    {
+        Gate::authorize('update', $class);
+
+        $timetableSlot->update(['is_locked' => ! $timetableSlot->is_locked]);
+
+        return to_route('classes.timetable.show', $class)->with('toast', __($timetableSlot->is_locked ? 'timetable.toasts.locked' : 'timetable.toasts.unlocked'));
+    }
+
     public function destroy(SchoolClass $class, TimetableSlot $timetableSlot, SaveTimetableSlot $save): RedirectResponse
     {
         Gate::authorize('update', $class);

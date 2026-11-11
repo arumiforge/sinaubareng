@@ -1,0 +1,63 @@
+{
+  "dataset": "level_profile",
+  "level": "mi",
+  "status": "draft",
+  "verify_by": "Tim Validasi SIGRAK (D-113)",
+  "decisions": ["D-126", "D-354", "D-355", "D-356", "D-359"],
+  "versions": [
+    {
+      "code": "PROFIL-MI-2026",
+      "applies_from_school_year": "2026/2027",
+      "label": "MI",
+      "ministry": {
+        "code": "kemenag",
+        "name": "Kementerian Agama (Direktorat Jenderal Pendidikan Islam)"
+      },
+      "rule_sets": {
+        "structure_jp": [
+          {
+            "code": "ALOKASI-MI-KMA-1503-2025",
+            "effective_on": null,
+            "applies_from_school_year": "2026/2027",
+            "source": "KMA 1503/2025, ditetapkan 22 September 2025, di tengah tahun ajaran, jadi berlaku dari tahun ajaran berikutnya (D-354); tanggal berlaku belum diperiksa"
+          }
+        ],
+        "cp": [
+          {
+            "code": "CP-PAI-BA-MADRASAH-9941-2025",
+            "effective_on": null,
+            "applies_from_school_year": "2026/2027",
+            "source": "SK Dirjen Pendis 9941/2025, ditetapkan 28 November 2025, di tengah tahun ajaran (D-354); tanggal berlaku belum diperiksa"
+          }
+        ],
+        "tp_atp_defaults": [
+          {
+            "code": "SIGRAK-MI-2026-R1",
+            "effective_on": null,
+            "applies_from_school_year": "2026/2027",
+            "source": "Data SIGRAK (D-363)"
+          }
+        ]
+      },
+      "religion_subjects": "madrasah_pai_and_arabic",
+      "character_frameworks": ["dpl_8", "kaih_7", "kbc"],
+      "cocurricular_jp_source": "some_subjects",
+      "rpm_extra_fields": {
+        "kbc": {
+          "enabled": true,
+          "switchable_by_admin": false,
+          "fields": ["kbc_theme", "insertion_material", "core_values"],
+          "source": "D-126 dengan sumber KMA 512/2026 (D-359)"
+        }
+      },
+      "report_export_target": "rdm",
+      "homeroom_jtm_default": 6,
+      "external_assessments": [
+        { "code": "tka", "status": "confirmed" },
+        { "code": "akmi", "status": "to_verify" }
+      ],
+      "calendar_source": "kanwil_kemenag",
+      "data_of_record": "emis"
+    }
+  ]
+}

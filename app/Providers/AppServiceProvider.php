@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Calendar\Impact\MeetingImpact;
+use App\Calendar\Impact\NoMeetings;
 use App\Models\User;
 use App\Tenancy\SchoolContext;
 use Carbon\CarbonImmutable;
@@ -25,6 +27,9 @@ final class AppServiceProvider extends ServiceProvider
     {
         // Fresh for every request and every queued job, so a school never leaks into the next one.
         $this->app->scoped(SchoolContext::class);
+
+        // D-261: P5-04 replaces this with a counter over `meetings`.
+        $this->app->bind(MeetingImpact::class, NoMeetings::class);
 
         // Telescope never runs in production (LOG-4).
         if ($this->app->environment('local', 'staging') && class_exists(TelescopeBaseServiceProvider::class)) {
