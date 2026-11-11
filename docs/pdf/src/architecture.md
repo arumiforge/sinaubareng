@@ -1,11 +1,11 @@
 # Gambaran Arsitektur
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 2 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/architecture.md</code> pada 10 November 2026. Diagram di dalam blok kode dibiarkan apa adanya dan diikuti ringkasan berbahasa Indonesia.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-04
-- **Terakhir diperbarui:** 2026-11-01
-- **Melanjutkan:** `product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`, `docs/agent/DECISIONS.md` (D-007…D-037)
+- **Terakhir diperbarui:** 2026-11-10 (P4-24: keputusan lanjutan D-050, D-064, D-259…D-370 diterapkan)
+- **Melanjutkan:** `product-concept.md`, `content-engine.md`, `ai-provider-engine.md`, `data-model.md`, `religious-education.md`, `docs/agent/DECISIONS.md` (D-007…D-037, kemudian D-050, D-064, D-259…D-370)
 
 ## Tujuan
 
@@ -15,7 +15,7 @@ Langkah instalasi server ada di `server-setup.md` (P2-05). Gaya kode ada di `cod
 
 ## Sekilas sistem
 
-Satu aplikasi Laravel di satu VPS Ubuntu 24.04 di balik Cloudflare, yang hanya bisa dijangkau lewat Cloudflare Tunnel (D-086, D-088). Aplikasi ini melayani tiga front end di tiga hostname, dan masing-masing punya guard login sendiri. Pekerjaan latar belakang berjalan di antrean Redis di bawah Horizon. Gotenberg satu-satunya layanan Docker. Satu-satunya layanan luar yang dipanggil server adalah Gemini API.
+Satu aplikasi Laravel di satu VPS Ubuntu 24.04 di balik Cloudflare, yang hanya bisa dijangkau lewat Cloudflare Tunnel (D-086, D-088). Aplikasi ini melayani tiga front end di tiga hostname, dan masing-masing punya guard login sendiri. Pekerjaan latar belakang berjalan di antrean Redis di bawah Horizon. Gotenberg satu-satunya layanan Docker. Pembuatan konten oleh guru hanya memanggil Gemini API dengan kunci milik guru sendiri; untuk keperluan konsol, Tim SIGRAK juga boleh memilih model yang kompatibel dengan OpenAI atau model Anthropic dengan kuncinya sendiri (D-315, D-326).
 
 ```mermaid
 flowchart LR
@@ -41,7 +41,7 @@ flowchart LR
             CON[Staff console<br/>Filament + Horizon<br/>guard: staff]
         end
         W[Queue workers<br/>Horizon: ai · exports · default]
-        SCH[Scheduler<br/>schedule:run]
+        SCH[Scheduler<br/>schedule:work]
         R[(Redis<br/>cache · sessions · queues · AI state)]
         DB[(MySQL 8)]
         FS[(Local disk<br/>letterheads · export cache)]
@@ -58,27 +58,30 @@ flowchart LR
     W --> GOT
     SCH --> R
     W -- HTTPS, teacher's key --> GEM[Google Gemini API<br/>free tier]
+    W -. console purposes, Tim SIGRAK key .-> OAI[OpenAI-compatible<br/>or Anthropic API]
 ```
 
-Ringkasan diagram: guru, kepala sekolah, operator, dan pengawas (ponsel/laptop), siswa dalam sesi TKA (desktop/tablet), dan staf Tim SIGRAK masuk lewat Cloudflare ke Nginx di VPS. Nginx meneruskan ke aplikasi Laravel yang berisi aplikasi sekolah (guard `web`), situs ujian (guard `exam`), dan konsol staf (guard `staff`). Aplikasi dan worker antrean memakai Redis, MySQL 8, dan disk lokal; worker juga memanggil Gotenberg dan, dengan kunci milik guru, Google Gemini API. Berkas game yang diunduh berjalan offline tanpa jaringan.
+Ringkasan diagram: guru, kepala sekolah, operator, dan pengawas (ponsel/laptop), siswa dalam sesi TKA (desktop/tablet), dan staf Tim SIGRAK masuk lewat Cloudflare ke Nginx di VPS. Nginx meneruskan ke aplikasi Laravel yang berisi aplikasi sekolah (guard `web`), situs ujian (guard `exam`), dan konsol staf (guard `staff`). Aplikasi dan worker antrean memakai Redis, MySQL 8, dan disk lokal; worker juga memanggil Gotenberg dan, dengan kunci milik guru, Google Gemini API; untuk keperluan konsol, dengan kunci Tim SIGRAK, API yang kompatibel dengan OpenAI atau API Anthropic. Berkas game yang diunduh berjalan offline tanpa jaringan.
 
-Situs ujian dan worker-nya tidak pernah memanggil Gemini (D-027). Hanya job di antrean `ai`, dan uji kunci di *Kunci AI Saya*, yang menjangkau Google.
+Situs ujian dan worker-nya tidak pernah memanggil Gemini (D-027). Hanya job di antrean `ai`, uji kunci di *Kunci AI Saya*, dan uji model di konsol (D-315) yang menjangkau penyedia AI.
 
 ## Komponen
 
 | Komponen | Apa itu | Berjalan sebagai | Berhubungan dengan | Sumber |
 |---|---|---|---|---|
 | **Aplikasi sekolah** | Semua layar untuk guru, kepala sekolah, operator, pengawas. Inertia.js + Svelte biasa, Tailwind dengan komponen TailAdmin yang diporting, teks dari `lang/id`. Menu guru: Hari Ini · Di Kelas · Buat · Asesmen · Kelas Saya, ditambah portal per peran | PHP-FPM di balik Nginx, bundel Vite | MySQL, Redis, disk lokal, antrean | D-008, D-010, D-021 |
-| **Bagian offline Di Kelas** | Service worker dan antrean IndexedDB khusus Absensi, Jurnal, Catatan Siswa | Di browser guru | Endpoint sinkronisasi aplikasi sekolah | D-016 |
+| **Bagian offline Di Kelas** | Service worker dan antrean IndexedDB untuk Kehadiran, Jurnal, catatan murid, isian observasi dan rubrik, serta hasil Pindai LJK; cache hanya-baca berisi pertemuan RPM hari ini dan besok (teks saja). Menampilkan "Versi baru tersedia, muat ulang" setelah rilis dan menyinkronkan antrean sebelum memuat ulang | Di browser guru | Endpoint sinkronisasi aplikasi sekolah | D-016, D-289, D-321, D-349 |
+| **Pembaca Pindai LJK** | Pustaka OMR JavaScript membaca bulatan lembar jawaban di browser; hanya jawaban dan tingkat keyakinan yang dikirim, foto lembar tidak pernah keluar dari ponsel; hasil mengantre saat offline. Nanti (setelah Pindai LJK di P5-08): jawaban tulisan tangan Uraian/Isian dibaca menjadi teks di ponsel, dikirim ke AI sebagai teks dengan kode `nomor absen-nomor soal` (mis. `12-3`), dan guru yang menentukan nilai | Di browser guru | Endpoint sinkronisasi; AI hanya lewat server, teks saja | D-287, D-289, D-369, D-370 |
 | **Runtime game** | Bundel vanilla JS + CSS per templat game (Quiz Battle di v1). Dipakai *Tayangkan* di dalam aplikasi, dan disisipkan ke berkas HTML *Unduh game* | Browser | Tidak ada (berkas yang diunduh punya CSP yang memblokir semua jaringan) | D-011, D-015 |
 | **Situs ujian** | Klien ujian latihan TKA: area soal, kisi nomor, *ragu-ragu*, timer, ukuran huruf. Entry Inertia + Svelte sendiri (`resources/exam-client/`, D-094) di subdomain sendiri, tanpa berbagi bundel dengan aplikasi sekolah | Aplikasi Laravel yang sama, kelompok rute dan guard sendiri | Hanya endpoint ujian | D-026, D-027 |
-| **Konsol staf** | Panel Filament untuk Tim SIGRAK: registri templat dan override prompt, sekolah dan langganan, bawaan per daerah, dukungan, ringkasan galat AI. Dasbor Horizon ada di balik guard yang sama | Aplikasi Laravel yang sama, kelompok rute dan guard sendiri | MySQL, Redis | D-010, D-013 |
+| **Konsol staf** | Panel Filament untuk Tim SIGRAK: registri templat dan override prompt, sekolah dan langganan, bawaan per daerah, dukungan, ringkasan galat AI. Juga: matriks Hak akses hanya-baca (D-314), model AI dan cadangannya per keperluan (D-315, D-326), Kesehatan Sistem (D-316), konsol kurikulum untuk membandingkan, menerbitkan, mengembalikan versi, laporan dampak, audit JP (D-317), masa simpan per jenis data (D-318), Kabar bersasaran (D-319), status permintaan bantuan (D-320). Dasbor Horizon ada di balik guard yang sama | Aplikasi Laravel yang sama, kelompok rute dan guard sendiri | MySQL, Redis | D-010, D-013, D-314…D-320 |
 | **MySQL 8** | Satu-satunya sumber data resmi. Skema di `data-model.md` | Layanan systemd di VPS | — | D-007 |
 | **Redis** | Cache, sesi, antrean, metadata Horizon, dan keadaan runtime AI (penghitung round robin, cooldown, keadaan circuit, corong per guru) | Layanan systemd di VPS | — | D-003 |
-| **Worker antrean** | Supervisor Horizon per antrean: `ai` (job pembuatan), `exports` (PDF, DOCX, Excel, HTML game), `default` (email, notifikasi, penilaian, impor) | Horizon di bawah Supervisor (atau systemd) | MySQL, Redis, Gotenberg, Gemini | `ai-provider-engine.md` (bagian Antrean dan kemajuan) |
-| **Scheduler** | `php artisan schedule:run` setiap menit: penyapu langkah tertahan, pemangkasan data, pemeliharaan ujian (lihat Job terjadwal) | cron | MySQL, Redis | — |
+| **Worker antrean** | Supervisor Horizon per antrean: `ai` (job pembuatan), `exports` (PDF, DOCX, Excel, HTML game, Berkas Administrasi dan ZIP satu sekolah, D-278…D-280), `default` (email, notifikasi, penilaian, impor, draf jadwal, D-262) | Horizon di bawah Supervisor | MySQL, Redis, Gotenberg, penyedia AI | `ai-provider-engine.md` (bagian Antrean dan kemajuan) |
+| **Scheduler** | `php artisan schedule:work`: penyapu langkah tertahan, pemangkasan data, pemeliharaan ujian, snapshot dan Kabar mingguan (lihat Job terjadwal) | Supervisor, tanpa entri cron | MySQL, Redis | D-064 |
 | **Gotenberg 8** | Chromium headless untuk HTML → PDF, dipanggil lewat `spatie/laravel-pdf` | Container Docker, image dikunci, terikat ke localhost, basic auth | Tidak ada koneksi keluar | D-028, D-031 |
-| **Gemini API** | `generateContent` Google, paket gratis, dengan kunci milik masing-masing guru | Eksternal | — | D-012, D-023 |
+| **Gemini API** | `generateContent` Google, paket gratis, dengan kunci milik masing-masing guru (kunci guru hanya Gemini) | Eksternal | — | D-012, D-023, D-326 |
+| **Penyedia AI konsol** | Kompatibel dengan OpenAI (OpenAI, OpenRouter, DeepSeek) dan Anthropic, hanya dengan kunci Tim SIGRAK, dipilih per keperluan di konsol | Eksternal | — | D-315, D-326 |
 | **Cloudflare** | DNS, proxy, TLS, WAF di depan setiap hostname | Eksternal | Nginx | D-003 |
 | **Telescope** | Pemeriksa request, query, dan job | Hanya lokal dan staging, tidak pernah publik di produksi | — | D-003 |
 | **Python (opsional)** | Hanya untuk pekerjaan data yang tidak bisa dikerjakan Laravel/Node dengan baik, di folder sendiri dengan dependensi terkunci. Tidak ada peran saat berjalan yang direncanakan | CLI | — | CONTEXT |
@@ -101,33 +104,43 @@ Kode dipisah berdasarkan tanggung jawab. Panah adalah satu-satunya dependensi ya
 
 ```
 app/
-├── AI/            Gemini only. Keys, selection, errors, privacy guard, usage logs.
-│                  Knows nothing about education. Entry point: AIGateway.
+├── AI/            Gemini adapter (teacher keys); OpenAI-compatible and Anthropic adapters
+│                  (Tim SIGRAK keys only, D-326). Keys, selection, errors, privacy guard,
+│                  usage logs. Knows nothing about education. Entry point: AIGateway.
 ├── Content/       Templates, generation pipeline, export. Knows nothing about Gemini.
 │   ├── Templates/   one folder per content type (Rpm, BankSoal, Lkpd, QuizBattle, TkaPackage)
 │   ├── Generation/  SpecificationBuilder, PromptBuilder, OutputValidator, OutputRepairer, GenerationRunner
-│   └── Export/      PdfExporter, DocxExporter, ExcelExporter, GameExporter
+│   ├── Export/      PdfExporter, DocxExporter, ExcelExporter, GameExporter
+│   ├── Readiness/   RpmReadiness per class and subject (D-270)
+│   └── Alignment/   Cek Keselarasan checker (planned, D-358)
 ├── Tenancy/       Current school context, BelongsToSchool scope, membership and role switch   (proposed)
 ├── Curriculum/    Import command, curriculum versions, school changes and validation          (proposed)
-├── Classroom/     Di Kelas: attendance, journal, student notes, offline sync endpoint          (proposed)
+│   └── Policy/      PolicyProfileResolver, Profil Jenjang (planned before P5-04, D-355, D-356)
+├── Calendar/      EffectiveDays, ConflictChecker (D-259, D-260)
+├── Progress/      CompletenessLedger, ProgressReport, weekly snapshots (D-263, D-265)
+├── Classroom/     Di Kelas: attendance, journal, notes, observations, offline sync endpoint    (proposed)
 ├── Exam/          TKA sessions, snapshot, cards, token, exam client API, scoring              (proposed)
 ├── Filament/      Staff console resources only
 └── Jobs/Generation/  GenerateRpm, GenerateBankSoal, GenerateLkpd, GenerateQuizBattle,
                       GenerateTkaPackage, ReviseSection (one job per content type, D-024)
 ```
 
-Ringkasan susunan folder: `AI/` hanya untuk Gemini (kunci, pemilihan, galat, penjaga privasi, log pemakaian; pintu masuknya `AIGateway`) dan tidak tahu apa pun tentang pendidikan. `Content/` berisi templat, pipeline pembuatan, dan ekspor, dan tidak tahu apa pun tentang Gemini. `Tenancy/`, `Curriculum/`, `Classroom/` (Di Kelas dan sinkronisasi offline), dan `Exam/` (sesi TKA, kartu, token, penilaian) adalah usulan. `Filament/` hanya berisi resource konsol staf, dan `Jobs/Generation/` berisi satu job per jenis konten (D-024).
+Ringkasan susunan folder: `AI/` berisi adapter Gemini (kunci guru) serta adapter yang kompatibel dengan OpenAI dan Anthropic (hanya kunci Tim SIGRAK, D-326), ditambah kunci, pemilihan, galat, penjaga privasi, log pemakaian; pintu masuknya `AIGateway`, dan tidak tahu apa pun tentang pendidikan. `Content/` berisi templat, pipeline pembuatan, ekspor, `Readiness/` (`RpmReadiness`, D-270), dan `Alignment/` (Cek Keselarasan, direncanakan, D-358), dan tidak tahu apa pun tentang Gemini. `Tenancy/`, `Curriculum/`, `Classroom/` (Di Kelas, observasi, dan sinkronisasi offline), dan `Exam/` (sesi TKA, kartu, token, penilaian) adalah usulan. `Curriculum/Policy/` berisi resolver profil kebijakan dan Profil Jenjang (direncanakan sebelum P5-04, D-355, D-356). `Calendar/` berisi `EffectiveDays` dan `ConflictChecker` (D-259, D-260); `Progress/` berisi `CompletenessLedger`, `ProgressReport`, dan snapshot mingguan (D-263, D-265). `Filament/` hanya berisi resource konsol staf, dan `Jobs/Generation/` berisi satu job per jenis konten (D-024).
 
 `app/AI/` dan `app/Content/` sudah ditetapkan oleh draf. Nama folder lainnya *usulan*; fitur administrasi tanpa batas yang kuat (asesmen, rapor, portal, keuangan, inventaris) tetap di susunan bawaan Laravel `Models`, `Http`, `Policies` sampai fiturnya membesar.
 
 | Modul | Boleh memakai | Tidak boleh memakai | Alasan |
 |---|---|---|---|
 | `AI` | Klien HTTP Laravel, Redis, tabel `ai_*` | `Content`, `Exam`, model siswa | Logika penyedia tetap bisa diganti dan dites dengan penyedia palsu (D-022 butir 4) |
-| `Content` | `AI` hanya lewat `AIGateway`, `Curriculum` (baca), `Tenancy` | Bagian dalam `AI`, tipe Gemini | Templat menyebut *purpose*, tidak pernah model |
-| `Curriculum` | `Tenancy` | `AI`, `Content` | Data rujukan murni ditambah alur validasi (D-019) |
+| `Content` | `AI` hanya lewat `AIGateway`, `Curriculum` (baca), `Calendar` (baca, untuk kesiapan), `Tenancy` | Bagian dalam `AI`, tipe Gemini | Templat menyebut *purpose*, tidak pernah model |
+| `Curriculum` | `Tenancy` | `AI`, `Content` | Data rujukan murni ditambah alur validasi (D-019). `Curriculum\Policy` menentukan profil kebijakan untuk setiap modul |
+| `Calendar` | `Tenancy`, `Curriculum` (baca) | `AI` | Satu hitungan hari efektif dan satu pemeriksa bentrok untuk semua peran (D-259, D-260) |
+| `Progress` | `Tenancy`, `Calendar`, `Content` dan `Classroom` (baca) | `AI`; menulis di luar `progress_snapshots` | Angka kelengkapan yang sama di setiap peran (D-263, D-265) |
 | `Classroom` | `Tenancy`, `Curriculum` (baca), `Content` (membaca pertemuan untuk Jurnal) | `AI` | Data offline tidak pernah menyentuh AI |
 | `Exam` | `Tenancy`, `Content` (membaca dokumen `tka_package` sekali, untuk dibuat snapshot) | `AI`, apa pun setelah snapshot | Isolasi ujian (D-027). Ujian yang berjalan hanya membaca tabel `exam_*` |
 | `Filament` | Semuanya, dengan `withoutSchoolScope()` bila perlu | — | Alat staf; satu-satunya tempat melewati scope dianggap wajar |
+
+**Lapisan kebijakan (direncanakan, D-354…D-358).** `app/Curriculum/Policy/` berisi resolver profil kebijakan: `PolicyProfileResolver` mengembalikan `PolicyProfile` dari tahun ajaran, jenjang, dan daerah. Resolver ini menggantikan penunjuk `allocation_versions` di `config/curriculum.php` (perilaku D-230 tidak berubah) dan membaca `curriculum_versions` dengan `effective_on`, `applies_from_school_year`, dan `supersedes_id`, ditambah catatan Profil Jenjang berversi per jenjang (`sd`, `mi`). Kode membaca profil dan tidak pernah bercabang pada `level == mi`. Keduanya hadir sebelum P5-04 (D-355, D-356). Dokumen menyimpan kode rule set yang berlaku saat dokumen dibuat (D-354). Cek Keselarasan (`app/Content/Alignment/`) mengembalikan baris blokir, peringatan, dan petunjuk sesuai kekuatan aturan (D-353) saat menyimpan dan saat review, dan tidak pernah menulis ulang pekerjaan guru; panel Dasar Kebijakan membaca tag taksonomi dokumen. Keduanya dimulai dengan RPM di P5-04 (D-358). Target nanti (P5-09 atau slice sendiri): `regulations`, `regulation_relations`, `rule_sets`, `rules`, konsol untuk setiap domain, dan Kabar Regulasi (D-354, D-355).
 
 **Data yang melintasi batas berupa snapshot.** Butir Bank Soal disalin ke `assessment_items`; paket TKA disalin ke `exam_items` saat sesi dijadwalkan; sebuah generation menyimpan spesifikasi dan keluaran langkahnya. Perubahan sumber di kemudian hari tidak pernah mengubah ujian yang sedang berjalan atau nilai yang sudah lewat.
 
@@ -180,20 +193,22 @@ Aturan utama, semuanya dari `ai-provider-engine.md` dan `content-engine.md` (bag
 - Kolom data (identitas, CP, kode TP, pertemuan, menit) digabungkan dari database setelah pembuatan; keluaran AI untuk kolom itu diabaikan.
 - *Perbaiki bagian ini* menjalankan `ReviseSection` dengan cara yang sama, dengan versi templat dokumen itu sendiri, dan menyimpan konten sebelumnya sebagai revisi.
 
-**Keunikan job dan pengiriman ulang diri sendiri (rincian *usulan*).** Draf menyebut setiap job bersifat `ShouldBeUnique` berdasarkan id generation *dan* mengirim ulang dirinya. Dengan `ShouldBeUnique` biasa, kunci dipegang sampai job selesai, sehingga pengiriman ulang dari dalam `handle()` akan dibuang. Pakai `ShouldBeUniqueUntilProcessing` (kunci dilepas saat job mulai) bersama middleware job `WithoutOverlapping` dengan key id generation. Dengan begitu pengiriman ganda tetap diblokir, dua jalannya satu generation tidak pernah tumpang tindih, dan langkah berikutnya bisa diantrekan.
+**Keunikan job dan pengiriman ulang diri sendiri (D-050).** Draf menyebut setiap job bersifat `ShouldBeUnique` berdasarkan id generation *dan* mengirim ulang dirinya. Dengan `ShouldBeUnique` biasa, kunci dipegang sampai job selesai, sehingga pengiriman ulang dari dalam `handle()` akan dibuang. Pakai `ShouldBeUniqueUntilProcessing` (kunci dilepas saat job mulai) bersama middleware job `WithoutOverlapping` dengan key id generation. Dengan begitu pengiriman ganda tetap diblokir, dua jalannya satu generation tidak pernah tumpang tindih, dan langkah berikutnya bisa diantrekan.
 
 ### 2. Ekspor (PDF, DOCX, Excel, berkas game)
 
 1. Guru menekan *Unduh PDF/Word/Excel* atau *Unduh game*. Controller memeriksa `document_exports` untuk baris dengan `content_hash`, versi templat, dan pengaturan cetak yang sama. Bila ada, berkas langsung disajikan dari disk.
 2. Bila tidak ada, job ekspor diantrekan di `exports` dan halaman menampilkan kemajuan (pola polling yang sama seperti pembuatan).
 3. Job membuat berkas dari JSON konten dokumen, tidak pernah dari tangkapan layar:
-   - **PDF:** satu view Blade per templat → `spatie/laravel-pdf` → Gotenberg lewat `http://127.0.0.1` dengan basic auth. JavaScript berjalan sebelum ditangkap (`waitUntilReady`) agar KaTeX, ApexCharts, dan three.js tampil. Gambar kop (milik guru, atau milik sekolah bila tidak ada; D-031) dan pengaturan cetak menjadi bagian view. Satu view → satu PDF, tanpa penggabungan.
+   - **PDF:** satu view Blade per templat → `spatie/laravel-pdf` → Gotenberg lewat `http://127.0.0.1` dengan basic auth. JavaScript berjalan sebelum ditangkap (`waitUntilReady`) agar KaTeX, ApexCharts, dan three.js tampil. Gambar kop (milik guru, atau milik sekolah bila tidak ada; D-031) dan pengaturan cetak menjadi bagian view. Satu view → satu PDF; hanya Berkas Administrasi yang menggabungkan PDF (di bawah, D-280).
    - **DOCX:** PhpWord dari tata letak SIGRAK sendiri per templat, gambar kop di header.
    - **Excel:** Laravel Excel, judul kolom berbahasa Indonesia lewat key terjemahan, angka disimpan sebagai angka.
    - **HTML game:** `GameExporter` menyisipkan bundel runtime dari versi templat dokumen, menyematkan konten sebagai JSON yang di-escape, dan menambahkan tag meta CSP tanpa jaringan.
 4. Berkas disimpan di disk lokal, dicatat di `document_exports`, dan diunduh lewat rute yang terotorisasi (tidak pernah URL publik).
 
 Kartu ujian dan laporan hasil TKA memakai jalur yang sama.
+
+**Berkas Administrasi (D-278…D-280).** Job `exports` membuat setiap bagian sebagai PDF sendiri lalu menggabungkannya lewat rute merge Gotenberg (nomor halaman daftar isi diambil dari jumlah halaman tiap bagian), atau mengemasnya dalam ZIP. Berkas disimpan 7 hari dan dipakai ulang selama datanya tidak berubah. Unduhan satu sekolah oleh kepala sekolah berupa satu ZIP berisi satu PDF per guru, juga di `exports`.
 
 **Gotenberg menerima semua yang dibutuhkannya di dalam request (*usulan*).** HTML, font, skrip, dan gambar dikirim sebagai berkas dalam request multipart (atau disisipkan sebagai URI `data:`). Container tidak punya rute ke aplikasi dan tidak punya internet keluar, sehingga string berbahaya di sebuah dokumen tidak bisa membuat Chromium mengambil apa pun.
 
@@ -206,8 +221,9 @@ Open Di Kelas while online
   service worker caches the Di Kelas shell
   IndexedDB caches today's classes, students, slots  ◄── GET (session cookie)
 Signal drops
-  Absensi / Jurnal / Catatan Siswa saved to
-  IndexedDB with a client_uuid, shown as
+  Kehadiran, Jurnal, notes, observations, and
+  Pindai LJK results saved to IndexedDB with
+  a client_uuid, shown as
   "tersimpan di perangkat"
 Signal returns (or app reopened)
   queue sent in batches ───────────────────────────►  POST /sync (session cookie + CSRF)
@@ -217,9 +233,10 @@ Signal returns (or app reopened)
   rows marked sent      ◄───────────────────────────   per-row result
 ```
 
-Ringkasan diagram: saat online, service worker menyimpan kerangka Di Kelas dan IndexedDB menyimpan kelas, siswa, dan slot hari itu. Saat sinyal hilang, Absensi, Jurnal, dan Catatan Siswa disimpan di IndexedDB dengan `client_uuid` dan ditampilkan sebagai "tersimpan di perangkat". Saat sinyal kembali, antrean dikirim bertahap ke `POST /sync` (cookie sesi + CSRF); server melakukan upsert berdasarkan `client_uuid`, memeriksa policy per baris, dan mengembalikan hasil per baris sehingga perangkat menandai baris sebagai terkirim.
+Ringkasan diagram: saat online, service worker menyimpan kerangka Di Kelas dan IndexedDB menyimpan kelas, siswa, dan slot hari itu. Saat sinyal hilang, Kehadiran, Jurnal, catatan murid, observasi, dan hasil Pindai LJK disimpan di IndexedDB dengan `client_uuid` dan ditampilkan sebagai "tersimpan di perangkat". Saat sinyal kembali, antrean dikirim bertahap ke `POST /sync` (cookie sesi + CSRF); server melakukan upsert berdasarkan `client_uuid`, memeriksa policy per baris, dan mengembalikan hasil per baris sehingga perangkat menandai baris sebagai terkirim.
 
-- Hanya Absensi, Jurnal, dan Catatan Siswa yang bekerja offline (D-016). Layar lain butuh koneksi.
+- Penulisan offline: Kehadiran, Jurnal, catatan murid (D-016), isian observasi dan rubrik (D-349), serta hasil Pindai LJK (jawaban dan tingkat keyakinan, tanpa gambar), yang baru masuk ke `scores` setelah sinkronisasi dan konfirmasi guru (D-289, D-369). Pembacaan offline: pertemuan RPM hari ini dan besok, hanya-baca, teks saja (D-289). Penyuntingan, AI, dan semua layar lain butuh koneksi.
+- **Rilis baru (D-321):** service worker mendeteksi build baru dan aplikasi menampilkan "Versi baru tersedia, muat ulang"; antrean offline disinkronkan sebelum memuat ulang.
 - Penulisan terakhir yang menang per baris; `recorded_at_device` menyimpan waktu perangkat di samping timestamp server.
 - **Autentikasi (*usulan*):** endpoint sinkronisasi memakai cookie sesi web biasa dan token CSRF, bukan token API terpisah. Draf menjaga sesi tetap hidup (tanpa pemutusan setelah 15 menit diam) dan aplikasinya satu origin, jadi tidak perlu jenis token tambahan. Bila sesi sudah habis, baris yang mengantre tetap di IndexedDB sampai guru masuk lagi; baris itu tidak pernah dibuang.
 - **Data di perangkat (*usulan*):** nama siswa yang disimpan dan baris yang mengantre hanya ada di IndexedDB untuk guru yang sedang masuk, dan dihapus saat keluar. Agama tidak disimpan (tidak diperlukan untuk absensi; D-036).
@@ -275,7 +292,10 @@ Alur berikut memakai blok bangunan yang sama dan tidak butuh komponen tambahan:
 - **Override prompt templat:** staf menyunting di Filament → baris `template_versions` baru yang tidak bisa diubah, tanpa deploy (D-013).
 - **Penjadwalan RPM:** pertemuan ditempatkan di jadwal pelajaran; entri jurnal yang ditandai "tidak terlaksana" menggeser pertemuan berikutnya ke slot selanjutnya (`meetings`, `meeting_schedule_history`).
 - **Buka di Canva (tingkat 1):** unduhan ekspor ditambah tautan yang membuka canva.com. Tanpa panggilan server ke Canva.
-- **Kabar:** pengumuman, pengingat, dan notifikasi database (pembuatan selesai, kunci tidak valid) dalam satu kotak masuk.
+- **Kabar:** pengumuman, pengingat, dan notifikasi database (pembuatan selesai, kunci tidak valid) dalam satu kotak masuk. Kabar dari Tim SIGRAK bisa menyasar daerah, jenjang, dan peran (D-319); Kabar kesiapan RPM dan keseimbangan JP hanya untuk guru (D-271).
+- **Kalender dan kemajuan:** `EffectiveDays` menjadi dasar kelengkapan, kesiapan RPM, keseimbangan JP, dan penjadwalan RPM (D-259); `ConflictChecker` memeriksa setiap butir bertanggal (D-260); setiap layar kelengkapan disusun dari baris `CompletenessLedger`, dengan hasil langsung di-cache per guru per hari di Redis (D-263, D-265); `RpmReadiness` menampilkan Siap, Segera habis, Perlu RPM (D-270).
+- **Draf jadwal:** "Susun draf jadwal" berjalan sebagai job di antrean `default`; hasilnya selalu berupa draf (D-262).
+- **Pengesahan dokumen:** pengesahan menyimpan `content_hash` dan kode 10 karakter; `/verifikasi/{code}` hanya berfungsi setelah login, untuk anggota sekolah itu dan pengawas binaannya (D-281).
 - **Batas paket:** pemeriksaan hak akses kecil membaca `subscriptions` dan `school_addons` sebelum sebuah fitur, pembuatan, atau ekspor dipakai. Setelah uji coba 1 minggu (D-160), akun tanpa paket hanya bisa melihat dan mengunduh; fitur tambahan membutuhkan add-on sekolah, kecuali uji coba Game kelas 7 hari yang hanya sekali per guru (D-157, D-158, D-159).
 
 ## Topologi deployment
@@ -302,17 +322,18 @@ Semuanya berjalan di satu VPS. Ini cukup untuk uji coba dan sesuai stack yang di
 │                      └── storage/       (letterheads, exports)       │
 │                                                                      │
 │  Supervisor ── Horizon ── supervisors: ai · exports · default        │
-│  cron ──────── php artisan schedule:run (every minute)               │
+│  Supervisor ── php artisan schedule:work (no cron, D-064)            │
 │  Docker ────── gotenberg:8.x (pinned)  127.0.0.1 only, basic auth    │
 │                                                                      │
-│  Outbound: generativelanguage.googleapis.com (Gemini), mail provider │
+│  Outbound: generativelanguage.googleapis.com (Gemini), mail provider,│
+│            console AI providers (OpenAI-compatible, Anthropic)       │
 └──────────────────────────────────────────────────────────────────────┘
 
 Build: Vite assets built in CI or locally, shipped as files. Node.js is not
 needed on the server unless a runtime need appears (CONTEXT).
 ```
 
-Ringkasan diagram: Internet → Cloudflare (DNS, proxy, TLS, WAF) → Cloudflare Tunnel (koneksi keluar saja) → VPS Ubuntu Server 24.04 tanpa IP publik. Di VPS, ufw menolak semua koneksi masuk dan SSH lewat tunnel + Cloudflare Access; Nginx di `127.0.0.1:8080` memulihkan IP asli dari `CF-Connecting-IP` dan melayani `app.`, `ujian.`, `admin.`; PHP-FPM (Laravel) memakai MySQL 8, Redis, dan `storage/` di localhost; Supervisor menjalankan Horizon (`ai`, `exports`, `default`); cron menjalankan scheduler setiap menit; Docker menjalankan Gotenberg yang dikunci versinya, hanya di 127.0.0.1 dengan basic auth. Koneksi keluar hanya ke Gemini dan penyedia email. Aset Vite dibangun di CI atau lokal; Node.js tidak dibutuhkan di server.
+Ringkasan diagram: Internet → Cloudflare (DNS, proxy, TLS, WAF) → Cloudflare Tunnel (koneksi keluar saja) → VPS Ubuntu Server 24.04 tanpa IP publik. Di VPS, ufw menolak semua koneksi masuk dan SSH lewat tunnel + Cloudflare Access; Nginx di `127.0.0.1:8080` memulihkan IP asli dari `CF-Connecting-IP` dan melayani `app.`, `ujian.`, `admin.`; PHP-FPM (Laravel) memakai MySQL 8, Redis, dan `storage/` di localhost; Supervisor menjalankan Horizon (`ai`, `exports`, `default`) dan `schedule:work` (tanpa cron, D-064); Docker menjalankan Gotenberg yang dikunci versinya, hanya di 127.0.0.1 dengan basic auth. Koneksi keluar hanya ke Gemini, penyedia email, dan penyedia AI konsol (kompatibel dengan OpenAI, Anthropic). Aset Vite dibangun di CI atau lokal; Node.js tidak dibutuhkan di server.
 
 Catatan:
 
@@ -324,10 +345,14 @@ Catatan:
 
 ### Job terjadwal
 
+Semuanya dijalankan oleh `schedule:work` di bawah Supervisor (D-064); waktu dalam WIB. Masa simpan dimulai dari nilai di bawah dan diatur di konsol (D-318).
+
 | Job | Frekuensi | Sumber |
 |---|---|---|
 | Penyapu langkah tertahan: lanjutkan generation yang langkahnya `running` melewati timeout + margin, catat percobaannya sebagai `unknown` | setiap menit | Draf AI, aturan duplikat 7 |
-| Pangkas `document_revisions` yang melebihi 5 terakhir per dokumen (D-153) | harian | model data |
+| Pangkas `document_revisions` yang melebihi 5 terakhir per dokumen, tetapi tidak pernah revisi yang terhubung ke baris `document_approvals` berstatus `approved` | harian | D-153, D-282 |
+| Snapshot kelengkapan mingguan ke `progress_snapshots` | Senin 00.30 | D-265 |
+| Kabar ringkasan kesiapan RPM dan keseimbangan JP untuk guru | Senin 06.00 | D-271 |
 | Pangkas baris rinci `ai_usage_logs` yang melewati masa simpan, simpan ringkasan bulanan | harian | D-118 (1 bulan) |
 | Hapus `exam_participants.password` 30 hari setelah sesi ditutup | harian | model data |
 | Tutup sesi ujian yang melewati `closes_at`, kirim paksa percobaan yang masih terbuka | setiap menit | model data, mesin konten |
@@ -340,17 +365,18 @@ Catatan:
 | Batas | Aturan | Ditegakkan oleh |
 |---|---|---|
 | **Tiga guard** | `web` (pengguna sekolah), `exam` (peserta per sesi), `staff` (Tim SIGRAK). Tabel terpisah, hostname terpisah, cookie sesi host-only. Akun sekolah tidak pernah bisa menjadi staf; peserta tidak pernah bisa menjangkau aplikasi | Guard + kelompok rute per domain (D-010, D-027) |
-| **Hanya dengan login** | Tanpa halaman publik. Hanya login, penerimaan undangan, dan reset kata sandi tanpa sesi. Akun hanya lewat undangan | Middleware di setiap kelompok rute (D-010) |
+| **Hanya dengan login** | Tanpa halaman publik. Hanya login, penerimaan undangan, dan reset kata sandi tanpa sesi. Akun hanya lewat undangan. `/verifikasi/{code}` juga butuh login (D-281) | Middleware di setiap kelompok rute (D-010) |
 | **Tenancy** | `school_id` di setiap tabel milik sekolah. Global scope `BelongsToSchool` dari keanggotaan yang aktif, fail-closed. `withoutSchoolScope()` hanya di konsol staf dan di job yang menyebut sekolahnya. Policy di setiap aksi. Satu tes IDOR per resource | `app/Tenancy` + policy + feature test (model data, bagian Tenancy dan akses) |
 | **Peran** | Dari `school_memberships`, bukan kolom peran. Pengawas hanya membaca lintas sekolah binaannya, hanya-baca, dan tidak pernah melihat baris tingkat siswa | Policy, `supervisor_assignments` |
 | **Data siswa yang sensitif** | Agama hanya terlihat oleh guru kelas itu, operator, kepala sekolah; disembunyikan dari pengawas; tidak pernah di prompt, tidak pernah di situs ujian (D-036). Catatan BK: penulis, wali kelas, kepala sekolah | Policy, `PromptDataGuard`, API resource ujian |
-| **Kunci AI** | Milik guru. Cast terenkripsi (APP_KEY, dirotasi dengan `APP_PREVIOUS_KEYS`), fingerprint untuk duplikat, 4 karakter terakhir untuk tampilan. Hanya tulis: tidak pernah di prop Inertia, tidak pernah di log, hanya dikirim sebagai header `x-goog-api-key`. Hanya didekripsi di `ApiKeyManager`/`GeminiClient`. Hanya pembuatan milik pemiliknya yang boleh memakai kunci | `app/AI/KeyManager`, penyembunyian header Telescope (D-012, D-023) |
-| **Privasi prompt** | Tanpa data pribadi siswa di prompt mana pun. Catatan guru dan teks kurikulum masuk ke blok data yang dibatasi; instruksi hanya dari templat; keluaran hanya diterima lewat validasi skema | `PromptDataGuard`, `PromptBuilder`, `OutputValidator` |
+| **Kunci AI** | Milik guru, hanya Gemini (D-326). Cast terenkripsi (APP_KEY, dirotasi dengan `APP_PREVIOUS_KEYS`), fingerprint untuk duplikat, 4 karakter terakhir untuk tampilan. Hanya tulis: tidak pernah di prop Inertia, tidak pernah di log, hanya dikirim sebagai header `x-goog-api-key`. Hanya didekripsi di `ApiKeyManager`/`GeminiClient`. Hanya pembuatan milik pemiliknya yang boleh memakai kunci | `app/AI/KeyManager`, penyembunyian header Telescope (D-012, D-023) |
+| **Privasi prompt** | Tanpa data pribadi siswa di prompt mana pun. Catatan guru dan teks kurikulum masuk ke blok data yang dibatasi; instruksi hanya dari templat; keluaran hanya diterima lewat validasi skema. Jawaban tulisan tangan dikirim sebagai teks dengan kode `nomor absen-nomor soal`, tanpa nama (D-370) | `PromptDataGuard`, `PromptBuilder`, `OutputValidator` |
 | **Keluaran AI di UI** | Ditampilkan sebagai teks (escaping Svelte, tidak pernah `{@html}` untuk keluaran AI). Runtime game memakai `textContent` | Aturan review kode, runtime game |
 | **Isolasi ujian** | Situs ujian tidak pernah memanggil AI, tidak menaut ke aplikasi, dan hanya membaca ujian milik peserta itu. Kredensial per sesi dan kedaluwarsa saat sesi ditutup. Token bergaya TOTP dari rahasia per sesi yang terenkripsi | `app/Exam`, guard `exam` (D-027) |
+| **Lembar jawaban** | Bulatan dibaca di browser guru; foto lembar tidak pernah diunggah; QR hanya berisi `public_id` acak | Kode klien Pindai LJK (D-287, D-325, D-369) |
 | **Game yang diunduh** | Hanya konten pembelajaran, tanpa data siswa, CSP memblokir semua jaringan | `GameExporter` (D-011) |
 | **Gotenberg** | Hanya localhost, basic auth, image dikunci, tanpa jaringan keluar, semua aset dikirim di dalam request | Pengaturan jaringan Docker (D-028) |
-| **Konsol staf** | Guard dan tabel terpisah; Horizon dibatasi untuk staf; Telescope tidak pernah publik di produksi | Konfigurasi panel Filament, gate Horizon |
+| **Konsol staf** | Guard dan tabel terpisah. Sebelas peran staf dengan cakupan, wewenang ditetapkan di kode (D-338, D-339; kode masih punya admin, support, content); halaman Hak akses hanya-baca (D-314). 2FA TOTP lewat Fortify, wajib untuk pemilik dan admin, direset oleh admin dan dicatat (D-343). Support melihat data sekolah hanya-baca berdasarkan MoU, agama dan data kesehatan disembunyikan, satu baris internal per sesi support (D-341). Horizon dibatasi untuk staf; Telescope tidak pernah publik di produksi | Konfigurasi panel Filament, `staff_role_assignments`, Fortify, gate Horizon |
 | **Edge** | WAF dan TLS Cloudflare; tanpa IP publik, lalu lintas hanya lewat Cloudflare Tunnel (D-088); Nginx memulihkan IP klien asli agar pembatasan laju dan log Laravel melihat alamat sebenarnya | Cloudflare, ufw, Nginx |
 
 **Pembatasan laju di situs ujian (*usulan*).** Satu kelas masuk dari satu jaringan sekolah, jadi banyak siswa berbagi satu IP publik. Pembatasan login di `ujian.<domain>` memakai key sesi dan nama pengguna, bukan hanya IP, dan aturan bot atau laju Cloudflare untuk hostname itu harus mengizinkan lonjakan 30–40 login dari satu IP dalam beberapa menit.
@@ -360,8 +386,8 @@ Catatan:
 Pilihan baru yang dibuat dokumen ini. Nomornya diberikan saat pekerjaan paralel diintegrasikan.
 
 1. **Satu codebase, tiga hostname, tiga guard.** Aplikasi sekolah, situs ujian, dan konsol staf adalah kelompok rute per domain dalam satu aplikasi Laravel (`app.`, `ujian.`, `admin.<domain>`), masing-masing dengan guard sendiri dan cookie sesi host-only. Alasan: satu deploy dan satu model data di satu VPS, dengan isolasi D-010 dan D-027 tetap terjaga.
-2. **Folder modul selain `app/AI` dan `app/Content`:** `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, dengan aturan dependensi di Batas modul. `Exam` dan `Classroom` tidak pernah bergantung pada `AI`.
-3. **Keunikan job pembuatan:** `ShouldBeUniqueUntilProcessing` ditambah `WithoutOverlapping` dengan key id generation, sebagai ganti `ShouldBeUnique` biasa, agar job bisa mengirim ulang dirinya untuk langkah berikutnya (memperjelas D-024 dan aturan antrean di draf AI).
+2. **Folder modul selain `app/AI` dan `app/Content`:** `app/Tenancy`, `app/Curriculum`, `app/Classroom`, `app/Exam`, dengan aturan dependensi di Batas modul. `Exam` dan `Classroom` tidak pernah bergantung pada `AI`. Ditambahkan kemudian: `app/Calendar`, `app/Progress` (D-259, D-260, D-263) dan `app/Curriculum/Policy` yang direncanakan (D-355).
+3. **Keunikan job pembuatan:** `ShouldBeUniqueUntilProcessing` ditambah `WithoutOverlapping` dengan key id generation, sebagai ganti `ShouldBeUnique` biasa, agar job bisa mengirim ulang dirinya untuk langkah berikutnya (memperjelas D-024 dan aturan antrean di draf AI; dicatat sebagai D-050).
 4. **Sinkronisasi offline memakai sesi web + CSRF**, bukan token API terpisah. Baris yang mengantre bertahan saat sesi habis sampai login berikutnya. Data siswa yang disimpan dihapus saat keluar dan tidak memuat agama.
 5. **Gotenberg menerima semua aset di dalam request** dan tidak punya jaringan keluar.
 6. **Database Redis terpisah** untuk cache, sesi, antrean/Horizon, dan keadaan AI.

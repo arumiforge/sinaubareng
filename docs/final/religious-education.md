@@ -2,12 +2,12 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-07
-- **Last updated:** 2026-11-09
-- **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
+- **Last updated:** 2026-11-10 (KBC for SD off by default, D-368; Profil Jenjang, D-356)
+- **Sources:** [`KMA_No_1503_Tahun_2025_….pdf`](../sources/KMA_No_1503_Tahun_2025_Pedoman_Implementasi_Kurikulum_Madrasah.pdf), [`Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`](../sources/Salinan_Kepka_BKPDM_No._020_Tahun_2026_tentang_Perubahan_atas_Keputusan_Kepala_BSKAP_Kemendikdasmen_No._046_H_KR_2025.pdf), [`SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_9941_Tahun_2025_CP_PAI_dan_Bahasa_Arab_pada_Madrasah.pdf), [`KMA_No_512_Tahun_2026_….pdf`](../sources/KMA_No_512_Tahun_2026_Pedoman_Kurikulum_Berbasis_Cinta.pdf), [`SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf`](../sources/SK_Dirjen_Pendis_No_6077_Tahun_2025_Panduan_Kurikulum_Berbasis_Cinta.pdf)
 
 ## Purpose
 
-This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036, D-037, D-038.
+This document defines how SIGRAK covers religious education in SD (six religions) and in MI (the Ministry of Religious Affairs' PAI subjects and Bahasa Arab). It lists the official sources, what data exists, what the team must still build, and how the data model handles religion. Decisions: D-034, D-035, D-036, D-037, D-038; later D-126, D-356, D-359, D-368. UI copy says "murid", not "siswa" (D-210).
 
 ## Official sources
 
@@ -78,6 +78,7 @@ MI does not teach a single PAI subject. It follows the Ministry of Religious Aff
 - **Six principles** (p. 12): transformatif, integratif, kontekstual, reflektif, berkelanjutan, kolaboratif.
 - **Approach and methods** (§G, pp. 15–19): pembelajaran mendalam with mindful and joyful learning; 12 suggested methods (pembiasaan, experiential learning, dialog nilai, storytelling, dilema moral, service learning, SEL, refleksi naratif, proyek berbasis karakter, inkuiri nilai, pedagogi kontemplatif, refleksi terbimbing), each with the levels it suits; pembiasaan and storytelling suit the early grades.
 - **Assessment** (§I, pp. 21–22): authentic and continuous, with 10 instruments (observation, reflection journal, portfolio, social action project, development notes, self and peer assessment, value conference, narrative reflection, attitude scale). Results are integrated, reported through Akhlak or Budi Pekerti and the attitude notes, and never used to label, judge, or rank students.
+- **Not a subject.** KBC adds no subject and changes no JP. SIGRAK reports KBC results only through Akhlak or Budi Pekerti and the attitude notes, never as labels or rankings (D-359).
 - **Still to come:** technical guides from the Dirjen with KBC learning outcomes per phase, strategies, assessment, and monitoring (§J, p. 22). Monitoring uses three levels of practice: merintis, berkembang, mekar (pp. 23–24).
 
 The 6077 guide below stays useful for its example lessons and CP-to-theme mapping.
@@ -92,11 +93,14 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 - **Everything is an example.** The guide says all aspects and indicators are examples, and each madrasah may adapt them (p. 12).
 - **Methods it recommends:** deep learning (mindful, meaningful, joyful), experience-based learning, the FIDS flow (Feel, Imagine, Do, Share), and process-based evaluation.
 
-**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. Both fields are optional, AI pre-filled (D-142): the teacher may change or clear them. This applies to every MI subject and does not apply to SD. KMA 512/2026 also covers religion teachers in SD; whether SIGRAK offers the KBC fields to them is open (D-359, `docs/drafts/open-questions.md`).
+**In SIGRAK (D-126).** For MI schools, the v1 RPM wizard adds *Tema KBC* (one or more Panca Cinta themes) and *Materi Insersi*, and the AI weaves them into TP, activities, and assessment. Both fields are optional, AI pre-filled (D-142): the teacher may change or clear them. This applies to every MI subject (D-126 stays, now with KMA 512/2026 as its source, D-359).
+
+**SD religion teachers (D-368).** KMA 512/2026 also covers religion teachers in SD, but SD schools follow Kemendikdasmen. So the KBC fields (Tema KBC, Materi Insersi, nilai dasar) are **off by default** for SD religion teachers. A SIGRAK admin can switch them on when needed, through the SD Profil Jenjang (D-356) or a console setting.
 
 ## How SIGRAK models it
 
 - **School level decides the subject set.** `schools.level` = `sd` gives the six religion subjects. `mi` gives the Kemenag subjects plus MI's own allocation table.
+- **Profil Jenjang (D-356).** SD/MI differences are read from the level's versioned Profil Jenjang record (ministry, rule-set codes, character frameworks on, RPM extra fields such as the KBC fields, rapor export target), never from `if level == mi` in code. MI turns KBC on; SD has it off unless an admin switches it on (D-368). The record is the minimum built before P5-04.
 - **Curriculum versions:** `SIGRAK-SD-2026-R1` (SD topics: general subjects incl. PAI, and the five other religions), `SIGRAK-MI-2026-R1` (MI Kemenag subject topics), `CP-PABP-BKPDM-020-2026` (six religions, CP), `CP-PAI-BA-MADRASAH-9941-2025` (MI PAI + Bahasa Arab, CP), and `ALOKASI-MI-KMA-1503-2025` (MI allocation). See [`data-model.md`](data-model.md#curriculum).
 - **Student religion (D-036)** is recorded per student so religion classes can be grouped. For a religion subject, the journal, student notes, assessment, and report card list only that religion's students. Attendance stays daily and class-wide.
 - **Privacy (D-036):** religion is sensitive personal data.
@@ -121,6 +125,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 sets the Panduan Kurikulum Berbasis Cinta a
 ## Open questions
 
 - [ ] An official-channel copy of SK 9941/2025 (low priority: two copies from different sources have identical text).
-- [x] KBC in the RPM template for MI: in v1, for every MI subject, not for SD (D-126); optional, AI pre-filled (D-142).
+- [x] KBC in the RPM template for MI: in v1, for every MI subject (D-126); optional, AI pre-filled (D-142).
+- [x] KBC fields for SD religion teachers: off by default, an admin can switch them on via Profil Jenjang or the console (D-368).
 - [x] Reviewer name: recorded as "Tim Validasi SIGRAK" (D-112).
 - [x] Inclusive schools need the special-education CP (Lampiran II of BKPDM 020/2026); it is in scope and waits for transcription (D-155).

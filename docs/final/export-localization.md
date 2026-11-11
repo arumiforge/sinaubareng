@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-07
-- **Last updated:** 2026-11-01
+- **Last updated:** 2026-11-10 (print rules, Berkas Administrasi, new prints, and banned words from D-210…D-371)
 
 ## Purpose
 
@@ -10,7 +10,7 @@ This guide describes how SIGRAK's Indonesian UI text and its Indonesian exports 
 
 It builds on [coding-standards.md](coding-standards.md) sections 7–8 (TR-*, EX-* rules) and does not change them. Rules here are numbered `LOC-*` (localization) and `XP-*` (export). Items marked *proposed* are listed under [Decisions to record](#decisions-to-record).
 
-Sources: [`CLAUDE.md`](../../CLAUDE.md) (language policy, D-002), [`content-engine.md#export`](content-engine.md#export), [`design-system.md`](design-system.md#ui-writing-rules), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx), D-028, D-031, D-033, D-039, D-080, D-094.
+Sources: [`CLAUDE.md`](../../CLAUDE.md) (language policy, D-002), [`content-engine.md#export`](content-engine.md#export), [`design-system.md`](design-system.md#ui-writing-rules), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx), D-028, D-031, D-033, D-039, D-080, D-094; later decisions D-210, D-218, D-274, D-278…D-284, D-287, D-292, D-295, D-297…D-303, D-311, D-325, D-370, D-371 ([`legacy-upgrade-01.md`](../drafts/legacy-upgrade-01.md) §4).
 
 ## 1. `lang/id` layout
 
@@ -66,7 +66,7 @@ One PHP file per area. The locale and the fallback are both `id`, and there is n
 
 ```php
 // lang/id/classes.php
-'students_count' => '{0} Belum ada siswa|[1,*] :count siswa',
+'students_count' => '{0} Belum ada murid|[1,*] :count murid',
 
 trans_choice('classes.students_count', $n, ['count' => IndonesianFormat::number($n)]);
 ```
@@ -176,11 +176,19 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 | 1282 | Galat | Pemberitahuan gagal dibatalkan: {…} | Pengingat belum berhasil ditarik. ({…}) | `school.errors.reminder_withdraw_failed` |
 | 1463 | Tombol | Lihat Daftar Isi | Daftar isi | `help.actions.contents` |
 
+The spreadsheet predates D-210 and D-302: where *Teks baru* says "siswa" or "Absensi", the key's value says "murid" or "Kehadiran" (LOC-14).
+
 ### 2.3 The 37 *Istilah* terms
 
-- **LOC-21** The terms have one home: `lang/id/terms.php`, one key per standard term (*proposed*). Examples: `terms.rpm` → "RPM", `terms.my_documents` → "Dokumen Saya", `terms.ai_key` → "Kunci AI", `terms.attendance` → "Absensi". Other strings use the term through a parameter only where the term really varies. In normal copy the word is written out, and the check below keeps it consistent.
+- **LOC-21** The terms have one home: `lang/id/terms.php`, one key per standard term (*proposed*). Examples: `terms.rpm` → "RPM", `terms.my_documents` → "Dokumen Saya", `terms.ai_key` → "Kunci AI", `terms.attendance` → "Kehadiran" (D-302). Other strings use the term through a parameter only where the term really varies. In normal copy the word is written out, and the check below keeps it consistent.
 - **LOC-22** **Banned-terms check.** A test reads the *Istilah lama* column, kept as a list in `tests/Fixtures/banned-terms.php`, and fails when a value in any `lang/id` file contains an old term. Examples: "Download", "Generate", "Modul Ajar", "API Key", "Presensi", "Instansi", "Cloud", "Edit", "Ijin", "...", "&", an emoji, or ALL-CAPS words of 3+ letters (except acronyms on an allow-list: RPM, LKPD, TKA, PDF, NISN, NIP, BOS, KKTP). The test reports the file, the key, and the suggested term.
 - **LOC-23** A new standard term is added to the design system's [Terms](design-system.md#terms) table, `terms.php`, and the banned list in the same PR.
+- **LOC-35** **Banned words (tested).** The same test also rejects, in any `lang/id` value (and so in every print, since prints read `lang/id/export.php`):
+  - "tunggakan", "kurang bayar", "belum lunas" (D-300); the copy is "Sumbangan sukarela" and "Sisa dari kesepakatan"
+  - "teguran" (D-311); the copy is "Pengingat"
+  - "tanda tangan elektronik" (D-281); the copy is "pengesahan dokumen"
+  - "siswa", "P5", "taraf serap" (D-210, D-322); the copy is "murid", "kokurikuler", "daya serap"
+  - "Absensi" as a label (D-302); the copy is "Kehadiran". Help-search aliases that still find "absensi" are listed in an allow-list.
 
 ### 2.4 Finding missing and unused strings
 
@@ -193,8 +201,8 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 ## 3. Validation and system messages
 
 - **LOC-26** `lang/id/validation.php` is Indonesian. It starts from the MIT-licensed `laravel-lang` Indonesian file, copied once and not installed as a dependency (*proposed*), and is then edited to the [voice](design-system.md#voice-and-tone):
-  - Messages say what to fix, in calm words: "Nama siswa wajib diisi." and "NISN harus 10 angka.", never "Input tidak valid".
-  - Every field in a Form Request has an `attributes` entry in lowercase ("nama siswa", "tanggal lahir"), so messages never show `student_name`.
+  - Messages say what to fix, in calm words: "Nama murid wajib diisi." and "NISN harus 10 angka.", never "Input tidak valid".
+  - Every field in a Form Request has an `attributes` entry in lowercase ("nama murid", "tanggal lahir"), so messages never show `student_name`.
   - Form-specific messages go in `custom` (`validation.custom.academic_year.invalid`) or in the Form Request's `messages()` with keys from the area file.
 - **LOC-27** **Error pages** (`errors.php` + `resources/views/errors/*.blade.php`) use plain copy and offer a next step:
   - 403: "Anda tidak punya akses ke halaman ini."
@@ -222,9 +230,10 @@ Common rules for all formats:
 
 ### 4.1 PDF (Gotenberg, D-028, D-031)
 
-- **XP-6** One Blade view per PDF: `resources/views/exports/<key>/pdf.blade.php`. It extends `exports/layouts/print.blade.php`, with `<html lang="id">`. A package (RPM + LKPD + rubric + key, or all exam cards) is one view with page breaks, never a merge.
-- **XP-7** **Paper:** set by `@page` from print settings. A4 is `210mm 297mm`. F4 is `215mm 330mm` (D-109). Margins come from print settings in mm.
-- **XP-8** **Letterhead:** the school's or the teacher's image (D-031) goes at the top of the **first page only**, at full content width, `max-height: 4cm`. It is passed to Gotenberg as an asset in the request, never as a URL (architecture decision 5).
+- **XP-6** One Blade view per PDF: `resources/views/exports/<key>/pdf.blade.php`. It extends `exports/layouts/print.blade.php`, with `<html lang="id">`. A package (RPM + LKPD + rubric + key, or all exam cards) is one view with page breaks, never a merge. **Amended (D-280):** Berkas Administrasi is the only merged PDF (XP-43); every other document stays one view → one PDF.
+- **XP-7** **Paper:** set by `@page` from print settings. A4 is `210mm 297mm`. F4 is `215mm 330mm` (D-109). Margins come from the margin profiles in print settings (XP-40).
+- **XP-8** **Letterhead:** the school's or the teacher's image (D-031) goes at the top of the **first page only** (the first content page after a cover, XP-39), at full content width, `max-height: 4cm`. It is passed to Gotenberg as an asset in the request, never as a URL (architecture decision 5).
+  - **Automatic letterhead (D-284).** A school without an image can press "Buat kop otomatis": SIGRAK composes a PNG from the logo, name, address, and contact in the school profile and saves it as an ordinary, replaceable letterhead. Prints still only see one image.
 - **XP-9** **Fonts** are bundled as files and sent with the request (D-033: no CDN). The school chooses the print font (D-125):
 
 | Print setting | Font used |
@@ -234,16 +243,41 @@ Common rules for all formats:
 | Arabic text (any setting) | Noto Naskh Arabic |
 | Math | KaTeX fonts |
 
-- **XP-10** **Page numbers** use Gotenberg's footer HTML, with `<span class="pageNumber">` and `<span class="totalPages">` placed in `export.print.page_of` ("Halaman :page dari :total"). Exam cards and single-page documents have no page numbers.
+- **XP-10** **Page numbers** use Gotenberg's footer HTML, with `<span class="pageNumber">` and `<span class="totalPages">` placed in `export.print.page_of` ("Halaman :page dari :total"). Exam cards, single-page documents, and covers (XP-39) have no page numbers.
 - **XP-11** **Signers** (names, NIP, titles) come from print settings as text, with a place and a date in the long form ("Kudus, 31 Oktober 2026").
 - **XP-12** JavaScript content (KaTeX, ApexCharts, three.js) must finish before capture. The view sets a ready flag that the PDF call waits for, and a view with no JS needs no wait.
 - **XP-13** **No watermark.** There is no free plan any more, only a 1-week trial with every feature (D-157, D-160), so exports never carry a watermark.
 - **XP-14** Tables use `page-break-inside: avoid` on rows and `thead { display: table-header-group }`, so headings repeat on each page.
+- **XP-39** **Cover (D-283).** Book-type documents and Berkas Administrasi get one shared black-and-white cover:
+  - No page number.
+  - The document year follows the semester: semester 1 → the first year of the school year, semester 2 → the second year, annual documents → the current year.
+  - An optional school logo uploaded by the school (`school_print_settings.cover_logo_path`). No government logos are bundled.
+- **XP-40** **Margin profiles and duplex (D-283).** `school_print_settings.margin_profiles` holds three profiles in mm (top/right/bottom/left), editable by the school. Each template names its profile:
+
+| Profile | Default (mm) | Used for |
+|---|---|---|
+| Buku administrasi | 15/12/15/25 | Prota, Promes, journals, leger, recaps, Berkas parts |
+| Dokumen ajar | 20/20/20/20 | RPM, LKPD, Bank Soal prints |
+| Lembar tunggal | 15/15/15/15 | Single sheets: answer sheets, exam cards, berita acara |
+
+The `school_print_settings.duplex` option mirrors the left and right margins on even pages for double-sided printing.
+- **XP-41** **Automatic landscape (D-283).** A table with 9 or more columns prints landscape unless the template says otherwise.
+- **XP-42** **NIHIL (D-283).** An empty table prints one full-width row "NIHIL" instead of being left out, so a supervisor sees the part was checked.
+- **XP-43** **Berkas Administrasi (D-278, D-279, D-280).**
+  - Contents: cover (XP-39), the completeness summary sheet (D-263), a contents page, a title page per part, and a NIHIL page for an empty part. BK notes are never included.
+  - Each part renders as its own PDF (the same files make the ZIP option), and Gotenberg's merge route joins them. The contents page takes page numbers from each part's page count, so there is no second render.
+  - Output: one merged PDF by default, a ZIP of separate PDFs as an option, no DOCX. Files are kept 7 days, then deleted, and reused while the data is unchanged.
+  - The principal's school-wide download (D-279) is one ZIP with one PDF per teacher, built as a job on the `exports` queue.
+- **XP-44** **Answer sheet (LJK, D-287, D-325, D-370).** One sheet per student, on the Lembar tunggal profile:
+  - Header: Mata Pelajaran, Kelas, Nama, Nomor. The student's absence number is printed, so a handwritten answer can be tagged `nomor absen-nomor soal` (e.g. `12-3`, D-370).
+  - PG items in two columns of letter boxes (A–D, or A–E when used) that the student crosses out; PG Kompleks, Benar-Salah, PGK Kategori, and Menjodohkan use the same letter-box style; numbered lines for Isian Singkat and Uraian.
+  - Four corner markers and one QR that holds only the sheet's random `public_id` (no student data on paper). The layout version is stored on the server.
+- **XP-45** **Pengesahan mark (D-281).** RPM, Prota, Promes, rencana asesmen, and Berkas Administrasi print a QR, the 10-character code, and "Disahkan melalui SIGRAK, [tanggal]" only while the active revision equals the approved one. For a Berkas the one QR sits in the principal's signature column on the summary sheet. The QR leads to `/verifikasi/{code}`, which works only after login. The print never says "tanda tangan elektronik" (LOC-35).
 
 ### 4.2 DOCX (PhpWord)
 
 - **XP-15** Each template has a DOCX builder in `app/Content/Export/Docx/<Key>DocxBuilder.php` that builds SIGRAK's own layout in code (D-031). There are no uploaded Word templates and no Word-to-PDF conversion.
-- **XP-16** The document language is set to `id-ID` (proofing and hyphenation). The page size and margins follow the print settings (same values as XP-7).
+- **XP-16** The document language is set to `id-ID` (proofing and hyphenation). The page size and margins follow the print settings (same values as XP-7, same margin profile as XP-40).
 - **XP-17** The letterhead image goes in the **first-page header**, and the other pages get an empty header. Signers are plain text.
 - **XP-18** Fonts are set by name ("Arial" or "Times New Roman", "Noto Naskh Arabic"; D-125), because Word substitutes fonts on the teacher's machine. Arabic runs use an RTL paragraph style (see §7).
 - **XP-19** Headings use Word heading styles, so teachers get a navigation pane and a table of contents. Body text does not use direct formatting.
@@ -289,6 +323,24 @@ public function columnFormats(): array
   - **Old headings stay valid.** When a heading label changes, the old label moves to `export.column_aliases.<column>` in `lang/id/export.php`, so templates filled earlier still import. Aliases are never removed.
   - **Indonesian cell values.** Fixed-set cells accept the labels the export writes ("Hadir" → `present`, "Ya"/"Tidak" → `true`/`false`), matched the same way as headings. Dates accept `dd/mm/yyyy` text and Excel date cells; numbers accept comma decimals (`76,5`) and numeric cells.
 
+### 4.4 Prints and exports from later decisions
+
+Each print below follows XP-6…XP-14 and XP-39…XP-45; Excel versions follow XP-20…XP-23 and import back where an import exists (D-150).
+
+| Print | Content | Formats | Decision |
+|---|---|---|---|
+| Promes Realisasi | Second view of the Promes: planned week against actual week per topic, built from journals | PDF | D-274 |
+| Analisis Daya Serap | Print layout (and search alias) of Analisis per TP, with Kelompok belajar per TP | PDF, XLSX | D-295 |
+| Leger | Printed and exported only from the locked version (XP-46) | PDF, XLSX | D-292 |
+| Rekap kehadiran | Per week, month, and semester, per class | PDF, XLSX | D-303 |
+| Daftar piket | Kelompok piket per school day, with tasks and rotation | PDF | D-297 |
+| Berita acara penyerahan tabungan | Balance handed over on graduation or mutasi keluar; signers wali kelas, parent or guardian, principal | PDF | D-301 |
+| Laporan kas kelas | Income (with sumbangan sukarela), expenses, balance; totals by default, per-student detail only when the wali kelas chooses | PDF, `wa.me` text | D-299 |
+
+- **XP-46** **Locked leger is the only source (D-292).** Rapor prints, the leger print, and the e-Rapor/RDM export read the locked leger version, never live scores. Before the lock they are not offered.
+- **XP-47** **TKA results (D-371).** Simulasi TKA result exports write the official category (Baik, Memadai, Kurang) and the Istimewa predicate (score ≥ 95,00) in two separate columns, read from `exam_results`, so they match the SHTKA. Scores use `score()` on a 0–100 scale. The four levels shown on screen are not stored as one value. The Info sheet (XP-22) carries the same practice-result note as the UI.
+- **XP-48** **e-Rapor SD and RDM export (D-218).** Built right after the Asesmen slice, in each system's import layout, from the locked leger (XP-46). The Profil Jenjang names the target (e-Rapor SD for SD, RDM for MI). It follows the XP-24 exception for external-system files.
+
 ## 5. Formatting helpers
 
 - **XP-26** `App\Support\IndonesianFormat` (PHP) and `resources/js/lib/format.ts` (TS) are the only formatters (EX-6). They share an API and the same outputs, and a test feeds both the same fixtures.
@@ -319,7 +371,8 @@ public function columnFormats(): array
   - The date is ISO (`2026-10-31`) so files sort.
   - The full name is at most 80 characters.
   - Examples: `rpm-ipas-kelas-4a-2026-10-31.pdf`, `leger-kelas-4a-semester-1-2026-2027.xlsx`, `kartu-login-simulasi-tka-6a-2026-11-03.pdf`.
-- **XP-32** **No student personal data in file names.** No names, NISN, or birth dates. A per-student file uses the class and the roster number (`rapor-kelas-6a-no-07-semester-1.pdf`), and a bundle of all students is one file or one ZIP.
+  - Prints from §4.4: `berkas-administrasi-semester-1-2026-2027.pdf` (or `.zip`), `promes-realisasi-ipas-kelas-4a-semester-1-2026-2027.pdf`, `analisis-daya-serap-ipas-kelas-4a-2026-11-10.pdf`, `rekap-kehadiran-kelas-4a-2026-11-10.xlsx`, `daftar-piket-kelas-4a-2026-11-10.pdf`, `laporan-kas-kelas-4a-2026-11-10.pdf`, `ljk-matematika-kelas-4a-2026-11-10.pdf`.
+- **XP-32** **No student personal data in file names.** No names, NISN, or birth dates. A per-student file uses the class and the roster number (`rapor-kelas-6a-no-07-semester-1.pdf`, `berita-acara-penyerahan-tabungan-kelas-6a-no-07-2027-06-20.pdf`), and a bundle of all students is one file or one ZIP.
 - **XP-33** No teacher names in file names either. The document title can be used (the teacher typed it) after it is slugged.
 - **XP-34** The download response sends both an ASCII `filename` and a UTF-8 `filename*` in `Content-Disposition`.
 
@@ -343,6 +396,9 @@ MI CP text (D-039) and PAI material mix Indonesian and Arabic. The rules:
 | `lang:audit` hard-coded text (LOC-25) | CI | Literal UI text outside `t()`/`__()` in Svelte or Blade |
 | Unused keys (LOC-24) | CI (warning) | A key nobody uses (listed, fixed in the same task) |
 | Banned terms (LOC-22) | CI (Pest) | A `lang/id` value contains an old *Istilah* term, "...", "&", an emoji, or ALL-CAPS |
+| Banned words (LOC-35) | CI (Pest) | A `lang/id` value contains tunggakan, kurang bayar, belum lunas, teguran, tanda tangan elektronik, siswa, P5, taraf serap, or Absensi outside the help-search allow-list |
+| Print rules (XP-41, XP-42) | Pest | A 9+ column table renders portrait without a template override, or an empty table lacks the NIHIL row |
+| TKA export (XP-47) | Pest | Category and predicate are not separate columns, or a score of 95,00 lacks the Istimewa predicate |
 | Server-only groups (LOC-10) | Feature test | `export`, `mail`, `validation`, … appear in the `translations` prop |
 | Parameter parity | Pest | A key's `:params` differ from those passed at a call site (checked for literal calls) |
 | Enum labels | Pest arch | An enum case has no `enums.*` label |
@@ -376,7 +432,8 @@ New choices in this guide. They get numbered at integration.
 ## Open questions
 
 - [x] F4 size: 215 × 330 mm (D-109).
-- [ ] e-Rapor import format (columns, file type) is still unknown (data-model open question). The XP-24 exception covers it once known.
+- [ ] e-Rapor SD and RDM import format (columns, file type) is still unknown (data-model open question). The export itself is decided (D-218, XP-48); the XP-24 exception covers the layout once known.
+- [ ] File names inside the principal's school-wide Berkas ZIP (D-279): XP-33 bans teacher names in file names, but the principal must tell the files apart. Owner to decide (for example a running number plus a list sheet inside the ZIP).
 - [x] Print fonts: Arial or Times New Roman, chosen by the school; no others (D-125).
 - [x] Exam client font: standard default size, A−/A/A+ control stays (D-121).
 

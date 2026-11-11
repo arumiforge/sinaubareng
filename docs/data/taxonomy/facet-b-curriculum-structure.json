@@ -1,0 +1,960 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "B",
+    "facet_name": "Curriculum structure",
+    "title": "Taksonomi SIGRAK — Faset B: Struktur kurikulum",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "JENJANG",
+      "facet": "B",
+      "label_id": "Jenjang",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-356",
+        "note": "SIGRAK serves SD and MI; each has a Profil Jenjang."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "JENJANG.SD",
+      "facet": "B",
+      "label_id": "SD",
+      "parent": "JENJANG",
+      "level_scope": "sd",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-356"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "sd",
+      "ministry": "kemendikdasmen"
+    },
+    {
+      "code": "JENJANG.MI",
+      "facet": "B",
+      "label_id": "MI",
+      "parent": "JENJANG",
+      "level_scope": "mi",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-356"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "mi",
+      "ministry": "kemenag"
+    },
+    {
+      "code": "FASE",
+      "facet": "B",
+      "label_id": "Fase",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null,
+        "note": "Fase A–C for SD/MI. Article to be cited after P4-23."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "FASE.A",
+      "facet": "B",
+      "label_id": "Fase A",
+      "parent": "FASE",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "a",
+      "grades": [
+        1,
+        2
+      ]
+    },
+    {
+      "code": "KELAS.1",
+      "facet": "B",
+      "label_id": "Kelas 1",
+      "parent": "FASE.A",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "1",
+      "grade": 1
+    },
+    {
+      "code": "KELAS.2",
+      "facet": "B",
+      "label_id": "Kelas 2",
+      "parent": "FASE.A",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "2",
+      "grade": 2
+    },
+    {
+      "code": "FASE.B",
+      "facet": "B",
+      "label_id": "Fase B",
+      "parent": "FASE",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "b",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "code": "KELAS.3",
+      "facet": "B",
+      "label_id": "Kelas 3",
+      "parent": "FASE.B",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "3",
+      "grade": 3
+    },
+    {
+      "code": "KELAS.4",
+      "facet": "B",
+      "label_id": "Kelas 4",
+      "parent": "FASE.B",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "4",
+      "grade": 4
+    },
+    {
+      "code": "FASE.C",
+      "facet": "B",
+      "label_id": "Fase C",
+      "parent": "FASE",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "c",
+      "grades": [
+        5,
+        6
+      ]
+    },
+    {
+      "code": "KELAS.5",
+      "facet": "B",
+      "label_id": "Kelas 5",
+      "parent": "FASE.C",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "5",
+      "grade": 5
+    },
+    {
+      "code": "KELAS.6",
+      "facet": "B",
+      "label_id": "Kelas 6",
+      "parent": "FASE.C",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "6",
+      "grade": 6
+    },
+    {
+      "code": "SEMESTER",
+      "facet": "B",
+      "label_id": "Semester",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null,
+        "note": "Two semesters per school year, as in the kalender pendidikan (D-253)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "SEMESTER.1",
+      "facet": "B",
+      "label_id": "Semester 1 (ganjil)",
+      "parent": "SEMESTER",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "1"
+    },
+    {
+      "code": "SEMESTER.2",
+      "facet": "B",
+      "label_id": "Semester 2 (genap)",
+      "parent": "SEMESTER",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "2"
+    },
+    {
+      "code": "JENIS-PEMBELAJARAN",
+      "facet": "B",
+      "label_id": "Jenis pembelajaran",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": "Pasal 7",
+        "pages": null,
+        "note": "Pasal 7 is referenced, not amended, by Permendikdasmen 13/2025."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "JENIS-PEMBELAJARAN.INTRA",
+      "facet": "B",
+      "label_id": "Intrakurikuler",
+      "parent": "JENIS-PEMBELAJARAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": "Pasal 7",
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "intracurricular"
+    },
+    {
+      "code": "JENIS-PEMBELAJARAN.KOK",
+      "facet": "B",
+      "label_id": "Kokurikuler",
+      "parent": "JENIS-PEMBELAJARAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 16–19",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P5",
+          "type": "replaced",
+          "note": "P5 is replaced by kokurikuler (13/2025)."
+        },
+        {
+          "from": "P5RA",
+          "type": "replaced",
+          "note": "Madrasah P5RA is replaced by kokurikuler (KMA 1503/2025)."
+        }
+      ],
+      "key": "cocurricular"
+    },
+    {
+      "code": "JENIS-PEMBELAJARAN.EKSTRA",
+      "facet": "B",
+      "label_id": "Ekstrakurikuler",
+      "parent": "JENIS-PEMBELAJARAN",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 22",
+        "pages": [
+          4
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "extracurricular"
+    },
+    {
+      "code": "KOK-BENTUK",
+      "facet": "B",
+      "label_id": "Bentuk kokurikuler",
+      "parent": "JENIS-PEMBELAJARAN.KOK",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ],
+        "note": "Forms joined by 'dan/atau'; the school chooses one or more.",
+        "also": [
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              8,
+              11,
+              28
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "KOK-BENTUK.LINTAS-DISIPLIN",
+      "facet": "B",
+      "label_id": "Pembelajaran kolaboratif lintas disiplin ilmu",
+      "parent": "KOK-BENTUK",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "cross_disciplinary_collaborative"
+    },
+    {
+      "code": "KOK-BENTUK.GERAKAN-7KAIH",
+      "facet": "B",
+      "label_id": "Gerakan 7 Kebiasaan Anak Indonesia Hebat",
+      "parent": "KOK-BENTUK",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "seven_habits_movement"
+    },
+    {
+      "code": "KOK-BENTUK.CARA-LAIN",
+      "facet": "B",
+      "label_id": "Cara lainnya",
+      "parent": "KOK-BENTUK",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "other_way"
+    },
+    {
+      "code": "KOK-TEMA",
+      "facet": "B",
+      "label_id": "Tema kokurikuler (katalog)",
+      "parent": "JENIS-PEMBELAJARAN.KOK",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ],
+        "note": "Themes are developed by the school; SIGRAK offers catalog examples."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/cocurricular-themes.json"
+        ],
+        "path": "themes[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "KOK-KEGIATAN",
+      "facet": "B",
+      "label_id": "Contoh kegiatan kokurikuler (katalog)",
+      "parent": "JENIS-PEMBELAJARAN.KOK",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/cocurricular-themes.json"
+        ],
+        "path": "activities[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "EKS-KATEGORI",
+      "facet": "B",
+      "label_id": "Kategori ekstrakurikuler (katalog)",
+      "parent": "JENIS-PEMBELAJARAN.EKSTRA",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/extracurriculars.json"
+        ],
+        "path": "categories[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "EKS-KEGIATAN",
+      "facet": "B",
+      "label_id": "Jenis ekstrakurikuler (katalog)",
+      "parent": "JENIS-PEMBELAJARAN.EKSTRA",
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 22",
+        "pages": [
+          4
+        ],
+        "note": "Pramuka or another kepanduan must be offered (D-210, D-216); the list itself is the school's."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "open",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/extracurriculars.json"
+        ],
+        "path": "items[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "JENIS-MAPEL",
+      "facet": "B",
+      "label_id": "Jenis mata pelajaran",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": null,
+        "pages": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "JENIS-MAPEL.WAJIB",
+      "facet": "B",
+      "label_id": "Mata pelajaran wajib",
+      "parent": "JENIS-MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "compulsory"
+    },
+    {
+      "code": "JENIS-MAPEL.AGAMA",
+      "facet": "B",
+      "label_id": "Pendidikan agama",
+      "parent": "JENIS-MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "religion"
+    },
+    {
+      "code": "JENIS-MAPEL.MULOK",
+      "facet": "B",
+      "label_id": "Muatan lokal",
+      "parent": "JENIS-MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "local_content"
+    },
+    {
+      "code": "JENIS-MAPEL.PILIHAN",
+      "facet": "B",
+      "label_id": "Mata pelajaran pilihan",
+      "parent": "JENIS-MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "optional"
+    },
+    {
+      "code": "JENIS-MAPEL.KOKURIKULER",
+      "facet": "B",
+      "label_id": "Dilaksanakan melalui kokurikuler",
+      "parent": "JENIS-MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KEPMENDIKDASMEN-127-P-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "cocurricular"
+    },
+    {
+      "code": "MAPEL",
+      "facet": "B",
+      "label_id": "Mata pelajaran (data kurikulum)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": null,
+        "pages": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "also": [
+          {
+            "regulation": "KMA-1503-2025",
+            "pages": [
+              28,
+              29,
+              30,
+              31
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/curriculum/subjects.json"
+        ],
+        "path": "subjects[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "CP",
+      "facet": "B",
+      "label_id": "Capaian Pembelajaran (data kurikulum)",
+      "parent": "MAPEL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "BSKAP-046-H-KR-2025",
+        "article": null,
+        "pages": null,
+        "note": "General-subject CP: base decree pending P4-23. Religion CP: BKPDM 020/2026 (SD) and SK Dirjen Pendis 9941/2025 (MI) files listed here.",
+        "also": [
+          {
+            "regulation": "BKPDM-020-2026"
+          },
+          {
+            "regulation": "SK-DIRJEN-PENDIS-9941-2025"
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "data_files": [
+        "docs/data/curriculum/cp-pendidikan-agama-sd-bkpdm-020-2026.json",
+        "docs/data/curriculum/cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json"
+      ]
+    },
+    {
+      "code": "CP-ELEMEN",
+      "facet": "B",
+      "label_id": "Elemen CP",
+      "parent": "CP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "BSKAP-046-H-KR-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "note": "Elements are free text in the SIGRAK curriculum files today (topics[].element); element codes are an open point."
+    },
+    {
+      "code": "TOPIK",
+      "facet": "B",
+      "label_id": "Topik (data kurikulum SIGRAK)",
+      "parent": "MAPEL",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-363",
+        "note": "Example defaults derived from official guides (D-020)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/curriculum/sigrak-sd-2026-r1-umum.json",
+          "docs/data/curriculum/sigrak-sd-2026-r1-agama.json",
+          "docs/data/curriculum/sigrak-mi-2026-r1.json"
+        ],
+        "path": "subjects[].topics[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "TP",
+      "facet": "B",
+      "label_id": "Tujuan Pembelajaran (data kurikulum SIGRAK)",
+      "parent": "TOPIK",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-363"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/curriculum/sigrak-sd-2026-r1-umum.json",
+          "docs/data/curriculum/sigrak-sd-2026-r1-agama.json",
+          "docs/data/curriculum/sigrak-mi-2026-r1.json"
+        ],
+        "path": "subjects[].topics[].learning_objectives[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "ATP",
+      "facet": "B",
+      "label_id": "Alur Tujuan Pembelajaran",
+      "parent": "TOPIK",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-363"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "note": "ATP codes sit in topics[].atp_code; the school may replace the order (L4)."
+    },
+    {
+      "code": "FOKUS",
+      "facet": "B",
+      "label_id": "Fokus materi (data kurikulum SIGRAK)",
+      "parent": "TOPIK",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-363"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/curriculum/sigrak-sd-2026-r1-umum.json",
+          "docs/data/curriculum/sigrak-sd-2026-r1-agama.json",
+          "docs/data/curriculum/sigrak-mi-2026-r1.json"
+        ],
+        "path": "subjects[].topics[].focus_items[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "P5",
+      "facet": "B",
+      "label_id": "Projek Penguatan Profil Pelajar Pancasila (P5)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null,
+        "note": "Term of the original 12/2024 text, before 13/2025. Article to be cited after P4-23."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P5RA",
+      "facet": "B",
+      "label_id": "Projek Penguatan Profil Pelajar Pancasila dan Profil Pelajar Rahmatan lil Alamin (P5RA)",
+      "parent": null,
+      "level_scope": "mi",
+      "force": "free",
+      "source_ref": {
+        "regulation": "KMA-450-2024",
+        "article": null,
+        "pages": null,
+        "note": "Madrasah term before KMA 1503/2025."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    }
+  ]
+}

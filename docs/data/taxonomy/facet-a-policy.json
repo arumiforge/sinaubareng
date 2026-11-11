@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "A",
+    "facet_name": "Policy",
+    "title": "Taksonomi SIGRAK — Faset A: Kebijakan",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "LAYER",
+      "facet": "A",
+      "label_id": "Lapisan kebijakan",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353",
+        "note": "Layers L0–L6 of policy-innovation-layers.md §2."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "LAYER.L0",
+      "facet": "A",
+      "label_id": "Undang-undang dan peraturan pemerintah",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l0_law"
+    },
+    {
+      "code": "LAYER.L1",
+      "facet": "A",
+      "label_id": "Standar nasional yang mengikat",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l1_binding_standard"
+    },
+    {
+      "code": "LAYER.L2",
+      "facet": "A",
+      "label_id": "Rujukan nasional (keputusan, panduan resmi)",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l2_national_reference"
+    },
+    {
+      "code": "LAYER.L3",
+      "facet": "A",
+      "label_id": "Kebijakan daerah",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l3_region"
+    },
+    {
+      "code": "LAYER.L4",
+      "facet": "A",
+      "label_id": "Kebijakan satuan pendidikan",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l4_school"
+    },
+    {
+      "code": "LAYER.L5",
+      "facet": "A",
+      "label_id": "Guru dan kelas",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l5_teacher_class"
+    },
+    {
+      "code": "LAYER.L6",
+      "facet": "A",
+      "label_id": "Inovasi SIGRAK",
+      "parent": "LAYER",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "l6_sigrak"
+    },
+    {
+      "code": "FORCE",
+      "facet": "A",
+      "label_id": "Kekuatan aturan",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353",
+        "note": "§2.1; extends the force tags of D-203."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "FORCE.MANDATORY",
+      "facet": "A",
+      "label_id": "Wajib",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "mandatory",
+      "app_behaviour": "block"
+    },
+    {
+      "code": "FORCE.MINIMUM",
+      "facet": "A",
+      "label_id": "Batas minimal",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "minimum",
+      "app_behaviour": "warn_below"
+    },
+    {
+      "code": "FORCE.MAXIMUM",
+      "facet": "A",
+      "label_id": "Batas maksimal",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "maximum",
+      "app_behaviour": "warn_above"
+    },
+    {
+      "code": "FORCE.RECOMMENDED",
+      "facet": "A",
+      "label_id": "Dianjurkan",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "recommended",
+      "app_behaviour": "hint_on"
+    },
+    {
+      "code": "FORCE.NOT-RECOMMENDED",
+      "facet": "A",
+      "label_id": "Tidak dianjurkan",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "not_recommended",
+      "app_behaviour": "hint_off"
+    },
+    {
+      "code": "FORCE.EXAMPLE",
+      "facet": "A",
+      "label_id": "Contoh",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "example",
+      "app_behaviour": "replaceable_default"
+    },
+    {
+      "code": "FORCE.SCHOOL-DISCRETION",
+      "facet": "A",
+      "label_id": "Keputusan sekolah",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "school_discretion",
+      "app_behaviour": "free_school"
+    },
+    {
+      "code": "FORCE.TEACHER-DISCRETION",
+      "facet": "A",
+      "label_id": "Keputusan guru",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "teacher_discretion",
+      "app_behaviour": "free_teacher"
+    },
+    {
+      "code": "FORCE.FREE",
+      "facet": "A",
+      "label_id": "Bebas",
+      "parent": "FORCE",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-353"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "free",
+      "app_behaviour": "free"
+    },
+    {
+      "code": "REGKIND",
+      "facet": "A",
+      "label_id": "Jenis regulasi",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354",
+        "note": "Kinds of policy-innovation-layers.md §6.2, plus perka and perdirjen (see README)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "REGKIND.UU",
+      "facet": "A",
+      "label_id": "Undang-Undang",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "uu"
+    },
+    {
+      "code": "REGKIND.PP",
+      "facet": "A",
+      "label_id": "Peraturan Pemerintah",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "pp"
+    },
+    {
+      "code": "REGKIND.PERMEN",
+      "facet": "A",
+      "label_id": "Peraturan Menteri",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "permen"
+    },
+    {
+      "code": "REGKIND.KEPMEN",
+      "facet": "A",
+      "label_id": "Keputusan Menteri",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "kepmen"
+    },
+    {
+      "code": "REGKIND.KMA",
+      "facet": "A",
+      "label_id": "Keputusan Menteri Agama",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "kma"
+    },
+    {
+      "code": "REGKIND.KEPKA",
+      "facet": "A",
+      "label_id": "Keputusan Kepala Badan",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "kepka"
+    },
+    {
+      "code": "REGKIND.PERKA",
+      "facet": "A",
+      "label_id": "Peraturan Kepala Badan",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "perka"
+    },
+    {
+      "code": "REGKIND.SK-DIRJEN",
+      "facet": "A",
+      "label_id": "Keputusan Direktur Jenderal",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "sk_dirjen"
+    },
+    {
+      "code": "REGKIND.PERDIRJEN",
+      "facet": "A",
+      "label_id": "Peraturan Direktur Jenderal",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "perdirjen"
+    },
+    {
+      "code": "REGKIND.PANDUAN",
+      "facet": "A",
+      "label_id": "Panduan atau pedoman resmi",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "panduan"
+    },
+    {
+      "code": "REGKIND.SURAT-EDARAN",
+      "facet": "A",
+      "label_id": "Surat Edaran",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "surat_edaran"
+    },
+    {
+      "code": "REGKIND.PERDA",
+      "facet": "A",
+      "label_id": "Peraturan Daerah",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "perda"
+    },
+    {
+      "code": "REGKIND.OTHER",
+      "facet": "A",
+      "label_id": "Lainnya",
+      "parent": "REGKIND",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-354"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "other"
+    },
+    {
+      "code": "SNP",
+      "facet": "A",
+      "label_id": "Standar Nasional Pendidikan",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PP-57-2021",
+        "article": null,
+        "pages": null,
+        "note": "Eight standards; PP 57/2021 as amended by PP 4/2022. Article to be cited from the official copy."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "SNP.SKL",
+      "facet": "A",
+      "label_id": "Standar Kompetensi Lulusan",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "graduate_competency"
+    },
+    {
+      "code": "SNP.ISI",
+      "facet": "A",
+      "label_id": "Standar Isi",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-12-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "content"
+    },
+    {
+      "code": "SNP.PROSES",
+      "facet": "A",
+      "label_id": "Standar Proses",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-1-2026",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "process"
+    },
+    {
+      "code": "SNP.PENILAIAN",
+      "facet": "A",
+      "label_id": "Standar Penilaian Pendidikan",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-21-2022",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "assessment"
+    },
+    {
+      "code": "SNP.PTK",
+      "facet": "A",
+      "label_id": "Standar Pendidik dan Tenaga Kependidikan",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PP-57-2021",
+        "article": null,
+        "pages": null,
+        "note": "SIGRAK has not registered the ministerial regulation for this standard; only the PP is cited."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "educators"
+    },
+    {
+      "code": "SNP.SARPRAS",
+      "facet": "A",
+      "label_id": "Standar Sarana dan Prasarana",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PP-57-2021",
+        "article": null,
+        "pages": null,
+        "note": "SIGRAK has not registered the ministerial regulation for this standard; only the PP is cited."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "facilities"
+    },
+    {
+      "code": "SNP.PENGELOLAAN",
+      "facet": "A",
+      "label_id": "Standar Pengelolaan",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-26-2025",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "management"
+    },
+    {
+      "code": "SNP.PEMBIAYAAN",
+      "facet": "A",
+      "label_id": "Standar Pembiayaan",
+      "parent": "SNP",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PP-57-2021",
+        "article": null,
+        "pages": null,
+        "note": "SIGRAK has not registered the ministerial regulation for this standard; only the PP is cited."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "financing"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 # Policy Foundation and Innovation Layers
 
-- **Status:** draft; owner decided 2026-11-09 (D-352…D-359, see §12). Accepted parts move to `docs/final/` in P4-24
+- **Status:** draft; owner decided 2026-11-09 (D-352…D-359, see §12). Accepted parts applied to `docs/final/` 2026-11-10 (P4-24: product-concept, data-model, architecture, content-engine, religious-education); this draft stays the design reference for the later waves of §13
 - **Task:** P4-21
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Input:** owner idea of 2026-11-09: "build on national curriculum and policy first, then give the widest room for innovation on top of that foundation"
 - **Builds on:** `docs/drafts/dokumen-resmi-sd-mi.md` (P4-03), `docs/drafts/administration-features.md` §1 (P4-04), `docs/data/regulations/`, `docs/data/curriculum/`, `docs/final/data-model.md`, `docs/final/religious-education.md`, `docs/drafts/assessment-landscape.md` (P4-18), D-113, D-203…D-210, D-226…D-234, D-317, D-339, D-344
 
@@ -331,7 +331,7 @@ Cited in the repo or found on the web but **not yet in `docs/sources/`**:
 | 1 (build, before P5-04) | Version columns on `curriculum_versions`; policy-profile resolver replaces `allocation_versions`; Profil Jenjang data | Part of P5-04 prep |
 | 2 (build) | Documents store rule-set codes; Dasar Kebijakan panel on RPM; first Cek Keselarasan rules | P5-04 |
 | 3 (build) | `regulations` / `rules` tables, console for every domain, Kabar Regulasi | P5-09 or own slice |
-| Docs | Apply the accepted parts to `docs/final/` (product-concept, data-model, architecture, content-engine) + Indonesian PDFs | P4-24 |
+| Docs | Apply the accepted parts to `docs/final/` (product-concept, data-model, architecture, content-engine) + Indonesian PDFs | P4-24 (applied 2026-11-10) |
 
 ## Sources
 

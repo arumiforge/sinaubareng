@@ -1,10 +1,10 @@
 # Game kelas: Pembelajaran dengan Interactive Flat Panel (IFP) untuk SD/MI
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/ifp-classroom.md</code> pada 8 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/ifp-classroom.md</code> pada 10 November 2026.</p>
 
-- **Status:** final (disetujui 2026-11-08); wawancara pemilik selesai 2026-11-04, keputusan D-171…D-181 dan D-233 sudah dicatat (belum masuk cakupan v1)
+- **Status:** final (disetujui 2026-11-08); wawancara pemilik selesai 2026-11-04, keputusan D-171…D-181 dan D-233 sudah dicatat (belum masuk cakupan v1); keputusan berikutnya D-210, D-267, D-286, D-298, D-331, D-332, D-369 diterapkan 2026-11-10
 - **Tugas:** P4-02
-- **Terakhir diperbarui:** 2026-11-08
+- **Terakhir diperbarui:** 2026-11-10
 - **Nama di UI:** *Game kelas*. Add-on yang sudah ada (D-158) tetap memakai namanya dan berkembang menjadi mode IFP ini (D-171)
 - **Cakupan:** SD dan MI, kelas 1–6 (Fase A–C). PAUD, SMP, dan SMA di luar cakupan.
 
@@ -114,6 +114,8 @@ Class summary (per item, per TP) → Jurnal (D-016) and Asesmen
 
 Ringkasan diagram: dari pertemuan RPM, guru mengetuk "Buka Game kelas" dan mendapat daftar putar hari itu (tujuan dari TP, cek awal 2–3 soal, alat peraga, latihan tim dengan templat game, tiket keluar 3 soal, refleksi dari RPM). Hasilnya menjadi ringkasan kelas per soal dan per TP yang masuk ke Jurnal (D-016) dan Asesmen.
 
+**Lanjutan (D-267).** Bila jurnal pertemuan sebelumnya menyatakan *terlaksana sebagian* (`partial`), pengalaman belajar yang belum selesai (memahami, mengaplikasi, merefleksi) membuka daftar putar sebagai blok "Lanjutan", sebelum *Tujuan hari ini*, sama seperti blok itu mengawali pertemuan berikutnya di RPM.
+
 Guru tetap bisa membuka satu game saja dari *Buat*; daftar putar adalah jalur yang dianjurkan.
 
 ### 3.2 Templat aktivitas (katalog untuk SD/MI; urutan pembuatan di D-176)
@@ -183,10 +185,10 @@ Konten selalu berasal dari data kurikulum SIGRAK (`docs/data/curriculum/`) dan T
 |---|---|
 | **Buat → RPM** | Setiap langkah pertemuan bisa memuat aktivitas Game kelas. Model pembelajaran "Game Based Learning" di wizard RPM menyarankan satu aktivitas. PDF RPM mencetak nama dan tujuan aktivitas, bukan game-nya |
 | **Bank Soal** | Templat latihan membaca soal dari set yang tersimpan (aturan sama dengan Quiz Battle: jenis soal yang bisa dinilai otomatis). Penjelasan pengecoh diambil dari *pembahasan* soal |
-| **LKPD** | LKPD bisa diakhiri dengan "Lanjut di Game kelas" (kerja kelompok di kertas, dicek di panel), dan alat peraga bisa dicetak sebagai gambar lembar kerja |
+| **LKPD** | LKPD bisa diakhiri dengan "Lanjut di Game kelas" (kerja kelompok di kertas, dicek di panel), dan alat peraga bisa dicetak sebagai gambar lembar kerja. Langkah LKPD interaktif (embed, H5P, cek mandiri) berjalan daring di aplikasi guru dan di sesi tayang IFP; sesi murid di perangkat menyusul dengan tugas desainnya sendiri (D-331). Kode Kotak Terkunci bisa dicek di IFP (daring, D-332) |
 | **Paket Soal TKA** | Pemanasan TKA memakai ulang soal dari sebuah paket tanpa memulai sesi CBT |
 | **Hari Ini** | Pelajaran hari ini menampilkan tombol "Buka Game kelas" di samping pertemuan RPM |
-| **Di Kelas → Jurnal** | Setelah sesi, entri jurnal terisi otomatis: aktivitas yang dijalankan, waktu yang dipakai, ringkasan hasil kelas (sinkronisasi luring D-016 berlaku untuk jurnal, bukan untuk game) |
+| **Di Kelas → Jurnal** | Setelah sesi, entri jurnal terisi otomatis: aktivitas yang dijalankan, waktu yang dipakai, ringkasan hasil kelas (sinkronisasi luring D-016 berlaku untuk jurnal, bukan untuk game). Pertemuan yang ditandai `partial` di jurnal mengisi blok Lanjutan pada daftar putar berikutnya (D-267) |
 | **Asesmen** | Ringkasan kelas per TP adalah catatan formatif. Ringkasan ini bisa dilampirkan ke rencana asesmen sebagai bukti *asesmen formatif*; nilai per murid hanya ada jika guru memakai cara merespons di §6.2 |
 | **Dokumen Saya** | Aktivitas dan daftar putar adalah dokumen dengan status validasi dan komentar, sama seperti konten lain |
 | **Portal Kepala Sekolah / Pengawas** | Laporan penggunaan untuk kepala sekolah dan pengawas (D-178): seberapa sering Game kelas dijalankan per kelas dan mata pelajaran, dan TP mana yang dilatih. Berguna untuk supervisi dan untuk melaporkan pemakaian IFP sekolah |
@@ -230,10 +232,12 @@ Ini menghormati aturan mode tayang bahwa nilai tinggal di sesi guru dan tidak ad
 
 IFP adalah layar bersama di depan kelas. Mengetik kata sandi guru di layar itu berisiko (murid melihat, dan browser bisa tetap dalam keadaan masuk).
 
-- **Kode Tayang (D-173).** Guru membuka halaman `/pid` di host aplikasi (D-233) pada IFP, yang menampilkan kode 6 digit atau QR. Guru mengonfirmasinya di ponselnya. IFP lalu mendapat sesi **khusus tayang**: hanya bisa memutar soal Game kelas hari ini dan tidak lebih (tanpa daftar murid, tanpa dokumen, tanpa pengaturan). Sesi berakhir saat guru mengetuk *Selesai* di ponsel atau setelah batas waktu.
+- **Kode Tayang (D-173).** Guru membuka halaman `/pid` di host aplikasi (D-233) pada IFP, yang menampilkan kode 6 digit atau QR. Guru mengonfirmasinya di ponselnya. IFP lalu mendapat sesi **khusus tayang**: hanya bisa memutar soal Game kelas hari ini dan langkah LKPD interaktif pelajaran hari ini (D-331) dan tidak lebih (tanpa daftar murid, tanpa dokumen, tanpa pengaturan). Sesi berakhir saat guru mengetuk *Selesai* di ponsel atau setelah batas waktu.
 - **Ponsel sebagai remote (D-173).** Ponsel yang dipasangkan menampilkan tombol berikutnya/sebelumnya, buka jawaban, kunci jawaban, dan lembar panduan. Guru bisa berkeliling kelas, dan kunci jawaban tidak pernah muncul di layar besar.
-- **Kartu Jawab (D-174, tahap terakhir).** Respons per murid tanpa perangkat murid. Setiap murid memegang kartu cetak dengan nomor dan empat sisi (A–D). Guru memindai kartu yang diangkat dengan kamera ponsel. Aplikasi mencocokkan nomor kartu dengan daftar murid di ponsel guru, sehingga tiket keluar memberi hasil per murid tanpa ada murid yang menyentuh perangkat atau masuk akun. Nama tidak pernah tampil di IFP. Ini satu-satunya jalur dari game ke nilai per murid (§5), jadi dikerjakan setelah siklus tingkat kelas terbukti.
+- **Kartu Jawab (D-174, tahap terakhir).** Respons per murid tanpa perangkat murid. Setiap murid memegang kartu cetak dengan nomor dan empat sisi (A–D). Guru memindai kartu yang diangkat dengan kamera ponsel. Fitur ini memakai ulang kode kamera dan pencocokan daftar murid dari Pindai LJK (D-286), yang membaca lembar jawaban di browser guru dengan pustaka OMR JavaScript dan hanya mengirim jawaban serta tingkat keyakinannya ke server, tidak pernah foto (D-369). Aplikasi mencocokkan nomor kartu dengan daftar murid di ponsel guru, sehingga tiket keluar memberi hasil per murid tanpa ada murid yang menyentuh perangkat atau masuk akun. Nama tidak pernah tampil di IFP. Ini satu-satunya jalur dari game ke nilai per murid (§5), jadi dikerjakan setelah siklus tingkat kelas terbukti.
 - Di IFP, hanya nama tim dan skor tim yang ditampilkan; tidak ada peringkat publik untuk murid perorangan.
+- **Piket di layar siaga (D-298).** Bila sekolah menyalakannya (bawaannya mati), layar siaga Game kelas menampilkan kelompok dan tugas piket hari ini, hanya dengan nama depan atau nama pendek.
+- Teks UI di panel dan ponsel memakai kata "murid", bukan "siswa" (D-210).
 
 ### 6.3 Inklusi
 
@@ -283,9 +287,9 @@ Ide yang tidak dimiliki kedua situs dan cocok dengan kekuatan SIGRAK:
 | 4 | Alat peraga Matematika Fase A–B (Blok Puluhan, Garis Bilangan, Pita Pecahan, Jam Analog, Uang Rupiah) | Tahap 1 |
 | 5 | Keterhubungan dengan Asesmen, "Perlu diulang" dan saran tindak lanjut AI; laporan penggunaan untuk kepala sekolah | P5-08, P5-09 |
 | 6 | Paket konten, pertama MI (Al-Qur'an Hadis, Bahasa Arab, Fikih, Akidah Akhlak, SKI) dan Bahasa Jawa dengan aksara Jawa (D-177); lalu enam agama di SD. Juga Pemanasan TKA, Urutkan, Papan Petak, Kotak Kejutan | Tahap 2–5, persetujuan data kurikulum (D-113) |
-| 7 | Kartu Jawab (D-174); aktivitas kamera yang terikat pada TP (D-180) | Tahap 1–6 |
+| 7 | Kartu Jawab (D-174), memakai ulang kode kamera dan pencocokan daftar murid dari Pindai LJK (D-286); aktivitas kamera yang terikat pada TP (D-180) | Tahap 1–6, Pindai LJK (P5-08) |
 
-**Ukuran keberhasilan (uji coba):** persentase pertemuan RPM yang memuat aktivitas Game kelas; jumlah sesi per kelas per minggu; persentase sesi yang sampai ke tiket keluar dan pembahasan; penilaian guru atas "membantu siswa paham" setelah memakai; waktu dari membuka RPM sampai aktivitas pertama tampil di panel (target di bawah 1 menit).
+**Ukuran keberhasilan (uji coba):** persentase pertemuan RPM yang memuat aktivitas Game kelas; jumlah sesi per kelas per minggu; persentase sesi yang sampai ke tiket keluar dan pembahasan; penilaian guru atas "membantu murid paham" setelah memakai; waktu dari membuka RPM sampai aktivitas pertama tampil di panel (target di bawah 1 menit).
 
 ## Keputusan
 
@@ -305,6 +309,13 @@ Dicatat di `docs/agent/DECISIONS.md` setelah wawancara pemilik pada 2026-11-04.
 | D-180 | Aktivitas kamera dan gerak hanya di tahap akhir dan hanya jika terikat pada TP |
 | D-181 | Paket luring mingguan dirilis bersama inti Game kelas |
 | D-233 | Halaman Kode Tayang di `/pid` pada host aplikasi (bukan subdomain `papan.`, bukan `/papan`) |
+| D-210 | Teks UI memakai kata "murid" |
+| D-267 | Pengalaman belajar yang belum selesai dari pertemuan `partial` menjadi blok Lanjutan di pertemuan berikutnya dan di Game kelas |
+| D-286 | Kartu Jawab memakai ulang kode kamera dan pencocokan daftar murid dari Pindai LJK |
+| D-298 | Piket di layar siaga Game kelas, sakelar sekolah bawaannya mati, hanya nama depan atau nama pendek |
+| D-331 | Langkah LKPD interaktif berjalan daring di aplikasi guru dan sesi tayang IFP; sesi murid menyusul |
+| D-332 | Kode Kotak Terkunci bisa dicek di IFP (daring) |
+| D-369 | Pindai LJK membaca lembar jawaban di browser guru; hanya jawaban dan tingkat keyakinannya yang sampai ke server |
 
 ## Pertanyaan terbuka
 

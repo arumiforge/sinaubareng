@@ -1,15 +1,15 @@
 # Kurikulum Pendidikan Agama (SD dan MI)
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/religious-education.md</code> pada 9 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/religious-education.md</code> pada 10 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-07
-- **Terakhir diperbarui:** 2026-11-09
-- **Sumber:** `KMA_No_1503_Tahun_2025_….pdf`, `Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`, `SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`, `SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf` (semuanya di `docs/sources/`)
+- **Terakhir diperbarui:** 2026-11-10 (KBC untuk SD bawaannya mati, D-368; Profil Jenjang, D-356)
+- **Sumber:** `KMA_No_1503_Tahun_2025_….pdf`, `Salinan_Kepka_BKPDM_No._020_Tahun_2026_….pdf`, `SK_Dirjen_Pendis_No_9941_Tahun_2025_….pdf`, `KMA_No_512_Tahun_2026_….pdf`, `SK_Dirjen_Pendis_No_6077_Tahun_2025_….pdf` (semuanya di `docs/sources/`)
 
 ## Tujuan
 
-Dokumen ini menetapkan cara SIGRAK mencakup pendidikan agama di SD (enam agama) dan di MI (mata pelajaran PAI dan Bahasa Arab dari Kementerian Agama). Dokumen ini mencantumkan sumber resmi, data yang sudah ada, yang masih harus dibangun tim, dan cara model data menangani agama. Keputusan: D-034, D-035, D-036, D-037, D-038.
+Dokumen ini menetapkan cara SIGRAK mencakup pendidikan agama di SD (enam agama) dan di MI (mata pelajaran PAI dan Bahasa Arab dari Kementerian Agama). Dokumen ini mencantumkan sumber resmi, data yang sudah ada, yang masih harus dibangun tim, dan cara model data menangani agama. Keputusan: D-034, D-035, D-036, D-037, D-038; berikutnya D-126, D-356, D-359, D-368. Teks UI memakai kata "murid", bukan "siswa" (D-210).
 
 ## Sumber resmi
 
@@ -28,7 +28,7 @@ Tidak ditemukan perubahan yang lebih baru atas SK 9941/2025 maupun KMA 1503/2025
 
 ## SD: enam mata pelajaran agama (D-034)
 
-Keenamnya masuk v1. Setiap agama adalah mata pelajaran tersendiri; siswa mengikuti yang sesuai dengan agama yang tercatat.
+Keenamnya masuk v1. Setiap agama adalah mata pelajaran tersendiri; murid mengikuti yang sesuai dengan agama yang tercatat.
 
 | Agama | Mata pelajaran | Elemen (subelemen) | Halaman CP SD | Status data |
 |---|---|---|---|---|
@@ -64,7 +64,7 @@ MI tidak mengajarkan satu mata pelajaran PAI. MI mengikuti struktur Kementerian 
 
 - **MI tetap memakai tabel KMA 1503/2025.** Permendikdasmen 13/2025 menyebut MI dalam tabel SD-nya, tetapi madrasah mengikuti KMA 1503/2025 (D-038). Di sana, JP kokurikuler diambil dari sebagian mata pelajaran per kelas, bukan dari setiap mata pelajaran seperti di SD.
 - **36 minggu per tahun, 32 di kelas 6. 1 JP = 35 menit.** Madrasah boleh menambah sampai 6 JP per minggu (KMA 1503/2025, hlm. 32). JP "koku" dialihkan ke program kokurikuler. Penjadwalan RPM hanya menghitung JP intrakurikuler, dan JP kokurikuler milik modul Kokurikuler.
-- **Mata pelajaran MI lainnya** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS mulai kelas 3, PJOK, Seni dan Budaya, Bahasa Inggris mulai kelas 3, Koding dan KA (mata pelajaran pilihan di kelas 5–6 menurut KMA 1503/2025; di SIGRAK berjalan lewat kokurikuler, D-208), Muatan Lokal) memakai CP nasional, tetapi dengan tabel alokasi MI sendiri dari KMA 1503/2025 (`mi-allocation-kma-1503-2025.json`). Muatan Lokal mengambil 72–216 JP per tahun (64–192 di kelas 6), dan siswa memilih satu seni (Seni Musik, Rupa, Teater, atau Tari).
+- **Mata pelajaran MI lainnya** (Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS mulai kelas 3, PJOK, Seni dan Budaya, Bahasa Inggris mulai kelas 3, Koding dan KA (mata pelajaran pilihan di kelas 5–6 menurut KMA 1503/2025; di SIGRAK berjalan lewat kokurikuler, D-208), Muatan Lokal) memakai CP nasional, tetapi dengan tabel alokasi MI sendiri dari KMA 1503/2025 (`mi-allocation-kma-1503-2025.json`). Muatan Lokal mengambil 72–216 JP per tahun (64–192 di kelas 6), dan murid memilih satu seni (Seni Musik, Rupa, Teater, atau Tari).
 - **Data CP:** `cp-pai-bahasa-arab-mi-sk-dirjen-9941-2025.json` berisi teks Fase A–C untuk kelima mata pelajaran, diambil dari lapisan teks PDF dan disusun menjadi baris elemen dan subelemen di P2-02 (D-039). Enam bacaan Bahasa Arab diketik ulang dari gambar halaman. Teks ditampilkan sesuai cetakan, dan sembilan baris yang mungkin memuat kesalahan sumber diberi `review_notes` (D-127). Tim Validasi SIGRAK masih harus meninjau dan menyetujui data sebelum diimpor (D-113).
 - **Bahan ajar:** Kemenag menerbitkan Buku Teks Utama (BTU) gratis untuk mata pelajaran ini yang selaras dengan KMA 1503/2025. Buku ini sumber rujukan yang wajar untuk RPM, seperti buku Parijatha untuk Bahasa Jawa.
 - **Guru:** kelima mata pelajaran diajar **guru mapel** (D-037). Secara bawaan statusnya `subject_teacher`, dan operator tetap bisa menugaskan ulang per kelas.
@@ -80,6 +80,7 @@ MI tidak mengajarkan satu mata pelajaran PAI. MI mengikuti struktur Kementerian 
 - **Enam prinsip** (hlm. 12): transformatif, integratif, kontekstual, reflektif, berkelanjutan, kolaboratif.
 - **Pendekatan dan metode** (§G, hlm. 15–19): pembelajaran mendalam dengan pembelajaran berkesadaran dan menggembirakan; 12 metode yang disarankan (pembiasaan, pembelajaran berbasis pengalaman, dialog nilai, penceritaan, dilema moral, pembelajaran berbasis pelayanan sosial, pembelajaran sosial-emosional, refleksi naratif, proyek berbasis karakter, inkuiri nilai, pedagogi kontemplatif, refleksi terbimbing), masing-masing dengan jenjang yang cocok; pembiasaan dan penceritaan cocok untuk kelas awal.
 - **Asesmen** (§I, hlm. 21–22): otentik dan berkelanjutan, dengan 10 instrumen (observasi, jurnal refleksi, portofolio, proyek sosial, catatan perkembangan, penilaian diri dan teman sebaya, wawancara nilai, refleksi naratif, skala sikap). Hasilnya terintegrasi, dilaporkan lewat Akhlak atau Budi Pekerti dan catatan sikap, dan tidak pernah dipakai untuk memberi label, menghakimi, atau memeringkat murid.
+- **Bukan mata pelajaran.** KBC tidak menambah mata pelajaran dan tidak mengubah JP. SIGRAK melaporkan hasil KBC hanya lewat Akhlak atau Budi Pekerti dan catatan sikap, tidak pernah sebagai label atau peringkat (D-359).
 - **Masih akan terbit:** panduan teknis dari Dirjen berisi capaian KBC per fase, strategi, asesmen, dan pemantauan (§J, hlm. 22). Pemantauan memakai tiga tingkat praktik: merintis, berkembang, mekar (hlm. 23–24).
 
 Panduan 6077 di bawah tetap berguna untuk contoh pembelajaran dan pemetaan CP ke tema.
@@ -93,13 +94,16 @@ SK Dirjen Pendis No. 6077 Tahun 2025 menetapkan Panduan Kurikulum Berbasis Cinta
 - **Semuanya contoh.** Panduan menyatakan semua aspek dan indikator adalah contoh, dan setiap madrasah boleh menyesuaikannya (hlm. 12).
 - **Metode yang disarankan:** deep learning (mindful, meaningful, joyful), pembelajaran berbasis pengalaman, alur FIDS (Feel, Imagine, Do, Share), dan evaluasi berbasis proses.
 
-**Di SIGRAK (D-126).** Untuk sekolah MI, wizard RPM v1 menambahkan *Tema KBC* (satu atau lebih tema Panca Cinta) dan *Materi Insersi*, dan AI merangkainya ke TP, kegiatan, dan asesmen. Kedua kolom bersifat opsional dan diisi awal oleh AI (D-142): guru boleh mengubah atau mengosongkannya. Ini berlaku untuk setiap mata pelajaran MI dan tidak berlaku untuk SD. KMA 512/2026 juga mencakup guru agama di SD; apakah SIGRAK menawarkan kolom KBC kepada mereka masih terbuka (D-359, `docs/drafts/open-questions.md`).
+**Di SIGRAK (D-126).** Untuk sekolah MI, wizard RPM v1 menambahkan *Tema KBC* (satu atau lebih tema Panca Cinta) dan *Materi Insersi*, dan AI merangkainya ke TP, kegiatan, dan asesmen. Kedua kolom bersifat opsional dan diisi awal oleh AI (D-142): guru boleh mengubah atau mengosongkannya. Ini berlaku untuk setiap mata pelajaran MI (D-126 tetap berlaku, kini dengan KMA 512/2026 sebagai sumbernya, D-359).
+
+**Guru agama SD (D-368).** KMA 512/2026 juga mencakup guru agama di SD, tetapi sekolah SD mengikuti Kemendikdasmen. Karena itu kolom KBC (Tema KBC, Materi Insersi, nilai dasar) **bawaannya mati** untuk guru agama SD. Admin SIGRAK dapat menyalakannya bila perlu, lewat Profil Jenjang SD (D-356) atau pengaturan di konsol.
 
 ## Cara SIGRAK memodelkannya
 
 - **Jenjang sekolah menentukan daftar mata pelajaran.** `schools.level` = `sd` memberi enam mata pelajaran agama. `mi` memberi mata pelajaran Kemenag ditambah tabel alokasi MI sendiri.
+- **Profil Jenjang (D-356).** Perbedaan SD/MI dibaca dari catatan Profil Jenjang berversi milik jenjang itu (kementerian, kode rule set, kerangka karakter yang aktif, kolom tambahan RPM seperti kolom KBC, target ekspor rapor), tidak pernah dari `if level == mi` di kode. MI menyalakan KBC; SD mematikannya kecuali admin menyalakannya (D-368). Catatan ini adalah versi minimum yang dibangun sebelum P5-04.
 - **Versi kurikulum:** `SIGRAK-SD-2026-R1` (topik SD: mapel umum termasuk PAI, dan lima agama lainnya), `SIGRAK-MI-2026-R1` (topik mapel Kemenag MI), `CP-PABP-BKPDM-020-2026` (enam agama, CP), `CP-PAI-BA-MADRASAH-9941-2025` (PAI + Bahasa Arab MI, CP), dan `ALOKASI-MI-KMA-1503-2025` (alokasi MI). Lihat `data-model.md` (bagian Kurikulum).
-- **Agama siswa (D-036)** dicatat per siswa agar kelas agama bisa dikelompokkan. Untuk mata pelajaran agama, jurnal, catatan siswa, asesmen, dan rapor hanya mencantumkan siswa beragama itu. Absensi tetap harian dan untuk seluruh kelas.
+- **Agama murid (D-036)** dicatat per murid agar kelas agama bisa dikelompokkan. Untuk mata pelajaran agama, jurnal, catatan murid, asesmen, dan rapor hanya mencantumkan murid beragama itu. Absensi tetap harian dan untuk seluruh kelas.
 - **Privasi (D-036):** agama adalah data pribadi yang sensitif.
   - Agama terlihat oleh guru kelas itu, operator, dan kepala sekolah.
   - Pengawas tidak pernah melihatnya.
@@ -122,6 +126,7 @@ SK Dirjen Pendis No. 6077 Tahun 2025 menetapkan Panduan Kurikulum Berbasis Cinta
 ## Pertanyaan terbuka
 
 - [ ] Salinan SK 9941/2025 dari kanal resmi (prioritas rendah: dua salinan dari sumber berbeda memiliki teks yang sama).
-- [x] KBC di templat RPM untuk MI: di v1, untuk setiap mata pelajaran MI, tidak untuk SD (D-126); opsional, diisi awal oleh AI (D-142).
+- [x] KBC di templat RPM untuk MI: di v1, untuk setiap mata pelajaran MI (D-126); opsional, diisi awal oleh AI (D-142).
+- [x] Kolom KBC untuk guru agama SD: bawaannya mati, admin dapat menyalakannya lewat Profil Jenjang atau konsol (D-368).
 - [x] Nama peninjau: dicatat sebagai "Tim Validasi SIGRAK" (D-112).
 - [x] Sekolah inklusi membutuhkan CP pendidikan khusus (Lampiran II BKPDM 020/2026); masuk cakupan dan menunggu transkripsi (D-155).

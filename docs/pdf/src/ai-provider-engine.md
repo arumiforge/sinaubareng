@@ -1,10 +1,10 @@
 # Mesin Penyedia AI
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/ai-provider-engine.md</code> pada 1 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/ai-provider-engine.md</code> pada 10 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-04
-- **Terakhir diperbarui:** 2026-11-01
+- **Terakhir diperbarui:** 2026-11-10 (pengaturan model dan adapter di konsol D-315, D-326; keunikan job D-050; privasi asesmen D-213, D-295, D-333, D-347, D-350, D-369, D-370)
 - **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md` (di `docs/sources/`)
 - **Fakta dicek pada 2026-10-30** terhadap halaman Google tentang [batas laju](https://ai.google.dev/gemini-api/docs/rate-limits), [pemecahan masalah](https://ai.google.dev/gemini-api/docs/troubleshooting), [galat API](https://ai.google.dev/gemini-api/docs/api-errors), [Gemini API Additional Terms](https://ai.google.dev/gemini-api/terms), dan [Google APIs Terms](https://developers.google.com/terms), serta [dokumentasi AI SDK](https://laravel.com/docs/ai-sdk) Laravel.
 
@@ -14,14 +14,16 @@ Dokumen ini merinci satu-satunya lapisan yang berkomunikasi dengan penyedia AI: 
 
 ## Cakupan: hanya paket gratis Gemini
 
-SIGRAK **hanya mendukung API key Google Gemini, dan dirancang untuk paket gratis** (kuota tanpa bayar) (D-023). Kunci dari penyedia AI lain tidak diterima. Kunci Gemini berbayar secara teknis bisa dipakai, tetapi tidak ada yang dirancang untuknya. Interface `AIProvider` tetap ada, karena memisahkan kode Gemini dan memungkinkan tes memakai penyedia palsu. Tidak ada rencana penyedia kedua.
+SIGRAK **hanya mendukung API key Google Gemini, dan dirancang untuk paket gratis** (kuota tanpa bayar) (D-023). Kunci guru dari penyedia AI lain tidak diterima. Kunci Gemini berbayar secara teknis bisa dipakai, tetapi tidak ada yang dirancang untuknya. Interface `AIProvider` tetap ada, karena memisahkan kode Gemini dan memungkinkan tes memakai penyedia palsu.
+
+**Penyedia di konsol untuk Tim SIGRAK (D-326).** Selain Gemini, `app/AI/` mendapat dua adapter untuk pekerjaan Tim SIGRAK sendiri: **kompatibel OpenAI** (base URL, kunci, model; mencakup OpenAI, OpenRouter, DeepSeek) dan **Anthropic**. Di konsol, admin dapat menguji kunci dari penyedia mana pun di antara ini dan memilihnya sebagai model atau cadangan per purpose (lihat bagian Model dan permintaan). Kunci guru tetap hanya Gemini (D-023); kunci guru dari penyedia lain ditunda ke usulan-02, setelah setiap templat diuji per penyedia. Sebelum purpose yang dipakai untuk pembuatan konten guru memakai kunci Tim SIGRAK, pemilik memutuskan siapa yang membayarnya.
 
 Merancang untuk paket gratis berarti:
 
 - **Batas rendah, per project.** Setiap pembuatan konten memakai panggilan sesedikit mungkin. Langkah digabung bila ukuran keluarannya memungkinkan. Tidak ada ping di latar belakang, tidak ada pembuatan ulang otomatis, dan tidak ada panggilan spekulatif.
 - **Hanya model stabil.** Model preview dan eksperimental punya batas lebih ketat, dan ketentuan Google melarang memakainya di produksi.
 - **Data yang dikirim bisa dibaca manusia.** Lihat bagian Aturan privasi.
-- **Hanya orang dewasa.** Ketentuan Gemini mewajibkan pengguna API berusia 18+, dan melarang pemakaian API di layanan yang ditujukan untuk, atau kemungkinan dipakai oleh, orang di bawah 18 tahun. Pengguna AI di SIGRAK adalah guru. Situs ujian TKA yang dipakai siswa tidak pernah memanggil AI (D-027).
+- **Hanya orang dewasa.** Ketentuan Gemini mewajibkan pengguna API berusia 18+, dan melarang pemakaian API di layanan yang ditujukan untuk, atau kemungkinan dipakai oleh, orang di bawah 18 tahun. Pengguna AI di SIGRAK adalah guru. Situs ujian TKA yang dipakai murid tidak pernah memanggil AI (D-027).
 
 ## Sasaran
 
@@ -66,6 +68,8 @@ app/AI/
 ├── Providers/Gemini/
 │   ├── GeminiProvider.php        # AIRequest → generateContent body; response/error → AIResponse/AIErrorClass
 │   └── GeminiClient.php          # thin client on Laravel's HTTP client; key passed per call
+├── Providers/OpenAICompatible/   # console only, Tim SIGRAK keys (D-326)
+├── Providers/Anthropic/          # console only, Tim SIGRAK keys (D-326)
 ├── KeyManager/
 │   ├── ApiKeyManager.php         # add, test, disable, delete; the encryption boundary
 │   ├── KeySelector.php           # round robin + filters + sticky per generation
@@ -82,7 +86,7 @@ app/Jobs/Generation/Generate{Rpm,BankSoal,Lkpd,QuizBattle,TkaPackage}.php, Revis
 
 ## Kunci
 
-**Kepemilikan (D-012, D-023).** Kunci adalah kunci Gemini paket gratis milik guru (`user_id`), tidak pernah milik sekolah, dan SIGRAK tidak punya kunci platform. Kepala sekolah tidak butuh kunci kecuali membuat konten. Batas bawaan: 5 kunci per guru (konfigurasi). Kunci kedua dan seterusnya butuh persetujuan seperti dijelaskan di atas.
+**Kepemilikan (D-012, D-023).** Kunci adalah kunci Gemini paket gratis milik guru (`user_id`), tidak pernah milik sekolah, dan pembuatan konten guru tidak memakai kunci platform. Kunci milik Tim SIGRAK hanya ada untuk tombol uji di konsol dan pekerjaan Tim SIGRAK sendiri (D-315, D-326), dan purpose untuk guru baru memakainya setelah pemilik memutuskan siapa yang membayar. Kepala sekolah tidak butuh kunci kecuali membuat konten. Batas bawaan: 5 kunci per guru (konfigurasi). Kunci kedua dan seterusnya butuh persetujuan seperti dijelaskan di atas.
 
 **Menambah kunci** (*Kunci AI Saya*, juga ditanyakan langsung saat guru pertama kali memakai fitur AI):
 
@@ -180,13 +184,13 @@ Yang perlu dipastikan dengan respons sungguhan saat implementasi:
 2. **Saat timeout, ulangi sekali di kunci yang sama sebelum failover.** Biaya ganda yang mungkin terjadi tetap di project yang sama, dan pemilihan lengket tetap terjaga.
 3. **Setiap percobaan dicatat** dengan nomor percobaannya, sehingga duplikat terlihat di riwayat pemakaian.
 4. **Hasil sebuah langkah diterima tepat sekali.** `generation_steps` unik pada (`generation_id`, `step_key`) dan berpindah `running → succeeded` dengan compare-and-set, sehingga duplikat yang terlambat tidak bisa menimpa keluaran yang sudah diterima.
-5. **Tanpa percobaan ulang di tingkat antrean.** Setiap job pembuatan punya `tries = 1` dan mengimplementasikan `ShouldBeUnique` berdasarkan id generation. Percobaan ulang terjadi di dalam gateway dengan aturan di atas. Saat dilanjutkan, langkah yang sudah `succeeded` dilewati.
+5. **Tanpa percobaan ulang di tingkat antrean.** Setiap job pembuatan punya `tries = 1` dan memakai `ShouldBeUniqueUntilProcessing` ditambah middleware `WithoutOverlapping`, keduanya berdasarkan id generation (D-050). `ShouldBeUnique` biasa akan menghalangi job mengirim ulang dirinya untuk langkah berikutnya. Percobaan ulang terjadi di dalam gateway dengan aturan di atas. Saat dilanjutkan, langkah yang sudah `succeeded` dilewati.
 6. **Klik ganda.** Tombol *Buat* mengirim client token (UUID). `generations` unik pada (`user_id`, `client_token`), sehingga kiriman ganda hanya membuat satu generation.
 7. **Worker yang mati.** Penyapu terjadwal mencari langkah yang tertahan di `running` lebih lama dari timeout + margin, menandai percobaannya `unknown` di log, dan melanjutkan pembuatan dari langkah itu. Kemungkinan biaya ganda dicatat.
 
 ## Model dan request
 
-- `config/ai.php` memetakan sebuah **purpose** (misalnya `document_long`, `document_short`, `game_content`, `repair`) ke daftar model yang berurutan. Templat menyebut purpose, tidak pernah model. Nama model hanya berubah di config/env. Bawaannya **Gemini 3.8 Flash** (keluaran teks; paket gratis 5 RPM, 250 ribu TPM, 20 RPD per project, AI Studio 2026-10-31; D-117). Cadangan dan batasnya ada di konfigurasi dan dicek ulang saat build.
+- Setiap **purpose** (misalnya `document_long`, `document_short`, `game_content`, `repair`) punya model aktif dan daftar cadangan berurutan. Templat menyebut purpose, tidak pernah model. Admin mengaturnya per purpose (bukan per templat) di konsol, dan disimpan di database; `config/ai.php` hanya berisi nilai awal. Setiap perubahan dicatat (D-315, mengubah D-117). Tombol uji di konsol memanggil model dengan kunci Tim SIGRAK, tidak pernah kunci guru. Bawaannya **Gemini 3.8 Flash** (keluaran teks; paket gratis 5 RPM, 250 ribu TPM, 20 RPD per project, AI Studio 2026-10-31; D-117). Batasnya dicek ulang saat build dan saat Google mengubahnya.
 - Keluaran terstruktur: `responseMimeType: application/json` dengan skema keluaran templat di kolom JSON schema yang didukung versi API saat ini.
 - Jangan kirim `temperature`, `top_p`, atau `top_k` (lihat Fakta penting).
 - Catatan guru dan teks kurikulum dimasukkan ke dalam blok data yang dibatasi dengan jelas. Instruksi hanya berasal dari templat. Keluaran hanya diterima lewat validasi skema. Inilah pengaman terhadap prompt injection.
@@ -202,11 +206,16 @@ Yang perlu dipastikan dengan respons sungguhan saat implementasi:
 
 Prompt dan respons paket gratis dipakai Google untuk memperbaiki produknya, dan peninjau manusia bisa membacanya. Ketentuan Google sendiri meminta agar informasi sensitif, rahasia, atau pribadi tidak dikirim ke layanan tanpa bayar. Karena itu:
 
-1. **Data pribadi siswa tidak pernah masuk ke prompt:** tanpa nama, NISN, tanggal lahir, absensi, catatan, atau nilai perorangan yang terkait identitas. `PromptDataGuard` memeriksa setiap request yang disusun dari data sekolah, dan kode pembuatan hanya menerima data siswa dalam bentuk yang diizinkan di bawah.
-2. **Draf deskripsi rapor** (Asesmen > Rapor) hanya mengirim tingkat penguasaan per TP untuk siswa anonim ("Murid A"). Nama sebenarnya digabungkan setelah pembuatan, di server kita.
-3. **Kolom catatan guru** menampilkan petunjuk: "Jangan tulis nama atau data pribadi siswa." Catatan berupa teks bebas, jadi ini panduan, bukan jaminan.
+1. **Data pribadi murid tidak pernah masuk ke prompt:** tanpa nama, NISN, tanggal lahir, absensi, catatan, atau nilai perorangan yang terkait identitas. `PromptDataGuard` memeriksa setiap request yang disusun dari data sekolah, dan kode pembuatan hanya menerima data murid dalam bentuk yang diizinkan di bawah.
+2. **Draf deskripsi rapor** (Asesmen > Rapor) hanya mengirim tingkat penguasaan per TP untuk murid anonim ("Murid A"). Nama sebenarnya digabungkan setelah pembuatan, di server kita.
+3. **Kolom catatan guru** menampilkan petunjuk: "Jangan tulis nama atau data pribadi murid." (D-210) Catatan berupa teks bebas, jadi ini panduan, bukan jaminan.
 4. **Data kurikulum, jawaban guru, dan konten yang dihasilkan** boleh dikirim. Semuanya tidak memuat data pribadi.
-5. Situs ujian (TKA) menyimpan kredensial dan jawaban siswa dan **tidak pernah** memanggil AI.
+5. Situs ujian (TKA) menyimpan kredensial dan jawaban murid dan **tidak pernah** memanggil AI.
+6. **Draf catatan wali kelas** hanya memakai jumlah kehadiran, jenis catatan, dan hasil per TP, tidak pernah nama atau data pribadi; wali kelas menyunting dan menyetujuinya (D-213).
+7. **Kelompok belajar** per TP sampai ke wizard RPM berikutnya hanya sebagai jumlah per kelompok (perlu bimbingan, cukup, siap pengayaan), tidak pernah nama (D-295).
+8. **AI asesmen** membuat instrumen, menandai miskonsepsi, dan menyusun draf umpan balik dari pola kelas (D-347). Nama di kertas dibaca dengan pengenalan teks di perangkat guru dan dicocokkan dengan daftar murid di sana. Pindai LJK membaca bulatan jawaban di browser guru dengan pustaka OMR JavaScript; hanya jawaban dan tingkat keyakinannya yang sampai ke server, dan foto tidak diunggah (D-369). Jawaban tulisan tangan Uraian/Isian dibaca di ponsel; hanya teks jawaban, diberi kode `nomor absen-nomor soal` (misalnya `12-3`) dan tanpa nama, yang dikirim ke AI bersama kunci jawaban atau rubrik. AI menyarankan skor dan umpan balik, guru yang memutuskan, dan SIGRAK memetakan kode itu kembali ke murid (D-370, target P5-08 setelah Pindai LJK).
+9. **Hasil sensitif** (sosial-emosional, kebutuhan khusus, minat atau bakat) tidak pernah dikirim ke AI (D-350).
+10. **Konteks daerah** (*Konteks Daerah*): AI hanya memakai butir dari profil sekolah dan daftar awal yang sudah ditinjau, lalu guru mengonfirmasinya; AI tidak pernah mengarang fakta lokal (D-333).
 
 ## Log pemakaian dan visibilitas
 
@@ -216,7 +225,7 @@ Prompt dan respons paket gratis dipakai Google untuk memperbaiki produknya, dan 
 |---|---|
 | Guru | *Kunci AI Saya*: status tiap kunci, cooldown, keberhasilan terakhir, hitungan harian, kegagalan terbaru dengan alasan sederhana |
 | Kepala sekolah | Total per guru: jumlah pembuatan, kegagalan karena masalah kunci. Tanpa kunci, tanpa detail per kunci |
-| Tim SIGRAK | Galat per kelas dan templat di Filament, ditambah Horizon. Telescope hanya di lokal/staging |
+| Tim SIGRAK | Galat per kelas dan templat di Filament, ditambah Horizon. Telescope hanya di lokal/staging. Log perubahan model per purpose di konsol (D-315) |
 
 Masa simpan (D-118): baris rinci selama 1 bulan, ringkasan bulanan disimpan.
 

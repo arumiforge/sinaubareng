@@ -1,10 +1,10 @@
 # Panduan Ekspor dan Lokalisasi
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 2 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 10 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-07
-- **Terakhir diperbarui:** 2026-11-01
+- **Terakhir diperbarui:** 2026-11-10 (aturan cetak, Berkas Administrasi, cetakan baru, dan kata terlarang dari D-210…D-371)
 
 ## Tujuan
 
@@ -12,7 +12,7 @@ Panduan ini menjelaskan cara teks UI berbahasa Indonesia dan ekspor berbahasa In
 
 Panduan ini melanjutkan `coding-standards.md` bagian 7–8 (aturan TR-\* dan EX-\*) tanpa mengubahnya. Aturan di sini diberi nomor `LOC-*` (lokalisasi) dan `XP-*` (ekspor). Butir bertanda *usulan* tercantum di Keputusan untuk dicatat.
 
-Sumber: `CLAUDE.md` (kebijakan bahasa, D-002), `content-engine.md` (bagian Ekspor), `design-system.md`, `Parafrase_Teks_UI_Sigrak.xlsx`, D-028, D-031, D-033, D-039, D-080, D-094.
+Sumber: `CLAUDE.md` (kebijakan bahasa, D-002), `content-engine.md` (bagian Ekspor), `design-system.md`, `Parafrase_Teks_UI_Sigrak.xlsx`, D-028, D-031, D-033, D-039, D-080, D-094; keputusan berikutnya D-210, D-218, D-274, D-278…D-284, D-287, D-292, D-295, D-297…D-303, D-311, D-325, D-370, D-371 (`legacy-upgrade-01.md` §4).
 
 ## 1. Susunan `lang/id`
 
@@ -68,7 +68,7 @@ Satu berkas PHP per area. Locale dan fallback sama-sama `id`, dan tidak ada `lan
 
 ```php
 // lang/id/classes.php
-'students_count' => '{0} Belum ada siswa|[1,*] :count siswa',
+'students_count' => '{0} Belum ada murid|[1,*] :count murid',
 
 trans_choice('classes.students_count', $n, ['count' => IndonesianFormat::number($n)]);
 ```
@@ -178,11 +178,19 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 | 1282 | Galat | Pemberitahuan gagal dibatalkan: {…} | Pengingat belum berhasil ditarik. ({…}) | `school.errors.reminder_withdraw_failed` |
 | 1463 | Tombol | Lihat Daftar Isi | Daftar isi | `help.actions.contents` |
 
+Spreadsheet ini dibuat sebelum D-210 dan D-302: bila *Teks baru* menulis "siswa" atau "Absensi", nilai key-nya menulis "murid" atau "Kehadiran" (LOC-14).
+
 ### 2.3 Ke-37 istilah *Istilah*
 
-- **LOC-21** Istilah punya satu tempat: `lang/id/terms.php`, satu key per istilah baku (*usulan*). Contoh: `terms.rpm` → "RPM", `terms.my_documents` → "Dokumen Saya", `terms.ai_key` → "Kunci AI", `terms.attendance` → "Absensi". Teks lain memakai istilah lewat parameter hanya bila istilahnya memang berubah-ubah. Dalam teks biasa kata itu ditulis langsung, dan pemeriksaan di bawah menjaga konsistensinya.
+- **LOC-21** Istilah punya satu tempat: `lang/id/terms.php`, satu key per istilah baku (*usulan*). Contoh: `terms.rpm` → "RPM", `terms.my_documents` → "Dokumen Saya", `terms.ai_key` → "Kunci AI", `terms.attendance` → "Kehadiran" (D-302). Teks lain memakai istilah lewat parameter hanya bila istilahnya memang berubah-ubah. Dalam teks biasa kata itu ditulis langsung, dan pemeriksaan di bawah menjaga konsistensinya.
 - **LOC-22** **Pemeriksaan istilah terlarang.** Sebuah tes membaca kolom *Istilah lama*, yang disimpan sebagai daftar di `tests/Fixtures/banned-terms.php`, dan gagal bila sebuah nilai di berkas `lang/id` mana pun memuat istilah lama. Contohnya: "Download", "Generate", "Modul Ajar", "API Key", "Presensi", "Instansi", "Cloud", "Edit", "Ijin", "...", "&", emoji, atau kata berhuruf kapital semua dengan 3+ huruf (kecuali akronim dalam daftar izin: RPM, LKPD, TKA, PDF, NISN, NIP, BOS, KKTP). Tes melaporkan berkas, key, dan istilah yang disarankan.
 - **LOC-23** Istilah baku baru ditambahkan ke tabel Istilah di `design-system.md`, ke `terms.php`, dan ke daftar terlarang dalam PR yang sama.
+- **LOC-35** **Kata terlarang (diuji).** Tes yang sama juga menolak kata berikut di nilai `lang/id` mana pun (dan karena itu di setiap cetakan, sebab cetakan membaca `lang/id/export.php`):
+  - "tunggakan", "kurang bayar", "belum lunas" (D-300); teksnya "Sumbangan sukarela" dan "Sisa dari kesepakatan"
+  - "teguran" (D-311); teksnya "Pengingat"
+  - "tanda tangan elektronik" (D-281); teksnya "pengesahan dokumen"
+  - "siswa", "P5", "taraf serap" (D-210, D-322); teksnya "murid", "kokurikuler", "daya serap"
+  - "Absensi" sebagai label (D-302); teksnya "Kehadiran". Alias pencarian bantuan yang masih menemukan "absensi" dicatat di daftar pengecualian.
 
 ### 2.4 Mencari teks yang hilang dan tidak terpakai
 
@@ -195,8 +203,8 @@ export function t(key: string, params: Record<string, string | number> = {}): st
 ## 3. Validasi dan pesan sistem
 
 - **LOC-26** `lang/id/validation.php` berbahasa Indonesia. Berkas ini berawal dari berkas bahasa Indonesia `laravel-lang` berlisensi MIT, disalin sekali dan tidak dipasang sebagai dependensi (*usulan*), lalu disunting sesuai nada di sistem desain:
-  - Pesan menyebut apa yang perlu diperbaiki, dengan kata-kata tenang: "Nama siswa wajib diisi." dan "NISN harus 10 angka.", tidak pernah "Input tidak valid".
-  - Setiap kolom di Form Request punya entri `attributes` dalam huruf kecil ("nama siswa", "tanggal lahir"), sehingga pesan tidak pernah menampilkan `student_name`.
+  - Pesan menyebut apa yang perlu diperbaiki, dengan kata-kata tenang: "Nama murid wajib diisi." dan "NISN harus 10 angka.", tidak pernah "Input tidak valid".
+  - Setiap kolom di Form Request punya entri `attributes` dalam huruf kecil ("nama murid", "tanggal lahir"), sehingga pesan tidak pernah menampilkan `student_name`.
   - Pesan khusus formulir masuk ke `custom` (`validation.custom.academic_year.invalid`) atau ke `messages()` Form Request dengan key dari berkas areanya.
 - **LOC-27** **Halaman galat** (`errors.php` + `resources/views/errors/*.blade.php`) memakai teks sederhana dan menawarkan langkah berikutnya:
   - 403: "Anda tidak punya akses ke halaman ini."
@@ -224,9 +232,10 @@ Aturan umum untuk semua format:
 
 ### 4.1 PDF (Gotenberg, D-028, D-031)
 
-- **XP-6** Satu view Blade per PDF: `resources/views/exports/<key>/pdf.blade.php`. View ini meng-extend `exports/layouts/print.blade.php`, dengan `<html lang="id">`. Sebuah paket (RPM + LKPD + rubrik + kunci, atau semua kartu ujian) adalah satu view dengan pemisah halaman, tidak pernah digabung.
-- **XP-7** **Kertas:** diatur lewat `@page` dari pengaturan cetak. A4 adalah `210mm 297mm`. F4 adalah `215mm 330mm` (D-109). Margin berasal dari pengaturan cetak dalam mm.
-- **XP-8** **Kop:** gambar milik sekolah atau guru (D-031) diletakkan di bagian atas **halaman pertama saja**, selebar area isi, `max-height: 4cm`. Gambar dikirim ke Gotenberg sebagai aset dalam request, tidak pernah sebagai URL (keputusan arsitektur 5).
+- **XP-6** Satu view Blade per PDF: `resources/views/exports/<key>/pdf.blade.php`. View ini meng-extend `exports/layouts/print.blade.php`, dengan `<html lang="id">`. Sebuah paket (RPM + LKPD + rubrik + kunci, atau semua kartu ujian) adalah satu view dengan pemisah halaman, tidak pernah digabung. **Diubah (D-280):** Berkas Administrasi adalah satu-satunya PDF yang digabung (XP-43); dokumen lain tetap satu view → satu PDF.
+- **XP-7** **Kertas:** diatur lewat `@page` dari pengaturan cetak. A4 adalah `210mm 297mm`. F4 adalah `215mm 330mm` (D-109). Margin berasal dari profil margin di pengaturan cetak (XP-40).
+- **XP-8** **Kop:** gambar milik sekolah atau guru (D-031) diletakkan di bagian atas **halaman pertama saja** (halaman isi pertama setelah sampul, XP-39), selebar area isi, `max-height: 4cm`. Gambar dikirim ke Gotenberg sebagai aset dalam request, tidak pernah sebagai URL (keputusan arsitektur 5).
+  - **Kop otomatis (D-284).** Sekolah yang belum punya gambar kop dapat menekan "Buat kop otomatis": SIGRAK menyusun PNG dari logo, nama, alamat, dan kontak di profil sekolah, lalu menyimpannya sebagai kop biasa yang bisa diganti. Cetakan tetap hanya melihat satu gambar.
 - **XP-9** **Font** dibundel sebagai berkas dan dikirim bersama request (D-033: tanpa CDN). Sekolah memilih font cetaknya (D-125):
 
 | Pengaturan cetak | Font yang dipakai |
@@ -236,16 +245,41 @@ Aturan umum untuk semua format:
 | Teks Arab (pengaturan apa pun) | Noto Naskh Arabic |
 | Matematika | Font KaTeX |
 
-- **XP-10** **Nomor halaman** memakai HTML footer Gotenberg, dengan `<span class="pageNumber">` dan `<span class="totalPages">` yang diletakkan di `export.print.page_of` ("Halaman :page dari :total"). Kartu ujian dan dokumen satu halaman tidak diberi nomor halaman.
+- **XP-10** **Nomor halaman** memakai HTML footer Gotenberg, dengan `<span class="pageNumber">` dan `<span class="totalPages">` yang diletakkan di `export.print.page_of` ("Halaman :page dari :total"). Kartu ujian, dokumen satu halaman, dan sampul (XP-39) tidak diberi nomor halaman.
 - **XP-11** **Penanda tangan** (nama, NIP, jabatan) berasal dari pengaturan cetak sebagai teks, dengan tempat dan tanggal dalam bentuk panjang ("Kudus, 31 Oktober 2026").
 - **XP-12** Konten JavaScript (KaTeX, ApexCharts, three.js) harus selesai sebelum ditangkap. View menyetel penanda siap yang ditunggu oleh pemanggil PDF, dan view tanpa JS tidak perlu menunggu.
 - **XP-13** **Tanpa watermark.** Tidak ada lagi paket gratis, hanya uji coba 1 minggu dengan semua fitur (D-157, D-160), jadi ekspor tidak pernah memakai watermark.
 - **XP-14** Tabel memakai `page-break-inside: avoid` pada baris dan `thead { display: table-header-group }`, sehingga judul kolom berulang di setiap halaman.
+- **XP-39** **Sampul (D-283).** Dokumen berbentuk buku dan Berkas Administrasi memakai satu sampul hitam-putih yang sama:
+  - Tanpa nomor halaman.
+  - Tahun dokumen mengikuti semester: semester 1 → tahun pertama tahun ajaran, semester 2 → tahun kedua, dokumen tahunan → tahun berjalan.
+  - Logo sekolah opsional yang diunggah sekolah (`school_print_settings.cover_logo_path`). Tidak ada logo pemerintah yang dibundel.
+- **XP-40** **Profil margin dan cetak bolak-balik (D-283).** `school_print_settings.margin_profiles` menyimpan tiga profil dalam mm (atas/kanan/bawah/kiri) yang dapat diubah sekolah. Setiap templat menyebut profilnya:
+
+| Profil | Bawaan (mm) | Dipakai untuk |
+|---|---|---|
+| Buku administrasi | 15/12/15/25 | Prota, Promes, jurnal, leger, rekap, bagian Berkas |
+| Dokumen ajar | 20/20/20/20 | RPM, LKPD, cetakan Bank Soal |
+| Lembar tunggal | 15/15/15/15 | Lembar tunggal: lembar jawaban, kartu ujian, berita acara |
+
+Opsi `school_print_settings.duplex` mencerminkan margin kiri dan kanan di halaman genap untuk cetak bolak-balik.
+- **XP-41** **Lanskap otomatis (D-283).** Tabel dengan 9 kolom atau lebih dicetak lanskap, kecuali templat menentukan lain.
+- **XP-42** **NIHIL (D-283).** Tabel kosong dicetak dengan satu baris selebar tabel bertuliskan "NIHIL", bukan dihilangkan, agar pengawas melihat bagian itu sudah diperiksa.
+- **XP-43** **Berkas Administrasi (D-278, D-279, D-280).**
+  - Isi: sampul (XP-39), lembar ringkasan kelengkapan (D-263), halaman daftar isi, halaman judul per bagian, dan halaman NIHIL untuk bagian yang kosong. Catatan BK tidak pernah dimasukkan.
+  - Setiap bagian dirender sebagai PDF sendiri (berkas yang sama dipakai untuk opsi ZIP), lalu digabung lewat route merge Gotenberg. Daftar isi mengambil nomor halaman dari jumlah halaman tiap bagian, jadi tidak ada render kedua.
+  - Keluaran: satu PDF gabungan secara bawaan, ZIP berisi PDF terpisah sebagai opsi, tanpa DOCX. Berkas disimpan 7 hari, lalu dihapus, dan dipakai ulang selama datanya tidak berubah.
+  - Unduhan seluruh sekolah oleh kepala sekolah (D-279) berupa satu ZIP dengan satu PDF per guru, dibuat sebagai job di antrean `exports`.
+- **XP-44** **Lembar jawaban (LJK, D-287, D-325, D-370).** Satu lembar per murid, dengan profil Lembar tunggal:
+  - Kepala lembar: Mata Pelajaran, Kelas, Nama, Nomor. Nomor absen murid dicetak, sehingga jawaban tulisan tangan dapat diberi kode `nomor absen-nomor soal` (mis. `12-3`, D-370).
+  - Butir PG dalam dua kolom kotak huruf (A–D, atau A–E bila dipakai) yang disilang murid; PG Kompleks, Benar-Salah, PGK Kategori, dan Menjodohkan memakai gaya kotak huruf yang sama; baris bernomor untuk Isian Singkat dan Uraian.
+  - Empat penanda sudut dan satu QR yang hanya berisi `public_id` acak milik lembar itu (tanpa data murid di kertas). Versi tata letak disimpan di server.
+- **XP-45** **Tanda pengesahan (D-281).** RPM, Prota, Promes, rencana asesmen, dan Berkas Administrasi mencetak QR, kode 10 karakter, dan "Disahkan melalui SIGRAK, [tanggal]" hanya selama revisi aktif sama dengan revisi yang disahkan. Pada Berkas, satu QR itu ada di kolom tanda tangan kepala sekolah pada lembar ringkasan. QR mengarah ke `/verifikasi/{code}`, yang hanya berfungsi setelah masuk. Cetakan tidak pernah menyebut "tanda tangan elektronik" (LOC-35).
 
 ### 4.2 DOCX (PhpWord)
 
 - **XP-15** Setiap templat punya pembangun DOCX di `app/Content/Export/Docx/<Key>DocxBuilder.php` yang menyusun tata letak SIGRAK sendiri lewat kode (D-031). Tidak ada templat Word yang diunggah dan tidak ada konversi Word ke PDF.
-- **XP-16** Bahasa dokumen diatur ke `id-ID` (pemeriksa ejaan dan pemenggalan kata). Ukuran halaman dan margin mengikuti pengaturan cetak (nilai yang sama dengan XP-7).
+- **XP-16** Bahasa dokumen diatur ke `id-ID` (pemeriksa ejaan dan pemenggalan kata). Ukuran halaman dan margin mengikuti pengaturan cetak (nilai yang sama dengan XP-7, profil margin yang sama dengan XP-40).
 - **XP-17** Gambar kop masuk ke **header halaman pertama**, dan halaman lain mendapat header kosong. Penanda tangan berupa teks biasa.
 - **XP-18** Font diatur berdasarkan nama ("Arial" atau "Times New Roman", "Noto Naskh Arabic"; D-125), karena Word mengganti font di komputer guru. Teks Arab memakai gaya paragraf RTL (lihat §7).
 - **XP-19** Judul memakai gaya heading Word, sehingga guru mendapat panel navigasi dan daftar isi. Teks isi tidak memakai format langsung.
@@ -291,6 +325,24 @@ public function columnFormats(): array
   - **Judul lama tetap berlaku.** Bila label judul kolom diubah, label lamanya dipindah ke `export.column_aliases.<column>` di `lang/id/export.php`, sehingga templat yang sudah diisi sebelumnya tetap bisa diimpor. Alias tidak pernah dihapus.
   - **Isi sel berbahasa Indonesia.** Sel himpunan tetap menerima label yang ditulis ekspor ("Hadir" → `present`, "Ya"/"Tidak" → `true`/`false`), dicocokkan dengan cara yang sama seperti judul kolom. Tanggal menerima teks `dd/mm/yyyy` dan sel tanggal Excel; angka menerima desimal koma (`76,5`) dan sel numerik.
 
+### 4.4 Cetakan dan ekspor dari keputusan berikutnya
+
+Setiap cetakan di bawah mengikuti XP-6…XP-14 dan XP-39…XP-45; versi Excel mengikuti XP-20…XP-23 dan dapat diimpor kembali bila ada impornya (D-150).
+
+| Cetakan | Isi | Format | Keputusan |
+|---|---|---|---|
+| Promes Realisasi | Tampilan kedua Promes: minggu rencana dibanding minggu terlaksana per topik, disusun dari jurnal | PDF | D-274 |
+| Analisis Daya Serap | Tata letak cetak (dan alias pencarian) Analisis per TP, dengan Kelompok belajar per TP | PDF, XLSX | D-295 |
+| Leger | Dicetak dan diekspor hanya dari versi terkunci (XP-46) | PDF, XLSX | D-292 |
+| Rekap kehadiran | Per minggu, bulan, dan semester, per kelas | PDF, XLSX | D-303 |
+| Daftar piket | Kelompok piket per hari sekolah, dengan tugas dan rotasi | PDF | D-297 |
+| Berita acara penyerahan tabungan | Saldo yang diserahkan saat lulus atau mutasi keluar; penanda tangan wali kelas, orang tua atau wali, kepala sekolah | PDF | D-301 |
+| Laporan kas kelas | Pemasukan (termasuk sumbangan sukarela), pengeluaran, saldo; total secara bawaan, rincian per murid hanya bila wali kelas memilihnya | PDF, teks `wa.me` | D-299 |
+
+- **XP-46** **Leger terkunci adalah satu-satunya sumber (D-292).** Cetakan rapor, cetakan leger, dan ekspor e-Rapor/RDM membaca versi leger yang terkunci, tidak pernah nilai yang sedang berjalan. Sebelum leger terkunci, ketiganya tidak ditawarkan.
+- **XP-47** **Hasil TKA (D-371).** Ekspor hasil Simulasi TKA menulis kategori resmi (Baik, Memadai, Kurang) dan predikat Istimewa (nilai ≥ 95,00) di dua kolom terpisah, dibaca dari `exam_results`, agar cocok dengan SHTKA. Nilai memakai `score()` pada skala 0–100. Empat tingkat yang tampil di layar tidak disimpan sebagai satu nilai. Lembar Info (XP-22) memuat catatan hasil latihan yang sama dengan UI.
+- **XP-48** **Ekspor e-Rapor SD dan RDM (D-218).** Dibuat tepat setelah slice Asesmen, dalam tata letak impor masing-masing sistem, dari leger terkunci (XP-46). Profil Jenjang menentukan tujuannya (e-Rapor SD untuk SD, RDM untuk MI). Ekspor ini mengikuti pengecualian XP-24 untuk berkas sistem lain.
+
 ## 5. Helper format
 
 - **XP-26** `App\Support\IndonesianFormat` (PHP) dan `resources/js/lib/format.ts` (TS) adalah satu-satunya pemformat (EX-6). Keduanya punya API yang sama dan keluaran yang sama, dan sebuah tes memberi keduanya fixture yang sama.
@@ -321,7 +373,8 @@ public function columnFormats(): array
   - Tanggal dalam format ISO (`2026-10-31`) agar berkas urut.
   - Panjang nama paling banyak 80 karakter.
   - Contoh: `rpm-ipas-kelas-4a-2026-10-31.pdf`, `leger-kelas-4a-semester-1-2026-2027.xlsx`, `kartu-login-simulasi-tka-6a-2026-11-03.pdf`.
-- **XP-32** **Tanpa data pribadi siswa di nama berkas.** Tanpa nama, NISN, atau tanggal lahir. Berkas per siswa memakai kelas dan nomor absen (`rapor-kelas-6a-no-07-semester-1.pdf`), dan kumpulan semua siswa berupa satu berkas atau satu ZIP.
+  - Cetakan dari §4.4: `berkas-administrasi-semester-1-2026-2027.pdf` (atau `.zip`), `promes-realisasi-ipas-kelas-4a-semester-1-2026-2027.pdf`, `analisis-daya-serap-ipas-kelas-4a-2026-11-10.pdf`, `rekap-kehadiran-kelas-4a-2026-11-10.xlsx`, `daftar-piket-kelas-4a-2026-11-10.pdf`, `laporan-kas-kelas-4a-2026-11-10.pdf`, `ljk-matematika-kelas-4a-2026-11-10.pdf`.
+- **XP-32** **Tanpa data pribadi siswa di nama berkas.** Tanpa nama, NISN, atau tanggal lahir. Berkas per siswa memakai kelas dan nomor absen (`rapor-kelas-6a-no-07-semester-1.pdf`, `berita-acara-penyerahan-tabungan-kelas-6a-no-07-2027-06-20.pdf`), dan kumpulan semua siswa berupa satu berkas atau satu ZIP.
 - **XP-33** Nama guru juga tidak dimasukkan ke nama berkas. Judul dokumen boleh dipakai (guru sendiri yang mengetiknya) setelah dijadikan slug.
 - **XP-34** Respons unduhan mengirim `filename` ASCII sekaligus `filename*` UTF-8 di `Content-Disposition`.
 
@@ -345,6 +398,9 @@ Teks CP MI (D-039) dan materi PAI mencampur bahasa Indonesia dan Arab. Aturannya
 | `lang:audit` teks tertulis langsung (LOC-25) | CI | Ada teks UI literal di luar `t()`/`__()` di Svelte atau Blade |
 | Key tidak terpakai (LOC-24) | CI (peringatan) | Ada key yang tidak dipakai siapa pun (dicantumkan, diperbaiki di tugas yang sama) |
 | Istilah terlarang (LOC-22) | CI (Pest) | Nilai di `lang/id` memuat istilah *Istilah* lama, "...", "&", emoji, atau huruf kapital semua |
+| Kata terlarang (LOC-35) | CI (Pest) | Nilai di `lang/id` memuat tunggakan, kurang bayar, belum lunas, teguran, tanda tangan elektronik, siswa, P5, taraf serap, atau Absensi di luar daftar pengecualian pencarian bantuan |
+| Aturan cetak (XP-41, XP-42) | Pest | Tabel 9+ kolom dirender tegak tanpa pengaturan templat, atau tabel kosong tanpa baris NIHIL |
+| Ekspor TKA (XP-47) | Pest | Kategori dan predikat tidak berada di kolom terpisah, atau nilai 95,00 tidak mendapat predikat Istimewa |
 | Kelompok khusus server (LOC-10) | Feature test | `export`, `mail`, `validation`, … muncul di prop `translations` |
 | Kesamaan parameter | Pest | `:params` sebuah key berbeda dengan yang dikirim di pemanggilnya (diperiksa untuk pemanggilan literal) |
 | Label enum | Pest arch | Ada case enum tanpa label `enums.*` |
@@ -378,6 +434,7 @@ Pilihan baru di panduan ini. Nomornya diberikan saat integrasi.
 ## Pertanyaan terbuka
 
 - [x] Ukuran F4: 215 × 330 mm (D-109).
-- [ ] Format impor e-Rapor (kolom, jenis berkas) masih belum diketahui (pertanyaan terbuka model data). Pengecualian XP-24 akan berlaku setelah diketahui.
+- [ ] Format impor e-Rapor SD dan RDM (kolom, jenis berkas) masih belum diketahui (pertanyaan terbuka model data). Ekspornya sendiri sudah diputuskan (D-218, XP-48); pengecualian XP-24 berlaku untuk tata letaknya setelah diketahui.
+- [ ] Nama berkas di dalam ZIP Berkas seluruh sekolah untuk kepala sekolah (D-279): XP-33 melarang nama guru di nama berkas, padahal kepala sekolah perlu membedakan berkasnya. Menunggu keputusan pemilik (misalnya nomor urut plus lembar daftar di dalam ZIP).
 - [x] Font cetak: Arial atau Times New Roman, dipilih sekolah; tidak ada yang lain (D-125).
 - [x] Font klien ujian: ukuran bawaan standar, pengatur A−/A/A+ tetap ada (D-121).

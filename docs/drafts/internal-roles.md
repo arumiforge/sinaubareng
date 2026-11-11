@@ -1,8 +1,8 @@
 # Internal Roles for Tim SIGRAK
 
-- **Status:** draft (needs owner review)
+- **Status:** draft; owner decided 2026-11-09 (D-338…D-343, §8). Applied to `docs/final/` 2026-11-10 (P4-24); §4 and §7 are replaced by D-341 and D-339
 - **Task:** P4-17
-- **Last updated:** 2026-11-09
+- **Last updated:** 2026-11-10
 - **Builds on:** D-167 (staff roles admin, support, content), D-314 (fixed roles, read-only matrix), D-113 (Tim Validasi), D-309 (pengawas requests), D-315…D-320 (console features), D-211 (plan mapping)
 
 ## 1. Summary

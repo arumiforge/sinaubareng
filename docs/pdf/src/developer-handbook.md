@@ -1,9 +1,9 @@
 # Buku Panduan Pengembang SIGRAK
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/developer-handbook.md</code> pada 9 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/developer-handbook.md</code> pada 10 November 2026.</p>
 
 - **Status:** final (permintaan pemilik 2026-11-09, D-361)
-- **Terakhir diperbarui:** 2026-11-09
+- **Terakhir diperbarui:** 2026-11-10
 - **Pembaca:** setiap pengembang atau agen baru yang bergabung dengan SIGRAK, sebelum membaca dokumen lain. PDF berbahasa Indonesia ini, `docs/pdf/developer-handbook.pdf`, adalah satu bacaan lengkap untuk pengembang baru (D-361).
 - **PDF berbahasa Indonesia:** `docs/pdf/developer-handbook.pdf`, diterjemahkan di `docs/pdf/src/developer-handbook.md`
 
@@ -290,7 +290,7 @@ Artinya bagi SIGRAK:
 
 - KBC **bukan mapel** dan tidak mengubah JP. Hasilnya dilaporkan lewat Akhlak atau Budi Pekerti dan catatan sikap, tidak pernah sebagai label atau peringkat.
 - Untuk MI, wizard RPM menambahkan dua kolom opsional, *Tema KBC* dan *Materi Insersi*. AI mengisi saran awal dari CP dan materi; guru boleh mengubah atau mengosongkan keduanya (D-126, D-142). **Status: Didesain (P5-04).**
-- KMA 512/2026 juga mencakup guru agama di sekolah umum, termasuk SD. Apakah SIGRAK menawarkan kolom KBC kepada guru agama SD masih **pertanyaan terbuka untuk pemilik** (`docs/drafts/open-questions.md`). Sampai dijawab, KBC tetap khusus MI.
+- KMA 512/2026 juga mencakup guru agama di sekolah umum, termasuk SD. Guru agama SD tidak melihat kolom KBC (Tema KBC, Materi Insersi, nilai dasar) secara bawaan; admin SIGRAK dapat menyalakannya sebagai pengaturan Profil Jenjang atau konsol (D-368).
 
 ### 3.8 Di mana inovasi terbuka lebar
 
@@ -385,8 +385,6 @@ Ringkasan diagram: Tim SIGRAK membuat sekolah dan mengundang operator atau kepal
 
 **Status:** **Dibangun** (P5-03d, P5-03e, P5-03h): tahun ajaran, kelas, salin kelas, penugasan mengajar, jadwal dengan semua pemeriksaannya. **Didesain:** halaman sakelar mapel sekolah dan peringatan muatan lokal, kalender (P5-03i), penyusun draf jadwal (P5-03j). P5-03 dibuka lagi untuk P5-03i dan P5-03j (D-252); keduanya datang sebelum atau bersamaan dengan P5-04.
 
-> **Berbeda dari dokumen final.** `data-model.md` masih menampilkan `timetable_slots.teacher_id` dan tanpa `kind`/`label`; D-247 dan D-249 yang berlaku. Dokumen itu menampilkan kalender wilayah sebagai "nilai bawaan yang ditimpa kalender sekolah"; D-256 menggantinya dengan salinan ditambah tawaran pembaruan. Dokumen itu juga belum punya kolom `public_id` pada tahun, kelas, dan keanggotaan (D-182, D-241).
-
 ### 4.3 Kurikulum: data, impor, versi, penyesuaian, validasi
 
 **Siapa:** Tim SIGRAK (data, impor, konsol), Tim Validasi SIGRAK (tinjauan), sekolah (perubahan), kepala sekolah dan pengawas (validasi).
@@ -479,8 +477,6 @@ Game kelas (fitur tambahan, D-171) mengembangkannya menjadi mode belajar IFP: da
 
 **Status:** **Didesain** untuk seluruh bagian ini. Belum ada yang dibangun dari mesin konten, lapisan AI, Dokumen Saya, atau ekspor; semuanya ada di P5-04 (inti konten: mesin penyedia AI, mesin templat, RPM, Dokumen Saya, ekspor PDF/DOCX) dan P5-05 (Bank Soal, LKPD, Quiz Battle). File `lang/id` untuk area ini baru berupa kerangka. Game kelas di luar Quiz Battle, gelombang LKPD, dan templat asesmen adalah gelombang **Nanti** setelah v1.
 
-> **Berbeda dari dokumen final.** `content-engine.md` masih menggambarkan keluaran LKPD tanpa blok atau `pattern` (D-296, D-329), ekspor Bank Soal tanpa pustaka butir (D-293, D-294), penjadwalan RPM tanpa `partial`, neraca JP, atau pembatalan (D-267…D-275), pasangan PGK Kategori "mendukung/tidak mendukung" yang sudah dihapus D-045, dan "satu PDF per unduhan, tidak pernah digabung", yang diubah D-280 untuk Berkas Administrasi.
-
 ### 4.5 Di kelas: Di Kelas, sinkronisasi luring, kehadiran, jurnal, observasi, alat kelas
 
 **Siapa:** guru di ponsel, biasanya saat atau tepat setelah pelajaran.
@@ -530,8 +526,6 @@ Sinkronisasi memakai sesi web dan token CSRF biasa, bukan token API. Baris yang 
 
 **Status:** **Dibangun:** hanya Kelas Saya > Jadwal. **Didesain:** semua yang lain di bagian ini ada di slice P5-07 (Di Kelas dengan sinkronisasi luring, Jurnal dari RPM), ditambah sebagian P5-04 dan P5-08.
 
-> **Berbeda dari dokumen final.** `product-concept.md` dan `design-system.md` masih memakai *Absensi* dan "siswa"; D-302 dan D-210 memakai *Kehadiran* dan *murid*. `architecture.md` dan `data-model.md` membatasi luring pada tiga formulir dan `journals.status` pada `done`/`not_done`; D-289, D-349, dan D-267 memperluas keduanya.
-
 Bacaan lanjutan: `content-engine.md`, `ifp-classroom.md`, `docs/drafts/lkpd-exploration.md`, `docs/drafts/legacy-upgrade-01.md`, `docs/drafts/administration-features.md`, `architecture.md`, D-011…D-016, D-024, D-029, D-171…D-181, D-263…D-278, D-289, D-293…D-303, D-329…D-337, D-349.
 
 ### 4.6 Asesmen
@@ -548,7 +542,7 @@ Bacaan lanjutan: `content-engine.md`, `ifp-classroom.md`, `docs/drafts/lkpd-expl
 
 **Pindai LJK (memindai lembar jawaban).** Termasuk inti di P5-08 (D-286). Lembar cetaknya mirip lembar yang sudah dipakai sekolah: kepala berisi Mata Pelajaran, Kelas, Nama, Nomor; kotak huruf yang disilang murid; baris bernomor untuk Isian dan Uraian; empat penanda sudut dan QR yang hanya berisi `public_id` acak milik lembar itu (D-287, D-325). Bentuk yang dipindai: PG, PG Kompleks, Benar-Salah dan PGK Kategori, Menjodohkan. Isian dan Uraian diisi manual dengan nilai parsial. Tidak ada AI yang membaca jawaban murid, dan gambar lembar tidak pernah diunggah (D-287). Antrean pindai bisa luring dan baru masuk ke `scores` setelah sinkronisasi dan konfirmasi guru (D-289). Kode kamera yang sama nanti dipakai Kartu Jawab (D-174) dan cadangan kertas untuk Simulasi TKA (D-288, setelah P5-08).
 
-> **Hal yang masih terbuka.** D-287 dan D-289 menggambarkan pemindaian di perangkat guru, dengan hanya hasilnya yang disinkronkan. D-347, yang dicatat kemudian, menyebut jawaban pilihan ganda "dibaca dengan OMR di server SIGRAK sendiri". Keduanya sepakat bahwa tidak ada AI yang membaca jawaban dan tidak ada data murid yang dikirim ke penyedia AI. Di mana OMR berjalan (ponsel atau server) perlu dipastikan di P4-19 atau di awal P5-08; pemilihan pustaka OMR sudah tercatat sebagai uji coba satu hari di ponsel Android kelas bawah (`legacy-upgrade-01.md`, pertanyaan terbuka).
+**Di mana bulatan dibaca.** Di peramban pada ponsel guru, dengan pustaka OMR JavaScript; hanya jawaban yang terbaca beserta tingkat keyakinannya yang dikirim ke server (D-369, yang menggantikan rumusan "OMR di server SIGRAK sendiri" pada D-347). **Jawaban tulisan tangan** (Uraian, Isian) menyusul setelah Pindai LJK: ponsel membacanya menjadi teks, guru memperbaiki teks di samping fotonya (foto tidak pernah keluar dari ponsel), dan hanya teksnya, diberi kode nomor absen + nomor soal seperti `12-3`, yang dikirim ke AI bersama kunci atau rubrik. AI menyarankan nilai dan umpan balik; guru yang memutuskan (D-370).
 
 **Peta Asesmen dan instrumen baru (Didesain, D-344…D-351).** *Master Assessment Landscape* milik pemilik menjadi satu dataset kurasi di `docs/data/assessment/` (domain, tujuan, metode, media, penskoran, pemanfaatan), ditinjau Tim Validasi, ditambah label di setiap instrumen (D-344). Desainnya menjadi tugas tersendiri, P4-19 (D-345). Templat baru: Rubrik Kinerja (praktik, demonstrasi, proyek, produk, praktik ibadah MI), Observasi DPL (indikator perilaku yang diamati beberapa kali, ditampilkan sebagai tren), Cek Kesiapan Awal (berupa profil, bukan nilai), Akomodasi Murid, serta kartu penilaian diri dan teman sejawat (D-346). Wizard "lima pertanyaan" di Asesmen (*Apa yang diukur? Untuk apa? Bagaimana? Bukti apa? Tindak lanjutnya apa?*) memilih dari taksonomi. Gelombang A mencakup dataset v1, label di Bank Soal dan LKPD, Rubrik Kinerja, Observasi DPL dengan isian di ponsel, Cek Kesiapan Awal, dan label miskonsepsi pada pengecoh (D-351). P5-08 sendiri tidak berubah.
 
@@ -589,15 +583,13 @@ Bacaan lanjutan: `content-engine.md`, `ifp-classroom.md`, `docs/drafts/lkpd-expl
 3. **Kartu login.** Sistem mencetak satu kartu per murid (nama, kelas, sesi, nama pengguna, kata sandi), beberapa per halaman, lewat antrean `exports`. Kredensialnya hanya berlaku untuk sesi itu.
 4. **Jalankan.** Proktor membuka sesi dan membacakan token saat ini: 6 karakter yang diturunkan dari rahasia sesi dan jendela 15 menit yang sedang berjalan (gaya TOTP), sehingga token tidak pernah disimpan (D-027). Murid masuk di `ujian.sigrak.com` dengan nama pengguna, kata sandi, dan token. Proktor memantau kemajuan, bisa mengatur ulang login peserta yang macet, atau menambah waktu untuk satu peserta; keduanya dicatat di `exam_events`.
 5. **Klien ujian.** Layar sederhana mirip TKA: area soal, kisi nomor, tanda *ragu-ragu*, pengatur waktu, kontrol ukuran huruf A−/A/A+ dengan ukuran bawaan standar (D-121). Urutan butir dan pilihan diacak per peserta, dengan kelompok stimulus tetap bersama. Setiap jawaban tersimpan otomatis dengan nomor urut (idempoten), sehingga koneksi yang tersambung lagi melanjutkan dari titik berhenti. Waktu ditegakkan oleh server; pengatur waktu di klien hanya menampilkannya. Tidak ada panggilan AI, tidak ada tautan ke aplikasi, tidak ada data di luar ujian peserta itu sendiri (D-027, D-094).
-6. **Hasil.** Nilai 0–100 per mapel, dengan nilai parsial untuk bentuk PGK, dinormalkan dan diberi label perkiraan latihan (D-030, D-042). Hasilnya menampilkan kategori (Baik, Memadai, Kurang) ditambah predikat Istimewa untuk nilai 95 ke atas, misalnya "Baik-Istimewa" (D-041, D-120). Ada analisis per kompetensi dan per butir, ekspor Excel dan PDF, dan salinan opsional ke Asesmen.
+6. **Hasil.** Nilai 0–100 per mapel, dengan nilai parsial untuk bentuk PGK, dinormalkan dan diberi label perkiraan latihan (D-030, D-042). Guru dan murid melihat empat tingkat: Istimewa, Baik, Memadai, Kurang. `exam_results` dan ekspor menyimpan kategori resmi (Baik, Memadai, Kurang) dan predikat Istimewa (95,00 ke atas) secara terpisah, sesuai SHTKA (D-371, melengkapi D-041 dan D-120). UI mencatat bahwa ini hasil latihan. Ada analisis per kompetensi dan per butir, ekspor Excel dan PDF, dan salinan opsional ke Asesmen.
 
 **Integritas dan kapasitas.** Pembatasan login di situs ujian didasarkan pada sesi dan nama pengguna, bukan IP, karena satu kelas berbagi satu IP sekolah; aturan Cloudflare mengizinkan lonjakan 30–40 login dari satu IP (D-054). Kata sandi dienkripsi supaya kartu bisa dicetak ulang, dan dihapus 30 hari setelah sesi ditutup. Situs ujian tidak bisa dipasang sebagai PWA (D-093).
 
 **Mengapa murid boleh memakainya.** Ketentuan Gemini melarang layanan yang kemungkinan dipakai orang di bawah 18 tahun. Jawaban SIGRAK: AI hanya berjalan di sesi guru *sebelum* ujian untuk menyiapkan soal; murid menerima konten yang sudah jadi dan diperiksa guru, dan tidak pernah memakai atau memicu AI (D-124).
 
 **Status:** **Didesain** (P5-06). Yang sudah dibangun: grup rute dan guard `ujian.`, entry Inertia + Svelte sendiri di `resources/exam-client/`, halaman beranda sementara, dan model `ExamParticipant` yang dipakai guard `exam`.
-
-> **Berbeda dari dokumen final.** `content-engine.md` mencantumkan empat kategori "Kurang, Memadai, Baik, Istimewa" dan `data-model.md` punya `exam_results.category` ∈ {`kurang`, `memadai`, `baik`, `istimewa`}; D-041 dan D-120 menampilkan tiga kategori ditambah predikat Istimewa ("Baik-Istimewa"). Bentuk penyimpanannya perlu dipastikan saat P5-06 dimulai.
 
 Bacaan lanjutan: `content-engine.md`, `architecture.md`, `docs/drafts/assessment-landscape.md`, `docs/drafts/administration-features.md`, D-026, D-027, D-030, D-041…D-047, D-089, D-092, D-094, D-111, D-120, D-124, D-144, D-205, D-213…D-218, D-286…D-295, D-301, D-304, D-344…D-351.
 
@@ -732,8 +724,6 @@ Ringkasan diagram: `AI` hanya mengurus Gemini (kunci, pemilihan, galat, penjaga 
 - Redis memakai database (atau prefiks) terpisah untuk cache, sesi, antrean/Horizon, dan status AI, sehingga `cache:clear` tidak pernah menghapus sesi, job, atau masa jeda kunci (D-053). Redis berjalan dengan `noeviction` dan AOF (D-058).
 - Horizon mengirim surel bila antrean menunggu terlalu lama (`ai` 600 detik, `exports` 120 detik, `default` 60 detik), dan penjadwal mengirim heartbeat (D-137).
 
-> **Berbeda dari dokumen final.** `architecture.md` menampilkan penjadwal sebagai entri cron yang menjalankan `schedule:run`; D-064 (dan `server-setup.md`) menjalankan `schedule:work` di bawah Supervisor.
-
 ### 5.5 Gotenberg
 
 `gotenberg/gotenberg:8.39.0-chromium`, dipublikasikan di `127.0.0.1:3000` dengan basic auth dan batas memori 1 GB, di jaringan Docker sendiri tanpa koneksi keluar (D-059). Setiap aset (HTML, fon, skrip, gambar, kop) dikirim di dalam request (D-052), sehingga string berbahaya di sebuah dokumen tidak bisa membuat Chromium mengambil apa pun. Laravel memanggilnya lewat `spatie/laravel-pdf` dengan driver Gotenberg (D-028, D-073). Hanya Berkas Administrasi yang memakai rute merge (D-280).
@@ -802,7 +792,7 @@ Ringkasan diagram: wilayah punya sekolah; sekolah punya keanggotaan pengguna dan
 
 ### 6.3 Tabel yang ditambahkan keputusan yang lebih baru
 
-`legacy-upgrade-01.md` §4 mendaftar apa yang harus ditambahkan P4-14 ke `data-model.md`. Yang utama: `national_holidays`, `progress_snapshots`, `document_approvals`, catatan job Berkas, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, status leger dengan konfirmasi dan log buka kunci, pengaturan retensi dan model AI dengan log, pengumuman staf dengan target, status permintaan bantuan; kolom baru seperti `calendar_events.class_id`, `journals.status` dengan `partial` dan alasan tidak terlaksana, `school_print_settings.margin_profiles`, `schools.district`, status pengajuan di `supervisor_assignments`, dan penanda tutup di `academic_years`. Peran internal menambah `staff_role_assignments` (D-339).
+`legacy-upgrade-01.md` §4 mendaftar apa yang perlu ditambahkan ke `data-model.md`; P4-24 menambahkannya pada 10 November 2026. Yang utama: `national_holidays`, `progress_snapshots`, `document_approvals`, catatan job Berkas, `answer_sheets`, `sheet_scans`, `question_items`, `savings_entries`, `handover_records`, `class_contribution_kinds`, `class_contributions`, status leger dengan konfirmasi dan log buka kunci, pengaturan retensi dan model AI dengan log, pengumuman staf dengan target, status permintaan bantuan; kolom baru seperti `calendar_events.class_id`, `journals.status` dengan `partial` dan alasan tidak terlaksana, `school_print_settings.margin_profiles`, `schools.district`, status pengajuan di `supervisor_assignments`, dan penanda tutup di `academic_years`. Peran internal menambah `staff_role_assignments` (D-339).
 
 ### 6.4 Tabel versi, sekarang dan rencana
 
@@ -864,8 +854,6 @@ Nama di kertas dibaca di perangkat guru, tidak pernah oleh penyedia AI (D-347). 
 Adapter khusus konsol untuk API yang kompatibel dengan OpenAI dan untuk satu penyedia komersial lain ada untuk pekerjaan Tim SIGRAK sendiri (D-326). Adapter ini tidak pernah mengubah model kunci guru. Lihat bagian 4.10.
 
 **Status:** **Didesain** (P5-04). Belum ada yang dibangun di `app/AI`.
-
-> **Berbeda dari dokumen final.** `ai-provider-engine.md` menyebut tidak ada penyedia kedua yang direncanakan dan model hanya berubah lewat konfigurasi; D-315 dan D-326 menambahkan pengaturan model di konsol dan adapter konsol, sementara kunci guru tetap hanya Gemini. Dokumen itu juga menyebut `ShouldBeUnique` biasa; D-050 memakai `ShouldBeUniqueUntilProcessing` ditambah `WithoutOverlapping`.
 
 Bacaan lanjutan: `ai-provider-engine.md`, D-012, D-022…D-024, D-036, D-050, D-116…D-119, D-124, D-128, D-152, D-213, D-315, D-326, D-347, D-350.
 
@@ -1041,7 +1029,7 @@ Bacaan lanjutan: `docs/agent/WORKFLOW.md`, `docs/agent/PROGRESS.md`, `coding-sta
 | Tugas | Isi | Status | Bergantung pada |
 |---|---|---|---|
 | P4-01 | Desain Buku Induk dan sinkronisasi Dapodik | Terhambat, ditahan sebagai "segera hadir" (D-161) | Pemilik memulai lagi |
-| P4-05 | Dokumen final dan glosarium untuk aturan 2025–2026 ("murid", rapor 12 komponen, ekskul, JTM) + PDF | Todo | D-210…D-221 |
+| P4-05 | Dokumen final dan glosarium untuk aturan 2025–2026 ("murid", rapor 12 komponen, ekskul, JTM) + PDF | Review (dikerjakan bersama di P4-24) | D-210…D-221 |
 | P4-06 | Desain: perluasan asesmen dan rapor | Todo | P4-05 |
 | P4-07 | Desain: perluasan kelas dan kewalikelasan | Todo | D-214…D-219 |
 | P4-08 | Desain: administrasi kepala sekolah, operator, pengawas (deskriptor per butir) | Todo | P4-12 |
@@ -1049,19 +1037,19 @@ Bacaan lanjutan: `docs/agent/WORKFLOW.md`, `docs/agent/PROGRESS.md`, `coding-sta
 | P4-10 | Desain: ekspor e-Rapor SD dan RDM | Todo | D-218, P5-08 |
 | P4-11 | Desain: Penyusun KSP dan evaluasi KSP (setelah v1) | Todo | D-209, D-217 |
 | P4-13 | Keputusan peningkatan aplikasi lama | Review | D-251 |
-| P4-14 | Terapkan peningkatan aplikasi lama ke `docs/final/` + PDF | Todo | P4-13 |
+| P4-14 | Terapkan peningkatan aplikasi lama ke `docs/final/` + PDF | Review (dikerjakan bersama di P4-24) | P4-13 |
 | P4-29 | Kurasi mapel inti SD (PP, BIN, MTK, IPAS) | Todo | P4-23 |
 | P4-30 | Kurasi mapel SD lainnya (SB, PJOK, BIG, BJW, KTB, SSD, KKA) | Todo | P4-23 |
 | P4-31 | Kurasi mapel agama, SD dan MI | Todo | P4-23 |
 | P4-19 | Desain: lanskap asesmen (Peta Asesmen, label, wizard, Gelombang A) | Todo | D-344…D-351 |
-| P4-20 | Terapkan D-329…D-351 ke `docs/final/` + PDF | Todo | P4-16…P4-18 |
+| P4-20 | Terapkan D-329…D-351 ke `docs/final/` + PDF | Review (dikerjakan bersama di P4-24) | P4-16…P4-18 |
 | P4-22 | Data awal taksonomi dan registri peraturan di `docs/data/taxonomy/` | Todo | P4-21 |
 | P4-23 | Ambil dan ekstrak peraturan yang belum ada, verifikasi KMA 512/2026 | Todo | — |
-| P4-24 | Terapkan fondasi kebijakan ke `docs/final/` + PDF | Todo | P4-21 |
+| P4-24 | Terapkan fondasi kebijakan ke `docs/final/` + PDF | Review (dikerjakan bersama di P4-24) | P4-21 |
 
 Yang sudah selesai di Fase 4: P4-02 (Game kelas), P4-03 dan P4-03b (dokumen resmi), P4-04 (fitur administrasi), P4-12 (instrumen supervisi), P4-16 (LKPD), P4-17 (peran internal), P4-18 (lanskap asesmen), P4-21 (fondasi kebijakan), P4-25 (buku panduan ini), P4-26 (ringkasan riset), P4-27 (penghapusan merek lama), P4-28 (dataset kurikulum SIGRAK), P4-15 (katalog SIGRAK).
 
-Tugas pembaruan dokumen P4-05, P4-14, P4-20, dan P4-24 bersama-sama menutup selisih yang ditandai buku ini antara dokumen final dan keputusan yang lebih baru.
+Tugas pembaruan dokumen P4-05, P4-14, P4-20, dan P4-24 dikerjakan sebagai satu tugas (P4-24, 10 November 2026) dan menutup selisih antara dokumen final dan keputusan yang lebih baru (§12.1).
 
 ### 11.2 Fase 5: slice v1 menurut urutan
 
@@ -1105,7 +1093,7 @@ Ringkasan diagram: setelah P5-01 dan P5-03a…h, jalurnya P5-03i lalu P5-03j; da
 2. **Minimum versi D-355,** sebelum P5-04: kolom versi di `curriculum_versions`, resolver profil kebijakan sebagai pengganti `config/curriculum.php` `allocation_versions` (perilaku sama), dan data Profil Jenjang. RPM pertama sudah harus menyimpan set aturannya.
 3. **P5-03j,** draf jadwal, paralel dengan P5-04.
 4. **P5-04, inti konten,** dengan keputusan tambahan dari P4-13 (D-267, D-269, D-270, D-272…D-277, D-283…D-285) dan bagian konsol D-315 dan D-316, ditambah panel Dasar Kebijakan dan aturan Cek Keselarasan pertama pada RPM (D-358).
-5. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: P4-22 (taksonomi), P4-23 (peraturan yang belum ada), kurasi kurikulum P4-29…P4-31, tinjauan Tim Validasi atas katalog dan data peraturan, serta pembaruan dokumen P4-14, P4-20, P4-24.
+5. Secara paralel, pekerjaan data dan dokumen yang membuka jalan bagi slice berikutnya: P4-22 (taksonomi), P4-23 (peraturan yang belum ada), kurasi kurikulum P4-29…P4-31, serta tinjauan Tim Validasi atas katalog dan data peraturan.
 
 Tambahan per slice dari peningkatan aplikasi lama tercantum di `legacy-upgrade-01.md` §5: P5-05 mendapat D-293, D-294, D-296; P5-07 mendapat D-263…D-271 (sisi guru), D-278, D-280, D-289, D-297…D-303, D-321; P5-08 mendapat D-286…D-292, D-295, D-301, D-304; P5-09 mendapat tampilan portal serta D-279, D-281, D-282, D-304 (mutasi), D-306…D-313; konsol mendapat D-314 dan D-317…D-320.
 
@@ -1151,35 +1139,11 @@ Keputusan disimpan di `docs/agent/DECISIONS.md`. Rentang di bawah mengelompokkan
 | D-352…D-359 | Fondasi kebijakan | Posisi, kekuatan aturan, versi, Profil Jenjang, taksonomi, panel, KMA 512 |
 | D-360…D-362 | Repositori dan dokumen | Merek lama dihapus, buku panduan ini, ringkasan riset |
 | D-363…D-367 | Kurikulum dan katalog SIGRAK | Satu format kurikulum, kurasi per mapel, crosswalk, alokasi SD dari struktur, katalog |
+| D-368…D-372 | Jawaban pemilik 2026-11-10 | Kolom KBC untuk SD mati secara bawaan, OMR di peramban, jawaban tulisan tangan dibaca di ponsel, empat tingkat TKA, P4-13 ditutup |
 
 ### 12.1 Di mana dokumen final berbeda dari keputusan yang lebih baru
 
-Di setiap kasus buku ini mengikuti keputusan yang lebih baru. Tugas pembaruan dokumen (P4-05, P4-14, P4-20, P4-24) akan menyelaraskan dokumen final.
-
-| Dokumen final menyebut | Keputusan yang lebih baru |
-|---|---|
-| Menu *Absensi*; "siswa" di teks UI | *Kehadiran* (D-302); "murid" (D-210) |
-| Luring: hanya Absensi, Jurnal, Catatan Siswa | Ditambah pertemuan RPM baca-saja, antrean pindai, isian observasi (D-289, D-349) |
-| `journals.status` done/not_done; `meetings.status` tanpa partial | `partial`, alasan, status pertemuan diturunkan (D-267, D-268) |
-| `timetable_slots.teacher_id` | Tanpa kolom guru; `kind` dan `label` (D-247, D-249) |
-| Kalender wilayah sebagai nilai bawaan yang ditimpa | Sekolah menyalin kalender wilayah, dengan tawaran pembaruan (D-256) |
-| 5 revisi terakhir, dipangkas | Revisi yang disahkan tidak pernah dipangkas (D-282) |
-| Satu PDF per unduhan, tanpa penggabungan | Penggabungan hanya untuk Berkas Administrasi (D-280) |
-| Margin cetak sebagai pengaturan biasa | Tiga profil margin, bolak-balik, sampul, lanskap, NIHIL (D-283) |
-| Keluaran LKPD tanpa blok | Blok kelas 1–3 dan kolom `pattern` (D-296, D-329) |
-| Hanya ekspor Bank Soal | Data per butir, enam cetakan turunan, pustaka butir (D-293, D-294) |
-| TKA: empat kategori termasuk Istimewa | Tiga kategori ditambah predikat Istimewa (D-041, D-120) |
-| Pasangan PGK Kategori "mendukung/tidak mendukung" | Dihapus (D-045) |
-| `staff_users.role` ∈ admin, support, content | Sebelas peran dengan cakupan (D-338, D-339); kode masih tiga peran |
-| Daftar fitur tambahan tetap | Pemetaan diatur di konsol (D-211) |
-| Penjadwal lewat cron | Supervisor menjalankan `schedule:work` (D-064) |
-| Tanpa penyedia AI kedua; model di konfigurasi | Model per tujuan di konsol dan adapter konsol (D-315, D-326) |
-| `ShouldBeUnique` biasa (dokumen AI) | `ShouldBeUniqueUntilProcessing` + `WithoutOverlapping` (D-050) |
-| Model data tanpa `learning_outcomes`, `public_id` di tahun, kelas, keanggotaan | Sudah ditambahkan (D-226, D-182, D-241) |
-| Akses support diberikan sekolah dan dicatat untuk sekolah (draf peran internal §4) | Akses baca-saja berdasarkan MoU, satu baris internal per sesi (D-341) |
-| `curriculum_versions` tanpa tanggal; penunjuk konfigurasi | Kolom versi dan resolver sebelum P5-04 (D-355) |
-
-Satu ketidakselarasan di dalam keputusan itu sendiri: D-287 dan D-289 menempatkan pemindaian lembar jawaban di perangkat guru, sementara D-347 menyebut jawaban pilihan ganda dibaca dengan OMR di server SIGRAK sendiri. Pastikan sebelum P5-08 (bagian 4.6).
+Saat ini tidak ada. Tugas konsolidasi dokumen P4-24 (yang menggabungkan P4-05, P4-14, dan P4-20) menerapkan semua keputusan yang lebih baru ke dokumen final pada 10 November 2026, termasuk daftar sebelumnya di bagian ini; daftar periksanya ada di `docs/agent/tasks/P4-24-final-docs-sync.md`. Ketidakselarasan soal tempat lembar jawaban dibaca sudah diputuskan oleh D-369 (di peramban guru). Bila keputusan baru mengubah dokumen final, perbarui dokumen itu dan PDF-nya dalam tugas yang sama; catat di sini celah yang masih terbuka.
 
 ## 13. Glosarium
 
@@ -1274,7 +1238,7 @@ Istilah pendidikan Indonesia dan istilah produk yang dipakai di buku ini dan di 
 | `local-setup-wsl2.md` | Pengembangan lokal di Windows |
 | `research-digest.md` | Semua temuan riset sejauh ini; periksa sebelum meneliti (D-362) |
 
-**Draf penting** (desain yang diterima tetapi belum masuk dokumen final):
+**Draf penting** (rincian desain di balik dokumen final; bagian yang diterima sudah masuk dokumen final):
 
 | Draf | Isi |
 |---|---|

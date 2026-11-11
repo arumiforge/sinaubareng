@@ -1,0 +1,341 @@
+{
+  "dataset": "safe_school_culture",
+  "version_code": "BSAN-PERMENDIKDASMEN-6-2026",
+  "status": "draft",
+  "level": "SD/MI",
+  "phases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "note": "Budaya Sekolah Aman dan Nyaman (BSAN) rows that bind SD: four aspects, early detection with a confidential complaint channel, tata tertib/kode etik/SOP, integration in intra/ko/ekstrakurikuler, roles (principal; in SD the guru kelas leads class conditions), kesepakatan kelas, positive culture values, collaborative handling and referral to the regional Pokja, yearly monitoring and evaluation. SMP/SMA-only roles are kept in the role list for contrast.",
+  "source": {
+    "file": "docs/sources/Permendikdasmen_No_6_Tahun_2026_Budaya_Sekolah_Aman_dan_Nyaman.pdf",
+    "sha256": "3e6d3deab3fdad8f6dd0d57b5e22eebc396596bb45051ed7c14b66b5c4a7d36f",
+    "regulation_code": "PERMENDIKDASMEN-6-2026",
+    "title": "Peraturan Menteri Pendidikan Dasar dan Menengah Republik Indonesia Nomor 6 Tahun 2026 tentang Budaya Sekolah Aman dan Nyaman",
+    "number": "6 Tahun 2026",
+    "issued_by": "Menteri Pendidikan Dasar dan Menengah Republik Indonesia (Abdul Mu'ti)",
+    "issued_on": "2026-01-08",
+    "promulgated_on": "2026-01-09",
+    "effective_on": "2026-01-09",
+    "gazette": "Berita Negara Republik Indonesia Tahun 2026 Nomor 11",
+    "revokes": "Permendikbudristek Nomor 46 Tahun 2023 tentang Pencegahan dan Penanganan Kekerasan di Lingkungan Satuan Pendidikan (Berita Negara Republik Indonesia Tahun 2023 Nomor 595)",
+    "implemented_by": "Kepmendikdasmen Nomor 17 Tahun 2026 tentang Pedoman Penyelenggaraan Budaya Sekolah Aman dan Nyaman (not yet in docs/sources/)",
+    "downloaded_from": "https://www.kemendikdasmen.go.id/download/file/1585 (\"Salinan Permendikdasmen Nomor 6 Tahun 2026 - BSAN (JDIH).pdf\"; same file as /download/file/1599)",
+    "downloaded_on": "2026-11-11",
+    "copy_type": "SALINAN certified by Kepala Biro Hukum",
+    "verification": "official_copy",
+    "pages_total": 20,
+    "pages_note": "PDF page = printed page. The ditetapkan/diundangkan dates on p. 20 are followed by a stray ellipsis character in the text layer."
+  },
+  "extraction": {
+    "date": "2026-11-11",
+    "structured": true,
+    "verified": false,
+    "verify_by": "Tim Validasi SIGRAK reviews the rows against the cited pages before any import or UI quote (D-113).",
+    "method": "Text from pdftotext -layout (born-digital PDF from Word), cut into verbatim spans per Pasal by script.",
+    "checked_against_images": [],
+    "skipped": [
+      "Konsiderans and Mengingat (pp. 1-2).",
+      "Pokja organisation detail (Pasal 30, 32-34) summarised only (pp. 13-15).",
+      "Peran Masyarakat and Media (Pasal 38-39) (pp. 16-17)."
+    ],
+    "conventions": [
+      "Keys are English snake_case; text values quote the Indonesian source as printed (light whitespace and hyphenation cleanup only).",
+      "pages are PDF page numbers; pages_note gives the printed numbering.",
+      "summary fields are short English notes for developers, not source text."
+    ]
+  },
+  "definition": {
+    "text": "1. Budaya Sekolah Aman dan Nyaman adalah keseluruhan tata nilai, sikap, kebiasaan, dan perilaku yang dibangun di lingkungan Sekolah untuk menjamin pemenuhan kebutuhan spiritual, pelindungan fisik, kesejahteraan psikologis dan keamanan sosiokultural, serta keadaban dan keamanan digital demi menciptakan dan menjaga lingkungan belajar yang kondusif bagi Warga Sekolah.",
+    "pages": [
+      2
+    ]
+  },
+  "principles": {
+    "text": "Pasal 2 (1) Penyelenggaraan Budaya Sekolah Aman dan Nyaman dilaksanakan berdasarkan asas: a. humanis; b. komprehensif; c. partisipatif; d. kepentingan terbaik bagi anak; e. nondiskriminatif; f. inklusif; g. keadilan dan kesetaraan gender; h. harmonis; dan i. berkelanjutan. (2) Asas humanis sebagaimana dimaksud pada ayat (1) huruf a merupakan pandangan yang menempatkan setiap individu sebagai manusia yang bermartabat, memiliki hak asasi, dan diperlakukan tanpa kekerasan serta penuh kasih sayang. (3) Asas komprehensif sebagaimana dimaksud pada ayat (1) huruf b merupakan pendekatan yang menyeluruh dan terpadu dalam mendukung tumbuh kembang dan motivasi belajar Murid melalui pelibatan aktif Warga Sekolah dan pemangku kepentingan. (4) Asas partisipatif sebagaimana dimaksud pada ayat (1) huruf c merupakan pelibatan yang berkesadaran dan bermakna antara Warga Sekolah dan pemangku kepentingan dalam penyelenggaraan Budaya Sekolah Aman dan Nyaman. (5) Asas kepentingan terbaik bagi anak sebagaimana dimaksud pada ayat (1) huruf d merupakan pengambilan keputusan dan tindakan yang senantiasa mengutamakan pemenuhan hak anak. (6) Asas nondiskriminatif sebagaimana dimaksud pada ayat (1) huruf e merupakan perlakuan yang tidak membeda-bedakan suku, agama, golongan, etnis, budaya, bahasa, serta kondisi fisik, mental, dan intelektual. (7) Asas inklusif sebagaimana dimaksud pada ayat (1) huruf f merupakan perlakuan yang mengakomodasi dan menjamin penyertaan penuh penyandang disabilitas dalam setiap aspek kehidupan negara dan masyarakat. (8) Asas keadilan dan kesetaraan gender sebagaimana dimaksud pada ayat (1) huruf g merupakan relasi sejajar antara perempuan dan laki-laki untuk mendapatkan perlakuan adil dalam mengakses sumber daya, kontrol, partisipasi, dan manfaat pembangunan dan pendidikan. (9) Asas harmonis sebagaimana dimaksud pada ayat (1) huruf h merupakan hubungan yang selaras, saling menghormati, dan berkeadaban antar-Warga Sekolah dengan pemangku kepentingan. (10) Asas berkelanjutan sebagaimana dimaksud pada ayat (1) huruf i merupakan penyelenggaraan Budaya Sekolah Aman dan Nyaman secara konsisten, berkesinambungan, dan menjadi bagian dari rutinitas dan kebiasaan Warga Sekolah.",
+    "pages": [
+      4,
+      5
+    ]
+  },
+  "aspects": {
+    "purpose": {
+      "text": "Pasal 3 (1) Budaya Sekolah Aman dan Nyaman bertujuan untuk menciptakan dan menjaga lingkungan belajar yang kondusif bagi Warga Sekolah. (2) Budaya Sekolah Aman dan Nyaman sebagaimana dimaksud pada ayat (1) meliputi: a. pemenuhan kebutuhan spiritual; b. pelindungan fisik; c. kesejahteraan psikologis dan keamanan sosiokultural; dan d. keadaban dan keamanan digital.",
+      "pages": [
+        5
+      ]
+    },
+    "spiritual": {
+      "text": "Pasal 4 Pemenuhan kebutuhan spiritual yang aman dan nyaman sebagaimana dimaksud dalam Pasal 3 ayat (2) huruf a mencakup: a. pelindungan kebebasan bagi Warga Sekolah untuk menjalankan ibadah dan menunjukkan identitas sesuai agama dan kepercayaan masing-masing; b. penguatan nilai spiritual yang menumbuhkan kerukunan antarumat beragama; dan c. penyediaan sarana atau ruang tempat ibadah yang layak, mudah diakses, dan inklusif sesuai dengan standar sarana prasarana.",
+      "pages": [
+        5
+      ]
+    },
+    "physical": {
+      "text": "Pasal 5 Pelindungan fisik yang aman dan nyaman sebagaimana dimaksud dalam Pasal 3 ayat (2) huruf b mencakup: a. pengondisian lahan, bangunan, dan ruang yang sesuai standar sarana prasarana; b. pengondisian akomodasi yang layak bagi penyandang disabilitas; c. pengondisian lingkungan Sekolah yang mendukung pola hidup sehat dan bersih; d. pengondisian lingkungan Sekolah yang meminimalkan area berisiko terjadinya perilaku dan kondisi tidak aman maupun tidak nyaman; dan e. penguatan sistem keamanan yang mampu mencegah potensi gangguan keamanan dari dalam dan luar Sekolah.",
+      "pages": [
+        5
+      ]
+    },
+    "psychological_sociocultural": {
+      "text": "Pasal 6 Kesejahteraan psikologis dan keamanan sosiokultural yang aman dan nyaman sebagaimana dimaksud dalam Pasal 3 ayat (2) huruf c mencakup: a. pemberian kesempatan yang setara untuk berpendapat, berekspresi, serta mengembangkan bakat dan minat tanpa membedakan latar belakang; b. penguatan dukungan psikologis dan sosial bagi Warga Sekolah dalam pengelolaan emosi, daya tahan mental, dan kemampuan beradaptasi; c. penguatan lingkungan inklusif yang menghargai keberagaman; dan d. penguatan hubungan antar-Warga Sekolah yang setara, saling menghormati, dan saling memuliakan.",
+      "pages": [
+        6
+      ]
+    },
+    "digital": {
+      "text": "Pasal 7 Keadaban dan keamanan digital yang aman dan nyaman sebagaimana dimaksud dalam Pasal 3 ayat (2) huruf d mencakup: a. penerapan dan pembiasaan adab dan etika dalam berinteraksi di ruang digital; b. penguatan literasi digital bagi Warga Sekolah untuk menangkal informasi bohong dan konten negatif serta ancaman kekerasan dan kejahatan siber; dan c. pelindungan data pribadi Warga Sekolah dalam proses pembelajaran.",
+      "pages": [
+        6
+      ]
+    }
+  },
+  "targets_and_area": {
+    "targets": {
+      "text": "Pasal 8 Sasaran Budaya Sekolah Aman dan Nyaman meliputi: a. Murid; b. Kepala Sekolah; c. Guru; dan d. Tenaga Kependidikan selain Pendidik.",
+      "pages": [
+        6
+      ]
+    },
+    "area": {
+      "text": "Pasal 9 Budaya Sekolah Aman dan Nyaman dilaksanakan dalam cakupan wilayah: a. lingkungan di dalam Sekolah; b. lokasi kegiatan pembelajaran di luar lingkungan Sekolah; dan c. ruang digital atau media daring yang berkaitan dengan aktivitas pendidikan atau interaksi sosial Warga Sekolah.",
+      "pages": [
+        6
+      ]
+    }
+  },
+  "components": {
+    "text": "Pasal 10 Penyelenggaraan Budaya Sekolah Aman dan Nyaman meliputi: a. penguatan tata kelola; b. edukasi Warga Sekolah; c. penguatan peran Warga Sekolah; d. respons dan penanganan pelanggaran; e. tanggung jawab Kementerian dan Pemerintah Daerah; dan f. peran pemangku kepentingan.",
+    "pages": [
+      6,
+      7
+    ]
+  },
+  "governance": {
+    "means": {
+      "text": "Pasal 11 Penguatan tata kelola sebagaimana dimaksud dalam Pasal 10 huruf a dilaksanakan melalui: a. deteksi dini; dan b. penyusunan tata tertib, kode etik, dan prosedur operasional standar.",
+      "pages": [
+        7
+      ]
+    },
+    "early_detection": {
+      "text": "Pasal 12 (1) Deteksi dini sebagaimana dimaksud dalam Pasal 11 huruf a dilakukan oleh Sekolah untuk mengidentifikasi potensi gangguan keamanan dan kenyamanan Warga Sekolah di lingkungan Sekolah. (2) Deteksi dini sebagaimana dimaksud pada ayat (1) dilakukan secara rutin melalui: a. pengenalan karakteristik dan kebutuhan perkembangan Murid; b. identifikasi dan pemantauan perubahan perilaku Warga Sekolah yang mengindikasikan adanya masalah psikososial; c. identifikasi Warga Sekolah yang berpotensi mengganggu keamanan dan kenyamanan lingkungan Sekolah; d. identifikasi titik rawan yang berpotensi mengganggu keamanan dan kenyamanan di dalam lingkungan Sekolah; dan e. menyediakan kanal pengaduan dan aspirasi yang: 1. mudah diakses oleh Warga Sekolah, termasuk penyandang disabilitas; 2. menjamin kerahasiaan pelapor; dan 3. terhubung langsung dengan Kepala Sekolah dan/atau guru yang ditunjuk. (3) Hasil deteksi dini sebagaimana dimaksud pada ayat (2) digunakan oleh Kepala Sekolah sebagai dasar peningkatan keamanan dan kenyamanan Sekolah secara berkelanjutan.",
+      "pages": [
+        7
+      ],
+      "force": "mandatory",
+      "summary": "Routine early detection incl. a complaint channel that is accessible, keeps the reporter confidential, and goes straight to the principal or an appointed teacher."
+    },
+    "rules_code_sop": {
+      "text": "Pasal 13 (1) Penyusunan tata tertib, kode etik, dan prosedur operasional standar sebagaimana dimaksud dalam Pasal 11 huruf b dilakukan Sekolah dengan melibatkan Warga Sekolah dan pemangku kepentingan sesuai kebutuhan. (2) Tata tertib dan kode etik sebagaimana dimaksud pada ayat (1) memuat tata nilai, sikap, dan perilaku yang harus ditaati oleh Warga Sekolah. (3) Prosedur operasional standar sebagaimana dimaksud pada ayat (1) memuat tata cara dalam melakukan kegiatan tertentu yang menjadi pedoman baku dalam mendukung penyelenggaraan Budaya Sekolah Aman dan Nyaman.",
+      "pages": [
+        7,
+        8
+      ]
+    }
+  },
+  "education": {
+    "means": {
+      "text": "Pasal 14 Edukasi Warga Sekolah sebagaimana dimaksud dalam Pasal 10 huruf b dilaksanakan melalui: a. penguatan kapasitas; dan b. pengintegrasian dalam kegiatan pembelajaran.",
+      "pages": [
+        8
+      ]
+    },
+    "capacity": {
+      "text": "Pasal 15 (1) Penguatan kapasitas sebagaimana dimaksud dalam Pasal 14 huruf a bagi Kepala Sekolah, Guru, dan Tenaga Kependidikan selain Pendidik meliputi: a. pengembangan kompetensi sesuai standar kompetensi; b. kemampuan deteksi dini; c. penanganan pelanggaran; d. pemahaman terhadap ragam disabilitas dan kebutuhan khusus; dan e. keselamatan dan pelindungan di lingkungan Sekolah. (2) Penguatan kapasitas sebagaimana dimaksud dalam Pasal 14 huruf a bagi Murid meliputi : a. dukungan psikologis awal; b. komunikasi efektif; c. kesehatan mental; dan d. pendidikan keadilan dan kesetaraan gender serta inklusivitas.",
+      "pages": [
+        8
+      ]
+    },
+    "curriculum_integration": {
+      "text": "Pasal 16 (1) Pengintegrasian dalam pembelajaran sebagaimana dimaksud dalam Pasal 14 huruf b dilakukan melalui: a. intrakurikuler; b. kokurikuler; dan c. ekstrakurikuler. (2) Intrakurikuler sebagaimana dimaksud pada ayat (1) huruf a dilakukan melalui penguatan nilai karakter baik dalam materi pembelajaran maupun metode pengajaran. (3) Kokurikuler sebagaimana dimaksud pada ayat (1) huruf b dilakukan melalui: a. pembelajaran kolaboratif lintas disiplin ilmu; b. Gerakan Tujuh Kebiasaan Anak Indonesia Hebat; dan/atau c. bentuk lainnya yang mengacu pada kurikulum Sekolah dan/atau kebijakan pemerintah. (4) Ekstrakurikuler sebagaimana dimaksud pada ayat (1) huruf c dilakukan melalui: a. krida; b. karya ilmiah; c. latihan olah bakat dan olah minat; d. kegiatan keagamaan; dan/atau e. bentuk kegiatan lainnya sesuai dengan kebijakan pemerintah dan ketentuan peraturan perundang-undangan.",
+      "pages": [
+        8,
+        9
+      ],
+      "summary": "Kokurikuler forms repeat the kokurikuler guide: lintas disiplin, Gerakan 7 KAIH, or other forms."
+    }
+  },
+  "roles": {
+    "means": {
+      "text": "Pasal 17 Penguatan Peran Warga Sekolah sebagaimana dimaksud dalam Pasal 10 huruf c dilaksanakan melalui: a. pembagian peran Warga Sekolah; b. manajemen kelas; c. keteladanan Kepala Sekolah, Guru, dan Tenaga Kependidikan selain Pendidik; dan d. penerapan budaya positif.",
+      "pages": [
+        9
+      ]
+    },
+    "division_of_roles": {
+      "text": "Pasal 18 (1) Pembagian peran Warga Sekolah sebagaimana dimaksud dalam Pasal 17 huruf a, dilakukan dengan menentukan peran Kepala Sekolah, Guru, dan Tenaga Kependidikan selain Pendidik serta pelibatan Murid dalam menciptakan Budaya Sekolah Aman dan Nyaman di lingkungan Sekolah. (2) Peran Kepala Sekolah sebagaimana dimaksud pada ayat (1) meliputi: a. penetapan tata tertib, kode etik, dan prosedur operasional standar; b. perencanaan kegiatan dan anggaran Sekolah untuk implementasi Budaya Sekolah Aman dan Nyaman; c. supervisi dan pembinaan terhadap pelaksanaan tugas Guru dan Tenaga Kependidikan selain Pendidik; d. edukasi kepada Warga Sekolah; e. deteksi dini, respons, dan penanganan pelanggaran dalam hal terjadi pelanggaran terhadap Budaya Sekolah Aman dan Nyaman; dan f. kemitraan dengan Orang Tua/Wali dan pemangku kepentingan dalam menciptakan dan menjaga Budaya Sekolah Aman dan Nyaman. (3) Peran Guru dan Tenaga Kependidikan selain Pendidik meliputi: a. Pada pendidikan anak usia dini formal, sekolah dasar, dengan ketentuan: 1. guru kelas berperan sebagai penanggung jawab utama kondisi kelas, yang meliputi penyambutan dan pemantauan kondisi fisik dan emosi Murid secara rutin, deteksi dini, serta respons dan penanganan pelanggaran antar Murid; 2. guru yang mengampu muatan pendidikan agama dan budi pekerti berperan dalam penguatan nilai spiritual, moral, dan etika Murid sebagai landasan budaya Sekolah; 3. guru yang mengampu muatan pendidikan jasmani, olahraga, dan kesehatan berperan dalam menjaga keamanan fisik Murid selama aktivitas fisik, membangun sportivitas dan kerja sama tim, serta mencegah kontak fisik yang mengarah pada pelanggaran keamanan dan kenyamanan saat aktivitas fisik; dan 4. Tenaga Kependidikan selain Pendidik berperan mendukung terciptanya lingkungan yang aman dan nyaman sesuai dengan tugas dan tanggung jawabnya. b. Pada Sekolah Menengah Pertama dan Sekolah Menengah Atas/Sekolah Menengah Kejuruan, dengan ketentuan: 1. wakil Kepala Sekolah bidang kesiswaan berperan membantu Kepala Sekolah dalam mengoordinasikan deteksi dini, respons dan penanganan pelanggaran; 2. wakil Kepala Sekolah bidang sarana prasarana berperan membantu Kepala Sekolah untuk memastikan keamanan fisik; 3. guru bimbingan dan konseling berperan sebagai koordinator layanan psikososial, yang meliputi asesmen kebutuhan psikologis, deteksi dini, layanan konseling individu maupun kelompok, serta fasilitasi respons dan Penanganan Pelanggaran Kolaboratif; 4. guru wali berperan dalam mendampingi Murid untuk: a) melakukan implementasi program prioritas nasional terkait pembelajaran dan/atau penguatan karakter; b) mencapai perkembangan akademik, pengembangan kompetensi, bakat, minat, dan keterampilan sesuai dengan tumbuh kembang Murid; dan c) memiliki kematangan sosial, psikologi, nilai spiritualitas, dan karakter yang baik. 5. wali kelas berperan sebagai manajer pengelolaan kelas yang meliputi pemantauan kehadiran dan perkembangan perilaku, menjadi jembatan komunikasi dengan orang tua/wali, dan memfasilitasi penyusunan kesepakatan kelas; 6. guru mata pelajaran berperan menciptakan suasana belajar yang berkesadaran, bermakna, dan menggembirakan dan melakukan integrasi muatan penguatan pendidikan karakter dalam kegiatan belajar mengajar; dan 7. Tenaga Kependidikan selain Pendidik berperan dalam menjaga keamanan fisik lingkungan, kebersihan, dan keamanan data pribadi Murid sesuai tugas dan tanggung jawab. (4) Pelibatan Murid sebagaimana dimaksud pada ayat (1) dilaksanakan melalui: a. partisipasi aktif dalam penyusunan kesepakatan kelas, tata tertib, dan kode etik Sekolah; b. pengembangan forum komunikasi antar-Murid; dan c. penerapan metode pendidik sebaya, tutor sebaya, atau pendekatan serupa dalam pengembangan Budaya Sekolah Aman dan Nyaman.",
+      "pages": [
+        9,
+        10,
+        11
+      ],
+      "summary": "SD (ayat 3 huruf a): the guru kelas is the main person responsible for class conditions (welcome, daily check of physical and emotional state, early detection, response between students); religion and PJOK teachers have named roles. The wali kelas, guru wali and BK roles in huruf b are for SMP/SMA/SMK only."
+    },
+    "class_management": {
+      "text": "Pasal 19 (1) Manajemen kelas sebagaimana dimaksud dalam Pasal 17 huruf b diterapkan oleh Guru untuk membangun suasana pembelajaran yang aman dan nyaman serta mengelola perilaku dan kebiasaan Murid yang disepakati bersama. (2) Dalam menerapkan manajemen kelas sebagaimana dimaksud pada ayat (1), Guru menyusun kesepakatan kelas dengan melibatkan Murid. (3) Kesepakatan kelas sebagaimana dimaksud pada ayat (2) memuat: a. nilai kebajikan; b. interaksi yang saling menghargai; dan c. tindakan pembinaan yang mendidik terhadap pelanggaran kesepakatan bersama. (4) Pelaksanaan kesepakatan kelas dapat ditinjau dan disesuaikan dengan kebutuhan.",
+      "pages": [
+        11
+      ],
+      "force": "mandatory",
+      "summary": "Teachers draft a kesepakatan kelas with students: virtues, respectful interaction, educational follow-up to breaches; reviewable."
+    },
+    "role_models": {
+      "text": "Pasal 20 Keteladanan Kepala Sekolah, Guru, dan Tenaga Kependidikan selain Pendidik sebagaimana dimaksud dalam Pasal 17 huruf c diwujudkan melalui sikap, perilaku, dan tindakan yang ditunjukkan dengan: a. bersikap ramah, terbuka, dan menghargai pendapat; b. berkomunikasi dengan baik dan santun; c. berintegritas dan disiplin; dan d. berperilaku sesuai dengan tata tertib dan kode etik.",
+      "pages": [
+        11
+      ]
+    },
+    "positive_culture": {
+      "text": "Pasal 21 (1) Penerapan budaya positif sebagaimana dimaksud dalam Pasal 17 huruf d dilakukan melalui pembiasaan nilai karakter dan perbuatan mulia dalam kehidupan di lingkungan Sekolah. (2) Nilai karakter sebagaimana dimaksud pada ayat (1) meliputi nilai religius, jujur, toleran, disiplin, bekerja keras, kreatif, mandiri, demokratis, rasa ingin tahu, semangat kebangsaan, cinta tanah air, menghargai prestasi, komunikatif, cinta damai, gemar membaca, peduli lingkungan, peduli sosial, dan bertanggung jawab. (3) Perbuatan mulia sebagaimana dimaksud pada ayat (1) merupakan implementasi nilai karakter yang membentuk keadaban sosial.",
+      "pages": [
+        11
+      ]
+    }
+  },
+  "violations": {
+    "kinds": {
+      "text": "Pasal 22 Pelanggaran terhadap Budaya Sekolah Aman dan Nyaman terdiri atas pelanggaran terhadap: a. tata tertib dan/atau kode etik; dan b. ketentuan peraturan perundang-undangan.",
+      "pages": [
+        11
+      ]
+    },
+    "collaborative_handling": {
+      "text": "Pasal 23 (1) Pelanggaran terhadap tata tertib dan/atau kode etik sebagaimana dimaksud dalam Pasal 22 huruf a ditangani oleh Sekolah melalui Penanganan Pelanggaran Kolaboratif. (2) Penanganan Pelanggaran Kolaboratif sebagaimana dimaksud pada ayat (1) terdiri atas: a. identifikasi dan klasifikasi laporan atau temuan dugaan pelanggaran; b. penanganan dugaan pelanggaran; dan c. penyusunan kesimpulan dan rekomendasi. (3) Penanganan Pelanggaran Kolaboratif sebagaimana dimaksud pada ayat (2) diutamakan untuk: a. memastikan pelindungan dan pengamanan kepada korban dari bahaya, ancaman, atau kekerasan; b. memberikan edukasi kepada pelanggar terkait kesalahan dan tanggung jawabnya; dan c. memulihkan kondisi keamanan dan kenyamanan Sekolah.",
+      "pages": [
+        12
+      ]
+    },
+    "referral": {
+      "text": "Pasal 24 (1) Pelanggaran terhadap ketentuan peraturan perundang-undangan sebagaimana dimaksud dalam Pasal 22 huruf b, ditindaklanjuti Sekolah melalui mekanisme rujukan. (2) Mekanisme rujukan sebagaimana dimaksud pada ayat (1) ditangani oleh Pokja sesuai kewenangan. (3) Dalam pelaksanaan mekanisme rujukan, Kepala Sekolah melakukan: a. identifikasi dan klasifikasi laporan atau temuan dugaan pelanggaran; b. pelaporan dugaan pelanggaran kepada Pokja; dan c. koordinasi dengan Orang Tua atau Wali Murid dalam hal dugaan pelanggaran melibatkan Murid.",
+      "pages": [
+        12
+      ]
+    },
+    "principal_reported": {
+      "text": "Pasal 25 Dalam hal dugaan pelanggaran sebagaimana dimaksud dalam Pasal 22 dilakukan oleh Kepala Sekolah, Warga Sekolah melaporkan dugaan pelanggaran dimaksud kepada Pokja.",
+      "pages": [
+        12
+      ]
+    },
+    "student_rights": {
+      "text": "Pasal 26 (1) Proses penanganan dugaan pelanggaran sebagaimana dimaksud dalam Pasal 22 yang melibatkan Murid dilakukan tanpa mengakibatkan terputusnya hak pendidikan Murid. (2) Dalam hal kesimpulan proses penanganan dugaan pelanggaran sebagaimana dimaksud dalam Pasal 23, Pasal 24, dan Pasal 25 dinyatakan tidak terbukti, yang bersangkutan berhak memperoleh pemulihan, meliputi pemulihan nama baik, pengembalian hak, dan akses dukungan pemulihan psikologis.",
+      "pages": [
+        12
+      ]
+    }
+  },
+  "government": {
+    "ministry": {
+      "text": "Pasal 27 (1) Kementerian bertanggung jawab atas penyelenggaraan Budaya Sekolah Aman dan Nyaman di tingkat nasional. (2) Dalam rangka penyelenggaraan Budaya Sekolah Aman dan Nyaman sebagaimana dimaksud pada ayat (1), Kementerian melakukan: a. penyusunan dan penetapan kebijakan, pedoman, modul, dan program; b. edukasi; c. pembinaan; d. supervisi dan pemantauan; dan e. koordinasi lintas sektor. (3) Kementerian dapat memberikan penghargaan kepada Pemerintah Daerah, Sekolah, dan Pemangku Kepentingan yang berperan dan mendukung penyelenggaraan Budaya Sekolah Aman dan Nyaman.",
+      "pages": [
+        13
+      ]
+    },
+    "region": {
+      "text": "Pasal 28 (1) Pemerintah Daerah bertanggung jawab atas penyelenggaraan Budaya Sekolah Aman dan Nyaman di daerah. (2) Dalam rangka penyelenggaraan Budaya Sekolah Aman dan Nyaman sebagaimana dimaksud pada ayat (1) dibentuk Pokja.",
+      "pages": [
+        13
+      ]
+    },
+    "pokja_formed_by": {
+      "text": "Pasal 29 (1) Gubernur membentuk Pokja untuk penyelenggaraan Budaya Sekolah Aman dan Nyaman yang menjadi kewenangan provinsi. (2) Bupati/wali kota membentuk Pokja untuk penyelenggaraan Budaya Sekolah Aman dan Nyaman yang menjadi kewenangan kabupaten/kota.",
+      "pages": [
+        13
+      ]
+    },
+    "pokja_tasks": {
+      "text": "Pasal 31 (1) Dalam penyelenggaraan Budaya Sekolah Aman dan Nyaman, Pokja sebagaimana dimaksud dalam Pasal 30 ayat (1) dan ayat (2), Pokja provinsi atau kabupaten/kota sesuai kewenangannya mempunyai tugas dan fungsi: a. melakukan sosialisasi dan/atau kampanye kepada Masyarakat; b. melakukan edukasi kepada Warga Sekolah dan pemangku kepentingan; c. memfasilitasi peningkatan kapasitas Guru dan Tenaga Kependidikan selain Pendidik; d. memfasilitasi penyediaan sarana prasarana; e. menerima laporan dugaan pelanggaran terhadap Budaya Sekolah Aman dan Nyaman dari Sekolah; f. melakukan verifikasi dan analisis awal atas laporan yang diterima; g. mengoordinasikan penentuan bentuk penanganan lanjutan sesuai kewenangan; h. memfasilitasi proses penanganan dugaan pelanggaran kepada instansi yang berwenang; i. melakukan pemantauan penanganan pelanggaran terhadap Budaya Sekolah Aman dan Nyaman yang telah dirujuk; dan j. melakukan pemantauan berkala terhadap penyelenggaraan Budaya Sekolah Aman dan Nyaman di Sekolah serta memberikan rekomendasi perbaikan. (2) Dalam menjalankan tugas dan fungsi sebagaimana dimaksud pada ayat (1), Pokja: a. menyediakan layanan pengaduan; dan b. memfasilitasi pendampingan berupa konseling, layanan kesehatan, bantuan hukum, advokasi, bimbingan sosial dan rohani, dan/atau layanan pendampingan lain sesuai kebutuhan. (3) Dalam hal tindak lanjut pelaporan dugaan pelanggaran dari pihak Sekolah, Pokja melakukan: a. telaah laporan dugaan pelanggaran; b. pemeriksaan; c. penyusunan kesimpulan dan rekomendasi rujukan; dan d. koordinasi rujukan penanganan pelanggaran, pendampingan, rehabilitasi, dan pemulihan. (4) Dalam proses penanganan dugaan pelanggaran, Pokja menjamin kerahasiaan identitas pelapor dan korban.",
+      "pages": [
+        13,
+        14
+      ]
+    }
+  },
+  "stakeholders": {
+    "list": {
+      "text": "Pasal 35 (1) Penyelenggaraan Budaya Sekolah Aman dan Nyaman dilaksanakan dengan melibatkan peran pemangku kepentingan. (2) Pemangku kepentingan sebagaimana dimaksud pada ayat (1) meliputi: a. Orang Tua atau Wali; b. Komite Sekolah; c. Masyarakat; dan d. Media.",
+      "pages": [
+        16
+      ]
+    },
+    "parents": {
+      "text": "Pasal 36 Peran Orang Tua atau Wali Murid sebagaimana dimaksud dalam Pasal 35 ayat (2) huruf a meliputi: a. penyelarasan nilai dan pola pengasuhan di rumah dengan pendidikan karakter yang berlaku di Sekolah; b. komunikasi aktif dan konstruktif dengan Sekolah terkait perkembangan Murid; c. pemantauan dan pendampingan aktivitas Murid di luar jam sekolah, termasuk aktivitas di ruang digital, secara proporsional dan sesuai dengan tahap perkembangan Murid; d. pembentukan forum komunikasi untuk koordinasi dengan pihak Sekolah; dan e. pelaksanaan kelas Orang Tua.",
+      "pages": [
+        16
+      ]
+    },
+    "komite": {
+      "text": "Pasal 37 Peran Komite Sekolah sebagaimana dimaksud dalam Pasal 35 ayat (2) huruf b meliputi: a. pemberian pertimbangan dalam penentuan dan penyelenggaraan kebijakan, program dan anggaran; b. penggalangan dana dan sumber daya pendidikan dari Pemangku Kepentingan lainnya; c. pengawasan penyelenggaraan Budaya Sekolah Aman dan Nyaman sesuai ketentuan peraturan perundang-undangan; dan d. tindak lanjut keluhan, saran, kritik dan aspirasi Warga Sekolah dan pemangku kepentingan, serta hasil pengawasan Komite Sekolah.",
+      "pages": [
+        16
+      ]
+    }
+  },
+  "monitoring": {
+    "supervision": {
+      "text": "Pasal 40 Menteri, gubernur, dan bupati/wali kota sesuai dengan kewenangannya melaksanakan pengawasan terhadap penyelenggaraan Budaya Sekolah Aman dan Nyaman.",
+      "pages": [
+        17
+      ]
+    },
+    "monitoring_evaluation": {
+      "text": "Pasal 41 (1) Menteri, gubernur, bupati/wali kota, dan kepala sekolah sesuai dengan kewenangannya melaksanakan pemantauan dan evaluasi terhadap penyelenggaraan Budaya Sekolah Aman dan Nyaman. (2) Pemantauan dan evaluasi sebagaimana dimaksud pada ayat (1) dilaksanakan paling sedikit 1 (satu) kali dalam 1 (satu) tahun. (3) Kepala sekolah melaporkan hasil pemantauan dan evaluasi penyelenggaraan Budaya Sekolah Aman dan Nyaman kepada Pokja sesuai dengan kewenangan. (4) Pokja melaporkan hasil pemantauan dan evaluasi penyelenggaraan Budaya Sekolah Aman dan Nyaman kepada gubernur atau bupati/wali kota sesuai dengan kewenangan. (5) Gubernur dan bupati/wali kota melaporkan hasil pemantauan dan evaluasi penyelenggaraan Budaya Sekolah Aman dan Nyaman kepada Menteri.",
+      "pages": [
+        17,
+        18
+      ],
+      "force": "minimum",
+      "summary": "At least once a year; the principal reports to the Pokja."
+    }
+  },
+  "funding": {
+    "text": "Pasal 42 (1) Kementerian dan Pemerintah Daerah sesuai dengan kewenangan, dan badan penyelenggara satuan pendidikan yang diselenggarakan oleh Masyarakat menganggarkan pendanaan untuk penyelenggaraan Budaya Sekolah Aman dan Nyaman. (2) Pendanaan penyelenggaraan Budaya Sekolah Aman dan Nyaman bersumber dari: a. anggaran pendapatan dan belanja negara; b. anggaran pendapatan dan belanja daerah; dan/atau c. sumber lainnya yang sah dan tidak mengikat sesuai dengan ketentuan peraturan perundang-undangan.",
+    "pages": [
+      18
+    ]
+  },
+  "transition": {
+    "tppk_satgas_end": {
+      "text": "Pasal 43 Pada saat Peraturan Menteri ini mulai berlaku: a. Tim Pencegahan dan Penanganan Kekerasan serta Satuan Tugas yang dibentuk berdasarkan Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 46 Tahun 2023 tentang Pencegahan dan Penanganan Kekerasan di Lingkungan Satuan Pendidikan dinyatakan berakhir masa tugasnya. b. Dalam hal masih terdapat proses penanganan laporan dugaan kekerasan, Tim Pencegahan dan Penanganan Kekerasan serta Satuan Tugas sebagaimana dimaksud dalam huruf a tetap melanjutkan proses penanganan laporan dugaan kekerasan sampai dengan Pokja dibentuk berdasarkan Peraturan Menteri ini.",
+      "pages": [
+        18
+      ]
+    },
+    "pokja_deadline": {
+      "text": "Pasal 44 Pokja sebagaimana dimaksud dalam Pasal 28 ayat (2) dibentuk paling lambat 6 (enam) bulan sejak Peraturan Menteri ini mulai berlaku.",
+      "pages": [
+        18
+      ]
+    }
+  },
+  "revocation": {
+    "text": "Pasal 45 Pada saat Peraturan Menteri ini mulai berlaku, Peraturan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 46 Tahun 2023 tentang Pencegahan dan Penanganan Kekerasan di Lingkungan Satuan Pendidikan (Berita Negara Republik Indonesia Tahun 2023 Nomor 595), dicabut dan dinyatakan tidak berlaku.",
+    "pages": [
+      19
+    ]
+  },
+  "open_points": [
+    {
+      "pages": [
+        9,
+        10
+      ],
+      "text": "Closes the digest gap 'wali kelas duties in Permendikdasmen 6/2026' for SD: the regulation gives SD duties to the guru kelas (Pasal 18 ayat 3 huruf a angka 1); 'wali kelas' as class manager is only named for SMP/SMA/SMK (huruf b angka 5)."
+    },
+    {
+      "pages": [
+        18
+      ],
+      "text": "Pasal 43: TPPK and Satgas under Permendikbudristek 46/2023 end; cases go to the regional Pokja (formed within 6 months, Pasal 44). SIGRAK must not offer a TPPK module."
+    },
+    {
+      "pages": [
+        8
+      ],
+      "text": "Implementing guide Kepmendikdasmen 17/2026 is not in docs/sources/ yet (official channel unreachable). Its forms (complaint channel, kesepakatan kelas, monev) are not extracted."
+    }
+  ]
+}
