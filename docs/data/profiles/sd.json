@@ -1,0 +1,63 @@
+{
+  "dataset": "level_profile",
+  "level": "sd",
+  "status": "draft",
+  "verify_by": "Tim Validasi SIGRAK (D-113)",
+  "decisions": ["D-354", "D-355", "D-356", "D-368"],
+  "versions": [
+    {
+      "code": "PROFIL-SD-2026",
+      "applies_from_school_year": "2026/2027",
+      "label": "SD",
+      "ministry": {
+        "code": "kemendikdasmen",
+        "name": "Kementerian Pendidikan Dasar dan Menengah"
+      },
+      "rule_sets": {
+        "structure_jp": [
+          {
+            "code": "STRUKTUR-SD-PERMENDIKDASMEN-13-2025",
+            "effective_on": "2025-07-15",
+            "applies_from_school_year": "2025/2026",
+            "source": "Permendikdasmen 13/2025 Pasal II: berlaku sejak diundangkan, 15 Juli 2025"
+          }
+        ],
+        "cp": [
+          {
+            "code": "CP-PABP-BKPDM-020-2026",
+            "effective_on": null,
+            "applies_from_school_year": "2026/2027",
+            "source": "Kepka BKPDM 020/2026, ditetapkan 11 Juni 2026, sebelum tahun ajaran 2026/2027; tanggal berlaku belum diperiksa"
+          }
+        ],
+        "tp_atp_defaults": [
+          {
+            "code": "SIGRAK-SD-2026-R1",
+            "effective_on": null,
+            "applies_from_school_year": "2026/2027",
+            "source": "Data SIGRAK (D-363)"
+          }
+        ]
+      },
+      "religion_subjects": "six_religions",
+      "character_frameworks": ["dpl_8", "kaih_7"],
+      "cocurricular_jp_source": "all_compulsory_except_english",
+      "rpm_extra_fields": {
+        "kbc": {
+          "enabled": false,
+          "switchable_by_admin": true,
+          "fields": ["kbc_theme", "insertion_material", "core_values"],
+          "source": "D-368: mati untuk SD, admin SIGRAK bisa menyalakan"
+        }
+      },
+      "report_export_target": "e_rapor_sd",
+      "homeroom_jtm_default": 2,
+      "external_assessments": [
+        { "code": "an", "status": "confirmed" },
+        { "code": "tka", "status": "confirmed" }
+      ],
+      "calendar_source": "provincial_kaldik",
+      "data_of_record": "dapodik"
+    }
+  ]
+}
