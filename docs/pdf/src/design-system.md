@@ -1,10 +1,10 @@
 # Sistem Desain dan Penulisan UI
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/design-system.md</code> pada 10 November 2026. Teks UI berbahasa Indonesia dikutip apa adanya.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/design-system.md</code> pada 11 November 2026. Teks UI berbahasa Indonesia dikutip apa adanya.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-06
-- **Terakhir diperbarui:** 2026-11-10 (istilah, label status, dan aturan suara dari D-210, D-263…D-311, D-322, D-353, D-358, D-371)
+- **Terakhir diperbarui:** 2026-11-11 (absensi dilarang, guru kelas / wali kelas, D-382, D-383; sebelumnya: istilah, label status, dan aturan suara dari D-210, D-263…D-311, D-322, D-353, D-358, D-371)
 - **Sumber:** `Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`, `Parafrase_Teks_UI_Sigrak.xlsx` (semuanya di `docs/sources/`)
 
 ## Tujuan
@@ -234,6 +234,7 @@ Kata berikut tidak pernah muncul di teks UI, cetakan, atau `lang/id`; tes istila
 - teguran (D-311)
 - tanda tangan elektronik (D-281)
 - siswa, P5, taraf serap di teks UI (D-210, D-322)
+- absensi (D-382; pencarian bantuan tetap boleh menemukannya)
 
 ## Sumber teks dan lokalisasi
 
@@ -246,4 +247,5 @@ Kata berikut tidak pernah muncul di teks UI, cetakan, atau `lang/id`; tes istila
 
 - [x] Teks UI memakai "Templat" (KBBI), bukan "template" (D-151).
 - [x] Palet runtime game: tugas desainer, dengan brief yang digabung bersama logo (D-154).
-- [x] Istilah untuk peserta didik: "murid" (D-210). Menu kehadiran: *Kehadiran* (D-302).
+- [x] Istilah untuk peserta didik: "murid" (D-210). Menu kehadiran: *Kehadiran* (D-302); "absensi" dilarang (D-382).
+- [x] Guru yang memegang satu kelas: "guru kelas" di SD, "wali kelas" di MI, diambil dari Profil Jenjang (D-383).

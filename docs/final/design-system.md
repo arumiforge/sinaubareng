@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-06
-- **Last updated:** 2026-11-10 (terms, status labels, and sound rules from D-210, D-263…D-311, D-322, D-353, D-358, D-371)
+- **Last updated:** 2026-11-11 (absensi banned, guru kelas / wali kelas, D-382, D-383; earlier: terms, status labels, and sound rules from D-210, D-263…D-311, D-322, D-353, D-358, D-371)
 - **Sources:** [`Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`](../sources/Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md), [`Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`](../sources/Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md), [`Parafrase_Teks_UI_Sigrak.xlsx`](../sources/Parafrase_Teks_UI_Sigrak.xlsx)
 
 ## Purpose
@@ -232,6 +232,7 @@ These never appear in UI copy, prints, or `lang/id`; the banned-terms test fails
 - teguran (D-311)
 - tanda tangan elektronik (D-281)
 - siswa, P5, taraf serap in UI copy (D-210, D-322)
+- absensi (D-382; help search may still find it)
 
 ## Copy source and localization
 
@@ -244,4 +245,5 @@ These never appear in UI copy, prints, or `lang/id`; the banned-terms test fails
 
 - [x] UI copy uses "Templat" (KBBI), not "template" (D-151).
 - [x] Game runtime palette: a designer task, briefed together with the logo (D-154).
-- [x] Student term: "murid" (D-210). Attendance menu: *Kehadiran* (D-302).
+- [x] Student term: "murid" (D-210). Attendance menu: *Kehadiran* (D-302); "absensi" banned (D-382).
+- [x] The teacher who holds one class: "guru kelas" in SD, "wali kelas" in MI, from the Profil Jenjang (D-383).

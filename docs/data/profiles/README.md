@@ -13,6 +13,7 @@ Each file holds `versions[]`. A version applies from `applies_from_school_year` 
 | `cocurricular_jp_source` | Which subjects give JP to kokurikuler | §8 (C4) |
 | `rpm_extra_fields` | RPM fields beyond the core. KBC: on for MI (D-126), off for SD and switchable by a SIGRAK admin (D-368) | D-126, D-368 |
 | `report_export_target` | e-Rapor SD or RDM | D-218 |
+| `homeroom_teacher_term` | UI and print term for the teacher who holds one class: "Guru kelas" for SD, "Wali kelas" for MI | D-383 |
 | `homeroom_jtm_default` | Wali kelas JTM: 2 for SD, 6 for MI; a school may change it | D-212 |
 | `external_assessments` | AN and TKA for SD; TKA for MI, AKMI still to verify | §8 |
 | `calendar_source`, `data_of_record` | Provincial kaldik or Kanwil calendar; Dapodik or EMIS | D-256, D-161 |

@@ -1,10 +1,10 @@
 # Panduan Ekspor dan Lokalisasi
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 10 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/export-localization.md</code> pada 11 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-07
-- **Terakhir diperbarui:** 2026-11-10 (aturan cetak, Berkas Administrasi, cetakan baru, dan kata terlarang dari D-210…D-371)
+- **Terakhir diperbarui:** 2026-11-11 (nama berkas ZIP Berkas, D-383, D-384; sebelumnya: aturan cetak, Berkas Administrasi, cetakan baru, dan kata terlarang dari D-210…D-371)
 
 ## Tujuan
 
@@ -269,7 +269,7 @@ Opsi `school_print_settings.duplex` mencerminkan margin kiri dan kanan di halama
   - Isi: sampul (XP-39), lembar ringkasan kelengkapan (D-263), halaman daftar isi, halaman judul per bagian, dan halaman NIHIL untuk bagian yang kosong. Catatan BK tidak pernah dimasukkan.
   - Setiap bagian dirender sebagai PDF sendiri (berkas yang sama dipakai untuk opsi ZIP), lalu digabung lewat route merge Gotenberg. Daftar isi mengambil nomor halaman dari jumlah halaman tiap bagian, jadi tidak ada render kedua.
   - Keluaran: satu PDF gabungan secara bawaan, ZIP berisi PDF terpisah sebagai opsi, tanpa DOCX. Berkas disimpan 7 hari, lalu dihapus, dan dipakai ulang selama datanya tidak berubah.
-  - Unduhan seluruh sekolah oleh kepala sekolah (D-279) berupa satu ZIP dengan satu PDF per guru, dibuat sebagai job di antrean `exports`.
+  - Unduhan seluruh sekolah oleh kepala sekolah (D-279) berupa satu ZIP dengan satu PDF per guru, dibuat sebagai job di antrean `exports`. Setiap PDF diberi nama nomor urut dan tugas guru, tidak pernah nama guru (`03-guru-kelas-4a.pdf`, `07-guru-mapel-pjok.pdf`; istilahnya mengikuti jenjang, D-383), dan ZIP berisi `daftar-isi.pdf` dengan nomor, tugas, dan nama guru (D-384, XP-33).
 - **XP-44** **Lembar jawaban (LJK, D-287, D-325, D-370).** Satu lembar per murid, dengan profil Lembar tunggal:
   - Kepala lembar: Mata Pelajaran, Kelas, Nama, Nomor. Nomor absen murid dicetak, sehingga jawaban tulisan tangan dapat diberi kode `nomor absen-nomor soal` (mis. `12-3`, D-370).
   - Butir PG dalam dua kolom kotak huruf (A–D, atau A–E bila dipakai) yang disilang murid; PG Kompleks, Benar-Salah, PGK Kategori, dan Menjodohkan memakai gaya kotak huruf yang sama; baris bernomor untuk Isian Singkat dan Uraian.
@@ -435,6 +435,6 @@ Pilihan baru di panduan ini. Nomornya diberikan saat integrasi.
 
 - [x] Ukuran F4: 215 × 330 mm (D-109).
 - [ ] Format impor e-Rapor SD dan RDM (kolom, jenis berkas) masih belum diketahui (pertanyaan terbuka model data). Ekspornya sendiri sudah diputuskan (D-218, XP-48); pengecualian XP-24 berlaku untuk tata letaknya setelah diketahui.
-- [ ] Nama berkas di dalam ZIP Berkas seluruh sekolah untuk kepala sekolah (D-279): XP-33 melarang nama guru di nama berkas, padahal kepala sekolah perlu membedakan berkasnya. Menunggu keputusan pemilik (misalnya nomor urut plus lembar daftar di dalam ZIP).
+- [x] Nama berkas di dalam ZIP Berkas seluruh sekolah untuk kepala sekolah: nomor urut + tugas, dengan `daftar-isi.pdf` (D-384).
 - [x] Font cetak: Arial atau Times New Roman, dipilih sekolah; tidak ada yang lain (D-125).
 - [x] Font klien ujian: ukuran bawaan standar, pengatur A−/A/A+ tetap ada (D-121).

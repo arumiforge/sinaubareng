@@ -107,7 +107,7 @@ Not changed (nothing stale): `coding-standards.md`, `server-monitoring.md`, `loc
 
 Done 2026-11-10 on branch `p4/p4-final-docs-sync`. Eleven final docs changed (product-concept, content-engine, data-model, architecture, server-setup, ai-provider-engine, export-localization, design-system, ifp-classroom, religious-education, developer-handbook), each with its translated lines and PDF in the same commit. Drafts marked as applied.
 
-**Open questions (owner):**
+**Open questions (owner):** answered 2026-11-11: Berkas ZIP names D-384, menu placements D-385 and D-386, "absensi" D-382. Still open: the design-system choices below.
 - File names inside the principal's school-wide Berkas ZIP (D-279) versus XP-33 (no teacher names in file names); recorded in `export-localization.md`.
 - Menu placement chosen without a decision, to confirm: teachers' Pusat Tindak Lanjut under Hari Ini; Ekstrakurikuler and Tabungan under Kelas Saya (Tabungan in Keuangan); Arsip Tahun Ajaran under the operator's Tahun Ajaran.
 - Design-system choices without a decision: status colours for Pengingat and help requests, the "Disahkan" label, which template uses which margin profile, and banning "Absensi" in `lang/id` with a help-search allow-list.

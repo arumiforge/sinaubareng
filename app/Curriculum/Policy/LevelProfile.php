@@ -77,6 +77,12 @@ final readonly class LevelProfile
     }
 
     /** Wali kelas JTM default (D-212); a school may change it. */
+    /** UI and print term for the teacher who holds one class (D-383). */
+    public function homeroomTeacherTerm(): string
+    {
+        return (string) ($this->data['homeroom_teacher_term'] ?? 'Wali kelas');
+    }
+
     public function homeroomJtmDefault(): int
     {
         return (int) $this->data['homeroom_jtm_default'];

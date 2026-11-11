@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P1-02; later decisions applied in P4-24 (D-210…D-371)
-- **Last updated:** 2026-11-10
+- **Last updated:** 2026-11-11 (guru kelas / wali kelas, menu placements, D-383, D-385, D-386)
 - **Sources:** [`Konsep_Awal_Produk_SIGRAK.md`](../sources/Konsep_Awal_Produk_SIGRAK.md), [`Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`](../sources/Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md), [`Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf`](../sources/Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf)
 
 ## Purpose
@@ -78,7 +78,7 @@ Principles, in priority order:
 
 | Role (UI name) | Who | Main jobs in SIGRAK | Device |
 |---|---|---|---|
-| Guru kelas (wali kelas) | Teaches the class subjects of one class: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, and the others not listed for guru mapel | Make content, daily Kehadiran, journal, assessment, report cards, class data, homeroom duties (rapor notes, parent messages, kenaikan, graduation, savings) | Phone, home laptop |
+| Guru kelas (wali kelas; the UI says "guru kelas" in SD and "wali kelas" in MI, D-383) | Teaches the class subjects of one class: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, and the others not listed for guru mapel | Make content, daily Kehadiran, journal, assessment, report cards, class data, homeroom duties (rapor notes, parent messages, kenaikan, graduation, savings) | Phone, home laptop |
 | Guru mapel (khusus) | Teaches one special subject across classes: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** (in SD one subject per religion: Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu; in MI the Kemenag subjects Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, always taught by guru mapel) | Make content, reused across classes. Journal, student notes, and assessment for their subject (Kehadiran is daily and belongs to the homeroom teacher) | Phone |
 | Kepala sekolah | Principal | Watch completeness and content made, validate school curriculum changes, Berkas Administrasi, pengesahan dokumen, Pengingat, supervision, leger sign-off, pembagian tugas, school books, print settings, subscription | Laptop, phone |
 | Operator sekolah | School admin staff | Academic year (and Arsip Tahun Ajaran), classes, invite teachers, timetable, calendar, school profile, mutasi, school inventory | Laptop |
@@ -172,7 +172,7 @@ Portals, reached through the role switch:
 | Operator Sekolah | Tahun Ajaran (incl. Arsip Tahun Ajaran), Kelas, Guru (undang), Jadwal, Kaldik, Profil Sekolah, Mutasi, Inventaris Sekolah |
 | Pengawas | Sekolah Binaan (request a school; Tim SIGRAK approves, D-309), Pantau (read-only, school totals), Validasi, Supervisi (teacher recaps and PKKS of the principal), Pusat Tindak Lanjut, Laporan Kepengawasan |
 
-The menu name is *Kehadiran*, path `/kehadiran`; help search still finds "absensi" (D-302). *Berkas Administrasi* is the semester bundle of a teacher's documents (D-278); Hari Ini shows a shortcut near the end of a semester. *Pusat Tindak Lanjut* is one follow-up list per role, read from existing records: teachers see their own, the principal the school's, the pengawas school-level and PKKS items only (D-310). *Arsip Tahun Ajaran*: a closed year is read-only, viewable and downloadable (D-318). *Supervisi* in the pengawas portal covers the principal: PKKS instruments drafted from the current rules, regional variants such as Kudus as data, and manual scores with optional evidence for items SIGRAK has no data for (D-308, D-324, D-327, D-328).
+The menu name is *Kehadiran*, path `/kehadiran`; help search still finds "absensi" (D-302). *Berkas Administrasi* is the semester bundle of a teacher's documents (D-278); Hari Ini shows a shortcut near the end of a semester. *Pusat Tindak Lanjut* is one follow-up list per role, read from existing records: teachers see their own (in Hari Ini, D-385), the principal the school's, the pengawas school-level and PKKS items only (D-310). *Arsip Tahun Ajaran*: a closed year is read-only, viewable and downloadable, inside the operator's Tahun Ajaran menu (D-318, D-386). Ekstrakurikuler and Tabungan sit in Kelas Saya (D-386). *Supervisi* in the pengawas portal covers the principal: PKKS instruments drafted from the current rules, regional variants such as Kudus as data, and manual scores with optional evidence for items SIGRAK has no data for (D-308, D-324, D-327, D-328).
 
 ### Internal console
 
