@@ -1,8 +1,8 @@
 # Class and School Administration Features for SD/MI
 
-- **Status:** draft; owner decided 2026-11-08 (D-210…D-221), see [§7](#7-owner-decisions-2026-11-08)
+- **Status:** draft; owner decided 2026-11-08 (D-210…D-221), see [§7](#7-owner-decisions-2026-11-08). Legacy app upgrade details added 2026-11-10 (D-301, D-303, D-306, D-308; P4-24); the accepted features are in `docs/final/product-concept.md`
 - **Task:** P4-04
-- **Last updated:** 2026-11-08
+- **Last updated:** 2026-11-10
 - **Scope:** SD (Kemendikdasmen) and MI (Kemenag), grades 1–6. SMP and above are out of scope.
 
 ## Purpose
@@ -72,7 +72,7 @@ Columns: **Basis** (rule or guide; *customary* = expected in supervision but no 
 | # | Feature | What it is | Basis | Need | Reuses | Effort | Value |
 |---|---|---|---|---|---|---|---|
 | H1 | **Rapor lengkap sesuai Panduan 2025** | Make sure the Rapor add-on outputs all 12 components: kokurikuler (A5), ekstrakurikuler, absences from Absensi, **catatan wali kelas** (AI draft from notes and attendance, never with personal data in the prompt), space for tanggapan orang tua, Fase A "without numbers" option | Panduan Asesmen 2025 §5.B | M | Rapor, Absensi, Catatan Siswa | M | ★★★ |
-| H2 | **Peringatan dini kehadiran** | Flag a student whose absences pass a school threshold, or 3 days in a row; shows on Hari Ini and to the principal, with a suggested action (home visit, call) | Panduan Asesmen 2025 ("wali kelas must detect absence early") | M | Absensi, Kabar | S | ★★★ |
+| H2 | **Peringatan dini kehadiran** | Flag a student whose absences pass a school threshold, or 3 days in a row; shows on Hari Ini and to the principal, with a suggested action (home visit, call). Thresholds (D-303): unexplained absence (tanpa keterangan) brings monthly attendance below 90% (sakit and izin not counted), or 3 consecutive school days without explanation; both changeable or switchable off per school. Kehadiran also gets a recap per week, month, and semester | Panduan Asesmen 2025 ("wali kelas must detect absence early") | M | Absensi, Kabar | S | ★★★ |
 | H3 | **Kenaikan kelas** | Before the dewan guru meeting: per student, unfinished TP, absences, notes; the meeting decision and a berita acara (PDF). Then the existing Kenaikan moves students | Panduan Asesmen 2025 §5.C; 21/2022 | M | Analisis, Absensi, Kenaikan | S–M | ★★ |
 | H4 | **Kelulusan kelas 6** | Grade 5–6 recap, school exam (ujian satuan pendidikan) scores, graduation decision, berita acara, Surat Keterangan Lulus, data sheet for ijazah/transkrip | Panduan Asesmen 2025; Permendikbudristek 58/2024; MI: Kepdirjen 751/2026, 3576/2026 (*secondary*) | M | Nilai, Rapor, print | M | ★★ |
 | H5 | **Ekstrakurikuler and Pramuka** | Ekskul list, members, attendance, pembina, rapor description. Pramuka must be offered again | Permendikdasmen 13/2025 Pasal 22 | M | Rapor; P4-01 tables | M | ★★ (was held with Buku Induk, D-161) |
@@ -86,7 +86,7 @@ Columns: **Basis** (rule or guide; *customary* = expected in supervision but no 
 |---|---|---|---|---|---|---|---|
 | K1 | **Penyusun KSP** | Build the Kurikulum Satuan Pendidikan in the 4 components of the 2025 guide (karakteristik, visi-misi-tujuan, pengorganisasian pembelajaran, perencanaan) + evaluation plan, pre-filled from school data, structure, allocation, kokurikuler plan, and Kaldik; AI drafts narrative sections; principal sets it (penetapan page) | Permendikdasmen 26/2025 Pasal 7; Panduan KSP 2025; IA 2024 item 9 | M | Template engine, curriculum data, Kaldik, Program Sekolah | L | ★★★ |
 | K2 | **Supervisi akademik Pembelajaran Mendalam** | Instruments for the existing Supervisi section: pre-observation, observation (mindful/meaningful/joyful, 4 frameworks), reflection, follow-up; schedule; results report. The teacher's RPM and journal open beside the form | 26/2025 Pasal 22–23; Kepmen 126/P/2025; Ruang GTK observation cycle | M | Supervisi, RPM, Jurnal | M | ★★★ |
-| K3 | **Bukti dukung kinerja (Ruang GTK)** | One download per teacher per period: RPM list, journal recap, reflection (A4), observation result (K2). For uploading to Ruang GTK; no integration | PermenPAN-RB 21/2024; Ruang GTK | N (high demand) | Dokumen Saya, Jurnal, K2 | S | ★★★ |
+| K3 | **Bukti dukung kinerja (Ruang GTK)** | One download per teacher per period: RPM list, journal recap, reflection (A4), observation result (K2). For uploading to Ruang GTK; no integration. Also covers the principal: a Kinerja Kepala Sekolah evidence download with the PKKS result (D-308). Built on the Berkas Administrasi builder as the K3 preset (D-278) | PermenPAN-RB 21/2024; Ruang GTK | N (high demand) | Dokumen Saya, Jurnal, K2 | S | ★★★ |
 | K4 | **Pembagian tugas dan beban kerja (JTM)** | From Jadwal and roles: JTM per teacher, extra duties (wali kelas 2 JTM SD / 6 JTM MI, pembina, koordinator kokurikuler), warning below 24 JTM, and the **SK Pembagian Tugas** as PDF | Permendikdasmen 11/2025, Kepmen 221/P/2025; KMA 736/2026 | M | Jadwal, memberships, print | S–M | ★★★ |
 | K5 | **Laporan bulanan sekolah** | Monthly recap for dinas/korwil: students by grade and gender, in/out transfers, attendance %, teacher attendance; PDF/Excel in a regional layout | Customary (regional) | M (in many regions) | Siswa, Absensi | S | ★★ |
 | K6 | **Evaluasi KSP and refleksi sekolah** | Semester/year evaluation from SIGRAK data (completeness, per-TP results, attendance) plus Rapor Pendidikan notes typed by the principal; feeds next year's RKT | 26/2025 Pasal 4 (evaluasi diri); Panduan KSP ch. 5 | M | K1, Ringkasan, Program Sekolah | M | ★★ |
@@ -102,12 +102,12 @@ Columns: **Basis** (rule or guide; *customary* = expected in supervision but no 
 | O1 | **Buku Induk and Dapodik sync** | Already designed, on hold | D-158, D-161 | M (customary) | P4-01 | L | ★★★ |
 | O2 | **Mutasi siswa lengkap** | Surat keterangan pindah, surat penerimaan, reminder to update Dapodik within 14 working days, block in the last semester of grade 6 | Permendikdasmen 3/2025 Bab III | M | Pindah atau keluar, print | S | ★★ |
 | O3 | **Persuratan** | Incoming/outgoing letter register, automatic numbering per school pattern, ready letters with letterhead (surat keterangan aktif, undangan rapat, surat tugas, SK) | Regional tata naskah | M (every TU) | Buku Sekolah, letterhead, print | M | ★★ |
-| O4 | **Inventaris sekolah (sarpras)** | School-level assets by room, condition, KIB-style list for negeri schools, yearly stock-take | Permendagri 7/2024; Permendikbudristek 22/2023 | M | Inventaris kelas | M | ★★ |
+| O4 | **Inventaris sekolah (sarpras)** | School-level assets by room, condition, KIB-style list for negeri schools, yearly stock-take. Class inventory is the room view of the same record: the wali kelas edits condition and count for their own room; Tim SIGRAK sets in the console whether the room view needs the class add-on (D-306) | Permendagri 7/2024; Permendikbudristek 22/2023 | M | Inventaris kelas | M | ★★ |
 | O5 | **Perpustakaan** | Catalogue, loans by student record, visit log | Perpusnas 4/2024 | N | Siswa | L | ★ |
 | O6 | **Ekspor e-Rapor SD / RDM** | Score and description export in the import layout of e-Rapor SD and RDM | Practice (both widely used) | M (in practice) | Rapor | M | ★★★ (already *later*, D-144) |
 | O7 | **Kartu pelajar dan cetak massal** | Student ID cards, class lists, attendance sheets to print | Customary | N | Siswa, print | S | ★ |
 | O8 | **SPMB online** | Public enrolment form | 3/2025 | — | — | L | Not a fit: needs public pages (D-010) |
-| T1 | **Tabungan murid** | Savings ledger per student (deposit, withdrawal, balance), recap per class and school, printable passbook page | Customary | N (common) | Keuangan kelas, print | S–M | ★★ (added by the owner, D-219) |
+| T1 | **Tabungan murid** | Savings ledger per student (deposit, withdrawal, balance), recap per class and school, printable passbook page. Detail (D-301): the book follows the student (`savings_entries`, balance per student per school) and moves with kenaikan; on graduation or mutasi keluar with a balance, a berita acara penyerahan tabungan and a closing withdrawal (`handover_records`); "Tabungan belum diserahkan" stays in the wali kelas's Kabar until closed | Customary | N (common) | Keuangan kelas, print | S–M | ★★ (added by the owner, D-219) |
 | O9 | **BOS/RKAS, SPP** | Budget and fee collection | 8/2026; e-RKAM | — | — | L | Not a fit: ARKAS/e-RKAM own this; SPP is sensitive (D-025) |
 
 ### 4.5 Supervisor (pengawas, korwil)
