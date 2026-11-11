@@ -8,6 +8,7 @@ use App\Enums\CurriculumVersionStatus;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -18,10 +19,23 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property CurriculumVersionStatus $status
  * @property array{files?: array<string, array<string, mixed>>} $meta
  * @property CarbonImmutable|null $imported_at NULL only before the first save
+ * @property CarbonImmutable|null $effective_on
+ * @property string|null $applies_from_school_year e.g. 2026/2027 (D-355)
+ * @property int|null $supersedes_id
  */
-#[Fillable(['code', 'name', 'status', 'meta', 'imported_at'])]
+#[Fillable(['code', 'name', 'status', 'effective_on', 'applies_from_school_year', 'supersedes_id', 'meta', 'imported_at'])]
 final class CurriculumVersion extends Model
 {
+    /**
+     * The version this one replaces (D-355).
+     *
+     * @return BelongsTo<self, $this>
+     */
+    public function supersedes(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'supersedes_id');
+    }
+
     /**
      * @return HasMany<SubjectAllocation, $this>
      */
@@ -66,6 +80,7 @@ final class CurriculumVersion extends Model
             'status' => CurriculumVersionStatus::class,
             'meta' => 'array',
             'imported_at' => 'datetime',
+            'effective_on' => 'immutable_date',
         ];
     }
 }

@@ -20,11 +20,10 @@ return [
     ],
 
     /*
-     * The version whose intrakurikuler allocations decide a class's compulsory subjects,
-     * per school level (data model, Curriculum versions in v1).
+     * The Profil Jenjang files, one per school level (D-356). The policy in force,
+     * including the structure version that decides a class's compulsory subjects, is
+     * resolved from them per school year (App\Curriculum\Policy\PolicyProfileResolver,
+     * D-355); this replaces the old `allocation_versions` pointer.
      */
-    'allocation_versions' => [
-        'sd' => 'STRUKTUR-SD-PERMENDIKDASMEN-13-2025',
-        'mi' => 'ALOKASI-MI-KMA-1503-2025',
-    ],
+    'profiles' => 'docs/data/profiles',
 ];

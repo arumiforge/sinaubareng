@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Curriculum;
 
+use App\Curriculum\Policy\PolicyProfileResolver;
+use App\Curriculum\Policy\SchoolYear;
 use App\Enums\LearningType;
 use App\Enums\SubjectKind;
 use App\Enums\SubjectSchoolLevel;
@@ -14,6 +16,7 @@ use App\Models\SchoolSubject;
 use App\Models\Subject;
 use App\Models\SubjectAllocation;
 use App\Tenancy\SchoolContext;
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Collection;
 use LogicException;
 
@@ -21,8 +24,8 @@ use LogicException;
  * The intrakurikuler subjects a class of one grade takes at a school (data model,
  * Curriculum):
  *
- * 1. compulsory subjects with an allocation for the grade in the level's structure
- *    version (config curriculum.allocation_versions); a school cannot switch these off;
+ * 1. compulsory subjects with an allocation for the grade in the structure rule set in
+ *    force for the school year (PolicyProfileResolver, D-355); a school cannot switch these off;
  * 2. the region's default local content, on unless the school switches it off;
  * 3. whatever else the school switches on in school_subjects (optional content such as
  *    Bahasa Inggris and IPAS in grades 1–2, or Tata Boga), off by default (D-204).
@@ -33,12 +36,16 @@ use LogicException;
  */
 final readonly class SubjectsForGrade
 {
-    public function __construct(private SchoolContext $context) {}
+    public function __construct(
+        private SchoolContext $context,
+        private PolicyProfileResolver $policy,
+    ) {}
 
     /**
+     * @param  string|null  $schoolYear  e.g. 2026/2027; NULL = the school year of today
      * @return Collection<int, SubjectOffer> keyed by subject id, in catalogue order
      */
-    public function forSchool(School $school, int $grade): Collection
+    public function forSchool(School $school, int $grade, ?string $schoolYear = null): Collection
     {
         if ($this->context->schoolId() !== $school->id) {
             throw new LogicException('Subjects are resolved only for the school in the current context.');
@@ -47,7 +54,7 @@ final readonly class SubjectsForGrade
         /** @var array<int, SubjectOffer> $offers */
         $offers = [];
 
-        foreach ($this->structure($school, $grade) as $allocation) {
+        foreach ($this->structure($school, $grade, $schoolYear ?? SchoolYear::forDate(CarbonImmutable::now())) as $allocation) {
             $offers[$allocation->subject_id] = new SubjectOffer($allocation->subject, SubjectOffer::FROM_STRUCTURE, true, $allocation->jp_per_week);
         }
 
@@ -75,10 +82,10 @@ final readonly class SubjectsForGrade
     /**
      * @return Collection<int, SubjectAllocation>
      */
-    private function structure(School $school, int $grade): Collection
+    private function structure(School $school, int $grade, string $schoolYear): Collection
     {
-        $code = config("curriculum.allocation_versions.{$school->level->value}");
-        $version = is_string($code) ? CurriculumVersion::query()->where('code', $code)->first() : null;
+        $code = $this->policy->forSchool($school, $schoolYear)->ruleSet('structure_jp');
+        $version = $code === null ? null : CurriculumVersion::query()->where('code', $code)->first();
 
         if ($version === null) {
             return collect();

@@ -9,6 +9,7 @@ use App\Curriculum\Import\Formats\LearningOutcomes;
 use App\Curriculum\Import\Formats\MiAllocation;
 use App\Curriculum\Import\Formats\SdStructure;
 use App\Curriculum\Import\Formats\SubjectCatalog;
+use App\Curriculum\Policy\PolicyProfileResolver;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Facades\DB;
 use Throwable;
@@ -39,8 +40,9 @@ final readonly class CurriculumImporter
         try {
             DB::transaction(fn () => $format->import($file, $report));
         } finally {
-            // A rolled-back catalogue must not stay cached.
+            // A rolled-back catalogue must not stay cached; resolved policies may change too (D-355).
             $this->container->make(SubjectLookup::class)->refresh();
+            $this->container->make(PolicyProfileResolver::class)->flush();
         }
 
         return $report;

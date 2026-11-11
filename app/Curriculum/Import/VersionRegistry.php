@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Curriculum\Import;
 
+use App\Curriculum\Policy\RuleSetDates;
 use App\Enums\CurriculumVersionStatus;
 use App\Models\CurriculumVersion;
 
@@ -12,10 +13,14 @@ use App\Models\CurriculumVersion;
  * (D-113); an import never changes the status of an existing one. A version can come
  * from several files (SIGRAK-SD-2026-R1: general subjects and religions), so each file keeps its
  * own entry in `meta.files`, and the name is set by the file that creates the version.
+ * The version dates come from docs/data/profiles (RuleSetDates, D-355).
  */
 final readonly class VersionRegistry
 {
-    public function __construct(private RowWriter $rows) {}
+    public function __construct(
+        private RowWriter $rows,
+        private RuleSetDates $dates,
+    ) {}
 
     /**
      * @param  array<string, mixed>|null  $meta
@@ -45,6 +50,8 @@ final readonly class VersionRegistry
         $files[$file->relativePath] = ['sha256' => $file->sha256, ...($meta ?? [])];
         ksort($files);
         $version->meta = ['files' => $files];
+        // D-355: effective date, first school year, and predecessor from the Profil Jenjang data.
+        $this->dates->apply($version);
         $this->rows->ignoreKeyOrder($version);
 
         $outcome = $created ? 'created' : ($version->isDirty() ? 'updated' : 'unchanged');
