@@ -1,9 +1,9 @@
 # Teacher Supervision Instruments for SD/MI
 
-- **Status:** draft; owner decided 2026-11-08 (D-222…D-225), see [§7](#7-owner-decisions-2026-11-08). MI version is a first draft (§8)
+- **Status:** draft; owner decided 2026-11-08 (D-222…D-225), see [§7](#7-owner-decisions-2026-11-08). MI version is a first draft (§8). Legacy app upgrade applied 2026-11-10 (D-308, D-312, D-313, D-324, D-327, D-328; P4-24)
 - **Task:** P4-12
-- **Last updated:** 2026-11-08
-- **Scope:** the principal (kepala sekolah/madrasah) supervising SD/MI teachers: guru kelas, guru mapel, and the wali kelas role. The pengawas supervising the principal or the school is **out of scope**.
+- **Last updated:** 2026-11-10
+- **Scope:** the principal (kepala sekolah/madrasah) supervising SD/MI teachers: guru kelas, guru mapel, and the wali kelas role. The pengawas supervising the principal (PKKS / supervisi manajerial) is now **in scope for v1** (D-308) but has its own instrument set, drafted in P4-08 from current rules (D-324); see [§9](#9-principal-supervision-and-legacy-app-upgrade-2026-11-09).
 - **Feeds:** K2 Supervisi akademik and K3 Bukti dukung kinerja in [`administration-features.md`](administration-features.md) (D-217), and P4-08.
 
 ## Purpose
@@ -107,7 +107,7 @@ Fields: tahun ajaran and semester; tujuan supervisi (from last semester's S-16 a
 9. Program remedial dan pengayaan
 10. Daftar hadir murid (wali kelas); untuk guru mapel: perencanaan kokurikuler bila terlibat
 
-In SIGRAK, items 1–9 are ticked automatically when the data exists; the principal only confirms "sesuai" and adds notes. A school can add items.
+In SIGRAK, items 1–9 get a suggested score from the completeness service (D-263): 0 when the data is missing, 1 ("ada, belum diperiksa") when it exists. The principal raises an item to 2 ("sesuai") or changes it, and an item counts toward the total only after the principal confirms it (D-312). The Berkas Administrasi summary sheet (D-278) shows the same data. A school can add items.
 
 ### S-02 Telaah CP–TP–ATP (10 items, 1–4)
 
@@ -298,7 +298,7 @@ A discussion record only (D-224): date, colleague, topic (a plan, a lesson video
 11. Rapor lengkap: nilai, deskripsi, kokurikuler, ekstrakurikuler, ketidakhadiran, catatan wali kelas (H1)
 12. Kenaikan kelas atau kelulusan disiapkan (H3, H4) [end of year]
 
-Items 1–3, 5, 7–11 are ticked from SIGRAK data. Counselling notes stay hidden from the form (only a count is shown), as today.
+Items 1–3, 5, 7–11 get a suggested score from SIGRAK data, confirmed by the principal as in S-01 (D-312). Counselling notes stay hidden from the form (only a count is shown), as today.
 
 ### S-16 Rekap dan laporan hasil supervisi
 
@@ -313,12 +313,14 @@ Rows: kebutuhan (from S-16), kegiatan (coaching, KKG/komunitas belajar, contoh p
 | Need | How |
 |---|---|
 | Templates, not hard-coded | Each instrument is a versioned template (items, tags, scale, bands) in the database. Tim SIGRAK ships the defaults above; a school can copy and edit (D-221). A visit stores the template version it used |
-| Data already in SIGRAK | S-01, S-04, S-06, S-11, S-15 pre-fill from Kurikulum, RPM, Jurnal, Asesmen, Absensi, Catatan Siswa |
+| Data already in SIGRAK | S-01, S-04, S-06, S-11, S-15 pre-fill from Kurikulum, RPM, Jurnal, Asesmen, Kehadiran (D-302), Catatan Murid |
 | Phone use | S-08 works on a phone during the lesson, one domain per screen. Offline is not needed in v1 (D-016) |
 | Teacher view | The teacher sees every result about them, comments, and signs. Only the principal fills the forms (D-224) |
 | Ruang GTK | K3 bundles S-07 to S-10 and S-11 for the teacher's own upload; no integration |
 | AI | Optional: draft the feedback paragraph from scores and evidence notes. No teacher or murid names in the prompt (D-036) |
 | Supervisor (pengawas) | Sees school-level S-16 aggregates only, never teacher-level scores (D-224) |
+| Findings bank | Each item has ready phrases for strengths, priorities, and RTL, seeded by Tim SIGRAK as editable template data; a school can add its own; the principal picks and edits; no AI (D-313) |
+| Regional variants | A template can have a regional variant; a school uses its region's variant or the default (D-324). Kudus is the first variant (D-327, §9) |
 
 Data model additions (for P4-08): `supervision_templates`, `supervision_template_items`, `supervision_programs`, `supervision_visits` (teacher, template version, date, status), `supervision_scores` (item, level, evidence note), `supervision_followups` (RTL rows). All school-scoped (`BelongsToSchool`).
 
@@ -353,6 +355,20 @@ The same 18 instruments apply to MI, with these changes. A revised version follo
 | S-14 | Kokurikuler may carry Panca Cinta themes |
 | S-15 | Same items |
 | Performance | Ruang GTK forms apply to madrasah teachers registered there; teacher data of record is EMIS GTK, not Dapodik |
+
+## 9. Principal supervision and legacy app upgrade (2026-11-09)
+
+Decided in P4-13 ([`legacy-upgrade-01.md`](legacy-upgrade-01.md) §2.6):
+
+| Topic | Change | Decision |
+|---|---|---|
+| Principal supervision | The pengawas supervises the principal in v1 (PKKS / supervisi manajerial), plus a Kinerja Kepala Sekolah evidence download (K3 extended to the principal). Only the assessed principal and that pengawas see a PKKS result. D-224 still holds for teachers | D-308 |
+| PKKS instruments | Drafted from current rules in P4-08; no local sample awaited; editable templates with regional variants | D-324 |
+| Suggested scores | S-01 and S-15 get suggested 0/1 from the completeness service; the principal confirms (§5) | D-312 |
+| Findings bank | Ready phrases per item (§6) | D-313 |
+| Kudus variant | The owner's Kudus set becomes a regional variant: S-01 with 24 components for guru kelas and 18 for guru mapel (also the Format Kudus profile of Berkas Administrasi, D-278), S-04/S-07 with 20 Ya/Tidak items, S-08 with 27 items in parts A–F scored 1–4 with an evidence column, S-09 with 5 reflection questions, feedback on 5 aspects, and an RTL table, and a 24-component principal administration review filled by the pengawas. Score = score ÷ (items × top score) × 100, same bands. SIGRAK terms in labels (RPM, kokurikuler, jurnal mengajar, kehadiran) | D-327 |
+| Principal administration items without SIGRAK data | Scored by hand by the pengawas, optional evidence upload per item; items backed by SIGRAK data get a suggested score the pengawas confirms | D-328 |
+| Pusat Tindak Lanjut | RTL from S-09/S-10, the S-17 programme, and PKKS follow-ups show in one follow-up list per role | D-310 |
 
 ## Sources
 

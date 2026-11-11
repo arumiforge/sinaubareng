@@ -1,10 +1,10 @@
 # Panduan Penyiapan Server
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/server-setup.md</code> pada 2 November 2026. Perintah, berkas konfigurasi, dan komentar di dalam blok kode dibiarkan apa adanya.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/server-setup.md</code> pada 10 November 2026. Perintah, berkas konfigurasi, dan komentar di dalam blok kode dibiarkan apa adanya.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P2-05
-- **Terakhir diperbarui:** 2026-10-31 (jawaban pemilik: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, disk 320 GB, staging di VPS yang sama)
+- **Terakhir diperbarui:** 2026-11-10 (penjelasan scheduler diselaraskan dengan `architecture.md`, D-064); 2026-10-31 (jawaban pemilik: domain, VPS, R2, staging, Ubuntu 24.04, 8 vCPU / 16 GB, Cloudflare Tunnel, disk 320 GB, staging di VPS yang sama)
 - **Versi dicek daring pada 2026-10-30** (sumber di bagian Versi).
 
 ## Tujuan
@@ -722,7 +722,7 @@ sudo supervisorctl reread && sudo supervisorctl update
 sudo supervisorctl status
 ```
 
-`schedule:work` di bawah Supervisor menggantikan baris cron yang biasa (`* * * * * php artisan schedule:run`), yaitu bentuk yang ditunjukkan `architecture.md`. Keduanya menjalankan jadwal yang sama; pakai salah satu saja.
+`schedule:work` di bawah Supervisor menggantikan baris cron yang biasa (`* * * * * php artisan schedule:run`); tidak ada entri cron untuk scheduler (D-064, sama seperti di `architecture.md`). Kedua bentuk menjalankan jadwal yang sama; pakai `schedule:work` saja.
 
 `stopwaitsecs=600` lebih lama dari langkah AI terlama (5 menit per langkah, draf D-022), sehingga deploy membiarkan job yang sedang berjalan selesai. Jaga `retry_after` antrean di atas timeout job terlama, sesuai syarat dokumen mesin AI.
 
@@ -1039,7 +1039,7 @@ Nomornya diberikan saat integrasi.
 7. **Tanpa IP publik; Cloudflare Tunnel untuk semua lalu lintas** (pemilik, 2026-10-31): satu tunnel `cloudflared` yang dikelola lokal per server merutekan `app.`, `ujian.`, `admin.`, dan `ssh.` ke localhost. IP sebenarnya dari `CF-Connecting-IP` (hanya dipercaya dari 127.0.0.1). UFW menolak semua koneksi masuk. SSH dan `admin.` ada di balik Cloudflare Access. Ini menggantikan rancangan Origin CA / Authenticated Origin Pulls / daftar izin IP Cloudflare.
 8. **Tiga vhost Nginx untuk satu codebase Laravel** (`app.`, `ujian.`, `admin.`), seperti di `architecture.md`, dengan cookie sesi host-only (tanpa `SESSION_DOMAIN` bersama).
 9. **Deploy berbasis folder rilis** (`releases/`, `shared/`, symlink `current`), menyimpan 5 rilis; PHP-FPM di-reload pada setiap deploy karena OPcache tidak memeriksa timestamp.
-10. **Supervisor menjalankan Horizon dan `schedule:work`** (tanpa entri cron untuk scheduler; `architecture.md` menunjukkan bentuk cron yang setara); jumlah worker ada di `config/horizon.php`.
+10. **Supervisor menjalankan Horizon dan `schedule:work`** (tanpa entri cron untuk scheduler, D-064; `architecture.md` menunjukkan hal yang sama); jumlah worker ada di `config/horizon.php`.
 11. **Cadangan:** setiap hari 01.30 WIB (18.30 UTC) `mysqldump` + tarball `storage/app`, 14 hari lokal, 30 hari di luar server lewat remote `rclone` yang terenkripsi; uji pemulihan setiap bulan, pemulihan dari luar server dua kali setahun. `APP_KEY` disimpan di pengelola kata sandi, tidak pernah di cadangan.
 12. **Server dan PHP berjalan dalam UTC; aplikasi berjalan dalam WIB** (`Asia/Jakarta`, D-165), dan sesi MySQL-nya memakai `+07:00` (seperti di `architecture.md`). Waktu cron di panduan ini dalam UTC.
 13. **Domain `sigrak.com`** dengan hostname `app.`, `ujian.`, `admin.` (pemilik, 2026-10-31).

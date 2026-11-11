@@ -1,8 +1,8 @@
 # Game kelas: Interactive Flat Panel (IFP) Learning for SD/MI
 
-- **Status:** final (approved 2026-11-08); owner interview done 2026-11-04, decisions D-171…D-181 and D-233 recorded (not in v1 scope yet)
+- **Status:** final (approved 2026-11-08); owner interview done 2026-11-04, decisions D-171…D-181 and D-233 recorded (not in v1 scope yet); later decisions D-210, D-267, D-286, D-298, D-331, D-332, D-369 applied 2026-11-10
 - **Task:** P4-02
-- **Last updated:** 2026-11-08
+- **Last updated:** 2026-11-10
 - **UI name:** *Game kelas*. The existing add-on (D-158) keeps its name and grows into this IFP mode (D-171)
 - **Scope:** SD and MI, grades 1–6 (Fase A–C). PAUD, SMP, and SMA are out of scope.
 
@@ -110,6 +110,8 @@ Game kelas playlist for today
 Class summary (per item, per TP) → Jurnal (D-016) and Asesmen
 ```
 
+**Lanjutan (D-267).** When the previous meeting's journal says *terlaksana sebagian* (`partial`), its unfinished experiences (memahami, mengaplikasi, merefleksi) open the playlist as a "Lanjutan" block, before *Tujuan hari ini*, just as they head the next meeting in the RPM.
+
 The teacher can still open a single game from *Buat*; the playlist is the recommended path.
 
 ### 3.2 Activity templates (catalogue for SD/MI; build order in D-176)
@@ -179,10 +181,10 @@ Content always comes from SIGRAK's curriculum data (`docs/data/curriculum/`) and
 |---|---|
 | **Buat → RPM** | Each meeting step can hold a Game kelas activity. The RPM wizard's learning model "Game Based Learning" suggests one. The RPM PDF prints the activity name and goal, not the game |
 | **Bank Soal** | Practice templates read items from a saved set (same rule as Quiz Battle: auto-gradable types). Distractor explanations come from the item's *pembahasan* |
-| **LKPD** | An LKPD can end with "Lanjut di Game kelas" (group work on paper, check on the panel), and a manipulative can be printed as a worksheet image |
+| **LKPD** | An LKPD can end with "Lanjut di Game kelas" (group work on paper, check on the panel), and a manipulative can be printed as a worksheet image. Interactive LKPD steps (embeds, H5P, self-check) run online in the teacher's app and in the IFP present session; a student session on devices comes later with its own design task (D-331). The Kotak Terkunci code can be checked on the IFP (online, D-332) |
 | **Paket Soal TKA** | Pemanasan TKA reuses items of a package without starting a CBT session |
 | **Hari Ini** | Today's lessons show a "Buka Game kelas" button next to the RPM meeting |
-| **Di Kelas → Jurnal** | After the session, the journal entry is pre-filled: activities run, time used, class result summary (D-016 offline sync applies to the journal, not to the game) |
+| **Di Kelas → Jurnal** | After the session, the journal entry is pre-filled: activities run, time used, class result summary (D-016 offline sync applies to the journal, not to the game). A meeting the journal marks `partial` feeds the Lanjutan block of the next playlist (D-267) |
 | **Asesmen** | The class summary per TP is a formative record. It can be attached to the assessment plan as *asesmen formatif* evidence; per-student scores only when the teacher uses the response method in §6.2 |
 | **Dokumen Saya** | Activities and playlists are documents with validation status and comments, like other content |
 | **Portal Kepala Sekolah / Pengawas** | Usage report for both principal and supervisor (D-178): how often Game kelas runs per class and subject, and which TPs were practised. Useful for supervision and for reporting the school's IFP use |
@@ -226,10 +228,12 @@ This respects the present-mode rule that scores live in the teacher's session an
 
 The IFP is a shared screen in front of the class. Typing the teacher's password on it is a risk (students watch, and the browser may stay logged in).
 
-- **Kode Tayang (D-173).** The teacher opens the `/pid` page on the app host (D-233) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Game kelas items and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
+- **Kode Tayang (D-173).** The teacher opens the `/pid` page on the app host (D-233) on the IFP, which shows a 6-digit code or QR. The teacher confirms it on their phone. The IFP then gets a **present-only** session: it can play today's Game kelas items and the interactive LKPD steps of today's lesson (D-331) and nothing else (no student list, no documents, no settings). It ends when the teacher taps *Selesai* on the phone or after a time limit.
 - **Phone as remote (D-173).** The paired phone shows next/previous, reveal answer, the answer key, and the run sheet. The teacher can walk around the class, and the key never appears on the big screen.
-- **Kartu Jawab (D-174, last step).** Per-student responses without student devices. Each student holds a printed card with a number and four sides (A–D). The teacher scans the raised cards with the phone camera. The app maps card numbers to the roster on the teacher's phone, so the exit ticket gives per-student results without any student touching a device or logging in. Names never show on the IFP. This is the only path from a game to per-student scores (§5), so it comes after the class-level loop is proven.
+- **Kartu Jawab (D-174, last step).** Per-student responses without student devices. Each student holds a printed card with a number and four sides (A–D). The teacher scans the raised cards with the phone camera. It reuses the camera and roster-mapping code of Pindai LJK (D-286), which reads answer sheets in the teacher's browser with a JavaScript OMR library and sends only answers and confidence to the server, never photos (D-369). The app maps card numbers to the roster on the teacher's phone, so the exit ticket gives per-student results without any student touching a device or logging in. Names never show on the IFP. This is the only path from a game to per-student scores (§5), so it comes after the class-level loop is proven.
 - On the IFP, only team names and team scores are shown; no public ranking of individual students.
+- **Piket on the idle screen (D-298).** When the school switches it on (off by default), the Game kelas idle screen shows today's piket group and tasks, with first or short names only.
+- UI copy on the panel and the phone says "murid", not "siswa" (D-210).
 
 ### 6.3 Inclusion
 
@@ -279,9 +283,9 @@ Ideas the two sites do not have and that fit SIGRAK's strengths:
 | 4 | Manipulatives for Matematika Fase A–B (Blok Puluhan, Garis Bilangan, Pita Pecahan, Jam Analog, Uang Rupiah) | Step 1 |
 | 5 | Asesmen link, "Perlu diulang" and AI follow-up suggestions; principal usage report | P5-08, P5-09 |
 | 6 | Content packs, first MI (Al-Qur'an Hadis, Bahasa Arab, Fikih, Akidah Akhlak, SKI) and Bahasa Jawa with aksara Jawa (D-177); then the six SD religions. Also Pemanasan TKA, Urutkan, Papan Petak, Kotak Kejutan | Steps 2–5, curriculum data sign-off (D-113) |
-| 7 | Kartu Jawab (D-174); camera activities tied to a TP (D-180) | Steps 1–6 |
+| 7 | Kartu Jawab (D-174), reusing the Pindai LJK camera and roster-mapping code (D-286); camera activities tied to a TP (D-180) | Steps 1–6, Pindai LJK (P5-08) |
 
-**Success measures (pilot):** share of RPM meetings with a Game kelas activity; sessions per class per week; share of sessions that reach the exit ticket and debrief; teachers' rating of "membantu siswa paham" after use; time from opening the RPM to first activity on the panel (target under 1 minute).
+**Success measures (pilot):** share of RPM meetings with a Game kelas activity; sessions per class per week; share of sessions that reach the exit ticket and debrief; teachers' rating of "membantu murid paham" after use; time from opening the RPM to first activity on the panel (target under 1 minute).
 
 ## Decisions
 
@@ -301,6 +305,13 @@ Recorded in `docs/agent/DECISIONS.md` after the owner interview on 2026-11-04.
 | D-180 | Camera and movement activities only later and only when tied to a TP |
 | D-181 | Weekly offline bundle ships with the Game kelas core |
 | D-233 | Kode Tayang page at `/pid` on the app host (not a `papan.` subdomain, not `/papan`) |
+| D-210 | UI copy says "murid" |
+| D-267 | A `partial` meeting's unfinished experiences become a Lanjutan block in the next meeting and in Game kelas |
+| D-286 | Kartu Jawab reuses the Pindai LJK camera and roster-mapping code |
+| D-298 | Piket on the Game kelas idle screen, school switch off by default, first or short names only |
+| D-331 | Interactive LKPD steps run online in the teacher's app and the IFP present session; student session later |
+| D-332 | Kotak Terkunci code can be checked on the IFP (online) |
+| D-369 | Pindai LJK reads answer sheets in the teacher's browser; only answers and confidence reach the server |
 
 ## Open questions
 

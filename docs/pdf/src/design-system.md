@@ -1,10 +1,10 @@
 # Sistem Desain dan Penulisan UI
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/design-system.md</code> pada 1 November 2026. Teks UI berbahasa Indonesia dikutip apa adanya.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/design-system.md</code> pada 10 November 2026. Teks UI berbahasa Indonesia dikutip apa adanya.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-06
-- **Terakhir diperbarui:** 2026-11-01
+- **Terakhir diperbarui:** 2026-11-10 (istilah, label status, dan aturan suara dari D-210, D-263…D-311, D-322, D-353, D-358, D-371)
 - **Sumber:** `Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`, `Catatan_Pengembang_Aplikasi_Lama_Design_System_Data_dan_AI.md`, `Parafrase_Teks_UI_Sigrak.xlsx` (semuanya di `docs/sources/`)
 
 ## Tujuan
@@ -21,7 +21,7 @@ Aplikasi harus terlihat seperti buku kerja guru yang rapi: latar polos, satu war
 | Warna aksen berbeda untuk tiap kartu atau ikon | Satu warna brand + warna status saja |
 | Label huruf kapital yang sangat kecil (`text-[9px] uppercase`) | Label huruf kalimat, minimal 13 px, ketebalan 600 |
 | Tombol hanya ikon | Ikon + teks. Ikon saja hanya untuk aksi universal (tutup, cari, menu) dengan `aria-label` |
-| Lencana "Kurang 232" di setiap baris | Bilah kemajuan tipis + angka. Berwarna hanya bila terlambat |
+| Lencana "Kurang 232" di setiap baris | Bilah kemajuan tipis + "Belum lengkap: 232" (D-263). Berwarna hanya bila terlambat |
 | `user-scalable=no` | Zoom diizinkan (aksesibilitas) |
 | Tailwind CDN, `lucide@latest` | Tailwind lewat build Vite. Ikon dikunci versinya dan dibundel |
 
@@ -70,11 +70,33 @@ Aturan:
 | Aksi | Tombol (utama, sekunder, teks), tombol ikon (hanya tutup/cari/menu) |
 | Formulir | Input, Select, Combobox (pemilih kurikulum), Checkbox, kartu Radio (pilihan wizard), Textarea dengan penghitung (catatan opsional untuk AI) |
 | Struktur | Tab, Tabel + daftar kartu untuk ponsel, Stepper (wizard), Bottom sheet, Dialog |
-| Umpan balik | Toast (satu baris, hilang sendiri), galat di tempat, Keadaan kosong, Skeleton, Kemajuan ("Langkah 2 dari 4") |
+| Umpan balik | Toast (satu baris, hilang sendiri), galat di tempat, Keadaan kosong, Skeleton, Kemajuan ("Langkah 2 dari 4"), Chip status (teks + warna, lihat Label status) |
 | Mesin konten | Kartu templat (galeri), Penyunting bagian dengan "Perbaiki bagian ini", Pembanding revisi (lama/baru), Panel status pembuatan |
 | Kunci AI | Baris kunci (label, project, 4 karakter terakhir, chip status, waktu cooldown), sheet Tambah kunci dengan hasil uji dan kotak persetujuan multi-kunci |
 | Ujian TKA | Kartu sesi, lembar kartu ujian (cetak), panel proktor (token aktif dengan hitung mundur, daftar peserta dengan status), tabel hasil |
-| Cetak | Unggah kop dengan pratinjau A4/F4 dan peringatan resolusi, formulir pengaturan cetak |
+| Cetak | Unggah kop dengan pratinjau A4/F4 dan peringatan resolusi, "Buat kop otomatis" (D-284), formulir pengaturan cetak dengan profil margin (D-283) |
+| Kebijakan (mulai P5-04, D-358) | Panel Dasar Kebijakan (CP, TP, DPL, prinsip, versi rule set); baris Cek Keselarasan: **blokir** (`--danger`, tidak bisa disimpan), **peringatan** (`--warn`), **saran** (`--info`), masing-masing dengan ikon dan label teks, tidak pernah hanya warna; tanda "Contoh" pada nilai bawaan yang berupa contoh (D-353) |
+
+## Label status
+
+Status selalu berupa label teks plus warna, tidak pernah hanya warna (D-263). Warnanya mengikuti token status; abu-abu adalah `--text-muted` di atas `--surface`.
+
+| Tempat | Label dan warna | Keputusan |
+|---|---|---|
+| Kelengkapan (guru, portal) | Lengkap (ok), Belum lengkap: n (warn bila terlambat), Belum dimulai (abu-abu), Tidak berlaku (abu-abu) | D-263 |
+| Kesiapan RPM | Siap (ok), Segera habis (warn), Perlu RPM (danger, menyebut tanggal kosong pertama); abu-abu Tidak ada jadwal / Belum ada ATP. Hari Ini hanya menampilkan kuning dan merah | D-270 |
+| Pengingat | Terkirim (abu-abu), Dibaca (info), Ditindaklanjuti (ok) | D-311 |
+| Permintaan bantuan | Baru (abu-abu), Diproses (info), Selesai (ok) | D-320 |
+| Pengesahan dokumen | Disahkan (ok), Berubah setelah disahkan (warn) | D-281 |
+
+## Suara dan notifikasi
+
+Saat pembuatan AI selesai atau gagal, ekspor atau Berkas Administrasi siap, atau sinkronisasi lembar jawaban selesai (D-285):
+
+- Selalu ada toast dan entri Kabar. Suara hanya menambah, jadi tidak ada informasi yang bergantung pada suara.
+- Suara menyala secara bawaan dengan pola *Lembut*. Ada tiga pola Web Audio (*Lembut*, *Lonceng*, *Tegas*), dan bunyi gagal berbeda dari bunyi berhasil. Suara hanya diputar selama tab terlihat.
+- Notifikasi layar hanya muncul selama tab tersembunyi. Izinnya diminta pada pembuatan pertama, bukan saat masuk.
+- Pengaturannya ada di Akun > Tampilan dan disimpan di server per pengguna. Web Push di luar cakupan.
 
 ## Aturan ponsel
 
@@ -104,6 +126,17 @@ Situs ujian adalah front end terpisah untuk siswa (D-027). Tampilannya harus ter
 - Tanpa promosi brand, tanpa tautan ke aplikasi guru, tanpa kata-kata tentang AI.
 - Teks singkat dan ramah anak: "Masukkan token dari pengawas", "Kirim jawaban", "Waktu tersisa 5 menit".
 
+**Tingkat hasil TKA (D-371).** Guru dan murid melihat empat tingkat, masing-masing dengan teks singkat (teksnya di `lang/id`):
+
+| Tingkat | Makna yang ditampilkan |
+|---|---|
+| Istimewa | Predikat tertinggi (nilai 95,00 atau lebih) |
+| Baik | Menguasai kompetensi yang diujikan dengan baik |
+| Memadai | Menguasai dasar, masih ada materi yang perlu ditingkatkan |
+| Kurang | Perlu peningkatan lebih lanjut |
+
+Ekspor menyimpan kategori resmi (Baik, Memadai, Kurang) dan predikat Istimewa secara terpisah (`export-localization.md` XP-47). Setiap layar hasil mencatat bahwa ini hasil latihan, dan bahwa hasil TKA resmi (SHTKA) melengkapi dan memvalidasi nilai rapor di jalur prestasi dan SPMB.
+
 ## Nada dan gaya bicara
 
 Sigrak berbicara seperti rekan guru yang sigap dan sopan: langsung ke inti, santun, tidak pernah memamerkan teknologi.
@@ -128,13 +161,16 @@ Sigrak berbicara seperti rekan guru yang sigap dan sopan: langsung ke inti, sant
 8. "Anda" untuk setiap peran. "Bapak/Ibu" hanya di pengumuman dari kepala sekolah.
 9. **Jangan pernah meminta guru menulis prompt.** Pertanyaan wizard bersifat pedagogis dan disertai nilai bawaan (lihat `content-engine.md`, bagian Aturan wizard).
 
+10. **Tanpa kata yang menekan.** Teks tentang uang dan tindak lanjut tetap mendukung: "Sumbangan sukarela", "Sisa dari kesepakatan", "Pengingat". Kata terlarang (di bawah) tidak pernah muncul.
+11. **Beri label "Contoh" pada nilai bawaan yang berupa contoh** (D-353), agar guru tahu bagian mana yang boleh diubah.
+
 | Situasi | Sebelum | Sesudah |
 |---|---|---|
 | Tombol utama | GENERATE MODUL | Buat RPM |
 | Galat | Gagal memproses AI: {pesan} | RPM belum berhasil dibuat. Periksa kunci AI Anda, lalu coba lagi. |
 | Semua kunci mencapai batas | — | Semua kunci AI Anda sedang mencapai batas. Coba lagi pukul {jam}. |
 | Konfirmasi | Hapus jurnal? / Ya, Hapus | Hapus jurnal 12 Okt? Jurnal ini tidak bisa dikembalikan. / Hapus jurnal |
-| Kosong | Data belum tersedia | Belum ada siswa. Tambahkan satu per satu atau impor dari Excel. |
+| Kosong | Data belum tersedia | Belum ada murid. Tambahkan satu per satu atau impor dari Excel. |
 
 ## Istilah
 
@@ -162,9 +198,9 @@ Ini istilah baku dari lembar *Istilah* di spreadsheet (37 entri; daftar lengkapn
 | API Key / API Key Gemini | Kunci AI | Jamak "kunci AI", satu per project Google |
 | Google Cloud Project | Project Google | **Baru**. Label yang diketik guru untuk setiap kunci |
 | Penilaian (menu) | Asesmen | |
-| Administrasi Kelas | Kelas Saya (+ Di Kelas untuk absensi, jurnal, catatan) | |
+| Administrasi Kelas | Kelas Saya (+ Di Kelas untuk kehadiran, jurnal, catatan) | |
 | Pemberitahuan / papan pengumuman | Kabar | Dari sekolah ke guru |
-| Pemberitahuan (kepala sekolah ke guru) | Pengingat | |
+| Pemberitahuan (kepala sekolah ke guru) / teguran | Pengingat | **Diperbarui**. Tidak pernah "teguran" (D-311) |
 | Tutorial | Bantuan | |
 | Pengaturan / Pengaturan Portal | Akun (pribadi) / Pengaturan Sekolah (sekolah) | |
 | Dashboard | Ringkasan (portal) / Hari Ini (guru) | |
@@ -174,11 +210,30 @@ Ini istilah baku dari lembar *Istilah* di spreadsheet (37 entri; daftar lengkapn
 | Role / Hak Akses | Peran | |
 | Cloud / Firestore / Firebase / sinkronisasi | tersimpan di akun | Nama teknologi tidak pernah ditampilkan |
 | Edit / Reset / Timpa | Ubah / Kembalikan, Atur ulang / Ganti | |
-| Presensi / Kehadiran / Daftar Hadir | Absensi | |
+| Absensi / Presensi | Kehadiran | **Diperbarui**. Nama menu (D-302); "Daftar hadir" tetap untuk cetakan; pencarian bantuan tetap menemukan "absensi" |
 | Mutasi siswa | Pindah dan keluar | |
 | Master + nama aplikasi lama | Kurikulum bawaan | |
 | Gagal … | … belum berhasil | Lebih tenang, tetap jelas |
+| Siswa | Murid | **Baru**. Istilah UI menurut Permendikdasmen 1/2026 (D-210); "siswa" hanya di nama tabel dan kutipan aplikasi lama |
+| P5 / Projek Penguatan Profil Pelajar Pancasila | Kokurikuler | **Baru** (D-210, D-322) |
+| Taraf serap | Daya serap | **Baru** (D-322); cetakan "Analisis Daya Serap" (D-295) |
+| Download Paket / Paket Administrasi | Berkas Administrasi | **Baru** (D-278). "Paket" tetap untuk Paket Soal TKA |
+| Tanda tangan elektronik / TTE / Pengesahan elektronik | Pengesahan dokumen | **Baru** (D-281). Persetujuan internal dengan kode, bukan tanda tangan elektronik yang sah secara hukum |
+| Regu piket | Kelompok piket | **Baru** (D-297) |
+| Keuangan lain / iuran | Sumbangan sukarela | **Baru** (D-300) |
+| Kurang bayar / tunggakan / belum lunas | Sisa dari kesepakatan | **Baru** (D-300). Hanya ditampilkan bila ada jumlah yang disepakati |
+| Kurang 182 | Belum lengkap: 182 | **Baru** (D-263) |
+| Tingkat TKA (empat kategori) | Istimewa, Baik, Memadai, Kurang | **Baru** (D-371). Lihat Tingkat hasil TKA |
 | `...` / `&` | `…` (satu karakter) / "dan" | |
+
+### Kata terlarang
+
+Kata berikut tidak pernah muncul di teks UI, cetakan, atau `lang/id`; tes istilah terlarang gagal bila menemukannya (`export-localization.md` LOC-35):
+
+- tunggakan, kurang bayar, belum lunas (D-300)
+- teguran (D-311)
+- tanda tangan elektronik (D-281)
+- siswa, P5, taraf serap di teks UI (D-210, D-322)
 
 ## Sumber teks dan lokalisasi
 
@@ -191,3 +246,4 @@ Ini istilah baku dari lembar *Istilah* di spreadsheet (37 entri; daftar lengkapn
 
 - [x] Teks UI memakai "Templat" (KBBI), bukan "template" (D-151).
 - [x] Palet runtime game: tugas desainer, dengan brief yang digabung bersama logo (D-154).
+- [x] Istilah untuk peserta didik: "murid" (D-210). Menu kehadiran: *Kehadiran* (D-302).
