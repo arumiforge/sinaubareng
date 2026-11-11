@@ -1,0 +1,657 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "F",
+    "facet_name": "Content",
+    "title": "Taksonomi SIGRAK — Faset F: Konten",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "KONTEN",
+      "facet": "F",
+      "label_id": "Jenis konten SIGRAK",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-024",
+        "note": "One dedicated template per content type."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "KONTEN.RPM",
+      "facet": "F",
+      "label_id": "Rencana Pembelajaran Mendalam (RPM)",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-024"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "RPP",
+          "type": "replaced",
+          "note": "RPP is replaced by the planning document (Permendikdasmen 1/2026); SIGRAK calls it RPM."
+        },
+        {
+          "from": "MODUL-AJAR",
+          "type": "replaced",
+          "note": "Modul Ajar is replaced by the planning document; SIGRAK calls it RPM."
+        }
+      ],
+      "key": "rpm"
+    },
+    {
+      "code": "KONTEN.BANK-SOAL",
+      "facet": "F",
+      "label_id": "Bank Soal",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-024"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "question_bank"
+    },
+    {
+      "code": "KONTEN.LKPD",
+      "facet": "F",
+      "label_id": "Lembar Kerja Peserta Didik (LKPD)",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "worksheet"
+    },
+    {
+      "code": "KONTEN.QUIZ-BATTLE",
+      "facet": "F",
+      "label_id": "Quiz Battle",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-172"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "quiz_battle"
+    },
+    {
+      "code": "KONTEN.PAKET-TKA",
+      "facet": "F",
+      "label_id": "Paket Soal TKA",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-026"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "tka_package"
+    },
+    {
+      "code": "KONTEN.RUBRIK-KINERJA",
+      "facet": "F",
+      "label_id": "Rubrik Kinerja",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "performance_rubric"
+    },
+    {
+      "code": "KONTEN.OBSERVASI-DPL",
+      "facet": "F",
+      "label_id": "Observasi DPL",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "dpl_observation"
+    },
+    {
+      "code": "KONTEN.CEK-KESIAPAN",
+      "facet": "F",
+      "label_id": "Cek Kesiapan Awal",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "readiness_check"
+    },
+    {
+      "code": "KONTEN.AKOMODASI-MURID",
+      "facet": "F",
+      "label_id": "Akomodasi Murid",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "student_accommodation"
+    },
+    {
+      "code": "KONTEN.KARTU-PENILAIAN-DIRI",
+      "facet": "F",
+      "label_id": "Kartu penilaian diri",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "self_assessment_card"
+    },
+    {
+      "code": "KONTEN.KARTU-PENILAIAN-ANTARTEMAN",
+      "facet": "F",
+      "label_id": "Kartu penilaian antarteman",
+      "parent": "KONTEN",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-346"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "peer_assessment_card"
+    },
+    {
+      "code": "RPP",
+      "facet": "F",
+      "label_id": "Rencana Pelaksanaan Pembelajaran (RPP)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-16-2022",
+        "article": null,
+        "pages": null,
+        "note": "Planning term before Permendikdasmen 1/2026."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "MODUL-AJAR",
+      "facet": "F",
+      "label_id": "Modul Ajar",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-16-2022",
+        "article": null,
+        "pages": null,
+        "note": "Planning term before Permendikdasmen 1/2026."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA",
+      "facet": "F",
+      "label_id": "Pola LKPD",
+      "parent": "KONTEN.LKPD",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332",
+        "note": "Wave 1 patterns; codes follow lkpd-exploration.md. Later patterns are added when decided."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "LKPD-POLA.L1",
+      "facet": "F",
+      "label_id": "Detektif Teks",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.L2",
+      "facet": "F",
+      "label_id": "Peta Cerita",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.N3",
+      "facet": "F",
+      "label_id": "Data Kelasku",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.N5",
+      "facet": "F",
+      "label_id": "Etnomatematika",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.G1",
+      "facet": "F",
+      "label_id": "Misi Petualangan",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.G2",
+      "facet": "F",
+      "label_id": "Kotak Terkunci",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.S5",
+      "facet": "F",
+      "label_id": "Pikir Komputasional Tanpa Komputer",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.D1",
+      "facet": "F",
+      "label_id": "Tiga Jalur",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "LKPD-POLA.D2",
+      "facet": "F",
+      "label_id": "Tiket Keluar",
+      "parent": "LKPD-POLA",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-332"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": []
+    },
+    {
+      "code": "GAME",
+      "facet": "F",
+      "label_id": "Templat Game kelas",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176",
+        "note": "Quiz Battle first; others follow the learning-function roadmap."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "GAME.QUIZ-BATTLE",
+      "facet": "F",
+      "label_id": "Quiz Battle",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "planned"
+    },
+    {
+      "code": "GAME.LOMBA-TIM",
+      "facet": "F",
+      "label_id": "Lomba Tim",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.PILAH-KELOMPOKKAN",
+      "facet": "F",
+      "label_id": "Pilah & Kelompokkan",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.PASANGKAN",
+      "facet": "F",
+      "label_id": "Pasangkan",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.URUTKAN",
+      "facet": "F",
+      "label_id": "Urutkan",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.PAPAN-PETAK",
+      "facet": "F",
+      "label_id": "Papan Petak",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.KOTAK-KEJUTAN",
+      "facet": "F",
+      "label_id": "Kotak Kejutan",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.TIKET-KELUAR",
+      "facet": "F",
+      "label_id": "Tiket Keluar",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "GAME.PEMANASAN-TKA",
+      "facet": "F",
+      "label_id": "Pemanasan TKA",
+      "parent": "GAME",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-176"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "build_status": "roadmap"
+    },
+    {
+      "code": "SOAL-BENTUK",
+      "facet": "F",
+      "label_id": "Bentuk soal (katalog)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/form-options.json"
+        ],
+        "path": "groups[].lists[code=SIGRAK-KAT-OPS-BSO].options[]",
+        "code_field": "code"
+      },
+      "note": "TKA item forms follow docs/data/tka/kerangka-tka-sd.json (Perka BSKAP 047/H/AN/2025)."
+    },
+    {
+      "code": "SOAL-KESUKARAN",
+      "facet": "F",
+      "label_id": "Tingkat kesukaran (katalog)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "teacher_discretion",
+      "source_ref": {
+        "source": "sigrak",
+        "decision": "D-367"
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/form-options.json"
+        ],
+        "path": "groups[].lists[code=SIGRAK-KAT-OPS-KSK].options[]",
+        "code_field": "code"
+      }
+    }
+  ]
+}

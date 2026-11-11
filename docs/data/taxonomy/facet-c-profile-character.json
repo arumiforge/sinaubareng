@@ -1,0 +1,881 @@
+{
+  "meta": {
+    "taxonomy": "sigrak_master_taxonomy",
+    "facet": "C",
+    "facet_name": "Profile and character",
+    "title": "Taksonomi SIGRAK — Faset C: Profil dan karakter",
+    "version": "TAX-2026-R1",
+    "status": "draft",
+    "review": {
+      "reviewer": "Tim Validasi SIGRAK",
+      "status": "pending",
+      "rule": "D-113: nothing here is imported or seeded before Tim Validasi SIGRAK signs it off."
+    },
+    "decisions": [
+      "D-353",
+      "D-357"
+    ],
+    "created_on": "2026-11-10",
+    "conventions": "docs/data/taxonomy/README.md"
+  },
+  "nodes": [
+    {
+      "code": "DPL",
+      "facet": "C",
+      "label_id": "Dimensi Profil Lulusan",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "note": "Binding source is the SKL; the same list is in 13/2025.",
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4,
+              7,
+              12,
+              13
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3",
+          "type": "replaced",
+          "note": "Profil Pelajar Pancasila (6 dimensions) is replaced by 8 DPL."
+        }
+      ],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "DPL.01",
+      "facet": "C",
+      "label_id": "Keimanan dan Ketakwaan terhadap Tuhan Yang Maha Esa",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.BERIMAN",
+          "type": "renamed"
+        }
+      ],
+      "key": "faith_piety"
+    },
+    {
+      "code": "DPL.02",
+      "facet": "C",
+      "label_id": "Kewargaan",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.BERKEBINEKAAN-GLOBAL",
+          "type": "approximate",
+          "note": "SIGRAK reading, not an official mapping; Tim Validasi to confirm."
+        }
+      ],
+      "key": "citizenship"
+    },
+    {
+      "code": "DPL.03",
+      "facet": "C",
+      "label_id": "Penalaran Kritis",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.BERNALAR-KRITIS",
+          "type": "renamed"
+        }
+      ],
+      "key": "critical_reasoning"
+    },
+    {
+      "code": "DPL.04",
+      "facet": "C",
+      "label_id": "Kreativitas",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.KREATIF",
+          "type": "renamed"
+        }
+      ],
+      "key": "creativity"
+    },
+    {
+      "code": "DPL.05",
+      "facet": "C",
+      "label_id": "Kolaborasi",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.BERGOTONG-ROYONG",
+          "type": "approximate",
+          "note": "SIGRAK reading, not an official mapping; Tim Validasi to confirm."
+        }
+      ],
+      "key": "collaboration"
+    },
+    {
+      "code": "DPL.06",
+      "facet": "C",
+      "label_id": "Kemandirian",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [
+        {
+          "from": "P3.MANDIRI",
+          "type": "renamed"
+        }
+      ],
+      "key": "independence"
+    },
+    {
+      "code": "DPL.07",
+      "facet": "C",
+      "label_id": "Kesehatan",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "health"
+    },
+    {
+      "code": "DPL.08",
+      "facet": "C",
+      "label_id": "Komunikasi",
+      "parent": "DPL",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-10-2025",
+        "article": null,
+        "pages": null,
+        "also": [
+          {
+            "regulation": "PERMENDIKDASMEN-13-2025",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "regulation": "PANDUAN-KOKURIKULER-BSKAP-2025",
+            "pages": [
+              10
+            ]
+          }
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "communication"
+    },
+    {
+      "code": "P3",
+      "facet": "C",
+      "label_id": "Profil Pelajar Pancasila",
+      "parent": null,
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null,
+        "note": "Term of the original 12/2024 text, before 13/2025. Article to be cited after P4-23."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.BERIMAN",
+      "facet": "C",
+      "label_id": "Beriman, bertakwa kepada Tuhan Yang Maha Esa, dan berakhlak mulia",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.BERKEBINEKAAN-GLOBAL",
+      "facet": "C",
+      "label_id": "Berkebinekaan global",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.BERGOTONG-ROYONG",
+      "facet": "C",
+      "label_id": "Bergotong royong",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.MANDIRI",
+      "facet": "C",
+      "label_id": "Mandiri",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.BERNALAR-KRITIS",
+      "facet": "C",
+      "label_id": "Bernalar kritis",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "P3.KREATIF",
+      "facet": "C",
+      "label_id": "Kreatif",
+      "parent": "P3",
+      "level_scope": "both",
+      "force": "free",
+      "source_ref": {
+        "regulation": "PERMENDIKBUDRISTEK-12-2024",
+        "article": null,
+        "pages": null
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": "TAX-2026-R1",
+      "crosswalk": []
+    },
+    {
+      "code": "KAIH",
+      "facet": "C",
+      "label_id": "7 Kebiasaan Anak Indonesia Hebat (katalog)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "school_discretion",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-13-2025",
+        "article": "Pasal 17",
+        "pages": [
+          3,
+          4
+        ],
+        "note": "Gerakan 7 KAIH is a kokurikuler form; the seven habits live in the catalog (D-207 label 'Tidur Cepat')."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed",
+      "members_from": {
+        "files": [
+          "docs/data/catalogs/cocurricular-themes.json"
+        ],
+        "path": "habits_7kaih[]",
+        "code_field": "code"
+      }
+    },
+    {
+      "code": "PANCA-CINTA",
+      "facet": "C",
+      "label_id": "Panca Cinta (Kurikulum Berbasis Cinta)",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ],
+        "note": "Mandatory to implement in madrasah; for SD religion teachers the fields are off by default and an admin can switch them on (D-368)."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "PANCA-CINTA.01",
+      "facet": "C",
+      "label_id": "Cinta Tuhan",
+      "parent": "PANCA-CINTA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "love_of_god"
+    },
+    {
+      "code": "PANCA-CINTA.02",
+      "facet": "C",
+      "label_id": "Cinta diri dan sesama manusia",
+      "parent": "PANCA-CINTA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "love_of_self_and_others"
+    },
+    {
+      "code": "PANCA-CINTA.03",
+      "facet": "C",
+      "label_id": "Cinta lingkungan",
+      "parent": "PANCA-CINTA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "love_of_environment"
+    },
+    {
+      "code": "PANCA-CINTA.04",
+      "facet": "C",
+      "label_id": "Cinta ilmu",
+      "parent": "PANCA-CINTA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "love_of_knowledge"
+    },
+    {
+      "code": "PANCA-CINTA.05",
+      "facet": "C",
+      "label_id": "Cinta tanah air",
+      "parent": "PANCA-CINTA",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          9
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "love_of_homeland"
+    },
+    {
+      "code": "KBC-NILAI",
+      "facet": "C",
+      "label_id": "Nilai dasar KBC",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "KBC-NILAI.01",
+      "facet": "C",
+      "label_id": "Spiritual",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "spiritual"
+    },
+    {
+      "code": "KBC-NILAI.02",
+      "facet": "C",
+      "label_id": "Personal",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "personal"
+    },
+    {
+      "code": "KBC-NILAI.03",
+      "facet": "C",
+      "label_id": "Sosial",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "social"
+    },
+    {
+      "code": "KBC-NILAI.04",
+      "facet": "C",
+      "label_id": "Ekologis",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "ecological"
+    },
+    {
+      "code": "KBC-NILAI.05",
+      "facet": "C",
+      "label_id": "Kebangsaan",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "national"
+    },
+    {
+      "code": "KBC-NILAI.06",
+      "facet": "C",
+      "label_id": "Intelektual",
+      "parent": "KBC-NILAI",
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "intellectual"
+    },
+    {
+      "code": "KBC-LEVEL",
+      "facet": "C",
+      "label_id": "Tingkat praktik KBC",
+      "parent": null,
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          23,
+          24
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    },
+    {
+      "code": "KBC-LEVEL.01",
+      "facet": "C",
+      "label_id": "Merintis",
+      "parent": "KBC-LEVEL",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          23,
+          24
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "starting"
+    },
+    {
+      "code": "KBC-LEVEL.02",
+      "facet": "C",
+      "label_id": "Berkembang",
+      "parent": "KBC-LEVEL",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          23,
+          24
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "developing"
+    },
+    {
+      "code": "KBC-LEVEL.03",
+      "facet": "C",
+      "label_id": "Mekar",
+      "parent": "KBC-LEVEL",
+      "level_scope": "both",
+      "force": "example",
+      "source_ref": {
+        "regulation": "KMA-512-2026",
+        "article": null,
+        "pages": [
+          23,
+          24
+        ]
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "key": "blooming"
+    },
+    {
+      "code": "BUDAYA-AMAN",
+      "facet": "C",
+      "label_id": "Budaya sekolah aman dan nyaman",
+      "parent": null,
+      "level_scope": "both",
+      "force": "mandatory",
+      "source_ref": {
+        "regulation": "PERMENDIKDASMEN-6-2026",
+        "article": null,
+        "pages": null,
+        "note": "Documents it requires (tata tertib, kesepakatan kelas, SOP pengaduan) are in facet H."
+      },
+      "status": "draft",
+      "since": "TAX-2026-R1",
+      "retired_in": null,
+      "crosswalk": [],
+      "vocabulary": "closed"
+    }
+  ]
+}
