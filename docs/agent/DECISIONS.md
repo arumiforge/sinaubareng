@@ -1796,3 +1796,23 @@ Reason: as built in P5-03j; the owner confirmed it.
 Accepted · 2026-11-11 · owner's choice, extends D-302 and LOC-35
 UI text never uses "absensi". It uses standard Indonesian words such as kehadiran, ketidakhadiran, and hadir. The banned-words test covers it; help search may still find the old word.
 Reason: the owner prefers standard spelling (ejaan baku).
+
+### D-383 — SD says "guru kelas", MI says "wali kelas"
+Accepted · 2026-11-11 · owner's choice · follows Permendikdasmen 6/2026 Pasal 18(3)
+The teacher who holds one class is called *guru kelas* in SD and *wali kelas* in MI, in the UI, prints, and help. The term comes from the Profil Jenjang (`homeroom_teacher_term`, D-356), so code never checks the level. Code, tables, and roles keep the English `homeroom` names; the JTM default of D-212 is unchanged. Docs and decisions written before this keep "wali kelas" as the general term; for SD read it as "guru kelas".
+Reason: Permendikdasmen 6/2026 Pasal 18(3) gives SD class duties to the guru kelas and names wali kelas only for SMP/SMA/SMK; madrasah practice keeps wali kelas.
+
+### D-384 — File names in the principal's school-wide Berkas ZIP
+Accepted · 2026-11-11 · owner's choice · settles D-279 against XP-33
+Each PDF in the ZIP is named by a running number and the teacher's assignment, never the teacher's name: `03-guru-kelas-4a.pdf`, `07-guru-mapel-pjok.pdf` (the D-383 term for the level). The ZIP holds `daftar-isi.pdf`, which lists number, assignment, and teacher name. XP-33 stays without exception.
+Reason: the principal can tell the files apart without teacher names in file names.
+
+### D-385 — Pusat Tindak Lanjut for teachers sits in Hari Ini
+Accepted · 2026-11-11 · owner's choice · confirms the P4-24 placement of D-310
+The teacher's own Pusat Tindak Lanjut is in the Hari Ini menu, next to Siapkan besok.
+Reason: follow-ups are daily work, seen every time the app opens.
+
+### D-386 — Ekstrakurikuler and Tabungan in Kelas Saya, Arsip Tahun Ajaran in Tahun Ajaran
+Accepted · 2026-11-11 · owner's choice · confirms the P4-24 placements of D-216, D-219, D-301, D-318
+Ekstrakurikuler and Tabungan stay in Kelas Saya (Tabungan inside Keuangan, which a school may turn off). Arsip Tahun Ajaran stays inside the operator's Tahun Ajaran menu.
+Reason: the owner accepted the placements written in the final docs.

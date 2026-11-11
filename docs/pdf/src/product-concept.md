@@ -1,10 +1,10 @@
 # Konsep Produk SIGRAK
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/product-concept.md</code> pada 10 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/product-concept.md</code> pada 11 November 2026.</p>
 
 - **Status:** final (disetujui 2026-10-31, D-123)
 - **Tugas:** P1-02; keputusan berikutnya diterapkan di P4-24 (D-210…D-371)
-- **Terakhir diperbarui:** 2026-11-10
+- **Terakhir diperbarui:** 2026-11-11 (guru kelas / wali kelas, penempatan menu, D-383, D-385, D-386)
 - **Sumber:** `Konsep_Awal_Produk_SIGRAK.md`, `Rebranding_dan_Perombakan_Fitur_Aplikasi_Lama.md`, `Dokumentasi-Fungsionalitas-Aplikasi-Lama.pdf` (di `docs/sources/`)
 
 ## Tujuan
@@ -80,7 +80,7 @@ Prinsip, berurutan menurut prioritas:
 
 | Peran (nama di UI) | Siapa | Tugas utama di SIGRAK | Perangkat |
 |---|---|---|---|
-| Guru kelas (wali kelas) | Mengajar mata pelajaran kelas di satu kelas: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, dan yang lain yang tidak tercantum untuk guru mapel | Membuat konten, Kehadiran harian, jurnal, asesmen, rapor, data kelas, tugas wali kelas (catatan rapor, pesan ke orang tua, kenaikan, kelulusan, tabungan) | Ponsel, laptop di rumah |
+| Guru kelas (wali kelas; tampilan memakai "guru kelas" di SD dan "wali kelas" di MI, D-383) | Mengajar mata pelajaran kelas di satu kelas: Pendidikan Pancasila, Bahasa Indonesia, Matematika, IPAS, Seni dan Budaya, dan yang lain yang tidak tercantum untuk guru mapel | Membuat konten, Kehadiran harian, jurnal, asesmen, rapor, data kelas, tugas wali kelas (catatan rapor, pesan ke orang tua, kenaikan, kelulusan, tabungan) | Ponsel, laptop di rumah |
 | Guru mapel (khusus) | Mengajar satu mata pelajaran khusus lintas kelas: **PJOK, Muatan Lokal (Bahasa Jawa), Bahasa Inggris, Pendidikan Agama** (di SD satu mata pelajaran per agama: Islam, Kristen, Katolik, Hindu, Buddha, Khonghucu; di MI mata pelajaran Kemenag Al-Qur'an Hadis, Akidah Akhlak, Fikih, SKI, Bahasa Arab, selalu diajar guru mapel) | Membuat konten yang dipakai ulang lintas kelas. Jurnal, catatan murid, dan asesmen untuk mata pelajarannya (Kehadiran bersifat harian dan menjadi tugas wali kelas) | Ponsel |
 | Kepala sekolah | Kepala sekolah | Memantau kelengkapan dan konten yang dibuat, memvalidasi perubahan kurikulum sekolah, Berkas Administrasi, pengesahan dokumen, Pengingat, supervisi, pengesahan leger, pembagian tugas, buku sekolah, pengaturan cetak, langganan | Laptop, ponsel |
 | Operator sekolah | Staf administrasi sekolah | Tahun ajaran (dan Arsip Tahun Ajaran), kelas, mengundang guru, jadwal pelajaran, kalender, profil sekolah, mutasi, inventaris sekolah | Laptop |
@@ -176,7 +176,7 @@ Portal, dibuka lewat tombol pindah peran:
 | Operator Sekolah | Tahun Ajaran (termasuk Arsip Tahun Ajaran), Kelas, Guru (undang), Jadwal, Kaldik, Profil Sekolah, Mutasi, Inventaris Sekolah |
 | Pengawas | Sekolah Binaan (ajukan sekolah; Tim SIGRAK menyetujui, D-309), Pantau (hanya-baca, rekap tingkat sekolah), Validasi, Supervisi (rekap guru dan PKKS kepala sekolah), Pusat Tindak Lanjut, Laporan Kepengawasan |
 
-Nama menunya *Kehadiran*, dengan path `/kehadiran`; pencarian bantuan tetap menemukan "absensi" (D-302). *Berkas Administrasi* adalah bundel dokumen guru per semester (D-278); Hari Ini menampilkan pintasannya menjelang akhir semester. *Pusat Tindak Lanjut* adalah satu daftar tindak lanjut per peran yang dibaca dari catatan yang sudah ada: guru melihat miliknya sendiri, kepala sekolah milik sekolah, pengawas hanya butir tingkat sekolah dan PKKS (D-310). *Arsip Tahun Ajaran*: tahun ajaran yang sudah ditutup hanya bisa dilihat dan diunduh (D-318). *Supervisi* di portal pengawas mencakup kepala sekolah: instrumen PKKS disusun dari aturan yang berlaku, varian daerah seperti Kudus disimpan sebagai data, dan skor manual dengan bukti opsional untuk butir yang datanya tidak ada di SIGRAK (D-308, D-324, D-327, D-328).
+Nama menunya *Kehadiran*, dengan path `/kehadiran`; pencarian bantuan tetap menemukan "absensi" (D-302). *Berkas Administrasi* adalah bundel dokumen guru per semester (D-278); Hari Ini menampilkan pintasannya menjelang akhir semester. *Pusat Tindak Lanjut* adalah satu daftar tindak lanjut per peran yang dibaca dari catatan yang sudah ada: guru melihat miliknya sendiri (di Hari Ini, D-385), kepala sekolah milik sekolah, pengawas hanya butir tingkat sekolah dan PKKS (D-310). *Arsip Tahun Ajaran*: tahun ajaran yang sudah ditutup hanya bisa dilihat dan diunduh, di dalam menu Tahun Ajaran milik operator (D-318, D-386). Ekstrakurikuler dan Tabungan ada di Kelas Saya (D-386). *Supervisi* di portal pengawas mencakup kepala sekolah: instrumen PKKS disusun dari aturan yang berlaku, varian daerah seperti Kudus disimpan sebagai data, dan skor manual dengan bukti opsional untuk butir yang datanya tidak ada di SIGRAK (D-308, D-324, D-327, D-328).
 
 ### Konsol internal
 
@@ -278,7 +278,7 @@ Ini 43 fitur aplikasi lama ditambah fitur baru, direvisi untuk konsep baru. Nila
 | Kelas Saya | Data siswa | Pertahankan | Kelas Saya > Murid (hanya catatan data, D-010) | "Murid" di teks UI (D-210) |
 | Kelas Saya | Mutasi siswa | Gabung | Kelas Saya > Murid > Pindah atau keluar. Berupa draf sampai ditetapkan; operator mendapat pengingat Dapodik 14 hari kerja | Bagian dari riwayat murid (D-217, D-304) |
 | Kelas Saya | Kenaikan kelas | Gabung | Kelas Saya > Murid > Kenaikan, aktif menjelang akhir tahun; berupa draf sampai ditetapkan, dengan lembar rapat dan berita acara. Kelulusan kelas 6 dengan data SKL dan ijazah | Dipakai setahun sekali (D-215, D-304) |
-| Kelas Saya | Kalender dan jadwal pelajaran | Pertahankan | Kelas Saya > Jadwal. Sekolah menyalin kaldik daerahnya, dengan tawaran pembaruan (kalender Jawa Tengah 6 hari untuk Kudus, Pati, Jepara); hari libur nasional dan cuti bersama terpusat; acara per kelas; hari dan minggu efektif; satu pemeriksa bentrok; pratinjau dampak perubahan; pembuat draf jadwal | D-252…D-262, D-323 |
+| Kelas Saya | Kalender dan jadwal pelajaran | Pertahankan | Kelas Saya > Jadwal. Sekolah menyalin kaldik daerahnya, dengan tawaran pembaruan (kalender Jawa Tengah 6 hari untuk Kudus, Pati, Jepara); hari libur nasional dan cuti bersama terpusat; acara per kelas; satu kalender sekolah yang dipegang operator, dengan usulan perubahan dari guru dan kepala sekolah; hari dan minggu efektif (hari STS/SAS tidak efektif); satu pemeriksa bentrok; pratinjau dampak perubahan; pembuat draf jadwal | D-252…D-262, D-323, D-379, D-380 |
 | Kelas Saya | Piket | Pertahankan | Kelas Saya > Piket: kelompok yang dibuat otomatis dengan rotasi, tugas, dan tanda tidak hadir; tampil di layar diam Game kelas bila sekolah memilihnya | D-297, D-298 |
 | Kelas Saya | Keuangan kelas | Pertahankan | Kelas Saya > Keuangan, sekolah bisa mematikannya. Laporan dibagikan manual, tanpa pengingat uang; *Sumbangan sukarela* (tidak pernah "tunggakan") | Tidak semua sekolah mengizinkannya (D-299, D-300) |
 | Kelas Saya | Inventaris kelas | Pertahankan | Kelas Saya > Inventaris, tampilan per ruang dari inventaris sekolah | D-217, D-306 |

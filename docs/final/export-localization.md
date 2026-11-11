@@ -2,7 +2,7 @@
 
 - **Status:** final (approved 2026-10-31, D-123)
 - **Task:** P2-07
-- **Last updated:** 2026-11-10 (print rules, Berkas Administrasi, new prints, and banned words from D-210…D-371)
+- **Last updated:** 2026-11-11 (Berkas ZIP names, D-383, D-384; earlier: print rules, Berkas Administrasi, new prints, and banned words from D-210…D-371)
 
 ## Purpose
 
@@ -267,7 +267,7 @@ The `school_print_settings.duplex` option mirrors the left and right margins on 
   - Contents: cover (XP-39), the completeness summary sheet (D-263), a contents page, a title page per part, and a NIHIL page for an empty part. BK notes are never included.
   - Each part renders as its own PDF (the same files make the ZIP option), and Gotenberg's merge route joins them. The contents page takes page numbers from each part's page count, so there is no second render.
   - Output: one merged PDF by default, a ZIP of separate PDFs as an option, no DOCX. Files are kept 7 days, then deleted, and reused while the data is unchanged.
-  - The principal's school-wide download (D-279) is one ZIP with one PDF per teacher, built as a job on the `exports` queue.
+  - The principal's school-wide download (D-279) is one ZIP with one PDF per teacher, built as a job on the `exports` queue. Each PDF is named by a running number and the teacher's assignment, never the name (`03-guru-kelas-4a.pdf`, `07-guru-mapel-pjok.pdf`; the term follows the level, D-383), and the ZIP holds `daftar-isi.pdf` with number, assignment, and teacher name (D-384, XP-33).
 - **XP-44** **Answer sheet (LJK, D-287, D-325, D-370).** One sheet per student, on the Lembar tunggal profile:
   - Header: Mata Pelajaran, Kelas, Nama, Nomor. The student's absence number is printed, so a handwritten answer can be tagged `nomor absen-nomor soal` (e.g. `12-3`, D-370).
   - PG items in two columns of letter boxes (A–D, or A–E when used) that the student crosses out; PG Kompleks, Benar-Salah, PGK Kategori, and Menjodohkan use the same letter-box style; numbered lines for Isian Singkat and Uraian.
@@ -433,7 +433,7 @@ New choices in this guide. They get numbered at integration.
 
 - [x] F4 size: 215 × 330 mm (D-109).
 - [ ] e-Rapor SD and RDM import format (columns, file type) is still unknown (data-model open question). The export itself is decided (D-218, XP-48); the XP-24 exception covers the layout once known.
-- [ ] File names inside the principal's school-wide Berkas ZIP (D-279): XP-33 bans teacher names in file names, but the principal must tell the files apart. Owner to decide (for example a running number plus a list sheet inside the ZIP).
+- [x] File names inside the principal's school-wide Berkas ZIP: running number + assignment, with `daftar-isi.pdf` (D-384).
 - [x] Print fonts: Arial or Times New Roman, chosen by the school; no others (D-125).
 - [x] Exam client font: standard default size, A−/A/A+ control stays (D-121).
 

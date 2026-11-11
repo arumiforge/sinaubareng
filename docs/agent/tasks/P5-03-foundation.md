@@ -37,6 +37,7 @@ Each sub-task is one PR. Arrows are dependencies.
 | P5-03j | Draft timetable generator (D-262): one class or all, draft with comparison, reasons for unplaced JP, preference switches per school, `default` queue job | e, i | Action, job, operator UI, property tests against D-248…D-251 | review |
 | P5-03k | Minimal versioning (D-355): `curriculum_versions.effective_on`, `applies_from_school_year`, `supersedes_id`; a policy-profile resolver (school year, level, region), cached per school year, replaces `config/curriculum.php` `allocation_versions` | c | Migration, `app/Curriculum/Policy`, tests | review |
 | P5-03l | Profil Jenjang (D-356): `sd` and `mi` as versioned data (ministry, rule-set codes per domain, character frameworks, RPM extra fields, rapor export target, JTM default, external assessments); code reads the profile, never the level | k | `docs/data/profiles/`, `app/Curriculum/Policy`, tests | review |
+| P5-03m | Level term for the teacher who holds one class (D-383): UI, prints, and help read `LevelProfile::homeroomTeacherTerm()` ("Guru kelas" for SD, "Wali kelas" for MI) instead of a fixed "Wali kelas" in `lang/id` (e.g. `classes.php` labels and hints use a `:term` parameter); a test checks both levels; no `if level` | l | `lang/id`, pages that show the term, tests | todo |
 
 Not in this slice: students and enrollments, the school calendar beyond P5-03i, the full `regulations`/`rules` tables and their console (P5-09, D-355), school transfer requests, the 3-step onboarding, and the supervisor portal. They come with the slices that use them.
 

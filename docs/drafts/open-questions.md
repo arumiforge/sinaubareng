@@ -2,7 +2,7 @@
 
 - **Status:** draft (owner review)
 - **Task:** P1-08 (started); kept up to date by every task
-- **Last updated:** 2026-11-11 (questions from P4-22, P4-23, P4-24, and P5-03i…l added)
+- **Last updated:** 2026-11-11 (questions from P4-22, P4-23, P4-24, and P5-03i…l added; D-379…D-386 answered)
 
 ## Purpose
 
@@ -69,16 +69,12 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 |---|---|---|
 | Fetch the four regulation PDFs the build environment could not reach (Permendikdasmen 1/2026 Standar Proses, 9/2026 AN, Kepmendikdasmen 17/2026 BSAN, base Permendikbudristek 12/2024) from an Indonesian connection (JDIH or peraturan.go.id) and add them to `docs/sources/`; then the team extracts them and fills the registry (task P4-32) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md), [policy-innovation-layers.md](policy-innovation-layers.md#11-sources-still-needed) | owner, then team |
 | Replace the two mirror copies (Permendikdasmen 26/2025, Permendikbudristek 21/2022) with JDIH copies when they can be fetched, and re-hash (owner chose to keep the mirrors until then) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md) | team |
-| Permendikdasmen 6/2026 Pasal 18(3) gives SD class duties to the *guru kelas* and names "wali kelas" only for SMP/SMA/SMK, while SIGRAK says "wali kelas" for SD/MI (also in the JTM rule of 11/2025, D-212). Keep "wali kelas" in the UI, switch SD to "guru kelas", or show both? | [administration-features.md](administration-features.md) | owner |
 
 ## Docs consolidation (P4-24, 2026-11-11)
 
 | Question | Source | Who answers |
 |---|---|---|
-| File names inside the principal's school-wide Berkas ZIP (D-279) clash with XP-33, which forbids teacher names in file names. Which rule wins? | [export-localization.md](../final/export-localization.md), [P4-24 task](../agent/tasks/P4-24-final-docs-sync.md) | owner |
-| Menu placements written without a decision: teachers' Pusat Tindak Lanjut under Hari Ini; Ekstrakurikuler and Tabungan under Kelas Saya (Tabungan in Keuangan); Arsip Tahun Ajaran under the operator's Tahun Ajaran. Confirm or move | [product-concept.md](../final/product-concept.md) | owner |
 | Design-system choices without a decision: status colours for Pengingat and help requests, the "Disahkan" label, which template uses which margin profile | [design-system.md](../final/design-system.md) | owner |
-| Ban "Absensi" in `lang/id` (LOC-35, with a help-search allow-list)? Today the banned-words test covers siswa, teguran, tunggakan, kurang bayar, belum lunas, tanda tangan elektronik, not "Absensi" | [design-system.md](../final/design-system.md), PR #72 Q12 | owner |
 | Confirm that the later decisions win where they contradict earlier ones, as the docs now assume: D-339 over D-314 (eleven staff roles, not three), D-339 over D-315 (the owner, not an admin, sets AI models), D-216 over D-161 (ekstrakurikuler in v1) | [P4-24 task](../agent/tasks/P4-24-final-docs-sync.md) | owner |
 | Column names for tables described only in words (support sessions, Berkas jobs, school and user settings, leger state, observation results, Konteks Daerah, console tables) | [data-model.md](../final/data-model.md) | team (in each build slice) |
 
@@ -88,9 +84,6 @@ Defaults in use until answered; details in [the P5-03 task file](../agent/tasks/
 
 | Question | Default in use | Who answers |
 |---|---|---|
-| Do STS/SAS days count as effective days? D-259 says no; the Jawa Tengah guide (Lampiran XIII) counts the SAS and end-of-year assessment weeks as effective and takes out only TKA days | D-259: exam days are not effective. Region data keeps SAS weeks as notes, so the region total stays 254; a school that enters SAS events gets a lower count | owner |
-| Who may edit the calendar? | Operator: everything. Wali kelas: events of their own class. Guru mapel and principal: read only | owner (principal role) |
-| Saving a draft timetable replaces every unlocked row of each class in the draft | As stated, after a confirm dialog | owner |
 | Jawa Tengah May and June 2027: Lampiran XIII takes out a kelulusan day in May that SD/MI do not have | Kelulusan on 7 June (Pasal 22); year and semester totals match the guide, May and June differ by one day | Tim Validasi |
 | `effective_on` of KMA 1503/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025 | NULL; `applies_from_school_year` follows D-354 | Tim Validasi |
 | Idul Fitri and Idul Adha 2027 depend on the Menteri Agama after sidang isbat | SKB dates, not marked provisional | team (recheck in 2027) |
@@ -108,6 +101,10 @@ Defaults in use until answered; details in [the P5-03 task file](../agent/tasks/
 | Two Profil Pelajar Pancasila → 8 DPL links are `approximate`: berkebinekaan global → kewargaan, bergotong royong → kolaborasi | [P4-22 task](../agent/tasks/P4-22-taxonomy-seed.md) | Tim Validasi |
 | DPL sub-dimensions, CP element codes, the region code list, and articles missing where only a mirror or summary was read | [P4-22 task](../agent/tasks/P4-22-taxonomy-seed.md) | team, after P4-32 |
 | Review the new SD/MI extracts in `docs/data/regulations/` (10/2025, 12/2025, 26/2025, 21/2022, 6/2026, CP decree index) and the calendar data in `docs/data/calendar/` | [regulations README](../data/regulations/README.md), [calendar README](../data/calendar/README.md) | Tim Validasi |
+
+## Answered on 2026-11-11
+
+STS/SAS days not effective (D-379), calendar kept by the operator with proposals from others (D-380), saving a draft timetable replaces unlocked rows (D-381), no "absensi" (D-382), "guru kelas" in SD and "wali kelas" in MI (D-383), Berkas ZIP file names (D-384), Pusat Tindak Lanjut in Hari Ini (D-385), Ekstrakurikuler, Tabungan, and Arsip Tahun Ajaran placements (D-386).
 
 ## Answered on 2026-11-01
 

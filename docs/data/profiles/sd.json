@@ -3,7 +3,7 @@
   "level": "sd",
   "status": "draft",
   "verify_by": "Tim Validasi SIGRAK (D-113)",
-  "decisions": ["D-354", "D-355", "D-356", "D-368"],
+  "decisions": ["D-354", "D-355", "D-356", "D-368", "D-383"],
   "versions": [
     {
       "code": "PROFIL-SD-2026",
@@ -51,6 +51,7 @@
         }
       },
       "report_export_target": "e_rapor_sd",
+      "homeroom_teacher_term": "Guru kelas",
       "homeroom_jtm_default": 2,
       "external_assessments": [
         { "code": "an", "status": "confirmed" },

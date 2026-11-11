@@ -51,6 +51,7 @@
         }
       },
       "report_export_target": "rdm",
+      "homeroom_teacher_term": "Wali kelas",
       "homeroom_jtm_default": 6,
       "external_assessments": [
         { "code": "tka", "status": "confirmed" },
