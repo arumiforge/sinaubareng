@@ -43,7 +43,8 @@ final class NationalHolidays
             foreach (self::FIXED as $monthDay => $name) {
                 $date = CarbonImmutable::parse("{$year}-{$monthDay}");
 
-                if ($date->betweenIncluded($start, $to) && ! isset($days[$date->toDateString()])) {
+                // Explicit bounds: Carbon's between() swaps a reversed range, which would add dates past `$to`.
+                if ($date->gte($start) && $date->lte($to) && ! isset($days[$date->toDateString()])) {
                     $days[$date->toDateString()] = new HolidayDay($date->toDateString(), $name, NationalHolidayKind::NationalHoliday, true);
                 }
             }
