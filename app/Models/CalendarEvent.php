@@ -41,8 +41,8 @@ final class CalendarEvent extends Model
             RegionCalendar::query()->find($event->calendar_id)?->bumpVersion();
         };
 
-        static::saved($bump);
-        static::deleted($bump);
+        self::saved($bump);
+        self::deleted($bump);
     }
 
     /**

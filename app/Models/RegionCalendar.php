@@ -43,10 +43,10 @@ final class RegionCalendar extends Model
 
     protected static function booted(): void
     {
-        static::addGlobalScope('region', fn (Builder $query) => $query->whereNotNull('calendars.region_id'));
+        self::addGlobalScope('region', fn (Builder $query) => $query->whereNotNull('calendars.region_id'));
 
         // Schools hear about every change that affects their days (D-256).
-        static::updating(function (self $calendar): void {
+        self::updating(function (self $calendar): void {
             if ($calendar->isDirty(self::TRACKED) && ! $calendar->isDirty('version')) {
                 $calendar->version = (int) $calendar->getOriginal('version') + 1;
             }

@@ -10,14 +10,13 @@ use App\Calendar\NationalHolidays;
 use App\Enums\CalendarEventKind;
 use App\Enums\CalendarStatus;
 use App\Models\AcademicYear;
-use App\Models\CalendarEvent;
 use App\Models\NationalHoliday;
 use App\Models\Region;
 use App\Models\RegionCalendar;
 use App\Models\School;
 use App\Models\SchoolCalendar;
 use App\Models\SchoolClass;
-use App\Models\SchoolMembership;
+use App\Models\Subject;
 use App\Models\User;
 use App\Tenancy\SchoolContext;
 use Carbon\CarbonImmutable;
@@ -163,7 +162,7 @@ it('limits a class event to that class (D-258)', function (): void {
 it('counts only the class timetable days', function (): void {
     copyCalendar($this->operator, $this->year);
     foreach ([1, 2, 3, 4, 5] as $weekday) {
-        DB::table('timetable_slots')->insert(['public_id' => (string) str()->uuid(), 'school_id' => $this->school->id, 'class_id' => $this->class->id, 'weekday' => $weekday, 'period_no' => 1, 'starts_at' => '07:00', 'ends_at' => '07:30', 'kind' => 'lesson', 'subject_id' => \App\Models\Subject::factory()->create()->id, 'jp' => 1]);
+        DB::table('timetable_slots')->insert(['public_id' => (string) str()->uuid(), 'school_id' => $this->school->id, 'class_id' => $this->class->id, 'weekday' => $weekday, 'period_no' => 1, 'starts_at' => '07:00', 'ends_at' => '07:30', 'kind' => 'lesson', 'subject_id' => Subject::factory()->create()->id, 'jp' => 1]);
     }
 
     $table = effective($this->class);
