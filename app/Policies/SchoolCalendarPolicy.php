@@ -7,14 +7,13 @@ namespace App\Policies;
 use App\Enums\MembershipRole;
 use App\Models\CalendarEvent;
 use App\Models\SchoolCalendar;
-use App\Models\SchoolClass;
 use App\Models\User;
 use App\Tenancy\SchoolContext;
 
 /**
- * Kalender (D-256, D-258): every member of the school reads it; the operator manages the
- * calendar and adds events for the school or any class; a wali kelas adds events for
- * their own class only; guru mapel only read.
+ * Kalender: one calendar per school, kept by the operator (D-380). Every member reads it.
+ * Wali kelas, guru mapel, and the principal propose changes, which the operator
+ * approves or rejects (replaces the direct wali kelas edits of D-258).
  */
 final class SchoolCalendarPolicy
 {
@@ -30,7 +29,7 @@ final class SchoolCalendarPolicy
         return $this->viewAny($user) && $calendar->school_id === $this->context->schoolId();
     }
 
-    /** Create, copy from the region, apply region changes, cuti bersama school days. */
+    /** Create, copy from the region, apply region changes, edit events, decide on proposals. */
     public function manage(User $user, ?SchoolCalendar $calendar = null): bool
     {
         return $this->context->role() === MembershipRole::Operator
@@ -38,29 +37,16 @@ final class SchoolCalendarPolicy
             && ($calendar === null || $calendar->school_id === $this->context->schoolId());
     }
 
-    /** Adding an event for `$class`, or for the whole school when it is null. */
-    public function addEvent(User $user, SchoolCalendar $calendar, ?SchoolClass $class): bool
+    /** Wali kelas, guru mapel, and the principal send changes to the operator (D-380). */
+    public function propose(User $user, SchoolCalendar $calendar): bool
     {
-        if ($this->manage($user, $calendar)) {
-            return true;
-        }
-
-        return $this->view($user, $calendar) && $this->isHomeroom($user, $class);
+        return $this->view($user, $calendar)
+            && in_array($this->context->role(), [MembershipRole::Teacher, MembershipRole::Principal], true);
     }
 
-    public function changeEvent(User $user, SchoolCalendar $calendar, CalendarEvent $event): bool
+    /** Changing or deleting an event of this calendar, directly or as a proposal. */
+    public function touchEvent(User $user, SchoolCalendar $calendar, CalendarEvent $event): bool
     {
-        if ($event->calendar_id !== $calendar->id) {
-            return false;
-        }
-
-        return $this->manage($user, $calendar) || ($this->view($user, $calendar) && $this->isHomeroom($user, $event->loadMissing('schoolClass')->schoolClass));
-    }
-
-    private function isHomeroom(User $user, ?SchoolClass $class): bool
-    {
-        return $class !== null
-            && $this->context->role() === MembershipRole::Teacher
-            && $class->homeroom_teacher_id === $user->id;
+        return $event->calendar_id === $calendar->id && ($this->manage($user, $calendar) || $this->propose($user, $calendar));
     }
 }

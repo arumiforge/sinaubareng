@@ -97,7 +97,7 @@ Route::middleware('auth')->group(function (): void {
         Route::get('/kelas-saya/jadwal', MyTimetableController::class)->name('my_classes.timetable');
     });
 
-    // Kalender (D-253…D-261): every member reads it; the operator manages it; a wali kelas adds events for their class.
+    // Kalender (D-253…D-261): every member reads it; the operator keeps it; teachers and the principal propose changes (D-380).
     Route::middleware('translations:calendar')->group(function (): void {
         Route::get('/kalender', [CalendarController::class, 'show'])->name('calendar.show');
         Route::post('/kalender', [CalendarController::class, 'store'])->name('calendar.store');
@@ -107,6 +107,9 @@ Route::middleware('auth')->group(function (): void {
         Route::scopeBindings()->group(function (): void {
             Route::put('/kalender/{calendar}/acara/{event}', [CalendarController::class, 'updateEvent'])->name('calendar.events.update');
             Route::delete('/kalender/{calendar}/acara/{event}', [CalendarController::class, 'destroyEvent'])->name('calendar.events.destroy');
+            // Proposals from teachers and the principal, decided by the operator (D-380).
+            Route::post('/kalender/{calendar}/usulan/{changeRequest}/setujui', [CalendarController::class, 'approveChange'])->name('calendar.changes.approve');
+            Route::post('/kalender/{calendar}/usulan/{changeRequest}/tolak', [CalendarController::class, 'rejectChange'])->name('calendar.changes.reject');
         });
     });
 });

@@ -18,9 +18,9 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 
 /**
- * Create or change a calendar event (D-258, D-260). The class, when given, must be a
- * class of the calendar's year; a wali kelas may only pick their own class. Conflict
- * errors refuse the save; conflict warnings are passed on to the toast.
+ * Create or change a calendar event (D-258, D-260), directly by the operator or as a
+ * proposal by a teacher or the principal (D-380). The class, when given, must be a class
+ * of the calendar's year. Conflict errors refuse the save; warnings go to the toast.
  */
 final class SaveCalendarEventRequest extends FormRequest
 {
@@ -40,11 +40,17 @@ final class SaveCalendarEventRequest extends FormRequest
         $calendar = $this->calendar();
         $event = $this->event();
 
-        if ($event !== null && ! $user->can('changeEvent', [$calendar, $event])) {
+        if ($event !== null && ! $user->can('touchEvent', [$calendar, $event])) {
             return false;
         }
 
-        return $user->can('addEvent', [$calendar, $this->schoolClass()]);
+        return $user->can('manage', $calendar) || $user->can('propose', $calendar);
+    }
+
+    /** Teachers and the principal send a proposal; only the operator changes the calendar (D-380). */
+    public function isProposal(): bool
+    {
+        return ! (bool) $this->user()?->can('manage', $this->calendar());
     }
 
     /**
@@ -62,6 +68,7 @@ final class SaveCalendarEventRequest extends FormRequest
             'ends_on' => ['required', 'date_format:Y-m-d', 'after_or_equal:starts_on'],
             'class' => ['nullable', 'string'],
             'confirmed' => ['sometimes', 'boolean'],
+            'reason' => ['nullable', 'string', 'max:255'],
         ];
     }
 
@@ -77,6 +84,7 @@ final class SaveCalendarEventRequest extends FormRequest
             'starts_on' => __('calendar.fields.starts_on'),
             'ends_on' => __('calendar.fields.ends_on'),
             'class' => __('calendar.fields.class'),
+            'reason' => __('calendar.fields.reason'),
         ];
     }
 

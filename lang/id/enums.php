@@ -27,6 +27,16 @@ return [
         'sas' => 'SAS',
         'other' => 'Asesmen lain',
     ],
+    'calendar_change_action' => [
+        'create' => 'Usulan acara baru',
+        'update' => 'Usulan perubahan acara',
+        'delete' => 'Usulan hapus acara',
+    ],
+    'calendar_change_status' => [
+        'pending' => 'Menunggu persetujuan',
+        'approved' => 'Disetujui',
+        'rejected' => 'Ditolak',
+    ],
     'calendar_status' => [
         'draft' => 'Draf',
         'active' => 'Aktif',

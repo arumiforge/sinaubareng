@@ -36,6 +36,22 @@
         is_school_day: boolean;
     }
 
+    interface ChangeRequest {
+        id: string;
+        action: string;
+        action_label: string;
+        title: string | null;
+        starts_on: string | null;
+        ends_on: string | null;
+        kind_label: string | null;
+        class_name: string | null;
+        requested_by: string | null;
+        reason: string | null;
+        status: string;
+        status_label: string;
+        decision_note: string | null;
+    }
+
     interface Row {
         school_days: number;
         holidays: number;
@@ -59,6 +75,8 @@
         calendar = null,
         region_calendar = null,
         can_manage = false,
+        can_propose = false,
+        change_requests = [],
         events = [],
         holidays = [],
         classes = [],
@@ -72,17 +90,19 @@
         calendar?: { id: string; source: string | null; region_changes: { type: string; message: string }[] } | null;
         region_calendar?: string | null;
         can_manage?: boolean;
+        can_propose?: boolean;
+        change_requests?: ChangeRequest[];
         events?: CalendarEvent[];
         holidays?: Holiday[];
-        classes?: (Option & { editable: boolean })[];
+        classes?: Option[];
         selected_class?: string | null;
         effective_days?: EffectiveDays | null;
         kinds?: Option[];
         exam_types?: Option[];
     } = $props();
 
-    const editableClasses = $derived(classes.filter((item) => item.editable));
-    const canAdd = $derived(calendar !== null && (can_manage || editableClasses.length > 0));
+    // D-380: the operator edits; teachers and the principal send the same form as a proposal.
+    const canAdd = $derived(calendar !== null && (can_manage || can_propose));
 
     // Holidays and events in one list by date, grouped per month.
     type Item = { date: string; holiday?: Holiday; event?: CalendarEvent };
@@ -103,7 +123,7 @@
 
     let editing = $state<string | null>(null);
     let formOpen = $state(false);
-    const form = useForm({ title: '', kind: 'school_event', exam_type: 'sts', starts_on: '', ends_on: '', class: '', confirmed: false });
+    const form = useForm({ title: '', kind: 'school_event', exam_type: 'sts', starts_on: '', ends_on: '', class: '', reason: '', confirmed: false });
 
     async function show(): Promise<void> {
         formOpen = true;
@@ -119,7 +139,8 @@
         form.exam_type = 'sts';
         form.starts_on = year?.starts_on ?? '';
         form.ends_on = year?.starts_on ?? '';
-        form.class = can_manage ? '' : (editableClasses[0]?.value ?? '');
+        form.class = '';
+        form.reason = '';
         void show();
     }
 
@@ -132,6 +153,7 @@
         form.starts_on = event.starts_on;
         form.ends_on = event.ends_on;
         form.class = event.class ?? '';
+        form.reason = '';
         void show();
     }
 
@@ -161,12 +183,45 @@
 
     function remove(event: CalendarEvent, confirmed = false): void {
         if (calendar === null) return;
-        if (!confirmed && !confirm(t('calendar.dialogs.delete', { title: event.title }))) return;
+        let reason = '';
+        if (!confirmed) {
+            if (can_manage) {
+                if (!confirm(t('calendar.dialogs.delete', { title: event.title }))) return;
+            } else {
+                const answer = prompt(t('calendar.proposals.dialogs.delete', { title: event.title }));
+                if (answer === null) return;
+                reason = answer;
+            }
+        }
         router.delete(route('calendar.events.destroy', { calendar: calendar.id, event: event.id }), {
-            data: { confirmed },
+            data: { confirmed, reason },
             preserveScroll: true,
             onError: (errors) => {
                 if (errors.confirm_impact && confirm(`${errors.confirm_impact} ${t('calendar.impact.confirm')}`)) remove(event, true);
+            },
+        });
+    }
+
+    let changeError = $state<string | null>(null);
+
+    function decide(change: ChangeRequest, approve: boolean, confirmed = false): void {
+        if (calendar === null) return;
+        let note = '';
+        if (!approve) {
+            const answer = prompt(t('calendar.proposals.dialogs.reject'));
+            if (answer === null) return;
+            note = answer;
+        }
+        changeError = null;
+        const name = approve ? 'calendar.changes.approve' : 'calendar.changes.reject';
+        router.post(route(name, { calendar: calendar.id, changeRequest: change.id }), { confirmed, note }, {
+            preserveScroll: true,
+            onError: (errors) => {
+                if (errors.confirm_impact && confirm(`${errors.confirm_impact} ${t('calendar.impact.confirm')}`)) {
+                    decide(change, approve, true);
+                } else {
+                    changeError = errors.change ?? null;
+                }
             },
         });
     }
@@ -256,9 +311,56 @@
                 </section>
             {/if}
 
+            {#if change_requests.length > 0}
+                <section class="space-y-3 rounded-card border border-line bg-surface p-4 sm:p-6" aria-labelledby="proposals">
+                    <h2 id="proposals" class="text-title font-semibold">{can_manage ? t('calendar.proposals.title_pending') : t('calendar.proposals.title_mine')}</h2>
+                    {#if changeError}
+                        <p class="text-body font-semibold text-danger" role="alert">{changeError}</p>
+                    {/if}
+                    <ul class="divide-y divide-line">
+                        {#each change_requests as change (change.id)}
+                            <li class="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between">
+                                <div class="min-w-0">
+                                    <p class="text-label text-muted">
+                                        {change.action_label}{change.starts_on ? ` · ${span(change.starts_on, change.ends_on ?? change.starts_on)}` : ''}{change.kind_label ? ` · ${change.kind_label}` : ''}
+                                    </p>
+                                    <p class="font-semibold">{change.title}</p>
+                                    <p class="text-label text-muted">
+                                        {change.class_name ?? t('calendar.whole_school')}{change.requested_by ? ` · ${t('calendar.proposals.by', { name: change.requested_by })}` : ''}
+                                    </p>
+                                    {#if change.reason}
+                                        <p class="text-label">{t('calendar.proposals.reason', { reason: change.reason })}</p>
+                                    {/if}
+                                    {#if !can_manage}
+                                        <p class="text-label font-semibold {change.status === 'rejected' ? 'text-danger' : 'text-brand-strong'}">{change.status_label}</p>
+                                        {#if change.decision_note}
+                                            <p class="text-label">{t('calendar.proposals.note', { note: change.decision_note })}</p>
+                                        {/if}
+                                    {/if}
+                                </div>
+                                {#if can_manage}
+                                    <div class="flex shrink-0 gap-2">
+                                        <PrimaryButton type="button" onclick={() => decide(change, true)}>{t('calendar.proposals.actions.approve')}</PrimaryButton>
+                                        <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold text-danger" onclick={() => decide(change, false)}>
+                                            {t('calendar.proposals.actions.reject')}
+                                        </button>
+                                    </div>
+                                {/if}
+                            </li>
+                        {/each}
+                    </ul>
+                </section>
+            {/if}
+
             {#if formOpen}
                 <section class="rounded-card border border-brand bg-surface p-4 sm:p-6" aria-labelledby="event-form-title">
-                    <h2 id="event-form-title" class="mb-4 text-title font-semibold">{editing === null ? t('calendar.actions.add') : t('calendar.actions.edit')}</h2>
+                    <h2 id="event-form-title" class="mb-4 text-title font-semibold">
+                        {#if can_manage}
+                            {editing === null ? t('calendar.actions.add') : t('calendar.actions.edit')}
+                        {:else}
+                            {editing === null ? t('calendar.proposals.actions.add') : t('calendar.proposals.actions.edit')}
+                        {/if}
+                    </h2>
                     <form class="grid gap-4 sm:grid-cols-2" onsubmit={save} novalidate>
                         <div class="sm:col-span-2">
                             <TextField id="title" label={t('calendar.fields.title')} maxlength={120} bind:value={form.title} error={form.errors.title} />
@@ -272,14 +374,19 @@
                         <SelectField
                             id="class"
                             label={t('calendar.fields.class')}
-                            hint={can_manage ? t('calendar.hints.class') : undefined}
-                            placeholder={can_manage ? t('calendar.whole_school') : undefined}
-                            options={can_manage ? classes : editableClasses}
+                            hint={t('calendar.hints.class')}
+                            placeholder={t('calendar.whole_school')}
+                            options={classes}
                             bind:value={form.class}
                             error={form.errors.class}
                         />
+                        {#if !can_manage}
+                            <div class="sm:col-span-2">
+                                <TextField id="reason" label={t('calendar.fields.reason')} hint={t('calendar.proposals.hints.reason')} maxlength={255} bind:value={form.reason} error={form.errors.reason} />
+                            </div>
+                        {/if}
                         <div class="flex flex-col gap-3 sm:col-span-2 sm:flex-row">
-                            <PrimaryButton type="submit" disabled={form.processing}>{t('calendar.actions.save')}</PrimaryButton>
+                            <PrimaryButton type="submit" disabled={form.processing}>{can_manage ? t('calendar.actions.save') : t('calendar.proposals.actions.send')}</PrimaryButton>
                             <button type="button" class="inline-flex min-h-11 items-center justify-center rounded-input border border-line px-5 text-body font-semibold" onclick={() => (formOpen = false)}>
                                 {t('common.actions.cancel')}
                             </button>
@@ -292,7 +399,9 @@
                 <div class="flex items-center justify-between gap-3">
                     <h2 id="events" class="text-title font-semibold">{t('calendar.sections.events')}</h2>
                     {#if canAdd}
-                        <button type="button" class="min-h-11 rounded-input border border-line px-4 text-body font-semibold" onclick={openAdd}>{t('calendar.actions.add')}</button>
+                        <button type="button" class="min-h-11 rounded-input border border-line px-4 text-body font-semibold" onclick={openAdd}>
+                            {can_manage ? t('calendar.actions.add') : t('calendar.proposals.actions.add')}
+                        </button>
                     {/if}
                 </div>
                 {#if items.length === 0}
@@ -327,8 +436,12 @@
                                         </div>
                                         {#if event.can_edit}
                                             <div class="flex shrink-0 gap-2">
-                                                <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold" onclick={() => openEdit(event)}>{t('calendar.actions.edit')}</button>
-                                                <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold text-danger" onclick={() => remove(event)}>{t('calendar.actions.delete')}</button>
+                                                <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold" onclick={() => openEdit(event)}>
+                                                    {can_manage ? t('calendar.actions.edit') : t('calendar.proposals.actions.edit')}
+                                                </button>
+                                                <button type="button" class="min-h-11 rounded-input border border-line px-3 text-body font-semibold text-danger" onclick={() => remove(event)}>
+                                                    {can_manage ? t('calendar.actions.delete') : t('calendar.proposals.actions.delete')}
+                                                </button>
                                             </div>
                                         {/if}
                                     {/if}

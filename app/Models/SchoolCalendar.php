@@ -64,6 +64,16 @@ final class SchoolCalendar extends Model
         return $this->hasMany(CalendarEvent::class, 'calendar_id');
     }
 
+    /**
+     * Changes proposed by teachers and the principal (D-380).
+     *
+     * @return HasMany<CalendarChangeRequest, $this>
+     */
+    public function changeRequests(): HasMany
+    {
+        return $this->hasMany(CalendarChangeRequest::class, 'calendar_id');
+    }
+
     /** Whether the region calendar changed after the school last applied or skipped its changes (D-256). */
     public function hasRegionUpdate(): bool
     {
