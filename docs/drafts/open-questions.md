@@ -67,7 +67,7 @@ The MI allocation question (official copy of KMA 1503/2025) is closed by D-038.
 
 | Question | Source | Who answers |
 |---|---|---|
-| Replace the two mirror copies (Permendikdasmen 26/2025, Permendikbudristek 21/2022) with JDIH copies when they can be fetched, and re-hash (owner chose to keep the mirrors until then) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md) | team |
+| Replace the three mirror copies (Permendikdasmen 26/2025, Permendikbudristek 21/2022, Kepmendikdasmen 17/2026) with JDIH copies when they can be fetched, and re-hash (owner chose to keep the mirrors until then) | [P4-23 task](../agent/tasks/P4-23-missing-regulations.md) | team |
 
 ## Docs consolidation (P4-24, 2026-11-11)
 
@@ -103,7 +103,7 @@ Defaults in use until answered; details in [the P5-03 task file](../agent/tasks/
 
 ## Answered on 2026-11-11
 
-STS/SAS days not effective (D-379), calendar kept by the operator with proposals from others (D-380), saving a draft timetable replaces unlocked rows (D-381), no "absensi" (D-382), "guru kelas" in SD and "wali kelas" in MI (D-383), Berkas ZIP file names (D-384), Pusat Tindak Lanjut in Hari Ini (D-385), Ekstrakurikuler, Tabungan, and Arsip Tahun Ajaran placements (D-386).
+STS/SAS days not effective (D-379), calendar kept by the operator with proposals from others (D-380), saving a draft timetable replaces unlocked rows (D-381), no "absensi" (D-382), "guru kelas" in SD and "wali kelas" in MI (D-383, confirmed again in D-387), SD Bahasa Inggris compulsory in grades 3–6 and optional in grades 1–2 (D-387), Berkas ZIP file names (D-384), Pusat Tindak Lanjut in Hari Ini (D-385), Ekstrakurikuler, Tabungan, and Arsip Tahun Ajaran placements (D-386).
 
 ## Answered on 2026-11-01
 

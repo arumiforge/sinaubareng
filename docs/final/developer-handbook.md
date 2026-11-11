@@ -1,7 +1,7 @@
 # SIGRAK Developer Handbook
 
 - **Status:** final (owner request 2026-11-09, D-361)
-- **Last updated:** 2026-11-11 (P5-03i…l built: calendar, draft timetable, versioning columns, Profil Jenjang)
+- **Last updated:** 2026-11-11 (P5-03i…l built: calendar, draft timetable, versioning columns, Profil Jenjang; D-387)
 - **Audience:** every new developer or agent who joins SIGRAK, before they read any other document. The Indonesian PDF of this handbook, `docs/pdf/developer-handbook.pdf`, is the one complete reading for a new developer (D-361).
 - **Indonesian PDF:** [`docs/pdf/developer-handbook.pdf`](../pdf/developer-handbook.pdf), translated in [`docs/pdf/src/developer-handbook.md`](../pdf/src/developer-handbook.md)
 
@@ -228,7 +228,7 @@ Rules change every year, so they are data with effective dates, not code constan
 **The policy in force** is resolved from three inputs: school year, level, and region. For each domain, the active rule set whose school-year range covers that year wins. Two rules follow from this:
 
 - **Documents remember their rule set.** An RPM, an assessment plan, or a rapor stores the rule-set codes it was made under, the same way a document stores its template version. A rule change never silently changes an existing document.
-- **Rules follow the school year.** A rule published mid-year applies from the next school year unless the regulation itself sets an earlier date. Example: Bahasa Inggris becomes compulsory in SD/MI from 2027/2028, so the 2027/2028 structure rule set marks it mandatory while 2026/2027 still lists it as optional.
+- **Rules follow the school year.** A rule published mid-year applies from the next school year unless the regulation itself sets an earlier date. Example: a structure rule published during 2026/2027 is listed in the 2027/2028 structure rule set, and 2026/2027 keeps the old one. (SD Bahasa Inggris is not such a case: it is compulsory in grades 3–6 and optional in grades 1–2 from 2026/2027, D-387.)
 
 **What exists today (Built):** `curriculum_versions` with `code`, `name`, `status` (draft, active, retired), `meta`, `imported_at`, and since P5-03k `effective_on`, `applies_from_school_year`, and `supersedes_id`. The version in force comes from `PolicyProfileResolver` reading the Profil Jenjang files in `docs/data/profiles/` (D-378); before P5-03k it was a config pointer, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
 

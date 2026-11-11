@@ -105,7 +105,7 @@ Layer = where the rule that bounds the component comes from. Strength = the stro
 | Intrakurikuler JP per subject | L1 | mandatory (SD); minimum + up to 6 extra JP (MI) | Staff; MI school adds | Yes | Yes | D-038, D-204 |
 | Kokurikuler JP | L1 | mandatory yearly total | Staff; school spreads it (D-277) | Yes | Yes | D-277 |
 | Muatan lokal | L3 | maximum (SD 72 JP) | Region, then school | Yes | Yes | D-231, D-232 |
-| Optional subjects (Bahasa Inggris 1–2, KKA, Seni Suara Daerah, Tata Boga) | L1/L3 | school_discretion; Bahasa Inggris becomes mandatory 2027/2028 | School | Yes | Yes | D-204, D-208 |
+| Optional subjects (Bahasa Inggris 1–2, KKA, Seni Suara Daerah, Tata Boga) | L1/L3 | school_discretion (Bahasa Inggris grades 1–2; compulsory in grades 3–6, D-387) | School | Yes | Yes | D-204, D-208 |
 | CP | L2 | mandatory content | Staff | Yes | Yes | D-226, D-139, D-145 |
 | TP / ATP | L2 example → L4 | example | School, teacher | Yes (defaults) | Yes | D-019, D-276 |
 | Topics, fokus (KM-SD data) | L2-derived (legacy app data) | example | Staff, school | Yes | SD only | D-020 |
@@ -170,7 +170,7 @@ Layer = where the rule that bounds the component comes from. Strength = the stro
 A **policy profile** is resolved from (school year, level, region): for each domain, the active rule set whose school-year range covers that year. It replaces the config pointer and is cached per school year.
 
 - **Documents remember their rule set.** An RPM, asesmen plan, or rapor stores the rule-set codes it was made under, like `template_versions`. A rule change never silently changes an existing document.
-- **Rules follow the school year.** A rule published mid-year applies from the next school year unless the regulation itself sets an earlier date. Example: Bahasa Inggris becomes compulsory in SD/MI in 2027/2028 (Permendikbudristek 12/2024 Pasal 33), so the 2027/2028 structure rule set lists it as mandatory, and 2026/2027 still lists it as optional.
+- **Rules follow the school year.** A rule published mid-year applies from the next school year unless the regulation itself sets an earlier date. Example: a structure rule published during 2026/2027 is listed in the 2027/2028 structure rule set, and 2026/2027 keeps the old one. SD Bahasa Inggris follows the 13/2025 tables from 2026/2027 (compulsory in grades 3–6, optional in grades 1–2); the 2027/2028 date of Permendikbudristek 12/2024 Pasal 33 is not used (D-387).
 - **Transitions are data.** Phase-in by grade is stored in `transition`, so one rule set can say "grades 1 and 4 in year one".
 
 ### 6.4 Workflow

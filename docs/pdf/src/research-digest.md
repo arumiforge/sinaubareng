@@ -1,6 +1,6 @@
 # Ringkasan Riset
 
-<p class="source-note">Diterjemahkan dari <code>docs/final/research-digest.md</code> pada 9 November 2026.</p>
+<p class="source-note">Diterjemahkan dari <code>docs/final/research-digest.md</code> pada 11 November 2026.</p>
 
 - **Status:** final (permintaan pemilik 2026-11-09, D-362)
 - **Terakhir diperbarui:** 2026-11-11
@@ -74,7 +74,7 @@ Panduan dari BSKAP (semuanya **resmi**, PDF-nya di `docs/sources/`, diekstrak ke
 | Temuan | Sumber, tingkat | Dampak | Keputusan, repo |
 |---|---|---|---|
 | JP intrakurikuler SD dari aplikasi lama (kini target semester SIGRAK-SD-2026-R1) sama persis dengan Tabel 1–5 Permendikdasmen 13/2025 | 13/2025 hlm. 15–21, resmi | Diimpor apa adanya | D-204, `dokumen-resmi-sd-mi.md` §2 |
-| Bahasa Inggris dan IPAS tidak ada di struktur kelas 1–2 | 13/2025 hlm. 15–18, resmi | Konten opsional sekolah, mati secara bawaan, bukan mata pelajaran rapor wajib | D-204 |
+| Bahasa Inggris dan IPAS tidak ada di struktur kelas 1–2 | 13/2025 hlm. 15–18, resmi | Konten opsional sekolah, mati secara bawaan, bukan mata pelajaran rapor wajib. Bahasa Inggris SD wajib di kelas 3–6 mulai 2026/2027 sesuai tabel 13/2025; tanggal 2027/2028 dari Pasal 33 12/2024 tidak dipakai (D-387) | D-204, D-387 |
 | Batas muatan lokal SD: 72 JP per tahun (64 di kelas 6); Bahasa Jawa memakai seluruhnya; MI boleh 72–216 | 13/2025 hlm. 16, hlm. 21; KMA 1503/2025 | Tata Boga opsional sekolah; batas ditegakkan per sekolah | D-204, `data-model.md` |
 | Total kokurikuler SD: 216 / 216 / 252 / 252 / 252 / 224 JP per tahun (kelas 1–6) | 13/2025, Panduan Kokurikuler hlm. 35, resmi | Versi alokasi baru `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | `dokumen-resmi-sd-mi.md` C3 |
 | 8 dimensi profil lulusan: keimanan dan ketakwaan, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, komunikasi | 13/2025 Pasal 17, resmi | Daftar tetap DPL1–DPL8 di RPM dan kokurikuler | `content-engine.md` |
@@ -326,7 +326,6 @@ Versi dicek 2026-10-30; alat pemantauan 2026-10-31. Rincian: `docs/final/server-
 | Celah | Mengapa penting | Dilacak di |
 |---|---|---|
 | Semua PDF regulasi yang didaftar di `policy-innovation-layers.md` §11 kini sudah ada di repo (P4-23, P4-32, 2026-11-11). Salinan mirror yang perlu diganti berkas JDIH: Permendikdasmen 26/2025, Permendikbudristek 21/2022, Kepmendikdasmen 17/2026. Teks dasar Permendikbudristek 17/2021 (AN), yang diubah 9/2026, belum ada di repo | Nomor pasal yang dibaca dari mirror perlu dicek dengan berkas JDIH; 17/2021 hanya diperlukan bila SIGRAK mengutip pasal AN yang tidak diubah | tindak lanjut P4-23, P4-32 |
-| Bahasa Inggris di SD/MI untuk 2026/2027: pilihan menurut 12/2024 Pasal 33 (tidak diubah), tetapi tercantum wajib di kelas III–VI pada tabel 13/2025 | Label pada set aturan struktur 2026/2027 | Tim Validasi, `policy-innovation-layers.md` §6.3 |
 | Batas kategori TKA, jumlah soal, dan nilai parsial PGK dalam teks resmi | Penilaian latihan ujian | `kerangka-tka-sd.json` |
 | AKMI untuk MI tahun 2026; spesifikasi impor resmi e-Rapor SD dan RDM 2026 | Ekspor (D-218) | P4-10, `policy-innovation-layers.md` §11 |
 | Siapa yang menetapkan KKTP menurut pasal (21/2022 hanya menyebut guru memilih atau mengembangkan instrumen, Pasal 5, dan membandingkan dengan kriteria ketercapaian tujuan pembelajaran, Pasal 9(8); sisanya ada di panduan BSKAP) | Aturan Asesmen | sama |
