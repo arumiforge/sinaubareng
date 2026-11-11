@@ -32,6 +32,8 @@ return new class extends Migration
             $table->unsignedInteger('source_version')->nullable()->comment('Region version last applied or skipped');
             $table->json('joint_leave_school_days')->nullable()->comment('Cuti bersama dates kept as school days (D-255)');
             $table->json('meta')->nullable()->comment('Region calendars: source file, sha256, expected effective days');
+            // MySQL refuses a CHECK on a column whose FK cascades (error 3823), so the owner rule checks this instead.
+            $table->unsignedTinyInteger('owner_nulls')->virtualAs('(region_id IS NULL) + (school_id IS NULL)')->comment('1 = exactly one owner');
             $table->timestamps();
             $table->unique(['region_id', 'academic_year']);
             $table->unique(['school_id', 'academic_year']);
@@ -39,7 +41,7 @@ return new class extends Migration
 
         $statuses = implode("','", array_column(CalendarStatus::cases(), 'value'));
         DB::statement("ALTER TABLE calendars ADD CONSTRAINT calendars_status_check CHECK (status IN ('{$statuses}'))");
-        DB::statement('ALTER TABLE calendars ADD CONSTRAINT calendars_owner_check CHECK ((region_id IS NULL) <> (school_id IS NULL))');
+        DB::statement('ALTER TABLE calendars ADD CONSTRAINT calendars_owner_check CHECK (owner_nulls = 1)');
         DB::statement('ALTER TABLE calendars ADD CONSTRAINT calendars_days_check CHECK (school_days_per_week IS NULL OR school_days_per_week BETWEEN 5 AND 6)');
     }
 };

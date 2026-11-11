@@ -23,6 +23,5 @@ return new class extends Migration
         DB::statement("ALTER TABLE curriculum_versions ADD CONSTRAINT curriculum_versions_school_year_check CHECK (
             applies_from_school_year IS NULL OR applies_from_school_year REGEXP '^[0-9]{4}/[0-9]{4}$'
         )");
-        DB::statement('ALTER TABLE curriculum_versions ADD CONSTRAINT curriculum_versions_supersedes_check CHECK (supersedes_id IS NULL OR supersedes_id <> id)');
     }
 };
