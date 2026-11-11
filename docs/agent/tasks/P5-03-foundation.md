@@ -122,9 +122,36 @@ Not in this slice: students and enrollments, the school calendar beyond P5-03i, 
 
 **P5-03k / P5-03l** (review, PR #72): see D-378. `curriculum_versions` has the three version columns, filled by `curriculum:import` from `docs/data/profiles/`; `App\Curriculum\Policy\PolicyProfileResolver` replaces `allocation_versions`; `SubjectsForGrade::forSchool()` takes the school year (`ClassSubjects` passes the class's year). Tests: `tests/Feature/Curriculum/PolicyProfileTest.php`.
 
-**Open questions (owner or Tim Validasi):**
-- D-259 counts `exam` events as non-effective, but the Jawa Tengah guide (Lampiran XIII) counts the SAS and Sumatif Akhir Tahun weeks as effective; only the TKA days are taken out. The region data therefore keeps those weeks as notes (`assessment_windows`), not events, so the total is 254. Once a school enters its SAS days as `exam` events, its count drops below the guide's. Should STS/SAS days count as effective days (owner)?
-- Jawa Tengah May and June 2027: Lampiran XIII takes a kelulusan day out of May that SD/MI do not have (SMA's date); the data puts it on 7 June (Pasal 22). Year and semester totals match; months differ by one day (Tim Validasi).
-- `effective_on` of KMA 1503/2025, Kepka BKPDM 020/2026, and SK Dirjen Pendis 9941/2025 is not yet known (NULL); `applies_from_school_year` follows D-354 (Tim Validasi).
-- Idul Fitri and Idul Adha 2027 follow the SKB until the Menteri Agama sets them after sidang isbat; recheck then.
+## Open questions
 
+Undecided choices, the default this PR uses meanwhile, and deferred work. "Owner" decides product questions; "team" (Tim SIGRAK / Tim Validasi) settles data and build questions.
+
+**Undecided, default in use**
+
+| # | Question | Default used now | Who |
+|---|---|---|---|
+| 1 | D-259 counts `exam` days as non-effective, but the Jawa Tengah guide (Lampiran XIII) counts the SAS and Sumatif Akhir Tahun weeks as effective; only TKA days are taken out. Should STS/SAS days count as effective? | Follow D-259 (exam days not effective). The region data keeps SAS weeks as notes (`assessment_windows`), not events, so the region total is 254; a school that enters SAS events gets a lower count | Owner |
+| 2 | Jawa Tengah May and June 2027: Lampiran XIII takes a kelulusan day out of May that SD/MI do not have | Kelulusan on 7 June (Pasal 22). Year and semester totals match the guide; May and June differ by one day | Team (Tim Validasi) |
+| 3 | `effective_on` of KMA 1503/2025, Kepka BKPDM 020/2026, SK Dirjen Pendis 9941/2025 | NULL. `applies_from_school_year` follows D-354 (mid-year rules apply from the next school year) | Team (Tim Validasi) |
+| 4 | Idul Fitri and Idul Adha 2027 depend on the Menteri Agama's decision after sidang isbat | SKB dates, not marked provisional | Team (recheck in 2027) |
+| 5 | When does a region calendar become visible to schools? | Imported as `draft`; schools only see `active` ones; a console user activates it after sign-off | Team (Tim Validasi) |
+| 6 | A class with no lessons on its timetable yet: which days count? | The region calendar's school days per week, else 6, with a note on the page | Team |
+| 7 | A day that is both a holiday and an assessment or activity | Counted once, in this order: Libur, Asesmen, Kegiatan | Team |
+| 8 | Who may edit the calendar? | Operator: everything. Wali kelas: events of their own class. Guru mapel and principal: read only | Owner (principal role) |
+| 9 | A school year before any listed rule set has started | The resolver uses the earliest listed rule set (D-378) | Team |
+| 10 | Draft generator details: breaks the same for every day; Upacara and other fixed rows come from locked rows; optional content (no allocation) is not placed; the religion group gets the JP all religions share; soft-switch weights are fixed in code | As listed | Team |
+| 11 | Saving a draft replaces every unlocked row of each class in the draft | As stated, after a confirm dialog | Owner |
+| 12 | Banning "Absensi" in `lang/id` (from PR #70) | Not banned yet; the LOC-35 test covers siswa, teguran, tunggakan, kurang bayar, belum lunas, tanda tangan elektronik | Owner |
+
+**Deferred work**
+
+| Item | Where | Who |
+|---|---|---|
+| Impact preview counts RPM meetings (D-261): `MeetingImpact` is a no-op until `meetings` exists | P5-04 | Team |
+| Conflict rules for supervision schedules and Agenda & Rapat (D-260) | P5-09 | Team |
+| Profil Jenjang as a table with console editing; the D-368 admin switch for SD KBC fields (data says "switchable", no switch stored yet) | P5-09 or own slice | Team |
+| `regulations`, `rule_sets`, `rules` tables and the console for every domain; Kabar Regulasi (D-354, D-355) | P5-09 or own slice | Team |
+| Region calendars for other provinces or regencies | Data, no code change (D-257) | Team |
+| New `lang/id` keys listed in PR #70 (not-done reasons, Lanjutan, Neraca JP, Dasar Kebijakan, Cek Keselarasan, TKA levels, …) | With their slices | Team |
+| Browser check at 375 px: the app cannot run in the build session (Symfony 8 needs PHP 8.4) | Before merge or on staging | Team |
+| `docs/final/` and `CONTEXT.md` updates (see the PR body) | Docs session | Team |
