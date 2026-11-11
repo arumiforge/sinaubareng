@@ -1816,3 +1816,8 @@ Reason: follow-ups are daily work, seen every time the app opens.
 Accepted · 2026-11-11 · owner's choice · confirms the P4-24 placements of D-216, D-219, D-301, D-318
 Ekstrakurikuler and Tabungan stay in Kelas Saya (Tabungan inside Keuangan, which a school may turn off). Arsip Tahun Ajaran stays inside the operator's Tahun Ajaran menu.
 Reason: the owner accepted the placements written in the final docs.
+
+### D-387 — SD Bahasa Inggris: compulsory in grades 3–6, optional in grades 1–2
+Accepted · 2026-11-11 · owner's choice · confirms D-204 and the Permendikdasmen 13/2025 tables
+For SD, Bahasa Inggris is compulsory in grades 3–6 and optional in grades 1–2 (a school may leave it off), from 2026/2027 on, as the 13/2025 structure tables show. The 2027/2028 date in Permendikbudristek 12/2024 Pasal 33 does not make 2026/2027 a different rule set for SIGRAK. The owner also confirmed D-383 ("guru kelas" in SD) after Kepmendikdasmen 17/2026 Tabel 3.5 was found to name "Guru Kelas atau Wali Kelas" for PAUD/SD.
+Reason: the structure tables are the rule schools follow; one label for every year avoids a confusing change.

@@ -3,7 +3,7 @@
 <p class="source-note">Diterjemahkan dari <code>docs/final/developer-handbook.md</code> pada 11 November 2026.</p>
 
 - **Status:** final (permintaan pemilik 2026-11-09, D-361)
-- **Terakhir diperbarui:** 2026-11-11 (P5-03i…l dibangun: kalender, draf jadwal, kolom versi, Profil Jenjang)
+- **Terakhir diperbarui:** 2026-11-11 (P5-03i…l dibangun: kalender, draf jadwal, kolom versi, Profil Jenjang; D-387)
 - **Pembaca:** setiap pengembang atau agen baru yang bergabung dengan SIGRAK, sebelum membaca dokumen lain. PDF berbahasa Indonesia ini, `docs/pdf/developer-handbook.pdf`, adalah satu bacaan lengkap untuk pengembang baru (D-361).
 - **PDF berbahasa Indonesia:** `docs/pdf/developer-handbook.pdf`, diterjemahkan di `docs/pdf/src/developer-handbook.md`
 
@@ -230,7 +230,7 @@ Aturan berubah setiap tahun, jadi aturan disimpan sebagai data dengan tanggal be
 **Kebijakan yang berlaku** ditentukan dari tiga masukan: tahun ajaran, jenjang, dan wilayah. Untuk setiap domain, set aturan aktif yang rentang tahun ajarannya mencakup tahun itu yang dipakai. Dua aturan lahir dari sini:
 
 - **Dokumen mengingat set aturannya.** RPM, rencana asesmen, atau rapor menyimpan kode set aturan saat dokumen itu dibuat, sama seperti dokumen menyimpan versi templatnya. Perubahan aturan tidak pernah diam-diam mengubah dokumen yang sudah ada.
-- **Aturan mengikuti tahun ajaran.** Aturan yang terbit di tengah tahun berlaku mulai tahun ajaran berikutnya, kecuali peraturannya sendiri menetapkan tanggal lebih awal. Contoh: Bahasa Inggris menjadi wajib di SD/MI mulai 2027/2028, sehingga set aturan struktur 2027/2028 menandainya wajib, sementara 2026/2027 masih mencantumkannya sebagai pilihan.
+- **Aturan mengikuti tahun ajaran.** Aturan yang terbit di tengah tahun berlaku mulai tahun ajaran berikutnya, kecuali peraturannya sendiri menetapkan tanggal lebih awal. Contoh: aturan struktur yang terbit selama 2026/2027 dicantumkan di set aturan struktur 2027/2028, dan 2026/2027 tetap memakai yang lama. (Bahasa Inggris SD bukan kasus seperti ini: wajib di kelas 3–6 dan pilihan di kelas 1–2 mulai 2026/2027, D-387.)
 
 **Yang sudah ada hari ini (Dibangun):** `curriculum_versions` dengan `code`, `name`, `status` (draft, active, retired), `meta`, `imported_at`, dan sejak P5-03k `effective_on`, `applies_from_school_year`, serta `supersedes_id`. Versi yang berlaku diambil dari `PolicyProfileResolver` yang membaca berkas Profil Jenjang di `docs/data/profiles/` (D-378); sebelum P5-03k versi itu ditunjuk lewat konfigurasi, `config/curriculum.php` `allocation_versions` (`sd` → `STRUKTUR-SD-PERMENDIKDASMEN-13-2025`, `mi` → `ALOKASI-MI-KMA-1503-2025`, D-230).
 

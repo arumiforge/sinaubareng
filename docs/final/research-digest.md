@@ -72,7 +72,7 @@ Guides from BSKAP (all **official**, PDFs in `docs/sources/`, extracted to `docs
 | Finding | Source, level | Implication | Decisions, repo |
 |---|---|---|---|
 | The legacy app's SD intrakurikuler JP (now the semester targets of SIGRAK-SD-2026-R1) match 13/2025 Tabel 1–5 exactly | 13/2025 pp. 15–21, official | Import as is | D-204, `dokumen-resmi-sd-mi.md` §2 |
-| Bahasa Inggris and IPAS are not in the grades 1–2 structure | 13/2025 pp. 15–18, official | School-optional content, off by default, not a required rapor subject | D-204 |
+| Bahasa Inggris and IPAS are not in the grades 1–2 structure | 13/2025 pp. 15–18, official | School-optional content, off by default, not a required rapor subject. SD Bahasa Inggris is compulsory in grades 3–6 from 2026/2027, as the 13/2025 tables show; the 2027/2028 date of 12/2024 Pasal 33 is not used (D-387) | D-204, D-387 |
 | SD muatan lokal cap: 72 JP per year (64 in grade 6); Bahasa Jawa uses all of it; MI may have 72–216 | 13/2025 p. 16, p. 21; KMA 1503/2025 | Tata Boga is school-optional; cap enforced per school | D-204, `data-model.md` |
 | SD kokurikuler totals: 216 / 216 / 252 / 252 / 252 / 224 JP per year (grades 1–6) | 13/2025, Panduan Kokurikuler p. 35, official | New allocation version `STRUKTUR-SD-PERMENDIKDASMEN-13-2025` | `dokumen-resmi-sd-mi.md` C3 |
 | 8 dimensi profil lulusan: keimanan dan ketakwaan, kewargaan, penalaran kritis, kreativitas, kolaborasi, kemandirian, kesehatan, komunikasi | 13/2025 Pasal 17, official | Fixed list DPL1–DPL8 in RPM and kokurikuler | `content-engine.md` |
@@ -324,7 +324,6 @@ Versions checked 2026-10-30; monitoring tools 2026-10-31. Detail: [`server-setup
 | Gap | Why it matters | Where tracked |
 |---|---|---|
 | Every regulation PDF listed in `policy-innovation-layers.md` §11 is now in the repo (P4-23, P4-32, 2026-11-11). Mirror copies to swap for JDIH files: Permendikdasmen 26/2025, Permendikbudristek 21/2022, Kepmendikdasmen 17/2026. The base Permendikbudristek 17/2021 (AN), amended by 9/2026, is not in the repo | Article numbers read on a mirror need a check against the JDIH file; 17/2021 matters only if SIGRAK quotes its unamended AN articles | P4-23, P4-32 follow-up |
-| Bahasa Inggris in SD/MI for 2026/2027: elective under 12/2024 Pasal 33 (not amended), but listed as required in kelas III–VI in the 13/2025 tables | Labels in the 2026/2027 structure rule set | Tim Validasi, [`policy-innovation-layers.md`](../drafts/policy-innovation-layers.md) §6.3 |
 | TKA category limits, item count, and PGK partial credit in an official text | Scoring of the practice exam | `kerangka-tka-sd.json` |
 | AKMI for MI in 2026; official e-Rapor SD and RDM 2026 import specs | Exports (D-218) | P4-10, `policy-innovation-layers.md` §11 |
 | Who sets the KKTP at article level (21/2022 only says the teacher picks or develops instruments, Pasal 5, and compares against kriteria ketercapaian tujuan pembelajaran, Pasal 9(8); the rest is in the BSKAP guide) | Asesmen rules | same |

@@ -7,7 +7,7 @@ Owner = branch name or session label of whoever claimed the task.
 
 ## Current phase
 
-**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234, D-240…D-372, and D-377…D-386 (D-185…D-202 unused; D-235…D-239 reserved; D-373…D-376 were reserved for a parallel session and stay unused). D-252…D-328 are the legacy app upgrade (P4-13, `docs/drafts/legacy-upgrade-01.md`). On 2026-11-11 four parallel sessions were merged: P4-24 (with P4-05, P4-14, P4-20; PR #70), P4-22 (PR #71), P5-03i…l (PR #72), P4-23 (PR #73). No running tasks. P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Next:** P5-04 (content core); in parallel P4-29…P4-31 (curation), P4-19 (Peta Asesmen on facet E), and P4-32 once the owner supplies the PDFs. Every undecided point, with the default in use, is in `docs/drafts/open-questions.md`.
+**Phases 0–3 are done** (2026-11-01). All approved docs are in `docs/final/` with Indonesian PDFs in `docs/pdf/`. Decisions run D-001…D-234, D-240…D-372, and D-377…D-387 (D-185…D-202 unused; D-235…D-239 reserved; D-373…D-376 were reserved for a parallel session and stay unused). D-252…D-328 are the legacy app upgrade (P4-13, `docs/drafts/legacy-upgrade-01.md`). On 2026-11-11 four parallel sessions were merged: P4-24 (with P4-05, P4-14, P4-20; PR #70), P4-22 (PR #71), P5-03i…l (PR #72), P4-23 (PR #73). No running tasks. P4-01 (Buku Induk and Dapodik sync) is on hold as upcoming (D-161). **Next:** P5-04 (content core); in parallel P4-29…P4-31 (curation), P4-19 (Peta Asesmen on facet E), and P4-32 once the owner supplies the PDFs. Every undecided point, with the default in use, is in `docs/drafts/open-questions.md`.
 
 ## Open decisions blocking work
 
