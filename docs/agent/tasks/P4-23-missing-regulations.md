@@ -70,7 +70,9 @@ No content of these four was written into the repo; the digest rows for 1/2026 s
 - 21/2022: **SD graduation considers kelas V and VI** reports (Pasal 10(2)).
 - CONTEXT.md line "Official 2025 curriculum rules and guides … `docs/data/regulations/`" could mention the national standards (SKL, Isi, Pengelolaan, Penilaian, BSAN) now there.
 
-**Open questions for the owner** (not decided here):
+**Owner answers (2026-11-11):** Q1 keep the two mirror copies (26/2025, 21/2022) until JDIH copies can be fetched; Q2 keep the full CP decree file unchanged in the repo. Q3 is still open.
+
+**Open questions for the owner** (as asked):
 
 1. Keep the two **mirror** copies (26/2025, 21/2022) until a JDIH copy can be fetched, or should the owner download the JDIH files and upload them? *Suggested: keep, replace later and re-hash.*
 2. The CP decree PDF is 15 MB (1,691 pages). Keep the full file in the repo (it is the CP source for P4-29/P4-30), or keep only the SD/MI pages? *Suggested: keep the full official file unchanged.*
